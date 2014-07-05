@@ -1,0 +1,9 @@
+{
+    "children": [{
+        "id": "A",
+        "leaf": true
+    }, {
+        "id": "B",
+        "leaf": true
+    }]
+}

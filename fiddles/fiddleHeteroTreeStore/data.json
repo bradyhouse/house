@@ -1,0 +1,98 @@
+{
+    "title": "",
+    "animalid": "root",
+    "parentId": null,
+    "leaf": false,
+    "children": [
+        {
+            "title": "Mammals",
+            "mtype": "Classification",
+            "classid": "Mammal",
+            "parentId": "root",
+            "leaf": false,
+            "children": [
+                {
+                    "title": "Whale",
+                    "mtype": "Animal",
+                    "animalid": "1",
+                    "parentid": "Mammal",
+                    "leaf": true
+                },
+                {
+                    "title": "Human",
+                    "mtype": "Animal",
+                    "animalid": "2",
+                    "parentId": "Mammal",
+                    "leaf": true
+                },
+                {
+                    "title": "Ape",
+                    "mtype": "Animal",
+                    "animalid": "3",
+                    "parentId": "Mammal",
+                    "leaf": true
+                }
+            ]
+        },
+        {
+            "title": "Reptiles",
+            "mtype": "Classification",
+            "classid": "Reptile",
+            "parentId": "root",
+            "leaf": false,
+            "children": [
+                {
+                    "title": "Crocodile",
+                    "mtype": "Animal",
+                    "animalid": "4",
+                    "parentid": "Reptile",
+                    "leaf": true
+                },
+                {
+                    "title": "Alligator",
+                    "mtype": "Animal",
+                    "animalid": "5",
+                    "parentId": "Reptile",
+                    "leaf": true
+                },
+                {
+                    "title": "Lizard",
+                    "mtype": "Animal",
+                    "animalid": "6",
+                    "parentId": "Reptile",
+                    "leaf": true
+                }
+            ]
+        },
+        {
+            "title": "Birds",
+            "mtype": "Classification",
+            "classid": "Bird",
+            "parentId": "root",
+            "leaf": false,
+            "children": [
+                {
+                    "title": "Eagle",
+                    "mtype": "Animal",
+                    "animalid": "7",
+                    "parentid": "Bird",
+                    "leaf": true
+                },
+                {
+                    "title": "Hawk",
+                    "mtype": "Animal",
+                    "animalid": "8",
+                    "parentId": "Bird",
+                    "leaf": true
+                },
+                {
+                    "title": "Pigeon",
+                    "mtype": "Animal",
+                    "animalid": "9",
+                    "parentId": "Bird",
+                    "leaf": true
+                }
+            ]
+        }
+    ]
+}

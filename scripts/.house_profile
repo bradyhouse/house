@@ -1,0 +1,7 @@
+#!/bin/bash
+alias htbuild="cd ~/github/house/scripts; ./house_build_testing.sh;"
+alias hkbuild="cd ~/github/house/scripts; ./houseknecht_build_testing.sh;"
+alias hkstart="cd ~/github/house/scripts; ./houseknecht_start_testing.sh;"
+alias hthbuild="cd ~/github/house/scripts; ./house_theme_build.sh;"
+alias exstart="cd ~/github/house/scripts; ./examples_start.sh;"
+alias pgenerate="cd ~/github/house/scripts; ./prototype_app_generate.sh"

@@ -1,0 +1,22 @@
+{
+    "leaf": false,
+    "children": [{
+        "clOrgEntity": {
+            "id": "ORD"
+        },
+        "clUserCorp": {
+            "id": "ABA",
+            "longName": "SUNGARD"
+        },
+        "reqSrcIds": ["DFLT"],
+        "children": [{
+            "closingAcct": {
+                "id": "ABA",
+                "srcSegregationType": "EAST"
+            },
+            "reqSrcId": "DFLT",
+            "leaf": true
+        }],
+        "leaf": false
+    }]
+}

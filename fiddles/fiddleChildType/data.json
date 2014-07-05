@@ -1,0 +1,23 @@
+{
+    "leaf": false,
+    "closingAcctId": "root",
+    "parentId": null,
+    "children": [{
+        "userCorpId": "ABA-SUNGUARD",
+        "mType": "UserCorp",
+        "clOrgEntity": "ORD",
+        "clUserCorp": "ABA-SUNGARD",
+        "reqSrc": "DFLT",
+        "parentId": "root",
+        "children": [{
+            "closingAcctId": "ABA-EAST",
+            "parentId": "ABA-SUNGARD",
+            "mType": "ClosingAcct",
+            "clUserCorp": "ABA-SUNGARD-ABA-EAST",
+            "closingAcct": "ABA-EAST",
+            "reqSrc": "DFLT",
+            "leaf": true
+        }],
+        "leaf": false
+    }]
+}

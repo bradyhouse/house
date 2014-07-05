@@ -1,0 +1,29 @@
+{"leaf":false,
+    "children":[{
+        "Destination": {
+        "Id":"ORD",
+        "Time": "1:00 CDT"},
+        "Arrival": {
+          "Id":"RDU",
+          "Time": "12:00 EST"
+        },
+        "Airplane":{
+            "Id":"010",
+            "longName": "BOEING 737"
+        },
+        "Status": ["OnTime"],
+        "children":[{
+            "Passenger":{
+                "Id":"Gandalf Wizard",
+                "Seat":"3A"},
+            "Section":"First Class",
+            "leaf":true
+        }, {
+            "Passenger":{
+                "Id":"Bilbo Baggins",
+                "Seat":"3B"},
+            "Section":"First Class",
+            "leaf":true }],
+        "leaf":false
+    }]
+}
