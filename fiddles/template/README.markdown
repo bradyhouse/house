@@ -1,4 +1,4 @@
-House \ Fiddles \ template
+template
 ======
 
 This sub-directories includes a set of files used as a starting point for the creation of a new fiddle. It includes:

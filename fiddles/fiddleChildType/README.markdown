@@ -1,4 +1,4 @@
-House \ Fiddles \ fiddleChildType
+fiddleChildType
 ======
 
 ### Title

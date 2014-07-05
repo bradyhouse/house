@@ -1,4 +1,4 @@
-House \ Fiddles \ fiddleHeteroTreeStore
+fiddleHeteroTreeStore
 ======
 
 ### Title

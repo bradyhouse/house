@@ -1,4 +1,4 @@
-House \ Fiddles \ fiddleUtilFilter
+fiddleUtilFilter
 ======
 
 ### Title

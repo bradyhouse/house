@@ -1,4 +1,4 @@
-House \ Fiddles
+fiddles
 ======
 
 Before you can build a website using Ext JS, you have to understand Ext JS.  Based on books, 

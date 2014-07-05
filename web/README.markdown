@@ -1,4 +1,4 @@
-house \ web
+web
 =====
 
 Sencha 5.0 workspace. This directory was created using the Sencha command *generate workspace* option.  

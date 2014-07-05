@@ -1,4 +1,4 @@
-House \ Fiddles \ fiddleGMap
+fiddleGMap
 ======
 
 ### Title

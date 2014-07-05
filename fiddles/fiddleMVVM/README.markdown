@@ -1,4 +1,4 @@
-House \ Fiddles \ fiddleMVVM
+fiddleMVVM
 ======
 
 ### Title

@@ -1,4 +1,4 @@
-House \ Fiddles \ fiddleModelAssociations
+fiddleModelAssociations
 ======
 
 ### Title
