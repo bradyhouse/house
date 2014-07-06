@@ -3,5 +3,6 @@
 Ext.define("House.view.west.Properties", {
     extend: 'Ext.panel.Panel',
     alias: 'widget.properties',
-    html: '<div>Properties</div>'
+    html: '<div>Properties</div>',
+    padding: '2 2 2 2'
 });

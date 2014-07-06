@@ -32,7 +32,6 @@
      *      ]
      */
     "requires": [
-        "ext-locale"
     ],
 
     /**
@@ -141,7 +140,7 @@
      */
     "css": [
         {
-            "path": "${build.dir.relative}/resources/House-all.css",
+            "path": "bootstrap.css",
             "bootstrap": true
         }
     ],
@@ -192,18 +191,5 @@
      * Uniquely generated id for this application, used as prefix for localStorage keys.
      * Normally you should never change this value.
      */
-    "id": "c882c88d-d70c-435f-ba77-85180fec436d",
-
-    "locales": [
-        "en"
-    ],
-
-    /*"builds": {
-        "crisp": {
-            "theme": "ext-theme-crisp"
-        },
-        "neptune": {
-            "theme": "ext-theme-neptune"
-        }
-    }*/
+    "id": "0d08945b-66a5-464e-b5a4-5f4a56c52fb2"
 }

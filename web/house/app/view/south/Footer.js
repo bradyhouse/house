@@ -3,5 +3,6 @@
 Ext.define("House.view.south.Footer", {
     extend: 'Ext.panel.Panel',
     alias: 'widget.footer',
-    html: '<div>Footer</div>'
+    html: '<div>Footer</div>',
+    padding: '2 2 2 2'
 });

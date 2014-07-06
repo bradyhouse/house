@@ -1,4 +1,4 @@
-house / web / ext
+ext
 =====
 
 Workspace extJS framework folder. To utilize the web workspace folder packaged with the house code base, add

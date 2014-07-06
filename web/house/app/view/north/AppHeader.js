@@ -4,7 +4,8 @@ Ext.define("House.view.north.AppHeader", {
     extend: 'Ext.Container',
     xType: 'appHeader',
     alias: 'widget.appHeader',
-    title: 'Houseknecht.com',
+    title: 'H o u s e k n e c h t',
+    padding: '10 0 0 10',
     height: 52,
     layout: {
         type: 'hbox',
