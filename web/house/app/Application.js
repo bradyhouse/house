@@ -7,13 +7,7 @@ Ext.define('House.Application', {
         'House.view.Viewport'
     ],
     controllers: [
-        'Global',
-        'navigation.NavigationController',
-        'content.ContentController',
-        'footer.FooterController',
-        'properties.PropertiesController',
-        'header.HeaderController',
-        'account.AccountController'
+        'Global'
     ],
     init: function() {
         var me = this;

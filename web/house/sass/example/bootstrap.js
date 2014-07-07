@@ -1275,7 +1275,8 @@ Ext.Loader.addClassPathMappings({
   "Ext.util.Renderable": "../../../ext/src/util/Renderable.js",
   "Ext.util.StoreHolder": "../../../ext/src/util/StoreHolder.js",
   "ExtThemeNeptune": "../../../ext/packages/ext-theme-neptune/overrides",
-  "House": "../../app"
+  "House": "../../app",
+  "House.view.north.FooterModel": "../../app/view/south/FooterModel.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
   "Ext.AbstractManager": [],
@@ -2249,18 +2250,19 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "House.Application": [],
   "House.controller.Global": [],
-  "House.controller.account.AccountController": [],
-  "House.controller.content.ContentController": [],
-  "House.controller.footer.FooterController": [],
-  "House.controller.header.HeaderController": [],
-  "House.controller.navigation.NavigationController": [],
-  "House.controller.properties.PropertiesController": [],
   "House.model.account.User": [],
   "House.view.Viewport": [],
   "House.view.center.Content": [],
+  "House.view.center.ContentController": [],
+  "House.view.center.ContentModel": [],
+  "House.view.center.google.GMapPanel": [],
   "House.view.east.Navigation": [],
   "House.view.north.AppHeader": [],
+  "House.view.north.AppHeaderController": [],
+  "House.view.north.AppHeaderModel": [],
+  "House.view.north.FooterModel": [],
   "House.view.south.Footer": [],
+  "House.view.south.FooterController": [],
   "House.view.west.Properties": []
 });
 Ext.ClassManager.addNameAliasMappings({
@@ -3475,16 +3477,19 @@ Ext.ClassManager.addNameAliasMappings({
   "ExtThemeNeptune.toolbar.Toolbar": [],
   "House.Application": [],
   "House.controller.Global": [],
-  "House.controller.account.AccountController": [],
-  "House.controller.content.ContentController": [],
-  "House.controller.footer.FooterController": [],
-  "House.controller.header.HeaderController": [],
-  "House.controller.navigation.NavigationController": [],
-  "House.controller.properties.PropertiesController": [],
   "House.model.account.User": [],
   "House.view.Viewport": [],
   "House.view.center.Content": [
     "widget.content"
+  ],
+  "House.view.center.ContentController": [
+    "controller.content"
+  ],
+  "House.view.center.ContentModel": [
+    "viewmodel.content"
+  ],
+  "House.view.center.google.GMapPanel": [
+    "widget.gmappanel"
   ],
   "House.view.east.Navigation": [
     "widget.navigation"
@@ -3492,8 +3497,20 @@ Ext.ClassManager.addNameAliasMappings({
   "House.view.north.AppHeader": [
     "widget.appHeader"
   ],
+  "House.view.north.AppHeaderController": [
+    "controller.appheader"
+  ],
+  "House.view.north.AppHeaderModel": [
+    "viewmodel.appheader"
+  ],
+  "House.view.north.FooterModel": [
+    "viewmodel.footer"
+  ],
   "House.view.south.Footer": [
     "widget.footer"
+  ],
+  "House.view.south.FooterController": [
+    "controller.footer"
   ],
   "House.view.west.Properties": [
     "widget.properties"
@@ -3504,6 +3521,7 @@ Ext.setVersion("ext-theme-base", "5.0.0");
 Ext.setVersion("ext-theme-crisp", "5.0.0");
 Ext.setVersion("ext-theme-neptune", "5.0.0");
 Ext.setVersion("ext-theme-neutral", "5.0.0");
+Ext.setVersion("house-theme", "1.0.0");
 Ext.setVersion("sencha-core", "5.0.0");
 
 

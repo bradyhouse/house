@@ -1,5 +1,5 @@
 $image-search-path: '/Users/e13542/github/house/web/build/testing/House/resources';
-$theme-name:  'ext-theme-crisp' !default;
+$theme-name:  'house-theme' !default;
 $include-ext-abstractmanager: true;
 $include-ext-action: true;
 $include-ext-ajax: true;
@@ -654,18 +654,19 @@ $include-extthemeneptune-toolbar-paging: true;
 $include-extthemeneptune-toolbar-toolbar: true;
 $include-house-application: true;
 $include-house-controller-global: true;
-$include-house-controller-account-accountcontroller: true;
-$include-house-controller-content-contentcontroller: true;
-$include-house-controller-footer-footercontroller: true;
-$include-house-controller-header-headercontroller: true;
-$include-house-controller-navigation-navigationcontroller: true;
-$include-house-controller-properties-propertiescontroller: true;
 $include-house-model-account-user: true;
 $include-house-view-viewport: true;
 $include-house-view-center-content: true;
+$include-house-view-center-contentcontroller: true;
+$include-house-view-center-contentmodel: true;
+$include-house-view-center-google-gmappanel: true;
 $include-house-view-east-navigation: true;
 $include-house-view-north-appheader: true;
+$include-house-view-north-appheadercontroller: true;
+$include-house-view-north-appheadermodel: true;
+$include-house-view-north-footermodel: true;
 $include-house-view-south-footer: true;
+$include-house-view-south-footercontroller: true;
 $include-house-view-west-properties: true;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
@@ -675,6 +676,8 @@ $include-house-view-west-properties: true;
 @import '../../../../../ext/packages/ext-theme-neptune/sass/etc/all';
 /* including package ext-theme-crisp */
 @import '../../../../../ext/packages/ext-theme-crisp/sass/etc/all';
+/* including package house-theme */
+@import '../../../../../packages/house-theme/sass/etc/all';
 /* including package ext-theme-crisp */
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/Component';
 @import '../../../../../ext/packages/ext-theme-crisp/sass/var/panel/Tool';

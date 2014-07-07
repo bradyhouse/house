@@ -4,24 +4,32 @@ Ext.define("House.view.north.AppHeader", {
     extend: 'Ext.Container',
     xType: 'appHeader',
     alias: 'widget.appHeader',
-    title: 'H o u s e k n e c h t',
+    title: 'Houseknecht.com',
     padding: '10 0 0 10',
     height: 52,
     layout: {
         type: 'hbox',
         align: 'middle'
     },
+    controller: 'appheader',
+    viewModel: {
+        type: 'appheader'
+    },
     initComponent: function() {
         document.title = this.title;
         this.items = [{
             xtype: 'component',
-            id: 'app-header-logo'
-        },{
-            xtype: 'component',
             id: 'app-header-title',
             html: this.title,
-            flex: 1
+            flex: 1,
+            bind: {
+                html: '{text}'
+            },
+            listener: {
+                afterrender: 'onAppHeaderAfterRender'
+            }
         }];
         this.callParent();
     }
+
 });

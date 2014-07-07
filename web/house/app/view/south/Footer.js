@@ -3,6 +3,16 @@
 Ext.define("House.view.south.Footer", {
     extend: 'Ext.panel.Panel',
     alias: 'widget.footer',
-    html: '<div>Footer</div>',
-    padding: '2 2 2 2'
+    controller: 'footer',
+    viewModel: {
+        type: 'footer'
+    },
+    layout: {
+        type: 'hbox',
+        align: 'middle'
+    },
+    padding: '0 0 0 0',
+    bind: {
+        html: '{text}'
+    }
 });

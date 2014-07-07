@@ -4,5 +4,5 @@ Ext.define("House.view.east.Navigation", {
     extend: 'Ext.panel.Panel',
     alias: 'widget.navigation',
     html: '<div>Navigation</div>',
-    padding: '2 2 2 2'
+    padding: '0'
 });

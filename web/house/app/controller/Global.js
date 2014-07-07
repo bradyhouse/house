@@ -18,7 +18,8 @@ Ext.define('House.controller.Global', {
     },
 
     beforeHandleRoute: function(id, action) {
-        this.redirectTo(me.getApplication().getDefaultToken());
+        var me = this;
+        me.redirectTo(me.getApplication().getDefaultToken());
     },
 
     handleRoute: function(id) {
