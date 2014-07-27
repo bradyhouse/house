@@ -21,35 +21,10 @@ Ext.define('House.view.Viewport', {
         framed: true,
         height: 50
     }, {
-        region: 'west',
-        xtype: 'navigation',
-        reference: 'navigation',
-        border: false,
-        collapsible: true,
-        collapsed: true,
-        width: '10%'
-    }, {
         region: 'center',
         xtype: 'content',
         reference: 'content',
-        width: '80%',
+        width: '1000%',
         height: '80%'
-    }, {
-        region: 'east',
-        xtype: 'properties',
-        reference: 'properties',
-        border: false,
-        collapsible: true,
-        collapsed: true,
-        width: '10%'
-    }, {
-        region: 'south',
-        xtype: 'footer',
-        reference: 'footer',
-        framed: true,
-        height: 100,
-        padding: '1 1 1 1',
-        collapsible: true,
-        collapsed: true
     }]
 });

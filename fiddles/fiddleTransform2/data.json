@@ -1,0 +1,15 @@
+{
+    "data": [{
+        "id": "1",
+        "f": "John",
+        "l": "Snow"        
+    }, {
+        "id": "2",
+        "f": "Joffrey",
+        "l": "Lanster"
+    }, {
+        "id": "3",
+        "f": "Stanza",
+        "l": "Stark"
+    }]
+}
