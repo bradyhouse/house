@@ -2,7 +2,7 @@
 
 Ext.onReady(function() {
     Ext.application({
-        name : '{{FiddleName}}',
+        name : '$1',
         launch : function() {
             Ext.Msg.alert('ExtJS Version', Ext.getVersion());
         }

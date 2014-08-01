@@ -1,4 +1,4 @@
-{{FiddleName}}
+$1
 ======
 
 ### Title
