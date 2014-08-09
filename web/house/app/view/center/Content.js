@@ -50,8 +50,10 @@ Ext.define("House.view.center.Content", {
             width:  1024,
             height: 768,
             markers: [{
+                k: 41.86537,
+                A: -87.62371999999999,
                 lat: 41.86537,
-                lng: -87.62372,
+                lng: -87.62371999999999,
                 draggable: true,
                 raiseOnDrag: false,
                 icon: iconImg,
@@ -59,6 +61,8 @@ Ext.define("House.view.center.Content", {
                 shape: shape,
                 listeners: {
                     click: function (e) {
+                        console.log(e.latLng);
+                        console.log(google.maps);
                         Ext.Msg.show({
                             title: '',
                             msg: locations[0][0],

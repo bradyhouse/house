@@ -23,7 +23,7 @@ Ext.define('House.view.center.google.GMapPanel', {
         var options = Ext.apply({}, this.mapOptions),
             point = new google.maps.LatLng(41.878114, -87.629798),
             options = Ext.applyIf(options, {
-                zoom: 6,
+                zoom: 3,
                 center: point,
                 mapTypeId: google.maps.MapTypeId.SATELLITE
             });

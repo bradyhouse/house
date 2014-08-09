@@ -1,5 +1,3 @@
-
-
 Ext.onReady(function() {
     Ext.application({
         name : '{{FiddleName}}',

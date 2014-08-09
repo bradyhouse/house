@@ -2,10 +2,265 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173faf31-4786-47a5-b382-816637239eb0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fiddles/fiddleTest/README.markdown" afterPath="$PROJECT_DIR$/fiddles/fiddleTest/README.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fiddles/fiddleTest/app.js" afterPath="$PROJECT_DIR$/fiddles/fiddleTest/app.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fiddles/template/README.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fiddles/template/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fiddles/template/data.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fiddles/template/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fiddles/template/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/substr.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/ext/README.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/Boot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/Microloader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/bootstrap-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/build-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/build.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/codegen.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/defaults.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/development.defaults.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/development.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/ext.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/find-cmd-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/init-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/js-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/microloader/development.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/microloader/production.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/microloader/testing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/native.defaults.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/native.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/package.defaults.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/package.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/packager-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/page-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/plugin.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/production.defaults.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/production.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/refresh-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/resolve-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/resources-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/sass-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/sencha.cfg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/slice-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/testing.defaults.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/testing.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/.sencha/app/watch-impl.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/Application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/controller/Main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/controller/Root.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/model/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/store/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/view/main/Main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/view/main/MainController.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/app/view/main/MainModel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/bootstrap.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/resources/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/example/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/example/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/example/custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/example/example.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/example/render.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/fiddle/sass/example/theme.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/.house_profile" afterPath="$PROJECT_DIR$/scripts/.house_profile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/temp/development/House/sass/House-all.scss.tmp" afterPath="$PROJECT_DIR$/web/build/temp/development/House/sass/House-all.scss.tmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/temp/development/House/sass/.sass-cache/22b493e3de49c04c293dadbbce30cc8f6c368cc5/House-all.scssc" afterPath="$PROJECT_DIR$/web/build/temp/development/House/sass/.sass-cache/22b493e3de49c04c293dadbbce30cc8f6c368cc5/House-all.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/datepicker/arrow-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/datepicker/arrow-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/datepicker/arrow-right.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/datepicker/arrow-right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/arrows-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/arrows-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/arrows.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/arrows.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/checkbox.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/checkbox.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/clear-trigger-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/clear-trigger-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/clear-trigger.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/clear-trigger.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/fieldset/collapse-tool.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/fieldset/collapse-tool.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/columns.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/columns.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/date-trigger-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/date-trigger-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/date-trigger.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/date-trigger.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow-open-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow-open-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow-open.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow-open.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-checked.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-checked.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-group-checked.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-group-checked.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-large-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-medium-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-menu-parent-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-menu-parent-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-menu-parent.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-menu-parent.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-more-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-more-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-more.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-more.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-bottom.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-bottom.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-right.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-top.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-plain-scroll-top.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-scroll-bottom.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-scroll-bottom.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-bottom.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-bottom.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-bottom.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-bottom.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-scroll-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-scroll-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-scroll-right.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-scroll-right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-right.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-right.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-scroll-top.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-scroll-top.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-top.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab-bar/default-scroll-top.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-top.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/default-scroll-top.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-small-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-open-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-open-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-open.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-open.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-over-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-over-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-over.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-over.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/breadcrumb/default-split-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-large-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-medium-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/default-toolbar-small-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-unchecked.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/menu/default-unchecked.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/e-handle.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/e-handle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-minus-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-minus-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-minus.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-minus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-plus-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-plus-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-plus.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-plus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-end.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-line-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-line-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-line.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-line.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus-nl-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus-nl-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus-nl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus-nl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-minus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus-nl-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus-nl-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus-nl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus-nl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-plus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/elbow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/equals.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/equals.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/exclamation.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/exclamation.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/find.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/find.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder-open-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder-open-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder-open.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder-open.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/folder.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-more-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-more-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-more.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-more.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-scroll-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-scroll-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-scroll-right.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/toolbar/footer-scroll-right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/greater_than.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/greater_than.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/grid-cell-small-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/group-by.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/group-by.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/group-collapse.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/group-collapse.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/group-expand.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/group-expand.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hd-pop.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hd-pop.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-asc.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-asc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-desc.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-desc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-lock.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-lock.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-unlock.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/hmenu-unlock.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-error.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-error.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-info.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-info.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-question.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-question.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-warning.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/shared/icon-warning.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/leaf-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/leaf-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/leaf.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tree/leaf.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/less_than.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/filters/less_than.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-bottom.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-bottom.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-left.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-right.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-top.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/util/splitter/mini-top.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/datepicker/month-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/datepicker/month-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/ne-handle.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/ne-handle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/nw-handle.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/nw-handle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-first.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-first.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-last.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-last.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-next.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-next.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-prev.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/page-prev.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-large-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-medium-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow-b-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow-b-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow-b.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow-b.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/button/plain-toolbar-small-s-arrow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/radio.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/radio.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/refresh.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/refresh.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/s-handle.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/s-handle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/se-handle.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/se-handle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/search-trigger-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/search-trigger-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/search-trigger.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/search-trigger.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-bg.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-thumb.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-thumb.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-v-bg.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-v-bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-v-thumb.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/slider/slider-v-thumb.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/sort_asc.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/sort_asc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/sort_desc.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/grid/sort_desc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/spinner-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/spinner-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/spinner.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/spinner.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/sw-handle.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/sizer/sw-handle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tab/tab-default-close.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tab/tab-default-close.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/tag-field-item-close.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/tag-field-item-close.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/editor/tb-sprite.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/editor/tb-sprite.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tools/tool-sprites-dark.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tools/tool-sprites-dark.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/tools/tool-sprites.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/tools/tool-sprites.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/trigger-rtl.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/trigger-rtl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/images/form/trigger.png" afterPath="$PROJECT_DIR$/web/build/development/House/resources/images/form/trigger.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house/app/view/center/Content.js" afterPath="$PROJECT_DIR$/web/house/app/view/center/Content.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house/app/view/center/google/GMapPanel.js" afterPath="$PROJECT_DIR$/web/house/app/view/center/google/GMapPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/development/House/resources/House-all.css" afterPath="$PROJECT_DIR$/web/build/development/House/resources/House-all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/build/temp/development/House/sass/House-all.scss" afterPath="$PROJECT_DIR$/web/build/temp/development/House/sass/House-all.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house/app.json" afterPath="$PROJECT_DIR$/web/house/app.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house/bootstrap.json" afterPath="$PROJECT_DIR$/web/house/bootstrap.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/fiddle.sh" afterPath="$PROJECT_DIR$/scripts/fiddle.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fiddles/fiddleTest/index.html" afterPath="$PROJECT_DIR$/fiddles/fiddleTest/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/house.iml" afterPath="$PROJECT_DIR$/.idea/house.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="house.iws" />
@@ -29,67 +284,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="448" max-vertical-offset="1155">
+              <caret line="68" column="14" selection-start-line="4" selection-start-column="4" selection-end-line="68" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiddles/template/index.html">
+        <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="240">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="255">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiddles/template/README.markdown">
+      <file leaf-file-name="app.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/house/app.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="300">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.32407406" vertical-offset="915" max-vertical-offset="3015">
+              <caret line="75" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="GMapPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/house/app/view/center/google/GMapPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1230">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Content.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/house/app/view/center/Content.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1470">
+              <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiddles/fiddleTest/app.js">
+        <entry file="file://$PROJECT_DIR$/fiddles/fiddleBuildExplicit/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="285">
+              <caret line="8" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fiddles/fiddleTest/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="637">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiddles/fiddleUtilFilter/README.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="345">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiddles/template/app.js">
+        <entry file="file://$PROJECT_DIR$/fiddles/fiddleFrameworkExplicit/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="225">
+              <caret line="8" column="5" selection-start-line="1" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContentController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/house/app/view/center/ContentController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="330">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/house/sass/etc/all.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="555">
+              <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/data.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,17 +397,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fiddles/template/app.js" />
         <option value="$PROJECT_DIR$/fiddles/template/index.html" />
         <option value="$PROJECT_DIR$/fiddles/template/README.markdown" />
         <option value="$PROJECT_DIR$/fiddles/fiddleTest/app.js" />
         <option value="$PROJECT_DIR$/fiddles/fiddleTest/index.html" />
+        <option value="$PROJECT_DIR$/fiddles/template/app.js" />
+        <option value="$PROJECT_DIR$/fiddles/template/data.json" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleFillNode/index.html" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleFillNode/data.json" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleFillNode/app.js" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleTreeState/data.json" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleTreeState/app.js" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleSimpleRouting/app.js" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleSimpleRouting/index.html" />
+        <option value="$PROJECT_DIR$/web/house/sass/etc/all.scss" />
+        <option value="$PROJECT_DIR$/web/house/app.json" />
+        <option value="$PROJECT_DIR$/web/house/app/view/center/ContentController.js" />
+        <option value="$PROJECT_DIR$/web/house/app/view/center/google/GMapPanel.js" />
+        <option value="$PROJECT_DIR$/web/house/app/view/center/Content.js" />
+        <option value="$PROJECT_DIR$/fiddles/fiddleBuildExplicit/app.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1600" />
+    <option name="width" value="1440" />
     <option name="height" value="818" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -147,6 +450,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,6 +479,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="house" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="house" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="house" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="house" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="house" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="fiddles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -193,7 +529,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
+              <option name="myItemId" value="fiddleArchitectCtrls" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,40 +547,72 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fiddleUtilFilter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="house" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="house" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fiddles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fiddleTest" />
+              <option name="myItemId" value="fiddleArchitectCRUD" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/cme/risk" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="173faf31-4786-47a5-b382-816637239eb0" name="Default" comment="" />
@@ -254,25 +622,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1600" height="818" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="818" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24952501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22832981" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -296,55 +664,367 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fiddles/template/app.js">
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="448" max-vertical-offset="1155">
+          <caret line="68" column="14" selection-start-line="4" selection-start-column="4" selection-end-line="68" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fiddles/fiddleUtilFilter/README.markdown">
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fiddles/template/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="240">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="255">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fiddles/template/README.markdown">
+    <entry file="file://$PROJECT_DIR$/web/house/app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3015">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/google/GMapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1230">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTest/app.js">
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/Content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="674">
+        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1470">
+          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleBuildExplicit/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="285">
+          <caret line="8" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleFrameworkExplicit/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="225">
+          <caret line="8" column="5" selection-start-line="1" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/ContentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="330">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/sass/etc/all.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="555">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTest/index.html">
+    <entry file="file://$PROJECT_DIR$/web/house/sass/etc/all.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="674">
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="555">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1155">
+          <caret line="68" column="14" selection-start-line="4" selection-start-column="4" selection-end-line="68" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="255">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3015">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/google/GMapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1230">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/Content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="1470">
+          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/ContentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="330">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/sass/etc/all.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="555">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="1125">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1605" max-vertical-offset="1995">
+          <caret line="107" column="10" selection-start-line="92" selection-start-column="8" selection-end-line="107" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleClassConfig/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleClassConfig/README.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="362" max-vertical-offset="1185">
+          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="270">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleFrameworkExplicit/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="225">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="2070">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="270">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleFrameworkExplicit/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="225">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleUtilFilter/README.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleUtilFilter/README.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16153847" vertical-offset="0" max-vertical-offset="650">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1276923" vertical-offset="362" max-vertical-offset="1185">
+          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleTreeState/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1605" max-vertical-offset="1995">
+          <caret line="107" column="10" selection-start-line="92" selection-start-column="8" selection-end-line="107" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleClassConfig/README.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="815">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleClassConfig/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="842">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="448" max-vertical-offset="1155">
+          <caret line="68" column="14" selection-start-line="4" selection-start-column="4" selection-end-line="68" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="255">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32407406" vertical-offset="915" max-vertical-offset="3015">
+          <caret line="75" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/google/GMapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1230">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/Content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1470">
+          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleBuildExplicit/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="8" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleFrameworkExplicit/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="8" column="5" selection-start-line="1" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/app/view/center/ContentController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house/sass/etc/all.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="555">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/fiddleSimpleRouting/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="477" max-vertical-offset="1125">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
