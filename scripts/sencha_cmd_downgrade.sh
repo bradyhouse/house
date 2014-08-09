@@ -7,13 +7,13 @@ then
 	source ~/.bash_profile
 	echo ".bash_profile downgraded to ext_4.2.2"
 	
-	if [[ ! -d ~/cme/ext_5 && -d ~/cme/ext_422 && -d ~/cme/ext ]]
+	if [[ ! -d ~/github/house/web/ext_5 && -d ~/github/house/web/ext_422 && -d ~/github/house/web/ext ]]
 	then
-		sudo mv ~/cme/ext ~/cme/ext_5
-		sudo mv ~/cme/ext_422 ~/cme/ext
-		echo "~/cme/ext downgraded to ext_4.2.2"
+		sudo mv ~/github/house/web/ext ~/github/house/web/ext_5
+		sudo mv ~/github/house/web/ext_422 ~/github/house/web/ext
+		echo "~/github/house/web/ext downgraded to ext_4.2.2"
 	else
-		echo "Cannot downgrade the ~/cme/ext directory. Please update manually."
+		echo "Cannot downgrade the ~/github/house/web/ext directory. Please update manually."
 	fi
 else
 	echo "Already downgraded based on the .bash_profile"
