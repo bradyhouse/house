@@ -1,10 +1,3 @@
-/* Prototype ATTEMPTING to illustrate
- how to create a heterogeneous tree store
- by defining a childType attribute
- on the parent TreeModel class.
-
- */
-
 /***************************
  DEFINE THE CLOSING ACCT MODEL
  ****************************/
@@ -13,8 +6,12 @@ Ext.define('DataBinding.model.ClosingAcct', {
     idProperty: 'closingAcctId',
     entityName: 'ClosingAcct',
     fields: [
-        'clUserCorp',
-        'closingAcct',
+        { name: 'clUserCorp'},
+        { name:'closingAcct'},
+        { name: 'text',
+          convert: function(v, record) {
+          	return record.get('closingAcct');   
+         }}
     ]
 });
 
@@ -23,14 +20,21 @@ Ext.define('DataBinding.model.ClosingAcct', {
  ****************************/
 Ext.define('DataBinding.model.UserCorp', {
     extend: 'Ext.data.TreeModel',
-    entityName: 'UserCorp',
     childType: 'ClosingAcct',
+    entityName: 'UserCorp',
     /***************************
      5.0.0 CHANGE
      ****************************/
     idProperty: 'userCorpId',
-    fields: ['clUserCorp',
-        'clOrgEntity'
+    fields: [
+        { name: 'clUserCorp'},
+        { name: 'clOrgEntity'},
+        { name: 'text',
+         convert: function(v, record) {
+             return record.get('clUserCorp');
+         },
+         depends: ['clUserCorp']
+        }
     ]
 });
 
@@ -47,11 +51,10 @@ Ext.define('DataBinding.store.UserCorps', {
         type: 'ajax',
         url: 'data.json',
         reader: {
-            type: 'json',
-            typeProperty: 'mType'
+            type: 'json'
         }
     },
-    autoLoad: true
+    clearOnLoad: true
 });
 
 /*****************************
@@ -66,14 +69,14 @@ Ext.define('DataBinding.view.navigation.UserCorps', {
         'DataBinding.store.UserCorps'],
     store: 'UserCorps',
     alias: 'widget.usercorps',
-    isUserCorps: true,
+    rootVisible: false,
     title: 'TreeModel Childtype Property',
     columns: [{
         xtype: 'treecolumn',
-        text: 'ClUserCorp',
+        text: 'UserCorps-ClosingAcct',
         flex: 2.5,
         sortable: true,
-        dataIndex: 'id'
+        dataIndex: 'text'
     }, {
         text: 'Entity',
         flex: 1,
@@ -128,8 +131,7 @@ Ext.require('Ext.form.field.Trigger');
  ******************************/
 Ext.onReady(function() {
     Ext.create('DataBinding.store.UserCorps', {
-        storeId: 'UserCorps',
-        autoLoad: true
+        storeId: 'UserCorps'
     });
     Ext.create('DataBinding.Main', {
         renderTo: Ext.getBody(),

@@ -1,6 +1,3 @@
-
-
-
 /*****************************
 
  DEFINE THE MAIN VIEW CONTROLLER
@@ -9,9 +6,7 @@
 
 Ext.define('FiddleMVVM.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-    requires: [
-        'Ext.MessageBox'
-    ],
+    requires: ['Ext.MessageBox'],
 
     alias: 'controller.main',
 
@@ -20,7 +15,7 @@ Ext.define('FiddleMVVM.view.main.MainController', {
     },
     onConfirm: function (choice) {
         if (choice === 'yes') {
-            //
+            Ext.Msg.alert('Alert', 'Goodbye then!');
         }
     }
 });
@@ -61,7 +56,8 @@ Ext.define('FiddleMVVM.view.main.Main', {
             title: '{name}'
         },
         region: 'north'
-    }, { type: 'panel',
+    }, {
+        type: 'panel',
         region: 'west',
         html: '<ul><li>This area is commonly used for navigation, for example, using a "tree" component.</li></ul>',
         width: 250,
@@ -70,10 +66,10 @@ Ext.define('FiddleMVVM.view.main.Main', {
             text: 'Button',
             handler: 'onClickButton'
         }]
-    },{
+    }, {
         region: 'center',
         xtype: 'tabpanel',
-        items:[{
+        items: [{
             title: 'Tab 1',
             html: '<h2>Content appropriate for the current navigation.</h2>'
         }]
@@ -87,9 +83,10 @@ Ext.define('FiddleMVVM.view.main.Main', {
  THE MAIN CONTAINER.
 
  ******************************/
-Ext.onReady(function() {
+Ext.onReady(function () {
 
     Ext.create('FiddleMVVM.view.main.Main', {
-        renderTo: Ext.getBody()
+        renderTo: Ext.getBody(),
+        height: 400
     });
 });

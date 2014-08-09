@@ -9,7 +9,7 @@ ls -1 | grep 'fiddle' > index.tmp
 mv index.tmp ../scripts/bin
 cd ../scripts/bin
 while read line; do
-   echo "<a href=\"$line/index.html\" target="_blank">$line</a></br>" >> ../../fiddles/index.html
+   echo "<a href=\"$line/index.html\" target="_self">$line</a></br>" >> ../../fiddles/index.html
 done < index.tmp
 cat snippets/indexfooter >> ../../fiddles/index.html
 

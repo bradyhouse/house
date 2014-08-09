@@ -48,7 +48,7 @@ Ext.onReady(function() {
             return !!this.get('closingAccountId');
         }
     });
-
+    
     /*****************************************
      * CREATE THE TREE STORE ATTACHED TO THE
      * USER MODEL.
@@ -67,7 +67,7 @@ Ext.onReady(function() {
         },
         autoLoad: true
     });
-
+    
     /*****************************
      * DEFINE THE TREE PANEL
      */
@@ -86,7 +86,7 @@ Ext.onReady(function() {
             dataIndex: 'text'
         }]
     });
-
+    
     /******************************************
      * CREATE AN INSTANCE OF THE USERS
      * STORE
@@ -94,7 +94,7 @@ Ext.onReady(function() {
     Ext.create('Fiddle.store.UserCorps', {
         storeId: 'UserCorps'
     });
-
+    
     /******************************************
      * CREATE AN INSTANCE OF THE TREE PANEL
      * CONTAINER

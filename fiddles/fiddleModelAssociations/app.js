@@ -1,4 +1,3 @@
-/* UNDER CONSTRUCTION */
 
 /***************************
  DEFINE THE AIRPORT MODEL
@@ -41,31 +40,40 @@ Ext.define('FiddleAssociatedModels.model.Airplane', {
     ]
 });
 
+/***************************
+ DEFINE PASSENGER MODEL
+ ****************************/
+Ext.define('FiddleAssociatedModels.model.Passenger', {
+    extend: 'Ext.data.TreeModel',
+    entityName: 'Passenger',
+    fields: [
+        { name: 'Id', mapping: 'Id', type: 'string'},
+        { name: 'Seat', mapping: 'Seat', type: 'string'}
+    ]
+});
+
+
 
 /***************************
- DEFINE CARGO MODEL
+ DEFINE PACKAGE MODEL
  ****************************/
-Ext.define('FiddleAssociatedModels.model.Cargo', {
+Ext.define('FiddleAssociatedModels.model.Package', {
     extend: 'Ext.data.TreeModel',
-    entityName: 'Cargo',
+    entityName: 'Package',
     fields: [
-        { name: 'passengerId', mapping: 'Passenger.Id', type: 'string'},
-        { name: 'passengerSeat', mapping: 'Passenger.Seat', type: 'string'},
+        { name: 'packageId', mapping: 'Id', reference: 'Passenger', type: 'string'},
+        { name: 'packageLocal', mapping: 'Seat', reference: 'Passenger', type: 'string'},
         { name: 'section', mapping: 'Section', type: 'string'},
         { name: 'text',
             convert: function(val,rec) {
-                console.log(rec);
-                return rec.get('passengerId');
+                return rec.data.Passenger.Id + ' (' + rec.data.Passenger.Seat + ')';
             },
-            depends: ['passengerId']
+            depends: ['packageId', 'packageLocal']
         },
         { name: 'flightId',
-            reference: {
-                parent: 'Flight',
-                role: 'airplane',
-                inverse: 'cargos',
-                association: 'CargosByAirplane'
-            }}
+          convert: function(val, rec) {
+             return parent.flightId;
+         }}
     ]
 });
 
@@ -75,19 +83,24 @@ Ext.define('FiddleAssociatedModels.model.Cargo', {
 Ext.define('FiddleAssociatedModels.model.Flight', {
     extend: 'Ext.data.TreeModel',
     entityName: 'Flight',
-    childType: 'Cargo',
+    
+    /* NEW REQUIRED ATTRIBUTE */ 
+    childType: 'Package',
     fields: [ {
         name: 'destinationId',
         mapping: 'Destination.Id',
-        reference: 'Destination'
+        reference: 'Destination',
+        unique: true
     }, {
         name: 'arrivalId',
         mapping: 'Arrival.Id',
-        reference: 'Arrival'
+        reference: 'Arrival',
+        unique: true
     }, {
         name: 'airplaneId',
         mapping: 'Airplane.Id',
-        reference: 'Airplane'
+        reference: 'Airplane',
+        unique: true
     }, {
         name: 'status',
         mapping: 'Status',
@@ -95,7 +108,13 @@ Ext.define('FiddleAssociatedModels.model.Flight', {
     }, {
         name: 'text',
         convert: function(value, record) {
-            return record.get('airplaneId');
+            return record.get('airplaneId') + ' ' + record.get('destinationId') + '/' + record.get('arrivalId');
+        },
+        depends: ['airplaneId']
+    }, {
+        name: 'flightId',
+        convert: function(value, record) {
+            return record.get('airplaneId')
         },
         depends: ['airplaneId']
     }]
@@ -135,12 +154,21 @@ Ext.define('FiddleAssociatedModels.view.Flights', {
     store: 'Flights',
     alias: 'widget.flights',
     title: 'Associated Models',
+    rootVisible: false,
+    scroll: 'both',
     columns: [{
         xtype: 'treecolumn',
-        text: 'Flight-Passenger',
-        flex: 2.5,
+        text: 'Tree Column',
+        flex: 1.5,
         sortable: true,
         dataIndex: 'text'
+    },{
+        text: 'flight #',
+        dataIndex: 'flightId',
+        flex: 1
+    }, {
+        text: 'status',
+        dataIndex: 'status'
     }, {
         text: 'Entity',
         flex: 1,
@@ -157,7 +185,7 @@ Ext.define('FiddleAssociatedModels.view.Flights', {
 Ext.define('FiddleAssociatedModels.Main', {
     extend: "Ext.container.Container",
     border: true,
-    padding: 10,
+    padding: 2,
     initComponent: function() {
         var me = this;
         Ext.each(me.items, function(item) {
@@ -165,7 +193,7 @@ Ext.define('FiddleAssociatedModels.Main', {
                 backgroundColor: "#f4f4f",
                 border: "1px solid #333"
             };
-            item.padding = 10;
+            item.padding = 2;
             item.height = 450;
         });
         me.callParent();
@@ -179,9 +207,6 @@ Ext.define('FiddleAssociatedModels.Main', {
     }
 });
 
-Ext.require('Ext.form.field.Display');
-Ext.require('Ext.form.field.Trigger');
-
 /*****************************
  ONCE EXT IS READY, CONFIGURE
  EXT'S AJAX SETTINGS, CREATE
@@ -190,8 +215,7 @@ Ext.require('Ext.form.field.Trigger');
  ******************************/
 Ext.onReady(function() {
     Ext.create('FiddleAssociatedModels.store.Flights', {
-        storeId: 'Flights',
-        autoLoad: true
+        storeId: 'Flights'
     });
     Ext.create('FiddleAssociatedModels.Main', {
         renderTo: Ext.getBody(),

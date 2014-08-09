@@ -1,11 +1,11 @@
-{"leaf":false,
+{   
     "children":[{
         "Destination": {
-        "Id":"ORD",
-        "Time": "1:00 CDT"},
+            "Id":"ORD",
+            "Time": "1:00 CDT"},
         "Arrival": {
-          "Id":"RDU",
-          "Time": "12:00 EST"
+            "Id":"RDU",
+            "Time": "12:00 EST"
         },
         "Airplane":{
             "Id":"010",
@@ -14,7 +14,7 @@
         "Status": ["OnTime"],
         "children":[{
             "Passenger":{
-                "Id":"Gandalf Wizard",
+                "Id":"Gandalf Gray",
                 "Seat":"3A"},
             "Section":"First Class",
             "leaf":true
@@ -23,7 +23,31 @@
                 "Id":"Bilbo Baggins",
                 "Seat":"3B"},
             "Section":"First Class",
-            "leaf":true }],
-        "leaf":false
+            "leaf":true }]
+    },{
+        "Destination": {
+            "Id":"LAX",
+            "Time": "1:00 CDT"},
+        "Arrival": {
+            "Id":"MDW",
+            "Time": "12:00 EST"
+        },
+        "Airplane":{
+            "Id":"020",
+            "longName": "BOEING 737"
+        },
+        "Status": ["OnTime"],
+        "children":[{
+            "Passenger":{
+                "Id":"Golem",
+                "Seat":"10B"},
+            "Section":"Coach",
+            "leaf":true
+        }, {
+            "Passenger":{
+                "Id":"Froto Baggins",
+                "Seat":"10A"},
+            "Section":"Coach",
+            "leaf":true }]
     }]
 }

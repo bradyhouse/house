@@ -1,4 +1,7 @@
-/* UNDER CONSTRUCTION @ 6/25/2014 */
+/* UNDER CONSTRUCTION @ 6/25/2014 
+   CURRENT ISSUE - WHY DOESN"T THE
+   TREESTORE SEE THE CHILD NODES.
+*/
 
 Ext.onReady(function() {
 
@@ -19,6 +22,7 @@ Ext.onReady(function() {
             Ext.define('FiddleOneToMany.model.Order', {
                 extend: 'Ext.data.TreeModel',
                 entityName: 'Order',
+                childType: 'OrderItem',
                 fields: [
                     'id', 'total'],
 
@@ -40,10 +44,10 @@ Ext.onReady(function() {
             Ext.define('FiddleOneToMany.model.User', {
                 extend: 'Ext.data.TreeModel',
                 entityName: 'User',
+                childType: 'Order',
                 fields: [
                     'id', 'name', 'total'],
-
-                hasMany: {
+				hasMany: {
                     model: 'Order',
                     name: 'orders'
                 }
@@ -80,7 +84,7 @@ Ext.onReady(function() {
             Ext.define('FiddleOneToMany.store.Users', {
                 extend: 'Ext.data.TreeStore',
                 requires: [
-                  'FiddleOneToMany.model.User'
+                  'FiddleOneToMany.model.User'  
                 ],
                 model: 'FiddleOneToMany.model.User',
                 proxy: {
@@ -172,8 +176,7 @@ Ext.onReady(function() {
         console.log('Creating Users Store Instance');
         try {
             Ext.create('FiddleOneToMany.store.Users', {
-                storeId: 'Users',
-                autoLoad: true
+                storeId: 'Users'
             });
         } catch(err) {
             throw err;
