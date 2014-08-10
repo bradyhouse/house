@@ -1,0 +1,9 @@
+####bin aliases###
+alias house.cntf="./cntf"
+alias house.escapestr="./escapestr"
+alias house.explodejs="./explodejs"
+alias house.explodejson="./explodejson"
+alias house.nodedfs="./nodedfs"
+alias house.rmr="./rmr"
+alias house.seds="./seds"
+alias house.substr="./substr"
