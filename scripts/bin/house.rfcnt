@@ -2,6 +2,9 @@
 
 if [ $# -ne "1" ]
 then
+  echo ""
+  echo "recursive file count"
+  echo ""
   echo "Usage:"
   echo ""
   echo "       $0 \"[d]\""
@@ -11,7 +14,7 @@ then
   exit 86
 fi
 
-_s=$1
+_s=$2
 _total=0
 _agg=0
  
@@ -33,3 +36,4 @@ do
 done
 
 echo "$_agg"
+cd $1

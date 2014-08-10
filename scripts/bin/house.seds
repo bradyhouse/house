@@ -2,6 +2,9 @@
 
 if [ $# -ne "3" ]
 then
+  echo ""
+  echo "sed substitute"
+  echo ""
   echo "Usage:"
   echo "" 
   echo "       $0 [o] [t] [r]"

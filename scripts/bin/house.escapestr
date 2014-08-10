@@ -1,7 +1,8 @@
-#!/bin/bash
-
-if [ $# -ne "2" ]
+if [ $# -ne "1" ]
 then
+  echo ""
+  echo "escape string"
+  echo ""
   echo "Usage:"
   echo ""
   echo "       $0 \"[d]\" \"[c]\""
@@ -11,6 +12,4 @@ then
   echo ""
   exit 86
 fi
-
-cd $1
-find . -name $2 -print0 | xargs -0 rm -rf
+echo $1 | sed -e 's/[]\/$*.^|[]/\\&/g'
