@@ -1,12 +1,8 @@
-
-Ext.onReady(function () {
+Ext.onReady(function() {
 
     Ext.define('fiddleTreeState.StateManager', {
-        requires: [
-            'Ext.state.Manager',
-            'Ext.state.LocalStorageProvider'
-        ]
-    }, function () {
+        requires: ['Ext.state.Manager', 'Ext.state.LocalStorageProvider']
+    }, function() {
         Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider({
             prefix: 'fiddleTreeState-'
         }));
@@ -37,12 +33,12 @@ Ext.onReady(function () {
             reader: 'json',
             url: 'data.json'
         },
-        constructor: function (config) {
+        constructor: function(config) {
             var me = this;
             me.callParent([config]);
             me.on('load', me.onStoreLoad);
         },
-        onStoreLoad: function (store, records, successful) {
+        onStoreLoad: function(store, records, successful) {
             var me = this,
                 tree = store.ownerTree,
                 id = tree.getStateId(),
@@ -56,8 +52,8 @@ Ext.onReady(function () {
             }
         },
         // @private
-        restoreTreeState: function (root, tree, state) {
-            root.cascadeBy(function (model) {
+        restoreTreeState: function(root, tree, state) {
+            root.cascadeBy(function(model) {
                 var text = model.get('text'),
                     node = state.nodes[text];
                 if (node) {
@@ -74,9 +70,7 @@ Ext.onReady(function () {
 
     Ext.define('fiddleTreeState.tree.Animals', {
         extend: 'Ext.tree.Panel',
-        requires: [
-            'fiddleTreeState.StateManager'
-        ],
+        requires: ['fiddleTreeState.StateManager'],
         rootVisible: false,
         alias: 'widget.tree-animals',
         frame: true,
@@ -86,22 +80,27 @@ Ext.onReady(function () {
         height: 800,
         useArrows: true,
         animate: false,
-        stateId: 'tree-state',
+        stateId: 'animalSelections',
         stateEvents: ['itemcollapse', 'itemexpand', 'checkchange'],
         saveDelay: 1000,
         stateful: true,
-        getState: function () {
+        getState: function() {
             var nodes = {},
-                checked = this.getChecked();
-            Ext.Array.forEach(checked, function (node) {
-                var text = node.get('text');
-                if (text) {
-                    nodes[text] = {
-                        checked: node.get('checked'),
-                        expanded: node.isExpanded()
-                    };
-                }
-            });
+                checked = this.getChecked(),
+                text = null;
+            try {
+                Ext.Array.forEach(checked, function(node) {
+                    text = node.get('text');
+                    if (text) {
+                        nodes[text] = {
+                            checked: node.get('checked'),
+                            expanded: node.isExpanded()
+                        };
+                    }
+                });
+            } catch (err) {
+                Ext.Msg.show('Error', err.message);
+            }
             return {
                 nodes: nodes
             };
@@ -115,6 +114,7 @@ Ext.onReady(function () {
         }
 
     });
+
 
     Ext.create('fiddleTreeState.tree.Animals', {
         renderTo: Ext.getBody(),

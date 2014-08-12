@@ -7,10 +7,11 @@ then
 fi
 #try
 (
-     cp -rf "../fiddles/template" "../fiddles/$1/" || exit 1
-     $(./substr.sh '{{FiddleName}}' $1 "../fiddles/$1/app.js" > app.tmp; mv app.tmp "../fiddles/$1/app.js") || exit 2 
-     $(./substr.sh '{{FiddleName}}' $1 "../fiddles/$1/index.html" > index.tmp;  mv index.tmp "../fiddles/$1/index.html") || exit 3
-     $(./substr.sh '{{FiddleName}}' $1 "../fiddles/$1/README.markdown" > README.tmp; mv README.tmp "../fiddles/$1/README.markdown") || exit 4
+     if [[ -d "../fiddles/$1" ]]; then rm -R "../fiddles/$1"; fi
+     cp -rf "../fiddles/template" "../fiddles/$1" || exit 1
+     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/$1/app.js" > app.tmp; mv app.tmp "../../fiddles/$1/app.js") || exit 2 
+     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/$1/index.html" > index.tmp;  mv index.tmp "../../fiddles/$1/index.html") || exit 3
+     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/$1/README.markdown" > README.tmp; mv README.tmp "../../fiddles/$1/README.markdown") || exit 4
 )
 #catch
 case $? in
