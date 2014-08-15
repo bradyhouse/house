@@ -14,7 +14,7 @@ then
   exit 86
 fi
 
-_s=$2
+_s=$1
 _total=0
 _agg=0
  

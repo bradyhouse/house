@@ -18,4 +18,3 @@ _bin=$(pwd)
 
 cd $1
 node $_bin/server.js
-
