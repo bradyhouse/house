@@ -1,7 +1,7 @@
-Ext.onReady(function() {
+Ext.onReady(function () {
     var vMajor = 4;
     try {
-        v = Ext.getVersion().parts[0];
+        vMajor = Ext.getVersion().parts[0];
     } catch (err) {
         console.log(err.message);
     }
@@ -10,24 +10,24 @@ Ext.onReady(function() {
             extend: 'Ext.button.Button',
             alias: 'widget.mybutton',
             enableToggle: true,
-            scale: 'large',
+            scale: 'small',
             text: 'Not Clicked',
             // <5.0_Required>
             cls: '',
             ui: 'default',
-            onRender: function() {
-                this.setUI('off');
+            onRender: function () {
+                this.setUI('off-small');
                 this.callParent();
             },
             // </5.0_Required>
-            onClick: function() {
+            onClick: function () {
                 var me = this;
                 if (me.text === 'Not Clicked') {
                     me.setText('Clicked');
-                    me.setUI('on');
+                    me.setUI('on-small');
                 } else {
                     me.setText('Not Clicked');
-                    me.setUI('off');
+                    me.setUI('off-small');
                 }
             }
         });
@@ -37,9 +37,9 @@ Ext.onReady(function() {
             alias: 'widget.mybutton',
             enableToggle: true,
             ui: 'off',
-            scale: 'large',
+            scale: 'small',
             text: 'Not Clicked',
-            onClick: function() {
+            onClick: function () {
                 var me = this;
                 if (me.text === 'Not Clicked') {
                     me.setText('Clicked');
@@ -66,4 +66,9 @@ Ext.onReady(function() {
     Ext.create('MyFiddle.view.Main', {
         renderTo: Ext.getBody()
     });
+
+
+
+
+
 });

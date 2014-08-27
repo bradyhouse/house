@@ -10,6 +10,8 @@ fiddleDefect14035
 fiddleDefect14037
 fiddleDefect14141
 fiddleDefect14198
+fiddleDefect14485
+fiddleDefect14485-Wrk
 fiddleFrameworkExplicit
 fiddleGMap
 fiddleGroupingDups1
@@ -19,6 +21,7 @@ fiddleInstances
 fiddleLifeCycle
 fiddleLoadMask
 fiddleMVVM
+fiddleMetaProperty
 fiddleModelAssociations
 fiddleOneToMany
 fiddleProxyConfig
@@ -27,5 +30,7 @@ fiddleStoreApplyFilter
 fiddleTitleAlignTarget
 fiddleTransform1
 fiddleTransform2
+fiddleTreeSortState
 fiddleTreeState
 fiddleUtilFilter
+fiddleVanillaStore

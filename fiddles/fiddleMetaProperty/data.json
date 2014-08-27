@@ -1,0 +1,84 @@
+{
+    "personid": "root",
+    "text": "Game of Thrones",
+    "status": "Season 4",
+    "children": [{
+        "text": "House of Lannister",
+        "checked": false,
+        "personid": "Lannister",
+        "status":  "In Power",
+        "leaf": false,
+        "children": [{
+            "text": "Tyrion",
+            "checked": false,
+            "status": "alive",
+            "personid": "1",
+            "leaf": true
+        }, {
+            "text": "Joffrey",
+            "checked": false,
+            "personid": "2",
+            "status": "dead",
+            "leaf": true
+        }, {
+            "text": "Cersei",
+            "checked": false,
+            "personid": "3",
+            "status": "alive",
+            "leaf": true
+        }],
+        "expanded": false
+    }, {
+        "text": "House of Stark",
+        "status": "Defeated",
+        "checked": false,
+        "personid": "Stark",
+        "leaf": false,
+        "children": [{
+            "text": "Sansa",
+            "checked": false,
+            "personid": "4",
+            "status": "alive",
+            "leaf": true
+        }, {
+            "text": "Arya",
+            "checked": false,
+            "personid": "5",
+            "status": "unknown",
+            "leaf": true
+        }, {
+            "text": "Bran",
+            "checked": false,
+            "personid": "6",
+            "status": "unknown",
+            "leaf": true
+        }],
+        "expanded": false
+
+    }, {
+        "text": "House of Clegane",
+        "checked": false,
+        "personid": "Clegane",
+        "leaf": false,
+        "status": "minor",
+        "children": [{
+            "text": "Sandor",
+            "checked": false,
+            "personid": "7",
+            "status": "unknown",
+            "leaf": true
+        }, {
+            "text": "Gregor",
+            "checked": false,
+            "personid": "8",
+            "status": "alive",
+            "leaf": true
+        }],
+        "expanded": false
+    }],
+    "myMetaData": {
+        "version": "1",
+        "code": "200",
+        "searchquery": "false"
+    }
+}

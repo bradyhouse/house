@@ -1,0 +1,74 @@
+{
+    "text": "",
+    "animalid": "root",
+    "parentId": null,
+    "leaf": false,
+    "children": [{
+        "text": "Mammals",
+        "animalid": "Mammal",
+        "parentId": "root",
+        "leaf": false,
+        "children": [{
+            "text": "Whale",
+            "animalid": "1",
+            "parentid": "Mammal",
+            "leaf": true
+        }, {
+            "text": "Human",
+            "animalid": "2",
+            "parentId": "Mammal",
+            "leaf": true
+        }, {
+            "text": "Ape",
+            "animalid": "3",
+            "parentId": "Mammal",
+            "leaf": true
+        }],
+        "expanded": false
+    }, {
+        "text": "Reptiles",
+        "animalid": "Reptile",
+        "parentId": "root",
+        "leaf": false,
+        "children": [{
+            "text": "Crocodile",
+            "animalid": "4",
+            "parentid": "Reptile",
+            "leaf": true
+        }, {
+            "text": "Alligator",
+            "animalid": "5",
+            "parentId": "Reptile",
+            "leaf": true
+        }, {
+            "text": "Lizard",
+            "animalid": "6",
+            "parentId": "Reptile",
+            "leaf": true
+        }],
+        "expanded": false
+
+    }, {
+        "text": "Birds",
+        "animalid": "Bird",
+        "parentId": "root",
+        "leaf": false,
+        "children": [{
+            "text": "Eagle",
+            "animalid": "7",
+            "parentid": "Bird",
+            "leaf": true
+        }, {
+            "text": "Hawk",
+            "animalid": "8",
+            "parentId": "Bird",
+            "leaf": true
+        }, {
+            "text": "Pigeon",
+            "animalid": "9",
+            "parentId": "Bird",
+            "leaf": true
+        }],
+        "expanded": false
+    }]
+}
