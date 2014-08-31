@@ -12,7 +12,7 @@ then
 fi
 #try
 (
-     if [[ !-d "../fiddles/$1 ]]; then exit 1; fi
+     if [[ ! -d "../fiddles/$1" ]]; then exit 1; fi
      if [[ -d "../fiddles/$2" ]]; then sudo rm -R "../fiddles/$2" || exit 2; fi
      cp -rf "../fiddles/$1" "../fiddles/$2" || exit 3
      $(cd bin; ./house.substr $1 $2 "../../fiddles/$2/app.js" > app.tmp; mv app.tmp "../../fiddles/$2/app.js") || exit 4
