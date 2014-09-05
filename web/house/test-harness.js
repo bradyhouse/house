@@ -6,7 +6,8 @@ Harness.configure({
 
     preload : [
         "http://cdn.sencha.io/ext/gpl/4.2.0/resources/css/ext-all.css",
-        "http://cdn.sencha.io/ext/gpl/4.2.0/ext-all-debug.js"
+        "house/ext-all-debug.js"
+
     ]
 
 });
@@ -15,7 +16,7 @@ Harness.start(
     {
         group               : 'Sanity',
         items               : [
-            'tests/010_sanity.t.js'
+            'house/tests/010_sanity.t.js'
         ]
     },
     {
@@ -27,7 +28,7 @@ Harness.start(
         items : [
             {
                 hostPageUrl         : 'index.html',
-                url                 : 'tests/014_app.t.js'
+                url                 : 'house/tests/014_app.t.js'
             }
         ]
     }
