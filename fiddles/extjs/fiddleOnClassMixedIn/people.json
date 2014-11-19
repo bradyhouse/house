@@ -1,0 +1,69 @@
+{
+    "text": "",
+    "personid": "root",
+    "parentId": null,
+    "leaf": false,
+    "children": [{
+        "text": "House of Lannister",
+        "personid": "Lannister",
+        "parentId": "root",
+        "leaf": false,
+        "children": [{
+            "text": "Tyrion",
+            "personid": "1",
+            "parentid": "Lannister",
+            "leaf": true
+        }, {
+            "text": "Joffrey",
+            "personid": "2",
+            "parentId": "Lannister",
+            "leaf": true
+        }, {
+            "text": "Cersei",
+            "personid": "3",
+            "parentId": "Lannister",
+            "leaf": true
+        }],
+        "expanded": false
+    }, {
+        "text": "House of Stark",
+        "personid": "Stark",
+        "parentId": "root",
+        "leaf": false,
+        "children": [{
+            "text": "Sansa",
+            "personid": "4",
+            "parentid": "Stark",
+            "leaf": true
+        }, {
+            "text": "Arya",
+            "personid": "5",
+            "parentId": "Stark",
+            "leaf": true
+        }, {
+            "text": "Bran",
+            "personid": "6",
+            "parentId": "Stark",
+            "leaf": true
+        }],
+        "expanded": false
+
+    }, {
+        "text": "House of Clegane",
+        "personid": "Clegane",
+        "parentId": "root",
+        "leaf": false,
+        "children": [{
+            "text": "Sandor",
+            "personid": "7",
+            "parentid": "Clegane",
+            "leaf": true
+        }, {
+            "text": "Gregor",
+            "personid": "8",
+            "parentId": "Clegane",
+            "leaf": true
+        }],
+        "expanded": false
+    }]
+}

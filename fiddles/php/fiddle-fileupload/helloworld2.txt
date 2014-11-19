@@ -1,0 +1,10 @@
+New Stuff 1
+<h3>What if ...</h3>
+<p> What if instead of simply paying it, you could plot that ugly credit card bill on google maps?
+    Or perform an internet search in bulk by uploading a csv?  These are questions that have inspired the
+    Google ETL Interfaces (aka <i>Gooetls</i>).  Although we are still under construction and some disgruntled soul
+    has unleashed a <i>raptor</i> on our home page, you are welcome to look around or drop us a note via
+    the <a id="index-contactUs" href="#">contact widget</a>.
+</p>
+<p>Thankyou for visiting,</p>
+<h6>team Gooetls</h6>

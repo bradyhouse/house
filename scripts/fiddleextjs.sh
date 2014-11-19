@@ -21,19 +21,19 @@ case $? in
         ;;
     2)  echo "foo bar! failed trying to update the ../fiddles/$1/app.js file."
 	if [[ -d "../fiddles/$" ]]; then rm -R "../fiddles/$1"; fi
-	;;
+	    ;;
     3)  echo "foo bar! failed trying to update the ../fiddles/$1/index.html file."
         if [[ -d "../fiddles/$" ]]; then rm -R "../fiddles/$1"; fi
         ;;
     4)  echo "foo bar! failed trying to update the ../fiddles/$1/README.markdown file."
         if [[ -d "../fiddles/$" ]]; then rm -R "../fiddles/$1"; fi
         ;;
-    *)  echo "foo bar! Something went wrong." 
+    *)  echo "foo bar! Something went wrong."
         if [[ -d "../fiddles/$" ]]; then rm -R "../fiddles/$1"; fi
         ;;
 esac
 #finally
-    exit $?
+exit $?
 
 
 
