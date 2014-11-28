@@ -35,7 +35,15 @@ fi
 
 _s=$(echo $1 | sed -e 's/[]\/$*.^|[]/\\&/g')
 _g=$(echo $2 | sed -e 's/[]\/$*.^|[]/\\&/g')
+_tmp=$(echo "$3.tmp")
 
-sed -e "s/$_s/$_g/g" $_f
+sed -e "s/$_s/$_g/g" $_f > $_tmp
+
+sudo mv -f $_tmp $_f
+
+if [ -f $_tmp ]
+then
+   rm -R $_tmp
+fi
 
 exit $?  

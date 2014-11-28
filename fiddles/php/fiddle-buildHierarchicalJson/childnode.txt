@@ -1,6 +1,0 @@
-{
-    "text": "|||text|||",
-    "recordId": "|||recordId|||",
-    "parentId": "|||parentRecordId|||",
-    "leaf": true
-}

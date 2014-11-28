@@ -1,8 +1,0 @@
-{
-        "text": "|||text|||",
-        "recordId": "|||recordId|||",
-        "parentId": "root",
-        "leaf": false,
-        "children": [|||children|||],
-        "expanded": false
-}
