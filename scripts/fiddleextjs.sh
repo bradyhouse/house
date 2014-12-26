@@ -9,9 +9,15 @@ fi
 (
      if [[ -d "../fiddles/extjs/$1" ]]; then rm -R "../fiddles/extjs/$1"; fi
      cp -rf "../fiddles/extjs/template" "../fiddles/extjs/$1" || exit 1
+<<<<<<< HEAD
+     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/app.js";) || exit 2
+     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/index.html";) || exit 3
+     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/README.markdown";) || exit 4
+=======
      $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/app.js" > app.tmp; mv app.tmp "../../fiddles/extjs/$1/app.js") || exit 2
      $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/index.html" > index.tmp;  mv index.tmp "../../fiddles/extjs/$1/index.html") || exit 3
      $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/README.markdown" > README.tmp; mv README.tmp "../../fiddles/extjs/$1/README.markdown") || exit 4
+>>>>>>> b4bda69ea75640ec6729ad591092444755f37038
 )
 #catch
 case $? in

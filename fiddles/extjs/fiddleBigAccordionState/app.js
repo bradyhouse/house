@@ -223,7 +223,10 @@ Ext.onReady(function () {
     Ext.define('App.Box', {
         extend: "Ext.container.Container",
         border:	true,
+<<<<<<< HEAD
+=======
         padding: 25,
+>>>>>>> b4bda69ea75640ec6729ad591092444755f37038
         viewModel: {
             type: 'box'
         },

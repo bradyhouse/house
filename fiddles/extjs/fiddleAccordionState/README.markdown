@@ -12,3 +12,4 @@ Fiddle exploring how to add a tool bar to each card in an accordion panel using 
 
 ### Tags
 ExtJS-5, accordion, panel, state, x-tree-icon, x-tree-leaf, tbar
+

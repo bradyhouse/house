@@ -39,7 +39,7 @@ binDir=$(echo "$location/bin";)
             esac
 
             cd $binDir
-            cat snippets/indexheader > $indexFile
+            cat tpl/indexheader > $indexFile
             cd $fiddleDir
             ls -1 | grep 'fiddle' > index.tmp
             mv index.tmp $binDir
@@ -47,7 +47,7 @@ binDir=$(echo "$location/bin";)
             while read line; do
                echo "<a href=\"$line/$fiddleName\" target=\"_self\">$line</a></br>" >> $indexFile
             done < index.tmp
-            cat snippets/indexfooter >> $indexFile
+            cat tpl/indexfooter >> $indexFile
             exit 0
             ;;
         *)  exit 86

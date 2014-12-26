@@ -15,13 +15,13 @@ fi
      if [[ ! -d "../fiddles/extjs/$1" ]]; then exit 1; fi
      if [[ -d "../fiddles/extjs/$2" ]]; then sudo rm -R "../fiddles/extjs/$2" || exit 2; fi
      cp -rf "../fiddles/extjs/$1" "../fiddles/extjs/$2" || exit 3
-     $(cd bin; ./house.substr $1 $2 "../../fiddles/extjs/$2/app.js" > app.tmp; mv app.tmp "../../fiddles/extjs/$2/app.js") || exit 4
-     $(cd bin; ./house.substr $1 $2 "../../fiddles/extjs/$2/index.html" > index.tmp;  mv index.tmp "../../fiddles/extjs/$2/index.html") || exit 5
-     $(cd bin; ./house.substr $1 $2 "../../fiddles/extjs/$2/README.markdown" > README.tmp; mv README.tmp "../../fiddles/extjs/$2/README.markdown") || exit 6
+     $(cd bin; ./house.substr $1 $2 "../../fiddles/extjs/$2/app.js";) || exit 4
+     $(cd bin; ./house.substr $1 $2 "../../fiddles/extjs/$2/index.html";) || exit 5
+     $(cd bin; ./house.substr $1 $2 "../../fiddles/extjs/$2/README.markdown";) || exit 6
 )
 #catch
 case $? in
-    0)  echo "Done. The \"../fiddles/extjs/$2\" directory has been initialized."
+    0)  echo "Done. The \"../../fiddles/extjs/$2\" directory has been initialized."
         ;;
     1)  echo "fubar! The "\source\" fiddle does not exist."
         ;;

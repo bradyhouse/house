@@ -2,11 +2,10 @@ fiddle421TreeStore
 fiddleAccordionDockedToolbar
 fiddleAccordionState
 fiddleAccordionToolbar
-fiddleArchitectCRUD
-fiddleArchitectCtrlsCrispTouch
-fiddleArchitectCtrlsGray
+fiddleBasicPieChart
 fiddleBigAccordionState
 fiddleBigTreeState
+fiddleBudgetCalc
 fiddleBuildExplicit
 fiddleDefect14035
 fiddleDefect14037
@@ -16,6 +15,8 @@ fiddleDefect14485
 fiddleDefect14485-Wrk
 fiddleDefect14979
 fiddleDefect14979-Wrk
+fiddleDynamicPieChart
+fiddleFieldContainer
 fiddleFileDownload
 fiddleFrameworkExplicit
 fiddleGMap
@@ -34,9 +35,9 @@ fiddleModelAssociations
 fiddleOnClassMixedIn
 fiddleOneToMany
 fiddlePlugin
-fiddleProxyConfig
 fiddleRemoteSort
 fiddleSuggestionSearch
+fiddleToDoList
 fiddleTransform
 fiddleTreeModelChildType1
 fiddleTreeModelChildType2

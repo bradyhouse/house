@@ -111,7 +111,10 @@ Ext.onReady(function() {
 
     });
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> b4bda69ea75640ec6729ad591092444755f37038
     Ext.create('fiddleBigTreeState.tree.Animals', {
         renderTo: Ext.getBody(),
         items: [{
