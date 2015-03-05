@@ -27,8 +27,7 @@ binDir=$(echo "$location/bin";)
 (
     #ToDo Refactor
     case $1 in
-        'extjs'|'php')
-
+        'extjs'|'php'|'jquery')
             case $1 in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;
