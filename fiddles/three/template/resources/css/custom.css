@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+
+.enter-stage-right {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slidein;
+    -webkit-animation-name: slidein;
+}
+@-moz-keyframes slidein {
+    from { margin-left: 100%; }
+    to { margin-left: 10%; }
+}
+@-webkit-keyframes slidein {
+    from { margin-left: 100%; }
+    to { margin-left: 10%; }
+}
+
+
+#title {
+    position:absolute;
+    left:20px;
+    top:20px;
+}
+
+#prompt {
+    position:absolute;
+    bottom:20px;
+    left:20px;
+}
+
+#status {
+    position:absolute;
+    bottom:20px;
+    width:200px;
+    height:40px;
+    right:20px;
+}
+
+#rotation {
+    position:absolute;
+    left:20px;
+    top:0px;
+}
+
+#scale {
+    position:absolute;
+    left:20px;
+    top:20px;
+}
+
+#slider {
+    position:absolute;
+    width:800px;
+    top:610px;
+    height:10px;
+    background: #cf4c35;
+}
+
+#slider .ui-slider-handle {
+    height:12px;
+    top:-2px;
+    width:16px;
+}
+
+#properties {
+    color: white;
+    position:absolute;
+    left:810px;
+    top:126px;
+    margin-top:10px;
+    margin-left:20px;
+}
+
+#texturePicker {
+    position:absolute;
+    top:200px;
+    margin-left:10px;
+}
+
+#textureUrl {
+}
+
+#texturePicker .swatch {
+    width: 320px;
+    height: 240px;
+    margin-left: 20px;
+    margin-top:30px;
+    background-size:100% 100%;
+}
+
+.colorSelector {
+    position: absolute;
+    margin-left:10px;
+}
+
+.colorSelector div {
+    position: absolute;
+    top: 4px;
+    left: 140px;
+    width: 28px;
+    height: 28px;
+    background: url(../js/colorpicker/images/select2.png) center;
+}
+
+#diffuseColor {
+    position: absolute;
+    top:80px;
+}
+
+#specularColor {
+    position: absolute;
+    top:120px;
+}
+
+#container {
+    position:absolute;
+}
+
+#webglcanvas {
+    border:none;
+    background-color:#000000;
+}
+
+.footer-description {
+    position: absolute !important;
+    width: 800px;
+    top: 785px;
+
+}
+.footer-born-on {
+    position: absolute !important;
+    top: 850px;
+    width: 800px;
+}
+
+
+

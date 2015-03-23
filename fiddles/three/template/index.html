@@ -1,11 +1,68 @@
+<!DOCTYPE html>
 <html>
+<html lang="en">
+
 <head>
-    <title>Sencha Fiddle - {{FiddleName}}</title>
-    <script type="text/javascript" src="https://extjs.cachefly.net/ext/gpl/5.0.0/build/ext-all-debug.js"></script>
-    <script type="text/javascript" src="https://extjs.cachefly.net/ext/gpl/5.0.0/packages/ext-theme-neptune-touch/build/ext-theme-neptune-touch.js"></script>
-    <link rel="stylesheet" href="https://extjs.cachefly.net/ext/gpl/5.0.0/packages/ext-theme-neptune-touch/build/resources/ext-theme-neptune-touch-all-debug.css" />
-    <script type="text/javascript" src="app.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="resources/images/favicon.ico" id="favicon"/>
+
+	<title>House three.js Fiddle - {{FiddleName}}</title>
+
+	<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+	<link rel="stylesheet" href="resources/css/bootstrap.darkly.min.css"/>
+	<link rel="stylesheet" href="resources/css/bling.css"/>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="resources/js/html5shiv.js"></script>
+	<script src="resources/js/respond.min.js"></script>
+	<![endif]-->
+	<!-- 3DApplications Pieces -->
+	<link rel="stylesheet" href="resources/js/jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.css"/>
+	<link rel="stylesheet" media="screen" type="text/css" href="resources/js/colorpicker/css/colorpicker.css"/>
+
 </head>
-<body>
+
+<body id="page-top" class="index">
+<div class="container enter-stage-right">
+	<div class="col-lg-12">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="page-header">
+					<h1 id="navbar">&nbsp;{{FiddleName}}</h1>
+				</div>
+				<div class="bs-component">
+					<div id="container">
+					</div>
+					<p>
+						Fiddle based on Tony Parisi's <i>Normal Mapping</i> example discussed in
+						chapter 4 of his book,
+						<i><b>Programming 3D Applications with HTML5 and WebGL: 3D Animation and Visualization for Web Pages</b></i>.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="BornOnHook" class="modal-footer text-danger">
+			@ {{BornOnDate}}
+		</div>
+		<script src="resources/js/jquery-1.11.2.js"></script>
+		<script src="resources/js/bootstrap.min.js"></script>
+		<script src="resources/js/three.min.js"></script>
+		<script src="resources/js/Detector.js"></script>
+		<script src="resources/js/Coordinates.js"></script>
+		<script src="resources/js/OrbitAndPanControls.js"></script>
+		<script src="resources/js/TrackballControls.js"></script>
+		<script src="resources/js/uclass_TeapotGeometry.js"></script>
+		<script src="resources/js/uclass_TeacupGeometry.js"></script>
+		<script src="resources/js/uclass_TeaspoonGeometry.js"></script>
+		<script src="resources/js/uclass_BeveledBlockGeometry.js"></script>
+		<script src="resources/js/uclass_shaders.js"></script>
+		<script src="resources/js/stats.min.js"></script>
+		<script src="resources/js/dat.gui.min.js"></script>
+		<script src="resources/js/tween.min.js"></script>
+		<script src="app.js"></script>
 </body>
 </html>

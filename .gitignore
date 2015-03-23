@@ -2,3 +2,11 @@ jasmine/
 siesta/
 web/packages/house-theme/build
 .DS_Store
+fiddles/dojo/lib/dijit/
+fiddles/dojo/lib/dojo/
+fiddles/dojo/lib/dojox/
+fiddles/dojo/lib/build-report.txt
+fiddles/meteor/
+nohup.out
+lib
+index.tmp
