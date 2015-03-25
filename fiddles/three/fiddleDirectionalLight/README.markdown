@@ -1,9 +1,12 @@
 fiddleDirectionalLight
 ======
 
+![Screenshot](screenshot.png)
+
+
 ### Title
 
-House three.js Fiddle - Directional Light
+Directional Light
 
 
 ### Creation Date

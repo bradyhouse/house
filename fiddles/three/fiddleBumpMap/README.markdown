@@ -1,9 +1,11 @@
 fiddleBumpMapping
 ======
 
+![Screenshot](screenshot.png)
+
 ### Title
 
-House three.js Fiddle - fiddleBumpMapping
+Texture Bump Mapping
 
 
 ### Creation Date

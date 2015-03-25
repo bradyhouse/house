@@ -1,9 +1,11 @@
 fiddleCubeGeometry
 ======
 
+![Screenshot](screenshot.png)
+
 ### Title
 
-House three.js Fiddle - Cube Geometry
+Cube Geometry
 
 
 ### Creation Date
