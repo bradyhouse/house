@@ -19,8 +19,8 @@ then
       exit 59
 fi
 
-fiddleSubDir="dojo"
-bornOnDate=$(date +"%m-%d-%y" + " " +"%r";)
+fiddleSubDir="jquery"
+bornOnDate=$(date +"%m-%d-%y";)
 
 echo ${bornOnDate}
 

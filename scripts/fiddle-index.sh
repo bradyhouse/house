@@ -37,17 +37,18 @@ fi
 
 location=$(pwd;)
 home=$(cd ~; pwd)
-fiddleDir=$(cd ..; cd "fiddles/$1"; pwd;)
+type=$1
+
+fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
 fiddleNameStub=$(echo "index";)
 indexFile=$(echo "$fiddleDir/index.html";)
 binDir=$(echo "$location/bin";)
 
 #try
 (
-    #ToDo Refactor
-    case $1 in
+    case ${type} in
         'extjs'|'php'|'jquery'|'three'|'dojo')
-            case $1 in
+            case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;
                 'python') fiddleName=$(echo "fiddle.py";)
@@ -55,7 +56,6 @@ binDir=$(echo "$location/bin";)
                 *) fiddleName=$(echo "$fiddleNameStub.html";)
                     ;;
             esac
-
             cd $binDir
             cat tpl/indexheader > $indexFile
             cd $fiddleDir
@@ -65,22 +65,26 @@ binDir=$(echo "$location/bin";)
             while read line; do
                echo "<a href=\"$line/$fiddleName\" target=\"_self\">$line</a></br>" >> $indexFile
             done < index.tmp
+            rm -r index.tmp
             cat tpl/indexfooter >> $indexFile
-            exit 0
+            ./house-substr.sh '{{FiddleType}}' ${type} $indexFile || exit 86
             ;;
-        *)  exit 86
+        *)  exit 5000
             ;;
     esac
 )
 #catch
-case $? in
+rc=$?
+case ${rc} in
     0)  echo "Done. All \"$1\" fiddles have been re-indexed."
         ;;
-    *)  echo "fubar! Something went wrong."
+    86) echo "Error:  Call to the \"bin/house-substr.sh\" script failed."
+        ;;
+    *)  echo "Error: Something went wrong."
         ;;
 esac
 #finally
-    exit $?
+exit ${rc}
 
 
 

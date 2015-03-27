@@ -1,4 +1,12 @@
-        <br />
-        <br />
-    </body>
+				</p>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer text-danger">
+		</div>
+		<script src="resources/js/jquery-1.11.2.js"></script>
+		<script src="resources/js/bootstrap.min.js"></script>
+	</div>
+</div>
+</body>
 </html>

@@ -1,6 +1,7 @@
 jasmine/
 siesta/
 web/packages/house-theme/build
+.idea
 .DS_Store
 fiddles/dojo/lib/dijit/
 fiddles/dojo/lib/dojo/
