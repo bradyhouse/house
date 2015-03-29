@@ -1,0 +1,59 @@
+
+@import '../../../resources/css/bootstrap.min.css';
+@import '../../../resources/css/bootstrap.darkly.min.css';
+@import '../../../resources/css/custom.css';
+
+
+.thumbnail {
+    width: 260px;
+    height: 180px;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 0 12px 12px -10px #c4c4c4;
+    -webkit-box-shadow: 0 17px 22px -20px #c4c4c4;
+    -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.thumbnails p {
+    text-align: center;
+    padding: 10px;
+}
+.carousel-control {
+    width: 40px !important;
+    top: 40% !important;
+    background-color: transparent;
+    border-color: #000000;
+    opacity: 1;
+
+}
+
+.thumbnail-play {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-top: -100px;
+    margin-left: 100px;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    background: #333333;
+    border: 3px solid #ffffff;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.thumbnails {
+    padding-left: 50px;
+    padding-right: 75px;
+}
