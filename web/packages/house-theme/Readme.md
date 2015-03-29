@@ -1,2 +1,0 @@
-# house-theme - Read Me
-
