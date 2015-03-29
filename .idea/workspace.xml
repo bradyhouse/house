@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f4815b2-1877-4594-9e7e-1fd78ef74ddc" name="Default" comment="" />
+    <list default="true" id="3f4815b2-1877-4594-9e7e-1fd78ef74ddc" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fiddles/jquery/fiddle-0005-BootStrapCarousel/resources/screenshot.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="house.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,16 +31,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.5" vertical-offset="66" max-vertical-offset="765">
               <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fiddles/jquery/fiddle-0003-Ajax/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -105,11 +98,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.markdown" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.markdown" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fiddles/jquery/fiddle-0005-BootStrapCarousel/README.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66964287" vertical-offset="0" max-vertical-offset="672">
+            <state vertical-scroll-proportion="-16.666666" vertical-offset="0" max-vertical-offset="600">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.markdown" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fiddles/jquery/README.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.070754714" vertical-offset="0" max-vertical-offset="636">
+              <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -141,7 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/scripts/bin/house-thread-stop.sh" />
         <option value="$PROJECT_DIR$/scripts/bin/house-free-port.sh" />
         <option value="$PROJECT_DIR$/scripts/bin/house-port-release.sh" />
         <option value="$PROJECT_DIR$/fiddles/three/claraIoModelFiddle/ThreeJS3/batmanhouse.json" />
@@ -192,6 +197,7 @@
         <option value="$PROJECT_DIR$/fiddles/jquery/fiddle-0005-BootStrapCarousel/app.js" />
         <option value="$PROJECT_DIR$/fiddles/jquery/fiddle-0005-BootStrapCarousel/README.markdown" />
         <option value="$PROJECT_DIR$/fiddles/jquery/fiddle-0005-BootStrapCarousel/resources/css/custom.css" />
+        <option value="$PROJECT_DIR$/fiddles/jquery/README.markdown" />
       </list>
     </option>
   </component>
@@ -307,28 +313,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="house" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="house" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fiddles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fiddle-0005-BootStrapCarousel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -352,11 +336,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fiddles/jquery" />
       <recent name="$PROJECT_DIR$/fiddles/jquery/fiddle-0006-VideoPlayer/plugin" />
       <recent name="$PROJECT_DIR$/fiddles/resources/css" />
       <recent name="$PROJECT_DIR$/fiddles/jquery/fiddle-0006-VideoPlayer" />
       <recent name="$PROJECT_DIR$/fiddles/jquery/resources/css" />
-      <recent name="$PROJECT_DIR$/fiddles/jquery/fiddle-0005-BootStrapCarousel/resources/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/fiddles/three" />
@@ -778,8 +762,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fiddles/jquery/fiddle-0005-BootStrapCarousel/README.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66964287" vertical-offset="0" max-vertical-offset="672">
+        <state vertical-scroll-proportion="-16.666666" vertical-offset="0" max-vertical-offset="600">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fiddles/jquery/README.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.070754714" vertical-offset="0" max-vertical-offset="636">
+          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
           <folding />
         </state>
       </provider>
