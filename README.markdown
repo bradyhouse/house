@@ -1,10 +1,6 @@
 house
 =====
 
-As a JavaScript developer, much of my time is spent researching and attempting to master different 
-frameworks. In an attempt to capture this research I have developed a "house" repository, which has become
-my research starting point. Essentially, it is a collection of bash scripts and framework specific prototypes (or fiddles).  
-The bash scripts maintained in the scripts directory are a work in progress. They are used for command line
-boiler plating or automation.    
+As a JavaScript developer, much of my time is spent researching and attempting to master different frameworks. In an attempt to capture this research I have developed a "house" repository, which has become my research starting point. Essentially, it is a collection of bash scripts and framework specific prototypes (or fiddles).  The bash scripts maintained in the scripts directory are a work in progress. They are used for command line boiler plating or automation.    
 
 
