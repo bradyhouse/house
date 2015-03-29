@@ -1,20 +1,2 @@
 @CHARSET "UTF-8";
-
-.enter-stage-right {
-    -moz-animation-duration: 3s;
-    -webkit-animation-duration: 3s;
-    -moz-animation-name: slidein;
-    -webkit-animation-name: slidein;
-}
-@-moz-keyframes slidein {
-    from { margin-left: 100%; }
-    to { margin-left: 10%; }
-}
-@-webkit-keyframes slidein {
-    from { margin-left: 100%; }
-    to { margin-left: 10%; }
-}
-
-
-
-
+@import '../../../resources/css/custom.css';

@@ -4,40 +4,45 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="../resources/images/favicon.ico" id="favicon"/>
-
-	<meta name="description" content="house fiddle ">
+	<meta name="description" content="House jQuery fiddle collection">
 	<meta name="author" content="bradyhouse@gmail.com">
-	<title>House Fiddles - Index</title>
-	<!-- Bootstrap core CSS -->
+	<link rel="shortcut icon" href="resources/images/favicon.ico" id="favicon"/>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="resources/js/html5shiv.js"></script>
+	<script src="resources/js/respond.min.js"></script>
+	<![endif]-->
+	<title>House Fiddles - Root</title>
+	<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 	<link href="resources/css/bootstrap.darkly.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="resources/css/custom.css"/>
 </head>
 <body>
-<div class="container">
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">House Fiddles</a>
+<div class="container enter-stage-right">
+	<div class="col-lg-12">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="page-header">
+					<h1 id="navbar">House Fiddles</h1>
+				</div>
+				<div class="bs-component">
+					<ul>
+						<li><a href="dojo/index.html" target="_mainContent">Dojo</a></li>
+						<li><a href="extjs/index.html" target="_mainContent">ExtJS</a></li>
+						<li><a href="jquery/index.html" target="_mainContent">jQuery</a></li>
+						<li><a href="three/index.html" target="_mainContent">three.js</a></li>
+						<li><a href="php/index.html" target="_mainContent">php</a></li>
+					</ul>
+				</div>
 			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="dojo/index.html" target="_mainContent">Dojo</a></li>
-					<li><a href="extjs/index.html" target="_mainContent">ExtJS</a></li>
-					<li><a href="jquery/index.html" target="_mainContent">jQuery</a></li>
-					<li><a href="three/index.html" target="_mainContent">three.js</a></li>
-					<li><a href="php/index.html" target="_mainContent">php</a></li>
-				</ul>
-			</div><!--/.nav-collapse -->
 		</div>
-	</nav>
+		<div id="BornOnHook" class="modal-footer text-danger">
+			@ 03-28-15
+		</div>
+		<script src="resources/js/jquery-1.11.2.js"></script>
+		<script src="resources/js/bootstrap.min.js"></script>
+	</div>
 </div>
-
 </body>
 </html>
