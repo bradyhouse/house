@@ -10,18 +10,23 @@ Ext.onReady(function () {
             me.callParent([cfg]);
         },
         getStoreFields: function () {
-            return [{
-                name: "text",
-                convert: undefined
-            }, {
-                name: "checked",
-                defaultValue: false
-            }, {
-                name: "expanded",
-                defaultValue: true
-            }, {
-                name: "status"
-            }];
+            return [
+                {
+                    name: "text",
+                    convert: undefined
+                },
+                {
+                    name: "checked",
+                    defaultValue: false
+                },
+                {
+                    name: "expanded",
+                    defaultValue: true
+                },
+                {
+                    name: "status"
+                }
+            ];
         },
         getStoreProxy: function () {
             return {
@@ -40,23 +45,28 @@ Ext.onReady(function () {
         extend: 'Ext.grid.Panel',
         alias: 'widget.usercorps',
         title: 'Vanilla Store',
-        columns: [{
-            text: "text",
-            dataIndex: "text",
-            flex: 3
-        }, {
-            text: "checked",
-            dataIndex: "checked",
-            flex: 1.5
-        }, {
-            text: "expanded",
-            dataIndex: "expanded",
-            flex: 1.5
-        }, {
-            text: "status",
-            dataIndex: "status",
-            flex: 1.5
-        }],
+        columns: [
+            {
+                text: "text",
+                dataIndex: "text",
+                flex: 3
+            },
+            {
+                text: "checked",
+                dataIndex: "checked",
+                flex: 1.5
+            },
+            {
+                text: "expanded",
+                dataIndex: "expanded",
+                flex: 1.5
+            },
+            {
+                text: "status",
+                dataIndex: "status",
+                flex: 1.5
+            }
+        ],
         single: true,
         initComponent: function () {
             this.title += '&nbsp;&nbsp;(ExtJS Version ' + Ext.getVersion().getMajor() + '.' + Ext.getVersion().getMinor() + '.' + Ext.getVersion().getPatch() + '.' + Ext.getVersion().getBuild() + ')</span>';

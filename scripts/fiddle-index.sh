@@ -43,6 +43,8 @@ fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
 fiddleNameStub=$(echo "index";)
 indexFile=$(echo "$fiddleDir/index.html";)
 binDir=$(echo "$location/bin";)
+bornOnDate=$(date +"%m-%d-%y";)
+echo ${bornOnDate}
 
 #try
 (
@@ -68,6 +70,7 @@ binDir=$(echo "$location/bin";)
             rm -r index.tmp
             cat tpl/indexfooter >> $indexFile
             ./house-substr.sh '{{FiddleType}}' ${type} $indexFile || exit 86
+            ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} $indexFile || exit 86
             ;;
         *)  exit 5000
             ;;

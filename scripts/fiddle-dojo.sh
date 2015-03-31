@@ -21,7 +21,6 @@ fi
 
 fiddleSubDir="dojo"
 bornOnDate=$(date +"%m-%d-%y";)
-
 echo ${bornOnDate}
 
 #try

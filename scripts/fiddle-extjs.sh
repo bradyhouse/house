@@ -18,18 +18,19 @@ then
       echo "Please specify the name of the new fiddle"
       exit 
 fi
+
+fiddleSubDir="extjs"
+bornOnDate=$(date +"%m-%d-%y";)
+echo ${bornOnDate}
+
 #try
 (
-     if [[ -d "../fiddles/extjs/$1" ]]; then rm -R "../fiddles/extjs/$1"; fi
-     cp -rf "../fiddles/extjs/template" "../fiddles/extjs/$1" || exit 1
-     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/app.js";) || exit 2
-     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/index.html";) || exit 3
-     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/README.markdown";) || exit 4
-=======
-     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/app.js" > app.tmp; mv app.tmp "../../fiddles/extjs/$1/app.js") || exit 2
-     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/index.html" > index.tmp;  mv index.tmp "../../fiddles/extjs/$1/index.html") || exit 3
-     $(cd bin; ./house.substr '{{FiddleName}}' $1 "../../fiddles/extjs/$1/README.markdown" > README.tmp; mv README.tmp "../../fiddles/extjs/$1/README.markdown") || exit 4
->>>>>>> b4bda69ea75640ec6729ad591092444755f37038
+    if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+    $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1
+    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
+    $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
+    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
+    $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
 )
 #catch
 case $? in
