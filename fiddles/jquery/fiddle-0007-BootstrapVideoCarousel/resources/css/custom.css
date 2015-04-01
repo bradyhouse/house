@@ -1,0 +1,177 @@
+@CHARSET "UTF-8";
+
+@import '../../../resources/css/custom.css';
+
+.fiddle {
+    text-align: center;
+    padding: 20px;
+}
+
+.thumbnail {
+    width: 260px;
+    height: 180px;
+    border: 0;
+    padding: 20px;
+    box-shadow: 0 12px 12px -10px #c4c4c4;
+    -webkit-box-shadow: 0 17px 22px -20px #c4c4c4;
+    -moz-box-shadow: 0 12px 12px -10px #c4c4c4;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.thumbnails p {
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-control {
+    width: 40px !important;
+    top: 40% !important;
+    background-color: transparent;
+    border-color: #000000;
+    opacity: 1;
+
+}
+
+.thumbnail-play {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-top: -100px;
+    margin-left: 100px;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    background: #333333;
+    border: 3px solid #ffffff;
+    -webkit-border-radius: 23px;
+    -moz-border-radius: 23px;
+    border-radius: 23px;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.thumbnails {
+    padding-left: 50px;
+    padding-right: 75px;
+}
+
+.selected {
+    padding: 10px;
+    background-color: red !important;
+}
+
+.player {
+    padding-left: 52px;
+    padding-right: 52px;
+    padding-bottom: 10px;
+}
+
+.player .header {
+    color: #74A245;
+    position: absolute;
+    top: 152;
+    text-align: center;
+
+    left: 45%;
+    width: 40%;
+    padding: 10px;
+    filter: alpha(opacity=50);
+    text-align: left;
+    opacity: 1;
+    border: none;
+    z-index: 10;
+}
+
+#player-navbar {
+    background-color: #0e0e0e !important;
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.player-navbar .bs-component {
+    padding-top: 40px !important;
+}
+
+.player-navbar .progress {
+    padding-top: 38px;
+}
+
+.player video {
+    width: 100%;
+    background-color: #000000;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.video-control {
+    height: 40px;
+    width: 40px;
+    vertical-align: top;
+    margin-top: -3px;
+    border-radius: 23px;
+    background-color: green;
+    border-color: #ffffff;
+    color: white;
+    border-width: 3px;
+    font-weight: 100;
+    line-height: 40px;
+    font-size: 30px;
+    text-align: center;
+    cursor: hand;
+}
+
+.video-control a {
+    color: white;
+}
+
+.video-control a .rotate {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+}
+
+.player .progress {
+    height: 20px;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+
+.player .progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #74A245;
+}
+
+.player .subTitle {
+    position: absolute;
+    top: 50%;
+    margin-right: 100%;
+    left: 25%;
+    width: 50%;
+    padding: 10px;
+    filter: alpha(opacity=50);
+    text-align: center;
+    opacity: 0.5;
+    border: none;
+    background-color: #333333;
+    z-index: 10;
+}
+
+.player .hidden {
+    display: none;
+}
+
+
+
+
