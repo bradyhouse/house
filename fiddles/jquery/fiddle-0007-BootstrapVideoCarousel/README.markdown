@@ -6,7 +6,7 @@ fiddle-0007-BootstrapVideoCarousel
 
 ### Title
 
-House jQuery Fiddle - fiddle-0007-BootstrapVideoCarousel
+Bootstrap Carousel Video Player
 
 
 ### Creation Date
@@ -21,14 +21,14 @@ Chicago, IL
 
 ### Description
 
-Another jQuery Fiddle. 
+Fiddle exploring how to combine bootstrap style carousel and video player.
 
 
 ### Published Version Link
 
-N/A
+[https://jsfiddle.net/bradyhouse/86mp2t4q/light/](https://jsfiddle.net/bradyhouse/86mp2t4q/light/)
 
 
 ### Tags
 
-jQuery
+jQuery, bootstrap, carousel, video  
