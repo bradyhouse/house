@@ -206,6 +206,7 @@ Ext.onReady(function () {
         }
     ]);
     store.load();
+    win.show();
 
     // Boiler Plate
     Ext.define('App.BoxModel', {
@@ -247,6 +248,6 @@ Ext.onReady(function () {
         renderTo: Ext.getBody()
     });
 
-    win.show();
+
 
 });

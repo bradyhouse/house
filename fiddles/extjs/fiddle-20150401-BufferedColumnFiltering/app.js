@@ -2,15 +2,15 @@ Ext.onReady(function() {
 
     Ext.QuickTips.init();
 
-    var fiddleHeader = 'Fiddle ~ JSON Store Column Filtering',
-        fiddleSubHeader = '<i>Grid panel configured with the "gridfilters" plugin and  bound to a Json Store populated with 781 records. NOTE - The data is ' + '<a href="http://www.json-generator.com/" title="json generator" target="_blank">generated json</a>.</i>',
+    var fiddleHeader = 'Fiddle ~ Buffered Store Column Filtering',
+        fiddleSubHeader = '<i>Grid panel configured with the "gridfilters" plugin and bound to a buffered store populated with 781 records. NOTE - The data is ' + '<a href="http://www.json-generator.com/" title="json generator" target="_blank">generated json</a>.</i>',
         url = {
-            local: 'data.json'
+            local: 'data.json', // static data file
+            remote: 'grid-filter.php'
         },
         encode = false,
         local = true,
-        store = Ext.create('Ext.data.JsonStore', {
-            autoDestroy: true,
+        store = Ext.create('Ext.data.BufferedStore', {
             proxy: {
                 type: 'ajax',
                 url: (local ? url.local : url.remote),
@@ -21,12 +21,14 @@ Ext.onReady(function() {
                     totalProperty: 'total'
                 }
             },
-            remoteSort: false,
             sortInfo: {
                 field: 'name',
                 direction: 'ASC'
             },
-            pageSize: 50,
+            pageSize: 500,
+            trailingBufferZone: 20,
+            leadingBufferZone: 281,
+            autoLoad: true,
             storeId: 'myStore',
             fields: ['_id', 'index', 'isActive', 'checkingBalance', 'savingBalance', 'picture', 'age', 'eyeColor', 'name', 'gender', 'company', 'email', 'address', 'about', 'latitude', 'longitude']
         }),
@@ -108,15 +110,18 @@ Ext.onReady(function() {
         grid = Ext.create('Ext.grid.Panel', {
             border: false,
             store: store,
-            columns: createHeaders(7),
+            columns: createHeaders(4),
             loadMask: true,
+            selModel: {
+                pruneRemoved: false
+            },
             plugins: 'gridfilters',
             bbar: Ext.create('Ext.toolbar.Paging', {
                 store: store
             })
         }),
         win = Ext.create('Ext.Window', {
-            title: 'Fiddle ~ JSON Store Column Filtering ',
+            title: 'Fiddle ~ Buffered Store Column Filtering ',
             modal: true,
             height: 500,
             width: 700,
@@ -146,7 +151,6 @@ Ext.onReady(function() {
             }
         }
     }]);
-    store.load();
     win.show();
 
     // Boiler Plate

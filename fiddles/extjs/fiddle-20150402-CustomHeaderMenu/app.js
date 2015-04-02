@@ -1,15 +1,17 @@
+
 Ext.onReady(function() {
 
     Ext.QuickTips.init();
 
     var fiddleHeader = 'Fiddle ~ JSON Store Column Filtering',
-        fiddleSubHeader = '<i>Grid panel configured with the "gridfilters" plugin and  bound to a Json Store populated with 781 records. NOTE - The data is ' + '<a href="http://www.json-generator.com/" title="json generator" target="_blank">generated json</a>.</i>',
+        fiddleSubHeader = '<i>Grid panel configured with the "gridfilters" plugin and  bound to a Json Store populated with 471 records. NOTE - The data is ' + '<a href="http://www.json-generator.com/" title="json generator" target="_blank">generated json</a>.</i>',
         url = {
-            local: 'data.json'
+            local: 'data.json', // static data file
+            remote: 'grid-filter.php'
         },
         encode = false,
         local = true,
-        store = Ext.create('Ext.data.JsonStore', {
+        store = Ext.create('Ext.data.Store', {
             autoDestroy: true,
             proxy: {
                 type: 'ajax',
@@ -30,81 +32,6 @@ Ext.onReady(function() {
             storeId: 'myStore',
             fields: ['_id', 'index', 'isActive', 'checkingBalance', 'savingBalance', 'picture', 'age', 'eyeColor', 'name', 'gender', 'company', 'email', 'address', 'about', 'latitude', 'longitude']
         }),
-        filters = {
-            ftype: 'filters',
-            encode: encode,
-            local: local,
-            filters: [{
-                type: 'numeric',
-                dataIndex: 'index'
-            }, {
-                type: 'string',
-                dataIndex: 'name'
-            }, {
-                type: 'numeric',
-                dataIndex: 'age'
-            }, {
-                type: 'numeric',
-                dataIndex: 'checkingBalance'
-            }, {
-                type: 'numeric',
-                dataIndex: 'savingsBalance'
-            }, {
-                type: 'date',
-                dataIndex: 'registered'
-            }, {
-                type: 'string',
-                dataIndex: 'address'
-            }]
-        },
-        createHeaders = function(finish, start) {
-            var columns = [{
-                dataIndex: 'index',
-                text: 'id',
-                filter: {
-                    type: 'numeric'
-                }
-            }, {
-                dataIndex: 'name',
-                text: 'Name',
-                id: '_id',
-                filter: {
-                    type: 'string'
-                    // specify disabled to disable the filter menu
-                    //, disabled: true
-                },
-                flex: 1
-            }, {
-                dataIndex: 'age',
-                text: 'Age',
-                filter: {
-                    //type: 'numeric'  // specify type here or in store fields config
-                }
-            }, {
-                dataIndex: 'checkingBalance',
-                text: 'Checking',
-                filter: {}
-            }, {
-                dataIndex: 'savingsBalance',
-                text: 'Savings',
-                filter: {}
-            }, {
-                dataIndex: 'registered',
-                text: 'MemberSince',
-                renderer: Ext.util.Format.dateRenderer('Y-m-d'),
-                filter: {
-                    //type: 'date'     // specify type here or in store fields config
-                }
-            }, {
-                dataIndex: 'address',
-                text: 'Address',
-                filter: {
-                    //type: 'boolean'  // specify type here or in store fields config
-                },
-                flex: 1
-            }];
-            return columns.slice(start || 0, finish);
-        },
         grid = Ext.create('Ext.grid.Panel', {
             border: false,
             store: store,

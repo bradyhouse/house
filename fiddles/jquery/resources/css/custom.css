@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 @import 'bootstrap.min.css';
 @import 'bootstrap.darkly.min.css';
+
 .enter-stage-right {
     -moz-animation-duration: 3s;
     -webkit-animation-duration: 3s;
