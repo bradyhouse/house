@@ -1,7 +1,7 @@
 CHANGELOG
 ===
 
-Alternately, the **Daily Diary of my Programming Dreams**.
+Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201503301950
 
