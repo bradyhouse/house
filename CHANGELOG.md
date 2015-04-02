@@ -60,7 +60,7 @@ Alternately, the **Daily Diary of my Programming Dreams**.
         Ext.data.Store.  It combines the structure from fiddle-20150331-ExtJS4ColumnFiltering
         with the json data file (781 records) from fiddle-20150330-BufferedDataGrid using a 
         DataStore.  Additionally, its example of using the "bufferedrender" plugin as per
-        the forum post already mentioned ~ http://www.sencha.com/forum/showthread.php?259314.
+        the forum post ~ http://www.sencha.com/forum/showthread.php?259314.
         
 
 * Added **fiddles/extjs/fiddle-20150402-CustomColumnHeaderMenu** ~ (Under Construction)
