@@ -29,10 +29,10 @@ Alternately, the **Daily Diary of my Programming Dreams**.
         from fiddle-20150330-BufferedDataGrid.
         
         Additionally, this fiddle introduces an alternate (or new) "template" style.  
-        Specifically, the fiddle is rendered using a pop-up window.  In the app.js, 
-        the actual fiddle code ends when the win.show() call.  At run time, the 
-        fiddle code runs in the modal pop-up (foreground). The boiler plate code 
-        appears behind it (background).  
+        The fiddle is rendered using a pop-up window.  In the app.js, the actual 
+        fiddle code ends when the win.show() call.  At run time, the fiddle code runs 
+        in the modal pop-up (foreground). The boiler plate code appears behind it 
+        (background).  
         
 
 * Added **scripts/bin/house-disk-space.sh**  
