@@ -5,4 +5,4 @@ As a JavaScript developer, much of my time is spent researching and attempting t
 
 * To learn about my latest changes check out the detailed [change log](CHANGELOG.markdown)
 * To get started using my fiddles, checkout the [fiddles readme](fiddles/README.markdown)
-* To learn more about me and what I am up to these days checkout my [Google+ profile](https://plus.google.com/u/0/+BradyHouseknecht/posts)
+* Finally, to learn more about me and what I am up to these days checkout my [Google+ profile](https://plus.google.com/u/0/+BradyHouseknecht/posts)
