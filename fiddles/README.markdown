@@ -9,7 +9,7 @@ Root fiddle collection directory. To startup the included node.js web server fro
     ➜  scripts git:(master) ✗ ./fiddle-start.sh "all"
     
     
-When successful, this will produce the following output:
+This should produce the following output:
 
     FIDDLE-START.SH
     v0.11.14-pre
@@ -19,5 +19,14 @@ When successful, this will produce the following output:
     
     appending output to nohup.out
     
+To stop the web server, use following command:
+    
+    ➜  scripts git:(master) ✗ ./fiddle-stop.sh
+
+This should produce the following output:
+
+    FIDDLE-STOP.SH
+    http://localhost:8889 ~ is dead.
+
 
 

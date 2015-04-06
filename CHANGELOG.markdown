@@ -46,8 +46,14 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Enhanced **scripts/fiddle-fork.sh**
     1. Added support for all fiddle types
     2. Added call to the fiddle-index script
-    3. Enhanced the ReadMe.Markdown update logic to append a "forked from" 
+    3. Enhanced the ReadMe.Markdown update logic to append a "Forked from" section
     4. Added validation to insure that the new fiddle includes "fiddle" or "Fiddle" in the name.  NOTE - This is necessary to insure that the new fiddle is picked-up by the fiddle-index.sh script
-    
+
+
+### 201504041810
+
+* Added [fiddles/exts/fiddle-20150405-fiddle3DPieChart](fiddles/extjs/fiddle-20150405-fiddle3DPieChart/README.markdown)
+    * Fiddle adapted from Sencha's Chart Kitchen Sink's "Basic Pie Chart" example. The second pie chart is identical to the first except for the series type attribute, which has been changed to the new pie3d series type. This series type was introduced in ExtJS 5.1.
+   
     
         

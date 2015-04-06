@@ -66,7 +66,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
      # Add "Forked From" section to the readme file
      $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
      $(echo "### Forked From" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-     $(echo "${sourceFiddle}" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+     $(echo "[${sourceFiddle}](../${sourceFiddle}/README.markdown)" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
      $(echo "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
      # Delete the existing screenshot image
      $(sudo rm -R "../fiddles/${type}/${targetFiddle}/screenshot.png";) || exit 94

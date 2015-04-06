@@ -26,22 +26,6 @@ function createMaterials() {
     materials["phong"] = new THREE.MeshPhongMaterial({ bumpMap: bumpMap });
     materials["phong-textured"] = new THREE.MeshPhongMaterial({ map: map, bumpMap: bumpMap });
 }
-function setMaterialColor(r, g, b) {
-    r /= 255;
-    g /= 255;
-    b /= 255;
-
-    materials["phong"].color.setRGB(r, g, b);
-    materials["phong-textured"].color.setRGB(r, g, b);
-}
-function setMaterialSpecular(r, g, b) {
-    r /= 255;
-    g /= 255;
-    b /= 255;
-
-    materials["phong"].specular.setRGB(r, g, b);
-    materials["phong-textured"].specular.setRGB(r, g, b);
-}
 function setMaterial(name) {
     materialName = name;
     if (textureOn) {
@@ -53,16 +37,6 @@ function setMaterial(name) {
         sphere.visible = true;
         sphereTextured.visible = false;
         sphere.material = materials[name];
-    }
-}
-function toggleTexture() {
-    textureOn = !textureOn;
-    var names = materialName.split("-");
-    if (!textureOn) {
-        setMaterial(names[0]);
-    }
-    else {
-        setMaterial(names[0] + "-textured");
     }
 }
 function createScene(canvas) {
@@ -98,10 +72,6 @@ function createScene(canvas) {
 function rotateScene(deltax) {
     root.rotation.y += deltax / 100;
     $("#rotation").html("rotation: 0," + root.rotation.y.toFixed(2) + ",0");
-}
-function scaleScene(scale) {
-    root.scale.set(scale, scale, scale);
-    $("#scale").html("scale: " + scale);
 }
 function onMouseMove(evt) {
     if (!mouseDown)
@@ -159,7 +129,6 @@ $(document).ready(
         var canvas = document.getElementById("webglcanvas");
         createScene(canvas);
         addMouseHandler(canvas);
-        //initControls();
         run();
     }
 );

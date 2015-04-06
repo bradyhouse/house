@@ -1,4 +1,4 @@
-fiddleCellEditing
+fiddleBudgetCalc
 ======
 ![Screenshot](screenshot.png)
 
