@@ -23,8 +23,8 @@ http.createServer(function (request, response) {
         filename = path.join(process.cwd(), uri),
         contentTypesByExtension = {
             '.html': "text/html",
-            '.css':  "text/css",
-            '.js':   "text/javascript"
+            '.css': "text/css",
+            '.js': "text/javascript"
         };
     fs.exists(filename, function (exists) {
         if (!exists) {

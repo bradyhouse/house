@@ -1,4 +1,4 @@
-Ext.onReady(function() {
+Ext.onReady(function () {
     var deleteIconLink = 'http://dev.sencha.com/ext/5.0.1/examples/kitchensink/resources/images/icons/fam/delete.gif',
         kitchenSinkForkLink = 'http://dev.sencha.com/ext/5.0.0/examples/kitchensink/#cell-editing',
         fiddleHeader = '<i>Budget Calculator</i>',
@@ -27,7 +27,7 @@ Ext.onReady(function() {
             type: 'number'
         }, {
             name: 'disposable',
-            convert: function(value, record) {
+            convert: function (value, record) {
                 return record.data.income - record.data.expense;
             }
         }]
@@ -36,31 +36,31 @@ Ext.onReady(function() {
         extend: 'Ext.app.ViewController',
         alias: 'controller.fiddle-monthly-nut-editor',
         requires: ['MyFiddle.MonthlyNut', 'Ext.util.DelayedTask'],
-        onRender: function() {
+        onRender: function () {
             consoleLog('onRender');
             var me = this,
-                delayedTask = new Ext.util.DelayedTask(function() {
+                delayedTask = new Ext.util.DelayedTask(function () {
                     me.loadDefaultValues();
                 });
             delayedTask.delay(500);
         },
-        onLoadClick: function() {
+        onLoadClick: function () {
             consoleLog('onLoadClick');
             this.loadDefaultValues();
         },
-        onResetClick: function() {
+        onResetClick: function () {
             consoleLog('onResetClick');
             this.loadDefaultValues();
         },
-        onIncomeChange: function() {
+        onIncomeChange: function () {
             consoleLog('onIncomeChange');
             this.updateStore();
         },
-        onExpenseChange: function() {
+        onExpenseChange: function () {
             consoleLog('onExpenseChange');
             this.updateStore();
         },
-        onUpdateAggregates: function() {
+        onUpdateAggregates: function () {
             indentConsoleLog('updateAggregates');
             var me = this,
                 form = this.getView(),
@@ -76,7 +76,7 @@ Ext.onReady(function() {
             aggregates.fireEvent('reformat');
         },
         // @private
-        updateStore: function() {
+        updateStore: function () {
             indentConsoleLog('updateStore');
             var me = this,
                 form = this.getView(),
@@ -85,7 +85,7 @@ Ext.onReady(function() {
                 disposableCalc = form.down('money[name=disposable]').getValue(),
                 expenseEditor = form.up('panel').down('fiddle-expense-editor'),
                 aggregates = form.up('panel').down('fiddle-aggregates'),
-                delayedTask = new Ext.util.DelayedTask(function() {
+                delayedTask = new Ext.util.DelayedTask(function () {
                     me.loadFormRecord(incomeInput,
                         expenseInput);
                     if (expenseEditor) {
@@ -99,12 +99,12 @@ Ext.onReady(function() {
             }
         },
         // @private
-        loadDefaultValues: function() {
+        loadDefaultValues: function () {
             consoleLog('loadDefaultValues');
             this.loadFormRecord(defaultMonthlyNumbers.income, defaultMonthlyNumbers.expense);
         },
         // @private
-        loadFormRecord: function(inc, exp) {
+        loadFormRecord: function (inc, exp) {
             consoleLog('loadFormRecord');
             var me = this,
                 form = me.getView();
@@ -184,41 +184,41 @@ Ext.onReady(function() {
         extend: 'Ext.app.ViewController',
         alias: 'controller.fiddle-expense-editor',
         requires: ['MyFiddle.Budget'],
-        onFormUpdated: function() {
+        onFormUpdated: function () {
             this.bindChart();
         },
-        onBeforeStateRestore: function() {
+        onBeforeStateRestore: function () {
             consoleLog('onBeforeStateRestore');
             if (this.getView().isLayoutSuspended()) {
                 return false;
             }
         },
-        onDataChanged: function() {
+        onDataChanged: function () {
             consoleLog('onDataChanged');
             this.bindChart();
         },
-        onCellEdit: function(editor, e) {
+        onCellEdit: function (editor, e) {
             consoleLog('onCellEdit');
             this.bindChart();
         },
-        onAfterLayout: function() {
+        onAfterLayout: function () {
             consoleLog('onAfterLayout');
             var me = this,
                 view = me.getView(),
                 store = view.getStore();
-            delayedTask = new Ext.util.DelayedTask(function() {
+            delayedTask = new Ext.util.DelayedTask(function () {
                 view.loadStore();
                 me.bindChart();
             });
             delayedTask.delay(300);
         },
-        onResetClick: function() {
+        onResetClick: function () {
             consoleLog('onRemoveClick');
             var me = this;
             me.getView().getStore().removeAll();
             me.bindChart();
         },
-        onAddClick: function() {
+        onAddClick: function () {
             consoleLog('onAddClick');
             var me = this.getView(),
                 rec = new MyFiddle.Budget({
@@ -231,14 +231,14 @@ Ext.onReady(function() {
                 column: 0
             });
         },
-        onRemoveClick: function(grid, rowIndex) {
+        onRemoveClick: function (grid, rowIndex) {
             consoleLog('onRemoveClick');
             var me = this;
             this.getView().getStore().removeAt(rowIndex);
             me.bindChart();
         },
         // @private
-        bindChart: function() {
+        bindChart: function () {
             consoleLog('bindChart');
             // ToDo - Refactor into multiple functions
             var me = this,
@@ -273,7 +273,7 @@ Ext.onReady(function() {
                 nutChart.redraw();
             }
             if (expenseChart) {
-                Ext.Array.forEach(expenses, function(expense) {
+                Ext.Array.forEach(expenses, function (expense) {
                     expensesDataArr.push({
                         slice: expense.data.item,
                         amount: expense.data.amount
@@ -288,7 +288,7 @@ Ext.onReady(function() {
             form.fireEvent('updateaggregates');
         },
         // @private
-        updateExpenseTotal: function() {
+        updateExpenseTotal: function () {
             consoleLog('updateExpenseTotal');
             var me = this,
                 view = me.getView(),
@@ -322,7 +322,7 @@ Ext.onReady(function() {
             removeclick: 'onRemoveClick',
             formupdated: 'onFormUpdated'
         },
-        initComponent: function() {
+        initComponent: function () {
             consoleLog('initComponent');
             var me = this;
             // Suspend Layout to prevent persistence
@@ -340,7 +340,7 @@ Ext.onReady(function() {
             me.resumeLayouts();
 
         },
-        getState: function() {
+        getState: function () {
             consoleLog('getState');
             var me = this,
                 data = me.getStore().data,
@@ -357,7 +357,7 @@ Ext.onReady(function() {
             indentConsoleLog('expenseField');
             indentConsoleLog(expenseField ? expenseField.getValue() : null);
 
-            Ext.Array.forEach(data.items, function(item) {
+            Ext.Array.forEach(data.items, function (item) {
                 rows.push({
                     item: item.data.item,
                     amount: item.data.amount
@@ -377,18 +377,18 @@ Ext.onReady(function() {
         },
         applyState: Ext.emptyFn,
         // @private
-        calcTotalExpenses: function() {
+        calcTotalExpenses: function () {
             indentConsoleLog('calcTotalExpenses');
             var me = this,
                 total = 0.0;
-            Ext.Array.forEach(me.getStore().data.items, function(item) {
+            Ext.Array.forEach(me.getStore().data.items, function (item) {
                 total += item.data.amount;
             });
             indentConsoleLog('total = ' + total);
             return total;
         },
         // @private
-        mindTouchSupport: function() {
+        mindTouchSupport: function () {
             indentConsoleLog('mindTouchSupport');
             if (Ext.supports.Touch) {
                 this.addDocked({
@@ -398,7 +398,7 @@ Ext.onReady(function() {
             }
         },
         // @private
-        inflateButtons: function() {
+        inflateButtons: function () {
             indentConsoleLog('inflateButtons');
             return [{
                 text: 'Add Item',
@@ -416,14 +416,14 @@ Ext.onReady(function() {
              }];*/
         },
         // @private
-        inflateSelModel: function() {
+        inflateSelModel: function () {
             indentConsoleLog('inflateSelModel');
             return {
                 selType: 'cellmodel'
             };
         },
         // @private
-        inflateColumns: function() {
+        inflateColumns: function () {
             var me = this;
             indentConsoleLog('inflateColumns');
             return [{
@@ -448,14 +448,14 @@ Ext.onReady(function() {
                 items: [{
                     icon: deleteIconLink,
                     tooltip: 'Delete item',
-                    handler: function(grid, rowIndex) {
+                    handler: function (grid, rowIndex) {
                         me.fireEvent('removeclick', grid, rowIndex);
                     }
                 }]
             }];
         },
         // @private
-        inflatePlugins: function() {
+        inflatePlugins: function () {
             indentConsoleLog('inflatePlugins');
             this.cellEditing = new Ext.grid.plugin.CellEditing({
                 clicksToEdit: 1
@@ -463,7 +463,7 @@ Ext.onReady(function() {
             return [this.cellEditing];
         },
         // @private
-        inflateStore: function() {
+        inflateStore: function () {
             indentConsoleLog('inflateStore');
             var myStateId = this.getStateId();
             return new Ext.data.Store({
@@ -483,7 +483,7 @@ Ext.onReady(function() {
             })
         },
         // @private
-        loadStore: function() {
+        loadStore: function () {
             indentConsoleLog('loadStore');
             var me = this,
                 id = me.getStateId(),
@@ -495,7 +495,7 @@ Ext.onReady(function() {
             if (id) {
                 state = Ext.state.Manager.get(id);
                 if (!Ext.isEmpty(state)) {
-                    Ext.Array.forEach(state.expenseSlices, function(expenseSlice) {
+                    Ext.Array.forEach(state.expenseSlices, function (expenseSlice) {
                         rec = new MyFiddle.Budget({
                             item: expenseSlice.item,
                             amount: expenseSlice.amount
@@ -518,7 +518,7 @@ Ext.onReady(function() {
         extend: 'Ext.Panel',
         xtype: 'fiddle-expense-chart',
         flex: 1,
-        initComponent: function() {
+        initComponent: function () {
             var me = this;
             me.items = [{
                 xtype: 'polar',
@@ -554,7 +554,7 @@ Ext.onReady(function() {
                     highlight: true,
                     tooltip: {
                         trackMouse: true,
-                        renderer: function(storeItem, item) {
+                        renderer: function (storeItem, item) {
                             this.setHtml(storeItem.get('slice') + ': $ ' + storeItem.get('amount'));
                         }
                     }
@@ -567,7 +567,7 @@ Ext.onReady(function() {
         extend: 'Ext.Panel',
         xtype: 'fiddle-monthlynut-chart',
         flex: 1,
-        initComponent: function() {
+        initComponent: function () {
             var me = this;
             me.items = [{
                 xtype: 'polar',
@@ -600,7 +600,7 @@ Ext.onReady(function() {
                     highlight: true,
                     tooltip: {
                         trackMouse: true,
-                        renderer: function(storeItem, item) {
+                        renderer: function (storeItem, item) {
                             this.setHtml(storeItem.get('slice') + ': $ ' + storeItem.get('amount'));
                         }
                     }
@@ -614,7 +614,7 @@ Ext.onReady(function() {
     Ext.define('MyFiddle.AggregatesController', {
         extend: 'Ext.app.ViewController',
         alias: 'controller.fiddle-aggregates',
-        onReformat: function() {
+        onReformat: function () {
             consoleLog('onReformat');
             var me = this,
                 view = me.getView(),
@@ -721,9 +721,10 @@ Ext.onReady(function() {
     function indentConsoleLog(msg) {
         consoleLog('    ' + msg);
     }
+
     Ext.define('MyFiddle.StateManager', {
         requires: ['Ext.state.Manager', 'Ext.state.LocalStorageProvider']
-    }, function() {
+    }, function () {
         Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider({
             prefix: 'MyFiddle-'
         }));

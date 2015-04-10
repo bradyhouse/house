@@ -1,12 +1,12 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bedlington.io___________________________________________________________|
+#  School / Organization   : bradyhouse.io___________________________________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
 #  Create date             : 03/19/2015______________________________________________________________|
-#  Description             : UTILITY USED TO ADD A NEW FIDDLE TO THE ../FIDDLES DIRECTORY____________|
-#  Command line Arguments  : $1 = FIDDLE TYPE, $2 = FIDDLE NAME______________________________________|
+#  Description             : ENTRY POINT FOR ALL FIDDLE-*.SH SCRIPTS_________________________________|
+#  Command line Arguments  : $1 = COMMAND TYPE - "create", $2, $3 ..  = REQUIRED ARGUMENTS___________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
@@ -17,27 +17,26 @@ thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 #try
 (
-	if [ "$#" -ne 2 ]; then  exit 86; fi
+	if [ "$#" -lt 1 ]; then  exit 86; fi
     case $1 in
-        'extjs')
-            ./fiddle-extjs.sh $2 || exit 87
-            ./fiddle-index.sh "extjs" || exit 87
+        'create')
+            if [ "$#" -lt 3 ]; then  ./fiddle-create.sh; fi
+            ./fiddle-create.sh $2 $3
             ;;
-        'jquery')
-            ./fiddle-jquery.sh $2 || exit 88
-            ./fiddle-index.sh "jquery" || exit 88
+        'fork')
+            if [ "$#" -lt 4 ]; then  ./fiddle-fork.sh; fi
+            ./fiddle-fork.sh $2 $3 $4
             ;;
-        'three')
-            ./fiddle-three.sh $2 || exit 89
-            ./fiddle-index.sh "three" || exit 89
+        'index')
+            if [ "$#" -lt 2 ]; then  ./fiddle-index.sh; fi
+            ./fiddle-index.sh $2
             ;;
-        'php')
-            ./fiddle-php.sh $2 || exit 90
-            ./fiddle-index.sh "php" || exit 90
+        'start')
+            if [ "$#" -lt 2 ]; then  ./fiddle-start.sh; fi
+            ./fiddle-start.sh  $2
             ;;
-        'dojo')
-            ./fiddle-dojo.sh $2 || exit 91
-            ./fiddle-index.sh "dojo" || exit 91
+        'stop')
+            ./fiddle-stop.sh
             ;;
         *)  exit 86
             ;;
@@ -53,29 +52,22 @@ case ${_rc} in
         echo ""
         echo "Usage:"
         echo ""
-        echo "$0 \"[t]\" \"[n]\""
+        echo "$0 \"[c]\" \"[a1]\" \"[a2]\" \"[a3]\""
         echo ""
-        echo "[t] - type. Valid types include: "
+        echo -e "[c]\tcommand. Valid types include: "
         echo ""
-        echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs\"\t\tExt JS Fiddle"
-        echo -e "\t\"php\"\t\tPHP Fiddle"
-        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
+        echo -e "\t\"create\"\tCreate a new fiddle"
+        echo -e "\t\"fork\"\t\tFork an existing fiddle"
+        echo -e "\t\"index\"\t\tRe-index a specific fiddle type"
+        echo -e "\t\"start\"\t\tStart the fiddle web service process"
+        echo -e "\t\"stop\"\t\tStop the wed service process"
         echo ""
-        echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
+        echo -e "[a1-3]\targuments. The arguments required by the "
+        echo -e "\tspecified command. There can be up to 3 arguments."
+        echo -e "\tTo understand the arguments required by a specific"
+        echo -e "\tcommand execute the command with no additional"
+        echo -e "\tparameters."
         echo ""
-        echo ""
-        ;;
-    87) echo "fubar! extjs fiddle creation failed."
-        ;;
-    88) echo "fubar! jquery fiddle creation failed."
-        ;;
-    89) echo "fubar! three fiddle creation failed."
-        ;;
-    90) echo "fubar! php fiddle creation failed."
-        ;;
-    91) echo "fubar! dojo fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

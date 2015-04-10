@@ -1,16 +1,79 @@
 
-Ext.onReady(function() {
+
+
+Ext.define('Fiddle.CustomHeader', {
+    extend: 'Ext.grid.header.Container',
+    xtype: 'customheader'
+});
+
+Ext.onReady(function () {
 
     Ext.QuickTips.init();
 
-    var fiddleHeader = 'Fiddle ~ JSON Store Column Filtering',
-        fiddleSubHeader = '<i>Grid panel configured with the "gridfilters" plugin and  bound to a Json Store populated with 471 records. NOTE - The data is ' + '<a href="http://www.json-generator.com/" title="json generator" target="_blank">generated json</a>.</i>',
+    var fiddleHeader = 'Fiddle ~ Custom Header Menu',
+        fiddleSubHeader = '<i>Fiddle exploring how to override the default ' +
+            'grid header menu with a custom pop-up.  ' +
+            'When the user clicks a column header, a custom dialog appears.</i>',
         url = {
             local: 'data.json', // static data file
             remote: 'grid-filter.php'
         },
         encode = false,
         local = true,
+        headerFactory = function (finish, start) {
+            var columns = [
+                {
+                    dataIndex: 'index',
+                    text: 'id',
+                    filter: {
+                        type: 'numeric'
+                    }
+                },
+                {
+                    dataIndex: 'name',
+                    text: 'Name',
+                    id: '_id',
+                    filter: {
+                        type: 'numeric'
+                    },
+                    flex: 1
+                },
+                {
+                    dataIndex: 'age',
+                    text: 'Age',
+                    filter: {
+                        type: 'numeric'
+                    }
+                },
+                {
+                    dataIndex: 'checkingBalance',
+                    text: 'Checking',
+                    filter: {}
+                },
+                {
+                    dataIndex: 'savingsBalance',
+                    text: 'Savings',
+                    filter: {}
+                },
+                {
+                    dataIndex: 'registered',
+                    text: 'MemberSince',
+                    renderer: Ext.util.Format.dateRenderer('Y-m-d'),
+                    filter: {
+                        type: 'date'
+                    }
+                },
+                {
+                    dataIndex: 'address',
+                    text: 'Address',
+                    filter: {
+                        type: 'string'
+                    },
+                    flex: 1
+                }
+            ];
+            return columns.slice(start || 0, finish);
+        },
         store = Ext.create('Ext.data.Store', {
             autoDestroy: true,
             proxy: {
@@ -35,7 +98,7 @@ Ext.onReady(function() {
         grid = Ext.create('Ext.grid.Panel', {
             border: false,
             store: store,
-            columns: createHeaders(7),
+            columns: headerFactory(7),
             loadMask: true,
             plugins: 'gridfilters',
             bbar: Ext.create('Ext.toolbar.Paging', {
@@ -44,7 +107,7 @@ Ext.onReady(function() {
         }),
         win = Ext.create('Ext.Window', {
             title: 'Fiddle ~ JSON Store Column Filtering ',
-            modal: true,
+            closable: false,
             height: 500,
             width: 700,
             layout: 'fit',
@@ -52,25 +115,9 @@ Ext.onReady(function() {
         });
 
     grid.child('[dock=bottom]').add(['->', {
-        text: 'All Filter Data',
-        tooltip: 'Get Filter Data for Grid',
-        handler: function() {
-            var data = Ext.encode(grid.filters.getFilterData());
-            Ext.Msg.alert('All Filter Data', data);
-        }
-    }, {
         text: 'Clear Filter Data',
-        handler: function() {
+        handler: function () {
             grid.filters.clearFilters();
-        }
-    }, {
-        text: 'Add Columns',
-        handler: function() {
-            if (grid.headerCt.items.length < 6) {
-                grid.headerCt.add(createHeaders(6, 4));
-                grid.view.refresh();
-                this.disable();
-            }
         }
     }]);
     store.load();
@@ -92,23 +139,28 @@ Ext.onReady(function() {
         viewModel: {
             type: 'box'
         },
-        items: [{
-            xtype: 'panel',
-            bind: {
-                title: '{header}'
-            },
-            items: [{
+        items: [
+            {
                 xtype: 'panel',
-                padding: 10,
-                border: false,
                 bind: {
-                    html: '{subheader}'
-                }
-            }],
-            region: 'north'
-        }]
+                    title: '{header}'
+                },
+                items: [
+                    {
+                        xtype: 'panel',
+                        padding: 10,
+                        border: false,
+                        bind: {
+                            html: '{subheader}'
+                        }
+                    }
+                ],
+                region: 'north'
+            }
+        ]
     });
     Ext.create('App.Box', {
         renderTo: Ext.getBody()
     });
+
 });

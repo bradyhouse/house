@@ -146,7 +146,7 @@ Ext.onReady(function () {
         }),
         win = Ext.create('Ext.Window', {
             title: 'Fiddle ~ Buffered Rendered Column Filtering',
-            modal: true,
+            closable: false,
             height: 500,
             width: 700,
             layout: 'fit',

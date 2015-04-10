@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bedlington.io___________________________________________________________|
+#  School / Organization   : bradyhouse.io___________________________________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -12,38 +12,41 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
+# 04/09/2015 - CHANGELOG.MARKDOWN ~ 201504091810
 # ---------------------------------------------------------------------------------------------------|
 clear
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
 _type=$(echo $1)
+_port=8889
 #try
 (
     # Validate requisites
-    if [ "$#" -ne 1 ]; then  exit 86; fi
+    if [ "$#" -lt 1 ]; then  exit 86; fi
+    if [ "$#" -gt 1 ]; then _port=$2; fi
     if [[ ! -d bin ]]; then exit 87; fi
 
     cd bin
 
     case ${_type} in
         'all')
-            ./house-node-fs-start.sh "../../fiddles" || exit 88
+            ./house-node-fs-start.sh "../../fiddles" "${_port}" || exit 88
             ;;
         'extjs')
-            ./house-node-fs-start.sh "../../fiddles/extjs" || exit 88
+            ./house-node-fs-start.sh "../../fiddles/extjs" "${_port}" || exit 88
             ;;
         'jquery')
-            ./house-node-fs-start.sh "../../fiddles/jquery" || exit 88
+            ./house-node-fs-start.sh "../../fiddles/jquery" "${_port}" || exit 88
             ;;
         'three')
-            ./house-node-fs-start.sh "../../fiddles/three" || exit 88
+            ./house-node-fs-start.sh "../../fiddles/three" "${_port}" || exit 88
             ;;
         'php')
-            ./house-node-fs-start.sh "../../fiddles/php" || exit 88
+            ./house-node-fs-start.sh "../../fiddles/php" "${_port}" || exit 88
             ;;
         'dojo')
-            ./house-node-fs-start.sh "../../fiddles/dojo" || exit 88
+            ./house-node-fs-start.sh "../../fiddles/dojo" "${_port}" || exit 88
             ;;
         *)  exit 86
             ;;
@@ -66,7 +69,7 @@ case ${rc} in
     86) echo ""
         echo "Usage:"
         echo ""
-        echo "$0 \"[t]\""
+        echo "$0 \"[t]\" \"[[p]]\""
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
@@ -77,7 +80,9 @@ case ${rc} in
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
         echo ""
-        echo ""
+        echo "[[p]] - OPTIONAL port number. If not specified then port 8889 will be used."
+        echo "        Note - If you specify a different port, then to stop the resulting process"
+        echo "        using the fiddle-stop.sh script, you will need to supply the same port."
         echo ""
         ;;
     87) echo -e "Fubar\tCannot find the \"${_path}/bin\" directory."

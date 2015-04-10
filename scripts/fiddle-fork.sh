@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bedlington.io___________________________________________________________|
+#  School / Organization   : bradyhouse.io___________________________________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -65,7 +65,9 @@ forkedOnDate=$(date +"%m-%d-%y";)
      $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
      # Add "Forked From" section to the readme file
      $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+     $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
      $(echo "### Forked From" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+     $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
      $(echo "[${sourceFiddle}](../${sourceFiddle}/README.markdown)" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
      $(echo "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
      # Delete the existing screenshot image
