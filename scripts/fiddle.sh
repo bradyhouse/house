@@ -14,6 +14,7 @@
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
+port=8889
 echo "${thisFile}" | awk '{print toupper($0)}'
 #try
 (
@@ -33,10 +34,12 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ;;
         'start')
             if [ "$#" -lt 2 ]; then  ./fiddle-start.sh; fi
-            ./fiddle-start.sh  $2
+            if [ "$#" -eq 3 ]; then port=$3; fi
+            ./fiddle-start.sh  $2 ${port}
             ;;
         'stop')
-            ./fiddle-stop.sh
+            if [ "$#" -eq 2 ]; then port=$2; fi
+            ./fiddle-stop.sh ${port}
             ;;
         *)  exit 86
             ;;
