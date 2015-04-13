@@ -22,6 +22,7 @@ Chicago, IL
 ### Description
 
 Fiddle exploring how to use a canvas control to --
+
 1. plot the positon of the cursor by drawing rectangles on the canvas as the mouse is moved over it
 2. after clearing the canvas, create replay effect by redrawing the same set rectangles in time delayed sequence
 

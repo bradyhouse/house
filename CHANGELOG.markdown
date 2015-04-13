@@ -65,6 +65,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201504121810
 
-* Added [fiddles/jquery/fiddle-0008-CanvasMouseCapture](fiddles/jquery/fiddle-0008-CanvasMouseCapture/README.markdown)
-* Added [fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore](fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore/README.markdown)
-* Added [fiddles/extjs/fiddle-20150412-GridFieldFilterContext](fiddles/extjs/fiddle-20150412-GridFieldFilterContext/README.markdown)
+* Added [fiddles/jquery/fiddle-0008-CanvasMouseCapture](fiddles/jquery/fiddle-0008-CanvasMouseCapture)
+* Added [fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore](fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore)
+* Added [fiddles/extjs/fiddle-20150412-GridFieldFilterContext](fiddles/extjs/fiddle-20150412-GridFieldFilterContext)
