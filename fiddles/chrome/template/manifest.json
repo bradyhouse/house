@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "{{FiddleName}}",
+  "description": "{{FiddleName}} - {{BornOnDate}}",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "resources/images/icon.png",
+    "default_popup": "index.html",
+    "default_title": "{{FiddleName}}"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}

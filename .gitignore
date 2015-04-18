@@ -3,6 +3,12 @@ siesta/
 web/packages/house-theme/build
 .idea/
 .DS_Store
+benchmark
+fiddles/chrome/fiddle-0001-helloWorld
+fiddles/extjs/20150415-GridDynamicRuleFilter
+fiddles/jquery/0011-GoogleCustomSearch
+fiddles/jquery/0010-IndexDbCreateOpen
+fiddles/jquery/0011-Calculator
 fiddles/dojo/lib/dijit/
 fiddles/dojo/lib/dojo/
 fiddles/dojo/lib/dojox/

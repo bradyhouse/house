@@ -41,6 +41,10 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             if [ "$#" -eq 2 ]; then port=$2; fi
             ./fiddle-stop.sh ${port}
             ;;
+        'delete')
+            if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh; fi
+            ./fiddle-delete.sh $2 $3
+            ;;
         *)  exit 86
             ;;
     esac
@@ -63,7 +67,8 @@ case ${_rc} in
         echo -e "\t\"fork\"\t\tFork an existing fiddle"
         echo -e "\t\"index\"\t\tRe-index a specific fiddle type"
         echo -e "\t\"start\"\t\tStart the fiddle web service process"
-        echo -e "\t\"stop\"\t\tStop the wed service process"
+        echo -e "\t\"stop\"\t\tStop the web service process"
+        echo -e "\t\"delete\"\tDelete an existing fiddle"
         echo ""
         echo -e "[a1-3]\targuments. The arguments required by the "
         echo -e "\tspecified command. There can be up to 3 arguments."

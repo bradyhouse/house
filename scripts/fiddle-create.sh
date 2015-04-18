@@ -10,7 +10,8 @@
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver.
+# 03/19/2015 - Baseline Ver.
+# 04/15/2015 - See CHANGELOG @ 201504151810
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -39,6 +40,9 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ./fiddle-dojo.sh $2 || exit 91
             ./fiddle-index.sh "dojo" || exit 91
             ;;
+        'chrome')
+            ./fiddle-chrome.sh $2 || exit 92
+            ;;
         *)  exit 86
             ;;
     esac
@@ -62,6 +66,7 @@ case ${_rc} in
         echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
+             -e "\t\"chrome\"\t\tChrome Extension Fiddle"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""
@@ -76,6 +81,8 @@ case ${_rc} in
     90) echo "fubar! php fiddle creation failed."
         ;;
     91) echo "fubar! dojo fiddle creation failed."
+        ;;
+    92) echo "fubar! chrome fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

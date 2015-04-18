@@ -68,3 +68,23 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/jquery/fiddle-0008-CanvasMouseCapture](fiddles/jquery/fiddle-0008-CanvasMouseCapture)
 * Added [fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore](fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore)
 * Added [fiddles/extjs/fiddle-20150412-GridFieldFilterContext](fiddles/extjs/fiddle-20150412-GridFieldFilterContext)
+
+### 201504151810
+
+* Added [fiddles/extjs/fiddle-20150412-GridItemContextFilterPlugin](fiddles/extjs/fiddle-20150412-GridItemContextFilterPlugin)
+* Added [fiddles/extjs/fiddle-20150414-GridDynamicTagFilter](fiddles/extjs/fiddle-20150414-GridDynamicTagFilter)
+* Added [fiddles/extjs/fiddle-20150414-HTMLEditor](fiddles/extjs/fiddle-20150414-HTMLEditor)
+* Added [fiddles/chrome](fiddles/chrome)
+* Added [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+    * Reflected changes:
+        1. [scripts/fiddle.sh](scripts/fiddle.sh)
+* Added [scripts/fiddle-chrome.sh](scripts/fiddle-chrome.sh)
+    * Reflected changes:
+        1. [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        2. [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+* Added [fiddles/extjs/fiddle-20150415-SpreadsheetClipBoardMixin](fiddles/extjs/fiddle-20150415-SpreadsheetClipBoardMixin)
+* Added [fiddles/chrome/fiddle-0001-templateTest](fiddles/chrome/fiddle-0001-templateTest)
+* Added [fiddles/extjs/fiddle-20150415-MixinBeforeConstructorSetPlugins](fiddles/extjs/fiddle-20150415-MixinBeforeConstructorSetPlugins)
+* Deleted fiddles/extjs/fiddle-20150402-CustomHeaderMenu
+* Added [fiddles/extjs/fiddle-20150414-GridDynamicTagFilter](fiddles/extjs/fiddle-20150414-GridDynamicTagFilter)
+* Added [fiddles/jquery/fiddle-0012-DifferentialInheritance](fiddles/jquery/fiddle-0012-DifferentialInheritance)
