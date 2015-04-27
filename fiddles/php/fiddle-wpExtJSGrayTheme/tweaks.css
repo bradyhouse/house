@@ -1,0 +1,57 @@
+.x-panel-header.x-header.x-header-noborder.x-docked.x-unselectable.x-panel-header-default.x-horizontal.x-panel-header-horizontal.x-panel-header-default-horizontal.x-top.x-panel-header-top.x-panel-header-default-top.x-box-layout-ct.x-accordion-hd.x-accordion-hd-sibling-expanded {
+    background-color: #D2E7F7 !important;
+    font-weight: bold;
+}
+
+.x-panel-header.x-header.x-header-noborder.x-docked.x-unselectable.x-panel-header-default.x-horizontal.x-panel-header-horizontal.x-panel-header-default-horizontal.x-top.x-panel-header-top.x-panel-header-default-top.x-box-layout-ct.x-accordion-hd {
+    background-color: #D2E7F7 !important;
+    font-weight: bold;
+}
+
+body#ext-element-1 {
+    background-image: url(http://dev.sencha.com/ext/5.1.0/examples/kitchensink/crisp-en/resources/images/square.gif) !important;
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slide-up;
+    -webkit-animation-name: slide-up;
+}
+
+#top-bar-tile {
+    background-image: url(http://dev.sencha.com/ext/5.1.0/examples/kitchensink/crisp-en/resources/images/header-bg.png) !important;
+    height: 51px;
+    vertical-align: middle;
+
+}
+
+
+#search-box {
+    float: right;
+    margin-top: -30px;
+    margin-right: 20px;
+}
+.slogan {
+    padding: 20px;
+    font-size: 10px;
+    font-weight: 100;
+}
+
+@-moz-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+
+    to {
+        margin-top: 0%;
+    }
+}
+
+@-webkit-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+
+    to {
+        margin-top: 0%;
+    }
+}
+

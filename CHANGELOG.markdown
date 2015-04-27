@@ -88,3 +88,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Deleted fiddles/extjs/fiddle-20150402-CustomHeaderMenu
 * Added [fiddles/extjs/fiddle-20150414-GridDynamicTagFilter](fiddles/extjs/fiddle-20150414-GridDynamicTagFilter)
 * Added [fiddles/jquery/fiddle-0012-DifferentialInheritance](fiddles/jquery/fiddle-0012-DifferentialInheritance)
+
+### 201504201810
+
+* Added [fiddles/jquery/fiddle-0013-ConstructorInvocationPattern](fiddles/jquery/fiddle-0013-ConstructorInvocationPattern)
+* Added [fiddles/extjs/fiddle-20150420-GridItemContextTagFilterMixin](fiddles/extjs/fiddle-20150420-GridItemContextTagFilterMixin)
+* Added [fiddles/extjs/fiddle-20150421-GridItemContextDistinctTagFilterMixin](fiddles/extjs/fiddle-20150421-GridItemContextDistinctTagFilterMixin)
+* Added [fiddles/extjs/fiddle-20150423-ComboBoxNumericFormatting](fiddles/extjs/fiddle-20150423-ComboBoxNumericFormatting)
+* Added [fiddles/extjs/fiddle-20150423-VanillaClassDebugHook](fiddles/extjs/fiddle-20150423-VanillaClassDebugHook)
+* Added [fiddles/php/fiddle-wpExtJSGrayTheme](fiddles/php/fiddle-wpExtJSGrayTheme)

@@ -6,7 +6,7 @@ fiddle-0012-DifferentialInheritance
 
 ### Title
 
-Bootstrap Button
+Crockford Differential Inheritance
 
 
 ### Creation Date
@@ -30,4 +30,4 @@ Fiddle demonstrating how to add multiple bootstrap styled button to the DOM and 
 
 ### Tags
 
-jQuery, appendTo, differential inheritance, btn-info, btn-warning, btn-success, btn-danger, btn-default, btn-primary
+Crockford (51), differential inheritance, jQuery, appendTo, btn-info, btn-warning, btn-success, btn-danger, btn-default, btn-primary

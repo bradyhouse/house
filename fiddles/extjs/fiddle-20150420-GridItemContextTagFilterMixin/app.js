@@ -1,12 +1,27 @@
 var meta = {
     fiddleHeader: 'Extreme Fiddle ~ Grid Item Context Tag Filter Plugin',
-    fiddleSubHeader: 'Fiddle exploring how to create a grid filtering plug-in that provides type-ahead suggestions. <br />' +
+    fiddleSubHeader: 'Fiddle exploring how to create a grid item context menu that provides type-ahead, "tag style" filtering using a secondary mixin class. <br />' +
     '<br />' +
     '<b>To test:</b><br/>' +
     '<ul><li>In default Mode, simply right-click on any cell in the grid</li>' +
-    '<li>In Pre-populated mode, select a cell and then right-click</li></ul>',
+    '<li>To enter Pre-populated mode, select a cell and then right-click</li>' +
+    '<li>To filter the grid, click the [apply] button.  This will sort the grid in ASC order and save filter criteria</li>' +
+    '<li>To remove the filter and clear the criteria click [clear]</li>' +
+    '<li>To sort the grid and criteria suggestion list, click the [ASC] or [DESC] buttons</li></ul>'
 };
 
+Ext.define('Fiddle.ViewRecordsFilter', {
+    extend: 'Ext.util.Filter',
+    isCriteriaFilter: true,
+    config: {
+        criteria: '',
+        field: '',
+        filterFn: function (record) {
+            var me = this;
+            return Ext.Array.contains(me.getCriteria(), record.get(me.getField()));
+        }
+    }
+});
 Ext.define('Fiddle.Tag', {
     extend: 'Ext.form.field.Tag',
     xtype: 'fiddle-tag',
@@ -16,44 +31,38 @@ Ext.define('Fiddle.Tag', {
     valueField: 'name',
     typeAhead: true,
     minChars: 1,
-    grow: false,
+    grow: true,
     collapseOnSelect: true,
     flex: 2,
     typeAheadDelay: 100,
-    triggers: {
-        search: {
-            cls: 'x-form-clear-trigger',
-            handler: 'onSearchComboClearClick'
-        }
+    hideTriggers: true,
+    listeners: {
+        render: 'onSearchComboRender'
+    },
+    bind: {
+        value: '{defaultTagValue}'
     },
     listConfig: {
         loadingText: 'Searching...',
         emptyText: 'No matching names found.',
         itemSelector: '.search-item',
-        itemTpl: ['<h4>{name}</h4>']
+        itemTpl: ['<b>{name}</b>']
     }
 });
-Ext.define('Fiddle.ComboBox', {
-    extend: 'Ext.panel.Panel',
-    xtype: 'fiddle-combo',
-    border: null,
+Ext.define('Fiddle.SplitButton', {
+    extend: 'Ext.button.Split',
+    xtype: 'fiddle-split',
+    border: true,
     listeners: {
         beforerender: 'onFieldSplitButtonBeforeRender'
     },
-    items: [{
-        xtype: 'splitbutton',
-        text: 'field'
-    }]
+    text: 'field'
 });
 Ext.define('Fiddle.CustomMenuTitle', {
     extend: 'Ext.panel.Title',
     xtype: 'custom-menu-title',
     border: null,
-    style: {
-        background: '#638BB5',
-        color: '#FFFFFF',
-        padding: '5px'
-    },
+    cls: 'custom-menu-title',
     text: '<b>Filter</b>',
     layout: {
         align: 'left'
@@ -77,7 +86,7 @@ Ext.define('Fiddle.Records', {
         remoteSort: false,
         sortInfo: {
             field: 'name',
-            direction: 'ASC'
+            direction: 'DESC'
         },
         pageSize: 50,
         fields: ['_id', 'index', 'isActive', 'checkingBalance', 'savingBalance', 'picture', 'age', 'eyeColor', 'name', 'gender', 'company', 'email', 'address', 'about', 'latitude', 'longitude'],
@@ -87,39 +96,47 @@ Ext.define('Fiddle.Records', {
     Ext.create('Fiddle.Records', {
         storeId: 'records'
     });
-    // Create chained store
     Ext.create('Ext.data.ChainedStore', {
         source: 'records',
         storeId: 'viewrecords'
     });
 });
-Ext.define('Fiddle.FilterPanel', {
+Ext.define('Fiddle.Panel', {
     extend: 'Ext.panel.Panel',
     requires: [
-        'Fiddle.ComboBox'
+        'Fiddle.SplitButton',
+        'Fiddle.Tag'
     ],
-    xtype: 'grid-filter-panel',
+    xtype: 'fiddle-panel',
     title: null,
-    grow: true,
     layout: {
         type: 'hbox',
         align: 'left'
     },
     border: null,
-    style: {
-        marginTop: '-1px'
-    },
     items: [
         {
-            xtype: 'fiddle-combo',
-            border: false
+            xtype: 'fiddle-split'
         }, {
             xtype: 'fiddle-tag'
         }]
 });
+Ext.define('Fiddle.CustomMenuModel', {
+    extend: 'Ext.app.ViewModel',
+    alias: 'viewmodel.custommenu',
+    data: {
+        update: false,
+        defaultTagValue: '',
+        defaultValueField: 'name',
+        defaultDisplayField: 'name'
+    }
+});
 Ext.define('Fiddle.CustomMenuController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.custommenu',
+    requires: [
+        'Fiddle.ViewRecordsFilter'
+    ],
     onFieldSplitButtonBeforeRender: function (ctrl) {
         var me = this,
             i = 0,
@@ -127,8 +144,8 @@ Ext.define('Fiddle.CustomMenuController', {
             menuItems = [],
             menuItem = null,
             customMenu = me.getView(),
-            splitButton = ctrl.down('splitbutton'),
-            grid = customMenu.targetGrid,
+            splitButton = ctrl,
+            grid = customMenu.getTargetGrid(),
             gridColumns = grid.query('gridcolumn'),
             gridColumnCount = gridColumns.length,
             selectedColumnIndex = customMenu.targetColumnIndex < gridColumnCount ? customMenu.targetColumnIndex : 1,
@@ -158,11 +175,10 @@ Ext.define('Fiddle.CustomMenuController', {
         combo.setRawValue(recordFieldValue);
     },
     onFieldMenuCheckChange: function (checkItem) {
-        console.log('onFieldMenuCheckChange');
         var me = this,
-            toolbar = me.getView(),
-            splitButton = toolbar.down('splitbutton'),
-            comboBox = toolbar.down('fiddle-tag'),
+            menu = me.getView(),
+            splitButton = menu.down('fiddle-split'),
+            comboBox = menu.down('fiddle-tag'),
             picker = comboBox.getPicker(),
             selectionModel = comboBox.pickerSelectionModel,
             fieldName = checkItem.dataIndex;
@@ -176,8 +192,7 @@ Ext.define('Fiddle.CustomMenuController', {
         picker.refresh();
         if (selectionModel && selectionModel.hasSelection()) {
             console.log('updating selection model');
-            comboBox.setValue([selectionModel.getSelection()[0].get(fieldName)]);
-            comboBox.clearValue();
+            comboBox.setValue(selectionModel.getSelection()[0].get(fieldName));
         }
     },
     onSearchComboClearClick: function (combo) {
@@ -192,41 +207,45 @@ Ext.define('Fiddle.CustomMenuController', {
             combo.fireEvent('change', combo, value, null);
         }
     },
-    onMenuCloseButtonClick: function (tool) {
+    onMenuCloseButtonClick: function () {
+        this.closeMenu();
+    },
+    onAscendingClick: function () {
         var view = this.getView();
-        view.hide();
+        this.sortViewRecords(view, 'ASC');
+        this.sortRecords(view, 'ASC');
     },
-    onAscendingClick: function (ctrl) {
-        this.sortViewRecords('ASC');
-        this.sortRecords('ASC');
-    },
-    onDescendingClick: function (ctrl) {
-        this.sortViewRecords('DESC');
-        this.sortRecords('DESC');
+    onDescendingClick: function () {
+        var me = this,
+            menu = this.getView();
+        me.sortViewRecords(menu, 'DESC');
+        me.sortRecords(menu, 'DESC');
     },
     onApplyFilterClick: function (ctrl) {
-        console.log('onSearchComboChange');
         var me = this,
-            toolbar = me.getView(),
-            combo = toolbar.down('fiddle-tag'),
+            menu = me.getView(),
+            combo = menu.down('fiddle-tag'),
             searchField = combo.valueField,
             store = Ext.getStore('viewrecords'),
-            triggerValue = combo.value;
+            triggerValue = combo.value,
+            filterConfig = {
+                id: 'fiddle-filter',
+                criteria: triggerValue,
+                field: searchField
+            },
+            fiddleFilter = Ext.create('Fiddle.ViewRecordsFilter', filterConfig);
+
         if (!Ext.isEmpty(triggerValue)) {
-            store.clearFilter();
+            store.removeFilter('fiddle-filter');
             try {
-                store.filter({
-                    filterFn: function (record) {
-                        return Ext.Array.contains(triggerValue, record.get(searchField));
-                    },
-                    id: searchField + 'filter'
-                });
+                store.addFilter(fiddleFilter);
+                menu.getTargetGrid().setCustomMenu(menu);
+                me.sortViewRecords(menu, "ASC");
+                me.closeMenu();
             } catch (e) {
                 combo.markInvalid('Invalid Search Criteria');
             }
-            if (store.getCount() > 0) {
-                toolbar.hide();
-            } else {
+            if (store.getCount() === 0) {
                 store.clearFilter();
                 combo.markInvalid('No matches found');
             }
@@ -237,13 +256,14 @@ Ext.define('Fiddle.CustomMenuController', {
     onClearFilterClick: function (ctrl) {
         var me = this,
             menu = me.getView(),
-            grid = menu.targetGrid,
+            grid = menu.getTargetGrid(),
             store = grid.getStore();
         if (store) {
-            store.clearFilter();
-            me.sortRecords('DESC');
+            store.removeFilter('fiddle-filter');
+            me.sortRecords(menu, 'DESC');
         }
-        menu.hide();
+        grid.setCustomMenu(null);
+        me.closeMenu();
     },
     onSearchComboRender: function (combo) {
         var me = this,
@@ -264,49 +284,48 @@ Ext.define('Fiddle.CustomMenuController', {
             }
         }
     },
-    // @private
-    buildNewComboBoxTpl: function (value) {
-        return Ext.create('Ext.XTemplate', '<tpl for=".">', '<div class="x-boundlist-item">{' + value + '}</div>', '</tpl>');
-    },
-    // @private
-    buildNewComboBoxDisplayTpl: function (value) {
-        return Ext.create('Ext.XTemplate', '<tpl for=".">', '{' + value + '}  - {' + value + '}', '</tpl>');
-    },
-    // @private
-    buildNewComboBoxPickerTpl: function (value) {
-        return Ext.create('Ext.XTemplate', '<tpl for=".">', '<li role="option" unselectable="on" class="x-boundlist-item"><h4>{' + value + '}</h4></li>', '</tpl>');
-    },
-    // @private
-    sortViewRecords: function (direction) {
-        var me = this,
-            store = Ext.getStore('viewrecords'),
-            toolbar = me.getView(),
-            comboBox = toolbar.down('combo'),
-            field = comboBox.valueField;
-        if (store) {
-            store.sort(field, direction);
+    privates: {
+        // @private
+        buildNewComboBoxTpl: function (value) {
+            return Ext.create('Ext.XTemplate', '<tpl for=".">',
+                '<div class="x-boundlist-item">{' + value + '}</div>',
+                '</tpl>');
+        },
+        // @private
+        buildNewComboBoxDisplayTpl: function (value) {
+            return Ext.create('Ext.XTemplate', '<tpl for=".">', '{' + value + '}  - {' + value + '}', '</tpl>');
+        },
+        // @private
+        buildNewComboBoxPickerTpl: function (value) {
+            return Ext.create('Ext.XTemplate', '<tpl for=".">', '<li role="option" unselectable="on" class="x-boundlist-item"><b>{' + value + '}</b></li>', '</tpl>');
+        },
+        // @private
+        sortViewRecords: function (menu, direction) {
+            var me = this,
+                store = Ext.getStore('viewrecords'),
+                filterPanel = menu.down('fiddle-panel'),
+                comboBox = filterPanel.down('fiddle-tag'),
+                field = comboBox.valueField;
+            if (store) {
+                store.sort(field, direction);
+
+            }
+        },
+        // @private
+        sortRecords: function (menu, direction) {
+            var me = this,
+                store = Ext.getStore('records'),
+                comboBox = menu.down('fiddle-tag'),
+                field = comboBox.valueField;
+            if (store) {
+                store.sort(field, direction);
+            }
+        },
+        // @private
+        closeMenu: function () {
+            var view = this.getView();
+            view.hide();
         }
-    },
-    // @private
-    sortRecords: function (direction) {
-        var me = this,
-            store = Ext.getStore('records'),
-            toolbar = me.getView(),
-            comboBox = toolbar.down('combo'),
-            field = comboBox.valueField;
-        if (store) {
-            store.sort(field, direction);
-        }
-    }
-});
-Ext.define('Fiddle.CustomMenuModel', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.custommenu',
-    data: {
-        update: false,
-        defaultSearchCriteria: '',
-        defaultValueField: 'name',
-        defaultDisplayField: 'name'
     }
 });
 Ext.define('Fiddle.CustomMenu', {
@@ -314,10 +333,11 @@ Ext.define('Fiddle.CustomMenu', {
     xtype: 'custom-menu',
     requires: [
         'Fiddle.CustomMenuTitle',
-        'Fiddle.FilterPanel',
+        'Fiddle.Panel',
         'Fiddle.CustomMenuController',
         'Fiddle.CustomMenuModel'
     ],
+    width: 300,
     config: {
         targetGrid: null,
         targetColumnIndex: 1
@@ -331,13 +351,7 @@ Ext.define('Fiddle.CustomMenu', {
         type: 'close',
         tooltip: 'Close',
         handler: 'onMenuCloseButtonClick',
-        style: {
-            background: '#638BB5',
-            color: '#FFFFFF',
-            marginLeft: '-1px',
-            marginBottom: '-1px',
-            padding: '5px'
-        },
+        cls: 'custom-menu-title-close-btn',
         border: null
     }],
     bodyStyle: {
@@ -348,7 +362,7 @@ Ext.define('Fiddle.CustomMenu', {
     plain: true,
     items: [
         {
-            xtype: 'grid-filter-panel',
+            xtype: 'fiddle-panel',
             bodyStyle: {
                 background: '#C0C0C0',
                 paddingTop: '5px',
@@ -374,7 +388,6 @@ Ext.define('Fiddle.CustomMenu', {
                     toolTip: 'Sort Ascending',
                     handler: 'onAscendingClick',
                     flex: 1
-
                 },
                 {
                     xtype: 'button',
@@ -401,62 +414,84 @@ Ext.define('Fiddle.CustomMenu', {
         }
     ]
 });
-Ext.define('Fiddle.Plugin', {
-    extend: 'Ext.plugin.Abstract',
-    alias: 'plugin.fiddleplugin',
-    requires: [
-        'Fiddle.CustomMenu'
-    ],
-    init: function (parent) {
+Ext.define('Fiddle.Mixin', {
+    extend: 'Ext.Mixin',
+    mixinConfig: {
+        id: 'fiddlemixin',
+        after: {
+            constructor: 'onAfterConstructor'
+        }
+    },
+    onAfterConstructor: function () {
         var me = this;
-        console.log(parent);
-        parent.on({
-            cellclick: me.onGridCellClick,
-            itemcontextmenu: me.onGridItemContextMenu
+        me.on({
+            cellclick: me.onCellClick,
+            itemcontextmenu: me.onItemContextMenu
         });
     },
-    onGridCellClick: function (panel, td, cellIndex, record, tr, rowIndex) {
-        var innerDiv = td.getElementsByClassName('x-grid-cell-inner'),
-            innerHtml = innerDiv[0].innerHTML,
-            grid = panel.ownerGrid,
-            gridColumns = grid.query('gridcolumn'),
-            column = gridColumns[cellIndex];
-        panel.lastColumnIndex = cellIndex;
-        panel.lastCellValue = innerHtml;
-        panel.lastColumnName = column.dataIndex;
-    },
-    onGridItemContextMenu: function (panel, record, item, index, event) {
+    onCellClick: function (panel, td, cellIndex, record, tr, rowIndex) {
         var me = this,
-            defaultCriteria = panel.lastCellValue,
-            defaultField = panel.lastColumnName,
-            defaultValue = defaultField,
-            menu = panel.customMenu;
+            innerDiv = td.getElementsByClassName('x-grid-cell-inner'),
+            innerHtml = innerDiv[0].innerHTML,
+            grid = me.ownerGrid,
+            gridColumns = grid.query('gridcolumn'),
+            column = gridColumns[cellIndex],
+            menu = grid.getCustomMenu();
+        if (menu && menu.isVisible()) {
+            menu.hide();
+        }
+        grid.setLastColumnIndex(cellIndex);
+        grid.setLastCellValue(innerHtml);
+        grid.setLastColumnName(column.dataIndex);
+    },
+    onItemContextMenu: function (panel, record, item, index, event) {
+        var me = this,
+            grid = me.ownerGrid,
+            defaultCriteria = grid.getLastCellValue(),
+            defaultField = grid.getLastColumnName(),
+            menu = grid.getCustomMenu();
         event.preventDefault();
+        console.log(defaultCriteria);
         if (!menu) {
-            menu = panel.buildCustomMenu(defaultCriteria, defaultField, defaultValue);
-            panel.customMenu = menu;
+            menu = grid.inflateCustomMenu(grid, defaultCriteria, defaultField);
         }
         menu.showAt(event.getXY());
+    },
+    // @private
+    inflateCustomMenu: function (panel, criteria, field) {
+        var menu = Ext.create('Fiddle.CustomMenu', {
+            targetGrid: panel,
+            targetColumnIndex: panel.lastColumnIndex
+        });
+        if (!Ext.isEmpty(criteria)) {
+            menu.getViewModel().setData({
+                update: true,
+                defaultTagValue: [criteria],
+                defaultValueField: field,
+                defaultDisplayField: field
+            });
+        }
+        return menu;
     }
 });
 Ext.define('Fiddle.Grid', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.fiddle-grid',
-    border: false,
     store: 'viewrecords',
-    itemId: 'fiddle-grid',
     requires: [
         'Fiddle.CustomMenu',
-        'Fiddle.Plugin'
+        'Fiddle.Mixin'
     ],
-    plugins: ['gridfilters', 'bufferedrenderer', {
-        ptype: 'fiddleplugin'
-    }],
+    mixins: [
+        'Fiddle.Mixin'
+    ],
     config: {
+        border: false,
         customMenu: null,
         lastColumnIndex: 1,
         lastCellValue: '',
-        lastColumnName: 'name'
+        lastColumnName: 'name',
+        loadMask: true
     },
     columns: [
         {
@@ -509,80 +544,57 @@ Ext.define('Fiddle.Grid', {
             flex: 1
         }
     ],
-    loadMask: true,
-    // @private
-    inflateCustomMenu: function (criteria, field, value) {
-        var menu = Ext.create('Fiddle.CustomMenu', {
-            targetGrid: parent,
-            targetColumnIndex: panel.lastColumnIndex
-        });
-        if (!Ext.isEmpty(criteria)) {
-            menu.getViewModel().setData({
-                update: true,
-                defaultValueField: value,
-                defaultDisplayField: field,
-                defaultSearchCriteria: criteria
-            });
-        }
-        return menu;
+    plugins: ['gridfilters', 'bufferedrenderer']
+});
+// BOILER PLATE
+Ext.define('App.BoxModel', {
+    extend: 'Ext.app.ViewModel',
+    alias: 'viewmodel.box',
+    data: {
+        header: meta.fiddleHeader,
+        subheader: meta.fiddleSubHeader
     }
 });
-
+Ext.define('App.Box', {
+    extend: "Ext.container.Container",
+    border: true,
+    padding: 25,
+    viewModel: {
+        type: 'box'
+    },
+    items: [
+        {
+            xtype: 'panel',
+            bind: {
+                title: '<h2>{header}<h2>'
+            },
+            items: [
+                {
+                    xtype: 'panel',
+                    padding: 10,
+                    border: false,
+                    bind: {
+                        html: '{subheader}'
+                    }
+                }
+            ],
+            region: 'north'
+        }
+    ]
+});
 Ext.onReady(function () {
-
     var grid = Ext.create('Fiddle.Grid'),
         win = Ext.create('Ext.Window', {
             title: meta.fiddleHeader,
             closable: false,
-            height: 500,
-            width: 700,
+            height: 300,
+            width: 500,
             layout: 'fit',
             items: grid
-        }),
-        positionX = 25,
-        positionY = 192;
-
-    win.showAt([positionX, positionY]);
-
-    // Boiler Plate
+        });
+    win.showAt(25, 270);
     Ext.QuickTips.init();
-    Ext.define('App.BoxModel', {
-        extend: 'Ext.app.ViewModel',
-        alias: 'viewmodel.box',
-        data: {
-            header: meta.fiddleHeader,
-            subheader: meta.fiddleSubHeader
-        }
-    });
-    Ext.define('App.Box', {
-        extend: "Ext.container.Container",
-        border: true,
-        padding: 25,
-        viewModel: {
-            type: 'box'
-        },
-        items: [
-            {
-                xtype: 'panel',
-                bind: {
-                    title: '{header}'
-                },
-                items: [
-                    {
-                        xtype: 'panel',
-                        padding: 10,
-                        border: false,
-                        bind: {
-                            html: '{subheader}'
-                        }
-                    }
-                ],
-                region: 'north'
-            }
-        ]
-    });
     Ext.create('App.Box', {
         renderTo: Ext.getBody()
     });
-
 });

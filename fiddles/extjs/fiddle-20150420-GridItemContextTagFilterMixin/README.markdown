@@ -1,4 +1,4 @@
-fiddle-20150417-GridItemContextTagFilterPlugin
+fiddle-20150420-GridItemContextTagFilterMixin
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,28 +6,28 @@ fiddle-20150417-GridItemContextTagFilterPlugin
 
 ### Title
 
-Grid Item Context Filter Plugin
+Grid Item Context Tag Filter Mixin
 
 
 ### Creation Date
 
-04-12-15
+04-20-15
 
 
 ### Description
 
-Fiddle exploring how to create a grid filtering plug-in that provides type-ahead suggestions.
+Fiddle exploring how to create a grid item context menu that provides type-ahead, "tag style" filtering using a secondary mixin class.
 
 
 ### Published Version Link
 
-[sencha fiddle](https://fiddle.sencha.com/#fiddle/l65)
+[sencha fiddle](https://fiddle.sencha.com/#fiddle/lkq)
 
 
 ### Tags
 
-ExtJS-5-1, data, store, combo, picker, chainedstore, grid, filter, MVVM, plugin, itemcontextmenu 
- 
+ExtJS-5-1, data, store, combo, picker, chainedstore, grid, filter, MVVM, mixin, itemcontextmenu, tagfield, util, filter, MVVM
+
 
 
 ### Forked From
