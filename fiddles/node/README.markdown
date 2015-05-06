@@ -14,11 +14,10 @@ In other words, if you are an aspiring web developer trying to decide on a platf
 then Node.js is the writing the wall.  The answer is JavaScript. Pre-_Node.js_, JavaScript was seen as purely
 a necessary frontend evil.  It could be used to do cool things in the web browser, but it was beholding to
 the backend for the heavy lifting.  The web server and database tiers were beyond its reach. Node.js
-breaks this paradigm. Now JavaScript can be used for backend just as it is used in the frontend
-using JavaScript.
+breaks this paradigm. Now JavaScript can be used for doing cool things on the backend as well.
 
 I have added this section to begin my study of and practise with this technology. For these fiddles,
-you will need to start each fiddle individually. Navigate to the root directory and enter the following
+you will need to start each one individually. Navigate to the root directory and enter the following
 commands in sequence:
 
         npm install
