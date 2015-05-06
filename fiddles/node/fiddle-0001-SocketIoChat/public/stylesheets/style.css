@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+@import 'bootstrap.darkly.min.css';
+
+#textMessage.form-control {
+  width: 300px;
+}
+.chatMessages {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(0,0,0,.05);
+  margin-bottom: 20px;
+  height: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.message {
+  overflow: hidden;
+  padding: 12px;
+  color: black;
+  background: #ababab; /* Old browsers */
+  float: left;
+  margin-left: 0;
+  width: 914px;
+  -webkit-animation-name: flip;
+  -webkit-animation-duration: 500ms;
+  border-bottom:1px solid rgba(0, 0, 0, .1);
+}
+
+a {
+  color: #00B7FF;
+}

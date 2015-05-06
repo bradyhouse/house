@@ -43,7 +43,6 @@
                 if (me.click) {
                     button.on('click', me.click);
                 }
-
                 button.appendTo(container);
             };
             me.toString = function () {

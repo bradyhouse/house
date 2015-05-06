@@ -1,0 +1,80 @@
+@CHARSET "UTF-8";
+@import 'bootstrap.min.css';
+@import 'bootstrap.darkly.min.css';
+
+body {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 300px !important;
+    padding: 0px;
+    margin: 0px;
+}
+#fiddleHook {
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.enter-stage-right {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slidein;
+    -webkit-animation-name: slidein;
+}
+
+@-moz-keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+
+@-webkit-keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+
+.enter-stage-south {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slide-up;
+    -webkit-animation-name: slide-up;
+}
+
+@-moz-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+@-webkit-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+button {
+    color: #000000 !important;
+}
+
+p {
+    padding-top: 20px;
+}
+
+
+

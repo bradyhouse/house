@@ -1,0 +1,658 @@
+@CHARSET "UTF-8";
+@import '../../../resources/css/custom.css';
+
+/** DOJO OVERRIDES **/
+/******************* Dijit Tundra overrides *****************/
+/* used for tabs in dijit tab container to display the CME colors */
+.tundra .dijitTab {
+    color: #3774af;
+    font-weight: bold;
+}
+
+/* used to remove the warning icon for textbox */
+.tundra .dijitValidationIcon {
+    width: 0px;
+    background: transparent;
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitButtonNode {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    /*    color:#FFF;*/
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitToggleButton {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    /*    color:#FFF;*/
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitButtonNodeHover {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitToggleButton {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+.tundra .dijitButton {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitButtonHover {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitToggleButtonHover {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitButtonHoverFocused {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+/* Used to style the look and feel of the dijit span surrounding the dijit button */
+.tundra .dijitButtonFocused {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+.tundra .dijitButtonHover .dijitButtonNode,
+.tundra .dijitButtonNodeHover,
+.tundra .dijitToggleButtonHover .dijitButtonNode,
+.tundra .dijitDropDownButtonHover .dijitButtonNode,
+.tundra .dijitComboButton .dijitButtonContentsHover,
+.tundra .dijitComboButton .dijitDownArrowButtonHover {
+    background: transparent url("../images/buttonBg.gif") repeat-x;
+    border: 0px;
+    font: normal normal normal 11px Arial;
+    font-weight: normal;
+    color: #FFF;
+    padding: 2px 3px;
+    /*width:auto;*/
+    /*height:18px;*/
+}
+
+
+.gridContainerTable{
+    width:100%;
+    border: none;
+}
+
+.tundra .dijitTextBox {
+    margin-top: 4px;
+}
+
+.tundra .dijitBorderContainer {
+    background-color: #FFF;
+    padding: 5px;
+}
+
+.tundra .dijitSplitterH, .tundra .dijitGutterH {
+    background: none repeat scroll 0 0 #FFF;
+    border: 0 none;
+    height: 5px;
+}
+
+.tundra .dijitTabContainer {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.tundra .dijitButtonDisabled {
+    border-color: #d5d5d5 #d5d5d5 #bdbdbd #d5d5d5;
+    background: #e4e4e4  top repeat-x;
+}
+
+#preloader, body, html {
+    height: 100%;
+    margin: 0 auto;
+}
+
+#appLayout {
+    height: 100%;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.clearLeft {
+    clear: left;
+}
+
+.clearRight {
+    clear: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.centerPanelPad {
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-top: 7px;
+}
+
+.topBottomNoPadding {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.topBottomPadding {
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
+.shown {
+    visibility: visible;
+    display: block;
+}
+
+.shown-link-inline {
+    visibility: visible;
+    display: inline-block;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+label.risk {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    width: 150px;
+}
+
+label.rating {
+    float: left;
+    padding-right: 2px;
+    text-align: right;
+    min-width: 100px;
+}
+
+label.baselineLabel {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    width: 110px;
+}
+
+label.summaryLabel {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+
+}
+
+label.summaryLabelBold {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    font-weight: bold;
+    width: 100px;
+
+}
+
+label.coverage {
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    font-weight: bold;
+    width: 120px;
+}
+
+label.toleranceLabel {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    width: 220px;
+}
+
+label.riskSearchAlerts {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    width: 120px;
+}
+
+label.riskSearch {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    width: 106px;
+}
+
+label.riskSearchBottom {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    width: 107px;
+}
+
+label.riskAutoWidth {
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+}
+
+.quantitativeTextBox {
+    width: 200px;
+}
+
+label.riskStrong {
+    float: left;
+    margin-right: 5px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    font-weight: bold;
+    width: 150px;
+}
+
+.sectionHeader {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.sectionContainer {
+    margin-bottom: 20px;
+}
+
+.dialogButtonAlign {
+    float: none;
+    clear: none;
+    text-align: right;
+}
+
+.criteriaLabel {
+    margin-left: 15px;
+}
+
+.qualitativeRating, .quantitativeRating {
+    margin-top: 20px;
+}
+
+#peerGroupErrors, #templateErrors, #counterpartyErrors {
+    margin-left: 25px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+#alertInquiryHighCount {
+    background-image: url("../images/error.png");
+    background-repeat: no-repeat;
+    background-color: #f9e7e7;
+    background-position: 1px center;
+    border: 1px solid #ff0000;
+    padding: 5px;
+    padding-top: 6px;
+    padding-left: 26px;
+    font: 12px Arial;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+#subCategoryErrors, #frequencyErrors, #criteriaErrors, #marketDataSubCategoryErrors, #addTemplateTypeErrors {
+    margin-left: 25px;
+    float: left;
+    width: 300px;
+}
+
+.deletePrompt {
+    text-align: right
+}
+
+.marketDataPeriod {
+    float: left;
+    width: 55px;
+}
+
+.strongCategoryLabel {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.riskLinks {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.counterpartyBusinessTypeContainer {
+    clear: left;
+    margin-left: 160px;
+}
+
+.clearingMemberFirmContainer {
+    clear: left;
+    margin-left: 160px;
+}
+
+.creditRiskHeader {
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+.hideOverflow {
+    overflow: hidden;
+}
+
+.error {
+    background-image: url("../images/error.png");
+    background-repeat: no-repeat;
+    background-color: #f9e7e7;
+    background-position: 1px center;
+    border: 1px solid #ff0000;
+    margin: 2px;
+    padding: 5px;
+    padding-top: 6px;
+    padding-left: 24px;
+    font: 10px Arial;
+    font-weight: bold;
+}
+
+.generalAlert {
+    background-image: url("../images/general_alert.png");
+    background-repeat: no-repeat;
+    background-color: #ffffcc;
+    background-position: 1px center;
+    border: 1px solid #f5dc34;
+    margin: 2px;
+    padding: 5px;
+    padding-top: 6px;
+    padding-left: 24px;
+    font: 10px Arial;
+    font-weight: bold;
+}
+
+.informationalAlert {
+    background-image: url("../images/iconGreen.png");
+    background-repeat: no-repeat;
+    background-color: #98FB98;
+    background-position: 1px center;
+    border: 1px solid #009900;
+    padding: 5px;
+    padding-top: 6px;
+    padding-left: 24px;
+    font: 10px Arial;
+    font-weight: bold;
+}
+
+.ratingLabel {
+    float: left;
+    margin-right: 5px;
+}
+
+.ratingFormContainer {
+    margin-bottom: 10px;
+}
+
+.ratingTable {
+    margin-bottom: 25px;
+}
+
+.autoOverflow {
+    overflow: auto;
+}
+
+.fieldNavigationLink {
+    vertical-align: bottom;
+    margin-left: 10px;
+
+}
+
+.fontNormal {
+    font-weight: normal;
+}
+
+.horRuledRiskSummary table tr.strong th, .horRuledRiskSummary table tr.strong td, table.horRuledRiskSummary tr.strong th, table.horRuledRiskSummary tr.strong td {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    padding: 3px;
+    border-collapse: collapse;
+}
+
+.horRuledRiskSummary {
+    border-collapse: collapse;
+}
+
+.alternatingTable table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+
+.alternatingTable {
+    font: normal 12px/150% Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow: hidden;
+}
+
+.alternatingTable table td, .alternatingTable table th {
+    padding: 3px 10px;
+}
+
+.alternatingTable table thead th {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8C8C8C), color-stop(1, #7D7D7D));
+    background: -moz-linear-gradient(center top, #8C8C8C 5%, #7D7D7D 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8C8C8C', endColorstr='#7D7D7D');
+    background-color: #8C8C8C;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.alternatingTable table thead th:first-child {
+    border: none;
+}
+
+.alternatingTable table tbody td {
+    color: #7D7D7D;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.alternatingTable table tbody .alt td {
+    background: #EBEBEB;
+    color: #7D7D7D;
+}
+
+.alternatingTable table tbody td:first-child {
+    border-left: none;
+}
+
+.alternatingTable table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table.horRuledRiskSummary td {
+    border-top: none;
+}
+
+/** CME OVERRIDES **/
+.horizontallyRuled table tr th, .horizontallyRuled table tr td, table.horRuled tr th, table.horRuled tr td {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    padding: 0px;
+    font-weight: normal;
+}
+
+.tableContainer {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.quantitativeButtons, .qualitativeButtons {
+    margin-top: 5px;
+}
+
+.selectionCriteriaPane {
+    overflow: hidden;
+    width: 100%;
+    margin-right: 5px;
+}
+
+td.tableContainer-labelCell[style] {
+    width: auto !important;
+}
+
+table.tableContainer-table {
+    text-align: right;
+}
+
+.qualitativeTableContainer {
+    text-align: right;
+}
+
+.commentaryPane {
+    margin-left: 20px;
+}
+
+.ratingFormContainer {
+    margin-left: 10px;
+}
+
+.riskTextLabel {
+    font-weight: bold;
+    float: left;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    text-align: right;
+    width: 150px;
+}
+
+.alertTextLabel {
+    font-weight: bold;
+    float: left;
+    text-align: right;
+    width: 240px;
+}
+
+.clearingOrgSelect {
+    width: 250px;
+    height: 100px;
+    overflow: auto;
+}
+
+.baselinePeersReadOnly {
+    width: 600px;
+    height: 150px;
+    overflow: auto;
+}
+
+.leftRightButtons {
+    padding: 50px 10px 0;
+}
+
+.leftRightButtonsAlertInquiry, .leftRightButtonsToleranceInquiry {
+    padding: 25px 10px 0;
+}
+
+.manual input {
+    text-align: center;
+}
+
+/*CME OVERRIDES */
+select, input {
+    font: normal normal normal 1em Arial;
+    color: #333;
+    border: 1px solid #CCC;
+    vertical-align: bottom;
+    padding-left: 5px;
+    scroll: auto;
+    scrollbar-base-color: #FFFFFF;
+    scrollbar-face-color: #333333;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-highlight-color: #FFFFFF;
+    scrollbar-3dlight-color: #333333;
+    scrollbar-shadow-color: #FFFFFF;
+    scrollbar-darkshadow-color: #333333;
+    scrollbar-arrow-color: #CCCCCC;
+}
+
+
+.dojoxGridCell {
+    color: #000000 !important;
+}
+
+
+

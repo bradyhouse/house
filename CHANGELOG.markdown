@@ -97,3 +97,17 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/extjs/fiddle-20150423-ComboBoxNumericFormatting](fiddles/extjs/fiddle-20150423-ComboBoxNumericFormatting)
 * Added [fiddles/extjs/fiddle-20150423-VanillaClassDebugHook](fiddles/extjs/fiddle-20150423-VanillaClassDebugHook)
 * Added [fiddles/php/fiddle-wpExtJSGrayTheme](fiddles/php/fiddle-wpExtJSGrayTheme)
+
+### 201505011810
+
+* Added [scripts/fiddle-node.sh](scripts/fiddle-node.sh)
+    * Reflected changes:
+        1. [scripts/fiddle.sh](scripts/fiddle.sh)
+        2. [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        3. [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        4. [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+        5. [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+* Added [fiddles/jquery/fiddle-0011-Calculator](fiddles/jquery/fiddle-0011-Calculator)
+* Added [fiddles/chrome/fiddle-0002-Calculator](fiddles/chrome/fiddle-0002-Calculator)
+* Added [fiddles/node/fiddle-0001-SocketIoChat](fiddles/node/fiddle-0001-SocketIoChat)
+* Added [fiddles/dojo/fiddleEnhancedGridPlugins](fiddles/dojo/fiddleEnhancedGridPlugins)

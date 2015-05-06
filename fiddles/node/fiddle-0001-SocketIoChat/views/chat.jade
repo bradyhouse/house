@@ -1,0 +1,14 @@
+extends layout
+block content
+   div(class="page-header")
+      h1  &nbsp;&nbsp;#{title}
+   input(type="hidden", id="hiddenUserName", name="hiddenUserName" value="#{userName}")
+   div(class="col-lg-10")
+      p  Hello #{userName}
+      div(class="chatMessages", id="chatMessages")
+      div(class="collapse navbar-collapse")
+         ul(class="nav navbar-nav")
+            li
+               input(type="text",id="textMessage", class="form-control", name="textMessage")
+            li
+              input(type="button", id="buttonSend", class="btn btn-success", onclick="send();" value="send")

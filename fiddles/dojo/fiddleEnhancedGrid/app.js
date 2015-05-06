@@ -8,9 +8,9 @@ dojo.ready(function(){
         items: []
     };
     var data_list = [
-        { col1: "normal", col2: false, col3: 'But are not followed by two hexadecimal', col4: 29.91},
-        { col1: "important", col2: false, col3: 'Because a % sign always indicates', col4: 9.33},
-        { col1: "important", col2: false, col3: 'Signs can be selectively', col4: 19.34}
+        { col1: "normal", col2: false, col3: 'But are not followed by two hexadecimal', col4: 29.91, details: { x: 1}},
+        { col1: "important", col2: false, col3: 'Because a % sign always indicates', col4: 9.33, details: { x: 1}},
+        { col1: "important", col2: false, col3: 'Signs can be selectively', col4: 19.34, details: { x: 1}}
     ];
     var rows = 60;
     for(var i=0, l=data_list.length; i<rows; i++){

@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "fiddle-0002-Calculator",
+  "description": "fiddle-0002-Calculator - 05-05-15",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "resources/images/icon.png",
+    "default_popup": "index.html",
+    "default_title": "fiddle-0002-Calculator",
+    "default_width": "400px"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}

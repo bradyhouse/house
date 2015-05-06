@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
+# 05/01/2015 - See CHANGELOG @ 201505011810
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -31,6 +32,7 @@ then
       echo "    \"php\"    - PHP Fiddle"
       echo "    \"jquery\" - jQuery / Bootstrap Fiddle"
       echo "    \"three\"  - three.js Fiddle"
+      echo "    \"node\"   - node.js Fiddle"
       echo ""
       exit
 fi
@@ -49,7 +51,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'extjs'|'php'|'jquery'|'three'|'dojo')
+        'extjs'|'php'|'jquery'|'three'|'dojo'|'node')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;

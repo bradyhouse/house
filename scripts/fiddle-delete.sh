@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # 04/15/2015 - See CHANGELOG @ 201504151810
+# 05/01/2015 - See CHANGELOG @ 201505011810
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -27,7 +28,7 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome')
+        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' )
         if [[ -d "${fiddlePath}" ]]
         then
             sudo rm -r "${fiddlePath}" || exit 87
@@ -62,6 +63,7 @@ case ${_rc} in
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
         echo -e "\t\"chrome\"\tChrome Extension Fiddle"
+        echo -e "\t\"node\"\tnode.js Fiddle"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""

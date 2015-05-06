@@ -43,6 +43,10 @@ echo "${thisFile}" | awk '{print toupper($0)}'
         'chrome')
             ./fiddle-chrome.sh $2 || exit 92
             ;;
+        'node')
+            ./fiddle-node.sh $2 || exit 93
+            ./iddle-index.sh "node" || exit 93
+            ;;
         *)  exit 86
             ;;
     esac
@@ -67,6 +71,7 @@ case ${_rc} in
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
              -e "\t\"chrome\"\t\tChrome Extension Fiddle"
+        echo -e "\t\"node\"\t\tNode Fiddle"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""
@@ -83,6 +88,8 @@ case ${_rc} in
     91) echo "fubar! dojo fiddle creation failed."
         ;;
     92) echo "fubar! chrome fiddle creation failed."
+        ;;
+    93) echo "fubar! node fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

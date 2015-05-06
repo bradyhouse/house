@@ -194,7 +194,7 @@ Ext.define('Fiddle.CustomMenuController', {
         splitButton.setText(checkItem.text);
         comboBox.valueField = fieldName;
         comboBox.displayField = fieldName;
-        comboBox.labelTpl = me.buildNewComboBoxTpl(fieldName);
+        comboBox.labelTpl = me.buildNewComboBoxLabelTpl(fieldName);
         comboBox.displayTpl = me.buildNewComboBoxDisplayTpl(fieldName);
         picker.tpl = me.buildNewComboBoxPickerTpl(fieldName);
         picker.displayField = fieldName;
@@ -291,7 +291,7 @@ Ext.define('Fiddle.CustomMenuController', {
         }
     },
     // @private
-    buildNewComboBoxTpl: function (value) {
+    buildNewComboBoxLabelTpl: function (value) {
         return Ext.create('Ext.XTemplate', '<tpl for=".">', '<div class="x-boundlist-item">{' + value + '}</div>', '</tpl>');
     },
     // @private
@@ -322,12 +322,6 @@ Ext.define('Fiddle.CustomMenuController', {
                 }
             }
         );
-
-        /*return Ext.create('Ext.XTemplate',
-            '<tpl for=".">',
-            '<li role="option" unselectable="on" class="x-boundlist-item">' +
-            '<b>{' + value + '}</b></li>',
-            '</tpl>');*/
     },
     // @private
     sortViewRecords: function (menu, direction) {
@@ -552,12 +546,12 @@ Ext.define('Fiddle.Grid', {
         {
             dataIndex: 'checkingBalance',
             text: 'Checking',
-            filter: {}
+            filter: {"type": 'numeric'}
         },
         {
             dataIndex: 'savingsBalance',
             text: 'Savings',
-            filter: {}
+            filter: {"type": 'numeric'}
         },
         {
             dataIndex: 'registered',

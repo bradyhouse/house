@@ -520,12 +520,12 @@ Ext.define('Fiddle.Grid', {
         {
             dataIndex: 'checkingBalance',
             text: 'Checking',
-            filter: {}
+            filter: { type: 'numeric'}
         },
         {
             dataIndex: 'savingsBalance',
             text: 'Savings',
-            filter: {}
+            filter: { type: 'numeric'}
         },
         {
             dataIndex: 'registered',

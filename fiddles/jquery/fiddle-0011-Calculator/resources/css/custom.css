@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+
+@import '../../../resources/css/bootstrap.min.css';
+@import '../../../resources/css/bootstrap.darkly.min.css';
+@import '../../../resources/css/custom.css';
+
+.btn {
+    border-radius: 0px;
+}
+
+

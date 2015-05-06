@@ -10,11 +10,6 @@ window.writeLog = function (log) {
 }
 
 
-/***
- * Sample Data we want to save
- * Note how the records do not have
- * the same schema
- */
 var studentData = [
     {name: "Elvis"},
     {name: "George"},
