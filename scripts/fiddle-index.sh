@@ -12,27 +12,31 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
 # 05/01/2015 - See CHANGELOG @ 201505011810
+# 05/08/2015 - See CHANGELOG @ 201505061810
 # ---------------------------------------------------------------------------------------------------|
+clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 
 if [ "$#" -ne 1 ]
 then
-      echo ""
-      echo "Nope ~ Incorrect number of arguments"
-      echo ""
-      echo "Usage:"
-      echo ""
-      echo "$0 \"[t]\""
-      echo ""
-      echo "[t] - type. Valid types include: "
-      echo ""
-      echo "   \"dojo\"    - Dojo Fiddle"
-      echo "    \"extjs\"  - Ext JS Fiddle"
-      echo "    \"php\"    - PHP Fiddle"
-      echo "    \"jquery\" - jQuery / Bootstrap Fiddle"
-      echo "    \"three\"  - three.js Fiddle"
-      echo "    \"node\"   - node.js Fiddle"
+    echo ""
+    echo "Nope ~ Incorrect number of arguments"
+    echo ""
+    echo "Usage:"
+    echo ""
+    echo "$0 \"[t]\""
+    echo ""
+    echo "[t] - type. Valid types include: "
+    echo ""
+    echo -e "\t\"dojo\"\t\tDojo Fiddle"
+    echo -e "\t\"extjs\"\t\tExt JS Fiddle"
+    echo -e "\t\"php\"\t\tPHP Fiddle"
+    echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
+    echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
+    echo -e "\t\"chrome\"\tChrome Extension Fiddle"
+    echo -e "\t\"node\"\t\tnode.js Fiddle"
+    echo -e "\t\"tween\"\t\ttween.js Fiddle"
       echo ""
       exit
 fi
@@ -51,7 +55,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'extjs'|'php'|'jquery'|'three'|'dojo'|'node')
+        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;

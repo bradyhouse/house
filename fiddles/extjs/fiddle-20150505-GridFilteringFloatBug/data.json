@@ -1,0 +1,39 @@
+/* This dataset was generated on http://www.json-generator.com/ using the
+following template.
+ [
+ '{{repeat(5, 7)}}',
+ {
+ _id: '{{objectId()}}',
+ checkingBalance: '{{floating(-100000, 1000000, 9, "0,0.000000000")}}',
+ savingsBalance: '{{floating(-100000, 1000000, 9, "0,0.000000000")}}'
+ }
+ ]
+*/
+
+[
+    {
+        "_id": "554a55f68f4a863bece420ac",
+        "checkingBalance": "287,200.729618780",
+        "savingsBalance": "554,261.164204218"
+    },
+    {
+        "_id": "554a55f6d4de0a97f239af33",
+        "checkingBalance": "738,445.201842115",
+        "savingsBalance": "922,646.166034975"
+    },
+    {
+        "_id": "554a55f63ceea9d55941f25e",
+        "checkingBalance": "56,774.889724329",
+        "savingsBalance": "807,446.987740696"
+    },
+    {
+        "_id": "554a55f6e6421251f8753629",
+        "checkingBalance": "154,880.653694272",
+        "savingsBalance": "782,345.341867768"
+    },
+    {
+        "_id": "554a55f65d827684aa04cf83",
+        "checkingBalance": "617,043.463815935",
+        "savingsBalance": "-81,862.060748972"
+    }
+]

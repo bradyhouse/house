@@ -360,7 +360,7 @@
                 bufferName = ctrl.mapActiveBufferName(buffer),
                 boundBufferValue = ctrl.bindInputBuffer(activeBuffer),
                 updatedValue = boundBufferValue / 100;
-            activeBuffer = ctrl.unbindBufferOutput(updatedValue);
+            activeBuffer = ctrl.unbindBufferOutput(updatedValue.toString());
             buffer[bufferName] = activeBuffer;
             ctrl.writeToReadOut(readout, updatedValue + '|');
         },
@@ -679,7 +679,7 @@
         },
         ReadOut: function (id, parent) {
             var me = this;
-            new app.view.Base(me, id, 'row navbar-right navbar-brand', null, parent, function () {
+            new app.view.Base(me, id, 'row navbar-right navbar-brand digital', null, parent, function () {
                 me.self.text('0.00');
             });
         },
@@ -782,6 +782,7 @@
             value: 0.0
         }
     };
+
     $(document).ready(function () {
         app.view.init();
     });

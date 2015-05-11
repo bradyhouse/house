@@ -15,6 +15,7 @@
 # 04/03/2015 - (1) Added support for all fiddle types; (2) Added call to the fiddle-index script.
 # 04/15/2015 - See CHANGELOG @ 201504151810
 # 05/01/2015 - See CHANGELOG @ 201505011810
+# 05/08/2015 - See CHANGELOG @ 201505061810
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -38,6 +39,7 @@ then
     echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
     echo -e "\t\"chrome\"\t\tChrome Extension Fiddle"
     echo -e "\t\"node\"\t\tNode.js Fiddle"
+    echo -e "\t\"tween\"\tTween.js Fiddle"
     echo ""
     echo -e "[a] - source fiddle directory name."
     echo ""

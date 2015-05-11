@@ -12,7 +12,8 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
-# 04/09/2015 - CHANGELOG.MARKDOWN ~ 201504091810
+# 04/09/2015 - See CHANGELOG.MARKDOWN ~ 201504091810
+# 05/08/2015 - See CHANGELOG.MARKDOWN ~ 201505061810
 # ---------------------------------------------------------------------------------------------------|
 clear
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
@@ -48,10 +49,13 @@ _port=8889
         'dojo')
             ./house-node-fs-start.sh "../../fiddles/dojo" "${_port}" || exit 88
             ;;
+        'tween')
+            ./house-node-fs-start.sh "../../fiddles/tween" "${_port}" || exit 88
+            ;;
         *)  exit 86
             ;;
     esac
- 
+
 )
 #catch
 rc=$?
@@ -79,6 +83,7 @@ case ${rc} in
         echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
+        echo -e "\t\"tween\"\t\ttween.js Fiddle"
         echo ""
         echo "[[p]] - OPTIONAL port number. If not specified then port 8889 will be used."
         echo "        Note - If you specify a different port, then to stop the resulting process"

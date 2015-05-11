@@ -1,4 +1,5 @@
 (function (app, $, undefined) {
+    "use strict";
 
     $(document).ready(function () {
         // fiddle
@@ -12,5 +13,6 @@
     function addSomeBling(ctrl) {
         ctrl.addClass('enter-stage-south');
     }
+
 
 })(window.app = window.app || {}, jQuery)

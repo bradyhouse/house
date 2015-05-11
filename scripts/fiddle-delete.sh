@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # 04/15/2015 - See CHANGELOG @ 201504151810
 # 05/01/2015 - See CHANGELOG @ 201505011810
+# 05/08/2015 - See CHANGELOG @ 201505061810
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -28,7 +29,7 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' )
+        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' )
         if [[ -d "${fiddlePath}" ]]
         then
             sudo rm -r "${fiddlePath}" || exit 87
@@ -61,9 +62,10 @@ case ${_rc} in
         echo -e "\t\"extjs\"\t\tExt JS Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
+        echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
         echo -e "\t\"chrome\"\tChrome Extension Fiddle"
-        echo -e "\t\"node\"\tnode.js Fiddle"
+        echo -e "\t\"node\"\t\tnode.js Fiddle"
+        echo -e "\t\"tween\"\t\ttween.js Fiddle"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""

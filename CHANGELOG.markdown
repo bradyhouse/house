@@ -111,3 +111,28 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/chrome/fiddle-0002-Calculator](fiddles/chrome/fiddle-0002-Calculator)
 * Added [fiddles/node/fiddle-0001-SocketIoChat](fiddles/node/fiddle-0001-SocketIoChat)
 * Added [fiddles/dojo/fiddleEnhancedGridPlugins](fiddles/dojo/fiddleEnhancedGridPlugins)
+
+### 201505061810
+
+* Added [fiddles/three/README.markdown](fiddles/three/README.markdown)
+* Added [fiddles/extjs/fiddle-20150505-GridFilteringFloatBug](fiddles/extjs/fiddle-20150505-GridFilteringFloatBug)
+* Added [fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore](fiddles/jquery/fiddle-0009-CanvasMouseRecordRestore)
+* Removed fiddles/phantomjs (unfinished)
+* Added [fiddles/jquery/fiddle-0014-RequestAnimationFrameLimit](fiddles/jquery/fiddle-0014-RequestAnimationFrameLimit)
+* Added [fiddles/jquery/fiddle-0015-xUnitTesting](fiddles/jquery/fiddle-0015-xUnitTesting)
+* Added [READINGLIST.markdown](READINGLIST.markdown)
+* Enhanced [fiddles/jquery/template](fiddles/jquery/template) to include test.html, test.js files
+    * Reflected changes:
+        1. [scripts/fiddle-jquery.sh](scripts/fiddle-jquery.sh)
+* Added [scripts/fiddle-tween.sh](scripts/fiddle-tween.sh)
+    * Reflected changes:
+        1. [scripts/fiddle.sh](scripts/fiddle.sh)
+        2. [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        3. [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        4. [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+        5. [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        6. [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+        7. [fiddles/index.html](fiddles/index.html)
+* Added [fiddles/tween/fiddle-0001-BouncingBall](fiddles/tween/fiddle-0001-BouncingBall)
+* Added [fiddles/tween/fiddle-0002-100MovingDots](fiddles/tween/fiddle-0002-100MovingDots)
+* Added [fiddles/tween/fiddle-0003-CreatejsEaseQuadIn](fiddles/tween/fiddle-0003-CreatejsEaseQuadIn)

@@ -7,5 +7,15 @@
 .btn {
     border-radius: 0px;
 }
+@font-face {
+    font-family: digital;
+    src: url(Open24DisplaySt.ttf);
+    font-weight: 400;
+}
+
+.digital {
+    font-family: digital;
+    font-size: 2em;
+}
 
 

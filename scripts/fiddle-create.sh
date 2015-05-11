@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # 03/19/2015 - Baseline Ver.
 # 04/15/2015 - See CHANGELOG @ 201504151810
+# 05/08/2015 - See CHANGELOG @
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -45,7 +46,10 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ;;
         'node')
             ./fiddle-node.sh $2 || exit 93
-            ./iddle-index.sh "node" || exit 93
+            ;;
+        'tween')
+            ./fiddle-tween.sh $2 || exit 94
+            ./fiddle-index.sh "tween" || exit 94
             ;;
         *)  exit 86
             ;;
@@ -69,9 +73,10 @@ case ${_rc} in
         echo -e "\t\"extjs\"\t\tExt JS Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
-             -e "\t\"chrome\"\t\tChrome Extension Fiddle"
+        echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
+        echo -e "\t\"chrome\"\tChrome Extension Fiddle"
         echo -e "\t\"node\"\t\tNode Fiddle"
+        echo -e "\t\"tween\"\t\ttween.js Fiddle"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""
@@ -90,6 +95,8 @@ case ${_rc} in
     92) echo "fubar! chrome fiddle creation failed."
         ;;
     93) echo "fubar! node fiddle creation failed."
+        ;;
+    94) echo "fubar tween fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

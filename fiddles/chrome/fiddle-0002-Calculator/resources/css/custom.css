@@ -76,5 +76,12 @@ p {
     padding-top: 20px;
 }
 
+@font-face {
+    font-family: digital;
+    src: url(7SDD.TTF);
+    font-weight: 400;
+}
 
-
+.digital {
+    font-family: digital;
+}

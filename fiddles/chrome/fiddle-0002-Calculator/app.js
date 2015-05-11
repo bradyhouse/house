@@ -655,7 +655,7 @@
         },
         ReadOut: function (id, parent) {
             var me = this;
-            new app.view.Base(me, id, 'row navbar-right navbar-brand', null, parent, function () {
+            new app.view.Base(me, id, 'row navbar-brand navbar-right', null, parent, function () {
                 me.self.text('0.00');
             });
         },
