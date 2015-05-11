@@ -120,7 +120,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Removed fiddles/phantomjs (unfinished)
 * Added [fiddles/jquery/fiddle-0014-RequestAnimationFrameLimit](fiddles/jquery/fiddle-0014-RequestAnimationFrameLimit)
 * Added [fiddles/jquery/fiddle-0015-xUnitTesting](fiddles/jquery/fiddle-0015-xUnitTesting)
-* Added [READINGLIST.markdown](READINGLIST.markdown)
 * Enhanced [fiddles/jquery/template](fiddles/jquery/template) to include test.html, test.js files
     * Reflected changes:
         1. [scripts/fiddle-jquery.sh](scripts/fiddle-jquery.sh)
