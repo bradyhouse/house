@@ -135,3 +135,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/tween/fiddle-0001-BouncingBall](fiddles/tween/fiddle-0001-BouncingBall)
 * Added [fiddles/tween/fiddle-0002-100MovingDots](fiddles/tween/fiddle-0002-100MovingDots)
 * Added [fiddles/tween/fiddle-0003-CreatejsEaseQuadIn](fiddles/tween/fiddle-0003-CreatejsEaseQuadIn)
+
+### 201505210420
+
+* Added [fiddles/extjs/fiddle-20150521-ClearStoreAndColumns](fiddles/extjs/fiddle-20150521-ClearStoreAndColumns)
+
