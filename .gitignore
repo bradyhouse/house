@@ -33,3 +33,7 @@ fiddles/node/fiddle-0019-webApp/
 fiddles/three/fiddle-0012-FresnelShader/
 nohup.out
 lib
+fiddles/java/out
+java.iml
+FiddleParallelStream.java
+FiddlePredicatePivot.java

@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
 # 05/01/2015 - See CHANGELOG @ 201505011810
+# 05/32/2015 - See CHANGELOG @ 201505310420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -46,6 +47,9 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh; fi
             ./fiddle-delete.sh $2 $3
             ;;
+        'refactor')
+            if [ "$#" -eq 4 ]; then ./fiddle-refactor.sh $2 $3 $4; fi
+            ;;
         *)  exit 86
             ;;
     esac
@@ -70,6 +74,7 @@ case ${_rc} in
         echo -e "\t\"start\"\t\tStart the fiddle web service process"
         echo -e "\t\"stop\"\t\tStop the web service process"
         echo -e "\t\"delete\"\tDelete an existing fiddle"
+        echo -e "\t\"refactor\"\t Rename (\"refactor\") an existing fiddle"
         echo ""
         echo -e "[a1-3]\targuments. The arguments required by the "
         echo -e "\tspecified command. There can be up to 3 arguments."

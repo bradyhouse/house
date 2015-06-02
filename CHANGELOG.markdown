@@ -140,3 +140,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * Added [fiddles/extjs/fiddle-20150521-ClearStoreAndColumns](fiddles/extjs/fiddle-20150521-ClearStoreAndColumns)
 
+### 201505310420
+
+* Added [fiddles/jquery/fiddle-0016-BackgroundCover](fiddles/jquery/fiddle-0016-BackgroundCover)
+* Added [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+    * Reflected changes:
+        1. [scripts/fiddle.sh](scripts/fiddle.sh)
+* Added [fiddles/extjs/fiddle-20150528-TableLayout](fiddles/extjs/fiddle-20150528-TableLayout)
+* Added [fiddles/extjs/fiddle-20150528-GridSubColumns](fiddles/extjs/fiddle-20150528-GridSubColumns)
+* Added [fiddles/java](fiddles/java)
+* Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleBinaryOperator.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleBinaryOperator.java)
+* Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleFibonacci.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleFibonacci.java)
+* Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleNoArguments.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleNoArguments.java)
+* Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleStreamFilter.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleStreamFilter.java)
+* Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleStreamMap.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleStreamMap.java)
+* Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceFilter.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceFilter.java)
+* Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceMap.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceMap.java)

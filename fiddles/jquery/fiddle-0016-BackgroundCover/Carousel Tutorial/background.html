@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tutorial Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap Demo">
+    <meta name="author" content="Untame.net">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.carousel').carousel({interval: 7000});
+      });
+    </script>
+
+    <style>
+      .carousel { z-index: -99; }
+      .carousel .item {
+        position: fixed; 
+        width: 100%; height: 100%;
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        transition: opacity 1s;
+
+      }
+      .carousel .one {
+        background: url(assets/img/slide3blur.jpg);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .carousel .two {
+        background: url(assets/img/slide2blur.jpg);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .carousel .three {
+        background: url(assets/img/slide1blur.jpg);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .carousel .active.left {
+        left:0;
+        opacity:0;
+        z-index:2;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="myCarousel" class="carousel container slide">
+      <div class="carousel-inner">
+                <div class="active item one"></div>
+                <div class="item two"></div>
+                <div class="item three"></div>
+      </div>
+    </div>
+
+    <div class="container well well-large">
+      <h2>This page exemplifies a rotating background set.</h2>
+      <h4>The images will resize nicely with the browser's viewport.</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae nibh placerat mauris dignissim convallis et sed nisi. Mauris gravida, sapien ut viverra posuere, massa sem ultricies purus, non accumsan eros magna vitae metus. Sed lobortis mauris risus, id iaculis enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam nec mauris arcu. Praesent hendrerit, velit id consequat sollicitudin, augue nibh varius dolor, vel viverra lacus arcu ac sapien. Nulla facilisi.</p>
+      <p>Etiam et nibh sit amet nibh viverra mattis. Integer pretium faucibus sem, sit amet ultricies purus fermentum at. Maecenas dignissim, metus in tristique mattis, leo nunc sagittis sapien, eget pretium quam urna at enim. Cras quis massa vel massa scelerisque consequat. Suspendisse pulvinar elit ac dolor dictum condimentum. Vestibulum mattis accumsan luctus. In bibendum lorem nec dui interdum auctor. Sed lobortis faucibus augue, vel cursus nibh lacinia id. Pellentesque tincidunt, massa sit amet elementum posuere, velit nulla vulputate dui, vel viverra dolor nulla ut velit. In hac habitasse platea dictumst. Sed dictum tortor ultricies sapien cursus tincidunt. Nunc commodo ultrices justo, a tempor nibh bibendum a. Integer pulvinar justo ut diam congue eget facilisis erat sagittis.</p>
+
+  </body>
+</html>
