@@ -11,7 +11,7 @@ House jQuery Fiddle - fiddle-0016-BackgroundCover
 
 ### Creation Date
 
-05-27-15
+05-31-15
 
 
 ### Location
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another jQuery Fiddle. 
+Fiddle exploring how to use a bootstrap carousel to dynamically update (change) the page's background.
 
 
 ### Published Version Link
@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-jQuery
+jQuery, bootstrap, carousel

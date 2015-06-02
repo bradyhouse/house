@@ -16,17 +16,17 @@
 
 }
 .carousel .one {
-    background: url('../img/slide3blur.jpg');
+    background: url('../img/a.jpg');
     background-size: cover;
     -moz-background-size: cover;
 }
 .carousel .two {
-    background: url('../img/slide2blur.jpg');
+    background: url('../img/b.jpg');
     background-size: cover;
     -moz-background-size: cover;
 }
 .carousel .three {
-    background: url('../img/slide1blur.jpg');
+    background: url('../img/c.jpg');
     background-size: cover;
     -moz-background-size: cover;
 }
