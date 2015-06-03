@@ -1,7 +1,63 @@
 
-@import '../../../resources/css/custom.css';
+@import '../../../resources/css/bootstrap.min.css';
+@import '../../../resources/css/bootstrap.darkly.min.css';
+.enter-stage-right {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slidein;
+    -webkit-animation-name: slidein;
+}
 
+@-moz-keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 10%;
+    }
+}
 
+@-webkit-keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 10%;
+    }
+}
+
+.enter-stage-south {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slide-up;
+    -webkit-animation-name: slide-up;
+}
+
+@-moz-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+@-webkit-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+button {
+    color: #000000 !important;
+}
+
+p {
+    padding-top: 20px;
+}
 .thumbnail {
     width: 260px;
     height: 180px;

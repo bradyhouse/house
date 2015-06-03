@@ -60,4 +60,42 @@ p {
     padding-top: 20px;
 }
 
+.carousel { z-index: -99; }
+.carousel .item {
+    position: fixed;
+    width: 100%; height: 100%;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+
+}
+.carousel .one {
+    background: url('../images/a.jpg');
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .two {
+    background: url('../images/b.jpg');
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .three {
+    background: url('../images/c.jpg');
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.carousel .active.left {
+    left:0;
+    opacity:0;
+    z-index:2;
+}
+.bs-component {
+    background-color: #000000;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+}
+
 

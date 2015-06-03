@@ -5,8 +5,9 @@
 		<div class="modal-footer text-danger">
         	@ {{BornOnDate}}
 		</div>
-		<script src="resources/js/jquery-1.11.2.js"></script>
-		<script src="resources/js/bootstrap.min.js"></script>
+        <script src="resources/js/jquery-1.11.2.js"></script>
+        <script src="resources/js/bootstrap.min.js"></script>
+        <script src="resources/js/carousel.js"></script>
 	</div>
 </div>
 </body>

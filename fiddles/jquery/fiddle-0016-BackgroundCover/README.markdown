@@ -6,7 +6,7 @@ fiddle-0016-BackgroundCover
 
 ### Title
 
-House jQuery Fiddle - fiddle-0016-BackgroundCover
+Carousel Background
 
 
 ### Creation Date

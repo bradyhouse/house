@@ -17,6 +17,13 @@
 	<link href="resources/css/custom.css" rel="stylesheet">
 </head>
 <body>
+<div id="background-carousel" class="carousel container slide">
+    <div class="carousel-inner">
+        <div class="active item one"></div>
+        <div class="item two"></div>
+        <div class="item three"></div>
+    </div>
+</div>
 <div class="container enter-stage-south">
 	<div class="col-lg-12">
 		<div class="row">

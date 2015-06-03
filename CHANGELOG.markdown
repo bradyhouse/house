@@ -156,3 +156,32 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleStreamMap.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleStreamMap.java)
 * Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceFilter.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceFilter.java)
 * Added [fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceMap.java](fiddles/java/src/io/bradyhouse/fiddles/java8/FiddleReduceMap.java)
+
+### 201506020420
+
+* Added [fiddles/jquery/fiddle-0017-DateSerialization](fiddles/jquery/fiddle-0017-DateSerialization)
+* Added [fiddles/extjs/fiddle-20150602-GridRecordToolTip](fiddles/extjs/fiddle-20150602-GridRecordToolTip)
+* Updated all index.html pages to include background carousel slider
+    * Reflected changes:
+        1. [fiddles/resources/css/custom.css](fiddles/resources/css/custom.css)
+        2. [fiddles/dojo/resources/css/custom.css](fiddles/dojo/resources/css/custom.css)
+        3. [fiddles/extjs/resources/css/custom.css](fiddles/extjs/resources/css/custom.css)
+        4. [fiddles/jquery/resources/css/custom.css](fiddles/jquery/resources/css/custom.css)
+        5. [fiddles/three/resources/css/custom.css](fiddles/three/resources/css/custom.css)
+        6. [fiddles/tween/resources/css/custom.css](fiddles/tween/resources/css/custom.css)
+        7. [fiddles/jquery/fiddle-0005-BootStrapCarousel/resources/css/custom.css](fiddles/jquery/fiddle-0005-BootStrapCarousel/resources/css/custom.css)
+        8. [fiddles/jquery/fiddle-0006-BootStrapVideoControls/resources/css/custom.css](fiddles/jquery/fiddle-0006-BootStrapVideoControls/resources/css/custom.css)
+        9. [fiddles/jquery/fiddle-0006-VideoPlayer/resources/css/custom.css](fiddles/jquery/fiddle-0006-VideoPlayer/resources/css/custom.css)
+        10. [fiddles/jquery/fiddle-0007-BootstrapVideoCarousel/resources/css/custom.css](fiddles/jquery/fiddle-0007-BootstrapVideoCarousel/resources/css/custom.css)
+        11. [fiddles/jquery/fiddle-0011-Calculator/resources/css/custom.css](fiddles/jquery/fiddle-0011-Calculator/resources/css/custom.css)
+        12. [fiddles/jquery/template/resources/css/custom.css](fiddles/jquery/template/resources/css/custom.css)
+* Migrated dojo fiddles to CDN
+    * Reflected changes:
+        1. [fiddles/dojo/fiddleDateTextBox/index.html](fiddles/dojo/fiddleDateTextBox/index.html)
+        2. [fiddles/dojo/fiddleEnhancedGrid/index.html](fiddles/dojo/fiddleEnhancedGrid/index.html)
+        3. [fiddles/dojo/fiddleEnhancedGridPlugins/index.html](fiddles/dojo/fiddleEnhancedGridPlugins/index.html)
+        4. [fiddles/dojo/fiddleEpochTimeStamp/index.html](fiddles/dojo/fiddleEpochTimeStamp/index.html)
+        5. [fiddles/dojo/fiddleObjectToQuery/index.html](fiddles/dojo/fiddleObjectToQuery/index.html)
+        6. [fiddles/dojo/fiddleParsingDates/index.html](fiddles/dojo/fiddleParsingDates/index.html)
+        7. [fiddles/dojo/fiddleTabContainer/index.html](fiddles/dojo/fiddleTabContainer/index.html)
+        8. [fiddles/dojo/template/index.html](fiddles/dojo/template/index.html)

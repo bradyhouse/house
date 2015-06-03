@@ -1,2 +1,9 @@
 @CHARSET "UTF-8";
 @import '../../../resources/css/custom.css';
+
+/*Grid need a explicit width/height by default*/
+#grid {
+    width: 1110px;
+    height: 494px;
+    color: #000000;
+}
