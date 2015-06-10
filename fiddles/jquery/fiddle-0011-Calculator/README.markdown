@@ -28,7 +28,7 @@ Chrome extension (See [fiddles/chrome/fiddle-0002-Calculator](fiddles/chrome/fid
 ### Published Version Link
 
 [jsfidle](http://jsfiddle.net/bradyhouse/c7a6fqgv/)
-
+[codepen](http://codepen.io/bradyhouse/pen/JdNVrw)
 
 ### Tags
 

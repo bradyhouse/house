@@ -1,18 +1,40 @@
 (function (app, $, undefined) {
     "use strict";
-
+     app.util = function () {
+        return {
+            request: function (url, onSuccess, onError) {
+                $(document).load(url);
+                $(document).ajaxComplete(onSuccess);
+            }
+        }
+    };
+    app.model = function (config) {
+        var localFields = [];
+        return {
+            self: this,
+            fields: localFields
+        }
+    };
+    app.store = function (config) {
+        var localData = [];
+        return {
+            self: this,
+            data: localData,
+            load: function (model) {
+                localData.push(model);
+            }
+        }
+    };
+    app.view = app.view || {
+        render: function (hook) {
+            hook.append('hi there!');
+        },
+        init: function () {
+            var hook = $('#fiddleHook');
+            this.render(hook);
+        }
+    };
     $(document).ready(function () {
-        // fiddle
-        console.log('document.ready');
-        var hook = $('#fiddleHook');
-        hook.html("<div style='width: 100px; height: 100px; color: #ffffff !important;'><i> Hi There! </i></div>");
-        // boiler plate
-        addSomeBling(hook);
+        app.view.init();
     });
-
-    function addSomeBling(ctrl) {
-        ctrl.addClass('enter-stage-south');
-    }
-
-
 })(window.app = window.app || {}, jQuery)

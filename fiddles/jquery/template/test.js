@@ -8,12 +8,15 @@ function assert(message, expr) {
     return true;
 }
 function output(text, color) {
-    var p = document.createElement('p');
+    var testHook = $('#fiddleTestHook'),
+        p = document.createElement('div');
+    p.class = 'row';
     p.innerHTML = text;
     p.style.color = color;
-    document.body.appendChild(p);
+    testHook.append(p);
 }
 function testCase(name, tests) {
+
     assert.count = 0;
     var successful = 0,
         testCount = 0,
@@ -21,7 +24,7 @@ function testCase(name, tests) {
         hasTearDown = typeof tests.tearDown == "function";
 
     for (var test in tests) {
-        if (!/^test/.test(test)) {
+        if (!/^assert/.test(test)) {
             continue;
         }
         testCount++;

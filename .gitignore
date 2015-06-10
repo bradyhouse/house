@@ -31,6 +31,9 @@ fiddles/node/fiddle-0017-couchDbClient/
 fiddles/node/fiddle-0018-couchDbWebService/
 fiddles/node/fiddle-0019-webApp/
 fiddles/three/fiddle-0012-FresnelShader/
+fiddles/jquery/fiddle-0017-DateSerialization/
+fiddles/jquery/fiddle-0019-YuiTesting/
+fiddles/eslint/
 nohup.out
 lib
 fiddles/java/out

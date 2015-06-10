@@ -81,7 +81,7 @@ Ext.define('Fiddle.Records', {
                 rootProperty: 'data',
                 idProperty: '_id',
                 totalProperty: 'total'
-            }
+             }
         },
         remoteSort: false,
         sortInfo: {

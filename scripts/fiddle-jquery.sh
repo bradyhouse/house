@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
 # 05/07/2015 - See CHANGELOG @ 201505061810
+# 06/04/2015 - See CHANGELOG @ 201506040420
 # ---------------------------------------------------------------------------------------------------|
 if [ "$#" -ne 1 ]
 then
@@ -32,6 +33,7 @@ echo ${bornOnDate}
     $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
     $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/test.html";) || exit 2
     $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
+    $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/test.html";) || exit 2
     $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
     $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
 )

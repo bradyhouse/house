@@ -185,3 +185,17 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         6. [fiddles/dojo/fiddleParsingDates/index.html](fiddles/dojo/fiddleParsingDates/index.html)
         7. [fiddles/dojo/fiddleTabContainer/index.html](fiddles/dojo/fiddleTabContainer/index.html)
         8. [fiddles/dojo/template/index.html](fiddles/dojo/template/index.html)
+
+### 201506040420
+
+* Added [fiddles/jquery/fiddle-0018-BootstrapDatagrid](fiddles/jquery/fiddle-0018-BootstrapDatagrid)
+* Updated [fiddles/jquery/template/data.json](fiddles/jquery/template/data.json) ~ Overwrote with [fiddles/extjs/template/data.json](fiddles/extjs/template/data.json)
+* Updated [fiddles/jquery/template/index.html](fiddles/jquery/template/index.html) ~ Added footer link to [fiddles/jquery/template/test.html](fiddles/jquery/template/test.html)
+* Added [fiddles/extjs/fiddle-20150605-ExtendToolTip](fiddles/extjs/fiddle-20150605-ExtendToolTip)
+* Added [fiddles/extjs/fiddle-20150605-LockedColumns](fiddles/extjs/fiddle-20150605-LockedColumns)
+* Refactored [fiddles/jquery/template/test.html](fiddles/jquery/template/test.html)
+    * Reflected changes:
+        1. [scripts/fiddle-jquery.sh](scripts/fiddle-jquery.sh)
+* Added [fiddles/jquery/resources/js/yui-min.js](fiddles/jquery/resources/js/yui-min.js)
+    * Reflected changes:
+        1. Updated [fiddles/jquery/template/test.html](fiddles/jquery/template/test.html)
