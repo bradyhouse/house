@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # 05/31/2015 - Baseline ~ See CHANGELOG @ 201505310420
+# 06/20/2015 - See CHANGELOG @ 201506200420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -34,11 +35,27 @@ changeLogFile="../../CHANGELOG.markdown"
     # Verify the fiddle exists
     if [[ ! -d "${fiddlePath}" ]]; then exit 88; fi
 
+    sudo mv "${fiddlePath}" "${newFiddlePath}" || exit 90
+
+    cd bin
+
+    # Update readme.markdown
+    if [[ -f "${newReadmeFile}" ]]
+    then
+        ./house-substr.sh "${fiddleName}" "${newName}" "${newReadmeFile}" || exit 91
+    fi
+
+    # Update CHANGELOG.markdown
+    if [[ -f "${changeLogFile}" ]]
+    then
+        ./house-substr.sh "${fiddleName}" "${newName}" "${changeLogFile}" || exit 91
+    fi
+
+    cd ..
+
     # Verify type parameter
 	case ${fiddleType} in
         'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' )
-
-        sudo mv "${fiddlePath}" "${newFiddlePath}" || exit 90
 
         cd bin
 
@@ -46,18 +63,6 @@ changeLogFile="../../CHANGELOG.markdown"
         if [[ -f "${newIndexFile}" ]]
         then
             ./house-substr.sh "${fiddleName}" "${newName}" "${newIndexFile}" || exit 91
-        fi
-
-        # Update readme.markdown
-        if [[ -f "${newReadmeFile}" ]]
-        then
-            ./house-substr.sh "${fiddleName}" "${newName}" "${newReadmeFile}" || exit 91
-        fi
-
-        # Update CHANGELOG.markdown
-        if [[ -f "${changeLogFile}" ]]
-        then
-            ./house-substr.sh "${fiddleName}" "${newName}" "${changeLogFile}" || exit 91
         fi
 
         cd ..
@@ -69,14 +74,13 @@ changeLogFile="../../CHANGELOG.markdown"
             ;;
         esac
         ;;
-        *)
-            exit 86
     esac
 )
 #catch
 _rc=$?
 case ${_rc} in
-    0)  echo ""
+    0)  echo "Refactor process completed successfully."
+        echo "\"${fiddleName}\" is now \"${newName}\"."
         ;;
     86) echo ""
         echo "Nope ~ Incorrect number of arguments"

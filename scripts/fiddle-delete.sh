@@ -13,6 +13,7 @@
 # 04/15/2015 - See CHANGELOG @ 201504151810
 # 05/01/2015 - See CHANGELOG @ 201505011810
 # 05/08/2015 - See CHANGELOG @ 201505061810
+# 06/20/2015 - See CHANGELOG @ 201506200420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -29,13 +30,13 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' )
+        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' )
         if [[ -d "${fiddlePath}" ]]
         then
             sudo rm -r "${fiddlePath}" || exit 87
         fi
         case ${fiddleType} in
-            'extjs' | 'jquery' | 'three' | 'php' | 'dojo')
+            'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' )
                 ./fiddle-index.sh ${fiddleType} || exit 88
             ;;
         esac
@@ -47,7 +48,7 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 #catch
 _rc=$?
 case ${_rc} in
-    0)  echo ""
+    0)  echo "The \"${fiddleName}\" ${fiddleType} fiddle has been deleted successfully."
         ;;
     86) echo ""
         echo "Nope ~ Incorrect number of arguments"
@@ -58,6 +59,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
+        echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs\"\t\tExt JS Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"

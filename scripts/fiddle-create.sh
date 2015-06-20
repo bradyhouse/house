@@ -12,7 +12,8 @@
 # ---------------------------------------------------------------------------------------------------|
 # 03/19/2015 - Baseline Ver.
 # 04/15/2015 - See CHANGELOG @ 201504151810
-# 05/08/2015 - See CHANGELOG @
+# 05/08/2015 - See CHANGELOG @ 201505061810
+# 06/20/2015 - See CHANGELOG @ 201506200420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -51,6 +52,9 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ./fiddle-tween.sh $2 || exit 94
             ./fiddle-index.sh "tween" || exit 94
             ;;
+        'bash')
+            ./fiddle-bash.sh $2 || exit 95
+            ;;
         *)  exit 86
             ;;
     esac
@@ -69,6 +73,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
+        echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs\"\t\tExt JS Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
@@ -97,6 +102,8 @@ case ${_rc} in
     93) echo "fubar! node fiddle creation failed."
         ;;
     94) echo "fubar tween fiddle creation failed."
+        ;;
+    95) echo "fubar bash fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

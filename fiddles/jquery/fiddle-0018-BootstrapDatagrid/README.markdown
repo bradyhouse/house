@@ -21,17 +21,14 @@ Chicago, IL
 
 ### Description
 
-Fiddle exploring how render a JSON block containing 781 records using a Bootstrap style data grid.  This fiddle also further
-explores Christian Johansen's "xUnit" testing example discussed in chapter 1 of his book, <u>Test-Driven JavaScript Development</u>.
-It uses his assert and testcase functions to verify the properties of the rendered page.  The secondary test.html page is used to verify (assert)
-the properties of the rendered page.
+Fiddle exploring how to create a bootstrap styled data grid. Additionally, it explores one way around the CORS/AJAX issue.  In this case, an externally hosted script (js file) is used to inject 471 stringified (serialized) JSON objects into the DOM.  These are then parsed (deserialized) and consumed.
 
 
 ### Published Version Link
 
-N/A
+[js fiddle](http://jsfiddle.net/bradyhouse/zs91fj9L/)
 
 
 ### Tags
 
-jquery, xunit, johansen, assert, bootstrap, datagrid, table, table-bordered table-responsive table-hover, johansen
+jquery, bootstrap, yeti, datagrid, CORS, databinding, mvvm

@@ -27,9 +27,8 @@
 
     app.util = app.util || {
         ajax: {
-            request: function (url, fn) {
-                $(document).load(url);
-                $(document).ajaxComplete(fn);
+            request: function (fn) {
+                fn.apply(this, [window.houseData.json]);
             }
         }
     };
@@ -127,8 +126,8 @@
         },
         beforeRender: function (fn) {
             var me = this;
-            app.util.ajax.request("data.json", function (event, xhr, settings) {
-                var root = JSON.parse(xhr.responseText),
+            app.util.ajax.request(function (json) {
+                var root = JSON.parse(json),
                     i = 0,
                     config,
                     model;

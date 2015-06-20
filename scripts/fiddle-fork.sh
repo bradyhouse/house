@@ -16,6 +16,7 @@
 # 04/15/2015 - See CHANGELOG @ 201504151810
 # 05/01/2015 - See CHANGELOG @ 201505011810
 # 05/08/2015 - See CHANGELOG @ 201505061810
+# 06/20/2015 - See CHANGELOG @ 201506200420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -32,6 +33,7 @@ then
     echo ""
     echo -e "[t] - type. Valid types include: "
     echo ""
+    echo -e "\t\"bash\"\t\tBash Fiddle"
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
     echo -e "\t\"extjs\"\t\tExt JS Fiddle"
     echo -e "\t\"php\"\t\tPHP Fiddle"
@@ -56,56 +58,66 @@ forkedOnDate=$(date +"%m-%d-%y";)
 
 #try
 (
-     # Verify the new fiddle name contains the word "Fiddle" or "fiddle"
-     if [[ ${targetFiddle} != *"fiddle"* ]]
-     then
+    # Verify the new fiddle name contains the word "Fiddle" or "fiddle"
+    if [[ ${targetFiddle} != *"fiddle"* ]]
+    then
         if [[ ${targetFiddle} != *"Fiddle"* ]]
         then
             exit 87;
         fi
-     fi
+    fi
 
-     # Verify that the source fiddle directory exists
-     if [[ ! -d "../fiddles/${type}/${sourceFiddle}" ]]; then exit 86; fi
+    # Verify that the source fiddle directory exists
+    if [[ ! -d "../fiddles/${type}/${sourceFiddle}" ]]; then exit 86; fi
 
-     # If the new fiddle directory already exists, then delete it
-     if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then sudo rm -R "../fiddles/${type}/${targetFiddle}" || exit 88; fi
+    # If the new fiddle directory already exists, then delete it
+    if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then sudo rm -R "../fiddles/${type}/${targetFiddle}" || exit 88; fi
 
-     # Initialize the new fiddle directory based on the source fiddle directory
-     cp -rf "../fiddles/${type}/${sourceFiddle}" "../fiddles/${type}/${targetFiddle}" || exit 89
+    # Initialize the new fiddle directory based on the source fiddle directory
+    cp -rf "../fiddles/${type}/${sourceFiddle}" "../fiddles/${type}/${targetFiddle}" || exit 89
 
-     # Perform the obvious find/replace of the fiddle name
-     $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/app.js";) || exit 90
-     $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/index.html";) || exit 91
-     $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
+    case ${type} in
+        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
+            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/app.js";) || exit 90
+            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/index.html";) || exit 91
+            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
+            ;;
+        'bash')
+            if [[ -e "../fiddles/${type}/${targetFiddle}/README.markdown" ]]
+            then
+                sudo rm -r "../fiddles/${type}/${targetFiddle}/README.markdown" || exit 92
+            fi
+            $(cp -rf "../fiddles/${type}/template/README.markdown" "../fiddles/${type}/${targetFiddle}/README.markdown") || exit 92
+            $(cd bin; ./house-substr.sh '{{FiddleName}}' ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
+            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${forkedOnDate} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
+            ;;
+    esac
 
-     # Add "Forked From" section to the readme file
-     $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-     $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-     $(echo "### Forked From" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-     $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-     $(echo "[${sourceFiddle}](../${sourceFiddle})" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+    # Add "Forked From" section to the readme file
+    $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo "### Forked From" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo "[${sourceFiddle}](../${sourceFiddle})" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
 
-     # If the screenshot photo exists, delete the existing screenshot image
-     if [[ -e "../fiddles/${type}/${targetFiddle}/screenshot.png" ]]
-     then
-         $(sudo rm -R "../fiddles/${type}/${targetFiddle}/screenshot.png";) || exit 94
-     fi
+    # If the screenshot photo exists, delete the existing screenshot image
+    if [[ -e "../fiddles/${type}/${targetFiddle}/screenshot.png" ]]
+    then
+        $(sudo rm -R "../fiddles/${type}/${targetFiddle}/screenshot.png";) || exit 94
+    fi
 
-     # If not a chrome based fiddle, then re-index parent directory
-     if [[ "${type}" != "chrome" ]]
-     then
-         ./fiddle-index.sh ${type} || exit 95
-     fi
+    case ${type} in
+        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween')
+            ./fiddle-index.sh ${type} || exit 95;
+            ;;
+        'chrome')
+            sudo rm -r "../fiddles/${type}/${targetFiddle}/manifest.json"
+            $(cp -rf "../fiddles/${fiddleSubDir}/template/manifest.json" "../fiddles/${type}/${targetFiddle}/manifest.json") || exit 96
+            $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
+            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
+            ;;
+    esac
 
-     # If chrome fiddle, then replace the manifest file with an updated template version
-     if [[ ${type} == "chrome" ]]
-     then
-        sudo rm -r "../fiddles/${type}/${targetFiddle}/manifest.json"
-        $(cp -rf "../fiddles/${fiddleSubDir}/template/manifest.json" "../fiddles/${type}/${targetFiddle}/manifest.json") || exit 96
-        $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
-        $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
-     fi
 )
 #catch
 rc=$?

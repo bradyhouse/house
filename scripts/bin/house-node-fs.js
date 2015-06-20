@@ -18,9 +18,11 @@ http.createServer(function (request, response) {
             response.end();
             return;
         }
+
         if (fs.statSync(filename).isDirectory()) {
             filename += '/index.html';
         }
+
         fs.readFile(filename, "binary", function (err, file) {
             var headers = {},
                 contentType = contentTypesByExtension[path.extname(filename)];

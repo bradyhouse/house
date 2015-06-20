@@ -13,6 +13,7 @@
 # Baseline Ver.
 # 05/01/2015 - See CHANGELOG @ 201505011810
 # 05/08/2015 - See CHANGELOG @ 201505061810
+# 06/20/2015 - See CHANGELOG @ 201506200420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -71,7 +72,11 @@ echo ${bornOnDate}
             mv index.tmp $binDir
             cd $binDir
             while read line; do
-               echo "<a href=\"$line/$fiddleName\" target=\"_self\">$line</a></br>" >> $indexFile
+               ignore=$(echo $(cat "../../.gitignore" | grep "${line}" | wc -l;))
+               if [[ "${ignore}" -eq "0" ]]
+               then
+                  echo "<a href=\"$line/$fiddleName\" target=\"_self\">$line</a></br>" >> $indexFile;
+               fi
             done < index.tmp
             rm -r index.tmp
             cat tpl/indexfooter >> $indexFile

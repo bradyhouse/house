@@ -199,3 +199,16 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/jquery/resources/js/yui-min.js](fiddles/jquery/resources/js/yui-min.js)
     * Reflected changes:
         1. Updated [fiddles/jquery/template/test.html](fiddles/jquery/template/test.html)
+
+### 201506200420
+
+* Added [fiddles/bash](fiddles/bash)
+     * Reflected changes:
+            1. [scripts/fiddle-bash.sh](scripts/fiddle-bash.sh)
+            2. [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            3. [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            4. [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            5. [fiddles/bash/README.markdown](fiddles/bash/README.markdown)
+* Added [fiddles/bash/fiddle-0001-FunctionBasics](fiddles/bash/fiddle-0001-FunctionBasics)
+* Refactored [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+    * Note - It now ignores fiddles whose relative path has been added to the .gitignore file.

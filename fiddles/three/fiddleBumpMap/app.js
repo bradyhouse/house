@@ -1,3 +1,4 @@
+// Global Scope
 var renderer = null,
     scene = null,
     camera = null,
