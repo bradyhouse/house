@@ -14,6 +14,7 @@
 # 04/15/2015 - See CHANGELOG @ 201504151810
 # 05/08/2015 - See CHANGELOG @ 201505061810
 # 06/20/2015 - See CHANGELOG @ 201506200420
+# 06/21/2015 - See CHANGELOG @ 201506210420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -58,6 +59,8 @@ echo "${thisFile}" | awk '{print toupper($0)}'
         *)  exit 86
             ;;
     esac
+    # Update the changelog
+    $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.markdown") || exit 96
 )
 #catch
 _rc=$?
@@ -101,9 +104,11 @@ case ${_rc} in
         ;;
     93) echo "fubar! node fiddle creation failed."
         ;;
-    94) echo "fubar tween fiddle creation failed."
+    94) echo "fubar! tween fiddle creation failed."
         ;;
-    95) echo "fubar bash fiddle creation failed."
+    95) echo "fubar! bash fiddle creation failed."
+        ;;
+    96) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

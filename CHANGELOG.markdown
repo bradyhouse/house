@@ -204,11 +204,36 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * Added [fiddles/bash](fiddles/bash)
      * Reflected changes:
-            1. [scripts/fiddle-bash.sh](scripts/fiddle-bash.sh)
-            2. [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
-            3. [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
-            4. [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
-            5. [fiddles/bash/README.markdown](fiddles/bash/README.markdown)
+        1. [scripts/fiddle-bash.sh](scripts/fiddle-bash.sh)
+        2. [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        3. [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        4. [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        5. [fiddles/bash/README.markdown](fiddles/bash/README.markdown)
 * Added [fiddles/bash/fiddle-0001-FunctionBasics](fiddles/bash/fiddle-0001-FunctionBasics)
 * Refactored [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
     * Note - It now ignores fiddles whose relative path has been added to the .gitignore file.
+
+### 201506210420
+
+* Enhanced [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+    * Note - It now appends an entry to the CHANGELOG.markdown file.
+* Enhanced [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+    * Note - If the target directory doesn't exist, it now throws an error.
+* Added [fiddles/bash/fiddle-0002-FileTypeArchiver](fiddles/bash/fiddle-0002-FileTypeArchiver)
+* Added [fiddles/bash/fiddle-0003-SystemDate](fiddles/bash/fiddle-0003-SystemDate)
+* Added [scripts/fiddle-test.sh](scripts/fiddle-test.sh)
+    * Note - This allows for the running of the JsTestDriver library for a given fiddle.
+    * Reflected changes:
+        1. Added [fiddles/jquery/fiddle-0020-JsTestDriver](fiddles/jquery/fiddle-0020-JsTestDriver)
+        2. Added [scripts/bin/house-jstestdriver-start.sh](scripts/bin/house-jstestdriver-start.sh)
+        3. Added [scripts/bin/house-jstestdriver-stop.sh](scripts/bin/house-jstestdriver-stop.sh)
+        4. Added [scripts/bin/house-jstestdriver-test.sh](scripts/bin/house-jstestdriver-test.sh)
+        5. [scripts/fiddle.sh](scripts/fiddle.sh)
+        6. Added [fiddles/jquery/template/jsTestDriver.conf](fiddles/jquery/template/jsTestDriver.conf)
+        7. Deleted fiddles/jquery/template/test.js
+        8. Deleted fiddles/jquery/template/test.html
+* Added [fiddles/jquery/fiddle-0020-JsTestDriver](fiddles/jquery/fiddle-0020-JsTestDriver)
+* Deleted scripts/bin/house-java-version.sh
+
+
+
