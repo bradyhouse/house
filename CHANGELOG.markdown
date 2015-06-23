@@ -219,7 +219,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     * Note - It now appends an entry to the CHANGELOG.markdown file.
 * Enhanced [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
     * Note - If the target directory doesn't exist, it now throws an error.
-* Added [fiddles/bash/fiddle-0002-FileTypeArchiver](fiddles/bash/fiddle-0002-FileTypeArchiver)
 * Added [fiddles/bash/fiddle-0003-SystemDate](fiddles/bash/fiddle-0003-SystemDate)
 * Added [scripts/fiddle-test.sh](scripts/fiddle-test.sh)
     * Note - This allows for the running of the JsTestDriver library for a given fiddle.
