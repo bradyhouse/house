@@ -29,7 +29,7 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'jquery' )
+        'jquery' | 'three' )
             cd bin
             ./house-jstestdriver-test.sh "../${fiddlePath}"
             ;;

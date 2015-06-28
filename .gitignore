@@ -36,8 +36,11 @@ fiddles/eslint/
 fiddles/extjs/fiddle-20150613-GridLayoutPersistence/
 fiddles/extjs/fiddle-20150613-GridLifeCycle/
 fiddles/extjs/fiddle-20150613-GridPersistence/
-fiddles/bash/fiddle-0002-FileTypeArchiver/
-
+fiddles/three/fiddle-0001-FresnelShader/
+script.log
+stdout.txt
+stdout~.txt
+ext-all-debug.js
 nohup.out
 lib
 fiddles/java/out

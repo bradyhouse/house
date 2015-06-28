@@ -215,25 +215,27 @@
             }),
             scene = new THREE.Scene(),
             directionalLight = new THREE.DirectionalLight(0x00EE00, 1.0),
-            ambientLight = new THREE.AmbientLight(0x3a66a1),
-        //controls = new THREE.TrackballControls(camera),
+            ambientLight = new THREE.AmbientLight(0xFFFFFF),
+        controls = new THREE.TrackballControls(camera),
             renderLoop = function () {
                 renderer.render(scene, camera);
                 window.requestAnimationFrame(renderLoop);
-                //controls.update();
                 app.store.spheres.move();
+                controls.update();
+
             };
 
         renderer.setClearColor(0x000000, 1);
         renderer.setSize(WIDTH, HEIGHT);
-        app.store.spheres.inflate(19);
+        // Add 1 sphere
+        app.store.spheres.inflate(18);
         app.store.spheres.render(scene);
-        camera.position.z = 200;
-        camera.position.x = -60;
+        camera.position.z = -150;
+        camera.position.x = -150;
         camera.position.y = -100;
 
         directionalLight.position.set(100, 100, 300);
-        //controls.target.set(0, 0, 0);
+        controls.target.set(0, 0, 0);
         scene.add(directionalLight);
         scene.add(ambientLight);
         scene.add(camera);

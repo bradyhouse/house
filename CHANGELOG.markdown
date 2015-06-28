@@ -234,5 +234,21 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/jquery/fiddle-0020-JsTestDriver](fiddles/jquery/fiddle-0020-JsTestDriver)
 * Deleted scripts/bin/house-java-version.sh
 
+### 201506230420
 
+* Added [fiddles/extjs/fiddle-20150623-ButtonSetLocalX](fiddles/extjs/fiddle-20150623-ButtonSetLocalX)
+* Added [fiddles/extjs/fiddle-20150623-jsTestDriver](fiddles/extjs/fiddle-20150623-jsTestDriver)
+* Added [fiddles/bash/fiddle-0002-ListCommand](fiddles/bash/fiddle-0002-ListCommand)
+* Added [fiddles/three/fiddle-0000-TemplateTest](fiddles/three/fiddle-0000-TemplateTest)
+* Added [fiddles/three/fiddle-0002-WebGlDetection](fiddles/three/fiddle-0002-WebGlDetection)
+* Added [fiddles/bash/fiddle-0004-CurlDownload](fiddles/bash/fiddle-0004-CurlDownload)
+* Added [fiddles/bash/fiddle-0006-SayCommand](fiddles/bash/fiddle-0006-SayCommand)
+* Added [fiddles/bash/fiddle-0007-InstallUbuntuZfs](fiddles/bash/fiddle-0007-InstallUbuntuZfs)
+* Added [fiddles/bash/fiddle-0008-ZfsFileVolume](fiddles/bash/fiddle-0008-ZfsFileVolume)
+* Added [fiddles/bash/fiddle-0009-TrCommand](fiddles/bash/fiddle-0009-TrCommand)
+* Added [fiddles/bash/fiddle-0010-SortCommand](fiddles/bash/fiddle-0010-SortCommand)
+* Added [fiddles/bash/fiddle-0011-WcCommand](fiddles/bash/fiddle-0011-WcCommand)
+* Added [fiddles/bash/fiddle-0012-PrCommand](fiddles/bash/fiddle-0012-PrCommand)
+* Added [fiddles/bash/fiddle-0013-NlCommand](fiddles/bash/fiddle-0013-NlCommand)
+* Added [fiddles/jquery/fiddle-0021-CanvasToDataURL](fiddles/jquery/fiddle-0021-CanvasToDataURL)
 
