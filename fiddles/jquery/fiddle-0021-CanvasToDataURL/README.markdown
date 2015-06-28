@@ -30,7 +30,7 @@ Fiddle exploring how to use a canvas control to --
 
 ### Published Version Link
 
-[js fiddle](http://jsfiddle.net/bradyhouse/8g1q3g9w/)
+[js fiddle](http://jsfiddle.net/bradyhouse/yvstp104/)
 
 
 ### Tags
