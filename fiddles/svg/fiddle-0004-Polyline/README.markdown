@@ -1,4 +1,4 @@
-fiddle-0001-Ellipses
+fiddle-0004-Polyline
 ======
 
 ![Screenshot](screenshot.png)
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Fiddle illustrating how to create a simple ellipse using SVG markup.
+Fiddle illustrating how to create a simple polyline using SVG markup.
 
 
 ### Published Version Link
@@ -31,9 +31,14 @@ N/A
 
 ### Tags
 
-svg, ellipse
+svg, polyline
 
 
 ### Forked From
 
 [fiddle-0002-Rectangle](../fiddle-0002-Rectangle)
+
+
+### Forked From
+
+[fiddle-0003-Ellipses](../fiddle-0003-Ellipses)
