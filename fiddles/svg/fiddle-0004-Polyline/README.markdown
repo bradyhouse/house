@@ -6,7 +6,7 @@ fiddle-0004-Polyline
 
 ### Title
 
-Simple Ellipses
+Simple Polyline
 
 
 ### Creation Date
