@@ -17,8 +17,8 @@
 # 05/01/2015 - See CHANGELOG @ 201505011810
 # 05/08/2015 - See CHANGELOG @ 201505061810
 # 06/20/2015 - See CHANGELOG @ 201506200420
+# 07/05/2015 - See CHANGELOG @ 201506290420
 # ---------------------------------------------------------------------------------------------------|
-clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 
@@ -42,6 +42,7 @@ then
     echo -e "\t\"chrome\"\t\tChrome Extension Fiddle"
     echo -e "\t\"node\"\t\tNode.js Fiddle"
     echo -e "\t\"tween\"\tTween.js Fiddle"
+    echo -e "\t\"svg\"\t\tScalar Graphic Vector Fiddle"
     echo ""
     echo -e "[a] - source fiddle directory name."
     echo ""
@@ -77,7 +78,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${type}/${sourceFiddle}" "../fiddles/${type}/${targetFiddle}" || exit 89
 
     case ${type} in
-        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
+        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome'|'svg')
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/app.js";) || exit 90
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/index.html";) || exit 91
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92

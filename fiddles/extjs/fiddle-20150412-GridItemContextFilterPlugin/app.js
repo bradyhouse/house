@@ -1,12 +1,21 @@
+var meta = {
+    fiddleHeader: 'ExtJS 5 - Grid Type-Ahead, Filter Plugin',
+    fiddleSubHeader: 'Fiddle exploring how to create a grid filtering plug-in that provides type-ahead suggestions. <br />' +
+    '<br />' +
+    '<b>To test:</b><br/>' +
+    '<ul><li>In default Mode, simply right-click on any cell in the grid</li>' +
+    '<li>In Pre-populated mode, select a cell and then right-click</li></ul>',
+    dataUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/data.json'
+};
 Ext.define('Fiddle.CustomMenuTitle', {
     extend: 'Ext.panel.Title',
     xtype: 'custom-menu-title',
     border: null,
     style: {
         background: '#638BB5',
-        color: '#FFFFFF',
-        padding: '5px'
+        color: '#FFFFFF'
     },
+    padding: '5px',
     text: '<b>Filter</b>',
     layout: {
         align: 'left'
@@ -19,7 +28,7 @@ Ext.define('Fiddle.Records', {
         autoDestroy: true,
         proxy: {
             type: 'ajax',
-            url: 'data.json',
+            url: meta.dataUrl,
             reader: {
                 type: 'json',
                 rootProperty: 'data',
@@ -199,7 +208,7 @@ Ext.define('Fiddle.CustomMenuController', {
             recordFieldValue = record.get(recordField);
         combo.setRawValue(recordFieldValue);
     },
-    onSearchComboRender: function(combo) {
+    onSearchComboRender: function (combo) {
         var me = this,
             menu = me.getView(),
             model = menu.viewModel,
@@ -465,105 +474,89 @@ Ext.define('Fiddle.Plugin', {
 });
 
 Ext.onReady(function () {
-    var fiddleHeader = 'Extreme Fiddle ~ Grid Type-Ahead Filter Plugin',
-        fiddleSubHeader = 'Fiddle exploring how to create a grid filtering plug-in that provides type-ahead suggestions. <br />' +
-            '<br />'+
-            '<b>To test:</b><br/>'+
-            '<ul><li>In default Mode, simply right-click on any cell in the grid</li>' +
-            '<li>In Pre-populated mode, select a cell and then right-click</li></ul>',
-        filters = {
-            ftype: 'filters',
-            encode: false,
-            local: true,
-            filters: [
-                {
-                    type: 'numeric',
-                    dataIndex: 'index'
-                },
-                {
-                    type: 'string',
-                    dataIndex: 'name'
-                },
-                {
-                    type: 'numeric',
-                    dataIndex: 'age'
-                },
-                {
-                    type: 'numeric',
-                    dataIndex: 'checkingBalance'
-                },
-                {
-                    type: 'numeric',
-                    dataIndex: 'savingsBalance'
-                },
-                {
-                    type: 'date',
-                    dataIndex: 'registered'
-                },
-                {
-                    type: 'string',
-                    dataIndex: 'address'
-                }
-            ]
-        },
-        pluginFactory = function () {
+    var pluginFactory = function () {
             return ['gridfilters', 'bufferedrenderer', {
                 ptype: 'fiddleplugin'
             }]
         },
-        columnFactory = function (finish, start) {
+        columnFactory = function () {
             var columns = [
                 {
                     dataIndex: 'index',
                     text: 'id',
+                    locked: true,
                     filter: {
                         type: 'numeric'
                     },
+                    width: 25,
+                    hidden: true
                 },
                 {
                     dataIndex: 'name',
                     text: 'Name',
+                    locked: true,
                     id: '_id',
                     filter: {
                         type: 'numeric'
                     },
-                    flex: 1
+                    width: 150
                 },
                 {
-                    dataIndex: 'age',
-                    text: 'Age',
-                    filter: {
-                        type: 'numeric'
-                    }
-                },
-                {
-                    dataIndex: 'checkingBalance',
-                    text: 'Checking',
-                    filter: {}
-                },
-                {
-                    dataIndex: 'savingsBalance',
-                    text: 'Savings',
-                    filter: {}
-                },
-                {
-                    dataIndex: 'registered',
-                    text: 'MemberSince',
-                    renderer: Ext.util.Format.dateRenderer('Y-m-d'),
-                    filter: {
-                        type: 'date'
-                    }
-                },
-                {
-                    dataIndex: 'address',
-                    text: 'Address',
-                    filter: {
-                        type: 'string'
+                    text: 'Banking',
+                    defaults: {
+                        hideable: false,
+                        menuDisabled: true,
+                        draggable: false,
+                        align: 'right'
+
                     },
-                    flex: 1
+                    columns: [{
+                        dataIndex: 'checkingBalance',
+                        text: 'Checking',
+                        filter: {}
+                    },
+                        {
+                            dataIndex: 'savingsBalance',
+                            text: 'Savings',
+                            filter: {}
+                        }]
+                },
+                {
+                    text: 'Profile',
+                    defaults: {
+                        hideable: false,
+                        menuDisabled: true,
+                        draggable: false
+                    },
+                    columns: [{
+                        dataIndex: 'age',
+                        text: 'Age',
+                        filter: {
+                            type: 'numeric'
+                        },
+                        width: 50,
+                        align: 'right'
+                    }, {
+                        dataIndex: 'registered',
+                        text: 'MemberSince',
+                        renderer: Ext.util.Format.dateRenderer('Y-m-d'),
+                        filter: {
+                            type: 'date'
+                        },
+                        width: 75
+                    },
+                        {
+                            dataIndex: 'address',
+                            text: 'Address',
+                            filter: {
+                                type: 'string'
+                            },
+                            width: 200
+                        }
+                    ]
                 }
             ];
-            return columns.slice(start || 0, finish);
+            return columns;
         },
         grid = Ext.create('Ext.grid.Panel', {
             border: false,
@@ -575,20 +568,27 @@ Ext.onReady(function () {
             lastColumnIndex: 1,
             lastCellValue: '',
             lastColumnName: 'name',
-            columns: columnFactory(7),
+            columns: columnFactory(),
             loadMask: true,
             plugins: pluginFactory()
         }),
         win = Ext.create('Ext.Window', {
-            title: fiddleHeader,
+            id: 'fiddleWin',
+            title: meta.fiddleHeader,
             closable: false,
             height: 500,
-            width: 700,
-            layout: 'fit',
+            maximizable: true,
+            width: 500,
+            layout: {
+                type: 'fit',
+                align: 'stretch'
+            },
+
             items: grid
+
         }),
         positionX = 25,
-        positionY = 192;
+        positionY = 197;
 
     win.showAt([positionX, positionY]);
 
@@ -598,36 +598,39 @@ Ext.onReady(function () {
         extend: 'Ext.app.ViewModel',
         alias: 'viewmodel.box',
         data: {
-            header: fiddleHeader,
-            subheader: fiddleSubHeader
+            header: meta.fiddleHeader,
+            subheader: meta.fiddleSubHeader
         }
     });
     Ext.define('App.Box', {
         extend: "Ext.container.Container",
-        border: true,
-        padding: 25,
-        viewModel: {
-            type: 'box'
-        },
-        items: [
-            {
-                xtype: 'panel',
-                bind: {
-                    title: '{header}'
-                },
-                items: [
-                    {
-                        xtype: 'panel',
-                        padding: 10,
-                        border: false,
-                        bind: {
-                            html: '{subheader}'
+        config: {
+            id: 'appBox',
+            border: true,
+            padding: 25,
+            viewModel: {
+                type: 'box'
+            },
+            items: [
+                {
+                    xtype: 'panel',
+                    bind: {
+                        title: '{header}'
+                    },
+                    items: [
+                        {
+                            xtype: 'panel',
+                            padding: 10,
+                            border: false,
+                            bind: {
+                                html: '{subheader}'
+                            }
                         }
-                    }
-                ],
-                region: 'north'
-            }
-        ]
+                    ],
+                    region: 'north'
+                }
+            ]
+        }
     });
     Ext.create('App.Box', {
         renderTo: Ext.getBody()

@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Houseknecht.com | Recursive Polygons</title>
+    <style type="text/css">
+        html, body, #map_canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+	}
+    </style>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">//<![CDATA[
+/**
+* This program is based on Context Free program 
+* "Foggy Tree by Chris Coyne:
+* http://www.contextfreeart.org/gallery/view.php?id=4 
+* It was modified to work with the Google Map API v3.
+*
+*/
+
+// Google MAP Object assigned by the initialize function
+var map;
+
+// Google MAP centerpoint Object assigned by the initialize 
+// function and used to set the MAP Control center
+var point;
+
+// Google MAP centerpoint Object assigned by the 
+// seed1 and seed2 functions to set the geocode 
+// coordinates where the next polygon will be created
+var nextpoint;
+
+// float value used by the intialize function to
+// set the latitude of the centerpoint object.
+var centerX = -53.014783;
+
+// float value used by the intialize function to
+// set the longitude of the centerpoint object.
+var centerY =  -122.343750;
+
+// float value used by the seed1 and seed2 functions
+// to set the geocode latitude value of the somepoint 
+// object
+var cx = -87.997030; 
+
+// float value used by the seed1 and seed2 functions
+// to set the geocode longitude value of the somepoint 
+// object
+var cy =-122.695313;
+
+// integer value used by the initialize 
+// function to set the zoom option of 
+// the map object
+var mapzoomfactor = 1;
+
+// integer value used to by the ellipse function
+// to define how many point will be created 
+// to define the ellipitical Google Map Polygon
+// object. NOTE - Its set to twenty due to performance
+// constraints. 
+var dotPoints = 20;
+
+// integer value used by the seed1 and seed2 functions
+// corresponding to radius of the elliptical polygon.  The
+// value must be larger then 1.
+var dotSize = 3;
+
+// float values used by intialize function
+// to store the amounts returned by the radians functions
+// for the degreeOffsetA/degreeOffsetB values. 
+// This value is then used by the seed1 and seed2 
+// to vary the location of a dot (polygon).
+var angleOffsetA = 0.0;
+var angleOffsetB = 0.0;
+
+// float values defining the latitude/longitude (A/B) degree 
+// offset between dots (or polygons)
+var degreesOffsetA=1.5;
+var degreesOffsetB=50.0;
+
+// float values used by the seed1 and seed2 functions
+// to assign the latitude/longitude of the somepoint object
+var newx = 0.0;
+var newy = 0.0;
+
+// float value used by the seed1 and seed2 functions
+// to store a random number
+var r = 0.0;
+
+// constant used to capture the result returned by the
+// setTimeOut function.
+var rc;
+
+// float value used by the initialize function
+// to create the trunk of the tree
+var angleoffset = 360.0;
+
+// color of the dots created by the ellipse function
+var fillcolor='#000000';
+
+// bit used by the draw function to determine
+// whether another sequence of dots should be drawn.
+// the value is set by the pause function which
+// is wired to the onclick event of the map object
+var canplot=1;
+
+function initialize()
+{
+     // Routine used to configure the 
+     // initial state of the map
+     try
+     {
+          point = new google.maps.LatLng(centerX, centerY);
+          var myMapOptions = {
+               zoom: mapzoomfactor,
+               center: point,
+               mapTypeControl: false,
+               streetViewControl: false,
+               panControl: false,     
+               zoomControl: false,     
+               scaleControl: false, 
+               draggable: false,
+               mapTypeId: google.maps.MapTypeId.NONE
+          };
+          map = new google.maps.Map(document.getElementById('map_canvas'),myMapOptions);
+          // Disable dragging by default
+          map.setOptions( {draggable:false} ); 
+          // Add a Click event handler that will enable the user to
+          // stop the plotter from firing
+          google.maps.event.addListener(map, 'click', function() {     pause();   });
+
+          angleOffsetA = radians(degreesOffsetA); // Convert 1.5 degrees to radians
+          angleOffsetB = radians(degreesOffsetB);  // Convert 50 degrees to radians
+          seed1(dotSize, radians(angleoffset), cx, cy);
+          rc=setTimeout("draw()",1000);
+     } // end try
+     catch(err)
+     {
+          alert("initialize: " + err.message);
+     } // end catch
+} // end initialize
+
+function radians(degrees)
+{
+     // function used to convert degrees
+     // to radians
+     // NOTE - 1 radians = 57.2957795 degrees
+     try
+     {
+           return (degrees / 57.2957795);
+     } // end try
+     catch(err)
+     {
+           alert("radians: " + err.message);
+     } // end catch
+} // end radians
+
+function draw()
+{
+     // Recursive routine that fires at one second
+     // intervals.
+     try
+     {
+          // Verify the CanPlot flag has not been
+          // set to false by the user click on the
+          // Map view control.
+          if(canplot==1)
+          {
+          seed1(dotSize, radians(angleoffset), cx, cy);
+          // Recurse (restart) after a second
+          rc=setTimeout("draw()",1000);
+          } // end if
+     } // end try
+     catch(err)
+     {
+          alert("draw: " + err.message);
+     } // end catch
+} // end draw
+
+function seed1(dotSize, angle, x, y)
+{
+     // seed1 function adapted from the Foggy Tree routine.
+     try
+     {
+          if (dotSize > 1.0) 
+          {
+               // Create a random numbers between 0 and 1
+               r = Math.random(); 
+               // 98% chance this will happen
+               if (r > 0.02) 
+               {  
+                    nextpoint=new google.maps.LatLng(x, y);
+                    ellipse(nextpoint, dotSize, dotPoints,fillcolor);
+                    newx = x + Math.cos(angle) * dotSize;
+                    newy = y + Math.sin(angle) * dotSize;
+                    seed1(dotSize * 0.99, angle - angleOffsetA, newx, newy);   
+               } // end if
+               // 02% chance this will happen
+               else 
+               {  
+                    nextpoint=new google.maps.LatLng(x, y);
+                    ellipse(nextpoint, dotSize, dotPoints,fillcolor);
+                    newx = x + Math.cos(angle);
+                    newy = y + Math.sin(angle);
+                    seed2(dotSize * 0.99, angle + angleOffsetA, newx, newy);
+                    seed1(dotSize * 0.60, angle + angleOffsetB, newx, newy);
+                    seed2(dotSize * 0.50, angle - angleOffsetB, newx, newy);
+               } // end else
+          } // end if
+     } // end try
+     catch(err)
+     {
+     alert("seed1: " + err.message);
+     } // end catch
+} // end seed1
+
+function seed2(dotSize, angle, x, y) 
+{
+     // seed2 function adapted from the Foggy Tree routine.
+     try
+     {
+          if (dotSize > 1.0) 
+          {
+               // Create a random numbers between 0 and 1
+               r = Math.random();
+               // 95% chance this will happen
+               if (r > 0.05) 
+               {
+                    nextpoint=new google.maps.LatLng(x, y);
+                    ellipse(nextpoint, dotSize, dotPoints,fillcolor);
+                    newx = x + Math.cos(angle) * dotSize;
+                    newy = y + Math.sin(angle) * dotSize;
+                    seed2(dotSize * 0.99, angle + angleOffsetA, newx, newy);
+               } // end if
+               // 05% chance this will happen
+               else 
+               {
+                    nextpoint=new google.maps.LatLng(x, y);
+                    ellipse(nextpoint, dotSize, dotPoints,fillcolor);
+                    newx = x + Math.cos(angle);
+                    newy = y + Math.sin(angle);
+                    seed1(dotSize * 0.99, angle + angleOffsetA, newx, newy);  
+                    seed2(dotSize * 0.60, angle + angleOffsetB, newx, newy);
+                    seed1(dotSize * 0.50, angle - angleOffsetB, newx, newy);
+               } // end else
+          } // end if
+     } // end try
+     catch(err)
+     {
+     alert("seed2: " + err.message);
+     } // end catch
+} // end seed2
+
+function ellipse(center, radius, numPoints, fill)
+{
+     // function used to add a polygon consisting
+     // of a given number of points (numPoints) with
+     // a given radius, at a given location (center) 
+     // and filled with a given color (fill).        
+     try
+     {
+          var poly = [] ; 
+          var lat = center.lat() ;
+          var lng = center.lng() ;
+          var d2r = Math.PI/180 ;                // degrees to radians
+          var r2d = 180/Math.PI ;                // radians to degrees
+          var Clat = (radius/3963) * r2d ;      //  using 3963 as earth's radius
+          var Clng = Clat/Math.cos(lat*d2r);
+          //Add each point in the circle
+          for (var i = 0 ; i < numPoints ; i++)
+          {
+                var theta = Math.PI * (i / (numPoints / 2)) ;
+                Cx = lng + (Clng * Math.cos(theta)) ;
+                Cy = lat + (Clat * Math.sin(theta)) ;
+                poly.push(new google.maps.LatLng(Cy,Cx)) ;
+          }
+          //Add the first point to complete the circle
+          poly.push(poly[0]) ;
+          //Create a line with teh points from poly, red, 3 pixels wide, 80% opaque
+          var polygon = new google.maps.Polygon({
+                path: poly,
+                strokeColor: fill,
+                strokeOpacity: 0.8,
+                strokeWeight: 3,
+               fillColor: fill,
+                fillOpacity: 0.35
+          });
+          polygon.setMap(map);
+} // end try
+catch(err)
+{
+     alert("ellipse: " + err.message);
+} // end catch
+} // end ellipse
+
+function pause()
+{
+   // Event Handler wired to the
+   // map view on click event. This
+   // method allow the end user a 
+   // way to stop the plot (or draw)
+   // function from re-firing. This meant
+   // to enable the user to gain control
+   // of the browser should they need to leave
+   // the site.
+   try
+   {
+          // Evaluate the canplot
+          // switch and set it
+          // equal to the opposite
+          switch(canplot)
+          {
+           case 0: // case paused then start
+            canplot=1;
+            map.setOptions( {draggable:false,
+                 panControl: false,     
+                 zoomControl: false,     
+                 scaleControl: false, 
+                 draggable: false,
+                 mapTypeControl: false
+                 } ); 
+            draw();
+            break;
+           case 1: // case plotting then pause
+            canplot=0;
+            map.setOptions( {draggable:true,
+                 panControl: true,     
+                 zoomControl: true,     
+                 scaleControl: true, 
+                 draggable: true,
+                 mapTypeControl: true,
+                 } ); 
+            
+            break;
+     } // end switch
+   } // end try
+   catch(err)
+   {
+     alert("pause: " + err.message);
+   } // end catch
+} // end pause
+
+// Wire the intialize function to the page load event
+google.maps.event.addDomListener(window, 'load', initialize);
+    
+    //]]>
+    </script>
+</head>
+<body>
+    <div id="map_canvas" style="position: relative; background-color: rgb(229, 227, 223);">
+    </div>
+</body>
+</html>

@@ -7,15 +7,17 @@
 #  Create date             : 03/19/2015______________________________________________________________|
 #  Description             : UTILITY USED TO START A NODE FILE SERVER FOR A SPECIFIC FIDDLE SUB-_____|
 #                            DIRECTORY_______________________________________________________________|
-#  Command line Arguments  : $1 = FIDDLE TYPE ~ "DOJO", "EXTJS", "JQUERY", "PHP", "THREE", OR "ALL"__|
+#  Command line Arguments  : $1 = FIDDLE TYPE ~ "DOJO", "EXTJS", "JQUERY", "PHP", "THREE",___________|
+#                            "TWEEN", "SVG", OR "ALL"________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
-# 04/09/2015 - See CHANGELOG.MARKDOWN ~ 201504091810
-# 05/08/2015 - See CHANGELOG.MARKDOWN ~ 201505061810
+# 04/09/2015 - See CHANGELOG.MARKDOWN @ 201504091810
+# 05/08/2015 - See CHANGELOG.MARKDOWN @ 201505061810
+# 07/05/2015 - See CHANGELOG.MARKDOWN @ 201506290420
+
 # ---------------------------------------------------------------------------------------------------|
-clear
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
@@ -52,6 +54,9 @@ _port=8889
         'tween')
             ./house-node-fs-start.sh "../../fiddles/tween" "${_port}" || exit 88
             ;;
+         'svg')
+            ./house-node-fs-start.sh "../../fiddles/svg" "${_port}" || exit 88
+            ;;
         *)  exit 86
             ;;
     esac
@@ -64,7 +69,7 @@ case ${rc} in
         'all')
             echo "A Node.js file server has been started for all fiddles."
             ;;
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo')
+        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg')
             echo "A Node.js file server has been started for the \"${_type}\" fiddle collection."
             ;;
         esac
@@ -84,6 +89,7 @@ case ${rc} in
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
         echo -e "\t\"tween\"\t\ttween.js Fiddle"
+        echo -e "\t\"svg\"\t\tScalar Graphic Vector Fiddle"
         echo ""
         echo "[[p]] - OPTIONAL port number. If not specified then port 8889 will be used."
         echo "        Note - If you specify a different port, then to stop the resulting process"

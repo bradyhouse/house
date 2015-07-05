@@ -7,7 +7,8 @@ var meta = {
     '<li>To enter Pre-populated mode, select a cell and then right-click</li>' +
     '<li>To filter the grid, click the [apply] button.  This will sort the grid in ASC order and save filter criteria</li>' +
     '<li>To remove the filter and clear the criteria click [clear]</li>' +
-    '<li>To sort the grid and criteria suggestion list, click the [ASC] or [DESC] buttons</li></ul>'
+    '<li>To sort the grid and criteria suggestion list, click the [ASC] or [DESC] buttons</li></ul>',
+    recordsUrl: 'data.json'
 };
 
 Ext.define('Fiddle.Records', {
@@ -16,7 +17,7 @@ Ext.define('Fiddle.Records', {
         autoDestroy: true,
         proxy: {
             type: 'ajax',
-            url: 'data.json',
+            url: meta.recordsUrl,
             reader: {
                 type: 'json',
                 rootProperty: 'data',
@@ -62,6 +63,9 @@ Ext.define('Fiddle.CustomMenuTitle', {
         text: '<b>Filter</b>',
         layout: {
             align: 'left'
+        },
+        style: {
+            padding: '5px'
         },
         flex: 1
     }
@@ -523,51 +527,75 @@ Ext.define('Fiddle.Grid', {
         {
             dataIndex: 'index',
             text: 'id',
+            locked: true,
             filter: {
                 type: 'numeric'
-            }
+            },
+            width: 30
         },
         {
             dataIndex: 'name',
             text: 'Name',
+            locked: true,
             id: '_id',
             filter: {
                 type: 'numeric'
             },
-            flex: 1
+            width: 150
         },
         {
-            dataIndex: 'age',
-            text: 'Age',
-            filter: {
-                type: 'numeric'
-            }
-        },
-        {
-            dataIndex: 'checkingBalance',
-            text: 'Checking',
-            filter: {"type": 'numeric'}
-        },
-        {
-            dataIndex: 'savingsBalance',
-            text: 'Savings',
-            filter: {"type": 'numeric'}
-        },
-        {
-            dataIndex: 'registered',
-            text: 'MemberSince',
-            renderer: Ext.util.Format.dateRenderer('Y-m-d'),
-            filter: {
-                type: 'date'
-            }
-        },
-        {
-            dataIndex: 'address',
-            text: 'Address',
-            filter: {
-                type: 'string'
+            text: 'Banking',
+            defaults: {
+                hideable: false,
+                menuDisabled: true,
+                draggable: false,
+                align: 'right'
+
             },
-            flex: 1
+            columns: [{
+                dataIndex: 'checkingBalance',
+                text: 'Checking',
+                filter: {}
+            },
+                {
+                    dataIndex: 'savingsBalance',
+                    text: 'Savings',
+                    filter: {}
+                }]
+        },
+        {
+            text: 'Profile',
+            defaults: {
+                hideable: false,
+                menuDisabled: true,
+                draggable: false
+            },
+            columns: [{
+                dataIndex: 'age',
+                text: 'Age',
+                filter: {
+                    type: 'numeric'
+                },
+                width: 50,
+                align: 'right'
+            }, {
+                dataIndex: 'registered',
+                text: 'MemberSince',
+                renderer: Ext.util.Format.dateRenderer('Y-m-d'),
+                filter: {
+                    type: 'date'
+                },
+                width: 75
+            },
+                {
+                    dataIndex: 'address',
+                    text: 'Address',
+                    filter: {
+                        type: 'string'
+                    },
+                    width: 200
+                }
+            ]
         }
     ]
 });
@@ -614,6 +642,7 @@ Ext.onReady(function () {
             closable: false,
             height: 300,
             width: 500,
+            maximizable: true,
             layout: 'fit',
             items: grid
         });

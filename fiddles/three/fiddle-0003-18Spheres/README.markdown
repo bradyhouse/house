@@ -1,4 +1,4 @@
-fiddle18Spheres
+fiddle-0003-18Spheres
 ======
 
 ![Screenshot](screenshot.png)
@@ -33,11 +33,11 @@ NOTE - the maximum value of "n" turned out to be 18. After 18 WebGL stops workin
 ### Published Version Link
 
 [js fiddle](http://jsfiddle.net/bradyhouse/vxjk7kg5/)
-
+[code pen](http://codepen.io/bradyhouse/pen/VLXwEZ)
 
 ### Tags
 
-three.js, r61, SphereGeometry, CubeGeometry, OrbitAndPanControls, TrackballControls
+three.js, r61, SphereGeometry, OrbitAndPanControls, TrackballControls
 
 
 ### Forked From

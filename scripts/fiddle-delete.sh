@@ -14,8 +14,8 @@
 # 05/01/2015 - See CHANGELOG @ 201505011810
 # 05/08/2015 - See CHANGELOG @ 201505061810
 # 06/20/2015 - See CHANGELOG @ 201506200420
+# 07/05/2015 - See CHANGELOG @ 201506290420
 # ---------------------------------------------------------------------------------------------------|
-clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 fiddleType=$1
@@ -32,13 +32,13 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' )
+        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
         if [[ -d "${fiddlePath}" ]]
         then
             sudo rm -r "${fiddlePath}" || exit 87
         fi
         case ${fiddleType} in
-            'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' )
+            'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 88
             ;;
         esac
@@ -70,6 +70,7 @@ case ${_rc} in
         echo -e "\t\"chrome\"\tChrome Extension Fiddle"
         echo -e "\t\"node\"\t\tnode.js Fiddle"
         echo -e "\t\"tween\"\t\ttween.js Fiddle"
+        echo -e "\t\"svg\"\t\tScalar Vector Graphics Fiddle"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""

@@ -1,4 +1,4 @@
-package io.bradyhouse.fiddles.java8;
+iqqpackage io.bradyhouse.fiddles.java8;
 
 import java.util.HashMap;
 import java.util.Map;

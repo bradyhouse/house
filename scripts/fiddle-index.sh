@@ -14,8 +14,8 @@
 # 05/01/2015 - See CHANGELOG @ 201505011810
 # 05/08/2015 - See CHANGELOG @ 201505061810
 # 06/20/2015 - See CHANGELOG @ 201506200420
+# 07/05/2015 - See CHANGELOG @ 201506290420
 # ---------------------------------------------------------------------------------------------------|
-clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 
@@ -38,8 +38,9 @@ then
     echo -e "\t\"chrome\"\tChrome Extension Fiddle"
     echo -e "\t\"node\"\t\tnode.js Fiddle"
     echo -e "\t\"tween\"\t\ttween.js Fiddle"
-      echo ""
-      exit
+    echo -e "\t\"svg\"\t\tScalar Graphic Vector Fiddle"
+    echo ""
+    exit
 fi
 
 location=$(pwd;)
@@ -56,7 +57,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween')
+        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;

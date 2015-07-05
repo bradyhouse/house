@@ -15,8 +15,8 @@
 # 05/08/2015 - See CHANGELOG @ 201505061810
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 06/21/2015 - See CHANGELOG @ 201506210420
+# 07/05/2015 - See CHANGELOG @ 201506290420
 # ---------------------------------------------------------------------------------------------------|
-clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 #try
@@ -56,6 +56,10 @@ echo "${thisFile}" | awk '{print toupper($0)}'
         'bash')
             ./fiddle-bash.sh $2 || exit 95
             ;;
+        'svg')
+            ./fiddle-svg.sh $2 || exit 97
+            ./fiddle-index.sh "svg" || exit 97
+            ;;
         *)  exit 86
             ;;
     esac
@@ -85,6 +89,7 @@ case ${_rc} in
         echo -e "\t\"chrome\"\tChrome Extension Fiddle"
         echo -e "\t\"node\"\t\tNode Fiddle"
         echo -e "\t\"tween\"\t\ttween.js Fiddle"
+        echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""
@@ -109,6 +114,8 @@ case ${_rc} in
     95) echo "fubar! bash fiddle creation failed."
         ;;
     96) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
+        ;;
+    97) echo "fubar! svg fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

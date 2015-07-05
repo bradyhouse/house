@@ -28,6 +28,9 @@ div.custom-menu-title {
     background-color: #2A3F5D !important;
     padding: 5px;
 }
+div.x-tool-default.x-tool-after-title {
+    padding: 5px;
+}
 div.custom-menu-title div.x-title-text {
     color: #ffffff;
 }

@@ -61,7 +61,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/extjs/fiddle-20150408-GridDynamicFieldFilter](fiddles/extjs/fiddle-20150408-GridDynamicFieldFilter/README.markdown)
 * Added [fiddles/extjs/fiddle-20150407-GridFilteringToolBar](fiddles/extjs/fiddle-20150407-GridFilteringToolBar/README.markdown)
 * Added [fiddles/extjs/fiddle-20150407-ChainedStoreFiltering](fiddles/extjs/fiddle-20150407-ChainedStoreFiltering/README.markdown)
-* Added [fiddles/three/fiddle18Spheres](fiddles/three/fiddle18Spheres/README.markdown)
+* Added [fiddles/three/fiddle-0003-18Spheres](fiddles/three/fiddle-0003-18Spheres/README.markdown)
 
 ### 201504121810
 
@@ -252,3 +252,22 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/bash/fiddle-0013-NlCommand](fiddles/bash/fiddle-0013-NlCommand)
 * Added [fiddles/jquery/fiddle-0021-CanvasToDataURL](fiddles/jquery/fiddle-0021-CanvasToDataURL)
 
+### 201506290420
+
+* Refactored [scripts/fiddle-jquery.sh](scripts/fiddle-jquery.sh)
+    * Note - Refactored based on the 201506210420 changes.  Now, it updates the tests/test.js based on the supplied fiddle name.
+* Added [fiddles/extjs/fiddle-20150630-MsgBoxVariations](fiddles/extjs/fiddle-20150630-MsgBoxVariations)
+* Added [fiddles/extjs/fiddle-20150702-SimplePromise](fiddles/extjs/fiddle-20150702-SimplePromise)
+* Added [fiddles/extjs/fiddle-20150701-GMapRecursiveTree](fiddles/extjs/fiddle-20150701-GMapRecursiveTree)
+* Added [fiddles/svg](fiddles/svg)
+    * Reflected changes:
+        1. added [scripts/fiddle-svg.sh](scripts/fiddle-svg.sh)
+        2. added [fiddles/svg/README.markdown](fiddles/svg/README.markdown)
+        3. updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        4. updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        5. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        6. updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+        7. updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor)
+        8. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+* Added [fiddles/svg/fiddle-0001-Circle](fiddles/svg/fiddle-0001-Circle)
+* Added [fiddles/bash/fiddle-0014-ReadCommand](fiddles/bash/fiddle-0014-ReadCommand)

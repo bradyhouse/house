@@ -1,4 +1,4 @@
-fiddleFlyingSpheres
+fiddle-0004-FlyingSpheres
 ======
 
 ![Screenshot](screenshot.png)

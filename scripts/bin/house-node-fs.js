@@ -9,7 +9,8 @@ http.createServer(function (request, response) {
         contentTypesByExtension = {
             '.html': "text/html",
             '.css': "text/css",
-            '.js': "text/javascript"
+            '.js': "text/javascript",
+            '.svg': "image/svg+xml"
         };
     fs.exists(filename, function (exists) {
         if (!exists) {
