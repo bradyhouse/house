@@ -271,3 +271,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         8. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
 * Added [fiddles/svg/fiddle-0001-Circle](fiddles/svg/fiddle-0001-Circle)
 * Added [fiddles/bash/fiddle-0014-ReadCommand](fiddles/bash/fiddle-0014-ReadCommand)
+* Added [fiddles/svg/fiddle-0002-Rectangle](fiddles/svg/fiddle-0002-Rectangle)
+* Added [fiddles/svg/fiddle-0003-Ellipses](fiddles/svg/fiddle-0003-Ellipses)

@@ -1,4 +1,4 @@
-{{FiddleName}}
+fiddle-0001-Circle
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,12 +6,12 @@
 
 ### Title
 
-House SVG Fiddle - {{FiddleName}}
+Simple Circle
 
 
 ### Creation Date
 
-{{BornOnDate}}
+07-04-2015
 
 
 ### Location
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another SVG Fiddle.
+Fiddle illustrating how to create a simple rectangle using SVG markup.
 
 
 ### Published Version Link
@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-svg
+svg, rect,
