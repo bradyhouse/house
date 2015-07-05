@@ -1,4 +1,4 @@
-fiddle-0001-Circle
+fiddle-0002-Rectangle
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,12 +6,12 @@ fiddle-0001-Circle
 
 ### Title
 
-Simple Circle
+Simple Rectangle
 
 
 ### Creation Date
 
-07-04-2015
+07-05-2015
 
 
 ### Location
@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-svg, rect,
+svg, rect
