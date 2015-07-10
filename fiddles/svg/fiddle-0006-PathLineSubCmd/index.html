@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>fiddle-0006-PathLineSubCmd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="fiddles/svg/fiddle-0006-PathLineSubCmd">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <script>
+        function signalError() {
+            document.getElementById('body').setAttribute("class", "invalid");
+        }
+    </script>
+    <link rel="stylesheet" href="resources/css/custom.css"/>
+</head>
+<body id="body">
+<div class="container enter-stage-south">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h3>Path <i>M, L</i> Subcommands</h3>
+                </div>
+                <div class="bs-component">
+                    <div class="row">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                             viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice"
+                             style="width:100px; height:100px; position:relative; top:10; left:10; z-index:1;">
+                            <path d="M 20,20 L 100,100" stroke="blue"/>
+                            <path d="M 100,100 L 100,20" stroke="red"/>
+                            <path d="M 100,20 L 20,20" stroke="green"/>
+                        </svg>
+                    </div>
+                    <p>
+                        <a href="readme.markdown" title="View Additional details" target="_blank">readme</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="BornOnHook" class="modal-footer text-danger">
+            @ 07-05-15
+        </div>
+    </div>
+</div>
+</body>
+</html>

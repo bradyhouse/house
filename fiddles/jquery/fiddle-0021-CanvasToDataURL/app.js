@@ -1,12 +1,5 @@
 (function (app, $, undefined) {
-
-    $(document).ready(function () {
-        $("#fiddleHook").on("mousemove", app.onCanvasMouseMove);
-        $("#btnClear").on("click", app.onButtonClearClick);
-        $("#btnRestore").on("click", app.onButtonRestoreClick);
-        $("#btnSave").on("click", app.onButtonSaveClick);
-        app.canvas = document.getElementById("fiddleHook");
-    });
+    "use strict";
 
     app.model = {
         point: {
@@ -83,6 +76,22 @@
             link.click();
         }
     };
+
+    app.isStorageSupported = function() {
+        try {
+            return 'localStorage' in window && window.localStorage !== null;
+        } catch (e) {
+            return false;
+        }
+    };
+
+    $(document).ready(function () {
+        $("#fiddleHook").on("mousemove", app.onCanvasMouseMove);
+        $("#btnClear").on("click", app.onButtonClearClick);
+        $("#btnRestore").on("click", app.onButtonRestoreClick);
+        $("#btnSave").on("click", app.onButtonSaveClick);
+        app.canvas = document.getElementById("fiddleHook");
+    });
 
 
 })(window.app = window.app || {}, jQuery)

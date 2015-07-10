@@ -1,44 +1,31 @@
 var meta = {
-    fiddleHeader: 'fiddle-20150702-SimplePromise',
-    fiddleSubHeader: 'Template Fiddle created @ 07-02-15' +
+    fiddleHeader: 'Simple Promise',
+    fiddleSubHeader: 'Fiddle exploring the new P' +
     '<br />'
 };
-Ext.define('Fiddle.Records', {
-    extend: 'Ext.data.Store',
-    config: {
-        autoDestroy: true,
-        proxy: {
-            type: 'ajax',
-            url: 'data.json',
-            reader: {
-                type: 'json',
-                rootProperty: 'data',
-                idProperty: '_id',
-                totalProperty: 'total'
-            }
-        },
-        remoteSort: false,
-        sortInfo: {
-            field: 'name',
-            direction: 'DESC'
-        },
-        pageSize: 50,
-        fields: ['_id', 'index', 'isActive', 'checkingBalance', 'savingBalance', 'picture', 'age', 'eyeColor', 'name', 'gender', 'company', 'email', 'address', 'about', 'latitude', 'longitude'],
-        autoLoad: true
-    }
-}, function () {
-    Ext.create('Fiddle.Records', {
-        storeId: 'records'
+
+Ext.Promise.all([
+    new Ext.Promise(function(resolve, reject) {
+        setTimeout(function() {
+            resolve('foo');
+        }, 200);
+    }),
+    Ext.Ajax.request({
+        url : 'data1.json' //will take 600ms
+    })
+])
+    .then(function(results) {
+        var timeout = results[0],
+            ajax    = results[1];
+
+        console.log('timeout result', timeout);
+        console.log('ajax data', Ext.decode(ajax.responseText));
+
+        Ext.Msg.alert('Success!', 'All promises returned!');
     });
-    Ext.create('Ext.data.ChainedStore', {
-        source: 'records',
-        storeId: 'viewrecords'
-    });
-});
-Ext.define('Fiddle.View', {
-    extend: 'Ext.panel.Panel',
-    html: 'Ext version ~ ' + Ext.getVersion().version
-});
+
+
+
 // Boiler plate
 Ext.define('App.BoxModel', {
     extend: 'Ext.app.ViewModel',

@@ -18,6 +18,7 @@
 # 05/08/2015 - See CHANGELOG @ 201505061810
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 07/05/2015 - See CHANGELOG @ 201506290420
+# 07/06/2015 - See CHANGELOG @ 201507060420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -123,6 +124,9 @@ forkedOnDate=$(date +"%m-%d-%y";)
             ;;
     esac
 
+    # Update the changelog
+    $(echo "* Added [fiddles/${type}/${targetFiddle}](fiddles/${type}/${targetFiddle})" >> "../CHANGELOG.markdown") || exit 97
+
 )
 #catch
 rc=$?
@@ -153,6 +157,8 @@ case ${rc} in
     95) echo "fubar! call to the fiddle-index.sh script failed."
         ;;
     96) echo "fubar! update of the manifest.json file failed."
+        ;;
+    97) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
         ;;
     *)  echo "fubar! Something went wrong."
         if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then rm -R "../fiddles/${type}/${targetFiddle}"; fi

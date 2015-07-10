@@ -55,7 +55,7 @@ changeLogFile="../../CHANGELOG.markdown"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' )
+        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
 
         cd bin
 
@@ -69,7 +69,7 @@ changeLogFile="../../CHANGELOG.markdown"
 
         # Re-index directory
         case ${fiddleType} in
-            'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween')
+            'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 89
             ;;
         esac
@@ -99,6 +99,7 @@ case ${_rc} in
         echo -e "\t\"chrome\"\tChrome Extension Fiddle"
         echo -e "\t\"node\"\t\tnode.js Fiddle"
         echo -e "\t\"tween\"\t\ttween.js Fiddle"
+        echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
         echo ""
         echo "[f] - existing fiddle name.  For example: \"fiddleParabolaSurface\""
         echo ""

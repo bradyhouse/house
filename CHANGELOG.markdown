@@ -273,3 +273,17 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/bash/fiddle-0014-ReadCommand](fiddles/bash/fiddle-0014-ReadCommand)
 * Added [fiddles/svg/fiddle-0002-Rectangle](fiddles/svg/fiddle-0002-Rectangle)
 * Added [fiddles/svg/fiddle-0003-Ellipses](fiddles/svg/fiddle-0003-Ellipses)
+
+### 201507060420
+
+* Enhanced [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+    Note - Script now adds an entry to the CHANGELOG.markdown file.
+* Added [fiddles/svg/fiddle-0006-PathLineSubCmd](fiddles/svg/fiddle-0006-PathLineSubCmd)
+* Added [fiddles/svg/fiddle-0007-PathQuadCurveSubCmd](fiddles/svg/fiddle-0007-PathQuadCurveSubCmd)
+* Added [fiddles/extjs/fiddle-20150706-AjaxRetryPopUp](fiddles/extjs/fiddle-20150706-AjaxRetryPopUp)
+* Added [fiddles/svg/fiddle-0008-ReusablePattern](fiddles/svg/fiddle-0008-ReusablePattern)
+* Added [fiddles/bash/fiddle-0015-BackgroundJobs](fiddles/bash/fiddle-0015-BackgroundJobs)
+* Added [fiddles/bash/fiddle-0016-ForLoops](fiddles/bash/fiddle-0016-ForLoops)
+* Added [fiddles/svg/fiddle-0009-Text](fiddles/svg/fiddle-0009-Text)
+* Added [fiddles/svg/fiddle-0010-DynamicShapeInjection](fiddles/svg/fiddle-0010-DynamicShapeInjection)
+* Added [fiddles/extjs/fiddle-20150709-GridLayoutPersistence](fiddles/extjs/fiddle-20150709-GridLayoutPersistence)

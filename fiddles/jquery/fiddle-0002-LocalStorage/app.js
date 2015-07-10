@@ -5,7 +5,7 @@
             editorDiv = $("#editor"),
             messageTextArea = $("#messageTextArea"),
             saveButton = $("#saveButton"),
-            storageEnabled = isStorageSupported(),
+            storageEnabled = app.isStorageSupported(),
             objectMessage = {
                 message: storageEnabled && localStorage.getItem("message-textarea-val") ? localStorage.getItem("message-textarea-val") : "Enter your message"
             },
@@ -15,7 +15,7 @@
         fiddleDiv.addClass('enter-stage-right');
 
         if (storageEnabled) {
-            messageTextArea.val(message);
+            messageTextArea.val(objectMessage.message);
             messageTextArea.css('height', messageTextAreaHeight);
             messageTextArea.css('width', messageTextAreaWidth);
             saveButton.click(function () {
@@ -29,17 +29,14 @@
         } else {
             editorDiv.html("Local Storage is not supported in this browser :(");
         }
-        function isStorageSupported() {
-            try {
-                return 'localStorage' in window && window.localStorage !== null;
-            } catch (e) {
-                return false;
-            }
-        }
     });
 
-    var form = function () {
-
+    app.isStorageSupported = function() {
+        try {
+            return 'localStorage' in window && window.localStorage !== null;
+        } catch (e) {
+            return false;
+        }
     }
 
 
