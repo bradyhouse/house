@@ -16,6 +16,7 @@
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 06/21/2015 - See CHANGELOG @ 201506210420
 # 07/05/2015 - See CHANGELOG @ 201506290420
+# 07/11/2015 - See CHANGELOG @ 201507110420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -23,9 +24,13 @@ echo "${thisFile}" | awk '{print toupper($0)}'
 (
 	if [ "$#" -ne 2 ]; then  exit 86; fi
     case $1 in
-        'extjs')
-            ./fiddle-extjs.sh $2 || exit 87
-            ./fiddle-index.sh "extjs" || exit 87
+        'extjs5')
+            ./fiddle-extjs-5.sh $2 || exit 87
+            ./fiddle-index.sh "extjs5" || exit 87
+            ;;
+        'extjs6')
+            ./fiddle-extjs-6.sh $2 || exit 87
+            ./fiddle-index.sh "extjs6" || exit 87
             ;;
         'jquery')
             ./fiddle-jquery.sh $2 || exit 88
@@ -82,7 +87,8 @@ case ${_rc} in
         echo ""
         echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs\"\t\tExt JS Fiddle"
+        echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
+        echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\three.js / WebGl Fiddle"

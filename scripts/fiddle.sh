@@ -54,6 +54,9 @@ echo "${thisFile}" | awk '{print toupper($0)}'
         'test')
             if [ "$#" -eq 3 ]; then ./fiddle-test.sh $2 $3; fi
             ;;
+        'list')
+            if [ "$#" -eq 2 ]; then ./fiddle-list.sh $2; fi
+            ;;
         *)  exit 86
             ;;
     esac
@@ -75,6 +78,7 @@ case ${_rc} in
         echo -e "\t\"create\"\tCreate a new fiddle"
         echo -e "\t\"fork\"\t\tFork an existing fiddle"
         echo -e "\t\"index\"\t\tRe-index a specific fiddle type"
+        echo -e "\t\"list\"\t\tList the fiddles defined for a specific type"
         echo -e "\t\"start\"\t\tStart the fiddle web service process"
         echo -e "\t\"stop\"\t\tStop the web service process"
         echo -e "\t\"delete\"\tDelete an existing fiddle"

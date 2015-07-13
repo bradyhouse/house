@@ -13,6 +13,7 @@
 # 05/31/2015 - Baseline ~ See CHANGELOG @ 201505310420
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 07/05/2015 - See CHANGELOG @ 201506290420
+# 07/11/2015 - See CHANGELOG @ 201507110420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -55,10 +56,8 @@ changeLogFile="../../CHANGELOG.markdown"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
-
+        'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
         cd bin
-
         # Update index.html page
         if [[ -f "${newIndexFile}" ]]
         then
@@ -69,7 +68,7 @@ changeLogFile="../../CHANGELOG.markdown"
 
         # Re-index directory
         case ${fiddleType} in
-            'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
+            'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 89
             ;;
         esac
@@ -92,7 +91,8 @@ case ${_rc} in
         echo "[t] - type. Valid types include: "
         echo ""
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs\"\t\tExt JS Fiddle"
+        echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
+        echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"

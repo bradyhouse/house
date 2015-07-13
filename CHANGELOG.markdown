@@ -283,7 +283,43 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/extjs/fiddle-20150706-AjaxRetryPopUp](fiddles/extjs/fiddle-20150706-AjaxRetryPopUp)
 * Added [fiddles/svg/fiddle-0008-ReusablePattern](fiddles/svg/fiddle-0008-ReusablePattern)
 * Added [fiddles/bash/fiddle-0015-BackgroundJobs](fiddles/bash/fiddle-0015-BackgroundJobs)
-* Added [fiddles/bash/fiddle-0016-ForLoops](fiddles/bash/fiddle-0016-ForLoops)
 * Added [fiddles/svg/fiddle-0009-Text](fiddles/svg/fiddle-0009-Text)
 * Added [fiddles/svg/fiddle-0010-DynamicShapeInjection](fiddles/svg/fiddle-0010-DynamicShapeInjection)
 * Added [fiddles/extjs/fiddle-20150709-GridLayoutPersistence](fiddles/extjs/fiddle-20150709-GridLayoutPersistence)
+* Added [fiddles/extjs/fiddle-20150710-DynamicColumnState](fiddles/extjs/fiddle-20150710-DynamicColumnState)
+* Added [fiddles/extjs/fiddle-20150710-DynamicColumnState](fiddles/extjs/fiddle-20150710-DynamicColumnState)
+
+### 201507110420
+
+* Added [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+    * Note - Needed a way to list the fiddles of a given type from within the scripts directory.  This becomes useful when you want to "fork" or "refactor" an existing fiddle.
+    * Reflected changes:
+        1. Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+* Moved fiddles/extjs to [fiddles/extjs5](fiddles/extjs5)
+    * Note - Response to the release of ExtJS version 6 this week.
+    * Reflected changes:
+        1. updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        2. updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        3. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        4. updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+        5. updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor)
+        6. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        7. updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+        8. updated [fiddles/index.html](fiddles/index.html)
+* Added [fiddles/extjs/6](fiddles/extjs6)
+    * Note - Response to the release of ExtJS version 6 this week.
+    * Reflected changes:
+        1. updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        2. updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        3. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        4. updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+        5. updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor)
+        6. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        7. updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+        8. updated [fiddles/index.html](fiddles/index.html)
+* Added [fiddles/bash/fiddle-0016-ForLoops](fiddles/bash/fiddle-0016-ForLoops)
+* Deleted all "sencha-*" scripts
+    * Note - I have forgotten what these scripts do. I haven't used them and therefore, no point in maintaining.
+    * Reflected changes:
+        1. [scripts/README.markdown](scripts/README.markdown)
+* Added [fiddles/extjs6/fiddle-0001-ItDoesntWork](fiddles/extjs6/fiddle-0001-ItDoesntWork)

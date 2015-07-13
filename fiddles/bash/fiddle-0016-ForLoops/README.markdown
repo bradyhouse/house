@@ -6,12 +6,12 @@ fiddle-0016-ForLoops
 
 ### Title
 
-fiddle-0016-ForLoops
+Basic For Loops
 
 
 ### Creation Date
 
-07-08-15
+07-12-15
 
 
 ### Location
@@ -21,9 +21,10 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
+Another fiddle aimed at my memory.  Specifically (and although functionally useless),
+it provides two examples of how to implement a for loop in bash version 3.2.
 
 
 ### Tags
 
-bash
+bash, function, for, in, echo, -e
