@@ -34,10 +34,18 @@ fiddles/three/fiddle-0012-FresnelShader/
 fiddles/jquery/fiddle-0017-DateSerialization/
 fiddles/eslint/
 fiddles/extjs/fiddle-20150613-GridLifeCycle/
+fiddles/jquery/fiddle-0023-TumblrScreenScrape/
+fiddles/jquery/fiddle-0022-IframeDetection/
 fiddles/three/fiddle-0001-FresnelShader/
 fiddles/react/
 fiddles/react/react-0.13.3/
+CodeKit.app
+googleapi.js
+codekit*
+*.codekit
 avatar.*
+KitchenSink*
+*.gz
 script.log
 stdout.txt
 stdout~.txt
@@ -48,3 +56,5 @@ fiddles/java/out
 java.iml
 FiddleParallelStream.java
 FiddlePredicatePivot.java
+foreignObject.svg
+recursivetree.htm

@@ -19,6 +19,7 @@
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 07/05/2015 - See CHANGELOG @ 201506290420
 # 07/06/2015 - See CHANGELOG @ 201507060420
+# 07/26/2015 - See CHANGELOG @ 201507260420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -35,6 +36,7 @@ then
     echo -e "[t] - type. Valid types include: "
     echo ""
     echo -e "\t\"bash\"\t\tBash Fiddle"
+    echo -e "\t\"compass\"\tCompass Fiddle"
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
     echo -e "\t\"extjs\"\t\tExt JS Fiddle"
     echo -e "\t\"php\"\t\tPHP Fiddle"

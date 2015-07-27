@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>fiddle-0014-TriColorGradients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="fiddles/svg/fiddle-0014-TriColorGradients">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <script>
+        function signalError() {
+            document.getElementById('body').setAttribute("class", "invalid");
+        }
+    </script>
+    <link rel="stylesheet" href="resources/css/custom.css"/>
+</head>
+<body id="body">
+<div class="container enter-stage-south">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h3>TriColor Gradients</h3>
+                </div>
+                <div class="bs-component">
+                    <div class="row">
+                        <svg id="canvas" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                             width="100%" height="300px" preserveAspectRatio="none">
+                            <linearGradient id="r">
+                                <stop offset="0" stop-color="red"/>
+                                <stop offset=".5" stop-color="yellow"/>
+                                <stop offset="1" stop-color="green"/>
+                            </linearGradient>
+                            <linearGradient id="t" gradientTransform="rotate(90,.5,.5)">
+                                <stop offset="0" stop-color="#008"/>
+                                <stop offset=".4" stop-color="cyan" stop-opacity="0"/>
+                                <stop offset=".6" stop-color="cyan" stop-opacity="0"/>
+                                <stop offset="1" stop-color="#22a"/>
+                            </linearGradient>
+                            <linearGradient id="s" gradientTransform="rotate(45,.5,.5)">
+                                <stop offset="0" stop-color="#008"/>
+                                <stop offset=".45" stop-color="red" stop-opacity="0"/>
+                                <stop offset=".55" stop-color="green" stop-opacity="0"/>
+                                <stop offset="1" stop-color="#22a"/>
+                            </linearGradient>
+                            <rect x="10" y="10" height="100" width="100" fill="url(#r)"/>
+                            <rect x="120" y="10" height="100" width="100" fill="url(#t)"/>
+                            <rect x="230" y="10" height="100" width="100" fill="url(#s)"/>
+                            <rect x="120" y="120" height="100" width="100" fill="url(#r)"/>
+                            <rect x="120" y="120" height="100" width="100" fill="url(#t)"/>
+                            <rect x="120" y="120" height="100" width="100" fill="url(#s)"/>
+                        </svg>
+                    </div>
+                    <p>
+                        <a href="readme.markdown" title="View Additional details" target="_blank">readme</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="BornOnHook" class="modal-footer text-danger">
+            @ 07-26-15
+        </div>
+    </div>
+</div>
+<script src="../resources/js/jquery-1.11.2.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

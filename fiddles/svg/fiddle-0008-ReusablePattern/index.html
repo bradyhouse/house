@@ -23,9 +23,13 @@
                 <div class="bs-component">
                     <div class="row">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                             viewBox="0 0 300 300" width="300" style="background-color: #fff;"
+                             viewBox="0 0 300 300" width="100%" style="background-color: #fff;"
                              preserveAspectRatio="none">
                             <defs>
+                                <linearGradient id="gradient">
+                                    <stop class="begin" offset="0%"/>
+                                    <stop class="end" offset="100%"/>
+                                </linearGradient>
                                 <pattern id="gridPatternWithTessellation" x="20" y="20" width="100" height="100"
                                          patternUnits="userSpaceOnUse">
                                     <line stroke="black" stroke-width="1" stroke-linecap="round"
@@ -41,11 +45,16 @@
                                          id="patternLine2">
                                     </use>
                                     <!-- Draw the upper-right rectangle -->
-                                    <rect fill="#ada1d9" fill-opacity="1" fill-rule="nonzero"
-                                          stroke="#32287d" stroke-width="10" stroke-linecap="butt"
+                                    <rect fill="magenta" fill-opacity="1" fill-rule="nonzero"
+                                          stroke="turquoise" stroke-width="10" stroke-linecap="butt"
                                           stroke-linejoin="bevel" stroke-miterlimit="4" stroke-opacity="0.4"
                                           id="patternRect-upperRight"
                                           width="20" height="20" x="90" y="-10">
+                                        <animate attributeName="x" dur="20s" values="80;85;90;95;100;95;90;85;80" repeatCount="indefinite">
+                                        </animate>
+                                        <animate attributeName="y" dur="20s" values="-10;-15;-20;-15;-10" repeatCount="indefinite">
+                                        </animate>
+
                                     </rect>
                                     <!-- Reuse the first rectangle element and rotate it 90 degrees each time. -->
                                     <use transform="rotate(90, 50, 50)"
@@ -68,20 +77,31 @@
                                                  stroke-opacity="0.5"
                                                  id="path3389"
                                                  cx="50" cy="50" rx="30" ry="20">
+                                            <animate attributeName="rx" dur="10s" values="30;35;40;35;30" repeatCount="indefinite">
+                                            </animate>
+                                            <animate attributeName="ry" dur="10s" values="20;25;30;25;20" repeatCount="indefinite">
+                                            </animate>
+
+
                                         </ellipse>
                                         <!-- group containing the eye's iris -->
                                         <g id="iris" path="3389" cx="50" cy="50" rx="20" ry="14">
                                             <!-- Draw the circle -->
-                                            <circle fill="#d9d2a1" fill-opacity="1"
-                                                    fill-rule="nonzero" stroke="#32287d"
+                                            <circle fill="magenta" fill-opacity="1"
+                                                    fill-rule="nonzero" stroke="turquoise"
                                                     stroke-width="1" stroke-linecap="butt"
                                                     stroke-linejoin="bevel" stroke-miterlimit="4"
                                                     id="path3395" cx="50" cy="50" r="10">
+                                                <animate attributeName="r" dur="10s" values="10;20;15;10" repeatCount="indefinite">
+                                                </animate>
                                             </circle>
                                             <!-- Reference the bitmap image (PNG) -->
                                             <image id="avatar" width="5.5%" height="5.5%" x="41px"
                                                    y="42px" xlink:href="resources/images/favicon.ico" alt="bradyhouse.io">
                                             </image>
+                                            <animate attributeName="cx" dur="5s" values="50;55;60;65;60;55;50" repeatCount="indefinite">
+                                            </animate>
+
                                         </g>
                                     </g>
 
@@ -90,7 +110,7 @@
                                     <path fill="none" stroke="black"
                                           stroke-width="1px" stroke-linecap="butt"
                                           stroke-linejoin="miter" stroke-opacity="1"
-                                          d="m 0,50 s 10,0 0,20 C 20,20 0,0 0,0 0,0"
+                                          d="M 0,50 s 10,0 0,20 C 20,20 0,0 0,0"
                                           id="patternPath-lowerLeft"></path>
                                     <!-- Reuse the first path, rotate it 90 more degrees for each of the four corners -->
                                     <use transform="rotate(90, 50, 50)"
@@ -136,5 +156,7 @@
         </div>
     </div>
 </div>
+<script src="../resources/js/jquery-1.11.2.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

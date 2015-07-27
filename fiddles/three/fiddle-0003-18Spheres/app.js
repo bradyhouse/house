@@ -245,7 +245,11 @@
     };
 
     $(document).ready(function () {
-        app.initComponent($('#viewport'));
+        if (window!=window.top && (window.innerWidth + window.innerHeight) <= 450) {
+            $('#staticPreview').show();
+        } else {
+            app.initComponent($('#viewport'));
+        }
     });
 
 })(window.app = window.app || {}, jQuery)

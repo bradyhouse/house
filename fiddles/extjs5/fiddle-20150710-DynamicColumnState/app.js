@@ -24,11 +24,10 @@ function onGridApplyState(grid) {
         sorter = !Ext.isEmpty(state) ? state.sort : null,
         storeState = !Ext.isEmpty(state) ? state.storeState : null,
         store = !Ext.isEmpty(state) ? me.store : null,
-        columns = !Ext.isEmpty(state) ? state.columns : null,
-        myStore = Ext.getStore('myStore');
+        columns = !Ext.isEmpty(state) ? state.columns : null;
 
     if (!Ext.isEmpty(state)) {
-        myStore.loadRecords([], {addRecords: false});
+        store.loadRecords([], {addRecords: false});
         delete state.columns;
         if (columns) {
             me.headerCt.applyColumnsState(columns);
@@ -47,7 +46,7 @@ function onGridApplyState(grid) {
         else if (storeState) {
             store.applyState(storeState);
         }
-        myStore.load();
+        store.load();
     }
 }
 
@@ -273,7 +272,6 @@ Ext.application({
                 viewConfig: {
                     enableLockable: true,
                     emptyText: '<div style="width:auto; height:auto; text-align:center; color:red; font-weight:bold;">Completely Empty.</div>'
-
                 },
                 columns: headerFactory(),
                 loadMask: true,

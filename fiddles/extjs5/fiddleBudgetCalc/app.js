@@ -1,13 +1,123 @@
-Ext.onReady(function () {
+Ext.onReady(function() {
     var deleteIconLink = 'http://dev.sencha.com/ext/5.0.1/examples/kitchensink/resources/images/icons/fam/delete.gif',
         kitchenSinkForkLink = 'http://dev.sencha.com/ext/5.0.0/examples/kitchensink/#cell-editing',
-        fiddleHeader = '<i>Budget Calculator</i>',
+        fiddleHeader = '<i>Budget Calculator</i><br/><div style="font-size: .5em; font-name: courier;">ITM 460 / Fall 2014 / Brady Houseknecht</div>',
         defaultMonthlyNumbers = {
             income: 0.00,
             expense: 0.00
-        };
+        },
+        verbose = false; // Logging on/off switch
+    // Logging
+    function consoleLog(msg) {
+        if (verbose) {
+            var now = new Date();
+            Ext.log({}, Ext.Date.format(now, 'U') + ' |    ' + msg);
+        }
+    }
+    function indentConsoleLog(msg) {
+        consoleLog('    ' + msg);
+    }
 
-    // Fiddle #1 ~ Monthly Nut Editor
+    // YouTube Tab
+    Ext.define('MyFiddle.YouTubeTabController', {
+        extend: 'Ext.app.ViewController',
+        alias: 'controller.fiddle-youtube-tab',
+        onExpand: function() {
+            console.log('onExpand');
+            this.getView().setTitle('<b>"Budget" @ YouTube</b>');
+        },
+        onCollapse: function() {
+            console.log('onCollapse');
+            this.getView().setTitle('"Budget" @ YouTube ...');
+        }
+    });
+    Ext.define('MyFiddle.YouTubeTab', {
+        extend: 'Ext.panel.Panel',
+        xtype: 'fiddle-youtube-tab',
+        requires: [
+            'MyFiddle.YouTubeTabController'
+        ],
+        controller: 'fiddle-youtube-tab',
+        listeners: {
+            expand: 'onExpand',
+            collapse: 'onCollapse'
+        },
+        title: '"Budget" @ YouTube ...',
+        collapsed: true,
+        items: [{
+            xtype: 'panel',
+            layout: 'hbox',
+            autoScroll: true,
+            items: [{
+                xtype: 'panel',
+                html: '<iframe width="400" height="386" src="//www.youtube.com/embed/asRDOhgN70Q" frameborder="0" allowfullscreen></iframe>'
+            }, {
+                xtype: 'panel',
+                html: '<iframe width="400" height="386" src="//www.youtube.com/embed/SbQuwSlokbM" frameborder="0" allowfullscreen></iframe>'
+            }, {
+                xtype: 'panel',
+                html: '<iframe width="400" height="386" src="//www.youtube.com/embed/wjjPlEW9bRM" frameborder="0" allowfullscreen></iframe>'
+            }, {
+                xtype: 'panel',
+                html: '<iframe width="400" height="386" src="//www.youtube.com/embed/dEvJlzS9C4Q" frameborder="0" allowfullscreen></iframe>'
+            }, {
+                xtype: 'panel',
+                html: '<iframe width="400" height="386" src="//www.youtube.com/embed/oYw3ksQeMD8" frameborder="0" allowfullscreen></iframe>'
+            }, {
+                xtype: 'panel',
+                html: '<iframe width="400" height="386" src="//www.youtube.com/embed/3ugDU2qNcyg" frameborder="0" allowfullscreen></iframe>'
+            }, {
+                xtype: 'panel',
+                html: '<iframe width="400" height="386" src="//www.youtube.com/embed/EW5IdwltaAc" frameborder="0" allowfullscreen></iframe>'
+            }]
+
+        }]
+    });
+
+    // Planet Money Audio
+    Ext.define('MyFiddle.PlanetMoneyTabController', {
+        extend: 'Ext.app.ViewController',
+        alias: 'controller.fiddle-planet-money-tab',
+        onExpand: function() {
+            console.log('onExpand');
+            this.getView().setTitle('<b>"Money" @ NPR</b>');
+        },
+        onCollapse: function() {
+            console.log('onCollapse');
+            this.getView().setTitle('"Money" @ NPR ...');
+        }
+    });
+    Ext.define('MyFiddle.PlanetMoneyTab', {
+        extend: 'Ext.panel.Panel',
+        xtype: 'fiddle-planet-money-tab',
+        controller: 'fiddle-planet-money-tab',
+        listeners: {
+            expand: 'onExpand',
+            collapse: 'onCollapse'
+        },
+        collapsed: true,
+        title: '"Money" @ NPR...',
+        items: [{
+            xtype: 'panel',
+            layout: 'hbox',
+            autoScroll: true,
+            items: [{
+                xtype: 'panel',
+                html: '<embed src="http://www.npr.org/v2/?i=364144837&#38;m=364889129&#38;t=audio" height="386" wmode="opaque" allowfullscreen="true" width="400" base="http://www.npr.org" type="application/x-shockwave-flash"></embed>'
+            }, {
+                xtype: 'panel',
+                html: '<embed src="http://www.npr.org/v2/?i=364984303&#38;m=365516442&#38;t=audio" height="386" wmode="opaque" allowfullscreen="true" width="400" base="http://www.npr.org" type="application/x-shockwave-flash"></embed>'
+            }, {
+                xtype: 'panel',
+                html: '<embed src="http://www.npr.org/v2/?i=363864319&#38;m=364213473&#38;t=audio" height="386" wmode="opaque" allowfullscreen="true" width="400" base="http://www.npr.org" type="application/x-shockwave-flash"></embed>'
+            }, {
+                xtype: 'panel',
+                html: '<embed src="http://www.npr.org/v2/?i=368723679&#38;m=368764618&#38;t=audio" height="386" wmode="opaque" allowfullscreen="true" width="400" base="http://www.npr.org" type="application/x-shockwave-flash"></embed>'
+            }]
+        }]
+    });
+
+    // Monthly Nut Editor
     Ext.define('MyFiddle.Money', {
         extend: 'Ext.form.field.Number',
         alias: 'widget.money',
@@ -27,7 +137,7 @@ Ext.onReady(function () {
             type: 'number'
         }, {
             name: 'disposable',
-            convert: function (value, record) {
+            convert: function(value, record) {
                 return record.data.income - record.data.expense;
             }
         }]
@@ -36,31 +146,31 @@ Ext.onReady(function () {
         extend: 'Ext.app.ViewController',
         alias: 'controller.fiddle-monthly-nut-editor',
         requires: ['MyFiddle.MonthlyNut', 'Ext.util.DelayedTask'],
-        onRender: function () {
+        onRender: function() {
             consoleLog('onRender');
             var me = this,
-                delayedTask = new Ext.util.DelayedTask(function () {
+                delayedTask = new Ext.util.DelayedTask(function() {
                     me.loadDefaultValues();
                 });
             delayedTask.delay(500);
         },
-        onLoadClick: function () {
+        onLoadClick: function() {
             consoleLog('onLoadClick');
             this.loadDefaultValues();
         },
-        onResetClick: function () {
+        onResetClick: function() {
             consoleLog('onResetClick');
             this.loadDefaultValues();
         },
-        onIncomeChange: function () {
+        onIncomeChange: function() {
             consoleLog('onIncomeChange');
             this.updateStore();
         },
-        onExpenseChange: function () {
+        onExpenseChange: function() {
             consoleLog('onExpenseChange');
             this.updateStore();
         },
-        onUpdateAggregates: function () {
+        onUpdateAggregates: function() {
             indentConsoleLog('updateAggregates');
             var me = this,
                 form = this.getView(),
@@ -76,7 +186,7 @@ Ext.onReady(function () {
             aggregates.fireEvent('reformat');
         },
         // @private
-        updateStore: function () {
+        updateStore: function() {
             indentConsoleLog('updateStore');
             var me = this,
                 form = this.getView(),
@@ -85,7 +195,7 @@ Ext.onReady(function () {
                 disposableCalc = form.down('money[name=disposable]').getValue(),
                 expenseEditor = form.up('panel').down('fiddle-expense-editor'),
                 aggregates = form.up('panel').down('fiddle-aggregates'),
-                delayedTask = new Ext.util.DelayedTask(function () {
+                delayedTask = new Ext.util.DelayedTask(function() {
                     me.loadFormRecord(incomeInput,
                         expenseInput);
                     if (expenseEditor) {
@@ -99,12 +209,12 @@ Ext.onReady(function () {
             }
         },
         // @private
-        loadDefaultValues: function () {
+        loadDefaultValues: function() {
             consoleLog('loadDefaultValues');
             this.loadFormRecord(defaultMonthlyNumbers.income, defaultMonthlyNumbers.expense);
         },
         // @private
-        loadFormRecord: function (inc, exp) {
+        loadFormRecord: function(inc, exp) {
             consoleLog('loadFormRecord');
             var me = this,
                 form = me.getView();
@@ -121,7 +231,7 @@ Ext.onReady(function () {
         xtype: 'fiddle-monthly-nut-editor',
         requires: ['MyFiddle.Money'],
         controller: 'fiddle-monthly-nut-editor',
-        title: 'Monthly <i>Nut</i>',
+        title: 'Income',
         flex: 1,
         listeners: {
             render: 'onRender',
@@ -169,7 +279,7 @@ Ext.onReady(function () {
         }]
     });
 
-    // Fiddle #2 ~ Expense Editor
+    // Expense Editor
     Ext.define('MyFiddle.Budget', {
         extend: 'Ext.data.Model',
         fields: [{
@@ -184,41 +294,41 @@ Ext.onReady(function () {
         extend: 'Ext.app.ViewController',
         alias: 'controller.fiddle-expense-editor',
         requires: ['MyFiddle.Budget'],
-        onFormUpdated: function () {
+        onFormUpdated: function() {
             this.bindChart();
         },
-        onBeforeStateRestore: function () {
+        onBeforeStateRestore: function() {
             consoleLog('onBeforeStateRestore');
             if (this.getView().isLayoutSuspended()) {
                 return false;
             }
         },
-        onDataChanged: function () {
+        onDataChanged: function() {
             consoleLog('onDataChanged');
             this.bindChart();
         },
-        onCellEdit: function (editor, e) {
+        onCellEdit: function(editor, e) {
             consoleLog('onCellEdit');
             this.bindChart();
         },
-        onAfterLayout: function () {
+        onAfterLayout: function() {
             consoleLog('onAfterLayout');
             var me = this,
                 view = me.getView(),
                 store = view.getStore();
-            delayedTask = new Ext.util.DelayedTask(function () {
+            delayedTask = new Ext.util.DelayedTask(function() {
                 view.loadStore();
                 me.bindChart();
             });
             delayedTask.delay(300);
         },
-        onResetClick: function () {
+        onResetClick: function() {
             consoleLog('onRemoveClick');
             var me = this;
             me.getView().getStore().removeAll();
             me.bindChart();
         },
-        onAddClick: function () {
+        onAddClick: function() {
             consoleLog('onAddClick');
             var me = this.getView(),
                 rec = new MyFiddle.Budget({
@@ -231,14 +341,14 @@ Ext.onReady(function () {
                 column: 0
             });
         },
-        onRemoveClick: function (grid, rowIndex) {
+        onRemoveClick: function(grid, rowIndex) {
             consoleLog('onRemoveClick');
             var me = this;
             this.getView().getStore().removeAt(rowIndex);
             me.bindChart();
         },
         // @private
-        bindChart: function () {
+        bindChart: function() {
             consoleLog('bindChart');
             // ToDo - Refactor into multiple functions
             var me = this,
@@ -273,7 +383,7 @@ Ext.onReady(function () {
                 nutChart.redraw();
             }
             if (expenseChart) {
-                Ext.Array.forEach(expenses, function (expense) {
+                Ext.Array.forEach(expenses, function(expense) {
                     expensesDataArr.push({
                         slice: expense.data.item,
                         amount: expense.data.amount
@@ -288,7 +398,7 @@ Ext.onReady(function () {
             form.fireEvent('updateaggregates');
         },
         // @private
-        updateExpenseTotal: function () {
+        updateExpenseTotal: function() {
             consoleLog('updateExpenseTotal');
             var me = this,
                 view = me.getView(),
@@ -322,7 +432,7 @@ Ext.onReady(function () {
             removeclick: 'onRemoveClick',
             formupdated: 'onFormUpdated'
         },
-        initComponent: function () {
+        initComponent: function() {
             consoleLog('initComponent');
             var me = this;
             // Suspend Layout to prevent persistence
@@ -340,7 +450,7 @@ Ext.onReady(function () {
             me.resumeLayouts();
 
         },
-        getState: function () {
+        getState: function() {
             consoleLog('getState');
             var me = this,
                 data = me.getStore().data,
@@ -357,7 +467,7 @@ Ext.onReady(function () {
             indentConsoleLog('expenseField');
             indentConsoleLog(expenseField ? expenseField.getValue() : null);
 
-            Ext.Array.forEach(data.items, function (item) {
+            Ext.Array.forEach(data.items, function(item) {
                 rows.push({
                     item: item.data.item,
                     amount: item.data.amount
@@ -377,18 +487,18 @@ Ext.onReady(function () {
         },
         applyState: Ext.emptyFn,
         // @private
-        calcTotalExpenses: function () {
+        calcTotalExpenses: function() {
             indentConsoleLog('calcTotalExpenses');
             var me = this,
                 total = 0.0;
-            Ext.Array.forEach(me.getStore().data.items, function (item) {
+            Ext.Array.forEach(me.getStore().data.items, function(item) {
                 total += item.data.amount;
             });
             indentConsoleLog('total = ' + total);
             return total;
         },
         // @private
-        mindTouchSupport: function () {
+        mindTouchSupport: function() {
             indentConsoleLog('mindTouchSupport');
             if (Ext.supports.Touch) {
                 this.addDocked({
@@ -398,7 +508,7 @@ Ext.onReady(function () {
             }
         },
         // @private
-        inflateButtons: function () {
+        inflateButtons: function() {
             indentConsoleLog('inflateButtons');
             return [{
                 text: 'Add Item',
@@ -416,14 +526,14 @@ Ext.onReady(function () {
              }];*/
         },
         // @private
-        inflateSelModel: function () {
+        inflateSelModel: function() {
             indentConsoleLog('inflateSelModel');
             return {
                 selType: 'cellmodel'
             };
         },
         // @private
-        inflateColumns: function () {
+        inflateColumns: function() {
             var me = this;
             indentConsoleLog('inflateColumns');
             return [{
@@ -448,14 +558,14 @@ Ext.onReady(function () {
                 items: [{
                     icon: deleteIconLink,
                     tooltip: 'Delete item',
-                    handler: function (grid, rowIndex) {
+                    handler: function(grid, rowIndex) {
                         me.fireEvent('removeclick', grid, rowIndex);
                     }
                 }]
             }];
         },
         // @private
-        inflatePlugins: function () {
+        inflatePlugins: function() {
             indentConsoleLog('inflatePlugins');
             this.cellEditing = new Ext.grid.plugin.CellEditing({
                 clicksToEdit: 1
@@ -463,7 +573,7 @@ Ext.onReady(function () {
             return [this.cellEditing];
         },
         // @private
-        inflateStore: function () {
+        inflateStore: function() {
             indentConsoleLog('inflateStore');
             var myStateId = this.getStateId();
             return new Ext.data.Store({
@@ -483,7 +593,7 @@ Ext.onReady(function () {
             })
         },
         // @private
-        loadStore: function () {
+        loadStore: function() {
             indentConsoleLog('loadStore');
             var me = this,
                 id = me.getStateId(),
@@ -495,7 +605,7 @@ Ext.onReady(function () {
             if (id) {
                 state = Ext.state.Manager.get(id);
                 if (!Ext.isEmpty(state)) {
-                    Ext.Array.forEach(state.expenseSlices, function (expenseSlice) {
+                    Ext.Array.forEach(state.expenseSlices, function(expenseSlice) {
                         rec = new MyFiddle.Budget({
                             item: expenseSlice.item,
                             amount: expenseSlice.amount
@@ -513,12 +623,12 @@ Ext.onReady(function () {
         }
     });
 
-    // Fiddle #3 ~ Charts
+    // Charts
     Ext.define('MyFiddle.ExpenseChart', {
         extend: 'Ext.Panel',
         xtype: 'fiddle-expense-chart',
         flex: 1,
-        initComponent: function () {
+        initComponent: function() {
             var me = this;
             me.items = [{
                 xtype: 'polar',
@@ -554,7 +664,7 @@ Ext.onReady(function () {
                     highlight: true,
                     tooltip: {
                         trackMouse: true,
-                        renderer: function (storeItem, item) {
+                        renderer: function(storeItem, item) {
                             this.setHtml(storeItem.get('slice') + ': $ ' + storeItem.get('amount'));
                         }
                     }
@@ -567,7 +677,7 @@ Ext.onReady(function () {
         extend: 'Ext.Panel',
         xtype: 'fiddle-monthlynut-chart',
         flex: 1,
-        initComponent: function () {
+        initComponent: function() {
             var me = this;
             me.items = [{
                 xtype: 'polar',
@@ -600,7 +710,7 @@ Ext.onReady(function () {
                     highlight: true,
                     tooltip: {
                         trackMouse: true,
-                        renderer: function (storeItem, item) {
+                        renderer: function(storeItem, item) {
                             this.setHtml(storeItem.get('slice') + ': $ ' + storeItem.get('amount'));
                         }
                     }
@@ -610,11 +720,83 @@ Ext.onReady(function () {
         }
     });
 
-    // Fiddle #4 ~ Aggregates
+    // Calculator
+    Ext.define('MyFiddle.CalculateController', {
+        extend: 'Ext.app.ViewController',
+        alias: 'controller.fiddle-calculate',
+        onExpand: function() {
+            console.log('onExpand');
+            var me = this,
+                view = this.getView(),
+                youtube = view.up('panel').down('fiddle-youtube-tab');
+
+            view.setTitle('<b>Get Started</b>');
+            youtube.collapse();
+        },
+        onCollapse: function() {
+            console.log('onCollapse');
+            this.getView().setTitle('Get Started ...');
+        }
+    });
+    Ext.define('MyFiddle.Calculate', {
+        extend: 'Ext.panel.Panel',
+        xtype: 'fiddle-calculate',
+        requires: [
+            'MyFiddle.CalculateController',
+            'MyFiddle.MonthlyNutEditor',
+            'MyFiddle.ExpenseEditor',
+            'MyFiddle.ExpenseChart',
+            'MyFiddle.MonthlyNutChart',
+            'MyFiddle.Aggregates'
+        ],
+        controller: 'fiddle-calculate',
+        bodyStyle: {
+            "background-color": "#272827", // neutral gray
+        },
+        animate: false,
+        listeners: {
+            expand: 'onExpand',
+            collapse: 'onCollapse'
+        },
+        title: '<b>Get Started<b>',
+        layout: {
+            type: 'accordion',
+            multi: true,
+            hideCollapseTool: true
+        },
+        items: [{
+            xtype: 'fiddle-monthly-nut-editor'
+        }, {
+            xtype: 'fiddle-expense-editor'
+        }, {
+            xtype: 'panel',
+            title: 'Budget',
+            layout: 'hbox',
+            items: [{
+                xtype: 'fiddle-monthlynut-chart',
+                padding: '5 5 5 0',
+                flex: 1,
+                style: {
+                    backgroundColor: "#D2E7F7"
+                }
+            }, {
+                xtype: 'fiddle-expense-chart',
+                padding: '5 0 5 5',
+                flex: 1,
+                style: {
+                    backgroundColor: "#D2E7F7"
+                }
+            }]
+        }, {
+            xtype: 'fiddle-aggregates'
+        }]
+    });
+
+    // Aggregates
     Ext.define('MyFiddle.AggregatesController', {
         extend: 'Ext.app.ViewController',
         alias: 'controller.fiddle-aggregates',
-        onReformat: function () {
+        onReformat: function() {
             consoleLog('onReformat');
             var me = this,
                 view = me.getView(),
@@ -665,7 +847,7 @@ Ext.onReady(function () {
             xtype: 'panel',
             bind: {
                 bodyStyle: {
-                    "background-color": "#000000",
+                    "background-color": "#272827",
                     "padding": "10px",
                     "font-weight": "bolder",
                     "font-family": "Times",
@@ -711,62 +893,81 @@ Ext.onReady(function () {
         }
     });
 
-    // Boiler Plate
-    function consoleLog(msg) {
-        return;
-        var now = new Date();
-        Ext.log({}, Ext.Date.format(now, 'U') + ' |    ' + msg);
-    }
+    // About Footer
+    Ext.define('MyFiddle.FooterController', {
+        extend: 'Ext.app.ViewController',
+        alias: 'controller.fiddle-footer',
+        onExpand: function() {
+            consoleLog('onExpand');
+            var me = this,
+                view = me.getView();
+            view.setTitle('About');
+        },
+        onCollapse: function() {
+            consoleLog('onCollapse');
+            var me = this,
+                view = this.getView();
+            view.setTitle('About');
+        }
+    });
+    Ext.define('MyFiddle.Footer', {
+        extend: 'Ext.panel.Panel',
+        xtype: 'fiddle-footer',
+        requires: [
+            'MyFiddle.FooterController'
+        ],
+        controller: 'fiddle-footer',
+        title: 'About',
+        flex: 1,
+        listener: {
+            expand: 'onExpand',
+            collapse: 'onCollapse'
+        },
+        bodyStyle: {
+            "background-color": "#272827",
+            "padding": "10px",
+            "font-weight": "bolder",
+            "font-family": "Times",
+            "font-size": "1em",
+            "color": "#ffffff"
+        },
+        html: '<i>&nbsp;&nbsp;Illinois Institute of Technology | Information Technology Management - 460 | 20262734 | Final Project</i>'
+    });
 
-    function indentConsoleLog(msg) {
-        consoleLog('    ' + msg);
-    }
-
+    // State
     Ext.define('MyFiddle.StateManager', {
         requires: ['Ext.state.Manager', 'Ext.state.LocalStorageProvider']
-    }, function () {
+    }, function() {
         Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider({
             prefix: 'MyFiddle-'
         }));
     });
+
+    // Scaffolding
     Ext.define('MyFiddle.Scaffold', {
         extend: 'Ext.panel.Panel',
-        requires: ['MyFiddle.MonthlyNutEditor', 'MyFiddle.ExpenseEditor', 'MyFiddle.ExpenseChart', 'MyFiddle.MonthlyNutChart', 'MyFiddle.Aggregates'],
+        requires: [
+            'MyFiddle.YouTubeTab',
+            'MyFiddle.PlanetMoneyTab',
+            'MyFiddle.Calculate',
+            'MyFiddle.Footer'],
         alias: 'widget.scaffold',
         bodyStyle: {
-            "background-color": "#000000"
+            "background-color": "#272827", // neutral gray
+            "padding": "0"
         },
         layout: {
-            type: 'accordion',
-            multi: true,
-            hideCollapseTool: true
+            type: 'accordion'
         },
+        autoScroll: true,
         items: [{
-            xtype: 'fiddle-monthly-nut-editor'
+            xtype: 'fiddle-calculate'
         }, {
-            xtype: 'fiddle-expense-editor'
+            xtype: 'fiddle-youtube-tab'
         }, {
-            xtype: 'panel',
-            title: 'The <i>Big Picture</i>',
-            fill: true,
-            layout: 'hbox',
-            items: [{
-                xtype: 'fiddle-monthlynut-chart',
-                padding: '5 5 5 0',
-                flex: 1,
-                style: {
-                    backgroundColor: "#D2E7F7"
-                }
-            }, {
-                xtype: 'fiddle-expense-chart',
-                padding: '5 0 5 5',
-                flex: 1,
-                style: {
-                    backgroundColor: "#D2E7F7"
-                }
-            }]
+            xtype: 'fiddle-planet-money-tab'
         }, {
-            xtype: 'fiddle-aggregates'
+            xtype: 'fiddle-footer'
         }]
     });
     Ext.define('App.BoxModel', {
@@ -786,7 +987,7 @@ Ext.onReady(function () {
             items: [{
                 xtype: 'panel',
                 bodyStyle: {
-                    "background-color": "#000000",
+                    "background-color": "#272827",
                     "padding": "10px",
                     "font-weight": "bolder",
                     "font-family": "Times",

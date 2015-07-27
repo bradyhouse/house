@@ -80,6 +80,7 @@ Ext.onReady(function () {
         win = Ext.create('Ext.Window', {
             title: meta.fiddleHeader,
             closable: false,
+            maximizable: true,
             height: 500,
             width: 700,
             layout: 'fit',
@@ -89,7 +90,9 @@ Ext.onReady(function () {
         positionY = 192;
     win.showAt([positionX, positionY]);
     Ext.QuickTips.init();
-
+    window.setTimeout(function () {
+        win.maximize(true);
+    }, 2500);
     Ext.create('App.Box', {
         renderTo: Ext.getBody()
     });

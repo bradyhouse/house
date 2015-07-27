@@ -17,6 +17,7 @@
 # 05/08/2015 - See CHANGELOG.MARKDOWN @ 201505061810
 # 07/05/2015 - See CHANGELOG.MARKDOWN @ 201506290420
 # 07/11/2015 - See CHANGELOG.MARKDOWN @ 201507110420
+# 07/26/2015 - See CHANGELOG @ 201507260420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 _path=$(pwd;)  # Capture Path
@@ -35,6 +36,9 @@ _port=8889
     case ${_type} in
         'all')
             ./house-node-fs-start.sh "../../fiddles" "${_port}" || exit 88
+            ;;
+        'compass')
+            ./house-node-fs-start.sh "../../fiddles/compass" "${_port}" || exit 88
             ;;
         'extjs5')
             ./house-node-fs-start.sh "../../fiddles/extjs5" "${_port}" || exit 88

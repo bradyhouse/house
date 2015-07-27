@@ -1,0 +1,20 @@
+1, action, 1, create, Create a new fiddle
+2, action, 2, fork, Fork an existing fiddle
+3, action, 3, index, Re-index a specific fiddle type
+4, action, 4, list, List the fiddles defined for a specific type
+5, action, 5, start, Start the fiddle web service process
+6, action, 6, stop, Stop the web service process
+7, action, 7, delete, Delete an existing fiddle
+8, action, 8, refactor, Rename ("refactor") an existing fiddle
+9, action, 9, test, Invoke JsTestDriver for a given fiddle
+10, type, 1, bash, Bash Fiddle
+11, type, 2, dojo, Dojo Fiddle
+12, type, 3, extjs5, Ext JS 5 Fiddle
+13, type, 4, extjs6, Ext JS 6 Fiddle
+14, type, 5, php, PHP Fiddle
+15, type, 6, jquery, jQuery / Bootstrap Fiddle
+16, type, 7, three, three.js / WebGl Fiddle
+17, type, 8, chrome, Chrome Extension Fiddle
+18, type, 9, node, Node Fiddle
+19, type, 10, tween, tween.js Fiddle
+20, type, 11, svg, Scalar Vector Graphic Fiddle

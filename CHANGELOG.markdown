@@ -322,4 +322,39 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     * Note - I have forgotten what these scripts do. I haven't used them and therefore, no point in maintaining.
     * Reflected changes:
         1. [scripts/README.markdown](scripts/README.markdown)
-* Added [fiddles/extjs6/fiddle-0001-ItDoesntWork](fiddles/extjs6/fiddle-0001-ItDoesntWork)
+* Added [fiddles/extjs6/fiddle-0001-HelloWorld](fiddles/extjs6/fiddle-0001-HelloWorld)
+
+### 201507260420
+
+* Added [fiddles/bash/fiddle-0017-InstallJoeEditor](fiddles/bash/fiddle-0017-InstallJoeEditor)
+* Added [fiddles/svg/fiddle-0011-DeclarativeAnimiation](fiddles/svg/fiddle-0011-DeclarativeAnimiation)
+* Added [fiddles/extjs6/fiddle-0002-Calculator](fiddles/extjs6/fiddle-0002-Calculator)
+    * Note - This one is unfinished.
+* Added [fiddles/svg/fiddle-0012-AnimatedTextPath](fiddles/svg/fiddle-0012-AnimatedTextPath)
+* Added [fiddles/extjs6/fiddle-0003-LockedColumnCellIndex](fiddles/extjs6/fiddle-0003-LockedColumnCellIndex)
+* Added [fiddles/bash/fiddle-0018-awkPrintStatements](fiddles/bash/fiddle-0018-awkPrintStatements)
+* Added [fiddles/extjs6/fiddle-0004-BarChart](fiddles/extjs6/fiddle-0004-BarChart)
+* Added [fiddles/extjs5/fiddle-20150721-BarChartPanZoom](fiddles/extjs5/fiddle-20150721-BarChartPanZoom)
+* Added [fiddles/extjs6/fiddle-0005-LockedColumnState](fiddles/extjs6/fiddle-0005-LockedColumnState)
+* Added [scripts/download-codekit.sh](download-codekit.sh)
+    * Note - [CodeKit](http://incident57.com/codekit/) is web development tool intended for mac users.  If your mac is
+    locked down like mine, this script can be used to download the executable using Curl.  This will allow you to open
+    the zip without getting the annoying "Not from the App Store" error.
+* Refactored [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+* Added [fiddles/compass](fiddles/compass)
+    * Reflected changes:
+        1. updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        2. updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        3. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        4. updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+        5. updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor)
+        6. updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        7. updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+        8. updated [fiddles/index.html](fiddles/index.html)
+        9. updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+        10. added [scripts/fiddle-compass.sh](scripts/fiddle-compass.sh)
+        11. added [fiddles/compass/README.markdown](fiddles/compass/README.markdown)
+* Added [fiddles/svg/fiddle-0013-GradientCylinder](fiddles/svg/fiddle-0013-GradientCylinder)
+* Added [fiddles/svg/fiddle-0014-TriColorGradients](fiddles/svg/fiddle-0014-TriColorGradients)
+* Added [fiddles/svg/fiddle-0015-GradientWeave](fiddles/svg/fiddle-0015-GradientWeave)
+* Added [fiddles/compass/fiddle-0001-Template](fiddles/compass/fiddle-0001-Template)

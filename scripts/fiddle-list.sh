@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # 07/12/2015 - Baseline Ver ~ See CHANGELOG @ 201507110420
+# 07/26/2015 - See CHANGELOG @ 201507260420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -19,8 +20,22 @@ clear
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php'| 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php'| 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+            count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
+            echo -e ""
+            echo -e "--------------------------------------------------------"
+            echo -e "$1 Fiddles" | awk '{print toupper($0)}'
+            echo -e "--------------------------------------------------------"
+            echo -e ""
             ls -1 ../fiddles/$1 | grep 'fiddle'
+            if [[ ${count} -eq "0" ]]
+            then
+                echo -e "N/A"
+            fi
+            echo -e ""
+            echo -e "--------------------------------------------------------"
+            echo -e "Total:  ${count}"
+            echo -e ""
             ;;
         *)  exit 86
             ;;
@@ -41,6 +56,7 @@ case ${_rc} in
         echo "[t] - type. Valid types include: "
         echo ""
         echo -e "\t\"bash\"\t\tBash Fiddle"
+        echo -e "\t\"compass\"\tCompass Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"

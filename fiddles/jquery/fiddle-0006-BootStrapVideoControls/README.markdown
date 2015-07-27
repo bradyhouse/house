@@ -34,5 +34,6 @@ Fiddle exploring how to dynamically create a bootstrap style image carousel.
 jQuery, bootstrap, carousel, setTimeOut, fadeIn, removeClass, addClass
 
 ### Forked From
+
 [fiddle-0005-BootStrapCarousel](../fiddle-0005-BootStrapCarousel/README.markdown)
 

@@ -16,6 +16,7 @@
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 07/05/2015 - See CHANGELOG @ 201506290420
 # 07/11/2015 - See CHANGELOG @ 201507110420
+# 07/26/2015 - See CHANGELOG @ 201507260420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -31,6 +32,7 @@ then
     echo ""
     echo "[t] - type. Valid types include: "
     echo ""
+    echo -e "\t\"compass\"\tCompass Fiddle"
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
     echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
     echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
@@ -59,7 +61,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
+        'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;

@@ -1,0 +1,147 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>fiddle-0015-GradientWeave</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="fiddles/svg/fiddle-0015-GradientWeave">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <script>
+        function signalError() {
+            document.getElementById('body').setAttribute("class", "invalid");
+        }
+    </script>
+    <link rel="stylesheet" href="resources/css/custom.css"/>
+</head>
+<body id="body">
+<div class="container enter-stage-south">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h3>Gradient Weave</h3>
+                </div>
+                <div class="bs-component">
+                    <div class="row">
+                        <svg id="canvas" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                             width="100%" style="background-color: black;" preserveAspectRatio="none">
+                            <defs>
+                                <pattern id="gridPattern" width="10" height="10" patternUnits="userSpaceOnUse">
+                                    <path d="M10 0 L0 0 L0 10" fill='none' stroke='magenta' stroke-width='0.25'>
+                                    </path>
+                                </pattern>
+                            </defs>
+                            <g id="layer1">
+                                <rect id="grid" width="100%" height="100%" x="0" y="0"
+                                      stroke='gray' stroke-width='0.25' fill='url(#gridPattern)'>
+                                </rect>
+                            </g>
+                            <linearGradient id="horizontal" gradientTransform="rotate(90,.5,.5)" >
+                                <stop offset=".10" stop-color="magenta">
+                                    <animate attributeName="offset" dur="20s" values=".10;.05;.09" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".20" stop-color="cyan">
+                                    <animate attributeName="offset" dur="20s" values=".20;.15;.19" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".30" stop-color="cyan">
+                                    <animate attributeName="offset" dur="20s" values=".30;.25;;.29" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".40" stop-color="magenta">
+                                    <animate attributeName="offset" dur="20s" values=".40;.35;.39" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".50" stop-color="cyan" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".50;.45;.49" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".60" stop-color="cyan" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".60;.55;.59" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".70" stop-color="magenta">
+                                    <animate attributeName="offset" dur="20s" values=".70;.65;.69" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".80" stop-color="cyan" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".80;.75;.79" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".90" stop-color="cyan" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".90;.85;.89" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset="1" stop-color="magenta">
+                                    <animate attributeName="offset" dur="20s" values="1;.95;.99" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                            </linearGradient>
+                            <linearGradient id="vertical">
+                                <stop offset=".10" stop-color="cyan">
+                                    <animate attributeName="offset" dur="20s" values=".10;.05;.09" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".20" stop-color="magenta">
+                                    <animate attributeName="offset" dur="20s" values=".20;.15;.19" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".30" stop-color="magenta">
+                                    <animate attributeName="offset" dur="20s" values=".30;.25;.29" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".40" stop-color="cyan">
+                                    <animate attributeName="offset" dur="20s" values=".40;.35;.39" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".50" stop-color="magenta" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".50;.45;.49" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".60" stop-color="magenta" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".60;.55;.59" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".70" stop-color="cyan">
+                                    <animate attributeName="offset" dur="20s" values=".70;.65;.69" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".80" stop-color="magenta" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".80;.75;.79" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset=".90" stop-color="magenta" stop-opacity="0">
+                                    <animate attributeName="offset" dur="20s" values=".90;.85;.89" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                                <stop offset="1" stop-color="cyan">
+                                    <animate attributeName="offset" dur="20s" values="1;.95;.99" repeatCount="indefinite">
+                                    </animate>
+                                </stop>
+                            </linearGradient>
+
+                            <rect x="0" y="0" height="100%" width="100%" fill-opacity=".5" fill="url(#horizontal)">
+                                <animate attributeName="width" dur="20s" values="10%;20%;30%;40%;50%;60%;70%;80%;90%;100%;90%;80%;70%;60%;50%;40%;30%;20%;10%" repeatCount="indefinite">
+                                </animate>
+                            </rect>
+                            <rect x="0" y="0" height="100%" width="100%" fill-opacity=".5" fill="url(#vertical)">
+                                <animate attributeName="height" dur="20s" values="10%;20%;30%;40%;50%;60%;70%;80%;90%;100%;90%;80%;70%;60%;50%;40%;30%;20%;10%" repeatCount="indefinite">
+                                </animate>
+                            </rect>
+                        </svg>
+                    </div>
+                    <p>
+                        <a href="readme.markdown" title="View Additional details" target="_blank">readme</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="BornOnHook" class="modal-footer text-danger">
+            @ 07-26-15
+        </div>
+    </div>
+</div>
+<script src="../resources/js/jquery-1.11.2.js"></script>
+<!--<script src="app.js"></script>-->
+</body>
+</html>
