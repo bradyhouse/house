@@ -24,7 +24,6 @@
 
 (function (app, $, undefined) {
     "use strict";
-
     app.util = app.util || {
         ajax: {
             request: function (fn) {
@@ -182,7 +181,6 @@
             window.app.view.render(hook);
         }
     };
-
     $(document).ready(function () {
         app.view.init();
     });

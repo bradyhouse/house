@@ -33,7 +33,7 @@ echo ${bornOnDate}
     $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
     cd "../fiddles/${fiddleSubDir}/$1"
     mkdir resources
-    compass create --bare --sass-dir "resources/sass" --css-dir "resources/css" --javascripts-dir "../resources/js" --images-dir "../resources/images"
+    compass create --sass-dir "sass" --css-dir "css" --javascripts-dir "js" --images-dir "img"
 )
 #catch
 rc=$?

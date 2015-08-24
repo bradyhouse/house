@@ -130,6 +130,12 @@ Ext.define('Fiddle.Chart', {
             ptype: 'chartitemevents',
             moveEvents: true
         },
+        innerPadding: {
+            top: 20,
+            left: 0,
+            right: 0,
+            bottom: 20
+        },
         interactions: [
             {
                 type: 'panzoom',

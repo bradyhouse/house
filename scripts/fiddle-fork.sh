@@ -81,7 +81,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${type}/${sourceFiddle}" "../fiddles/${type}/${targetFiddle}" || exit 89
 
     case ${type} in
-        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
+        'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/app.js";) || exit 90
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/index.html";) || exit 91
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
@@ -115,7 +115,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${type} in
-        'extjs'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
+        'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
             ./fiddle-index.sh ${type} || exit 95;
             ;;
         'chrome')

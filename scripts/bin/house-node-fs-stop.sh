@@ -26,6 +26,8 @@ _pid=$(lsof -i:${_port} -t || echo '-1')  # Capture Process Id
   # Kill the process
   $(lsof -i:${_port} -t | xargs kill;) || exit 86
 
+  lsof -i:1841 -t | xargs kill
+
 )
 #catch
 _rc=$?

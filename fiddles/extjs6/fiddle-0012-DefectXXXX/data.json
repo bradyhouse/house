@@ -1,0 +1,412 @@
+/* http://www.json-generator.com/
+ [
+ '{{repeat(800, 7)}}',
+ {
+ _id: '{{objectId()}}',
+ index: '{{index()}}',
+ guid: '{{guid()}}',
+ isActive: '{{bool()}}',
+ checkingBalance: '{{floating(-1000000, 1000000, 2, "$0,0.00")}}',
+ savingsBalance: '{{floating(1000, 1000000, 2, "$0,0.00")}}',
+ picture: 'http://placehold.it/32x32',
+ age: '{{integer(20, 40)}}',
+ eyeColor: '{{random("blue", "brown", "green")}}',
+ name: '{{firstName()}} {{surname()}}',
+ gender: '{{gender()}}',
+ company: '{{company().toUpperCase()}}',
+ email: '{{email()}}',
+ phone: '+1 {{phone()}}',
+ address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+ about: '{{lorem(1, "paragraphs")}}',
+ registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd")}}',
+ latitude: '{{floating(-90.000001, 90)}}',
+ longitude: '{{floating(-180.000001, 180)}}',
+ tags: [
+ '{{repeat(7)}}',
+ '{{lorem(1, "words")}}'
+ ],
+ friends: [
+ '{{repeat(3)}}',
+ {
+ id: '{{index()}}',
+ name: '{{firstName()}} {{surname()}}'
+ }
+ ],
+ greeting: function (tags) {
+ return 'Hello, ' + this.name + '! You have ' + tags.integer(1, 10) + ' unread messages.';
+ },
+ favoriteFruit: function (tags) {
+ var fruits = ['apple', 'banana', 'strawberry'];
+ return fruits[tags.integer(0, fruits.length - 1)];
+ }
+ }
+ ]
+ */
+{
+    "total": "781",
+    "data": [
+        {
+            "checkingBalance": "$445,323.05"
+        },
+        {
+            "checkingBalance": "$208,943.78"
+        },
+        {
+            "checkingBalance": "$285,459.81"
+        },
+        {
+            "checkingBalance": "-$348,123.57"
+        },
+        {
+            "checkingBalance": "$307,762.85"
+        },
+        {
+            "checkingBalance": "-$281,853.05"
+        },
+        {
+            "checkingBalance": "-$582,347.57"
+        },
+        {
+            "checkingBalance": "-$878,389.31"
+        },
+        {
+            "checkingBalance": "-$761,070.82"
+        },
+        {
+            "checkingBalance": "$799,265.89"
+        },
+        {
+            "checkingBalance": "-$359,953.47"
+        },
+        {
+            "checkingBalance": "-$490,654.95"
+        },
+        {
+            "checkingBalance": "$547,061.84"
+        },
+        {
+            "checkingBalance": "$597,756.17"
+        },
+        {
+            "checkingBalance": "$818,486.47"
+        },
+        {
+            "checkingBalance": "$660,026.25"
+        },
+        {
+            "checkingBalance": "-$633,667.09"
+        },
+        {
+            "checkingBalance": "-$109,395.12"
+        },
+        {
+            "checkingBalance": "$519,308.70"
+        },
+        {
+            "checkingBalance": "-$8,415.98"
+        },
+        {
+            "checkingBalance": "-$446,016.49"
+        },
+        {
+            "checkingBalance": "-$917,130.68"
+        },
+        {
+            "checkingBalance": "-$967,876.70"
+        },
+        {
+            "checkingBalance": "-$133,181.41"
+        },
+        {
+            "checkingBalance": "-$753,559.10"
+        },
+        {
+            "checkingBalance": "$361,351.35"
+        },
+        {
+            "checkingBalance": "-$186,105.97"
+        },
+        {
+            "checkingBalance": "-$490,033.23"
+        },
+        {
+            "checkingBalance": "-$400,463.90"
+        },
+        {
+            "checkingBalance": "$446,652.47"
+        },
+        {
+            "checkingBalance": "-$190,714.31"
+        },
+        {
+            "checkingBalance": "$448,411.45"
+        },
+        {
+            "checkingBalance": "-$219,561.24"
+        },
+        {
+            "checkingBalance": "$479,722.71"
+        },
+        {
+            "checkingBalance": "$310,465.20"
+        },
+        {
+            "checkingBalance": "$916,557.01"
+        },
+        {
+            "checkingBalance": "$476,179.37"
+        },
+        {
+            "checkingBalance": "$796,133.84"
+        },
+        {
+            "checkingBalance": "-$693,450.86"
+        },
+        {
+            "checkingBalance": "$573,935.25"
+        },
+        {
+            "checkingBalance": "$746,084.63"
+        },
+        {
+            "checkingBalance": "$953,079.56"
+        },
+        {
+            "checkingBalance": "-$776,350.83"
+        },
+        {
+            "checkingBalance": "-$363,055.34"
+        },
+        {
+            "checkingBalance": "$952,217.61"
+        },
+        {
+            "checkingBalance": "-$487,981.09"
+        },
+        {
+            "checkingBalance": "$778,238.96"
+        },
+        {
+            "checkingBalance": "$605,384.28"
+        },
+        {
+            "checkingBalance": "$440,082.35"
+        },
+        {
+            "checkingBalance": "-$213,838.64"
+        },
+        {
+            "checkingBalance": "-$629,206.99"
+        },
+        {
+            "checkingBalance": "$534,289.58"
+        },
+        {
+            "checkingBalance": "$12,471.98"
+        },
+        {
+            "checkingBalance": "-$83,259.36"
+        },
+        {
+            "checkingBalance": "-$304,390.74"
+        },
+        {
+            "checkingBalance": "$688,689.36"
+        },
+        {
+            "checkingBalance": "-$274,839.78"
+        },
+        {
+            "checkingBalance": "$75,796.55"
+        },
+        {
+            "checkingBalance": "-$574,593.25"
+        },
+        {
+            "checkingBalance": "$978,898.82"
+        },
+        {
+            "checkingBalance": "$356,518.45"
+        },
+        {
+            "checkingBalance": "-$646,138.63"
+        },
+        {
+            "checkingBalance": "-$687,505.95"
+        },
+        {
+            "checkingBalance": "$922,135.14"
+        },
+        {
+            "checkingBalance": "$894,050.16"
+        },
+        {
+            "checkingBalance": "-$876,471.66"
+        },
+        {
+            "checkingBalance": "$309,736.52"
+        },
+        {
+            "checkingBalance": "-$662,117.48"
+        },
+        {
+            "checkingBalance": "$978,076.71"
+        },
+        {
+            "checkingBalance": "-$523,815.03"
+        },
+        {
+            "checkingBalance": "$813,056.33"
+        },
+        {
+            "checkingBalance": "$410,159.08"
+        },
+        {
+            "checkingBalance": "$615,977.72"
+        },
+        {
+            "checkingBalance": "-$730,689.67"
+        },
+        {
+            "checkingBalance": "$691,186.46"
+        },
+        {
+            "checkingBalance": "$726,909.89"
+        },
+        {
+            "checkingBalance": "-$560,310.43"
+        },
+        {
+            "checkingBalance": "$666,568.61"
+        },
+        {
+            "checkingBalance": "-$713,141.55"
+        },
+        {
+            "checkingBalance": "-$911,558.61"
+        },
+        {
+            "checkingBalance": "-$348,918.38"
+        },
+        {
+            "checkingBalance": "-$327,596.49"
+        },
+        {
+            "checkingBalance": "$439,314.48"
+        },
+        {
+            "checkingBalance": "-$226,342.19"
+        },
+        {
+            "checkingBalance": "$325,742.94"
+        },
+        {
+            "checkingBalance": "-$161,736.22"
+        },
+        {
+            "checkingBalance": "-$864,519.52"
+        },
+        {
+            "checkingBalance": "-$289,814.03"
+        },
+        {
+            "checkingBalance": "-$515,398.11"
+        },
+        {
+            "checkingBalance": "$328,271.95"
+        },
+        {
+            "checkingBalance": "-$572,016.99"
+        },
+        {
+            "checkingBalance": "-$181,926.41"
+        },
+        {
+            "checkingBalance": "$634,977.38"
+        },
+        {
+            "checkingBalance": "-$649,342.04"
+        },
+        {
+            "checkingBalance": "-$385,264.64"
+        },
+        {
+            "checkingBalance": "$418,321.09"
+        },
+        {
+            "checkingBalance": "-$801,778.38"
+        },
+        {
+            "checkingBalance": "-$853,389.90"
+        },
+        {
+            "checkingBalance": "$368,763.50"
+        },
+        {
+            "checkingBalance": "-$507,214.68"
+        },
+        {
+            "checkingBalance": "-$28,390.31"
+        },
+        {
+            "checkingBalance": "$869,640.07"
+        },
+        {
+            "checkingBalance": "$676,480.94"
+        },
+        {
+            "checkingBalance": "-$44,598.61"
+        },
+        {
+            "checkingBalance": "-$977,864.74"
+        },
+        {
+            "checkingBalance": "$181,026.92"
+        },
+        {
+            "checkingBalance": "$431,683.15"
+        },
+        {
+            "checkingBalance": "$355,607.40"
+        },
+        {
+            "checkingBalance": "$696,352.53"
+        },
+        {
+            "checkingBalance": "$565,204.23"
+        },
+        {
+            "checkingBalance": "-$237,897.71"
+        },
+        {
+            "checkingBalance": "-$177,541.18"
+        },
+        {
+            "checkingBalance": "-$39,726.72"
+        },
+        {
+            "checkingBalance": "$824,288.43"
+        },
+        {
+            "checkingBalance": "-$971,298.71"
+        },
+        {
+            "checkingBalance": "$719,917.30"
+        },
+        {
+            "checkingBalance": "$979,213.94"
+        },
+        {
+            "checkingBalance": "$214,992.91"
+        },
+        {
+            "checkingBalance": "-$621,763.17"
+        },
+        {
+            "checkingBalance": "$908,867.83"
+        },
+        {
+            "checkingBalance": "-$438,742.12"
+        }
+    ]
+}

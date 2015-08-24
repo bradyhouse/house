@@ -1,0 +1,24 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  max-width: 1200px;
+  margin: auto;
+}
+header[role="banner"], footer[role="contentinfo"] {
+  width: 100%;
+  display: block;
+}
+nav[role="navigation"] {
+  width: 25%;
+  float: left;
+}
+.main-content {
+  width: 70%;
+  float: right;
+}
+footer[role="contentinfo"] {
+  clear: both;
+}

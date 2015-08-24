@@ -9,7 +9,7 @@
 }
 
 body#ext-element-1 {
-    background-image: url(http://dev.sencha.com/ext/5.1.0/examples/kitchensink/crisp-en/resources/images/square.gif) !important;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/background-square.gif) !important;
     background-repeat: repeat;
     -moz-animation-duration: 3s;
     -webkit-animation-duration: 3s;

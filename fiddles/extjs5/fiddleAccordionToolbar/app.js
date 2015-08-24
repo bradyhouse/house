@@ -1,5 +1,3 @@
-/* UNDER CONSTRUCTION - 09/03/2014 */
-
 
 Ext.onReady(function () {
 

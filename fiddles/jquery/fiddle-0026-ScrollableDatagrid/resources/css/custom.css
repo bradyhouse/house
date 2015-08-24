@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+@import '../../../resources/css/bootstrap.darkly.min.css';
+
+.enter-stage-south {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slide-up;
+    -webkit-animation-name: slide-up;
+}
+
+@-moz-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+@-webkit-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+

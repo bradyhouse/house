@@ -1,4 +1,4 @@
-extjs
+extjs5
 ======
 
 ![Screenshot](screenshot.png)

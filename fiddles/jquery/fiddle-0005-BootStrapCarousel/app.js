@@ -77,24 +77,18 @@
             innerClipCarouselHtml = openActiveItemHtml,
             clip = null,
             lastClipIndex = clips.length - 1;
-
         for (i = 0; i < clips.length; i++) {
             clip = clips[i];
-            // <li class="span3">
             innerClipCarouselHtml += '<li class="span3">';
-            // <div class="thumbnail" onclick="app.playerStreamLoad(this, clip[content-url], clip.description, clip[thumb-url]);" title="War on Drugs continues">
             innerClipCarouselHtml += '<div id="' + clip.id + '" class="thumbnail" ';
             innerClipCarouselHtml += 'onclick="app.playerStreamLoad(this, ';
             innerClipCarouselHtml += "'" + clip['content-url'] + "', ";
             innerClipCarouselHtml += "'" + escape(clip.description) + "', ";
             innerClipCarouselHtml += "'" + clip['thumb-url'] + "');";
             innerClipCarouselHtml += '" title="' + clip.name + '">';
-            // <img src="http://buffalogrove.sat.iit.edu/thumb/dogs_friends-t2.jpg">
             innerClipCarouselHtml += '<img src="' + clip['thumb-url'] + '">';
-            // </div>
             innerClipCarouselHtml += '</div>';
             innerClipCarouselHtml += '</li>';
-
             if (i < lastClipIndex) {
                 innerClipCarouselHtml += closeItemHtml + openItemHtml;
             } else {

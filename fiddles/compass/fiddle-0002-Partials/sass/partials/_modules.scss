@@ -1,0 +1,51 @@
+.chapter-summary {
+  a {
+    display: block;
+    padding: .5em;
+    color: $color10;
+    opacity: .7;
+    border: none;
+    &:hover {
+      opacity: 1;
+    }
+    &:visited {
+      opacity: .9;
+    }
+    b {
+      display: block;
+    }
+    span {
+      display: block;
+      font-size: .8em;
+    }
+  }
+}
+.testimonial {
+  background-color: #eee;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  padding: 1em 2em;
+  > img {
+    display: inline-block;
+    width: 17%;
+  }
+  blockquote {
+    margin: 0 0 0 3%;
+    padding: 0 .5em;
+    width: 76%;
+    font-family: $blockquote;
+    font-size: 2.4em;
+    font-style: italic;
+    display: inline-block;
+    vertical-align: top;
+    footer {
+      font-size: .6em;
+      border-top: 2px dotted #ddd;
+      margin: 20px 0 0 0;
+      padding: 10px 0 0 0;
+    }
+  }
+  blockquote.small {
+    font-size: .9em;
+  }
+}
