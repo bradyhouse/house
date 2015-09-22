@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<project default="main">
+	<target name="main">
+		<echo>
+            fiddle-0001-antEcho
+		</echo>
+        <echo>
+            09-10-15
+        </echo>
+	</target>
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<project default="main">
+    <property name="AMP" value="&#38;"/>
+    <target name="-stop-sencha-web">
+        <echo file="tmp.sh"> lsof -i:1841 -t | xargs kill;</echo>
+        <exec executable="/bin/sh"><arg value="tmp.sh"/></exec>
+        <delete file="tmp.sh"/>
+    </target>
+    <target name="-start-sencha-web">
+        <echo file="tmp.sh"> nohup sencha web start ${AMP}</echo>
+        <exec executable="/bin/sh"><arg value="tmp.sh"/></exec>
+        <delete file="tmp.sh"/>
+    </target>
+    <target name="main"
+            depends="-stop-sencha-web,-start-sencha-web">
+		<echo>
+            fiddle-0004-SenchaCmdHacks
+		</echo>
+        <echo>
+            09-15-15
+        </echo>
+        <echo file="tmp.sh"> nohup sencha web start ${AMP}</echo>
+        <exec executable="/bin/sh"><arg value="tmp.sh"/></exec>
+        <delete file="tmp.sh"/>
+	</target>
+</project>

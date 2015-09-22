@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<project default="main">
+    <property file="build.properties" />
+    <target name="main">
+		<echo>
+            fiddle-0003-FileList
+		</echo>
+        <filelist
+            id="fiddles"
+            dir="${path}"
+            files="*">
+        </filelist>
+	<echo>
+		${fiddles}
+	</echo>
+	</target>
+</project>

@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+repo_root="/Users/e13542/cme/risk"
+updates_root="/Users/e13542/cme/risk_20150925"
+
+# citrbx-16597
+cp -rf ${updates_root}/app/view/center/measure/panel/drilldown/mixin/SnapshotBar.js ${repo_root}/app/view/center/measure/panel/drilldown/mixin/SnapshotBar.js
+
+# citrbx-16668
+cp -rf ${updates_root}/overrides/chart/label/Callout.js ${repo_root}/overrides/chart/label/Callout.js
+
+# citrbx-16669
+cp -rf ${updates_root}/app/view/center/measure/mixin/DrillthroughPanel.js ${repo_root}/app/view/center/measure/mixin/DrillthroughPanel.js
+
+# citrbx-16678
+cp -rf ${updates_root}/overrides/data/PageMap.js ${repo_root}/overrides/data/PageMap.js
+
+# citrbx-16681
+cp -rf ${updates_root}/app/view/center/measure/panel/measurechart/MeasurePanel.js ${repo_root}/app/view/center/measure/panel/measurechart/MeasurePanel.js
+
+# citrbx-16686
+cp -rf ${updates_root}/app/view/center/operations/panel/mixin/OperationsSearchMenu.js ${repo_root}/app/view/center/operations/panel/mixin/OperationsSearchMenu.js
+cp -rf ${updates_root}/app/view/center/operations/searchmenu/OperationsSearchMenuController.js ${repo_root}/app/view/center/operations/searchmenu/OperationsSearchMenuController.js
+
+# citrbx-16691
+cp -rf ${updates_root}/app/util/StateManager.js ${repo_root}/app/util/StateManager.js
+cp -rf ${updates_root}/app/view/center/futureprice/column/TemplateColumn.js ${repo_root}/app/view/center/futureprice/column/TemplateColumn.js
+
+# citrbx-16705
+cp -rf ${updates_root}/app/view/center/BaseGridColumn.js ${repo_root}/app/view/center/BaseGridColumn.js
+cp -rf ${updates_root}/app/view/center/measure/panel/column/drilldown/TreeColumn.js ${repo_root}/app/view/center/measure/panel/column/drilldown/TreeColumn.js
+cp -rf ${updates_root}/app/view/center/mixin/BaseGrid.js ${repo_root}/app/view/center/mixin/BaseGrid.js
+
+# citrbx-16743
+cp -rf ${updates_root}/app/view/center/measure/panel/drilldown/mixin/DrilldownPanel.js ${repo_root}/app/view/center/measure/panel/drilldown/mixin/DrilldownPanel.js
+cp -rf ${updates_root}/app/view/center/measure/panel/drillthrough/mixin/DrillthroughStore.js ${repo_root}/app/view/center/measure/panel/drillthrough/mixin/DrillthroughStore.js
+cp -rf ${updates_root}/app/view/center/cmeview/panel/measuregrid/CmeViewMeasureGrid.js ${repo_root}/app/view/center/cmeview/panel/measuregrid/CmeViewMeasureGrid.js
+cp -rf ${updates_root}/overrides/data/PageMap.js ${repo_root}/overrides/data/PageMap.js
+
+# citrbx-16748
+cp -rf ${updates_root}/app/view/center/measure/mixin/DrilldownPanel.js DrillDownPanel.js
+cp -rf ${updates_root}/app/view/center/measure/mixin/DrilldownPanel.js ${repo_root}/app/view/center/measure/mixin/DrilldownPanel.js
+
+# citrbx-16767
+cp -rf ${updates_root}/app/view/center/mixin/BaseGrid.js ${repo_root}/app/view/center/mixin/BaseGrid.js
+cp -rf ${updates_root}/app/view/center/futureprice/column/TemplateColumn.js ${repo_root}/app/view/center/futureprice/column/TemplateColumn.js
+cp -rf ${updates_root}/app/view/center/BaseGridColumn.js ${repo_root}/app/view/center/BaseGridColumn.js
+cp -rf ${updates_root}/data/center/drilldowns/hierarchy/lookup/pbTotal.json ${repo_root}/data/center/drilldowns/hierarchy/lookup/pbTotal.json
+cp -rf ${updates_root}/data/center/drilldowns/hierarchy/lookup/pbTotalChange.json ${repo_root}/data/center/drilldowns/hierarchy/lookup/pbTotalChange.json
+
+# citrbx-16777
+cp -rf ${updates_root}/app/view/center/measure/panel/drilldown/DrilldownPanel.js ${repo_root}/app/view/center/measure/panel/drilldown/DrilldownPanel.js
+
+# citrbx-16801
+cp -rf ${updates_root}/app/view/center/operations/panel/OperationsPanel.js ${repo_root}/app/view/center/operations/panel/OperationsPanel.js
+
+# citrbx-16815
+cp -rf ${updates_root}/resource ${repo_root}/resource
+cp -rf ${updates_root}/app/Application.js ${repo_root}/app/Application.js
+cp -rf ${updates_root}/app/store/navigation/operations/HistoricalCycleDates.js ${repo_root}/app/store/navigation/operations/HistoricalCycleDates.js
+cp -rf ${updates_root}/app/view/navigation/panel/operations/Operations.js ${repo_root}/app/view/navigation/panel/operations/Operations.js
+
+# citrbx-16845
+cp -rf ${updates_root}/app/view/center/measure/mixin/DrilldownPanel.js ${repo_root}/app/view/center/measure/mixin/DrilldownPanel.js
+cp -rf ${updates_root}/data/center/measures/response.json ${repo_root}/data/center/measures/response.json
+
+# citrbx-16849
+cp -rf ${updates_root}/app/store/center/drilldown/Drilldown.js ${repo_root}/app/store/center/drilldown/Drilldown.js
+cp -rf ${updates_root}/app/view/center/measure/panel/drilldown/mixin/DrilldownPanel.js ${repo_root}/app/view/center/measure/panel/drilldown/mixin/DrilldownPanel.js
+
+# citrbx-16878
+cp -rf ${updates_root}/app/model/routing/QueryString.js ${repo_root}/app/model/routing/QueryString.js
+cp -rf ${updates_root}/app/view/center/measure/mixin/DrilldownPanel.js ${repo_root}/app/view/center/measure/mixin/DrilldownPanel.js
+
+# citrbx-16886
+cp -rf ${updates_root}/app/Application.js ${repo_root}/app/Application.js
+
+# citrbx-16893
+cp -rf ${updates_root}/app/Application.js ${repo_root}/app/Application.js
+
+# citrbx-16900
+cp -rf ${updates_root}/app/view/navigation/panel/operations/Operations.js ${repo_root}/app/view/navigation/panel/operations/Operations.js
+
+# citrbx-16902
+cp -rf ${updates_root}/app/store/center/drilldown/AggregateFilter.js ${repo_root}/app/store/center/drilldown/AggregateFilter.js
+cp -rf ${updates_root}/app/store/center/drilldown/Drilldown.js ${repo_root}/app/store/center/drilldown/Drilldown.js
+
+# citrbx-16973
+cp -rf ${updates_root}/app/util/StateManager.js ${repo_root}/app/util/StateManager.js
+

@@ -15,7 +15,7 @@ House extJS Fiddle - fiddle-0005-LockedColumnState
 
 ### Description
 
-Another ExtJS Fiddle. 
+Another ExtJS Fiddle.
 
 
 ### Published Version Link
@@ -25,4 +25,4 @@ N/A
 
 ### Tags
 
-ExtJS-5-1
+extjs-6

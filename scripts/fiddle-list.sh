@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # 07/12/2015 - Baseline Ver ~ See CHANGELOG @ 201507110420
 # 07/26/2015 - See CHANGELOG @ 201507260420
+# 09/10/2015 - See CHANGELOG @ 201508240420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -20,7 +21,7 @@ clear
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php'| 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php'| 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
             echo -e ""
             echo -e "--------------------------------------------------------"
@@ -55,6 +56,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
+        echo -e "\t\"ant\"\t\tAnt Fiddle"
         echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"

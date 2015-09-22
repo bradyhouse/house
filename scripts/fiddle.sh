@@ -14,6 +14,7 @@
 # 05/01/2015 - See CHANGELOG @ 201505011810
 # 05/03/2015 - See CHANGELOG @ 201505310420
 # 06/21/2015 - See CHANGELOG @ 201506210420
+# 09/10/2015 - See CHANGELOG @ 201508240420
 # ---------------------------------------------------------------------------------------------------|
 clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -23,20 +24,24 @@ echo "${thisFile}" | awk '{print toupper($0)}'
 (
 	if [ "$#" -lt 1 ]; then  exit 86; fi
     case $1 in
+        'combine')
+            if [ "$#" -lt 3 ]; then  ./fiddle-combine.sh; exit 0; fi
+             ./fiddle-combine.sh $2 $3
+            ;;
         'create')
-            if [ "$#" -lt 3 ]; then  ./fiddle-create.sh; fi
+            if [ "$#" -lt 3 ]; then  ./fiddle-create.sh;  exit 0; fi
             ./fiddle-create.sh $2 $3
             ;;
         'fork')
-            if [ "$#" -lt 4 ]; then  ./fiddle-fork.sh; fi
+            if [ "$#" -lt 4 ]; then  ./fiddle-fork.sh;  exit 0; fi
             ./fiddle-fork.sh $2 $3 $4
             ;;
         'index')
-            if [ "$#" -lt 2 ]; then  ./fiddle-index.sh; fi
+            if [ "$#" -lt 2 ]; then  ./fiddle-index.sh;  exit 0; fi
             ./fiddle-index.sh $2
             ;;
         'start')
-            if [ "$#" -lt 2 ]; then  ./fiddle-start.sh; fi
+            if [ "$#" -lt 2 ]; then  ./fiddle-start.sh;  exit 0; fi
             if [ "$#" -eq 3 ]; then port=$3; fi
             ./fiddle-start.sh  $2 ${port}
             ;;
@@ -45,17 +50,20 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ./fiddle-stop.sh ${port}
             ;;
         'delete')
-            if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh; fi
+            if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh;  exit 0; fi
             ./fiddle-delete.sh $2 $3
             ;;
         'refactor')
-            if [ "$#" -eq 4 ]; then ./fiddle-refactor.sh $2 $3 $4; fi
+            if [ "$#" -lt 4 ]; then  ./fiddle-refactor.sh;  exit 0; fi
+            ./fiddle-refactor.sh $2 $3 $4;
             ;;
         'test')
-            if [ "$#" -eq 3 ]; then ./fiddle-test.sh $2 $3; fi
+            if [ "$#" -lt 3 ]; then  ./fiddle-test.sh;  exit 0; fi
+            ./fiddle-test.sh $2 $3;
             ;;
         'list')
-            if [ "$#" -eq 2 ]; then ./fiddle-list.sh $2; fi
+            if [ "$#" -lt 2 ]; then  ./fiddle-list.sh;  exit 0; fi
+            ./fiddle-list.sh $2;
             ;;
         *)  exit 86
             ;;
@@ -76,6 +84,7 @@ case ${_rc} in
         echo -e "[c]\tcommand. Valid types include: "
         echo ""
         echo -e "\t\"create\"\tCreate a new fiddle"
+        echo -e "\t\"combine\"\tCombine src files into an app.js file."
         echo -e "\t\"fork\"\t\tFork an existing fiddle"
         echo -e "\t\"index\"\t\tRe-index a specific fiddle type"
         echo -e "\t\"list\"\t\tList the fiddles defined for a specific type"

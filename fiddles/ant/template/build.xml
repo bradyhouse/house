@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<project default="main">
+	<target name="main">
+		<echo>
+            {{FiddleName}}
+		</echo>
+        <echo>
+            {{BornOnDate}}
+        </echo>
+	</target>
+</project>

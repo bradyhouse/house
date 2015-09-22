@@ -61,3 +61,6 @@ foreignObject.svg
 recursivetree.htm
 *-compiled.js
 *.map
+*.iml
+*.jar
+*.dmg

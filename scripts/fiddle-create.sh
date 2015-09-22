@@ -18,6 +18,7 @@
 # 07/05/2015 - See CHANGELOG @ 201506290420
 # 07/11/2015 - See CHANGELOG @ 201507110420
 # 07/26/2015 - See CHANGELOG @ 201507260420
+# 09/10/2015 - See CHANGELOG @ 201508240420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -25,6 +26,9 @@ echo "${thisFile}" | awk '{print toupper($0)}'
 (
 	if [ "$#" -ne 2 ]; then  exit 86; fi
     case $1 in
+        'ant')
+            ./fiddle-ant.sh $2 || exit 87
+            ;;
         'compass')
             ./fiddle-compass.sh $2 || exit 87
             ./fiddle-index.sh "compass" || exit 87
@@ -35,6 +39,7 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ;;
         'extjs6')
             ./fiddle-extjs-6.sh $2 || exit 87
+            ./fiddle-combine.sh $1 $2 || exit 87
             ./fiddle-index.sh "extjs6" || exit 87
             ;;
         'jquery')
@@ -90,6 +95,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
+        echo -e "\t\"ant\"\t\tAnt Fiddle"
         echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"

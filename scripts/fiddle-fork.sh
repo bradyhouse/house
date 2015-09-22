@@ -20,6 +20,7 @@
 # 07/05/2015 - See CHANGELOG @ 201506290420
 # 07/06/2015 - See CHANGELOG @ 201507060420
 # 07/26/2015 - See CHANGELOG @ 201507260420
+# 09/10/2015 - See CHANGELOG @ 201508240420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -35,6 +36,7 @@ then
     echo ""
     echo -e "[t] - type. Valid types include: "
     echo ""
+    echo -e "\t\"ant\"\t\tAnt Fiddle"
     echo -e "\t\"bash\"\t\tBash Fiddle"
     echo -e "\t\"compass\"\tCompass Fiddle"
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
@@ -90,7 +92,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/index.html";) || exit 91
             $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
             ;;
-        'bash')
+        'ant' | 'bash')
             if [[ -e "../fiddles/${type}/${targetFiddle}/README.markdown" ]]
             then
                 sudo rm -r "../fiddles/${type}/${targetFiddle}/README.markdown" || exit 92

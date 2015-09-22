@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<project default="main">
+    <property file="build.properties" />
+	<target name="main">
+		<echo>
+            fiddle-0002-antProperties
+		</echo>
+        <echo>
+            09-15-15
+        </echo>
+        <echo>
+            ${message}
+        </echo>
+	</target>
+</project>
