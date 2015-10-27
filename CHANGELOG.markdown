@@ -426,3 +426,31 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Started [fiddles/extjs6/fiddle-0019-ReporterTearDown](fiddles/extjs6/fiddle-0019-ReporterTearDown)
 * Added [fiddles/extjs6/fiddle-0020-PivotGrid](fiddles/extjs6/fiddle-0020-PivotGrid)
 * Added [fiddles/extjs6/fiddle-0021-GridExcelExport](fiddles/extjs6/fiddle-0021-GridExcelExport)
+
+### 201509220420
+
+* Added [fiddles/extjs6/fiddle-0022-BufferedStoreExcelExport](fiddles/extjs6/fiddle-0022-BufferedStoreExcelExport)
+* Added [fiddles/extjs6/fiddle-0023-ReporterSpecRunner](fiddles/extjs6/fiddle-0023-ReporterSpecRunner)
+* Refactored [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+    * Based on [fiddles/bash/fiddle-0032-ListAndCount](fiddles/bash/fiddle-0032-ListAndCount)
+* Added [fiddles/jquery/fiddle-0028-RecursiveDOMInjection](fiddles/jquery/fiddle-0028-RecursiveDOMInjection)
+* Added [fiddles/chrome/fiddle-0003-BookmarkTable](fiddles/chrome/fiddle-0003-BookmarkTable)
+* Refactored [scripts/fiddle-combine.sh](scripts/fiddle-combine.sh)
+    1. Added "preinit.js" file support for non-ext* fiddles
+    2. Added "js-beautify" app.js reformatting logic
+    3. Added optional 3rd input parameter for overriding the target file
+        * Reflected changes:
+            1. updated [scripts/fiddle.sh](scripts/fiddle.sh)
+    4. Added optional 4th input parameter for disabling main closure in non-extjs fiddles
+            1. updated [scripts/fiddle.sh](scripts/fiddle.sh)
+    5. Added support for extjs5 fiddles
+* Added [fiddles/jquery/fiddle-0029-CustomJasmineReporter](fiddles/jquery/fiddle-0029-CustomJasmineReporter)
+* Added [fiddles/bash/fiddle-0035-Kdiff3](fiddles/bash/fiddle-0035-Kdiff3)
+* Added [fiddles/extjs5/fiddle-20150926-PivotGrid](fiddles/extjs5/fiddle-20150926-PivotGrid)
+* Enhanced [scripts/fiddle.sh](scripts/fiddle.sh)
+    1. Added ASCII artwork-- showTitle function
+* Added [fiddles/jquery/fiddle-0030-MixinClass](fiddles/jquery/fiddle-0030-MixinClass)
+* Added [fiddles/extjs6/fiddle-0024-TreeStoreLifeCycle](fiddles/extjs6/fiddle-0024-TreeStoreLifeCycle)
+* Added [fiddles/jquery/fiddle-0031-ReferenceError](fiddles/jquery/fiddle-0031-ReferenceError)
+* Added [fiddles/jquery/fiddle-0032-Namespace](fiddles/jquery/fiddle-0032-Namespace)
+* Added [fiddles/svg/fiddle-0019-Button](fiddles/svg/fiddle-0019-Button)

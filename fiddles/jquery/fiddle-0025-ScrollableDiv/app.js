@@ -92,8 +92,7 @@
                 height: (window.innerHeight * .60) + 'px',
                 hook: target,
                 rendered: function(viewport, frame, content) {
-                    content.self.append('<iframe src="' + window.location.origin + '" width="100%" height="1500px" scrolling="false" ' +
-                    'sandbox="allow-scripts allow-pointer-lock allow-same-origin"/>');}
+                    content.self.append('<iframe src="http://www.duckduckgo.com" style="width: 100%; height: 700px;” scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace=“0” hspace=“0”/>');}
             });
         },
         init: function() {

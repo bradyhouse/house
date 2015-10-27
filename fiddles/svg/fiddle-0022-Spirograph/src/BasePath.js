@@ -2,7 +2,7 @@
  * Base class for all virtualized shapes.
  */
 
-class BasePath {
+class Path {
 
     /**
      * Static config method. Object returned defines the default properties of the class. This

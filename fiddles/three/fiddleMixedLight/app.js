@@ -265,7 +265,7 @@ function initControls() {
         }
     );
 
-    orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
+    orbitControls = new THREE.OrbitAndPanControls(camera, renderer.domElement);
 }
 $(document).ready(
     function () {

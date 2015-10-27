@@ -1,5 +1,3 @@
-
-
 /**
  * AppController static method page hook.
  *
@@ -7,62 +5,109 @@
  */
 app.controller = app.controller || {
 
-    selectedShape: null,
+        selectedShape: null,
 
-    onSurfaceLoad: function (evt) {
-        return AppController.onSurfaceLoad(evt);
+        toolMenuItems: new Array("Rectangle", "Ellipse", "Star"),
 
-    },
+        chosenToolMenuItem: "Rectangle",
 
-    onPathMouseDown: function (path, evt) {
-        return AppController.onPathMouseDown(path, evt);
-    },
+        emptyFn: function() {
+            return AppController.onEmptyFn();
+        },
 
-    onPathMouseOut: function (path, evt) {
-        return AppController.onPathMouseOut(path, evt);
-    },
+        onSurfaceLoad: function (evt) {
+            return AppController.onSurfaceLoad(evt);
+        },
 
-    onPathMouseOver: function (path, evt) {
-        return AppController.onPathMouseOver(path, evt);
-    },
+        onPathMouseDown: function (path, evt) {
+            return AppController.onPathMouseDown(path, evt);
+        },
 
-    onShapeGroupMouseDown: function (evt) {
-        return AppController.onShapeGroupMouseDown(evt);
-    },
+        onPathMouseOut: function (path, evt) {
+            return AppController.onPathMouseOut(path, evt);
+        },
 
-    onShapeGroupKeyUp: function(evt) {
-        return AppController.onShapeGroupKeyUp(evt);
-    },
+        onPathMouseOver: function (path, evt) {
+            return AppController.onPathMouseOver(path, evt);
+        },
 
-    onSelectedShapeMouseUp: function() {
-        return AppController.onSelectedShapeMouseUp();
-    },
+        onShapeGroupMouseDown: function (evt) {
+            return AppController.onShapeGroupMouseDown(evt);
+        },
 
-    onSelectedShapeMouseDown: function(evt) {
-        return AppController.onSelectedShapeMouseDown(evt);
-    },
+        onShapeGroupKeyUp: function (evt) {
+            return AppController.onShapeGroupKeyUp(evt);
+        },
 
-    onSelectedShapeDrop: function() {
-        return AppController.onSelectedShapeDrop();
-    },
+        onSelectedShapeMouseUp: function () {
+            return AppController.onSelectedShapeMouseUp();
+        },
 
-    onSelectedShapeDrag: function(evt, x, y) {
-        return AppController.onSelectedShapeDrag(evt, x, y);
-    },
+        onSelectedShapeMouseDown: function (evt) {
+            return AppController.onSelectedShapeMouseDown(evt);
+        },
 
-    selectShape: function(evt, id) {
-        return AppController.selectShape(evt, id);
-    },
+        onSelectedShapeDrop: function () {
+            return AppController.onSelectedShapeDrop();
+        },
 
-    onDOMContentLoaded: function () {
-        var fiddleHook = document.getElementById('fiddleHook');
-        app.surface = app.surface || new Surface({
-            hook: fiddleHook,
-            autoBind: true,
-            autoPopulate: true
-        });
-    }
-};
+        onSelectedShapeDrag: function (evt, x, y) {
+            return AppController.onSelectedShapeDrag(evt, x, y);
+        },
+
+        selectShape: function (evt, id) {
+            return AppController.selectShape(evt, id);
+        },
+
+        onToolButtonMouseOver: function(btn) {
+            return AppController.onToolButtonMouseOver(btn);
+        },
+
+        onToolButtonMouseOut: function(btn) {
+            return AppController.onToolButtonMouseOut(btn);
+        },
+
+        onToolButtonMouseDown: function() {
+            return AppController.onToolButtonMouseDown();
+        },
+
+        onToolStatusMouseOver: function () {
+            return AppController.onToolStatusMouseOver();
+        },
+
+        onToolStatusMouseOut: function() {
+            return AppController.onToolStatusMouseOut();
+        },
+
+        onToolStatusMouseDown: function() {
+            return AppController.onToolStatusMouseDown();
+        },
+
+        onToolMenuMouseOut: function() {
+            return AppController.onToolMenuMouseOut();
+        },
+
+        onToolMenuItemSelect: function(shape) {
+            return AppController.onToolMenuItemSelect(shape);
+        },
+
+        onToolMenuItemMouseOver: function(itemId) {
+            return AppController.onToolMenuItemMouseOver(itemId);
+        },
+
+        onToolMenuItemMouseOut: function(itemId) {
+            return AppController.onToolMenuItemMouseOut(itemId);
+        },
+
+        onDOMContentLoaded: function () {
+            var fiddleHook = document.getElementById('fiddleHook');
+            app.surface = app.surface || new Surface({
+                    hook: fiddleHook,
+                    autoBind: true,
+                    autoPopulate: true
+                });
+        }
+    };
 
 /**
  * "Debug" Jasmine testing hooks.
@@ -88,11 +133,41 @@ app.test = window.location.pathname.match('test') ? app.test || {
     splitAttribute: function (field, id, defVal) {
         return Util.splitAttribute(field, id, defVal);
     },
-    mapFromQueryString: function(url, parameter) {
+    mapFromQueryString: function (url, parameter) {
         return Util.mapFromQueryString(url, parameter);
     },
     color: function () {
         return Util.color();
+    },
+    rectangle: function (config) {
+        return new Rectangle(config);
+    },
+    text: function (config) {
+        return new Text(config);
+    },
+    menubar: function (config) {
+        return new Menubar(config);
+    },
+    toolStatus: function() {
+        return new ToolStatus();
+    },
+    toolButton: function() {
+        return new ToolButton();
+    },
+    toolMenuInnerBorder: function() {
+        return new ToolMenuInnerBorder();
+    },
+    toolMenuOuterBorder: function() {
+        return new ToolMenuOuterBorder();
+    },
+    toolMenuItem: function(text, x, y) {
+        return new ToolMenuItem(text, x, y);
+    },
+    toolMenu: function() {
+        return new ToolMenu();
+    },
+    toolGroup: function() {
+        return new ToolGroup();
     }
 } : null;
 

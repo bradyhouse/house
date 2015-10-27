@@ -9,7 +9,7 @@ function extractJar() {
 }
 
 # extractJar "/Users/e13542/bin/Sencha/Cmd/5.1.2.52/sencha.jar"
-cd Sencha
-cd Cmd
-cd 6.0.0.202
-extractJar "/Users/e13542/bin/Sencha/Cmd/6.0.0.202/sencha.jar"
+# cd Sencha
+# cd Cmd
+# cd 6.0.0.202
+extractJar "/Users/e13542/bin/Sencha/Cmd/6.0.2.14/sencha.jar"

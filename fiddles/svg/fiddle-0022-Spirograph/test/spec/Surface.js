@@ -16,10 +16,9 @@ describe("Surface", function () {
             svg.setAttribute('onload', 'app.controller.onSurfaceLoad(evt);');
 
         });
-         afterEach(function() {
+
+        afterEach(function() {
             document.body.removeChild(document.getElementById('surface1'));
-            surface = null;
-             svg = null;
         });
 
 
@@ -63,7 +62,6 @@ describe("Surface", function () {
 
         afterEach(function() {
             document.body.removeChild(document.getElementById('surface1'));
-
         });
 
         it("should be added to the DOM", function () {
@@ -80,15 +78,10 @@ describe("Surface", function () {
                 autoBind: true,
                 autoPopulate: true
             });
-            spyOn(controller, 'onSurfaceLoad');
-
         });
-        afterEach(function () {
+
+        afterEach(function() {
             document.body.removeChild(document.getElementById('surface1'));
-        });
-
-        it('should call onSurfaceLoad', function () {
-            expect(controller.onSurfaceLoad).toHaveBeenCalled();
         });
 
         it("should be added to the DOM", function () {

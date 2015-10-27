@@ -6,7 +6,7 @@ fiddle-0022-Spirograph
 
 ### Title
 
-House SVG Fiddle - fiddle-0022-Spirograph
+Spirograph
 
 
 ### Creation Date
@@ -21,7 +21,8 @@ Chicago, IL
 
 ### Description
 
-Another SVG Fiddle.
+Extreme fiddle, which I have been working on off/on for months now ...
+
 
 
 ### Published Version Link
@@ -31,4 +32,4 @@ N/A
 
 ### Tags
 
-svg
+svg, es6, class,

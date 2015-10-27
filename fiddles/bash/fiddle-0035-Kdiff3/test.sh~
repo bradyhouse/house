@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+clear;
+echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
+echo "Bash version ${BASH_VERSION}..."
+
+test1=$(./script.sh "/Users/e13542/github/house/fiddles/jquery/fiddle-0029-CustomJasmineReporter/src/test/jasmine-html.js" "/Users/e13542/github/house/fiddles/jquery/fiddle-0029-CustomJasmineReporter/src/jasmine.js";);
+
+
+if [[ ! ${test1} -eq 0 ]]
+then
+    echo "test 1 failed"
+else
+    echo "test 1 passed"
+fi
+
+
+

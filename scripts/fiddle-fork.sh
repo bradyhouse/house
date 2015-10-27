@@ -21,6 +21,7 @@
 # 07/06/2015 - See CHANGELOG @ 201507060420
 # 07/26/2015 - See CHANGELOG @ 201507260420
 # 09/10/2015 - See CHANGELOG @ 201508240420
+# 09/23/2015 - See CHANGELOG @ 201509220420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -57,8 +58,25 @@ then
     exit
 fi
 
-type=$(echo $1;)
-sourceFiddle=$(echo $2;)
+function listAndCount() {
+    cd ../fiddles/${fiddleType}
+    echo $(ls -1 | grep ${fiddleCriteria} | wc -l | sed -e 's/^[[:space:]]*//';)
+}
+
+function getFiddle() {
+    matches=$(listAndCount;)
+    if [[ ${matches} -eq 1 ]]
+    then
+        cd ../fiddles/${fiddleType};
+        echo $(ls -1 | grep ${fiddleCriteria} | sed -e 's/^[[:space:]]*//';);
+    else
+        echo "";
+    fi
+}
+
+fiddleType=$1
+fiddleCriteria=$2
+fiddleName=$(getFiddle;);
 targetFiddle=$(echo $3;)
 forkedOnDate=$(date +"%m-%d-%y";)
 
@@ -74,68 +92,68 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     # Verify that the source fiddle directory exists
-    if [[ ! -d "../fiddles/${type}/${sourceFiddle}" ]]; then exit 86; fi
+    if [[ ! -d "../fiddles/${fiddleType}/${fiddleName}" ]]; then exit 86; fi
 
     # If the new fiddle directory already exists, then delete it
-    if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then sudo rm -R "../fiddles/${type}/${targetFiddle}" || exit 88; fi
+    if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then sudo rm -R "../fiddles/${fiddleType}/${targetFiddle}" || exit 88; fi
 
     # Initialize the new fiddle directory based on the source fiddle directory
-    cp -rf "../fiddles/${type}/${sourceFiddle}" "../fiddles/${type}/${targetFiddle}" || exit 89
+    cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
-    case ${type} in
+    case ${fiddleType} in
         'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
-            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/app.js";) || exit 90
-            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/index.html";) || exit 91
-            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
+            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/app.js";) || exit 90
+            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/index.html";) || exit 91
+            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
             ;;
         'svg')
-            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/index.html";) || exit 91
-            $(cd bin; ./house-substr.sh ${sourceFiddle} ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
+            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/index.html";) || exit 91
+            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
             ;;
         'ant' | 'bash')
-            if [[ -e "../fiddles/${type}/${targetFiddle}/README.markdown" ]]
+            if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ]]
             then
-                sudo rm -r "../fiddles/${type}/${targetFiddle}/README.markdown" || exit 92
+                sudo rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92
             fi
-            $(cp -rf "../fiddles/${type}/template/README.markdown" "../fiddles/${type}/${targetFiddle}/README.markdown") || exit 92
-            $(cd bin; ./house-substr.sh '{{FiddleName}}' ${targetFiddle} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
-            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${forkedOnDate} "../../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 92
+            $(cp -rf "../fiddles/${fiddleType}/template/README.markdown" "../fiddles/${fiddleType}/${targetFiddle}/README.markdown") || exit 92
+            $(cd bin; ./house-substr.sh '{{FiddleName}}' ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
+            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${forkedOnDate} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
             ;;
     esac
 
     # Add "Forked From" section to the readme file
-    $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo "### Forked From" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo  "" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo "[${sourceFiddle}](../${sourceFiddle})" >> "../fiddles/${type}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+    $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
 
     # If the screenshot photo exists, delete the existing screenshot image
-    if [[ -e "../fiddles/${type}/${targetFiddle}/screenshot.png" ]]
+    if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png" ]]
     then
-        $(sudo rm -R "../fiddles/${type}/${targetFiddle}/screenshot.png";) || exit 94
+        $(sudo rm -R "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png";) || exit 94
     fi
 
-    case ${type} in
+    case ${fiddleType} in
         'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
-            ./fiddle-index.sh ${type} || exit 95;
+            ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')
-            sudo rm -r "../fiddles/${type}/${targetFiddle}/manifest.json"
-            $(cp -rf "../fiddles/${fiddleSubDir}/template/manifest.json" "../fiddles/${type}/${targetFiddle}/manifest.json") || exit 96
+            sudo rm -r "../fiddles/${fiddleType}/${targetFiddle}/manifest.json"
+            $(cp -rf "../fiddles/${fiddleSubDir}/template/manifest.json" "../fiddles/${fiddleType}/${targetFiddle}/manifest.json") || exit 96
             $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
             $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
             ;;
     esac
 
     # Update the changelog
-    $(echo "* Added [fiddles/${type}/${targetFiddle}](fiddles/${type}/${targetFiddle})" >> "../CHANGELOG.markdown") || exit 97
+    $(echo "* Added [fiddles/${fiddleType}/${targetFiddle}](fiddles/${fiddleType}/${targetFiddle})" >> "../CHANGELOG.markdown") || exit 97
 
 )
 #catch
 rc=$?
 case ${rc} in
-    0)  echo "Done. The \"../../fiddles/${type}/${targetFiddle}\" directory has been initialized."
+    0)  echo "Done. The \"../../fiddles/${fiddleType}/${targetFiddle}\" directory has been initialized."
         ;;
     86) echo "fubar! The \"source\" fiddle does not exist."
         ;;
@@ -143,16 +161,16 @@ case ${rc} in
         ;;
     88) echo "fubar! The \"branch\" fiddle cannot be overwritten."
         ;;
-    89) echo "fubar! failed to create the ../fiddles/${type}/${sourceFiddle} directory."
+    89) echo "fubar! failed to create the ../fiddles/${fiddleType}/${fiddleName} directory."
         ;;
-    90) echo "fubar! failed trying to update the ../fiddles/${type}/${targetFiddle}/app.js file."
-	    if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then rm -R "../fiddles/${type}/${targetFiddle}"; fi
+    90) echo "fubar! failed trying to update the ../fiddles/${fiddleType}/${targetFiddle}/app.js file."
+	    if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi
     	;;
-    91) echo "fubar! failed trying to update the ../fiddles/${type}/${targetFiddle}/index.html file."
-        if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then rm -R "../fiddles/${type}/${targetFiddle}"; fi
+    91) echo "fubar! failed trying to update the ../fiddles/${fiddleType}/${targetFiddle}/index.html file."
+        if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi
         ;;
-    92) echo "fubar! failed trying to update the ../fiddles/${type}/${targetFiddle}/README.markdown file."
-        if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then rm -R "../fiddles/${type}/${targetFiddle}"; fi
+    92) echo "fubar! failed trying to update the ../fiddles/${fiddleType}/${targetFiddle}/README.markdown file."
+        if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi
         ;;
     93) echo "fubar! failed while trying to append the \"forked from\" section to the README.markdown file."
         ;;
@@ -165,7 +183,7 @@ case ${rc} in
     97) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
         ;;
     *)  echo "fubar! Something went wrong."
-        if [[ -d "../fiddles/${type}/${targetFiddle}" ]]; then rm -R "../fiddles/${type}/${targetFiddle}"; fi
+        if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi
         ;;
 esac
 #finally

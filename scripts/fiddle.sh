@@ -15,18 +15,46 @@
 # 05/03/2015 - See CHANGELOG @ 201505310420
 # 06/21/2015 - See CHANGELOG @ 201506210420
 # 09/10/2015 - See CHANGELOG @ 201508240420
+# 09/23/2015 - See CHANGELOG @ 201509220420
 # ---------------------------------------------------------------------------------------------------|
 clear
-thisFile=$(echo "$0" | sed 's/\.\///g')
 port=8889
-echo "${thisFile}" | awk '{print toupper($0)}'
+thisFile=$(echo "$0" | sed 's/\.\///g')
+
+function showTitle() {
+    echo -e ""
+    echo -e "H o u s e"
+    echo -e "oooooooooooo  o8o        .o8        .o8  oooo    "
+    echo -e " 888       8  \`\"'        888        888   888   "
+    echo -e " 888         oooo   .oooo888   .oooo888   888   .ooooo."
+    echo -e " 888oooo8     888  d88   888  d88   888   888  d88   88b"
+    echo -e " 888          888  888   888  888   888   888  888ooo888"
+    echo -e " 888          888  888   888  888   888   888  888    .o "
+    echo -e "o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P "
+    echo -e ""
+    echo "$1" | awk '{print toupper($0)}'
+}
+
 #try
 (
-	if [ "$#" -lt 1 ]; then  exit 86; fi
+    showTitle "${thisFile}"
+    if [ "$#" -lt 1 ]; then  exit 86; fi
     case $1 in
         'combine')
-            if [ "$#" -lt 3 ]; then  ./fiddle-combine.sh; exit 0; fi
-             ./fiddle-combine.sh $2 $3
+            case "$#" in
+                1 | 2)
+                    ./fiddle-combine.sh; exit 0;
+                    ;;
+                3)
+                    ./fiddle-combine.sh $2 $3;
+                    ;;
+                4)
+                    ./fiddle-combine.sh $2 $3 $4;
+                    ;;
+                *)
+                    ./fiddle-combine.sh $2 $3 $4 $5;
+                    ;;
+            esac
             ;;
         'create')
             if [ "$#" -lt 3 ]; then  ./fiddle-create.sh;  exit 0; fi
@@ -84,7 +112,7 @@ case ${_rc} in
         echo -e "[c]\tcommand. Valid types include: "
         echo ""
         echo -e "\t\"create\"\tCreate a new fiddle"
-        echo -e "\t\"combine\"\tCombine src files into an app.js file."
+        echo -e "\t\"combine\"\tCombine src files into an app.js file"
         echo -e "\t\"fork\"\t\tFork an existing fiddle"
         echo -e "\t\"index\"\t\tRe-index a specific fiddle type"
         echo -e "\t\"list\"\t\tList the fiddles defined for a specific type"

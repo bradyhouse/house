@@ -5,6 +5,19 @@
 class AppController {
 
     /**
+     * Static method used to configure default
+     * event handlers. If a
+     * class is defined with a specific
+     * set of event handlers, this method
+     * can be used to wire-up (and then test) the default
+     * configuration. Impetus for this method
+     * came from the addition of the Text class.
+     */
+    static onEmptyFn() {
+        return true;
+    }
+
+    /**
      * Static method used to handle (listen for)
      * the Surface (svg) load event.
      *
@@ -92,6 +105,22 @@ class AppController {
         console.log(evt);
     }
 
+    static onTextMouseDown(evt) {
+
+    }
+
+    static onTextMouseOver(evt) {
+
+    }
+
+    static onTextMouseOut(evt) {
+
+    }
+
+    static onTextClick(evt) {
+
+    }
+
     static selectShape(evt, id) {
         var shapesGroup = document.getElementById('shapesGroup'),
             groupTransform = Util.splitAttribute('shapesGroup','transform', 'translate(0,0)'),
@@ -152,7 +181,7 @@ class AppController {
 
         shapesGroup.setAttribute('onmousemove', null);
         shapesGroup.setAttribute('onmouseup', null);
-        shapesGroup.setAttribute('transform', null);
+        //shapesGroup.setAttribute('transform', 'translate(0,0)');
         app.controller.selectedShape.setAttribute('mouseover', null);
         app.controller.selectedShape.setAttribute('mousemove', null);
         app.controller.selectedShape.setAttribute('stroke-width', '1');
@@ -199,6 +228,65 @@ class AppController {
     static onShapeGroupKeyUp(evt) {
         console.log('onShapeGroupKeyUp');
 
+    }
+
+    static onToolButtonMouseOver(btn) {
+        btn.setAttribute('fill','#ffff88');
+    }
+
+    static onToolButtonMouseOut(btn) {
+        btn.setAttribute('fill','#88ffff');
+    }
+
+    static onToolButtonMouseDown() {
+        return AppController.showToolMenu();
+    }
+
+    static onToolStatusMouseOver() {
+        document.getElementById('toolButton').setAttribute('fill','#ffff88');
+    }
+
+    static onToolStatusMouseOut() {
+        document.getElementById('toolButton').setAttribute('fill','#88ffff');
+    }
+
+    static onToolStatusMouseDown() {
+        return AppController.showToolMenu();
+    }
+
+    static showToolMenu() {
+        var toolMenu = document.getElementById("toolMenu");
+        toolMenu.setAttribute('visibility','visible');
+        document.getElementById('toolButton').setAttribute('fill','#88ffff');
+    }
+
+    static hide(obj) {
+        obj.setAttribute('visibility','hidden');
+    }
+
+    static onToolMenuMouseOut() {
+        return AppController.hide(document.getElementById('toolMenu'));
+    }
+
+    static onToolMenuItemSelect(shape) {
+        var toolStatus = document.getElementById("toolStatus");
+        for (var i in app.controller.toolMenuItems){
+            var toolMenuItem=app.controller.toolMenuItems[i];
+            if (shape==toolMenuItem) {
+                toolStatus.firstChild.remove();
+                toolStatus.appendChild(document.createTextNode(toolMenuItem));
+                app.controller.chosenToolMenuItem = toolMenuItem;
+            }
+        }
+        return AppController.hide(document.getElementById('toolMenu'));
+    }
+
+    static onToolMenuItemMouseOver(itemId) {
+        document.getElementById(itemId).setAttribute('fill','red');
+    }
+
+    static onToolMenuItemMouseOut(itemId) {
+        document.getElementById(itemId).setAttribute('fill','black');
     }
 
  }

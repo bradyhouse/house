@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<antlib>
+
+    <taskdef resource="net/sf/antcontrib/antlib.xml"
+             classpath="${cmd.dir}/lib/ant-contrib-1.0b3.jar"
+             loaderref="senchaloader"/>
+
+    <typedef name="x-subtraction" classname="com.sencha.ant.Subtraction" loaderref="senchaloader"/>
+    
+    <!--
+    Initializes Sencha Cmd properties from the application, workspace, framework and
+    Cmd itself.
+    -->
+    <taskdef name="x-sencha-init" classname="com.sencha.ant.InitTask" loaderref="senchaloader"/>
+    
+    <!--
+    Copies a text file, possibly prepending data.  This also ensures encoding is unchanged.
+    -->
+    <taskdef name="x-copy-text-file" classname="com.sencha.ant.CopyTextFileTask" loaderref="senchaloader"/>
+    
+    <!--
+    Updates a property file, optionally removing the datetime stamp (defaults to true).
+    -->
+    <taskdef name="x-property-file" classname="com.sencha.ant.PropertyFileTask" loaderref="senchaloader"/>
+    
+    <!--
+    Truthy values: 1, true, yes, on
+
+    Ex:
+        <if>
+            <x-is-true value="${foo}"/>
+            <then>
+            </then>
+        </if>
+    -->
+    <typedef name="x-is-true" classname="com.sencha.ant.IsTrueCondition" loaderref="senchaloader"/>
+    
+    <!--
+    Returns !x-is-true
+    -->
+    <typedef name="x-is-false" classname="com.sencha.ant.IsFalseCondition" loaderref="senchaloader"/>
+    
+    <!--
+    Truthy values: 1, true, yes, on
+    -->
+    <typedef name="x-is-merge-conflict" classname="com.sencha.ant.IsMergeConflictCondition" loaderref="senchaloader"/>
+
+    <!--
+    This task removes comments (line and/or block) from a JS file. The following
+    options are supported:
+
+        srcfile: The source file to strip
+        outfile: The output file to generate (defaults to srcfile).
+        header: Optional text to include in a comment block at the start of the file.
+        blockcomments : True (the default) to strip block comments ("/* ... */").
+        linecomments  : True (the default) to strip line comments ("//").
+        keepfirstcomment : True (the default) to keep the first comment in the JS file.
+            This is typically a copyright.
+        whitespace : True to also strip whitespace.
+    -->
+    <taskdef name="x-strip-js" classname="com.sencha.ant.StripJS" loaderref="senchaloader"/>
+
+    <!--
+    Compresses JavaScript source according to the following options (attributes):
+
+        srcfile: The source file to compress.
+        outfile: The output file to generate (defaults to srcfile).
+        charset: The charset of the input/output files.
+        header: Optional text to include in a comment block at the start of the file.
+        linebreak: The column number at which to break lines (default is -1, to not break lines).
+        obfuscate: False to not obfuscate local symbols (default is true).
+        disableoptimizations: True to disable all built-in optimizations.
+        preservesemi: True to preserve all semicolons.
+        verbose: True to enable extra diagnostic messages.
+    -->
+    <taskdef name="x-compress-js" classname="com.sencha.ant.CompressJS" loaderref="senchaloader"/>
+
+    <!--
+    Compresses JavaScript source according to the following options (attributes):
+
+        srcfile: The source file to compress.
+        outfile: The output file to generate (defaults to srcfile).
+        charset: The charset of the input/output files.
+        header: Optional text to include in a comment block at the start of the file.
+        linebreak: The column number at which to break lines (default is -1, to not break lines).
+
+        <option name="closure-opt-name" value="value"/>
+    -->
+    <taskdef name="x-closure" classname="com.sencha.ant.ClosureTask" loaderref="senchaloader"/>
+
+    <!--
+    Compresses CSS source according to the following options (attributes):
+
+        srcfile: The source file to compress.
+        outfile: The output file to generate (defaults to srcfile).
+        charset: The charset of the input/output files.
+        header: Optional text to include in a comment block at the start of the file.
+        linebreak: The column number at which to break lines.
+        verbose: True to enable extra diagnostic messages.
+    -->
+    <taskdef name="x-compress-css" classname="com.sencha.ant.CompressCSS" loaderref="senchaloader"/>
+
+    <taskdef name="x-generate" classname="com.sencha.ant.GeneratorTask" loaderref="senchaloader"/>
+    <taskdef name="x-canonical-path" classname="com.sencha.ant.CanonicalPathTask" loaderref="senchaloader"/>
+    <taskdef name="x-sencha-command" classname="com.sencha.ant.SenchaCommandTask" loaderref="senchaloader"/>
+    <taskdef name="x-phantom" classname="com.sencha.ant.PhantomTask" loaderref="senchaloader"/>
+    <taskdef name="x-js-preprocess" classname="com.sencha.ant.JsPreprocessorTask" loaderref="senchaloader"/>
+    <taskdef name="x-css-preprocess" classname="com.sencha.ant.CssPreprocessorTask" loaderref="senchaloader"/>
+    <taskdef name="x-script-def" classname="com.sencha.ant.ScriptTask" loaderref="senchaloader"/>
+    <taskdef name="x-split-css" classname="com.sencha.ant.SplitCssTask" loaderref="senchaloader"/>
+    <taskdef name="x-get-project-targets" classname="com.sencha.ant.GetProjectTargetsTask" loaderref="senchaloader"/>
+    <taskdef name="x-build-listener" classname="com.sencha.ant.ListenerTask" loaderref="senchaloader"/>
+    <taskdef name="x-compile" classname="com.sencha.ant.CompileTask" loaderref="senchaloader"/>
+    <taskdef name="x-ant-call" classname="com.sencha.ant.CallTask" loaderref="senchaloader"/>
+    <taskdef name="x-watch" classname="com.sencha.ant.WatchTask" loaderref="senchaloader"/>
+    <taskdef name="x-load-app-builder-properties" classname="com.sencha.ant.AppBuilderPropertyLoader" loaderref="senchaloader"/>
+    <taskdef name="x-server" classname="com.sencha.ant.WebServerTask" loaderref="senchaloader"/>
+    <taskdef name="x-sass-build" classname="com.sencha.ant.SassBuildTask" loaderref="senchaloader"/>
+    <taskdef name="x-capture-slicer-data" classname="com.sencha.ant.CaptureSlicerDataTask" loaderref="senchaloader"/>
+    <taskdef name="x-sass-page" classname="com.sencha.ant.SassPageTask" loaderref="senchaloader"/>
+    
+    <!--
+    Loads a set of properties files in the specified order, then applies variable
+    expansion.  
+    
+        file: the file path to load properties from
+        prefix: a prefix for all properties loaded via this file
+        required: will throw an error if the specified file does not exist
+        keytemplate: a MessageFormat template string to use when applying
+                     prefixes (default is '{0}.{1}'
+    
+    nested <file/> nodes are also supported:
+        
+        path: the path to the properties file
+        prefix: a prefix for all properties loaded via this file
+        required: will throw an error if the specified file does not exist
+    
+    examples:
+    
+        <x-load-properties file="build.properties" required="1" prefix="build"/>
+    
+        <x-load-prperties prefix="custom.prefix">
+            <file path="local.properties" required="false"/>
+            <file path="overrides.properties" required="false"/>
+            <file path="base.properties" required="true"/>
+            <file path="config.json" required="true" prefix="custom.prefix.json"/>
+        </x-load-prperties>
+    -->
+    <taskdef name="x-load-properties" classname="com.sencha.ant.PropertyLoaderTask" loaderref="senchaloader"/>
+    
+    <!--
+    Loads a json file, sets the supplied properties, then saves the output 
+    to the specified output file    
+
+    file: the input json file
+    tofile: the output json file
+
+    example:
+        <x-set-json-property file="in.js" tofile="out.js">
+            <property name="foo" value="bar"/>
+            <property name="baz" value="abc"/>
+        </x-set-json-property>
+    -->
+    <taskdef name="x-set-json-property" classname="com.sencha.ant.JsonPropertySetterTask" loaderref="senchaloader"/>
+    
+    <!--
+    Adds specified jar(s) to the current class loader's classpath
+
+        <x-extend-classpath>
+            <jar path="${some.path}/to/a/file.jar/>
+        </x-extend-classpath>
+    -->
+    <taskdef name="x-extend-classpath" classname="com.sencha.ant.ClassPathExtender" loaderref="senchaloader"/>
+
+    <!--
+        <x-make-pkg pkg="${build.dir}/foo.pkg"
+                    dir="${package.dir}"
+                    files="fileSetId"
+                    temp="${build.dir}/temp"
+                    />
+    -->
+    <taskdef name="x-make-pkg" classname="com.sencha.ant.MakePkgTask" loaderref="senchaloader"/>
+
+    <!--
+    Stores an environment variable value in the specified property. The name of the
+    environment variable is first matched for exact case, but if no exact case match
+    is found, it will pick a match ignoring case if one exists.
+    
+    This should be preferred over the "properties" task to acquire environment variables
+    because it reflects the exact case of the variables as Ant properties which are
+    case sensitive but environment variables (like "Path") are case insensitive at least
+    on Windows.
+
+        <x-get-env name="PATH" property="env.path"/>
+    -->
+    <taskdef name="x-get-env" classname="com.sencha.ant.GetEnvTask" loaderref="senchaloader"/>
+
+    <!--
+    This is a customised echo task to allow ant targets to output information regardless of log level control flag
+
+        <x-echo message="message" level="info|warn|debug|error"/>
+
+        <x-echo level="info|warn|debug|error">
+            message
+        </x-echo
+    -->
+    <taskdef name="x-echo" classname="com.sencha.ant.SenchaEchoTask" loaderref="senchaloader"/>
+
+    <!--
+    This task evaluates Ant properties in a JavaScript expression and stores the result
+    in the specified property.
+
+        <x-eval property="z" args="x,y"> x + y </x-eval>
+    -->
+    <x-script-def name="x-eval">
+        <attribute name="property"/>
+        <attribute name="args"/>
+        <attribute name="overwrite"/>
+        <![CDATA[
+        var scope = (function () { return this; }());
+        var params = attributes.get('args');
+        var value = '';
+        var parsers = {
+            'number': parseFloat,
+            'float':  parseFloat,
+            'int':    function (v) { return parseInt(v, 10); },
+            'string': function (v) { return v + ''; }
+        };
+
+        if (params) {
+            params = (params + '').split(',');
+            for (var i = 0; i < params.length; ++i) {
+                var param = params[i] + ''; // 'foo' or 'foo:int'
+                var colon = param.indexOf(':');
+                var name = (colon < 0) ? param : param.substring(0, colon);
+                var type = (colon < 0) ? 'number' : param.substring(colon+1);
+                var fn = parsers[type] || parsers.number;
+
+                scope[name] = fn(project.getProperty(name));
+                //self.log('Param: ' + param + ' <' + type + '> value: ' + scope[name]);
+            }
+            eval('var xx = ' + self.text);
+            var ov = attributes.get('overwrite') || '';
+            ov = ov+''; // JS not Java
+            if (ov === '1' || ov === 'true') {
+                project.setProperty(attributes.get('property'), xx+'');
+            } else {
+                project.setNewProperty(attributes.get('property'), xx+'');
+            }
+        }
+        ]]>
+    </x-script-def>
+
+    <!--
+    Creates a new GUID and stores it in the specified property.
+
+        <x-guid property="g"/>
+        <x-guid property="g2" case="upper"/>
+    -->
+    <x-script-def name="x-guid">
+        <attribute name="property"/>
+        <attribute name="case"/>
+        <![CDATA[
+            var s = java.util.UUID.randomUUID().toString();
+            var c = attributes.get('case');
+            c = c && (c + '').toLowerCase();
+            if (c == 'upper') {
+                s = s.toUpperCase();
+            } else {
+                s = s.toLowerCase();
+            }
+            project.setNewProperty(attributes.get('property'), s);
+        ]]>
+    </x-script-def>
+
+    <!--
+    This task produces a valid and properly escaped URL given its component pieces.
+    -->
+    <macrodef name="x-make-url-param">
+        <!--
+        The trick here is that the macrodef creates an Ant type that can hold attributes
+        and body text. We only use this as the type of the nested elements of make-url.
+        -->
+        <attribute name="param"/>
+        <sequential/>
+    </macrodef>
+    <x-script-def name="x-make-url" 
+              src="${cmd.dir}/ant/tasks/make-url.js">
+        <!-- The property to hold the URL -->
+        <attribute name="property" />
+        <!-- The host (machine name or IP address) -->
+        <attribute name="host" />
+        <!-- The protocol (e.g., "https"). Defaults to "http" -->
+        <attribute name="scheme" />
+        <attribute name="port" />
+        <attribute name="path" />
+        <attribute name="fragment" />
+
+        <element name="query" type="x-make-url-param"/>
+
+        <script src="${cmd.dir}/ant/JSON.js"/>
+        <script src="${cmd.dir}/ant/ant-util.js"/>
+    </x-script-def>
+
+    <!--
+    Updates the specified changelog file based on the commits since that file was last
+    updated.
+    -->
+    <x-script-def name="x-git-changelog" 
+                  src="${cmd.dir}/ant/tasks/git-changelog.js">
+        <attribute name="srcfile"/>
+        <attribute name="outfile"/>
+        <attribute name="ticketregex"/>
+        <attribute name="format"/>
+        <attribute name="sort"/>
+
+        <script src="${cmd.dir}/ant/JSON.js"/>
+        <script src="${cmd.dir}/ant/ant-util.js"/>
+    </x-script-def>
+
+    <!--
+    Returns the current HEAD commit hash in the specified property (Git only).
+    -->
+    <macrodef name="x-git-current-hash">
+        <attribute name="property"/>
+        <sequential>
+            <property name="x-git.exe" value="git"/>
+            <exec executable="${x-git.exe}" outputproperty="@{property}">
+                <arg value="log"/>
+                <arg value="-1"/>
+                <arg value="--format=%H"/>
+                <env key="PATH" path="${x-env.PATH}"/>
+            </exec>
+        </sequential>
+    </macrodef>
+    
+    <!-- remove Java generated timestamp from a property file -->
+    <macrodef name="x-remove-timestamp">
+        <attribute name="file"/>
+        <sequential>
+            <if>
+                <available file="@{file}"/>
+                <then>
+                    <replaceregexp file="@{file}" match="#\w{3}, \d{2} \w{3} \d{4} \d\d:\d\d:\d\d.*&#10;" replace=""/>
+                </then>
+            </if>
+        </sequential>
+    </macrodef>
+    
+    <!--
+    Runs jsduck given a set of configuration options.
+    -->
+    <macrodef name="x-jsduck-param">
+        <!--
+        The trick here is that the macrodef creates an Ant type that can hold attributes
+        and body text. We only use this as the type of the nested elements of make-url.
+        -->
+        <attribute name="path"/>
+        <sequential/>
+    </macrodef>
+    <x-script-def name="x-jsduck" src="${cmd.dir}/ant/tasks/jsduck.js">
+        <attribute name="outdir"/>
+        <attribute name="ignore-global"/>
+        <attribute name="external"/>
+        <attribute name="builtin-classes"/>
+        <attribute name="meta-tags"/>
+
+        <attribute name="warnings"/>
+        <attribute name="verbose"/>
+
+        <attribute name="title"/>
+        <attribute name="footer"/>
+        <attribute name="head-html"/>
+        <attribute name="body-html"/>
+        <attribute name="welcome"/>
+        <attribute name="guides"/>
+        <attribute name="videos"/>
+        <attribute name="examples"/>
+        <attribute name="stats"/>
+        <attribute name="categories"/>
+        <attribute name="pretty-json"/>
+        <attribute name="images"/>
+        <attribute name="link-tpl"/>
+        <attribute name="img-tpl"/>
+        <attribute name="export"/>
+        <attribute name="seo"/>
+        <attribute name="eg-iframe"/>
+        <attribute name="processes"/>
+        <attribute name="template"/>
+        <attribute name="template-links"/>
+        <attribute name="extjs-path"/>
+        <attribute name="local-storage-db"/>
+        <attribute name="touch-examples-ui"/>
+        <attribute name="ext-namespace"/>
+        <attribute name="examples-base-url"/>
+        <attribute name="config"/>
+        
+        <element name="files" type="fileset"/>
+        <element name="dir" type="x-jsduck-param"/>
+        
+        <script src="${cmd.dir}/ant/JSON.js"/>
+        <script src="${cmd.dir}/ant/ant-util.js"/>
+    </x-script-def>
+    
+    <!--
+    Escapes a string and stores the result in a property or var.
+    -->
+    <x-script-def name="x-escape" src="${cmd.dir}/ant/tasks/escape.js">
+         <!-- The string to escape -->
+        <attribute name="string"/>
+
+        <!-- The property to hold the escaped string -->
+        <attribute name="property"/>
+
+        <!-- The var property to hold the escaped string -->
+        <attribute name="var"/>
+
+        <!-- The type of escaping. Valid options are "xml" and "json". -->
+        <attribute name="type"/>
+
+        <script src="${cmd.dir}/ant/JSON.js"/>
+        <script src="${cmd.dir}/ant/ant-util.js"/>
+    </x-script-def>
+
+    <!--
+    This task processes a file foe "#include" statements alone on lines and replaces
+    them with the contents of the file they specify. For example:
+
+        #include "foo/bar/File.txt"
+    -->
+    <x-script-def name="x-include" 
+              src="${cmd.dir}/ant/tasks/include.js">
+        <!-- The input file -->
+        <attribute name="srcfile"/>
+
+        <!-- The output file. By default this is the same as the srcfile. -->
+        <attribute name="outfile"/>
+
+        <!--
+        The regex to match an include statement (match[1] is the file to include).
+        Defaults to "#include" as shown above.
+        -->
+        <attribute name="regex"/>
+
+        <script src="${cmd.dir}/ant/JSON.js"/>
+        <script src="${cmd.dir}/ant/ant-util.js"/>
+    </x-script-def>
+    
+    <!--
+        This task processes embedded JQL queries inside an input file, transforms them
+        via XSLT and generates an output file.
+
+        The JQL queries are embedded like so:
+
+                #jql[../path/to/xform.xslt]
+                    project = EXTJSIV AND
+                    type in (Bug) AND
+                    fixVersion in ("4.1.0 Beta 2") AND
+                    status in ("Pending Verification", Closed)
+                #jql
+
+        The "[...]" following the initial "#jql" is optional and specifies the XSLT to use
+        to transform the result. If specified, a relative path is relative to the srcfile.
+
+        The above stanza will be replaced by the transformed results in the outfile.
+        -->
+    <x-script-def name="x-jira-query" 
+              src="${cmd.dir}/ant/tasks/jira-query.js">
+        <!-- The input file -->
+        <attribute name="srcfile"/>
+
+        <!-- The output file. By default this is the same as the srcfile. -->
+        <attribute name="outfile"/>
+
+        <!-- The base Jira URL ready to append the JQL query -->
+        <attribute name="url"/>
+
+        <!-- An optional default XSLT to use for the returned query results -->
+        <attribute name="xslt"/>
+
+        <!-- The basedir for the XSLT processor -->
+        <attribute name="basedir"/>
+
+        <!-- The output file prefix for forum-style notes -->
+        <attribute name="forumprefix"/>
+
+        <!-- True to fail on error (the default) or false to just log it. -->
+        <attribute name="failonerror"/>
+
+        <script src="${cmd.dir}/ant/JSON.js"/>
+        <script src="${cmd.dir}/ant/ant-util.js"/>
+    </x-script-def>
+    
+    <!-- loads a json file into our Configuration -->
+    <taskdef name="x-load-json-properties" classname="com.sencha.ant.LoadJsonPropertiesTask"/>
+    
+    <macrodef name="x-prep-path-for-cli">
+        <attribute name="path"/>
+        <attribute name="property"/>
+        <sequential>
+            <local name="relative.path"/>
+            <local name="curr.dir"/>
+            <property name="curr.dir" location="."/>
+            <x-get-relative-path 
+                to="@{path}" 
+                from="${curr.dir}" 
+                property="relative.path"/>
+            <condition property="os.isUnix" value="true">
+                <os family="unix"/>
+            </condition>
+            <x-script-def name="x-prep-path-impl">
+                <attribute name="relpath"/>
+                <attribute name="prop"/>
+                <attribute name="isunix"/>
+                <![CDATA[
+                    var isUnix = attributes.get("isunix"),
+                        relPath = attributes.get("relpath"),
+                        propName = attributes.get("prop");
+                    
+                    if(isUnix == "true") {
+                        project.setNewProperty(propName, relPath);
+                    } else {
+                        project.setNewProperty(propName, '"' + relPath + '"');
+                    }
+                ]]>
+            </x-script-def>
+            <x-prep-path-impl 
+                relpath="${relative.path}" 
+                prop="@{property}"
+                isunix="${os.isUnix}"/>
+        </sequential>
+    </macrodef>
+        
+    <macrodef name="x-scp">
+        <attribute name="localfile"/>
+        <attribute name="remotefile"/>
+        <attribute name="keyfile" default=""/>
+        <sequential>
+            <local name="lfile"/>
+            <local name="kfile"/>
+            <x-prep-path-for-cli path="@{localfile}"  property="lfile"/>
+
+            <echo>[x-scp] ${lfile} @{remotefile}</echo>
+            <if>
+                <equals arg1="@{keyfile}" arg2=""/>
+                <then>
+                    <x-shell>
+                        scp -r ${lfile} @{remotefile}
+                    </x-shell>
+                </then>
+                <else>
+                    <x-prep-path-for-cli path="@{keyfile}"    property="kfile"/>
+                    <x-shell>
+                        scp -r -i ${kfile} ${lfile} @{remotefile}
+                    </x-shell>
+                </else>
+            </if>
+        </sequential>
+    </macrodef>
+
+    <!--
+    The AntContrib shellscript task, while very handy, requires you to know the proper
+    shell for your platform. To use scripts like Ant or Compass which are distributed
+    as batch files on Windows or shell scripts on Linux/Mac, you typically don't need
+    to know this and it makes scripts needlessly platform-specific.
+    -->
+    <macrodef name="x-shell">
+        <attribute name="failonerror" default="true"/>
+        <attribute name="dir" default="."/>
+        <attribute name="outputproperty" default=""/>
+        <attribute name="reloadprofile" default="false"/>
+        <text name="text"/>
+        <sequential>
+            <local name="shell.name"/>
+            <local name="reload.profile"/>
+
+            <x-echo level="debug">
+                x-shell: in directory : @{dir}
+                x-shell: running command => @{text}
+            </x-echo>
+
+            <if>
+                <and>
+                    <x-is-true value="@{reloadprofile}"/>
+                    <os family="mac"/>
+                </and>
+                <then>
+                    <property name="reload.profile">
+                        <![CDATA[
+                            if [ -e /etc/profile ]
+                            then
+                                source /etc/profile;
+                            fi
+
+                            if [ -e ~/.bash_profile ]
+                            then
+                                source ~/.bash_profile;
+                            fi
+
+                            if [ -e ~/.profile ]
+                            then
+                                source ~/.profile;
+                            fi
+
+                            if [ -e ~/.bashrc ]
+                            then
+                                source ~/.bashrc;
+                            fi
+                        ]]>
+                    </property>
+                </then>
+            </if>
+            <property name="reload.profile" value=""/>
+
+            <!--
+            We cannot use "property" task since it sets lots of properties in order to
+            access environment variables and also they are case sensative and Windows
+            is not (e.g., "Path" may be defined instead of "PATH").
+            -->
+            <local name="env.path" />
+            <x-get-env name="PATH" property="env.path"/>
+
+            <if>
+                <isset property="x-shell.name"/>
+                <then>
+                    <property name="shell.name" value="${x-shell.name}"/>
+                </then>
+                <else>
+                    <if>
+                        <os family="windows"/>
+                        <then>
+                            <property name="shell.name" value="cmd.exe"/>
+                        </then>
+                        <else>
+                            <property name="shell.name" value="bash"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+
+            <if>
+                <equals arg1="${shell.name}" arg2="cmd.exe"/>
+                <then>
+                    <if>
+                        <equals arg1="@{outputproperty}" arg2=""/>
+                        <then>
+                            <shellscript shell="cmd.exe" tmpsuffix=".cmd" dir="@{dir}"
+                                         failonerror="@{failonerror}">
+                                <arg value="/c"/>
+                                <arg value="call"/>
+                                <env key="PATH" path="${env.path}"/>
+                                @{text}
+                            </shellscript>
+                        </then>
+                        <else>
+                            <shellscript shell="cmd.exe" tmpsuffix=".cmd" dir="@{dir}"
+                                         failonerror="@{failonerror}"
+                                         outputproperty="@{outputproperty}">
+                                <arg value="/c"/>
+                                <arg value="call"/>
+                                <env key="PATH" path="${env.path}"/>
+                                @{text}
+                            </shellscript>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if>
+                        <equals arg1="@{outputproperty}" arg2=""/>
+                        <then>
+                            <shellscript shell="${shell.name}" dir="@{dir}"
+                                         failonerror="@{failonerror}">
+                                ${reload.profile}
+                                @{text}
+                            </shellscript>
+                        </then>
+                        <else>
+                            <shellscript shell="${shell.name}" dir="@{dir}"
+                                         failonerror="@{failonerror}"
+                                         outputproperty="@{outputproperty}">
+                                ${reload.profile}
+                                @{text}
+                            </shellscript>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="x-verify-app-cmd-ver">
+        <sequential>
+            <if>
+                <isset property="app.name"/>
+                <then>
+                    <local name="version.diff"/>
+                    <property name="cmd.version" value="0.0.0.0"/>
+                    <property name="app.cmd.version" value="0.0.0.0"/>
+
+                    <x-script-def name="x-verify-version" language="javascript">
+                        <![CDATA[
+                            importPackage(com.sencha.util);
+                            importPackage(com.sencha.logging);
+                            
+                            var _logger = SenchaLogManager.getLogger('x-verify-app-cmd-ver'),
+                                a1 = project.getProperty("cmd.version"),
+                                a2 = project.getProperty("app.cmd.version"),
+                                v1 = new Version(a1),
+                                v2 = new Version(a2),
+                                diff = v1.compareTo(v2),
+                                message;
+
+                            if (diff > 0) {
+                                _logger.warn("The application was last modified by an " +
+                                    "older version of Sencha Cmd (" + v2 + "), current is " + v1 + "." + 
+                                    " Please run 'sencha app upgrade -noframework' to update to " + v1 + ".");
+                            } else if(diff < 0) {
+                                _logger.warn("The application was last modified by a newer " +
+                                    "version of Sencha Cmd (" + v2 + "), current is " + v1 + "." + 
+                                    " Please install a newer Sencha Cmd version comptible with " + v2 + ".");
+                            }
+                        ]]>
+                    </x-script-def>
+                    <x-verify-version/>
+                </then>
+            </if>
+        </sequential>
+    </macrodef>
+    
+    <macrodef name="x-normalize-path">
+        <attribute name="path"/>
+        <attribute name="property"/>
+        <sequential>
+
+            <!--            
+            we need to use com.sencha java code here, but that can't be loaded right away,
+            so we need to defer the loading of this code by using a nested x-script-def
+            call
+            -->
+            <x-script-def name="x-normalize-path-impl">
+                <attribute name="pathname"/>
+                <attribute name="propertyname"/>
+                <![CDATA[
+                    importPackage(com.sencha.util);
+                    var pathName = attributes.get("pathname"),
+                        normalized = PathUtil.convertPathCharsToUnix(pathName),
+                        propName = attributes.get("propertyname");
+                        
+                    project.setNewProperty(propName, normalized);
+                ]]>
+            </x-script-def>
+            <x-normalize-path-impl pathName="@{path}" propertyName="@{property}"/>
+        </sequential>
+    </macrodef>
+    
+    <macrodef name="x-get-relative-path">
+        <attribute name="from" default="."/>
+        <attribute name="to"/>
+        <attribute name="property"/>
+        <sequential>
+            
+            <!--            
+            we need to use com.sencha java code here, but that can't be loaded right away,
+            so we need to defer the loading of this code by using a nested x-script-def
+            call
+            -->
+            <x-script-def name="x-get-relative-path-impl">
+                <attribute name="frompath"/>
+                <attribute name="topath"/>
+                <attribute name="propertyname"/>
+                <![CDATA[
+                    importPackage(com.sencha.util);
+                    var fromPath = attributes.get("frompath"),
+                        toPath = attributes.get("topath"),
+                        relPath = PathUtil.getRelativePath(fromPath, toPath),
+                        propName = attributes.get("propertyname");
+                    
+                    relPath = PathUtil.convertPathCharsToUnix(relPath);
+                    if(relPath.endsWith("/")) {
+                        relPath = relPath.substring(0, relPath.length() - 1);
+                    }
+                    
+                    project.setNewProperty(propName, relPath);
+                ]]>
+            </x-script-def>
+            
+            <x-get-relative-path-impl 
+                fromPath="@{from}"
+                toPath="@{to}"
+                propertyName="@{property}"
+                />
+        </sequential>
+    </macrodef>
+
+    <macrodef name="x-set-json-version">
+        <attribute name="file"/>
+        <attribute name="version"/>
+        <sequential>
+            <x-script-def name="x-set-json-version-impl">
+                <attribute name="file"/>
+                <attribute name="version"/>
+
+                <script src="${cmd.dir}/ant/JSON.js"/>
+                <script src="${cmd.dir}/ant/ant-util.js"/>
+
+                var fileName = attributes.get('file') + '';
+                var version = attributes.get('version') + '';
+
+                echo("Stamping version " + version + " on to " + fileName);
+
+                var object = readJson(fileName);
+                object.version = version;
+                writeJson(fileName, object);
+            </x-script-def>
+            
+            <x-set-json-version-impl file="@{file}" version="@{version}"/>
+        </sequential>
+    </macrodef>
+    
+    <!-- 
+    Helper macrodef for launching a terminal with a command
+    -->
+    <macrodef name="x-launch-terminal">
+        <attribute name="dir" default="${app.dir}"/>
+        <text name="text.launch.command" trim="false" optional="false"/>
+        <sequential>
+            <if>
+                <equals arg1="${os.family}" arg2="windows"/>
+                <then>
+                    <exec executable="cmd" dir="${dir}">
+                        <arg line="/c start cmd.exe /k @{text.launch.command}"/>
+                    </exec>
+                </then>
+                <else>
+                    <local name="input.string"/>
+                    <property name="input.string">
+                        <![CDATA[ tell application "Terminal"
+                        do script "cd @{dir}; @{text.launch.command}"
+                        end tell ]]>
+                    </property>
+                    <exec executable="/usr/bin/osascript" inputstring="${input.string}"/>
+                </else>
+            </if>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="x-run-if-true">
+        <attribute name="value"/>
+        <element name="actions" implicit="true"/>
+        <sequential>
+            <if>
+                <x-is-true value="@{value}"/>
+                <then>
+                    <actions/>
+                </then>
+            </if>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="x-launch-browser">
+        <attribute name="url"/>
+        <sequential>
+
+            <!--            
+            we need to use com.sencha java code here, but that can't be loaded right away,
+            so we need to defer the loading of this code by using a nested x-script-def
+            call
+            -->
+            <x-script-def name="x-run-browser">
+                <attribute name="url"/>
+                <![CDATA[
+                    importPackage(com.sencha.util);
+                    var url = attributes.get("url");
+                        
+                    DesktopUtil.tryBrowse(url);
+                ]]>
+            </x-script-def>
+            <x-run-browser url="@{url}"/>
+        </sequential>
+    </macrodef>
+    
+</antlib>

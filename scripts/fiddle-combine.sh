@@ -10,13 +10,33 @@
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# 09/09/2015 - Baseline ~ See CHANGELOG.markdown @ 201508240420
+# 09/09/2015 - See CHANGELOG @ 201508240420
+# 09/23/2015 - See CHANGELOG @ 201509220420
 # ---------------------------------------------------------------------------------------------------|
 
 
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 
+fiddleType=$1
+fiddleCriteria=$2
+appFileName="app.js"
+fiddleName=""
+fiddlePath=""
+appFile=""
+srcDir=""
+srcFile=""
+useClosure=1
+
+if [ "$#" -gt 2 ]; then appFileName=$3; fi
+if [ "$#" -gt 3 ]; then useClosure=$4; fi
+
+
+
+function whichJsBeautify() {
+    which js-beautify
+    echo $?
+}
 
 function listAndCount() {
     cd ../fiddles/${fiddleType}
@@ -56,85 +76,171 @@ function listSourceFiles() {
 }
 
 function initAppFile() {
-    if [[ -e "app.js" ]]
+
+    type=$1;
+    appFile=$2;
+    closure=$3;
+
+    if [[ -e "${appFile}" ]]
     then
-        sudo rm -f "app.js";
+        sudo rm -f "${appFile}";
     fi
 
-    case $1 in
+    case ${type} in
 	    'extjs6' | 'extjs5' )
             if [[ -e "src/meta.js" ]]
             then
-                cat "src/meta.js" > "app.js";
+                cat "src/meta.js" > "${appFile}";
             fi
             ;;
         *)
-            echo "(function (app) {" > "app.js";
-            echo -e "\t\"use strict\";" >> "app.js";
+            if [[ -e "src/preinit.js" ]]
+            then
+                cat "src/preinit.js" > "${appFile}";
+                echo -e "\n" >> "${appFile}";
+                if [[ ${closure} -eq 0 ]]
+                then
+                    echo "(function (app) {" >> "${appFile}";
+                fi
+            else
+                if [[ ${closure} -eq 0 ]]
+                then
+                    echo "(function (app) {" > "${appFile}";
+                fi
+            fi
+            if [[ ${closure} -eq 0 ]]
+            then
+                echo -e "\t\"use strict\";" >> "${appFile}";
+            fi
             ;;
     esac
 }
 
 function addAppFileBody() {
-    for file in $(listSourceFiles $1)
+    type=$1;
+    appFile=$2;
+
+    for file in $(listSourceFiles ${type})
     do
         filePath="src/${file}"
         if [[ -e "${filePath}" ]]
         then
-            #echo -e "\n" >> "app.js"
-            cat "${filePath}" | grep -v -e '^$' >> "app.js"
+            echo -e "\n" >> "${appFile}"
+            cat "${filePath}" | grep -v -e '^$' >> "${appFile}"
         fi
     done
 }
 function completeAppFile() {
-    case $1 in
+    type=$1;
+    appFile=$2;
+    closure=$3;
+    case ${type} in
 	    'extjs6' | 'extjs5' )
             if [[ -e "src/init.js" ]]
             then
-                cat "src/init.js" >> "app.js"
+                cat "src/init.js" >> "${appFile}"
             else
                 if [[ -e "src/Application.js" ]]
                 then
-                    cat "src/Application.js" >> "app.js"
+                    cat "src/Application.js" >> "${appFile}"
                 fi
             fi
             ;;
         *)
-            echo "})(window.app = window.app || {})" >> "app.js";
+            if [[ ${closure} -eq 0 ]]
+            then
+                echo "})(window.app = window.app || {})" >> "${appFile}";
+            fi
             ;;
     esac
 
 }
 
 function createAppFile() {
-    initAppFile "${fiddleType}" || exit 89
-    addAppFileBody "${fiddleType}" || exit 90
-    completeAppFile "${fiddleType}" || exit 91
+    type=$1;
+    appFile=$2;
+    closure=$3;
+
+    initAppFile "${type}" "${appFile}" "${closure}" || exit 89
+    addAppFileBody "${type}" "${appFile}" || exit 90
+    completeAppFile "${type}" "${appFile}" "${closure}" || exit 91
+    if [[ $(whichJsBeautify;) ]]
+    then
+        beautifyAppFile "${appFile}" || exit 92
+    else
+        echo "warning: js-beautify not installed."
+    fi
 }
 
-fiddleType=$1
-fiddleCriteria=$2
+function beautifyAppFile() {
+    js-beautify "$1" > "$1~"
+    cat "$1~" > "$1"
+    rm -r "$1~"
+}
+
+function catch() {
+    case $1 in
+        0)  echo "Combine Source process completed successfully."
+            echo "The ${appFileName} file for \"${fiddleName}\" has been updated."
+            ;;
+        86) echo ""
+            echo "Nope ~ Incorrect number of arguments"
+            echo ""
+            echo "Usage:"
+            echo ""
+            echo "$0 \"[t]\" \"[f]\" \"[a]\" \"[c]\""
+            echo ""
+            echo "[t] - type. Valid types include: "
+            echo ""
+            echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
+            echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
+            echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
+            echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
+            echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
+            echo ""
+            echo "[f] - existing fiddle name.  For example: \"fiddleParabolaSurface\""
+            echo ""
+            echo "[a] - (optional) target file name. Defaults to \"app.js\""
+            echo ""
+            echo "[c] - (optional) disable closure. Defaults to \"1\" (false)"
+            echo ""
+            ;;
+        87) echo "fubar! target fiddle, \"${fiddlePath}\" does not exist."
+            ;;
+        88) echo "fubar! target fiddle, \"${fiddlePath}\" does not contain a src directory."
+            ;;
+        89) echo "fubar! initAppFile call failed"
+            ;;
+        90) echo "fubar! addAppFileBody call failed"
+            ;;
+        91) echo "fubar! completeAppFile call failed"
+            ;;
+        *)  echo "fubar! Something went wrong."
+            ;;
+    esac
+    exit $1
+}
+
 fiddleName=$(getFiddle;);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
-appFile="${fiddlePath}/app.js"
+appFile="${fiddlePath}/${appFileName}"
 srcDir="${fiddlePath}/src"
-srcFile=""
+
 
 #try
 (
-	# Verify parameter count is 2
-	if [ "$#" -ne 2 ]; then  exit 86; fi
-
+    # Verify parameter count is 2
+    if [ "$#" -lt 2 ]; then  exit 86; fi
     # Verify type parameter
 	case ${fiddleType} in
-	    'extjs6' | 'svg' | 'jquery' | 'three' )
+	    'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
 	        # Verify the fiddle exists
             if [[ ! -d "${fiddlePath}" ]]; then exit 87; fi
 
             # Verify the src directory exists
             if [[ ! -d "${srcDir}" ]]; then exit 87; fi
             cd ${fiddlePath};
-            createAppFile || exit $?;
+            createAppFile "${fiddleType}" "${appFileName}" "${useClosure}" || exit $?;
             ;;
         *)
             exit 86
@@ -142,46 +248,10 @@ srcFile=""
 
     esac
 )
-#catch
-_rc=$?
-case ${_rc} in
-    0)  echo "Combine Source process completed successfully."
-        echo "The app.js file for \"${fiddleName}\" has been updated."
-        ;;
-    86) echo ""
-        echo "Nope ~ Incorrect number of arguments"
-        echo ""
-        echo "Usage:"
-        echo ""
-        echo "$0 \"[t]\" \"[f]\""
-        echo ""
-        echo "[t] - type. Valid types include: "
-        echo ""
-        echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
-        echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
-        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
-        echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
-        echo ""
-        echo "[f] - existing fiddle name.  For example: \"fiddleParabolaSurface\""
-        echo ""
-        echo ""
-        ;;
-    87) echo "fubar! target fiddle, \"${fiddlePath}\" does not exist."
-        ;;
-    88) echo "fubar! target fiddle, \"${fiddlePath}\" does not contain a src directory."
-        ;;
-    89) echo "fubar! initAppFile call failed"
-        ;;
-    90) echo "fubar! addAppFileBody call failed"
-        ;;
-    91) echo "fubar! completeAppFile call failed"
-        ;;
-    *)  echo "fubar! Something went wrong."
-        ;;
-esac
+catch $?
+
 #finally
-exit ${_rc}
+exit $?
 
 
 

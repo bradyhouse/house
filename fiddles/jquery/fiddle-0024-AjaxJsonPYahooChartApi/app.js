@@ -18,11 +18,14 @@ var metaData = {
                         timeStampRange = null;
                     for (; timeStampRangesIndex < timeStampRangesCount; timeStampRangesIndex++) {
                         timeStampRange = new app.model.TimeStampDateRange(timeStampRanges[timeStampRangesIndex]);
+                        stdout += timeStampRange.toString() + '<br />';
                         app.store.TimeStampDateRanges.push(timeStampRange);
+
                     }
                     app.util.log(stdout);
                 }
             });
+
         },
         log: function (msg) {
             $(".log").html(msg);
@@ -59,6 +62,12 @@ var metaData = {
             set companyName(value) {
                 this._companyName = value;
             };
+            get exchangeName() {
+                return this._exchangeName;
+            };
+            set exchangeName(value) {
+                this._exchangeName = value;
+            };
             get unit() {
                 return this._unit;
             };
@@ -88,10 +97,7 @@ var metaData = {
             };
             set previousClose(value) {
                 this._previousClose = value;
-            }
-
-
-
+            };
         },
         TimeStamp: class {
             constructor(config) {
@@ -135,6 +141,11 @@ var metaData = {
             set max(value) {
                 this._max = value;
             };
+            toString() {
+                return this.date + ',' +
+                    this.min + ',' +
+                    this.max;
+            }
         },
         Series: class {
             constructor(config) {

@@ -16,10 +16,6 @@ describe("BasePath", function () {
             docElement.setAttribute("onmouseout", 'app.controller.onPathMouseOut(evt, this.id);');
         });
 
-        afterEach(function() {
-            basePath = null;
-            docElement = null;
-        });
 
         it("should have a default docElement", function() {
             expect(basePath.docElementNS.outerHTML).toEqual(docElement.outerHTML);

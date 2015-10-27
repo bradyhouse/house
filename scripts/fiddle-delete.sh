@@ -18,23 +18,39 @@
 # 07/11/2015 - See CHANGELOG @ 201507110420
 # 07/26/2015 - See CHANGELOG @ 201507260420
 # 09/10/2015 - See CHANGELOG @ 201508240420
+# 09/23/2015 - See CHANGELOG @ 201509220420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
+
+function listAndCount() {
+    cd ../fiddles/${fiddleType}
+    echo $(ls -1 | grep ${fiddleCriteria} | wc -l | sed -e 's/^[[:space:]]*//';)
+}
+
+function getFiddle() {
+    matches=$(listAndCount;)
+    if [[ ${matches} -eq 1 ]]
+    then
+        cd ../fiddles/${fiddleType};
+        echo $(ls -1 | grep ${fiddleCriteria} | sed -e 's/^[[:space:]]*//';);
+    else
+        echo "";
+    fi
+}
+
 fiddleType=$1
-fiddleName=$2
+fiddleCriteria=$2
+fiddleName=$(getFiddle;);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 
 #try
 (
-	# Verify parameter count is 2
 	if [ "$#" -ne 2 ]; then  exit 86; fi
 
-    # Verify that the target fiddle directory exists
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
-    # Verify type parameter
-	case ${fiddleType} in
+    case ${fiddleType} in
         'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
         if [[ -d "${fiddlePath}" ]]
         then

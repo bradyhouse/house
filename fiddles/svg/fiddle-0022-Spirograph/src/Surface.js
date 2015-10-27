@@ -14,20 +14,19 @@ class Surface {
     config() {
         return {
             id: 'surface1',
-            cssWidth: '500px',
+            cssWidth: '500%',
             cssHeight: '500px',
             xmlns: Util.xmlNamespaces().xmlns,
             xmlnsEv: Util.xmlNamespaces().xmlnsEv,
             xmlnsXlink: Util.xmlNamespaces().xmlnsXLink,
             zoomAndPan: "disabled",
-            coorWidth: '500px',
+            coorWidth: '100%',
             coorHeight: '500px',
             hook: window.document.body,
             autoBind: false,
             autoPopulate: false,
             onLoad: 'app.controller.onSurfaceLoad(evt);'
-
-        }
+        };
     }
 
     /**
@@ -145,6 +144,10 @@ class Surface {
         return this._group;
     }
 
+    get menubar() {
+        return this._menubar;
+    }
+
     get shapes() {
         return this._shapes;
     }
@@ -159,18 +162,32 @@ class Surface {
     /**
      * Method invoked during initialization (init)
      * when the autoBind flag is true.  It creates
+     * new Menubar instance and assigns it to the
+     * menubar property.  The docElementNS of the
+     * resulting class is then appended to the
+     * docElement.
+     */
+    initMenubar() {
+        this._menubar = new Menubar({
+            hook: this.docElement,
+            autoBind: this.autoBind
+        });
+    }
+
+    /**
+     * Method invoked during initialization (init)
+     * when the autoBind flag is true.  It creates
      * new Group instance and assigns it to the
      * group property.  The docElementNS of the
      * resulting class is then appended to the
      * docElement.
      */
     initGroup() {
-        var group = new Group({
+        this._group = new Group({
             id: 'shapesGroup',
             hook: this.docElement,
             autoBind: this.autoBind
         });
-        this._group = group;
     }
 
     /**
@@ -202,13 +219,14 @@ class Surface {
         svg.setAttribute('xmlns:xlink', this.xmlnsXlink);
         svg.setAttribute('xmlns:ev', this.xmlnsEv);
         svg.setAttribute('zoomAndPan', this.zoomAndPan);
-        svg.setAttribute('style', 'width: ' + this.cssWidth + '; height: ' + this.cssHeight + ';');
+        // svg.setAttribute('style', 'width: ' + this.cssWidth + '; height: ' + this.cssHeight + ';');
         svg.setAttribute('onload', this.onLoad);
 
         me._docElement = svg;
 
         if (me.autoBind) {
             me.initGroup();
+            me.initMenubar();
             if (me.autoPopulate) {
                 me.initShapes();
             }
