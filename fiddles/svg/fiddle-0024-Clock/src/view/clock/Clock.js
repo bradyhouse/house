@@ -53,7 +53,7 @@ app.view.clock.Clock = class extends Group {
                             children: [
                                 new Path({
                                     data: 'M10 0 L0 0 L0 10',
-                                    fill: 'none',
+                                    fill: null,
                                     stroke: 'yellow',
                                     strokeWidth: '0.25'
                                 })

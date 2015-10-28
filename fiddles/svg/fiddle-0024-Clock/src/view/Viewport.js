@@ -20,9 +20,9 @@ class Viewport extends Surface {
                     text: 'de-constructed version on Github',
                     color: '#58FA58',
                     cornerRadius: 12,
-                    width: 485,
+                    width: 225,
                     height: 22,
-                    left: 5,
+                    left: 250,
                     top: 470
                 })
             ]
