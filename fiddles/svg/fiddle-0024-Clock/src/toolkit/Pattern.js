@@ -1,11 +1,10 @@
 /**
  * Class used to wrap (or model)
- * an Scalar Vector Graphic (SVG) group,
- * "<g>", tag.  This tag
- * is used to "group" elements within
- * a given SVG block.
+ * an Scalar Vector Graphic (SVG) pattern,
+ * "<pattern>", tag.  For additional info
+ * refer to [MDN ... pattern](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/pattern).
  */
-class Group {
+class Pattern {
 
     /**
      * Static config method. Object returned defines the default properties of the class. This
@@ -15,20 +14,20 @@ class Group {
      */
     config() {
         return {
-            id: 'group1',
-            stroke: null,
-            strokeWidth: null,
-            opacity: null,
+            id: 'pattern1',
+            units: null,
+            contentUnits: null,
+            width: null,
+            height: null,
+            x: null,
+            y: null,
             xmlns: Util.xmlNamespaces().xmlns,
             hook: null,
             autoBind: false,
-            onMouseDown: 'app.controller.onShapeGroupMouseDown(evt);',
-            onKeyUp: 'app.controller.onShapeGroupKeyUp(evt);',
             children: [],
             transform: null,
-            visibility: null,
-            zIndex: null,
-            cursor: null
+            preserveAspectRatio: null,
+            link: null
         }
     }
 
@@ -42,15 +41,16 @@ class Group {
         this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
         this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
         this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-        this._onKeyUp = config && config.hasOwnProperty('onKeyUp') ? config.onKeyUp : this.config().onKeyUp;
-        this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
         this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
         this._transform = config && config.hasOwnProperty('transform') ? config.transform : this.config().transform;
-        this._visibility = config && config.hasOwnProperty('visibility') ? config.visibility : this.config().visibility;
-        this._zIndex = config && config.hasOwnProperty('zIndex') ? config.zIndex : this.config().zIndex;
-        this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
-        this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
-        this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
+        this._width = config && config.hasOwnProperty('width') ? config.width : this.config().width;
+        this._height = config && config.hasOwnProperty('height') ? config.height : this.config().height;
+        this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
+        this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
+        this._units = config && config.hasOwnProperty('units') ? config.units : this.config().units;
+        this._contentUnits = config && config.hasOwnProperty('contentUnits') ? config.contentUnits : this.config().contentUnits;
+        this._preserveAspectRatio = config && config.hasOwnProperty('preserveAspectRatio') ? config.preserveAspectRatio : this.config().preserveAspectRatio;
+        this._link = config && config.hasOwnProperty('link') ? config.link : this.config().link;
         this.init();
     }
 
@@ -108,24 +108,6 @@ class Group {
     }
 
     /**
-     * Getter for the onKeyUp event handler.
-     *
-     * @returns {string}
-     */
-    get onKeyUp() {
-        return this._onKeyUp;
-    }
-
-    /**
-     * Getter for the onMouseDown event handler.
-     *
-     * @returns {*}
-     */
-    get onMouseDown() {
-        return this._onMouseDown;
-    }
-
-    /**
      * Getter for children objects.
      * @returns {*}
      */
@@ -134,7 +116,8 @@ class Group {
     }
 
     /**
-     * Getter for transform attribute.
+     * Getter for the optional pattern transform, "patternTransform", tag attribute.
+     *
      * @returns {*}
      */
     get transform() {
@@ -142,44 +125,74 @@ class Group {
     }
 
     /**
-     * Getter for opacity attribute.
-     * @returns {*}
-     */
-    get opacity() {
-        return this._opacity;
-    }
-
-    /**
-     * Getter for stroke attribute.
-     * @returns {*}
-     */
-    get stroke() {
-        return this._stroke;
-    }
-
-    /**
-     * Getter for strokeWidth attribute.
-     * @returns {*}
-     */
-    get strokeWidth() {
-        return this._strokeWidth;
-    }
-
-    /**
-     * Getter for visibility attribute.
-      * @returns {*}
-     */
-    get visibility() {
-        return this._visibility;
-    }
-
-    /**
-     * Getter for zIndex attribute.
+     * Getter for width attribute.
      *
      * @returns {*}
      */
-    get zIndex() {
-        return this._zIndex;
+    get width() {
+        return this._width;
+    }
+
+    /**
+     * Getter for height attribute.
+     *
+     * @returns {*}
+     */
+    get height() {
+        return this._height;
+    }
+
+    /**
+     * Getter for  x attribute.
+     * @returns {*}
+     */
+    get x() {
+        return this._x;
+    }
+
+    /**
+     * Getter for y attribute.
+     * @returns {*}
+     */
+    get y() {
+        return this._y;
+    }
+
+    /**
+     * Getter for the optional pattern units, "patternUnits", tag attribute.
+     *
+     * @returns {*}
+     */
+    get units() {
+        return this._units;
+    }
+
+    /**
+     * Getter for the optional pattern content units "patternContentUnits", tag attribute.
+     *
+     * @returns {*}
+     */
+    get contentUnits() {
+        return this._contentUnits;
+    }
+
+    /**
+     * Getter for the optional preserve aspect ratio, "preserveAspectRatio", tag attribute.
+     *
+     * @returns {*}
+     */
+    get preserveAspectRatio() {
+        return this._preserveAspectRatio;
+
+    }
+
+    /**
+     * Getter for the optional link, "xlink:href", tag attribute.
+     *
+     * @returns {*}
+     */
+    get link() {
+        return this._link;
     }
 
     /**
@@ -198,40 +211,43 @@ class Group {
     init() {
         var i = 0,
             child = null,
-            docElement = document.createElementNS(this.xmlns, 'g');
+            docElement = document.createElementNS(this.xmlns, 'pattern');
 
         docElement.setAttribute('id', this.id);
 
-        if (this.onMouseDown) {
-            docElement.setAttribute('onmousedown', this.onMouseDown);
+        if (this.x) {
+            docElement.setAttribute('x', this.x);
         }
-
-        if (this.onKeyUp) {
-            docElement.setAttribute('onkeyup', this.onKeyUp);
+        if (this.y) {
+            docElement.setAttribute('y', this.y);
         }
 
         if (this.transform) {
-            docElement.setAttribute('transform', this.transform);
+            docElement.setAttribute('patternTransform', this.transform);
         }
 
-        if (this.stroke) {
-            docElement.setAttribute('stroke', this.stroke);
+        if (this.units) {
+            docElement.setAttribute('patternUnits', this.units);
         }
 
-        if (this.strokeWidth) {
-            docElement.setAttribute('stroke-width', this.strokeWidth);
+        if (this.contentUnits) {
+            docElement.setAttribute('patternContentUnits', this.contentUnits);
         }
 
-        if (this.visibility) {
-            docElement.setAttribute('visibility', this.visibility);
+        if (this.link) {
+            docElement.setAttributeNS(Util.xmlNamespaces().xmlnsXLink, 'href', this.link);
         }
 
-        if (this.opacity) {
-            docElement.setAttribute('opacity', this.opacity);
+        if (this.width) {
+            docElement.setAttribute('width', this.width);
         }
 
-        if (this.zIndex) {
-            docElement.setAttribute('z-index', this.zIndex);
+        if (this.height) {
+            docElement.setAttribute('height', this.height);
+        }
+
+        if (this.preserveAspectRatio) {
+            docElement.setAttribute('preserveAspectRatio', this.preserveAspectRatio);
         }
 
         this._docElementNS = docElement;
@@ -249,6 +265,5 @@ class Group {
             this.bind();
         }
     }
-
 
 }

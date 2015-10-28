@@ -1,4 +1,4 @@
-fiddle-0022-Spirograph
+fiddle-0024-Clock
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,12 +6,12 @@ fiddle-0022-Spirograph
 
 ### Title
 
-Spirograph
+House SVG Fiddle - fiddle-0024-Clock
 
 
 ### Creation Date
 
-08-12-15
+10-27-15
 
 
 ### Location
@@ -21,8 +21,7 @@ Chicago, IL
 
 ### Description
 
-Extreme fiddle, which I have been working on off/on for months now ...
-
+Another SVG Fiddle.
 
 
 ### Published Version Link
@@ -32,4 +31,4 @@ N/A
 
 ### Tags
 
-svg, es6, class,
+svg

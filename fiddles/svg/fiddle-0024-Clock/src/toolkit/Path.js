@@ -1,5 +1,7 @@
 /**
- * Base class for all virtualized shapes.
+ * Class used to wrap (or model)
+ * an Scalar Vector Graphic (SVG) path,
+ * "<path>", tag.
  */
 
 class Path {
@@ -17,11 +19,12 @@ class Path {
             strokeWidth: 1,
             opacity: .5,
             xmlns: Util.xmlNamespaces().xmlns,
+            data: null,
             hook: null,
             autoBind: false,
-            onMouseDown: 'app.controller.onPathMouseDown(evt, this.id);',
-            onMouseOver: 'app.controller.onPathMouseOver(evt, this.id);',
-            onMouseOut: 'app.controller.onPathMouseOut(evt, this.id);'
+            onMouseDown: null,
+            onMouseOver: null,
+            onMouseOut: null
 
         }
     }
@@ -36,12 +39,11 @@ class Path {
         this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
         this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
         this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
+        this._data = config && config.hasOwnProperty('data') ? config.data : this.config().data;
         this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
         this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
         this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-        this._onMouseOver = config && config.hasOwnProperty('onMouseOver') ? config.onMouseOver : this.config().onMouseOver;
-        this._onMouseOut = config && config.hasOwnProperty('onMouseOut') ? config.onMouseOut : this.config().onMouseOut;
-        this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
+
         this.init();
     }
 
@@ -79,6 +81,10 @@ class Path {
         return this._opacity;
     }
 
+    get data() {
+        return this._data;
+    }
+
     get xmlns() {
         return this._xmlns;
     }
@@ -91,17 +97,7 @@ class Path {
         return this._autoBind;
     }
 
-    get onMouseOut() {
-        return this._onMouseOut;
-    }
 
-    get onMouseOver() {
-        return this._onMouseOver;
-    }
-
-    get onMouseDown() {
-        return this._onMouseDown;
-    }
 
     /**
      * Method used to append the docElement to configured hook element.
@@ -116,9 +112,11 @@ class Path {
         docElement.setAttribute('stroke', this.stroke);
         docElement.setAttribute('stroke-width', this.strokeWidth);
         docElement.setAttribute('opacity', this.opacity);
-        docElement.setAttribute("onmousedown", this.onMouseDown);
-        docElement.setAttribute("onmouseover", this.onMouseOver);
-        docElement.setAttribute("onmouseout", this.onMouseOut);
+
+        if (this.data) {
+            docElement.setAttribute('d', this.data);
+        }
+
         this._docElementNS = docElement;
         if (this.autoBind) {
             this.bind();
