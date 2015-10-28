@@ -26,8 +26,8 @@ Fiddle exploring how to create a re-useable analog clock component using ES6 cla
 
 ### Published Version Link
 
-[code pen](http://codepen.io/bradyhouse/pen/YyLOZx)
-
+* [codepen.io](http://codepen.io/bradyhouse/pen/YyLOZx)
+* [jsfiddle.net](http://jsfiddle.net/bradyhouse/khqvz440/)
 
 ### Tags
 
