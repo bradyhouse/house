@@ -3,7 +3,8 @@
  * an Scalar Vector Graphic (SVG) text,
  * "<text>", tag.  This tag
  * is used to add text blocks on
- * screen.
+ * screen. For additional info
+ * refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text).
  */
 class Text {
 
@@ -22,7 +23,7 @@ class Text {
             hook: null,
             autoBind: false,
             cursor: null,
-            text: '&nbsp;',
+            text: null,
             children: [],
             onMouseOver: null,
             onMouseOut: null,

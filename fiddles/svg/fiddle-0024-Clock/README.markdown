@@ -6,7 +6,7 @@ fiddle-0024-Clock
 
 ### Title
 
-House SVG Fiddle - fiddle-0024-Clock
+SVG Analog Clock
 
 
 ### Creation Date
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another SVG Fiddle.
+Fiddle exploring how to create a re-useable analog clock component using ES6 classes that is rendered in SVG instead of HTML. The component utilizes a design pattern similar to EXTJS complete with controller style mixins in order to organize (sub-divide) the various event handlers.  The inner working of the clock is based on the [ball clock SVG](http://srufaculty.sru.edu/david.dailey/svg/ballclock.svg) by David Dailey.  Finally, it builds on the "toolkit" collection of SVG wrapper classes created in [fiddle-0019-Button](../fiddle-0019-Button).
 
 
 ### Published Version Link
@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-svg
+svg, rectangle, circle, definitions, animate transform, group, linear gradient, pattern, radial gradient, text, textpath, class, mixin

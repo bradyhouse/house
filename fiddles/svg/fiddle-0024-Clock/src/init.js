@@ -1,4 +1,5 @@
 
+
 app.controller = app.controller || {
         onDOMContentLoaded: function () {
             var fiddleHook = document.getElementById('fiddleHook');
@@ -19,11 +20,8 @@ app.test = window.location.pathname.match('test') ? app.test || {
     surface: function (config) {
         return new Surface(config);
     },
-    basePath: function (config) {
-        return new BasePath(config);
-    },
-    star: function (config) {
-        return new Star(config);
+    path: function (config) {
+        return new Path(config);
     },
     xmlNamespaces: function () {
         return Util.xmlNamespaces();

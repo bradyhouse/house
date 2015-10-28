@@ -18,13 +18,12 @@ class Surface {
             xmlnsEv: Util.xmlNamespaces().xmlnsEv,
             xmlnsXlink: Util.xmlNamespaces().xmlnsXLink,
             zoomAndPan: "disabled",
-            width: '100%',
+            width: '500px',
             height: '500px',
             hook: window.document.body,
             autoBind: false,
             children: [],
             onLoad: null
-
         };
     }
 

@@ -4,7 +4,7 @@ class Viewport extends Surface {
         super({
             id: 'svgFiddle',
             hook: config && config.hasOwnProperty('hook') ? config.hook : window.document.body,
-            height: 600,
+            height: 500,
             width: 500,
             autoBind: true,
             children: [
@@ -17,13 +17,13 @@ class Viewport extends Surface {
                 }),
                 new app.view.button.Button({
                     id: 'button1',
-                    text: 'House SVG Fiddle #24',
+                    text: 'de-constructed version on Github',
                     color: '#58FA58',
-                    cornerRadius: 15,
+                    cornerRadius: 12,
                     width: 485,
-                    height: 30,
+                    height: 22,
                     left: 5,
-                    top: 515
+                    top: 470
                 })
             ]
         });

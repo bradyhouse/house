@@ -144,6 +144,7 @@ app.view.clock.Clock = class extends Group {
                     centerY: _centerY,
                     radius: _width == "100%" ? "30%" : Math.floor(.30 * _width),
                     fill: "url(#bland)",
+                    fillOpacity: .75,
                     stroke: "white",
                     strokeWidth: "18",
                     strokeDash: "1%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%"

@@ -18,21 +18,18 @@ app.view.button.mixin.Rectangle = class {
             if (rect) {
                 rect.addEventListener('click', this.onButtonRectangleClick);
 
-                // Must use globals for mousedown and mouseout-- ie addEventListener doesn't seem to work
+                // Use globals for mousedown and mouseout
                 rect.setAttribute('onmousedown', 'window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown("'+ buttonId +'");');
                 rect.setAttribute('onmouseout', 'window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut("'+ buttonId +'");');
-
             }
-
         }
-
     }
 
     onButtonRectangleClick() {
-
-
-        window.location.href = ''
-
+        var link = document.createElement('a');
+        link.setAttribute('href', window.app.metadata.gitHubUrl);
+        link.setAttribute('target', '_blank');
+        link.click();
     }
 
     static onButtonRectangleMouseOut(buttonId) {
@@ -61,11 +58,9 @@ app.view.button.mixin.Rectangle = class {
                 path.setAttribute('y', pathY);
             }
         }
-
     }
 
     static onButtonRectangleMouseDown(buttonId) {
-
         var rectangleId = buttonId + '-rectangle',
             backRectangleId = buttonId + '-backrectangle',
             pathId = buttonId + '-text',

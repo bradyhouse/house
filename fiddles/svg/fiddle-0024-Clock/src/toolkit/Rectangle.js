@@ -39,13 +39,13 @@ class Rectangle {
     config() {
         return {
             id: 'rect1',
-            cssClass: 'rectangle',
-            stroke: 'black',
-            strokeWidth: '1',
-            fill: '#000000',
+            cssClass: null,
+            stroke: null,
+            strokeWidth: null,
+            fill: null,
             opacity: null,
-            height: 50,
-            width: 50,
+            height: null,
+            width: null,
             x: null,
             y: null,
             cornerRadius: null,
@@ -201,11 +201,14 @@ class Rectangle {
     init() {
         var docElement = document.createElementNS(this.xmlns, 'rect');
 
+
         if (this.id) {
             docElement.setAttribute('id', this.id);
         }
 
-        docElement.setAttribute('class', this.cssClass);
+        if (this.cssClass) {
+            docElement.setAttribute('class', this.cssClass);
+        }
 
         if (this.x) {
             docElement.setAttribute('x', this.x);
@@ -215,13 +218,17 @@ class Rectangle {
             docElement.setAttribute('y', this.y);
         }
 
-        docElement.setAttribute('width', this.width);
-        docElement.setAttribute('height', this.height);
+        if (this.width) {
+            docElement.setAttribute('width', this.width);
+        }
+
+        if (this.height) {
+            docElement.setAttribute('height', this.height);
+        }
 
         if (this.fill) {
             docElement.setAttribute('fill', this.fill);
         }
-
 
         if (this.opacity) {
             docElement.setAttribute('opacity', this.opacity);
@@ -253,6 +260,8 @@ class Rectangle {
             docElement.setAttribute('rx', this.cornerRadius);
             docElement.setAttribute('ry', this.cornerRadius);
         }
+
+        docElement.setAttribute('title', 'this is a rectangle');
 
         this._docElementNS = docElement;
 

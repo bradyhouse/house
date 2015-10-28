@@ -15,9 +15,9 @@ class Path {
     config() {
         return {
             id: 'path1',
-            stroke: 'black',
-            strokeWidth: 1,
-            opacity: .5,
+            stroke: null,
+            strokeWidth: null,
+            opacity: null,
             xmlns: Util.xmlNamespaces().xmlns,
             data: null,
             hook: null,
@@ -97,26 +97,34 @@ class Path {
         return this._autoBind;
     }
 
-
-
     /**
      * Method used to append the docElement to configured hook element.
      */
     bind() {
         this.hook.appendChild(this.docElement);
     }
-
+    /**
+     * Method called by the constructor to create and assign docElement based
+     * on the properties exposed by the class.
+     *
+     * Note - if the autoBind flag is true, then it ends by invoking bind method.
+     */
     init() {
         var docElement = document.createElementNS(this.xmlns, 'path');
         docElement.setAttribute('id', this.id);
-        docElement.setAttribute('stroke', this.stroke);
-        docElement.setAttribute('stroke-width', this.strokeWidth);
-        docElement.setAttribute('opacity', this.opacity);
 
+        if (this.stroke) {
+            docElement.setAttribute('stroke', this.stroke);
+        }
+        if (this.strokeWidth) {
+            docElement.setAttribute('stroke-width', this.strokeWidth);
+        }
+        if (this.opacity) {
+            docElement.setAttribute('opacity', this.opacity);
+        }
         if (this.data) {
             docElement.setAttribute('d', this.data);
         }
-
         this._docElementNS = docElement;
         if (this.autoBind) {
             this.bind();

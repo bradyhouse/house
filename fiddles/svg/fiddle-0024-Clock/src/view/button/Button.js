@@ -76,6 +76,8 @@ app.view.button.Button = class extends Group {
                     hook: null,
                     text: null,
                     autoBind: false,
+                    x: 0,
+                    y: 0,
                     cursor: 'pointer',
                     children: [
                         new TextPath({

@@ -1,8 +1,12 @@
-(function(app) {
+(function (app) {
     "use strict";
 
 
-    app.toolkit = app.toolkit || {};
+    app.metadata = app.metadata || {
+            gitHubUrl: 'https://github.com/bradyhouse/house/tree/master/fiddles/svg/fiddle-0024-Clock'
+        };
+
+
     app.view = app.view || {};
     app.view.button = app.view.button || {};
     app.view.button.mixin = app.view.button.mixin || {};
@@ -18,76 +22,81 @@
          * @returns {string}
          */
         static color() {
-                var hex = "#",
-                    i = 0;
-                for (; i < 6; i++) {
-                    hex += Math.floor(Math.random() * 16).toString(16);
-                }
-                return hex;
+            var hex = "#",
+                i = 0;
+            for (; i < 6; i++) {
+                hex += Math.floor(Math.random() * 16).toString(16);
             }
-            /**
-             * Collection of namespace strings used in the
-             * creation of svg elements.
-             *
-             * @returns {{xmlns: string, xmlnsXLink: string, xmlnsEv: string}}
-             */
+            return hex;
+        }
+
+        /**
+         * Collection of namespace strings used in the
+         * creation of svg elements.
+         *
+         * @returns {{xmlns: string, xmlnsXLink: string, xmlnsEv: string}}
+         */
         static xmlNamespaces() {
-                return {
-                    xmlns: 'http://www.w3.org/2000/svg',
-                    xmlnsXLink: 'http://www.w3.org/1999/xlink',
-                    xmlnsEv: 'http://www.w3.org/2001/xml-events'
-                }
+            return {
+                xmlns: 'http://www.w3.org/2000/svg',
+                xmlnsXLink: 'http://www.w3.org/1999/xlink',
+                xmlnsEv: 'http://www.w3.org/2001/xml-events'
             }
-            /**
-             * Utility method that can be used to get a given attribute (field) from a given doc
-             * element and split its value into a string array. If
-             * the element does not have the requested attribute, then
-             * the provided default value (valDef) is split and returned.
-             *
-             * @param field
-             * @param id
-             * @param valDef
-             * @returns {Array}
-             */
+        }
+
+        /**
+         * Utility method that can be used to get a given attribute (field) from a given doc
+         * element and split its value into a string array. If
+         * the element does not have the requested attribute, then
+         * the provided default value (valDef) is split and returned.
+         *
+         * @param field
+         * @param id
+         * @param valDef
+         * @returns {Array}
+         */
         static splitAttribute(field, id, valDef) {
-                var docElement = document.getElementById(id);
-                if (docElement && docElement.getAttribute(field)) {
-                    return docElement.getAttribute(field).split(/[,\(\)]/);
-                }
-                return valDef.split(/[,\(\)]/);
+            var docElement = document.getElementById(id);
+            if (docElement && docElement.getAttribute(field)) {
+                return docElement.getAttribute(field).split(/[,\(\)]/);
             }
-            /**
-             * Utility method that can be used to "pop" a given parameter from
-             * a given url.  NOTE - To get a query string parameter value, pass
-             * in "location.search".
-             *
-             * @param parameter
-             * @param url
-             * @returns {string}
-             */
+            return valDef.split(/[,\(\)]/);
+        }
+
+        /**
+         * Utility method that can be used to "pop" a given parameter from
+         * a given url.  NOTE - To get a query string parameter value, pass
+         * in "location.search".
+         *
+         * @param parameter
+         * @param url
+         * @returns {string}
+         */
         static mapFromQueryString(url, parameter) {
-                var name = parameter.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"),
-                    regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                    value = regex.exec(url);
-                return value === null ? "" : decodeURIComponent(value[1].replace(/\+/g, " "));
-            }
-            /**
-             * Utility method that can be used to hide a given object.
-             *
-             * @param obj
-             */
+            var name = parameter.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"),
+                regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                value = regex.exec(url);
+            return value === null ? "" : decodeURIComponent(value[1].replace(/\+/g, " "));
+        }
+
+        /**
+         * Utility method that can be used to hide a given object.
+         *
+         * @param obj
+         */
         static hide(obj) {
-                obj.setAttribute('visibility', 'hidden');
-            }
-            /**
-             * Utility method that can be used to darken a given hex color by
-             * given percentage ("lum").  This method was
-             * lifted from http://www.sitepoint.com/javascript-generate-lighter-darker-color/.
-             *
-             * @param hex
-             * @param lum
-             * @returns {string}
-             */
+            obj.setAttribute('visibility', 'hidden');
+        }
+
+        /**
+         * Utility method that can be used to darken a given hex color by
+         * given percentage ("lum").  This method was
+         * lifted from http://www.sitepoint.com/javascript-generate-lighter-darker-color/.
+         *
+         * @param hex
+         * @param lum
+         * @returns {string}
+         */
         static darkenColor(hex, lum) {
             // validate hex string
             hex = String(hex).replace(/[^0-9a-f]/gi, '');
@@ -130,90 +139,100 @@
                 xmlns: Util.xmlNamespaces().xmlns
             };
         }
+
         constructor(config) {
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._offset = config && config.hasOwnProperty('offset') ? config.offset : this.config().offset;
-                this._color = config && config.hasOwnProperty('color') ? config.color : this.config().color;
-                this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._offset = config && config.hasOwnProperty('offset') ? config.offset : this.config().offset;
+            this._color = config && config.hasOwnProperty('color') ? config.color : this.config().color;
+            this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter for the offset, "offset", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter for the offset, "offset", tag attribute.
+         *
+         * @returns {*}
+         */
         get offset() {
-                return this._offset;
-            }
-            /**
-             * Getter for the color, "stop-color", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._offset;
+        }
+
+        /**
+         * Getter for the color, "stop-color", tag attribute.
+         *
+         * @returns {*}
+         */
         get color() {
-                return this._color;
-            }
-            /**
-             * Getter for the optional opacity, "stop-opacity", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._color;
+        }
+
+        /**
+         * Getter for the optional opacity, "stop-opacity", tag attribute.
+         *
+         * @returns {*}
+         */
         get opacity() {
-                return this._opacity;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._opacity;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var docElement = document.createElementNS(this.xmlns, 'stop');
             docElement.setAttribute('offset', this.offset);
@@ -266,163 +285,179 @@
          * @returns {{id: string, hook: null, autoBind: boolean, attributeName: string, from: string, to: string, begin: string, duration: string, repeat: string, xmlns: string}}
          */
         config() {
-                return {
-                    id: 'animateTransform1',
-                    hook: null,
-                    autoBind: false,
-                    attributeName: "transform",
-                    type: "rotate",
-                    by: null,
-                    from: "272,550,250",
-                    to: "632,550,250",
-                    begin: "0s",
-                    duration: "43200s",
-                    repeat: "indefinite",
-                    xmlns: Util.xmlNamespaces().xmlns
-                };
-            }
-            /**
-             * Class Constructor.
-             *
-             * @param config
-             */
+            return {
+                id: 'animateTransform1',
+                hook: null,
+                autoBind: false,
+                attributeName: "transform",
+                type: "rotate",
+                by: null,
+                from: "272,550,250",
+                to: "632,550,250",
+                begin: "0s",
+                duration: "43200s",
+                repeat: "indefinite",
+                xmlns: Util.xmlNamespaces().xmlns
+            };
+        }
+
+        /**
+         * Class Constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._attributeName = config && config.hasOwnProperty('attributeName') ? config.attributeName : this.config().attributeName;
-                this._type = config && config.hasOwnProperty('type') ? config.type : this.config().type;
-                this._from = config && config.hasOwnProperty('from') ? config.from : this.config().from;
-                this._to = config && config.hasOwnProperty('to') ? config.to : this.config().to;
-                this._by = config && config.hasOwnProperty('by') ? config.by : this.config().by;
-                this._begin = config && config.hasOwnProperty('begin') ? config.begin : this.config().begin;
-                this._duration = config && config.hasOwnProperty('duration') ? config.duration : this.config().duration;
-                this._repeat = config && config.hasOwnProperty('repeat') ? config.repeat : this.config().repeat;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._attributeName = config && config.hasOwnProperty('attributeName') ? config.attributeName : this.config().attributeName;
+            this._type = config && config.hasOwnProperty('type') ? config.type : this.config().type;
+            this._from = config && config.hasOwnProperty('from') ? config.from : this.config().from;
+            this._to = config && config.hasOwnProperty('to') ? config.to : this.config().to;
+            this._by = config && config.hasOwnProperty('by') ? config.by : this.config().by;
+            this._begin = config && config.hasOwnProperty('begin') ? config.begin : this.config().begin;
+            this._duration = config && config.hasOwnProperty('duration') ? config.duration : this.config().duration;
+            this._repeat = config && config.hasOwnProperty('repeat') ? config.repeat : this.config().repeat;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * String value assigned to the id attribute of the
-             * docElementNS object.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * String value assigned to the id attribute of the
+         * docElementNS object.
+         *
+         * @returns {string}
+         */
         get id() {
-                return this._id;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._id;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter used to access the attribute name, "attributeName", tag attribute.
-             * @returns {*}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter used to access the attribute name, "attributeName", tag attribute.
+         * @returns {*}
+         */
         get attributeName() {
-                return this._attributeName;
-            }
-            /**
-             * Getter used to access the type tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._attributeName;
+        }
+
+        /**
+         * Getter used to access the type tag attribute.
+         *
+         * @returns {*}
+         */
         get type() {
-                return this._type;
-            }
-            /**
-             * Getter used to access the "from" tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._type;
+        }
+
+        /**
+         * Getter used to access the "from" tag attribute.
+         *
+         * @returns {*}
+         */
         get from() {
-                return this._from;
-            }
-            /**
-             * Getter used to access the "to" tag attribute.
-             * @returns {*}
-             */
+            return this._from;
+        }
+
+        /**
+         * Getter used to access the "to" tag attribute.
+         * @returns {*}
+         */
         get to() {
-                return this._to;
-            }
-            /**
-             * Getter used to access the "begin" tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._to;
+        }
+
+        /**
+         * Getter used to access the "begin" tag attribute.
+         *
+         * @returns {*}
+         */
         get begin() {
-                return this._begin;
-            }
-            /**
-             * Getter used to access the duration, "dur", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._begin;
+        }
+
+        /**
+         * Getter used to access the duration, "dur", tag attribute.
+         *
+         * @returns {*}
+         */
         get duration() {
-                return this._duration;
-            }
-            /**
-             * Getter used to access the repeat count, "repeatCount", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._duration;
+        }
+
+        /**
+         * Getter used to access the repeat count, "repeatCount", tag attribute.
+         *
+         * @returns {*}
+         */
         get repeat() {
-                return this._repeat;
-            }
-            /**
-             * Getter used to access the optional "by" tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._repeat;
+        }
+
+        /**
+         * Getter used to access the optional "by" tag attribute.
+         *
+         * @returns {*}
+         */
         get by() {
-                return this._by;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._by;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var docElement = document.createElementNS(this.xmlns, 'animateTransform');
             if (this.id) {
@@ -474,114 +509,125 @@
          * @returns {{id: string, xmlns: string, hook: null, autoBind: boolean, xFrequency: null, yFrequency: null, children: Array}}
          */
         config() {
-                return {
-                    id: 'radialgradient1',
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    autoBind: false,
-                    xFrequency: null,
-                    yFrequency: null,
-                    children: []
-                }
+            return {
+                id: 'radialgradient1',
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                autoBind: false,
+                xFrequency: null,
+                yFrequency: null,
+                children: []
             }
-            /**
-             * Class constructor.
-             *
-             * @param config
-             */
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this._xFrequency = config && config.hasOwnProperty('xFrequency') ? config.xFrequency : this.config().xFrequency;
-                this._yFrequency = config && config.hasOwnProperty('yFrequency') ? config.yFrequency : this.config().yFrequency;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this._xFrequency = config && config.hasOwnProperty('xFrequency') ? config.xFrequency : this.config().xFrequency;
+            this._yFrequency = config && config.hasOwnProperty('yFrequency') ? config.yFrequency : this.config().yFrequency;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * String value assigned to the id attribute of the
-             * docElementNS object.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * String value assigned to the id attribute of the
+         * docElementNS object.
+         *
+         * @returns {string}
+         */
         get id() {
-                return this._id;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._id;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter for the optional frequency X, "fx", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter for the optional frequency X, "fx", tag attribute.
+         *
+         * @returns {*}
+         */
         get xFrequency() {
-                return this._xFrequency;
-            }
-            /**
-             * Getter for the optional frequency Y, "fy", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._xFrequency;
+        }
+
+        /**
+         * Getter for the optional frequency Y, "fy", tag attribute.
+         *
+         * @returns {*}
+         */
         get yFrequency() {
-                return this._yFrequency;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._yFrequency;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._children;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var i = 0,
                 child = null,
@@ -623,180 +669,197 @@
          * @returns {{id: string, xmlns: string, hook: null, autoBind: boolean, start: {x: string, y: string}, end: {x: string, y: string}, spreadMethod: null, link: null, children: Array}}
          */
         config() {
-                return {
-                    id: 'lineargradient1',
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    autoBind: false,
-                    units: null,
-                    transform: null,
-                    startCoordinates: {
-                        x: '0%',
-                        y: '0%'
-                    },
-                    endCoordinates: {
-                        x: '100%',
-                        y: '100%'
-                    },
-                    xFrequency: null,
-                    yFrequency: null,
-                    spreadMethod: null,
-                    link: null,
-                    children: []
-                }
+            return {
+                id: 'lineargradient1',
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                autoBind: false,
+                units: null,
+                transform: null,
+                startCoordinates: {
+                    x: '0%',
+                    y: '0%'
+                },
+                endCoordinates: {
+                    x: '100%',
+                    y: '100%'
+                },
+                xFrequency: null,
+                yFrequency: null,
+                spreadMethod: null,
+                link: null,
+                children: []
             }
-            /**
-             * Class constructor.
-             *
-             * @param config
-             */
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._units = config && config.hasOwnProperty('units') ? config.units : this.config().units;
-                this._startCoordinates = config && config.hasOwnProperty('startCoordinates') ? config.startCoordinates : this.config().startCoordinates;
-                this._endCoordinates = config && config.hasOwnProperty('endCoordinates') ? config.endCoordinates : this.config().endCoordinates;
-                this._link = config && config.hasOwnProperty('link') ? config.link : this.config().link;
-                this._xFrequency = config && config.hasOwnProperty('xFrequency') ? config.xFrequency : this.config().xFrequency;
-                this._yFrequency = config && config.hasOwnProperty('yFrequency') ? config.yFrequency : this.config().yFrequency;
-                this._spreadMethod = config && config.hasOwnProperty('spreadMethod') ? config.spreadMethod : this.config().spreadMethod;
-                this._transform = config && config.hasOwnProperty('transform') ? config.transform : this.config().transform;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._units = config && config.hasOwnProperty('units') ? config.units : this.config().units;
+            this._startCoordinates = config && config.hasOwnProperty('startCoordinates') ? config.startCoordinates : this.config().startCoordinates;
+            this._endCoordinates = config && config.hasOwnProperty('endCoordinates') ? config.endCoordinates : this.config().endCoordinates;
+            this._link = config && config.hasOwnProperty('link') ? config.link : this.config().link;
+            this._xFrequency = config && config.hasOwnProperty('xFrequency') ? config.xFrequency : this.config().xFrequency;
+            this._yFrequency = config && config.hasOwnProperty('yFrequency') ? config.yFrequency : this.config().yFrequency;
+            this._spreadMethod = config && config.hasOwnProperty('spreadMethod') ? config.spreadMethod : this.config().spreadMethod;
+            this._transform = config && config.hasOwnProperty('transform') ? config.transform : this.config().transform;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * String value assigned to the id attribute of the
-             * docElementNS object.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * String value assigned to the id attribute of the
+         * docElementNS object.
+         *
+         * @returns {string}
+         */
         get id() {
-                return this._id;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._id;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter for the optional start coordinate pair. When present, the values are used to assign the "x1" and "y1" tag attributes.
-             *
-             * @returns {x: *, y: *}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter for the optional start coordinate pair. When present, the values are used to assign the "x1" and "y1" tag attributes.
+         *
+         * @returns {x: *, y: *}
+         */
         get startCoordinates() {
-                return this._startCoordinates;
-            }
-            /**
-             * Getter for the optional end coordinate pair. When present, the values are used to assign the "x2" and "y2" tag attributes.
-             *
-             * @returns {*}
-             */
+            return this._startCoordinates;
+        }
+
+        /**
+         * Getter for the optional end coordinate pair. When present, the values are used to assign the "x2" and "y2" tag attributes.
+         *
+         * @returns {*}
+         */
         get endCoordinates() {
-                return this._endCoordinates;
-            }
-            /**
-             * Getter for the optional frequency X, "fx", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._endCoordinates;
+        }
+
+        /**
+         * Getter for the optional frequency X, "fx", tag attribute.
+         *
+         * @returns {*}
+         */
         get xFrequency() {
-                return this._xFrequency;
-            }
-            /**
-             * Getter for the optional frequency Y, "fy", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._xFrequency;
+        }
+
+        /**
+         * Getter for the optional frequency Y, "fy", tag attribute.
+         *
+         * @returns {*}
+         */
         get yFrequency() {
-                return this._yFrequency;
-            }
-            /**
-             * Getter for the optional gradient transform, "gradientTransform", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._yFrequency;
+        }
+
+        /**
+         * Getter for the optional gradient transform, "gradientTransform", tag attribute.
+         *
+         * @returns {*}
+         */
         get transform() {
-                return this._transform;
-            }
-            /**
-             * Getter for the optional gradient units, "gradientUnits", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._transform;
+        }
+
+        /**
+         * Getter for the optional gradient units, "gradientUnits", tag attribute.
+         *
+         * @returns {*}
+         */
         get units() {
-                return this._units;
-            }
-            /**
-             * Getter for the optional link, "xlink:href", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._units;
+        }
+
+        /**
+         * Getter for the optional link, "xlink:href", tag attribute.
+         *
+         * @returns {*}
+         */
         get link() {
-                return this._link;
-            }
-            /**
-             * Getter for the optional spread method, "spreadMethod", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._link;
+        }
+
+        /**
+         * Getter for the optional spread method, "spreadMethod", tag attribute.
+         *
+         * @returns {*}
+         */
         get spreadMethod() {
-                return this._spreadMethod;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._spreadMethod;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._children;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var i = 0,
                 child = null,
@@ -858,182 +921,200 @@
          * @returns {{id: string, stroke: null, strokeWidth: null, opacity: null, xmlns: string, hook: null, autoBind: boolean, onMouseDown: string, onKeyUp: string, children: Array, transform: null, visibility: null, zIndex: null}}
          */
         config() {
-                return {
-                    id: 'pattern1',
-                    units: null,
-                    contentUnits: null,
-                    width: null,
-                    height: null,
-                    x: null,
-                    y: null,
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    autoBind: false,
-                    children: [],
-                    transform: null,
-                    preserveAspectRatio: null,
-                    link: null
-                }
+            return {
+                id: 'pattern1',
+                units: null,
+                contentUnits: null,
+                width: null,
+                height: null,
+                x: null,
+                y: null,
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                autoBind: false,
+                children: [],
+                transform: null,
+                preserveAspectRatio: null,
+                link: null
             }
-            /**
-             * Class constructor.
-             *
-             * @param config
-             */
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this._transform = config && config.hasOwnProperty('transform') ? config.transform : this.config().transform;
-                this._width = config && config.hasOwnProperty('width') ? config.width : this.config().width;
-                this._height = config && config.hasOwnProperty('height') ? config.height : this.config().height;
-                this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
-                this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
-                this._units = config && config.hasOwnProperty('units') ? config.units : this.config().units;
-                this._contentUnits = config && config.hasOwnProperty('contentUnits') ? config.contentUnits : this.config().contentUnits;
-                this._preserveAspectRatio = config && config.hasOwnProperty('preserveAspectRatio') ? config.preserveAspectRatio : this.config().preserveAspectRatio;
-                this._link = config && config.hasOwnProperty('link') ? config.link : this.config().link;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this._transform = config && config.hasOwnProperty('transform') ? config.transform : this.config().transform;
+            this._width = config && config.hasOwnProperty('width') ? config.width : this.config().width;
+            this._height = config && config.hasOwnProperty('height') ? config.height : this.config().height;
+            this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
+            this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
+            this._units = config && config.hasOwnProperty('units') ? config.units : this.config().units;
+            this._contentUnits = config && config.hasOwnProperty('contentUnits') ? config.contentUnits : this.config().contentUnits;
+            this._preserveAspectRatio = config && config.hasOwnProperty('preserveAspectRatio') ? config.preserveAspectRatio : this.config().preserveAspectRatio;
+            this._link = config && config.hasOwnProperty('link') ? config.link : this.config().link;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * String value assigned to the id attribute of the
-             * docElementNS object.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * String value assigned to the id attribute of the
+         * docElementNS object.
+         *
+         * @returns {string}
+         */
         get id() {
-                return this._id;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._id;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Getter for the optional pattern transform, "patternTransform", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._children;
+        }
+
+        /**
+         * Getter for the optional pattern transform, "patternTransform", tag attribute.
+         *
+         * @returns {*}
+         */
         get transform() {
-                return this._transform;
-            }
-            /**
-             * Getter for width attribute.
-             *
-             * @returns {*}
-             */
+            return this._transform;
+        }
+
+        /**
+         * Getter for width attribute.
+         *
+         * @returns {*}
+         */
         get width() {
-                return this._width;
-            }
-            /**
-             * Getter for height attribute.
-             *
-             * @returns {*}
-             */
+            return this._width;
+        }
+
+        /**
+         * Getter for height attribute.
+         *
+         * @returns {*}
+         */
         get height() {
-                return this._height;
-            }
-            /**
-             * Getter for  x attribute.
-             * @returns {*}
-             */
+            return this._height;
+        }
+
+        /**
+         * Getter for  x attribute.
+         * @returns {*}
+         */
         get x() {
-                return this._x;
-            }
-            /**
-             * Getter for y attribute.
-             * @returns {*}
-             */
+            return this._x;
+        }
+
+        /**
+         * Getter for y attribute.
+         * @returns {*}
+         */
         get y() {
-                return this._y;
-            }
-            /**
-             * Getter for the optional pattern units, "patternUnits", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._y;
+        }
+
+        /**
+         * Getter for the optional pattern units, "patternUnits", tag attribute.
+         *
+         * @returns {*}
+         */
         get units() {
-                return this._units;
-            }
-            /**
-             * Getter for the optional pattern content units "patternContentUnits", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._units;
+        }
+
+        /**
+         * Getter for the optional pattern content units "patternContentUnits", tag attribute.
+         *
+         * @returns {*}
+         */
         get contentUnits() {
-                return this._contentUnits;
-            }
-            /**
-             * Getter for the optional preserve aspect ratio, "preserveAspectRatio", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._contentUnits;
+        }
+
+        /**
+         * Getter for the optional preserve aspect ratio, "preserveAspectRatio", tag attribute.
+         *
+         * @returns {*}
+         */
         get preserveAspectRatio() {
-                return this._preserveAspectRatio;
-            }
-            /**
-             * Getter for the optional link, "xlink:href", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._preserveAspectRatio;
+        }
+
+        /**
+         * Getter for the optional link, "xlink:href", tag attribute.
+         *
+         * @returns {*}
+         */
         get link() {
-                return this._link;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._link;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var i = 0,
                 child = null,
@@ -1096,83 +1177,91 @@
          * @returns {{xmlns: string, hook: null, autoBind: boolean, children: Array, transform: boolean}}
          */
         config() {
-                return {
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    autoBind: false,
-                    children: []
-                }
+            return {
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                autoBind: false,
+                children: []
             }
-            /**
-             * Class constructor.
-             *
-             * @param config
-             */
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._children;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var i = 0,
                 child = null,
@@ -1210,191 +1299,210 @@
          * @returns {{id: string, stroke: string, strokeWidth: number, centerX: string, centerY: string, radius: string, fill: null, xmlns: string, hook: null, children: Array, autoBind: boolean}}
          */
         config() {
-                return {
-                    id: 'circle1',
-                    stroke: 'black',
-                    strokeWidth: 2,
-                    centerX: '50%',
-                    centerY: '50%',
-                    radius: '50%',
-                    fill: null,
-                    fillOpacity: null,
-                    strokeDash: null,
-                    strokeOpacity: null,
-                    transform: null,
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    children: [],
-                    autoBind: false
-                }
+            return {
+                id: 'circle1',
+                stroke: 'black',
+                strokeWidth: 2,
+                centerX: '50%',
+                centerY: '50%',
+                radius: '50%',
+                fill: null,
+                fillOpacity: null,
+                strokeDash: null,
+                strokeOpacity: null,
+                transform: null,
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                children: [],
+                autoBind: false
             }
-            /**
-             * Class constructor.
-             *
-             * @param config
-             */
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
-                this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
-                this._strokeOpacity = config && config.hasOwnProperty('strokeOpacity') ? config.strokeOpacity : this.config().strokeOpacity;
-                this._strokeDash = config && config.hasOwnProperty('strokeDash') ? config.strokeDash : this.config().strokeDash;
-                this._fill = config && config.hasOwnProperty('fill') ? config.fill : this.config().fill;
-                this._fillOpacity = config && config.hasOwnProperty('fillOpacity') ? config.fillOpacity : this.config().fillOpacity;
-                this._centerX = config && config.hasOwnProperty('centerX') ? config.centerX : this.config().centerX;
-                this._centerY = config && config.hasOwnProperty('centerY') ? config.centerY : this.config().centerY;
-                this._radius = config && config.hasOwnProperty('radius') ? config.radius : this.config().radius;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
+            this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
+            this._strokeOpacity = config && config.hasOwnProperty('strokeOpacity') ? config.strokeOpacity : this.config().strokeOpacity;
+            this._strokeDash = config && config.hasOwnProperty('strokeDash') ? config.strokeDash : this.config().strokeDash;
+            this._fill = config && config.hasOwnProperty('fill') ? config.fill : this.config().fill;
+            this._fillOpacity = config && config.hasOwnProperty('fillOpacity') ? config.fillOpacity : this.config().fillOpacity;
+            this._centerX = config && config.hasOwnProperty('centerX') ? config.centerX : this.config().centerX;
+            this._centerY = config && config.hasOwnProperty('centerY') ? config.centerY : this.config().centerY;
+            this._radius = config && config.hasOwnProperty('radius') ? config.radius : this.config().radius;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * String value assigned to the id attribute of the
-             * docElementNS object.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * String value assigned to the id attribute of the
+         * docElementNS object.
+         *
+         * @returns {string}
+         */
         get id() {
-                return this._id;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._id;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter for stroke attribute.
-             * @returns {*}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter for stroke attribute.
+         * @returns {*}
+         */
         get stroke() {
-                return this._stroke;
-            }
-            /**
-             * Getter for strokeWidth attribute.
-             * @returns {*}
-             */
+            return this._stroke;
+        }
+
+        /**
+         * Getter for strokeWidth attribute.
+         * @returns {*}
+         */
         get strokeWidth() {
-                return this._strokeWidth;
-            }
-            /**
-             * Getter for opational stroke opacity, "stroke-opacity" tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._strokeWidth;
+        }
+
+        /**
+         * Getter for opational stroke opacity, "stroke-opacity" tag attribute.
+         *
+         * @returns {*}
+         */
         get strokeOpacity() {
-                return this._strokeOpacity;
-            }
-            /**
-             * Getter for optional stroke dash array, "stroke-dasharray" tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._strokeOpacity;
+        }
+
+        /**
+         * Getter for optional stroke dash array, "stroke-dasharray" tag attribute.
+         *
+         * @returns {*}
+         */
         get strokeDash() {
-                return this._strokeDash;
-            }
-            /**
-             * Getter for the optional pattern transform tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._strokeDash;
+        }
+
+        /**
+         * Getter for the optional pattern transform tag attribute.
+         *
+         * @returns {*}
+         */
         get transform() {
-                return this._transform;
-            }
-            /**
-             * Getter for the fill attribute.
-             *
-             * @returns {*}
-             */
+            return this._transform;
+        }
+
+        /**
+         * Getter for the fill attribute.
+         *
+         * @returns {*}
+         */
         get fill() {
-                return this._fill;
-            }
-            /**
-             * Getter for the optional fill opacity, "fill-opacity", tag attribute.
-             *
-             * @returns {*}
-             */
+            return this._fill;
+        }
+
+        /**
+         * Getter for the optional fill opacity, "fill-opacity", tag attribute.
+         *
+         * @returns {*}
+         */
         get fillOpacity() {
-                return this._fillOpacity;
-            }
-            /**
-             * Getter for the radius, "r", attribute.
-             *
-             * @returns {*}
-             */
+            return this._fillOpacity;
+        }
+
+        /**
+         * Getter for the radius, "r", attribute.
+         *
+         * @returns {*}
+         */
         get radius() {
-                return this._radius;
-            }
-            /**
-             * Getter for the center X, "cx", attribute.
-             *
-             * @returns {*}
-             */
+            return this._radius;
+        }
+
+        /**
+         * Getter for the center X, "cx", attribute.
+         *
+         * @returns {*}
+         */
         get centerX() {
-                return this._centerX;
-            }
-            /**
-             * Getter for the center Y, "cy", attribute.
-             *
-             * @returns {*}
-             */
+            return this._centerX;
+        }
+
+        /**
+         * Getter for the center Y, "cy", attribute.
+         *
+         * @returns {*}
+         */
         get centerY() {
-                return this._centerY;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._centerY;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._children;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var i = 0,
                 child = null,
@@ -1483,157 +1591,187 @@
          * @returns {{id: string, stroke: string, strokeWidth: number, fill: string, height: number, width: number, x: number, y: number, xmlns: string, hook: null, autoBind: boolean, onMouseOver: null, onMouseOut: null, onMouseDown: null}}
          */
         config() {
-                return {
-                    id: 'rect1',
-                    cssClass: 'rectangle',
-                    stroke: 'black',
-                    strokeWidth: '1',
-                    fill: '#000000',
-                    opacity: null,
-                    height: 50,
-                    width: 50,
-                    x: null,
-                    y: null,
-                    cornerRadius: null,
-                    cursor: null,
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    autoBind: false,
-                    children: [],
-                    onClick: null,
-                    onMouseOver: null,
-                    onMouseOut: null,
-                    onMouseDown: null,
-                }
+            return {
+                id: 'rect1',
+                cssClass: null,
+                stroke: null,
+                strokeWidth: null,
+                fill: null,
+                opacity: null,
+                height: null,
+                width: null,
+                x: null,
+                y: null,
+                cornerRadius: null,
+                cursor: null,
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                autoBind: false,
+                children: [],
+                onClick: null,
+                onMouseOver: null,
+                onMouseOut: null,
+                onMouseDown: null,
             }
-            /**
-             * Class constructor.
-             *
-             * @param config (optional)
-             */
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config (optional)
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._cssClass = config && config.hasOwnProperty('cssClass') ? config.cssClass : this.config().cssClass;
-                this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
-                this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
-                this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
-                this._cornerRadius = config && config.hasOwnProperty('cornerRadius') ? config.cornerRadius : this.config().cornerRadius;
-                this._width = config && config.hasOwnProperty('width') ? config.width : this.config().width;
-                this._height = config && config.hasOwnProperty('height') ? config.height : this.config().height;
-                this._fill = config && config.hasOwnProperty('fill') ? config.fill : this.config().fill;
-                this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
-                this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
-                this._onClick = config && config.hasOwnProperty('onClick') ? config.onClick : this.config().onClick;
-                this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
-                this._onMouseOut = config && config.hasOwnProperty('onMouseOut') ? config.onMouseOut : this.config().onMouseOut;
-                this._onMouseOver = config && config.hasOwnProperty('onMouseOver') ? config.onMouseOver : this.config().onMouseOver;
-                this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._cssClass = config && config.hasOwnProperty('cssClass') ? config.cssClass : this.config().cssClass;
+            this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
+            this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
+            this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
+            this._cornerRadius = config && config.hasOwnProperty('cornerRadius') ? config.cornerRadius : this.config().cornerRadius;
+            this._width = config && config.hasOwnProperty('width') ? config.width : this.config().width;
+            this._height = config && config.hasOwnProperty('height') ? config.height : this.config().height;
+            this._fill = config && config.hasOwnProperty('fill') ? config.fill : this.config().fill;
+            this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
+            this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
+            this._onClick = config && config.hasOwnProperty('onClick') ? config.onClick : this.config().onClick;
+            this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
+            this._onMouseOut = config && config.hasOwnProperty('onMouseOut') ? config.onMouseOut : this.config().onMouseOut;
+            this._onMouseOver = config && config.hasOwnProperty('onMouseOver') ? config.onMouseOver : this.config().onMouseOver;
+            this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
             return this._docElementNS;
         }
+
         get id() {
             return this._id;
         }
+
         get cssClass() {
             return this._cssClass;
         }
+
         get xmlns() {
             return this._xmlns;
         }
+
         get hook() {
             return this._hook;
         }
+
         get autoBind() {
             return this._autoBind;
         }
+
         get onClick() {
             return this._onClick;
         }
+
         get onMouseOut() {
             return this._onMouseOut;
         }
+
         get onMouseDown() {
             return this._onMouseDown;
         }
+
         get onMouseOver() {
             return this._onMouseOver;
         }
+
         get stroke() {
             return this._stroke;
         }
+
         get strokeWidth() {
             return this._strokeWidth;
         }
+
         get fill() {
             return this._fill;
         }
+
         get x() {
             return this._x;
         }
+
         get y() {
             return this._y;
         }
+
         get width() {
             return this._width;
         }
+
         get height() {
             return this._height;
         }
+
         get cursor() {
             return this._cursor;
         }
+
         get cornerRadius() {
             return this._cornerRadius;
         }
+
         get opacity() {
-                return this._opacity;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._opacity;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._children;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var docElement = document.createElementNS(this.xmlns, 'rect');
             if (this.id) {
                 docElement.setAttribute('id', this.id);
             }
-            docElement.setAttribute('class', this.cssClass);
+            if (this.cssClass) {
+                docElement.setAttribute('class', this.cssClass);
+            }
             if (this.x) {
                 docElement.setAttribute('x', this.x);
             }
             if (this.y) {
                 docElement.setAttribute('y', this.y);
             }
-            docElement.setAttribute('width', this.width);
-            docElement.setAttribute('height', this.height);
+            if (this.width) {
+                docElement.setAttribute('width', this.width);
+            }
+            if (this.height) {
+                docElement.setAttribute('height', this.height);
+            }
             if (this.fill) {
                 docElement.setAttribute('fill', this.fill);
             }
@@ -1662,6 +1800,7 @@
                 docElement.setAttribute('rx', this.cornerRadius);
                 docElement.setAttribute('ry', this.cornerRadius);
             }
+            docElement.setAttribute('title', 'this is a rectangle');
             this._docElementNS = docElement;
             if (this.children.length > 0) {
                 for (var i = 0; i < this.children.length; i++) {
@@ -1693,267 +1832,294 @@
          * @returns {{id: string, stroke: null, strokeWidth: null, opacity: null, xmlns: string, hook: null, autoBind: boolean, onMouseDown: string, onKeyUp: string, children: Array, transform: null, visibility: null, zIndex: null}}
          */
         config() {
-                return {
-                    id: 'group1',
-                    stroke: null,
-                    controller: null,
-                    strokeWidth: null,
-                    opacity: null,
-                    width: null,
-                    height: null,
-                    x: 0,
-                    y: 0,
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    autoBind: false,
-                    onMouseDown: null,
-                    onKeyUp: null,
-                    onRender: null,
-                    children: [],
-                    transform: null,
-                    visibility: null,
-                    zIndex: null,
-                    cursor: null,
-                    parent: null
-                }
+            return {
+                id: 'group1',
+                stroke: null,
+                controller: null,
+                strokeWidth: null,
+                opacity: null,
+                width: null,
+                height: null,
+                x: 0,
+                y: 0,
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                autoBind: false,
+                onMouseDown: null,
+                onKeyUp: null,
+                onRender: null,
+                children: [],
+                transform: null,
+                visibility: null,
+                zIndex: null,
+                cursor: null,
+                parent: null
             }
-            /**
-             * Class constructor.
-             *
-             * @param config
-             */
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._onKeyUp = config && config.hasOwnProperty('onKeyUp') ? config.onKeyUp : this.config().onKeyUp;
-                this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
-                this._onRender = config && config.hasOwnProperty('onRender') ? config.onRender : this.config().onRender;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
-                this._transform = config && config.hasOwnProperty('transform') ? config.transform : this.config().transform;
-                this._visibility = config && config.hasOwnProperty('visibility') ? config.visibility : this.config().visibility;
-                this._zIndex = config && config.hasOwnProperty('zIndex') ? config.zIndex : this.config().zIndex;
-                this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
-                this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
-                this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
-                this._controller = config && config.hasOwnProperty('controller') ? config.controller : this.config().controller;
-                this._width = config && config.hasOwnProperty('width') ? config.width : this.config().width;
-                this._height = config && config.hasOwnProperty('height') ? config.height : this.config().height;
-                this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
-                this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
-                this.init();
-            }
-            /**
-             * Getter for the component controller class.
-             * @returns {*}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._onKeyUp = config && config.hasOwnProperty('onKeyUp') ? config.onKeyUp : this.config().onKeyUp;
+            this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
+            this._onRender = config && config.hasOwnProperty('onRender') ? config.onRender : this.config().onRender;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
+            this._transform = config && config.hasOwnProperty('transform') ? config.transform : this.config().transform;
+            this._visibility = config && config.hasOwnProperty('visibility') ? config.visibility : this.config().visibility;
+            this._zIndex = config && config.hasOwnProperty('zIndex') ? config.zIndex : this.config().zIndex;
+            this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
+            this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
+            this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
+            this._controller = config && config.hasOwnProperty('controller') ? config.controller : this.config().controller;
+            this._width = config && config.hasOwnProperty('width') ? config.width : this.config().width;
+            this._height = config && config.hasOwnProperty('height') ? config.height : this.config().height;
+            this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
+            this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
+            this.init();
+        }
+
+        /**
+         * Getter for the component controller class.
+         * @returns {*}
+         */
         get controller() {
-                return this._controller;
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            return this._controller;
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * String value assigned to the id attribute of the
-             * docElementNS object.
-             *
-             * @returns {string}
-             */
+            return this._docElementNS;
+        }
+
+        /**
+         * String value assigned to the id attribute of the
+         * docElementNS object.
+         *
+         * @returns {string}
+         */
         get id() {
-                return this._id;
-            }
-            /**
-             * XML Namespace URI.  Property required by the
-             * init method in order to create and populate
-             * the documentNS attribute.
-             *
-             * @returns {string}
-             */
+            return this._id;
+        }
+
+        /**
+         * XML Namespace URI.  Property required by the
+         * init method in order to create and populate
+         * the documentNS attribute.
+         *
+         * @returns {string}
+         */
         get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Reference to the document element that the
-             * docElementNS attribute will be added too.
-             *
-             * @returns {object}
-             */
+            return this._xmlns;
+        }
+
+        /**
+         * Reference to the document element that the
+         * docElementNS attribute will be added too.
+         *
+         * @returns {object}
+         */
         get hook() {
-                return this._hook;
-            }
-            /**
-             * Flag that can be passed to class constructor
-             * to automatically add the docElementNS attribute
-             * to the configured hook attribute.
-             *
-             * @returns {boolean}
-             */
+            return this._hook;
+        }
+
+        /**
+         * Flag that can be passed to class constructor
+         * to automatically add the docElementNS attribute
+         * to the configured hook attribute.
+         *
+         * @returns {boolean}
+         */
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Getter for the onKeyUp event handler.
-             *
-             * @returns {string}
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Getter for the onKeyUp event handler.
+         *
+         * @returns {string}
+         */
         get onKeyUp() {
-                return this._onKeyUp;
-            }
-            /**
-             * Getter for the onMouseDown event handler.
-             *
-             * @returns {*}
-             */
+            return this._onKeyUp;
+        }
+
+        /**
+         * Getter for the onMouseDown event handler.
+         *
+         * @returns {*}
+         */
         get onMouseDown() {
-                return this._onMouseDown;
-            }
-            /**
-             * Getter for the optional render event handler.  This
-             * handler can be used to delay event from firing
-             * until the parent has been assigned.
-             *
-             * @returns {*}
-             */
+            return this._onMouseDown;
+        }
+
+        /**
+         * Getter for the optional render event handler.  This
+         * handler can be used to delay event from firing
+         * until the parent has been assigned.
+         *
+         * @returns {*}
+         */
         get onRender() {
-                return this._onRender;
-            }
-            /**
-             * Setter for the optional render event handler.
-             *
-             * @param fn
-             */
+            return this._onRender;
+        }
+
+        /**
+         * Setter for the optional render event handler.
+         *
+         * @param fn
+         */
         set onRender(fn) {
-                this._onRender = fn;
-            }
-            /**
-             * Setter that can be used to assign the parent attribute
-             * after the class is initialized.
-             *
-             * @param obj
-             */
+            this._onRender = fn;
+        }
+
+        /**
+         * Setter that can be used to assign the parent attribute
+         * after the class is initialized.
+         *
+         * @param obj
+         */
         set parent(obj) {
-                this._parent = obj;
-                if (this.onRender) {
-                    this.onRender(this);
-                }
+            this._parent = obj;
+            if (this.onRender) {
+                this.onRender(this);
             }
-            /**
-             * Getter used to access the parent element (or class) attribute.
-             * @returns {*}
-             */
+        }
+
+        /**
+         * Getter used to access the parent element (or class) attribute.
+         * @returns {*}
+         */
         get parent() {
-                return this._parent;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._parent;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Getter for transform attribute.
-             * @returns {*}
-             */
+            return this._children;
+        }
+
+        /**
+         * Getter for transform attribute.
+         * @returns {*}
+         */
         get transform() {
-                return this._transform;
-            }
-            /**
-             * Getter for opacity attribute.
-             * @returns {*}
-             */
+            return this._transform;
+        }
+
+        /**
+         * Getter for opacity attribute.
+         * @returns {*}
+         */
         get opacity() {
-                return this._opacity;
-            }
-            /**
-             * Getter for stroke attribute.
-             * @returns {*}
-             */
+            return this._opacity;
+        }
+
+        /**
+         * Getter for stroke attribute.
+         * @returns {*}
+         */
         get stroke() {
-                return this._stroke;
-            }
-            /**
-             * Getter for strokeWidth attribute.
-             * @returns {*}
-             */
+            return this._stroke;
+        }
+
+        /**
+         * Getter for strokeWidth attribute.
+         * @returns {*}
+         */
         get strokeWidth() {
-                return this._strokeWidth;
-            }
-            /**
-             * Getter for visibility attribute.
-             *
-             * @returns {*}
-             */
+            return this._strokeWidth;
+        }
+
+        /**
+         * Getter for visibility attribute.
+         *
+         * @returns {*}
+         */
         get visibility() {
-                return this._visibility;
-            }
-            /**
-             * Getter for width attribute.
-             *
-             * @returns {*}
-             */
+            return this._visibility;
+        }
+
+        /**
+         * Getter for width attribute.
+         *
+         * @returns {*}
+         */
         get width() {
-                return this._width;
-            }
-            /**
-             * Getter for height attribute.
-             *
-             * @returns {*}
-             */
+            return this._width;
+        }
+
+        /**
+         * Getter for height attribute.
+         *
+         * @returns {*}
+         */
         get height() {
-                return this._height;
-            }
-            /**
-             * Getter for  x attribute.
-             * @returns {*}
-             */
+            return this._height;
+        }
+
+        /**
+         * Getter for  x attribute.
+         * @returns {*}
+         */
         get x() {
-                return this._x;
-            }
-            /**
-             * Getter for y attribute.
-             * @returns {*}
-             */
+            return this._x;
+        }
+
+        /**
+         * Getter for y attribute.
+         * @returns {*}
+         */
         get y() {
-                return this._y;
-            }
-            /**
-             * Getter for zIndex attribute.
-             *
-             * @returns {*}
-             */
+            return this._y;
+        }
+
+        /**
+         * Getter for zIndex attribute.
+         *
+         * @returns {*}
+         */
         get zIndex() {
-                return this._zIndex;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._zIndex;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                this.hook.appendChild(this.docElementNS);
-            }
-            /**
-             * Method used to construct ("initialize") the configured controller class.
-             */
+            this.hook.appendChild(this.docElementNS);
+        }
+
+        /**
+         * Method used to construct ("initialize") the configured controller class.
+         */
         initController() {
-                var className = this.controller,
-                    initCmd = 'new ' + className + '({ view: this });';
-                this._controller = eval(initCmd);
-            }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+            var className = this.controller,
+                initCmd = 'new ' + className + '({ view: this });';
+            this._controller = eval(initCmd);
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var i = 0,
                 child = null,
@@ -2019,7 +2185,8 @@
      * an Scalar Vector Graphic (SVG) text,
      * "<text>", tag.  This tag
      * is used to add text blocks on
-     * screen.
+     * screen. For additional info
+     * refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text).
      */
     class Text {
         /**
@@ -2029,100 +2196,117 @@
          * @returns {{id: string, x: number, y: number, xmlns: string, hook: null, autoBind: boolean, text: string, onMouseOver: string, onMouseOut: string, onMouseDown: string, onClick: string}}
          */
         config() {
-                return {
-                    id: 'text1',
-                    x: 0,
-                    y: 0,
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    hook: null,
-                    autoBind: false,
-                    cursor: null,
-                    text: '&nbsp;',
-                    children: [],
-                    onMouseOver: null,
-                    onMouseOut: null,
-                    onMouseDown: null,
-                    onClick: null,
-                    textAlign: 'start'
-                }
+            return {
+                id: 'text1',
+                x: 0,
+                y: 0,
+                xmlns: Util.xmlNamespaces().xmlns,
+                hook: null,
+                autoBind: false,
+                cursor: null,
+                text: null,
+                children: [],
+                onMouseOver: null,
+                onMouseOut: null,
+                onMouseDown: null,
+                onClick: null,
+                textAlign: 'start'
             }
-            /**
-             * Class constructor
-             * @param config (optional)
-             */
+        }
+
+        /**
+         * Class constructor
+         * @param config (optional)
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
-                this._onMouseOut = config && config.hasOwnProperty('onMouseOut') ? config.onMouseOut : this.config().onMouseOut;
-                this._onMouseOver = config && config.hasOwnProperty('onMouseOver') ? config.onMouseOver : this.config().onMouseOver;
-                this._onClick = config && config.hasOwnProperty('onClick') ? config.onClick : this.config().onClick;
-                this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
-                this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
-                this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
-                this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
-                this._textAlign = config && config.hasOwnProperty('textAlign') ? config.textAlign : this.config().textAlign;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._onMouseDown = config && config.hasOwnProperty('onMouseDown') ? config.onMouseDown : this.config().onMouseDown;
+            this._onMouseOut = config && config.hasOwnProperty('onMouseOut') ? config.onMouseOut : this.config().onMouseOut;
+            this._onMouseOver = config && config.hasOwnProperty('onMouseOver') ? config.onMouseOver : this.config().onMouseOver;
+            this._onClick = config && config.hasOwnProperty('onClick') ? config.onClick : this.config().onClick;
+            this._x = config && config.hasOwnProperty('x') ? config.x : this.config().x;
+            this._y = config && config.hasOwnProperty('y') ? config.y : this.config().y;
+            this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
+            this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
+            this._textAlign = config && config.hasOwnProperty('textAlign') ? config.textAlign : this.config().textAlign;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
             return this._docElementNS;
         }
+
         get id() {
             return this._id;
         }
+
         get xmlns() {
             return this._xmlns;
         }
+
         get hook() {
             return this._hook;
         }
+
         get autoBind() {
             return this._autoBind;
         }
+
         get onMouseOut() {
             return this._onMouseOut;
         }
+
         get onMouseDown() {
             return this._onMouseDown;
         }
+
         get onMouseOver() {
             return this._onMouseOver;
         }
+
         get onClick() {
             return this._onClick;
         }
+
         get x() {
             return this._x;
         }
+
         get y() {
             return this._y;
         }
+
         get text() {
             return this._text;
         }
+
         get cursor() {
             return this._cursor;
         }
+
         get textAlign() {
-                return this._textAlign;
-            }
-            /**
-             * Getter for children objects.
-             * @returns {*}
-             */
+            return this._textAlign;
+        }
+
+        /**
+         * Getter for children objects.
+         * @returns {*}
+         */
         get children() {
             return this._children;
         }
+
         init() {
             var docElement = document.createElementNS(this.xmlns, 'text'),
                 textNode = this.text ? document.createTextNode(this.text) : null,
@@ -2166,6 +2350,7 @@
                 this.bind();
             }
         }
+
         bind() {
             if (this.hook) {
                 this.hook.appendChild(this.docElementNS);
@@ -2193,47 +2378,57 @@
                 text: '&nbsp;'
             }
         }
+
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
-                this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
-                this._link = config && config.hasOwnProperty('link') ? config.link : this.config().link;
-                this.init();
-            }
-            /**
-             * Document element object.  This property is populated
-             * during init using the document.createElementNS()
-             * method.
-             *
-             * @returns {object}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
+            this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
+            this._link = config && config.hasOwnProperty('link') ? config.link : this.config().link;
+            this.init();
+        }
+
+        /**
+         * Document element object.  This property is populated
+         * during init using the document.createElementNS()
+         * method.
+         *
+         * @returns {object}
+         */
         get docElementNS() {
             return this._docElementNS;
         }
+
         get id() {
             return this._id;
         }
+
         get xmlns() {
             return this._xmlns;
         }
+
         get hook() {
             return this._hook;
         }
+
         get autoBind() {
             return this._autoBind;
         }
+
         get text() {
             return this._text;
         }
+
         get cursor() {
             return this._cursor;
         }
+
         get link() {
             return this._link;
         }
+
         init() {
             var docElement = document.createElementNS(this.xmlns, 'textPath'),
                 textNode = this.text ? document.createTextNode(this.text) : null;
@@ -2254,6 +2449,7 @@
                 this.bind();
             }
         }
+
         bind() {
             if (this.hook) {
                 this.hook.appendChild(this.docElementNS);
@@ -2270,6 +2466,7 @@
                 view: null
             }
         }
+
         constructor(config) {
             this._prototype = new Object();
             this._mixins = config && config.hasOwnProperty('mixins') ? this._mixins = config.mixins : this.config().mixins;
@@ -2277,22 +2474,27 @@
             this._view = config && config.hasOwnProperty('view') ? this._view = config.view : this.config().view;
             this.init();
         }
+
         get prototype() {
             return this._prototype;
         }
+
         get name() {
             return this._name;
         }
+
         get mixins() {
             return this._mixins;
         }
+
         get view() {
             return this._view;
         }
+
         applyMixin(mixin) {
             var target = this,
                 source = mixin.prototype;
-            Object.getOwnPropertyNames(source).forEach(function(name) {
+            Object.getOwnPropertyNames(source).forEach(function (name) {
                 if (name !== "constructor" || name !== "afterInit") Object.defineProperty(target, name,
                     Object.getOwnPropertyDescriptor(source, name));
             });
@@ -2300,6 +2502,7 @@
                 mixin.prototype.afterInit(this.view, this);
             }
         }
+
         init() {
             var statement = '',
                 mixin = null,
@@ -2328,25 +2531,26 @@
          * @returns {{id: string, stroke: string, strokeWidth: string, opacity: string, xmlns: string}}
          */
         config() {
-                return {
-                    id: 'path1',
-                    stroke: 'black',
-                    strokeWidth: 1,
-                    opacity: .5,
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    data: null,
-                    hook: null,
-                    autoBind: false,
-                    onMouseDown: null,
-                    onMouseOver: null,
-                    onMouseOut: null
-                }
+            return {
+                id: 'path1',
+                stroke: null,
+                strokeWidth: null,
+                opacity: null,
+                xmlns: Util.xmlNamespaces().xmlns,
+                data: null,
+                hook: null,
+                autoBind: false,
+                onMouseDown: null,
+                onMouseOver: null,
+                onMouseOut: null
             }
-            /**
-             * Class constructor
-             *
-             * @param config
-             */
+        }
+
+        /**
+         * Class constructor
+         *
+         * @param config
+         */
         constructor(config) {
             this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
             this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
@@ -2358,57 +2562,81 @@
             this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
             this.init();
         }
-        get xmlns() {
-                return this._xmlns;
-            }
-            /**
-             * Document element object.  This property is populated
-             * during constructor using the document.createElementNS()
-             * method.
-             */
-        get docElementNS() {
-                return this._docElementNS;
-            }
-            /**
-             * Document element id getter.
-             * @returns {string|*|string|string|string|string}
-             */
-        get id() {
-            return this._id;
-        }
-        get stroke() {
-            return this._stroke;
-        }
-        get strokeWidth() {
-            return this._strokeWidth;
-        }
-        get opacity() {
-            return this._opacity;
-        }
-        get data() {
-            return this._data;
-        }
+
         get xmlns() {
             return this._xmlns;
         }
+
+        /**
+         * Document element object.  This property is populated
+         * during constructor using the document.createElementNS()
+         * method.
+         */
+        get docElementNS() {
+            return this._docElementNS;
+        }
+
+        /**
+         * Document element id getter.
+         * @returns {string|*|string|string|string|string}
+         */
+        get id() {
+            return this._id;
+        }
+
+        get stroke() {
+            return this._stroke;
+        }
+
+        get strokeWidth() {
+            return this._strokeWidth;
+        }
+
+        get opacity() {
+            return this._opacity;
+        }
+
+        get data() {
+            return this._data;
+        }
+
+        get xmlns() {
+            return this._xmlns;
+        }
+
         get hook() {
             return this._hook;
         }
+
         get autoBind() {
-                return this._autoBind;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._autoBind;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
             this.hook.appendChild(this.docElement);
         }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var docElement = document.createElementNS(this.xmlns, 'path');
             docElement.setAttribute('id', this.id);
-            docElement.setAttribute('stroke', this.stroke);
-            docElement.setAttribute('stroke-width', this.strokeWidth);
-            docElement.setAttribute('opacity', this.opacity);
+            if (this.stroke) {
+                docElement.setAttribute('stroke', this.stroke);
+            }
+            if (this.strokeWidth) {
+                docElement.setAttribute('stroke-width', this.strokeWidth);
+            }
+            if (this.opacity) {
+                docElement.setAttribute('opacity', this.opacity);
+            }
             if (this.data) {
                 docElement.setAttribute('d', this.data);
             }
@@ -2432,125 +2660,141 @@
          * @returns {{id: string, xmlns: string, xmlnsEv: string, xmlnsXlink: string, zoomAndPan: string, coorWidth: string, coorHeight: string, hook: HTMLElement, autoBind: boolean, children: Array}}
          */
         config() {
-                return {
-                    id: 'surface1',
-                    xmlns: Util.xmlNamespaces().xmlns,
-                    xmlnsEv: Util.xmlNamespaces().xmlnsEv,
-                    xmlnsXlink: Util.xmlNamespaces().xmlnsXLink,
-                    zoomAndPan: "disabled",
-                    width: '100%',
-                    height: '500px',
-                    hook: window.document.body,
-                    autoBind: false,
-                    children: [],
-                    onLoad: null
-                };
-            }
-            /**
-             * Class constructor.
-             *
-             * @param config
-             */
+            return {
+                id: 'surface1',
+                xmlns: Util.xmlNamespaces().xmlns,
+                xmlnsEv: Util.xmlNamespaces().xmlnsEv,
+                xmlnsXlink: Util.xmlNamespaces().xmlnsXLink,
+                zoomAndPan: "disabled",
+                width: '500px',
+                height: '500px',
+                hook: window.document.body,
+                autoBind: false,
+                children: [],
+                onLoad: null
+            };
+        }
+
+        /**
+         * Class constructor.
+         *
+         * @param config
+         */
         constructor(config) {
-                this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-                this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-                this._xmlnsXlink = config && config.hasOwnProperty('xmlnsXlink') ? config.xmlnsXlink : this.config().xmlnsXlink;
-                this._xmlnsEv = config && config.hasOwnProperty('xmlnsEv') ? config.xmlnsEv : this.config().xmlnsEv;
-                this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-                this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-                this._zoomAndPan = config && config.hasOwnProperty('zoomAndPan') ? config.zoomAndPan : this.config().zoomAndPan;
-                this._coorWidth = config && config.hasOwnProperty('width') ? config.width : this.config().width;
-                this._coorHeight = config && config.hasOwnProperty('height') ? config.height : this.config().height;
-                this._onLoad = config && config.hasOwnProperty('onLoad') ? config.onLoad : this.config().onLoad;
-                this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
-                this.init();
-            }
-            /**
-             * Horizontal length in the svg coordinate system.
-             *
-             * See `MDN > Web technology for developers > SVG > SVG Attribute reference > `
-             * [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width).
-             *
-             * @returns {string}
-             */
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
+            this._xmlnsXlink = config && config.hasOwnProperty('xmlnsXlink') ? config.xmlnsXlink : this.config().xmlnsXlink;
+            this._xmlnsEv = config && config.hasOwnProperty('xmlnsEv') ? config.xmlnsEv : this.config().xmlnsEv;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._zoomAndPan = config && config.hasOwnProperty('zoomAndPan') ? config.zoomAndPan : this.config().zoomAndPan;
+            this._coorWidth = config && config.hasOwnProperty('width') ? config.width : this.config().width;
+            this._coorHeight = config && config.hasOwnProperty('height') ? config.height : this.config().height;
+            this._onLoad = config && config.hasOwnProperty('onLoad') ? config.onLoad : this.config().onLoad;
+            this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
+            this.init();
+        }
+
+        /**
+         * Horizontal length in the svg coordinate system.
+         *
+         * See `MDN > Web technology for developers > SVG > SVG Attribute reference > `
+         * [width](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width).
+         *
+         * @returns {string}
+         */
         get coorWidth() {
-                return this._coorWidth;
-            }
-            /**
-             * Vertical length in the user coordinate system.
-             *
-             * See `MDN > Web technology for developers > SVG > SVG Attribute reference > `
-             * [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height).
-             *
-             * @returns {string|*}
-             */
+            return this._coorWidth;
+        }
+
+        /**
+         * Vertical length in the user coordinate system.
+         *
+         * See `MDN > Web technology for developers > SVG > SVG Attribute reference > `
+         * [height](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height).
+         *
+         * @returns {string|*}
+         */
         get coorHeight() {
-                return this._coorHeight;
-            }
-            /**
-             * String value assigned to the id attribute of the
-             * docElementNS object.
-             *
-             * @returns {string}
-             */
+            return this._coorHeight;
+        }
+
+        /**
+         * String value assigned to the id attribute of the
+         * docElementNS object.
+         *
+         * @returns {string}
+         */
         get id() {
-                return this._id;
-            }
-            /**
-             * The namespace uri attribute of the svg doc element.
-             *
-             * See [http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/glossary.html#dt-namespaceURI].
-             *
-             * @returns {string}
-             */
+            return this._id;
+        }
+
+        /**
+         * The namespace uri attribute of the svg doc element.
+         *
+         * See [http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/glossary.html#dt-namespaceURI].
+         *
+         * @returns {string}
+         */
         get xmlns() {
             return this._xmlns;
         }
+
         get xmlnsXlink() {
             return this._xmlnsXlink;
         }
+
         get xmlnsEv() {
             return this._xmlnsEv;
         }
+
         get docElementNS() {
             return this._docElementNS;
         }
+
         get hook() {
             return this._hook;
         }
+
         get autoBind() {
             return this._autoBind;
         }
+
         get zoomAndPan() {
             return this._zoomAndPan;
         }
+
         get onLoad() {
             return this._onLoad;
         }
+
         get group() {
-                return this._group;
-            }
-            /**
-             * Getter for children collection.
-             * @returns {*}
-             */
+            return this._group;
+        }
+
+        /**
+         * Getter for children collection.
+         * @returns {*}
+         */
         get children() {
-                return this._children;
-            }
-            /**
-             * Method used to append the docElement to configured hook element.
-             */
+            return this._children;
+        }
+
+        /**
+         * Method used to append the docElement to configured hook element.
+         */
         bind() {
-                if (this.hook) {
-                    this.hook.appendChild(this.docElementNS);
-                }
+            if (this.hook) {
+                this.hook.appendChild(this.docElementNS);
             }
-            /**
-             * Method called by the constructor to create and assign docElement based
-             * on the properties exposed by the class.
-             *
-             * Note - if the autoBind flag is true, then it ends by invoking bind method.
-             */
+        }
+
+        /**
+         * Method called by the constructor to create and assign docElement based
+         * on the properties exposed by the class.
+         *
+         * Note - if the autoBind flag is true, then it ends by invoking bind method.
+         */
         init() {
             var me = this,
                 svg = document.createElementNS(this.xmlns, 'svg');
@@ -2584,6 +2828,7 @@
             this.prototype.onButtonRectangleClick = this.onButtonRectangleClick;
             this.prototype.afterInit = this.afterInit;
         }
+
         afterInit(view, controller) {
             if (view && view.docElementNS) {
                 var buttonId = view.docElementNS.getAttribute('id'),
@@ -2591,17 +2836,20 @@
                     rect = view.docElementNS.querySelector("rect[id=" + rectId + "]");
                 if (rect) {
                     rect.addEventListener('click', this.onButtonRectangleClick);
-                    // Must use globals for mousedown and mouseout-- ie addEventListener doesn't seem to work
+                    // Use globals for mousedown and mouseout
                     rect.setAttribute('onmousedown', 'window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown("' + buttonId + '");');
                     rect.setAttribute('onmouseout', 'window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut("' + buttonId + '");');
                 }
             }
         }
+
         onButtonRectangleClick() {
-            var rectId = this.getAttribute('id'),
-                buttonId = rectId.split('-')[0];
-            alert('You clicked button id "' + buttonId + '"');
+            var link = document.createElement('a');
+            link.setAttribute('href', window.app.metadata.gitHubUrl);
+            link.setAttribute('target', '_blank');
+            link.click();
         }
+
         static onButtonRectangleMouseOut(buttonId) {
             var rectangleId = buttonId + '-rectangle',
                 backRectangleId = buttonId + '-backrectangle',
@@ -2628,6 +2876,7 @@
                 }
             }
         }
+
         static onButtonRectangleMouseDown(buttonId) {
             var rectangleId = buttonId + '-rectangle',
                 backRectangleId = buttonId + '-backrectangle',
@@ -2661,6 +2910,7 @@
             this.prototype.onButtonTextClick = this.onButtonTextClick;
             this.prototype.afterInit = this.afterInit;
         }
+
         afterInit(view, controller) {
             if (view && view.docElementNS) {
                 var buttonId = view.docElementNS.getAttribute('id'),
@@ -2764,6 +3014,8 @@
                         hook: null,
                         text: null,
                         autoBind: false,
+                        x: 0,
+                        y: 0,
                         cursor: 'pointer',
                         children: [
                             new TextPath({
@@ -2779,6 +3031,7 @@
             });
             this.postInit();
         }
+
         postInit() {
             var backRect = this.docElementNS.firstChild,
                 backFill = backRect ? backRect.getAttribute('fill') : null;
@@ -2796,13 +3049,15 @@
             this.prototype = new Object();
             this.prototype.afterInit = this.afterInit;
         }
+
         afterInit(view, controller) {
             if (view) {
-                view.onRender = function(group) {
+                view.onRender = function (group) {
                     group.parent.docElementNS.setAttribute('onload', 'app.view.clock.mixin.Surface.onSurfaceLoad("' + view.id + '")');
                 }
             }
         }
+
         static onSurfaceLoad(clockId) {
             var root = document.getElementById("root").getBBox(),
                 transformId = clockId + '-transform',
@@ -2984,6 +3239,7 @@
                         centerY: _centerY,
                         radius: _width == "100%" ? "30%" : Math.floor(.30 * _width),
                         fill: "url(#bland)",
+                        fillOpacity: .75,
                         stroke: "white",
                         strokeWidth: "18",
                         strokeDash: "1%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%"
@@ -3044,7 +3300,7 @@
             super({
                 id: 'svgFiddle',
                 hook: config && config.hasOwnProperty('hook') ? config.hook : window.document.body,
-                height: 600,
+                height: 500,
                 width: 500,
                 autoBind: true,
                 children: [
@@ -3057,13 +3313,13 @@
                     }),
                     new app.view.button.Button({
                         id: 'button1',
-                        text: 'House SVG Fiddle #24',
+                        text: 'de-constructed version on Github',
                         color: '#58FA58',
-                        cornerRadius: 15,
+                        cornerRadius: 12,
                         width: 485,
-                        height: 30,
+                        height: 22,
                         left: 5,
-                        top: 515
+                        top: 470
                     })
                 ]
             });
@@ -3072,48 +3328,45 @@
 
 
     app.controller = app.controller || {
-        onDOMContentLoaded: function() {
-            var fiddleHook = document.getElementById('fiddleHook');
-            app.view.Viewport = new Viewport({
-                hook: fiddleHook
-            });
-        }
-    };
+            onDOMContentLoaded: function () {
+                var fiddleHook = document.getElementById('fiddleHook');
+                app.view.Viewport = new Viewport({
+                    hook: fiddleHook
+                });
+            }
+        };
     /**
      * "Debug" Jasmine testing hooks.
      */
     app.test = window.location.pathname.match('test') ? app.test || {
-        group: function(config) {
+        group: function (config) {
             return new Group(config);
         },
-        surface: function(config) {
+        surface: function (config) {
             return new Surface(config);
         },
-        basePath: function(config) {
-            return new BasePath(config);
+        path: function (config) {
+            return new Path(config);
         },
-        star: function(config) {
-            return new Star(config);
-        },
-        xmlNamespaces: function() {
+        xmlNamespaces: function () {
             return Util.xmlNamespaces();
         },
-        splitAttribute: function(field, id, defVal) {
+        splitAttribute: function (field, id, defVal) {
             return Util.splitAttribute(field, id, defVal);
         },
-        mapFromQueryString: function(url, parameter) {
+        mapFromQueryString: function (url, parameter) {
             return Util.mapFromQueryString(url, parameter);
         },
-        color: function() {
+        color: function () {
             return Util.color();
         },
-        rectangle: function(config) {
+        rectangle: function (config) {
             return new Rectangle(config);
         },
-        text: function(config) {
+        text: function (config) {
             return new Text(config);
         },
-        circle: function(config) {
+        circle: function (config) {
             return new Circle(config);
         }
     } : null;
