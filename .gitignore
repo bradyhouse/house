@@ -2,9 +2,10 @@ icons/
 jasmine/
 siesta/
 web/packages/house-theme/build
-.idea/
+fiddles/java/.idea/
 .DS_Store
 benchmark
+fiddles/compass/*/.sass-cache/
 fiddles/chrome/fiddle-0001-helloWorld
 fiddles/extjs/20150415-GridDynamicRuleFilter
 fiddles/jquery/0011-GoogleCustomSearch
