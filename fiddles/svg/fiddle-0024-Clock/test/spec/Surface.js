@@ -10,6 +10,7 @@ describe("Surface", function () {
             svg.setAttribute('width', '500px');
             svg.setAttribute('height', '500px');
             svg.setAttribute('zoomAndPan', 'disabled');
+            
 
         });
 

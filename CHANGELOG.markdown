@@ -458,3 +458,32 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 2015010270420
 
 * Added [fiddles/svg/fiddle-0024-Clock](fiddles/svg/fiddle-0024-Clock)
+
+### 2015011060420
+
+* Added [fiddles/svg/toolkit](fiddles/svg/toolkit)
+    * Based on [fiddles/svg/fiddle-0024-Clock/src/toolkit](fiddles/svg/fiddle-0024-Clock/toolkit)
+    * Reflected changes:
+        1. Updated [fiddles/svg/template](fiddles/svg/template)
+        2. Added [fiddles/svg/toolkit/README.markdown](fiddles/svg/toolkit/README.markdown)
+* Finished [fiddles/svg/fiddle-0020-ArcPath](fiddles/svg/fiddle-0020-ArcPath)
+    * Reflected changes:
+        1. [fiddles/svg/toolkit/Util.js](fiddles/svg/toolkit/Util.js)
+            * added mapCircularPoint
+            * added convertToRadians
+        2. [fiddles/svg/toolkit/Util.js](fiddles/svg/toolkit/Text.js)
+            * added style attribute support
+* Added [scripts/setup/install-browserify.sh](scripts/setup/install-browserify.sh)
+    * Reflected changes:
+        1. [scripts/setup/README.markdown](scripts/setup/README.markdown)
+* Added [scripts/setup/install-npm.sh](scripts/setup/install-npm.sh)
+    * Reflected changes:
+        1. [scripts/setup/README.markdown](scripts/setup/README.markdown)
+* Added [scripts/setup/install-babel.sh](scripts/setup/install-babel.sh)
+    * Reflected changes:
+        1. [scripts/setup/README.markdown](scripts/setup/README.markdown)
+* Added [fiddles/bash/fiddle-0036-Browserify](fiddles/bash/fiddle-0036-Browserify)
+* Added [fiddles/bash/fiddle-0037-Babel](fiddles/bash/fiddle-0037-Babel)
+* Enhanced [fiddles/svg/toolkit/Util.js](fiddles/svg/toolkit/Util.js)
+* Added [fiddles/extjs6/fiddle-0024-SmartTreeFiltering](fiddles/extjs6/fiddle-0024-SmartTreeFiltering)
+* Started [fiddles/extjs6/fiddle-0025-CustomToolButton](fiddles/extjs6/fiddle-0025-CustomToolButton)

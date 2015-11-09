@@ -1,4 +1,4 @@
-fiddle-0020-ArcPaths
+fiddle-0020-ClockFace
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,7 +6,7 @@ fiddle-0020-ArcPaths
 
 ### Title
 
-House SVG Fiddle - fiddle-0020-ArcPaths
+Clock Face
 
 
 ### Creation Date
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another SVG Fiddle.
+Fiddle exploring how to plot the numbers of clock, "12, 1, 2 ... 11", along the circumference of circle with a fixed center and radius.
 
 
 ### Published Version Link

@@ -93,21 +93,59 @@
              * @returns {string}
              */
         static darkenColor(hex, lum) {
-            // validate hex string
-            hex = String(hex).replace(/[^0-9a-f]/gi, '');
-            if (hex.length < 6) {
-                hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+                // validate hex string
+                hex = String(hex).replace(/[^0-9a-f]/gi, '');
+                if (hex.length < 6) {
+                    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+                }
+                lum = lum || 0;
+                // convert to decimal and change luminosity
+                var rgb = "#",
+                    c, i;
+                for (i = 0; i < 3; i++) {
+                    c = parseInt(hex.substr(i * 2, 2), 16);
+                    c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+                    rgb += ("00" + c).substr(c.length);
+                }
+                return rgb;
             }
-            lum = lum || 0;
-            // convert to decimal and change luminosity
-            var rgb = "#",
-                c, i;
-            for (i = 0; i < 3; i++) {
-                c = parseInt(hex.substr(i * 2, 2), 16);
-                c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-                rgb += ("00" + c).substr(c.length);
+            /**
+             * Utility method that can be used to calculate a point
+             * along the circumference of a circle. The method is based
+             * on the established parametric equations (below).  It
+             * returns an object containing the calculated x,y coordinates.
+             *
+             *  x = cx + r * cos(a)
+             *  y = cy + r * sin(a)
+             *
+             * @param centerX
+             * @param centerY
+             * @param radius
+             * @param angle
+             * @returns {{x: number, y: number}}
+             */
+        static mapCircularPoint(centerX, centerY, radius, angle) {
+                var coorX = 0,
+                    coorY = 0;
+                try {
+                    coorX = Math.round(centerX + (radius * Math.cos(Util.convertToRadians(angle))));
+                    coorY = Math.round(centerY + (radius * Math.sin(Util.convertToRadians(angle))));
+                } catch (err) {
+                    console.log(err.stackTrace);
+                }
+                return {
+                    x: coorX,
+                    y: coorY
+                }
             }
-            return rgb;
+            /**
+             * Utility Method that can be used to convert an angle
+             * to it's radian equivalent.
+             * @param angle
+             * @returns {number}
+             */
+        static convertToRadians(angle) {
+            return angle * (Math.PI / 180);
         }
     }
 
@@ -1216,11 +1254,11 @@
         config() {
                 return {
                     id: 'circle1',
-                    stroke: 'black',
-                    strokeWidth: 2,
-                    centerX: '50%',
-                    centerY: '50%',
-                    radius: '50%',
+                    stroke: null,
+                    strokeWidth: null,
+                    centerX: null,
+                    centerY: null,
+                    radius: 0,
                     fill: null,
                     fillOpacity: null,
                     strokeDash: null,
@@ -1388,6 +1426,25 @@
                 return this._children;
             }
             /**
+             * Getter for the circle's diameter.
+             *
+             * @returns {*}
+             */
+        get diameter() {
+                if (this.radius && typeof this.radius === 'number') {
+                    return parseInt(this.radius);
+                }
+                return 0;
+            }
+            /**
+             * Getter used to get the circumference of the circle.
+             *
+             * @returns {number}
+             */
+        get circumference() {
+                return Math.floor(this.diameter * Math.PI);
+            }
+            /**
              * Method used to append the docElement to configured hook element.
              */
         bind() {
@@ -1403,9 +1460,15 @@
             var i = 0,
                 child = null,
                 docElement = document.createElementNS(this.xmlns, 'circle');
-            docElement.setAttribute('r', this.radius);
-            docElement.setAttribute('cx', this.centerX);
-            docElement.setAttribute('cy', this.centerY);
+            if (this.radius) {
+                docElement.setAttribute('r', this.radius);
+            }
+            if (this.centerX) {
+                docElement.setAttribute('cx', this.centerX);
+            }
+            if (this.centerY) {
+                docElement.setAttribute('cy', this.centerY);
+            }
             if (this.id) {
                 docElement.setAttribute('id', this.id);
             }
@@ -1438,9 +1501,6 @@
                         this.docElementNS.appendChild(child.docElementNS);
                     }
                 }
-            }
-            if (this.controller) {
-                this.initController();
             }
             if (this.autoBind) {
                 this.bind();
@@ -2050,6 +2110,9 @@
                     autoBind: false,
                     cursor: null,
                     text: null,
+                    style: null,
+                    fontFamily: null,
+                    fontSize: null,
                     children: [],
                     onMouseOver: null,
                     onMouseOut: null,
@@ -2076,6 +2139,9 @@
                 this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
                 this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
                 this._textAlign = config && config.hasOwnProperty('textAlign') ? config.textAlign : this.config().textAlign;
+                this._fontSize = config && config.hasOwnProperty('fontSize') ? config.fontSize : this.config().fontSize;
+                this._fontFamily = config && config.hasOwnProperty('fontFamily') ? config.fontFamily : this.config().fontFamily;
+                this._style = config && config.hasOwnProperty('style') ? config.style : this.config().style;
                 this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
                 this.init();
             }
@@ -2122,6 +2188,19 @@
         get text() {
             return this._text;
         }
+        get fontSize() {
+            return this._fontSize;
+        }
+        get fontFamily() {
+                return this._fontFamily;
+            }
+            /**
+             * Getter used to access the optional "style" tag attribute.
+             * @returns {*}
+             */
+        get style() {
+            return this._style;
+        }
         get cursor() {
             return this._cursor;
         }
@@ -2157,11 +2236,22 @@
             if (this.cursor) {
                 style += ' cursor: ' + this.cursor + ';'
             }
+            if (this.style) {
+                style += ' ' + this.style;
+            }
             docElement.setAttribute('style', style);
             docElement.setAttribute('x', this.x);
             docElement.setAttribute('y', this.y);
-            docElement.setAttribute('font-family', "arial");
-            docElement.setAttribute('font-size', '12');
+            if (this.fontFamily) {
+                docElement.setAttribute('font-family', this.fontFamily);
+            } else {
+                docElement.setAttribute('font-family', "arial");
+            }
+            if (this.fontSize) {
+                docElement.setAttribute('font-size', this.fontSize);
+            } else {
+                docElement.setAttribute('font-size', '12');
+            }
             if (textNode) {
                 docElement.appendChild(textNode);
             }
@@ -2465,6 +2555,7 @@
                     width: '500px',
                     height: '500px',
                     hook: window.document.body,
+                    style: null,
                     autoBind: false,
                     children: [],
                     onLoad: null
@@ -2485,6 +2576,7 @@
                 this._zoomAndPan = config && config.hasOwnProperty('zoomAndPan') ? config.zoomAndPan : this.config().zoomAndPan;
                 this._coorWidth = config && config.hasOwnProperty('width') ? config.width : this.config().width;
                 this._coorHeight = config && config.hasOwnProperty('height') ? config.height : this.config().height;
+                this._style = config && config.hasOwnProperty('style') ? config.style : this.config().style;
                 this._onLoad = config && config.hasOwnProperty('onLoad') ? config.onLoad : this.config().onLoad;
                 this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
                 this.init();
@@ -2555,6 +2647,13 @@
                 return this._group;
             }
             /**
+             * Getter used to access the optional "style" tag attribute.
+             * @returns {*}
+             */
+        get style() {
+                return this._style;
+            }
+            /**
              * Getter for children collection.
              * @returns {*}
              */
@@ -2582,6 +2681,9 @@
             svg.setAttribute('width', this.coorWidth);
             svg.setAttribute('height', this.coorHeight);
             svg.setAttribute('zoomAndPan', this.zoomAndPan);
+            if (this.style) {
+                svg.setAttribute('style', this.style);
+            }
             if (this.onload) {
                 svg.setAttribute('onload', this.onLoad);
             }
@@ -2855,6 +2957,144 @@
     }
 
 
+    class Clockface extends Group {
+        constructor(config) {
+            var _prefix = config && config.hasOwnProperty('id') ? config.id : 'clock1',
+                _id = _prefix + '-face',
+                _width = config && config.hasOwnProperty('width') ? config.width : 100,
+                _height = config && config.hasOwnProperty('height') ? config.height : 100,
+                _radius = config && config.hasOwnProperty('radius') ? config.radius : Math.floor(.45 * _width),
+                _centerX = config && config.hasOwnProperty('centerX') ? config.centerX : Math.floor(.45 * _width),
+                _centerY = config && config.hasOwnProperty('centerY') ? config.centerY : Math.floor(.45 * _height),
+                _coor3pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 0),
+                _coor4pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 30),
+                _coor5pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 60),
+                _coor6pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 90),
+                _coor7pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 120),
+                _coor8pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 150),
+                _coor9pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 180),
+                _coor10pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 210),
+                _coor11pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 240),
+                _coor12pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 270),
+                _coor1pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 300),
+                _coor2pm = Util.mapCircularPoint(_centerX, _centerY, _radius, 330),
+                _charOffsetX = 6,
+                _charOffsetY = 11,
+                _fontSize = config && config.hasOwnProperty('fontSize') ? config.fontSize : 12,
+                _fill = config && config.hasOwnProperty('fill') ? config.fill : 'blue',
+                _textStyle = config && config.hasOwnProperty('style') ? config.style : 'stroke: white; fill: #58FA58;';
+            super({
+                id: _id,
+                children: [
+                    new Circle({
+                        id: 'circle',
+                        radius: _radius,
+                        centerX: _centerX,
+                        centerY: _centerY,
+                        fill: _fill,
+                    }),
+                    new Text({
+                        id: 'twelve',
+                        x: _coor12pm.x,
+                        y: _coor12pm.y,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '12'
+                    }),
+                    new Text({
+                        id: 'one',
+                        x: _coor1pm.x,
+                        y: _coor1pm.y,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '1'
+                    }),
+                    new Text({
+                        id: 'two',
+                        x: _coor2pm.x,
+                        y: _coor2pm.y,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '2'
+                    }),
+                    new Text({
+                        id: 'three',
+                        x: _coor3pm.x,
+                        y: _coor3pm.y,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '3'
+                    }),
+                    new Text({
+                        id: 'four',
+                        x: _coor4pm.x,
+                        y: _coor4pm.y,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '4'
+                    }),
+                    new Text({
+                        id: 'five',
+                        x: _coor5pm.x + _charOffsetX,
+                        y: _coor5pm.y + _charOffsetY,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '5'
+                    }),
+                    new Text({
+                        id: 'six',
+                        x: _coor6pm.x,
+                        y: _coor6pm.y + _charOffsetY,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '6'
+                    }),
+                    new Text({
+                        id: 'seven',
+                        x: _coor7pm.x - _charOffsetX,
+                        y: _coor7pm.y + _charOffsetY,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '7'
+                    }),
+                    new Text({
+                        id: 'eight',
+                        x: _coor8pm.x - _charOffsetX,
+                        y: _coor8pm.y + _charOffsetY,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '8'
+                    }),
+                    new Text({
+                        id: 'nine',
+                        x: _coor9pm.x - _charOffsetX,
+                        y: _coor9pm.y,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '9'
+                    }),
+                    new Text({
+                        id: 'ten',
+                        x: _coor10pm.x - _charOffsetX,
+                        y: _coor10pm.y - _charOffsetY,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '10'
+                    }),
+                    new Text({
+                        id: 'eleven',
+                        x: _coor11pm.x - _charOffsetX,
+                        y: _coor11pm.y,
+                        fontSize: _fontSize,
+                        style: _textStyle,
+                        text: '11'
+                    })
+                ]
+            });
+        }
+    }
+
+
     app.view.clock.ClockController = class extends ViewController {
         constructor(config) {
             super({
@@ -2892,9 +3132,11 @@
                 _x = config && config.hasOwnProperty('left') ? config.left : 0,
                 _y = config && config.hasOwnProperty('top') ? config.top : 0,
                 _width = config && config.hasOwnProperty('width') ? config.width : '100%',
-                _centerX = _width != '100%' ? _x + Math.floor(_width / 2) : '50%',
+                _widthIsPercentage = typeof _width == 'string' && _width.indexOf('%') != -1 ? true : false,
+                _centerX = _widthIsPercentage ? '50%' : _x + Math.floor(_width / 2),
                 _height = config && config.hasOwnProperty('height') ? config.height : '100%',
-                _centerY = _height != '100%' ? _y + Math.floor(_height / 2) : '50%';
+                _heightIsPercentage = typeof _height == 'string' && _height.indexOf('%') != -1 ? true : false,
+                _centerY = _heightIsPercentage ? '50%' : _y + Math.floor(_height / 2);
             super({
                 id: _id,
                 stroke: null,
@@ -2945,16 +3187,12 @@
                             }),
                             new RadialGradient({
                                 id: 'bland',
-                                xFrequency: ".6",
-                                yFrequency: ".3",
+                                xFrequency: ".5",
+                                yFrequency: ".5",
                                 children: [
                                     new Stop({
                                         offset: ".3",
                                         color: "#58FA58"
-                                    }),
-                                    new Stop({
-                                        offset: ".9",
-                                        color: "#000"
                                     }),
                                     new Stop({
                                         offset: "1",
@@ -3009,20 +3247,28 @@
                         id: _faceId,
                         centerX: _centerX,
                         centerY: _centerY,
-                        radius: _width == "100%" ? "30%" : Math.floor(.30 * _width),
-                        fill: "url(#bland)",
+                        radius: _widthIsPercentage ? "35%" : Math.floor(.35 * _width),
                         fillOpacity: .75,
                         stroke: "white",
                         strokeWidth: "18",
-                        strokeDash: "1%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%"
+                        strokeDash: "0.03%,3%"
+                    }),
+                    new Clockface({
+                        id: _id,
+                        centerX: _centerX,
+                        centerY: _centerY,
+                        fill: "url(#bland)",
+                        fontSize: 16,
+                        radius: _widthIsPercentage ? "30%" : Math.floor(.3 * _width),
+                        width: _widthIsPercentage ? "30%" : Math.floor(.3 * _width),
+                        height: _heightIsPercentage ? "30%" : Math.floor(.3 * _height)
                     }),
                     new Rectangle({
                         id: _hourHandId,
-                        x: _width == '100%' ? "49%" : Math.floor(.49 * (_x + _width)),
-                        y: _height == '100%' ? "30%" : Math.floor(.3 * (_y + _height)),
-                        cornerRadius: null,
-                        width: _width == '100%' ? "2%" : Math.floor(.02 * _width),
-                        height: _height == '100%' ? '20%' : Math.floor(.2 * _height),
+                        x: _width == _widthIsPercentage ? "49%" : Math.floor(.49 * (_x + _width)),
+                        y: _height == _heightIsPercentage ? "30%" : Math.floor(.3 * (_y + _height)),
+                        width: _widthIsPercentage ? "2%" : Math.floor(.02 * _width),
+                        height: _heightIsPercentage ? '20%' : Math.floor(.2 * _height),
                         stroke: "#2C7D2C",
                         fill: "url(#hand)",
                         strokeWidth: 1.5,
@@ -3032,31 +3278,29 @@
                         id: _minuteHandId,
                         x: _width == '100%' ? "49.75%" : Math.floor(.4975 * (_x + _width)),
                         y: _height == '100%' ? "20%" : Math.floor(.20 * (_x + _height)),
-                        width: _width == '100%' ? "1%" : Math.floor(.01 * (_x + _width)),
-                        height: _height == '100%' ? "30%" : Math.floor(.30 * (_x + _height)),
+                        width: _width == '100%' ? "1%" : Math.floor(.01 * _width),
+                        height: _height == '100%' ? "30%" : Math.floor(.30 * _height),
                         stroke: "#2C7D2C",
                         strokeWidth: 1.5,
                         fill: "url(#hand)",
-                        cornerRadius: null,
                         transform: "rotate(116.54 550 250)"
                     }),
                     new Rectangle({
                         id: _secondHandId,
-                        x: _width == '100%' ? "49.75%" : Math.floor(.4975 * (_x + _width)),
-                        y: _height == '100%' ? "20%" : Math.floor(.20 * (_y + _height)),
-                        width: _width == '100%' ? ".2%" : Math.floor(.01 * (_x + _width)),
-                        height: _height == '100%' ? "30%" : Math.floor(.30 * (_y + _height)),
+                        x: _widthIsPercentage ? "49.75%" : Math.floor(.4975 * (_x + _width)),
+                        y: _heightIsPercentage ? "20%" : Math.floor(.20 * (_y + _height)),
+                        width: _widthIsPercentage ? ".2%" : Math.floor(.01 * _width),
+                        height: _heightIsPercentage ? "30%" : Math.floor(.30 * _height),
                         fill: "url(#hand)",
                         stroke: "#2C7D2C",
                         strokeWidth: 1.5,
-                        cornerRadius: null,
                         transform: "rotate(385.762 550 250)"
                     }),
                     new Circle({
                         id: _centerCircleId,
                         centerX: _centerX,
                         centerY: _centerY,
-                        radius: '1.4%',
+                        radius: _widthIsPercentage ? '1.4%' : Math.floor(.014 * _width),
                         fill: 'url(#hand)',
                         stroke: '#2C7D2C',
                         strokeWidth: 1
@@ -3088,9 +3332,9 @@
                         text: 'de-constructed version on Github',
                         color: '#58FA58',
                         cornerRadius: 12,
-                        width: 225,
+                        width: 485,
                         height: 22,
-                        left: 250,
+                        left: 5,
                         top: 470
                     })
                 ]

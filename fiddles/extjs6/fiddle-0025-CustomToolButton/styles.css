@@ -1,0 +1,78 @@
+.x-hide-tooltip {
+    display: none !important;
+}
+
+.x-panel-header.x-header.x-header-noborder.x-docked.x-unselectable.x-panel-header-default.x-horizontal.x-panel-header-horizontal.x-panel-header-default-horizontal.x-top.x-panel-header-top.x-panel-header-default-top.x-box-layout-ct.x-accordion-hd.x-accordion-hd-sibling-expanded {
+    background-color: #D2E7F7 !important;
+    font-weight: bold;
+}
+
+.x-panel-header.x-header.x-header-noborder.x-docked.x-unselectable.x-panel-header-default.x-horizontal.x-panel-header-horizontal.x-panel-header-default-horizontal.x-top.x-panel-header-top.x-panel-header-default-top.x-box-layout-ct.x-accordion-hd {
+    background-color: #D2E7F7 !important;
+    font-weight: bold;
+}
+
+body#ext-element-1 {
+    background-image: url(http://dev.sencha.com/ext/5.1.0/examples/kitchensink/crisp-en/resources/images/square.gif) !important;
+    background-repeat: repeat;
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slide-up;
+    -webkit-animation-name: slide-up;
+}
+
+div.x-panel-header {
+    padding-top: 10px;
+    background-image: url(http://dev.sencha.com/ext/5.1.0/examples/kitchensink/crisp-en/resources/images/header-bg.png) !important;
+}
+div.x-panel-header div.x-title-text {
+    color: #ffffff;
+}
+div.custom-menu-title {
+    background-color: #2A3F5D !important;
+    padding: 5px;
+}
+div.custom-menu-title div.x-title-text {
+    color: #ffffff;
+}
+div.custom-menu-title-close-btn {
+    background-color: #2A3F5D !important;
+    padding: 5px;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+
+
+div.console {
+    margin-top: 20px;
+    margin-left: 750px;
+    text-align: left;
+    font-family: Courier, "Courier New";
+    font-size: x-small;
+}
+div.error {
+    color: red;
+    font-weight: bold;
+}
+
+
+@-moz-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+
+    to {
+        margin-top: 0%;
+    }
+}
+
+@-webkit-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+
+    to {
+        margin-top: 0%;
+    }
+}
+

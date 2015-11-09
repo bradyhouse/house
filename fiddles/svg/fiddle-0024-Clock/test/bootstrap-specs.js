@@ -1266,7 +1266,8 @@ House.Boot.load({
         'spec/Path.js',
         'spec/Group.js',
         'spec/Text.js',
-        'spec/Rectangle.js'
+        'spec/Rectangle.js',
+        'spec/Circle.js'
 
     ],
     success: function() {

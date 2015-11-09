@@ -19,11 +19,11 @@ class Circle {
     config() {
         return {
             id: 'circle1',
-            stroke: 'black',
-            strokeWidth: 2,
-            centerX: '50%',
-            centerY: '50%',
-            radius: '50%',
+            stroke: null,
+            strokeWidth: null,
+            centerX: null,
+            centerY: null,
+            radius: 0,
             fill: null,
             fillOpacity: null,
             strokeDash: null,
@@ -210,6 +210,27 @@ class Circle {
     }
 
     /**
+     * Getter for the circle's diameter.
+     *
+     * @returns {*}
+     */
+    get diameter() {
+        if (this.radius && typeof this.radius === 'number') {
+            return parseInt(this.radius);
+        }
+        return 0;
+    }
+
+    /**
+     * Getter used to get the circumference of the circle.
+     *
+     * @returns {number}
+     */
+    get circumference() {
+        return Math.floor(this.diameter * Math.PI);
+    }
+
+    /**
      * Method used to append the docElement to configured hook element.
      */
     bind() {
@@ -227,10 +248,17 @@ class Circle {
             child = null,
             docElement = document.createElementNS(this.xmlns, 'circle');
 
+        if (this.radius) {
+            docElement.setAttribute('r', this.radius);
+        }
 
-        docElement.setAttribute('r', this.radius);
-        docElement.setAttribute('cx', this.centerX);
-        docElement.setAttribute('cy', this.centerY);
+        if (this.centerX) {
+            docElement.setAttribute('cx', this.centerX);
+        }
+
+        if (this.centerY) {
+            docElement.setAttribute('cy', this.centerY);
+        }
 
         if (this.id) {
             docElement.setAttribute('id', this.id);
@@ -265,7 +293,6 @@ class Circle {
             docElement.setAttribute('transform', this.transform);
         }
 
-
         this._docElementNS = docElement;
 
         if (this.children.length > 0) {
@@ -275,10 +302,6 @@ class Circle {
                     this.docElementNS.appendChild(child.docElementNS);
                 }
             }
-        }
-
-        if (this.controller) {
-            this.initController();
         }
 
         if (this.autoBind) {

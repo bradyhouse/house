@@ -24,6 +24,9 @@ class Text {
             autoBind: false,
             cursor: null,
             text: null,
+            style: null,
+            fontFamily: null,
+            fontSize: null,
             children: [],
             onMouseOver: null,
             onMouseOut: null,
@@ -51,6 +54,9 @@ class Text {
         this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
         this._cursor = config && config.hasOwnProperty('cursor') ? config.cursor : this.config().cursor;
         this._textAlign = config && config.hasOwnProperty('textAlign') ? config.textAlign : this.config().textAlign;
+        this._fontSize = config && config.hasOwnProperty('fontSize') ? config.fontSize : this.config().fontSize;
+        this._fontFamily = config && config.hasOwnProperty('fontFamily') ? config.fontFamily : this.config().fontFamily;
+        this._style = config && config.hasOwnProperty('style') ? config.style : this.config().style;
         this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
         this.init();
     }
@@ -110,6 +116,22 @@ class Text {
         return this._text;
     }
 
+    get fontSize() {
+        return this._fontSize;
+    }
+
+    get fontFamily() {
+        return this._fontFamily;
+    }
+
+    /**
+     * Getter used to access the optional "style" tag attribute.
+     * @returns {*}
+     */
+    get style() {
+        return this._style;
+    }
+
     get cursor() {
         return this._cursor;
     }
@@ -155,12 +177,27 @@ class Text {
             style += ' cursor: ' + this.cursor + ';'
         }
 
+        if (this.style) {
+            style += ' ' + this.style;
+        }
+
+
         docElement.setAttribute('style', style);
         docElement.setAttribute('x', this.x);
         docElement.setAttribute('y', this.y);
 
-        docElement.setAttribute('font-family', "arial");
-        docElement.setAttribute('font-size', '12');
+        if(this.fontFamily) {
+            docElement.setAttribute('font-family', this.fontFamily);
+        } else {
+            docElement.setAttribute('font-family', "arial");
+        }
+
+        if (this.fontSize) {
+            docElement.setAttribute('font-size', this.fontSize);
+        } else {
+            docElement.setAttribute('font-size', '12');
+        }
+
 
         if (textNode) {
             docElement.appendChild(textNode);

@@ -24,9 +24,11 @@ app.view.clock.Clock = class extends Group {
             _x = config && config.hasOwnProperty('left') ? config.left : 0,
             _y = config && config.hasOwnProperty('top') ? config.top : 0,
             _width = config && config.hasOwnProperty('width') ? config.width : '100%',
-            _centerX = _width != '100%' ? _x + Math.floor(_width / 2) : '50%',
+            _widthIsPercentage = typeof _width == 'string' && _width.indexOf('%') != -1 ? true : false,
+            _centerX = _widthIsPercentage ? '50%' : _x + Math.floor(_width / 2),
             _height = config && config.hasOwnProperty('height') ? config.height : '100%',
-            _centerY = _height != '100%' ? _y + Math.floor(_height / 2) : '50%';
+            _heightIsPercentage = typeof _height == 'string' && _height.indexOf('%') != -1 ? true : false,
+            _centerY = _heightIsPercentage ? '50%' : _y + Math.floor(_height / 2);
 
         super({
             id: _id,
@@ -78,16 +80,12 @@ app.view.clock.Clock = class extends Group {
                         }),
                         new RadialGradient({
                             id: 'bland',
-                            xFrequency: ".6",
-                            yFrequency: ".3",
+                            xFrequency: ".5",
+                            yFrequency: ".5",
                             children: [
                                 new Stop({
                                     offset: ".3",
                                     color: "#58FA58"
-                                }),
-                                new Stop({
-                                    offset: ".9",
-                                    color: "#000"
                                 }),
                                 new Stop({
                                     offset: "1",
@@ -142,20 +140,28 @@ app.view.clock.Clock = class extends Group {
                     id: _faceId,
                     centerX: _centerX,
                     centerY: _centerY,
-                    radius: _width == "100%" ? "30%" : Math.floor(.30 * _width),
-                    fill: "url(#bland)",
+                    radius: _widthIsPercentage ? "35%" : Math.floor(.35 * _width),
                     fillOpacity: .75,
                     stroke: "white",
                     strokeWidth: "18",
-                    strokeDash: "1%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%,0.03%,2.91%"
+                    strokeDash: "0.03%,3%"
+                }),
+                new Clockface({
+                    id: _id,
+                    centerX: _centerX,
+                    centerY: _centerY,
+                    fill: "url(#bland)",
+                    fontSize: 16,
+                    radius: _widthIsPercentage ? "30%" : Math.floor(.3 * _width),
+                    width: _widthIsPercentage ? "30%" : Math.floor(.3 * _width),
+                    height: _heightIsPercentage ? "30%" : Math.floor(.3 * _height)
                 }),
                 new Rectangle({
                     id: _hourHandId,
-                    x: _width == '100%' ? "49%" : Math.floor(.49 * (_x + _width)),
-                    y: _height == '100%' ? "30%" : Math.floor(.3 * (_y + _height)),
-                    cornerRadius: null,
-                    width: _width == '100%' ? "2%" : Math.floor(.02 * _width),
-                    height: _height == '100%' ? '20%' : Math.floor(.2 * _height),
+                    x: _width == _widthIsPercentage ? "49%" : Math.floor(.49 * (_x + _width)),
+                    y: _height == _heightIsPercentage ? "30%" : Math.floor(.3 * (_y + _height)),
+                    width: _widthIsPercentage ? "2%" : Math.floor(.02 * _width),
+                    height: _heightIsPercentage ? '20%' : Math.floor(.2 * _height),
                     stroke: "#2C7D2C",
                     fill: "url(#hand)",
                     strokeWidth: 1.5,
@@ -165,31 +171,29 @@ app.view.clock.Clock = class extends Group {
                     id: _minuteHandId,
                     x: _width == '100%' ? "49.75%" : Math.floor(.4975 * (_x + _width)),
                     y: _height == '100%' ? "20%" : Math.floor(.20 * (_x + _height)),
-                    width: _width == '100%' ? "1%" : Math.floor(.01 * (_x + _width)),
-                    height: _height == '100%' ? "30%" : Math.floor(.30 * (_x + _height)),
+                    width: _width == '100%' ? "1%" : Math.floor(.01 * _width),
+                    height: _height == '100%' ? "30%" : Math.floor(.30 * _height),
                     stroke: "#2C7D2C",
                     strokeWidth: 1.5,
                     fill: "url(#hand)",
-                    cornerRadius: null,
                     transform: "rotate(116.54 550 250)"
                 }),
                 new Rectangle({
                     id: _secondHandId,
-                    x: _width == '100%' ? "49.75%" : Math.floor(.4975 * (_x + _width)),
-                    y: _height == '100%' ? "20%" : Math.floor(.20 * (_y + _height)),
-                    width: _width == '100%' ? ".2%" : Math.floor(.01 * (_x + _width)),
-                    height: _height == '100%' ? "30%" : Math.floor(.30 * (_y + _height)),
+                    x: _widthIsPercentage ? "49.75%" : Math.floor(.4975 * (_x + _width)),
+                    y: _heightIsPercentage ? "20%" : Math.floor(.20 * (_y + _height)),
+                    width: _widthIsPercentage ? ".2%" : Math.floor(.01 * _width),
+                    height: _heightIsPercentage ? "30%" : Math.floor(.30 *_height),
                     fill: "url(#hand)",
                     stroke: "#2C7D2C",
                     strokeWidth: 1.5,
-                    cornerRadius: null,
                     transform: "rotate(385.762 550 250)"
                 }),
                 new Circle({
                     id: _centerCircleId,
                     centerX: _centerX,
                     centerY: _centerY,
-                    radius: '1.4%',
+                    radius: _widthIsPercentage ? '1.4%' : Math.floor(.014 * _width),
                     fill: 'url(#hand)',
                     stroke: '#2C7D2C',
                     strokeWidth: 1

@@ -21,6 +21,7 @@ class Surface {
             width: '500px',
             height: '500px',
             hook: window.document.body,
+            style: null,
             autoBind: false,
             children: [],
             onLoad: null
@@ -43,6 +44,7 @@ class Surface {
         this._zoomAndPan = config && config.hasOwnProperty('zoomAndPan') ? config.zoomAndPan : this.config().zoomAndPan;
         this._coorWidth = config && config.hasOwnProperty('width') ? config.width : this.config().width;
         this._coorHeight = config && config.hasOwnProperty('height') ? config.height : this.config().height;
+        this._style = config && config.hasOwnProperty('style') ? config.style : this.config().style;
         this._onLoad = config && config.hasOwnProperty('onLoad') ? config.onLoad : this.config().onLoad;
         this._children = config && config.hasOwnProperty('children') ? config.children : this.config().children;
         this.init();
@@ -126,6 +128,14 @@ class Surface {
     }
 
     /**
+     * Getter used to access the optional "style" tag attribute.
+     * @returns {*}
+     */
+    get style() {
+        return this._style;
+    }
+
+    /**
      * Getter for children collection.
      * @returns {*}
      */
@@ -156,6 +166,10 @@ class Surface {
         svg.setAttribute('width', this.coorWidth);
         svg.setAttribute('height', this.coorHeight);
         svg.setAttribute('zoomAndPan', this.zoomAndPan);
+
+        if (this.style) {
+            svg.setAttribute('style', this.style);
+        }
 
         if (this.onload) {
             svg.setAttribute('onload', this.onLoad);

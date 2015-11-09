@@ -1,3 +1,4 @@
+icons/
 jasmine/
 siesta/
 web/packages/house-theme/build
@@ -38,7 +39,6 @@ fiddles/extjs/fiddle-20150613-GridLifeCycle/
 fiddles/jquery/fiddle-0023-TumblrScreenScrape/
 fiddles/jquery/fiddle-0022-IframeDetection/
 fiddles/three/fiddle-0001-FresnelShader/
-fiddles/svg/fiddle-0020-ArcPaths/
 fiddles/svg/fiddle-0022-Spirograph/
 fiddles/svg/fiddle-0023-MenuBar/
 fiddles/svg/fiddle-0023-PathExporter/

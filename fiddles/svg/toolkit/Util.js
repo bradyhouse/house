@@ -69,7 +69,7 @@ class Util {
      * @param obj
      */
     static hide(obj) {
-        obj.setAttribute('visibility','hidden');
+        obj.setAttribute('visibility', 'hidden');
     }
 
     /**
@@ -86,19 +86,62 @@ class Util {
         // validate hex string
         hex = String(hex).replace(/[^0-9a-f]/gi, '');
         if (hex.length < 6) {
-            hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
         }
         lum = lum || 0;
 
         // convert to decimal and change luminosity
         var rgb = "#", c, i;
         for (i = 0; i < 3; i++) {
-            c = parseInt(hex.substr(i*2,2), 16);
+            c = parseInt(hex.substr(i * 2, 2), 16);
             c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-            rgb += ("00"+c).substr(c.length);
+            rgb += ("00" + c).substr(c.length);
         }
 
         return rgb;
+    }
+
+    /**
+     * Utility method that can be used to calculate a point
+     * along the circumference of a circle. The method is based
+     * on the established parametric equations (below).  It
+     * returns an object containing the calculated x,y coordinates.
+     *
+     *  x = cx + r * cos(a)
+     *  y = cy + r * sin(a)
+     *
+     * @param centerX
+     * @param centerY
+     * @param radius
+     * @param angle
+     * @returns {{x: number, y: number}}
+     */
+    static mapCircularPoint(centerX, centerY, radius, angle) {
+         var coorX = 0,
+            coorY = 0;
+
+        try {
+            coorX = Math.round(centerX + (radius * Math.cos(Util.convertToRadians(angle))));
+            coorY = Math.round(centerY + (radius * Math.sin(Util.convertToRadians(angle))));
+
+        } catch (err) {
+            console.log(err.stackTrace);
+        }
+
+        return {
+            x: coorX,
+            y: coorY
+        }
+    }
+
+    /**
+     * Utility Method that can be used to convert an angle
+     * to it's radian equivalent.
+     * @param angle
+     * @returns {number}
+     */
+    static convertToRadians (angle) {
+        return angle * (Math.PI / 180);
     }
 
 }
