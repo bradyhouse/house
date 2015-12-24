@@ -16,7 +16,9 @@
 # 07/11/2015 - See CHANGELOG @ 201507110420
 # 07/26/2015 - See CHANGELOG @ 201507260420
 # 09/10/2015 - See CHANGELOG @ 201508240420
+# 12/06/2015 - See CHANGELOG @ 201511100420
 # ---------------------------------------------------------------------------------------------------|
+
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 fiddleType=$1
@@ -58,7 +60,7 @@ changeLogFile="../../CHANGELOG.markdown"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
+        'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
         cd bin
         # Update index.html page
         if [[ -f "${newIndexFile}" ]]
@@ -70,7 +72,7 @@ changeLogFile="../../CHANGELOG.markdown"
 
         # Re-index directory
         case ${fiddleType} in
-            'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
+            'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 89
             ;;
         esac
@@ -92,6 +94,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
+        echo -e "\t\"angular\"\tAngular Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"

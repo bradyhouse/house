@@ -1,0 +1,43 @@
+<Page loaded="loaded">
+    <Page.actionBar>
+        <ActionBar title="Puzz 5 x 5">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout orientation="vertical">
+        <StackLayout orientation="horizontal">
+            <Button text="1" />
+            <Button text="2" />
+            <Button text="3" />
+            <Button text="4" />
+            <Button text="5" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="6" />
+            <Button text="7" />
+            <Button text="8" />
+            <Button text="9" />
+            <Button text="10" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="11" />
+            <Button text="12" />
+            <Button text="13" />
+            <Button text="14" />
+            <Button text="15" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="16" />
+            <Button text="17" />
+            <Button text="18" />
+            <Button text="19" />
+            <Button text="20" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="21" />
+            <Button text="22" />
+            <Button text="23" />
+            <Button text="24" />
+        </StackLayout>
+    </StackLayout>
+</Page>
+

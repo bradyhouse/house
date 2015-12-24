@@ -18,6 +18,7 @@
 # 07/05/2015 - See CHANGELOG.MARKDOWN @ 201506290420
 # 07/11/2015 - See CHANGELOG.MARKDOWN @ 201507110420
 # 07/26/2015 - See CHANGELOG.MARKDOWN @ 201507260420
+# 12/06/2015 - See CHANGELOG.MARKDOWN @ 201511100420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 _path=$(pwd;)  # Capture Path
@@ -36,6 +37,9 @@ _port=8889
     case ${_type} in
         'all')
             ./house-node-fs-start.sh "../../fiddles" "${_port}" || exit 88
+            ;;
+        'angular')
+            ./house-node-fs-start.sh "../../fiddles/angular" "${_port}" || exit 88
             ;;
         'compass')
             ./house-node-fs-start.sh "../../fiddles/compass" "${_port}" || exit 88
@@ -90,6 +94,7 @@ case ${rc} in
         echo "[t] - type. Valid types include: "
         echo ""
         echo -e "\t\"all\"\t\tStartup all Fiddles"
+        echo -e "\t\"angular\"\t\tAngular Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs\"\t\tExt JS Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"

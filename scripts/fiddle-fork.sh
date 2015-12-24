@@ -113,7 +113,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
         'ant' | 'bash')
             if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ]]
             then
-                sudo rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92
+                rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92
             fi
             $(cp -rf "../fiddles/${fiddleType}/template/README.markdown" "../fiddles/${fiddleType}/${targetFiddle}/README.markdown") || exit 92
             $(cd bin; ./house-substr.sh '{{FiddleName}}' ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
@@ -131,7 +131,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     # If the screenshot photo exists, delete the existing screenshot image
     if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png" ]]
     then
-        $(sudo rm -R "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png";) || exit 94
+        $(rm -R "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png";) || exit 94
     fi
 
     case ${fiddleType} in
@@ -139,7 +139,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')
-            sudo rm -r "../fiddles/${fiddleType}/${targetFiddle}/manifest.json"
+            rm -r "../fiddles/${fiddleType}/${targetFiddle}/manifest.json"
             $(cp -rf "../fiddles/${fiddleSubDir}/template/manifest.json" "../fiddles/${fiddleType}/${targetFiddle}/manifest.json") || exit 96
             $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
             $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96

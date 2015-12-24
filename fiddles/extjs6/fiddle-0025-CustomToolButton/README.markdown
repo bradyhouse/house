@@ -15,14 +15,14 @@ Custom Tool Button
 
 ### Description
 
-Fiddle exploring how (and if) a custom tool can be created in which the tooltips have been disabled.
+Fiddle exploring how to use an override to disable the tooltip on the last collasped child panel of a container.
 
 
 ### Published Version Link
 
-N/A
+[sencha fiddle](https://fiddle.sencha.com/#fiddle/10pc)
 
 
 ### Tags
 
-ExtJS-6-1
+ExtJS-6-1, override, panel, tool, onmouseover, data-qtip, el, setattribute

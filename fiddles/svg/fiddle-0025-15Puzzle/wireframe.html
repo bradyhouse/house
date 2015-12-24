@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>fiddle-0025-15Puzzle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="fiddles/svg/fiddle-0025-15Puzzle">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <script>
+        function signalError() {
+            document.getElementById('body').setAttribute("class", "invalid");
+        }
+    </script>
+    <link rel="stylesheet" href="resources/css/custom.css"/>
+</head>
+<body id="body">
+<div class="container enter-stage-south">
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-header">
+                    <h3>fiddle-0025-15Puzzle</h3>
+                </div>
+                <div class="bs-component">
+                    <div class="row">
+                        <svg id="surface1" width="100%" height="300px" zoomAndPan="disabled">
+                            <g id="button1" x="0" y="0">
+                                <rect id="button1-backrectangle" class="rectangle" x="27" y="28" width="100" height="30" fill="#2c6a7c" stroke="#2c6a7c" stroke-width="1" rx="10" ry="10"></rect>
+                                <rect id="button1-rectangle" class="rectangle" x="25" y="25" width="100" height="30" fill="#58D3F7" stroke="#58D3F7" style="cursor: pointer;" rx="10" ry="10" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button1&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button1&quot;);"></rect>
+                                <path id="button1-path" stroke="black" stroke-width="0" opacity="0.5" d="M 51,43 L 125,43"></path>
+                                <text id="button1-text" style="text-anchor: start; cursor: pointer;" x="0" y="0" font-family="arial" font-size="12" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button1&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button1&quot;);">
+                                    <textPath id="button1-textpath" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#button1-path">Button 1</textPath>
+                                </text>
+                            </g><g id="button2" x="0" y="0"><rect id="button2-backrectangle" class="rectangle" x="152" y="28" width="200" height="30" fill="#7d2c2c" stroke="#7d2c2c" stroke-width="1" rx="20" ry="20"></rect><rect id="button2-rectangle" class="rectangle" x="150" y="25" width="200" height="30" fill="#FA5858" stroke="#FA5858" style="cursor: pointer;" rx="20" ry="20" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button2&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button2&quot;);"></rect><path id="button2-path" stroke="black" stroke-width="0" opacity="0.5" d="M 226,43 L 350,43"></path><text id="button2-text" style="text-anchor: start; cursor: pointer;" x="0" y="0" font-family="arial" font-size="12" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button2&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button2&quot;);"><textPath id="button2-textpath" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#button2-path">Button 2</textPath></text></g><g id="button3" x="0" y="0"><rect id="button3-backrectangle" class="rectangle" x="377" y="28" width="100" height="30" fill="#2c7d2c" stroke="#2c7d2c" stroke-width="1" rx="8" ry="8"></rect><rect id="button3-rectangle" class="rectangle" x="375" y="25" width="100" height="30" fill="#58FA58" stroke="#58FA58" style="cursor: pointer;" rx="8" ry="8" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button3&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button3&quot;);"></rect><path id="button3-path" stroke="black" stroke-width="0" opacity="0.5" d="M 401,43 L 475,43"></path><text id="button3-text" style="text-anchor: start; cursor: pointer;" x="0" y="0" font-family="arial" font-size="12" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button3&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button3&quot;);"><textPath id="button3-textpath" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#button3-path">Button 3</textPath></text></g><g id="button4" x="0" y="0"><rect id="button4-backrectangle" class="rectangle" x="502" y="28" width="100" height="50" fill="#7c417a" stroke="#7c417a" stroke-width="1" rx="5" ry="5"></rect><rect id="button4-rectangle" class="rectangle" x="500" y="25" width="100" height="50" fill="#F781F3" stroke="#F781F3" style="cursor: pointer;" rx="5" ry="5" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button4&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button4&quot;);"></rect><path id="button4-path" stroke="black" stroke-width="0" opacity="0.5" d="M 526,53 L 600,53"></path><text id="button4-text" style="text-anchor: start; cursor: pointer;" x="0" y="0" font-family="arial" font-size="12" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button4&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button4&quot;);"><textPath id="button4-textpath" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#button4-path">Button 4</textPath></text></g><g id="button5" x="0" y="0"><rect id="button5-backrectangle" class="rectangle" x="27" y="103" width="400" height="50" fill="#7a7c41" stroke="#7a7c41" stroke-width="1" rx="25" ry="25"></rect><rect id="button5-rectangle" class="rectangle" x="25" y="100" width="400" height="50" fill="#F3F781" stroke="#F3F781" style="cursor: pointer;" rx="25" ry="25" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button5&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button5&quot;);"></rect><path id="button5-path" stroke="black" stroke-width="0" opacity="0.5" d="M 201,128 L 425,128"></path><text id="button5-text" style="text-anchor: start; cursor: pointer;" x="0" y="0" font-family="arial" font-size="12" onmousedown="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseDown(&quot;button5&quot;);" onmouseout="window.app.view.button.mixin.Rectangle.onButtonRectangleMouseOut(&quot;button5&quot;);"><textPath id="button5-textpath" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#button5-path">Button 5</textPath></text></g></svg>
+                    </div>
+                    <p>
+                        <a href="readme.markdown" title="View Additional details" target="_blank">readme</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="BornOnHook" class="modal-footer text-danger">
+            @ 12-07-15
+        </div>
+    </div>
+</div>
+<script src="../resources/js/jquery-1.11.2.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

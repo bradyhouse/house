@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+
+
+.enter-stage-right {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slidein;
+    -webkit-animation-name: slidein;
+}
+
+@-moz-keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 10%;
+    }
+}
+
+@-webkit-keyframes slidein {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 10%;
+    }
+}
+
+.enter-stage-south {
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slide-up;
+    -webkit-animation-name: slide-up;
+}
+
+@-moz-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+@-webkit-keyframes slide-up {
+    from {
+        margin-top: 100%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+button {
+    color: #000000 !important;
+}
+
+p {
+    padding-top: 20px;
+}
+
+
+.btn.btn-success {
+    border-radius: 10px;
+}
+.btn.btn-danger {
+    border-radius: 15px;
+}
+
+.btn.btn-info {
+    border-radius: 15px;
+}
+
+.btn.btn-warning {
+    border-radius: 0px;
+    border: none;
+    color: #2196F3;
+    background-color: #2196F3;
+}
+
+@font-face {
+    font-family: digital;
+    src: url(Open24DisplaySt.ttf);
+    font-weight: 400;
+}
+
+.digital {
+    font-family: digital;
+    font-size: 2em;
+}
+
+

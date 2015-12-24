@@ -19,6 +19,7 @@
 # 07/26/2015 - See CHANGELOG @ 201507260420
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
+# 11/26/2015 - See CHANGELOG @ 201511100420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -26,6 +27,18 @@ echo "${thisFile}" | awk '{print toupper($0)}'
 function listAndCount() {
     cd ../fiddles/${fiddleType}
     echo $(ls -1 | grep ${fiddleCriteria} | wc -l | sed -e 's/^[[:space:]]*//';)
+}
+
+function updateChangeLog() {
+    changeLogFile=$1
+    changeLogFileTmp="${changeLogFile}.~"
+    fiddleName=$2
+    if [[ -f "${changeLogFile}" ]]
+    then
+       cat "${changeLogFile}" | grep -v "${fiddleName}" > "${changeLogFileTmp}"
+       cat "${changeLogFileTmp}" > "${changeLogFile}"
+       rm -f "${changeLogFileTmp}"
+    fi
 }
 
 function getFiddle() {
@@ -43,6 +56,7 @@ fiddleType=$1
 fiddleCriteria=$2
 fiddleName=$(getFiddle;);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
+changeLogFile="../CHANGELOG.markdown"
 
 #try
 (
@@ -51,13 +65,13 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
         if [[ -d "${fiddlePath}" ]]
         then
-            sudo rm -r "${fiddlePath}" || exit 87
+            rm -r "${fiddlePath}" || exit 87
         fi
         case ${fiddleType} in
-            'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
+            'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 88
             ;;
         esac
@@ -65,6 +79,9 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
         *)
             exit 86
     esac
+
+    updateChangeLog "${changeLogFile}" "${fiddleName}" || exit 90
+
 )
 #catch
 _rc=$?
@@ -80,6 +97,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
+        echo -e "\t\"angular\"\t\tAngular Fiddle"
         echo -e "\t\"ant\"\t\tAnt Fiddle"
         echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
@@ -103,6 +121,8 @@ case ${_rc} in
     88) echo "fubar! call to \"fiddle-index.sh\" for \"${fiddleType}\" failed."
         ;;
     89) echo "fubar! the target directory, \"${fiddlePath}\", doesn't exist."
+        ;;
+    90) echo "fubar! the failed while attempting to update \"${changeLogFile}\"."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

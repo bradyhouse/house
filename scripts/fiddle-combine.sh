@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # 09/09/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
+# 12/06/2015 - See CHANGELOG @ 201511100420
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -83,7 +84,7 @@ function initAppFile() {
 
     if [[ -e "${appFile}" ]]
     then
-        sudo rm -f "${appFile}";
+        rm -f "${appFile}";
     fi
 
     case ${type} in
@@ -192,6 +193,7 @@ function catch() {
             echo ""
             echo "[t] - type. Valid types include: "
             echo ""
+            echo -e "\t\"angular\"\tAngular Fiddle"
             echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
             echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
             echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"

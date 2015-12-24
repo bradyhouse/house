@@ -68,6 +68,7 @@ function setMaterialSpecular(r, g, b) {
 
 var materialName = "phong-normal";
 var normalMapOn = true;
+
 function setMaterial(name) {
     materialName = name;
     if (normalMapOn) {

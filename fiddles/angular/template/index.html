@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta name="description" content="http://github/bradyhouse/house/fiddles/jquery/{{FiddleName}}">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/custom.css" type="text/css">
+</head>
+<body>
+
+<h3>&nbsp;{{FiddleName}}</h3>
+
+
+<div ng-controller="MainCtrl">
+    <div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
+</div>
+
+<p>
+    <a href="app.js" title="View Source Code" target="_blank">src</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="README.markdown" title="View Additional details" target="_blank">readme</a>
+</p>
+
+<div id="BornOnHook" class="modal-footer text-danger">
+    @ {{BornOnDate}}
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

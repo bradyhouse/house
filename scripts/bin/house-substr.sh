@@ -5,22 +5,6 @@ then
   echo ""
   echo "sub string"
   echo ""
-  echo "Usage:"
-  echo ""
-  echo "       $0 [o] [n] [f]"
-  echo ""
-  echo "       [o] - old pattern"
-  echo "       [t] - new pattern"
-  echo "       [f] - file"
-  echo ""
-  exit 86
-fi
-
-if [ $# -ne "3" ]
-then
-  echo ""
-  echo "sub string"
-  echo ""
   echo "Usage: `basename $0` old-pattern new-pattern filename"
   exit 86
 fi
@@ -46,4 +30,4 @@ then
    rm -R $_tmp
 fi
 
-exit $?  
+exit $?

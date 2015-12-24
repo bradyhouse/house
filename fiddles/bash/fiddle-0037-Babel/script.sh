@@ -1,18 +1,30 @@
 #!/usr/bin/env bash
 
-clear;
-echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
-echo "Bash version ${BASH_VERSION}..."
+_srcFile="app.js";
+_compiledFile="app.min.js";
 
-function controlFunction() {
-    echo " hello $1"
+if [[ "$#" -gt 1 ]]
+then
+    _srcFile=$1
+    _compiledFile=$2
+fi
+
+function isBabelInstalled() {
+
+    if [[ $(which babel;) ]]
+    then
+        echo 0
+    else
+        echo -1
+    fi
+
 }
 
-function valueFunction() {
-    z=`expr $1 + 3`;
-    echo ${z};
+function transpile() {
+    babel $1 --compact=true --no-comments > $2
 }
-controlFunction;
-controlFunction $(whoami;);
-rc=$(valueFunction 2;);
-echo "2 + 3 = ${rc}";
+
+if [[ $(isBabelInstalled) ]]
+then
+    transpile ${_srcFile} ${_compiledFile};
+fi

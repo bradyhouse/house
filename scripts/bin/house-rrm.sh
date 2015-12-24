@@ -16,4 +16,4 @@ then
 fi
 
 cd $1
-find . -name $2 -print0 | xargs -0 rm -rf
+find . -name "$2" -delete

@@ -3,7 +3,7 @@ fiddle-0037-Babel
 
 ### Title
 
-fiddle-0037-Babel
+Babel Minify
 
 
 ### Creation Date
@@ -18,7 +18,7 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
+Simple script exploring
 
 
 ### Tags

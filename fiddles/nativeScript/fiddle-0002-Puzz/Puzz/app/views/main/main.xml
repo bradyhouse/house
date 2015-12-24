@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <StackLayout>
+        <Button text="About" tap="showAbout" />
+        <Button text="3 x 3" tap="showThree" />
+        <Button text="4 x 4" tap="showFour" />
+        <Button text="5 x 5" tap="showFive" />
+    </StackLayout>
+</Page>

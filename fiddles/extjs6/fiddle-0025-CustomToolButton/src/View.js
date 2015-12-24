@@ -1,8 +1,8 @@
-
 Ext.define('Fiddle.View', {
     extend: 'Ext.panel.Panel',
-    requires: ['Fiddle.Panel'],
-
+    requires: [
+        'Fiddle.Panel'
+    ],
     constructor() {
         var config = {};
         config.items = this.buildItems();
@@ -13,16 +13,14 @@ Ext.define('Fiddle.View', {
         buildItems: function() {
             var i = 1,
                 items = [];
-
-            for(; i <=10; i++) {
+            for (; i <= 10; i++) {
                 items.push({
                     xtype: 'dummypanel',
-                    title: 'Panel # ' + i,
-                    collapsed: i > 3 ? true : false
+                    title: i == 10 ? 'MouseOver the tool buttons =>' : null,
+                    collapsed: i > 3 ? true : false,
                 });
             }
             return items;
         }
     }
 });
-

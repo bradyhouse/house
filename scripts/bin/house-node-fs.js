@@ -3,8 +3,9 @@ var http = require("http"),
     path = require("path"),
     fs = require("fs"),
     port = process.argv[2] || 8889;
+process.env.TZ = 'Europe/Amsterdam';
 http.createServer(function (request, response) {
-    var uri = url.parse(request.url).pathname,
+    var uri = url.parse(request.url) .pathname,
         filename = path.join(process.cwd(), uri),
         contentTypesByExtension = {
             '.html': "text/html",

@@ -1,0 +1,10 @@
+<Page loaded="loaded">
+    <Page.actionBar>
+        <ActionBar title="Puzz - About">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout>
+
+
+    </StackLayout>
+</Page>

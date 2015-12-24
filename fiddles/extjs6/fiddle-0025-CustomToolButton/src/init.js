@@ -1,5 +1,4 @@
-
-// Boiler plate
+// Boiler Plate
 Ext.define('App.BoxModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.box',

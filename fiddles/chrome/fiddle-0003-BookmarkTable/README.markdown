@@ -6,7 +6,7 @@ fiddle-0003-BookmarkTable
 
 ### Title
 
-fiddle-0003-BookmarkTable
+Bookmark Organizer
 
 
 ### Creation Date
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another chrome extension Fiddle. 
+Another chrome extension Fiddle.
 
 
 ### Published Version Link

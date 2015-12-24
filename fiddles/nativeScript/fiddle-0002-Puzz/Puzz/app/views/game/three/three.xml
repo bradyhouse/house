@@ -1,0 +1,22 @@
+<Page loaded="loaded">
+    <Page.actionBar>
+        <ActionBar title="Puzz 3 x 3">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout orientation="vertical">
+        <StackLayout orientation="horizontal">
+            <Button text="1" />
+            <Button text="2" />
+            <Button text="3" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="4" />
+            <Button text="5" />
+            <Button text="6" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="7"></Button>
+            <Button text="8"></Button>
+        </StackLayout>
+    </StackLayout>
+</Page>

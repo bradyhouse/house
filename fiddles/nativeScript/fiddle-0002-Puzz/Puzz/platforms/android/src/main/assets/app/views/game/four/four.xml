@@ -1,0 +1,32 @@
+<Page loaded="loaded">
+    <Page.actionBar>
+        <ActionBar title="Puzz 4 x 4">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout orientation="vertical">
+        <StackLayout orientation="horizontal">
+            <Button text="1" />
+            <Button text="2" />
+            <Button text="3" />
+            <Button text="4" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="5" />
+            <Button text="6" />
+            <Button text="7" />
+            <Button text="8" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="9" />
+            <Button text="10" />
+            <Button text="11" />
+            <Button text="12" />
+        </StackLayout>
+        <StackLayout orientation="horizontal">
+            <Button text="13" />
+            <Button text="14" />
+            <Button text="15" />
+        </StackLayout>
+    </StackLayout>
+</Page>
+

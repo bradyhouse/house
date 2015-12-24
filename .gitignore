@@ -1,10 +1,13 @@
 icons/
 jasmine/
+magpie/
+
 siesta/
 web/packages/house-theme/build
 fiddles/java/.idea/
 .DS_Store
-benchmark
+arcade/
+fiddles/android
 fiddles/compass/*/.sass-cache/
 fiddles/chrome/fiddle-0001-helloWorld
 fiddles/extjs/20150415-GridDynamicRuleFilter
@@ -40,6 +43,9 @@ fiddles/extjs/fiddle-20150613-GridLifeCycle/
 fiddles/jquery/fiddle-0023-TumblrScreenScrape/
 fiddles/jquery/fiddle-0022-IframeDetection/
 fiddles/three/fiddle-0001-FresnelShader/
+fiddles/three/WebGLBook/
+fiddles/three/Programming3DApplications/
+fiddles/three/fiddle-0006-StarField/
 fiddles/svg/fiddle-0022-Spirograph/
 fiddles/svg/fiddle-0023-MenuBar/
 fiddles/svg/fiddle-0023-PathExporter/
