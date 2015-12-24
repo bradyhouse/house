@@ -529,3 +529,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Started [fiddles/svg/fiddle-0025-15Puzzle](fiddles/svg/fiddle-0025-15Puzzle)
 * Added [fiddles/three/fiddle-0005-BluePlanet](fiddles/three/fiddle-0005-BluePlanet)
 * Added [fiddles/jquery/fiddle-0036-NavBar](fiddles/jquery/fiddle-0036-NavBar)
+* Added [fiddles/nativeScript/fiddle-0001-SampleGroceries](fiddles/nativeScript/fiddle-0001-SampleGroceries)
+* Started [fiddles/nativeScript/fiddle-0002-Puzz](fiddles/nativeScript/fiddle-0002-Puzz)
