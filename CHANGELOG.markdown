@@ -527,7 +527,20 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/jquery/fiddle-0035-JqueryCSV](fiddles/jquery/fiddle-0035-JqueryCSV)
 * Added [fiddles/angular/fiddle-0001-SimpleGrid](fiddles/angular/fiddle-0001-SimpleGrid)
 * Started [fiddles/svg/fiddle-0025-15Puzzle](fiddles/svg/fiddle-0025-15Puzzle)
-* Added [fiddles/three/fiddle-0005-BluePlanet](fiddles/three/fiddle-0005-BluePlanet)
+* Added [fiddles/three/fiddle-0005-EarthMoon](fiddles/three/fiddle-0005-EarthMoon)
 * Added [fiddles/jquery/fiddle-0036-NavBar](fiddles/jquery/fiddle-0036-NavBar)
 * Added [fiddles/nativeScript/fiddle-0001-SampleGroceries](fiddles/nativeScript/fiddle-0001-SampleGroceries)
 * Started [fiddles/nativeScript/fiddle-0002-Puzz](fiddles/nativeScript/fiddle-0002-Puzz)
+
+### 201512240420
+
+* Added [fiddles/java/fiddle-0001-Lambda](fiddles/java/fiddle-0001-Lambda)
+* Added [fiddles/java/fiddle-0002-StrategyPattern](fiddles/java/fiddle-0002-StrategyPattern)
+* Added [fiddles/android](fiddles/android)
+* Added [fiddles/android/fiddle-0006-OpenGLRenderer](fiddles/android/fiddle-0006-OpenGLRenderer)
+* Added [fiddles/android/fiddle-0007-DroidzAttack](fiddles/android/fiddle-0007-DroidzAttack)
+* Added [fiddles/android/fiddle-0008-SpriteAnimation](fiddles/android/fiddle-0008-SpriteAnimation)
+* Added [fiddles/android/fiddle-0009-ParticleExplosion](fiddles/android/fiddle-0009-ParticleExplosion)
+* Added [fiddles/android/fiddle-0010-BitmapFonts](fiddles/android/fiddle-0010-BitmapFonts)
+* Refactored / Published [fiddles/three/fiddle-0005-EarthMoon](fiddles/three/fiddle-0005-EarthMoon)
+* Added [fiddles/three/fiddle-0006-Saturn](fiddles/three/fiddle-0006-Saturn)
