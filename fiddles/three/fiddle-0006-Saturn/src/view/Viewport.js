@@ -5,16 +5,13 @@ app.view.Viewport = class extends app.toolkit.three.R {
     }
 
     render() {
-        let sun = new app.view.milkyway.Sun({});
-        let saturn = new app.view.milkyway.saturn.Saturn({});
-
-
-        sun.init();
+        let sun = new app.view.milkyway.Sun({autoInit: true}),
+            saturn = new app.view.milkyway.saturn.Saturn(),
+            stars = new app.view.milkyway.Stars({autoInit: true});
+        this.addObject(stars);
         this.addObject(sun);
-
         saturn.init();
         this.addObject(saturn);
     }
 
-
-}
+};

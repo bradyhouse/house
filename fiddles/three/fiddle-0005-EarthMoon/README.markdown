@@ -26,7 +26,7 @@ Chapter 3 of Tony Parisi's book, **WebGL Up and Running**.
 
 ### Published Version Link
 
-N/A
+[Code Pen](http://codepen.io/bradyhouse/pen/XXNdPd)
 
 
 ### Tags

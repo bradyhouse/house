@@ -544,3 +544,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/android/fiddle-0010-BitmapFonts](fiddles/android/fiddle-0010-BitmapFonts)
 * Refactored / Published [fiddles/three/fiddle-0005-EarthMoon](fiddles/three/fiddle-0005-EarthMoon)
 * Added [fiddles/three/fiddle-0006-Saturn](fiddles/three/fiddle-0006-Saturn)
+* Added [fiddles/three/fiddle-0007-Stars](fiddles/three/fiddle-0007-Stars)

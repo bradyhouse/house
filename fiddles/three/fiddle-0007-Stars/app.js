@@ -1,24 +1,17 @@
 (function(app) {
     "use strict";
 
-
     let metadata = {
         urls: {
-            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0006-Saturn',
-            saturn: {
-                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/saturnSurface.jpg',
-                ringsMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/saturnRings.png'
-            }
+            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0007-Stars'
         }
     };
-
 
     app.toolkit = app.toolkit || {};
     app.toolkit.three = app.toolkit.three || {};
     app.view = app.view || {};
     app.view.milkyway = app.view.milkyway || {};
     app.view.milkyway.saturn = app.view.milkyway.saturn || {};
-
 
     app.toolkit.three.Publisher = class {
         constructor() {
@@ -358,7 +351,7 @@
             scene.add(new THREE.AmbientLight(0x505050));
             scene.data = this;
             camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 1, 10000);
-            camera.position.set(0, 0, 40);
+            camera.position.set(0, 0, 3.3333);
             scene.add(camera);
             root = new THREE.Object3D();
             scene.add(root);
@@ -473,225 +466,6 @@
     }
 
 
-    app.view.milkyway.Planet = class extends app.toolkit.three.Object {
-        config() {
-            return {
-                size: 1,
-                distance: 0.0,
-                period: 0.0,
-                map: '',
-                revolutionSpeed: 0.002,
-                animateOrbit: true,
-                type: null
-            }
-        }
-        constructor(config) {
-            super();
-            this._size = config && config.hasOwnProperty('size') ? config.size : this.config().size;
-            this._distance = config && config.hasOwnProperty('distance') ? config.distance : this.config().distance;
-            this._period = config && config.hasOwnProperty('period') ? config.period : this.config().period;
-            this._map = config && config.hasOwnProperty('map') ? config.map : this.config().map;
-            this._type = config && config.hasOwnProperty('type') ? config.type : this.config().type;
-            this._revolutionSpeed = config && config.hasOwnProperty('revolutionSpeed') ? config.revolutionSpeed : this.config().revolutionSpeed;
-            this._animateOrbit = config && config.hasOwnProperty('animateOrbit') ? config.animateOrbit : this.config().animateOrbit;
-        }
-        get size() {
-            return this._size;
-        }
-        get distance() {
-            return this._distance;
-        }
-        get period() {
-            return this._period;
-        }
-        get map() {
-            return this._map;
-        }
-        get type() {
-            return this._type;
-        }
-        get revolutionSpeed() {
-            return this._revolutionSpeed;
-        }
-        set revolutionSpeed(speed) {
-            this._revolutionSpeed = speed;
-        }
-        get animateOrbit() {
-            return this._animateOrbit;
-        }
-    }
-
-
-    app.view.milkyway.saturn.Rings = class extends THREE.Geometry {
-        config() {
-            return {
-                innerRadius: .5,
-                outerRadius: 1,
-                gridY: 200,
-                autoInit: false
-            }
-        }
-        constructor(config) {
-            super();
-            this._innerRadius = config && config.hasOwnProperty('innerRadius') ? config.innerRadius : this.config().innerRadius;
-            this._outerRadius = config && config.hasOwnProperty('outerRadius') ? config.outerRadius : this.config().outerRadius;
-            this._gridY = config && config.hasOwnProperty('gridY') ? config.gridY : this.config().gridY;
-            this._autoInit = config && config.hasOwnProperty('autoInit') ? config.autoInit : this.config().autoInit;
-            if (this.autoInit) {
-                this.init();
-            }
-        }
-        get innerRadius() {
-            return this._innerRadius;
-        }
-        get outerRadius() {
-            return this._outerRadius;
-        }
-        get gridY() {
-            return this._gridY;
-        }
-        get autoInit() {
-            return this._autoInit;
-        }
-        init() {
-            let twopi = 2 * Math.PI,
-                iVer = Math.max(2, this.gridY);
-            for (let i = 0; i < (iVer + 1); i++) {
-                let fRad1 = i / iVer,
-                    fRad2 = (i + 1) / iVer,
-                    fX1 = this.innerRadius * Math.cos(fRad1 * twopi),
-                    fY1 = this.innerRadius * Math.sin(fRad1 * twopi),
-                    fX2 = this.outerRadius * Math.cos(fRad1 * twopi),
-                    fY2 = this.outerRadius * Math.sin(fRad1 * twopi),
-                    fX4 = this.innerRadius * Math.cos(fRad2 * twopi),
-                    fY4 = this.innerRadius * Math.sin(fRad2 * twopi),
-                    fX3 = this.outerRadius * Math.cos(fRad2 * twopi),
-                    fY3 = this.outerRadius * Math.sin(fRad2 * twopi),
-                    v1 = new THREE.Vector3(fX1, fY1, 0),
-                    v2 = new THREE.Vector3(fX2, fY2, 0),
-                    v3 = new THREE.Vector3(fX3, fY3, 0),
-                    v4 = new THREE.Vector3(fX4, fY4, 0);
-                this.vertices.push(new THREE.Vertex(v1));
-                this.vertices.push(new THREE.Vertex(v2));
-                this.vertices.push(new THREE.Vertex(v3));
-                this.vertices.push(new THREE.Vertex(v4));
-            }
-            for (let i = 0; i < (iVer + 1); i++) {
-                this.faces.push(new THREE.Face3(i * 4, i * 4 + 1, i * 4 + 2));
-                this.faces.push(new THREE.Face3(i * 4, i * 4 + 2, i * 4 + 3));
-                this.faceVertexUvs[0].push([
-                    new THREE.UV(0, 1),
-                    new THREE.UV(1, 1),
-                    new THREE.UV(1, 0)
-                ]);
-                this.faceVertexUvs[0].push([
-                    new THREE.UV(0, 1),
-                    new THREE.UV(1, 0),
-                    new THREE.UV(0, 0)
-                ]);
-            }
-            this.computeCentroids();
-            this.computeFaceNormals();
-            this.boundingSphere = {
-                radius: this.outerRadius
-            };
-        }
-    }
-
-
-    app.view.milkyway.saturn.Saturn = class extends app.view.milkyway.Planet {
-        constructor() {
-            super({
-                type: app.view.milkyway.Saturn,
-                size: 9.41,
-                distance: 10,
-                period: 2, // 29.46
-                map: metadata.urls.saturn.surfaceMaterial
-            });
-        }
-        get globeMesh() {
-            return this._globeMesh;
-        }
-        get animateOrbit() {
-            return true;
-        }
-        get ringsMesh() {
-            return this._ringsMesh;
-        }
-        get planetGroup() {
-            return this._planetGroup;
-        }
-        get planetOrbitGroup() {
-            return this._planetOrbitGroup;
-        }
-        get tilt() {
-            return -0.466;
-        }
-        get rotationY() {
-            return 0.003;
-        }
-        createGlobe() {
-            let geometry = new THREE.SphereGeometry(7, 32, 32),
-                texture = THREE.ImageUtils.loadTexture(this.map),
-                material = new THREE.MeshPhongMaterial({
-                    map: texture
-                }),
-                globeMesh = new THREE.Mesh(geometry, material);
-            globeMesh.rotation.z = .1;
-            this.object3D.add(globeMesh);
-            this._globeMesh = globeMesh;
-        }
-        createRings() {
-            let ringsmap = metadata.urls.saturn.ringsMaterial,
-                geometry = new app.view.milkyway.saturn.Rings({
-                    innerRadius: 1.1,
-                    outerRadius: 1.867,
-                    gridY: 200,
-                    autoInit: true
-                }),
-                texture = THREE.ImageUtils.loadTexture(ringsmap),
-                material = new THREE.MeshLambertMaterial({
-                    map: texture,
-                    transparent: false,
-                    ambient: 0xffffff
-                }),
-                ringsMesh = new THREE.Mesh(geometry, material);
-            ringsMesh.doubleSided = true;
-            ringsMesh.rotation.x = 2.21;
-            ringsMesh.rotation.y = .09;
-            this.planetGroup.add(ringsMesh);
-            this.planetGroup.position.x = -.2;
-            this.planetGroup.position.z = -1;
-            this.planetGroup.position.y = 1;
-            this._ringsMesh = ringsMesh;
-        }
-        update() {
-            if (this.globeMesh) {
-                this.globeMesh.rotation.y += this.rotationY / this.period;
-            }
-            if (this.ringsMesh) {
-                this.ringsMesh.rotation.z -= this.rotationY / this.period;
-            }
-            this.updateChildren();
-        }
-        init() {
-            let planetOrbitGroup = new THREE.Object3D(),
-                planetGroup = new THREE.Object3D(),
-                distSquared = this.distance * this.distance;
-            planetGroup.position.set(Math.sqrt(distSquared / 2), 0, -Math.sqrt(distSquared / 2));
-            planetOrbitGroup.add(planetGroup);
-            planetGroup.scale.set(this.size, this.size, this.size);
-            planetGroup.rotation.x = this.tilt;
-            this.object3D = planetOrbitGroup;
-            this._planetGroup = planetGroup;
-            this._planetOrbitGroup = planetOrbitGroup;
-            this.createRings();
-            this.createGlobe();
-            this.revolutionSpeed = this.rotationY;
-        }
-    }
-
-
     app.view.milkyway.Stars = class extends app.toolkit.three.Object {
         config() {
             return {
@@ -757,6 +531,7 @@
         }
     };
 
+
     app.view.milkyway.Sun = class extends app.toolkit.three.Object {
         config() {
             autoInit: false
@@ -789,18 +564,15 @@
         }
         render() {
             let sun = new app.view.milkyway.Sun({
-                    autoInit: true
-                }),
-                saturn = new app.view.milkyway.saturn.Saturn(),
-                stars = new app.view.milkyway.Stars({
-                    autoInit: true
-                });
-            this.addObject(stars);
+                autoInit: true
+            });
+            let stars = new app.view.milkyway.Stars({
+                autoInit: true
+            });
             this.addObject(sun);
-            saturn.init();
-            this.addObject(saturn);
+            this.addObject(stars);
         }
-    };
+    }
 
 
     /**
