@@ -545,3 +545,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Refactored / Published [fiddles/three/fiddle-0005-EarthMoon](fiddles/three/fiddle-0005-EarthMoon)
 * Added [fiddles/three/fiddle-0006-Saturn](fiddles/three/fiddle-0006-Saturn)
 * Added [fiddles/three/fiddle-0007-Stars](fiddles/three/fiddle-0007-Stars)
+* Added [fiddles/three/fiddle-0008-Orbit](fiddles/three/fiddle-0008-Orbit)
