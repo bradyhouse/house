@@ -1265,7 +1265,8 @@ House.Boot.load({
         'spec/Template.js',
         'spec/Planet.js',
         'spec/Rings.js',
-        'spec/Saturn.js'
+        'spec/Saturn.js',
+        'spec/Stars.js'
 
     ],
     success: function() {

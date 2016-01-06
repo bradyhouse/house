@@ -6,7 +6,8 @@ fiddle-0007-Stars
 
 ### Title
 
-Fiddle exploring how to model Saturn and its rings in three dimensional space.  Its based on the examples discussed in Chapter 3 of Tony Parisi's book,  WebGL Up and Running.
+Starry Night
+
 
 ### Creation Date
 
@@ -20,7 +21,7 @@ Vancouver, CA
 
 ### Description
 
-Fiddle exploring how to model the earth and moon in three dimensional space.  Its based on the examples discussed in
+Fiddle exploring how to model a star field—aka the proverbial “starry night".  Its based on the examples discussed in
 Chapter 3 of Tony Parisi's book, **WebGL Up and Running**.
 
 

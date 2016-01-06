@@ -64,18 +64,9 @@ app.test = window.location.pathname.match('test') ? app.test || {
     viewport: function(config) {
         return new app.view.Viewport(config);
     },
-    planet: function(config) {
-        return new app.view.milkyway.Planet(config);
-    },
-    saturn: function(config) {
-        return new app.view.milkyway.saturn.Saturn(config);
-    },
-    rings: function(config) {
-        return new app.view.milkyway.saturn.Rings(config);
+    stars: function(config) {
+        return new app.view.milkyway.Stars(config);
     }
-
-
-
 } : null;
 
 if (!window.location.pathname.match('test')) {

@@ -1258,15 +1258,12 @@ if (!Function.prototype.bind) {
 House.Boot.load({
     charset: "UTF-8",
     url: [
-        '../libs/Three.js',
+        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/Three.js',
         '../app.js',
         'jasmine.js',
         'json2.js',
         'spec/Template.js',
-        'spec/Planet.js',
-        'spec/Rings.js',
-        'spec/Saturn.js'
-
+        'spec/Stars.js'
     ],
     success: function() {
         var env = jasmine.getEnv();

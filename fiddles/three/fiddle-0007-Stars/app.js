@@ -1,17 +1,20 @@
 (function(app) {
     "use strict";
 
+
     let metadata = {
         urls: {
             github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0007-Stars'
         }
     };
 
+
     app.toolkit = app.toolkit || {};
     app.toolkit.three = app.toolkit.three || {};
     app.view = app.view || {};
     app.view.milkyway = app.view.milkyway || {};
     app.view.milkyway.saturn = app.view.milkyway.saturn || {};
+
 
     app.toolkit.three.Publisher = class {
         constructor() {
@@ -631,14 +634,8 @@
         viewport: function(config) {
             return new app.view.Viewport(config);
         },
-        planet: function(config) {
-            return new app.view.milkyway.Planet(config);
-        },
-        saturn: function(config) {
-            return new app.view.milkyway.saturn.Saturn(config);
-        },
-        rings: function(config) {
-            return new app.view.milkyway.saturn.Rings(config);
+        stars: function(config) {
+            return new app.view.milkyway.Stars(config);
         }
     } : null;
     if (!window.location.pathname.match('test')) {
