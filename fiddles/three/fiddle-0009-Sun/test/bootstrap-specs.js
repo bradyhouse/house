@@ -1258,7 +1258,7 @@ if (!Function.prototype.bind) {
 House.Boot.load({
     charset: "UTF-8",
     url: [
-        '../libs/Three.js',
+        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/Three.js',
         '../app.js',
         'jasmine.js',
         'json2.js',

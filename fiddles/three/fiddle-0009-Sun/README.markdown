@@ -21,8 +21,8 @@ Chicago, IL
 
 ### Description
 
-Pen exploring how to model the surface sun using custom fragment and vertex shaders.  Again, this one is based on the examples discussed in
-Chapter 3 of Tony Parisi's book, **WebGL Up and Running**.
+Fiddle exploring how to model the surface of the Sun using custom fragment and vertex shaders.  Again, this one is based on the examples discussed in
+Tony Parisi's book, **WebGL Up and Running**.
 
 
 ### Published Version Link
