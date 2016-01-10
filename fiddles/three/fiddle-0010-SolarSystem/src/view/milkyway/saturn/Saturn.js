@@ -53,7 +53,7 @@ app.view.milkyway.saturn.Saturn = class extends app.view.milkyway.Planet {
             distsquared = this.distance * this.distance;
 
         ringsMesh.doubleSided = true;
-        ringsMesh.rotation.x = 4.5;
+        ringsMesh.rotation.x = 5;
         ringsMesh.rotation.y = .09;
 
         this.planetGroup.add(ringsMesh);

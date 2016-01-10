@@ -4,7 +4,7 @@
 
     let metadata = {
         urls: {
-            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0010-Milkyway',
+            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0010-SolarSystem',
             sun: {
                 surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunSurfaceMaterial.jpg',
                 atmosphereMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunAtmosphereMaterial.png'
@@ -899,7 +899,7 @@
                 ringsMesh = new THREE.Mesh(geometry, material),
                 distsquared = this.distance * this.distance;
             ringsMesh.doubleSided = true;
-            ringsMesh.rotation.x = 4.5;
+            ringsMesh.rotation.x = 5;
             ringsMesh.rotation.y = .09;
             this.planetGroup.add(ringsMesh);
             this._ringsMesh = ringsMesh;
@@ -1157,31 +1157,31 @@
                     type: app.view.milkyway.Planet,
                     size: 2.7,
                     distance: 2.6,
-                    period: 5.93,
+                    period: 2,
                     map: metadata.urls.jupiter.surfaceMaterial
                 }, {
                     type: app.view.milkyway.saturn.Saturn,
                     size: 2.14,
                     distance: 5,
-                    period: 14.73,
+                    period: 3,
                     map: metadata.urls.saturn.surfaceMaterial
                 }, {
                     type: app.view.milkyway.Planet,
                     size: 1,
                     distance: 9.8,
-                    period: 42.005,
+                    period: 4,
                     map: metadata.urls.uranus.surfaceMaterial
                 }, {
                     type: app.view.milkyway.Planet,
                     size: 1.94,
                     distance: 19.4,
-                    period: 82.4,
+                    period: 5,
                     map: metadata.urls.neptune.surfaceMaterial
                 }, {
                     type: app.view.milkyway.Planet,
                     size: 10 / 5.55,
                     distance: 38.6,
-                    period: 123.85,
+                    period: 6,
                     map: metadata.urls.pluto.surfaceMaterial
                 }],
                 mouseDown: function(x, y) {
@@ -1300,7 +1300,7 @@
             this.addObject(sun);
             this.addObject(stars);
             this.createPlanets();
-            this.camera.position.set(0, -50, metadata.constants.SUN_SIZE_IN_EARTHS * 20);
+            this.camera.position.set(0, 0, metadata.constants.SUN_SIZE_IN_EARTHS * 10);
             this.scene.add(ambientLight);
             this.root.rotation.x = Math.PI / 8;
         }
@@ -1328,6 +1328,7 @@
                 container = document.createElement("div");
             container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
             container.setAttribute('id', 'container');
+            container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
             let view = new app.view.Viewport({
                 hook: hook
@@ -1337,6 +1338,12 @@
             });
             view.render();
             view.run();
+        },
+        onContainerClick: function() {
+            var link = document.createElement('a');
+            link.setAttribute('href', metadata.urls.github);
+            link.setAttribute('target', '_blank');
+            link.click();
         }
     };
     app.test = window.location.pathname.match('test') ? app.test || {

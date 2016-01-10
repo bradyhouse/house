@@ -7,11 +7,11 @@ app.view.Viewport = class extends app.toolkit.three.R {
                 {type: app.view.milkyway.Planet, size: 1 / 1.05, distance: 0.7, period: 0.62, map: metadata.urls.venus.surfaceMaterial },
                 {type: app.view.milkyway.earth.Earth, size: 1, distance: 1, period: 1, map: metadata.urls.earth.surfaceMaterial },
                 {type: app.view.milkyway.Planet, size: 1 / 1.88, distance: 1.6, period: 1.88, map: metadata.urls.mars.surfaceMaterial},
-                {type: app.view.milkyway.Planet, size: 2.7, distance: 2.6, period: 5.93, map: metadata.urls.jupiter.surfaceMaterial},
-                {type: app.view.milkyway.saturn.Saturn, size: 2.14, distance: 5, period: 14.73, map: metadata.urls.saturn.surfaceMaterial},
-                {type: app.view.milkyway.Planet, size: 1, distance: 9.8, period: 42.005, map: metadata.urls.uranus.surfaceMaterial},
-                {type: app.view.milkyway.Planet, size: 1.94, distance: 19.4, period: 82.4, map: metadata.urls.neptune.surfaceMaterial},
-                {type: app.view.milkyway.Planet,size: 10 / 5.55, distance: 38.6, period: 123.85, map: metadata.urls.pluto.surfaceMaterial }
+                {type: app.view.milkyway.Planet, size: 2.7, distance: 2.6, period: 2, map: metadata.urls.jupiter.surfaceMaterial},
+                {type: app.view.milkyway.saturn.Saturn, size: 2.14, distance: 5, period: 3, map: metadata.urls.saturn.surfaceMaterial},
+                {type: app.view.milkyway.Planet, size: 1, distance: 9.8, period: 4, map: metadata.urls.uranus.surfaceMaterial},
+                {type: app.view.milkyway.Planet, size: 1.94, distance: 19.4, period: 5, map: metadata.urls.neptune.surfaceMaterial},
+                {type: app.view.milkyway.Planet,size: 10 / 5.55, distance: 38.6, period: 6, map: metadata.urls.pluto.surfaceMaterial }
             ],
             mouseDown: function (x, y) {
                 this.lastX = x;
@@ -142,7 +142,7 @@ app.view.Viewport = class extends app.toolkit.three.R {
         this.addObject(sun);
         this.addObject(stars);
         this.createPlanets();
-        this.camera.position.set(0, -50, metadata.constants.SUN_SIZE_IN_EARTHS * 20);
+        this.camera.position.set(0, 0, metadata.constants.SUN_SIZE_IN_EARTHS * 10);
         this.scene.add(ambientLight);
         this.root.rotation.x = Math.PI / 8;
     }
