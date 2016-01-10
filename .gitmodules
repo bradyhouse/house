@@ -1,0 +1,3 @@
+[submodule "fiddles/nativeScript/demo/nativescript-marketplace-demo"]
+	path = fiddles/nativeScript/demo/nativescript-marketplace-demo
+	url = https://github.com/NativeScript/nativescript-marketplace-demo

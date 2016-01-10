@@ -548,3 +548,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/three/fiddle-0008-Orbit](fiddles/three/fiddle-0008-Orbit)
 * Added [fiddles/three/fiddle-0009-Sun](fiddles/three/fiddle-0009-Sun)
 * Added [fiddles/three/fiddle-0010-SolarSystem](fiddles/three/fiddle-0010-SolarSystem)
+
+### 201601100420
+
+* Added dependency [fiddles/nativeScript/demo/nativescript-marketplace-demo](fiddles/nativeScript/demo/nativescript-marketplace-demo)
