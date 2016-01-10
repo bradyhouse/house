@@ -6,7 +6,7 @@ fiddle-0010-SolarSystem
 
 ### Title
 
-The Sun
+Our Galaxy
 
 
 ### Creation Date
@@ -26,7 +26,7 @@ Pen exploring how to model the sun and planets of our galaxy.  Again, this one i
 
 ### Published Version Link
 
-N/A
+[code pen](http://codepen.io/bradyhouse/pen/wMdOvP/)
 
 
 ### Tags
