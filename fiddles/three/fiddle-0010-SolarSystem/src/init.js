@@ -5,21 +5,15 @@
  */
 
 if ( !window.requestAnimationFrame ) {
-
     window.requestAnimationFrame = ( function() {
-
         return window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame ||
             window.oRequestAnimationFrame ||
             window.msRequestAnimationFrame ||
-            function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element ) {
-
+            function(callback, element ) {
                 window.setTimeout( callback, 1000 / 60 );
-
             };
-
     } )();
-
 }
 
 
@@ -29,18 +23,13 @@ app.controller = app.controller || {
                 container = document.createElement("div");
             container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
             container.setAttribute('id', 'container');
-            container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
-            let view = new app.view.Viewport({});
+            let view = new app.view.Viewport({
+                hook: hook
+            });
             view.init({ container: container });
             view.render();
             view.run();
-        },
-        onContainerClick: function() {
-            var link = document.createElement('a');
-            link.setAttribute('href', metadata.urls.github);
-            link.setAttribute('target', '_blank');
-            link.click();
         }
     };
 

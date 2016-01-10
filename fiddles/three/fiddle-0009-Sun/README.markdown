@@ -27,7 +27,7 @@ Tony Parisi's book, **WebGL Up and Running**.
 
 ### Published Version Link
 
-[codepen](http://codepen.io/bradyhouse/pen/1f383629cbf071b540b702ed020a87ad)
+[codepen](http://codepen.io/bradyhouse/pen/OMmyra)
 
 
 ### Tags

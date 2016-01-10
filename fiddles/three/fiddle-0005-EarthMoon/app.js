@@ -4,14 +4,14 @@
 
     let metadata = {
         urls: {
+            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0005-EarthMoon',
             earth: {
-                normalMaterial: 'resources/images/earthSurfaceNormal.jpg',
-                surfaceMaterial: 'resources/images/earthSurface.jpg',
-                specularMaterial: 'resources/images/earthSurfaceSpecular.jpg',
-                cloudsMaterial: 'resources/images/earthAtmosphere.png'
+                normalMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurfaceNormal.jpg',
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurface.jpg',
+                specularMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurfaceSpecular.jpg',
+                cloudsMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthAtmosphere.png'
             },
-            stars: 'resources/images/stars.png',
-            moon: 'resources/images/moon.jpg'
+            moon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/moon.jpg'
         }
     };
 
@@ -476,7 +476,164 @@
     }
 
 
-    app.view.milkyway.earth.Earth = class extends app.toolkit.three.Object {
+    app.view.milkyway.Stars = class extends app.toolkit.three.Object {
+        config() {
+            return {
+                autoInit: false,
+                verticeCount: 667,
+                materialCount: 8,
+                systemCount: 24,
+                distance: 1000
+            }
+        }
+        constructor(config) {
+            super();
+            this._autoInit = config && config.hasOwnProperty('autoInit') ? config.autoInit : this.config().autoInit;
+            this._verticeCount = config && config.hasOwnProperty('verticeCount') ? config.verticeCount : this.config().verticeCount;
+            this._materialCount = config && config.hasOwnProperty('materialCount') ? config.materialCount : this.config().materialCount;
+            this._systemCount = config && config.hasOwnProperty('systemCount') ? config.systemCount : this.config().systemCount;
+            this._distance = config && config.hasOwnProperty('distance') ? config.distance : this.config().distance;
+            if (this.autoInit) {
+                this.init();
+            }
+        }
+        get autoInit() {
+            return this._autoInit;
+        }
+        get verticeCount() {
+            return this._verticeCount;
+        }
+        get materialCount() {
+            return this._materialCount;
+        }
+        get systemCount() {
+            return this._systemCount;
+        }
+        get distance() {
+            return this._distance;
+        }
+        init() {
+            let starsGroup = new THREE.Object3D(),
+                starsGeometry = new THREE.Geometry(),
+                starsMaterials = [];
+            for (let i = 0; i < this.verticeCount; i++) {
+                let vector = new THREE.Vector3((Math.random() * 2 - 1) * this.distance, (Math.random() * 2 - 1) * this.distance, (Math.random() * 2 - 1) * this.distance);
+                if (vector.length() < this.distance) {
+                    vector = vector.setLength(this.distance);
+                }
+                starsGeometry.vertices.push(new THREE.Vertex(vector));
+            }
+            for (let i = 0; i < this.materialCount; i++) {
+                starsMaterials.push(
+                    new THREE.ParticleBasicMaterial({
+                        color: 0x101010 * (i + 1),
+                        size: i % 2 + 1,
+                        sizeAttenuation: false
+                    })
+                );
+            }
+            for (let i = 0; i < this.systemCount; i++) {
+                let stars = new THREE.ParticleSystem(starsGeometry, starsMaterials[i % this.materialCount]);
+                stars.rotation.y = i / (Math.PI * 2);
+                starsGroup.add(stars);
+            }
+            this.object3D = starsGroup;
+        }
+    };
+
+
+    app.view.milkyway.Planet = class extends app.toolkit.three.Object {
+        config() {
+            return {
+                size: 1,
+                distance: 0.0,
+                period: 0.0,
+                map: '',
+                revolutionSpeed: 0.002,
+                animateOrbit: true,
+                animateRotation: true,
+                autoInit: false
+            }
+        }
+        constructor(config) {
+            super(config);
+            this._autoInit = config && config.hasOwnProperty('autoInit') ? config.autoInit : this.config().autoInit;
+            this._size = config && config.hasOwnProperty('size') ? config.size : this.config().size;
+            this._distance = config && config.hasOwnProperty('distance') ? config.distance : this.config().distance;
+            this._period = config && config.hasOwnProperty('period') ? config.period : this.config().period;
+            this._map = config && config.hasOwnProperty('map') ? config.map : this.config().map;
+            this._revolutionSpeed = config && config.hasOwnProperty('revolutionSpeed') ? config.revolutionSpeed : this.config().revolutionSpeed;
+            this._animateOrbit = config && config.hasOwnProperty('animateOrbit') ? config.animateOrbit : this.config().animateOrbit;
+            this._animateRotation = config && config.hasOwnProperty('animateRotation') ? config.animateRotation : this.config().animateRotation;
+            if (this.autoInit) {
+                this.init();
+            }
+        }
+        get size() {
+            return this._size;
+        }
+        get distance() {
+            return this._distance;
+        }
+        get period() {
+            return this._period;
+        }
+        get map() {
+            return this._map;
+        }
+        get revolutionSpeed() {
+            return this._revolutionSpeed;
+        }
+        set revolutionSpeed(speed) {
+            this._revolutionSpeed = speed;
+        }
+        get animateOrbit() {
+            return this._animateOrbit;
+        }
+        get animateRotation() {
+            return this._animateRotation;
+        }
+        get planetGroup() {
+            return this._planetGroup;
+        }
+        get globeMesh() {
+            return this._globeMesh;
+        }
+        get autoInit() {
+            return this._autoInit;
+        }
+        update() {
+            if (this.animateOrbit) {
+                this.object3D.rotation.y += this.revolutionSpeed / this.period;
+            }
+            this.updateChildren();
+        }
+        render() {
+            let geometry = new THREE.SphereGeometry(1, 32, 32),
+                texture = THREE.ImageUtils.loadTexture(this.map),
+                material = new THREE.MeshPhongMaterial({
+                    map: texture,
+                    ambient: 0x333333
+                }),
+                globeMesh = new THREE.Mesh(geometry, material);
+            this.planetGroup.add(globeMesh);
+            this._globeMesh = globeMesh;
+        }
+        init() {
+            let planetOrbitGroup = new THREE.Object3D(),
+                planetGroup = new THREE.Object3D(),
+                distSquared = this.distance * this.distance;
+            planetGroup.position.set(Math.sqrt(distSquared / 2), 0, -Math.sqrt(distSquared / 2));
+            planetOrbitGroup.add(planetGroup);
+            planetGroup.scale.set(this.size, this.size, this.size);
+            this.object3D = planetOrbitGroup;
+            this._planetGroup = planetGroup;
+            this.render();
+        }
+    }
+
+
+    app.view.milkyway.earth.Earth = class extends app.view.milkyway.Planet {
         constructor() {
             super();
         }
@@ -634,12 +791,16 @@
             super();
         }
         render() {
-            let sun = new app.view.milkyway.Sun({});
-            let earth = new app.view.milkyway.earth.Earth({});
+            let sun = new app.view.milkyway.Sun({}),
+                stars = new app.view.milkyway.Stars({
+                    autoInit: true
+                }),
+                earth = new app.view.milkyway.earth.Earth({});
             sun.init();
             this.addObject(sun);
             earth.init();
             this.addObject(earth);
+            this.addObject(stars);
         }
     }
 
@@ -663,8 +824,9 @@
         onDOMContentLoaded: function() {
             let hook = document.getElementById("fiddleHook"),
                 container = document.createElement("div");
-            container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000");
+            container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
             container.setAttribute('id', 'container');
+            container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
             let view = new app.view.Viewport({});
             view.init({
@@ -672,6 +834,12 @@
             });
             view.render();
             view.run();
+        },
+        onContainerClick: function() {
+            var link = document.createElement('a');
+            link.setAttribute('href', metadata.urls.github);
+            link.setAttribute('target', '_blank');
+            link.click();
         }
     };
     app.test = window.location.pathname.match('test') ? app.test || {

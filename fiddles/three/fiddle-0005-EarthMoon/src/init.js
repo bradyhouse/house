@@ -27,14 +27,20 @@ app.controller = app.controller || {
         onDOMContentLoaded: function () {
             let hook = document.getElementById("fiddleHook"),
                 container = document.createElement("div");
-            container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000");
+            container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
             container.setAttribute('id', 'container');
+            container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
             let view = new app.view.Viewport({});
             view.init({ container: container });
             view.render();
             view.run();
-
+        },
+        onContainerClick: function() {
+            var link = document.createElement('a');
+            link.setAttribute('href', metadata.urls.github);
+            link.setAttribute('target', '_blank');
+            link.click();
         }
     };
 

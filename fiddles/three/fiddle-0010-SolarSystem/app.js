@@ -4,10 +4,59 @@
 
     let metadata = {
         urls: {
+            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0010-Milkyway',
             sun: {
-                surfaceMaterial: 'resources/images/sunSurfaceMaterial.jpg',
-                atmosphereMaterial: 'resources/images/sunAtmosphereMaterial.png'
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunSurfaceMaterial.jpg',
+                atmosphereMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunAtmosphereMaterial.png'
+            },
+            mercury: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/mercurySurfaceMaterial.jpg'
+            },
+            venus: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/venusSurfaceMaterial.jpg'
+            },
+            earth: {
+                normalMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurfaceNormal.jpg',
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurface.jpg',
+                specularMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurfaceSpecular.jpg',
+                cloudsMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthAtmosphere.png'
+            },
+            moon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/moon.jpg',
+            mars: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/marsSurfaceMaterial.png'
+            },
+            jupiter: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/jupiterSurfaceMaterial.jpg'
+            },
+            saturn: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/saturnSurface.jpg',
+                ringsMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/saturnRings.png'
+            },
+            uranus: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/uranusSurfaceMaterial.jpg'
+            },
+            neptune: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/neptuneSurfaceMaterial.jpg'
+            },
+            pluto: {
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/plutoSurfaceMaterial.jpg'
             }
+        },
+        constants: {
+            SUN_SIZE_IN_EARTHS: 20,
+            MOUSE_MOVE_TOLERANCE: 4,
+            MAX_ROTATION_X: Math.PI / 2,
+            MAX_CAMERA_Z: 10 * 50,
+            MIN_CAMERA_Z: 10 * 3,
+            EARTH_DISTANCE: 50,
+            PLUTO_DISTANCE_IN_EARTHS: 77.2,
+            EARTH_DISTANCE_SQUARED: 45000,
+            EXAGGERATED_PLANET_SCALE: 5.55,
+            MOON_DISTANCE_FROM_EARTH: 356400,
+            MOON_PERIOD: 28,
+            MOON_ROTATION_SPEED: 0.003,
+            MOON_EXAGGERATE_FACTOR: 1.2,
+            MOON_SIZE_IN_EARTHS: 1 / 3.7 * 1.2
         }
     };
 
@@ -17,6 +66,7 @@
     app.view = app.view || {};
     app.view.milkyway = app.view.milkyway || {};
     app.view.milkyway.saturn = app.view.milkyway.saturn || {};
+    app.view.milkyway.earth = app.view.milkyway.earth || {};
 
 
     app.toolkit.three.Publisher = class {
@@ -83,15 +133,22 @@
                 keyUp: null,
                 keyDown: null,
                 keyPress: null,
-                objects: []
+                mouseMove: null,
+                mouseDown: null,
+                mouseUp: null,
+                mouseScroll: null
             }
         }
         constructor(config) {
             super(config);
-            this._objects = config && config.hasOwnProperty('objects') ? config.objects : this.config().objects;
+            this._objects = [];
             this._handleKeyUp = config && config.hasOwnProperty('keyUp') ? config.keyUp : this.config().keyUp;
             this._handleKeyDown = config && config.hasOwnProperty('keyDown') ? config.keyDown : this.config().keyDown;
             this._handleKeyPress = config && config.hasOwnProperty('keyPress') ? config.keyPress : this.config().keyPress;
+            this._handleMouseMove = config && config.hasOwnProperty('mouseMove') ? config.mouseMove : this.config().mouseMove;
+            this._handleMouseDown = config && config.hasOwnProperty('mouseDown') ? config.mouseDown : this.config().mouseDown;
+            this._handleMouseUp = config && config.hasOwnProperty('mouseUp') ? config.mouseUp : this.config().mouseUp;
+            this._handleMouseScroll = config && config.hasOwnProperty('mouseScroll') ? config.mouseScroll : this.config().mouseScroll;
             this._overObject = null;
             this._clickedObject = null;
         }
@@ -124,6 +181,18 @@
         }
         get handleKeyPress() {
             return this._handleKeyPress;
+        }
+        get handleMouseMove() {
+            return this._handleMouseMove;
+        }
+        get handleMouseDown() {
+            return this._handleMouseDown;
+        }
+        get handleMouseUp() {
+            return this._handleMouseUp;
+        }
+        get handleMouseScroll() {
+            return this._handleMouseScroll;
         }
         get clickedObject() {
             return this._clickedObject;
@@ -279,9 +348,11 @@
             }
         }
         addObject(obj) {
-            this.objects.push(obj);
-            if (obj.object3D) {
-                this.root.add(obj.object3D);
+            if (obj) {
+                this._objects.push(obj);
+                if (obj.object3D) {
+                    this._root.add(obj.object3D);
+                }
             }
         }
         removeObject(obj) {
@@ -542,7 +613,7 @@
         config() {
             return {
                 autoInit: false,
-                size: 50,
+                size: metadata.constants.SUN_SIZE_IN_EARTHS,
                 fragmentShader: 'uniform float time;\n' +
                     'uniform sampler2D texture1;\n' +
                     'uniform sampler2D texture2;\n' +
@@ -604,8 +675,8 @@
         update() {
             let delta = this.clock.getDelta();
             this.uniforms.time.value += delta;
-            this.updateChildren();
             this.object3D.rotation.y -= 0.001;
+            this.updateChildren();
         }
         init() {
             let sunGroup = new THREE.Object3D(),
@@ -644,19 +715,594 @@
     };
 
 
-    app.view.Viewport = class extends app.toolkit.three.R {
-        constructor() {
+    app.view.milkyway.Orbit = class extends app.toolkit.three.Object {
+        config() {
+            return {
+                autoInit: false,
+                segmentCount: 120,
+                distance: 10
+            }
+        }
+        constructor(config) {
             super();
+            this._segmentCount = config && config.hasOwnProperty('segmentCount') ? config.segmentCount : this.config().segmentCount;
+            this._distance = config && config.hasOwnProperty('distance') ? config.distance : this.config().distance;
+            this._autoInit = config && config.hasOwnProperty('autoInit') ? config.autoInit : this.config().autoInit;
+            if (this.autoInit) {
+                this.init();
+            }
+        }
+        get autoInit() {
+            return this._autoInit;
+        }
+        get segmentCount() {
+            return this._segmentCount;
+        }
+        get distance() {
+            return this._distance;
+        }
+        init() {
+            let geometry = new THREE.Geometry(),
+                twopi = 2 * Math.PI;
+            for (let i = 0; i <= this.segmentCount; i++) {
+                let x = this.distance * Math.cos(i / this.segmentCount * twopi),
+                    z = this.distance * Math.sin(i / this.segmentCount * twopi),
+                    vertex = new THREE.Vertex(new THREE.Vector3(x, 0, z));
+                geometry.vertices.push(vertex);
+            }
+            let material = new THREE.LineBasicMaterial({
+                    color: 0x66ffff,
+                    opacity: .6,
+                    linewidth: .5
+                }),
+                line = new THREE.Line(geometry, material);
+            this.object3D = line;
+        }
+    }
+
+
+    app.view.milkyway.Planet = class extends app.toolkit.three.Object {
+        config() {
+            return {
+                size: 1,
+                distance: 0.0,
+                period: 0.0,
+                map: '',
+                revolutionSpeed: 0.002,
+                animateOrbit: true,
+                animateRotation: true,
+                autoInit: false
+            }
+        }
+        constructor(config) {
+            super(config);
+            this._autoInit = config && config.hasOwnProperty('autoInit') ? config.autoInit : this.config().autoInit;
+            this._size = config && config.hasOwnProperty('size') ? config.size : this.config().size;
+            this._distance = config && config.hasOwnProperty('distance') ? config.distance : this.config().distance;
+            this._period = config && config.hasOwnProperty('period') ? config.period : this.config().period;
+            this._map = config && config.hasOwnProperty('map') ? config.map : this.config().map;
+            this._revolutionSpeed = config && config.hasOwnProperty('revolutionSpeed') ? config.revolutionSpeed : this.config().revolutionSpeed;
+            this._animateOrbit = config && config.hasOwnProperty('animateOrbit') ? config.animateOrbit : this.config().animateOrbit;
+            this._animateRotation = config && config.hasOwnProperty('animateRotation') ? config.animateRotation : this.config().animateRotation;
+            if (this.autoInit) {
+                this.init();
+            }
+        }
+        get size() {
+            return this._size;
+        }
+        get distance() {
+            return this._distance;
+        }
+        get period() {
+            return this._period;
+        }
+        get map() {
+            return this._map;
+        }
+        get revolutionSpeed() {
+            return this._revolutionSpeed;
+        }
+        set revolutionSpeed(speed) {
+            this._revolutionSpeed = speed;
+        }
+        get animateOrbit() {
+            return this._animateOrbit;
+        }
+        get animateRotation() {
+            return this._animateRotation;
+        }
+        get planetGroup() {
+            return this._planetGroup;
+        }
+        get globeMesh() {
+            return this._globeMesh;
+        }
+        get autoInit() {
+            return this._autoInit;
+        }
+        update() {
+            if (this.animateOrbit) {
+                this.object3D.rotation.y += this.revolutionSpeed / this.period;
+            }
+            this.updateChildren();
+        }
+        render() {
+            let geometry = new THREE.SphereGeometry(1, 32, 32),
+                texture = THREE.ImageUtils.loadTexture(this.map),
+                material = new THREE.MeshPhongMaterial({
+                    map: texture,
+                    ambient: 0x333333
+                }),
+                globeMesh = new THREE.Mesh(geometry, material);
+            this.planetGroup.add(globeMesh);
+            this._globeMesh = globeMesh;
+        }
+        init() {
+            let planetOrbitGroup = new THREE.Object3D(),
+                planetGroup = new THREE.Object3D(),
+                distSquared = this.distance * this.distance;
+            planetGroup.position.set(Math.sqrt(distSquared / 2), 0, -Math.sqrt(distSquared / 2));
+            planetOrbitGroup.add(planetGroup);
+            planetGroup.scale.set(this.size, this.size, this.size);
+            this.object3D = planetOrbitGroup;
+            this._planetGroup = planetGroup;
+            this.render();
+        }
+    }
+
+
+    app.view.milkyway.saturn.Saturn = class extends app.view.milkyway.Planet {
+        constructor(config) {
+            super(config);
+            this.createRings();
+        }
+        get globeMesh() {
+            return this._globeMesh;
+        }
+        get animateOrbit() {
+            return true;
+        }
+        get ringsMesh() {
+            return this._ringsMesh;
+        }
+        get tilt() {
+            return -0.466;
+        }
+        get rotationY() {
+            return 0.003;
+        }
+        update() {
+            this.object3D.rotation.y += this.revolutionSpeed / this.period;
+            if (this.globeMesh) {
+                this.globeMesh.rotation.y += this.rotationY;
+            }
+            if (this.ringsMesh) {
+                this.ringsMesh.rotation.z -= this.rotationY;
+            }
+            this.updateChildren();
+        }
+        createRings() {
+            let ringsmap = metadata.urls.saturn.ringsMaterial,
+                geometry = new app.view.milkyway.saturn.Rings({
+                    innerRadius: 1.1,
+                    outerRadius: 1.867,
+                    gridY: 200,
+                    autoInit: true
+                }),
+                texture = THREE.ImageUtils.loadTexture(ringsmap),
+                material = new THREE.MeshLambertMaterial({
+                    map: texture,
+                    transparent: false,
+                    ambient: 0xffffff
+                }),
+                ringsMesh = new THREE.Mesh(geometry, material),
+                distsquared = this.distance * this.distance;
+            ringsMesh.doubleSided = true;
+            ringsMesh.rotation.x = 4.5;
+            ringsMesh.rotation.y = .09;
+            this.planetGroup.add(ringsMesh);
+            this._ringsMesh = ringsMesh;
+        }
+    }
+
+
+    app.view.milkyway.saturn.Rings = class extends THREE.Geometry {
+        config() {
+            return {
+                innerRadius: .5,
+                outerRadius: 1,
+                gridY: 200,
+                autoInit: false
+            }
+        }
+        constructor(config) {
+            super();
+            this._innerRadius = config && config.hasOwnProperty('innerRadius') ? config.innerRadius : this.config().innerRadius;
+            this._outerRadius = config && config.hasOwnProperty('outerRadius') ? config.outerRadius : this.config().outerRadius;
+            this._gridY = config && config.hasOwnProperty('gridY') ? config.gridY : this.config().gridY;
+            this._autoInit = config && config.hasOwnProperty('autoInit') ? config.autoInit : this.config().autoInit;
+            if (this.autoInit) {
+                this.init();
+            }
+        }
+        get innerRadius() {
+            return this._innerRadius;
+        }
+        get outerRadius() {
+            return this._outerRadius;
+        }
+        get gridY() {
+            return this._gridY;
+        }
+        get autoInit() {
+            return this._autoInit;
+        }
+        update() {}
+        init() {
+            let twopi = 2 * Math.PI,
+                iVer = Math.max(2, this.gridY);
+            for (let i = 0; i < (iVer + 1); i++) {
+                let fRad1 = i / iVer,
+                    fRad2 = (i + 1) / iVer,
+                    fX1 = this.innerRadius * Math.cos(fRad1 * twopi),
+                    fY1 = this.innerRadius * Math.sin(fRad1 * twopi),
+                    fX2 = this.outerRadius * Math.cos(fRad1 * twopi),
+                    fY2 = this.outerRadius * Math.sin(fRad1 * twopi),
+                    fX4 = this.innerRadius * Math.cos(fRad2 * twopi),
+                    fY4 = this.innerRadius * Math.sin(fRad2 * twopi),
+                    fX3 = this.outerRadius * Math.cos(fRad2 * twopi),
+                    fY3 = this.outerRadius * Math.sin(fRad2 * twopi),
+                    v1 = new THREE.Vector3(fX1, fY1, 0),
+                    v2 = new THREE.Vector3(fX2, fY2, 0),
+                    v3 = new THREE.Vector3(fX3, fY3, 0),
+                    v4 = new THREE.Vector3(fX4, fY4, 0);
+                this.vertices.push(new THREE.Vertex(v1));
+                this.vertices.push(new THREE.Vertex(v2));
+                this.vertices.push(new THREE.Vertex(v3));
+                this.vertices.push(new THREE.Vertex(v4));
+            }
+            for (let i = 0; i < (iVer + 1); i++) {
+                this.faces.push(new THREE.Face3(i * 4, i * 4 + 1, i * 4 + 2));
+                this.faces.push(new THREE.Face3(i * 4, i * 4 + 2, i * 4 + 3));
+                this.faceVertexUvs[0].push([
+                    new THREE.UV(0, 1),
+                    new THREE.UV(1, 1),
+                    new THREE.UV(1, 0)
+                ]);
+                this.faceVertexUvs[0].push([
+                    new THREE.UV(0, 1),
+                    new THREE.UV(1, 0),
+                    new THREE.UV(0, 0)
+                ]);
+            }
+            this.computeCentroids();
+            this.computeFaceNormals();
+            this.boundingSphere = {
+                radius: this.outerRadius
+            };
+        }
+    }
+
+
+    app.view.milkyway.earth.Moon = class extends app.toolkit.three.Object {
+        config() {
+            return {
+                earth: null,
+                autoInit: false
+            }
+        }
+        constructor(config) {
+            super();
+            this._autoInit = config && config.hasOwnProperty('autoInit') ? config.autoInit : this.config().autoInit;
+            this._earth = config && config.hasOwnProperty('earth') ? config.earth : this.config().earth;
+            if (this.autoInit) {
+                this.init();
+            }
+        }
+        get earth() {
+            return this._earth;
+        }
+        get size() {
+            return .02;
+        }
+        get scale() {
+            return 1.2;
+        }
+        get orbit() {
+            return 356400;
+        }
+        get period() {
+            return 3;
+        }
+        get inclination() {
+            return 0.089;
+        }
+        get rotationSpeed() {
+            return this._rotationSpeed;
+        }
+        get autoInit() {
+            return this._autoInit;
+        }
+        update() {
+            this.mesh.rotation.y += this.rotationSpeed;
+        }
+        get distance() {
+            return this._distance;
+        }
+        get mesh() {
+            return this._mesh;
+        }
+        init() {
+            let rotationSpeed = metadata.constants.MOON_ROTATION_SPEED,
+                size = this.size,
+                moonGroup = new THREE.Object3D(),
+                map = metadata.urls.moon,
+                geometry = new THREE.SphereGeometry(0, 32, 32),
+                texture = THREE.ImageUtils.loadTexture(map),
+                material = new THREE.MeshPhongMaterial({
+                    map: texture,
+                    ambient: 0x888888
+                }),
+                mesh = new THREE.Mesh(geometry, material),
+                distance = metadata.constants.MOON_DISTANCE_FROM_EARTH / this.earth.radius / .022,
+                distsquared = distance * distance;
+            this._rotationSpeed = rotationSpeed;
+            mesh.position.set(distance, 0, -Math.sqrt(distsquared / 2));
+            mesh.rotation.y = Math.PI;
+            moonGroup.add(mesh);
+            moonGroup.rotation.x = this.inclination;
+            moonGroup.scale.set(size, size, size);
+            this.object3D = moonGroup;
+            this._mesh = mesh;
+            this._distance = distance;
+        }
+    }
+
+
+    app.view.milkyway.earth.Earth = class extends app.view.milkyway.Planet {
+        constructor(config) {
+            super(config);
+            //this.initSurface();
+            this.initAtmosphere();
+            this.initMoon();
+        }
+        get rotationY() {
+            return 0.003;
+        }
+        get tilt() {
+            return 0.41;
+        }
+        get radius() {
+            return 6371;
+        }
+        get cloudsScale() {
+            return 1.005;
+        }
+        get cloudRotationY() {
+            return this.rotationY * 0.95;
+        }
+        get globeMesh() {
+            return this._globeMesh;
+        }
+        get cloudsMesh() {
+            return this._cloudsMesh;
+        }
+        get autoInit() {
+            return this._autoInit;
+        }
+        update() {
+            this.updateChildren();
+            if (this.animateOrbit) {
+                this.object3D.rotation.y += this.revolutionSpeed / this.period;
+            }
+            if (this.globeMesh) {
+                this.globeMesh.rotation.y += this.rotationY;
+            }
+            if (this.cloudsMesh) {
+                this.cloudsMesh.rotation.y += this.cloudRotationY;
+            }
+        }
+        initAtmosphere() {
+            let cloudsMap = THREE.ImageUtils.loadTexture(metadata.urls.earth.cloudsMaterial),
+                cloudsMaterial = new THREE.MeshLambertMaterial({
+                    color: 0xffffff,
+                    map: cloudsMap,
+                    transparent: true
+                }),
+                cloudsGeometry = new THREE.SphereGeometry(this.cloudsScale, 32, 32),
+                cloudsMesh = new THREE.Mesh(cloudsGeometry, cloudsMaterial);
+            cloudsMesh.rotation.z = this.tilt;
+            this.planetGroup.add(cloudsMesh);
+            this._cloudsMesh = cloudsMesh;
+        }
+        initMoon() {
+            let moon = new app.view.milkyway.earth.Moon({
+                earth: this,
+                autoInit: true
+            });
+            this.addChild(moon);
+        }
+    };
+
+
+    app.view.Viewport = class extends app.toolkit.three.R {
+        config() {
+            return {
+                planetSpecs: [{
+                    type: app.view.milkyway.Planet,
+                    size: 1 / 2.54,
+                    distance: 0.4,
+                    period: 0.24,
+                    map: metadata.urls.mercury.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.Planet,
+                    size: 1 / 1.05,
+                    distance: 0.7,
+                    period: 0.62,
+                    map: metadata.urls.venus.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.earth.Earth,
+                    size: 1,
+                    distance: 1,
+                    period: 1,
+                    map: metadata.urls.earth.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.Planet,
+                    size: 1 / 1.88,
+                    distance: 1.6,
+                    period: 1.88,
+                    map: metadata.urls.mars.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.Planet,
+                    size: 2.7,
+                    distance: 2.6,
+                    period: 5.93,
+                    map: metadata.urls.jupiter.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.saturn.Saturn,
+                    size: 2.14,
+                    distance: 5,
+                    period: 14.73,
+                    map: metadata.urls.saturn.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.Planet,
+                    size: 1,
+                    distance: 9.8,
+                    period: 42.005,
+                    map: metadata.urls.uranus.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.Planet,
+                    size: 1.94,
+                    distance: 19.4,
+                    period: 82.4,
+                    map: metadata.urls.neptune.surfaceMaterial
+                }, {
+                    type: app.view.milkyway.Planet,
+                    size: 10 / 5.55,
+                    distance: 38.6,
+                    period: 123.85,
+                    map: metadata.urls.pluto.surfaceMaterial
+                }],
+                mouseDown: function(x, y) {
+                    this.lastX = x;
+                    this.lastY = y;
+                    this.mouseDown = true;
+                },
+                mouseUp: function(x, y) {
+                    this.lastX = x;
+                    this.lastY = y;
+                    this.mouseDown = false;
+                },
+                mouseMove: function(x, y) {
+                    if (this.mouseDown) {
+                        let dx = x - this.lastX;
+                        if (Math.abs(dx) > metadata.constants.MOUSE_MOVE_TOLERANCE) {
+                            this.root.rotation.y -= (dx * 0.01);
+                        }
+                        this.lastX = x;
+                        return;
+                        let dy = y - this.lastY;
+                        if (Math.abs(dy) > metadata.constants.MOUSE_MOVE_TOLERANCE) {
+                            this.root.rotation.x += (dy * 0.01);
+                            if (this.root.rotation.x < 0) {
+                                this.root.rotation.x = 0;
+                            }
+                            if (this.root.rotation.x > metadata.constants.MAX_ROTATION_X) {
+                                this.root.rotation.x = metadata.constants.MAX_ROTATION_X;
+                            }
+                        }
+                        this.lastY = y;
+                    }
+                },
+                mouseScroll: function(delta) {
+                    let dx = delta;
+                    this.camera.position.z -= dx;
+                    if (this.camera.position.z < metadata.constants.MIN_CAMERA_Z)
+                        this.camera.position.z = metadata.constants.MIN_CAMERA_Z;
+                    if (this.camera.position.z > metadata.constants.MAX_CAMERA_Z)
+                        this.camera.position.z = metadata.constants.MAX_CAMERA_Z;
+                }
+            }
+        }
+        constructor(config) {
+            super(config);
+            this._planetSpecs = config && config.hasOwnProperty('planetSpecs') ? config.planets : this.config().planetSpecs;
+            this._lastX = config && config.hasOwnProperty('lastX') ? config.lastX : this.config().lastX;
+            this._lastY = config && config.hasOwnProperty('lastY') ? config.lastY : this.config().lastY;
+            this._planets = [];
+            this._orbits = [];
+            this._mouseDown = false;
+        }
+        get planetSpecs() {
+            return this._planetSpecs;
+        }
+        get planets() {
+            return this._planets;
+        }
+        get orbits() {
+            return this._orbits;
+        }
+        get lastX() {
+            return this._lastX;
+        }
+        set lastX(x) {
+            this._lastX = x;
+        }
+        get lastY() {
+            return this._lastY;
+        }
+        set lastY(y) {
+            this._lastY = y;
+        }
+        get mouseDown() {
+            return this._mouseDown;
+        }
+        set mouseDown(val) {
+            this._mouseDown = val;
+        }
+        createPlanets() {
+            this.planetSpecs.forEach(function(spec) {
+                let planet = new spec.type({
+                        animateOrbit: true,
+                        animateRotation: true,
+                        showOrbit: true,
+                        distance: spec.distance * metadata.constants.EARTH_DISTANCE + metadata.constants.SUN_SIZE_IN_EARTHS,
+                        size: spec.size * metadata.constants.EXAGGERATED_PLANET_SCALE,
+                        period: spec.period,
+                        revolutionSpeed: 0.002,
+                        map: spec.map,
+                        autoInit: true
+                    }),
+                    orbitDistance = spec.distance * metadata.constants.EARTH_DISTANCE + metadata.constants.SUN_SIZE_IN_EARTHS,
+                    orbit = new app.view.milkyway.Orbit({
+                        distance: orbitDistance,
+                        autoInit: true
+                    });
+                this.addObject(planet);
+                this.planets.push(planet);
+                this.addObject(orbit);
+                this.orbits.push(orbit);
+            }, this);
         }
         render() {
             let sun = new app.view.milkyway.Sun({
                     autoInit: true
                 }),
+                starDistance = metadata.constants.SUN_SIZE_IN_EARTHS +
+                metadata.constants.EARTH_DISTANCE *
+                metadata.constants.PLUTO_DISTANCE_IN_EARTHS,
                 stars = new app.view.milkyway.Stars({
-                    autoInit: true
-                });
-            this.addObject(stars);
+                    autoInit: true,
+                    distance: starDistance
+                }),
+                ambientLight = new THREE.AmbientLight(0x676767);
             this.addObject(sun);
+            this.addObject(stars);
+            this.createPlanets();
+            this.camera.position.set(0, -50, metadata.constants.SUN_SIZE_IN_EARTHS * 20);
+            this.scene.add(ambientLight);
+            this.root.rotation.x = Math.PI / 8;
         }
     }
 
@@ -671,7 +1317,7 @@
                 window.mozRequestAnimationFrame ||
                 window.oRequestAnimationFrame ||
                 window.msRequestAnimationFrame ||
-                function( /* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+                function(callback, element) {
                     window.setTimeout(callback, 1000 / 60);
                 };
         })();
@@ -682,20 +1328,15 @@
                 container = document.createElement("div");
             container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
             container.setAttribute('id', 'container');
-            container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
-            let view = new app.view.Viewport({});
+            let view = new app.view.Viewport({
+                hook: hook
+            });
             view.init({
                 container: container
             });
             view.render();
             view.run();
-        },
-        onContainerClick: function() {
-            var link = document.createElement('a');
-            link.setAttribute('href', metadata.urls.github);
-            link.setAttribute('target', '_blank');
-            link.click();
         }
     };
     app.test = window.location.pathname.match('test') ? app.test || {

@@ -21,8 +21,7 @@ Vancouver, CA
 
 ### Description
 
-Fiddle exploring how to model the Sun.  Its based on the examples discussed in
-Chapter 3 of Tony Parisi's book, **WebGL Up and Running**.
+Pen exploring how to model the sun and planets of our galaxy.  Again, this one is based on the examples discussed in Tony Parisi's book, **WebGL Up and Running**.
 
 
 ### Published Version Link

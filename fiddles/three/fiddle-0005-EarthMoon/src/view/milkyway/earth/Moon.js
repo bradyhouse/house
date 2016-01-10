@@ -41,6 +41,7 @@ app.view.milkyway.earth.Moon = class extends app.toolkit.three.Object {
         }
     }
 
+
     init() {
         let geometry = new THREE.SphereGeometry(this.size, 32, 32),
             texture = THREE.ImageUtils.loadTexture(metadata.urls.moon),
@@ -53,6 +54,7 @@ app.view.milkyway.earth.Moon = class extends app.toolkit.three.Object {
         moonGroup.add(mesh);
         moonGroup.rotation.x = this.inclination;
         this.object3D = moonGroup;
+
     }
 
 }

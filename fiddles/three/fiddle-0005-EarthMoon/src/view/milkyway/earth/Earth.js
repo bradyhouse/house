@@ -1,4 +1,4 @@
-app.view.milkyway.earth.Earth = class extends app.toolkit.three.Object {
+app.view.milkyway.earth.Earth = class extends app.view.milkyway.Planet {
 
     constructor() {
         super();

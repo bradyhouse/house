@@ -5,16 +5,25 @@ app.toolkit.three.R = class extends app.toolkit.three.Publisher {
             keyUp: null,
             keyDown: null,
             keyPress: null,
-            objects: []
+            mouseMove: null,
+            mouseDown: null,
+            mouseUp: null,
+            mouseScroll: null
         }
     }
 
     constructor(config) {
         super(config);
-        this._objects = config && config.hasOwnProperty('objects') ? config.objects : this.config().objects;
+        this._objects = [];
         this._handleKeyUp = config && config.hasOwnProperty('keyUp') ? config.keyUp : this.config().keyUp;
         this._handleKeyDown = config && config.hasOwnProperty('keyDown') ? config.keyDown : this.config().keyDown;
         this._handleKeyPress = config && config.hasOwnProperty('keyPress') ? config.keyPress : this.config().keyPress;
+        this._handleMouseMove = config && config.hasOwnProperty('mouseMove') ? config.mouseMove : this.config().mouseMove;
+        this._handleMouseDown = config && config.hasOwnProperty('mouseDown') ? config.mouseDown : this.config().mouseDown;
+        this._handleMouseUp = config && config.hasOwnProperty('mouseUp') ? config.mouseUp : this.config().mouseUp;
+        this._handleMouseScroll = config && config.hasOwnProperty('mouseScroll') ? config.mouseScroll : this.config().mouseScroll;
+
+
         this._overObject = null;
         this._clickedObject = null;
     }
@@ -57,6 +66,22 @@ app.toolkit.three.R = class extends app.toolkit.three.Publisher {
 
     get handleKeyPress() {
         return this._handleKeyPress;
+    }
+
+    get handleMouseMove() {
+        return this._handleMouseMove;
+    }
+
+    get handleMouseDown() {
+        return this._handleMouseDown;
+    }
+
+    get handleMouseUp() {
+        return this._handleMouseUp;
+    }
+
+    get handleMouseScroll() {
+        return this._handleMouseScroll;
     }
 
     get clickedObject() {
@@ -243,10 +268,13 @@ app.toolkit.three.R = class extends app.toolkit.three.Publisher {
     }
 
     addObject(obj) {
-        this.objects.push(obj);
 
-        if (obj.object3D) {
-            this.root.add(obj.object3D);
+
+        if(obj) {
+            this._objects.push(obj);
+            if (obj.object3D) {
+                this._root.add(obj.object3D);
+            }
         }
     }
 

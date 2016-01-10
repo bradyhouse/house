@@ -42,13 +42,12 @@ app.view.milkyway.Orbit = class extends app.toolkit.three.Object {
         }
 
         let material = new THREE.LineBasicMaterial({
-                color: 0xffffff,
-                opacity: .5,
-                linewidth: 2
+                color: 0x66ffff,
+                opacity: .6,
+                linewidth: .5
             }),
             line = new THREE.Line(geometry, material);
 
-        line.rotation.x = .5;
 
         this.object3D = line;
     }
