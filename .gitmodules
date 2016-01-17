@@ -1,3 +1,30 @@
 [submodule "fiddles/nativeScript/demo/nativescript-marketplace-demo"]
 	path = fiddles/nativeScript/demo/nativescript-marketplace-demo
 	url = https://github.com/NativeScript/nativescript-marketplace-demo
+[submodule "fiddles/bash/libs/the-art-of-command-line"]
+	path = fiddles/bash/libs/the-art-of-command-line
+	url = https://github.com/jlevy/the-art-of-command-line
+[submodule "fiddles/angular/libs/angular.js"]
+	path = fiddles/angular/libs/angular.js
+	url = https://github.com/angular/angular.js
+[submodule "fiddles/chrome/libs/programming_chrome_apps"]
+	path = fiddles/chrome/libs/programming_chrome_apps
+	url = https://github.com/MarcRochkind/programming_chrome_apps.git
+[submodule "fiddles/jquery/libs/ITM463"]
+	path = fiddles/jquery/libs/ITM463
+	url = https://github.com/bradyhouse/ITM463.git
+[submodule "fiddles/three/libs/WebGLBook"]
+	path = fiddles/three/libs/WebGLBook
+	url = https://github.com/tparisi/WebGLBook.git
+[submodule "fiddles/three/libs/three.js"]
+	path = fiddles/three/libs/three.js
+	url = https://github.com/mrdoob/three.js/
+[submodule "fiddles/python/libs/ITM413"]
+	path = fiddles/python/libs/ITM413
+	url = https://github.com/bradyhouse/ITM413.git
+[submodule "fiddles/php/libs/ITM462"]
+	path = fiddles/php/libs/ITM462
+	url = https://github.com/bradyhouse/ITM462.git
+[submodule "fiddles/tween/libs/tween.js"]
+	path = fiddles/tween/libs/tween.js
+	url = https://github.com/tweenjs/tween.js.git

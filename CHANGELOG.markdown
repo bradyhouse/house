@@ -551,4 +551,24 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201601100420
 
-* Added dependency [fiddles/nativeScript/demo/nativescript-marketplace-demo](fiddles/nativeScript/demo/nativescript-marketplace-demo)
+* Added [fiddles/anglular](fiddles/python)
+    * Reflected changes:
+        1. Added [scripts/fiddle-python.sh](scripts/fiddle-python.sh)
+        2. Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        3. Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+        4. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+        5. Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+* Added dependency to [nativescript-marketplace-demo](https://github.com/NativeScript/nativescript-marketplace-demo) ~ [fiddles/nativeScript/demo/nativescript-marketplace-demo](fiddles/nativeScript/demo/nativescript-marketplace-demo)
+* Added dependency to [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line) ~ [fiddles/bash/libs/the-art-of-command-line](fiddles/bash/libs/the-art-of-command-line)
+* Added dependency to [angular.js](https://github.com/angular/angular.js) ~ [fiddles/angular/libs/angular.js](fiddles/angular/libs/angular.js)
+* Added dependency to [programming_chrome_apps](https://github.com/MarcRochkind/programming_chrome_apps.git) ~ [fiddles/chrome/libs/programming_chrome_apps](fiddles/chrome/libs/programming_chrome_apps)
+* Added dependency to [ITM463](https://github.com/bradyhouse/ITM463.git) ~ [fiddles/jquery/libs/ITM463](fiddles/jquery/libs/ITM463)
+* Added dependency to [WebGLBook](https://github.com/tparisi/WebGLBook.git) ~ [fiddles/three/libs/WebGLBook](fiddles/three/libs/WebGLBook)
+* Added dependency to [three.js/](https://github.com/mrdoob/three.js/) ~ [fiddles/three/libs/three.js](fiddles/three/libs/three.js)
+* Added dependency to [ITM413](https://github.com/bradyhouse/ITM413.git) ~ [fiddles/python/libs/ITM413](fiddles/python/libs/ITM413)
+* Added dependency to [ITM462](https://github.com/bradyhouse/ITM462.git) ~ [fiddles/php/libs/ITM462](fiddles/php/libs/ITM462)
+* Added dependency to [tween.js](https://github.com/tweenjs/tween.js.git) ~ [fiddles/tween/libs/tween.js](fiddles/tween/libs/tween.js)
+* Added [fiddles/extjs6/fiddle-0031-ArrayStore](fiddles/extjs6/fiddle-0031-ArrayStore)
+* Continued [fiddles/nativeScript/fiddle-0002-Puzz](fiddles/nativeScript/fiddle-0002-Puzz)
+* Added [fiddles/nativeScript/emulate.sh](fiddles/nativeScript/emulate.sh)
+

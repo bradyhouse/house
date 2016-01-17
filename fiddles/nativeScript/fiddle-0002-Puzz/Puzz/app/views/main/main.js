@@ -1,4 +1,13 @@
-var frameModule = require("ui/frame");
+var view = require("ui/core/view"),
+    frameModule = require("ui/frame"),
+    base = require("../base"),
+    btnIds = [1, 2, 3, 4];
+
+exports.pageLoaded = function(args) {
+    var sender = args.object,
+        parent = sender.parent;
+    base.resizeButtons(view, parent, btnIds, 1, 5);
+};
 
 exports.showAbout = function() {
     var topmost = frameModule.topmost();

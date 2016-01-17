@@ -20,6 +20,7 @@
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 11/26/2015 - See CHANGELOG @ 201511100420
+# 01/17/2016 - See CHANGELOG @ 201601100420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -65,7 +66,7 @@ changeLogFile="../CHANGELOG.markdown"
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'python' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
         if [[ -d "${fiddlePath}" ]]
         then
             rm -r "${fiddlePath}" || exit 87
@@ -105,6 +106,7 @@ case ${_rc} in
         echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 6 Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
+        echo -e "\t\"python\"\tPython Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
         echo -e "\t\"chrome\"\tChrome Extension Fiddle"

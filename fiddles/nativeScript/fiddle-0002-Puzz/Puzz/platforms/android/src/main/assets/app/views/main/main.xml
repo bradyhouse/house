@@ -1,8 +1,12 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-    <StackLayout>
-        <Button text="About" tap="showAbout" />
-        <Button text="3 x 3" tap="showThree" />
-        <Button text="4 x 4" tap="showFour" />
-        <Button text="5 x 5" tap="showFive" />
+<Page loaded="pageLoaded" >
+    <Page.actionBar>
+        <ActionBar title="Puzz">
+        </ActionBar>
+    </Page.actionBar>
+    <StackLayout orientation="vertical" cssClass="layout-container">
+        <Button id="btn1" text="About" tap="showAbout" cssClass="btn-lightblue" />
+        <Button id="btn2" text="3 x 3" tap="showThree" cssClass="btn-lightblue" />
+        <Button id="btn3" text="4 x 4" tap="showFour" cssClass="btn-lightblue" />
+        <Button id="btn4" text="5 x 5" tap="showFive" cssClass="btn-lightblue" />
     </StackLayout>
 </Page>

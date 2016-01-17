@@ -20,6 +20,7 @@
 # 07/26/2015 - See CHANGELOG @ 201507260420
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 12/06/2015 - See CHANGELOG @ 201511100420
+# 01/17/2016 - See CHANGELOG @ 201601100420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -58,6 +59,9 @@ echo "${thisFile}" | awk '{print toupper($0)}'
         'php')
             ./fiddle-php.sh $2 || exit 90
             ./fiddle-index.sh "php" || exit 90
+            ;;
+        'python')
+            ./fiddle-python.sh $2 || exit 98
             ;;
         'dojo')
             ./fiddle-dojo.sh $2 || exit 91
@@ -107,6 +111,7 @@ case ${_rc} in
         echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
+        echo -e "\t\"python\"\tPython Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
         echo -e "\t\"chrome\"\tChrome Extension Fiddle"
@@ -139,6 +144,8 @@ case ${_rc} in
     96) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
         ;;
     97) echo "fubar! svg fiddle creation failed."
+        ;;
+    98) echo "fubar! python fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

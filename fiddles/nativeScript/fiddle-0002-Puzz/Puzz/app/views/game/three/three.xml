@@ -1,22 +1,23 @@
-<Page loaded="loaded">
+<Page loaded="pageLoaded">
     <Page.actionBar>
-        <ActionBar title="Puzz 3 x 3">
+        <ActionBar title="Puzz - 3 x 3">
         </ActionBar>
     </Page.actionBar>
-    <StackLayout orientation="vertical">
+    <StackLayout orientation="vertical" cssClass="layout-container" >
         <StackLayout orientation="horizontal">
-            <Button text="1" />
-            <Button text="2" />
-            <Button text="3" />
+            <Button id="btn1" text="1" cssClass="btn-lightblue" />
+            <Button id="btn2" text="2" cssClass="btn-lightblue" />
+            <Button id="btn3" text="3" cssClass="btn-lightblue" />
         </StackLayout>
         <StackLayout orientation="horizontal">
-            <Button text="4" />
-            <Button text="5" />
-            <Button text="6" />
+            <Button id="btn4" text="4" cssClass="btn-lightblue" />
+            <Button id="btn5" text="5" cssClass="btn-lightblue" />
+            <Button id="btn6" text="6" cssClass="btn-lightblue" />
         </StackLayout>
         <StackLayout orientation="horizontal">
-            <Button text="7"></Button>
-            <Button text="8"></Button>
+            <Button id="btn7" text="7" cssClass="btn-lightblue" />
+            <Button id="btn8" text="8" cssClass="btn-lightblue" />
+            <Button id="btn9" text="&nbsp;" cssClass="btn-blank" />
         </StackLayout>
     </StackLayout>
 </Page>
