@@ -3,7 +3,7 @@ app.view.milkyway.Sun = class extends app.toolkit.three.Object {
     config() {
         return {
             autoInit: false,
-            size: 50,
+            size: metadata.constants.SUN_SIZE_IN_EARTHS,
             fragmentShader: 'uniform float time;\n' +
             'uniform sampler2D texture1;\n' +
             'uniform sampler2D texture2;\n' +
@@ -61,6 +61,10 @@ app.view.milkyway.Sun = class extends app.toolkit.three.Object {
         return this._uniforms;
     }
 
+    get clock() {
+        return this._clock;
+    }
+
     get size() {
         return this._size;
     }
@@ -72,9 +76,19 @@ app.view.milkyway.Sun = class extends app.toolkit.three.Object {
     update() {
         let delta = this.clock.getDelta();
         this.uniforms.time.value += delta;
-        this.updateChildren();
         this.object3D.rotation.y -= 0.001;
+        this.updateChildren();
+    }
 
+    animate() {
+        if(this.object3D.position.y > 0) {
+            let newposY = this.object3D.position.y - 10;
+            new TWEEN.Tween(this.object3D.position)
+                .to({
+                    y: newposY
+                }, 10).easing(TWEEN.Easing.Bounce.EaseIn).start();
+        }
+        this.update();
     }
 
     init() {
@@ -112,7 +126,9 @@ app.view.milkyway.Sun = class extends app.toolkit.three.Object {
 
         sunGroup.add(sunMesh);
         sunGroup.add(light);
+        sunGroup.position.y = 2000;
         this.object3D = sunGroup;
+
 
     }
 

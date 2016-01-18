@@ -28,3 +28,6 @@
 [submodule "fiddles/tween/libs/tween.js"]
 	path = fiddles/tween/libs/tween.js
 	url = https://github.com/tweenjs/tween.js.git
+[submodule "fiddles/android/libs/ITM455"]
+	path = fiddles/android/libs/ITM455
+	url = https://github.com/bradyhouse/ITM455.git

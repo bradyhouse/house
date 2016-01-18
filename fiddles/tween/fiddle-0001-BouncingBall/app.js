@@ -36,6 +36,4 @@
 
 
 })(window.app = window.app || {}, jQuery)
-/**
- * Created by e13542 on 5/8/15.
- */
+

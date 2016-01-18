@@ -568,7 +568,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added dependency to [ITM413](https://github.com/bradyhouse/ITM413.git) ~ [fiddles/python/libs/ITM413](fiddles/python/libs/ITM413)
 * Added dependency to [ITM462](https://github.com/bradyhouse/ITM462.git) ~ [fiddles/php/libs/ITM462](fiddles/php/libs/ITM462)
 * Added dependency to [tween.js](https://github.com/tweenjs/tween.js.git) ~ [fiddles/tween/libs/tween.js](fiddles/tween/libs/tween.js)
+* Added dependency to [ITM455](https://github.com/bradyhouse/ITM455.git) ~ [fiddles/android/libs/ITM455](fiddles/android/libs/ITM455)
 * Added [fiddles/extjs6/fiddle-0031-ArrayStore](fiddles/extjs6/fiddle-0031-ArrayStore)
 * Continued [fiddles/nativeScript/fiddle-0002-Puzz](fiddles/nativeScript/fiddle-0002-Puzz)
 * Added [fiddles/nativeScript/emulate.sh](fiddles/nativeScript/emulate.sh)
-
+* Added [fiddles/bash/fiddle-0049-InstallTypeScript](fiddles/bash/fiddle-0049-InstallTypeScript)
+* Added [fiddles/three/fiddle-0011-PlanetTween](fiddles/three/fiddle-0011-PlanetTween)
+* Added [fiddles/three/fiddle-0012-BasicTween](fiddles/three/fiddle-0012-BasicTween)
