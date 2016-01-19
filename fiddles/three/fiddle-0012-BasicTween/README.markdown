@@ -21,14 +21,14 @@ Chicago, IL US
 
 ### Description
 
-Fiddle exploring the basic tweening examples in chapter 4 involving tweening.
+Pen exploring the basic tweening examples in chapter 4 of Tony Parisi's book, **WebGL Up and Running**.
 
 
 ### Published Version Link
 
-N/A
+[codepen.io](http://codepen.io/bradyhouse/pen/xZPdLL)
 
 
 ### Tags
 
-three.js, tween.js
+three.js, tween.js, r46, es6
