@@ -1,6 +1,6 @@
 let metadata = {
     urls: {
-        github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0010-SolarSystem',
+        github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0011-PlanetTween',
         sun: {
             surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunSurfaceMaterial.jpg',
             atmosphereMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunAtmosphereMaterial.png'
@@ -37,9 +37,8 @@ let metadata = {
         pluto: {
             surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/plutoSurfaceMaterial.jpg'
         }
-
-
     },
+    consoleTag: 'H O U S E ~ f i d d l e s',
     constants: {
         SUN_SIZE_IN_EARTHS: 20,
         MOUSE_MOVE_TOLERANCE: 4,

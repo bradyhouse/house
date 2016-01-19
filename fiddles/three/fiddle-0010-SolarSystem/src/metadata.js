@@ -36,10 +36,9 @@ let metadata = {
         },
         pluto: {
             surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/plutoSurfaceMaterial.jpg'
-        }
-
-
+        },
     },
+    consoleTag: 'H O U S E ~ f i d d l e s',
     constants: {
         SUN_SIZE_IN_EARTHS: 20,
         MOUSE_MOVE_TOLERANCE: 4,

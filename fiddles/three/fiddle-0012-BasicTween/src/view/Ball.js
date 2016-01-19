@@ -22,6 +22,7 @@ app.view.Ball = class extends app.toolkit.three.Object {
         return this._deltaY;
     }
 
+
     animate() {
         if(this.object3D.position.y > 0) {
             let newposY = this.object3D.position.y + this.deltaY;
@@ -32,7 +33,6 @@ app.view.Ball = class extends app.toolkit.three.Object {
         } else {
             if(this.moves.length > 50 && (this.object3D.position.x > 6 || this.object3D.position.x < -6)) {
                 this._deltaX = this._deltaX * -1;
-                console.log(this.moves);
                 this._moves = [];
             }
             let newposX = this.object3D.position.x + this.deltaX;
@@ -42,6 +42,13 @@ app.view.Ball = class extends app.toolkit.three.Object {
                     x: newposX
                 }, 100).easing(TWEEN.Easing.Quadratic.EaseIn).start();
         }
+
+        let newRotationZ = this.object3D.rotation.z + this.deltaX * -1;
+        new TWEEN.Tween(this.object3D.rotation)
+            .to({
+                z: newRotationZ
+            }, 210).start();
+
     }
 
     init() {

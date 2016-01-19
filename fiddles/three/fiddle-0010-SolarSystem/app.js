@@ -40,8 +40,9 @@
             },
             pluto: {
                 surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/plutoSurfaceMaterial.jpg'
-            }
+            },
         },
+        consoleTag: 'H O U S E ~ f i d d l e s',
         constants: {
             SUN_SIZE_IN_EARTHS: 20,
             MOUSE_MOVE_TOLERANCE: 4,
@@ -1326,9 +1327,9 @@
         onDOMContentLoaded: function() {
             let hook = document.getElementById("fiddleHook"),
                 container = document.createElement("div");
+            this.configConsole();
             container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
             container.setAttribute('id', 'container');
-            container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
             let view = new app.view.Viewport({
                 hook: hook
@@ -1339,11 +1340,10 @@
             view.render();
             view.run();
         },
-        onContainerClick: function() {
-            var link = document.createElement('a');
-            link.setAttribute('href', metadata.urls.github);
-            link.setAttribute('target', '_blank');
-            link.click();
+        configConsole: function() {
+            console.log("%c" + metadata.consoleTag, 'font-style: italic; font-size: 20px;');
+            console.log("%c" + metadata.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
+            console.group();
         }
     };
     app.test = window.location.pathname.match('test') ? app.test || {

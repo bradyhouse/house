@@ -6,10 +6,10 @@
         urls: {
             github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0012-BasicTween',
             ball: {
-                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/ballSurfaceMaterial.jpg'
+                surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/neptuneSurfaceMaterial.jpg'
             }
         },
-        constants: {}
+        consoleTag: 'H O U S E ~ f i d d l e s'
     };
 
 
@@ -605,7 +605,6 @@
             } else {
                 if (this.moves.length > 50 && (this.object3D.position.x > 6 || this.object3D.position.x < -6)) {
                     this._deltaX = this._deltaX * -1;
-                    console.log(this.moves);
                     this._moves = [];
                 }
                 let newposX = this.object3D.position.x + this.deltaX;
@@ -615,6 +614,11 @@
                         x: newposX
                     }, 100).easing(TWEEN.Easing.Quadratic.EaseIn).start();
             }
+            let newRotationZ = this.object3D.rotation.z + this.deltaX * -1;
+            new TWEEN.Tween(this.object3D.rotation)
+                .to({
+                    z: newRotationZ
+                }, 210).start();
         }
         init() {
             let texture = metadata.urls.ball.surfaceMaterial,
@@ -630,10 +634,6 @@
     }
 
 
-    /**
-     * Provides requestAnimationFrame in a cross browser way.
-     * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-     */
     if (!window.requestAnimationFrame) {
         window.requestAnimationFrame = (function() {
             return window.webkitRequestAnimationFrame ||
@@ -649,9 +649,8 @@
         onDOMContentLoaded: function() {
             let hook = document.getElementById("fiddleHook"),
                 container = document.createElement("div");
+            this.consoleBrand();
             container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
-            //container.setAttribute('id', 'container');
-            //container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
             let view = new app.view.Viewport({
                 hook: hook
@@ -661,6 +660,11 @@
             });
             view.render();
             view.run();
+        },
+        consoleBrand: function() {
+            console.log("%c" + metadata.consoleTag, 'font-style: italic; font-size: 20px;');
+            console.log("%c" + metadata.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
+            console.group();
         }
     };
     app.test = window.location.pathname.match('test') ? app.test || {

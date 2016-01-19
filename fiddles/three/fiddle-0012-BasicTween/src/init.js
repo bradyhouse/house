@@ -1,9 +1,4 @@
 
-/**
- * Provides requestAnimationFrame in a cross browser way.
- * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
- */
-
 if ( !window.requestAnimationFrame ) {
     window.requestAnimationFrame = ( function() {
         return window.webkitRequestAnimationFrame ||
@@ -16,14 +11,14 @@ if ( !window.requestAnimationFrame ) {
     } )();
 }
 
-
 app.controller = app.controller || {
         onDOMContentLoaded: function () {
             let hook = document.getElementById("fiddleHook"),
                 container = document.createElement("div");
+
+            this.configConsole();
+
             container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
-            //container.setAttribute('id', 'container');
-            //container.addEventListener('click', this.onContainerClick);
             hook.appendChild(container);
             let view = new app.view.Viewport({
                 hook: hook
@@ -31,6 +26,11 @@ app.controller = app.controller || {
             view.init({ container: container });
             view.render();
             view.run();
+        },
+        configConsole: function() {
+            console.log("%c" + metadata.consoleTag, 'font-style: italic; font-size: 20px;');
+            console.log("%c" + metadata.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
+            console.group();
         }
     };
 
