@@ -6,27 +6,27 @@ fiddle-0011-PlanetTween
 
 ### Title
 
-Our Galaxy
+Planet Tween
 
 
 ### Creation Date
 
-01/06/2016
+01/18/2016
 
 
 ### Location
 
-Vancouver, CA
+Chicago
 
 
 ### Description
 
-Pen exploring how to model the sun and planets of our galaxy.  Again, this one is based on the examples discussed in Tony Parisi's book, **WebGL Up and Running**.
+Pen exploring how to apply tween effects in 3D space. It takes the "Tweening" concepts discussed in Chapter 4 of Tony Parisi's book, **WebGL Up and Running**, and applies them to the examples presented in Chapter 3.
 
 
 ### Published Version Link
 
-[code pen](http://codepen.io/bradyhouse/pen/wMdOvP/)
+[codepen.io](http://codepen.io/bradyhouse/pen/JGOWRo)
 
 
 ### Tags

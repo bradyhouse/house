@@ -6,12 +6,12 @@ fiddle-0012-BasicTween
 
 ### Title
 
-House three.js Fiddle - fiddle-0012-BasicTween
+Basic Tween
 
 
 ### Creation Date
 
-fiddle-0012-BasicTween
+01/18/2016
 
 
 ### Location
@@ -21,8 +21,7 @@ Chicago, IL US
 
 ### Description
 
-Fiddle based on Tony Parisi's Bump Mapping example discussed in chapter 4 of his book,
-**Programming 3D Applications with HTML5 and WebGL: 3D Animation and Visualization for Web Pages**.
+Fiddle exploring the basic tweening examples in chapter 4 involving tweening.
 
 
 ### Published Version Link
@@ -32,4 +31,4 @@ N/A
 
 ### Tags
 
-three.js
+three.js, tween.js

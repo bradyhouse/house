@@ -63,6 +63,9 @@ app.view.milkyway.earth.Moon = class extends app.toolkit.three.Object {
     animate() {
         if(this.object3D.position.y > 0) {
             let newposY = this.object3D.position.y - 10;
+            if (newposY < 0) {
+                newposY = 0;
+            }
             new TWEEN.Tween(this.object3D.position)
                 .to({
                     y: newposY

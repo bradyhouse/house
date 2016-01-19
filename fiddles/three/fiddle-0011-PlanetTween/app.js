@@ -4,7 +4,7 @@
 
     let metadata = {
         urls: {
-            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0011-PlanetTweening',
+            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0010-SolarSystem',
             sun: {
                 surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunSurfaceMaterial.jpg',
                 atmosphereMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunAtmosphereMaterial.png'
@@ -684,6 +684,9 @@
         animate() {
             if (this.object3D.position.y > 0) {
                 let newposY = this.object3D.position.y - 10;
+                if (newposY < 0) {
+                    newposY = 0;
+                }
                 new TWEEN.Tween(this.object3D.position)
                     .to({
                         y: newposY
@@ -1063,6 +1066,9 @@
         animate() {
             if (this.object3D.position.y > 0) {
                 let newposY = this.object3D.position.y - 10;
+                if (newposY < 0) {
+                    newposY = 0;
+                }
                 new TWEEN.Tween(this.object3D.position)
                     .to({
                         y: newposY
@@ -1245,18 +1251,6 @@
                             this.root.rotation.y -= (dx * 0.01);
                         }
                         this.lastX = x;
-                        let dy = y - this.lastY;
-                        if (Math.abs(dy) > metadata.constants.MOUSE_MOVE_TOLERANCE) {
-                            this.root.rotation.x += (dy * 0.01);
-                            if (this.root.rotation.x < 0) {
-                                this.root.rotation.x = 0;
-                            }
-                            if (this.root.rotation.x > metadata.constants.MAX_ROTATION_X) {
-                                this.root.rotation.x = metadata.constants.MAX_ROTATION_X;
-                            }
-                        }
-                        this.lastY = y;
-                        console.log(this.root.rotation);
                     }
                 },
                 mouseScroll: function(delta) {

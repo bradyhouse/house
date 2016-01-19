@@ -31,22 +31,6 @@ app.view.Viewport = class extends app.toolkit.three.R {
                     }
                     this.lastX = x;
 
-
-                    let dy = y - this.lastY;
-                    if (Math.abs(dy) > metadata.constants.MOUSE_MOVE_TOLERANCE) {
-                        this.root.rotation.x += (dy * 0.01);
-                        if (this.root.rotation.x < 0) {
-                            this.root.rotation.x = 0;
-                        }
-                        if (this.root.rotation.x > metadata.constants.MAX_ROTATION_X) {
-                            this.root.rotation.x = metadata.constants.MAX_ROTATION_X;
-                        }
-                    }
-                    this.lastY = y;
-
-                    console.log(this.root.rotation);
-
-
                 }
             },
             mouseScroll: function (delta) {
