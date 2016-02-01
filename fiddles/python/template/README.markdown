@@ -18,9 +18,9 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
+Another python fiddle.
 
 
 ### Tags
 
-bash
+python

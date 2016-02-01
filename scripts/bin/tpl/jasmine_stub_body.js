@@ -1,9 +1,14 @@
-describe ("{{classname}} - Test Suite", function () {
+describe ("{{classname}}", function () {
     var clsInstance = null;
     beforeEach (function () {
         clsInstance = Ext.create('{{classname}}');
     });
-    it ('{{classname}} is loaded', function () {
-        expect (clsInstance != null).toBeTruthy ();
+    afterEach(function() {
+        clsInstance.destroy();
+    });
+    describe('no config', function() {
+        it ('should have a constructor without dependencies', function () {
+            expect (clsInstance).toBeTruthy();
+        });
     });
 });

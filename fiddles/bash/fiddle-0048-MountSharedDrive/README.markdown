@@ -3,7 +3,7 @@ fiddle-0048-MountSharedDrive
 
 ### Title
 
-fiddle-0048-MountSharedDrive
+Mount SharedDrive
 
 
 ### Creation Date
@@ -18,9 +18,9 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
+Shell script that automates the mounting of a shared drive.
 
 
 ### Tags
 
-bash
+bash, mount_smbfs

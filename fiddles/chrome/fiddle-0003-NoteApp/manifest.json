@@ -1,0 +1,15 @@
+{
+    "app": {
+        "background": {
+            "scripts": [ "background.js" ]
+        }
+    },
+    "manifest_version": 2,
+    "name": "Notepad",
+    "version": "1.0.0",
+    "permissions": [
+        "unlimitedStorage",
+        "idle"
+    ]
+}
+

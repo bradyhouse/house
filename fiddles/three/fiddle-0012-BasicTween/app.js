@@ -649,7 +649,7 @@
         onDOMContentLoaded: function() {
             let hook = document.getElementById("fiddleHook"),
                 container = document.createElement("div");
-            this.consoleBrand();
+            this.configConsole();
             container.setAttribute('style', "width: 98%; height: 98%; overflow:hidden; position:absolute; background-color:#000000; cursor: hand;");
             hook.appendChild(container);
             let view = new app.view.Viewport({
@@ -661,7 +661,7 @@
             view.render();
             view.run();
         },
-        consoleBrand: function() {
+        configConsole: function() {
             console.log("%c" + metadata.consoleTag, 'font-style: italic; font-size: 20px;');
             console.log("%c" + metadata.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
             console.group();

@@ -434,7 +434,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Refactored [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
     * Based on [fiddles/bash/fiddle-0032-ListAndCount](fiddles/bash/fiddle-0032-ListAndCount)
 * Added [fiddles/jquery/fiddle-0028-RecursiveDOMInjection](fiddles/jquery/fiddle-0028-RecursiveDOMInjection)
-* Added [fiddles/chrome/fiddle-0003-BookmarkTable](fiddles/chrome/fiddle-0003-BookmarkTable)
 * Refactored [scripts/fiddle-combine.sh](scripts/fiddle-combine.sh)
     1. Added "preinit.js" file support for non-ext* fiddles
     2. Added "js-beautify" app.js reformatting logic
@@ -575,3 +574,23 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/bash/fiddle-0049-InstallTypeScript](fiddles/bash/fiddle-0049-InstallTypeScript)
 * Added [fiddles/three/fiddle-0011-PlanetTween](fiddles/three/fiddle-0011-PlanetTween)
 * Added [fiddles/three/fiddle-0012-BasicTween](fiddles/three/fiddle-0012-BasicTween)
+
+### 201601190420
+
+* Bug fix [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+    * Note - Previously, the "fiddle.sh fork chrome ..." command threw an error while attempting to update the manifest.json file.  This issue is now resolved.
+* Added [fiddles/chrome/fiddle-0003-NoteApp](fiddles/chrome/fiddle-0003-NoteApp)
+* Added [fiddles/chrome/fiddle-0004-NoteAppSync](fiddles/chrome/fiddle-0004-NoteAppSync)
+* Added [fiddles/chrome/fiddle-0005-TextEditor](fiddles/chrome/fiddle-0005-TextEditor)
+* Added [fiddles/extjs6/fiddle-0032-CSVStore](fiddles/extjs6/fiddle-0032-CSVStore)
+* Added [fiddles/chrome/fiddle-0006-BookmarkSearch](fiddles/chrome/fiddle-0006-BookmarkSearch)
+* Added [fiddles/bash/fiddle-0050-InstallIstanbul](fiddles/bash/fiddle-0050-InstallIstanbul)
+* Added [fiddles/bash/fiddle-0051-InstallCucumber](fiddles/bash/fiddle-0051-InstallCucumber)
+* Added [fiddles/bash/fiddle-0052-InstallBeautifulSoup](fiddles/bash/fiddle-0052-InstallBeautifulSoup)
+* Added [fiddles/bash/fiddle-0053-PythonVirtualEnv](fiddles/bash/fiddle-0053-PythonVirtualEnv)
+* Added [fiddles/python/fiddle-0001-BeautifulSoup](fiddles/python/fiddle-0001-BeautifulSoup)
+* Added [fiddles/python/fiddle-0002-SoupFindAll](fiddles/python/fiddle-0002-SoupFindAll)
+* Added [fiddles/python/fiddle-0003-SoupFindChildren](fiddles/python/fiddle-0003-SoupFindChildren)
+* Added [fiddles/python/fiddle-0004-SoupFindRegex](fiddles/python/fiddle-0004-SoupFindRegex)
+* Added [fiddles/python/fiddle-0005-HelloCrawler](fiddles/python/fiddle-0005-HelloCrawler)
+* Added [fiddles/python/fiddle-0006-OreillyCrawler](fiddles/python/fiddle-0006-OreillyCrawler)

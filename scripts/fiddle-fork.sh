@@ -22,6 +22,7 @@
 # 07/26/2015 - See CHANGELOG @ 201507260420
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
+# 01/19/2016 - See CHANGELOG @ 201601190420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -140,9 +141,9 @@ forkedOnDate=$(date +"%m-%d-%y";)
             ;;
         'chrome')
             rm -r "../fiddles/${fiddleType}/${targetFiddle}/manifest.json"
-            $(cp -rf "../fiddles/${fiddleSubDir}/template/manifest.json" "../fiddles/${fiddleType}/${targetFiddle}/manifest.json") || exit 96
-            $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
-            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/manifest.json";) || exit 96
+            $(cp -rf "../fiddles/${fiddleType}/template/manifest.json" "../fiddles/${fiddleType}/${targetFiddle}/manifest.json") || exit 96
+            $(cd bin; ./house-substr.sh '{{FiddleName}}' ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/manifest.json";) || exit 96
+            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${forkedOnDate} "../../fiddles/${fiddleType}/${targetFiddle}/manifest.json";) || exit 96
             ;;
     esac
 

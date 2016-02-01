@@ -1,0 +1,14 @@
+{
+    "app": {
+        "background": {
+            "scripts": [ "background.js" ]
+        }
+    },
+    "description": "fiddle-0005-TextEditor",
+    "manifest_version": 2,
+    "name": "TextEditor",
+    "version": "1.0.0",
+    "fileSystem": [
+        "write"
+    ]
+}

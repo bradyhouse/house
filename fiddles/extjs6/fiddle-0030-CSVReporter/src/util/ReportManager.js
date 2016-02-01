@@ -52,6 +52,8 @@ Ext.define('Fiddle.ReportManager', {
                 success: function (response, options) {
                     var root = {};
                     root.data = $.csv.toObjects(response.responseText);
+
+
                     Ext.callback(callback, scope, [root, fields, cols]);
                 },
                 failure: function (response, options) {

@@ -21,7 +21,7 @@
     cp -rf "tpl/jasmine_stub_header.js" ${jasmine_stub_file} || exit 90
     $(echo -en '\n' >> ${jasmine_stub_file};) || exit 90
     $(cat "tpl/jasmine_stub_body.js" >> ${jasmine_stub_file};) || exit 90
-    $(./house.substr '{{classname}}' ${extjs_class_name} ${jasmine_stub_file};) || exit 90
+    $(./house-substr.sh '{{classname}}' ${extjs_class_name} ${jasmine_stub_file};) || exit 90
 )
 #catch
 case $? in
