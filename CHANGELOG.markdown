@@ -594,3 +594,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/python/fiddle-0004-SoupFindRegex](fiddles/python/fiddle-0004-SoupFindRegex)
 * Added [fiddles/python/fiddle-0005-HelloCrawler](fiddles/python/fiddle-0005-HelloCrawler)
 * Added [fiddles/python/fiddle-0006-OreillyCrawler](fiddles/python/fiddle-0006-OreillyCrawler)
+
