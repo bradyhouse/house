@@ -21,6 +21,7 @@
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 12/06/2015 - See CHANGELOG @ 201511100420
 # 01/17/2016 - See CHANGELOG @ 201601100420
+# 02/01/2016 - See CHANGELOG @ 201602010420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -31,6 +32,10 @@ echo "${thisFile}" | awk '{print toupper($0)}'
         'angular')
             ./fiddle-angular.sh $2 || exit 87
             ./fiddle-index.sh "angular" || exit 87
+            ;;
+        'angular2')
+            ./fiddle-angular-2.sh $2 || exit 87
+            ./fiddle-index.sh "angular2" || exit 87
             ;;
         'ant')
             ./fiddle-ant.sh $2 || exit 87
@@ -105,6 +110,8 @@ case ${_rc} in
         echo "[t] - type. Valid types include: "
         echo ""
         echo -e "\t\"ant\"\t\tAnt Fiddle"
+        echo -e "\t\"angular\"\t\tAngular Fiddle"
+        echo -e "\t\"angular2\"\t\tAngular2 Fiddle"
         echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"

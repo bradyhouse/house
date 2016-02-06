@@ -47,6 +47,8 @@ fiddles/eslint/
 fiddles/extjs/fiddle-20150613-GridLifeCycle/
 fiddles/jquery/fiddle-0023-TumblrScreenScrape/
 fiddles/jquery/fiddle-0022-IframeDetection/
+fiddles/jquery/fiddle-0037-JasmineJunit/
+fiddles/jquery/fiddle-0038-PressThis/
 fiddles/three/fiddle-0001-FresnelShader/
 fiddles/three/WebGLBook/
 fiddles/three/Programming3DApplications/
@@ -55,6 +57,7 @@ fiddles/svg/fiddle-0022-Spirograph/
 fiddles/svg/fiddle-0023-PathExporter/
 fiddles/react/
 fiddles/react/react-0.13.3/
+libxml2-2.7.2
 sencha_ver5.sh
 sencha_ver6.sh
 CodeKit.app

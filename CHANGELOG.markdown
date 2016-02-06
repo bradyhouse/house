@@ -550,7 +550,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201601100420
 
-* Added [fiddles/anglular](fiddles/python)
+* Added [fiddles/python](fiddles/python)
     * Reflected changes:
         1. Added [scripts/fiddle-python.sh](scripts/fiddle-python.sh)
         2. Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
@@ -595,3 +595,27 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/python/fiddle-0005-HelloCrawler](fiddles/python/fiddle-0005-HelloCrawler)
 * Added [fiddles/python/fiddle-0006-OreillyCrawler](fiddles/python/fiddle-0006-OreillyCrawler)
 
+### 201602010420
+
+* **fiddle.sh**
+  1. Added [fiddles/angular2](fiddles/angular2)
+        * Reflected changes:
+            1. Added [scripts/fiddle-angular2.sh](scripts/fiddle-angular2.sh)
+            2. Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            3. Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+            4. Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            5. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            6. Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            7. Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            8. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+* **Bash**
+    1. Added [fiddles/bash/fiddle-0054-DownloadLibXml2](fiddles/bash/fiddle-0054-DownloadLibXml2)
+    2. Added [fiddles/bash/fiddle-0055-InstallScrapy](fiddles/bash/fiddle-0055-InstallScrapy)
+    3. Added [fiddles/bash/fiddle-0056-InstallLiveServer](fiddles/bash/fiddle-0056-InstallLiveServer)
+* **Angular 2**
+    1. Added dependency to [systemjs](https://github.com/systemjs/systemjs)
+    2. Added dependency to [traceur-compiler](https://github.com/google/traceur-compiler.git)
+    3. Added [fiddles/angular2/fiddle-0001-HelloWorld](fiddles/angular2/fiddle-0001-HelloWorld)
+    4. Added [fiddles/angular2/fiddle-0002-PoormanReddit](fiddles/angular2/fiddle-0002-PoormanReddit)
+* **ExtJS 6**
+    1. Added [fiddles/extjs6/fiddle-0033-CSVExporter](fiddles/extjs6/fiddle-0033-CSVExporter)

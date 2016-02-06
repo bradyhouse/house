@@ -23,6 +23,7 @@
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 01/19/2016 - See CHANGELOG @ 201601190420
+# 02/01/2016 - See CHANGELOG @ 201602010420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -38,6 +39,8 @@ then
     echo ""
     echo -e "[t] - type. Valid types include: "
     echo ""
+    echo -e "\t\"angular\"\t\tAngular Fiddle"
+    echo -e "\t\"angular2\"\t\tAngular 2 Fiddle"
     echo -e "\t\"ant\"\t\tAnt Fiddle"
     echo -e "\t\"bash\"\t\tBash Fiddle"
     echo -e "\t\"compass\"\tCompass Fiddle"
@@ -102,7 +105,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
             $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/app.js";) || exit 90
             $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/index.html";) || exit 91
             $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
@@ -136,7 +139,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${fiddleType} in
-        'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')

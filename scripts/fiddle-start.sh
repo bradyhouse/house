@@ -41,6 +41,9 @@ _port=8889
         'angular')
             ./house-node-fs-start.sh "../../fiddles/angular" "${_port}" || exit 88
             ;;
+        'angular2')
+            ./house-node-fs-start.sh "../../fiddles/angular2" "${_port}" || exit 88
+            ;;
         'compass')
             ./house-node-fs-start.sh "../../fiddles/compass" "${_port}" || exit 88
             ;;

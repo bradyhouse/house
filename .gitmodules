@@ -31,3 +31,9 @@
 [submodule "fiddles/android/libs/ITM455"]
 	path = fiddles/android/libs/ITM455
 	url = https://github.com/bradyhouse/ITM455.git
+[submodule "fiddles/angular2/libs/systemjs"]
+	path = fiddles/angular2/libs/systemjs
+	url = https://github.com/systemjs/systemjs
+[submodule "fiddles/angular2/libs/traceur-compiler"]
+	path = fiddles/angular2/libs/traceur-compiler
+	url = https://github.com/google/traceur-compiler.git
