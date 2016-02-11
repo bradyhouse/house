@@ -1,4 +1,4 @@
-angular
+angular2
 ======
 
 _Angular?_ No, now its: _Angular2!_  Its ubiquitous. Unfortunately, as primarily an "ExtJS" developer, I know nothing of _Angular_ or
