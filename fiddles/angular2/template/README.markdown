@@ -6,7 +6,7 @@
 
 ### Title
 
-House Angular 2 Fiddle - {{FiddleName}}
+{{FiddleName}}
 
 
 ### Creation Date
@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-angular2
+angular v2.0.0-39, typescript, component, view, bootstrap

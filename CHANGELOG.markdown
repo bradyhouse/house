@@ -619,3 +619,18 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4. Added [fiddles/angular2/fiddle-0002-PoormanReddit](fiddles/angular2/fiddle-0002-PoormanReddit)
 * **ExtJS 6**
     1. Added [fiddles/extjs6/fiddle-0033-CSVExporter](fiddles/extjs6/fiddle-0033-CSVExporter)
+
+### 201602090420
+
+* **Angular 2**
+    1. Added [fiddles/angular2/fiddle-0003-InventoryApp](fiddles/angular2/fiddle-0003-InventoryApp)
+    2. Added [fiddles/angular2/fiddle-0004-OutputBinding](fiddles/angular2/fiddle-0004-OutputBinding)
+    3. Added [fiddles/angular2/fiddle-0005-NgIf](fiddles/angular2/fiddle-0005-NgIf)
+    4. Added [fiddles/angular2/fiddle-0006-NgStyle](fiddles/angular2/fiddle-0006-NgStyle)
+    5. Added [fiddles/angular2/fiddle-0007-NgSwitch](fiddles/angular2/fiddle-0007-NgSwitch)
+    6. Added [fiddles/angular2/fiddle-0008-NgClass](fiddles/angular2/fiddle-0008-NgClass)
+    7. Added [fiddles/angular2/fiddle-0009-NgFor](fiddles/angular2/fiddle-0009-NgFor)
+    8. Added [fiddles/angular2/fiddle-0011-NgNonBindable](fiddles/angular2/fiddle-0011-NgNonBindable)
+* **ExtJS 6**
+    1. Added [fiddles/extjs6/fiddle-0034-CSVExcelStyleGrid](fiddles/extjs6/fiddle-0034-CSVExcelStyleGrid)
+

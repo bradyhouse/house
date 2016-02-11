@@ -1,0 +1,89 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.7.5
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 warn package.json fiddle-0010-SimpleForm@0.0.1 No repository field.
+6 verbose install where, deps [ '/Users/e13542/github/house/fiddles/angular2/fiddle-0010-SimpleForm',
+6 verbose install   [ 'http-server', 'typescript' ] ]
+7 verbose install where, peers [ '/Users/e13542/github/house/fiddles/angular2/fiddle-0010-SimpleForm',
+7 verbose install   [] ]
+8 info preinstall fiddle-0010-SimpleForm@0.0.1
+9 silly cache add args [ 'typescript@1.6.2', null ]
+10 verbose cache add spec typescript@1.6.2
+11 silly cache add parsed spec { raw: 'typescript@1.6.2',
+11 silly cache add   scope: null,
+11 silly cache add   name: 'typescript',
+11 silly cache add   rawSpec: '1.6.2',
+11 silly cache add   spec: '1.6.2',
+11 silly cache add   type: 'version' }
+12 verbose addNamed typescript@1.6.2
+13 silly addNamed semver.valid 1.6.2
+14 silly addNamed semver.validRange 1.6.2
+15 silly mapToRegistry name typescript
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/typescript
+19 verbose addNameVersion registry:https://registry.npmjs.org/typescript not in flight; fetching
+20 silly cache add args [ 'http-server@^0.8.0', null ]
+21 verbose cache add spec http-server@^0.8.0
+22 silly cache add parsed spec { raw: 'http-server@^0.8.0',
+22 silly cache add   scope: null,
+22 silly cache add   name: 'http-server',
+22 silly cache add   rawSpec: '^0.8.0',
+22 silly cache add   spec: '>=0.8.0 <0.9.0',
+22 silly cache add   type: 'range' }
+23 verbose addNamed http-server@>=0.8.0 <0.9.0
+24 silly addNamed semver.valid null
+25 silly addNamed semver.validRange >=0.8.0 <0.9.0
+26 silly addNameRange { name: 'http-server', range: '>=0.8.0 <0.9.0', hasData: false }
+27 silly mapToRegistry name http-server
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry uri https://registry.npmjs.org/http-server
+31 verbose addNameRange registry:https://registry.npmjs.org/http-server not in flight; fetching
+32 verbose request uri https://registry.npmjs.org/http-server
+33 verbose request no auth needed
+34 info attempt registry request try #1 at 11:08:32
+35 verbose request id 97c3116bc66f1860
+36 http request GET https://registry.npmjs.org/http-server
+37 verbose request uri https://registry.npmjs.org/typescript
+38 verbose request no auth needed
+39 info attempt registry request try #1 at 11:08:32
+40 verbose etag "DEIRKKKD0GI6I9QNRTLOOJAYU"
+41 http request GET https://registry.npmjs.org/typescript
+42 info retry will retry, error on last attempt: Error: certificate not trusted
+43 info retry will retry, error on last attempt: Error: certificate not trusted
+44 info attempt registry request try #2 at 11:08:42
+45 http request GET https://registry.npmjs.org/http-server
+46 info attempt registry request try #2 at 11:08:42
+47 verbose etag "DEIRKKKD0GI6I9QNRTLOOJAYU"
+48 http request GET https://registry.npmjs.org/typescript
+49 info retry will retry, error on last attempt: Error: certificate not trusted
+50 info retry will retry, error on last attempt: Error: certificate not trusted
+51 info attempt registry request try #3 at 11:09:42
+52 http request GET https://registry.npmjs.org/http-server
+53 info attempt registry request try #3 at 11:09:42
+54 verbose etag "DEIRKKKD0GI6I9QNRTLOOJAYU"
+55 http request GET https://registry.npmjs.org/typescript
+56 silly get cb [ 304, undefined ]
+57 verbose etag https://registry.npmjs.org/typescript from cache
+58 verbose get saving typescript to /Users/e13542/.npm/registry.npmjs.org/typescript/.cache.json
+59 silly cache afterAdd typescript@1.6.2
+60 verbose afterAdd /Users/e13542/.npm/typescript/1.6.2/package/package.json not in flight; writing
+61 verbose afterAdd /Users/e13542/.npm/typescript/1.6.2/package/package.json written
+62 verbose stack Error: certificate not trusted
+62 verbose stack     at Error (native)
+62 verbose stack     at TLSSocket.<anonymous> (_tls_wrap.js:929:36)
+62 verbose stack     at TLSSocket.emit (events.js:104:17)
+62 verbose stack     at TLSSocket._finishInit (_tls_wrap.js:460:8)
+63 verbose cwd /Users/e13542/github/house/fiddles/angular2/fiddle-0010-SimpleForm
+64 error Darwin 14.5.0
+65 error argv "node" "/usr/local/bin/npm" "install"
+66 error node v0.12.2
+67 error npm  v2.7.5
+68 error code CERT_UNTRUSTED
+69 error certificate not trusted
+70 error If you need help, you may report this error at:
+70 error     <https://github.com/npm/npm/issues>
+71 verbose exit [ 1, true ]
