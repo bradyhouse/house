@@ -622,6 +622,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201602090420
 
+* **fiddle.sh**
+    1. Updated [scripts/fiddle-angular2.sh](scripts/fiddle-angular2.sh)
+        * Added logic to use the fiddle name as the default component selector in the app.ts template file.
 * **Angular 2**
     1. Added [fiddles/angular2/fiddle-0003-InventoryApp](fiddles/angular2/fiddle-0003-InventoryApp)
     2. Added [fiddles/angular2/fiddle-0004-OutputBinding](fiddles/angular2/fiddle-0004-OutputBinding)
