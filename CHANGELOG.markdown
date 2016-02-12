@@ -634,6 +634,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6. Added [fiddles/angular2/fiddle-0008-NgClass](fiddles/angular2/fiddle-0008-NgClass)
     7. Added [fiddles/angular2/fiddle-0009-NgFor](fiddles/angular2/fiddle-0009-NgFor)
     8. Added [fiddles/angular2/fiddle-0011-NgNonBindable](fiddles/angular2/fiddle-0011-NgNonBindable)
+    9. Added [fiddles/angular2/fiddle-0012-FormBuilder](fiddles/angular2/fiddle-0012-FormBuilder)
 * **ExtJS 6**
     1. Added [fiddles/extjs6/fiddle-0034-CSVExcelStyleGrid](fiddles/extjs6/fiddle-0034-CSVExcelStyleGrid)
-
+* **Bash**
+    1. Added [fiddles/bash/fiddle-0057-PhantomJsRasterize](fiddles/bash/fiddle-0057-PhantomJsRasterize)

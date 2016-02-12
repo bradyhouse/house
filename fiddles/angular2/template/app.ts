@@ -10,9 +10,11 @@ import {
   selector: '{{FiddleName}}'
 })
 @View({
-  template: `<article>Hello world</article>`
+  template: `
+  <article>Hello world</article>`
 })
-class {{FiddleName}} {
+class Fiddle {
+
 }
 
-bootstrap({{FiddleName}});
+bootstrap(Fiddle);
