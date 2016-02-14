@@ -25,7 +25,7 @@ echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
 _type=$(echo $1)
-_port=8889
+_port=$(echo $2) || 8889
 
 
 function startHouseNodeServer() {
