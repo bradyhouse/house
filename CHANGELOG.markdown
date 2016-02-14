@@ -662,4 +662,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **ExtJS 6**
     * Added [fiddles/extjs6/fiddle-0035-SimpleGrid](fiddles/extjs6/fiddle-0035-SimpleGrid)
 * **Three**
-    * Added [fiddles/three/fiddle-0013-ParticleExplosion](fiddles/three/fiddle-0013-ParticleExplosion)
+    * Started [fiddles/three/fiddle-0013-ParticleExplosion](fiddles/three/fiddle-0013-ParticleExplosion)
