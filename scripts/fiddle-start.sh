@@ -19,62 +19,83 @@
 # 07/11/2015 - See CHANGELOG.MARKDOWN @ 201507110420
 # 07/26/2015 - See CHANGELOG.MARKDOWN @ 201507260420
 # 12/06/2015 - See CHANGELOG.MARKDOWN @ 201511100420
+# 02/13/2016 - See CHANGELOG.MARKDOWN @ 201602130420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
 _type=$(echo $1)
 _port=8889
+
+
+function startHouseNodeServer() {
+    cd bin
+    case ${_type} in
+        'all')
+            ./house-node-fs-start.sh "../../fiddles" "${_port}" || exit 88
+            ;;
+        *)
+            ./house-node-fs-start.sh "../../fiddles/${_type}" "${_port}" || exit 88
+            ;;
+    esac
+}
+
+function isNodeInstalled() {
+    if [[ ! $(which node;) ]]
+    then
+        echo -1;
+    else
+        echo 0;
+    fi
+}
+
+function isLiveServerInstalled() {
+    if [[ ! $(which live-server;) ]]
+    then
+        echo -1;
+    else
+        echo 0;
+    fi
+}
+
+function stopLiveServer() {
+    _pid=$(lsof -i:${_port} -t || echo '-1')
+    if [[ ${_pid} -eq "-1" ]];
+    then
+        echo 0;
+    else
+        $(lsof -i:${_port} -t | xargs kill;) || exit 89;
+        echo 0;
+    fi
+}
+
+function startLiveServer() {
+    case ${_type} in
+        'all')
+            cd "../fiddles" || exit 88;
+            ;;
+        *)
+            cd "../fiddles/${_type}" || exit 88;
+            ;;
+    esac
+    nohup live-server --port=${_port} --ignore="/" --quiet &
+}
 #try
 (
     # Validate requisites
     if [ "$#" -lt 1 ]; then  exit 86; fi
     if [ "$#" -gt 1 ]; then _port=$2; fi
     if [[ ! -d bin ]]; then exit 87; fi
-
-    cd bin
-
-    case ${_type} in
-        'all')
-            ./house-node-fs-start.sh "../../fiddles" "${_port}" || exit 88
-            ;;
-        'angular')
-            ./house-node-fs-start.sh "../../fiddles/angular" "${_port}" || exit 88
-            ;;
-        'angular2')
-            ./house-node-fs-start.sh "../../fiddles/angular2" "${_port}" || exit 88
-            ;;
-        'compass')
-            ./house-node-fs-start.sh "../../fiddles/compass" "${_port}" || exit 88
-            ;;
-        'extjs5')
-            ./house-node-fs-start.sh "../../fiddles/extjs5" "${_port}" || exit 88
-            ;;
-        'extjs6')
-            ./house-node-fs-start.sh "../../fiddles/extjs6" "${_port}" || exit 88
-            ;;
-        'jquery')
-            ./house-node-fs-start.sh "../../fiddles/jquery" "${_port}" || exit 88
-            ;;
-        'three')
-            ./house-node-fs-start.sh "../../fiddles/three" "${_port}" || exit 88
-            ;;
-        'php')
-            ./house-node-fs-start.sh "../../fiddles/php" "${_port}" || exit 88
-            ;;
-        'dojo')
-            ./house-node-fs-start.sh "../../fiddles/dojo" "${_port}" || exit 88
-            ;;
-        'tween')
-            ./house-node-fs-start.sh "../../fiddles/tween" "${_port}" || exit 88
-            ;;
-         'svg')
-            ./house-node-fs-start.sh "../../fiddles/svg" "${_port}" || exit 88
-            ;;
-        *)  exit 86
-            ;;
-    esac
-
+    if [[ ! $(isLiveServerInstalled;) ]]
+    then
+        if [[ ! $(isNodeInstalled;) ]]; then exit 90; fi
+        echo -e "[Info]\tlive-server not found. Starting house-node-fs.js ..."
+        startHouseNodeServer || exit $?
+    else
+        stopLiveServer || exit $?;
+        startLiveServer || exit $?;
+        exit 1;
+    fi
 )
 #catch
 rc=$?
@@ -83,8 +104,18 @@ case ${rc} in
         'all')
             echo "A Node.js file server has been started for all fiddles."
             ;;
-        'extjs' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg')
+        *)
             echo "A Node.js file server has been started for the \"${_type}\" fiddle collection."
+            ;;
+        esac
+        echo ""
+        ;;
+    1)  case ${_type} in
+        'all')
+            echo "live-server has been started from the root fiddles directory on port ${_port}."
+            ;;
+        *)
+            echo "live-server has been started from the \"${_type}\" fiddle directory on port ${_port}."
             ;;
         esac
         echo ""
@@ -98,8 +129,10 @@ case ${rc} in
         echo ""
         echo -e "\t\"all\"\t\tStartup all Fiddles"
         echo -e "\t\"angular\"\t\tAngular Fiddle"
+        echo -e "\t\"angular2\"\t\tAngular 2 Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs\"\t\tExt JS Fiddle"
+        echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
+        echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
         echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
@@ -114,6 +147,10 @@ case ${rc} in
     87) echo -e "Fubar\tCannot find the \"${_path}/bin\" directory."
         ;;
     88) echo -e "Fubar\tCall to the \"${_path}/bin/house-node-fs-start.sh\" failed."
+        ;;
+    89) echo -e "Fubar\tAttempt to stop live-server failed."
+        ;;
+    90) echo -e "Fubar\tNode is not installed."
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

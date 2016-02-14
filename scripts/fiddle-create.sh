@@ -22,6 +22,7 @@
 # 12/06/2015 - See CHANGELOG @ 201511100420
 # 01/17/2016 - See CHANGELOG @ 201601100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
+# 02/13/2016 - See CHANGELOG @ 201602130420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -59,6 +60,7 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ;;
         'three')
             ./fiddle-three.sh $2 || exit 89
+            ./fiddle-combine.sh "three" "$2" "app.js" "0" || exit 89
             ./fiddle-index.sh "three" || exit 89
             ;;
         'php')

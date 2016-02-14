@@ -6,9 +6,7 @@ function catch() {
     case $1 in
         0)  echo "all tests succeeded"
             ;;
-        1)  echo "isLiveServerInstalled() failed"
-            ;;
-        2)  echo "installLiveServer() failed";
+        1)  echo "installLiveServer() failed";
             ;;
         *)  echo "fubar! Something went wrong."
             ;;
@@ -17,8 +15,7 @@ function catch() {
 }
 # try
 (
-    isLiveServerInstalled || exit 1
-    installLiveServer || exit 2
+    installLiveServer || exit 1
 )
 catch $?;
 

@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
+# 02/13/2016 - See CHANGELOG @ 201602130420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -36,10 +37,7 @@ echo ${bornOnDate}
     $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/index.html";) || exit 3
     $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
     $(cd bin; ./house-substr.sh '{{BornOnDate}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
-
-    #$(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/app.js" > app.tmp; mv app.tmp "../../fiddles/${fiddleSubDir}/$1/app.js") || exit 2
-    #$(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/index.html" > index.tmp;  mv index.tmp "../../fiddles/${fiddleSubDir}/$1/index.html") || exit 3
-    #$(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown" > README.tmp; mv README.tmp "../../fiddles/${fiddleSubDir}/$1/README.markdown") || exit 4
+    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/src/metadata.js";) || exit 4
 
     exit
 )

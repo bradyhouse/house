@@ -24,6 +24,7 @@
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 01/19/2016 - See CHANGELOG @ 201601190420
 # 02/01/2016 - See CHANGELOG @ 201602010420
+# 02/13/2016
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -47,6 +48,7 @@ then
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
     echo -e "\t\"extjs\"\t\tExt JS Fiddle"
     echo -e "\t\"php\"\t\tPHP Fiddle"
+    echo -e "\t\"python\"\t\tPython Fiddle"
     echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
     echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
     echo -e "\t\"chrome\"\t\tChrome Extension Fiddle"
@@ -114,7 +116,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/index.html";) || exit 91
             $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
             ;;
-        'ant' | 'bash')
+        'ant'|'bash'|'python')
             if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ]]
             then
                 rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92

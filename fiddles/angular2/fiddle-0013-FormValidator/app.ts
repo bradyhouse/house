@@ -1,7 +1,7 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
 
 import {Component, bootstrap, View} from "angular2/angular2";
-import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Control, NgIf} from "angular2/angular2";
+import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Control, AbstractControl, NgIf} from "angular2/angular2";
 import {Validators} from 'angular2/angular2';
 
 @Component({
@@ -9,18 +9,21 @@ import {Validators} from 'angular2/angular2';
 
 })
 @View({
-    directives: [FORM_DIRECTIVES],
+    directives: [FORM_DIRECTIVES, NgIf],
     template: `
   <div>
-    <h2>Form Builder</h2>
-    <hr/>
-    {{heading}}
-    <hr/>
+    <h4>Angular2: Form Validators</h4>
+    <div *ng-if="heading.value!='Enter a value' && heading.valid">
+        <hr/>
+        You entered: {{heading.value}}
+        <hr/>
+    </div>
+
     <form [ng-form-model]="myForm" (submit)="onSubmit(myForm.value)">
 
       <div class="form-group">
 
-        <label for="headingInput">Heading:</label>
+        <label for="headingInput">Form Input:</label>
 
         <input type="text"
                class="form-control"
@@ -28,12 +31,9 @@ import {Validators} from 'angular2/angular2';
                placeholder="Heading"
                [ng-form-control]="myForm.controls['heading']">
 
-        <div *ng-if="!heading.valid" class="bg-warning">Heading is invalid</div>
-        <div *ng-if="heading.hasError('required')" class="bg-warning">SKU is required</div>
+        <div *ng-if="heading.hasError('required')" class="bg-warning">Enter something!</div>
 
       </div>
-
-      <div *ng-if="!myForm.valid" class="bg-warning">Form is invalid</div>
 
       <button type="submit" class="btn btn-default">Submit</button>
 
@@ -46,16 +46,14 @@ class Fiddle {
     myForm: ControlGroup;
 
     constructor(fb: FormBuilder) {
-        this.heading = "Enter a different value";
         this.myForm = fb.group({
-            "heading": ["", Validators.required]
+            "heading": ["Enter a value", Validators.required]
         });
-
+        this.heading = this.myForm.controls['heading'];
     }
 
     onSubmit(form) {
         console.log('you entered: ', form);
-        this.heading = form.heading;
     }
 }
 

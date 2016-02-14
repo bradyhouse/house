@@ -600,31 +600,31 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **fiddle.sh**
   1. Added [fiddles/angular2](fiddles/angular2)
         * Reflected changes:
-            1. Added [scripts/fiddle-angular2.sh](scripts/fiddle-angular2.sh)
-            2. Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
-            3. Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
-            4. Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
-            5. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
-            6. Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
-            7. Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
-            8. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+            1.  Added [scripts/fiddle-angular2.sh](scripts/fiddle-angular2.sh)
+            2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            3.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+            4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            5.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            6.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            7.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            8.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
 * **Bash**
-    1. Added [fiddles/bash/fiddle-0054-DownloadLibXml2](fiddles/bash/fiddle-0054-DownloadLibXml2)
-    2. Added [fiddles/bash/fiddle-0055-InstallScrapy](fiddles/bash/fiddle-0055-InstallScrapy)
-    3. Added [fiddles/bash/fiddle-0056-InstallLiveServer](fiddles/bash/fiddle-0056-InstallLiveServer)
+    1.  Added [fiddles/bash/fiddle-0054-DownloadLibXml2](fiddles/bash/fiddle-0054-DownloadLibXml2)
+    2.  Added [fiddles/bash/fiddle-0055-InstallScrapy](fiddles/bash/fiddle-0055-InstallScrapy)
+    3.  Added [fiddles/bash/fiddle-0056-InstallLiveServer](fiddles/bash/fiddle-0056-InstallLiveServer)
 * **Angular 2**
-    1. Added dependency to [systemjs](https://github.com/systemjs/systemjs)
-    2. Added dependency to [traceur-compiler](https://github.com/google/traceur-compiler.git)
-    3. Added [fiddles/angular2/fiddle-0001-HelloWorld](fiddles/angular2/fiddle-0001-HelloWorld)
-    4. Added [fiddles/angular2/fiddle-0002-PoormanReddit](fiddles/angular2/fiddle-0002-PoormanReddit)
+    1.  Added dependency to [systemjs](https://github.com/systemjs/systemjs)
+    2.  Added dependency to [traceur-compiler](https://github.com/google/traceur-compiler.git)
+    3.  Added [fiddles/angular2/fiddle-0001-HelloWorld](fiddles/angular2/fiddle-0001-HelloWorld)
+    4.  Added [fiddles/angular2/fiddle-0002-PoormanReddit](fiddles/angular2/fiddle-0002-PoormanReddit)
 * **ExtJS 6**
-    1. Added [fiddles/extjs6/fiddle-0033-CSVExporter](fiddles/extjs6/fiddle-0033-CSVExporter)
+    1.  Added [fiddles/extjs6/fiddle-0033-CSVExporter](fiddles/extjs6/fiddle-0033-CSVExporter)
 
-### 201602011420
+### 201602110420
 
 * **fiddle.sh**
-    1. Updated [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
-        * Added logic to use the fiddle name as the default component selector in the app.ts template file.
+    1. Refactored [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
+        * Note - Added logic to use the fiddle name as the default component selector in the app.ts template file.
 * **Angular 2**
     1.  Added [fiddles/angular2/fiddle-0003-InventoryApp](fiddles/angular2/fiddle-0003-InventoryApp)
     2.  Added [fiddles/angular2/fiddle-0004-OutputBinding](fiddles/angular2/fiddle-0004-OutputBinding)
@@ -640,3 +640,26 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1. Added [fiddles/extjs6/fiddle-0034-CSVExcelStyleGrid](fiddles/extjs6/fiddle-0034-CSVExcelStyleGrid)
 * **Bash**
     1. Added [fiddles/bash/fiddle-0057-PhantomJsRasterize](fiddles/bash/fiddle-0057-PhantomJsRasterize)
+
+### 201602130420
+
+* **fiddle.sh**
+    1.  Enhanced [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+        * Note - added logic to use npm live-server.
+    2.  Enhanced [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        * Note - added python support.
+    3.  Enhanced [scripts/fiddle-three.sh](scripts/fiddle-three.sh)
+        * Note - added logic to update the src/metadata.js based on the fiddle name.
+    4.  Enhanced [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        * Note - added logic to invoke fiddle-combine.sh for three type fiddles.
+    5.  Enhanced [scripts/fiddle-combine.sh](scripts/fiddle-combine.sh)
+        * Note - added logic to invoke the typescript compiler, "tsc", for angular2 fiddles.
+* **python**
+    1.  Added [fiddles/python/fiddle-0007-ScrapyTutorial](fiddles/python/fiddle-0007-ScrapyTutorial)
+    2.  Added [fiddles/python/fiddle-0008-WikipediaScrapy](fiddles/python/fiddle-0008-WikipediaScrapy)
+* **bash**
+    * Added [fiddles/bash/fiddle-0058-InstallJsBeautify](fiddles/bash/fiddle-0058-InstallJsBeautify)
+* **ExtJS 6**
+    * Added [fiddles/extjs6/fiddle-0035-SimpleGrid](fiddles/extjs6/fiddle-0035-SimpleGrid)
+* **Three**
+    * Added [fiddles/three/fiddle-0013-ParticleExplosion](fiddles/three/fiddle-0013-ParticleExplosion)

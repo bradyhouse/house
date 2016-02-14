@@ -13,6 +13,7 @@
 # 09/09/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 12/06/2015 - See CHANGELOG @ 201511100420
+# 02/13/2016 - See CHANGELOG @ 201602130420
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -32,7 +33,14 @@ useClosure=1
 if [ "$#" -gt 2 ]; then appFileName=$3; fi
 if [ "$#" -gt 3 ]; then useClosure=$4; fi
 
-
+function isTscInstalled() {
+    if [[ ! $(which tsc;) ]]
+    then
+        echo -1;
+    else
+        echo 0;
+    fi
+}
 
 function whichJsBeautify() {
     which js-beautify
@@ -194,6 +202,7 @@ function catch() {
             echo "[t] - type. Valid types include: "
             echo ""
             echo -e "\t\"angular\"\tAngular Fiddle"
+            echo -e "\t\"angular2\"\tAngular 2 Fiddle"
             echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
             echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
             echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
@@ -217,6 +226,10 @@ function catch() {
             ;;
         91) echo "fubar! completeAppFile call failed"
             ;;
+        92) echo "fubar! Tsc is not installed."
+            ;;
+        93) echo "fubar! call to \"tsc\" failed."
+            ;;
         *)  echo "fubar! Something went wrong."
             ;;
     esac
@@ -233,13 +246,17 @@ srcDir="${fiddlePath}/src"
 (
     # Verify parameter count is 2
     if [ "$#" -lt 2 ]; then  exit 86; fi
+    # Verify the fiddle exists
+    if [[ ! -d "${fiddlePath}" ]]; then exit 87; fi
     # Verify type parameter
 	case ${fiddleType} in
+	    'angular2' )
+	        if [[ ! $(isTscInstalled;) ]]; then exit 92; fi
+            cd ${fiddlePath};
+            tsc || exit 93;
+	        ;;
 	    'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
-	        # Verify the fiddle exists
-            if [[ ! -d "${fiddlePath}" ]]; then exit 87; fi
-
-            # Verify the src directory exists
+	        # Verify the src directory exists
             if [[ ! -d "${srcDir}" ]]; then exit 87; fi
             cd ${fiddlePath};
             createAppFile "${fiddleType}" "${appFileName}" "${useClosure}" || exit $?;
@@ -247,7 +264,6 @@ srcDir="${fiddlePath}/src"
         *)
             exit 86
             ;;
-
     esac
 )
 catch $?
