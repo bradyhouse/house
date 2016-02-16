@@ -1,7 +1,7 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
 
 import {Component, bootstrap, View} from "angular2/angular2";
-import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Control, AbstractControl, NgIf} from "angular2/angular2";
+import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Control, NgIf} from "angular2/angular2";
 import {Validators} from 'angular2/angular2';
 
 @Component({
