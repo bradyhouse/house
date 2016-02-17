@@ -667,3 +667,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/angular2/fiddle-0014-CustomFormValidation](fiddles/angular2/fiddle-0014-CustomFormValidation)
     2.  Added [fiddles/angular2/fiddle-0015-NgModel](fiddles/angular2/fiddle-0015-NgModel)
     3.  Started [fiddles/angular2/fiddle-0016-PseudoChatApp](fiddles/angular2/fiddle-0016-PseudoChatApp)
+    4.  Added [fiddles/angular2/fiddle-0017-AjaxGetRequest](fiddles/angular2/fiddle-0017-AjaxGetRequest)

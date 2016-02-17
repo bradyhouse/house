@@ -1,0 +1,15 @@
+{
+  "name": "fiddle-0017-AjaxGetRequest",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.8.0",
+    "typescript": "1.6.2"
+  }
+}
