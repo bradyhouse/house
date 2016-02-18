@@ -18,7 +18,11 @@ Chicago, IL
 
 ### Description
 
-An Angular2 Fiddle exploring how to perform a simple AJAX get request.
+An Angular2 Fiddle exploring how to--
+
+ 1. "Subscribe" to a get request in order to download some JSON
+ 2. Dynamically configure the columns of an AgGrid control
+ 3. Populate the grid
 
 
 ### Published Version Link
