@@ -37,3 +37,9 @@
 [submodule "fiddles/angular2/libs/traceur-compiler"]
 	path = fiddles/angular2/libs/traceur-compiler
 	url = https://github.com/google/traceur-compiler.git
+[submodule "fiddles/angular2/libs/ag-grid"]
+	path = fiddles/angular2/libs/ag-grid
+	url = https://github.com/ceolter/ag-grid.git
+[submodule "fiddles/angular2/libs/ag-grid-angular2-beta-ts"]
+	path = fiddles/angular2/libs/ag-grid-angular2-beta-ts
+	url = https://github.com/helix46/ag-grid-angular2-beta-ts.git

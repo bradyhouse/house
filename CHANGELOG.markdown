@@ -658,7 +658,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/python/fiddle-0007-ScrapyTutorial](fiddles/python/fiddle-0007-ScrapyTutorial)
     2.  Added [fiddles/python/fiddle-0008-WikipediaScrapy](fiddles/python/fiddle-0008-WikipediaScrapy)
 * **bash**
-    *  Added [fiddles/bash/fiddle-0058-InstallJsBeautify](fiddles/bash/fiddle-0058-InstallJsBeautify)
+    1.  Added [fiddles/bash/fiddle-0058-InstallJsBeautify](fiddles/bash/fiddle-0058-InstallJsBeautify)
+    2.  Added [fiddles/bash/fiddle-0059-NpmDisableStrictSSL](fiddles/bash/fiddle-0059-NpmDisableStrictSSL)
 * **ExtJS 6**
     * Added [fiddles/extjs6/fiddle-0035-SimpleGrid](fiddles/extjs6/fiddle-0035-SimpleGrid)
 * **Three**
@@ -668,3 +669,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/angular2/fiddle-0015-NgModel](fiddles/angular2/fiddle-0015-NgModel)
     3.  Started [fiddles/angular2/fiddle-0016-PseudoChatApp](fiddles/angular2/fiddle-0016-PseudoChatApp)
     4.  Added [fiddles/angular2/fiddle-0017-AjaxGetRequest](fiddles/angular2/fiddle-0017-AjaxGetRequest)
+    5.  Added [fiddles/angular2/fiddle-0018-AgGrid](fiddles/angular2/fiddle-0018-AgGrid)

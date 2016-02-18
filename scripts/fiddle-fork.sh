@@ -24,7 +24,7 @@
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 01/19/2016 - See CHANGELOG @ 201601190420
 # 02/01/2016 - See CHANGELOG @ 201602010420
-# 02/13/2016
+# 02/13/2016 - See CHANGELOG @ 201602130420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -80,6 +80,15 @@ function getFiddle() {
     fi
 }
 
+function updateFile() {
+    file=$1
+    fiddleName=$2
+    targetFiddle=$3
+    if [[ -e "${file}" ]]
+    then
+        $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "${file}";) || exit 90
+    fi
+}
 fiddleType=$1
 fiddleCriteria=$2
 fiddleName=$(getFiddle;);
@@ -108,13 +117,13 @@ forkedOnDate=$(date +"%m-%d-%y";)
 
     case ${fiddleType} in
         'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
-            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/app.js";) || exit 90
-            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/index.html";) || exit 91
-            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?
             ;;
         'svg')
-            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/index.html";) || exit 91
-            $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
+           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?
+           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?
             ;;
         'ant'|'bash'|'python')
             if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ]]

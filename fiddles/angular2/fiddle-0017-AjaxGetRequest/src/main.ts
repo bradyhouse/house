@@ -1,5 +1,5 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {Component, enableProdMode, Injectable} from 'angular2/core';
+import {Component, enableProdMode, Injectable, OnInit} from 'angular2/core';
 import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
