@@ -1,4 +1,4 @@
-import {Component, Injectable} from 'angular2/core';
+import {Component, enableProdMode, Injectable} from 'angular2/core';
 import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 export class DataJsonApi {
     constructor(private http: Http) {}
     request() {
-        const endpoint = "data.json";
+        const endpoint = metadata.urls.data;
         return this.http
             .get(endpoint)
             .map(res => res.json());

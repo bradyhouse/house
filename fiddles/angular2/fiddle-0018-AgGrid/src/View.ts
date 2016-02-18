@@ -1,7 +1,6 @@
 import {Component} from 'angular2/core';
 import {DataJsonApi} from './DataJsonApi.ts';
 import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
-import * as core from 'angular2/core';
 
 
 @Component({

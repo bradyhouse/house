@@ -670,3 +670,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Started [fiddles/angular2/fiddle-0016-PseudoChatApp](fiddles/angular2/fiddle-0016-PseudoChatApp)
     4.  Added [fiddles/angular2/fiddle-0017-AjaxGetRequest](fiddles/angular2/fiddle-0017-AjaxGetRequest)
     5.  Added [fiddles/angular2/fiddle-0018-AgGrid](fiddles/angular2/fiddle-0018-AgGrid)
+    6.  Added [fiddles/angular2/fiddle-0019-ZingChart](fiddles/angular2/fiddle-0019-ZingChart)
