@@ -18,11 +18,7 @@ import {ZingChart} from './ZingChart';
             </div>
             <div class="row">
                 <ag-grid-ng2 class="ag-dark" style="height: {{height}}px; width: 100%;"
-                    [showToolPanel]="true"
-                    [enableFilter]="true"
-                    [enableColResize]="true"
-                    [rowSelection]="multiple"
-                    [enableSorting]="true"
+                    [gridOptions]="gridOptions"
                     [columnDefs]="columnDefs"
                     [rowData] = "rowData">
                 </ag-grid-ng2>
@@ -36,9 +32,6 @@ export class View implements OnInit {
     charts : Chart[];
     header : string;
     constructor(private dataJsonApi:DataJsonApi) {
-        this.height = window.innerHeight - 500;
-        this.header = metadata.fiddleHeader;
-
     }
     ngOnInit() {
         this.dataJsonApi.request().subscribe((res:Response) => {
@@ -54,7 +47,6 @@ export class View implements OnInit {
             }
         });
     }
-
     configureChart(data) {
 
         var ages = [],
@@ -114,6 +106,21 @@ export class View implements OnInit {
             });
         }
         return columns;
+    }
+    get gridOptions() {
+        return {
+            showToolPanel: true,
+            enableFilter: true,
+            enableColResize: true,
+            rowSelection: 'single',
+            enableSorting: true
+        }
+    }
+    get height() {
+        return window.innerHeight - 425;
+    }
+    get header() {
+        return metadata.fiddleHeader;
     }
 }
 

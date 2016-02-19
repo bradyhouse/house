@@ -12,7 +12,10 @@ import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
                 <h4 id="navbar">&nbsp;Angular 2 - AgGrid ({{total}} Records)</h4>
             </div>
             <div class="row">
-                <ag-grid-ng2 class="ag-fresh" style="height: {{height}}px; width: 100%;" [showToolPanel]="true" [enableFilter]="true" [enableColResize]="true" [rowSelection]="multiple" [enableSorting]="true"  [columnDefs]="columnDefs"   [rowData] = "rowData"></ag-grid-ng2>
+                <ag-grid-ng2 class="ag-dark" style="height: {{height}}px; width: 100%;"
+                [gridOptions]="gridOptions"
+                [columnDefs]="columnDefs"
+                [rowData] = "rowData"></ag-grid-ng2>
             </div>
         </div>
     </div>`,
@@ -20,9 +23,7 @@ import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
     providers: [HTTP_PROVIDERS, DataJsonApi]
 })
 export class View implements OnInit {
-    constructor(private dataJsonApi:DataJsonApi) {
-        this.height = window.innerHeight - 200;
-    }
+    constructor(private dataJsonApi:DataJsonApi) {}
     ngOnInit() {
         this.dataJsonApi.request().subscribe((res:Response) => {
             this.total = res.total;
@@ -46,6 +47,18 @@ export class View implements OnInit {
             });
         }
         return columns;
+    }
+    get height() {
+        return window.innerHeight - 125;
+    }
+    get gridOptions() {
+        return {
+            showToolPanel: true,
+            enableFilter: true,
+            enableColResize: true,
+            rowSelection: 'single',
+            enableSorting: true
+        }
     }
 }
 
