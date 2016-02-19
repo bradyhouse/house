@@ -23,6 +23,11 @@ An Angular2 Fiddle exploring how to--
  1. "Subscribe" to a get request in order to download some JSON
  2. Dynamically configure the columns of an AgGrid control
  3. Populate the grid
+ 4. Configure the grid to provide:
+    * filtering
+    * sorting
+    * resize
+    * column show/hide
 
 
 ### Published Version Link

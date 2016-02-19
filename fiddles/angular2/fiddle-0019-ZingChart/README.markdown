@@ -22,14 +22,21 @@ An Angular2 Fiddle exploring how to--
 
  1. "Subscribe" to a get request in order to download some JSON
  2. Dynamically configure the columns and rows of grid
- 3. Dynamically configure a zingchart control using the same data
+ 4. Configure the grid to provide:
+    * filtering
+    * sorting
+    * resize
+    * column show/hide
+ 5. Dynamically configure a zingchart control using the same data
+
 
 Note - Data for this plunk was generated using [http://www.json-generator.com/](http://www.json-generator.com/).
 
 
 ### Published Version Link
 
-[plnkr](http://embed.plnkr.co/AgPnJNaXcSRuG9wTyXhr/)
+[plnkr](http://embed.plnkr.co/Cq5nm5ka1MihLfSZUash/)
+
 
 ### Tags
 

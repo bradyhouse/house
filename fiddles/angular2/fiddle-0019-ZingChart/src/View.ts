@@ -17,7 +17,15 @@ import {ZingChart} from './ZingChart';
                 <zingchart *ngFor="#chartObj of charts" [chart]='chartObj'></zingchart>
             </div>
             <div class="row">
-                <ag-grid-ng2 class="ag-fresh" style="height: {{height}}px; width: 100%;" [enableSorting]="true"  [columnDefs]="columnDefs"   [rowData] = "rowData"></ag-grid-ng2>
+                <ag-grid-ng2 class="ag-dark" style="height: {{height}}px; width: 100%;"
+                    [showToolPanel]="true"
+                    [enableFilter]="true"
+                    [enableColResize]="true"
+                    [rowSelection]="multiple"
+                    [enableSorting]="true"
+                    [columnDefs]="columnDefs"
+                    [rowData] = "rowData">
+                </ag-grid-ng2>
             </div>
         </div>
     </div>`,
@@ -28,7 +36,7 @@ export class View implements OnInit {
     charts : Chart[];
     header : string;
     constructor(private dataJsonApi:DataJsonApi) {
-        this.height = window.innerHeight - 200;
+        this.height = window.innerHeight - 500;
         this.header = metadata.fiddleHeader;
 
     }

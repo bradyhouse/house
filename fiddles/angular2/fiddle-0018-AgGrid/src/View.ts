@@ -12,7 +12,7 @@ import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
                 <h4 id="navbar">&nbsp;Angular 2 - AgGrid ({{total}} Records)</h4>
             </div>
             <div class="row">
-                <ag-grid-ng2 class="ag-fresh" style="height: {{height}}px; width: 100%;" [enableSorting]="true"  [columnDefs]="columnDefs"   [rowData] = "rowData"></ag-grid-ng2>
+                <ag-grid-ng2 class="ag-fresh" style="height: {{height}}px; width: 100%;" [showToolPanel]="true" [enableFilter]="true" [enableColResize]="true" [rowSelection]="multiple" [enableSorting]="true"  [columnDefs]="columnDefs"   [rowData] = "rowData"></ag-grid-ng2>
             </div>
         </div>
     </div>`,
