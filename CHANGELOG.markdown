@@ -524,7 +524,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         10. Updated [fiddles/index.html](fiddles/index.html)
 * Added [fiddles/nativeScript](fiddles/nativeScript)
 * Added [fiddles/jquery/fiddle-0035-JqueryCSV](fiddles/jquery/fiddle-0035-JqueryCSV)
-* Added [fiddles/angular/fiddle-0001-SimpleGrid](fiddles/angular/fiddle-0001-SimpleGrid)
+* Added [fiddles/angular/fiddle-0001-SimpleUIGrid](fiddles/angular/fiddle-0001-SimpleUIGrid)
 * Started [fiddles/svg/fiddle-0025-15Puzzle](fiddles/svg/fiddle-0025-15Puzzle)
 * Added [fiddles/three/fiddle-0005-EarthMoon](fiddles/three/fiddle-0005-EarthMoon)
 * Added [fiddles/jquery/fiddle-0036-NavBar](fiddles/jquery/fiddle-0036-NavBar)
@@ -664,6 +664,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     * Added [fiddles/extjs6/fiddle-0035-SimpleGrid](fiddles/extjs6/fiddle-0035-SimpleGrid)
 * **Three**
     * Started [fiddles/three/fiddle-0013-ParticleExplosion](fiddles/three/fiddle-0013-ParticleExplosion)
+* **Angular**
+    1.  Added [fiddles/angular/fiddle-0002-ResizeableAgGrid](fiddles/angular/fiddle-0002-ResizeableAgGrid)
+    2.  Added dependency [angular-resizeable](https://github.com/Reklino/angular-resizable)
+        * [fiddles/angular/lib/angular-resizeable](fiddles/angular/lib/angular-resizeable)
 * **Angular 2**
     1.  Added [fiddles/angular2/fiddle-0014-CustomFormValidation](fiddles/angular2/fiddle-0014-CustomFormValidation)
     2.  Added [fiddles/angular2/fiddle-0015-NgModel](fiddles/angular2/fiddle-0015-NgModel)
@@ -671,3 +675,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/angular2/fiddle-0017-AjaxGetRequest](fiddles/angular2/fiddle-0017-AjaxGetRequest)
     5.  Added [fiddles/angular2/fiddle-0018-AgGrid](fiddles/angular2/fiddle-0018-AgGrid)
     6.  Added [fiddles/angular2/fiddle-0019-ZingChart](fiddles/angular2/fiddle-0019-ZingChart)
+    7.  Started [fiddles/angular2/fiddle-0020-LayoutContainer](fiddles/angular2/fiddle-0020-LayoutContainer)
+    8.  Started [fiddles/angular2/fiddle-0021-SplitterComponent](fiddles/angular2/fiddle-0021-SplitterComponent)
+

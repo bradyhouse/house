@@ -1,31 +1,35 @@
 import {Component} from 'angular2/core';
 import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
 import * as core from 'angular2/core';
-
+import {AppHeader} from './header/AppHeader';
+import {Navigation} from './navigation/Navigation';
 import {DataJsonApi} from './DataJsonApi';
 import {ZingChart} from './ZingChart';
 
 @Component({
     selector: 'app',
     template: `
-    <div class="enter-stage-south">
-        <div class="col-lg-12">
-            <div class="page-header">
-                <h4 id="navbar">&nbsp;{{header}}</h4>
-            </div>
-            <div class="row">
-                <zingchart *ngFor="#chartObj of charts" [chart]='chartObj'></zingchart>
-            </div>
-            <div class="row">
-                <ag-grid-ng2 class="ag-dark" style="height: {{height}}px; width: 100%;"
+    <r2d2-header></r2d2-header>
+    <r2d2-navigation></r2d2-navigation>
+      <div class="col-lg-10 r2d2-center">
+        <div class="panel panel-default">
+            <div class="enter-stage-south">
+                <div class="container-fluid">
+                <div class="row">
+                    <zingchart *ngFor="#chartObj of charts" [chart]='chartObj'></zingchart>
+                </div>
+                <div class="row">
+                    <ag-grid-ng2 class="ag-dark fill" style="width: 100%;"
                     [gridOptions]="gridOptions"
                     [columnDefs]="columnDefs"
                     [rowData] = "rowData">
-                </ag-grid-ng2>
+                    </ag-grid-ng2>
+                </div>
+                </div>
             </div>
         </div>
-    </div>`,
-    directives: [(<any>window).ag.grid.AgGridNg2, ZingChart],
+      </div>`,
+    directives: [(<any>window).ag.grid.AgGridNg2, ZingChart, AppHeader, Navigation],
     providers: [HTTP_PROVIDERS, DataJsonApi]
 })
 export class View implements OnInit {
@@ -93,8 +97,6 @@ export class View implements OnInit {
             },
             height : 300
         }]
-
-
     }
     parseColumns(rec) {
         var columns = [];
@@ -117,10 +119,11 @@ export class View implements OnInit {
         }
     }
     get height() {
-        return window.innerHeight - 425;
+        return window.innerHeight - 400;
     }
     get header() {
         return metadata.fiddleHeader;
     }
+
 }
 

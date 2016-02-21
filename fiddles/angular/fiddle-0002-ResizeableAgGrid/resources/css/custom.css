@@ -1,0 +1,174 @@
+@CHARSET "UTF-8";
+
+
+.grid {
+    height: 330px;
+}
+
+body {
+    background-color: darkblue;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.enter-stage-south {
+    -moz-animation-duration: 6s;
+    -webkit-animation-duration: 6s;
+    -moz-animation-name: slide-up;
+    -webkit-animation-name: slide-up;
+}
+
+@-moz-keyframes slide-up {
+    from {
+        margin-top: 130%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+@-webkit-keyframes slide-up {
+    from {
+        margin-top: 130%;
+    }
+    to {
+        margin-top: 0%;
+    }
+}
+
+.container {
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 100%;
+}
+
+.container.active {
+    left: 0;
+}
+
+.container .resizable {
+    position: relative;
+    margin-top: -10%;
+}
+
+.resizable {
+    text-align: center;
+    box-sizing: border-box;
+    width: 300px;
+    height: 250px;
+    background-color: mediumvioletred;
+    border-radius: 10px;
+}
+
+.inner {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 1em;
+    height: 100%;
+    width: 100%;
+}
+
+.toggle {
+    position: absolute;
+    z-index: 1;
+    top: 1em;
+    right: 1em;
+    color: #aaa;
+    text-decoration: none;
+}
+
+.toggle:hover {
+    color: #aaa;
+}
+
+.toggle .active {
+    color: #19b785;
+}
+
+.resizable {
+    position: absolute;
+}
+
+.resizable.no-transition {
+    transition: none !important;
+    background-color: #7bd389;
+}
+
+.rg-right, .rg-left, .rg-top, .rg-bottom {
+    display: block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    position: absolute;
+    z-index: 1;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: transparent;
+}
+
+.rg-right span, .rg-left span, .rg-top span, .rg-bottom span {
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid #ccc;
+}
+
+.rg-right span, .rg-left span {
+    border-width: 0 1px;
+    top: 50%;
+    margin-top: -10px;
+    margin: -10px 0 0 3.5px;
+    height: 20px;
+    width: 7px;
+}
+
+.rg-top span, .rg-bottom span {
+    border-width: 1px 0;
+    left: 50%;
+    margin: 3.5px 0 0 -10px;
+    width: 20px;
+    height: 7px;
+}
+
+.rg-top {
+    cursor: row-resize;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-top: -14px;
+}
+
+.rg-right {
+    cursor: col-resize;
+    height: 100%;
+    right: 0;
+    top: 0;
+    margin-right: -14px;
+}
+
+.rg-bottom {
+    cursor: row-resize;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -14px;
+}
+
+.rg-left {
+    cursor: col-resize;
+    height: 100%;
+    left: 0;
+    top: 0;
+    margin-left: -14px;
+}
+

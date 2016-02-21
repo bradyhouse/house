@@ -68,3 +68,8 @@ angular2.0.0-beta-6, typescript, component, bootstrap, enableProdMode, Injectabl
 ### Forked From
 
 [fiddle-0018-AgGrid](../fiddle-0018-AgGrid)
+
+
+### Forked From
+
+[fiddle-0019-ZingChart](../fiddle-0019-ZingChart)

@@ -1,4 +1,3 @@
-
 var metadata = {
     fiddleHeader: 'Angular 2 - AgGrid / ZingChart',
     urls: {
@@ -7,3 +6,4 @@ var metadata = {
     },
     consoleTag: 'H O U S E ~ f i d d l e s'
 };
+//# sourceMappingURL=meta.js.map

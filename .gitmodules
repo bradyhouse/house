@@ -43,3 +43,6 @@
 [submodule "fiddles/angular2/libs/ag-grid-angular2-beta-ts"]
 	path = fiddles/angular2/libs/ag-grid-angular2-beta-ts
 	url = https://github.com/helix46/ag-grid-angular2-beta-ts.git
+[submodule "fiddles/angular/libs/angular-resizable"]
+	path = fiddles/angular/libs/angular-resizable
+	url = https://github.com/Reklino/angular-resizable
