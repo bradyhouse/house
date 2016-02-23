@@ -660,6 +660,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **bash**
     1.  Added [fiddles/bash/fiddle-0058-InstallJsBeautify](fiddles/bash/fiddle-0058-InstallJsBeautify)
     2.  Added [fiddles/bash/fiddle-0059-NpmDisableStrictSSL](fiddles/bash/fiddle-0059-NpmDisableStrictSSL)
+    3.  Added [fiddles/bash/fiddle-0060-NodeVersionManagement](fiddles/bash/fiddle-0060-NodeVersionManagement)
+    4.  Added [fiddles/bash/fiddle-0061-InstallNpmCheckUpdates](fiddles/bash/fiddle-0061-InstallNpmCheckUpdates)
 * **ExtJS 6**
     * Added [fiddles/extjs6/fiddle-0035-SimpleGrid](fiddles/extjs6/fiddle-0035-SimpleGrid)
 * **Three**
@@ -668,6 +670,23 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/angular/fiddle-0002-ResizeableAgGrid](fiddles/angular/fiddle-0002-ResizeableAgGrid)
     2.  Added dependency [angular-resizeable](https://github.com/Reklino/angular-resizable)
         * [fiddles/angular/lib/angular-resizeable](fiddles/angular/lib/angular-resizeable)
+    3.  Added dependency [angular-phonecat](https://github.com/angular/angular-phonecat)
+        * [fiddles/angular/lib/angular-phonecat](fiddles/angular/lib/angular-phonecat)
+    4.  Added [fiddles/angular/fiddle-0003-PhoneCatIntro](fiddles/angular/fiddle-0003-PhoneCatIntro)
+    5.  Added [fiddles/angular/fiddle-0004-PhoneCatStep0](fiddles/angular/fiddle-0004-PhoneCatStep0)
+    6.  Added [fiddles/angular/fiddle-0005-PhoneCatStep1](fiddles/angular/fiddle-0005-PhoneCatStep1)
+    7.  Added [fiddles/angular/fiddle-0006-PhoneCatStep2](fiddles/angular/fiddle-0006-PhoneCatStep2)
+    8.  Added [fiddles/angular/fiddle-0007-PhoneCatStep3](fiddles/angular/fiddle-0007-PhoneCatStep3)
+    9.  Added [fiddles/angular/fiddle-0008-PhoneCatStep4](fiddles/angular/fiddle-0008-PhoneCatStep4)
+    10. Added [fiddles/angular/fiddle-0009-PhoneCatStep5](fiddles/angular/fiddle-0009-PhoneCatStep5)
+    11. Added [fiddles/angular/fiddle-0010-PhoneCatStep6](fiddles/angular/fiddle-0010-PhoneCatStep6)
+    12. Added [fiddles/angular/fiddle-0011-PhoneCatStep7](fiddles/angular/fiddle-0011-PhoneCatStep7)
+    13. Added [fiddles/angular/fiddle-0012-PhoneCatStep8](fiddles/angular/fiddle-0012-PhoneCatStep8)
+    14. Added [fiddles/angular/fiddle-0013-PhoneCatStep9](fiddles/angular/fiddle-0013-PhoneCatStep9)
+    15. Added [fiddles/angular/fiddle-0014-PhoneCatStep10](fiddles/angular/fiddle-0014-PhoneCatStep10)
+    16. Added [fiddles/angular/fiddle-0015-PhoneCatStep11](fiddles/angular/fiddle-0015-PhoneCatStep11)
+    17. Added [fiddles/angular/fiddle-0016-PhoneCatStep12](fiddles/angular/fiddle-0016-PhoneCatStep12)
+    19. Added [fiddles/angular/fiddle-0018-CustomTransclusion](fiddles/angular/fiddle-0018-CustomTransclusion)
 * **Angular 2**
     1.  Added [fiddles/angular2/fiddle-0014-CustomFormValidation](fiddles/angular2/fiddle-0014-CustomFormValidation)
     2.  Added [fiddles/angular2/fiddle-0015-NgModel](fiddles/angular2/fiddle-0015-NgModel)
@@ -677,4 +696,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added [fiddles/angular2/fiddle-0019-ZingChart](fiddles/angular2/fiddle-0019-ZingChart)
     7.  Started [fiddles/angular2/fiddle-0020-LayoutContainer](fiddles/angular2/fiddle-0020-LayoutContainer)
     8.  Started [fiddles/angular2/fiddle-0021-SplitterComponent](fiddles/angular2/fiddle-0021-SplitterComponent)
+* **jQuery**
+    1.  Added [fiddles/jquery/fiddle-0037-ShadowDom](fiddles/jquery/fiddle-0037-ShadowDom)
 

@@ -15,16 +15,16 @@ import {ZingChart} from './ZingChart';
         <div class="panel panel-default">
             <div class="enter-stage-south">
                 <div class="container-fluid">
-                <div class="row">
-                    <zingchart *ngFor="#chartObj of charts" [chart]='chartObj'></zingchart>
-                </div>
-                <div class="row">
-                    <ag-grid-ng2 class="ag-dark fill" style="width: 100%;"
-                    [gridOptions]="gridOptions"
-                    [columnDefs]="columnDefs"
-                    [rowData] = "rowData">
-                    </ag-grid-ng2>
-                </div>
+                    <div class="row">
+                        <zingchart *ngFor="#chartObj of charts" [chart]='chartObj'></zingchart>
+                    </div>
+                    <div class="row">
+                        <ag-grid-ng2 class="ag-dark fill" style="width: 100%; flex-direction: column; flex-grow: 1;"
+                        [gridOptions]="gridOptions"
+                        [columnDefs]="columnDefs"
+                        [rowData] = "rowData">
+                        </ag-grid-ng2>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@ Chicago, IL
 
 ### Description
 
-Simple shell script for using npm to install [live-server](https://www.npmjs.com/package/live-server) using npm.
+A simple shell script for using npm to install [live-server](https://www.npmjs.com/package/live-server) using npm.
 
 
 ### Tags
