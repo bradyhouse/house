@@ -56,18 +56,11 @@ generator script block was used:
 
 ### Published Version Link
 
-[plnkr](http://embed.plnkr.co/Cq5nm5ka1MihLfSZUash/)
-
+N/A
 
 ### Tags
 
 angular2.0.0-beta-6, typescript, component, bootstrap, enableProdMode, Injectable, Http, Header, HTTP_PROVIDER, rxjs, ag-grid, ag.grid.AgGridNg2, ZingChart
-
-
-
-### Forked From
-
-[fiddle-0018-AgGrid](../fiddle-0018-AgGrid)
 
 
 ### Forked From

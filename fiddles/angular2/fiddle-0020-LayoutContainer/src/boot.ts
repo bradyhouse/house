@@ -8,8 +8,6 @@ console.log("%c" + meta.consoleTag, 'font-style: italic; font-size: 20px;');
 console.log("%c" + meta.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
 console.group();
 
-declare var ag: any;
-ag.grid.initialiseAgGridWithAngular2({ core: core });
 
 enableProdMode();
 bootstrap(View)
