@@ -1,7 +1,6 @@
 fiddle-0004-PhoneCatStep0
 ======
 
-
 ### Title
 
 Angular PhoneCat (Step 0)

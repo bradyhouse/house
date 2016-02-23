@@ -1,9 +1,6 @@
 fiddle-0003-PhoneCatIntro
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 Angular PhoneCat Intro / Setup
