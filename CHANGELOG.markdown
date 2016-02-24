@@ -697,6 +697,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     9.  Added [fiddles/angular2/fiddle-0022-MicroApp](fiddles/angular2/fiddle-0022-MicroApp)
     10. Added [fiddles/angular2/fiddle-0023-SelectList](fiddles/angular2/fiddle-0023-SelectList)
     11. Added [fiddles/angular2/fiddle-0024-DashboardLayout](fiddles/angular2/fiddle-0024-DashboardLayout)
+    12. Added [fiddles/angular2/fiddle-0025-TreeView](fiddles/angular2/fiddle-0025-TreeView)
 * **jQuery**
     1.  Added [fiddles/jquery/fiddle-0037-ShadowDom](fiddles/jquery/fiddle-0037-ShadowDom)
 
