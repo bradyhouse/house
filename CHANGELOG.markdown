@@ -686,7 +686,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     15. Added [fiddles/angular/fiddle-0014-PhoneCatStep10](fiddles/angular/fiddle-0014-PhoneCatStep10)
     16. Added [fiddles/angular/fiddle-0015-PhoneCatStep11](fiddles/angular/fiddle-0015-PhoneCatStep11)
     17. Added [fiddles/angular/fiddle-0016-PhoneCatStep12](fiddles/angular/fiddle-0016-PhoneCatStep12)
-    19. Added [fiddles/angular/fiddle-0018-CustomTransclusion](fiddles/angular/fiddle-0018-CustomTransclusion)
+    18. Added [fiddles/angular/fiddle-0018-CustomTransclusion](fiddles/angular/fiddle-0018-CustomTransclusion)
 * **Angular 2**
     1.  Added [fiddles/angular2/fiddle-0014-CustomFormValidation](fiddles/angular2/fiddle-0014-CustomFormValidation)
     2.  Added [fiddles/angular2/fiddle-0015-NgModel](fiddles/angular2/fiddle-0015-NgModel)
@@ -694,8 +694,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/angular2/fiddle-0017-AjaxGetRequest](fiddles/angular2/fiddle-0017-AjaxGetRequest)
     5.  Added [fiddles/angular2/fiddle-0018-AgGrid](fiddles/angular2/fiddle-0018-AgGrid)
     6.  Added [fiddles/angular2/fiddle-0019-ZingChart](fiddles/angular2/fiddle-0019-ZingChart)
-    7.  Started [fiddles/angular2/fiddle-0020-LayoutContainer](fiddles/angular2/fiddle-0020-LayoutContainer)
-    8.  Started [fiddles/angular2/fiddle-0021-SplitterComponent](fiddles/angular2/fiddle-0021-SplitterComponent)
+    9.  Added [fiddles/angular2/fiddle-0022-MicroApp](fiddles/angular2/fiddle-0022-MicroApp)
+    10. Added [fiddles/angular2/fiddle-0023-SelectList](fiddles/angular2/fiddle-0023-SelectList)
+    11. Added [fiddles/angular2/fiddle-0024-DashboardLayout](fiddles/angular2/fiddle-0024-DashboardLayout)
 * **jQuery**
     1.  Added [fiddles/jquery/fiddle-0037-ShadowDom](fiddles/jquery/fiddle-0037-ShadowDom)
 

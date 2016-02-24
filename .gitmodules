@@ -46,3 +46,6 @@
 [submodule "fiddles/angular/libs/angular-resizable"]
 	path = fiddles/angular/libs/angular-resizable
 	url = https://github.com/Reklino/angular-resizable
+[submodule "fiddles/angular2/libs/angular-ui-tree"]
+	path = fiddles/angular2/libs/angular-ui-tree
+	url = https://github.com/angular-ui-tree/angular-ui-tree.git
