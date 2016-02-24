@@ -1,17 +1,13 @@
-fiddle-0021-SplitterComponent
-======
-
-![Screenshot](screenshot.png)
-
+fiddle-0023-SelectList
 
 ### Title
 
-fiddle-0021-SplitterComponent
+Select List
 
 
 ### Creation Date
 
-02-19-16
+02-23-16
 
 
 ### Location
@@ -21,7 +17,7 @@ Chicago, IL
 
 ### Description
 
-Another Angular2 Fiddle.
+Fiddle exploring how to create a simple select list control.
 
 
 ### Published Version Link
@@ -33,10 +29,6 @@ N/A
 
 angular v2.0.0-39, typescript, component, view, bootstrap
 
-
-### Forked From
-
-[fiddle-0021-SplitterComponent](../fiddle-0021-SplitterComponent)
 
 
 ### Forked From
