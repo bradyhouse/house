@@ -29,10 +29,12 @@ import {ZingChart} from './ZingChart';
     providers: [HTTP_PROVIDERS, DataJsonApi]
 })
 export class View implements OnInit {
-    charts : Chart[];
-    header : string;
+    charts:Chart[];
+    header:string;
+
     constructor(private dataJsonApi:DataJsonApi) {
     }
+
     ngOnInit() {
         this.dataJsonApi.request().subscribe((res:Response) => {
             this.total = res.total;
@@ -47,26 +49,27 @@ export class View implements OnInit {
             }
         });
     }
+
     configureChart(data) {
 
         var ages = [],
             checking = [],
             savings = [];
 
-        data.map(function(item) {
+        data.map(function (item) {
             ages.push(item.age);
             checking.push(item.checking);
             savings.push(item.savings);
         });
 
         this.charts = [{
-            id : 'chart-1',
+            id: 'chart-1',
             align: 'center',
             width: "100%",
-            data : {
+            data: {
                 type: 'line',
-                "plotarea":{
-                    "adjust-layout":true
+                "plotarea": {
+                    "adjust-layout": true
                 },
                 padding: "40px",
                 "scale-x": {
@@ -91,11 +94,12 @@ export class View implements OnInit {
                     values: checking
                 }]
             },
-            height : 300
+            height: 300
         }]
 
 
     }
+
     parseColumns(rec) {
         var columns = [];
         if (rec) {
@@ -107,6 +111,7 @@ export class View implements OnInit {
         }
         return columns;
     }
+
     get gridOptions() {
         return {
             showToolPanel: true,
@@ -116,9 +121,11 @@ export class View implements OnInit {
             enableSorting: true
         }
     }
+
     get height() {
         return window.innerHeight - 425;
     }
+
     get header() {
         return metadata.fiddleHeader;
     }

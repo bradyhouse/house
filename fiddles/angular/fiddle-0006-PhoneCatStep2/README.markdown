@@ -19,7 +19,7 @@ Chicago, IL
 
 ### Description
 
-Fiddle based on step 1 of the [Angular PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/step_02).
+Fiddle based on step 2 of the [Angular PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/step_02).
 
 
 ### Dependencies

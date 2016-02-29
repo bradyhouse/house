@@ -1,10 +1,10 @@
-fiddle-0008-PhoneCatStep4
+fiddle-0007-FullTextSearch
 ======
 
 
 ### Title
 
-Angular PhoneCat (Step 4)
+Angular PhoneCat (Step 3)
 
 
 ### Creation Date
@@ -19,7 +19,8 @@ Chicago, IL
 
 ### Description
 
-Fiddle based on step 4 of the [Angular PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/step_04).
+Fiddle based on step 3 of the [Angular PhoneCat Tutorial App](https://docs.angularjs.org/tutorial/step_03).
+Specifically, it explores how to implement a "full text" search box.
 
 
 ### Dependencies
@@ -34,9 +35,8 @@ In order to run this fiddle, your machine needs to be configured with the apps a
 1.  execute [setup.sh](setup.sh)
     * This will:
         1.  clone the angular-phonecat repo @ step 14
-        2.  checkout step 4
+        2.  checkout step 3
         3.  install the repo's dependencies
-        4.  update the web driver
 
 2.  execute [run.sh](run.sh)
     * This will:
@@ -66,8 +66,3 @@ angular 1.5.1, phonecat, step 0, node.js-v0.10.27+, karma, protractor
 ### Forked From
 
 [fiddle-0006-PhoneCatStep2](../fiddle-0006-PhoneCatStep2)
-
-
-### Forked From
-
-[fiddle-0007-PhoneCatStep3](../fiddle-0007-PhoneCatStep3)

@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+
+.treeview {
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    color: black;
+    background-color: white;
+    font-style: normal;
+}
+
+.treeview li {
+    font-size: .9em;
+}
+

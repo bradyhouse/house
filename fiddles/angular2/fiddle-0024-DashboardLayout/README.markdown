@@ -55,7 +55,6 @@ generator script block was used:
      ]
 
 
-
 ### Published Version Link
 
 [plnkr.co](http://embed.plnkr.co/ALJtYKMCFlWfy18o3VPB/)

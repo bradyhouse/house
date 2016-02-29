@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+body {
+    padding: 2rem;
+}
+.treeview {
+    list-style: none;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    justify-content: flex-end;
+}
+

@@ -676,8 +676,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added [fiddles/angular/fiddle-0004-PhoneCatStep0](fiddles/angular/fiddle-0004-PhoneCatStep0)
     6.  Added [fiddles/angular/fiddle-0005-PhoneCatStep1](fiddles/angular/fiddle-0005-PhoneCatStep1)
     7.  Added [fiddles/angular/fiddle-0006-PhoneCatStep2](fiddles/angular/fiddle-0006-PhoneCatStep2)
-    8.  Added [fiddles/angular/fiddle-0007-PhoneCatStep3](fiddles/angular/fiddle-0007-PhoneCatStep3)
-    9.  Added [fiddles/angular/fiddle-0008-PhoneCatStep4](fiddles/angular/fiddle-0008-PhoneCatStep4)
+    8.  Added [fiddles/angular/fiddle-0007-FullTextSearch](fiddles/angular/fiddle-0007-FullTextSearch)
+    9.  Added [fiddles/angular/fiddle-0008-2WayDatabinding](fiddles/angular/fiddle-0008-2WayDatabinding)
     10. Added [fiddles/angular/fiddle-0009-PhoneCatStep5](fiddles/angular/fiddle-0009-PhoneCatStep5)
     11. Added [fiddles/angular/fiddle-0010-PhoneCatStep6](fiddles/angular/fiddle-0010-PhoneCatStep6)
     12. Added [fiddles/angular/fiddle-0011-PhoneCatStep7](fiddles/angular/fiddle-0011-PhoneCatStep7)
@@ -697,7 +697,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     9.  Added [fiddles/angular2/fiddle-0022-MicroApp](fiddles/angular2/fiddle-0022-MicroApp)
     10. Added [fiddles/angular2/fiddle-0023-SelectList](fiddles/angular2/fiddle-0023-SelectList)
     11. Added [fiddles/angular2/fiddle-0024-DashboardLayout](fiddles/angular2/fiddle-0024-DashboardLayout)
-    12. Added [fiddles/angular2/fiddle-0025-TreeView](fiddles/angular2/fiddle-0025-TreeView)
+    12. Added [fiddles/angular2/fiddle-0025-TreeComponent](fiddles/angular2/fiddle-0025-TreeComponent)
 * **jQuery**
     1.  Added [fiddles/jquery/fiddle-0037-ShadowDom](fiddles/jquery/fiddle-0037-ShadowDom)
 
