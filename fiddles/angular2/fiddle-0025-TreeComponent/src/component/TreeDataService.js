@@ -5,23 +5,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var TreeNodeCheckedPipe = (function () {
-    function TreeNodeCheckedPipe() {
-        this.store = [];
+require('rxjs/add/operator/map');
+var TreeDataService = (function () {
+    function TreeDataService(http) {
+        this.http = http;
     }
-    TreeNodeCheckedPipe.prototype.transform = function (node) {
-        this.store.length = 0;
-        (_a = this.store).push.apply(_a, node.filter(function (node) { return node.checked; }));
-        return this.store;
-        var _a;
+    TreeDataService.prototype.request = function (url) {
+        return this.http
+            .get(url)
+            .map(function (res) { return res.json(); });
     };
-    TreeNodeCheckedPipe = __decorate([
-        core_1.Pipe({
-            name: 'treeNodeChecked',
-            pure: false
-        })
-    ], TreeNodeCheckedPipe);
-    return TreeNodeCheckedPipe;
+    TreeDataService = __decorate([
+        core_1.Injectable()
+    ], TreeDataService);
+    return TreeDataService;
 })();
-exports.TreeNodeCheckedPipe = TreeNodeCheckedPipe;
-//# sourceMappingURL=TreeNodeCheckedPipe.js.map
+exports.TreeDataService = TreeDataService;
+//# sourceMappingURL=TreeDataService.js.map

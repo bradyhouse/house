@@ -9,22 +9,22 @@ import {TreeDataService} from './TreeDataService';
 @Component({
     selector: 'tree',
     template: `
-        <table class="tree-table">
+        <table class="{{uiClassPrefix}}-table">
             <tr>
-                <td nowrap="true" class="tree-toolbar">
-                    <input id="queryEl" type="text" placeholder="Search" #queryEl (keyup)="0">&nbsp;
-                    <button class="btn btn-default btn-xs" (click)="onShowSelectedClick()">
+                <td nowrap="true" class="{{uiClassPrefix}}-toolbar">
+                    <input class="{{uiClassPrefix}}-search-field" id="queryEl" type="text" placeholder="Search" #queryEl (keyup)="0">&nbsp;
+                    <button class="{{uiClassPrefix}}-btn btn btn-default btn-xs" (click)="onShowSelectedClick()">
                         <span class="fa fa-list-ul" title="Show selected"></span>
                     </button>&nbsp;
-                    <button class="btn btn-default btn-xs" (click)="onResetClick()">
+                    <button class="{{uiClassPrefix}}-btn btn btn-default btn-xs" (click)="onResetClick()">
                         <span class="fa fa-times" title="Unselect all"></span>
                     </button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div id="scrollbox" class="tree-scrollbox" style=" height: {{height}}px;">
-                    <treeview [store]="root.nodes" [queryEl]="queryEl" [isChecked]="isChecked"></treeview>
+                    <div id="scrollbox" class="{{uiClassPrefix}}-scrollbox" style=" height: {{height}}px;">
+                    <treeview [store]="root.nodes" [uiClassPrefix]="uiClassPrefix" [queryEl]="queryEl" [isChecked]="isChecked"></treeview>
                     </div>
                 </td>
             </tr>
@@ -32,7 +32,7 @@ import {TreeDataService} from './TreeDataService';
 
   `,
     directives: [TreeView],
-    inputs: ['height', 'uiClass', 'url'],
+    inputs: ['height', 'uiClassPrefix', 'url'],
     providers: [HTTP_PROVIDERS, TreeDataService]
 })
 export class Tree implements OnInit {
@@ -41,7 +41,7 @@ export class Tree implements OnInit {
     isChecked:Boolean = false;
     height:number;
     url:String;
-    uiClass:String;
+    uiClassPrefix:String;
 
     constructor(private service:TreeDataService) {
         this.root = new TreeNode("root", [], null);

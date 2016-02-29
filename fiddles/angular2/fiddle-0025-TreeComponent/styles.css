@@ -1,9 +1,13 @@
 @CHARSET "UTF-8";
 
-.tree {
+.tree-table {
     background-color: gainsboro;
     color: black;
     width: 350px;
+}
+
+.tree-search-field {
+    width: 80%;
 }
 
 .tree-view {
