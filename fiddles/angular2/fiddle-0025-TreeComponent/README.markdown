@@ -1,6 +1,8 @@
 fiddle-0025-TreeComponent
 ======
 
+![Screenshot](screenshot.png)
+
 ### Title
 
 Tree Component
@@ -36,7 +38,7 @@ An Angular2 Fiddle exploring how to--
         * On first click, it hides all unchecked nodes
         * Clicking a second time, unhides anything hidden
     * Includes a "Reset" button
-        * Clicking returns the tree
+        * Clicking returns the tree to it's initial state
 
 Note - Data for this fiddle was generated using [http://www.json-generator.com/](http://www.json-generator.com/). The
 recipe:
