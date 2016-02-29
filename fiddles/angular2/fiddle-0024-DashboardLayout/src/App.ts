@@ -19,4 +19,4 @@ import {Header} from './component/Header';
   `,
     directives: [Header, Content]
 })
-export class Fiddle {}
+export class App {}

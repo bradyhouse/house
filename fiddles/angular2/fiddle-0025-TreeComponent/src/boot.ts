@@ -1,6 +1,6 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {enableProdMode} from 'angular2/core';
-import {Fiddle} from './Fiddle';
+import {App} from './App';
 import * as meta from './meta';
 import * as core from 'angular2/core';
 
@@ -10,7 +10,7 @@ console.group();
 
 
 enableProdMode();
-bootstrap(Fiddle)
+bootstrap(App)
     .catch(err => console.error(err));
 
 

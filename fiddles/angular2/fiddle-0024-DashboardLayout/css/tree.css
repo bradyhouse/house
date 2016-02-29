@@ -2,8 +2,6 @@
 
 .tree {
     background-color: gainsboro;
-    color: black;
-    width: 350px;
 }
 
 .tree-view {
@@ -17,7 +15,6 @@
 
 .tree-view li {
     font-size: .9em;
-    color: black;
 }
 
 .tree-scrollbox {

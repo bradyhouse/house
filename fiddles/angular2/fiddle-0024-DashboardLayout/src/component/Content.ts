@@ -2,25 +2,18 @@ import {Component, View} from 'angular2/core';
 import * as core from 'angular2/core';
 import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
 import {Chart} from './Chart';
-import {TreeView} from './TreeView';
-import {TreeNode} from './TreeNode';
+import {Tree} from './tree/Tree';
+import {TreeNode} from './tree/TreeNode';
 import {DataJsonApi} from './DataJsonApi';
+import * as meta from '../meta';
+
 
 
 @Component({
     selector: 'content',
     template: `
      <div class="wrapper" style="height: {{height}}px;">
-        <div class="west col-sm-1">
-            <p>Search: <input style="width: 60%;" (change)="onSearchChange()">&nbsp;
-            <a href="#" class="btn btn-primary btn-xs" (click)="onShowSelectedClick">
-                <span class="fa fa-list-ul" title="Show selected"></span>
-            </a>&nbsp;
-            <a href="#" class="btn btn-default btn-xs" (click)="onResetClick">
-                <span class="fa fa-times" title="Unselect all"></span>
-            </a></p>
-            <treeview [store]="treeNodes" [height]="treeViewHeight"></treeview>
-        </div>
+        <tree [uiClass]="treeClass" [height]="treeHeight" [url]="treeUrl"></tree>
         <div class="main">
                 <chart *ngFor="#chartObj of charts" [model]='chartObj'
                     style="width: 100%; height: {{mainItemHeight}}px;">
@@ -33,14 +26,16 @@ import {DataJsonApi} from './DataJsonApi';
                 </ag-grid-ng2>
         </div>
     </div>`,
-    directives: [(<any>window).ag.grid.AgGridNg2, Chart, TreeView],
+    directives: [(<any>window).ag.grid.AgGridNg2, Chart, Tree],
     providers: [HTTP_PROVIDERS, DataJsonApi]
 })
 export class Content implements OnInit {
     charts:Chart[];
 
     constructor(private dataJsonApi:DataJsonApi) {
-        this.treeNodes = [];
+        this.treeNodes=[]
+        this.treeUrl=meta.urls.data;
+        this.treeClass= "west col-sm-1";
     }
 
     ngOnInit() {
@@ -100,7 +95,7 @@ export class Content implements OnInit {
 
                     }
                 },
-                backgroundColor: "#ffffcc",
+                backgroundColor: "#ffffff",
                 tooltip: {
                     padding: 5,
                     offsetY: -5,
@@ -145,23 +140,12 @@ export class Content implements OnInit {
         return window.innerHeight - 60;
     }
 
-    get treeViewHeight() {
+    get treeHeight() {
         return this.height - 50;
     }
 
     get mainItemHeight() {
         return Math.floor(this.height / 2);
-    }
-
-    onSearchChange() {
-        console.log('onSearchChange');
-    }
-    onResetClick() {
-        console.log('onResetClick');
-
-    }
-    onShowSelectedClick() {
-        console.log('onShowSelectedClick');
     }
 
 }
