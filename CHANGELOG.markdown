@@ -322,7 +322,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     * Note - I have forgotten what these scripts do. I haven't used them and therefore, no point in maintaining.
     * Reflected changes:
         1. [scripts/README.markdown](scripts/README.markdown)
-* Added [fiddles/extjs6/fiddle-0001-HelloWorld](fiddles/extjs6/fiddle-0001-HelloWorld)
 
 ### 201507260420
 
@@ -615,7 +614,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular 2**
     1.  Added dependency to [systemjs](https://github.com/systemjs/systemjs)
     2.  Added dependency to [traceur-compiler](https://github.com/google/traceur-compiler.git)
-    3.  Added [fiddles/angular2/fiddle-0001-HelloWorld](fiddles/angular2/fiddle-0001-HelloWorld)
     4.  Added [fiddles/angular2/fiddle-0002-PoormanReddit](fiddles/angular2/fiddle-0002-PoormanReddit)
 * **ExtJS 6**
     1.  Added [fiddles/extjs6/fiddle-0033-CSVExporter](fiddles/extjs6/fiddle-0033-CSVExporter)
@@ -701,3 +699,37 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **jQuery**
     1.  Added [fiddles/jquery/fiddle-0037-ShadowDom](fiddles/jquery/fiddle-0037-ShadowDom)
 
+### 201603020420
+
+* **fiddle.sh**
+    1.  Added [fiddles/d3](fiddles/d3)
+        * Reflected changes:
+            1.  Added [scripts/fiddle-d3.sh](scripts/fiddle-d3.sh)
+            2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            3.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+            4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            5.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            6.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            7.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            8.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+* **d3**
+    1.  Added dependency to [d3-cookbook](https://github.com/NickQiZhu/d3-cookbook)
+        *   [fiddles/d3/libs/d3-cookbook](fiddles/d3/libs/d3-cookbook)
+    2.  Added dependency (submodule) to [d3](https://github.com/mbostock/d3)
+        *   [fiddles/d3/libs/d3]([fiddles/d3/libs/d3)
+    3.  Added dependency (submodule) to [sizzlejs](https://github.com/jquery/sizzle/tree/master)
+        *   [fiddles/d3/libs/sizzle](fiddles/d3/libs/sizzle)
+    4.  Added [fiddles/d3/fiddle-0001-SelectAppend](fiddles/d3/fiddle-0001-SelectAppend)
+    5.  Added [fiddles/d3/fiddle-0002-SingleSelection](fiddles/d3/fiddle-0002-SingleSelection)
+    6.  Added [fiddles/d3/fiddle-0003-MultipleSelect](fiddles/d3/fiddle-0003-MultipleSelect)
+    7.  Added [fiddles/d3/fiddle-0004-SelectionIteration](fiddles/d3/fiddle-0004-SelectionIteration)
+    8.  Added [fiddles/d3/fiddle-0005-SubSelection](fiddles/d3/fiddle-0005-SubSelection)
+    9.  Added [fiddles/d3/fiddle-0006-FunctionChain](fiddles/d3/fiddle-0006-FunctionChain)
+    10. Added [fiddles/d3/fiddle-0007-EnterUpdateExit](fiddles/d3/fiddle-0007-EnterUpdateExit)
+    11. Added [fiddles/d3/fiddle-0008-ObjectBinding](fiddles/d3/fiddle-0008-ObjectBinding)
+    12. Added dependency (submodule) to [nvd3](https://github.com/novus/nvd3)
+        * [fiddles/d3/libs/nvd3](fiddles/d3/libs/nvd3)
+* **Bash**
+    *   Added [fiddles/bash/fiddle-0062-PsuedoDatabase](fiddles/bash/fiddle-0062-PsuedoDatabase)
+* **Angular2**
+    *   Added [fiddles/angular2/fiddle-0026-Nvd3Component](fiddles/angular2/fiddle-0026-Nvd3Component)

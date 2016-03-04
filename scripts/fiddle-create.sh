@@ -23,6 +23,7 @@
 # 01/17/2016 - See CHANGELOG @ 201601100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 02/13/2016 - See CHANGELOG @ 201602130420
+# 03/02/2016 - See CHANGELOG @ 201603020420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -44,6 +45,10 @@ echo "${thisFile}" | awk '{print toupper($0)}'
         'compass')
             ./fiddle-compass.sh $2 || exit 87
             ./fiddle-index.sh "compass" || exit 87
+            ;;
+        'd3')
+            ./fiddle-d3.sh $2 || exit 87
+            ./fiddle-index.sh "d3" || exit 87
             ;;
         'extjs5')
             ./fiddle-extjs-5.sh $2 || exit 87
@@ -116,6 +121,7 @@ case ${_rc} in
         echo -e "\t\"angular2\"\t\tAngular2 Fiddle"
         echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
+        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"

@@ -25,6 +25,7 @@
 # 01/19/2016 - See CHANGELOG @ 201601190420
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 02/13/2016 - See CHANGELOG @ 201602130420
+# 03/02/2016 - See CHANGELOG @ 201603020420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -45,6 +46,7 @@ then
     echo -e "\t\"ant\"\t\tAnt Fiddle"
     echo -e "\t\"bash\"\t\tBash Fiddle"
     echo -e "\t\"compass\"\tCompass Fiddle"
+    echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
     echo -e "\t\"extjs\"\t\tExt JS Fiddle"
     echo -e "\t\"php\"\t\tPHP Fiddle"
@@ -116,7 +118,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'chrome')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?

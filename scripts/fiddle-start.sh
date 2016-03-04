@@ -20,6 +20,7 @@
 # 07/26/2015 - See CHANGELOG.MARKDOWN @ 201507260420
 # 12/06/2015 - See CHANGELOG.MARKDOWN @ 201511100420
 # 02/13/2016 - See CHANGELOG.MARKDOWN @ 201602130420
+# 03/02/2016 - See CHANGELOG.MARKDOWN @ 201603020420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 _path=$(pwd;)  # Capture Path
@@ -130,6 +131,7 @@ case ${rc} in
         echo -e "\t\"all\"\t\tStartup all Fiddles"
         echo -e "\t\"angular\"\t\tAngular Fiddle"
         echo -e "\t\"angular2\"\t\tAngular 2 Fiddle"
+        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"

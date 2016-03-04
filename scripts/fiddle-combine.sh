@@ -14,6 +14,7 @@
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 12/06/2015 - See CHANGELOG @ 201511100420
 # 02/13/2016 - See CHANGELOG @ 201602130420
+# 03/02/2016 - See CHANGELOG @ 201603020420
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -203,6 +204,7 @@ function catch() {
             echo ""
             echo -e "\t\"angular\"\tAngular Fiddle"
             echo -e "\t\"angular2\"\tAngular 2 Fiddle"
+            echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
             echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
             echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
             echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
@@ -255,7 +257,7 @@ srcDir="${fiddlePath}/src"
             cd ${fiddlePath};
             tsc || exit 93;
 	        ;;
-	    'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
+	    'd3' | 'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
 	        # Verify the src directory exists
             if [[ ! -d "${srcDir}" ]]; then exit 87; fi
             cd ${fiddlePath};

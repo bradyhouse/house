@@ -19,6 +19,7 @@
 # 12/06/2015 - See CHANGELOG @ 201511100420
 # 01/17/2016 - See CHANGELOG @ 201601100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
+# 03/02/2016 - See CHANGELOG @ 201603020420
 # ---------------------------------------------------------------------------------------------------|
 
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -99,6 +100,7 @@ case ${_rc} in
         echo -e "\t\"angular\"\tAngular Fiddle"
         echo -e "\t\"angular2\"\tAngular 2 Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
+        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"

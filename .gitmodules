@@ -49,3 +49,15 @@
 [submodule "fiddles/angular2/libs/angular-ui-tree"]
 	path = fiddles/angular2/libs/angular-ui-tree
 	url = https://github.com/angular-ui-tree/angular-ui-tree.git
+[submodule "fiddles/d3/libs/d3-cookbook"]
+	path = fiddles/d3/libs/d3-cookbook
+	url = https://github.com/NickQiZhu/d3-cookbook
+[submodule "fiddles/d3/libs/d3"]
+	path = fiddles/d3/libs/d3
+	url = https://github.com/mbostock/d3.git
+[submodule "fiddles/d3/libs/sizzle"]
+	path = fiddles/d3/libs/sizzle
+	url = https://github.com/jquery/sizzle.git
+[submodule "fiddles/d3/libs/nvd3"]
+	path = fiddles/d3/libs/nvd3
+	url = https://github.com/novus/nvd3.git

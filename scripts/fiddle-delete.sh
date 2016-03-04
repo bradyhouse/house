@@ -22,6 +22,7 @@
 # 11/26/2015 - See CHANGELOG @ 201511100420
 # 01/17/2016 - See CHANGELOG @ 201601100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
+# 03/02/2016 - See CHANGELOG @ 201603020420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -67,13 +68,13 @@ changeLogFile="../CHANGELOG.markdown"
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'python' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'python' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
         if [[ -d "${fiddlePath}" ]]
         then
             rm -r "${fiddlePath}" || exit 87
         fi
         case ${fiddleType} in
-            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
+            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'd3' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 88
             ;;
         esac
@@ -104,6 +105,7 @@ case ${_rc} in
         echo -e "\t\"ant\"\t\tAnt Fiddle"
         echo -e "\t\"bash\"\t\tBash Fiddle"
         echo -e "\t\"compass\"\tCompass Fiddle"
+        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 6 Fiddle"

@@ -19,6 +19,7 @@
 # 07/26/2015 - See CHANGELOG @ 201507260420
 # 12/06/2015 - See CHANGELOG @ 201511100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
+# 03/02/2016 - See CHANGELOG @ 201603020420
 # ---------------------------------------------------------------------------------------------------|
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
@@ -37,6 +38,7 @@ then
     echo -e "\t\"angular\"\tAngular fiddle"
     echo -e "\t\"angular2\"\tAngular 2 fiddle"
     echo -e "\t\"compass\"\tCompass Fiddle"
+    echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
     echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
     echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
@@ -65,7 +67,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'svg')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;

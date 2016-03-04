@@ -1,12 +1,13 @@
 export class TreeNode {
 
-    expanded: boolean = false;
-    checked: boolean = false;
+    expanded:boolean = false;
+    checked:boolean = false;
 
     constructor(public name:String,
                 public nodes:Array<TreeNode>,
                 public parent:TreeNode) {
     }
+
     toggle() {
         this.expanded = !this.expanded;
     }
@@ -14,8 +15,8 @@ export class TreeNode {
     containsChecked() {
         checkedNodes:TreeNode;
         if (this.nodes && this.nodes.length) {
-            checkedNodes = this.nodes.filter(function(node) {
-               return node.checked;
+            checkedNodes = this.nodes.filter(function (node) {
+                return node.checked;
             });
         }
         return checkedNodes.length > 0;
@@ -34,7 +35,7 @@ export class TreeNode {
     }
 
     get icon() {
-        if (!this.nodes.length){
+        if (!this.nodes.length) {
             return null;
         }
         if (this.expanded) {
@@ -42,7 +43,6 @@ export class TreeNode {
         }
         return '+';
     }
-
 
     check() {
         this.checked = this.expanded = !this.checked;
@@ -52,6 +52,7 @@ export class TreeNode {
         this.checkRecursive(this.checked);
 
     }
+
     checkRecursive(state:boolean) {
         this.nodes.forEach(node => {
             node.checked = node.expanded = state;
