@@ -6,7 +6,7 @@ fiddle-0008-ObjectBinding
 
 ### Title
 
-fiddle-0008-ObjectBinding
+Object Binding
 
 
 ### Creation Date
@@ -21,7 +21,9 @@ Chicago, IL
 
 ### Description
 
-Another d3 fiddle.
+Fiddle based on the [object-as-data example](https://github.com/NickQiZhu/d3-cookbook/blob/master/src/chapter3/object-as-data.html)
+given in chapter 3 of Nick Qi Zhu's book **Data Visualization with D3.js Cookbook**.  It demonstrates how to
+bind an array of objects to a simple bar chart.
 
 
 ### Published Version Link
@@ -31,4 +33,4 @@ N/A
 
 ### Tags
 
-d3
+d3, domain, range, select, selectAll, data, enter, append, exit, remove
