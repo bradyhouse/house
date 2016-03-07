@@ -1,5 +1,10 @@
 @CHARSET "UTF-8";
 
+.tree {
+    max-width: 256px !important;
+    padding-right: 5px;
+}
+
 .tree-table {
     background-color: gainsboro;
     color: black;

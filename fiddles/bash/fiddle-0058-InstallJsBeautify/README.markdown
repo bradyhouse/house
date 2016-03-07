@@ -3,7 +3,7 @@ fiddle-0058-InstallJsBeautify
 
 ### Title
 
-fiddle-0058-InstallJsBeautify
+Install JsBeautify
 
 
 ### Creation Date
@@ -18,9 +18,9 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
-
+Fiddle exploring how to install [js-beautify](https://www.npmjs.com/package/js-beautify) using npm.  Note, I wrote this script
+after installing js-beautify--ie this is a preemptive _BIF_ fiddle.
 
 ### Tags
 
-bash
+bash, npm, js-beautify

@@ -1,28 +1,29 @@
-import {Component} from 'angular2/core';
+import {Component, View} from 'angular2/core';
 import * as core from 'angular2/core';
-import {Tree} from './component/Tree';
+import {TreeController} from './component/Tree';
 import * as meta from './meta';
 
 
 @Component({
-    selector: 'app',
-    template: `
-        <tree [uiClassPrefix]="treeUiClassPrefix" [height]="treeHeight" [url]="treeUrl"></tree>
-    `,
-    directives: [Tree]
+    selector: 'app'
 })
-export class App {
+@View({
+    template: `
+        <div header></div>
+        <tree class="tree" [uiClassPrefix]="treeUiClassPrefix" [height]="treeHeight" [url]="treeUrl"></tree>
+    `,
+    directives: [TreeController]
+})
+export class AppController {
 
     get treeUrl() {
         return meta.urls.data;
     }
-
     get treeUiClassPrefix() {
         return "tree";
     }
-
     get treeHeight() {
-        return  window.innerHeight - 50;
+        return  window.innerHeight - 100;
     }
 
 }

@@ -5,28 +5,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
-var Tree_1 = require('./component/Tree');
+var Chart_1 = require('./component/Chart');
 var meta = require('./meta');
 var App = (function () {
     function App() {
     }
-    Object.defineProperty(App.prototype, "treeUrl", {
+    Object.defineProperty(App.prototype, "chartNodes", {
+        get: function () {
+            return ["GREEN_KIRBY", "KLEIN_WATERS"];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(App.prototype, "chartHeight", {
+        get: function () {
+            return 300;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(App.prototype, "chartUrl", {
         get: function () {
             return meta.urls.data;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(App.prototype, "treeUiClassPrefix", {
+    Object.defineProperty(App.prototype, "chartUiCls", {
         get: function () {
-            return "tree";
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(App.prototype, "treeHeight", {
-        get: function () {
-            return window.innerHeight - 50;
+            return "chart";
         },
         enumerable: true,
         configurable: true
@@ -34,8 +41,8 @@ var App = (function () {
     App = __decorate([
         core_1.Component({
             selector: 'app',
-            template: "\n        <tree [uiClassPrefix]=\"treeUiClassPrefix\" [height]=\"treeHeight\" [url]=\"treeUrl\"></tree>\n    ",
-            directives: [Tree_1.Tree]
+            template: "\n        <div style=\"width: 500px;\">\n            <chart [uiCls]=\"chartUiCls\" [nodes]=\"chartNodes\" [height]=\"chartHeight\" [url]=\"chartUrl\"></chart>\n        </div>\n    ",
+            directives: [Chart_1.Chart]
         })
     ], App);
     return App;

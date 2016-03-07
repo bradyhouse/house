@@ -7,38 +7,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('angular2/core');
 var Tree_1 = require('./component/Tree');
 var meta = require('./meta');
-var App = (function () {
-    function App() {
+var AppController = (function () {
+    function AppController() {
     }
-    Object.defineProperty(App.prototype, "treeUrl", {
+    Object.defineProperty(AppController.prototype, "treeUrl", {
         get: function () {
             return meta.urls.data;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(App.prototype, "treeUiClassPrefix", {
+    Object.defineProperty(AppController.prototype, "treeUiClassPrefix", {
         get: function () {
             return "tree";
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(App.prototype, "treeHeight", {
+    Object.defineProperty(AppController.prototype, "treeHeight", {
         get: function () {
-            return window.innerHeight - 50;
+            return window.innerHeight - 100;
         },
         enumerable: true,
         configurable: true
     });
-    App = __decorate([
+    AppController = __decorate([
         core_1.Component({
-            selector: 'app',
-            template: "\n        <tree [uiClassPrefix]=\"treeUiClassPrefix\" [height]=\"treeHeight\" [url]=\"treeUrl\"></tree>\n    ",
-            directives: [Tree_1.Tree]
+            selector: 'app'
+        }),
+        core_1.View({
+            template: "\n        <div header></div>\n        <tree class=\"tree\" [uiClassPrefix]=\"treeUiClassPrefix\" [height]=\"treeHeight\" [url]=\"treeUrl\"></tree>\n    ",
+            directives: [Tree_1.TreeController]
         })
-    ], App);
-    return App;
+    ], AppController);
+    return AppController;
 })();
-exports.App = App;
+exports.AppController = AppController;
 //# sourceMappingURL=App.js.map

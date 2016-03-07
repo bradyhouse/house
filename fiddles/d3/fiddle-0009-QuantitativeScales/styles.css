@@ -1,0 +1,27 @@
+body {
+    font-family: "Courier New";
+}
+.label {
+    font-weight: bold;
+    background-color: black;
+    color: lawngreen;
+}
+
+.cell {
+    margin: 5px;
+    float: left;
+    text-align: center;
+    border: #969696 solid thin;
+    padding: 5px;
+    font-size: x-small;
+}
+
+.clear {
+    clear: both;
+}
+
+.boundary {
+    min-height: 20px;
+    width: 100%;
+    border-bottom: double;
+}

@@ -1,206 +1,105 @@
-import { Component, OnInit, OnChanges, ElementRef, Inject } from 'angular2/core';
-declare var d3, nv:any;
+import {Component, OnInit} from 'angular2/core';
+import * as core from 'angular2/core';
+import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
+import {ChartDataService} from './ChartDataService';
+import {Nvd3Component} from './Nvd3Component';
+
 
 @Component({
     selector: 'chart',
-    inputs: ['options', 'data'],
-    template: ``
+    template: `
+        <div class="{{uiCls}}-scrollbox" style="width: 100%; height: {{height}}px;">
+            <nvd3-component [options]="chartOptions" [data]="data"></nvd3-component>
+        </div>
+    `,
+    inputs: ['uiCls', 'height', 'nodes', 'url'],
+    directives: [Nvd3Component],
+    providers: [HTTP_PROVIDERS, ChartDataService]
 })
-
-export class Chart {
-    options;
-    data;
-    el:any;
-    chart;
-    svg;
-
-    constructor(@Inject(ElementRef) elementRef:ElementRef) {
-        this.el = elementRef.nativeElement;
+export class Chart implements OnInit {
+    data:Object[];
+    height:Number;
+    nodes:String[];
+    url:String;
+    uiCls:String;
+    constructor(private chartDataService:ChartDataService) {
+        this.data = [];
     }
-
-    ngOnChanges() {
-        if (!this.chart && !this.svg) {
-            this.configure(this.options);
-        } else {
-            this.refresh();
-        }
+    ngOnInit() {
+        var me = this;
+        this.chartDataService.request(this.url).subscribe((res:Response) => {
+            var store = [];
+            if (res.children && this.nodes.length) {
+                this.nodes.map(function (node) {
+                    var titleNodes = res.children.filter(function (child) {
+                        return child.title == node;
+                    });
+                    if (titleNodes.length) {
+                        titleNodes.map(function (titleNode) {
+                            if (!titleNode.leaf) {
+                                titleNode.children.map(function (child) {
+                                    store.push(child);
+                                });
+                            }
+                        }, store);
+                    }
+                }, store);
+            }
+            me.bind(store);
+        });
     }
-
-    refresh() {
-        if (this.chart && this.svg) {
-            this.svg.datum(this.data).call(this.chart);
-        }
-    }
-
-    configure(options) {
-        let self = this;
-        if (!options) {
-            return;
-        }
-        this.clearElement();
-        this.chart = nv.models[options.chart.type]();
-        this.chart.id = options.chart.hasOwnProperty('id') ? options.chart.id : 'chart-' + Math.random().toString(36).substr(2, 15);
-
-        //TODO - REFACTOR THIS MESS!!!
-        for (let key in this.chart) {
-            if (!this.chart.hasOwnProperty(key)) continue;
-            if (key[0] === '_');
-            else if ([
-                    'clearHighlights',
-                    'highlightPoint',
-                    'id',
-                    'options',
-                    'resizeHandler',
-                    'state',
-                    'open',
-                    'close',
-                    'tooltipContent'
-                ].indexOf(key) >= 0);
-            else if (key === 'dispatch') this.configureEvents(this.chart[key], options.chart[key]);
-
-            else if ([
-                    'bars',
-                    'bars1',
-                    'bars2',
-                    'boxplot',
-                    'bullet',
-                    'controls',
-                    'discretebar',
-                    'distX',
-                    'distY',
-                    'interactiveLayer',
-                    'legend',
-                    'lines',
-                    'lines1',
-                    'lines2',
-                    'multibar',
-                    'pie',
-                    'scatter',
-                    'sparkline',
-                    'stack1',
-                    'stack2',
-                    'sunburst',
-                    'tooltip',
-                    'x2Axis',
-                    'xAxis',
-                    'y1Axis',
-                    'y2Axis',
-                    'y3Axis',
-                    'y4Axis',
-                    'yAxis',
-                    'yAxis1',
-                    'yAxis2'
-                ].indexOf(key) >= 0 ||
-                (key === 'stacked' && options.chart.type === 'stackedAreaChart')) {
-                this.configureChart(this.chart[key], options.chart[key], options.chart.type);
-            }
-            else if ((key === 'xTickFormat' || key === 'yTickFormat') && options.chart.type === 'lineWithFocusChart');
-            else if ((key === 'tooltips') && options.chart.type === 'boxPlotChart');
-            else if ((key === 'tooltipXContent' || key === 'tooltipYContent') && options.chart.type === 'scatterChart');
-            else if (options.chart[key] === undefined || options.chart[key] === null);
-            else this.chart[key](options.chart[key]);
-        }
-
-        this.configureDimensions();
-
-        nv.addGraph(function () {
-            if (!self.chart) {
-                return;
-            }
-            if (self.chart.resizeHandler) {
-                self.chart.resizeHandler.clear();
-            }
-            self.chart.resizeHandler = nv.utils.windowResize(function () {
-                self.chart && self.chart.update && self.chart.update();
+    bind(data) {
+        var root = {
+            key: this.nodes,
+            values: []
+        };
+        data.sort(function (a, b) {
+            return parseFloat(a.checking) - parseFloat(b.checking);
+        });
+        data.map(function (item) {
+            var namePieces = item.name.split(' '),
+                lastName = namePieces && namePieces.length > 1 ? namePieces[1].toUpperCase() : item.name.toUpperCase();
+            root.values.push({
+                "label": lastName,
+                "color": parseFloat(item.checking) < 0 ? "red" : "green",
+                "value": item.checking
             });
-            return self.chart;
-        }, options.chart['callback']);
+        }, root);
+        this.data.push(root);
     }
-
-    configureDimensions() {
-        let chartHeight = this.options.chart.height,
-            chartWidth = this.options.chart.width;
-        d3.select(this.el).select('svg').remove();
-        this.svg = d3.select(this.el).append('svg');
-        if (chartHeight) {
-            if (!isNaN(+chartHeight)) {
-                chartHeight += 'px';
-            }
-            this.svg.attr('height', chartHeight).style({height: chartHeight});
-        }
-        if (chartWidth) {
-            if (!isNaN(+chartWidth)) {
-                chartWidth += 'px';
-            }
-            this.svg.attr('width', chartWidth).style({width: chartWidth});
-        } else {
-            this.svg.attr('width', '100%').style({width: '100%'});
-        }
-
-    }
-
-    configureChart(chart, options, chartType) {
-        if (chart && options) {
-
-            for (let key in chart) {
-                if (!chart.hasOwnProperty(key)) continue;
-
-                let value = chart[key];
-
-                if (key[0] === '_');
-                else if (key === 'dispatch') this.configureEvents(value, options[key]);
-                else if (key === 'tooltip') this.configure(chart[key], options[key], chartType);
-                else if (key === 'contentGenerator') if (options[key]) chart[key](options[key]);
-                else if ([
-                        'axis',
-                        'clearHighlights',
-                        'defined',
-                        'highlightPoint',
-                        'nvPointerEventsClass',
-                        'options',
-                        'rangeBand',
-                        'rangeBands',
-                        'scatter',
-                        'open',
-                        'close'
-                    ].indexOf(key) === -1) {
-                    if (options[key] === undefined || options[key] === null);
-                    else chart[key](options[key]);
-                }
-            }
-
-        }
-    }
-
-    configureEvents(dispatch, options) {
-        if (dispatch && options) {
-            for (let key in dispatch) {
-                if (!dispatch.hasOwnProperty(key)) continue;
-
-                let value = dispatch[key];
-
-                if (options[key] === undefined || options[key] === null);
-                else dispatch.on(key + '._', options[key]);
-            }
-        }
-    }
-
-    clearElement() {
-        this.el.innerHTML = '';
-        if (this.chart && this.chart.tooltip && this.chart.tooltip.id) {
-            d3.select('#' + this.chart.tooltip.id()).remove();
-        }
-        if (nv.graphs && this.chart) {
-            for (var i = nv.graphs.length - 1; i >= 0; i--) {
-                if (nv.graphs[i] && (nv.graphs[i].id === this.chart.id)) {
-                    nv.graphs.splice(i, 1);
+    get chartOptions() {
+        return {
+            chart: {
+                id: 'chart1',
+                type: 'discreteBarChart',
+                margin: {
+                    top: 10,
+                    right: 10,
+                    bottom: 55,
+                    left: 55
+                },
+                x: function (d) {
+                    return d.label;
+                },
+                y: function (d) {
+                    return d.value;
+                },
+                showValues: false,
+                valueFormat: function (d) {
+                    return d3.format(',.4f')(d);
+                },
+                duration: 150,
+                rotateLabels: 45,
+                showValues: false,
+                showLegend: true,
+                staggerLabels: true,
+                xAxis: {
+                    axisLabel: 'Account',
+                },
+                yAxis: {
+                    axisLabel: 'Checking Balance',
                 }
             }
         }
-        if (nv.tooltip && nv.tooltip.cleanup) {
-            nv.tooltip.cleanup();
-        }
-        if (this.chart && this.chart.resizeHandler) this.chart.resizeHandler.clear();
-        this.chart = null;
     }
 }

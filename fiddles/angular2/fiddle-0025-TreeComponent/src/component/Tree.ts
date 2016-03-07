@@ -1,15 +1,25 @@
 import {Component, View} from 'angular2/core';
 import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
 import * as core from 'angular2/core';
-import {TreeView} from './TreeView';
+import {TreeViewController} from './TreeView';
+import {DisplayNodes} from './DisplayNodes';
 import {TreeNode} from './TreeNode';
 import {TreeDataService} from './TreeDataService';
 
 
 @Component({
     selector: 'tree',
+    inputs: ['height', 'uiClassPrefix', 'url'],
+    providers: [HTTP_PROVIDERS, TreeDataService]
+})
+@View({
     template: `
         <table class="{{uiClassPrefix}}-table">
+            <tr>
+                <td nowrap="true" class="{{uiClassPrefix}}-toolbar">
+                    <displaynodes *ngFor="#selectedNode of root.selectedNodes" [nodes]="selectedNode"></displaynodes>
+                </td>
+            </tr>
             <tr>
                 <td nowrap="true" class="{{uiClassPrefix}}-toolbar">
                     <input class="{{uiClassPrefix}}-search-field" id="queryEl" type="text" placeholder="Search" #queryEl (keyup)="0">&nbsp;
@@ -23,32 +33,34 @@ import {TreeDataService} from './TreeDataService';
             </tr>
             <tr>
                 <td>
-                    <div id="scrollbox" class="{{uiClassPrefix}}-scrollbox" style=" height: {{height}}px;">
-                    <treeview [store]="root.nodes" [uiClassPrefix]="uiClassPrefix" [queryEl]="queryEl" [isChecked]="isChecked"></treeview>
+                    <div class="{{uiClassPrefix}}-scrollbox" style=" height: {{height}}px;">
+                    <treeview (change)="changed()" [store]="root.nodes" [uiClassPrefix]="uiClassPrefix" [queryEl]="queryEl" [isChecked]="isChecked"></treeview>
                     </div>
                 </td>
             </tr>
         </table>
-
   `,
-    directives: [TreeView],
-    inputs: ['height', 'uiClassPrefix', 'url'],
-    providers: [HTTP_PROVIDERS, TreeDataService]
+    directives: [TreeViewController, DisplayNodes]
 })
-export class Tree implements OnInit {
+export class TreeController implements OnInit {
 
     query:String = "";
+    root:TreeNode;
     isChecked:Boolean = false;
     height:number;
     url:String;
     uiClassPrefix:String;
+    selectedNodes:String[];
 
-    constructor(private service:TreeDataService) {
+    constructor(private treeDataService:TreeDataService) {
         this.root = new TreeNode("root", [], null);
     }
 
+    changed() {
+    }
+
     ngOnInit() {
-        this.service.request(this.url).subscribe((res:Response) => {
+        this.treeDataService.request(this.url).subscribe((res:Response) => {
             if (res.children) {
                 res.children.map(function (parentNode) {
                     var rootChildNode = new TreeNode(parentNode.title, [], this.root);

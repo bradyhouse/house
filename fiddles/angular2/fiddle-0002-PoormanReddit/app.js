@@ -1,11 +1,9 @@
+/// <reference path="typings/angular2/angular2.d.ts" />
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require("angular2/angular2");
 var Article = (function () {
@@ -44,8 +42,7 @@ var RedditArticle = (function () {
         }),
         angular2_1.View({
             template: "\n  <article>\n    <div class=\"votes\">{{ article.votes }}</div>\n    <div class=\"main\">\n      <h2>\n        <a href=\"{{ article.link }}\">{{ article.title }}</a>\n        <span>({{ article.domain() }})</span>\n      </h2>\n      <ul>\n        <li><a href (click)=\"voteUp()\">upvote</a></li>\n        <li><a href (click)=\"voteDown()\">downvote</a></li>\n      </ul>\n    </div>\n  </article>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], RedditArticle);
     return RedditArticle;
 })();
@@ -69,9 +66,9 @@ var RedditApp = (function () {
         angular2_1.View({
             directives: [RedditArticle, angular2_1.NgFor],
             template: "\n    <section class=\"new-link\">\n      <div class=\"control-group\">\n        <div><label for=\"title\">Title:</label></div>\n        <div><input name=\"title\" #newtitle></div>\n      </div>\n      <div class=\"control-group\">\n        <div><label for=\"link\">Link:</label></div>\n        <div><input name=\"link\" #newlink></div>\n      </div>\n\n      <button (click)=\"addArticle(newtitle, newlink)\">Submit link</button>\n    </section>\n\n    <reddit-article\n      *ng-for=\"#article of articles\"\n      [article]=\"article\">\n    </reddit-article>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
+        })
     ], RedditApp);
     return RedditApp;
 })();
 angular2_1.bootstrap(RedditApp);
+//# sourceMappingURL=app.js.map

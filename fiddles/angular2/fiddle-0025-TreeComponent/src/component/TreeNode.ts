@@ -1,11 +1,46 @@
 export class TreeNode {
-
     expanded:boolean = false;
     checked:boolean = false;
+    _selectedNodes:String[];
 
     constructor(public name:String,
                 public nodes:Array<TreeNode>,
                 public parent:TreeNode) {
+        if (!parent) {
+            this._selectedNodes = [];
+        } else {
+            this._selectedNodes = null;
+        }
+    }
+
+    get icon() {
+        if (!this.nodes.length) {
+            return null;
+        }
+        if (this.expanded) {
+            return '-';
+        }
+        return '+';
+    }
+
+    get isRoot() {
+        return this._selectedNodes ? true : false;
+    }
+
+    get selectedNodes() {
+        if (this.parent) {
+            return this.parent.selectedNodes;
+        } else {
+            return this._selectedNodes;
+        }
+    }
+
+    set selectedNodes(nodes) {
+        if (this.parent) {
+            this.parent.selectedNodes = nodes;
+        } else {
+            this._selectedNodes = nodes;
+        }
     }
 
     toggle() {
@@ -34,22 +69,17 @@ export class TreeNode {
         return matchingNodes.length > 0;
     }
 
-    get icon() {
-        if (!this.nodes.length) {
-            return null;
-        }
-        if (this.expanded) {
-            return '-';
-        }
-        return '+';
-    }
+    check(callback) {
+        var me = this;
 
-    check() {
-        this.checked = this.expanded = !this.checked;
-        if (this.parent) {
-            this.parent.checked = this.parent.containsChecked();
+        me.checked = me.expanded = !me.checked;
+        if (me.parent) {
+            me.parent.checked = me.parent.containsChecked();
+            if(me.parent.isRoot) {
+                me.select(callback);
+            }
         }
-        this.checkRecursive(this.checked);
+        me.checkRecursive(me.checked);
 
     }
 
@@ -59,4 +89,25 @@ export class TreeNode {
             node.checkRecursive(state);
         });
     }
+
+    select(callback) {
+        var me = this,
+            nodeName = me.name;
+        if (me.checked) {
+            if (me.selectedNodes.indexOf(nodeName) == -1) {
+                me.selectedNodes.push(nodeName);
+                me.selectedNodes.sort(function (a, b) {
+                    return b < a;
+                });
+            }
+        } else {
+            me.selectedNodes = me.selectedNodes.filter(function (node) {
+                return node != nodeName;
+            });
+        }
+        if (callback) {
+            callback.apply(me);
+        }
+    }
+
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="http://github/bradyhouse/house/fiddles/d3/fiddle-0009-QuantitativeScales">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
+</head>
+<body>
+    <div id="linear" class="clear">
+        <span class="cell label"><i>linear</i>&nbsp;&nbsp;n</span>
+    </div>
+    <div id="linear-capped" class="clear">
+        <span class="cell label"><i>linear capped</i>&nbsp;&nbsp;1 &lt;= a*n + b &lt;= 20</span>
+    </div>
+
+    <div id="pow" class="clear">
+        <span class="cell label"><i>power</i>&nbsp;&nbsp;n^2</span>
+    </div>
+    <div id="pow-capped" class="clear">
+        <span class="cell label"><i>power capped</i>&nbsp;&nbsp;1 &lt;= a*n^2 + b &lt;= 10</span>
+    </div>
+    <div id="log" class="clear">
+        <span class="cell label"><i>log</i>&nbsp;&nbsp;log(n)</span>
+    </div>
+    <div id="log-capped" class="clear">
+        <span class="cell label"><i>log capped</i>&nbsp;&nbsp;1 &lt;= a*log(n) + b &lt;= 10</span>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

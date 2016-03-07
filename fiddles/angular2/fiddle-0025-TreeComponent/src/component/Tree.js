@@ -7,18 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('angular2/core');
 var http_1 = require('angular2/http');
 var TreeView_1 = require('./TreeView');
+var DisplayNodes_1 = require('./DisplayNodes');
 var TreeNode_1 = require('./TreeNode');
 var TreeDataService_1 = require('./TreeDataService');
-var Tree = (function () {
-    function Tree(service) {
-        this.service = service;
+var TreeController = (function () {
+    function TreeController(treeDataService) {
+        this.treeDataService = treeDataService;
         this.query = "";
         this.isChecked = false;
         this.root = new TreeNode_1.TreeNode("root", [], null);
     }
-    Tree.prototype.ngOnInit = function () {
+    TreeController.prototype.changed = function () {
+    };
+    TreeController.prototype.ngOnInit = function () {
         var _this = this;
-        this.service.request(this.url).subscribe(function (res) {
+        this.treeDataService.request(this.url).subscribe(function (res) {
             if (res.children) {
                 res.children.map(function (parentNode) {
                     var rootChildNode = new TreeNode_1.TreeNode(parentNode.title, [], this.root);
@@ -35,7 +38,7 @@ var Tree = (function () {
             }
         });
     };
-    Tree.prototype.onResetClick = function () {
+    TreeController.prototype.onResetClick = function () {
         this.isChecked = false;
         this.root.nodes.map(function (node) {
             node.expanded = false;
@@ -47,19 +50,21 @@ var Tree = (function () {
         });
         document.getElementById('queryEl').value = "";
     };
-    Tree.prototype.onShowSelectedClick = function () {
+    TreeController.prototype.onShowSelectedClick = function () {
         this.isChecked = !this.isChecked;
     };
-    Tree = __decorate([
+    TreeController = __decorate([
         core_1.Component({
             selector: 'tree',
-            template: "\n        <table class=\"{{uiClassPrefix}}-table\">\n            <tr>\n                <td nowrap=\"true\" class=\"{{uiClassPrefix}}-toolbar\">\n                    <input class=\"{{uiClassPrefix}}-search-field\" id=\"queryEl\" type=\"text\" placeholder=\"Search\" #queryEl (keyup)=\"0\">&nbsp;\n                    <button class=\"{{uiClassPrefix}}-btn btn btn-default btn-xs\" (click)=\"onShowSelectedClick()\">\n                        <span class=\"fa fa-list-ul\" title=\"Show selected\"></span>\n                    </button>&nbsp;\n                    <button class=\"{{uiClassPrefix}}-btn btn btn-default btn-xs\" (click)=\"onResetClick()\">\n                        <span class=\"fa fa-times\" title=\"Unselect all\"></span>\n                    </button>\n                </td>\n            </tr>\n            <tr>\n                <td>\n                    <div id=\"scrollbox\" class=\"{{uiClassPrefix}}-scrollbox\" style=\" height: {{height}}px;\">\n                    <treeview [store]=\"root.nodes\" [uiClassPrefix]=\"uiClassPrefix\" [queryEl]=\"queryEl\" [isChecked]=\"isChecked\"></treeview>\n                    </div>\n                </td>\n            </tr>\n        </table>\n\n  ",
-            directives: [TreeView_1.TreeView],
             inputs: ['height', 'uiClassPrefix', 'url'],
             providers: [http_1.HTTP_PROVIDERS, TreeDataService_1.TreeDataService]
+        }),
+        core_1.View({
+            template: "\n        <table class=\"{{uiClassPrefix}}-table\">\n            <tr>\n                <td nowrap=\"true\" class=\"{{uiClassPrefix}}-toolbar\">\n                    <displaynodes *ngFor=\"#selectedNode of root.selectedNodes\" [nodes]=\"selectedNode\"></displaynodes>\n                </td>\n            </tr>\n            <tr>\n                <td nowrap=\"true\" class=\"{{uiClassPrefix}}-toolbar\">\n                    <input class=\"{{uiClassPrefix}}-search-field\" id=\"queryEl\" type=\"text\" placeholder=\"Search\" #queryEl (keyup)=\"0\">&nbsp;\n                    <button class=\"{{uiClassPrefix}}-btn btn btn-default btn-xs\" (click)=\"onShowSelectedClick()\">\n                        <span class=\"fa fa-list-ul\" title=\"Show selected\"></span>\n                    </button>&nbsp;\n                    <button class=\"{{uiClassPrefix}}-btn btn btn-default btn-xs\" (click)=\"onResetClick()\">\n                        <span class=\"fa fa-times\" title=\"Unselect all\"></span>\n                    </button>\n                </td>\n            </tr>\n            <tr>\n                <td>\n                    <div class=\"{{uiClassPrefix}}-scrollbox\" style=\" height: {{height}}px;\">\n                    <treeview (change)=\"changed()\" [store]=\"root.nodes\" [uiClassPrefix]=\"uiClassPrefix\" [queryEl]=\"queryEl\" [isChecked]=\"isChecked\"></treeview>\n                    </div>\n                </td>\n            </tr>\n        </table>\n  ",
+            directives: [TreeView_1.TreeViewController, DisplayNodes_1.DisplayNodes]
         })
-    ], Tree);
-    return Tree;
+    ], TreeController);
+    return TreeController;
 })();
-exports.Tree = Tree;
+exports.TreeController = TreeController;
 //# sourceMappingURL=Tree.js.map

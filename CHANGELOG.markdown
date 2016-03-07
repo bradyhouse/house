@@ -694,7 +694,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added [fiddles/angular2/fiddle-0019-ZingChart](fiddles/angular2/fiddle-0019-ZingChart)
     9.  Added [fiddles/angular2/fiddle-0022-MicroApp](fiddles/angular2/fiddle-0022-MicroApp)
     10. Added [fiddles/angular2/fiddle-0023-SelectList](fiddles/angular2/fiddle-0023-SelectList)
-    11. Added [fiddles/angular2/fiddle-0024-DashboardLayout](fiddles/angular2/fiddle-0024-DashboardLayout)
+    11. Added [fiddles/angular2/fiddle-0024-Dashboard](fiddles/angular2/fiddle-0024-Dashboard)
     12. Added [fiddles/angular2/fiddle-0025-TreeComponent](fiddles/angular2/fiddle-0025-TreeComponent)
 * **jQuery**
     1.  Added [fiddles/jquery/fiddle-0037-ShadowDom](fiddles/jquery/fiddle-0037-ShadowDom)
@@ -733,3 +733,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     *   Added [fiddles/bash/fiddle-0062-PsuedoDatabase](fiddles/bash/fiddle-0062-PsuedoDatabase)
 * **Angular2**
     *   Added [fiddles/angular2/fiddle-0026-Nvd3Component](fiddles/angular2/fiddle-0026-Nvd3Component)
+
+### 201603050420
+
+* **d3**
+    1.  Added [fiddles/d3/fiddle-0009-QuantitativeScales](fiddles/d3/fiddle-0009-QuantitativeScales)
+* **bash**
+    1.  Added [fiddles/bash/fiddle-0063-InstallTsun](fiddles/bash/fiddle-0063-InstallTsun)

@@ -10,18 +10,17 @@ import {
 } from "angular2/angular2";
 
 class Product {
-    sku: string;
-    name: string;
-    image_url: string;
-    department: Array<string>;
-    price: number;
+    sku:string;
+    name:string;
+    image_url:string;
+    department:Array<string>;
+    price:number;
 
-    constructor(
-        sku:string,
-        name:string,
-        image_url:string,
-        department: Array<string>,
-        price: number) {
+    constructor(sku:string,
+                name:string,
+                image_url:string,
+                department:Array<string>,
+                price:number) {
         this.sku = sku;
         this.name = name;
         this.image_url = image_url;
@@ -40,7 +39,7 @@ class Product {
   `
 })
 class ProductImage {
-    product: Product;
+    product:Product;
 }
 
 @Component({
@@ -59,7 +58,7 @@ class ProductImage {
   `
 })
 class ProductDepartment {
-    product: Product;
+    product:Product;
 }
 
 @Component({
@@ -72,7 +71,7 @@ class ProductDepartment {
   `
 })
 class PriceDisplay {
-    price: number;
+    price:number;
 }
 
 @Component({
@@ -95,8 +94,8 @@ class PriceDisplay {
   `
 })
 class ProductRow {
-    product: Product;
-    click: EventEmitter;
+    product:Product;
+    click:EventEmitter;
 
     constructor() {
         this.click = new EventEmitter();
@@ -122,8 +121,8 @@ class ProductRow {
   `
 })
 class ProductsList {
-    productList: Array<Product>;
-    click: EventEmitter;
+    productList:Array<Product>;
+    click:EventEmitter;
 
     constructor() {
         this.click = new EventEmitter();
@@ -147,7 +146,7 @@ class ProductsList {
   `
 })
 class Fiddle {
-    products: Array<Product>;
+    products:Array<Product>;
 
     constructor() {
         this.products = [];
