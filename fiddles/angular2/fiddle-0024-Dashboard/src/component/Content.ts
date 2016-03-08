@@ -66,6 +66,7 @@ export class ContentController {
     }
     parseColumns(rec) {
         var columns = [];
+
         if (rec) {
             Object.keys(rec).map(function (key) {
                 if (key !== 'leaf' && key !== 'title') {

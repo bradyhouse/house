@@ -59,10 +59,10 @@ export class TreeController implements OnInit {
                     var rootChildNode = new TreeNode(parentNode.title, [], this.root);
                     if (!parentNode.leaf) {
                         parentNode.children.map(function (child) {
-                            rootChildNode.nodes.push(new TreeNode(child.title, [], rootChildNode));
+                            rootChildNode.nodes.push(new TreeNode(child.name.toUpperCase(), [], rootChildNode));
                         });
                         rootChildNode.nodes.sort(function (a, b) {
-                            return a.name < b.name;
+                            return parseFloat(a.checking) - parseFloat(b.checking);
                         });
                     }
                     this.root.nodes.push(rootChildNode);
