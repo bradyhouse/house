@@ -1,4 +1,4 @@
-{{FiddleName}}
+fiddle-0015-BasicAxes
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,12 +6,12 @@
 
 ### Title
 
-House Angular 2 Fiddle - {{FiddleName}}
+fiddle-0015-BasicAxes
 
 
 ### Creation Date
 
-{{BornOnDate}}
+03-09-16
 
 
 ### Location
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another Angular Fiddle.
+Another d3 fiddle.
 
 
 ### Published Version Link
@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-Angular 2
+d3

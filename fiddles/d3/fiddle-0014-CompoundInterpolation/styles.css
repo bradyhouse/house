@@ -1,0 +1,31 @@
+body {
+    font-family: "Courier New";
+    font-size: small;
+}
+
+.clear {
+    clear: both;
+}
+
+.cell {
+    min-width: 40px;
+    min-height: 20px;
+    margin: 0px;
+    float: left;
+    text-align: center;
+    border: white solid thin;
+    padding: 5px;
+}
+
+.v-bar {
+    min-height: 1px;
+    min-width: 30px;
+    background-color: #4682b4;
+    margin-right: 2px;
+    font-size: 10px;
+    color: #f0f8ff;
+    text-align: center;
+    width: 10px;
+    display: inline-block;
+}
+

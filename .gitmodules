@@ -61,3 +61,6 @@
 [submodule "fiddles/d3/libs/nvd3"]
 	path = fiddles/d3/libs/nvd3
 	url = https://github.com/novus/nvd3.git
+[submodule "fiddles/angular2/libs/angular2-rxjs-observable-data-services"]
+	path = fiddles/angular2/libs/angular2-rxjs-observable-data-services
+	url = https://github.com/jhades/angular2-rxjs-observable-data-services.git

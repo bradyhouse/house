@@ -736,7 +736,23 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201603050420
 
+* **fiddle.sh**
+    * Refactored [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
+        * Note - Modified to use new node based template directory
+* **bash**
+    1.  Added [fiddles/bash/fiddle-0064-InstallTypings](fiddles/bash/fiddle-0064-InstallTypings)
 * **d3**
     1.  Added [fiddles/d3/fiddle-0009-QuantitativeScales](fiddles/d3/fiddle-0009-QuantitativeScales)
 * **bash**
     1.  Added [fiddles/bash/fiddle-0063-InstallTsun](fiddles/bash/fiddle-0063-InstallTsun)
+* **Angular2**
+    1.  Added dependency (submodule) to [angular2-rxjs-observable-data-services](https://github.com/jhades/angular2-rxjs-observable-data-services.git)
+        *   [fiddles/angular2/libs/angular2-rxjs-observable-data-services](fiddles/angular2/libs/angular2-rxjs-observable-data-services)
+    2.  Added [fiddles/angular2/fiddle-0027-ToDoList](fiddles/angular2/fiddle-0027-ToDoList)
+* **d3**
+    1.  Added [fiddles/d3/fiddle-0010-TimeScale](fiddles/d3/fiddle-0010-TimeScale)
+    2.  Added [fiddles/d3/fiddle-0011-OrdinalScale](fiddles/d3/fiddle-0011-OrdinalScale)
+    3.  Added [fiddles/d3/fiddle-0012-StringInterpolation](fiddles/d3/fiddle-0012-StringInterpolation)
+    4.  Added [fiddles/d3/fiddle-0013-ColorInterpolation](fiddles/d3/fiddle-0013-ColorInterpolation)
+    5.  Added [fiddles/d3/fiddle-0014-CompoundInterpolation](fiddles/d3/fiddle-0014-CompoundInterpolation)
+    6.  Added [fiddles/d3/fiddle-0015-BasicAxes](fiddles/d3/fiddle-0015-BasicAxes)
