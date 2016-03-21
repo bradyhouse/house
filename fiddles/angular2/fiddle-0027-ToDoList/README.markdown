@@ -6,7 +6,7 @@ fiddle-0027-ToDoList
 
 ### Title
 
-House Angular 2 Fiddle - fiddle-0027-ToDoList
+ToDoList
 
 
 ### Creation Date
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another Angular Fiddle.
+Angular 2
 
 
 ### Published Version Link

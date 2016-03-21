@@ -23,9 +23,11 @@
 # 01/17/2016 - See CHANGELOG @ 201601100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 03/02/2016 - See CHANGELOG @ 201603020420
+# 03/10/2016 - See CHANGELOG @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
-thisFile=$(echo "$0" | sed 's/\.\///g')
-echo "${thisFile}" | awk '{print toupper($0)}'
+echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
+source _fiddle-func.sh;
+
 
 function listAndCount() {
     cd ../fiddles/${fiddleType}
@@ -68,13 +70,13 @@ changeLogFile="../CHANGELOG.markdown"
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'python' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
         if [[ -d "${fiddlePath}" ]]
         then
             rm -r "${fiddlePath}" || exit 87
         fi
         case ${fiddleType} in
-            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'd3' | 'dojo' | 'tween' | 'svg' )
+            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 88
             ;;
         esac
@@ -100,23 +102,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
-        echo -e "\t\"angular\"\t\tAngular Fiddle"
-        echo -e "\t\"angular2\"\t\tAngular 2 Fiddle"
-        echo -e "\t\"ant\"\t\tAnt Fiddle"
-        echo -e "\t\"bash\"\t\tBash Fiddle"
-        echo -e "\t\"compass\"\tCompass Fiddle"
-        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-        echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
-        echo -e "\t\"extjs5\"\t\tExt JS 6 Fiddle"
-        echo -e "\t\"php\"\t\tPHP Fiddle"
-        echo -e "\t\"python\"\tPython Fiddle"
-        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
-        echo -e "\t\"chrome\"\tChrome Extension Fiddle"
-        echo -e "\t\"node\"\t\tnode.js Fiddle"
-        echo -e "\t\"tween\"\t\ttween.js Fiddle"
-        echo -e "\t\"svg\"\t\tScalar Vector Graphics Fiddle"
+        voidEchoFiddleTypes;
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""

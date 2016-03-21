@@ -26,9 +26,12 @@
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 02/13/2016 - See CHANGELOG @ 201602130420
 # 03/02/2016 - See CHANGELOG @ 201603020420
+# 03/10/2016 - See CHANGELOG @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
-thisFile=$(echo "$0" | sed 's/\.\///g')
-echo "${thisFile}" | awk '{print toupper($0)}'
+
+echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
+source _fiddle-func.sh;
+
 
 if [ "$#" -ne 3 ]
 then
@@ -41,22 +44,7 @@ then
     echo ""
     echo -e "[t] - type. Valid types include: "
     echo ""
-    echo -e "\t\"angular\"\t\tAngular Fiddle"
-    echo -e "\t\"angular2\"\t\tAngular 2 Fiddle"
-    echo -e "\t\"ant\"\t\tAnt Fiddle"
-    echo -e "\t\"bash\"\t\tBash Fiddle"
-    echo -e "\t\"compass\"\tCompass Fiddle"
-    echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-    echo -e "\t\"dojo\"\t\tDojo Fiddle"
-    echo -e "\t\"extjs\"\t\tExt JS Fiddle"
-    echo -e "\t\"php\"\t\tPHP Fiddle"
-    echo -e "\t\"python\"\t\tPython Fiddle"
-    echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-    echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
-    echo -e "\t\"chrome\"\t\tChrome Extension Fiddle"
-    echo -e "\t\"node\"\t\tNode.js Fiddle"
-    echo -e "\t\"tween\"\tTween.js Fiddle"
-    echo -e "\t\"svg\"\t\tScalar Graphic Vector Fiddle"
+    voidEchoFiddleTypes;
     echo ""
     echo -e "[a] - source fiddle directory name."
     echo ""
@@ -118,7 +106,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'chrome')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?
@@ -152,7 +140,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${fiddleType} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'node'|'tween'|'svg')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'node'|'tween'|'svg')
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')

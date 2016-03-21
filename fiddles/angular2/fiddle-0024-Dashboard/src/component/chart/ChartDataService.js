@@ -10,8 +10,6 @@ var ChartDataService = (function () {
     function ChartDataService(http) {
         this.http = http;
     }
-    ChartDataService.prototype.bind = function (url, titles, store) {
-    };
     ChartDataService.prototype.request = function (url) {
         return this.http
             .get(url)

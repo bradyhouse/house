@@ -20,10 +20,10 @@
 # 01/17/2016 - See CHANGELOG @ 201601100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 03/02/2016 - See CHANGELOG @ 201603020420
+# 03/10/2016 - See CHANGELOG @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
-
-thisFile=$(echo "$0" | sed 's/\.\///g')
-echo "${thisFile}" | awk '{print toupper($0)}'
+echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
+source _fiddle-func.sh;
 fiddleType=$1
 fiddleName=$2
 newName=$3
@@ -63,7 +63,7 @@ changeLogFile="../../CHANGELOG.markdown"
 
     # Verify type parameter
 	case ${fiddleType} in
-        'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
+        'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
         cd bin
         # Update index.html page
         if [[ -f "${newIndexFile}" ]]
@@ -75,7 +75,7 @@ changeLogFile="../../CHANGELOG.markdown"
 
         # Re-index directory
         case ${fiddleType} in
-            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'dojo' | 'tween' | 'svg' )
+            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 89
             ;;
         esac
@@ -83,53 +83,39 @@ changeLogFile="../../CHANGELOG.markdown"
     esac
 )
 #catch
-_rc=$?
+_rc=$?;
 case ${_rc} in
-    0)  echo "Refactor process completed successfully."
-        echo "\"${fiddleName}\" is now \"${newName}\"."
+    0)  echo "Refactor process completed successfully.";
+        echo "\"${fiddleName}\" is now \"${newName}\".";
         ;;
-    86) echo ""
-        echo "Nope ~ Incorrect number of arguments"
-        echo ""
-        echo "Usage:"
-        echo ""
-        echo "$0 \"[t]\" \"[f]\" \"[n]\""
-        echo ""
-        echo "[t] - type. Valid types include: "
-        echo ""
-        echo -e "\t\"angular\"\tAngular Fiddle"
-        echo -e "\t\"angular2\"\tAngular 2 Fiddle"
-        echo -e "\t\"compass\"\tCompass Fiddle"
-        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-        echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
-        echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
-        echo -e "\t\"php\"\t\tPHP Fiddle"
-        echo -e "\t\"python\"\tPython Fiddle"
-        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
-        echo -e "\t\"chrome\"\tChrome Extension Fiddle"
-        echo -e "\t\"node\"\t\tnode.js Fiddle"
-        echo -e "\t\"tween\"\t\ttween.js Fiddle"
-        echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
-        echo ""
-        echo "[f] - existing fiddle name.  For example: \"fiddleParabolaSurface\""
-        echo ""
-        echo "[n] - new name."
-        echo ""
+    86) echo "";
+        echo "Nope ~ Incorrect number of arguments";
+        echo "";
+        echo "Usage:";
+        echo "";
+        echo "$0 \"[t]\" \"[f]\" \"[n]\"";
+        echo "";
+        echo "[t] - type. Valid types include: ";
+        echo "";
+        voidEchoFiddleTypes;
+        echo "";
+        echo "[f] - existing fiddle name.  For example: \"fiddleParabolaSurface\"";
+        echo "";
+        echo "[n] - new name.";
+        echo "";
         ;;
-    87) echo "fubar! New name, \"${newFiddlePath}\" is already in use."
+    87) echo "fubar! New name, \"${newFiddlePath}\" is already in use.";
         ;;
-    88) echo "fubar! target fiddle, \"${fiddlePath}\" does not exist."
+    88) echo "fubar! target fiddle, \"${fiddlePath}\" does not exist.";
         ;;
-    89) echo "fubar! call to \"fiddle-index.sh\" for \"${fiddleType}\" failed."
+    89) echo "fubar! call to \"fiddle-index.sh\" for \"${fiddleType}\" failed.";
         ;;
-    90) echo "fubar! call to \"mv\" failed."
+    90) echo "fubar! call to \"mv\" failed.";
         ;;
-    91) echo "fubar! call to \"house-substr.sh\" failed."
+    91) echo "fubar! call to \"house-substr.sh\" failed.";
         ;;
-    *)  echo "fubar! Something went wrong."
+    *)  echo "fubar! Something went wrong.";
         ;;
 esac
 #finally
-exit ${_rc}
+exit ${_rc};

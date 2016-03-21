@@ -64,3 +64,6 @@
 [submodule "fiddles/angular2/libs/angular2-rxjs-observable-data-services"]
 	path = fiddles/angular2/libs/angular2-rxjs-observable-data-services
 	url = https://github.com/jhades/angular2-rxjs-observable-data-services.git
+[submodule "fiddles/angular2/libs/ag-grid-ng2-example"]
+	path = fiddles/angular2/libs/ag-grid-ng2-example
+	url = https://github.com/ceolter/ag-grid-ng2-example.git

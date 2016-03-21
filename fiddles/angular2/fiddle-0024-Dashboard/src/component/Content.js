@@ -64,6 +64,13 @@ var ContentController = (function () {
         }, me);
         me.configureGrid();
     };
+    Object.defineProperty(ContentController.prototype, "treeHeight", {
+        get: function () {
+            return this.height - 50;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(ContentController.prototype, "selectedNodes", {
         get: function () {
             return this._selectedNodes;
@@ -83,13 +90,6 @@ var ContentController = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ContentController.prototype, "height", {
-        get: function () {
-            return window.innerHeight - 60;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(ContentController.prototype, "gridHeight", {
         get: function () {
             return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : 0;
@@ -97,26 +97,9 @@ var ContentController = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(ContentController.prototype, "chartHeight", {
+    Object.defineProperty(ContentController.prototype, "height", {
         get: function () {
-            return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : this.height - 4;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ContentController.prototype, "treeHeight", {
-        get: function () {
-            return this.height - 50;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ContentController.prototype, "chartConfig", {
-        get: function () {
-            return {
-                url: meta.urls.data,
-                uiCls: "chart"
-            };
+            return window.innerHeight - 60;
         },
         enumerable: true,
         configurable: true
@@ -124,6 +107,7 @@ var ContentController = (function () {
     ContentController = __decorate([
         core_1.Component({
             selector: 'content',
+            moduleId: module.id,
             providers: [http_1.HTTP_PROVIDERS, DataJsonApi_1.DataJsonApi]
         }),
         core_1.View({

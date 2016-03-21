@@ -21,8 +21,11 @@
 # 12/06/2015 - See CHANGELOG.MARKDOWN @ 201511100420
 # 02/13/2016 - See CHANGELOG.MARKDOWN @ 201602130420
 # 03/02/2016 - See CHANGELOG.MARKDOWN @ 201603020420
+# 03/10/2016 - See CHANGELOG.MARKDOWN @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
+source _fiddle-func.sh;
+
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
 _type=$(echo $1)
@@ -135,8 +138,9 @@ case ${rc} in
         echo -e "\t\"dojo\"\t\tDojo Fiddle"
         echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
         echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
-        echo -e "\t\"php\"\t\tPHP Fiddle"
         echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
+        echo -e "\t\"php\"\t\tPHP Fiddle"
+        echo -e "\t\"rxjs\"\t\tRxJS Fiddle"
         echo -e "\t\"three\"\t\tThree.js / WebGl Fiddle"
         echo -e "\t\"tween\"\t\ttween.js Fiddle"
         echo -e "\t\"svg\"\t\tScalar Graphic Vector Fiddle"

@@ -9,5 +9,3 @@ function valueFunction() {
     z=`expr $1 + $1`;
     echo ${z};
 }
-valueFunction;
-

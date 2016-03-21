@@ -9,6 +9,7 @@ import * as meta from '../meta';
 
 @Component({
     selector: 'content',
+    moduleId: module.id,
     providers: [HTTP_PROVIDERS, DataJsonApi]
 })
 @View({
@@ -86,10 +87,12 @@ export class ContentController {
         }, me);
         me.configureGrid();
     }
+    get treeHeight() {
+        return this.height - 50;
+    }
     get selectedNodes() {
         return this._selectedNodes;
     }
-
     get gridOptions() {
         return {
             enableFilter: true,
@@ -98,27 +101,11 @@ export class ContentController {
             enableSorting: true
         }
     }
+    get gridHeight() {
+        return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : 0;
+    }
     get height() {
         return window.innerHeight - 60;
     }
 
-    get gridHeight() {
-        return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : 0;
-    }
-
-    get chartHeight() {
-        return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : this.height - 4;
-
-    }
-
-    get treeHeight() {
-        return this.height - 50;
-    }
-
-    get chartConfig() {
-        return {
-            url: meta.urls.data,
-            uiCls: "chart"
-        }
-    }
 }

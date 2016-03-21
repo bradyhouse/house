@@ -1,0 +1,20 @@
+<table class="{{uiClassPrefix}}-table">
+    <tr>
+        <td nowrap="true" class="{{uiClassPrefix}}-toolbar">
+            <input class="{{uiClassPrefix}}-search-field" id="queryEl" type="text" placeholder="Search" #queryEl (keyup)="0">&nbsp;
+            <button class="{{uiClassPrefix}}-btn btn btn-default btn-xs" (click)="onShowSelectedClick()">
+                <span class="fa fa-list-ul" title="Show selected"></span>
+            </button>&nbsp;
+            <button class="{{uiClassPrefix}}-btn btn btn-default btn-xs" (click)="onResetClick()">
+                <span class="fa fa-times" title="Unselect all"></span>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="{{uiClassPrefix}}-scrollbox" style=" height: {{height}}px;">
+                <treeview (change)="changed()" [store]="root.nodes" [uiClassPrefix]="uiClassPrefix" [queryEl]="queryEl" [isChecked]="isChecked"></treeview>
+            </div>
+        </td>
+    </tr>
+</table>

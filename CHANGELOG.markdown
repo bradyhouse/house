@@ -736,23 +736,59 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201603050420
 
-* **fiddle.sh**
-    * Refactored [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
-        * Note - Modified to use new node based template directory
-* **bash**
-    1.  Added [fiddles/bash/fiddle-0064-InstallTypings](fiddles/bash/fiddle-0064-InstallTypings)
-* **d3**
-    1.  Added [fiddles/d3/fiddle-0009-QuantitativeScales](fiddles/d3/fiddle-0009-QuantitativeScales)
-* **bash**
-    1.  Added [fiddles/bash/fiddle-0063-InstallTsun](fiddles/bash/fiddle-0063-InstallTsun)
 * **Angular2**
     1.  Added dependency (submodule) to [angular2-rxjs-observable-data-services](https://github.com/jhades/angular2-rxjs-observable-data-services.git)
         *   [fiddles/angular2/libs/angular2-rxjs-observable-data-services](fiddles/angular2/libs/angular2-rxjs-observable-data-services)
-    2.  Added [fiddles/angular2/fiddle-0027-ToDoList](fiddles/angular2/fiddle-0027-ToDoList)
-* **d3**
-    1.  Added [fiddles/d3/fiddle-0010-TimeScale](fiddles/d3/fiddle-0010-TimeScale)
-    2.  Added [fiddles/d3/fiddle-0011-OrdinalScale](fiddles/d3/fiddle-0011-OrdinalScale)
-    3.  Added [fiddles/d3/fiddle-0012-StringInterpolation](fiddles/d3/fiddle-0012-StringInterpolation)
-    4.  Added [fiddles/d3/fiddle-0013-ColorInterpolation](fiddles/d3/fiddle-0013-ColorInterpolation)
-    5.  Added [fiddles/d3/fiddle-0014-CompoundInterpolation](fiddles/d3/fiddle-0014-CompoundInterpolation)
-    6.  Added [fiddles/d3/fiddle-0015-BasicAxes](fiddles/d3/fiddle-0015-BasicAxes)
+    2.  Added [fiddles/angular2/fiddle-0028-CgmPanel](fiddles/angular2/fiddle-0028-CgmPanel)
+    3.  Added [fiddles/angular2/fiddle-0029-Dashboard](fiddles/angular2/fiddle-0029-Dashboard)
+* **Bash**
+    1.  Added [fiddles/bash/fiddle-0063-InstallTsun](fiddles/bash/fiddle-0063-InstallTsun)
+    2.  Added [fiddles/bash/fiddle-0064-InstallTypings](fiddles/bash/fiddle-0064-InstallTypings)
+    3.  Added [fiddles/bash/fiddle-0065-InstallAtom](fiddles/bash/fiddle-0065-InstallAtom)
+    4.  Added [fiddles/bash/fiddle-0066-TypeScriptProjectSetup](fiddles/bash/fiddle-0066-TypeScriptProjectSetup)
+    5.  Added [fiddles/bash/fiddle-0067-YoTypescriptGenerator](fiddles/bash/fiddle-0067-YoTypescriptGenerator)
+    6.  Added [fiddles/bash/fiddle-0068-YoSassTypescriptGenerator](fiddles/bash/fiddle-0068-YoSassTypescriptGenerator)
+* **D3**
+    1.  Added [fiddles/d3/fiddle-0009-QuantitativeScales](fiddles/d3/fiddle-0009-QuantitativeScales)
+    2.  Added [fiddles/d3/fiddle-0010-TimeScale](fiddles/d3/fiddle-0010-TimeScale)
+    3.  Added [fiddles/d3/fiddle-0011-OrdinalScale](fiddles/d3/fiddle-0011-OrdinalScale)
+    4.  Added [fiddles/d3/fiddle-0012-StringInterpolation](fiddles/d3/fiddle-0012-StringInterpolation)
+    5.  Added [fiddles/d3/fiddle-0013-ColorInterpolation](fiddles/d3/fiddle-0013-ColorInterpolation)
+    6.  Added [fiddles/d3/fiddle-0014-CompoundInterpolation](fiddles/d3/fiddle-0014-CompoundInterpolation)
+    7.  Added [fiddles/d3/fiddle-0015-BasicAxes](fiddles/d3/fiddle-0015-BasicAxes)
+* **fiddle.sh**
+    1.  Refactored [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
+        *   Note - Modified to use new node based template directory
+    2.  Added [scripts/_fiddle-func.sh](scripts/_fiddle-func.sh)
+        *   Note - This script is meant to share functions across the fiddle-* collection of scripts.
+        *   Reflected changes:
+            1.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            2.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+            3.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            4.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            6.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            7.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+    2.  Added [fiddles/rxjs](fiddles/rxjs)
+            *   Reflected changes:
+                1.  Added [scripts/fiddle-rxjs.sh](scripts/fiddle-rxjs.sh)
+                2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+                3.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+                4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+                5.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+                6.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+                7.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+                8.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+    3.  Added [fiddles/typescript](fiddles/typescript)
+            *   Reflected changes:
+                1.  Added [scripts/fiddle-typescript.sh](scripts/fiddle-typescript.sh)
+                    *   Note - Adapted from the [scripts/fiddle-node.sh](scripts/fiddle-node.sh)
+                2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+                4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+                5.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+                6.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+                7.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+                8.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+* **RxJS**
+    1.  Added [fiddles/rxjs/fiddle-0001-AjaxObservable](fiddles/rxjs/fiddle-0001-AjaxObservable)
+

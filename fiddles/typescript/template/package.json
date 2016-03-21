@@ -1,0 +1,27 @@
+{
+  "name": "FiddleName",
+  "version": "1.0.0",
+  "description": "Another typescript fiddle",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradyhouse/house.git"
+  },
+  "keywords": [
+    "fiddle",
+    "typescript"
+  ],
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradyhouse/house/issues"
+  },
+  "homepage": "https://github.com/bradyhouse/house/fiddles/typescript/FiddleName",
+  "dependencies": {
+    "bower": "^1.7.7",
+    "typescript": "^1.8.7"
+  }
+}

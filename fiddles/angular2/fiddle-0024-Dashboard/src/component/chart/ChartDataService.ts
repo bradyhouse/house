@@ -7,11 +7,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ChartDataService {
     constructor(private http: Http) {}
-    bind(url:String, titles:String[], store:Object[]) {
-
-
-    }
-
     request(url:String) {
         return this.http
             .get(url)

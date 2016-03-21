@@ -16,10 +16,12 @@
 # 06/21/2015 - See CHANGELOG @ 201506210420
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
+# 03/12/2015 - See CHANGELOG @ 201603100420
 # ---------------------------------------------------------------------------------------------------|
-clear
-port=8889
-thisFile=$(echo "$0" | sed 's/\.\///g')
+clear;
+port=8889;
+thisFile=$(echo "$0" | sed 's/\.\///g');
+source _fiddle-func.sh;
 
 function showTitle() {
     echo -e ""

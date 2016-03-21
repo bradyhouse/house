@@ -20,9 +20,11 @@
 # 12/06/2015 - See CHANGELOG @ 201511100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 03/02/2016 - See CHANGELOG @ 201603020420
+# 03/10/2016 - See CHANGELOG @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
-thisFile=$(echo "$0" | sed 's/\.\///g')
-echo "${thisFile}" | awk '{print toupper($0)}'
+echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
+source _fiddle-func.sh;
+
 
 if [ "$#" -ne 1 ]
 then
@@ -42,8 +44,9 @@ then
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
     echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
     echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
-    echo -e "\t\"php\"\t\tPHP Fiddle"
     echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
+    echo -e "\t\"php\"\t\tPHP Fiddle"
+    echo -e "\t\"rxjs\"\t\tRxJS Fiddle"
     echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
     echo -e "\t\"chrome\"\tChrome Extension Fiddle"
     echo -e "\t\"node\"\t\tnode.js Fiddle"
@@ -67,7 +70,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'svg')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'svg')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;

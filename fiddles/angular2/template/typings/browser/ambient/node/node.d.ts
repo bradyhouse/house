@@ -1,5 +1,5 @@
-// Compiled using typings@0.6.8
-// Source: https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/48c1e3c1d6baefa4f1a126f188c27c4fefd36bff/node/node.d.ts
+// Compiled using typings@0.6.10
+// Source: https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/138ad74b9e8e6c08af7633964962835add4c91e2/node/node.d.ts
 // Type definitions for Node.js v4.x
 // Project: http://nodejs.org/
 // Definitions by: Microsoft TypeScript <http://typescriptlang.org>, DefinitelyTyped <https://github.com/borisyankov/DefinitelyTyped>
@@ -176,12 +176,12 @@ declare module NodeJS {
     }
 
     export interface EventEmitter {
-        addListener(event: string, listener: Function): this;
-        on(event: string, listener: Function): this;
-        once(event: string, listener: Function): this;
-        removeListener(event: string, listener: Function): this;
-        removeAllListeners(event?: string): this;
-        setMaxListeners(n: number): this;
+        addListener(event: string, listener: Function): EventEmitter;
+        on(event: string, listener: Function): EventEmitter;
+        once(event: string, listener: Function): EventEmitter;
+        removeListener(event: string, listener: Function): EventEmitter;
+        removeAllListeners(event?: string): EventEmitter;
+        setMaxListeners(n: number): EventEmitter;
         getMaxListeners(): number;
         listeners(event: string): Function[];
         emit(event: string, ...args: any[]): boolean;
@@ -213,29 +213,11 @@ declare module NodeJS {
 
     export interface ReadWriteStream extends ReadableStream, WritableStream {}
 
-    export interface Events extends EventEmitter { }
-
-    export interface Domain extends Events {
-        run(fn: Function): void;
-        add(emitter: Events): void;
-        remove(emitter: Events): void;
-        bind(cb: (err: Error, data: any) => any): any;
-        intercept(cb: (data: any) => any): any;
-        dispose(): void;
-
-        addListener(event: string, listener: Function): this;
-        on(event: string, listener: Function): this;
-        once(event: string, listener: Function): this;
-        removeListener(event: string, listener: Function): this;
-        removeAllListeners(event?: string): this;
-    }
-
     export interface Process extends EventEmitter {
         stdout: WritableStream;
         stderr: WritableStream;
         stdin: ReadableStream;
         argv: string[];
-        execArgv: string[];
         execPath: string;
         abort(): void;
         chdir(directory: string): void;
@@ -294,12 +276,9 @@ declare module NodeJS {
         umask(mask?: number): number;
         uptime(): number;
         hrtime(time?:number[]): number[];
-        domain: Domain;
 
         // Worker
         send?(message: any, sendHandle?: any): void;
-        disconnect(): void;
-        connected: boolean;
     }
 
     export interface Global {
@@ -395,7 +374,7 @@ interface NodeBuffer {
     readUIntBE(offset: number, byteLength: number, noAssert?: boolean): number;
     readIntLE(offset: number, byteLength: number, noAssert?: boolean): number;
     readIntBE(offset: number, byteLength: number, noAssert?: boolean): number;
-    readUInt8(offset: number, noAssert?: boolean): number;
+    readUInt8(offset: number, noAsset?: boolean): number;
     readUInt16LE(offset: number, noAssert?: boolean): number;
     readUInt16BE(offset: number, noAssert?: boolean): number;
     readUInt32LE(offset: number, noAssert?: boolean): number;
@@ -434,9 +413,6 @@ interface NodeBuffer {
 ************************************************/
 declare module "buffer" {
     export var INSPECT_MAX_BYTES: number;
-    var BuffType: typeof Buffer;
-    var SlowBuffType: typeof SlowBuffer;
-    export { BuffType as Buffer, SlowBuffType as SlowBuffer };
 }
 
 declare module "querystring" {
@@ -462,12 +438,12 @@ declare module "events" {
         static listenerCount(emitter: EventEmitter, event: string): number; // deprecated
         static defaultMaxListeners: number;
 
-        addListener(event: string, listener: Function): this;
-        on(event: string, listener: Function): this;
-        once(event: string, listener: Function): this;
-        removeListener(event: string, listener: Function): this;
-        removeAllListeners(event?: string): this;
-        setMaxListeners(n: number): this;
+        addListener(event: string, listener: Function): EventEmitter;
+        on(event: string, listener: Function): EventEmitter;
+        once(event: string, listener: Function): EventEmitter;
+        removeListener(event: string, listener: Function): EventEmitter;
+        removeAllListeners(event?: string): EventEmitter;
+        setMaxListeners(n: number): EventEmitter;
         getMaxListeners(): number;
         listeners(event: string): Function[];
         emit(event: string, ...args: any[]): boolean;
@@ -485,7 +461,7 @@ declare module "http" {
         host?: string;
         hostname?: string;
         family?: number;
-        port?: number;
+        port?: number
         localAddress?: string;
         socketPath?: string;
         method?: string;
@@ -524,7 +500,7 @@ declare module "http" {
         statusCode: number;
         statusMessage: string;
         headersSent: boolean;
-        setHeader(name: string, value: string | string[]): void;
+        setHeader(name: string, value: string): void;
         sendDate: boolean;
         getHeader(name: string): string;
         removeHeader(name: string): void;
@@ -648,12 +624,6 @@ declare module "cluster" {
         silent?: boolean;
     }
 
-    export interface Address {
-        address: string;
-        port: number;
-        addressType: string;
-    }
-
     export class Worker extends events.EventEmitter {
         id: string;
         process: child.ChildProcess;
@@ -675,13 +645,6 @@ declare module "cluster" {
 
     // Event emitter
     export function addListener(event: string, listener: Function): void;
-    export function on(event: "disconnect", listener: (worker: Worker) => void): void;
-    export function on(event: "exit", listener: (worker: Worker, code: number, signal: string) => void): void;
-    export function on(event: "fork", listener: (worker: Worker) => void): void;
-    export function on(event: "listening", listener: (worker: Worker, address: any) => void): void;
-    export function on(event: "message", listener: (worker: Worker, message: any) => void): void;
-    export function on(event: "online", listener: (worker: Worker) => void): void;
-    export function on(event: "setup", listener: (settings: any) => void): void;
     export function on(event: string, listener: Function): any;
     export function once(event: string, listener: Function): void;
     export function removeListener(event: string, listener: Function): void;
@@ -770,7 +733,7 @@ declare module "os" {
             sys: number;
             idle: number;
             irq: number;
-        };
+        }
     }
 
     export interface NetworkInterfaceInfo {
@@ -945,7 +908,6 @@ declare module "child_process" {
         stdin:  stream.Writable;
         stdout: stream.Readable;
         stderr: stream.Readable;
-        stdio: (stream.Readable|stream.Writable)[];
         pid: number;
         kill(signal?: string): void;
         send(message: any, sendHandle?: any): void;
@@ -1748,18 +1710,15 @@ declare module "crypto" {
         final(): Buffer;
         final(output_encoding: string): string;
         setAutoPadding(auto_padding: boolean): void;
-        getAuthTag(): Buffer;
     }
     export function createDecipher(algorithm: string, password: any): Decipher;
     export function createDecipheriv(algorithm: string, key: any, iv: any): Decipher;
     export interface Decipher {
         update(data: Buffer): Buffer;
-        update(data: string|Buffer, input_encoding?: string, output_encoding?: string): string;
-        update(data: string|Buffer, input_encoding?: string, output_encoding?: string): Buffer;
+        update(data: string, input_encoding?: string, output_encoding?: string): string;
         final(): Buffer;
         final(output_encoding: string): string;
         setAutoPadding(auto_padding: boolean): void;
-        setAuthTag(tag: Buffer): void;
     }
     export function createSign(algorithm: string): Signer;
     export interface Signer extends NodeJS.WritableStream {
@@ -1792,17 +1751,6 @@ declare module "crypto" {
     export function randomBytes(size: number, callback: (err: Error, buf: Buffer) =>void ): void;
     export function pseudoRandomBytes(size: number): Buffer;
     export function pseudoRandomBytes(size: number, callback: (err: Error, buf: Buffer) =>void ): void;
-    export interface RsaPublicKey {
-        key: string;
-        padding?: any;
-    }
-    export interface RsaPrivateKey {
-        key: string;
-        passphrase?: string,
-        padding?: any;
-    }
-    export function publicEncrypt(public_key: string|RsaPublicKey, buffer: Buffer): Buffer
-    export function privateDecrypt(private_key: string|RsaPrivateKey, buffer: Buffer): Buffer
 }
 
 declare module "stream" {
@@ -1982,13 +1930,19 @@ declare module "tty" {
 declare module "domain" {
     import * as events from "events";
 
-    export class Domain extends events.EventEmitter implements NodeJS.Domain {
+    export class Domain extends events.EventEmitter {
         run(fn: Function): void;
         add(emitter: events.EventEmitter): void;
         remove(emitter: events.EventEmitter): void;
         bind(cb: (err: Error, data: any) => any): any;
         intercept(cb: (data: any) => any): any;
         dispose(): void;
+
+        addListener(event: string, listener: Function): Domain;
+        on(event: string, listener: Function): Domain;
+        once(event: string, listener: Function): Domain;
+        removeListener(event: string, listener: Function): Domain;
+        removeAllListeners(event?: string): Domain;
     }
 
     export function create(): Domain;

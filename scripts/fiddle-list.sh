@@ -17,72 +17,54 @@
 # 01/16/2015 - See CHANGELOG @ 201601100420
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 03/02/2016 - See CHANGELOG @ 201603020420
+# 03/10/2016 - See CHANGELOG @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
-thisFile=$(echo "$0" | sed 's/\.\///g')
-echo "${thisFile}" | awk '{print toupper($0)}'
+echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
+source _fiddle-func.sh;
 #try
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php'| 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
-            echo -e ""
-            echo -e "--------------------------------------------------------"
-            echo -e "$1 Fiddles" | awk '{print toupper($0)}'
-            echo -e "--------------------------------------------------------"
-            echo -e ""
-            ls -1 ../fiddles/$1 | grep 'fiddle'
+            echo -e "";
+            echo -e "--------------------------------------------------------";
+            echo -e "$1 Fiddles" | awk '{print toupper($0)}';
+            echo -e "--------------------------------------------------------";
+            echo -e "";
+            ls -1 ../fiddles/$1 | grep 'fiddle';
             if [[ ${count} -eq "0" ]]
             then
-                echo -e "N/A"
+                echo -e "N/A";
             fi
-            echo -e ""
-            echo -e "--------------------------------------------------------"
-            echo -e "Total:  ${count}"
-            echo -e ""
+            echo -e "";
+            echo -e "--------------------------------------------------------";
+            echo -e "Total:  ${count}";
+            echo -e "";
             ;;
-        *)  exit 86
+        *)  exit 86;
             ;;
     esac
 )
 #catch
-_rc=$?
+_rc=$?;
 case ${_rc} in
-    0)  echo ""
+    0)  echo "";
         ;;
-    86) echo ""
-        echo "Nope ~ Incorrect number of arguments"
-        echo ""
-        echo "Usage:"
-        echo ""
-        echo "$0 \"[t]\" \"[n]\""
-        echo ""
-        echo "[t] - type. Valid types include: "
-        echo ""
-        echo -e "\t\"angular\"\t\tAngular Fiddle"
-        echo -e "\t\"angular2\"\t\tAngular 2 Fiddle"
-        echo -e "\t\"ant\"\t\tAnt Fiddle"
-        echo -e "\t\"bash\"\t\tBash Fiddle"
-        echo -e "\t\"compass\"\tCompass Fiddle"
-        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-        echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
-        echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
-        echo -e "\t\"php\"\t\tPHP Fiddle"
-        echo -e "\t\"python\"\tPython Fiddle"
-        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
-        echo -e "\t\"chrome\"\tChrome Extension Fiddle"
-        echo -e "\t\"node\"\t\tNode Fiddle"
-        echo -e "\t\"tween\"\t\ttween.js Fiddle"
-        echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
-        echo ""
-        echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
-        echo ""
-        echo ""
+    86) echo "";
+        echo "Nope ~ Incorrect number of arguments";
+        echo "";
+        echo "Usage:";
+        echo "";
+        echo "$0 \"[t]\"";
+        echo "";
+        echo "[t] - type. Valid types include: ";
+        echo "";
+        voidEchoFiddleTypes;
+        echo "";
         ;;
-    *)  echo "fubar! Something went wrong."
+    *)  echo "fubar! Something went wrong.";
         ;;
 esac
 #finally
-exit ${_rc}
+exit ${_rc};

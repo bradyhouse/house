@@ -24,9 +24,11 @@
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 02/13/2016 - See CHANGELOG @ 201602130420
 # 03/02/2016 - See CHANGELOG @ 201603020420
+# 03/10/2016 - See CHANGELOG @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
-thisFile=$(echo "$0" | sed 's/\.\///g')
-echo "${thisFile}" | awk '{print toupper($0)}'
+echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
+source _fiddle-func.sh;
+
 #try
 (
 	if [ "$#" -ne 2 ]; then  exit 86; fi
@@ -47,8 +49,8 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ./fiddle-index.sh "compass" || exit 87
             ;;
         'd3')
-            ./fiddle-d3.sh $2 || exit 87
-            ./fiddle-index.sh "d3" || exit 87
+            ./fiddle-d3.sh $2 || exit 99
+            ./fiddle-index.sh "d3" || exit 99
             ;;
         'extjs5')
             ./fiddle-extjs-5.sh $2 || exit 87
@@ -74,6 +76,13 @@ echo "${thisFile}" | awk '{print toupper($0)}'
             ;;
         'python')
             ./fiddle-python.sh $2 || exit 98
+            ;;
+        'rxjs')
+            ./fiddle-rxjs.sh $2 || exit 100
+            ./fiddle-index.sh "rxjs" || exit 100
+            ;;
+        'typescript')
+            ./fiddle-typescript.sh $2 || exit 101
             ;;
         'dojo')
             ./fiddle-dojo.sh $2 || exit 91
@@ -116,23 +125,7 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
-        echo -e "\t\"ant\"\t\tAnt Fiddle"
-        echo -e "\t\"angular\"\t\tAngular Fiddle"
-        echo -e "\t\"angular2\"\t\tAngular2 Fiddle"
-        echo -e "\t\"bash\"\t\tBash Fiddle"
-        echo -e "\t\"compass\"\tCompass Fiddle"
-        echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-        echo -e "\t\"dojo\"\t\tDojo Fiddle"
-        echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
-        echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
-        echo -e "\t\"php\"\t\tPHP Fiddle"
-        echo -e "\t\"python\"\tPython Fiddle"
-        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-        echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
-        echo -e "\t\"chrome\"\tChrome Extension Fiddle"
-        echo -e "\t\"node\"\t\tNode Fiddle"
-        echo -e "\t\"tween\"\t\ttween.js Fiddle"
-        echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
+        voidEchoFiddleTypes;
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""
@@ -161,6 +154,12 @@ case ${_rc} in
     97) echo "fubar! svg fiddle creation failed."
         ;;
     98) echo "fubar! python fiddle creation failed."
+        ;;
+    99) echo "fubar! d3 fiddle creation failed."
+        ;;
+    100) echo "fubar! rxjs fiddle creation failed."
+        ;;
+    101) echo "fubar! typescript fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

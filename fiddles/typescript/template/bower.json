@@ -1,0 +1,30 @@
+{
+  "name": "FiddleName",
+  "description": "Another typescript fiddle",
+  "main": "app.js",
+  "authors": [
+    "bradyhouse@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "fiddle",
+    "typescript",
+    "es6"
+  ],
+  "homepage": "https://github.com/bradyhouse/house",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
