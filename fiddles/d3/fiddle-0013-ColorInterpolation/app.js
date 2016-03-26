@@ -19,7 +19,7 @@
     };
 
     window.app.render = function (data, scale, selector) {
-        d3.select(selector).selectAll("div.cell")
+        d3.select(selector).selectAll("div .cell")
             .data(data)
             .enter()
             .append("div")

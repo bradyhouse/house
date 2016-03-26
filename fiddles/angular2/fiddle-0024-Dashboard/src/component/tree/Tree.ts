@@ -1,4 +1,4 @@
-import {Component, View, EventEmitter} from 'angular2/core';
+import {Component, View, EventEmitter, OnInit} from 'angular2/core';
 import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
 import * as core from 'angular2/core';
 import {TreeViewController} from './TreeView';

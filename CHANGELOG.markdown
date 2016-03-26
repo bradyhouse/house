@@ -755,7 +755,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/d3/fiddle-0012-StringInterpolation](fiddles/d3/fiddle-0012-StringInterpolation)
     5.  Added [fiddles/d3/fiddle-0013-ColorInterpolation](fiddles/d3/fiddle-0013-ColorInterpolation)
     6.  Added [fiddles/d3/fiddle-0014-CompoundInterpolation](fiddles/d3/fiddle-0014-CompoundInterpolation)
-    7.  Added [fiddles/d3/fiddle-0015-BasicAxes](fiddles/d3/fiddle-0015-BasicAxes)
 * **fiddle.sh**
     1.  Refactored [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
         *   Note - Modified to use new node based template directory
@@ -792,3 +791,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **RxJS**
     1.  Added [fiddles/rxjs/fiddle-0001-AjaxObservable](fiddles/rxjs/fiddle-0001-AjaxObservable)
 
+### 201603220420
+
+* **Bash**
+    1.  Added [fiddles/bash/fiddle-0069-NodeProjectSetup](fiddles/bash/fiddle-0069-NodeProjectSetup)
+    2.  Added [fiddles/bash/fiddle-0070-GitSubModuleInitUpdate](fiddles/bash/fiddle-0070-GitSubModuleInitUpdate)
+    3.  Added [fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup](fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup)
+* **D3**
+    1.  Added [fiddles/d3/fiddle-0015-BasicAxes](fiddles/d3/fiddle-0015-BasicAxes)
+    2.  Added [fiddles/d3/fiddle-0017-ClickEventListener](fiddles/d3/fiddle-0017-ClickEventListener)
+    3.  Added [fiddles/d3/fiddle-0018-DragEventListener](fiddles/d3/fiddle-0018-DragEventListener)
+    4.  Added [fiddles/d3/fiddle-0019-BarChartGradient](fiddles/d3/fiddle-0019-BarChartGradient)
+    5.  Added [fiddles/d3/fiddle-0020-CustomAxisTick](fiddles/d3/fiddle-0020-CustomAxisTick)
+    6.  Added [fiddles/d3/fiddle-0021-GridLines](fiddles/d3/fiddle-0021-GridLines)
+    7.  Added [fiddles/d3/fiddle-0022-Rescaling](fiddles/d3/fiddle-0022-Rescaling)
+* **Angular 2**
+    1.  Started [fiddles/angular2/fiddle-0030-D3VerticalBarChart](fiddles/angular2/fiddle-0030-D3VerticalBarChart)

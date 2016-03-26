@@ -1,0 +1,27 @@
+body {
+    font-family: "Courier New";
+    font-size: small;
+    text-align: center;
+    background-color: black;
+}
+
+.axis {
+    padding-left: 10px;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: white;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font: 10px sans-serif;
+    color: white;
+}
+
+.axis .grid-line{
+    stroke: white;
+    shape-rendering: crispEdges
+}
+

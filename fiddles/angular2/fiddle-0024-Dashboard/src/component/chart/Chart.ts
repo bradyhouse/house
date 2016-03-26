@@ -17,7 +17,7 @@ import {Nvd3Component} from './Nvd3Component';
     providers: [HTTP_PROVIDERS, ChartDataService]
 })
 export class Chart implements OnChanges {
-    data:Object[];
+    data:any[];
     height:Number;
     nodes:String[];
     url:String;
@@ -61,10 +61,10 @@ export class Chart implements OnChanges {
             key: this.nodes,
             values: []
         };
-        data.sort(function (a, b) {
+        data.sort(function (a:any, b:any) {
             return parseFloat(a.checking) - parseFloat(b.checking);
         });
-        data.map(function (item) {
+        data.map(function (item:any) {
             var namePieces = item.name.split(' '),
                 lastName = namePieces && namePieces.length > 1 ? namePieces[1].toUpperCase() : item.name.toUpperCase();
             root.values.push({
@@ -104,7 +104,6 @@ export class Chart implements OnChanges {
                 },
                 duration: 30,
                 rotateLabels: 45,
-                showValues: false,
                 showLegend: true,
                 staggerLabels: true,
                 noData: this.message,

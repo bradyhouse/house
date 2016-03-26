@@ -1,5 +1,6 @@
 body {
-    font-family: "helvetica";
+    font-family: "Courier New";
+    font-size: small;
 }
 
 button {
@@ -18,11 +19,6 @@ button {
 }
 
 .box {
-    width: 200px;
-    height: 200px;
-    margin: 40px;
-    float: left;
-    text-align: center;
     border: #969696 solid thin;
     padding: 5px;
 }

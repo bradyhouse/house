@@ -6,7 +6,7 @@ fiddle-0014-CompoundInterpolation
 
 ### Title
 
-fiddle-0014-CompoundInterpolation
+Compound Interpolation
 
 
 ### Creation Date
@@ -21,7 +21,8 @@ Chicago, IL
 
 ### Description
 
-Another d3 fiddle.
+Fiddle based on the [compound-interpolation example](https://github.com/NickQiZhu/d3-cookbook/blob/master/src/chapter4/compound-interpolation.html)
+given in chapter 4 of Nick Qi Zhu's book **Data Visualization with D3.js Cookbook**.
 
 
 ### Published Version Link

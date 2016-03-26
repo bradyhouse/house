@@ -6,7 +6,7 @@
         .attr("id", "section1")
         .append("div")
         .attr("class", "blue box")
-        .append("p") // <-- F
+        .append("p")
         .text("dynamic blue box");
 
     d3.select("body")
