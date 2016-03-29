@@ -67,3 +67,6 @@
 [submodule "fiddles/angular2/libs/ag-grid-ng2-example"]
 	path = fiddles/angular2/libs/ag-grid-ng2-example
 	url = https://github.com/ceolter/ag-grid-ng2-example.git
+[submodule "fiddles/d3/libs/d3.wiki"]
+	path = fiddles/d3/libs/d3.wiki
+	url = https://github.com/mbostock/d3.wiki.git

@@ -740,7 +740,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added dependency (submodule) to [angular2-rxjs-observable-data-services](https://github.com/jhades/angular2-rxjs-observable-data-services.git)
         *   [fiddles/angular2/libs/angular2-rxjs-observable-data-services](fiddles/angular2/libs/angular2-rxjs-observable-data-services)
     2.  Added [fiddles/angular2/fiddle-0028-CgmPanel](fiddles/angular2/fiddle-0028-CgmPanel)
-    3.  Added [fiddles/angular2/fiddle-0029-Dashboard](fiddles/angular2/fiddle-0029-Dashboard)
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0063-InstallTsun](fiddles/bash/fiddle-0063-InstallTsun)
     2.  Added [fiddles/bash/fiddle-0064-InstallTypings](fiddles/bash/fiddle-0064-InstallTypings)
@@ -807,3 +806,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     7.  Added [fiddles/d3/fiddle-0022-Rescaling](fiddles/d3/fiddle-0022-Rescaling)
 * **Angular 2**
     1.  Started [fiddles/angular2/fiddle-0030-D3VerticalBarChart](fiddles/angular2/fiddle-0030-D3VerticalBarChart)
+
+### 201603260420
+
+* **D3**
+    1.  Added [fiddles/d3/fiddle-0023-ElementTransition](fiddles/d3/fiddle-0023-ElementTransition)
+    2.  Added [fiddles/d3/fiddle-0024-BarChart](fiddles/d3/fiddle-0024-BarChart)

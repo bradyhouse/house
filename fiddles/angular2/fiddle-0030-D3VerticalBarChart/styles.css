@@ -3,3 +3,6 @@
 .nvd3-svg {
     padding: 10px;
 }
+
+stop.begin { stop-color: #E9F90B; }
+stop.end { stop-color: #F91B0B; }

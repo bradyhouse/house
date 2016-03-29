@@ -1,17 +1,18 @@
 import { Component, OnChanges, ElementRef, Inject, Input } from 'angular2/core';
-import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
-declare var d3, nv:any;
+declare let d3, nv:any;
 
 @Component({
     selector: 'nvd3-component',
     template: ``
 })
-export class Nvd3Component {
+export class Nvd3Component implements OnChanges {
     @Input() options:any;
     @Input() data: Array<any>;
     el:any;
     chart:any;
+    chartElementType:string;
     svg:any;
+
 
     constructor(@Inject(ElementRef) elementRef:ElementRef) {
         this.el = elementRef.nativeElement;
@@ -37,8 +38,10 @@ export class Nvd3Component {
         }
         this.clearElement();
         this.chart = nv.models[options.chart.type]();
+        this.chartElementType = this.parseChartElementType(options.chart.type);
         this.chart.id = options.chart.hasOwnProperty('id') ? options.chart.id : 'chart-' + Math.random().toString(36).substr(2, 15);
 
+        // ToDo: Refactor
         for (let key in this.chart) {
             if (!this.chart.hasOwnProperty(key) || key[0] === '_') {
                 continue;
@@ -55,11 +58,9 @@ export class Nvd3Component {
                     'tooltipContent'
                 ].indexOf(key) >= 0) {
                 continue;
-            }
-            else if (key === 'dispatch') {
-                this.configureEvents(this.chart, options.chart.type, options.chart[key]);
-            }
-            else if ([
+            } else if (key === 'dispatch') {
+                this.configureEvents(this.chart, this.chartElementType, options.chart[key]);
+            } else if ([
                     'bars',
                     'bars1',
                     'bars2',
@@ -107,7 +108,9 @@ export class Nvd3Component {
             else if (options.chart[key] === undefined || options.chart[key] === null) {
                 continue;
             }
-            else this.chart[key](options.chart[key]);
+            else {
+                this.chart[key](options.chart[key]);
+            }
         }
         this.configureDimensions();
         nv.addGraph(this.onAddGraph, options.chart['callback']);
@@ -129,8 +132,10 @@ export class Nvd3Component {
     private configureDimensions() : void {
         let chartHeight = this.options.chart.height,
             chartWidth = this.options.chart.width;
+
         d3.select(this.el).select('svg').remove();
         this.svg = d3.select(this.el).append('svg');
+
         if (chartHeight) {
             if (!isNaN(+chartHeight)) {
                 chartHeight += 'px';
@@ -145,9 +150,38 @@ export class Nvd3Component {
         } else {
             this.svg.attr('width', '100%').style({width: '100%'});
         }
+
+        if(this.options && this.options.chart && this.options.chart.gradients) {
+            this.configureGradients(this.options.chart.gradients);
+        }
     }
 
-    private configureChart(chart, options, chartType) : void {
+    private configureGradients(gradientOptions:any) : void {
+        if (gradientOptions) {
+            let svgDefs = this.svg.append("svg:defs");
+            gradientOptions.map(function(gradientOption:any) {
+                let gradient:any = svgDefs
+                    .append("svg:" + gradientOption.type);
+                if (gradientOption.attributes) {
+                    for (attribute in gradientOption.attributes) {
+                        gradient.attr(attribute, gradientOption.attributes[attribute]);
+                    }
+                }
+                if (gradientOption.stops) {
+                    gradientOption.stops.map(function(stop:any) {
+                        let svgStop:any = gradient.append("svg:stop");
+                        for(attribute in stop) {
+                            svgStop.attr(attribute, stop[attribute]);
+                        }
+                    }, gradient);
+                }
+            }, svgDefs);
+        }
+    }
+
+
+
+    private configureChart(chart : any, options : any, chartType : string) : void {
         if (chart && options) {
             for (let key in chart) {
                 if (!chart.hasOwnProperty(key)) {
@@ -157,7 +191,7 @@ export class Nvd3Component {
                 if (key[0] === '_') {
                     continue;
                 } else if (key === 'dispatch') {
-                    this.configureEvents(value, options[key]);
+                    continue;
                 } else if (key === 'tooltip') {
                     this.configureChart(chart[key], options[key], chartType);
                 } else if (key === 'contentGenerator') {
@@ -194,8 +228,7 @@ export class Nvd3Component {
     }
 
     private configureEvents(chart:any, type:string, options:any) : void {
-        let elementType:string = chart && type && options ? this.parseChartElementType(type) : '';
-        let element:any = chart.hasOwnProperty(elementType) ? chart[elementType] : null;
+        let element:any = chart.hasOwnProperty(type) ? chart[type] : null;
         if (element) {
             for(let key in options) {
                 element.dispatch.on(key, options[key]);
@@ -223,12 +256,5 @@ export class Nvd3Component {
         }
         this.chart = null;
     }
-
-    private configureGradients() : void {
-
-        console.log(chart);
-        console.log(bars);
-    }
-
 
 }

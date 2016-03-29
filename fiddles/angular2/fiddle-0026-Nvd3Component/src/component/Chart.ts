@@ -12,6 +12,7 @@ declare let d3:any;
             <nvd3-component [options]="chartOptions" [data]="data"></nvd3-component>
         </div>
     `,
+    styleUrls: ['css/chart.css'],
     inputs: ['uiCls', 'height', 'width', 'nodes', 'url'],
     directives: [Nvd3Component],
     providers: [HTTP_PROVIDERS, ChartDataService]
@@ -62,8 +63,9 @@ export class Chart implements OnInit {
                 lastName = namePieces && namePieces.length > 1 ? namePieces[1].toUpperCase() : item.name.toUpperCase();
             root.values.push({
                 "label": lastName,
-                "color": parseFloat(item.checking) < 0 ? "red" : "green",
+                "color": parseFloat(item.checking) < 0 ? "url(#yellowToRed)" : "url(#lightblueToBlue)",
                 "value": item.checking,
+
                 "elementClick": function() {
                     alert(item.checking);
                 }
@@ -72,6 +74,7 @@ export class Chart implements OnInit {
         this.data.push(root);
     }
     get chartOptions() {
+        let self:any = this;
         return {
             chart: {
                 id: 'chart1',
@@ -102,47 +105,58 @@ export class Chart implements OnInit {
                 yAxis: {
                     label: 'Checking Balance',
                 },
-                callback: function() {
-                    console.log('callback');
-                    // d3.selectAll(".nv-slice path").attr("fill", function(d, i) { return "url(#grad" + i + ")"; })
-
-                    let chart:any = d3.select('svg'),
-                        gradient = chart.append("svg:defs")
-                            .append("svg:linearGradient")
-                            .attr("id", "gradient")
-                            .attr("x1", "0%")
-                            .attr("y1", "0%")
-                            .attr("x2", "100%")
-                            .attr("y2", "100%")
-                            .attr("spreadMethod", "pad");
-
-                    gradient.append("svg:stop")
-                        .attr("offset", "0%")
-                        .attr("stop-color", "#00cc00")
-                        .attr("stop-opacity", 1);
-
-                    gradient.append("svg:stop")
-                        .attr("offset", "100%")
-                        .attr("stop-color", "#006600")
-                        .attr("stop-opacity", 1);
-
-                    window.setTimeout(function() {
-                        let negativeBars:any=d3.select('.nvd3-svg > g')
-                            .select('.nv-barsWrap')
-                            .select('.nv-discretebar')
-                            .select('.nv-groups > g')
-                            .selectAll('.negative')
-                            .select('rect')
-                            .style("fill","url(#gradrient)");
-                        console.log(negativeBars);
-                    }, 1000);
-
-                },
-                dispatch: {
-                    'elementClick': function(event) {
-                        console.log(event);
-                    }
-                }
+                gradients: [{
+                    type: "linearGradient",
+                    attributes: {
+                        id: "yellowToRed",
+                        x1: "0%",
+                        y1: "0%",
+                        x2: "0%",
+                        y2: "100%",
+                        spreadMethod: "pad"
+                    },
+                    stops: [{
+                        class: "yellow",
+                        offset: "0%"
+                    }, {
+                        class: "red",
+                        offset: "100%"
+                    }]
+                }, {
+                    type: "linearGradient",
+                    attributes: {
+                        id: "redToYellow",
+                        x1: "0%",
+                        y1: "100%",
+                        x2: "0%",
+                        y2: "0%",
+                        spreadMethod: "pad"
+                    },
+                    stops: [{
+                        class: "red",
+                        offset: "0%"
+                    }, {
+                        class: "yellow",
+                        offset: "100%"
+                    }]
+                }, {
+                    type: "linearGradient",
+                    attributes: {
+                        id: "lightblueToBlue",
+                        x1: "0%",
+                        y1: "100%",
+                        x2: "0%",
+                        y2: "0%",
+                        spreadMethod: "pad"
+                    },
+                    stops: [{
+                        class: "lightblue",
+                        offset: "0%"
+                    }, {
+                        class: "blue",
+                        offset: "100%"
+                    }]
+                }]
             }
         }
     }

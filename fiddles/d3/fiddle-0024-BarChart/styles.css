@@ -1,0 +1,38 @@
+body {
+    font-family: "Courier New";
+    font-size: small;
+    text-align: center;
+    background-color: black;
+
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: white;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font: 10px sans-serif;
+    stroke: white;
+}
+
+.axis .h-grid-line{
+    stroke: white;
+    shape-rendering: crispEdges;
+    stroke-opacity: 1;
+    stroke-width: 2;
+}
+
+.axis .v-grid-line{
+    stroke: turquoise;
+    shape-rendering: crispEdges;
+    stroke-opacity: .2;
+    stroke-width: .5;
+}
+
+
+stop.begin { stop-color: #E9F90B; }
+stop.end { stop-color: #F91B0B; }
+
+

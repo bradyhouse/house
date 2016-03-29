@@ -12,3 +12,6 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
+stop.begin { stop-color: yellow; }
+stop.end { stop-color: green; }

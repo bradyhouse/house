@@ -38,7 +38,7 @@ export class Chart implements OnChanges {
                         if (titleNodes.length) {
                             titleNodes.map(function (titleNode) {
                                 if (!titleNode.leaf) {
-                                    titleNode.children.map(function (child) {
+                                       titleNode.children.map(function (child) {
                                         store.push(child);
                                     });
                                 }
