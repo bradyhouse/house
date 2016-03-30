@@ -6,7 +6,7 @@ fiddle-0024-BarChart
 
 ### Title
 
-fiddle-0024-BarChart
+Bar Chart
 
 
 ### Creation Date
@@ -21,14 +21,21 @@ Chicago, IL
 
 ### Description
 
-Another d3 fiddle.
+D3 fiddle exploring how to create a bar chart with the following requirements:
+
+*  x axis should use an ordinal scale and be labelled along the bottom
+*  y axis should use a linear scale and rendered along left side of the chart
+*  series bars should have a linear gradient
+*  colors used in the gradient should be defined in a separate css file
+*  the width and height of the chart should be based on the dimension of the window
+*  the dimensions of the chart should refresh on window resize
 
 
 ### Published Version Link
 
-N/A
+[codepen](http://codepen.io/bradyhouse/pen/GZvmjN)
 
 
 ### Tags
 
-d3
+d3: scale: ordinal, rangeRoundBands; axis: scale, orient
