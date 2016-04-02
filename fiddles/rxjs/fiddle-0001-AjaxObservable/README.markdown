@@ -6,7 +6,7 @@ fiddle-0001-AjaxObservable
 
 ### Title
 
-fiddle-0001-AjaxObservable
+Ajax Observable
 
 
 ### Creation Date
@@ -21,14 +21,17 @@ Chicago, IL
 
 ### Description
 
-Another d3 fiddle.
+Fiddle exploring how to create and subscribe to an observable that wraps the XmlHttpRequest in order to perform
+a GET request.
 
 
 ### Published Version Link
 
-N/A
+[js fiddle](https://jsfiddle.net/bradyhouse/4gr67tpv/)
 
 
 ### Tags
 
-rx.js
+rx: observable: create, onnext, oncompleted, onerror; subscribe;
+xmlhttprequest: open, onload, onerror, send;
+d3: select, text;

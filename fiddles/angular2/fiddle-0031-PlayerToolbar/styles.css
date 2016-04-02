@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+body { padding: 10px; vertical-align: middle; text-align: center }
+player-toolbar div.footer {  margin: 0px;  }
+player-toolbar nav.navbar.navbar-default {  background-color: transparent;  }
+player-toolbar .player-range {  margin-top: 10px;  }
+player-toolbar * {  border-radius: 0 !important;  }
+player-toolbar .btn-default {  height: 67px; border: none; margin: 0px;  }
+player-toolbar .container-fluid { margin: 0px;  }
+player-toolbar ul.nav.navbar-nav.navbar-right li.btn.btn-default {  margin-right: 20px;  }
+player-toolbar a.fa{  vertical-align: middle;  margin-bottom: 0px;  }
+player-toolbar label {  margin-top: 5px;  }
+

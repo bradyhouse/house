@@ -30,7 +30,7 @@ function createAppDirectory() {
 function addDirectories() {
     log "$0" "addDirectories";
     _root_path=$1;
-    _src_root_path="src";
+    _src_root_path="${_root_path}/src";
     createRootDirectory "${_root_path}";
     cd "${_root_path}";
     createSrcDirectory;

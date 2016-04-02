@@ -233,7 +233,7 @@ Ext.application({
                     id: 'btnClearColumns',
                     handler: function () {
                         var grid = this.up('grid');
-                        grid.reconfigure(grid.getStore(), []);
+                        M
                     }
                 }, {
                     text: 'restore state',

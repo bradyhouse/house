@@ -812,3 +812,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **D3**
     1.  Added [fiddles/d3/fiddle-0023-ElementTransition](fiddles/d3/fiddle-0023-ElementTransition)
     2.  Added [fiddles/d3/fiddle-0024-BarChart](fiddles/d3/fiddle-0024-BarChart)
+* **Angular2**
+    1.  Started [fiddles/angular2/fiddle-0031-PlayerToolbar](fiddles/angular2/fiddle-0031-PlayerToolbar)
+* **Rx**
+    1.  Refactored [fiddles/rxjs/fiddle-0001-AjaxObservable](fiddles/rxjs/fiddle-0001-AjaxObservable)
+    2.  Added [fiddles/rxjs/fiddle-0002-TimeObservable](fiddles/rxjs/fiddle-0002-TimeObservable)

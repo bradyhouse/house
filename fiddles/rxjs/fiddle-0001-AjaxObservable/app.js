@@ -1,7 +1,17 @@
-(function (app, $, undefined) {
+(function(undefined) {
     "use strict";
 
-    app.request = function(url) {
+    this.metadata = {
+        fiddleHeader: 'Rx - AJAX Observable',
+        urls: {
+            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/rxjs/fiddle-0001-AjaxObservable',
+            data: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/data.json"
+        },
+        consoleTag: 'H O U S E ~ f i d d l e s'
+    };
+
+
+    this.request = function(url) {
         return Rx.Observable.create(function(observer){
             var req = new XMLHttpRequest();
             req.open('GET', url);
@@ -20,22 +30,27 @@
         });
     };
 
-    app.start = app.request('data.json');
+    this.start = this.request(this.metadata.urls.data);
 
-    app.start.subscribe(
-    	function onNext(res) {
-    		console.log(res);
-    		d3.select("p#target")
-	        .text(res);
-    	}, 
-    	function onError(err) {
-    		console.log(err);
-    		d3.select("p#target")
-	        .text(err);
-    	},
-    	function onCompleted() {
-    		console.log('request complete');
-    	}
+    this.start.subscribe(
+        function onNext(res) {
+            console.log(res);
+            d3.select("p#target")
+                .text(res);
+        },
+        function onError(err) {
+            console.log(err);
+            d3.select("p#target")
+                .text(err);
+        },
+        function onCompleted() {
+            console.log('request complete');
+        }
     );
-    
-})(window.app = window.app || {}, d3)
+
+    console.log("%c" + meta.consoleTag, 'font-style: italic; font-size: 20px;');
+    console.log("%c" + meta.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
+    console.group();
+
+}.call(this));
+
