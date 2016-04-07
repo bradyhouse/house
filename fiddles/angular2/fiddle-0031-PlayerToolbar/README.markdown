@@ -73,11 +73,11 @@ Angular2 fiddle exploring how to create a player like toolbar with the following
 
 ### Published Version Link
 
-N/A
+[plnkr.co](http://plnkr.co/edit/YV3nmi?p=preview)
 
 ### Tags
 
-angular2, typescript, component, http, http_providers, nvd3, d3
+angular2, typescript, component, interface, enum, video, range, event emitter
 
 
 ### Forked From

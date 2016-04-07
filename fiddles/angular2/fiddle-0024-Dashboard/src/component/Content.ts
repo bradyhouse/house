@@ -9,7 +9,6 @@ import * as meta from '../meta';
 
 @Component({
     selector: 'content',
-    moduleId: module.id,
     providers: [HTTP_PROVIDERS, DataJsonApi]
 })
 @View({
@@ -30,69 +29,88 @@ import * as meta from '../meta';
 
 })
 export class ContentController {
-    _selectedNodes: String[] = [];
+
+    _selectedNodes:String[] = [];
 
     constructor(private dataJsonApi:DataJsonApi) {
-        this.chartData=[];
-        this.treeNodes=[];
-        this.treeUrl=meta.urls.data;
-        this.treeClass= "tree";
+        this.chartData = [];
+        this.treeNodes = [];
+        this.treeUrl = meta.urls.data;
+        this.treeClass = "tree";
         this.rowData = [];
         this.columnDefs = [];
     }
+
     configureGrid() {
         this.rowData = [];
         this.columnDefs = [];
 
         this.dataJsonApi.request().subscribe((res:Response) => {
             var accounts = [];
-            this.selectedNodes.map(function(node) {
-                 var titleNodes = res.children.filter(function (child) {
-                     return child.title == node;
-                 });
-                 if (titleNodes.length) {
-                     titleNodes.map(function (titleNode) {
-                         if (!titleNode.leaf) {
-                             titleNode.children.map(function (child) {
-                                 accounts.push(child);
-                             });
-                         }
-                     }, accounts);
-                 }
+            this.selectedNodes.map(function (node) {
+                var titleNodes = res.children.filter(function (child) {
+                    return child.title == node;
+                });
+                if (titleNodes.length) {
+                    titleNodes.map(function (titleNode) {
+                        if (!titleNode.leaf) {
+                            titleNode.children.map(function (child) {
+                                accounts.push(child);
+                            });
+                        }
+                    }, accounts);
+                }
             }, accounts);
+
+            accounts.sort(function (a, b) {
+                return parseFloat(a.checking) - parseFloat(b.checking);
+
+            });
 
             this.columnDefs = this.parseColumns(accounts[0]);
             this.rowData = accounts;
         });
     }
+
     parseColumns(rec) {
         var columns = [];
 
         if (rec) {
             Object.keys(rec).map(function (key) {
-                if (key !== 'leaf' && key !== 'title') {
-                    columns.push(
-                        {headerName: key, field: key}
-                    );
+                switch (key) {
+                    case 'isActive':
+                    case 'id':
+                    case 'leaf':
+                    case 'title':
+                        break;
+                    default:
+                        columns.push(
+                            {headerName: key, field: key}
+                        );
+                        break;
+                }
+
+                if (key !== 'leaf' && key !== 'title' && key !== 'id') {
+
                 }
             });
         }
         return columns;
     }
+
     onTreeNodeCheckChange(event) {
         var me = this;
         me._selectedNodes = [];
-        event.nodes.map(function(node){
+        event.nodes.map(function (node) {
             me._selectedNodes.push(node);
         }, me);
         me.configureGrid();
     }
-    get treeHeight() {
-        return this.height - 50;
-    }
+
     get selectedNodes() {
         return this._selectedNodes;
     }
+
     get gridOptions() {
         return {
             enableFilter: true,
@@ -101,11 +119,28 @@ export class ContentController {
             enableSorting: true
         }
     }
-    get gridHeight() {
-        return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : 0;
-    }
+
     get height() {
         return window.innerHeight - 60;
     }
 
+    get gridHeight() {
+        return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : 0;
+    }
+
+    get chartHeight() {
+        return this.rowData.length > 0 ? Math.floor(this.height / 2) - 4 : this.height - 4;
+
+    }
+
+    get treeHeight() {
+        return this.height - 50;
+    }
+
+    get chartConfig() {
+        return {
+            url: meta.urls.data,
+            uiCls: "chart"
+        }
+    }
 }

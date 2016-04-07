@@ -29,11 +29,13 @@ D3 fiddle exploring how to create a bar chart with the following requirements:
 *  colors used in the gradient should be defined in a separate css file
 *  the width and height of the chart should be based on the dimension of the window
 *  the dimensions of the chart should refresh on window resize
+*  the y axis should use a custom scale based on the values proximity to a fixed value (aka tolerance)
 
 
 ### Published Version Link
 
 [codepen](http://codepen.io/bradyhouse/pen/GZvmjN)
+[jsfiddle.net](https://jsfiddle.net/4bqc7s22/)
 
 
 ### Tags

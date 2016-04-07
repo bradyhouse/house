@@ -73,6 +73,18 @@ export class Chart implements OnInit {
         }, root);
         this.data.push(root);
     }
+
+    private constrain(number, min, max) {
+        let x = parseFloat(number);
+        if (min === null) {
+            min = number;
+        }
+        if (max === null) {
+            max = number;
+        }
+        return (x < min) ? min : ((x > max) ? max : x);
+    }
+
     get chartOptions() {
         let self:any = this;
         return {
@@ -89,10 +101,12 @@ export class Chart implements OnInit {
                     return d.label;
                 },
                 y: function (d) {
-                    return d.value;
+                    let scale = Math.floor(d.value / 100000),
+                        ret = (scale >= 0) ? self.constrain(scale, 0.05, 50) : self.constrain(scale, -50, -0.05);
+                    return ret;
                 },
-                valueFormat: function (d) {
-                    return d3.format(',.4f')(d);
+                valueFormat: function(d) {
+                    return d3.format(',4f')(d);
                 },
                 duration: 150,
                 rotateLabels: 45,

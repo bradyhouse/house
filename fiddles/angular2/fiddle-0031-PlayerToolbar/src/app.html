@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="panel panel-default" [ngStyle]="{'width': width + 'px'}" >
+        <div class="panel-body">
+            <video [ngStyle]="{'margin-left': videoMarginLeft + 'px', 'width': videoWidth + 'px'}"
+                   id="playerStream"
+                   (ended)="onVideoEnded($event)"
+                   src="http://buffalogrove.sat.iit.edu/Kitty.mp4"
+                   poster="http://buffalogrove.sat.iit.edu/thumb/dogs_friends-t2.jpg">
+                Sorry, your browser doesn't support embedded videos,
+                but don't worry, you can <a href="videofile.ogg">download it</a>
+                and watch it with your favorite video player!
+            </video>
+        </div>
+        <player-toolbar [options]="playerToolbarOptions"
+                        (statechange)="onPlayerToolbarStateChanged($event)"></player-toolbar>
+    </div>
+</div>

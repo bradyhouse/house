@@ -21,7 +21,7 @@ export class Nvd3Component implements OnChanges {
     ngOnChanges() : void {
         if (this.options && !this.chart && !this.svg) {
             this.configure(this.options);
-        } else {
+        } else  {
             this.onDataRefresh();
         }
     }
@@ -129,6 +129,7 @@ export class Nvd3Component implements OnChanges {
         return this.chart;
     }
 
+
     private configureDimensions() : void {
         let chartHeight = this.options.chart.height,
             chartWidth = this.options.chart.width;
@@ -178,8 +179,6 @@ export class Nvd3Component implements OnChanges {
             }, svgDefs);
         }
     }
-
-
 
     private configureChart(chart : any, options : any, chartType : string) : void {
         if (chart && options) {

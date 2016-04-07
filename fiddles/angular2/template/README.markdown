@@ -6,7 +6,7 @@
 
 ### Title
 
-House Angular 2 Fiddle - {{FiddleName}}
+{{FiddleName}}
 
 
 ### Creation Date
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Description
 
-Another Angular Fiddle.
+Another simple Angular 2 fiddle.
 
 
 ### Published Version Link
@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-Angular 2
+angular 2, js

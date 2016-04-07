@@ -78,14 +78,14 @@ export class VerticalbarD3 implements OnChanges {
 
     get quadrantWidth():Number {
         return this.options && this.options.width ?
-            this.options.width - this._margins.left - this._margins.right:
-            window.innerWidth - this._margins.left - this._margins.right;
+        this.options.width - this._margins.left - this._margins.right :
+        window.innerWidth - this._margins.left - this._margins.right;
     }
 
     get quadrantHeight():Number {
         return this.options && this.options.height ?
-            this.options.height - this._margins.top - this._margins.bottom:
-            window.innerHeight - this._margins.top - this._margins.bottom;
+        this.options.height - this._margins.top - this._margins.bottom :
+        window.innerHeight - this._margins.top - this._margins.bottom;
     }
 
     get xStart():Number {
@@ -94,8 +94,8 @@ export class VerticalbarD3 implements OnChanges {
 
     get yStart():Number {
         return this.options && this.options.height ?
-            this.options.height - this._margins.bottom:
-            window.innerHeight - this._margins.bottom;
+        this.options.height - this._margins.bottom :
+        window.innerHeight - this._margins.bottom;
     }
 
     get yEnd():Number {
@@ -104,6 +104,10 @@ export class VerticalbarD3 implements OnChanges {
 
     get margins():Margins {
         return this._margins;
+    }
+
+    get axesDom():any {
+        return this._svg.selectAll("g.axes");
     }
 
     get xAxis():any {
@@ -130,8 +134,7 @@ export class VerticalbarD3 implements OnChanges {
             this._chart.remove();
         }
         this._el.innerHTML = '<svg class="chart"></svg>';
-        this._svg = d3.select("body").append("svg:svg");
-        this._chart = d3.select(".chart")
+        this._svg = this._chart = d3.select(".chart")
             .attr("width", this.options.width)
             .attr("height", this.options.height);
         this.configureBodyClip();
@@ -196,28 +199,74 @@ export class VerticalbarD3 implements OnChanges {
     }
 
     private renderAxes():void {
-        let axesG = this._svg.selectAll("g.axes").remove();
+        let self:VerticalbarD3 = this,
+            axesG:any = this.axesDom;
 
-        axesG = this._svg.append("g")
+        if (axesG) {
+            self.removeAxesDom();
+        }
+
+        axesG = self.svg.append("g")
             .attr("class", "axes");
 
         axesG.append("g")
             .attr("class", "axis")
             .attr("transform", function () {
-                return "translate(" + this._margins.left + "," + this.yStart + ")";
+                return "translate(" + self.margins.left + "," + self.yStart + ")";
             })
-            .call(this.xAxis);
+            .call(self.xAxis);
 
         axesG.append("g")
             .attr("class", "axis")
             .attr("transform", function () {
-                return "translate(" + xStart() + "," + yEnd() + ")";
+                return "translate(" + self.xStart + "," + self.yEnd + ")";
             })
             .call(this._yAxis);
 
         this.renderYGridlines(axesG);
         this.renderXGridlines(axesG);
 
+    }
+
+    private renderBars():void {
+        let self:VerticalbarD3 = this;
+        this._bodyG.selectAll("rect.bar")
+            .data(self.data)
+            .enter()
+            .append("rect")
+            .attr("class", "bar");
+
+        this._bodyG.selectAll("rect.bar")
+            .data(self.data)
+            .transition()
+            .duration(self._duration)
+            .attr("x", function (d) {
+                return self._xScale(d.label);
+            })
+            .attr("y", function (d) {
+                return self._yScale(d.y);
+            })
+            .attr("height", function (d) {
+                return self.quadrantHeight - self._yScale(d.y);
+            })
+            .attr("width", function (d) {
+                return Math.floor(self.quadrantWidth / self.data.length - self.seriesPadding - 2);
+            })
+            .style("fill", "url(#gradient)");
+    }
+
+    private renderBody():void {
+        if (!this._bodyG && this._svg) {
+            this._bodyG = this._svg.append("g")
+                .attr("class", "body")
+                .attr("transform", "translate("
+                    + this.xStart
+                    + ","
+                    + this.yEnd + ")")
+                .attr("clip-path", "url(#body-clip)");
+        }
+        this.renderBars();
+        this.renderAxes();
     }
 
     private renderYGridlines(group:any):void {
@@ -252,49 +301,15 @@ export class VerticalbarD3 implements OnChanges {
             });
 
         lines.attr("x1", 0)
-            .attr("y1", 0)
+            .attr("y1", -this.quadrantHeight)
             .attr("x2", 0)
-            .attr("y2", -this.quadrantHeight);
+            .attr("y2", 0);
     }
 
-    private renderBody():void {
-        if (!this._bodyG && this._svg) {
-            this._bodyG = this._svg.append("g")
-                .attr("class", "body")
-                .attr("transform", "translate("
-                    + this.xStart
-                    + ","
-                    + this.yEnd + ")")
-                .attr("clip-path", "url(#body-clip)");
+    private removeAxesDom():void {
+        if (this.axesDom) {
+            this._svg.selectAll("g.axes").remove();
         }
-        this.renderBars();
-        this.renderAxes();
-    }
-
-    private renderBars():void {
-        this._bodyG.selectAll("rect.bar")
-            .data(this.data)
-            .enter()
-            .append("rect")
-            .attr("class", "bar");
-
-        this._bodyG.selectAll("rect.bar")
-            .data(this.data)
-            .transition()
-            .duration(this._duration)
-            .attr("x", function (d) {
-                return this._xScale(d.label);
-            })
-            .attr("y", function (d) {
-                return this._yScale(d.y);
-            })
-            .attr("height", function (d) {
-                return this.quadrantHeight - this._yScale(d.y);
-            })
-            .attr("width", function (d) {
-                return Math.floor(this.quadrantWidth / this.data.length - this.seriesPadding - 2);
-            })
-            .style("fill", "url(#gradient)");
     }
 
 }

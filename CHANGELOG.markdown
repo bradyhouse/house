@@ -817,3 +817,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Rx**
     1.  Refactored [fiddles/rxjs/fiddle-0001-AjaxObservable](fiddles/rxjs/fiddle-0001-AjaxObservable)
     2.  Added [fiddles/rxjs/fiddle-0002-TimeObservable](fiddles/rxjs/fiddle-0002-TimeObservable)
+    3.  Added [fiddles/rxjs/fiddle-0003-Disposable](fiddles/rxjs/fiddle-0003-Disposable)

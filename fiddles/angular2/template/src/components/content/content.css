@@ -1,9 +1,0 @@
-:host {
-  display: block;
-  width: calc(100% - 350px);
-  height: calc(100% - 40px);
-  position: fixed;
-  left: 350px;
-  top: 40px;
-  z-index: 1;
-}

@@ -27,8 +27,8 @@ export class Verticalbar implements OnInit {
 
     private _data:Array<VerticalbarD3SeriesInterface>;
 
-
     constructor(private verticalBarService:VerticalbarService) {
+
     }
 
     ngOnInit() {

@@ -35,12 +35,12 @@
     this.start.subscribe(
         function onNext(res) {
             console.log(res);
-            d3.select("p#target")
+            d3.select("div#target")
                 .text(res);
         },
         function onError(err) {
             console.log(err);
-            d3.select("p#target")
+            d3.select("div#target")
                 .text(err);
         },
         function onCompleted() {
@@ -48,8 +48,8 @@
         }
     );
 
-    console.log("%c" + meta.consoleTag, 'font-style: italic; font-size: 20px;');
-    console.log("%c" + meta.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
+    console.log("%c" + metadata.consoleTag, 'font-style: italic; font-size: 20px;');
+    console.log("%c" + metadata.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
     console.group();
 
 }.call(this));
