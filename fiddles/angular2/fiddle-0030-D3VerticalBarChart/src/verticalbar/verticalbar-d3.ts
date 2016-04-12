@@ -6,12 +6,12 @@ import {VerticalbarD3SeriesInterface} from './verticalbar-d3-series.interface';
 declare let d3:any;
 
 class Margins {
-    private _top:Number;
-    private _left:Number;
-    private _right:Number;
-    private _bottom:Number;
+    private _top:number;
+    private _left:number;
+    private _right:number;
+    private _bottom:number;
 
-    constructor(top:Number, left:Number, right:Number, bottom:Number) {
+    constructor(top:number, left:number, right:number, bottom:number) {
         this._top = top;
         this._left = left;
         this._right = right;
@@ -44,9 +44,9 @@ export class VerticalbarD3 implements OnChanges {
     @Input() data:Array<VerticalbarD3SeriesInterface>;
     @Input() options:VerticalbarD3OptionsInterface;
 
-    private _duration:Number = 1000;
-    private _seriesPadding:Number = 2;
-    private _bodyPadding:Number = 5;
+    private _duration:number = 1000;
+    private _seriesPadding:number = 2;
+    private _bodyPadding:number = 5;
     private _margins:Margins = new Margins(30, 40, 0, 30);
     private _xScale:any;
     private _yScale:any;
@@ -54,9 +54,10 @@ export class VerticalbarD3 implements OnChanges {
     private _yAxis:any;
     private _svg:any;
     private _bodyG:any;
-    private _snapshot:Boolean = false;
+    private _snapshot:boolean = false;
     private _el:any;
     private _chart:any;
+    private _loaded:boolean = false;
 
     constructor(@Inject(ElementRef) elementRef:any) {
         this._el = elementRef.nativeElement;
@@ -64,7 +65,10 @@ export class VerticalbarD3 implements OnChanges {
 
     ngOnChanges():void {
         if (this.data && this.data.length) {
-            this.render();
+            if (!this._loaded) {
+                this.render();
+                this._loaded = true;
+            }
         }
     }
 
@@ -76,29 +80,29 @@ export class VerticalbarD3 implements OnChanges {
         return this._chart;
     }
 
-    get quadrantWidth():Number {
+    get quadrantWidth():number {
         return this.options && this.options.width ?
         this.options.width - this._margins.left - this._margins.right :
         window.innerWidth - this._margins.left - this._margins.right;
     }
 
-    get quadrantHeight():Number {
+    get quadrantHeight():number {
         return this.options && this.options.height ?
         this.options.height - this._margins.top - this._margins.bottom :
         window.innerHeight - this._margins.top - this._margins.bottom;
     }
 
-    get xStart():Number {
+    get xStart():number {
         return this._margins.left;
     }
 
-    get yStart():Number {
+    get yStart():number {
         return this.options && this.options.height ?
         this.options.height - this._margins.bottom :
         window.innerHeight - this._margins.bottom;
     }
 
-    get yEnd():Number {
+    get yEnd():number {
         return this._margins.top;
     }
 
@@ -107,7 +111,11 @@ export class VerticalbarD3 implements OnChanges {
     }
 
     get axesDom():any {
-        return this._svg.selectAll("g.axes");
+        return this._svg ? this._svg.selectAll("g.axes") : null;
+    }
+
+    get seriesDom():any {
+        return this._bodyG ? this._bodyG.selectAll("rect.bar") : null;
     }
 
     get xAxis():any {
@@ -118,11 +126,11 @@ export class VerticalbarD3 implements OnChanges {
         return this._yAxis;
     }
 
-    get seriesPadding():Number {
+    get seriesPadding():number {
         return this._seriesPadding;
     }
 
-    get bodyPadding():Number {
+    get bodyPadding():number {
         return this._bodyPadding;
     }
 
@@ -180,12 +188,17 @@ export class VerticalbarD3 implements OnChanges {
                 return d.label;
             }))
             .rangeRoundBands([0, this.quadrantWidth, 0.05]);
-        this._xAxis = d3.svg.axis().scale(this._xScale).orient("bottom");
+
+        this._xAxis = d3.svg.axis()
+            .scale(this._xScale)
+            .orient("bottom");
+
         this._yScale = d3.scale.linear()
             .domain([0, d3.max(this.data, function (d) {
                 return d.y;
             })])
             .range([this.quadrantHeight, 0]);
+
         this._yAxis = d3.svg.axis()
             .scale(this._yScale)
             .orient("left");
@@ -221,15 +234,15 @@ export class VerticalbarD3 implements OnChanges {
             .attr("transform", function () {
                 return "translate(" + self.xStart + "," + self.yEnd + ")";
             })
-            .call(this._yAxis);
+            .call(this.yAxis);
 
         this.renderYGridlines(axesG);
-        this.renderXGridlines(axesG);
 
     }
 
     private renderBars():void {
         let self:VerticalbarD3 = this;
+
         this._bodyG.selectAll("rect.bar")
             .data(self.data)
             .enter()
@@ -253,6 +266,12 @@ export class VerticalbarD3 implements OnChanges {
                 return Math.floor(self.quadrantWidth / self.data.length - self.seriesPadding - 2);
             })
             .style("fill", "url(#gradient)");
+
+        this._bodyG.selectAll("rect.bar")
+            .data(self.data)
+            .exit()
+            .remove();
+
     }
 
     private renderBody():void {
@@ -265,8 +284,9 @@ export class VerticalbarD3 implements OnChanges {
                     + this.yEnd + ")")
                 .attr("clip-path", "url(#body-clip)");
         }
-        this.renderBars();
         this.renderAxes();
+        this.renderBars();
+
     }
 
     private renderYGridlines(group:any):void {
@@ -297,7 +317,7 @@ export class VerticalbarD3 implements OnChanges {
             .append("line")
             .classed("v-grid-line", true)
             .style("stroke-width", function (d, i) {
-                return i == 0 ? 0 : .5;
+                return (+d.x) < 1 ? 0 : .5;
             });
 
         lines.attr("x1", 0)

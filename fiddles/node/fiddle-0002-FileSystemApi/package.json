@@ -1,0 +1,16 @@
+{
+  "name": "{{FiddleName}}",
+  "version": "0.1.0",
+  "description": "http://github.com/bradyhouse/house/node/{{FiddleName}}",
+  "author": "{{WhoAmI}}",
+  "scripts": {
+    "start": "node --harmony ./app.js"
+  },
+  "dependencies": {
+    "connect": "^3.3.5",
+    "connect-redis": "^1.4.7",
+    "express": "^3.4.8",
+    "express-generator": "^4.12.1",
+    "redis": "^0.8.6"
+  }
+}

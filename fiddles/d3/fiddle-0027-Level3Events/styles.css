@@ -1,0 +1,31 @@
+body {
+    padding: 10%;
+}
+
+.box-lime {
+    border-width: 1px;
+    border-color: lime;
+    border-style: dashed;
+    padding: 20px;
+}
+
+.box-turquoise {
+    border-width: 1px;
+    border-color: turquoise;
+    border-style: dashed;
+    padding: 20px;
+}
+
+.box-magenta {
+    border-width: 1px;
+    border-color: magenta;
+    border-style: dashed;
+    padding: 20px;
+}
+
+.box-deepskyblue {
+    border-width: 1px;
+    border-color: deepskyblue;
+    border-style: dashed;
+    padding: 20px;
+}

@@ -1,4 +1,4 @@
-(function(app, $, undefined) {
+(function (app, $, undefined) {
     "use strict";
 
     let metadata = {
@@ -12,12 +12,7 @@
     function barChart() {
         let _chart = {},
             _duration = 1000,
-            _margins = {
-                top: 30,
-                left: 40,
-                right: 0,
-                bottom: 30
-            },
+            _margins = {top: 30, left: 40, right: 0, bottom: 30},
             _width = window.innerWidth - _margins.left - _margins.right,
             _height = window.innerHeight - _margins.top - _margins.bottom,
             _xScale, _yScale,
@@ -25,7 +20,11 @@
             _data = [],
             _svg,
             _bodyG,
-            _snapshot = false;
+            _snapshot = false,
+            getX = function(d) { return d.x },
+            getY = function(d) { return d.y},
+            x = d3.scale.ordinal(),
+            y = d3.scale.linear();
 
 
         function constrain(number, min, max) {
@@ -41,24 +40,30 @@
 
         function defineAxesAndScales() {
             _xScale = d3.scale.ordinal()
-                .domain(_data.map(function(d) {
+                .domain(_data.map(function (d) {
                     return d.label;
                 }))
                 .rangeRoundBands([0, quadrantWidth(), 0.05]);
             _xAxis = d3.svg.axis().scale(_xScale).orient("bottom");
             _yScale = d3.scale.linear()
-                .domain([0, d3.max(_data, function(d) {
-                    let scale = Math.floor(d.y / 3),
-                        ret = (scale >= 0) ? constrain(scale, 0.05, 20) : constrain(scale, -20, -0.05);
-                    return ret;
-                })])
+                .domain([
+                    d3.min(_data, function (d) {
+                        let scale = Math.floor(d.y / 3),
+                            ret = (scale < 0) ? constrain(scale, -20, -0.05) : 0;
+                        return ret;
+                        }),
+                    d3.max(_data, function (d) {
+                        let scale = Math.floor(d.y / 3),
+                            ret = (scale >= 0) ? constrain(scale, 0.05, 20) : constrain(scale, -20, -0.05);
+                        return ret;
+                    })])
                 .range([quadrantHeight(), 0]);
             _yAxis = d3.svg.axis()
                 .scale(_yScale)
                 .orient("left")
                 .ticks(3)
                 .tickSubdivide(0)
-                .tickFormat(function(v) {
+                .tickFormat(function (v) {
                     return v + " X";
                 });
         }
@@ -92,20 +97,20 @@
 
             axesG.append("g")
                 .attr("class", "axis")
-                .attr("transform", function() {
+                .attr("transform", function () {
                     return "translate(" + _margins.left + "," + yStart() + ")";
                 })
                 .call(_xAxis);
 
             axesG.append("g")
                 .attr("class", "axis")
-                .attr("transform", function() {
+                .attr("transform", function () {
                     return "translate(" + xStart() + "," + yEnd() + ")";
                 })
                 .call(_yAxis);
 
             renderYGridlines(axesG);
-
+            //renderXGridlines(axesG);
         }
 
         function renderYGridlines(group) {
@@ -117,13 +122,31 @@
                 .append("line")
                 .classed("h-grid-line", true)
                 .style("stroke", "white")
-                .style("stroke-opacity", function(d, i) {
+                .style("stroke-opacity", function (d, i) {
                     return (+d.y) == 0 ? 1 : .2;
                 });
 
             lines.attr("x1", 0)
                 .attr("y1", 0)
                 .attr("x2", quadrantWidth())
+                .attr("y2", 0);
+        }
+
+        function renderXGridlines(group) {
+            let lines = group.selectAll("g.axis g.tick")
+                .selectAll("line.v-grid-line")
+                .remove();
+
+            lines = group.selectAll("g.axis g.tick")
+                .append("line")
+                .classed("v-grid-line", true)
+                .style("stroke-width", function (d, i) {
+                    return (+d.x) < 1 ? 0 : .5;
+                });
+
+            lines.attr("x1", 0)
+                .attr("y1", -quadrantHeight())
+                .attr("x2", 0)
                 .attr("y2", 0);
         }
 
@@ -150,7 +173,10 @@
             if (!_bodyG)
                 _bodyG = svg.append("g")
                     .attr("class", "body")
-                    .attr("transform", "translate(" + xStart() + "," + yEnd() + ")")
+                    .attr("transform", "translate("
+                        + xStart()
+                        + ","
+                        + yEnd() + ")")
                     .attr("clip-path", "url(#body-clip)");
             renderBars();
             renderAxes(_svg);
@@ -169,16 +195,26 @@
                 .data(_data)
                 .transition()
                 .duration(_duration)
-                .attr("x", function(d) {
+                .attr("x", function (d) {
                     return _xScale(d.label);
                 })
-                .attr("y", function(d) {
-                    return _yScale(d.y);
+                .attr('y', function(d,i) { return _yScale(getY(d,i)); });
+            _bodyG.selectAll("rect.bar")
+                .data(_data)
+                .attr('transform', function(d,i) {
+                    var left = x(getX(d,i)) + x.rangeBand() * .05,
+                        top = getY(d,i) < 0 ?
+                            y(0) :
+                            y(0) - y(getY(d,i)) < 1 ?
+                            y(0) + 1 : //make 1 px positive bars show up above y=0
+                            y(0) - y(getY(d,i));
+
+                    return 'translate(' + left + ', ' + top + ')'
                 })
-                .attr("height", function(d) {
-                    return quadrantHeight() - _yScale(d.y);
+                .attr('height', function(d,i) {
+                    return  Math.max(Math.abs(_yScale(getY(d,i)) - quadrantHeight()/2), 10);
                 })
-                .attr("width", function(d) {
+                .attr("width", function (d) {
                     return Math.floor(quadrantWidth() / _data.length - padding - 2);
                 })
                 .style("fill", "url(#gradient)");
@@ -196,10 +232,10 @@
             return _margins.top;
         }
 
-        _chart.snapshot = function() {
+        _chart.snapshot = function () {
             return _snapshot;
         };
-        _chart.render = function() {
+        _chart.render = function () {
             if (!_svg) {
                 _svg = d3.select("body").append("svg")
                     .attr("height", _height)
@@ -210,26 +246,26 @@
             }
             renderBody(_svg);
         };
-        _chart.width = function(w) {
+        _chart.width = function (w) {
             if (!arguments.length) return _width;
             _width = w;
             return _chart;
         };
-        _chart.height = function(h) {
+        _chart.height = function (h) {
             if (!arguments.length) return _height;
             _height = h;
             return _chart;
         };
-        _chart.margins = function(m) {
+        _chart.margins = function (m) {
             if (!arguments.length) return _margins;
             _margins = m;
             return _chart;
         };
-        _chart.setSeries = function(series) {
+        _chart.setSeries = function (series) {
             _data = series;
             return _chart;
         };
-        _chart.resize = function() {
+        _chart.resize = function () {
             _width = window.innerWidth - _margins.left - _margins.right;
             _height = window.innerHeight - _margins.top - _margins.bottom;
             _snapshot = true;
@@ -261,157 +297,71 @@
     }
 
     function init() {
-        window.addEventListener("resize", function() {
+        window.addEventListener("resize", function () {
             onWindowResize();
         }, false);
         document.body.addEventListener('DOMContentLoaded', onDOMContentLoaded(), false);
         window.app.run();
     }
 
-    window.app.data = [{
-        "x": 0,
-        "y": 1.4947673988982424,
-        "label": "A"
-    }, {
-        "x": 1,
-        "y": 7.676086526326012,
-        "label": "B"
-    }, {
-        "x": 2,
-        "y": 8.311391009319639,
-        "label": "C"
-    }, {
-        "x": 3,
-        "y": 7.098099047760723,
-        "label": "D"
-    }, {
-        "x": 4,
-        "y": 6.856492567242657,
-        "label": "E"
-    }, {
-        "x": 5,
-        "y": 7.16529893760509,
-        "label": "F"
-    }, {
-        "x": 6,
-        "y": 7.047473435271625,
-        "label": "G"
-    }, {
-        "x": 7,
-        "y": 2.2977968233643606,
-        "label": "H"
-    }, {
-        "x": 8,
-        "y": 5.560482923769485,
-        "label": "I"
-    }, {
-        "x": 9,
-        "y": 2.087097265118159,
-        "label": "J"
-    }, {
-        "x": 10,
-        "y": 7.930794711840363,
-        "label": "K"
-    }, {
-        "x": 11,
-        "y": 0.4595904183709092,
-        "label": "L"
-    }, {
-        "x": 12,
-        "y": 5.33252537515214,
-        "label": "M"
-    }, {
-        "x": 13,
-        "y": 7.515292358545,
-        "label": "N"
-    }, {
-        "x": 14,
-        "y": 1.403073390532516,
-        "label": "O"
-    }, {
-        "x": 15,
-        "y": 3.490313827444835,
-        "label": "P"
-    }, {
-        "x": 16,
-        "y": 7.071262354658021,
-        "label": "Q"
-    }, {
-        "x": 17,
-        "y": 1.7309887540308193,
-        "label": "R"
-    }, {
-        "x": 18,
-        "y": 5.103745831631774,
-        "label": "S"
-    }, {
-        "x": 19,
-        "y": 7.334708048181251,
-        "label": "T"
-    }, {
-        "x": 20,
-        "y": 1.2935714752426752,
-        "label": "U"
-    }, {
-        "x": 21,
-        "y": 1.6815389549096806,
-        "label": "V"
-    }, {
-        "x": 22,
-        "y": 0.360368118257383,
-        "label": "W"
-    }, {
-        "x": 23,
-        "y": 8.647669373984925,
-        "label": "X"
-    }, {
-        "x": 24,
-        "y": 4.349171320294836,
-        "label": "Y"
-    }, {
-        "x": 25,
-        "y": 3.9064984435983092,
-        "label": "Z"
-    }, {
-        "x": 26,
-        "y": 3.2265013863732923,
-        "label": "AA"
-    }, {
-        "x": 27,
-        "y": 4.521172765950789,
-        "label": "BB"
-    }, {
-        "x": 28,
-        "y": 7.834619466111912,
-        "label": "CC"
-    }, {
-        "x": 29,
-        "y": 6.186021390900115,
-        "label": "DD"
-    }];
-    window.app.run = function() {
+    window.app.data = [
+        {"x": 0, "y": 1.4947673988982424, "label": "A", "sign": "1"},
+        {"x": 1, "y": 7.676086526326012, "label": "B" , "sign": "1"},
+        {"x": 2, "y": 8.311391009319639, "label": "C", "sign": "1"},
+        {"x": 3, "y": 7.098099047760723, "label": "D", "sign": "1"},
+        {"x": 4, "y": 6.856492567242657, "label": "E", "sign": "1"},
+        {"x": 5, "y": 7.16529893760509, "label": "F", "sign": "1"},
+        {"x": 6, "y": 7.047473435271625, "label": "G", "sign": "1"},
+        {"x": 7, "y": 2.2977968233643606, "label": "H", "sign": "1"},
+        {"x": 8, "y": 5.560482923769485, "label": "I", "sign": "1"},
+        {"x": 9, "y": 2.087097265118159, "label": "J", "sign": "1"},
+        {"x": 10, "y": 7.930794711840363, "label": "K", "sign": "1"},
+        {"x": 11, "y": 0.4595904183709092, "label": "L", "sign": "1"},
+        {"x": 12, "y": 5.33252537515214, "label": "M", "sign": "1"},
+        {"x": 13, "y": 7.515292358545, "label": "N", "sign": "1"},
+        {"x": 14, "y": 1.403073390532516, "label": "O", "sign": "1"},
+        {"x": 15, "y": 3.490313827444835, "label": "P", "sign": "1"},
+        {"x": 16, "y": 7.071262354658021, "label": "Q", "sign": "0"},
+        {"x": 17, "y": 1.7309887540308193, "label": "R", "sign": "0"},
+        {"x": 18, "y": 5.103745831631774, "label": "S", "sign": "0"},
+        {"x": 19, "y": 7.334708048181251, "label": "T", "sign": "0"},
+        {"x": 20, "y": 1.2935714752426752, "label": "U", "sign": "0"},
+        {"x": 21, "y": 1.6815389549096806, "label": "V", "sign": "0"},
+        {"x": 22, "y": 0.360368118257383, "label": "W", "sign": "0"},
+        {"x": 23, "y": 8.647669373984925, "label": "X", "sign": "0"},
+        {"x": 24, "y": 4.349171320294836, "label": "Y", "sign": "0"},
+        {"x": 25, "y": 3.9064984435983092, "label": "Z", "sign": "0"},
+        {"x": 26, "y": 3.2265013863732923, "label": "AA", "sign": "0"},
+        {"x": 27, "y": 4.521172765950789, "label": "BB", "sign": "0"},
+        {"x": 28, "y": 7.834619466111912, "label": "CC", "sign": "0"},
+        {"x": 29, "y": 6.186021390900115, "label": "DD", "sign": "0"}];
+    window.app.run = function () {
         window.app.update();
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             window.app.run();
         }, 2000);
     };
-    window.app.randomData = function() {
-
-        let getRandomArbitrary = function(min, max) {
+    window.app.randomData = function (sign) {
+        let getRandomArbitrary = function (min, max) {
                 return Math.random() * (max - min) + min;
             },
-            ret = getRandomArbitrary(0, 20);
+            ret = getRandomArbitrary(0, 20) * sign;
         console.log(ret);
         return ret;
     };
-    window.app.update = function() {
+    window.app.update = function () {
         if (!window.app.chart.snapshot()) {
-            window.app.data.map(function(d) {
-                d.y = window.app.randomData();
+            window.app.data.map(function (d) {
+                if(d.sign == "1") {
+                    d.y = window.app.randomData(1);
+                } else {
+                    d.y = window.app.randomData(-1);
+                }
             });
             window.app.chart
                 .setSeries(window.app.data)
                 .render();
+            _snapshot = true;
         }
     };
     window.app.chart = barChart();

@@ -21,9 +21,11 @@ text.
 * [D3 Tutorials Page](https://github.com/mbostock/d3/wiki/Tutorials)
 * [D3 Cookbook](https://github.com/NickQiZhu/d3-cookbook)
 * [DOM Element API](https://developer.mozilla.org/en-US/docs/Web/API/element)
-* [W3C level-3 selector Spec](http://www.w3.org/TR/css3-selectors/#sibling-combinators)
-* [W3C level-4 selector Spec](http://www.w3.org/csswg/selectors4/#combinator)
+* [W3C Level-3 Event Spec](https://www.w3.org/TR/DOM-Level-3-Events/)
+* [W3C Level-3 Selector Spec](http://www.w3.org/TR/css3-selectors/#sibling-combinators)
+* [W3C Level-4 Selector Spec](http://www.w3.org/csswg/selectors4/#combinator)
 * [Domain-Specific Languages (excerpt)](http://www.informit.com/article.aspx?p=1592379)
+* [D3 Mouse API Document](https://github.com/mbostock/d3/wiki/Selections#wiki-d3_mouse)
 
 #### Plugins
 * [D3 Plugins](https://github.com/d3/d3-plugins)
