@@ -6,7 +6,7 @@ fiddle-0024-BarChart
 
 ### Title
 
-Bar Chart
+2 Quadrant Bar Chart
 
 
 ### Creation Date
@@ -30,12 +30,11 @@ D3 fiddle exploring how to create a bar chart with the following requirements:
 *  the width and height of the chart should be based on the dimension of the window
 *  the dimensions of the chart should refresh on window resize
 *  the y axis should use a custom scale based on the values proximity to a fixed value (aka tolerance)
-
+*  the chart should have two quadrant for plotting positive and negative y values
 
 ### Published Version Link
 
-[codepen](http://codepen.io/bradyhouse/pen/GZvmjN)
-[jsfiddle.net](https://jsfiddle.net/4bqc7s22/)
+[js fiddle](https://jsfiddle.net/bradyhouse/q28d9emo/)
 
 
 ### Tags

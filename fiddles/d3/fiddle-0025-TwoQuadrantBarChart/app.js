@@ -2,9 +2,9 @@
     "use strict";
 
     let metadata = {
-        fiddleHeader: 'D3 - Gradient Bar Chart',
+        fiddleHeader: 'D3 - Two Quadrant Bar Chart',
         urls: {
-            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/d3/fiddle-0024-BarChart'
+            github: 'https://github.com/bradyhouse/house/tree/master/fiddles/d3/fiddle-0025-TwoQuadrantBarChart'
         },
         consoleTag: 'H O U S E ~ f i d d l e s'
     };
@@ -15,16 +15,17 @@
             _margins = {top: 30, left: 40, right: 0, bottom: 30},
             _width = window.innerWidth - _margins.left - _margins.right,
             _height = window.innerHeight - _margins.top - _margins.bottom,
-            _xScale, _yScale,
             _xAxis, _yAxis,
+            _forceY = [0],
             _data = [],
             _svg,
             _bodyG,
             _snapshot = false,
             getX = function(d) { return d.x },
-            getY = function(d) { return d.y},
+            getY = function(d) { return d.y },
             x = d3.scale.ordinal(),
-            y = d3.scale.linear();
+            y = d3.scale.linear(),
+            x0, y0;
 
 
         function constrain(number, min, max) {
@@ -39,13 +40,23 @@
         }
 
         function defineAxesAndScales() {
-            _xScale = d3.scale.ordinal()
+
+            /*_xScale = d3.scale.ordinal()
                 .domain(_data.map(function (d) {
                     return d.label;
                 }))
-                .rangeRoundBands([0, quadrantWidth(), 0.05]);
-            _xAxis = d3.svg.axis().scale(_xScale).orient("bottom");
-            _yScale = d3.scale.linear()
+                .rangeRoundBands([0, quadrantWidth(), 0.05]);*/
+            x.domain(_data.map(function (d) {
+                    return d.label;
+                }))
+                .rangeBands([0, quadrantWidth()], .1);
+            _xAxis = d3.svg.axis().scale(x).orient("bottom");
+            y.domain(d3.extent(_data.map(function (d) {
+                return d.y
+            }).concat(_forceY)));
+
+            y.range([quadrantHeight() - (y.domain()[0] < 0 ? 12 : 0), y.domain()[1] > 0 ? 12 : 0]);
+            /*_yScale = d3.scale.linear()
                 .domain([
                     d3.min(_data, function (d) {
                         let scale = Math.floor(d.y / 3),
@@ -57,15 +68,19 @@
                             ret = (scale >= 0) ? constrain(scale, 0.05, 20) : constrain(scale, -20, -0.05);
                         return ret;
                     })])
-                .range([quadrantHeight(), 0]);
+                .range([quadrantHeight(), 0]);*/
+
             _yAxis = d3.svg.axis()
-                .scale(_yScale)
+                .scale(y)
                 .orient("left")
                 .ticks(3)
                 .tickSubdivide(0)
                 .tickFormat(function (v) {
                     return v + " X";
                 });
+
+            x0 = x;
+            y0 = y.copy().range([y(0), y(0)]);
         }
 
         function defineBodyClip(svg) {
@@ -110,7 +125,6 @@
                 .call(_yAxis);
 
             renderYGridlines(axesG);
-            //renderXGridlines(axesG);
         }
 
         function renderYGridlines(group) {
@@ -132,41 +146,41 @@
                 .attr("y2", 0);
         }
 
-        function renderXGridlines(group) {
-            let lines = group.selectAll("g.axis g.tick")
-                .selectAll("line.v-grid-line")
-                .remove();
-
-            lines = group.selectAll("g.axis g.tick")
-                .append("line")
-                .classed("v-grid-line", true)
-                .style("stroke-width", function (d, i) {
-                    return (+d.x) < 1 ? 0 : .5;
-                });
-
-            lines.attr("x1", 0)
-                .attr("y1", -quadrantHeight())
-                .attr("x2", 0)
-                .attr("y2", 0);
-        }
-
         function renderGradients(svg) {
-            let gradient = svg.append("svg:defs")
-                .append("svg:linearGradient")
-                .attr("id", "gradient")
+            let defs = svg.append("svg:defs"),
+
+                positiveGradient = defs.append("svg:linearGradient")
+                .attr("id", "positive")
                 .attr("x1", "0%")
                 .attr("y1", "0%")
                 .attr("x2", "0%")
                 .attr("y2", "100%")
-                .attr("spreadMethod", "pad");
+                .attr("spreadMethod", "pad"),
 
-            gradient.append("svg:stop")
-                .attr("class", "begin")
+                negativeGradient = defs.append("svg:linearGradient")
+                    .attr("id", "negative")
+                    .attr("x1", "0%")
+                    .attr("y1", "0%")
+                    .attr("x2", "0%")
+                    .attr("y2", "100%")
+                    .attr("spreadMethod", "pad");
+
+            positiveGradient.append("svg:stop")
+                .attr("class", "yellow")
                 .attr("offset", "0%");
-
-            gradient.append("svg:stop")
-                .attr("class", "end")
+            positiveGradient.append("svg:stop")
+                .attr("class", "red")
                 .attr("offset", "100%");
+
+            negativeGradient.append("svg:stop")
+                .attr("class", "lightblue")
+                .attr("offset", "0%");
+            negativeGradient.append("svg:stop")
+                .attr("class", "blue")
+                .attr("offset", "100%");
+
+
+
         }
 
         function renderBody(svg) {
@@ -185,6 +199,7 @@
 
         function renderBars() {
             var padding = 2;
+
             _bodyG.selectAll("rect.bar")
                 .data(_data)
                 .enter()
@@ -195,29 +210,24 @@
                 .data(_data)
                 .transition()
                 .duration(_duration)
+                .attr('y', function(d,i) {
+                    return getY(d, i) < 0 ? y(0) : y(getY(d, i));
+                })
                 .attr("x", function (d) {
-                    return _xScale(d.label);
+                    return x(d.label);
                 })
-                .attr('y', function(d,i) { return _yScale(getY(d,i)); });
-            _bodyG.selectAll("rect.bar")
-                .data(_data)
-                .attr('transform', function(d,i) {
-                    var left = x(getX(d,i)) + x.rangeBand() * .05,
-                        top = getY(d,i) < 0 ?
-                            y(0) :
-                            y(0) - y(getY(d,i)) < 1 ?
-                            y(0) + 1 : //make 1 px positive bars show up above y=0
-                            y(0) - y(getY(d,i));
-
-                    return 'translate(' + left + ', ' + top + ')'
-                })
-                .attr('height', function(d,i) {
-                    return  Math.max(Math.abs(_yScale(getY(d,i)) - quadrantHeight()/2), 10);
+                .attr('height', function (d, i) {
+                    return Math.max(Math.abs(y(getY(d, i)) - y(0)), 1)
                 })
                 .attr("width", function (d) {
                     return Math.floor(quadrantWidth() / _data.length - padding - 2);
-                })
-                .style("fill", "url(#gradient)");
+                });
+
+            _bodyG.selectAll("rect.bar")
+                .data(_data)
+                .style("fill", function (d, i) {
+                    return getY(d, i) < 0 ? 'url(#negative)' : 'url(#positive)';
+                });
         }
 
         function xStart() {
@@ -240,6 +250,7 @@
                 _svg = d3.select("body").append("svg")
                     .attr("height", _height)
                     .attr("width", _width);
+                //defineSeriesData(_data);
                 defineAxesAndScales();
                 renderGradients(_svg);
                 defineBodyClip(_svg);
@@ -346,7 +357,6 @@
                 return Math.random() * (max - min) + min;
             },
             ret = getRandomArbitrary(0, 20) * sign;
-        console.log(ret);
         return ret;
     };
     window.app.update = function () {
@@ -361,7 +371,6 @@
             window.app.chart
                 .setSeries(window.app.data)
                 .render();
-            _snapshot = true;
         }
     };
     window.app.chart = barChart();

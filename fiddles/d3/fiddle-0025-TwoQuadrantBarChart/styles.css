@@ -29,8 +29,10 @@ body {
     stroke-opacity: .2;
 }
 
+stop.yellow { stop-color: #E9F90B; }
+stop.red { stop-color: #F91B0B; }
+stop.lightblue { stop-color: #0BC1F9; }
+stop.blue { stop-color: #0B0BF9; }
 
-stop.begin { stop-color: #E9F90B; }
-stop.end { stop-color: #F91B0B; }
 
 

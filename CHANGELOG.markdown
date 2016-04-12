@@ -812,8 +812,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **D3**
     1.  Added [fiddles/d3/fiddle-0023-ElementTransition](fiddles/d3/fiddle-0023-ElementTransition)
     2.  Added [fiddles/d3/fiddle-0024-BarChart](fiddles/d3/fiddle-0024-BarChart)
-    3.  Started [fiddles/d3/fiddle-0025-DiscreteBarChart](fiddles/d3/fiddle-0025-DiscreteBarChart)
-    4.  Started [fiddles/d3/fiddle-0026-Nvd3VerticalBarModel](fiddles/d3/fiddle-0026-Nvd3VerticalBarModel)
+    3.  Added [fiddles/d3/fiddle-0025-TwoQuadrantBarChart](fiddles/d3/fiddle-0025-TwoQuadrantBarChart)
     5.  Added [fiddles/d3/fiddle-0027-Level3Events](fiddles/d3/fiddle-0027-Level3Events)
 * **Angular2**
     1.  Started [fiddles/angular2/fiddle-0031-PlayerToolbar](fiddles/angular2/fiddle-0031-PlayerToolbar)
