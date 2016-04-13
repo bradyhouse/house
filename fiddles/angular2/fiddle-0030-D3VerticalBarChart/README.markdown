@@ -22,8 +22,8 @@ Chicago, IL
 
 An Angular2 Fiddle exploring how to--
 
- 1. Create a d3 "vertical Bar Chart"
- 2. "Subscribe" to an Observable in order to get some json
+ 1. Create a _Vertical Bar Chart_ using _straight_ D3
+ 2. "Subscribe" to an observable in order to get some json
  3. In the callback (2), populate a D3 chart (1)
 
 The chart should realize the following requirements:
