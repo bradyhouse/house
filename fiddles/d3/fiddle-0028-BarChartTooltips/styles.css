@@ -1,0 +1,111 @@
+body {
+    font-family: "Courier New";
+    font-size: small;
+    text-align: center;
+    background-color: black;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: white;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font: 10px sans-serif;
+    stroke: white;
+}
+
+.axis .h-grid-line {
+    stroke: white;
+    shape-rendering: crispEdges;
+    stroke-opacity: 1;
+    stroke-width: 2;
+}
+
+.axis .v-grid-line {
+    stroke: turquoise;
+    shape-rendering: crispEdges;
+    stroke-opacity: .2;
+}
+
+tooltip {
+    opacity: 0.9;
+    font-weight: bold;
+    font-family: Helvetica;
+    z-index: 1000;
+}
+
+
+tooltip div.tooltip {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+tooltip .negative {
+    /* top left, top right, bottom right, bottom left */
+    -moz-border-radius: 10px 0px 10px 0px;
+    -webkit-border-radius: 10px 0px 10px 0px;
+    border-radius: 10px 0px 10px 0px;
+    -khtml-border-radius: 10px 0px 10px 0px;
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, #F9AB0B),
+            color-stop(1, #E9190B)
+    );
+    background-image: -moz-linear-gradient(
+            center bottom,
+            #F9AB0B 0%,
+            #E9190B 100%
+    );
+    color: floralwhite;
+
+}
+
+
+tooltip .positive {
+
+    /* top left, top right, bottom right, bottom left */
+    -moz-border-radius: 0px 10px 0px 10px;
+    -webkit-border-radius: 0px 10px 0px 10px;
+    border-radius: 0px 10px 0px 10px;
+    -khtml-border-radius: 0px 10px 0px 10px;
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, #0BC1F9),
+            color-stop(1, #0B0BF9)
+    );
+    background-image: -moz-linear-gradient(
+            center bottom,
+            #0BC1F9 100%,
+            #0B0BF9 0%
+    );
+    color: floralwhite;
+
+}
+
+stop.yellow {
+    stop-color: #E9F90B;
+}
+
+stop.red {
+    stop-color: #F91B0B;
+}
+
+stop.lightblue {
+    stop-color: #0BC1F9;
+}
+
+stop.blue {
+    stop-color: #0B0BF9;
+}
+
+
+

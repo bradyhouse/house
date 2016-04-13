@@ -35,6 +35,10 @@ function parseFileLine() {
     echo ${lines[${line}]};
 }
 
+function rowCount() {
+    cnt=$(wc -l $1;)
+    echo ${cnt};
+}
 
 function startRoot() {
     echo "{" > $1
@@ -42,9 +46,9 @@ function startRoot() {
 }
 
 function endRoot() {
+    rowCount=$(rowCount);
     echo "]," >> $1
-    echo "\"totalCount\": 112654 }" >> $1
-
+    echo "\"totalCount\": ${rowCount} }" >> $1
 }
 
 function parseMonth() {
@@ -170,11 +174,11 @@ function minifyFile() {
 }
 function main() {
     startRoot ${_jsonFile};
-    fields=$(cat ${_fieldFile};);
-    for line in $(parseFile ${_csvFile})
-    do
+
+    while read line; do
         addArrayNode "${line}" "${_jsonFile}";
-    done
+    done < ${_csvFile}
+
     endRoot ${_jsonFile};
     minifyFile "${_jsonFile}" "${_minJsonFile}";
 }
