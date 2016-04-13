@@ -1,11 +1,9 @@
 @CHARSET "UTF-8";
 
-.nvd3-svg {
-    padding: 10px;
-}
-
-stop.begin { stop-color: #E9F90B; }
-stop.end { stop-color: #F91B0B; }
+stop.yellow { stop-color: #E9F90B; }
+stop.red { stop-color: #F91B0B; }
+stop.lightblue { stop-color: #0BC1F9; }
+stop.blue { stop-color: #0B0BF9; }
 
 body {
     font-family: "Courier New";
@@ -35,4 +33,15 @@ body {
     stroke: turquoise;
     shape-rendering: crispEdges;
 }
+
+.chart rect {
+    fill: steelblue;
+}
+
+.chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}
+
 

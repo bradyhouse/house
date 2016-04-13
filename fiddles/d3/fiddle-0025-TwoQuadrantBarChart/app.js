@@ -27,18 +27,6 @@
             y = d3.scale.linear(),
             x0, y0;
 
-
-        function constrain(number, min, max) {
-            let x = parseFloat(number);
-            if (min === null) {
-                min = number;
-            }
-            if (max === null) {
-                max = number;
-            }
-            return (x < min) ? min : ((x > max) ? max : x);
-        }
-
         function defineAxesAndScales() {
 
             /*_xScale = d3.scale.ordinal()

@@ -1,11 +1,11 @@
-fiddle-0026-Nvd3Component
+fiddle-0030-D3VerticalBarChart
 ======
 
 ![Screenshot](screenshot.png)
 
 ### Title
 
-Nvd3 Component
+D3 Vertical Bar Chart
 
 
 ### Creation Date
@@ -22,7 +22,7 @@ Chicago, IL
 
 An Angular2 Fiddle exploring how to--
 
- 1. Create a d3 "discreteBarChart"
+ 1. Create a d3 "vertical Bar Chart"
  2. "Subscribe" to a get request in order to download some Hierarchical JSON (see below)
  3. In the callback (2), filter the JSON for the first 2 parent nodes and populate the chart (1)
 
@@ -61,24 +61,17 @@ recipe:
           }]
         }
 
-(2) The logic for the [src/component/Chart.ts](src/component/Chart.ts) class is adapted from [ng2-nvd3](https://github.com/krispo/ng2-nvd3)
-library. I modified the logic in order de-couple the creation/setup of the chart control and the population of the
-bound data.
+
 
 
 ### Published Version Link
 
-[plnkr.co](http://plnkr.co/edit/hK2PeU?p=preview)
+[http://embed.plnkr.co/gb1fJz/](http://embed.plnkr.co/gb1fJz/)
 
 
 ### Tags
 
-angular2, typescript, component, http, http_providers, nvd3, d3
-
-
-### Forked From
-
-[fiddle-0025-TreeComponent](../fiddle-0025-TreeComponent)
+angular2, typescript, component, http, http_providers, d3
 
 
 ### Forked From

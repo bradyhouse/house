@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class VerticalbarService {
+export class VerticalbarChartService {
     constructor(private http: Http) {}
     request(url:string) {
         return this.http

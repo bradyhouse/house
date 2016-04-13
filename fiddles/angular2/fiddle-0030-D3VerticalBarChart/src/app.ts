@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import * as core from 'angular2/core';
-import {Verticalbar} from './verticalbar/verticalbar';
+import {VerticalbarChart} from './verticalbar/verticalbar-chart';
 import * as meta from './meta';
 
 
@@ -8,26 +8,39 @@ import * as meta from './meta';
     selector: 'app',
     template: `
         <div style="width: 500px;">
-            <verticalbar [cls]="chartCls" [height]="chartHeight" [width]="chartWidth" [url]="chartUrl"></verticalbar>
+            <verticalbar-chart [cls]="chartCls"
+                [height]="chartHeight"
+                [width]="chartWidth"
+                (resize)="onResize($event)"
+                [url]="chartUrl"></verticalbar-chart>
         </div>
     `,
-    directives: [Verticalbar]
+    directives: [VerticalbarChart]
 })
 export class App {
 
-    get chartHeight() {
-        return window.innerHeight - 50;
+    private _height:number = window.innerHeight;
+    private _width:number = window.innerWidth;
+
+    get chartHeight():number {
+        return this._height - 50;
     }
 
-    get chartWidth() {
-        return window.innerWidth - 50;
+    get chartWidth():number {
+        return this._width - 50;
     }
 
-    get chartUrl() {
+    get chartUrl():string {
         return meta.urls.data;
     }
 
-    get chartCls() {
+    get chartCls():string {
         return "chart";
     }
+
+    onResize(window:any):void {
+        this._width = window.innerWidth;
+        this._height = window.innerHeight;
+    }
+
 }
