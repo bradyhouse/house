@@ -10,8 +10,12 @@
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver. ~ 09/10/2015 - See CHANGELOG @ 201508240420
+# Baseline Ver - See CHANGELOG @ 201508240420
+# 04/16/2016 - See CHANGELOG @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
+
+source bin/_utils.sh;
+
 if [ "$#" -ne 1 ]
 then
       echo "Incorrect number of arguments"
@@ -37,10 +41,10 @@ function isAntInstalled() {
     if [[ ! $(isAntInstalled;) ]]; then exit 87; fi
     if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
     $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 88
-    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 89
-    $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 89
-    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/build.xml";) || exit 89
-    $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/build.xml";) || exit 89
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 89
+    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 89
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/build.xml";) || exit 89
+    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/build.xml";) || exit 89
 )
 #catch
 rc=$?

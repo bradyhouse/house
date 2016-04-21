@@ -13,10 +13,13 @@
 # Baseline Ver.
 # 04/09/2015 - CHANGELOG.MARKDOWN ~ 201504091810
 # 03/12/2016 - CHANGELOG.MARKDOWN ~ 201603050420
+# 04/16/2016 - CHANGELOG.MARKDOWN ~ 201604160420
 # ---------------------------------------------------------------------------------------------------|
 clear
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
-source _fiddle-func.sh;
+source bin/_utils.sh
+source bin/_types.sh
+
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
 _type=$(echo $1)

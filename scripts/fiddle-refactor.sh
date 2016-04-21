@@ -21,9 +21,13 @@
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
+# 04/16/2016 - See CHANGELOG @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
-source _fiddle-func.sh;
+source bin/_utils.sh
+source bin/_types.sh
+
+
 fiddleType=$1
 fiddleName=$2
 newName=$3

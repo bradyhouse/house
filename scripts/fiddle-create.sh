@@ -27,7 +27,9 @@
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
-source _fiddle-func.sh;
+source bin/_utils.sh
+source bin/_types.sh
+
 
 #try
 (

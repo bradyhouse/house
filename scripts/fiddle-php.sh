@@ -11,7 +11,11 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
+# 04/16/2016 - See CHANGELOG @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
+
+source bin/_utils.sh;
+
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 
@@ -19,14 +23,14 @@ if [ "$#" -ne 1 ]
 then
       echo "Incorrect number of arguments"
       echo "Please specify the name of the new fiddle"
-      exit 
+      exit
 fi
 #try
 (
      if [[ -d "../fiddles/php/$1" ]]; then rm -R "../fiddles/php/$1"; fi
      cp -rf "../fiddles/php/template" "../fiddles/php/$1" || exit 1
-     $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/php/$1/index.php" > app.tmp; mv app.tmp "../../fiddles/php/$1/index.php") || exit 2
-     $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/php/$1/README.markdown" > README.tmp; mv README.tmp "../../fiddles/php/$1/README.markdown") || exit 3
+     $(voidSubstr '{{FiddleName}}' $1 "../fiddles/php/$1/index.php" > app.tmp; mv app.tmp "../../fiddles/php/$1/index.php") || exit 2
+     $(voidSubstr '{{FiddleName}}' $1 "../fiddles/php/$1/README.markdown" > README.tmp; mv README.tmp "../../fiddles/php/$1/README.markdown") || exit 3
 )
 #catch
 rc=$?

@@ -21,7 +21,8 @@
 clear;
 port=8889;
 thisFile=$(echo "$0" | sed 's/\.\///g');
-source _fiddle-func.sh;
+source bin/_utils.sh
+source bin/_types.sh
 
 function showTitle() {
     echo -e ""

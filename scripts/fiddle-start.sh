@@ -22,27 +22,17 @@
 # 02/13/2016 - See CHANGELOG.MARKDOWN @ 201602130420
 # 03/02/2016 - See CHANGELOG.MARKDOWN @ 201603020420
 # 03/10/2016 - See CHANGELOG.MARKDOWN @ 201603050420
+# 04/16/2016 - See CHANGELOG.MARKDOWN @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
-source _fiddle-func.sh;
+source bin/_utils.sh;
+source bin/_types.sh;
 
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
 _type=$(echo $1)
 _port=$(echo $2) || 8889
 
-
-function startHouseNodeServer() {
-    cd bin
-    case ${_type} in
-        'all')
-            ./house-node-fs-start.sh "../../fiddles" "${_port}" || exit 88
-            ;;
-        *)
-            ./house-node-fs-start.sh "../../fiddles/${_type}" "${_port}" || exit 88
-            ;;
-    esac
-}
 
 function isNodeInstalled() {
     if [[ ! $(which node;) ]]
@@ -93,8 +83,7 @@ function startLiveServer() {
     if [[ ! $(isLiveServerInstalled;) ]]
     then
         if [[ ! $(isNodeInstalled;) ]]; then exit 90; fi
-        echo -e "[Info]\tlive-server not found. Starting house-node-fs.js ..."
-        startHouseNodeServer || exit $?
+        echo -e "[Info]\tlive-server not found."
     else
         stopLiveServer || exit $?;
         startLiveServer || exit $?;

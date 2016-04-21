@@ -21,9 +21,11 @@
 # 02/01/2016 - See CHANGELOG @ 201602010420
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
+# 04/16/2016 - See CHANGELOG @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
-source _fiddle-func.sh;
+source bin/_utils.sh
+source bin/_types.sh
 
 
 if [ "$#" -ne 1 ]
@@ -37,21 +39,7 @@ then
     echo ""
     echo "[t] - type. Valid types include: "
     echo ""
-    echo -e "\t\"angular\"\tAngular fiddle"
-    echo -e "\t\"angular2\"\tAngular 2 fiddle"
-    echo -e "\t\"compass\"\tCompass Fiddle"
-    echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-    echo -e "\t\"dojo\"\t\tDojo Fiddle"
-    echo -e "\t\"extjs5\"\t\tExt JS 5 Fiddle"
-    echo -e "\t\"extjs6\"\t\tExt JS 6 Fiddle"
-    echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-    echo -e "\t\"php\"\t\tPHP Fiddle"
-    echo -e "\t\"rxjs\"\t\tRxJS Fiddle"
-    echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
-    echo -e "\t\"chrome\"\tChrome Extension Fiddle"
-    echo -e "\t\"node\"\t\tnode.js Fiddle"
-    echo -e "\t\"tween\"\t\ttween.js Fiddle"
-    echo -e "\t\"svg\"\t\tScalar Graphic Vector Fiddle"
+    voidEchoFiddleTypes;
     echo ""
     exit
 fi
@@ -94,8 +82,8 @@ echo ${bornOnDate}
             done < index.tmp
             rm -r index.tmp
             cat tpl/indexfooter >> $indexFile
-            ./house-substr.sh '{{FiddleType}}' ${type} $indexFile || exit 86
-            ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} $indexFile || exit 86
+            voidSubstr '{{FiddleType}}' ${type} $indexFile || exit 86
+            voidSubstr '{{BornOnDate}}' ${bornOnDate} $indexFile || exit 86
             ;;
         *)  exit 5000
             ;;

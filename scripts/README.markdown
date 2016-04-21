@@ -21,8 +21,6 @@ script is implied by its name.  In particular --
 
         FIDDLE.SH
 
-        Nope ~ Incorrect number of arguments
-
         Usage:
 
         ./fiddle.sh "[c]" "[a1]" "[a2]" "[a3]"
@@ -45,10 +43,5 @@ script is implied by its name.  In particular --
             To understand the arguments required by a specific
             command execute the command with no additional
             parameters.
-
-
-
-*   **mysql-(start/stop).sh** scripts can (as the names imply) be used to start or stop the mysql services
-    on a Mac (or linux) machine that has mysql installed.
 
 

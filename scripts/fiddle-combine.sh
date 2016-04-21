@@ -15,7 +15,11 @@
 # 12/06/2015 - See CHANGELOG @ 201511100420
 # 02/13/2016 - See CHANGELOG @ 201602130420
 # 03/02/2016 - See CHANGELOG @ 201603020420
+# 04/16/2016 - See CHANGELOG @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
+
+source bin/_utils.sh
+source bin/_types.sh
 
 
 thisFile=$(echo "$0" | sed 's/\.\///g')
@@ -202,14 +206,7 @@ function catch() {
             echo ""
             echo "[t] - type. Valid types include: "
             echo ""
-            echo -e "\t\"angular\"\tAngular Fiddle"
-            echo -e "\t\"angular2\"\tAngular 2 Fiddle"
-            echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-            echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
-            echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
-            echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
-            echo -e "\t\"three\"\t\tthree.js / WebGl Fiddle"
-            echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
+            voidEchoFiddleTypes;
             echo ""
             echo "[f] - existing fiddle name.  For example: \"fiddleParabolaSurface\""
             echo ""

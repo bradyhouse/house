@@ -1,46 +1,64 @@
 import {Component} from 'angular2/core';
-import * as core from 'angular2/core';
-import {VerticalbarChart} from './verticalbar/verticalbar-chart';
-import * as meta from './meta';
+import {Http, Headers, HTTP_PROVIDERS} from 'angular2/http';
+import {BarChart} from './bar-chart/bar-chart';
+import {BarChartInterface} from './bar-chart/bar-chart.interface';
+import {ChartInterface} from './bar-chart/chart/chart.interface';
+
+import {DataService} from './data.service'
+import * as metadata from './meta';
 
 
 @Component({
     selector: 'app',
-    template: `
-        <div style="width: 500px;">
-            <verticalbar-chart [cls]="chartCls"
-                [height]="chartHeight"
-                [width]="chartWidth"
-                (resize)="onResize($event)"
-                [url]="chartUrl"></verticalbar-chart>
-        </div>
-    `,
-    directives: [VerticalbarChart]
+    templateUrl: './src/app.html',
+    directives: [BarChart],
+    providers: [HTTP_PROVIDERS, DataService]
 })
 export class App {
 
-    private _height:number = window.innerHeight;
-    private _width:number = window.innerWidth;
+    data:Array<ChartInterface> = [];
 
-    get chartHeight():number {
-        return this._height - 50;
+    private _width:number = window.innerWidth - 50;
+    private _height:number = window.innerHeight - 50;
+    private _simulate:boolean = false;
+    private _delay:number = 1000;
+    private _title:string = metadata.fiddleHeader;
+    private _chart:BarChart;
+
+    constructor(private dataService:DataService) {
+
     }
 
-    get chartWidth():number {
-        return this._width - 50;
+    onWindowResize(event:any):void {
+
+        let srcElement:any = event ? event.srcElement : null,
+            window:any = srcElement && srcElement.window ? srcElement.window : null,
+            height:any = window ? window.innerHeight : null,
+            width:any = window ? window.innerWidth : null;
+
+        if (width && height) {
+            this._width = window.innerWidth - 50;
+            this._height = window.innerHeight -50;
+        }
     }
 
-    get chartUrl():string {
-        return meta.urls.data;
+    onChartReady(chart:BarChart) {
+        this._chart = chart;
+        this.dataService.request(metadata.urls.data).subscribe((res:any) => {
+            if (res.items) {
+                this._chart.data = res.items;
+            }
+        });
     }
 
-    get chartCls():string {
-        return "chart";
-    }
-
-    onResize(window:any):void {
-        this._width = window.innerWidth;
-        this._height = window.innerHeight;
+    get options():BarChartInterface {
+        return {
+            title: this._title,
+            width: this._width,
+            height: this._height,
+            simulate: this._simulate,
+            delay: this._delay
+        }
     }
 
 }

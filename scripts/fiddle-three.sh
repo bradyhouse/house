@@ -12,7 +12,12 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
 # 02/13/2016 - See CHANGELOG @ 201602130420
+# 04/16/2016 - See CHANGELOG @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
+
+source bin/_utils.sh;
+source bin/_types.sh;
+
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 
@@ -31,13 +36,13 @@ echo ${bornOnDate}
 (
     if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
     $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1
-    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/app.js";) || exit 2
-    $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/app.js";) || exit 2
-    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/index.html";) || exit 3
-    $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${bornOnDate} "../../fiddles/${fiddleSubDir}/$1/index.html";) || exit 3
-    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
-    $(cd bin; ./house-substr.sh '{{BornOnDate}}' $1 "../../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
-    $(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/src/metadata.js";) || exit 4
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/app.js";) || exit 2
+    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/app.js";) || exit 2
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 3
+    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 3
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
+    $(voidSubstr '{{BornOnDate}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/src/metadata.js";) || exit 4
 
     exit
 )

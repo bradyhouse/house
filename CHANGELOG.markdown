@@ -239,7 +239,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/extjs/fiddle-20150623-ButtonSetLocalX](fiddles/extjs/fiddle-20150623-ButtonSetLocalX)
 * Added [fiddles/extjs/fiddle-20150623-jsTestDriver](fiddles/extjs/fiddle-20150623-jsTestDriver)
 * Added [fiddles/bash/fiddle-0002-ListCommand](fiddles/bash/fiddle-0002-ListCommand)
-* Added [fiddles/three/fiddle-0000-TemplateTest](fiddles/three/fiddle-0000-TemplateTest)
 * Added [fiddles/three/fiddle-0002-WebGlDetection](fiddles/three/fiddle-0002-WebGlDetection)
 * Added [fiddles/bash/fiddle-0004-CurlDownload](fiddles/bash/fiddle-0004-CurlDownload)
 * Added [fiddles/bash/fiddle-0006-SayCommand](fiddles/bash/fiddle-0006-SayCommand)
@@ -356,7 +355,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/svg/fiddle-0013-GradientCylinder](fiddles/svg/fiddle-0013-GradientCylinder)
 * Added [fiddles/svg/fiddle-0014-TriColorGradients](fiddles/svg/fiddle-0014-TriColorGradients)
 * Added [fiddles/svg/fiddle-0015-GradientWeave](fiddles/svg/fiddle-0015-GradientWeave)
-* Added [fiddles/compass/fiddle-0001-Template](fiddles/compass/fiddle-0001-Template)
 
 ### 201508010420
 
@@ -818,6 +816,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0031-PlayerToolbar](fiddles/angular2/fiddle-0031-PlayerToolbar)
     2.  Finished [fiddles/angular2/fiddle-0030-D3VerticalBarChart](fiddles/angular2/fiddle-0030-D3VerticalBarChart)
+    3.  Added [fiddles/angular2/fiddle-0032-D3BarChartTooltip](fiddles/angular2/fiddle-0032-D3BarChartTooltip)
+    4.  Added dependency (submodule) to [angular2-canvas-renderer-experiment](https://github.com/matsko/angular2-canvas-renderer-experiment)
 * **Rx**
     1.  Refactored [fiddles/rxjs/fiddle-0001-AjaxObservable](fiddles/rxjs/fiddle-0001-AjaxObservable)
     2.  Added [fiddles/rxjs/fiddle-0002-TimeObservable](fiddles/rxjs/fiddle-0002-TimeObservable)
@@ -827,3 +827,52 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0073-CsvToJson](fiddles/bash/fiddle-0073-CsvToJson)
 
+### 201604160420
+
+* **fiddle.sh**
+    1.  Removed [scripts/bin/house-*.sh](scripts/bin)
+    2.  Removed [scripts/mysql-*.sh](scripts)
+    3.  Removed [scripts/setup](scripts)
+    4.  Added [scripts/bin/_*](scripts/bin)
+        *   See - [fiddles/fiddle-0071-TypescriptD3ProjectSetup](fiddles/fiddle-0071-TypescriptD3ProjectSetup)
+        *   Reflected changes
+            1. Updated [scripts/fiddle-typescript.sh](scripts/fiddle-typescript.sh)
+    5.  Removed [scripts/_fiddle_func.sh](scripts)
+        *   Reflected changes:
+            1.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            2.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+            3.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            4.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            6.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            7.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+            8.  Updated [scripts/fiddle-stop.sh](scripts/fiddle-stop.sh)
+            9.  Updated [scripts/fiddle-test.sh](scripts/fiddle-test.sh)
+            10. Updated [scripts/fiddle-combine.sh](scripts/fiddle-combine.sh)
+            12. Updated [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
+            13. Updated [scripts/fiddle-angular.sh](scripts/fiddle-angular.sh)
+            14. Updated [scripts/fiddle-ant.sh](scripts/fiddle-ant.sh)
+            15. Updated [scripts/fiddle-bash.sh](scripts/fiddle-bash.sh)
+            16. Updated [scripts/fiddle-chrome.sh](scripts/fiddle-chrome.sh)
+            17. Updated [scripts/fiddle-compass.sh](scripts/fiddle-compass.sh)
+            18. Updated [scripts/fiddle-d3.sh](scripts/fiddle-d3.sh)
+            19. Updated [scripts/fiddle-dojo.sh](scripts/fiddle-dojo.sh)
+            20. Updated [scripts/fiddle-extjs-5.sh](scripts/fiddle-extjs-5.sh)
+            21. Updated [scripts/fiddle-extjs-6.sh](scripts/fiddle-extjs-6.sh)
+            22. Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            23. Updated [scripts/fiddle-jquery.sh](scripts/fiddle-jquery.sh)
+            24. Updated [scripts/fiddle-node.sh](scripts/fiddle-node.sh)
+            25. Updated [scripts/fiddle-php.sh](scripts/fiddle-php.sh)
+            26. Updated [scripts/fiddle-python.sh](scripts/fiddle-python.sh)
+            27. Updated [scripts/fiddle-rxjs.sh](scripts/fiddle-rxjs.sh)
+            28. Updated [scripts/fiddle-svg.sh](scripts/fiddle-svg.sh)
+            29. Updated [scripts/fiddle-three.sh](scripts/fiddle-three.sh)
+            30. Updated [scripts/fiddle-tween.sh](scripts/fiddle-tween.sh)
+            31. Updated [scripts/fiddle-typescript.sh](scripts/fiddle-typescript.sh)
+    6.  Added [scripts/test](scripts/test)
+        * Reflected changes:
+            1. Added [scripts/test/fiddle.sh](scripts/test/fiddle.sh)
+            2. Added [scripts/test/bin/utils.sh](scripts/test/bin/utils.sh)
+
+* **Typescript**
+    1.  Added [fiddles/typescript/fiddle-0001-HelloWorld](fiddles/typescript/fiddle-0001-HelloWorld)
