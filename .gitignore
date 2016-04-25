@@ -32,6 +32,7 @@ docs
 lib
 test
 tmp
+nohup.out
 
 gulpfile.js
 gulpfile.js.map
