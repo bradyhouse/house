@@ -250,9 +250,12 @@ srcDir="${fiddlePath}/src"
     # Verify type parameter
 	case ${fiddleType} in
 	    'angular2' )
-	        if [[ ! $(isTscInstalled;) ]]; then exit 92; fi
             cd ${fiddlePath};
-            tsc || exit 93;
+            createAppFile "${fiddleType}" "${appFileName}" "${useClosure}" || exit $?;
+            if [[ ! $(isTscInstalled;) ]]; then exit 92; fi
+            tsc -t ES5 --experimentalDecorators --sourceMap --allowJs --allowUnreachableCode --allowSyntheticDefaultImports --suppressImplicitAnyIndexErrors app.ts;
+            appFileName=app.js;
+            exit 0;
 	        ;;
 	    'd3' | 'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
 	        # Verify the src directory exists

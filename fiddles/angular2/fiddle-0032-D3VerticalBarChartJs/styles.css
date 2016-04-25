@@ -1,0 +1,115 @@
+body {
+    font-family: "Courier New";
+    font-size: small;
+    text-align: center;
+}
+
+bar-chart svg {
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+}
+
+bar-chart .bar-chart-negative-series {
+    fill: url(#yellowToRed);
+    stroke: url(#yellowToRed);
+}
+
+bar-chart .bar-chart-positive-series {
+    fill: url(#lightblueToBlue);
+    stroke: url(#lightblueToBlue);
+}
+
+bar-chart chart-title .chartTitle {
+    font-family: "Arial";
+    font-size: .8em;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    width: 100%;
+    margin: 0px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+bar-chart .bar-chart-x-axis path, .bar-chart-x-axis line {
+    fill: none;
+    stroke: darkslategrey;
+    stroke-opacity: .9;
+    stroke-width: .5;
+}
+
+bar-chart .bar-chart-y-axis path, .bar-chart-y-axis line {
+    fill: none;
+    stroke: darkslategrey;
+    stroke-opacity: .9;
+    stroke-width: .5;
+}
+
+bar-chart .bar-chart-x-axis text {
+    font-family: "Arial";
+    font-size: .5em;
+    font-weight: normal;
+    font-style: normal;
+    stroke-opacity: 1;
+    stroke-width: .1;
+    stroke: gray;
+    color: gray;
+}
+
+bar-chart .bar-chart-y-axis text {
+    font-family: "Arial";
+    font-size: .5em;
+    font-weight: normal;
+    font-style: normal;
+    stroke-opacity: 1;
+    stroke-width: .1;
+    stroke: gray;
+    color: gray;
+}
+
+bar-chart .bar-chart-x-axis .tick {
+    stroke-opacity: 1;
+    stroke-width: .1;
+    stroke: gray;
+    color: gray;
+}
+
+bar-chart .bar-chart-y-axis .tick {
+    stroke-opacity: 1;
+    stroke-width: .1;
+    stroke: gray;
+    color: gray;
+}
+
+
+bar-chart .bar-chart-y-axis .h-grid-line {
+    stroke: gray;
+    stroke-opacity: .5;
+    stroke-width: .5;
+}
+
+bar-chart rect.selected {
+    border-style: dotted;
+    border-color: black;
+    border-width: 1px;
+
+}
+
+bar-chart text.bar-chart-tooltip {
+    font-size: .7em;
+    font-family: "Arial";
+    font-weight: normal;
+    font-style: normal;
+    stroke-opacity: 1;
+    stroke-width: .2;
+    stroke: gray;
+    color: gray;
+}
+
+
+
+bar-chart stop.yellow { stop-color: #E9F90B; }
+bar-chart stop.red { stop-color: #F91B0B; }
+bar-chart stop.lightblue { stop-color: #0BC1F9; }
+bar-chart stop.blue { stop-color: #0B0BF9; }

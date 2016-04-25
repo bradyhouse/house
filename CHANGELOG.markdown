@@ -876,3 +876,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Typescript**
     1.  Added [fiddles/typescript/fiddle-0001-HelloWorld](fiddles/typescript/fiddle-0001-HelloWorld)
+
+* **Angular2**
+    1.  Added [fiddles/angular2/fiddle-0032-D3VerticalBarChartJs](fiddles/angular2/fiddle-0032-D3VerticalBarChartJs)

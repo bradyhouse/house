@@ -82,8 +82,9 @@ echo ${bornOnDate}
             done < index.tmp
             rm -r index.tmp
             cat tpl/indexfooter >> $indexFile
-            voidSubstr '{{FiddleType}}' ${type} $indexFile || exit 86
-            voidSubstr '{{BornOnDate}}' ${bornOnDate} $indexFile || exit 86
+
+            $(voidSubstr "{{FiddleType}}" "${type}" "${indexFile}";) || exit 86
+            $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexFile}";) || exit 86
             ;;
         *)  exit 5000
             ;;

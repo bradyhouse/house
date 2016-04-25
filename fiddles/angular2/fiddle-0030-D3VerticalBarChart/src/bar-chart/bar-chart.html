@@ -1,5 +1,9 @@
 <chart
     (window:resize)="onWindowResize($event)"
-    (onDomInit)="onChartDomInit($event)"
-    (onRefresh)="onChartRefresh($event)">
+    (domInit)="onChartDomInit($event)"
+    (refresh)="onChartRefresh($event)"
+    (barClick)="onChartBarClick($event)"
+    (barMouseOver)="onChartBarMouseOver($event)"
+    (barMouseOut)="onChartBarMouseOut($event)"
+>
 </chart>

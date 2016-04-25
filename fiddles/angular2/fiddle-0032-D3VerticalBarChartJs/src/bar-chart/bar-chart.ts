@@ -1,14 +1,20 @@
-import {Component, Input, Output, EventEmitter, OnInit} from 'angular2/core';
-import {Chart} from './chart/chart';
-import {ChartInterface} from './chart/chart.interface';
-import {BarChartInterface} from './bar-chart.interface';
+
 
 @Component({
     selector: 'bar-chart',
-    templateUrl: './src/bar-chart/bar-chart.html',
+    template: `
+        <chart
+            [options]="chartOptions"
+            (window:resize)="onWindowResize($event)"
+            (domInit)="onChartDomInit($event)"
+            (refresh)="onChartRefresh($event)"
+            (barClick)="onChartBarClick($event)"
+            (barMouseOver)="onChartBarMouseOver($event)"
+            (barMouseOut)="onChartBarMouseOut($event)">
+        </chart>`,
     directives: [Chart]
 })
-export class BarChart {
+class BarChart {
     @Input() options:BarChartInterface;
     @Output() ready:EventEmitter<BarChart> = new EventEmitter();
     @Output() click:EventEmitter<ChartInterface> = new EventEmitter();
@@ -69,6 +75,8 @@ export class BarChart {
         this.onSimulateDataChange();
         window.setTimeout(() => {
             this.simulateDataChange();
+            console.log('onSimulateDataChange');
+
         }, this.options.delay || 2000);
     }
 
@@ -140,8 +148,4 @@ export class BarChart {
             valueDeltaMin: this.valueDeltaMin
         }
     }
-
-
-
-
 }

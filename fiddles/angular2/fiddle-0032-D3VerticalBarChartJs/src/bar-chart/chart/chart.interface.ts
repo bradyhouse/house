@@ -1,6 +1,4 @@
-import {ChartViewModel} from './chart-view-model';
-
-export interface ChartInterface {
+interface ChartInterface {
     valueScaleFn?:Function;                 // scaling function -- when present this function will be used to calculate the value of Y.
     valueDeltaMax?:number;                  // delta Y Max Value.  When present, absolulte value of Y(n) - Y(0) must be less than equal to this value.
     valueDeltaMin?:number;                  // delta Y Min Value.  When present, absolulte value of Y(n) - Y(0) must be greater than or equal to this value.
@@ -14,4 +12,5 @@ export interface ChartInterface {
     duration?:number;                       // d3 refresh frequency in milliseconds
     viewModel?:ChartViewModel;              // dimensions configuration property
     values?:Array<ChartInterface>;          // d3 datum values collection necessary when defining a "root" item
+
 }

@@ -20,7 +20,7 @@ export class App {
 
     private _width:number = window.innerWidth - 50;
     private _height:number = window.innerHeight - 50;
-    private _simulate:boolean = false;
+    private _simulate:boolean = true;
     private _delay:number = 1000;
     private _title:string = metadata.fiddleHeader;
     private _chart:BarChart;
@@ -53,11 +53,14 @@ export class App {
 
     get options():BarChartInterface {
         return {
-            title: this._title,
-            width: this._width,
-            height: this._height,
-            simulate: this._simulate,
-            delay: this._delay
+            simulate: false,
+            scaleFn: (d:any):number => {
+                let value = d && d.value ? d.value : 0,
+                    tolerance:number = d && d.tolerance && d.tolerance !== 0 ? d.tolerance : 1,
+                    scale:number = (+value) / (+tolerance);
+                return scale;
+            },
+            scaleRange: [.05, 50]
         }
     }
 

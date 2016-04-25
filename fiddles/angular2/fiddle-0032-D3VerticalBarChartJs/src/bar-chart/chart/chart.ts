@@ -1,15 +1,36 @@
-import {Component, OnInit, ElementRef, Inject, Input, Output, EventEmitter} from 'angular2/core';
-import {ChartViewModel} from './chart-view-model';
-import {ChartInterface} from './chart.interface';
 
-declare let d3:any;
+
 
 @Component({
     selector: 'chart',
     properties: ['data', 'width', 'height'],
-    templateUrl: './src/bar-chart/chart/chart.html'
+    template: `<chart-title></chart-title>
+        <svg class="bar-chart" xmlns="http://www.w3.org/2000/svg" version="1.1">
+             <defs>
+                <clipPath id="body-clip"></clipPath>
+            </defs>
+            <g class="bar-chart-tooltip">
+            </g>
+            <g class="bar-chart-body" clip-path="url(#body-clip)">
+                <linearGradient id="yellowToRed" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+                    <stop class="yellow" offset="0%"></stop>
+                    <stop class="red" offset="100%"></stop>
+                </linearGradient>
+                <linearGradient id="redToYellow" x1="0%" y1="100%" x2="0%" y2="0%" spreadMethod="pad">
+                    <stop class="red" offset="0%"></stop>
+                    <stop class="yellow" offset="100%"></stop>
+                </linearGradient>
+                <linearGradient id="lightblueToBlue" x1="0%" y1="100%" x2="0%" y2="0%" spreadMethod="pad">
+                    <stop class="lightblue" offset="0%"></stop>
+                    <stop class="blue" offset="100%"></stop>
+                </linearGradient>
+            </g>
+            <g class="bar-chart-axes">
+
+            </g>
+        </svg>`
 })
-export class Chart implements OnInit {
+class Chart implements OnInit {
     @Input() options:ChartInterface;
     @Output() refresh:EventEmitter<boolean> = new EventEmitter();
     @Output() domInit:EventEmitter<Chart> = new EventEmitter();
@@ -104,9 +125,7 @@ export class Chart implements OnInit {
 
     private get canRender():boolean {
         return this._data &&
-        this._data.length &&
-        this.width &&
-        this.height ? true : false;
+        this._data.length ? true : false;
     }
 
     private get quadrantWidth():number {
@@ -344,14 +363,33 @@ export class Chart implements OnInit {
         }
     }
 
-    private renderBars():void {
-        this.removeTooltip();
-        this.removeBars();
+    private zeroBars():void {
         this.bodyEl.selectAll('g.bar-chart-series')
             .data(this.data)
             .enter()
             .append("g")
             .attr("class", "bar-chart-series");
+
+        this.bodyEl.selectAll("g.bar-chart-series")
+            .data(this.data)
+            .append('rect')
+            .attr("x", (d:ChartInterface) => {
+                return this._x(d.label);
+            })
+            .attr('y', (d:ChartInterface) => {
+                return this._y(0);
+            })
+            .attr('height', (d:ChartInterface) => {
+                return 0;
+            })
+            .attr("width", (d:ChartInterface) => {
+                return Math.floor(this.quadrantWidth / this.data.length - 2 * this._seriesPadding);
+            });
+    }
+    private renderBars():void {
+        this.removeTooltip();
+        this.removeBars();
+        this.zeroBars();
 
         this.bodyEl.selectAll("g.bar-chart-series")
             .data(this.data)
@@ -466,5 +504,5 @@ export class Chart implements OnInit {
             .classed('chartTitle', true)
             .text(this.title);
     }
-
 }
+

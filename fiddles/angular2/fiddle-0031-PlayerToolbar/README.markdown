@@ -1,4 +1,4 @@
-fiddle-0026-Nvd3Component
+fiddle-0031-PlayerToolbar
 ======
 
 ![Screenshot](screenshot.png)

@@ -1,4 +1,5 @@
 /// <reference path="typings/angular2/angular2.d.ts" />
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -15,7 +16,7 @@ var Product = (function () {
         this.price = price;
     }
     return Product;
-})();
+}());
 var ProductImage = (function () {
     function ProductImage() {
     }
@@ -29,7 +30,7 @@ var ProductImage = (function () {
         })
     ], ProductImage);
     return ProductImage;
-})();
+}());
 var ProductDepartment = (function () {
     function ProductDepartment() {
     }
@@ -44,7 +45,7 @@ var ProductDepartment = (function () {
         })
     ], ProductDepartment);
     return ProductDepartment;
-})();
+}());
 var PriceDisplay = (function () {
     function PriceDisplay() {
     }
@@ -58,7 +59,7 @@ var PriceDisplay = (function () {
         })
     ], PriceDisplay);
     return PriceDisplay;
-})();
+}());
 var ProductRow = (function () {
     function ProductRow() {
         this.click = new angular2_1.EventEmitter();
@@ -78,7 +79,7 @@ var ProductRow = (function () {
         })
     ], ProductRow);
     return ProductRow;
-})();
+}());
 var ProductsList = (function () {
     function ProductsList() {
         this.click = new angular2_1.EventEmitter();
@@ -98,7 +99,7 @@ var ProductsList = (function () {
         })
     ], ProductsList);
     return ProductsList;
-})();
+}());
 var Fiddle = (function () {
     function Fiddle() {
         this.products = [];
@@ -119,6 +120,6 @@ var Fiddle = (function () {
         })
     ], Fiddle);
     return Fiddle;
-})();
+}());
 angular2_1.bootstrap(Fiddle);
 //# sourceMappingURL=app.js.map
