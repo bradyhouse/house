@@ -1,4 +1,3 @@
-
 var metadata = {
     fiddleHeader: 'Angular 2 - Nvd3 Component',
     urls: {

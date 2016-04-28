@@ -32,12 +32,16 @@ requirements:
             2.  left (number) - absolute left position of the tooltip
             3.  lines ([{ field, value }]) - field/value collection
             4.  visible (boolean) - visibility (hide/show) flag
+            5.  width (number) - width of the tooltip; defaults to 150px
     2.  It should utilize the bootstrap tooltip class
     3.  It should not emit any events
     4.  It should expose an options input parameter, which is an instance of its interface (1)
     5.  The height of the rendered tooltip should be calculated based on the number of lines
     6.  Each line of the tooltip should display the field and it value in a table format
     7.  It should not rely on table tags to achieve the required format (6)
+    8.  If the width or height of the toolitp exceeds the width or height of the window, it should be remain hidden
+    9.  If the top plus the height exceeds the height of the window, then the top should be offset by the height
+    10. If the left plus the width exceeds the width of the window, then the left should be offset by the width
 
 
 ### Published Version Link

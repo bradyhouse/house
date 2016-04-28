@@ -1,7 +1,11 @@
 
-body {
-    padding: 30px;
+
+div.container {
+    border: medium dashed green;
+    width: 100px;
+    float: right;
 }
+
 
 tooltip div.tooltip-inner {
     border-radius: 0px;
@@ -21,7 +25,6 @@ tooltip span[role=value] {
 }
 
 tooltip .tooltip-inner {
-    width: 150px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 0px;

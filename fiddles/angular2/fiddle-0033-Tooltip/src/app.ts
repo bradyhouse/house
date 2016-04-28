@@ -10,14 +10,16 @@ import {Tooltip, TooltipInterface, TooltipOrientation} from './tooltip/tooltip';
 export class App {
 
     private _lines:Array<{field:string, value:string}> = [
-        { field: 'Name', value: 'Bob'},
-        { field: 'Address', value: 'NY'},
-        { field: 'Age', value: '40'},
-        { field: 'Hobbies', value: 'jousting'},
-        { field: 'Favorite Color', value: 'blue'}
+        {field: 'Name', value: 'Bob'},
+        {field: 'Address', value: 'NY'},
+        {field: 'Age', value: '40'},
+        {field: 'Hobbies', value: 'jousting'},
+        {field: 'Favorite Color', value: 'blue'}
     ];
     private _tooltipOptions:TooltipInterface = {};
-    private _nodes:Array<string> = ['A', 'B', 'C', 'D', 'E'];
+    private _nodes:Array<string> = ['A', 'B', 'C', 'D', 'E']
+
+
     private _tooltip:Tooltip;
 
     get width():number {
@@ -34,11 +36,11 @@ export class App {
 
     onMouseOver(event:any):void {
 
-        let elText:Array<{field:string, value:string}> = [{ field: 'Node', value: event.srcElement.outerText}];
+        let elText:Array<{field:string, value:string}> = [{field: 'Node', value: event.srcElement.outerText}];
 
         this.toolitpOptions = <TooltipInterface>{
-            left: event.x + 10,
-            top: event.y + 10,
+            left: event.x,
+            top: event.y,
             lines: elText.concat(this._lines),
             visible: true
         };
@@ -55,6 +57,10 @@ export class App {
 
     set toolitpOptions(options:TooltipInterface) {
         this._tooltipOptions = options;
+    }
+
+    get bottom():number {
+        return window.innerHeight - 159;
     }
 
 }

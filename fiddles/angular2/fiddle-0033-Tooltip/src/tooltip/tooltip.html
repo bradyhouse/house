@@ -1,7 +1,7 @@
 <div *ngIf="isVisible"
      role="tooltip"
      [ngStyle]="{'top': top + 'px', 'left': left + 'px', 'display': 'block', 'position': 'absolute'}">
-    <div class="tooltip-inner" [ngStyle]="{'height': height +'px'}">
+    <div class="tooltip-inner" [ngStyle]="{'height': height +'px', 'width': width + 'px'}">
         <div class="row" *ngFor="#line of lines">
             <span role="field">{{line.field}}</span><span role="value">{{line.value}}</span>
         </div>
