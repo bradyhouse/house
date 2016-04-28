@@ -19,9 +19,6 @@ export class App {
     private _tooltipOptions:TooltipInterface = {};
     private _nodes:Array<string> = ['A', 'B', 'C', 'D', 'E']
 
-
-    private _tooltip:Tooltip;
-
     get width():number {
         return window.innerWidth;
     }
