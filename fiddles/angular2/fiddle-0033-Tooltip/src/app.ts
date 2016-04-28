@@ -38,7 +38,7 @@ export class App {
 
         let elText:Array<{field:string, value:string}> = [{field: 'Node', value: event.srcElement.outerText}];
 
-        this.toolitpOptions = <TooltipInterface>{
+        this.tooltipOptions = <TooltipInterface>{
             left: event.x,
             top: event.y,
             lines: elText.concat(this._lines),
@@ -48,14 +48,14 @@ export class App {
     }
 
     onMouseOut(event:any):void {
-        this.toolitpOptions = <TooltipInterface>{};
+        this.tooltipOptions = <TooltipInterface>{};
     }
 
     get tooltipOptions():TooltipInterface {
         return this._tooltipOptions;
     }
 
-    set toolitpOptions(options:TooltipInterface) {
+    set tooltipOptions(options:TooltipInterface) {
         this._tooltipOptions = options;
     }
 
