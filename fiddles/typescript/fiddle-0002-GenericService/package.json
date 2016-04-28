@@ -1,20 +1,32 @@
 {
-  "name": "fiddle-0001-helloworld",
+  "name": "generic-service",
   "version": "1.0.0",
-  "description": "typescript \"hello world\" fiddle.",
+  "description": "fiddle exploring how to create a generic service class.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradyhouse/house.git"
+  },
+  "keywords": [
+    "typescript",
+    "generics"
+  ],
+  "author": "bradyhouse@gmail.com",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradyhouse/house/issues"
+  },
+  "homepage": "https://github.com/bradyhouse/house#readme",
   "devDependencies": {
-    "browser-sync": "^2.12.3",
+    "browser-sync": "^2.12.4",
     "browserify": "^13.0.0",
     "chai": "^3.5.0",
     "gulp-karma": "0.0.5",
     "gulp-sourcemaps": "^2.0.0-alpha",
-    "gulp-tslint": "^4.3.5",
+    "gulp-tslint": "^5.0.0",
     "gulp-typescript": "^2.13.0",
     "gulp-uglify": "^1.5.3",
     "karma": "^0.13.22",
@@ -26,7 +38,7 @@
     "mocha": "^2.4.5",
     "phantomjs-prebuilt": "^2.1.7",
     "sinon": "^1.17.3",
-    "tslint": "^3.7.4",
+    "tslint": "^3.8.1",
     "typescript": "^1.8.10",
     "vinyl-transform": "^1.0.0"
   },

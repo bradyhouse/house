@@ -5,27 +5,48 @@ body {
 }
 
 bar-chart svg {
-    height: calc(100%);
-    width: calc(100%);
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+}
+
+bar-chart .bar-chart-negative-series {
+    fill: url(#yellowToRed);
+    stroke: url(#yellowToRed);
+}
+
+bar-chart .bar-chart-positive-series {
+    fill: url(#lightblueToBlue);
+    stroke: url(#lightblueToBlue);
 }
 
 bar-chart chart-title .chartTitle {
-    font-family: "Helvetica";
-    font-size: large;
+    font-family: "Arial";
+    font-size: .8em;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
     width: 100%;
+    margin: 0px;
+    padding-bottom: 0px;
     padding-top: 5px;
     text-align: center;
-    color: black;
 }
 
-bar-chart .axis path, .axis line {
+bar-chart .bar-chart-x-axis path, .bar-chart-x-axis line {
     fill: none;
     stroke: darkslategrey;
     stroke-opacity: .9;
     stroke-width: .5;
 }
 
-bar-chart .axis text {
+bar-chart .bar-chart-y-axis path, .bar-chart-y-axis line {
+    fill: none;
+    stroke: darkslategrey;
+    stroke-opacity: .9;
+    stroke-width: .5;
+}
+
+bar-chart .bar-chart-x-axis text {
     font-family: "Arial";
     font-size: .5em;
     font-weight: normal;
@@ -36,96 +57,62 @@ bar-chart .axis text {
     color: gray;
 }
 
-bar-chart .axis .tick {
+bar-chart .bar-chart-y-axis text {
+    font-family: "Arial";
+    font-size: .5em;
+    font-weight: normal;
+    font-style: normal;
     stroke-opacity: 1;
     stroke-width: .1;
     stroke: gray;
     color: gray;
 }
 
-bar-chart .axis .h-grid-line {
-    stroke: black;
-    stroke-opacity: .9;
+bar-chart .bar-chart-x-axis .tick {
+    stroke-opacity: 1;
+    stroke-width: .1;
+    stroke: gray;
+    color: gray;
+}
+
+bar-chart .bar-chart-y-axis .tick {
+    stroke-opacity: 1;
+    stroke-width: .1;
+    stroke: gray;
+    color: gray;
+}
+
+
+bar-chart .bar-chart-y-axis .h-grid-line {
+    stroke: gray;
+    stroke-opacity: .5;
     stroke-width: .5;
-    color: darkslategrey;
+}
+
+bar-chart rect.selected {
+    border-style: dotted;
+    border-color: black;
+    border-width: 1px;
 
 }
 
-bar-chart tooltip {
-    opacity: 0.9;
-    font-weight: bold;
-    font-family: Helvetica;
-    z-index: 1000;
+bar-chart text.bar-chart-tooltip {
+    font-size: .7em;
+    font-family: "Arial";
+    font-weight: normal;
+    font-style: normal;
+    stroke-opacity: 1;
+    stroke-width: .2;
+    stroke: gray;
+    color: gray;
 }
 
-bar-chart tooltip div.tooltip {
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 5px;
-}
 
-bar-chart tooltip .negative {
-    /* top left, top right, bottom right, bottom left */
-    -moz-border-radius: 10px 0px 10px 0px;
-    -webkit-border-radius: 10px 0px 10px 0px;
-    border-radius: 10px 0px 10px 0px;
-    -khtml-border-radius: 10px 0px 10px 0px;
 
-    background-image: -webkit-gradient(
-            linear,
-            left bottom,
-            left top,
-            color-stop(0, #F9AB0B),
-            color-stop(1, #E9190B)
-    );
-    background-image: -moz-linear-gradient(
-            center bottom,
-            #F9AB0B 0%,
-            #E9190B 100%
-    );
-    color: floralwhite;
-
-}
-
-bar-chart tooltip .positive {
-
-    /* top left, top right, bottom right, bottom left */
-    -moz-border-radius: 0px 10px 0px 10px;
-    -webkit-border-radius: 0px 10px 0px 10px;
-    border-radius: 0px 10px 0px 10px;
-    -khtml-border-radius: 0px 10px 0px 10px;
-
-    background-image: -webkit-gradient(
-            linear,
-            left bottom,
-            left top,
-            color-stop(0, #0BC1F9),
-            color-stop(1, #0B0BF9)
-    );
-    background-image: -moz-linear-gradient(
-            center bottom,
-            #0BC1F9 100%,
-            #0B0BF9 0%
-    );
-    color: floralwhite;
-
-}
-
-bar-chart stop.yellow {
-    stop-color: #E9F90B;
-}
-
-bar-chart stop.red {
-    stop-color: #F91B0B;
-}
-
-bar-chart stop.lightblue {
-    stop-color: #0BC1F9;
-}
-
-bar-chart stop.blue {
-    stop-color: #0B0BF9;
-}
+bar-chart stop.yellow { stop-color: #E9F90B; }
+bar-chart stop.red { stop-color: #F91B0B; }
+bar-chart stop.lightblue { stop-color: #0BC1F9; }
+bar-chart stop.blue { stop-color: #0B0BF9; }
 
 
 

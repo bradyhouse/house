@@ -1,0 +1,22 @@
+{
+  "name": "generic-service",
+  "description": "fiddle exploring how to create a generic service class.",
+  "main": "app.js",
+  "authors": [
+    "bradyhouse@gmail.com"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "typescript",
+    "generics"
+  ],
+  "homepage": "https://github.com/bradyhouse/house",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -875,7 +875,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             2. Added [scripts/test/bin/utils.sh](scripts/test/bin/utils.sh)
 
 * **Typescript**
-    1.  Added [fiddles/typescript/fiddle-0001-HelloWorld](fiddles/typescript/fiddle-0001-HelloWorld)
+    1.  Started [fiddles/typescript/fiddle-0002-GenericService](fiddles/typescript/fiddle-0002-GenericService)
+
+* **Bash**
+    1.  Started [fiddles/bash/fiddle-0074-Angular2ProjectSetup](fiddles/bash/fiddle-0074-Angular2ProjectSetup)
 
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0032-D3VerticalBarChartJs](fiddles/angular2/fiddle-0032-D3VerticalBarChartJs)
+    2.  Added [fiddles/angular2/fiddle-0033-Tooltip](fiddles/angular2/fiddle-0033-Tooltip)
+

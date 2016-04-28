@@ -28,7 +28,7 @@ source bin/_types.sh
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
             echo -e "";
             echo -e "--------------------------------------------------------";

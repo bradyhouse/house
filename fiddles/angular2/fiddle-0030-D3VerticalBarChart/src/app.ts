@@ -64,4 +64,8 @@ export class App {
         }
     }
 
+    get panelHeight():number {
+        return window.innerHeight - 20;
+    }
+
 }

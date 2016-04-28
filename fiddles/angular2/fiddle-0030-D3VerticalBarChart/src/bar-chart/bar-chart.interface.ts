@@ -1,3 +1,7 @@
+import {Injectable} from 'angular2/core';
+import Injectable = ng.Injectable;
+
+@Injectable()
 export interface BarChartInterface {
     title?:string;                  // default (startup) chart title
     simulate?:boolean;              // boolean flag to simulated data change after the initial data (json) is loaded

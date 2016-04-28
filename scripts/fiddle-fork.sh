@@ -78,7 +78,7 @@ function updateFile() {
     targetFiddle=$3
     if [[ -e "${file}" ]]
     then
-        $(cd bin; ./house-substr.sh ${fiddleName} ${targetFiddle} "${file}";) || exit 90
+        $(voidSubstr ${fiddleName} ${targetFiddle} "${file}";) || exit 90
     fi
 }
 fiddleType=$1
@@ -123,8 +123,8 @@ forkedOnDate=$(date +"%m-%d-%y";)
                 rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92
             fi
             $(cp -rf "../fiddles/${fiddleType}/template/README.markdown" "../fiddles/${fiddleType}/${targetFiddle}/README.markdown") || exit 92
-            $(cd bin; ./house-substr.sh '{{FiddleName}}' ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
-            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${forkedOnDate} "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
+            $(voidSubstr '{{FiddleName}}' ${targetFiddle} "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
+            $(voidSubstr '{{BornOnDate}}' ${forkedOnDate} "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
             ;;
     esac
 
@@ -148,8 +148,8 @@ forkedOnDate=$(date +"%m-%d-%y";)
         'chrome')
             rm -r "../fiddles/${fiddleType}/${targetFiddle}/manifest.json"
             $(cp -rf "../fiddles/${fiddleType}/template/manifest.json" "../fiddles/${fiddleType}/${targetFiddle}/manifest.json") || exit 96
-            $(cd bin; ./house-substr.sh '{{FiddleName}}' ${targetFiddle} "../../fiddles/${fiddleType}/${targetFiddle}/manifest.json";) || exit 96
-            $(cd bin; ./house-substr.sh '{{BornOnDate}}' ${forkedOnDate} "../../fiddles/${fiddleType}/${targetFiddle}/manifest.json";) || exit 96
+            $(voidSubstr '{{FiddleName}}' ${targetFiddle} "../fiddles/${fiddleType}/${targetFiddle}/manifest.json";) || exit 96
+            $(voidSubstr '{{BornOnDate}}' ${forkedOnDate} "../fiddles/${fiddleType}/${targetFiddle}/manifest.json";) || exit 96
             ;;
     esac
 
