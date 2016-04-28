@@ -46,7 +46,7 @@ export class App {
     }
 
     onMouseOut(event:any):void {
-        //this.toolitpOptions = <TooltipInterface>{};
+        this.toolitpOptions = <TooltipInterface>{};
     }
 
     get tooltipOptions():TooltipInterface {
