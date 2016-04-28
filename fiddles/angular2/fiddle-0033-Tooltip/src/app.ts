@@ -56,8 +56,4 @@ export class App {
         this._tooltipOptions = options;
     }
 
-    get bottom():number {
-        return window.innerHeight - 159;
-    }
-
 }
