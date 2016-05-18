@@ -1,0 +1,11 @@
+<template name="taskListHeader">
+    <header class="task-list-header">
+        <h1>Task List</h1>
+        <div class="login-control">
+            {{#if currentUser}}
+            <span class="welcome">Welcome</span>
+            {{/if}}
+            {{> loginButtons align="right"}}
+        </div>
+    </header>
+</template>

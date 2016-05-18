@@ -1,0 +1,133 @@
+
+.modal-form-component {
+    position: absolute;
+    margin: 20px;
+    padding: 20px;
+}
+
+.modal-form-component .close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+.modal-form-component .close:hover,
+.modal-form-component .close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.modal-form-component button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.modal-form-component .modal {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+.modal-form-component .modal.fade .modal-dialog {
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -o-transition: -o-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+.modal-form-component .modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+.modal-form-component .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.modal-form-component .modal-dialog {
+    position: relative;
+    width: 100%;
+    margin: 10px;
+}
+.modal-form-component .modal-content {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0;
+}
+.modal-form-component .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000000;
+}
+.modal-form-component .modal-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.modal-form-component .modal-backdrop.in {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.modal-form-component .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.modal-form-component .modal-header .close {
+    margin-top: -15px;
+}
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+.modal-body {
+    position: relative;
+    padding: 20px;
+}
+.modal-footer {
+    padding: 20px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+.modal-footer .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+.modal-footer .btn-group .btn + .btn {
+    margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+    margin-left: 0;
+}
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}

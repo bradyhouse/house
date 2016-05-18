@@ -127,25 +127,6 @@
                 .attr("y2", 0);
         }
 
-        function renderGradients(svg) {
-            let gradient = svg.append("svg:defs")
-                .append("svg:linearGradient")
-                .attr("id", "gradient")
-                .attr("x1", "0%")
-                .attr("y1", "0%")
-                .attr("x2", "0%")
-                .attr("y2", "100%")
-                .attr("spreadMethod", "pad");
-
-            gradient.append("svg:stop")
-                .attr("class", "begin")
-                .attr("offset", "0%");
-
-            gradient.append("svg:stop")
-                .attr("class", "end")
-                .attr("offset", "100%");
-        }
-
         function renderBody(svg) {
             if (!_bodyG)
                 _bodyG = svg.append("g")
@@ -181,7 +162,7 @@
                 .attr("width", function(d) {
                     return Math.floor(quadrantWidth() / _data.length - padding - 2);
                 })
-                .style("fill", "url(#gradient)");
+                .style( "fill", "url(#gradient)");
         }
 
         function xStart() {

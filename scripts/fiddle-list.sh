@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -19,31 +19,38 @@
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
+# 05/17/2016 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
 source bin/_types.sh
 
+thisFile=$(echo "$0" | sed 's/\.\///g');
+
 #try
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
-            echo -e "";
-            echo -e "--------------------------------------------------------";
-            echo -e "$1 Fiddles" | awk '{print toupper($0)}';
-            echo -e "--------------------------------------------------------";
-            echo -e "";
-            ls -1 ../fiddles/$1 | grep 'fiddle';
+            voidShowTitle ${thisFile} > log;
+            echo -e "" >> log;
+            echo -e "--------------------------------------------------------" >> log;
+            echo -e "$1 Fiddles" | awk '{print toupper($0)}' >> log;
+            echo -e "--------------------------------------------------------" >> log;
+            echo -e "" >> log;
+            ls -1 ../fiddles/$1 | grep 'fiddle' >> log;
             if [[ ${count} -eq "0" ]]
             then
-                echo -e "N/A";
+                echo -e "N/A" >> log;
             fi
-            echo -e "";
-            echo -e "--------------------------------------------------------";
-            echo -e "Total:  ${count}";
-            echo -e "";
+            echo -e "" >> log;
+            echo -e "--------------------------------------------------------" >> log;
+            echo -e "Total:  ${count}" >> log;
+
+            cat log | more;
+            rm -rf log
+
             ;;
         *)  exit 86;
             ;;

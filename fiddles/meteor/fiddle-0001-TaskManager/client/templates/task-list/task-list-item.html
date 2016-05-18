@@ -1,0 +1,10 @@
+<template name="taskListItem">
+    {{#each taskListItems}}
+        <li class="task-item">
+            <span class="text">
+                <input type="text" class="text" value="{{name}}" />
+            </span>
+            <button class="delete-button" tabindex="-1">&times;</button>
+        </li>
+    {{/each}}
+</template>

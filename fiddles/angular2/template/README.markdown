@@ -31,4 +31,4 @@ N/A
 
 ### Tags
 
-angular 2, js
+node, angular2, systemjs, es6-shim, reflect-metadata, rxjs, zone.js, concurrently, lite-server, typings

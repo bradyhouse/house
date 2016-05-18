@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -28,6 +28,7 @@
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
+# 05/17/2016 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -51,6 +52,7 @@ then
     echo -e "[a] - source fiddle directory name."
     echo ""
     echo -e "[b] - new fiddle directory name."
+    echo -e ""
     echo -e "\tNOTE - the name must include the word \"fiddle\"."
     echo ""
     exit
@@ -108,19 +110,22 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')
-            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?
-            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?
-            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?
+        'angular2' | 'meteor')
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
+            ;;
+        'angular'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
             ;;
         'svg')
-           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?
-           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?
+           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
+           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
             ;;
         'ant'|'bash'|'python')
             if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ]]
             then
-                rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92
+                rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92;
             fi
             $(cp -rf "../fiddles/${fiddleType}/template/README.markdown" "../fiddles/${fiddleType}/${targetFiddle}/README.markdown") || exit 92
             $(voidSubstr '{{FiddleName}}' ${targetFiddle} "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92

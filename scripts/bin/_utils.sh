@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 03/12/2016______________________________________________________________|
-#  Description             : COLLECTION OF FUNCTION USED ACROSS THE SHELL SCRIPTS____________________|
-#  Command line Arguments  : N/A_____________________________________________________________________|
+#  Create date             : 05/02/2016______________________________________________________________|
+#  Description             : COLLECTION OF RE-USABLE FUNCTIONS.______________________________________|
+#  Entry Point             : N/A_____________________________________________________________________|
+#  Input Parameters        : N/A_____________________________________________________________________|
+#  Initial Consumer        : ../fiddle-*.sh__________________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver.
+# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -85,6 +86,46 @@ function findReplace() {
     fi
 }
 
+function voidShowTitle() {
+    echo -e ""
+    echo -e "H o u s e"
+    echo -e "oooooooooooo  o8o        .o8        .o8  oooo    "
+    echo -e " 888       8  \`\"'        888        888   888   "
+    echo -e " 888         oooo   .oooo888   .oooo888   888   .ooooo."
+    echo -e " 888oooo8     888  d88   888  d88   888   888  d88   88b"
+    echo -e " 888          888  888   888  888   888   888  888ooo888"
+    echo -e " 888          888  888   888  888   888   888  888    .o "
+    echo -e "o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P "
+    echo -e ""
+    echo "$1" | awk '{print toupper($0)}'
+}
+
+function voidEchoUpperCase() {
+    echo "$1" | awk '{print toupper($0)}'
+}
+
+function voidPathRecursiveList() {
+    if [ $# -ne "3" ]
+    then
+      echo ""
+      echo "directory recursive file type list"
+      echo ""
+      echo "Usage:"
+      echo ""
+      echo "       $0 \"[d]\" \"[e]\" \"[f]\""
+      echo ""
+      echo "       [d] - directory to search"
+      echo "       [e] - file extension criteria"
+      echo "       [f] - output file name"
+      echo ""
+      exit 86
+    fi
+    home=$(cd ~; pwd | sed -e 's/[]\/$*.^|[]/\\&/g')
+    _d=$(echo $1 | sed 's/~/'$home'/g')
+    _f=$(echo $3 | sed 's/~/'$home'/g')
+    find $_d -name ".$2" -prune -o -type f -print | grep ".$2" > $_f
+}
+
 function listAndCount() {
     cd ../fiddles/$1
     echo $(ls -1 | grep $2 | wc -l | sed -e 's/^[[:space:]]*//';)
@@ -100,3 +141,4 @@ function getFiddle() {
         echo "";
     fi
 }
+

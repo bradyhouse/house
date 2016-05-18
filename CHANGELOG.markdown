@@ -834,7 +834,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Removed [scripts/mysql-*.sh](scripts)
     3.  Removed [scripts/setup](scripts)
     4.  Added [scripts/bin/_*](scripts/bin)
-        *   See - [fiddles/fiddle-0071-TypescriptD3ProjectSetup](fiddles/fiddle-0071-TypescriptD3ProjectSetup)
+        *   See - [fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup](fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup)
         *   Reflected changes
             1. Updated [scripts/fiddle-typescript.sh](scripts/fiddle-typescript.sh)
     5.  Removed [scripts/_fiddle_func.sh](scripts)
@@ -883,4 +883,55 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0032-D3VerticalBarChartJs](fiddles/angular2/fiddle-0032-D3VerticalBarChartJs)
     2.  Added [fiddles/angular2/fiddle-0033-Tooltip](fiddles/angular2/fiddle-0033-Tooltip)
+    3.  Added [fiddles/angular2/fiddle-0034-TooltipJs](fiddles/angular2/fiddle-0034-TooltipJs)
 
+### 201605020420
+
+* **fiddle.sh**
+    1.  Added [scripts/bin/_install_save_ng2.sh](scripts/bin/_seed_angular2.sh)
+        *   See - [fiddles/bash/fiddle-0075-Angular2SeederSetup](fiddles/bash/fiddle-0075-Angular2SeederSetup)
+        *   Reflected changes:
+            1.  Updated [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
+            2.  Updated [scripts/fiddle-start.sh]
+    2.  Added [scripts/bin/_test_fiddle_shell.sh](scripts/bin/_test_fiddle_shell.sh)
+        *   Reflected changes:
+            1.  Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+            2.  Updated [scripts/fiddle-test.sh](scripts/fiddle-test.sh)
+    3.  Added [scripts/bin/_run_jstestdriver.sh](scripts/bin/_run_jstestdriver.sh)
+        *   Reflected changes:
+            1.  Updated [scripts/fiddle-test.sh](scripts/fiddle-test.sh)
+    4.  Deleted [scripts/fiddle-stop.sh](scripts)
+    5.  Added [fiddles/meteor](fiddles/meteor)
+         *  See [fiddles/bash/fiddle-0077-Meteor](fiddles/bash/fiddle-0077-Meteor)
+         *  Reflected changes:
+            1.  Added [scripts/fiddle-meteor.sh](scripts/fiddle-meteor.sh)
+            2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            3.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+            4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            5.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            6.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            7.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            8.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+
+* **Bash**
+    1.  Added [fiddles/bash/fiddle-0075-Angular2SeederSetup](fiddles/bash/fiddle-0075-Angular2SeederSetup)
+    2.  Added [fiddles/bash/fiddle-0076-Angular2CLI](fiddles/bash/fiddle-0076-Angular2CLI)
+    3.  Added [fiddles/bash/fiddle-0077-Meteor](fiddles/bash/fiddle-0077-Meteor)
+    4.  Added [fiddles/bash/fiddle-0078-MeteorWebpack](fiddles/bash/fiddle-0078-MeteorWebpack)
+    
+* **Angular2**
+    1.  Added [fiddles/angular2/fiddle-0035-ModalForm](fiddles/angular2/fiddle-0035-ModalForm)
+    2.  Added [fiddles/angular2/fiddle-0036-SiblingComponents](fiddles/angular2/fiddle-0036-SiblingComponents)
+    3.  Added [fiddles/angular2/fiddle-0037-PopUpGrid](fiddles/angular2/fiddle-0037-PopUpGrid)
+    4.  Added [fiddles/angular2/fiddle-0038-ComponentResolver](fiddles/angular2/fiddle-0038-ComponentResolver)
+    5.  Added dependency (submodule) to [Farata / angular2typescript](https://github.com/Farata/angular2typescript)
+    6.  Added dependency (submodule) to [angular-cli](https://github.com/angular/angular-cli)
+
+* **SVG**
+    1.  Started (~ restored) [fiddles/svg/fiddle-0022-Spirograph](fiddles/svg/fiddle-0022-Spirograph)
+    2.  Started (~ restored) [fiddles/svg/fiddle-0023-Menubar](fiddles/svg/fiddle-0023-Menubar)
+
+* **Meteor**
+    1.  Added [fiddles/meteor/fiddle-0001-TaskManager](fiddles/meteor/fiddle-0001-TaskManager)
+    2.  Added dependency (submodule) to [meteor-workshop-solution](https://github.com/pavlovich/meteor-workshop-solution)
+    

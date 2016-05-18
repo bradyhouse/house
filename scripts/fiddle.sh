@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -17,30 +17,19 @@
 # 09/10/2015 - See CHANGELOG @ 201508240420
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 03/12/2015 - See CHANGELOG @ 201603100420
+# 05/02/2015 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 clear;
+source bin/_utils.sh;
+source bin/_types.sh;
+
 port=8889;
 thisFile=$(echo "$0" | sed 's/\.\///g');
-source bin/_utils.sh
-source bin/_types.sh
-
-function showTitle() {
-    echo -e ""
-    echo -e "H o u s e"
-    echo -e "oooooooooooo  o8o        .o8        .o8  oooo    "
-    echo -e " 888       8  \`\"'        888        888   888   "
-    echo -e " 888         oooo   .oooo888   .oooo888   888   .ooooo."
-    echo -e " 888oooo8     888  d88   888  d88   888   888  d88   88b"
-    echo -e " 888          888  888   888  888   888   888  888ooo888"
-    echo -e " 888          888  888   888  888   888   888  888    .o "
-    echo -e "o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P "
-    echo -e ""
-    echo "$1" | awk '{print toupper($0)}'
-}
 
 #try
 (
-    showTitle "${thisFile}"
+    voidShowTitle ${thisFile};
+
     if [ "$#" -lt 1 ]; then  exit 86; fi
     case $1 in
         'combine')
@@ -73,12 +62,8 @@ function showTitle() {
             ;;
         'start')
             if [ "$#" -lt 2 ]; then  ./fiddle-start.sh;  exit 0; fi
-            if [ "$#" -eq 3 ]; then port=$3; fi
-            ./fiddle-start.sh  $2 ${port}
-            ;;
-        'stop')
-            if [ "$#" -eq 2 ]; then port=$2; fi
-            ./fiddle-stop.sh ${port}
+            if [ "$#" -eq 4 ]; then port=$4; fi
+            ./fiddle-start.sh  $2 $3 ${port}
             ;;
         'delete')
             if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh;  exit 0; fi
@@ -89,8 +74,18 @@ function showTitle() {
             ./fiddle-refactor.sh $2 $3 $4;
             ;;
         'test')
-            if [ "$#" -lt 3 ]; then  ./fiddle-test.sh;  exit 0; fi
-            ./fiddle-test.sh $2 $3;
+            case "$#" in
+                2)
+                    ./fiddle-test.sh $2;
+                    ;;
+                3)
+                    ./fiddle-test.sh $2 $3;
+                    ;;
+                *)
+                    ./fiddle-test.sh;
+                    ;;
+            esac
+            exit 0;
             ;;
         'list')
             if [ "$#" -lt 2 ]; then  ./fiddle-list.sh;  exit 0; fi

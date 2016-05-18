@@ -24,6 +24,7 @@ typings
 .idea
 .vscode
 *.iml
+*.log
 
 /tools/**/*.js
 dist

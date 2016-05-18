@@ -18,12 +18,13 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
+Shell script that automates the creation of a new Angular2 project based on the __QuickStart package.json file__. See
+[npm packages page](https://angular.io/docs/ts/latest/guide/npm-packages.html) on the [angular2 docs site](https://angular.io/docs/ts/latest/guide/).
 
 
 ### Tags
 
-bash
+bash, node, angular2, systemjs, es6-shim, reflect-metadata, rxjs, zone.js, concurrently, lite-server, typings
 
 
 ### Forked From

@@ -1,0 +1,31 @@
+
+
+div.container {
+    border: medium dashed green;
+    width: 100px;
+    float: right;
+}
+
+
+tooltip div.tooltip-inner {
+    border-radius: 0px;
+    background-color: #555555;
+}
+
+tooltip div[role=tooltip] {
+    -moz-box-shadow:    3px 3px 3px #333;
+    -webkit-box-shadow: 3px 3px 3px #333;
+    box-shadow:         3px 3px 3px #333;
+}
+tooltip span[role=field] {
+    float: left;
+}
+tooltip span[role=value] {
+    float: right;
+}
+
+tooltip .tooltip-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+}

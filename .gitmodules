@@ -70,3 +70,12 @@
 [submodule "fiddles/d3/libs/d3.wiki"]
 	path = fiddles/d3/libs/d3.wiki
 	url = https://github.com/mbostock/d3.wiki.git
+[submodule "fiddles/angular2/libs/angular-cli"]
+	path = fiddles/angular2/libs/angular-cli
+	url = https://github.com/angular/angular-cli.git
+[submodule "fiddles/angular2/libs/angular2typescript"]
+	path = fiddles/angular2/libs/angular2typescript
+	url = https://github.com/Farata/angular2typescript.git
+[submodule "fiddles/meteor/libs/meteor-workshop-solution"]
+	path = fiddles/meteor/libs/meteor-workshop-solution
+	url = https://github.com/pavlovich/meteor-workshop-solution.git

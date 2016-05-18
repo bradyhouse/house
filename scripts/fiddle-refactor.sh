@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -22,6 +22,7 @@
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
+# 05/17/2016 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -49,33 +50,26 @@ changeLogFile="../../CHANGELOG.markdown"
 
     sudo mv "${fiddlePath}" "${newFiddlePath}" || exit 90
 
-    cd bin
-
     # Update readme.markdown
     if [[ -f "${newReadmeFile}" ]]
     then
-        ./house-substr.sh "${fiddleName}" "${newName}" "${newReadmeFile}" || exit 91
+        $(voidSubstr "${fiddleName}" "${newName}" "${newReadmeFile}";) || exit 91
     fi
 
     # Update CHANGELOG.markdown
     if [[ -f "${changeLogFile}" ]]
     then
-        ./house-substr.sh "${fiddleName}" "${newName}" "${changeLogFile}" || exit 91
+        $(voidSubstr "${fiddleName}" "${newName}" "${changeLogFile}";) || exit 91
     fi
-
-    cd ..
 
     # Verify type parameter
 	case ${fiddleType} in
-        'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
-        cd bin
+        'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
         # Update index.html page
         if [[ -f "${newIndexFile}" ]]
         then
-            ./house-substr.sh "${fiddleName}" "${newName}" "${newIndexFile}" || exit 91
+            $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91
         fi
-
-        cd ..
 
         # Re-index directory
         case ${fiddleType} in

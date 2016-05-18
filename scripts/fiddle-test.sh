@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -12,40 +12,56 @@
 # ---------------------------------------------------------------------------------------------------|
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 04/16/2016 - See CHANGELOG @ 201604160420
+# 05/02/2015 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh;
 source bin/_types.sh;
+source bin/_test.sh;
+source bin/jstestdriver/_run_jstestdriver.sh;
 
-clear
 thisFile=$(echo "$0" | sed 's/\.\///g')
-echo "${thisFile}" | awk '{print toupper($0)}'
 fiddleType=$1
 fiddleName=$2
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 
+
 #try
 (
-	# Verify parameter count is 2
-	if [ "$#" -ne 2 ]; then  exit 86; fi
+    voidEchoUpperCase ${thisFile};
 
-    # Verify that the target fiddle directory exists
-    if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
+    # Handle fiddle.sh test request
+    if [[ "${fiddleType}" == "fiddle.sh" ]]
+    then
+        testFiddleShell || exit $?;
+    else
+        # Verify parameter count is 2
+        if [ "$#" -lt 2 ]; then  exit 86; fi
 
-    # Verify type parameter
-	case ${fiddleType} in
-        'jquery' | 'three' )
-            cd bin
-            ./house-jstestdriver-test.sh "../${fiddlePath}"
-            ;;
-        *)
-            exit 86
-    esac
+        # Verify that the target fiddle directory exists
+        if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
+
+        # Verify type parameter
+        case ${fiddleType} in
+            'jquery' | 'three' )
+                cd bin
+                runJsTestDriver "../${fiddlePath}";
+                exit $?;
+                ;;
+            *)
+                exit 86
+        esac
+    fi
 )
 #catch
 _rc=$?
 case ${_rc} in
-    0)  echo "The \"${fiddleName}\" ${fiddleType} fiddle has been tested successfully."
+    0)  if [[ "${fiddleType}" == "fiddle.sh" ]]
+        then
+            echo "All tests succeeded";
+        else
+            echo "The \"${fiddleName}\" ${fiddleType} fiddle has been tested successfully."
+        fi
         ;;
     86) echo ""
         echo "Nope ~ Incorrect number of arguments"

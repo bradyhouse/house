@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -25,6 +25,7 @@
 # 02/13/2016 - See CHANGELOG @ 201602130420
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
+# 05/17/2016 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -41,7 +42,6 @@ source bin/_types.sh
             ;;
         'angular2')
             ./fiddle-angular-2.sh $2 || exit 87
-            ./fiddle-index.sh "angular2" || exit 87
             ;;
         'ant')
             ./fiddle-ant.sh $2 || exit 87
@@ -66,6 +66,9 @@ source bin/_types.sh
         'jquery')
             ./fiddle-jquery.sh $2 || exit 88
             ./fiddle-index.sh "jquery" || exit 88
+            ;;
+        'meteor')
+            ./fiddle-meteor.sh $2 || exit 102
             ;;
         'three')
             ./fiddle-three.sh $2 || exit 89
@@ -133,7 +136,7 @@ case ${_rc} in
         echo ""
         echo ""
         ;;
-    87) echo "fubar! extjs fiddle creation failed."
+    87) echo "fubar! fiddle creation failed."
         ;;
     88) echo "fubar! jquery fiddle creation failed."
         ;;

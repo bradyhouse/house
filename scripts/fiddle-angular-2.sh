@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -13,9 +13,13 @@
 # Baseline Ver.
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
+# 05/02/2016 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh;
+source bin/angular2/_install.sh;
+source bin/angular2/_create.sh;
+source bin/angular2/_start.sh;
 
 if [ "$#" -ne 1 ]
 then
@@ -24,42 +28,42 @@ then
       exit 59
 fi
 
-fiddleSubDir="angular2"
+clear;
+echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
+echo "Bash version ${BASH_VERSION}..."
+
+fiddleSubDir="../fiddles/angular2/$1";
+fiddleTemplateDir="../fiddles/angular2/template";
 bornOnDate=$(date +"%m-%d-%y";)
+echo ${bornOnDate};
 
-echo ${bornOnDate}
 
-#try
+function catch() {
+    case $1 in
+        0)  endLog "\"${fiddleSubDir}\" created.";
+            ;;
+        1)  echo "_install.sh: ngInstall() failed";
+            ;;
+        2)  echo "_create.sh: ngCreate() failed";
+            ;;
+        *)  echo "fubar! Something went wrong."
+            ;;
+    esac
+    exit $1
+}
+# try
 (
-    if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-    $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1
-    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
-    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
-    ##$(cd bin; ./house-substr.sh '{{FiddleName}}' $1 "../../fiddles/${fiddleSubDir}/$1/package.json";) || exit 4
-
+    if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
+    cd ../fiddles/angular2;
+    ngInstall || exit 1;
+    ngCreate $1 ${bornOnDate} || exit 2;
 )
-#catch
-_rc=$?
-case ${_rc} in
-    0)  echo "Done. The \"../fiddles/${fiddleSubDir}/$1\" directory has been initialized."
-        ;;
-    1)  echo "foo bar! failed to create the \"../fiddles/${fiddleSubDir}/$1\" directory."
-        ;;
-    2)  echo "foo bar! failed trying to update the ../fiddles/${fiddleSubDir}/$1/index.html file."
-        if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-        ;;
-    3)  echo "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/$1/README.markdown file."
-        if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-        ;;
-    4)  echo "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/$1/package.json file."
-        if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-        ;;
-    *)  echo "foo bar! Something went wrong."
-        if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-        ;;
-esac
+
+# catch
+rc=$?; catch ${rc};
+
 #finally
-exit ${_rc}
+exit ${rc};
 
 
 

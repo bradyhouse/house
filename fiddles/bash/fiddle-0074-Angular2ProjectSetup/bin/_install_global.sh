@@ -107,21 +107,3 @@ function npmInstallBrowserSyncGlobal() {
         npm install -g browser-sync;
     fi
 }
-
-function isYoInstalled() {
-    if [[ ! $(which yo;) ]]
-    then
-        echo "false";
-    else
-        echo "true";
-    fi
-}
-
-function npmInstallYoGlobal() {
-    log "$0" "npmInstallYoGlobal";
-    installed=$(isYoInstalled;);
-    if [[ "${installed}" == "false"  ]]
-    then
-        npm install -g browser-sync;
-    fi
-}

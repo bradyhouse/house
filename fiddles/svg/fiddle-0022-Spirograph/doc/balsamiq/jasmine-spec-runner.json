@@ -1,0 +1,895 @@
+{
+    "mockup": {
+        "controls": {
+            "control": [
+                {
+                    "ID": "0",
+                    "measuredH": "10",
+                    "measuredW": "100",
+                    "typeID": "HRule",
+                    "w": "1481",
+                    "x": "16",
+                    "y": "51",
+                    "zOrder": "0"
+                },
+                {
+                    "ID": "1",
+                    "children": {
+                        "controls": {
+                            "control": [
+                                {
+                                    "ID": "0",
+                                    "h": "62",
+                                    "measuredH": "32",
+                                    "measuredW": "32",
+                                    "properties": {
+                                        "shape": "roundRect",
+                                        "text": "iframe.html"
+                                    },
+                                    "typeID": "RoundButton",
+                                    "w": "176",
+                                    "x": "91",
+                                    "y": "0",
+                                    "zOrder": "0"
+                                },
+                                {
+                                    "ID": "1",
+                                    "h": "49",
+                                    "measuredH": "100",
+                                    "measuredW": "150",
+                                    "properties": {
+                                        "curvature": "0",
+                                        "leftArrow": "false",
+                                        "stroke": "dotted"
+                                    },
+                                    "typeID": "Arrow",
+                                    "w": "10",
+                                    "x": "173",
+                                    "y": "60",
+                                    "zOrder": "1"
+                                },
+                                {
+                                    "ID": "4",
+                                    "h": "75",
+                                    "measuredH": "32",
+                                    "measuredW": "32",
+                                    "properties": {
+                                        "shape": "parallelogram",
+                                        "size": "13",
+                                        "text": "bootstrap.js"
+                                    },
+                                    "typeID": "RoundButton",
+                                    "w": "203",
+                                    "x": "50",
+                                    "y": "118",
+                                    "zOrder": "2"
+                                },
+                                {
+                                    "ID": "5",
+                                    "h": "10",
+                                    "measuredH": "100",
+                                    "measuredW": "150",
+                                    "properties": {
+                                        "curvature": "0",
+                                        "leftArrow": "false",
+                                        "stroke": "dotted"
+                                    },
+                                    "typeID": "Arrow",
+                                    "w": "84",
+                                    "x": "0",
+                                    "y": "26",
+                                    "zOrder": "3"
+                                }
+                            ]
+                        }
+                    },
+                    "h": "193",
+                    "measuredH": "193",
+                    "measuredW": "267",
+                    "properties": {
+                        "controlName": "Start"
+                    },
+                    "typeID": "__group__",
+                    "w": "267",
+                    "x": "50",
+                    "y": "79",
+                    "zOrder": "1"
+                },
+                {
+                    "ID": "2",
+                    "measuredH": "21",
+                    "measuredW": "227",
+                    "properties": {
+                        "size": "18",
+                        "text": "index.html > ... > iframe.html"
+                    },
+                    "typeID": "Title",
+                    "x": "19",
+                    "y": "23",
+                    "zOrder": "2"
+                },
+                {
+                    "ID": "3",
+                    "measuredH": "10",
+                    "measuredW": "100",
+                    "typeID": "HRule",
+                    "w": "1481",
+                    "x": "16",
+                    "y": "301",
+                    "zOrder": "3"
+                },
+                {
+                    "ID": "4",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.manifest = {...}"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "34",
+                    "y": "360",
+                    "zOrder": "4"
+                },
+                {
+                    "ID": "5",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "117",
+                    "y": "428",
+                    "zOrder": "5"
+                },
+                {
+                    "ID": "6",
+                    "measuredH": "14",
+                    "measuredW": "59",
+                    "properties": {
+                        "size": "11",
+                        "text": "' boostrap.js"
+                    },
+                    "typeID": "Title",
+                    "x": "34",
+                    "y": "339",
+                    "zOrder": "6"
+                },
+                {
+                    "ID": "7",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Boot = {...}"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "34",
+                    "y": "484",
+                    "zOrder": "7"
+                },
+                {
+                    "ID": "8",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "117",
+                    "y": "552",
+                    "zOrder": "8"
+                },
+                {
+                    "ID": "9",
+                    "h": "88",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Boot.loadSync([\n    \"../bootstrap-files.js\",\n    \"../bootstrap-data.js\",\n    \"../bootstrap-launch.js\"\n]);"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "34",
+                    "y": "617",
+                    "zOrder": "9"
+                },
+                {
+                    "ID": "11",
+                    "h": "85",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "direction": "bottom",
+                        "leftArrow": "true",
+                        "rightArrow": "false",
+                        "text": ""
+                    },
+                    "typeID": "Arrow",
+                    "w": "59",
+                    "x": "127",
+                    "y": "272",
+                    "zOrder": "10"
+                },
+                {
+                    "ID": "12",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Boot.loadSync([ ... ]);"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "345",
+                    "y": "360",
+                    "zOrder": "11"
+                },
+                {
+                    "ID": "14",
+                    "measuredH": "14",
+                    "measuredW": "84",
+                    "properties": {
+                        "size": "11",
+                        "text": "' boostrap-files.js"
+                    },
+                    "typeID": "Title",
+                    "x": "345",
+                    "y": "339",
+                    "zOrder": "12"
+                },
+                {
+                    "ID": "18",
+                    "h": "218",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "direction": "bottom",
+                        "leftArrow": "false",
+                        "rightArrow": "true",
+                        "stroke": "dotted",
+                        "text": "1"
+                    },
+                    "typeID": "Arrow",
+                    "w": "129",
+                    "x": "210",
+                    "y": "383",
+                    "zOrder": "13"
+                },
+                {
+                    "ID": "19",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Loader.loadScriptsSync([]);"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "345",
+                    "y": "464",
+                    "zOrder": "14"
+                },
+                {
+                    "ID": "20",
+                    "measuredH": "14",
+                    "measuredW": "87",
+                    "properties": {
+                        "size": "11",
+                        "text": "' boostrap-data.js"
+                    },
+                    "typeID": "Title",
+                    "x": "345",
+                    "y": "443",
+                    "zOrder": "15"
+                },
+                {
+                    "ID": "21",
+                    "h": "126",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "direction": "bottom",
+                        "leftArrow": "false",
+                        "rightArrow": "true",
+                        "stroke": "dotted",
+                        "text": "2"
+                    },
+                    "typeID": "Arrow",
+                    "w": "107",
+                    "x": "230",
+                    "y": "495",
+                    "zOrder": "16"
+                },
+                {
+                    "ID": "22",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Loader.setConfig({enabled: true});"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "352",
+                    "zOrder": "17"
+                },
+                {
+                    "ID": "23",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "420",
+                    "zOrder": "18"
+                },
+                {
+                    "ID": "24",
+                    "measuredH": "14",
+                    "measuredW": "96",
+                    "properties": {
+                        "size": "11",
+                        "text": "' boostrap-launch.js"
+                    },
+                    "typeID": "Title",
+                    "x": "621",
+                    "y": "331",
+                    "zOrder": "19"
+                },
+                {
+                    "ID": "25",
+                    "h": "102",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.require([\n    '*',\n    'Ext.ux.ajax.JsonSimlet',\n    'Ext.ux.ajax.XmlSimlet',\n    'Ext.ux.ajax.SimManager',\n    'Ext.ux.PreviewPlugin'\n]);"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "476",
+                    "zOrder": "20"
+                },
+                {
+                    "ID": "26",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "583",
+                    "zOrder": "21"
+                },
+                {
+                    "ID": "27",
+                    "h": "49",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.onReady(...)"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "640",
+                    "zOrder": "22"
+                },
+                {
+                    "ID": "28",
+                    "h": "288",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "-1",
+                        "direction": "bottom",
+                        "leftArrow": "false",
+                        "rightArrow": "true",
+                        "stroke": "dotted",
+                        "text": "3"
+                    },
+                    "typeID": "Arrow",
+                    "w": "375",
+                    "x": "230",
+                    "y": "383",
+                    "zOrder": "23"
+                },
+                {
+                    "ID": "29",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "callback"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "697",
+                    "zOrder": "24"
+                },
+                {
+                    "ID": "30",
+                    "h": "49",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.XTemplate.prototype.strict = true;"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "752",
+                    "zOrder": "25"
+                },
+                {
+                    "ID": "31",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "809",
+                    "zOrder": "26"
+                },
+                {
+                    "ID": "32",
+                    "h": "49",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "document.body.innerHTML = '';"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "865",
+                    "zOrder": "27"
+                },
+                {
+                    "ID": "33",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "922",
+                    "zOrder": "28"
+                },
+                {
+                    "ID": "34",
+                    "h": "49",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.deferCallback = Ext.callback;"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "978",
+                    "zOrder": "29"
+                },
+                {
+                    "ID": "35",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "1035",
+                    "zOrder": "30"
+                },
+                {
+                    "ID": "36",
+                    "h": "49",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.event.publisher.Gesture.instance.setAsync(false);"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "1093",
+                    "zOrder": "31"
+                },
+                {
+                    "ID": "37",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "1150",
+                    "zOrder": "32"
+                },
+                {
+                    "ID": "38",
+                    "h": "49",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Element.prototype.setCapture = Ext.emptyFn;"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "621",
+                    "y": "1205",
+                    "zOrder": "33"
+                },
+                {
+                    "ID": "39",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "704",
+                    "y": "1262",
+                    "zOrder": "34"
+                },
+                {
+                    "ID": "40",
+                    "h": "162",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Loader.loadScripts({\n        url: [\n            \"../../build/production/../app.js\",\n            \"cmd.js\",\n            \"../../.sencha/test/json2.js\",\n            \"../../.sencha/test/jasmine.js\",\n            \"cmd-jasmine.js\",\n            \"../resources/init.js\",\n            \"../bootstrap-specs.js\"\n        ]\n    });"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "233",
+                    "x": "594",
+                    "y": "1317",
+                    "zOrder": "35"
+                },
+                {
+                    "ID": "42",
+                    "h": "146",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Ext.Boot.load({\n    charset: \"UTF-8\",\n    url: [\n        '../specs/unitTest.js'\n    ],\n    success: function() {\n        Ext.Boot.load('../start-tests.js');\n    }\n});"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "922",
+                    "y": "352",
+                    "zOrder": "36"
+                },
+                {
+                    "ID": "43",
+                    "measuredH": "14",
+                    "measuredW": "94",
+                    "properties": {
+                        "size": "11",
+                        "text": "' boostrap-specs.js"
+                    },
+                    "typeID": "Title",
+                    "x": "922",
+                    "y": "331",
+                    "zOrder": "37"
+                },
+                {
+                    "ID": "44",
+                    "h": "934",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "direction": "bottom",
+                        "leftArrow": "false",
+                        "rightArrow": "true",
+                        "stroke": "dotted",
+                        "text": ""
+                    },
+                    "typeID": "Arrow",
+                    "w": "101",
+                    "x": "813",
+                    "y": "383",
+                    "zOrder": "38"
+                },
+                {
+                    "ID": "45",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "var env = jasmine.getEnv();"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "1178",
+                    "y": "352",
+                    "zOrder": "39"
+                },
+                {
+                    "ID": "46",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "1261",
+                    "y": "420",
+                    "zOrder": "40"
+                },
+                {
+                    "ID": "47",
+                    "measuredH": "14",
+                    "measuredW": "65",
+                    "properties": {
+                        "size": "11",
+                        "text": "start-tests.js"
+                    },
+                    "typeID": "Title",
+                    "x": "1178",
+                    "y": "331",
+                    "zOrder": "41"
+                },
+                {
+                    "ID": "48",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "if (window.Cmd)"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "1178",
+                    "y": "476",
+                    "zOrder": "42"
+                },
+                {
+                    "ID": "49",
+                    "h": "57",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "direction": "bottom",
+                        "leftArrow": "true",
+                        "rightArrow": "false",
+                        "text": "Yes"
+                    },
+                    "typeID": "Arrow",
+                    "w": "56",
+                    "x": "1193",
+                    "y": "544",
+                    "zOrder": "43"
+                },
+                {
+                    "ID": "50",
+                    "h": "56",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "top.Cmd = Cmd;"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "1057",
+                    "y": "609",
+                    "zOrder": "44"
+                },
+                {
+                    "ID": "51",
+                    "h": "80",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "direction": "bottom",
+                        "leftArrow": "false",
+                        "rightArrow": "true",
+                        "stroke": "dotted",
+                        "text": ""
+                    },
+                    "typeID": "Arrow",
+                    "w": "71",
+                    "x": "1104",
+                    "y": "356",
+                    "zOrder": "45"
+                },
+                {
+                    "ID": "52",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": " env.addReporter(new Cmd.jasmine.Reporter());"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "1057",
+                    "y": "723",
+                    "zOrder": "46"
+                },
+                {
+                    "ID": "53",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "1140",
+                    "y": "786",
+                    "zOrder": "47"
+                },
+                {
+                    "ID": "54",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "leftArrow": "false",
+                        "text": "sequential"
+                    },
+                    "typeID": "Arrow",
+                    "w": "10",
+                    "x": "1140",
+                    "y": "669",
+                    "zOrder": "48"
+                },
+                {
+                    "ID": "55",
+                    "h": "60",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "Cmd.native.switchTo({frame: 'sandbox'}, function() {\n            env.execute();\n        });"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "1057",
+                    "y": "842",
+                    "zOrder": "49"
+                },
+                {
+                    "ID": "57",
+                    "h": "49",
+                    "measuredH": "100",
+                    "measuredW": "150",
+                    "properties": {
+                        "curvature": "0",
+                        "direction": "top",
+                        "leftArrow": "false",
+                        "rightArrow": "true",
+                        "text": "No"
+                    },
+                    "typeID": "Arrow",
+                    "w": "60",
+                    "x": "1280",
+                    "y": "545",
+                    "zOrder": "50"
+                },
+                {
+                    "ID": "58",
+                    "h": "56",
+                    "measuredH": "32",
+                    "measuredW": "32",
+                    "properties": {
+                        "shape": "rectangle",
+                        "size": "10",
+                        "text": "env.execute();"
+                    },
+                    "typeID": "RoundButton",
+                    "w": "176",
+                    "x": "1298",
+                    "y": "608",
+                    "zOrder": "51"
+                }
+            ]
+        },
+        "measuredH": "1479",
+        "measuredW": "1497",
+        "mockupH": "1456",
+        "mockupW": "1481",
+        "version": "1.0"
+    }
+}

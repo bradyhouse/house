@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -25,6 +25,7 @@
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
+# 05/17/2016 - See CHANGELOG @ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -56,7 +57,7 @@ function getFiddle() {
         cd ../fiddles/${fiddleType};
         echo $(ls -1 | grep ${fiddleCriteria} | sed -e 's/^[[:space:]]*//';);
     else
-        echo "";
+        echo "NA";
     fi
 }
 
@@ -68,18 +69,20 @@ changeLogFile="../CHANGELOG.markdown"
 
 #try
 (
+	if [[ "${fiddleName}" -eq "NA" ]]; then exit 91; fi
+
 	if [ "$#" -ne 2 ]; then  exit 86; fi
 
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
         if [[ -d "${fiddlePath}" ]]
         then
             rm -r "${fiddlePath}" || exit 87
         fi
         case ${fiddleType} in
-            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
+            'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 88
             ;;
         esac
@@ -118,6 +121,8 @@ case ${_rc} in
     89) echo "fubar! the target directory, \"${fiddlePath}\", doesn't exist."
         ;;
     90) echo "fubar! the failed while attempting to update \"${changeLogFile}\"."
+        ;;
+    91) echo "fubar! the specified fiddle criteria,\"${fiddleCriteria}\", doesn't exist."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

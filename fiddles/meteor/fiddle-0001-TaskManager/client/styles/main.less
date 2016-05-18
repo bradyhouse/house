@@ -1,0 +1,168 @@
+@highlight: #D3EFE3;
+@light: #88D4B3;
+@midtone: #41B683;
+@dark: #000000;
+@text: #184531;
+@standard-border: @text solid 1px;
+@standard-separator: @midtone solid;
+@element-background: white;
+
+body {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  font-family: sans-serif;
+  font-size: 14px;
+  color: @text;
+
+  background: @dark linear-gradient(to bottom, @dark, @light 100%) fixed;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  min-height: 100%;
+
+  background: lighten(@highlight, 8%);
+  border: @standard-border;
+}
+
+header {
+  position: relative;
+  padding: 1px 1px 1px 10px;
+
+  background: linear-gradient(to bottom, @midtone, @light 100%);
+  border-bottom: @standard-separator 2px;
+  .filter {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  background: @element-background;
+}
+
+li {
+  position: relative;
+  padding: 15px;
+  height: 22px;
+
+  list-style: none;
+
+  background: @element-background;
+  border-bottom: @standard-separator 1px;
+
+  &.private {
+    background: @highlight;
+    border-color: #ddd;
+  }
+  &.checked {
+    background: @midtone;
+    border-bottom: @text 1px solid;
+    .text {
+      text-decoration: line-through;
+      color: @dark;
+    }
+
+  }
+
+  .toggle-private {
+    height: auto;
+    border-radius: 5%;
+    margin-right: 3px;
+    width: 53px;
+  }
+}
+
+form {
+  margin-bottom: -10px;
+  position: relative;
+}
+
+.new-task {
+  input {
+    box-sizing: border-box;
+    background: transparent;
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    font-size: 14px;
+    border-top: @midtone 2px solid;
+    border-bottom: @midtone 2px solid;
+    border-left: none;
+    border-right: none;
+
+    &:focus {
+      background-color: @element-background;
+    }
+  }
+}
+
+.delete-button {
+  position: relative;
+  margin-top: -10px;
+  float: right;
+  font-weight: bold;
+  color: #555555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.login-control {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  .welcome {
+    padding-right: 6px;
+    color: @dark;
+  }
+}
+
+#login-buttons {
+  a {
+    text-decoration: none;
+  }
+}
+
+#login-name-link {
+  color: @highlight;
+}
+
+.email {
+  padding-left: 5px;
+  opacity: .40;
+  &:before {
+    content: "(";
+  }
+  &:after {
+    content: ")";
+  }
+}
+
+#configure-login-service-dialog {
+  font-size: 12px;
+  li {
+    height: auto;
+    border: none;
+    list-style: square;
+  }
+}
+
+.task-item input[type=text] {
+  border: 0px solid white;
+  background: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 80%;
+  outline-width: 0;
+}

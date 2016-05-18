@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -15,13 +15,13 @@
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh;
-source bin/_install_global.sh;
-source bin/_add_directories.sh;
-source bin/_init.sh;
-source bin/_add_typingsrc.sh;
-source bin/_install_save.sh;
-source bin/_add_gulpfile.sh;
-source bin/_add_karma_conf.sh;
+source bin/typescript/_install_global.sh;
+source bin/typescript/_add_directories.sh;
+source bin/typescript/_init.sh;
+source bin/typescript/_add_typingsrc.sh;
+source bin/typescript/_install_save.sh;
+source bin/typescript/_add_gulpfile.sh;
+source bin/typescript/_add_karma_conf.sh;
 
 
 if [ "$#" -ne 1 ]

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
 # ---------------------------------------------------------------------------------------------------|
 #  School / Organization   : bradyhouse.io___________________________________________________________|
 #  Specification           : N/A_____________________________________________________________________|
@@ -17,14 +16,15 @@
 
 voidEchoFiddleTypes() {
     echo -e "\t\"ant\"\t\tAnt Fiddle"
-    echo -e "\t\"angular\"\t\tAngular Fiddle"
-    echo -e "\t\"angular2\"\t\tAngular2 Fiddle"
+    echo -e "\t\"angular\"\tAngular Fiddle"
+    echo -e "\t\"angular2\"\tAngular2 Fiddle"
     echo -e "\t\"bash\"\t\tBash Fiddle"
     echo -e "\t\"compass\"\tCompass Fiddle"
     echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
     echo -e "\t\"dojo\"\t\tDojo Fiddle"
-    echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
-    echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
+    echo -e "\t\"extjs 5\"\tExt JS 5 Fiddle"
+    echo -e "\t\"extjs 6\"\tExt JS 6 Fiddle"
+    echo -e "\t\"meteor\"\tMeteor Fiddle"
     echo -e "\t\"php\"\t\tPHP Fiddle"
     echo -e "\t\"python\"\tPython Fiddle"
     echo -e "\t\"rxjs\"\t\tRxJS Fiddle"

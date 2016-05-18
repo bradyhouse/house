@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 function npmInstallGulpDev() {
     log "$0" "npmInstallGulpDev";
     npm install --save-dev gulp;

@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -25,8 +25,8 @@ source bin/_types.sh
 thisFile=$(echo "$0" | sed 's/\.\///g')
 echo "${thisFile}" | awk '{print toupper($0)}'
 
-fiddleType=$1
-fiddleCriteria=$2
+fiddleType="??";
+fiddleCriteria="??";
 appFileName="app.js"
 fiddleName=""
 fiddlePath=""
@@ -35,6 +35,8 @@ srcDir=""
 srcFile=""
 useClosure=1
 
+if [ "$#" -gt 0 ]; then fiddleType=$1; fi
+if [ "$#" -gt 1 ]; then fiddleCriteria="??"; fi
 if [ "$#" -gt 2 ]; then appFileName=$3; fi
 if [ "$#" -gt 3 ]; then useClosure=$4; fi
 

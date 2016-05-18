@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
-#  School / Organization   : bradyhouse.io___________________________________________________________|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
@@ -58,7 +58,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'svg')
+        'angular'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'svg')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;
@@ -82,7 +82,6 @@ echo ${bornOnDate}
             done < index.tmp
             rm -r index.tmp
             cat tpl/indexfooter >> $indexFile
-
             $(voidSubstr "{{FiddleType}}" "${type}" "${indexFile}";) || exit 86
             $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexFile}";) || exit 86
             ;;
