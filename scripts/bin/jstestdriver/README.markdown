@@ -2,9 +2,9 @@ jstestdriver
 =====
 
 Collection of _sub-scripts_ used to automate the testing of [fiddles](../../../fiddle) that support use of the jstestdriver.
-By "sub-script", I mean this scripts contain functions referenced (or "sourced") by one more scripts in the parent
-[scripts](../..) directory.  By convention, this is indicated by the "_*" prefix.  In other words, each script only contains functions and
-cannot be executed by themselves.
+By "sub-script", I mean these scripts contain functions referenced (or "sourced") by one more scripts in the parent
+[scripts](../..) directory.  By convention, this is indicated by the "_*" prefix.  In other words, each script only
+contains functions and cannot be executed by themselves.
 
 
 
