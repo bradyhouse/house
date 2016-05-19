@@ -965,7 +965,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
 
 * **Aurelia**
-    1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
