@@ -61,3 +61,10 @@ where:
 
 *   [https://github.com/angular/material-start](https://github.com/angular/material-start)
 *   [https://material.angularjs.org/latest/](https://material.angularjs.org/latest/)
+*   [http://www.google.com/design/spec/material-design/introduction.html](http://www.google.com/design/spec/material-design/introduction.html)
+*   [https://github.com/angular/bower-material](https://github.com/angular/bower-material)
+*   [http://www.binpress.com/blog/2014/06/26/polymer-vs-angular/](http://www.binpress.com/blog/2014/06/26/polymer-vs-angular/)
+*   [https://gabiaxel.github.io/ng-polymer-elements/](https://gabiaxel.github.io/ng-polymer-elements/)
+*   [https://getmdl.io/](https://getmdl.io/)
+*   [https://www.youtube.com/watch?v=rrT6v5sOwJg](https://www.youtube.com/watch?v=rrT6v5sOwJg)
+*   [http://materializecss.com/](http://materializecss.com/)
