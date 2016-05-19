@@ -48,6 +48,7 @@ gulpfile.js.map
 # dependencies
 node_modules
 bower_components
+jspm_packages
 
 # misc
 .sass-cache

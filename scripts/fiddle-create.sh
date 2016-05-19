@@ -47,6 +47,9 @@ source bin/_types.sh
         'ant')
             ./fiddle-ant.sh $2 || exit 87;
             ;;
+        'aurelia')
+            ./fiddle-aurelia.sh $2 || exit 104;
+            ;;
         'compass')
             ./fiddle-compass.sh $2 || exit 87;
             ./fiddle-index.sh "compass" || exit 87;
@@ -173,6 +176,8 @@ case ${_rc} in
     102) echo "fubar! meteor fiddle creation failed."
         ;;
     103) echo "fubar! ember fiddle creation failed."
+        ;;
+    104) echo "fubar! aurelia fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

@@ -31,7 +31,7 @@ thisFile=$(echo "$0" | sed 's/\.\///g');
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'python' | 'angular' | 'angular2' | 'ant' | 'aurelia' | 'compass' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
             voidShowTitle ${thisFile} > log;
             echo -e "" >> log;

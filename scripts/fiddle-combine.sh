@@ -231,6 +231,8 @@ function catch() {
             ;;
         93) echo "fubar! call to \"tsc\" failed."
             ;;
+        95) echo "fubar! \"combine\" is not yet supported for the \"${fiddleType}\" type."
+            ;;
         *)  echo "fubar! Something went wrong."
             ;;
     esac
@@ -245,12 +247,9 @@ srcDir="${fiddlePath}/src"
 
 #try
 (
-    # Verify parameter count is 2
     if [ "$#" -lt 2 ]; then  exit 86; fi
-    # Verify the fiddle exists
     if [[ ! -d "${fiddlePath}" ]]; then exit 87; fi
-    # Verify type parameter
-	case ${fiddleType} in
+    case ${fiddleType} in
 	    'angular2' )
             cd ${fiddlePath};
             createAppFile "${fiddleType}" "${appFileName}" "${useClosure}" || exit $?;
@@ -260,22 +259,16 @@ srcDir="${fiddlePath}/src"
             exit 0;
 	        ;;
 	    'd3' | 'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
-	        # Verify the src directory exists
-            if [[ ! -d "${srcDir}" ]]; then exit 87; fi
+	        if [[ ! -d "${srcDir}" ]]; then exit 87; fi
             cd ${fiddlePath};
             createAppFile "${fiddleType}" "${appFileName}" "${useClosure}" || exit $?;
             ;;
         *)
-            exit 86
+            exit 95
             ;;
     esac
 )
-catch $?
-
+#catch
+rc=$?; catch ${rc}
 #finally
-exit $?
-
-
-
-
-
+exit ${rc}

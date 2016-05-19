@@ -61,15 +61,19 @@ function startLiveServer() {
             ngInstall || exit 91;
             ngStart || exit 92;
             ;;
-        'meteor')
+        'aurelia')
             cd ${_fiddleSubDir};
-            meteorInstall || exit 93;
-            meteorStart || exit 94;
+            live-server || exit 99;
             ;;
         'ember')
             cd ${_fiddleSubDir};
             emberInstall || exit 97;
             emberStart || exit 98;
+            ;;
+        'meteor')
+            cd ${_fiddleSubDir};
+            meteorInstall || exit 93;
+            meteorStart || exit 94;
             ;;
         'all')
             cd "../fiddles" || exit 88;
@@ -136,6 +140,8 @@ case ${rc} in
     97) echo -e "Fubar\t\"emberInstall\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     98) echo -e "Fubar\t\"emberStart\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    99) echo -e "Fubar\t\"live-server\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

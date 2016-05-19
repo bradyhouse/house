@@ -2,18 +2,18 @@ angular2
 ======
 
 _Angular?_ No, now its: _Angular2!_  Its ubiquitous. Unfortunately, as primarily an "ExtJS" developer, I know nothing of
- _Angular_ or now _Angular2_.  This directory is dedicated to fiddles involving my exploration of version 2 of the 
-Angular framework. As a starting point, I will work through the examples outlined by Felipe Coury (et al) in the book 
-**ng-book 2 The Complete Book of AngularJS 2**. This book, in its pre-release version, is available online 
+ _Angular_ or now _Angular2_.  This directory is dedicated to fiddles involving my exploration of version 2 of the
+Angular framework. As a starting point, I will work through the examples outlined by Felipe Coury (et al) in the book
+**ng-book 2 The Complete Book of AngularJS 2**. This book, in its pre-release version, is available online
 @ [https://gitter.im/ng-book/ng-book](https://gitter.im/ng-book/ng-book).
 
 
 ### Procedures
-  
-#### Create  
 
-As of [fiddle #38](fiddles/angular2/fiddle-0035-ModalForm), angular 2 fiddles are created using 
-the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_.  This means the [fiddle.sh](../../scripts/fiddle.sh) 
+#### Create
+
+As of [fiddle #38](fiddles/angular2/fiddle-0035-ModalForm), angular 2 fiddles are created using
+the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_.  This means the [fiddle.sh](../../scripts/fiddle.sh)
 script provides some wrapper logic that integrates this cli.  To create a new angular2 fiddle, run the following command
 from the [scripts](../../scripts) directory like so:
 
@@ -21,7 +21,7 @@ from the [scripts](../../scripts) directory like so:
 
 where:
 
-    <Name> is the name of the new fiddle. 
+    <Name> is the name of the new fiddle.
 
 
 ### Online Resources
@@ -57,3 +57,7 @@ where:
 *   [Vojta Jina’s talk on DI in 1.X](http://goo.gl/KLlzNO)
 *   [Great article on DI in 2.0](http://goo.gl/9Ca02H)
 
+##### Material Design
+
+*   [https://github.com/angular/material-start](https://github.com/angular/material-start)
+*   [https://material.angularjs.org/latest/](https://material.angularjs.org/latest/)
