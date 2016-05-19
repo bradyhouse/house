@@ -29,6 +29,7 @@
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/17/2016 - See CHANGELOG @ 201605020420
+# 05/18/2015 - See CHANGELOG @ 201605180420
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -110,7 +111,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'angular2' | 'meteor')
+        'angular2' | 'ember' | 'meteor')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             ;;
         'angular'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')
@@ -147,7 +148,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${fiddleType} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'node'|'tween'|'svg')
+        'angular'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'node'|'tween'|'svg')
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')

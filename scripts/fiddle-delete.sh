@@ -26,6 +26,7 @@
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/17/2016 - See CHANGELOG @ 201605020420
+# 05/18/2015 - See CHANGELOG @ 201605180420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -69,26 +70,27 @@ changeLogFile="../CHANGELOG.markdown"
 
 #try
 (
-	if [[ "${fiddleName}" -eq "NA" ]]; then exit 91; fi
+	if [[ "${fiddleName}" == "NA" ]]; then exit 91; fi
 
 	if [ "$#" -ne 2 ]; then  exit 86; fi
 
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
-        if [[ -d "${fiddlePath}" ]]
-        then
-            rm -r "${fiddlePath}" || exit 87
-        fi
-        case ${fiddleType} in
-            'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
-                ./fiddle-index.sh ${fiddleType} || exit 88
-            ;;
-        esac
+        'angular' | 'angular2' | 'ant' | 'compass' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+            if [[ -d "${fiddlePath}" ]]
+            then
+                rm -rf "${fiddlePath}" || exit 87
+            fi
+            case ${fiddleType} in
+                'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
+                    ./fiddle-index.sh ${fiddleType} || exit 88
+                ;;
+            esac
         ;;
         *)
             exit 86
+            ;;
     esac
 
     updateChangeLog "${changeLogFile}" "${fiddleName}" || exit 90

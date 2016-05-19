@@ -8,20 +8,20 @@ Meteor Install / Create / Start
 
 ### Creation Date
 
-05-16-16
+05-17-16
 
 
 ### Location
 
-Chicago, IL
+Angular 2 Summit @ Chicago
 
 
 ### Description
 
 Today I attended an all day session at the [Chicago Angular 2 Summit](https://angularsummit.com/conference/chicago/2016/05/home)
 on [Meteor.js](https://angularsummit.com/conference/chicago/2016/05/session?id=35669).  Although I have my questions regarding
-the merits (and longevity) of this framework, it is infact a fun framework to play with.  This fiddle explores the
-how to automate the initial setup of a meteor POC.
+the merits (and longevity) of this framework, it is in fact a fun framework to play with.  This POC explores how to
+automate the initial setup of a meteor POC.
 
 
 ### Tags

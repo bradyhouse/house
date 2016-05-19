@@ -20,18 +20,18 @@
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/17/2016 - See CHANGELOG @ 201605020420
+# 05/18/2015 - See CHANGELOG @ 201605180420
 # ---------------------------------------------------------------------------------------------------|
-echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
 source bin/_types.sh
-
+clear;
 thisFile=$(echo "$0" | sed 's/\.\///g');
 
 #try
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'python' | 'angular' | 'angular2' | 'ant' | 'compass' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
             voidShowTitle ${thisFile} > log;
             echo -e "" >> log;

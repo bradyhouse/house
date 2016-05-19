@@ -23,60 +23,57 @@
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/17/2016 - See CHANGELOG @ 201605020420
+# 05/18/2015 - See CHANGELOG @ 201605180420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
 source bin/_types.sh
 
-
-fiddleType=$1
-fiddleName=$2
-newName=$3
-fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
-newFiddlePath="../fiddles/${fiddleType}/${newName}"
-newIndexFile="../../fiddles/${fiddleType}/${newName}/index.html"
-newReadmeFile="../../fiddles/${fiddleType}/${newName}/README.markdown"
-changeLogFile="../../CHANGELOG.markdown"
+fiddleType=$1;
+fiddleName=$2;
+newName=$3;
+fiddlePath="../fiddles/${fiddleType}/${fiddleName}";
+newFiddlePath="../fiddles/${fiddleType}/${newName}";
+newIndexFile="../../fiddles/${fiddleType}/${newName}/index.html";
+newReadmeFile="../../fiddles/${fiddleType}/${newName}/README.markdown";
+altNewReadmeFile="../../fiddles/${fiddleType}/${newName}/README.md";
+changeLogFile="../../CHANGELOG.markdown";
 #try
 (
-	# Verify parameter count is 3
 	if [ "$#" -ne 3 ]; then  exit 86; fi
-
-    # Verify the new fiddle name is not already in use
     if [[ -d "${newFiddlePath}" ]]; then exit 87; fi
-
-    # Verify the fiddle exists
     if [[ ! -d "${fiddlePath}" ]]; then exit 88; fi
 
-    sudo mv "${fiddlePath}" "${newFiddlePath}" || exit 90
+    sudo mv "${fiddlePath}" "${newFiddlePath}" || exit 90;
 
-    # Update readme.markdown
-    if [[ -f "${newReadmeFile}" ]]
-    then
-        $(voidSubstr "${fiddleName}" "${newName}" "${newReadmeFile}";) || exit 91
-    fi
-
-    # Update CHANGELOG.markdown
     if [[ -f "${changeLogFile}" ]]
     then
-        $(voidSubstr "${fiddleName}" "${newName}" "${changeLogFile}";) || exit 91
+        $(voidSubstr "${fiddleName}" "${newName}" "${changeLogFile}";) || exit 91;
     fi
 
-    # Verify type parameter
 	case ${fiddleType} in
-        'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
-        # Update index.html page
-        if [[ -f "${newIndexFile}" ]]
-        then
-            $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91
-        fi
-
-        # Re-index directory
-        case ${fiddleType} in
-            'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
-                ./fiddle-index.sh ${fiddleType} || exit 89
+        'angular2' | 'ember' | 'meteor')
+            if [[ -f "${altNewReadmeFile}" ]]
+            then
+                $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
+            fi
             ;;
-        esac
+        'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
+            if [[ -f "${newIndexFile}" ]]
+            then
+                $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
+            fi
+            case ${fiddleType} in
+                'angular'| 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
+                    ./fiddle-index.sh ${fiddleType} || exit 89;
+                ;;
+            esac
+            ;;
+        *)
+            if [[ -f "${newReadmeFile}" ]]
+            then
+                $(voidSubstr "${fiddleName}" "${newName}" "${newReadmeFile}";) || exit 91;
+            fi
         ;;
     esac
 )

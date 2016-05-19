@@ -14,6 +14,7 @@ build/Release
 # Commenting this out is preferred by some people, see
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
+fiddle
 typings
 
 # Users Environment Variables
@@ -25,6 +26,8 @@ typings
 .vscode
 *.iml
 *.log
+*.zip
+*.dmg
 
 /tools/**/*.js
 dist
@@ -37,3 +40,20 @@ nohup.out
 
 gulpfile.js
 gulpfile.js.map
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+node_modules
+bower_components
+
+# misc
+.sass-cache
+connect.lock
+coverage/*
+libpeerconnection.log
+npm-debug.log
+testem.log
+

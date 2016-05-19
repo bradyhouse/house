@@ -26,6 +26,7 @@
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 05/17/2016 - See CHANGELOG @ 201605020420
+# 05/18/2015 - See CHANGELOG @ 201605180420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -37,35 +38,38 @@ source bin/_types.sh
 	if [ "$#" -ne 2 ]; then  exit 86; fi
     case $1 in
         'angular')
-            ./fiddle-angular.sh $2 || exit 87
-            ./fiddle-index.sh "angular" || exit 87
+            ./fiddle-angular.sh $2 || exit 87;
+            ./fiddle-index.sh "angular" || exit 87;
             ;;
         'angular2')
-            ./fiddle-angular-2.sh $2 || exit 87
+            ./fiddle-angular-2.sh $2 || exit 87;
             ;;
         'ant')
-            ./fiddle-ant.sh $2 || exit 87
+            ./fiddle-ant.sh $2 || exit 87;
             ;;
         'compass')
-            ./fiddle-compass.sh $2 || exit 87
-            ./fiddle-index.sh "compass" || exit 87
+            ./fiddle-compass.sh $2 || exit 87;
+            ./fiddle-index.sh "compass" || exit 87;
             ;;
         'd3')
-            ./fiddle-d3.sh $2 || exit 99
-            ./fiddle-index.sh "d3" || exit 99
+            ./fiddle-d3.sh $2 || exit 99;
+            ./fiddle-index.sh "d3" || exit 99;
+            ;;
+        'ember')
+            ./fiddle-ember.sh $2 || exit 103;
             ;;
         'extjs5')
-            ./fiddle-extjs-5.sh $2 || exit 87
-            ./fiddle-index.sh "extjs5" || exit 87
+            ./fiddle-extjs-5.sh $2 || exit 87;
+            ./fiddle-index.sh "extjs5" || exit 87;
             ;;
         'extjs6')
-            ./fiddle-extjs-6.sh $2 || exit 87
-            ./fiddle-combine.sh $1 $2 || exit 87
-            ./fiddle-index.sh "extjs6" || exit 87
+            ./fiddle-extjs-6.sh $2 || exit 87;
+            ./fiddle-combine.sh $1 $2 || exit 87;
+            ./fiddle-index.sh "extjs6" || exit 87;
             ;;
         'jquery')
-            ./fiddle-jquery.sh $2 || exit 88
-            ./fiddle-index.sh "jquery" || exit 88
+            ./fiddle-jquery.sh $2 || exit 88;
+            ./fiddle-index.sh "jquery" || exit 88;
             ;;
         'meteor')
             ./fiddle-meteor.sh $2 || exit 102
@@ -165,6 +169,10 @@ case ${_rc} in
     100) echo "fubar! rxjs fiddle creation failed."
         ;;
     101) echo "fubar! typescript fiddle creation failed."
+        ;;
+    102) echo "fubar! meteor fiddle creation failed."
+        ;;
+    103) echo "fubar! ember fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

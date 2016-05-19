@@ -16,12 +16,14 @@ Task Manager
 
 ### Location
 
-Chicago, IL
+Angular 2 Summit @ Chicago
+
 
 
 ### Description
 
-Meteor POC exploring how to create a simple task manager app that performs CRUD operations on a mongoDB database.
+Meteor POC exploring how to create a simple task manager (aka _ToDo_) app that performs CRUD operations 
+on a mongoDB database.
 
 
 ### Published Version Link

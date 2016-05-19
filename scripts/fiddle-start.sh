@@ -23,6 +23,7 @@
 # 03/10/2016 - See CHANGELOG.MARKDOWN @ 201603050420
 # 04/16/2016 - See CHANGELOG.MARKDOWN @ 201604160420
 # 05/17/2016 - See CHANGELOG.MARKDOWN @ 201605020420
+# 05/18/2015 - See CHANGELOG.MARKDOWN @ 201605180420
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -30,6 +31,8 @@ source bin/angular2/_install.sh;
 source bin/angular2/_start.sh;
 source bin/meteor/_install.sh;
 source bin/meteor/_start.sh;
+source bin/ember/_install.sh;
+source bin/ember/_start.sh;
 
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
@@ -62,6 +65,11 @@ function startLiveServer() {
             cd ${_fiddleSubDir};
             meteorInstall || exit 93;
             meteorStart || exit 94;
+            ;;
+        'ember')
+            cd ${_fiddleSubDir};
+            emberInstall || exit 97;
+            emberStart || exit 98;
             ;;
         'all')
             cd "../fiddles" || exit 88;
@@ -124,6 +132,10 @@ case ${rc} in
     95) echo -e "Fubar\t\"live-server\" function call failed.";
         ;;
     96) echo -e "[Fubar]\t\"live-server\" not found."
+        ;;
+    97) echo -e "Fubar\t\"emberInstall\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    98) echo -e "Fubar\t\"emberStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

@@ -18,7 +18,7 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
+Another shell script POC.
 
 
 ### Tags

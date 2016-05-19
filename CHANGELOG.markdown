@@ -888,8 +888,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201605020420
 
 * **fiddle.sh**
-    1.  Added [scripts/bin/_install_save_ng2.sh](scripts/bin/_seed_angular2.sh)
-        *   See - [fiddles/bash/fiddle-0075-Angular2SeederSetup](fiddles/bash/fiddle-0075-Angular2SeederSetup)
+    1.  Added [scripts/bin/angular2](scripts/bin/angular2)
+        *   See - [fiddles/bash/fiddle-0076-Angular2CLI](fiddles/bash/fiddle-0076-Angular2CLI)
         *   Reflected changes:
             1.  Updated [scripts/fiddle-angular-2.sh](scripts/fiddle-angular-2.sh)
             2.  Updated [scripts/fiddle-start.sh]
@@ -904,21 +904,21 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added [fiddles/meteor](fiddles/meteor)
          *  See [fiddles/bash/fiddle-0077-Meteor](fiddles/bash/fiddle-0077-Meteor)
          *  Reflected changes:
-            1.  Added [scripts/fiddle-meteor.sh](scripts/fiddle-meteor.sh)
-            2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
-            3.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
-            4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
-            5.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
-            6.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
-            7.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
-            8.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+            1.  Added [scripts/bin/meteor](scripts/bin/meteor)
+            2.  Added [scripts/fiddle-meteor.sh](scripts/fiddle-meteor.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0075-Angular2SeederSetup](fiddles/bash/fiddle-0075-Angular2SeederSetup)
     2.  Added [fiddles/bash/fiddle-0076-Angular2CLI](fiddles/bash/fiddle-0076-Angular2CLI)
     3.  Added [fiddles/bash/fiddle-0077-Meteor](fiddles/bash/fiddle-0077-Meteor)
-    4.  Added [fiddles/bash/fiddle-0078-MeteorWebpack](fiddles/bash/fiddle-0078-MeteorWebpack)
-    
+
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0035-ModalForm](fiddles/angular2/fiddle-0035-ModalForm)
     2.  Added [fiddles/angular2/fiddle-0036-SiblingComponents](fiddles/angular2/fiddle-0036-SiblingComponents)
@@ -934,4 +934,27 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Meteor**
     1.  Added [fiddles/meteor/fiddle-0001-TaskManager](fiddles/meteor/fiddle-0001-TaskManager)
     2.  Added dependency (submodule) to [meteor-workshop-solution](https://github.com/pavlovich/meteor-workshop-solution)
-    
+
+
+### 201605180420
+
+* **fiddle.sh**
+   1.  Added [fiddles/ember](fiddles/ember)
+         *  See [bash fiddle #80](fiddles/bash/fiddle-0080-Ember)
+         *  Reflected changes:
+            1.  Added [scripts/bin/ember](scripts/bin/ember)
+            2.  Added [scripts/fiddle-ember.sh](scripts/fiddle-ember.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+
+* **Bash**
+    1.  Added [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
+    2.  Added [fiddles/bash/fiddle-0080-Ember](fiddles/bash/fiddle-0080-Ember)
+
+* **Ember**
+    1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
