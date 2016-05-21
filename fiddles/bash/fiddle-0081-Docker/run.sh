@@ -4,7 +4,7 @@ source bin/_utils.sh;
 source bin/brew/_update.sh;
 source bin/brew/_install_virtualbox.sh;
 source bin/brew/_install_docker.sh;
-
+source bin/docker/_daemon.sh;
 
 clear;
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
@@ -26,18 +26,21 @@ function catch() {
             ;;
         5)  endLog "${this}: call to brewInstallDockerMachine failed.";
             ;;
-        *)  echo "${this}: Something went wrong."
+        6)  endLog "${this}: call to dockerRunDaemon failed.";
+            ;;
+        *)  endLog "${this}: Something went wrong."
             ;;
     esac
     exit $1
 }
 # try
 (
-    brewUpdate || exit 2;
-    brewInstallBrewCask || exit 3;
-    brewInstallVirtualbox || exit 4;
-    brewInstallDocker || exit 5;
-    brewInstallDockerMachine || exit 6;
+    brewUpdate || exit 1;
+    brewInstallBrewCask || exit 2;
+    brewInstallVirtualbox || exit 3;
+    brewInstallDocker || exit 4;
+    brewInstallDockerMachine || exit 5;
+    dockerRunDaemon || exit 6;
 )
 # catch
 rc=$?; catch ${rc};

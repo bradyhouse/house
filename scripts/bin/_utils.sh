@@ -142,3 +142,21 @@ function getFiddle() {
     fi
 }
 
+function isInstalled() {
+    if [[ ! $(which $1;) ]]
+    then
+        echo "false";
+    else
+        echo "true";
+    fi
+}
+
+function voidGrantAdmin() {
+    groupLog "voidGrantAdmin";
+    target=$1;
+    groupLog "${target}";
+    if [[ ! -d ${target} ]]; then endLog "Invalid Path"; exit -1; fi
+    sudo chown -R $(whoami):admin ${target} || exit $?;
+}
+
+
