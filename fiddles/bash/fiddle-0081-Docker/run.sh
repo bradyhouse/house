@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source bin/_utils.sh;
-source bin/brew/_install.sh;
+source bin/brew/_update.sh;
 source bin/brew/_install_virtualbox.sh;
 source bin/brew/_install_docker.sh;
 
