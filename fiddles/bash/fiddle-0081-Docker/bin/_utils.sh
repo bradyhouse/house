@@ -125,6 +125,7 @@ function getFiddle() {
     fi
 }
 
+
 function isInstalled() {
     app=$1;
 

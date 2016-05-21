@@ -2,19 +2,9 @@
 
 this=$(pwd;);
 
-function isBrewInstalled() {
-    if [[ ! $(which brew;) ]]
-    then
-        echo "false";
-    else
-        echo "true";
-    fi
-}
-
-
 function brewUpdate() {
     groupLog "brewUpdate";
-    installed=$(isBrewInstalled;);
+    installed=$(isInstalled "brew";);
     if [[ "${installed}" == "false" ]]
     then
         groupLog "${this}: home brew is not installed";
@@ -24,9 +14,23 @@ function brewUpdate() {
     fi
 }
 
-function brewInstallCask() {
-    groupLog "brewInstallCask";
-    brew install caskroom/cask/brew-cask || exit $?;
+function isBrewCaskInstalled() {
+    if [[ ! $(brew search caskroom/cask/brew-cask;) ]]
+    then
+        echo "false";
+    else
+        echo "true";
+    fi
+
+}
+
+function brewInstallBrewCask() {
+    groupLog "brewInstallBrewCask";
+    installed=$(isBrewCaskInstalled;);
+    if [[ "${installed}" == "false" ]]
+    then
+        brew install caskroom/cask/brew-cask || exit $?;
+    fi
 }
 
 

@@ -34,7 +34,7 @@ function catch() {
 # try
 (
     brewUpdate || exit 2;
-    brewInstallCask || exit 3;
+    brewInstallBrewCask || exit 3;
     brewInstallVirtualbox || exit 4;
     brewInstallDocker || exit 5;
     brewInstallDockerMachine || exit 6;
