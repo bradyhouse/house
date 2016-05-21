@@ -125,3 +125,13 @@ function getFiddle() {
     fi
 }
 
+function isInstalled() {
+    app=$1;
+
+    if [[ ! $(which ${app};) ]]
+    then
+        echo "false";
+    else
+        echo "true";
+    fi
+}

@@ -125,3 +125,7 @@ function getFiddle() {
     fi
 }
 
+function isInstalled() {
+
+
+}

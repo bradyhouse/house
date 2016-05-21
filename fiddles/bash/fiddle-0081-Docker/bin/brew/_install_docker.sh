@@ -2,10 +2,20 @@
 
 function brewInstallDocker() {
     groupLog "brewInstallDocker";
-    brew install docker || exit $?;
+    installed=$(isInstalled "docker";);
+    if [[ "${installed}" == "false" ]]
+    then
+       brew install docker || exit $?;
+    fi
 }
+
+
 
 function brewInstallDockerMachine() {
     groupLog "brewInstallDockerMachine";
-    brew install docker-machine || exit $?;
+    installed=$(isInstalled "docker-machine";);
+    if [[ "${installed}" == "false" ]]
+    then
+        brew install docker-machine || exit $?;
+    fi
 }

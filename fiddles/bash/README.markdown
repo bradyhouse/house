@@ -8,6 +8,7 @@ dedicated to fiddles involving bash (sh, ksh, csh ... etc).
 [Online Articles & Resources]
 
 * [Change The Color of My Shell Prompt](http://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/)
+* [Bash shell Cheat Sheet](http://cli.learncodethehardway.org/bash_cheat_sheet.pdf)
 
 
 
