@@ -2,5 +2,9 @@
 
 function brewInstallVirtualbox() {
     groupLog "brewInstallVirtualbox";
-    brew cask install virtualbox || exit $?;
+    installed=$(isInstalled "virtualbox";);
+    if [[ "${installed}" == "false" ]]
+    then
+        brew cask install virtualbox || exit $?;
+    fi
 }
