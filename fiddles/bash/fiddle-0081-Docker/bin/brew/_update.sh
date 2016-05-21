@@ -20,7 +20,7 @@ function brewUpdate() {
         groupLog "${this}: home brew is not installed";
         exit -1;
     else
-        sudo brew update;
+        brew update;
     fi
 }
 
