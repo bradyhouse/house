@@ -970,7 +970,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
     2.  Added [fiddles/bash/fiddle-0080-Ember](fiddles/bash/fiddle-0080-Ember)
-    3.  Added [fiddles/bash/fiddle-0081-VirtualBox](fiddles/bash/fiddle-0081-VirtualBox)
+    3.  Added [fiddles/bash/fiddle-0081-Docker](fiddles/bash/fiddle-0081-Docker)
+    4.  Added [fiddles/bash/fiddle-0082-GrantAdmin](fiddles/bash/fiddle-0082-GrantAdmin)
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
