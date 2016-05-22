@@ -42,11 +42,11 @@ function catch() {
     case $1 in
         0)  endLog "\"${fiddleSubDir}\" created.";
             ;;
-        1)  echo "_install.sh: ngInstall() failed";
+        1)  endLog "_install.sh: ngInstall() failed";
             ;;
-        2)  echo "_create.sh: ngCreate() failed";
+        2)  endLog "_create.sh: ngCreate() failed";
             ;;
-        *)  echo "fubar! Something went wrong."
+        *)  endLog "fubar! Something went wrong.";
             ;;
     esac
     exit $1

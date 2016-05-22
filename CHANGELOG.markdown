@@ -964,10 +964,22 @@ Alternately, the _Daily Diary of my Programming Dreams_.
            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
    3.  Added [fiddles/docker](fiddles/docker)
-       *  See [bash fiddle #](fiddles/bash/fiddle-0081-Docker)
+       *  See [bash fiddle #81](fiddles/bash/fiddle-0081-Docker)
        *  Reflected changes:
           1.  Added [scripts/bin/docker](scripts/bin/docker)
           2.  Added [scripts/fiddle-docker.sh](scripts/fiddle-docker.sh)
+          3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+          4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+          5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+          6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+          7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+          8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+          9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   4.  Added [fiddles/nativescript](fiddles/nativescript)
+       *  See [bash fiddle #84](fiddles/bash/fiddle-0084-NativeScript)
+       *  Reflected changes:
+          1.  Added [scripts/bin/nativescript](scripts/bin/nativescript)
+          2.  Added [scripts/fiddle-nativescript.sh](scripts/fiddle-docker.sh)
           3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
           4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
           5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
@@ -985,6 +997,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Added [fiddles/bash/fiddle-0081-Docker](fiddles/bash/fiddle-0081-Docker)
     4.  Added [fiddles/bash/fiddle-0082-GrantAdmin](fiddles/bash/fiddle-0082-GrantAdmin)
     5.  Added dependency (submodule) to [Homebrew](https://github.com/Homebrew/brew)
+    6.  Added [fiddles/bash/fiddle-0084-NativeScript](fiddles/bash/fiddle-0084-NativeScript)
 
 * **Docker**
     1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
@@ -994,4 +1007,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
 
 * **NativeScript**
-    1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)
+    1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)* Added [fiddles/bash/fiddle-0083-Nvm](fiddles/bash/fiddle-0083-Nvm)
+    2.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)

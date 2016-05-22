@@ -41,6 +41,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"extjs 5\"\tExt JS 5 Fiddle"
             echo -e "\t\"extjs 6\"\tExt JS 6 Fiddle"
             echo -e "\t\"meteor\"\tMeteor Fiddle"
+            echo -e "\t\"nativescript\"\tNativeScript Fiddle"
             echo -e "\t\"php\"\t\tPHP Fiddle"
             echo -e "\t\"python\"\tPython Fiddle"
             echo -e "\t\"rxjs\"\t\tRxJS Fiddle"

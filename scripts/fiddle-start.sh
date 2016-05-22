@@ -33,11 +33,15 @@ source bin/meteor/_install.sh;
 source bin/meteor/_start.sh;
 source bin/ember/_install.sh;
 source bin/ember/_start.sh;
+source bin/nativescript/_install.sh;
+source bin/nativescript/_start.sh;
 
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
-_type=$(echo $1)
-_fiddleSubDir="../fiddles/${_type}/$2"
+_type=$(echo $1);
+_fiddle=$(echo $2);
+_fiddleSubDir="../fiddles/${_type}";
+_fiddleRoot="${_fiddleSubDir}/${_fiddle}";
 _port=$(echo $3) || 8889
 
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
@@ -51,29 +55,36 @@ function isLiveServerInstalled() {
     fi
 }
 
-function startLiveServer() {
+function startServer() {
     case ${_type} in
         'all')
             cd "../fiddles" || exit 88;
             ;;
         'angular2')
-            cd ${_fiddleSubDir};
+            cd ${_fiddleRoot};
             ngInstall || exit 91;
             ngStart || exit 92;
             ;;
         'aurelia')
-            cd ${_fiddleSubDir};
+            cd ${_fiddleRoot};
             live-server || exit 99;
             ;;
         'ember')
-            cd ${_fiddleSubDir};
+            cd ${_fiddleRoot};
             emberInstall || exit 97;
             emberStart || exit 98;
             ;;
         'meteor')
-            cd ${_fiddleSubDir};
+            cd ${_fiddleRoot};
             meteorInstall || exit 93;
             meteorStart || exit 94;
+            ;;
+        'nativescript')
+            cd ${_fiddleRoot};
+            nvmInstall || exit 100;
+            adbInstall || exit 101;
+            nvmUseNodeVer426 || exit 102;
+            nativescriptAndroidStart || exit 103;
             ;;
         'all')
             cd "../fiddles" || exit 88;
@@ -91,7 +102,7 @@ function startLiveServer() {
     if [[ ! -d bin ]]; then exit 87; fi
     installed=$(isNgInstalled;);
     if [[ "${installed}" == "false" ]]; then exit 97; fi
-    startLiveServer;
+    startServer;
 )
 #catch
 rc=$?
@@ -142,6 +153,14 @@ case ${rc} in
     98) echo -e "Fubar\t\"emberStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     99) echo -e "Fubar\t\"live-server\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    100) echo -e "Fubar\t\"nvmInstall\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    101) echo -e "Fubar\t\"abdInstall\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    102) echo -e "Fubar\t\"nvmUseNodeVer426\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    103) echo -e "Fubar\t\"nativescriptAndroidStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

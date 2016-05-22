@@ -80,6 +80,9 @@ source bin/_types.sh
         'meteor')
             ./fiddle-meteor.sh $2 || exit 102
             ;;
+        'nativescript')
+            ./fiddle-nativescript.sh $2 || exit 105
+            ;;
         'three')
             ./fiddle-three.sh $2 || exit 89
             ./fiddle-combine.sh "three" "$2" "app.js" "0" || exit 89
@@ -181,6 +184,8 @@ case ${_rc} in
     103) echo "fubar! ember fiddle creation failed."
         ;;
     104) echo "fubar! aurelia fiddle creation failed."
+        ;;
+    105) echo "fubar! nativescript fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

@@ -22,6 +22,9 @@ function ngStart() {
     then
         _port=$2;
     fi
+    pwd;
+    read "continue?" COMMAND;
+
     ng serve --port ${_port};
     exit 0;
 }
