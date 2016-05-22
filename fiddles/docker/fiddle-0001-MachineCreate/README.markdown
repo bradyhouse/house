@@ -18,10 +18,15 @@ Chicago, IL
 
 ### Description
 
-Docker fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
-it supports list/create/delete/refactor/start functionality for the "docker" fiddle collection. This is only a test.
+_Hello world_ docker POC. It automates the following workflow:
+
+    1. create a container called "local" using the virtualBox driver and default docker image
+    3. start the container
+    4. open an ssh connection
+    5. wait for the session to end
+    5. stop the container
 
 
 ### Tags
 
-bash, docker, docker-machine
+bash, docker, docker-machine, ssh
