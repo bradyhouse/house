@@ -987,3 +987,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
+* Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
