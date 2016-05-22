@@ -1,5 +1,5 @@
-[submodule "fiddles/nativeScript/demo/nativescript-marketplace-demo"]
-	path = fiddles/nativeScript/demo/nativescript-marketplace-demo
+[submodule "fiddles/nativeScript/libs/nativescript-marketplace-demo"]
+	path = fiddles/nativeScript/libs/nativescript-marketplace-demo
 	url = https://github.com/NativeScript/nativescript-marketplace-demo
 [submodule "fiddles/bash/libs/the-art-of-command-line"]
 	path = fiddles/bash/libs/the-art-of-command-line
@@ -85,3 +85,6 @@
 [submodule "fiddles/bash/libs/brew"]
 	path = fiddles/bash/libs/brew
 	url = https://github.com/Homebrew/brew
+[submodule "fiddles/nativeScript/libs/angular2-seed-advanced"]
+	path = fiddles/nativeScript/libs/angular2-seed-advanced
+	url = https://github.com/NathanWalker/angular2-seed-advanced

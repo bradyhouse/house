@@ -992,3 +992,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
+
+* **NativeScript**
+    1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)
