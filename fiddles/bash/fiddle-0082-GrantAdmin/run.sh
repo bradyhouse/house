@@ -21,6 +21,6 @@ function catch() {
 }
 # try
 (
-    grantAdmin $(pwd;) || exit 1;
+    grantAdmin "/usr/local" || exit 1;
 )
 catch $?;

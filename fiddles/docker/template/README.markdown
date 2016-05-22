@@ -18,7 +18,8 @@ Chicago, IL
 
 ### Description
 
-Another docker POC.
+Docker fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
+it supports list/create/delete/refactor/start functionality for the "docker" fiddle collection. This is only a test.
 
 
 ### Tags

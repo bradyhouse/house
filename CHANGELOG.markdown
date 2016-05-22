@@ -987,6 +987,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Docker**
     1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
+    2.  Added dependency (submodule) to [docker machine](https://github.com/docker/machine)
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
