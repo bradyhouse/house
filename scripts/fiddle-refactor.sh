@@ -58,7 +58,7 @@ changeLogFile="../../CHANGELOG.markdown";
                 $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
             fi
             ;;
-        'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
+        'angular' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
             if [[ -f "${newIndexFile}" ]]
             then
                 $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;

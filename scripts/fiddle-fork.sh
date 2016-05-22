@@ -123,7 +123,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
             ;;
-        'ant'|'bash'|'python')
+        'ant' | 'bash' | 'docker' | 'python')
             if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ]]
             then
                 rm -r "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" || exit 92;

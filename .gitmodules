@@ -79,3 +79,6 @@
 [submodule "fiddles/meteor/libs/meteor-workshop-solution"]
 	path = fiddles/meteor/libs/meteor-workshop-solution
 	url = https://github.com/pavlovich/meteor-workshop-solution.git
+[submodule "fiddles/docker/libs/machine"]
+	path = fiddles/docker/libs/machine
+	url = https://github.com/docker/machine

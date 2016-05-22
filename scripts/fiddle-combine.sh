@@ -208,7 +208,7 @@ function catch() {
             echo ""
             echo "[t] - type. Valid types include: "
             echo ""
-            voidEchoFiddleTypes;
+            voidEchoFiddleTypes "combine";
             echo ""
             echo "[f] - existing fiddle name.  For example: \"fiddleParabolaSurface\""
             echo ""

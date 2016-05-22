@@ -58,6 +58,9 @@ source bin/_types.sh
             ./fiddle-d3.sh $2 || exit 99;
             ./fiddle-index.sh "d3" || exit 99;
             ;;
+        'docker')
+            ./fiddle-docker.sh $2 || exit 105;
+            ;;
         'ember')
             ./fiddle-ember.sh $2 || exit 103;
             ;;

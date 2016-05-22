@@ -32,7 +32,11 @@ echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
 source bin/_types.sh
 
-
+fiddleType=$1
+fiddleCriteria=$2
+fiddleName=$(getFiddle;);
+fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
+changeLogFile="../CHANGELOG.markdown"
 
 function listAndCount() {
     cd ../fiddles/${fiddleType}
@@ -62,12 +66,6 @@ function getFiddle() {
     fi
 }
 
-fiddleType=$1
-fiddleCriteria=$2
-fiddleName=$(getFiddle;);
-fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
-changeLogFile="../CHANGELOG.markdown"
-
 #try
 (
 	if [[ "${fiddleName}" == "NA" ]]; then exit 91; fi
@@ -77,7 +75,7 @@ changeLogFile="../CHANGELOG.markdown"
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'angular2' | 'ant' | 'aurelia' | 'compass' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'angular2' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
                 rm -rf "${fiddlePath}" || exit 87

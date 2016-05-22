@@ -952,7 +952,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
             9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
    2.  Added [fiddles/aurelia](fiddles/ember)
-        *  See [bash fiddle #79](fiddles/aurelia/fiddle-0079-Aurelia)
+        *  See [bash fiddle #79](fiddles/bash/fiddle-0079-Aurelia)
         *  Reflected changes:
            1.  Added [scripts/bin/aurelia](scripts/bin/aurelia)
            2.  Added [scripts/fiddle-ember.sh](scripts/fiddle-aurelia.sh)
@@ -963,6 +963,18 @@ Alternately, the _Daily Diary of my Programming Dreams_.
            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   3.  Added [fiddles/docker](fiddles/docker)
+       *  See [bash fiddle #](fiddles/bash/fiddle-0081-Docker)
+       *  Reflected changes:
+          1.  Added [scripts/bin/docker](scripts/bin/docker)
+          2.  Added [scripts/fiddle-docker.sh](scripts/fiddle-docker.sh)
+          3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+          4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+          5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+          6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+          7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+          8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+          9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
 
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
