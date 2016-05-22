@@ -1009,3 +1009,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**
     1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)* Added [fiddles/bash/fiddle-0083-Nvm](fiddles/bash/fiddle-0083-Nvm)
     2.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
+* Added [fiddles/docker/fiddle-0001-MachineCreate](fiddles/docker/fiddle-0001-MachineCreate)
