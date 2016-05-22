@@ -985,6 +985,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Added [fiddles/bash/fiddle-0081-Docker](fiddles/bash/fiddle-0081-Docker)
     4.  Added [fiddles/bash/fiddle-0082-GrantAdmin](fiddles/bash/fiddle-0082-GrantAdmin)
 
+* **Docker**
+    1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
+
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
-* Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
