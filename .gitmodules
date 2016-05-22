@@ -82,3 +82,6 @@
 [submodule "fiddles/docker/libs/machine"]
 	path = fiddles/docker/libs/machine
 	url = https://github.com/docker/machine
+[submodule "fiddles/bash/libs/brew"]
+	path = fiddles/bash/libs/brew
+	url = https://github.com/Homebrew/brew

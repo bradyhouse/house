@@ -984,6 +984,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/bash/fiddle-0080-Ember](fiddles/bash/fiddle-0080-Ember)
     3.  Added [fiddles/bash/fiddle-0081-Docker](fiddles/bash/fiddle-0081-Docker)
     4.  Added [fiddles/bash/fiddle-0082-GrantAdmin](fiddles/bash/fiddle-0082-GrantAdmin)
+    5.  Added dependency (submodule) to [Homebrew](https://github.com/Homebrew/brew)
 
 * **Docker**
     1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
