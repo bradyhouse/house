@@ -42,13 +42,13 @@ function catch() {
     brewInstallDockerMachine || exit 5;
     # add your code here
 
-    if [[ -d "docker-hello-node" ]]
+    if [[ -d "fiddle" ]]
     then
-        rm -rf docker-hello-node
+        rm -rf fiddle;
     fi
 
-    git clone https://github.com/spkane/docker-node-hello
-    cd docker-node-hello
+    git clone https://github.com/spkane/docker-node-hello "fiddle";
+    cd fiddle;
     docker build -t example/docker-node-hello:latest . || exit 6;
     docker run -d -p 8080:8080 example/docker-node-hello:latest || exit 7;
 
