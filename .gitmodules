@@ -88,3 +88,6 @@
 [submodule "fiddles/nativeScript/libs/angular2-seed-advanced"]
 	path = fiddles/nativeScript/libs/angular2-seed-advanced
 	url = https://github.com/NathanWalker/angular2-seed-advanced
+[submodule "fiddles/docker/libs/docker-node-hello"]
+	path = fiddles/docker/libs/docker-node-hello
+	url = https://github.com/spkane/docker-node-hello

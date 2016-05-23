@@ -998,15 +998,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/bash/fiddle-0082-GrantAdmin](fiddles/bash/fiddle-0082-GrantAdmin)
     5.  Added dependency (submodule) to [Homebrew](https://github.com/Homebrew/brew)
     6.  Added [fiddles/bash/fiddle-0084-NativeScript](fiddles/bash/fiddle-0084-NativeScript)
+    7.  Added [fiddles/bash/fiddle-0083-Nvm](fiddles/bash/fiddle-0083-Nvm)
 
 * **Docker**
     1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
     2.  Added dependency (submodule) to [docker machine](https://github.com/docker/machine)
     3.  Added [fiddles/docker/fiddle-0001-MachineCreate](fiddles/docker/fiddle-0001-MachineCreate)
-
+    4.  Added dependency (submodule) to [docker-node-hello](https://github.com/spkane/docker-node-hello)
+    5.  Added [fiddles/docker/fiddle-0002-DockerNodeHello](fiddles/docker/fiddle-0002-DockerNodeHello)
+    
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
 
 * **NativeScript**
-    1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)* Added [fiddles/bash/fiddle-0083-Nvm](fiddles/bash/fiddle-0083-Nvm)
+    1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)
     2.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
+

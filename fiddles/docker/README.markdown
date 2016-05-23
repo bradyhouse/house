@@ -22,5 +22,6 @@ aforementioned text.
 *   [docker docs](https://docs.docker.com)
 *   [docker machine repo](https://github.com/docker/machine)
 *   [virtual box](https://www.virtualbox.org)
-
+*   [docker hub](https://hub.docker.com/)
+*   [docker node repo](https://hub.docker.com/_/node/)
 

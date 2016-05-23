@@ -11,6 +11,7 @@ echo "Bash version ${BASH_VERSION}..."
 
 this=$(pwd;);
 
+
 function catch() {
     case $1 in
         0)  endLog "environment configured";
@@ -25,6 +26,8 @@ function catch() {
             ;;
         5)  endLog "${this}: call to brewInstallDockerMachine failed.";
             ;;
+        6)  endLog "";
+            ;;
         *)  endLog "${this}: Something went wrong."
             ;;
     esac
@@ -37,13 +40,18 @@ function catch() {
     brewInstallVirtualbox || exit 3;
     brewInstallDocker || exit 4;
     brewInstallDockerMachine || exit 5;
-    docker-machine create --driver virtualbox local || exit 6;
-    docker-machine env local || exit 7;
-    docker-machine ls || exit 8;
-    docker-machine start local || exit 9;
-    read -p "continue?" CMD;
-    docker-machine ssh local;
-    docker-machine stop local;
+    # add your code here
+
+    if [[ -d "docker-hello-node" ]]
+    then
+        rm -rf docker-hello-node
+    fi
+
+    git clone https://github.com/spkane/docker-node-hello
+    cd docker-node-hello
+    docker build -t example/docker-node-hello:latest . || exit 6;
+    docker run -d -p 8080:8080 example/docker-node-hello:latest || exit 7;
+
 )
 # catch
 rc=$?; catch ${rc};
