@@ -23,7 +23,7 @@ clear;
 source bin/_utils.sh;
 source bin/_types.sh;
 
-port=8889;
+port=1841;
 thisFile=$(echo "$0" | sed 's/\.\///g');
 
 #try

@@ -1,0 +1,17 @@
+.modal-overlay-component { color: rgba(0,0,0,0); margin: 10px; text-shadow: 0px 0px 6px #000, 0px 0px 3px #000;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 6000;
+    background-color: #000000;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    cursor: not-allowed;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}

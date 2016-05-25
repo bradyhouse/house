@@ -42,7 +42,14 @@ source bin/_types.sh
             ./fiddle-index.sh "angular" || exit 87;
             ;;
         'angular2')
-            ./fiddle-angular-2.sh $2 || exit 87;
+            ./fiddle-angular2.sh $2 || exit 87;
+            ./fiddle-index.sh "angular2" || exit 87;
+            ;;
+        'angular2-cli')
+            ./fiddle-angular2-cli.sh $2 || exit 87;
+            ;;
+        'angular2-seeder')
+            ./fiddle-angular2-seeder.sh $2 || exit 87;
             ;;
         'ant')
             ./fiddle-ant.sh $2 || exit 87;

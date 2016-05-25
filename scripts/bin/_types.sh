@@ -31,6 +31,8 @@ voidEchoFiddleTypes() {
             echo -e "\t\"ant\"\t\tAnt Fiddle"
             echo -e "\t\"angular\"\tAngular Fiddle"
             echo -e "\t\"angular2\"\tAngular2 Fiddle"
+            echo -e "\t\"angular2-cli\"\tAngular2 CLI Fiddle"
+            echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddle"
             echo -e "\t\"aurelia\"\tAurelia Fiddle"
             echo -e "\t\"bash\"\t\tBash Fiddle"
             echo -e "\t\"compass\"\tCompass Fiddle"

@@ -1,0 +1,36 @@
+<modal-overlay></modal-overlay>
+<div class="popup-component" [ngStyle]="{ 'z-index': 5001, 'left': left +'px', 'top': top + 'px', 'width': width + 'px', 'height': height + 'px' }">
+    <div class="popup-modal popup-fade" tabindex="-1" role="dialog" *ngIf="isVisible">
+        <div class="popup-modal-dialog">
+            <div class="popup-modal-content">
+                <div class="popup-modal-header" *ngIf="hasTitle">
+                    <button type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close" (click)="onCloseButtonClick($event)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="popup-modal-title">{{title}}</h4>
+                </div>
+                <div class="popup-modal-body">
+                    <ng-content select="[content]"></ng-content>
+                </div>
+                <div class="popup-modal-footer" *ngIf="!disableButtons">
+                    <button type="button"
+                            class="btn btn-default"
+                            (click)="onCloseButtonClick()"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="button"
+                            class="btn btn-primary"
+                            (click)="onSubmitClick()">
+                        {{submitButtonLabel}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -21,7 +21,8 @@ Chicago, IL
 
 ### Description
 
-Another simple Angular 2 fiddle.
+Angular2 fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
+it supports create/delete/refactor/list functionality for the "angular2" based POC's aka fiddles. This is only a test.
 
 
 ### Published Version Link

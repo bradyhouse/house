@@ -111,10 +111,10 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'angular2' | 'aurelia' | 'ember' | 'meteor' | 'nativescript')
+        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'ember' | 'meteor' | 'nativescript')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             ;;
-        'angular'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;

@@ -34,10 +34,10 @@ fiddleName=$2;
 newName=$3;
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}";
 newFiddlePath="../fiddles/${fiddleType}/${newName}";
-newIndexFile="../../fiddles/${fiddleType}/${newName}/index.html";
-newReadmeFile="../../fiddles/${fiddleType}/${newName}/README.markdown";
-altNewReadmeFile="../../fiddles/${fiddleType}/${newName}/README.md";
-changeLogFile="../../CHANGELOG.markdown";
+newIndexFile="../fiddles/${fiddleType}/${newName}/index.html";
+newReadmeFile="../fiddles/${fiddleType}/${newName}/README.markdown";
+altNewReadmeFile="../fiddles/${fiddleType}/${newName}/README.md";
+changeLogFile="../CHANGELOG.markdown";
 #try
 (
 	if [ "$#" -ne 3 ]; then  exit 86; fi
@@ -52,19 +52,19 @@ changeLogFile="../../CHANGELOG.markdown";
     fi
 
 	case ${fiddleType} in
-        'angular2' | 'aurelia' | 'ember' | 'meteor' | 'nativescript' )
+        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'ember' | 'meteor' | 'nativescript' )
             if [[ -f "${altNewReadmeFile}" ]]
             then
                 $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
             fi
             ;;
-        'angular' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
+        'angular' | 'angular2' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
             if [[ -f "${newIndexFile}" ]]
             then
                 $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
             fi
             case ${fiddleType} in
-                'angular'| 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
+                'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
                     ./fiddle-index.sh ${fiddleType} || exit 89;
                 ;;
             esac

@@ -27,8 +27,9 @@
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
-source bin/angular2/_install.sh;
-source bin/angular2/_start.sh;
+source bin/angular2-cli/_install.sh;
+source bin/angular2-cli/_start.sh;
+source bin/angular2-seeder/_start.sh;
 source bin/meteor/_install.sh;
 source bin/meteor/_start.sh;
 source bin/ember/_install.sh;
@@ -42,8 +43,8 @@ _type=$(echo $1);
 _fiddle=$(echo $2);
 _fiddleSubDir="../fiddles/${_type}";
 _fiddleRoot="${_fiddleSubDir}/${_fiddle}";
-_port=$(echo $3) || 8889
-
+_port=1841
+if [ "$#" -gt 2 ]; then _port=$3; fi
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 
 function isLiveServerInstalled() {
@@ -56,14 +57,18 @@ function isLiveServerInstalled() {
 }
 
 function startServer() {
+    groupLog "startServer";
     case ${_type} in
-        'all')
-            cd "../fiddles" || exit 88;
-            ;;
-        'angular2')
+        'angular2-cli')
             cd ${_fiddleRoot};
+            installed=$(isNgInstalled;);
+            if [[ "${installed}" == "false" ]]; then exit 97; fi
             ngInstall || exit 91;
             ngStart || exit 92;
+            ;;
+        'angular2-seeder')
+            cd ${_fiddleRoot};
+            seederStart || exit 104;
             ;;
         'aurelia')
             cd ${_fiddleRoot};
@@ -88,21 +93,17 @@ function startServer() {
             ;;
         'all')
             cd "../fiddles" || exit 88;
-            live-server || exit 95;
+            live-server --port=${_port} || exit 95;
             ;;
         *)  cd "../fiddles/${_type}" || exit 88;
-            live-server || exit 96;
+            live-server --port=${_port} || exit 96;
             ;;
     esac
 }
 #try
 (
     if [ "$#" -lt 1 ]; then  exit 86; fi
-    if [ "$#" -gt 2 ]; then _port=$3; fi
-    if [[ ! -d bin ]]; then exit 87; fi
-    installed=$(isNgInstalled;);
-    if [[ "${installed}" == "false" ]]; then exit 97; fi
-    startServer;
+    startServer || exit $?;
 )
 #catch
 rc=$?
@@ -161,6 +162,8 @@ case ${rc} in
     102) echo -e "Fubar\t\"nvmUseNodeVer426\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     103) echo -e "Fubar\t\"nativescriptAndroidStart\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    104) echo -e "Fubar\t\"seederStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

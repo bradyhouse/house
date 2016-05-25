@@ -34,37 +34,35 @@ source bin/_types.sh
 
 fiddleType=$1
 fiddleCriteria=$2
-fiddleName=$(getFiddle;);
+fiddleName=$(getFiddle "${fiddleType}" "${fiddleCriteria}";);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 changeLogFile="../CHANGELOG.markdown"
 
-function listAndCount() {
-    cd ../fiddles/${fiddleType}
-    echo $(ls -1 | grep ${fiddleCriteria} | wc -l | sed -e 's/^[[:space:]]*//';)
-}
+echo -e ""
+echo -e "fiddle type:\t${fiddleType}";
+echo -e "fiddle name:\t${fiddleName}";
+echo -e "";
+read -p "Are you sure you want to delete this fiddle? [Y/n] " CMD;
+
+if [[ ${CMD} == "n" ]]
+then
+    exit 0;
+fi
 
 function updateChangeLog() {
     changeLogFile=$1
     changeLogFileTmp="${changeLogFile}.~"
     fiddleName=$2
+    searchCriteria="fiddles/${fiddleType}/${fiddleName}";
+
     if [[ -f "${changeLogFile}" ]]
     then
-       cat "${changeLogFile}" | grep -v "${fiddleName}" > "${changeLogFileTmp}"
+       cat "${changeLogFile}" | grep -v "${searchCriteria}" > "${changeLogFileTmp}"
        cat "${changeLogFileTmp}" > "${changeLogFile}"
        rm -f "${changeLogFileTmp}"
     fi
 }
 
-function getFiddle() {
-    matches=$(listAndCount;)
-    if [[ ${matches} -eq 1 ]]
-    then
-        cd ../fiddles/${fiddleType};
-        echo $(ls -1 | grep ${fiddleCriteria} | sed -e 's/^[[:space:]]*//';);
-    else
-        echo "NA";
-    fi
-}
 
 #try
 (
@@ -75,13 +73,13 @@ function getFiddle() {
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'angular2' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
                 rm -rf "${fiddlePath}" || exit 87
             fi
             case ${fiddleType} in
-                'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
+                'angular' |'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
                     ./fiddle-index.sh ${fiddleType} || exit 88
                 ;;
             esac

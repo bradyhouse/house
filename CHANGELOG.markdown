@@ -922,7 +922,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0035-ModalForm](fiddles/angular2/fiddle-0035-ModalForm)
     2.  Added [fiddles/angular2/fiddle-0036-SiblingComponents](fiddles/angular2/fiddle-0036-SiblingComponents)
-    3.  Added [fiddles/angular2/fiddle-0037-PopUpGrid](fiddles/angular2/fiddle-0037-PopUpGrid)
+    3.  Added [fiddles/angular2/fiddle-0037-ModalPopUp](fiddles/angular2/fiddle-0037-ModalPopUp)
     4.  Added [fiddles/angular2/fiddle-0038-ComponentResolver](fiddles/angular2/fiddle-0038-ComponentResolver)
     5.  Added dependency (submodule) to [Farata / angular2typescript](https://github.com/Farata/angular2typescript)
     6.  Added dependency (submodule) to [angular-cli](https://github.com/angular/angular-cli)
@@ -987,6 +987,30 @@ Alternately, the _Daily Diary of my Programming Dreams_.
           7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
           8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
           9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   5.  Added [fiddles/angular2-cli](fiddles/angular2-cli)
+         *  See [bash fiddle #76](fiddles/bash/fiddle-0076-Angular2CLI)
+         *  Reflected changes:
+            1.  Added [scripts/bin/angular2-cli](scripts/bin/angular2-cli)
+            2.  Added [scripts/fiddle-angular2-cli.sh](scripts/fiddle-angular2-cli.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   6.  Added [fiddles/angular2-seeder](fiddles/angular2-seeder)
+        *  See [bash fiddle #75](fiddles/bash/fiddle-0075-Angular2SeederSetup)
+        *  Reflected changes:
+           1.  Added [scripts/bin/angular2-seeder](scripts/bin/angular2-seeder)
+           2.  Added [scripts/fiddle-angular2-seeder.sh](scripts/fiddle-angular2-seeder.sh)
+           3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+           4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+           5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+           6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+           7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+           8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+           9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
 
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
@@ -999,6 +1023,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added dependency (submodule) to [Homebrew](https://github.com/Homebrew/brew)
     6.  Added [fiddles/bash/fiddle-0084-NativeScript](fiddles/bash/fiddle-0084-NativeScript)
     7.  Added [fiddles/bash/fiddle-0083-Nvm](fiddles/bash/fiddle-0083-Nvm)
+    8.  Started [fiddles/bash/fiddle-0085-ShellDb](fiddles/bash/fiddle-0085-ShellDb)
 
 * **Docker**
     1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
@@ -1006,11 +1031,23 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Added [fiddles/docker/fiddle-0001-MachineCreate](fiddles/docker/fiddle-0001-MachineCreate)
     4.  Added dependency (submodule) to [docker-node-hello](https://github.com/spkane/docker-node-hello)
     5.  Added [fiddles/docker/fiddle-0002-DockerNodeHello](fiddles/docker/fiddle-0002-DockerNodeHello)
-    
+
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
+    2.  Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
 
 * **NativeScript**
     1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)
-    2.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
+    2.  Added [fiddles/nativeScript/fiddle-0000-Template](fiddles/nativeScript/fiddle-0000-Template)
+
+* **Angular2**
+    1.  Added [fiddles/angular2/fiddle-0000-Template](fiddles/angular2/fiddle-0000-Template)
+    2.  Started [fiddles/angular2/fiddle-0035-DragAndDrop](fiddles/angular2/fiddle-0035-DragAndDrop)
+    3.  Added [fiddles/angular2/fiddle-0036-ModalOverlay](fiddles/angular2/fiddle-0036-ModalOverlay)
+    4.  Added [fiddles/angular2/fiddle-0037-ModalPopUp](fiddles/angular2/fiddle-0037-ModalPopUp)
+
+* **Angular2-cli**
+    1.  Added [fiddles/angular2-cli/fiddle-0000-Template](fiddles/angular2-cli/fiddle-0000-Template)
+
+
 
