@@ -3,7 +3,7 @@ fiddle-0076-Angular2CLI
 
 ### Title
 
-fiddle-0076-Angular2CLI
+Angular2 CLI
 
 
 ### Creation Date
@@ -18,12 +18,12 @@ Chicago, IL
 
 ### Description
 
-Another shell script fiddle.
+Fiddle exploring how to automate the setup of a angular 2 project using the [angular2 Cmd Line Interface (CLI)](https://cli.angular.io/).
 
 
 ### Tags
 
-bash
+bash, angular2, angular-cli
 
 
 ### Forked From

@@ -19,6 +19,14 @@ clear;
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 echo "Bash version ${BASH_VERSION}..."
 
+function createTypingsRcFile() {
+    log "$0" "createTypingsRcFile";
+    touch .typingsrc
+    echo "{" >> .typingsrc
+    echo -e "   \"rejectUnauthorized\": false" >> .typingsrc
+    echo "}" >> .typingsrc
+}
+
 function seederCreate() {
     groupLog "seederCreate";
     fiddle=$1;
@@ -39,10 +47,11 @@ function seederCreate() {
         cp -rf ../template/README.markdown README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
+        createTypingsRcFile || exit 6;
         npm install;
     )
     # catch
-    rc=$1; case ${rc} in
+    rc=$?; case ${rc} in
         0)  echo ""
             ;;
         1)  endLog "seederCreate: Failed while attempting to remove the existing \"${fiddle}\" directory.";
@@ -54,6 +63,8 @@ function seederCreate() {
         4)  endLog "seederCreate: Failed while attempting to remove extraneous files file.";
             ;;
         5)  endLog "seederCreate: Failed while attempting to update the README.MD file.";
+            ;;
+        5)  endLog "seederCreate: Failed while attempting to create the .typingsrc file.";
             ;;
         *)  endLog "seederCreate: F U B A R ~ Something went wrong."
             ;;

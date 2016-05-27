@@ -1046,8 +1046,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Added [fiddles/angular2/fiddle-0036-ModalOverlay](fiddles/angular2/fiddle-0036-ModalOverlay)
     4.  Added [fiddles/angular2/fiddle-0037-ModalPopUp](fiddles/angular2/fiddle-0037-ModalPopUp)
 
-* **Angular2-cli**
+* **Angular2 CLI**
     1.  Added [fiddles/angular2-cli/fiddle-0000-Template](fiddles/angular2-cli/fiddle-0000-Template)
 
-
-
+* **Angular2 Seeder**
+    1.  Added [fiddles/angular2-seeder/fiddle-0000-Template](fiddles/angular2-seeder/fiddle-0000-Template)

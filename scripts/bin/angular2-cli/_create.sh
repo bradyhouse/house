@@ -25,7 +25,7 @@ function ngCreate() {
         then
             rm -rf ${fiddle} || exit 1;
         fi
-        ng new ${fiddle} || exit 2;
+        ng new ${fiddle} --skip-npm || exit 2;
         cd ${fiddle};
         cp -rf ../template/README.markdown README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;

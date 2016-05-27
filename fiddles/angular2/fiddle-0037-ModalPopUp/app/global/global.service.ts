@@ -4,9 +4,9 @@ import 'rxjs/add/operator/share';
 
 export class GlobalService {
 
-    _selectedRows:Array<any>;
-    modalFormVisiblityChange$: Observable<boolean>;
+    public modalFormVisiblityChange$: Observable<boolean>;
 
+    private _selectedRows:Array<any>;
     private _modalFormVisiblity: boolean = false;
     private _modalFormVisiblityObserver: Observer<any>;
 

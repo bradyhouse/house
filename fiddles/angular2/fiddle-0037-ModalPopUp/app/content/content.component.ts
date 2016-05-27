@@ -34,8 +34,7 @@ export class ContentComponent implements OnDestroy {
 
     constructor(private _globalService:GlobalService,
                 private _dataService:DataService,
-                public view:ViewContainerRef,
-                public compResolver:ComponentResolver) {
+                private _compResolver:ComponentResolver) {
 
         this._modalFormVisibilitySubscription = this._globalService.modalFormVisiblityChange$
             .subscribe(
@@ -70,9 +69,8 @@ export class ContentComponent implements OnDestroy {
     }
 
     private showPopUp(rows):void {
-        console.log('showPopUp');
         this.popUp.clear();
-        this.compResolver.resolveComponent(this.popUpBuilder(rows,
+        this._compResolver.resolveComponent(this.popUpBuilder(rows,
             this.popUpGridColumns, this.formOptions))
             .then(factory => {
                 this.popUp.createComponent(factory);

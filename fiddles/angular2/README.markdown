@@ -12,16 +12,23 @@ Angular framework. As a starting point, I will work through the examples outline
 
 #### Create
 
-As of [fiddle #38](fiddles/angular2/fiddle-0035-ModalForm), angular 2 fiddles are created using
-the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_.  This means the [fiddle.sh](../../scripts/fiddle.sh)
-script provides some wrapper logic that integrates this cli.  To create a new angular2 fiddle, run the following command
-from the [scripts](../../scripts) directory like so:
+TBW
 
-    ./fiddle.sh "create" "angular2" "fiddle-####-<Name>"
+#### Delete
 
-where:
+TBW
 
-    <Name> is the name of the new fiddle.
+#### Refactor
+
+TBW
+
+#### Fork
+
+TBW
+
+#### Index
+
+TBW
 
 
 ### Online Resources

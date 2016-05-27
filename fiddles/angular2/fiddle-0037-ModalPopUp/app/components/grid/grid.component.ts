@@ -18,8 +18,12 @@ export class GridComponent {
      constructor() {
      }
 
-     private onRowSelected($event) {
+     private onRowSelected($event):void {
           this.rowselected.emit($event.node);
+     }
+
+     private onCellValueChanged($event):void {
+          console.log($event);
      }
 
      get height():number {

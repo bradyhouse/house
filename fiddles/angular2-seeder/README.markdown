@@ -1,27 +1,47 @@
-angular2
+angular2 (seeder)
 ======
 
-_Angular?_ No, now its: _Angular2!_  Its ubiquitous. Unfortunately, as primarily an "ExtJS" developer, I know nothing of
- _Angular_ or now _Angular2_.  This directory is dedicated to fiddles involving my exploration of version 2 of the
-Angular framework. As a starting point, I will work through the examples outlined by Felipe Coury (et al) in the book
-**ng-book 2 The Complete Book of AngularJS 2**. This book, in its pre-release version, is available online
-@ [https://gitter.im/ng-book/ng-book](https://gitter.im/ng-book/ng-book).
-
+_Angular, Spangular_ Its ubiquitous.  Unfortunately, as I have found over the last few weeks ( _months_ ) 
+working with the framework (see the [Angular2 collection](../Angular2)), there is pain involved with entry.  
+Creating an Angular2 app doesn't begin with a story board (or idea).  It begins with _tooling_.  It begins
+with deciding how your code base will go from typescript to transpiled javascript. _Gulp and Grunt or webpack_?  
+Short of playing with the [Angular Cmd Line Interface (CLI)](https://cli.angular.io/), which (as of the writing 
+of this Markdown) is not quite ready for _production-lifting_, there are _seeder project templates_. This 
+collection is aimed at POC's experimenting with the [angular2 seed](https://github.com/mgechev/angular2-seed) 
+template.
+ 
 
 ### Procedures
 
 #### Create
 
-As of [fiddle #38](fiddles/angular2/fiddle-0035-ModalForm), angular 2 fiddles are created using
-the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_.  This means the [fiddle.sh](../../scripts/fiddle.sh)
-script provides some wrapper logic that integrates this cli.  To create a new angular2 fiddle, run the following command
-from the [scripts](../../scripts) directory like so:
+The create logic baked into the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #75](../bash/fiddle-0075-Angular2SeederSetup).
+It automates the steps outlined in the [How to Start](https://github.com/mgechev/angular2-seed/blob/master/README.md#how-to-start) section of
+repo's README.md file.  To create a new angular2 fiddle, run the following command from the [scripts](../../scripts) directory like so:
 
-    ./fiddle.sh "create" "angular2" "fiddle-####-<Name>"
+    ./fiddle.sh "create" "angular2-seeder" "fiddle-####-<Name>"
 
 where:
 
     <Name> is the name of the new fiddle.
+
+If everything is working correctly, you should see a stream of output that looks like this [sample create output](CREATE.markdown).
+
+#### Delete
+
+TBW
+
+#### Refactor
+
+TBW
+
+#### Fork
+
+TBW
+
+#### Index
+
+TBW
 
 
 ### Online Resources
