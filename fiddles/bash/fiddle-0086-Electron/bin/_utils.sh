@@ -170,17 +170,4 @@ function contains() {
     fi
 }
 
-function stripLine() {
-    file=$1
-    fileTmp="${file}.~"
-    searchCriteria=$2
-
-    if [[ -f "${file}" ]]
-    then
-       cat "${file}" | grep -v "${searchCriteria}" > "${fileTmp}"
-       cat "${fileTmp}" > "${file}"
-       rm -f "${fileTmp}"
-    fi
-}
-
 

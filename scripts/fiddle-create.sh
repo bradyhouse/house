@@ -68,6 +68,9 @@ source bin/_types.sh
         'docker')
             ./fiddle-docker.sh $2 || exit 105;
             ;;
+        'electron')
+            ./fiddle-electron.sh $2 || exit 105;
+            ;;
         'ember')
             ./fiddle-ember.sh $2 || exit 103;
             ;;

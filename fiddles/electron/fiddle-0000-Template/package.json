@@ -1,0 +1,27 @@
+{
+  "name": "fiddle-0000-Template",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradyhouse/house.git"
+  },
+  "keywords": [
+    "Electron",
+    "start",
+    "node"
+  ],
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradyhouse/house/issues"
+  },
+  "homepage": "https://github.com/bradyhouse/house/blob/master/fiddles/electron/README.markdown",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  }
+}

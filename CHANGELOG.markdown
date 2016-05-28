@@ -939,9 +939,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201605180420
 
 * **fiddle.sh**
-   1.  Added [fiddles/ember](fiddles/ember)
-         *  See [bash fiddle #80](fiddles/bash/fiddle-0080-Ember)
-         *  Reflected changes:
+   1.   Added [fiddles/ember](fiddles/ember)
+        *   See [bash fiddle #80](fiddles/bash/fiddle-0080-Ember)
+        *   Reflected changes:
             1.  Added [scripts/bin/ember](scripts/bin/ember)
             2.  Added [scripts/fiddle-ember.sh](scripts/fiddle-ember.sh)
             3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
@@ -951,45 +951,45 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
             8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
             9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
-   2.  Added [fiddles/aurelia](fiddles/ember)
-        *  See [bash fiddle #79](fiddles/bash/fiddle-0079-Aurelia)
-        *  Reflected changes:
-           1.  Added [scripts/bin/aurelia](scripts/bin/aurelia)
-           2.  Added [scripts/fiddle-ember.sh](scripts/fiddle-aurelia.sh)
-           3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
-           4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
-           5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
-           6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
-           7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
-           8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
-           9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
-   3.  Added [fiddles/docker](fiddles/docker)
-       *  See [bash fiddle #81](fiddles/bash/fiddle-0081-Docker)
-       *  Reflected changes:
-          1.  Added [scripts/bin/docker](scripts/bin/docker)
-          2.  Added [scripts/fiddle-docker.sh](scripts/fiddle-docker.sh)
-          3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
-          4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
-          5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
-          6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
-          7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
-          8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
-          9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
-   4.  Added [fiddles/nativescript](fiddles/nativescript)
-       *  See [bash fiddle #84](fiddles/bash/fiddle-0084-NativeScript)
-       *  Reflected changes:
-          1.  Added [scripts/bin/nativescript](scripts/bin/nativescript)
-          2.  Added [scripts/fiddle-nativescript.sh](scripts/fiddle-docker.sh)
-          3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
-          4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
-          5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
-          6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
-          7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
-          8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
-          9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   2.   Added [fiddles/aurelia](fiddles/ember)
+        *   See [bash fiddle #79](fiddles/bash/fiddle-0079-Aurelia)
+        *   Reflected changes:
+            1.  Added [scripts/bin/aurelia](scripts/bin/aurelia)
+            2.  Added [scripts/fiddle-ember.sh](scripts/fiddle-aurelia.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   3.   Added [fiddles/docker](fiddles/docker)
+        *   See [bash fiddle #81](fiddles/bash/fiddle-0081-Docker)
+        *   Reflected changes:
+            1.  Added [scripts/bin/docker](scripts/bin/docker)
+            2.  Added [scripts/fiddle-docker.sh](scripts/fiddle-docker.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   4.   Added [fiddles/nativescript](fiddles/nativescript)
+        *   See [bash fiddle #84](fiddles/bash/fiddle-0084-NativeScript)
+        *   Reflected changes:
+            1.  Added [scripts/bin/nativescript](scripts/bin/nativescript)
+            2.  Added [scripts/fiddle-nativescript.sh](scripts/fiddle-docker.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
    5.  Added [fiddles/angular2-cli](fiddles/angular2-cli)
-         *  See [bash fiddle #76](fiddles/bash/fiddle-0076-Angular2CLI)
-         *  Reflected changes:
+        *   See [bash fiddle #76](fiddles/bash/fiddle-0076-Angular2CLI)
+        *   Reflected changes:
             1.  Added [scripts/bin/angular2-cli](scripts/bin/angular2-cli)
             2.  Added [scripts/fiddle-angular2-cli.sh](scripts/fiddle-angular2-cli.sh)
             3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
@@ -1000,18 +1000,30 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
             9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
    6.  Added [fiddles/angular2-seeder](fiddles/angular2-seeder)
-        *  See [bash fiddle #75](fiddles/bash/fiddle-0075-Angular2SeederSetup)
-        *  Reflected changes:
-           1.  Added [scripts/bin/angular2-seeder](scripts/bin/angular2-seeder)
-           2.  Added [scripts/fiddle-angular2-seeder.sh](scripts/fiddle-angular2-seeder.sh)
-           3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
-           4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
-           5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
-           6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
-           7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
-           8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
-           9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
-
+        *   See [bash fiddle #75](fiddles/bash/fiddle-0075-Angular2SeederSetup)
+        *   Reflected changes:
+            1.  Added [scripts/bin/angular2-seeder](scripts/bin/angular2-seeder)
+            2.  Added [scripts/fiddle-angular2-seeder.sh](scripts/fiddle-angular2-seeder.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+   7.  Added [fiddles/electron](fiddles/electron)
+        *   See [bash fiddle #86](fiddles/bash/fiddle-0086-Electron)
+        *   Reflected changes:
+            1.  Added [scripts/bin/electron](scripts/bin/electron)
+            2.  Added [scripts/fiddle-electron.sh](scripts/fiddle-electron.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_utils.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+            
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
 
@@ -1024,6 +1036,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added [fiddles/bash/fiddle-0084-NativeScript](fiddles/bash/fiddle-0084-NativeScript)
     7.  Added [fiddles/bash/fiddle-0083-Nvm](fiddles/bash/fiddle-0083-Nvm)
     8.  Started [fiddles/bash/fiddle-0085-ShellDb](fiddles/bash/fiddle-0085-ShellDb)
+    9.  Added [fiddles/bash/fiddle-0086-Electron](fiddles/bash/fiddle-0086-Electron)
 
 * **Docker**
     1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
@@ -1051,3 +1064,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Angular2 Seeder**
     1.  Added [fiddles/angular2-seeder/fiddle-0000-Template](fiddles/angular2-seeder/fiddle-0000-Template)
+
+* **Electron** 
+    1.  Added [fiddles/electron/fiddle-0000-Template](fiddles/electron/fiddle-0000-Template)

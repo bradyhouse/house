@@ -52,7 +52,7 @@ changeLogFile="../CHANGELOG.markdown";
     fi
 
 	case ${fiddleType} in
-        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'ember' | 'meteor' | 'nativescript' )
+        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'ember' | 'electron' | 'meteor' | 'nativescript' )
             if [[ -f "${altNewReadmeFile}" ]]
             then
                 $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;

@@ -16,19 +16,8 @@
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
-
-function createTypingsRcFile() {
-    groupLog "createTypingsRcFile";
-    touch .typingsrc
-    echo "{" >> .typingsrc
-    echo -e "   \"rejectUnauthorized\": false" >> .typingsrc
-    echo "}" >> .typingsrc
-}
-
 function nativescriptCreate() {
-    groupLog "nativescriptCreate";
     fiddle=$1;
-    bornOnDate=$2;
     # try
     (
         if [[ -d "${fiddle}" ]]

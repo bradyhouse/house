@@ -111,7 +111,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'ember' | 'meteor' | 'nativescript')
+        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'meteor' | 'nativescript')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             ;;
         'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')

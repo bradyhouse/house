@@ -39,6 +39,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
             echo -e "\t\"docker\"\tDocker Fiddle"
             echo -e "\t\"dojo\"\t\tDojo Fiddle"
+            echo -e "\t\"electron\"\tElectron Fiddle"
             echo -e "\t\"ember\"\t\tEmber Fiddle"
             echo -e "\t\"extjs 5\"\tExt JS 5 Fiddle"
             echo -e "\t\"extjs 6\"\tExt JS 6 Fiddle"

@@ -73,7 +73,7 @@ function updateChangeLog() {
     if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
 
     case ${fiddleType} in
-        'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+        'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
                 rm -rf "${fiddlePath}" || exit 87

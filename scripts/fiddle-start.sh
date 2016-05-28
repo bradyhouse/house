@@ -36,6 +36,8 @@ source bin/ember/_install.sh;
 source bin/ember/_start.sh;
 source bin/nativescript/_install.sh;
 source bin/nativescript/_start.sh;
+source bin/electron/_install.sh;
+source bin/electron/_start.sh;
 
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
@@ -78,6 +80,11 @@ function startServer() {
             cd ${_fiddleRoot};
             emberInstall || exit 97;
             emberStart || exit 98;
+            ;;
+        'electron')
+            cd ${_fiddleRoot};
+            electronInstall || exit 105;
+            electronStart || exit 106;
             ;;
         'meteor')
             cd ${_fiddleRoot};
@@ -164,6 +171,10 @@ case ${rc} in
     103) echo -e "Fubar\t\"nativescriptAndroidStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     104) echo -e "Fubar\t\"seederStart\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    105) echo -e "Fubar\t\"electronInstall\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    106) echo -e "Fubar\t\"electronStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;
