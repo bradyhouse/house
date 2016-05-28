@@ -13,9 +13,9 @@
 As a JavaScript developer, much of my time is spent researching and attempting to master different frameworks.
 I have developed this repo, in an attempt to capture this research. My thinking (hope) is driven by
 the adage _if everything begins in the house, then (perhaps) the "house always wins"._ At the same time, to
-learn _anything_, I am someone who has to build _something_.  The [fiddle.sh](scripts/fiddle.sh) is that thing.
+learn _anything_, I am someone who has to build _something_.  The [fiddle.sh](scripts/fiddle.sh) script is that thing.
 Essentially, it is Command Line Interface (CLI) for quickly getting started with over 27 different frameworks and
-languages.  At present, it can be used to create a localized sandbox (aka fiddle) for any of the following
+languages.  At present, it can be used to create a localized sandbox (aka _fiddle_) for any of the following
 languages and frameworks:
 
 *	[angular](fiddles/angular)
@@ -49,8 +49,6 @@ languages and frameworks:
 To get started with any of the frameworks listed, use the above links to explore the associated collection.  To learn 
 about my latest changes check out the detailed [change log](CHANGELOG.markdown).  Finally, to learn more about me 
 and what I am up to these days checkout [bradyhouse.io](http://bradyhouse.io).
-
-
 
 
 
