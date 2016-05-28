@@ -14,8 +14,9 @@ As a JavaScript developer, much of my time is spent researching and attempting t
 I have developed this repo, in an attempt to capture this research. My thinking (hope) is driven by
 the adage _if everything begins in the house, then (perhaps) the "house always wins"._ At the same time, to
 learn _anything_, I am someone who has to build _something_.  The [scripts/fiddle.sh](scripts/fiddle.sh) is that thing.
-Essentially, it is Command Line Interface (CLI) for quickly getting started with over 28 different frameworks and
-languages.  At present, `fiddle.sh` supports:
+Essentially, it is Command Line Interface (CLI) for quickly getting started with over 27 different frameworks and
+languages.  At present, `fiddle.sh` can be used to quickly create a working sandbox for any of the following
+languages and frameworks:
 
 *	[angular](fiddles/angular)
 *	[angular2](fiddles/angular2)
@@ -33,7 +34,6 @@ languages.  At present, `fiddle.sh` supports:
 *	[ember](fiddles/ember)
 *	[extjs5](fiddles/extjs5)
 *	[extjs6](fiddles/extjs6)
-*	[java](fiddles/java)
 *	[jquery](fiddles/jquery)
 *	[meteor](fiddles/meteor)
 *	[nativeScript](fiddles/nativeScript)
