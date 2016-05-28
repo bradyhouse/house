@@ -1067,3 +1067,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Electron** 
     1.  Added [fiddles/electron/fiddle-0000-Template](fiddles/electron/fiddle-0000-Template)
+* Added [fiddles/angular/fiddle-0000-Template](fiddles/angular/fiddle-0000-Template)
