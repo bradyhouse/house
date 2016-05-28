@@ -1,46 +1,51 @@
 angular
 ======
 
-_Angular!_ Its ubiquitous.  Unfortunately, as primarily an "ExtJS" developer, I know nothing of _angular_.
-This directory is dedicated to fiddles involving my exploration of the angular framework.
+_Angular!_ Its ubiquitous.  This directory is dedicated to fiddles involving my exploration of the angular framework.
 
 
-### Procedures
+### Using fiddle.sh ...
 
-#### Create
+#### To Create
 
 [Angular](../angular) fiddles are created to simply run in the browser.  This means, the resulting sandbox can
 be hosted using [live-server](https://www.npmjs.com/package/live-server) or any type of vanilla web server
 package. The contents of the sandbox is based entirely on the contents of the [template](template) directory.
 To create a new angular fiddle, run the following command from the [scripts](../../scripts) directory like so:
 
-    ./fiddle.sh "create" "angular2-cli" "fiddle-####-<Name>"
+    ./fiddle.sh "create" "angular "fiddle-####-<Name>"
 
 where:
 
     <Name> is the name of the new fiddle.
 
-If everything is working correctly, you should see a stream of output that looks like this [sample create output](CREATE.markdown).
+If everything is working correctly, you should see a stream of output that looks like this [sample create output](create.markdown).
 
-#### Delete
-
-TBW
-
-#### Refactor
+#### To Remove
 
 TBW
 
-#### Fork
+
+#### To Refactor
 
 TBW
 
-#### Index
+#### To Fork
 
 TBW
 
-#### Start
+#### To Index
 
 TBW
+
+#### To Start
+
+To test out a new Angular fiddle or to test-drive the existing collection, run the following command from the 
+[scripts](../../scripts) directory:
+
+    ./fiddle.sh "create" "angular2-cli" "fiddle-####-<Name>"
+
+If everything is working correctly, you should see a stream of output that looks like this [sample start output](start.markdown).
 
 
 ### Online Resources
