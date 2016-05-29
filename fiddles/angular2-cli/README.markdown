@@ -2,8 +2,9 @@ angular2-cli
 ======
 
 _Angular?_ No, now its: _Angular2!_  Its ubiquitous.  Unfortunately, as I have found over the last few weeks ( _months_ ) 
-working with the framework (see the [Angular2 collection](../Angular2)), there is pain involved with entry.  Creating an 
-Angular2 app doesn't begin with a story board (or idea).  It begins with _tooling_.  It begins with deciding how your 
+working with the framework (see the [Angular2 collection](../Angular2)), there is obstacle to entry-- _tooling_.  
+
+Creating an Angular2 app doesn't begin with a story board (or idea).  It begins with _tooling_.  It begins with deciding how your 
 code base will go from typescript to transpiled javascript.  The [Angular Cmd Line Interface](https://cli.angular.io/), which by 
 the way _smells_ alot like [Sencha Cmd](http://docs.sencha.com/cmd/5.x/intro_to_cmd.html), is meant to alleviate this 
 pain (or delay) of entry.  This collection is aimed at my exploration and study of this new tool.  
