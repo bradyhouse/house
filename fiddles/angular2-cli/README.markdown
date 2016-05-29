@@ -13,10 +13,10 @@ pain (or delay) of entry.  This collection is aimed at my exploration and study 
 
 #### To Create
 
-[Angular2-cli](../angular2-cli) fiddles are created using the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_.  
-The create logic baked into the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #76](../bash/fiddle-0076-Angular2CLI).
-This means the [fiddle.sh](../../scripts/fiddle.sh) script provides some wrapper logic that integrates this CLI.  
-To create a new angular2 fiddle, run the following command from the [scripts](../../scripts) directory like so:
+[Angular2-cli](../angular2-cli) fiddles are created using the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_. The create logic baked 
+into the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #76](../bash/fiddle-0076-Angular2CLI).  This means the [fiddle.sh](../../scripts/fiddle.sh) 
+script provides some wrapper logic that integrates this CLI.  To create a new angular2 fiddle, run the following command 
+from the [scripts](../../scripts) directory like so:
 
     ./fiddle.sh "create" "angular2-cli" "fiddle-####-<Name>"
 
@@ -24,7 +24,7 @@ where:
 
     <Name> is the name of the new fiddle.
 
-If everything is working correctly, you should see a stream of output that looks like this [sample create output](CREATE.markdown).
+If everything is working correctly, you should see a stream of output that looks like this [sample create output](create.markdown).
 
 #### To Remove
 
