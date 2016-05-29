@@ -8,9 +8,9 @@ this framework.
 
 ### Using fiddle.sh ...
   
-#### Create  
+#### To Create  
 
-Meteor fiddles are created using the meteor CLI -- aka _meteor new_.  This means the [fiddle.sh](../../scripts/fiddle.sh) 
+Meteor fiddles are created using the meteor CLI -- aka `meteor new`.  This means the [fiddle.sh](../../scripts/fiddle.sh) 
 script provides some wrapper logic that integrates this cli.  To create a new meteor fiddle, run the following command
 from the [scripts](../../scripts) directory like so:
 
@@ -20,6 +20,25 @@ where:
 
     <Name> is the name of the new fiddle. 
 
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
 
 ### Online Resources
 

@@ -1049,9 +1049,13 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
     2.  Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
 
+
 * **NativeScript**
     1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)
     2.  Added [fiddles/nativeScript/fiddle-0000-Template](fiddles/nativeScript/fiddle-0000-Template)
+
+* **Angular**
+    1.  Added [fiddles/angular/fiddle-0000-Template](fiddles/angular/fiddle-0000-Template)
 
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0000-Template](fiddles/angular2/fiddle-0000-Template)
@@ -1067,10 +1071,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Electron** 
     1.  Added [fiddles/electron/fiddle-0000-Template](fiddles/electron/fiddle-0000-Template)
-* Added [fiddles/angular/fiddle-0000-Template](fiddles/angular/fiddle-0000-Template)
-* Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
-* Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
-* Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
-* Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
-* Added [fiddles/d3/fiddle-0000-Template](fiddles/d3/fiddle-0000-Template)
-* Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
+
+* **Aurelia**
+    1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
+    
+* **D3**
+    1.  Added [fiddles/d3/fiddle-0000-Template](fiddles/d3/fiddle-0000-Template)
+
+* **Meteor**
+    1.  Added [fiddles/meteor/fiddle-0000-Template](fiddles/meteor/fiddle-0000-Template)
