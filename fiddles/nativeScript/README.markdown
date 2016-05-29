@@ -5,7 +5,38 @@ I discovered (or heard about) nativeScript on a recent javaScript jabber podcast
 framework for developing cross-platform mobile apps using JavaScript.  This directory is dedicated
 to my exploration of this framework.  Each directory corresponds to separate mobile app.
 
-**NOTE - the creation and maintenance of this collection is independent of the the master [fiddle.sh](../../scripts/fiddle.sh) script.**
 
+### Using fiddle.sh ...
+
+#### Create
+
+_TBW_
+
+    fiddle.sh "create" "nativescript" "fiddle-####-<name>"
+
+where:
+
+    <Name> is the name of the new fiddle/poc.
+
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
 
 

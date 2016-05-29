@@ -11,7 +11,7 @@ is dedicated to my exploration of electron.
 As a starting point, I will be working through Adam Lynch's book [Developing an Electron Edge (Developing an edge Book 12)](https://amzn.com/B01G7TTKSK).
 
 
-### Procedures
+### Using fiddle.sh ...
 
 #### Create
 
@@ -26,26 +26,26 @@ where:
 
     <Name> is the name of the new fiddle.
 
-If everything is working correctly, you should see a stream of output that looks like this [sample create output](CREATE.markdown).
+If everything is working correctly, you should see a stream of output that looks like this [sample create output](create.markdown).
 
-#### Delete
+#### To Remove
 
-TBW
+_TBW_
 
-#### Refactor
+#### To Refactor
 
-TBW
+_TBW_
 
-#### Fork
+#### To Fork
 
-TBW
+_TBW_
 
-#### Index
+#### To Index
 
-TBW
+_TBW_
 
+#### To Start
 
-### Online Resources
+_TBW_
 
-TBW
 

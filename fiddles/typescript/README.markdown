@@ -11,6 +11,40 @@ commands in sequence:
 This will install all dependencies and startup the app on port 3000.
 
 
+### Using fiddle.sh ...
+
+#### Create
+
+_TBW_
+
+    fiddle.sh "create" "typescript" "fiddle-####-<name>"
+
+where:
+
+    <Name> is the name of the new fiddle/poc.
+
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
+
+
 #### Online Resources
 
 * [TypeScript](http://www.typescriptlang.org/)

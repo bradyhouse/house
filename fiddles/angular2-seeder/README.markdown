@@ -1,4 +1,4 @@
-angular2 (seeder)
+Angular2 (seeder)
 ======
 
 _Angular, Spangular_ Its ubiquitous.  Unfortunately, as I have found over the last few weeks ( _months_ ) 
@@ -11,9 +11,9 @@ collection is aimed at POC's experimenting with the [angular2 seed](https://gith
 template.
  
 
-### Procedures
+### Using fiddle.sh ...
 
-#### Create
+#### To Create
 
 The create logic baked into the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #75](../bash/fiddle-0075-Angular2SeederSetup).
 It automates the steps outlined in the [How to Start](https://github.com/mgechev/angular2-seed/blob/master/README.md#how-to-start) section of
@@ -25,21 +25,21 @@ where:
 
     <Name> is the name of the new fiddle.
 
-If everything is working correctly, you should see a stream of output that looks like this [sample create output](CREATE.markdown).
+If everything is working correctly, you should see a stream of output that looks like this [sample create output](create.markdown).
 
-#### Delete
-
-TBW
-
-#### Refactor
+#### To Delete
 
 TBW
 
-#### Fork
+#### To Refactor
 
 TBW
 
-#### Index
+#### To Fork
+
+TBW
+
+#### To Index
 
 TBW
 

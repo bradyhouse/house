@@ -11,4 +11,35 @@ with an API (or, obviously, through a human using a web browser)._
 from Mitchell's book will serve as a starting point.
 
 
+### Using fiddle.sh ...
 
+#### Create
+
+_TBW_
+
+    fiddle.sh "create" "python" "fiddle-####-<name>"
+
+where:
+
+    <Name> is the name of the new fiddle/poc.
+
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_

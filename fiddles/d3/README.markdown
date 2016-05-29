@@ -1,13 +1,43 @@
 D3
 ======
 
-In a _Ext JS_ land, there is a component for data visualization (or charts). In the _non-platform_, _npm-smorga_ world,
+In _Ext JS_ land, there is a component for data visualization (or charts). In the _non-platform_, _npm-smorga_ world,
 good luck.  Actually, there is Data-Driven Documents -- aka [D3.js](https://d3js.org/). This collection is dedicated to
-pen involving my exploration of this framework. As a starting point, I will work through the examples
-outlined by Nick Qi Zhu in the book **Data Visualization with D3.js Cookbook**. The [source code](https://github.com/NickQiZhu/d3-cookbook)
-from this book is sub-moduled in the [libs/d3-cookbook](libs/d3-cookbook) directory. To pull-down this secondary
-code base, simply run "git submodule update" command. Finally, the links listed below are taken from the aforementioned
-text.
+pen involving my exploration of this framework. 
+
+
+### Book
+
+As a starting point, I will work through the examples outlined by Nick Qi Zhu in the book **Data Visualization with D3.js Cookbook**. 
+The [source code](https://github.com/NickQiZhu/d3-cookbook) from this book is sub-moduled in the [libs/d3-cookbook](libs/d3-cookbook) 
+directory. To pull-down this secondary code base, simply run `git submodule update` command. Finally, the links listed 
+below are taken from the aforementioned text.
+
+### Using fiddle.sh ...
+
+#### To Create
+
+_TBW_
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
 
 
 ### Online Resources

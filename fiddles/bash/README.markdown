@@ -5,6 +5,33 @@ Its a Linux world. If you want to do something on the stack this usually means y
 some type of shell script.  As with everything, practise makes perfect. This directory is
 dedicated to fiddles involving bash (sh, ksh, csh ... etc).
 
+### Using fiddle.sh ...
+
+#### To Create
+
+_TBW_
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
+
+
 
 ### Online Resources
 

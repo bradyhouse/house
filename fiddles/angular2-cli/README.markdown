@@ -2,17 +2,16 @@ angular2-cli
 ======
 
 _Angular?_ No, now its: _Angular2!_  Its ubiquitous.  Unfortunately, as I have found over the last few weeks ( _months_ ) 
-working with the framework (see the [Angular2 collection](../Angular2)), there is pain involved with entry.  
-Creating an Angular2 app doesn't begin with a story board (or idea).  It begins with _tooling_.  It begins
-with deciding how your code base will go from typescript to transpiled javascript.  The [Angular Cmd Line Interface](https://cli.angular.io/),
-which by the way _smells_ alot like [Sencha Cmd](http://docs.sencha.com/cmd/5.x/intro_to_cmd.html), is 
-meant to alleviate this pain (or delay) of entry.  This collection is aimed at POC's experimenting
-with this new command line tool.  
+working with the framework (see the [Angular2 collection](../Angular2)), there is pain involved with entry.  Creating an 
+Angular2 app doesn't begin with a story board (or idea).  It begins with _tooling_.  It begins with deciding how your 
+code base will go from typescript to transpiled javascript.  The [Angular Cmd Line Interface](https://cli.angular.io/), which by 
+the way _smells_ alot like [Sencha Cmd](http://docs.sencha.com/cmd/5.x/intro_to_cmd.html), is meant to alleviate this 
+pain (or delay) of entry.  This collection is aimed at my exploration and study of this new tool.  
 
 
-### Procedures
+### Using fiddle.sh ...
 
-#### Create
+#### To Create
 
 [Angular2-cli](../angular2-cli) fiddles are created using the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_.  
 The create logic baked into the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #76](../bash/fiddle-0076-Angular2CLI).
@@ -27,21 +26,26 @@ where:
 
 If everything is working correctly, you should see a stream of output that looks like this [sample create output](CREATE.markdown).
 
-#### Delete
+#### To Remove
 
 TBW
 
-#### Refactor
+#### To Refactor
 
 TBW
 
-#### Fork
+#### To Fork
 
 TBW
 
-#### Index
+#### To Index
 
 TBW
+
+#### To Start
+
+TBW
+
 
 
 ### Online Resources

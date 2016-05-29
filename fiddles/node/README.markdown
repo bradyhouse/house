@@ -24,3 +24,37 @@ commands in sequence:
         npm start
 
 This will install all dependencies and startup the app on port 3000.
+
+
+### Using fiddle.sh ...
+
+#### Create
+
+_TBW_
+
+    fiddle.sh "create" "node" "fiddle-####-<name>"
+
+where:
+
+    <Name> is the name of the new fiddle/poc.
+
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_

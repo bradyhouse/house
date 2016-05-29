@@ -4,7 +4,7 @@ Ember
 _Yah-dah, yah-dah, yah-dah_ ... [ember](http://emberjs.com/) fiddles.
 
 
-### Procedures
+### Using fiddle.sh ...
 
 #### Create
 
@@ -16,6 +16,26 @@ where:
 
     <Name> is the name of the new fiddle/poc.
 
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
 
 ### Online Resources
 

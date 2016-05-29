@@ -7,4 +7,29 @@ development of Chrome extensions.  To test out any of these fiddles, see the ins
 
 **NOTE - you cannot use the master [fiddle.sh](../../scripts/fiddle.sh) script to test (or "start") these fiddles.**
 
+### Using fiddle.sh ...
+
+#### To Create
+
+_TBW_
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
  

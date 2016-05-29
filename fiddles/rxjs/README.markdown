@@ -8,6 +8,40 @@ further practise), these fiddles utilize d3.  The template index.html file inclu
 For fiddles exclusively involving d3, checkout my [d3 fiddle collection](../../d3).
 
 
+### Using fiddle.sh ...
+
+#### Create
+
+_TBW_
+
+    fiddle.sh "create" "rxjs" "fiddle-####-<name>"
+
+where:
+
+    <Name> is the name of the new fiddle/poc.
+
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
+
+
 ### Online Resources
 
 

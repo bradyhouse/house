@@ -1,7 +1,5 @@
-fiddles
+Fiddles
 =====
-
-![Screenshot](screenshot.png)
 
 Root fiddle collection directory. To startup the included node.js web server from this directory, use the following command:
     

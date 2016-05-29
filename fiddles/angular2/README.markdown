@@ -15,23 +15,27 @@ As a starting point, I will work through the examples outlined by Felipe Coury (
 
 #### To Create
 
-TBW
+_TBW_
 
 #### To Remove
 
-TBW
+_TBW_
 
 #### To Refactor
 
-TBW
+_TBW_
 
 #### To Fork
 
-TBW
+_TBW_
 
 #### To Index
 
-TBW
+_TBW_
+
+#### To Start
+
+_TBW_
 
 
 ### Online Resources

@@ -16,6 +16,35 @@ the setup of the docker client and dependencies via home brew. For the _non-Mac 
 aforementioned text.
 
 
+### Using fiddle.sh ...
+
+#### To Create
+
+_TBW_
+
+#### To Remove
+
+_TBW_
+
+#### To Refactor
+
+_TBW_
+
+#### To Fork
+
+_TBW_
+
+#### To Index
+
+_TBW_
+
+#### To Start
+
+_TBW_
+
+
+
+
 ### Online Resources
 
 *   [docker](http://docker.com)
