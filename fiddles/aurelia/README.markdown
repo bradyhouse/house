@@ -9,9 +9,7 @@ introduced a new framework called [Aurelia](aurelia.io). ... _Yah-dah, yah-dah, 
 
 #### To Create
 
-http://aurelia.io/docs.html#/aurelia/framework/latest/doc/article/getting-started
-
-[Aurelia](../nativeScript) fiddles are created using the [Aurelia Typescript]() toolkit. The create logic baked into 
+[Aurelia](../nativeScript) fiddles are created using the [Aurelia Typescript](http://aurelia.io/docs.html#/aurelia/framework/latest/doc/article/getting-started) toolkit. The create logic baked into 
 the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #79](../bash/fiddle-0079-Aurelia).  To create a new Aurelia 
 fiddle, run the following command from the [scripts](../../scripts) directory like so:
 
