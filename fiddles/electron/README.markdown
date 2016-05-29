@@ -3,10 +3,10 @@ Electron
 
 You can seemingly do everything in the browser using JavaScript (or some abstraction 
 _aka framework_).  _But what about the desktop?_ Enter [Electron](http://electron.atom.io/). This collection of fiddles
-is dedicated to my exploration of electron.
+is dedicated to my exploration of this framework.
 
 
-### Book
+### Kindle Injection
 
 As a starting point, I will be working through Adam Lynch's book [Developing an Electron Edge (Developing an edge Book 12)](https://amzn.com/B01G7TTKSK).
 
