@@ -33,7 +33,7 @@ Initially, the screen should:
 
 ### Published Version
 
-| ![plnkr.co](https://embed.plnkr.co/YTGESs/) |
+| ![plnkr.co](https://plnkr.co/edit/YTGESs?p=preview) |
 | :---: |
 | http://embed.plnkr.co/YTGESs/ |
 
