@@ -17,7 +17,7 @@ aforementioned text.
 
 ### Kindle Injection
 
-As a starting point, I purchased Karl Mathias and Sean P. Kane’s book [Docker: Up and Running](https://amzn.com/B00ZGRS4XM).
+As a starting point, I will be working through Karl Mathias and Sean P. Kane’s book [Docker: Up and Running](https://amzn.com/B00ZGRS4XM).
 
 
 ### Using fiddle.sh ...
