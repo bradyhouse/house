@@ -2,12 +2,14 @@ Angular2 (seeder)
 ======
 
 _Angular, Spangular_ Its ubiquitous.  Unfortunately, as I have found over the last few weeks ( _months_ ) 
-working with the framework (see the [Angular2 collection](../Angular2)), there is pain involved with entry.  
-Creating an Angular2 app doesn't begin with a story board (or idea).  It begins with _tooling_.  It begins
+working with the framework (see the [Angular2 collection](../Angular2)), there is an obstacle to entry-- _tooling_.
+  
+Creating an Angular2 app doesn't begin with a story board (or idea).  It begins with _tooling_. It begins
 with deciding how your code base will go from typescript to transpiled javascript. _Gulp and Grunt or webpack_?  
 Short of playing with the [Angular Cmd Line Interface (CLI)](https://cli.angular.io/), which (as of the writing 
-of this Markdown) is not quite ready for _production-lifting_, there are _seeder project templates_. This 
-collection is aimed at POC's experimenting with the [angular2 seed](https://github.com/mgechev/angular2-seed) 
+of this _markdown_) is not quite ready for _production_, there are _seeder project templates_. 
+
+This collection is aimed at POC's experimenting with the [angular2 seed](https://github.com/mgechev/angular2-seed) 
 template.
  
 
