@@ -1,30 +1,39 @@
 Fiddles
 =====
 
-Root fiddle collection directory. To startup the included node.js web server from this directory, use the following command:
-    
-    ➜  house git:(master) ✗ cd scripts
-    ➜  scripts git:(master) ✗ ./fiddle-start.sh "all"
-    
-    
-This should produce the following output:
+Root fiddle collection directory.
 
+
+### Using fiddle.sh ...
+
+#### To Start
+
+To start-up all fiddles at once, run the following command from the [scripts](../scripts) directory:
+
+    ./fiddle.sh "start" "all"
+    
+On the command line, this should produce the following output:
+
+    
+    H o u s e
+    oooooooooooo  o8o        .o8        .o8  oooo
+     888       8  `"'        888        888   888
+     888         oooo   .oooo888   .oooo888   888   .ooooo.
+     888oooo8     888  d88   888  d88   888   888  d88   88b
+     888          888  888   888  888   888   888  888ooo888
+     888          888  888   888  888   888   888  888    .o
+    o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
+    
+    FIDDLE.SH
     FIDDLE-START.SH
-    v0.11.14-pre
-    http://localhost:8889 ~ is dead.
-    node file server started @ http://localhost:8889
-    A Node.js file server has been started for all fiddles.
+    ├────STARTSERVER
+    Serving "/Users/e13542/github/house/fiddles" at http://127.0.0.1:1841
     
-    appending output to nohup.out
-    
-To stop the web server, use following command:
-    
-    ➜  scripts git:(master) ✗ ./fiddle-stop.sh
 
-This should produce the following output:
+Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stup the
+web server, simply press `Ctrl`-`C`.
 
-    FIDDLE-STOP.SH
-    http://localhost:8889 ~ is dead.
+
 
 
 
