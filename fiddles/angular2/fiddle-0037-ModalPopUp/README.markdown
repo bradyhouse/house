@@ -1,9 +1,6 @@
 fiddle-0037-ModalPopUp
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 Angular2 - Grid Selection Modal PopUp
@@ -34,10 +31,11 @@ Initially, the screen should:
         b, If rows are selected a pop-up window containing a second grid populated with the selected rows should open
  
 
-### Published Version Link
+### Published Version
 
-[plnkr.co](http://embed.plnkr.co/YTGESs/)
-
+| ![plnkr.co](http://embed.plnkr.co/YTGESs/) |
+| :---: |
+| * http://embed.plnkr.co/YTGESs/ |
 
 ### Tags
 
