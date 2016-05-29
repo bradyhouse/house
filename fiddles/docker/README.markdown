@@ -5,14 +5,8 @@ Docker
 markdown (*.md) file entitled [docker-deploy](http://three-bradyhouse.rhcloud.com/?p=807).  The file begins 
 `"Add convenience for users to containerize and deploy their Angular application via Docker. …”`.  And then, a 
 2x4 materialized and bounced off my head: _Huh, maybe I can't simply dismiss this Docker thing as something 
-beyond the pale of JavaScript/frontend and my so-called expertise._ 
-
-This collection (aka directory, aka _barrel_) is aimed at gaining some experience with [docker](http://docker.com). 
-_Yah-dah, yah-dah, yah-dah ..._   
-
-Finally, if you are really following along, start with [bash fiddle #81](../bash/fiddle-0081-docker). It automates
-the setup of the docker client and dependencies via home brew. For the _non-Mac challenged_, See the 
-aforementioned text.
+beyond the pale of JavaScript/frontend and my so-called expertise._ This collection (aka directory, aka _barrel_) is 
+aimed at gaining some experience with [docker](http://docker.com). 
 
 
 ### Kindle Injection
