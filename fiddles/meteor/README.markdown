@@ -20,6 +20,8 @@ where:
 
     <Name> is the name of the new fiddle. 
 
+If everything is working correctly, you should see a stream of output that looks like [this](create.markdown).
+
 #### To Remove
 
 _TBW_
