@@ -33,7 +33,7 @@ Initially, the screen should:
 
 ### Published Version
 
-<iframe src="https://embed.plnkr.co/YTGESs/" width="800" height="500">
+<iframe src="https://embed.plnkr.co/YTGESs/" sandbox width="800" height="500">
   <p>Your browser does not support iframes.</p>
 </iframe>
 | *[plnkr.co](http://embed.plnkr.co/YTGESs/)*  |
