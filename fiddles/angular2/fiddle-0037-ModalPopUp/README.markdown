@@ -33,9 +33,9 @@ Initially, the screen should:
 
 ### Published Version
 
-| ![plnkr.co](http://embed.plnkr.co/YTGESs/) |
+| ![plnkr.co](https://embed.plnkr.co/YTGESs/) |
 | :---: |
-| * http://embed.plnkr.co/YTGESs/ |
+| http://embed.plnkr.co/YTGESs/ |
 
 ### Tags
 
