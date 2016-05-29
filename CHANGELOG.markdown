@@ -1073,3 +1073,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
 * Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
 * Added [fiddles/d3/fiddle-0000-Template](fiddles/d3/fiddle-0000-Template)
+* Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
