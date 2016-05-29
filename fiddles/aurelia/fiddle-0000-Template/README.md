@@ -1,26 +1,28 @@
 fiddle-0000-Template
 ======
 
+![Screenshot](screenshot.png)
+
 
 ### Title
 
-POC Zero
+fiddle-0000-Template
 
 
 ### Creation Date
 
-05-19-16
+05-28-16
 
 
 ### Location
 
-Angular 2 Summit @ Chicago
+Chicago, IL
 
 
 ### Description
 
 Aurelia fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
-it supports list/create/delete/refactor/start functionality for the "aurelia" based POC's aka fiddles. This is only a test.
+it supports create/delete/refactor/list functionality for the "aurelia" based POC's aka fiddles. This is only a test.
 
 
 ### Published Version Link
