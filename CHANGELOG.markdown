@@ -1072,3 +1072,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
 * Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
 * Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
+* Added [fiddles/d3/fiddle-0000-Template](fiddles/d3/fiddle-0000-Template)

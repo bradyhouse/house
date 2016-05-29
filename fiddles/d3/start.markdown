@@ -1,8 +1,7 @@
-Angular (sample start)
+D3 (sample start)
 ======
 
-Executing the command `./fiddle.sh "start" "angular"` produces the following output.
-
+Executing the command `./fiddle.sh "start" "d3"` produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -16,10 +15,8 @@ Executing the command `./fiddle.sh "start" "angular"` produces the following out
     FIDDLE.SH
     FIDDLE-START.SH
     ├────STARTSERVER
-    Serving "/Users/e13542/github/house/fiddles/angular" at http://127.0.0.1:1841
+    Serving "/Users/e13542/github/house/fiddles/d3" at http://127.0.0.1:1841
     
 
 Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stup the
 web server, simply press `Ctrl`-`C`.
-
-

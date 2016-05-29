@@ -1,8 +1,7 @@
-Angular (sample start)
+D3 (sample create)
 ======
 
-Executing the command `./fiddle.sh "start" "angular"` produces the following output.
-
+Executing the command `./fiddle.sh "create" "d3" "fiddle-0000-Template"` produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -14,12 +13,11 @@ Executing the command `./fiddle.sh "start" "angular"` produces the following out
     o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
     
     FIDDLE.SH
-    FIDDLE-START.SH
-    ├────STARTSERVER
-    Serving "/Users/e13542/github/house/fiddles/angular" at http://127.0.0.1:1841
+    FIDDLE-CREATE.SH
+    05-28-16
+    Password:
+    Done. The "../fiddles/d3/fiddle-0000-Template" directory has been initialized.
+    FIDDLE-INDEX.SH
+    05-28-16
+    Done. All "d3" fiddles have been re-indexed.
     
-
-Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stup the
-web server, simply press `Ctrl`-`C`.
-
-
