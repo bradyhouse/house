@@ -1,7 +1,7 @@
 Aurelia (sample start)
 ======
 
-Executing the command `./fiddle.sh "start" "nativescript" "fiddle-0000-Template` produces the following output.
+Executing the command `./fiddle.sh "start" "aurelia" "fiddle-0000-Template` produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -16,3 +16,7 @@ Executing the command `./fiddle.sh "start" "nativescript" "fiddle-0000-Template`
     FIDDLE-START.SH
     ├────STARTSERVER
     Serving "/Users/e13542/github/house/fiddles/aurelia/fiddle-0000-Template" at http://127.0.0.1:8080
+
+
+Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stop the
+web server, simply press `Ctrl`-`C`.

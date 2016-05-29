@@ -43,14 +43,14 @@ TBW
 To test out a new Angular fiddle or to test-drive the existing collection, run the following command from the 
 [scripts](../../scripts) directory:
 
-    ./fiddle.sh "create" "angular2-cli" "fiddle-####-<Name>"
+    ./fiddle.sh "start" "angular"
 
-If everything is working correctly, you should see a stream of output that looks like this [sample start output](start.markdown).
+If everything is working correctly, you should see a stream of output that looks like [this](start.markdown).
 
 
 ### Online Resources
 
 *   [Main Repo](https://github.com/angular/angular.js)
-*   [CDN](https://cdnjs.com/libraries/angular.js/1.5.0-rc.2)
+*   [NPM CDNS](https://cdnjs.com/libraries/angular.js/1.5.0-rc.2)
 *   [Angular Developers Guide](https://docs.angularjs.org/guide)
 

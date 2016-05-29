@@ -19,7 +19,7 @@ Executing the command `./fiddle.sh "start" "angular"` produces the following out
     Serving "/Users/e13542/github/house/fiddles/angular" at http://127.0.0.1:1841
     
 
-Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stup the
+Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stop the
 web server, simply press `Ctrl`-`C`.
 
 
