@@ -114,7 +114,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
         'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'meteor' | 'nativescript')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             ;;
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'rxjs'|'d3'|'dojo'|'node'|'tween'|'chrome')
+        'angular'|'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'extjs6' | 'php' | 'jquery' | 'three' |'rxjs' | 'd3' | 'dojo' | 'node' | 'tween' | 'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;

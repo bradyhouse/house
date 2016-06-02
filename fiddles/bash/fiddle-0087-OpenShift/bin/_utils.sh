@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
+# ---------------------------------------------------------------------------------------------------|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
+#  Specification           : N/A_____________________________________________________________________|
+#  Specification Path      : N/A_____________________________________________________________________|
+#  Author                  : brady house_____________________________________________________________|
+#  Create date             : 05/02/2016______________________________________________________________|
+#  Description             : COLLECTION OF RE-USABLE FUNCTIONS.______________________________________|
+#  Entry Point             : N/A_____________________________________________________________________|
+#  Input Parameters        : N/A_____________________________________________________________________|
+#  Initial Consumer        : ../fiddle-*.sh__________________________________________________________|
+# ---------------------------------------------------------------------------------------------------|
+#  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+# ---------------------------------------------------------------------------------------------------|
+# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# ---------------------------------------------------------------------------------------------------|
+
 
 function voidSubstr() {
     if [ $# -ne "3" ]
@@ -125,4 +141,46 @@ function getFiddle() {
         echo "";
     fi
 }
+
+function isInstalled() {
+    if [[ ! $(which $1;) ]]
+    then
+        echo "false";
+    else
+        echo "true";
+    fi
+}
+
+function voidGrantAdmin() {
+    groupLog "voidGrantAdmin";
+    target=$1;
+    groupLog "${target}";
+    if [[ ! -d ${target} ]]; then endLog "Invalid Path"; exit -1; fi
+    sudo chown -R $(whoami):admin ${target} || exit $?;
+}
+
+function contains() {
+    string="$1"
+    substring="$2"
+    if test "${string#*$substring}" != "$string"
+    then
+        return 0    # $substring is in $string
+    else
+        return 1    # $substring is not in $string
+    fi
+}
+
+function stripLine() {
+    file=$1
+    fileTmp="${file}.~"
+    searchCriteria=$2
+
+    if [[ -f "${file}" ]]
+    then
+       cat "${file}" | grep -v "${searchCriteria}" > "${fileTmp}"
+       cat "${fileTmp}" > "${file}"
+       rm -f "${fileTmp}"
+    fi
+}
+
 

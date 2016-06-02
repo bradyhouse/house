@@ -1025,7 +1025,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
             
 * **Aurelia**
-    1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
@@ -1073,10 +1072,25 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/electron/fiddle-0000-Template](fiddles/electron/fiddle-0000-Template)
 
 * **Aurelia**
-    1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
     
 * **D3**
     1.  Added [fiddles/d3/fiddle-0000-Template](fiddles/d3/fiddle-0000-Template)
 
 * **Meteor**
     1.  Added [fiddles/meteor/fiddle-0000-Template](fiddles/meteor/fiddle-0000-Template)
+
+
+### 201605290420
+
+* **Bash**
+    1.  Added [fiddles/bash/fiddle-0087-OpenShift](fiddles/bash/fiddle-0087-OpenShift)
+    2.  Added [fiddles/bash/fiddle-0088-GcUtil](fiddles/bash/fiddle-0088-GcUtil)
+    3.  Revisited [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
+            
+* **Aurelia**
+    1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
+    2.  Started [fiddles/aurelia/fiddle-0037-ModalPopUp](fiddles/aurelia/fiddle-0037-ModalPopUp)
+    3.  Started [fiddles/aurelia/fiddle-0001-Component](fiddles/aurelia/fiddle-0001-Component)
+    4.  Added dependency (submodule) to [Patrick Walter's Aurelia Examples](https://github.com/PWKad/aurelia-samples)
+    5.  Added dependency (submodule) to [Marcel Hoyer's ToDoMVC App](https://github.com/mhoyer/todomvc-aurelia) 
+    6.  Added dependency (submodule) to [Jeremy Danyow's Northwind Breeze Example](https://github.com/jdanyow/aurelia-breeze-northwind)

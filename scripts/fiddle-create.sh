@@ -56,6 +56,7 @@ source bin/_types.sh
             ;;
         'aurelia')
             ./fiddle-aurelia.sh $2 || exit 104;
+            ./fiddle-index.sh "aurelia" || exit 104;
             ;;
         'compass')
             ./fiddle-compass.sh $2 || exit 87;

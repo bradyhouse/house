@@ -82,6 +82,7 @@ function aureliaCreate() {
         addReadme "${fiddle}" "${bornOnDate}" || exit 5;
         addIndex "${fiddle}" || exit 6;
         addFavicon || exit 7;
+        npm install || exit 8;
     )
     # catch
     rc=$?; case ${rc} in
@@ -100,6 +101,10 @@ function aureliaCreate() {
         6)  echo "aureliaCreate: call to the \"addFavicon()\" function failed.";
             ;;
         7)  echo "aureliaCreate: call to the \"addIndex()\" function failed.";
+            ;;
+        8)  echo "aureliaCreate: command \"npm install\" failed.";
+            ;;
+        9)  echo "aureliaCreate: call to the \"aureliaDevInstall()\" function failed.";
             ;;
         *)  echo "aureliaCreate: F U B A R ~ Something went wrong."
             ;;

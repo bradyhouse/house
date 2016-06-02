@@ -79,7 +79,7 @@ function updateChangeLog() {
                 rm -rf "${fiddlePath}" || exit 87
             fi
             case ${fiddleType} in
-                'angular' |'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
+                'angular' |'angular2' | 'aurelia'  | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
                     ./fiddle-index.sh ${fiddleType} || exit 88
                 ;;
             esac

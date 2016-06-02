@@ -14,7 +14,6 @@
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh;
-source bin/aurelia/_create.sh;
 
 if [ "$#" -ne 1 ]
 then
@@ -23,20 +22,17 @@ then
       exit 59
 fi
 
-clear;
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 echo "Bash version ${BASH_VERSION}..."
 
-fiddleSubDir="fiddles/aurelia/$1";
+fiddleSubDir="aurelia";
 bornOnDate=$(date +"%m-%d-%y";)
 
 function catch() {
     case $1 in
-        0)  endLog "\"${fiddleSubDir}\" created.";
+        0)  endLog "\"${fiddleSubDir}\$1\" created.";
             ;;
-        1)  echo "_create.sh: aureliaCreate() failed";
-            ;;
-        *)  echo "fubar! Something went wrong."
+        *)  endLog "fubar! Something went wrong."
             ;;
     esac
     exit $1
@@ -44,8 +40,12 @@ function catch() {
 # try
 (
     if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
-    cd ../fiddles/aurelia;
-    aureliaCreate $1 ${bornOnDate} || exit 2;
+    if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1";    fi
+    $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
+    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
+
 )
 
 # catch

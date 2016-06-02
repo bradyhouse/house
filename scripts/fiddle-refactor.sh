@@ -52,19 +52,19 @@ changeLogFile="../CHANGELOG.markdown";
     fi
 
 	case ${fiddleType} in
-        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'ember' | 'electron' | 'meteor' | 'nativescript' )
+        'angular2-cli' | 'angular2-seeder' | 'ember' | 'electron' | 'meteor' | 'nativescript' )
             if [[ -f "${altNewReadmeFile}" ]]
             then
                 $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
             fi
             ;;
-        'angular' | 'angular2' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
+        'angular' | 'angular2' | 'aurelia' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
             if [[ -f "${newIndexFile}" ]]
             then
                 $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
             fi
             case ${fiddleType} in
-                'angular' | 'angular2' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
+                'angular' | 'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
                     ./fiddle-index.sh ${fiddleType} || exit 89;
                 ;;
             esac

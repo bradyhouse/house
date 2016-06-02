@@ -72,10 +72,6 @@ function startServer() {
             cd ${_fiddleRoot};
             seederStart || exit 104;
             ;;
-        'aurelia')
-            cd ${_fiddleRoot};
-            live-server || exit 99;
-            ;;
         'ember')
             cd ${_fiddleRoot};
             emberInstall || exit 97;

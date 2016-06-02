@@ -1,8 +1,6 @@
 compass
 ======
 
-![Screenshot](screenshot.png)
-
 In my professional life (these days) I function as an "ExtJS SME". If you have ever explored the 
 [ExtJS API pages](http://docs.sencha.com/extjs/6.0/6.0.0-classic/), you will soon notice that every component includes 
 a collection of "CSS Variables" and "CSS Mixins".  Unfortunately, Sencha doesn't provide much explanation of these features.
@@ -38,3 +36,12 @@ _TBW_
 #### To Start
 
 _TBW_
+
+
+### Online Resources
+
+*   [The Idiomatic CSS Principles](https://github.com/necolas/idiomatic-css)
+*   [Github's PrimerCSS Guidelines](http://primercss.io/guidelines/#scss)
+*   [Google's CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml#CSS_Formatting_Rules)
+*   [Airbnb's Styleguide](https://github.com/airbnb/css#css)
+*   [@mdo's Code Guide](http://codeguide.co/#css)

@@ -259,7 +259,7 @@ srcDir="${fiddlePath}/src"
             appFileName=app.js;
             exit 0;
 	        ;;
-	    'd3' | 'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
+	    'aurelia' | 'd3' | 'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
 	        if [[ ! -d "${srcDir}" ]]; then exit 87; fi
             cd ${fiddlePath};
             createAppFile "${fiddleType}" "${appFileName}" "${useClosure}" || exit $?;

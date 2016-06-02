@@ -91,3 +91,12 @@
 [submodule "fiddles/docker/libs/docker-node-hello"]
 	path = fiddles/docker/libs/docker-node-hello
 	url = https://github.com/spkane/docker-node-hello
+[submodule "fiddles/aurelia/libs/aurelia-samples"]
+	path = fiddles/aurelia/libs/aurelia-samples
+	url = https://github.com/PWKad/aurelia-samples
+[submodule "fiddles/aurelia/libs/todomvc-aurelia"]
+	path = fiddles/aurelia/libs/todomvc-aurelia
+	url = https://github.com/mhoyer/todomvc-aurelia
+[submodule "fiddles/aurelia/libs/aurelia-breeze-northwind"]
+	path = fiddles/aurelia/libs/aurelia-breeze-northwind
+	url = https://github.com/jdanyow/aurelia-breeze-northwind
