@@ -12,7 +12,7 @@ introduced a new framework called [Aurelia](aurelia.io). ... _Yah-dah, yah-dah, 
 [Aurelia](../aurelia) fiddles are created to simply run in the browser.  This means, the resulting sandbox can
 be hosted using [live-server](https://www.npmjs.com/package/live-server) or any type of vanilla web server
 package. The contents of the sandbox is based entirely on the contents of the [template](template) directory, which
-are based on _hello world_ example published on [plnkr.co](http://plnkr.co/edit/5vMoxM?p=preview).
+are based on (for now ...) the _hello world_ example published on [plnkr.co](http://plnkr.co/edit/5vMoxM?p=preview).
 
 To create a new aurelia fiddle, run the following command from the [scripts](../../scripts) directory like so:
 
@@ -57,4 +57,4 @@ _TBW_
 *   [Patrick Walter's Aurelia Examples](https://github.com/PWKad/aurelia-samples)
 *   [Marcel Hoyer's ToDoMVC App](https://github.com/mhoyer/todomvc-aurelia)
 *   [Jeremy Danyow's Northwind Breeze Example](https://github.com/jdanyow/aurelia-breeze-northwind)
-*   
+*   [Master Detail Example](https://github.com/softchris/aurelia)
