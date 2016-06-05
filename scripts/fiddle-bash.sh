@@ -33,16 +33,19 @@ echo ${bornOnDate}
     $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1;
     $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 2;
     $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 2;
+    $(sudo chmod -R 775 "../fiddles/${fiddleSubDir}/$1";) || exit 3;
 )
 #catch
 rc=$?
 case ${rc} in
-    0)  echo "Done. The \"../fiddles/${fiddleSubDir}/$1\" directory has been initialized."
+    0)  endLog "Done. The \"../fiddles/${fiddleSubDir}/$1\" directory has been initialized."
         ;;
-    1)  echo "foo bar! failed to create the \"../fiddles/${fiddleSubDir}/$1\" directory."
+    1)  endLog "foo bar! failed to create the \"../fiddles/${fiddleSubDir}/$1\" directory."
         ;;
-    2)  echo "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/app.js\" file."
-	if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+    2)  endLog "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/README.markdown\" file."
+	    if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+	    ;;
+	3)  endLog "Failed while trying to set permissions on \"../fiddles/${fiddleSubDir}/$1/\".";
 	    ;;
     *)  echo "foo bar! Something went wrong."
         if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi

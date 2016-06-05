@@ -1083,9 +1083,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201605290420
 
 * **Bash**
-    1.  Added [fiddles/bash/fiddle-0087-OpenShift](fiddles/bash/fiddle-0087-OpenShift)
+    1.  Added [fiddles/bash/fiddle-0087-OpenShift](fiddles/bash/fiddle-0087-OpenShift) ~ [Issue #3](https://github.com/bradyhouse/house/issues/3)
     2.  Added [fiddles/bash/fiddle-0088-GcUtil](fiddles/bash/fiddle-0088-GcUtil)
     3.  Revisited [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
+    4.  Added [fiddles/bash/fiddle-0089-NodeWebKit](fiddles/bash/fiddle-0089-NodeWebKit) ~ [Issue #9](https://github.com/bradyhouse/house/issues/9)
             
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
@@ -1094,4 +1095,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added dependency (submodule) to [Patrick Walter's Aurelia Examples](https://github.com/PWKad/aurelia-samples)
     5.  Added dependency (submodule) to [Marcel Hoyer's ToDoMVC App](https://github.com/mhoyer/todomvc-aurelia) 
     6.  Added dependency (submodule) to [Jeremy Danyow's Northwind Breeze Example](https://github.com/jdanyow/aurelia-breeze-northwind)
-    7.  Added [fiddles/aurelia/fiddle-0002-DependencyInjection](fiddles/aurelia/fiddle-0002-DependencyInjection)
+    7.  Added [fiddles/aurelia/fiddle-0002-DependencyInjection](fiddles/aurelia/fiddle-0002-DependencyInjection) ~ [Issue #10](https://github.com/bradyhouse/house/issues/10)
+

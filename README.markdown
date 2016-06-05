@@ -51,4 +51,3 @@ about my latest changes check out the detailed [change log](CHANGELOG.markdown).
 and what I am up to these days checkout [bradyhouse.io](http://bradyhouse.io).
 
 
-
