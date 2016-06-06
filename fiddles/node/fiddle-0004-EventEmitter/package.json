@@ -1,7 +1,7 @@
 {
-  "name": "{{FiddleName}}",
+  "name": "fiddle-0004-DataEventEmitter",
   "version": "0.0.0",
-  "description": "http://github.com/bradyhouse/house/node/{{FiddleName}}",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0004-DataEventEmitter",
   "repository": "",
   "engines": {
     "node": ">= 0.10.0"

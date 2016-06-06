@@ -1,9 +1,6 @@
 {{FiddleName}}
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 {{FiddleName}}
@@ -19,6 +16,10 @@
 Chicago, IL
 
 
+### Issue
+
+N/A
+
 ### Description
 
 Another Node fiddle.
@@ -31,4 +32,4 @@ N/A
 
 ### Tags
 
-node.js, npm
+node.js, hamony, process, argv, fs

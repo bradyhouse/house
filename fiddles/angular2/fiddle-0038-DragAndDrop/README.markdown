@@ -1,14 +1,17 @@
-{{FiddleName}}
+fiddle-0038-DragAndDrop
 ======
+
+![Screenshot](screenshot.png)
+
 
 ### Title
 
-{{FiddleName}}
+fiddle-0038-DragAndDrop
 
 
 ### Creation Date
 
-{{BornOnDate}}
+06-04-16
 
 
 ### Location

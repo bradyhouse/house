@@ -823,7 +823,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/rxjs/fiddle-0002-TimeObservable](fiddles/rxjs/fiddle-0002-TimeObservable)
     3.  Started [fiddles/rxjs/fiddle-0003-Disposable](fiddles/rxjs/fiddle-0003-Disposable)
 * **Node**
-    1.  Started [fiddles/node/fiddle-0002-FileSystemApi](fiddles/node/fiddle-0002-FileSystemApi)
+    1.  Started [fiddles/node/fiddle-0002-FileWatcher](fiddles/node/fiddle-0002-FileWatcher)
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0073-CsvToJson](fiddles/bash/fiddle-0073-CsvToJson)
 
@@ -1096,4 +1096,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added dependency (submodule) to [Marcel Hoyer's ToDoMVC App](https://github.com/mhoyer/todomvc-aurelia) 
     6.  Added dependency (submodule) to [Jeremy Danyow's Northwind Breeze Example](https://github.com/jdanyow/aurelia-breeze-northwind)
     7.  Added [fiddles/aurelia/fiddle-0002-DependencyInjection](fiddles/aurelia/fiddle-0002-DependencyInjection) ~ [Issue #10](https://github.com/bradyhouse/house/issues/10)
+
+* **Angular2**
+    1.  Started [fiddles/angular2/fiddle-0038-DragAndDrop](fiddles/angular2/fiddle-0038-DragAndDrop) ~ [Issue #11](https://github.com/bradyhouse/house/issues/11)
+
+* **Node**
+    1.  Added [fiddles/node/fiddle-0003-ChildProcess](fiddles/node/fiddle-0003-ChildProcess) ~ [Issue 12](https://github.com/bradyhouse/house/issues/12)
+    2.  Added [fiddles/node/fiddle-0004-EventEmitter](fiddles/node/fiddle-0004-EventEmitter) ~ [Issue 13](https://github.com/bradyhouse/house/issues/13)
+    3.  Added [fiddles/node/fiddle-0005-ReadStream](fiddles/node/fiddle-0005-ReadStream) ~ [Issue 14](https://github.com/bradyhouse/house/issues/14)
+    4.  Added [fiddles/node/fiddle-0006-NetWatcher](fiddles/node/fiddle-0006-NetWatcher) ~ [Issue 15](https://github.com/bradyhouse/house/issues/15)
+    5.  Added [fiddles/node/fiddle-0007-SocketWatcher](fiddles/node/fiddle-0007-SocketWatcher) ~ [Issue 16](https://github.com/bradyhouse/house/issues/16)
+
 

@@ -1,0 +1,9 @@
+{
+  "name": "fiddle-0002-FileWatcher",
+  "version": "0.1.0",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0002-FileWatcher",
+  "author": "bradyhouse@gmail.com",
+  "scripts": {
+    "start": "node --harmony app.js"
+  }
+}

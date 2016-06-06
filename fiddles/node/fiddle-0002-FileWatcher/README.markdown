@@ -1,9 +1,6 @@
 fiddle-0002-FileSystemApi
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 fiddle-0002-FileSystemApi
@@ -19,9 +16,13 @@ fiddle-0002-FileSystemApi
 Chicago, IL
 
 
+### Issue
+
+N/A
+
 ### Description
 
-Another Node fiddle.
+POC exploring how to create a simple file watcher app usign Node.js.
 
 
 ### Published Version Link
@@ -31,4 +32,4 @@ N/A
 
 ### Tags
 
-node.js, npm
+node.js, fs, watch

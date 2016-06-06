@@ -30,6 +30,7 @@ typings
 *.log
 *.zip
 *.dmg
+file.txt
 
 /tools/**/*.js
 dist

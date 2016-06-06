@@ -16,14 +16,7 @@ a necessary frontend evil.  It could be used to do cool things in the web browse
 the backend for the heavy lifting.  The web server and database tiers were beyond its reach. Node.js
 breaks this paradigm. Now JavaScript can be used for doing cool things on the backend as well.
 
-I have added this section to begin my study of and practise with this technology. For these fiddles,
-you will need to start each one individually. Navigate to the root directory and enter the following
-commands in sequence:
-
-        npm install
-        npm start
-
-This will install all dependencies and startup the app on port 3000.
+I have added this section to begin my study of and practise with this technology. 
 
 
 ### Using fiddle.sh ...
@@ -58,3 +51,14 @@ _TBW_
 #### To Start
 
 _TBW_
+
+
+### Online Resources
+
+*   [main site](http://nodejs.org)
+*   [documentation](http://nodejs.org/api)
+    *   [fs](http://nodejs.org/api/fs.html)
+    *   [child_process](http://nodejs.org/api/child_process.html)
+    *   [events](http://nodejs.org/api/events.html)
+    *   [buffer](http://nodejs.org/api/buffer.html)
+

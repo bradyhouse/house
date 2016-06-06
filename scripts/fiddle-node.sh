@@ -25,32 +25,33 @@ fi
 
 fiddleSubDir="node"
 bornOnDate=$(date +"%m-%d-%y";)
+
 echo ${bornOnDate}
 
 #try
 (
     if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-    $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1
-    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
-    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
-    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
-    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
+    $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1;
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/package.json";) || exit 2;
+    $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3;
+    $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3;
+    cd "../fiddles/${fiddleSubDir}/$1"
+    npm install || exit 4;
 )
 #catch
 _rc=$?
 case ${_rc} in
-    0)  echo "Done. The \"../fiddles/${fiddleSubDir}/$1\" directory has been initialized."
+    0)  endLog "fiddles/${fiddleSubDir}/$1 initialized."
         ;;
-    1)  echo "foo bar! failed to create the \"../fiddles/${fiddleSubDir}/$1\" directory."
+    1)  endLog "foo bar! failed to create the \"../fiddles/${fiddleSubDir}/$1\" directory."
         ;;
-    2)  echo "foo bar! failed trying to update the ../fiddles/${fiddleSubDir}/$1/index.html file."
-        if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+    2)  endLog "foo bar! failed trying to update the ../fiddles/${fiddleSubDir}/$1/package.json file."
         ;;
-    3)  echo "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/$1/README.markdown file."
-        if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+    3)  endLog "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/$1/README.markdown file."
         ;;
-    *)  echo "foo bar! Something went wrong."
-        if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+    4)  endLog "foo bar! failed trying to run npm install."
+        ;;
+    *)  endLog "foo bar! Something went wrong."
         ;;
 esac
 #finally

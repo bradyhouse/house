@@ -1,7 +1,7 @@
 {
-  "name": "{{FiddleName}}",
+  "name": "fiddle-0005-ReadStream",
   "version": "0.0.0",
-  "description": "http://github.com/bradyhouse/house/node/{{FiddleName}}",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0005-ReadStream",
   "repository": "",
   "engines": {
     "node": ">= 0.10.0"
