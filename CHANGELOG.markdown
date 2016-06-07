@@ -1107,3 +1107,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/node/fiddle-0006-NetWatcher](fiddles/node/fiddle-0006-NetWatcher) ~ [Issue 15](https://github.com/bradyhouse/house/issues/15)
     5.  Added [fiddles/node/fiddle-0007-SocketWatcher](fiddles/node/fiddle-0007-SocketWatcher) ~ [Issue 16](https://github.com/bradyhouse/house/issues/16)
     6.  Added [fiddles/node/fiddle-0008-ClientServerJSON](fiddles/node/fiddle-0008-ClientServerJSON) ~ [Issue 17](https://github.com/bradyhouse/house/issues/17)
+    7.  Added [fiddles/node/fiddle-0009-Inheritance](fiddles/node/fiddle-0009-Inheritance) ~ [Issue 18](https://github.com/bradyhouse/house/issues/18)

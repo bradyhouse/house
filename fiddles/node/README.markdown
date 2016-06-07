@@ -19,6 +19,11 @@ breaks this paradigm. Now JavaScript can be used for doing cool things on the ba
 I have added this section to begin my study of and practise with this technology. 
 
 
+### Kindle Injection
+
+As a starting point, I will be working through Jim R. Wilson book [Node.js the Right Way](http://amzn.com/1937785734).
+
+
 ### Using fiddle.sh ...
 
 #### Create
