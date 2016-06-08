@@ -26,8 +26,8 @@ Chicago, IL
 
 ### Description
 
-POC exploring how inheritance works in node.js.  Note, this example is taken from the _LBJClient_ exampl in 
-Chapter 3 of Jim R. Wilson's book [Node.js the Right Way](http://amzn.com/1937785734).
+POC exploring how inheritance works in node.js.  Note, this example is taken from the _LBJClient_ example in 
+Chapter 3 of Jim R. Wilson's book [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
 
 
 ### Published Version Link

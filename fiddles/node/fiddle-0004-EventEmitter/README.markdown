@@ -22,7 +22,9 @@ Chicago, IL
 
 ### Description
 
-POC exploring how to capture data from an event emitter.
+POC exploring how to capture data from an event emitter.  Note, this POC is based on the _watcher spawn parse_ example 
+given in Chapter 2 of Jim R. Wilson's book [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
+
 
 
 ### Published Version Link

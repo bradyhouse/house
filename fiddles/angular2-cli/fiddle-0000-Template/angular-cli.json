@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.1",
-    "name": "fiddle-0000-template"
+    "name": "fiddle"
   },
   "apps": [
     {"main": "src/main.ts", "tsconfig": "src/tsconfig.json"}

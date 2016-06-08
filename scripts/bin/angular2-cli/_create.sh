@@ -15,9 +15,19 @@
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 
+function createTypingsRcFile() {
+    groupLog "createTypingsRcFile";
+    touch .typingsrc
+    echo "{" >> .typingsrc
+    echo -e "   \"rejectUnauthorized\": false" >> .typingsrc
+    echo "}" >> .typingsrc
+}
+
+
 function ngCreate() {
     groupLog "ngCreate";
     fiddle=$1;
+    appName=$(subDelimStr ${fiddle} "-" "2";);
     bornOnDate=$2;
     # try
     (
@@ -25,23 +35,36 @@ function ngCreate() {
         then
             rm -rf ${fiddle} || exit 1;
         fi
-        ng new ${fiddle} --skip-npm || exit 2;
+
+        if [[ "${appName}" == "Template" ]]
+        then
+            appName="fiddle";
+        fi
+
+        ng new ${appName} --skip-npm --directory ${fiddle} || exit 2;
         cd ${fiddle};
         cp -rf ../template/README.markdown README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
+        createTypingsRcFile || exit 6;
+        npm install || exit 7;
+
     )
     # catch
     rc=$?; case ${rc} in
-        0)  echo "";
+        0)  endLog "";
             ;;
-        1)  echo "ngCreate: Failed while attempting to remove the existing \"${fiddle}\" directory.";
+        1)  endLog "ngCreate: Failed while attempting to remove the existing \"${fiddle}\" directory.";
             ;;
-        2)  echo "ngCreate: Failed while attempting to \"ng new ${fiddle}\".";
+        2)  endLog "ngCreate: Failed while attempting to \"ng new ${fiddle}\".";
             ;;
-        5)  echo "ngCreate: Failed while attempting to update the README.md file.";
+        5)  endLog "ngCreate: Failed while attempting to update the README.md file.";
             ;;
-        *)  echo "ngCreate: F U B A R ~ Something went wrong."
+        6)  endLog "ngCreate: Call to createTypingsRcFile failed.";
+            ;;
+        7)  endLog "ngCreate: call to npm install failed.";
+            ;;
+        *)  endLog "ngCreate: F U B A R ~ Something went wrong."
             ;;
     esac
     exit ${rc};

@@ -22,7 +22,8 @@ Chicago, IL
 
 ### Description
 
-POC exploring how to use the node fs library to create a simple file reader stream.
+POC exploring how to use the node fs library to create a simple file reader stream.  Note, this POC is based on the 
+_read simple_ example given in Chapter 2 of Jim R. Wilson's book [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
 
 
 ### Published Version Link

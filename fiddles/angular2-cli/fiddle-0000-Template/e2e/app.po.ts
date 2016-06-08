@@ -1,9 +1,9 @@
-export class Fiddle0000TemplatePage {
+export class FiddlePage {
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('fiddle-0000-template-app h1')).getText();
+    return element(by.css('fiddle-app h1')).getText();
   }
 }

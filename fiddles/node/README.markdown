@@ -21,7 +21,7 @@ I have added this section to begin my study of and practise with this technology
 
 ### Kindle Injection
 
-As a starting point, I will be working through Jim R. Wilson book [Node.js the Right Way](http://amzn.com/1937785734).
+As a starting point, I will be working through Jim R. Wilson book [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
 
 
 ### Using fiddle.sh ...
@@ -60,10 +60,10 @@ _TBW_
 
 ### Online Resources
 
-*   [main site](http://nodejs.org)
-*   [documentation](http://nodejs.org/api)
+*   [nodejs.org](http://nodejs.org)
+*   [node api](http://nodejs.org/api)
     *   [fs](http://nodejs.org/api/fs.html)
     *   [child_process](http://nodejs.org/api/child_process.html)
     *   [events](http://nodejs.org/api/events.html)
     *   [buffer](http://nodejs.org/api/buffer.html)
-
+*   [json.org](json.org)

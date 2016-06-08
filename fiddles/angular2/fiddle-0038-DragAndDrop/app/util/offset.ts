@@ -1,4 +1,7 @@
+import {Injectable} from '@angular/core';
+import Injectable = ng.Injectable;
 
+@Injectable()
 export interface OffsetInterface {
     x:number;
     y:number;

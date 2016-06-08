@@ -1,13 +1,15 @@
-import {ElementRef} from '@angular/core';
+import {Component, ElementRef, Inject, Injectable, Input} from '@angular/core';
+import Injectable = ng.Injectable;
+
 import {RegionInterface, Region} from './../util/region';
 
-
+@Injectable()
 export interface DragDropInterface {
 
     id:string;
     config:Object;
-    dragElId:string;
-    handleElId:string;
+    dragElId:ElementRef;
+    handleElId:ElementRef;
     invalidHandleTypes:Object;
     invalidHandleIds:Object;
     invalidHandleClasses:Array<string>;
@@ -20,7 +22,7 @@ export interface DragDropInterface {
     unlock():void;
     isTarget:boolean;
     padding:number;
-    _domRef:Object;
+    _domRef:ElementRef;
     __ygDragDrop:boolean;
     constrainX:boolean;
     constrainY:boolean;
@@ -92,12 +94,18 @@ export interface DragDropInterface {
     toString():string;
 }
 
+@Component({
+    selector: 'dd',
+    template: ``
+})
 export class DragDrop implements DragDropInterface {
-
+    @Input() el:ElementRef;
     id:string = null;
     config:Object = null;
-    dragElId:string = null;
-    handleElId:string = null;
+    @Input()
+    dragElId:ElementRef;
+    @Input()
+    handleElId:ElementRef;
     invalidHandleTypes:Object = null;
     invalidHandleIds:Object =null;
     invalidHandleClasses:Array<string> = null;
@@ -344,7 +352,10 @@ export class DragDrop implements DragDropInterface {
         return null;
     }
 
-    constructor(id:string, sGroup:string, config:Object) {
+    constructor(@Inject(ElementRef) elementRef:any, id:string, sGroup:string, config:Object) {
+
+        this._domRef = elementRef.nativeElement;
+
         if (id) {
             this.init(id, sGroup, config);
         }

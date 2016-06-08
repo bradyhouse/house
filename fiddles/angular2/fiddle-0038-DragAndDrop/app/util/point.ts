@@ -1,7 +1,10 @@
+import {Injectable} from '@angular/core';
+import Injectable = ng.Injectable;
 import {Offset, OffsetInterface} from './offset';
 import {Region, RegionInterface} from './region';
 import {Util} from './util';
 
+@Injectable()
 export interface PointInterface {
     x:number;
     y:number;

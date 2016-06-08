@@ -1,6 +1,9 @@
+import {Injectable} from '@angular/core';
+import Injectable = ng.Injectable;
 import {OffsetInterface, Offset} from './offset';
 import {Util} from './util';
 
+@Injectable()
 export interface RegionInterface {
     isRegion:boolean;
     x:number;

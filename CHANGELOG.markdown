@@ -1058,12 +1058,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0000-Template](fiddles/angular2/fiddle-0000-Template)
-    2.  Started [fiddles/angular2/fiddle-0035-DragAndDrop](fiddles/angular2/fiddle-0035-DragAndDrop)
     3.  Added [fiddles/angular2/fiddle-0036-ModalOverlay](fiddles/angular2/fiddle-0036-ModalOverlay)
     4.  Added [fiddles/angular2/fiddle-0037-ModalPopUp](fiddles/angular2/fiddle-0037-ModalPopUp)
 
 * **Angular2 CLI**
-    1.  Added [fiddles/angular2-cli/fiddle-0000-Template](fiddles/angular2-cli/fiddle-0000-Template)
 
 * **Angular2 Seeder**
     1.  Added [fiddles/angular2-seeder/fiddle-0000-Template](fiddles/angular2-seeder/fiddle-0000-Template)
@@ -1087,6 +1085,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/bash/fiddle-0088-GcUtil](fiddles/bash/fiddle-0088-GcUtil)
     3.  Revisited [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
     4.  Added [fiddles/bash/fiddle-0089-NodeWebKit](fiddles/bash/fiddle-0089-NodeWebKit) ~ [Issue #9](https://github.com/bradyhouse/house/issues/9)
+    5.  Added [fiddles/bash/fiddle-0090-Zmq](fiddles/bash/fiddle-0090-Zmq) ~ [Issue 19](https://github.com/bradyhouse/house/issues/19)
+
             
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
@@ -1108,3 +1108,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added [fiddles/node/fiddle-0007-SocketWatcher](fiddles/node/fiddle-0007-SocketWatcher) ~ [Issue 16](https://github.com/bradyhouse/house/issues/16)
     6.  Added [fiddles/node/fiddle-0008-ClientServerJSON](fiddles/node/fiddle-0008-ClientServerJSON) ~ [Issue 17](https://github.com/bradyhouse/house/issues/17)
     7.  Added [fiddles/node/fiddle-0009-Inheritance](fiddles/node/fiddle-0009-Inheritance) ~ [Issue 18](https://github.com/bradyhouse/house/issues/18)
+

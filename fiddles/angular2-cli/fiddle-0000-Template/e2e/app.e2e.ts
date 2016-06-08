@@ -1,14 +1,14 @@
-import { Fiddle0000TemplatePage } from './app.po';
+import { FiddlePage } from './app.po';
 
-describe('fiddle-0000-template App', function() {
-  let page: Fiddle0000TemplatePage;
+describe('fiddle App', function() {
+  let page: FiddlePage;
 
   beforeEach(() => {
-    page = new Fiddle0000TemplatePage();
+    page = new FiddlePage();
   })
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('fiddle-0000-template works!');
+    expect(page.getParagraphText()).toEqual('fiddle works!');
   });
 });

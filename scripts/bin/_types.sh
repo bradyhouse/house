@@ -14,15 +14,14 @@
 # 05/18/2015 - See CHANGELOG @ 201605180420
 # ---------------------------------------------------------------------------------------------------|
 
-
 voidEchoFiddleTypes() {
 
     case $1 in
         'combine')
             echo -e "\t\"angular2\"\tAngular2 Fiddle"
             echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-            echo -e "\t\"extjs 5\"\tExt JS 5 Fiddle"
-            echo -e "\t\"extjs 6\"\tExt JS 6 Fiddle"
+            echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
+            echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
             echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
             echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
             echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"

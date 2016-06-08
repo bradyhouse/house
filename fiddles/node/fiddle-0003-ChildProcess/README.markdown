@@ -22,7 +22,8 @@ Chicago, IL
 
 ### Description
 
-POC exploring how to use the node _child_process_ module to spawn a secondary process thread.
+POC exploring how to use the node _child_process_ module to spawn a secondary process thread.  Note, this POC is based 
+on the _watcher spawn_ example given in Chapter 2 of Jim R. Wilson's book [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
 
 
 ### Published Version Link

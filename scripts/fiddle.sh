@@ -26,6 +26,25 @@ source bin/_types.sh;
 port=1841;
 thisFile=$(echo "$0" | sed 's/\.\///g');
 
+function fiddleIndex() {
+    ./fiddle-index.sh $1 || exit $?;
+}
+
+function fiddleIndexAll() {
+    fiddleIndex 'angular' || exit $?;
+    fiddleIndex 'angular2' || exit $?;
+    fiddleIndex 'aurelia' || exit $?;
+    fiddleIndex 'd3' || exit $?;
+    fiddleIndex 'dojo' || exit $?;
+    fiddleIndex 'extjs5' || exit $?;
+    fiddleIndex 'jquery' || exit $?;
+    fiddleIndex 'rxjs' || exit $?;
+    fiddleIndex 'svg' || exit $?;
+    fiddleIndex 'three' || exit $?;
+    fiddleIndex 'tween' || exit $?;
+}
+
+
 #try
 (
     voidShowTitle ${thisFile};
@@ -58,7 +77,13 @@ thisFile=$(echo "$0" | sed 's/\.\///g');
             ;;
         'index')
             if [ "$#" -lt 2 ]; then  ./fiddle-index.sh;  exit 0; fi
-            ./fiddle-index.sh $2
+
+            if [[ "$2" == "all" ]]
+            then
+                fiddleIndexAll || exit $?;
+            else
+                ./fiddle-index.sh $2 || exit $?;
+            fi
             ;;
         'start')
             if [ "$#" -lt 2 ]; then  ./fiddle-start.sh;  exit 0; fi

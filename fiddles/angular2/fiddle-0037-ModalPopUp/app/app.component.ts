@@ -14,10 +14,4 @@ import {GlobalService} from './global/global.service';
 export class AppComponent {
 
 
-
-    constructor() {
-
-    }
-
-
 }
