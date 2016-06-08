@@ -1,0 +1,19 @@
+{
+  "name": "fiddle-0010-ZeroMqPubSub",
+  "version": "0.0.0",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0010-ZeroMqPubSub",
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "pub": "node --harmony server.js",
+    "sub": "node --harmony client.js"
+  },
+  "dependencies": {
+    "zmq": "^2.15.3"
+  }
+}
