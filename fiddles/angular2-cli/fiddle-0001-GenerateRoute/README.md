@@ -1,15 +1,14 @@
-{{FiddleName}}
+fiddle-0001-GenerateRoute
 ======
-
 
 ### Title
 
-{{FiddleName}}
+Generate Route
 
 
 ### Creation Date
 
-{{BornOnDate}}
+06-08-16
 
 
 ### Location
@@ -19,12 +18,12 @@ Chicago, IL
 
 ### Issue
 
-N/A
+[Issue 22](https://github.com/bradyhouse/house/issues/22)
 
 
 ### Description
 
-Another simple Angular 2 fiddle.
+Angular 2 POC exploring how (and what) the `ng generate route` command produces.
 
 
 ### Published Version Link

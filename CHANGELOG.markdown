@@ -1023,7 +1023,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
             8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
             9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
-            
+
 * **Aurelia**
 
 * **Bash**
@@ -1066,11 +1066,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2 Seeder**
     1.  Added [fiddles/angular2-seeder/fiddle-0000-Template](fiddles/angular2-seeder/fiddle-0000-Template)
 
-* **Electron** 
+* **Electron**
     1.  Added [fiddles/electron/fiddle-0000-Template](fiddles/electron/fiddle-0000-Template)
 
 * **Aurelia**
-    
+
 * **D3**
     1.  Added [fiddles/d3/fiddle-0000-Template](fiddles/d3/fiddle-0000-Template)
 
@@ -1087,18 +1087,22 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/bash/fiddle-0089-NodeWebKit](fiddles/bash/fiddle-0089-NodeWebKit) ~ [Issue #9](https://github.com/bradyhouse/house/issues/9)
     5.  Added [fiddles/bash/fiddle-0090-Zmq](fiddles/bash/fiddle-0090-Zmq) ~ [Issue 19](https://github.com/bradyhouse/house/issues/19)
 
-            
+
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
     2.  Started [fiddles/aurelia/fiddle-0037-ModalPopUp](fiddles/aurelia/fiddle-0037-ModalPopUp)
     3.  Started [fiddles/aurelia/fiddle-0001-Component](fiddles/aurelia/fiddle-0001-Component)
     4.  Added dependency (submodule) to [Patrick Walter's Aurelia Examples](https://github.com/PWKad/aurelia-samples)
-    5.  Added dependency (submodule) to [Marcel Hoyer's ToDoMVC App](https://github.com/mhoyer/todomvc-aurelia) 
+    5.  Added dependency (submodule) to [Marcel Hoyer's ToDoMVC App](https://github.com/mhoyer/todomvc-aurelia)
     6.  Added dependency (submodule) to [Jeremy Danyow's Northwind Breeze Example](https://github.com/jdanyow/aurelia-breeze-northwind)
     7.  Added [fiddles/aurelia/fiddle-0002-DependencyInjection](fiddles/aurelia/fiddle-0002-DependencyInjection) ~ [Issue #10](https://github.com/bradyhouse/house/issues/10)
+    8.  Added [fiddles/aurelia/fiddle-0003-ObjectLifeTime](fiddles/aurelia/fiddle-0003-ObjectLifeTime) ~ [Issue 23](https://github.com/bradyhouse/house/issues/23)
 
 * **Angular2**
     1.  Started [fiddles/angular2/fiddle-0038-DragAndDrop](fiddles/angular2/fiddle-0038-DragAndDrop) ~ [Issue #11](https://github.com/bradyhouse/house/issues/11)
+
+* **Angular2 CLI**
+    1.  Added [fiddles/angular2-cli/fiddle-0001-GenerateRoute](fiddles/angular2-cli/fiddle-0001-GenerateRoute) ~ [Issue 22](https://github.com/bradyhouse/house/issues/22)
 
 * **Node**
     1.  Added [fiddles/node/fiddle-0003-ChildProcess](fiddles/node/fiddle-0003-ChildProcess) ~ [Issue 12](https://github.com/bradyhouse/house/issues/12)
@@ -1109,4 +1113,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added [fiddles/node/fiddle-0008-ClientServerJSON](fiddles/node/fiddle-0008-ClientServerJSON) ~ [Issue 17](https://github.com/bradyhouse/house/issues/17)
     7.  Added [fiddles/node/fiddle-0009-Inheritance](fiddles/node/fiddle-0009-Inheritance) ~ [Issue 18](https://github.com/bradyhouse/house/issues/18)
     8.  Added [fiddles/node/fiddle-0010-ZeroMqPubSub](fiddles/node/fiddle-0010-ZeroMqPubSub) ~ [Issue 20](https://github.com/bradyhouse/house/issues/20)
-    
+    9.  Added [fiddles/node/fiddle-0011-ZeroMqReqRep](fiddles/node/fiddle-0011-ZeroMqReqRep) ~ [Issue 21](https://github.com/bradyhouse/house/issues/21)

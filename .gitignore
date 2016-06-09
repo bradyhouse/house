@@ -60,3 +60,5 @@ libpeerconnection.log
 npm-debug.log
 testem.log
 
+# under construction
+fiddles/aurelia/fiddle-0037-ModalPopUp/*

@@ -1,2 +1,6 @@
-/* Styles go here */
+body {
+     font-family: "Courier New";
+     font-size: small;
+     padding: 5px;
+}
 

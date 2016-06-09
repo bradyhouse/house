@@ -1,0 +1,19 @@
+{
+  "name": "fiddle-0010-ZeroMqReqRep",
+  "version": "0.0.0",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0010-ZeroMqReqRep",
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "respond": "node --harmony responder.js",
+    "request": "node --harmony requester.js"
+  },
+  "dependencies": {
+    "zmq": "^2.15.3"
+  }
+}
