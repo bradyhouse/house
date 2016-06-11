@@ -1,0 +1,13 @@
+<content-popup [rows]="popupRows"
+                [columns]="popupColumns"
+                [show]="popupVisible"
+                (submit)="onPopupSubmit($event)"
+                (close)="onPopupClose($event)"
+                (download)="onPopupDownload($event)"></content-popup>
+<div class="content-component" [ngStyle]="{'width': width + 'px', 'height': height +'px' }">
+    <grid
+            (rowselected)="onRowSelected($event)"
+            [columnDefs]="columnDefs"
+            [rowData]="rowData">
+    </grid>
+</div>

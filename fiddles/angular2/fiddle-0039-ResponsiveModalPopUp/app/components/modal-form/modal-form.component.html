@@ -1,0 +1,43 @@
+<modal-overlay></modal-overlay>
+<div class="popup-component" [ngStyle]="{ 'position': 'absolute', 'z-index': '5000', 'left': left +'px', 'top': top + 'px'}">
+    <div class="popup-modal popup-fade" tabindex="-1" role="dialog" *ngIf="isVisible">
+        <div class="popup-modal-dialog">
+            <div class="popup-modal-content">
+                <div class="popup-modal-header" *ngIf="hasTitle">
+                    <ul class="nav navbar-nav pull-right">
+                        <li *ngIf="enableDownload">
+                            <a class="round"
+                               (click)="onDownloadButtonClick($event)" title="Download CSV">
+                                <i class="mdi mdi-download"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="round"
+                               (click)="onCloseButtonClick($event)" title="Close">
+                                <i class="mdi mdi-close"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <h4 class="popup-modal-title">{{title}}</h4>
+                </div>
+                <div class="popup-modal-body" [ngStyle]="{'width': width + 'px', 'height': height + 'px' }">
+                    <ng-content select="[content]"></ng-content>
+                </div>
+                <div class="popup-modal-footer" *ngIf="!disableButtons">
+                    <button type="button"
+                            class="btn btn-default"
+                            (click)="onCloseButtonClick()"
+                            data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <button type="button"
+                            class="btn btn-primary"
+                            (click)="onSubmitClick()">
+                        {{submitButtonLabel}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

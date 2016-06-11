@@ -16,6 +16,11 @@
 Chicago, IL
 
 
+### Issue
+
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+
+
 ### Description
 
 Angular2 fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that

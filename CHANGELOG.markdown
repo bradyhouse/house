@@ -1097,12 +1097,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added dependency (submodule) to [Jeremy Danyow's Northwind Breeze Example](https://github.com/jdanyow/aurelia-breeze-northwind)
     7.  Added [fiddles/aurelia/fiddle-0002-DependencyInjection](fiddles/aurelia/fiddle-0002-DependencyInjection) ~ [Issue #10](https://github.com/bradyhouse/house/issues/10)
     8.  Added [fiddles/aurelia/fiddle-0003-ObjectLifeTime](fiddles/aurelia/fiddle-0003-ObjectLifeTime) ~ [Issue 23](https://github.com/bradyhouse/house/issues/23)
+    9.  Added [fiddles/aurelia/fiddle-0004-HTTPServices](fiddles/aurelia/fiddle-0004-HTTPServices) ~ [Issue #28](https://github.com/bradyhouse/house/issues/28)
 
 * **Angular2**
     1.  Started [fiddles/angular2/fiddle-0038-DragAndDrop](fiddles/angular2/fiddle-0038-DragAndDrop) ~ [Issue #11](https://github.com/bradyhouse/house/issues/11)
+    2.  Added [fiddles/angular2/fiddle-0039-ResponsiveModalPopUp](fiddles/angular2/fiddle-0039-ResponsiveModalPopUp) ~ [Issue 29](https://github.com/bradyhouse/house/issues/29)
 
 * **Angular2 CLI**
     1.  Added [fiddles/angular2-cli/fiddle-0001-GenerateRoute](fiddles/angular2-cli/fiddle-0001-GenerateRoute) ~ [Issue 22](https://github.com/bradyhouse/house/issues/22)
+    2.  Added [fiddles/angular2-cli/fiddle-0002-GeneratePipe](fiddles/angular2-cli/fiddle-0002-GeneratePipe) ~ [Issue 27](https://github.com/bradyhouse/house/issues/27)
 
 * **Node**
     1.  Added [fiddles/node/fiddle-0003-ChildProcess](fiddles/node/fiddle-0003-ChildProcess) ~ [Issue 12](https://github.com/bradyhouse/house/issues/12)
@@ -1114,3 +1117,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     7.  Added [fiddles/node/fiddle-0009-Inheritance](fiddles/node/fiddle-0009-Inheritance) ~ [Issue 18](https://github.com/bradyhouse/house/issues/18)
     8.  Added [fiddles/node/fiddle-0010-ZeroMqPubSub](fiddles/node/fiddle-0010-ZeroMqPubSub) ~ [Issue 20](https://github.com/bradyhouse/house/issues/20)
     9.  Added [fiddles/node/fiddle-0011-ZeroMqReqRep](fiddles/node/fiddle-0011-ZeroMqReqRep) ~ [Issue 21](https://github.com/bradyhouse/house/issues/21)
+    10. Added [fiddles/node/fiddle-0012-ZeroMqCluster](fiddles/node/fiddle-0012-ZeroMqCluster) ~ [Issue 26](https://github.com/bradyhouse/house/issues/26)

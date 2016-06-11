@@ -24,6 +24,7 @@ typings
 
 #IDE configuration files
 *.gz
+*.ipc
 .idea
 .vscode
 *.iml

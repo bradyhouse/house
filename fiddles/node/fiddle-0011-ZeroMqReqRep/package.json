@@ -10,8 +10,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "respond": "node --harmony responder.js",
-    "request": "node --harmony requester.js"
+    "respond": "node --harmony rep.js",
+    "request": "node --harmony req.js"
   },
   "dependencies": {
     "zmq": "^2.15.3"
