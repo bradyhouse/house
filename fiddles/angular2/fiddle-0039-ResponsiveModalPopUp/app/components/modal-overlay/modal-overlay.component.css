@@ -1,10 +1,10 @@
 
 
-.modal-overlay-component { color: rgba(0,0,0,0); margin: 10px; text-shadow: 0px 0px 6px #000, 0px 0px 3px #000;
+.modal-overlay-component { color: rgba(0,0,0,0); margin: 10px; text-shadow: 0rem 0rem 0.375rem #000, 0rem 0rem .1875rem #000;
     position: absolute;
     display: block;
-    left: -20px;
-    top: -20px;
+    left: -1.25rem;
+    top: -1.25rem;
     z-index: 4000;
     overflow: hidden !important;
     background-color: #000000;

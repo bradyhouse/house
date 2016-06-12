@@ -25,12 +25,15 @@
                     var xmlns = "http://www.w3.org/2000/svg",
                         element = document.createElementNS(xmlns, "circle"),
                         field = '',
-                        i = 0;
+                        i = 0,
+                         value;
 
                     for (; i < this.fields.length; i++) {
                         field = this.fields[i];
-                        if (this.data.hasOwnProperty(field)) {
-                            element.setAttributeNS(null, field, this.data[field]);
+
+                        if (this.data.hasOwnProperty(field) && this.data[field]) {
+                             value = isNaN(this.data[field]) ? this.data[field] : +(this.data[field]);
+                            element.setAttributeNS(null, field, value);
                         }
                     }
                     canvas.appendChild(element);
@@ -43,11 +46,12 @@
         addCircle: function () {
             var circle = new app.model.Circle({
                 r: app.util.rand(0, 30),
-                cx: app.util.rand(0, app.view.hook.offsetWidth),
-                cy: app.util.rand(0, app.view.hook.offsetHeight),
+                cx: app.util.rand(0, $("#fiddleHook").width()),
+                cy: app.util.rand(0, $("#fiddleHook").height()),
                 opacity: .5,
                 fill: 'yellow'
             });
+
             circle.appendTo(app.view.hook);
         },
         run: function () {

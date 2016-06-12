@@ -1,5 +1,5 @@
 var metadata = {
-    fiddleHeader: 'Angular 2 - Modal PopUp',
+    fiddleHeader: 'Angular 2 - Responsive Modal PopUp',
     urls: {
         github: 'https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0039-ResponsiveModalPopUp'
     },

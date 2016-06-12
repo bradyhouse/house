@@ -1,18 +1,19 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {AgGridNg2} from 'ag-grid-ng2/main';
-import {GridOptions} from 'ag-grid/main';
+import {GridOptions, GridApi} from 'ag-grid/main';
 
 
 @Component({
      selector: 'grid-component',
      templateUrl: './app/components/grid/grid.component.html',
-     styleUrls: ['./app/components/grid/grid.component.css'],
      directives: [[AgGridNg2]]
 })
 export class GridComponent {
 
      @Output() rowselected:EventEmitter<any> = new EventEmitter();
-     @Input() rowData:Array<any>;
+     @Output() ready:EventEmitter<GridApi> = new EventEmitter();
+     @Output() valuechange:EventEmitter<any> = new EventEmitter();
+     @Input() rowData:any;
      @Input() columnDefs:Array<any>;
 
      constructor() {
@@ -23,7 +24,11 @@ export class GridComponent {
      }
 
      private onCellValueChanged($event):void {
-          console.log($event);
+          this.valuechange.emit($event);
+     }
+
+     private onGridReady($event):void {
+          this.ready.emit($event);
      }
 
      get height():number {

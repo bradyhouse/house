@@ -1,8 +1,9 @@
 @CHARSET "UTF-8";
 
-@import '../../../resources/css/bootstrap.darkly.min.css';
-@import '../../../resources/css/custom.css';
+/*@import '../../../resources/css/bootstrap.darkly.min.css'; */
+/*@import '../../../resources/css/custom.css'; */
 
+body { font-family: "Courier New";  font-size: small; background-color: black; color: white; }
 stop.begin { stop-color: yellow; }
 stop.end { stop-color: green; }
 body.invalid stop.end { stop-color: red; }

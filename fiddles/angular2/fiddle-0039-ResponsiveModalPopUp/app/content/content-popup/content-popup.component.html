@@ -1,9 +1,0 @@
-<modal-form [options]="popupOptions"
-       (submit)="onSubmit($event)"
-       (close)="onClose($event)"
-       (download)="onDownload($event)"
-       *ngIf="show">
-     <div class="panel panel-body" content>
-          <grid [rowData]="rows" [columnDefs]="columns" ></grid>
-     </div>
-</modal-form>

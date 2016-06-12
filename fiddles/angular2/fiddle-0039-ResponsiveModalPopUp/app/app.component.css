@@ -14,7 +14,7 @@
 }
 
 .wrapper > * {
-    padding: 0px;
+    padding: 0rem;
     flex: 1 100%;
 }
 
@@ -40,19 +40,19 @@
 }
 
 .main > * {
-    padding: 0px;
+    padding: 0rem;
     flex: 1 100%;
 }
 
 
 .west {
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-bottom: 0px;
-    padding-right: 5px;
+    padding-top: 0.625rem; /* 10 / 16 */
+    padding-left: 0.3125rem; /* 5 / 16  */
+    padding-bottom: 0rem;
+    padding-right: 0.3125rem; /* 5 / 16 */
     color: white;
-    min-width: 256px;
-    max-width: 256px;
+    min-width: 20.69523039611964%; /* 256 / 1237 */
+    max-width: 20.69523039611964%; /* 256 / 1237 */
     justify-content: flex-start;
     text-align: left;
     display: -webkit-box;
@@ -76,16 +76,16 @@
     background: hotpink;
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 37.5rem) {
     .west {
         flex: 1 auto;
     }
 
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 50rem) {
     .main {
-        flex: 5 0px;
+        flex: 5 0rem;
     }
 
     .west {
