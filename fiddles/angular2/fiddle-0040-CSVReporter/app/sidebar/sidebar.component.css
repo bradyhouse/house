@@ -1,0 +1,12 @@
+    .sidebar-component {
+    width: 20%;
+    /*max-width: 16rem !important;*/
+    padding: 0rem;
+}
+.sidebar-component button {
+    margin-right: 1.25rem;
+    float: right;
+}
+.sidebar-component p {
+    padding: 1.25rem;
+}

@@ -37,7 +37,7 @@ srcFile=""
 useClosure=1
 
 if [ "$#" -gt 0 ]; then fiddleType=$1; fi
-if [ "$#" -gt 1 ]; then fiddleCriteria="??"; fi
+if [ "$#" -gt 1 ]; then fiddleCriteria=$2; fi
 if [ "$#" -gt 2 ]; then appFileName=$3; fi
 if [ "$#" -gt 3 ]; then useClosure=$4; fi
 
@@ -55,23 +55,9 @@ function whichJsBeautify() {
     echo $?
 }
 
-function listAndCount() {
-    cd ../fiddles/${fiddleType}
-    echo $(ls -1 | grep ${fiddleCriteria} | wc -l | sed -e 's/^[[:space:]]*//';)
-}
-
-function getFiddle() {
-    matches=$(listAndCount;)
-    if [[ ${matches} -eq 1 ]]
-    then
-        cd ../fiddles/${fiddleType};
-        echo $(ls -1 | grep ${fiddleCriteria} | sed -e 's/^[[:space:]]*//';);
-    else
-        echo "";
-    fi
-}
 
 function listSourceFiles() {
+
     if [[ -e "src/sequence.conf" ]]
     then
         cat "src/sequence.conf" | sed -e 's/^[[:space:]]*//';
@@ -97,6 +83,8 @@ function initAppFile() {
     type=$1;
     appFile=$2;
     closure=$3;
+
+    groupLog "initAppFile";
 
     if [[ -e "${appFile}" ]]
     then
@@ -136,6 +124,7 @@ function initAppFile() {
 function addAppFileBody() {
     type=$1;
     appFile=$2;
+    groupLog "addAppFileBody";
 
     for file in $(listSourceFiles ${type})
     do
@@ -151,6 +140,8 @@ function completeAppFile() {
     type=$1;
     appFile=$2;
     closure=$3;
+    groupLog "completeAppFile";
+
     case ${type} in
 	    'extjs6' | 'extjs5' )
             if [[ -e "src/init.js" ]]
@@ -174,9 +165,12 @@ function completeAppFile() {
 }
 
 function createAppFile() {
+
     type=$1;
     appFile=$2;
     closure=$3;
+
+    groupLog "createAppFile";
 
     initAppFile "${type}" "${appFile}" "${closure}" || exit 89
     addAppFileBody "${type}" "${appFile}" || exit 90
@@ -197,8 +191,7 @@ function beautifyAppFile() {
 
 function catch() {
     case $1 in
-        0)  echo "Combine Source process completed successfully."
-            echo "The ${appFileName} file for \"${fiddleName}\" has been updated."
+        0)  endLog "The ${appFileName} file for \"${fiddleName}\" has been updated."
             ;;
         86) echo ""
             echo "Nope ~ Incorrect number of arguments"
@@ -240,7 +233,7 @@ function catch() {
     exit $1
 }
 
-fiddleName=$(getFiddle;);
+fiddleName=$(getFiddle "${fiddleType}" "${fiddleCriteria}";);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 appFile="${fiddlePath}/${appFileName}"
 srcDir="${fiddlePath}/src"

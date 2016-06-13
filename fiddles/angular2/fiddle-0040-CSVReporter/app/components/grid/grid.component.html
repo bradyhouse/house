@@ -1,0 +1,12 @@
+<ag-grid-ng2 #agGrid [ngStyle]="{ 'width': width + 'px', 'height': height + 'px'}" class="ag-fresh"
+             [gridOptions]="gridOptions"
+             [columnDefs]="columnDefs"
+             [rowData] = "rowData"
+             rowHeight="22"
+             rowSelection="multiple"
+             (rowSelected)="onRowSelected($event)"
+             (cellValueChanged)="onCellValueChanged($event)"
+             (gridReady)="onGridReady($event)"
+>
+</ag-grid-ng2>
+

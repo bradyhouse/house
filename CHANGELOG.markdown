@@ -1087,7 +1087,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/bash/fiddle-0089-NodeWebKit](fiddles/bash/fiddle-0089-NodeWebKit) ~ [Issue #9](https://github.com/bradyhouse/house/issues/9)
     5.  Added [fiddles/bash/fiddle-0090-Zmq](fiddles/bash/fiddle-0090-Zmq) ~ [Issue 19](https://github.com/bradyhouse/house/issues/19)
 
-
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
     2.  Started [fiddles/aurelia/fiddle-0037-ModalPopUp](fiddles/aurelia/fiddle-0037-ModalPopUp)
@@ -1097,11 +1096,13 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added dependency (submodule) to [Jeremy Danyow's Northwind Breeze Example](https://github.com/jdanyow/aurelia-breeze-northwind)
     7.  Added [fiddles/aurelia/fiddle-0002-DependencyInjection](fiddles/aurelia/fiddle-0002-DependencyInjection) ~ [Issue #10](https://github.com/bradyhouse/house/issues/10)
     8.  Added [fiddles/aurelia/fiddle-0003-ObjectLifeTime](fiddles/aurelia/fiddle-0003-ObjectLifeTime) ~ [Issue 23](https://github.com/bradyhouse/house/issues/23)
-    9.  Added [fiddles/aurelia/fiddle-0004-HTTPServices](fiddles/aurelia/fiddle-0004-HTTPServices) ~ [Issue #28](https://github.com/bradyhouse/house/issues/28)
+    9.  Started [fiddles/aurelia/fiddle-0004-HTTPServices](fiddles/aurelia/fiddle-0004-HTTPServices) ~ [Issue #28](https://github.com/bradyhouse/house/issues/28)
 
 * **Angular2**
     1.  Started [fiddles/angular2/fiddle-0038-DragAndDrop](fiddles/angular2/fiddle-0038-DragAndDrop) ~ [Issue #11](https://github.com/bradyhouse/house/issues/11)
     2.  Added [fiddles/angular2/fiddle-0039-ResponsiveModalPopUp](fiddles/angular2/fiddle-0039-ResponsiveModalPopUp) ~ [Issue 29](https://github.com/bradyhouse/house/issues/29)
+    3.  Added [fiddles/angular2/fiddle-0040-CSVReporter](fiddles/angular2/fiddle-0040-CSVReporter) ~ [Issue 30](https://github.com/bradyhouse/house/issues/30)
+    4.  Added [fiddles/angular2/fiddle-0041-JqueryCSV](fiddles/angular2/fiddle-0041-JqueryCSV) ~ [Issue 31](https://github.com/bradyhouse/house/issues/31)
 
 * **Angular2 CLI**
     1.  Added [fiddles/angular2-cli/fiddle-0001-GenerateRoute](fiddles/angular2-cli/fiddle-0001-GenerateRoute) ~ [Issue 22](https://github.com/bradyhouse/house/issues/22)
