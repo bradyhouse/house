@@ -11,8 +11,8 @@
         'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.6',
         'ts': 'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
         'typescript': 'https://npmcdn.com/typescript@1.8.10/lib/typescript.js',
-        'ag-grid-ng2': 'https://npmcdn.com/ag-grid-ng2@4.1.3',
-        'ag-grid': 'https://npmcdn.com/ag-grid@4.1.5',
+        'ag-grid-ng2': 'https://npmcdn.com/ag-grid-ng2@4.2.0',
+        'ag-grid': 'https://npmcdn.com/ag-grid@4.2.6',
         'jquery': 'https://npmcdn.com/jquery@3.0.0',
         'jquery-csv':'https://npmcdn.com/jquery-csv@0.8.1'
     };

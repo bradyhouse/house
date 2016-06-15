@@ -11,41 +11,67 @@ import {GridOptions, GridApi} from 'ag-grid/main';
 export class GridComponent {
 
      @Output() rowselected:EventEmitter<any> = new EventEmitter();
-     @Output() ready:EventEmitter<GridApi> = new EventEmitter();
+     @Output() ready:EventEmitter<any> = new EventEmitter();
      @Output() valuechange:EventEmitter<any> = new EventEmitter();
      @Input() width:number;
      @Input() height:number;
      @Input() rowData:any;
      @Input() columnDefs:Array<any>;
 
+     private _api:GridApi;
 
      constructor() {
+          console.log('grid - constructor');
      }
 
-     private onRowSelected($event):void {
+     onRowSelected($event):void {
+          if ($event.node.selected && this._api) {
+               let floatingRows:Array<any> = this.filterRowData($event.node.id, true);
+               this._api.setFloatingTopRowData(floatingRows);
+          } else {
+               this._api.setFloatingTopRowData([]);
+
+          }
           this.rowselected.emit($event.node);
      }
 
-     private onCellValueChanged($event):void {
+     onCellValueChanged($event) {
           this.valuechange.emit($event);
      }
 
-     private onGridReady($event):void {
+     onGridReady($event) {
+          console.log('grid - onGridReady');
+          this._api = $event.api;
           this.ready.emit($event);
      }
 
-     get height():number {
-          return window.innerHeight - 125;
+     get gridHeight():number {
+          return this.height ? this.height : window.innerHeight;
      }
 
      get gridOptions():GridOptions {
           return {
                showToolPanel: false,
-               enableFilter: false,
-               headerHeight: 22,
+               enableFilter: true,
+               rowHeight: 35,
                enableColResize: true,
-               enableSorting: true
+               enableSorting: true,
+               getRowStyle: function(params) {
+                    if (params.node.floating) {
+                         return {'font-weight': 'bold'}
+                    }
+               },
+               floatingTopRowData: []
           }
      }
+
+     filterRowData(index:number):Array<any> {
+          return this.rowData.filter(function(row:any, i:number) {
+               if (i === index) {
+                    return row;
+               }
+          });
+     }
+
 }
 

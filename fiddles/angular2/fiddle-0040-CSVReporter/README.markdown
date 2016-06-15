@@ -1,10 +1,9 @@
-fiddle-0040-AgGridCSVBinding
+fiddle-0040-CSVReporter
 ======
 
 ### Title
 
-fiddle-0040-AgGridCSVBinding
-
+CSV Reporter
 
 ### Creation Date
 
@@ -33,4 +32,4 @@ N/A
 
 ### Tags
 
-node, angular2, systemjs, es6-shim, reflect-metadata, rxjs, zone.js, concurrently, lite-server, typings
+node, angular2, systemjs, es6-shim, reflect-metadata, rxjs, ag-grid, ag-grid-ng2

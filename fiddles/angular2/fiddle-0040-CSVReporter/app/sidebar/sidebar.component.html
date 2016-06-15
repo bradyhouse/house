@@ -1,6 +1,40 @@
-<div class="sidebar-component" [ngStyle]="{'width': '100%', 'height': '100%'}">
-    <p *ngFor="let field of fields">
-        {{field}}
-    </p>
+<div class="sidebar-component"
+     *ngIf="isLoaded"
+     [ngStyle]="{'width': '100%', 'height': height + 'px'}">
+     <h4><ng-content select="[header]"></ng-content></h4>
+     <h4>Report:</h4>
+     <div class="form-group">
+          <select
+                  class="form-control"
+                  (change)="onReportSelectChange($event)">
+               <option
+                       *ngFor="let report of reports"
+                       [value]="report.url">
+                    {{report.name}}
+               </option>
+          </select>
+     </div>
+     <hr/>
+     <h4>Filters:</h4>
+     <div class="form-group" *ngFor="let field of fields">
+          <select-component
+               [field]="field"
+               [title]="field"
+               [items]="rows"
+               (change)="onSelectChange($event)"
+          >
+
+          </select-component>
+     </div>
+     <div class="form-group">
+          <a href="#"
+             class="btn btn-primary"
+             (click)="onClearClick($event)">Clear</a>
+          <a href="#"
+             class="btn btn-primary"
+             (click)="onExportClick($event)">Export</a>
+     </div>
+
+
 </div>
 
