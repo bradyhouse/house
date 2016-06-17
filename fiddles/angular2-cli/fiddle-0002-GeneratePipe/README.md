@@ -4,7 +4,7 @@ fiddle-0002-GeneratePipe
 
 ### Title
 
-fiddle-0002-GeneratePipe
+Generate Pipe
 
 
 ### Creation Date
@@ -24,7 +24,7 @@ Chicago, IL
 
 ### Description
 
-Another simple Angular 2 fiddle.
+The Angular2 CLI provides support for [generating other scaffolds](https://www.npmjs.com/package/angular-cli#generating-other-scaffolds).  This simple POC test out this functionality in order to see the files produced.
 
 
 ### Published Version Link
@@ -34,4 +34,4 @@ N/A
 
 ### Tags
 
-node, angular2, systemjs, es6-shim, reflect-metadata, rxjs, zone.js, concurrently, lite-server, typings
+node, angular2, angular-cli, generate, pipe

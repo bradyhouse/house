@@ -23,6 +23,9 @@ export class DataService {
         }, {
             url: 'report-b.csv',
             name: 'report-b'
+        }, {
+            url: 'report-c.csv',
+            name: 'report-c'
         }
     ];
 

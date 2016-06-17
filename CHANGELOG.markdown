@@ -1119,3 +1119,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     8.  Added [fiddles/node/fiddle-0010-ZeroMqPubSub](fiddles/node/fiddle-0010-ZeroMqPubSub) ~ [Issue 20](https://github.com/bradyhouse/house/issues/20)
     9.  Added [fiddles/node/fiddle-0011-ZeroMqReqRep](fiddles/node/fiddle-0011-ZeroMqReqRep) ~ [Issue 21](https://github.com/bradyhouse/house/issues/21)
     10. Added [fiddles/node/fiddle-0012-ZeroMqCluster](fiddles/node/fiddle-0012-ZeroMqCluster) ~ [Issue 26](https://github.com/bradyhouse/house/issues/26)
+
