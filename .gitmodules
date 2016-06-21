@@ -100,3 +100,12 @@
 [submodule "fiddles/aurelia/libs/aurelia-breeze-northwind"]
 	path = fiddles/aurelia/libs/aurelia-breeze-northwind
 	url = https://github.com/jdanyow/aurelia-breeze-northwind
+[submodule "fiddles/python/libs/coursera-dl"]
+	path = fiddles/python/libs/coursera-dl
+	url = https://github.com/coursera-dl/coursera-dl
+[submodule "fiddles/ember/libs/emberjs-essentials"]
+	path = fiddles/ember/libs/emberjs-essentials
+	url = https://github.com/suchitpuri/emberjs-essentials
+[submodule "fiddles/ember/libs/broccoli"]
+	path = fiddles/ember/libs/broccoli
+	url = https://github.com/broccolijs/broccoli

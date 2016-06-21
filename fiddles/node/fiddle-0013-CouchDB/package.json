@@ -1,0 +1,21 @@
+{
+  "name": "fiddle-0013-CouchDB",
+  "version": "0.0.0",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0013-CouchDB",
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony app.js"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "cheerio": "^0.20.0",
+    "file": "^0.2.2",
+    "request": "^2.72.0"
+  }
+}
