@@ -1,0 +1,19 @@
+{
+  "name": "fiddle-0014-Express",
+  "version": "0.0.0",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0014-Express",
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "server": "node --harmony server.js",
+    "express": "node --harmony server-express.js"
+  },
+  "dependencies": {
+    "express": "~3.3.5"
+  }
+}

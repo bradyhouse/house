@@ -1120,16 +1120,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     9.  Added [fiddles/node/fiddle-0011-ZeroMqReqRep](fiddles/node/fiddle-0011-ZeroMqReqRep) ~ [Issue 21](https://github.com/bradyhouse/house/issues/21)
     10. Added [fiddles/node/fiddle-0012-ZeroMqCluster](fiddles/node/fiddle-0012-ZeroMqCluster) ~ [Issue 26](https://github.com/bradyhouse/house/issues/26)
     11. Added [fiddles/node/fiddle-0013-CouchDB](fiddles/node/fiddle-0013-CouchDB) ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
+    12. Added [fiddles/node/fiddle-0014-Express](fiddles/node/fiddle-0014-Express) ~ [Issue 36](https://github.com/bradyhouse/house/issues/36)
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0002-Inheritance](fiddles/ember/fiddle-0002-Inheritance) ~ [Issue 32](https://github.com/bradyhouse/house/issues/32)
     2.  Started [fiddles/ember/fiddle-0003-LifeCycle](fiddles/ember/fiddle-0003-LifeCycle) ~ [Issue 24](https://github.com/bradyhouse/house/issues/24)
     3.  Added dependency (submodule) to [emberjs-essentials](https://github.com/suchitpuri/emberjs-essentials)
     4.  Added dependency (submodule) to [broccollijs](https://github.com/broccolijs/broccoli)
+    5.  Added [fiddles/ember/fiddle-0004-Mixins](fiddles/ember/fiddle-0004-Mixins) ~ [Issue 35](https://github.com/bradyhouse/house/issues/35)
 
 * **Python**
     1.  Added dependency (submodule) to [coursera-dl](https://github.com/coursera-dl/coursera-dl)
     2.  Added [fiddles/python/fiddle-0009-CourseraDL](fiddles/python/fiddle-0009-CourseraDL) ~ [Issue 33](https://github.com/bradyhouse/house/issues/33)
+
 
 
 

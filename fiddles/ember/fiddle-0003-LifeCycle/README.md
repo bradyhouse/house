@@ -1,12 +1,9 @@
 fiddle-0003-LifeCycle
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
-fiddle-0003-LifeCycle
+Ember Life Cycle
 
 
 ### Creation Date

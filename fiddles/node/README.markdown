@@ -28,8 +28,6 @@ As a starting point, I will be working through Jim R. Wilson book [Node.js the R
 
 #### Create
 
-_TBW_
-
     fiddle.sh "create" "node" "fiddle-####-<name>"
 
 where:

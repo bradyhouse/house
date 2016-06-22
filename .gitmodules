@@ -109,3 +109,6 @@
 [submodule "fiddles/ember/libs/broccoli"]
 	path = fiddles/ember/libs/broccoli
 	url = https://github.com/broccolijs/broccoli
+[submodule "fiddles/angular2/libs/ng2-bootstrap"]
+	path = fiddles/angular2/libs/ng2-bootstrap
+	url = https://github.com/valor-software/ng2-bootstrap

@@ -1,7 +1,7 @@
 {
   "name": "responsive-modal-popup",
   "version": "1.0.0",
-  "description": "fiddle-0039-ResponsiveModalPopUp",
+  "description": "fiddle",
   "main": "systemjs.config.js",
   "scripts": {
     "start": "live-server"
@@ -11,18 +11,20 @@
   "devDependencies": {
     "ag-grid": "^4.2.6",
     "ag-grid-ng2": "^4.2.0",
-    "angular-cli": "^1.0.0-beta.5",
-    "angular2-in-memory-web-api": "0.0.7",
+    "angular-cli": "^1.0.0-beta.6",
+    "angular2-in-memory-web-api": "0.0.12",
     "mdi": "^1.6.50"
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.1",
-    "@angular/compiler": "2.0.0-rc.1",
-    "@angular/core": "2.0.0-rc.1",
-    "@angular/http": "2.0.0-rc.1",
-    "@angular/platform-browser": "2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
-    "@angular/router": "2.0.0-rc.1",
+    "@angular/common": "2.0.0-rc.2",
+    "@angular/compiler": "2.0.0-rc.2",
+    "@angular/core": "2.0.0-rc.2",
+    "@angular/http": "2.0.0-rc.2",
+    "@angular/platform-browser": "2.0.0-rc.2",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.2",
+    "@angular/router": "2.0.0-rc.2",
+    "moment": "^2.13.0",
+    "ng2-bootstrap": "^1.0.17",
     "systemjs": "0.19.26"
   }
 }
