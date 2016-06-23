@@ -17,7 +17,7 @@
 
 function emberStart() {
     groupLog "emberStart";
-    _port=1841
+    _port=1234
     if [[ $? -eq 1 ]]
     then
         _port=$1;

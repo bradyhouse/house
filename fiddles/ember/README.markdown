@@ -69,6 +69,11 @@ _TBW_
 
 #### Special Topics
 
+##### Ember Prototype Extensions
+
+*   [Array Extensions](http://emberjs.com/api/classes/Ember.Array.html)
+*   [String Extensions](http://emberjs.com/api/classes/Ember.String.html)
+
 ##### Examples
 
 *   [EmberJS Essentials](https://github.com/suchitpuri/emberjs-essentials)

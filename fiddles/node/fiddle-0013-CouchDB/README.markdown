@@ -24,8 +24,8 @@ Chicago, IL
 ### Description
 
 _Where in the world does all the npm metadata reside???_  [couchDB](https://couchdb.apache.org/).  This POC explores 
-couchDB CRUD sounds interesting. Note, scripts developed in this fiddle are based on the couchDB scripts discussed/
-presented by Jim R. Wilson in chapter 5 of [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
+how to create, populate and query an instance of couchDB. The scripts developed in this POC are based on the couchDB 
+scripts presented in chapter 5 of [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
 
 
 ### Procedure
