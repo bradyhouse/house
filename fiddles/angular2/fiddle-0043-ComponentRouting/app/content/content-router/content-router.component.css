@@ -1,4 +1,9 @@
 .content-router H1 {
     float: right;
-    padding-right: 0.625rem;
+    padding-right: 5.625rem;
+}
+
+.content-router H2 {
+    float: left;
+    padding-left: 5.625rem;
 }

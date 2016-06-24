@@ -1,12 +1,22 @@
 import { RouterConfig }          from '@angular/router';
-import { ContentComponent }     from './content.component';
+import { ContentComponent } from './content.component';
+import { ContentRouterComponent } from './content-router/content-router.component';
+
 
 export const ContentRoutes: RouterConfig = [
     {
         path: '',
-        redirectTo: '/reports',
+        redirectTo: '/content/0',
         terminal: true
     },
-    { path: 'reports', component: ContentComponent },
-    { path: 'reports/:id', component: ContentComponent }
+    {
+        path: 'content',
+        component: ContentComponent,
+        children: [
+            {
+                path: ':id',
+                component: ContentRouterComponent
+            }
+        ]
+    }
 ];

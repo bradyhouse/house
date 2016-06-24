@@ -9,15 +9,15 @@ declare let jQuery:any;
 
 
 @Component({
-  selector: 'content-router',
-    templateUrl: './app/content/content-router/content-router.component.html',
-    styleUrls: ['./app/content/content-router/content-router.component.css']
+    selector: 'content-detail',
+    templateUrl: './app/content/content-detail/content-detail.component.html',
+    styleUrls: ['./app/content/content-detail/content-detail.component.css']
     providers: []
 })
-export class ContentRouterComponent extends Base {
+export class ContentDetailComponent extends Base {
     text: string;
     color: string;
-    url: string;
+
     private _width:number;
     private _height:number;
 
@@ -40,7 +40,6 @@ export class ContentRouterComponent extends Base {
                         console.log('report.id = ' + report.id);
                         this.text = report.text;
                         this.color = report.color;
-                        this.url = window.location;
                         this._dataService.selectedReportId = report.id;
                     }
                 })
