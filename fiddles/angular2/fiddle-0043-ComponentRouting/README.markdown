@@ -27,6 +27,12 @@ A POC consisting of N routes that is (a) driven by a `select` control residing i
 component;  (b) updates  the contents loaded in a second component.
 
 
+### Procedure
+
+1.  install dependencies `npm install`
+2.  start `npm start`
+
+
 ### Published Version Link
 
 [http://embed.plnkr.co/CZbenz/](http://embed.plnkr.co/CZbenz/)
@@ -34,4 +40,4 @@ component;  (b) updates  the contents loaded in a second component.
 
 ### Tags
 
-angular2, router, router_directives, activatedroute, navigate
+angular2, router, router_directives, activatedroute, navigate, live-server
