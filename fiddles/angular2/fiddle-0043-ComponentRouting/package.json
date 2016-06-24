@@ -23,12 +23,13 @@
     "@angular/platform-browser": "2.0.0-rc.2",
     "@angular/platform-browser-dynamic": "2.0.0-rc.2",
     "@angular/router": "2.0.0-rc.2",
+    "exists-sync": "0.0.3",
+    "live-server": "^1.0.0",
     "moment": "^2.13.0",
-    "systemjs": "0.19.26",
-    "through": "^2.3.8",
-    "walk-sync": "^0.2.6",
     "ng2-bootstrap": "^1.0.17",
     "systemjs": "0.19.26",
-    "live-server": "^1.0.0"
+    "through": "^2.3.8",
+    "walk-sync": "^0.2.6"
   }
 }
+

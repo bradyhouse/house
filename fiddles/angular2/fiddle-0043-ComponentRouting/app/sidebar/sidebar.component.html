@@ -1,0 +1,19 @@
+<div class="sidebar-component"
+     [ngStyle]="{'width': '100%', 'height': height + 'px'}">
+    <h4><ng-content select="[header]"></ng-content></h4>
+    <div class="form-group">
+        <select
+                class="form-control"
+                (change)="onReportSelectChange($event)"
+                >
+
+            <option *ngFor="let report of reports"
+                    [selected]="isSelected(report.id)"
+                    [value]="report.id">
+                {{report.id}}
+            </option>
+        </select>
+    </div>
+
+</div>
+

@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.1",
-    "name": "fiddle-0039-responsive-modal-popup"
+    "name": "fiddle"
   },
   "apps": [
     {"main": "app/main.ts"}

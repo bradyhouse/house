@@ -1103,6 +1103,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/angular2/fiddle-0039-ResponsiveModalPopUp](fiddles/angular2/fiddle-0039-ResponsiveModalPopUp) ~ [Issue 29](https://github.com/bradyhouse/house/issues/29)
     3.  Added [fiddles/angular2/fiddle-0040-CSVReporter](fiddles/angular2/fiddle-0040-CSVReporter) ~ [Issue 30](https://github.com/bradyhouse/house/issues/30)
     4.  Added [fiddles/angular2/fiddle-0041-JqueryCSV](fiddles/angular2/fiddle-0041-JqueryCSV) ~ [Issue 31](https://github.com/bradyhouse/house/issues/31)
+    5.  Started [fiddles/angular2/fiddle-0042-DeepLinks](fiddles/angular2/fiddle-0042-DeepLinks) ~ [Issue 42](https://github.com/bradyhouse/house/issues/42)
+    6.  Added [fiddles/angular2/fiddle-0043-ComponentRouting](fiddles/angular2/fiddle-0043-ComponentRouting) ~ [Issue 43](https://github.com/bradyhouse/house/issues/43)
 
 * **Angular2 CLI**
     1.  Added [fiddles/angular2-cli/fiddle-0001-GenerateRoute](fiddles/angular2-cli/fiddle-0001-GenerateRoute) ~ [Issue 22](https://github.com/bradyhouse/house/issues/22)
@@ -1122,6 +1124,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     11. Added [fiddles/node/fiddle-0013-CouchDB](fiddles/node/fiddle-0013-CouchDB) ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
     12. Added [fiddles/node/fiddle-0014-Express](fiddles/node/fiddle-0014-Express) ~ [Issue 36](https://github.com/bradyhouse/house/issues/36)
     13. Added [fiddles/node/fiddle-0015-RESTService](fiddles/node/fiddle-0015-RESTService) ~ [Issue 37](https://github.com/bradyhouse/house/issues/37)
+    14. Added [fiddles/node/fiddle-0016-Redis](fiddles/node/fiddle-0016-Redis) ~ [Issue 41](https://github.com/bradyhouse/house/issues/41)
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0002-Inheritance](fiddles/ember/fiddle-0002-Inheritance) ~ [Issue 32](https://github.com/bradyhouse/house/issues/32)
@@ -1136,3 +1139,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Python**
     1.  Added dependency (submodule) to [coursera-dl](https://github.com/coursera-dl/coursera-dl)
     2.  Added [fiddles/python/fiddle-0009-CourseraDL](fiddles/python/fiddle-0009-CourseraDL) ~ [Issue 33](https://github.com/bradyhouse/house/issues/33)
+
+
+

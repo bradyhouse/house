@@ -61,7 +61,8 @@ _TBW_
 ##### Component Router
 
 *   [Angular 2 Weekly meeting notes](https://goo.gl/JKeMe5)
-*   [Rob Eisenberg: New Router Talk @ ng-europe](https://goo.gl/zGatYQ)
+*   [The new Router for AngularJS by Rob Eisenberg at ng-europe 2014](https://www.youtube.com/watch?v=h1P_Vh4gSQY)
+*   [New Angular Router: Bridging the Gap Between 1.x and 2](https://www.youtube.com/watch?v=DGT3Htcqygk)
 *   [Chris Sevilleja’s ng-vegas presentation on the new router](https://goo.gl/Ua9aJJ)
 *   [Good blog entry on the new router](http://goo.gl/dd8922)
 *   [Good slide deck on the router](http://goo.gl/zZcVRq)
