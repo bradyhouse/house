@@ -4,7 +4,7 @@
   "description": "fiddle",
   "main": "systemjs.config.js",
   "scripts": {
-    "start": "live-server"
+    "start": "./live-server.js"
   },
   "author": "bradyhouse@gmail.com",
   "license": "MIT",

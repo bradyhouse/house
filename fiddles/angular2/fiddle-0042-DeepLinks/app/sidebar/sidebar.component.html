@@ -6,33 +6,35 @@
      <div class="form-group">
           <select
                   class="form-control"
-                  (change)="onReportSelectChange($event)">
+                  (change)="onUserSelectReport($event)">
                <option
                        *ngFor="let report of reports"
+                       [selected]="isSelected(report.name)"
                        [value]="report.url">
                     {{report.name}}
                </option>
           </select>
      </div>
-     <hr/>
      <h4>Filters:</h4>
      <div class="form-group" *ngFor="let field of fields">
           <select-component
                [field]="field"
                [title]="field"
                [items]="rows"
+               [selectedItems]="selectedValues"
                (change)="onSelectChange($event)"
           >
 
           </select-component>
      </div>
+    <h4></h4>
      <div class="form-group">
-          <a href="#"
+          <input type="button"
              class="btn btn-primary"
-             (click)="onClearClick($event)">Clear</a>
-          <a href="#"
+             (click)="onClearClick($event)" value="Clear" />
+          <input type="button"
              class="btn btn-primary"
-             (click)="onExportClick($event)">Export</a>
+             (click)="onExportClick($event)" value="Export" />
      </div>
 
 

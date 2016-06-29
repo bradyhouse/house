@@ -60,6 +60,7 @@ coverage/*
 libpeerconnection.log
 npm-debug.log
 testem.log
+fiddles/angular2/fiddle-0*/app-example
 
 # under construction
 fiddles/aurelia/fiddle-0037-ModalPopUp/*
@@ -78,7 +79,10 @@ fiddles/python/fiddle-0009-*/algs4partII-007/
 fiddles/python/fiddle-0009-*/.netrc
 fiddles/python/fiddle-0009-*/*.json
 
+
 # node fiddle 13 ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
 
 fiddles/node/fiddle-0013-*/cache/
 fiddles/node/fiddle-0013-*/*.bz2
+
+# under construction

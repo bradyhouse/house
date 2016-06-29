@@ -1,12 +1,5 @@
-<div class="content-component" *ngIf="isLoaded"
+<div class="content-component"
      (window:resize)="onWindowResize()"
      [ngStyle]="{'width': 'width' + px, 'height': height + 'px' }">
-    <grid-component
-            [width]="gridWidth"
-            [height]="gridHeight"
-            [columnDefs]="columnDefs"
-            [rowData]="rowData"
-            (ready)="onReady($event)"
-    >
-    </grid-component>
+    <router-outlet></router-outlet>
 </div>

@@ -1,6 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Observable, Injectable} from 'rxjs/Observable';
-import {Observer} from 'rxjs/Observer';
+import { Injectable }             from '@angular/core';
+import {Observable}               from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 import 'jquery';
@@ -11,12 +10,11 @@ declare let jQuery:any;
 @Injectable()
 export class DataService {
 
-
-    public responseChange$:Observable<any>;
-    public errorChange$:Observable<any>;
-    public rowFiltersChange$:Observable<any>;
-
-    public reports:Array<{url:string, name:string}> = [
+    selectedReportIdChange$:Observable<any>;
+    responseChange$:Observable<any>;
+    errorChange$:Observable<any>;
+    rowFiltersChange$:Observable<any>;
+    reports:Array<{url:string, name:string}> = [
         {
             url: 'report-a.csv',
             name: 'report-a'
@@ -26,22 +24,20 @@ export class DataService {
         }
     ];
 
+    private _requestLock:boolean = false;
+    private _selectedReportId:string;
+    private _selectedReportIdObserver:Observer<any>;
     private _rowFilters:Array<any>;
     private _rowFiltersObserver:Observer<any>;
-
     private _response:any;
     private _responseObserver:Observer<any>;
-
     private _error:any;
     private _errorObserver:Observer<any>;
-
     private _gridApi:any;
-
-    private  _json:any = {
+    private _json:any = {
         cols: [],
         data: []
     };
-
     private _filteredJson:any = {
         cols: [],
         data: []
@@ -55,7 +51,7 @@ export class DataService {
         return this._gridApi;
     }
 
-    set rowFitlers(filters:Array<any>) {
+    set rowFilters(filters:Array<any>) {
         this._rowFilters = filters;
         if (this._rowFiltersObserver) {
             this._rowFiltersObserver.next(filters);
@@ -91,8 +87,17 @@ export class DataService {
         return this._error;
     }
 
+    set selectedReportId(id:string) {
+        if (id != this._selectedReportId) {
+            this._selectedReportId = id;
+            this.triggerReportIdObserver();
+        }
+    }
+
     constructor() {
+
         this._rowFilters = [];
+
         this.responseChange$ = new Observable(
             (observer:any) => this._responseObserver = observer
         ).share();
@@ -105,39 +110,47 @@ export class DataService {
             (observer:any) => this._rowFiltersObserver = observer
         ).share();
 
-        this.request(this.reports[0].url);
+        this.selectedReportIdChange$ = new Observable(
+            (observer:any) => this._selectedReportIdObserver = observer
+        ).share();
 
     }
 
-    request(url) {
+    request(url, filters:any = null) {
         let self:DataService = this,
             req:any = new XMLHttpRequest(),
             data:any;
 
-        if (this._gridApi) {
-            this._gridApi.showLoadingOverlay();
-        }
-
-        req.open('GET', url);
-
-        req.onload = () => {
-            if (req.status == 200) {
-                window.setTimeout(() => {
-                    data = self.addFieldHeader(self, req.responseText.trimLeft().trimRight());
-                    self._json.data = jQuery.csv.toObjects(data);
-                    self.response = self._json;
-                }, 1000);
-            } else {
-                self.error = req.statusText;
+        if (!this._requestLock) {
+            console.log('data.service > request');
+            if (this._gridApi) {
+                this._gridApi.showLoadingOverlay();
             }
+            this._requestLock = true;
+            req.open('GET', url);
+            req.onload = () => {
+                if (req.status == 200) {
+                    window.setTimeout(() => {
+                        data = self.addFieldHeader(self, req.responseText.trimLeft().trimRight());
+                        self._json.data = jQuery.csv.toObjects(data);
+                        self.response = self._json;
+                        if (filters) {
+                            self.addFilter(filters);
+                        }
+                        this._requestLock = false;
+                    }, 1000);
+                } else {
+                    self.error = req.statusText;
+                }
+            };
+            req.onerror = () => {
+                self.error = "Unknown Error";
+            };
+            req.send();
         }
-        req.onerror = () => {
-            self.error = "Unknown Error";
-        }
-        req.send();
     }
 
-    addFilter(filter:any) {
+    addFilter(filter:{field:string, values:Array<string>}) {
         this._rowFilters.push(filter);
         if (this._rowFiltersObserver) {
             this._rowFiltersObserver.next(this._rowFilters);
@@ -149,6 +162,7 @@ export class DataService {
 
     clearFilter() {
         this.response = this._json;
+        this._rowFilters = [];
     }
 
     applyFilter() {
@@ -174,6 +188,33 @@ export class DataService {
             self.response = self._json;
         }
 
+    }
+
+    export() {
+        if (this._gridApi) {
+            let params = {
+                skipHeader: false,
+                skipFooters: false,
+                skipGroups: false,
+                allColumns: true,
+                onlySelected: false,
+                suppressQuotes: true,
+                fileName: 'report.csv',
+                columnSeparator: ','
+            };
+            this._gridApi.exportDataAsCsv(params);
+        }
+    }
+
+    reportNametoUrl(name:string):string {
+        let report:any = this.reports.filter((report:any) => {
+            return report.name === name;
+        }).pop();
+        if (report) {
+            return report.url;
+        } else {
+            return '';
+        }
     }
 
     private parseFieldCount(csv:any):number {
@@ -228,21 +269,10 @@ export class DataService {
         return header + '\n' + csv;
     }
 
-    export() {
-        if (this._gridApi) {
-            let params = {
-                skipHeader: false,
-                skipFooters: false,
-                skipGroups: false,
-                allColumns: true,
-                onlySelected: false,
-                suppressQuotes: true,
-                fileName: 'report.csv',
-                columnSeparator: ','
-            };
-            this._gridApi.exportDataAsCsv(params);
+    private triggerReportIdObserver() {
+        if (this._selectedReportIdObserver) {
+            this._selectedReportIdObserver.next(this._selectedReportId);
         }
     }
-
 
 }

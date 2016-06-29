@@ -5,6 +5,7 @@
           (change)="onSelectChange($event)">
           <option
                *ngFor="let value of values | fieldValues:field"
+               [selected]="isSelected(value)"
                [value]="value">
                {{value}}
           </option>

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, Injectable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
@@ -11,7 +11,7 @@ declare let jQuery:any;
 @Injectable()
 export class DataService {
 
-    public reports:Array<{url:string, name:string}> = [
+    public reports:Array<{id:string, color:string, text:string}> = [
         {
             id: 'red',
             color: 'red',

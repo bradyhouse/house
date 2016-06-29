@@ -20,10 +20,6 @@ export class GridComponent {
 
      private _api:GridApi;
 
-     constructor() {
-          console.log('grid - constructor');
-     }
-
      onRowSelected($event):void {
           if ($event.node.selected && this._api) {
                let floatingRows:Array<any> = this.filterRowData($event.node.id, true);
@@ -40,7 +36,6 @@ export class GridComponent {
      }
 
      onGridReady($event) {
-          console.log('grid - onGridReady');
           this._api = $event.api;
           this.ready.emit($event);
      }

@@ -1,31 +1,29 @@
-import { Component } from '@angular/core';
+import { Component }            from '@angular/core';
 import { ActivatedRoute }       from '@angular/router';
-import { Observable }                   from 'rxjs/Observable';
-import { DataService } from '../../global/data.service';
-import { Base } from '../../base';
+import { Observable }           from 'rxjs/Observable';
+import { DataService }          from '../../global/data.service';
+import { Base }                 from '../../base';
 import 'jquery';
 
 declare let jQuery:any;
 
 
 @Component({
-  selector: 'content-router',
+    selector: 'content-router',
     templateUrl: './app/content/content-router/content-router.component.html',
-    styleUrls: ['./app/content/content-router/content-router.component.css']
+    styleUrls: ['./app/content/content-router/content-router.component.css'],
     providers: []
 })
 export class ContentRouterComponent extends Base {
-    text: string;
-    color: string;
-    url: string;
+    text:string;
+    color:string;
+    url:string;
     private _width:number;
     private _height:number;
 
 
-    constructor(
-        private _route: ActivatedRoute,
-        private _dataService: DataService
-    ) {
+    constructor(private _route:ActivatedRoute,
+                private _dataService:DataService) {
         super();
 
         this.subscriptions.push(
