@@ -1103,7 +1103,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/angular2/fiddle-0039-ResponsiveModalPopUp](fiddles/angular2/fiddle-0039-ResponsiveModalPopUp) ~ [Issue 29](https://github.com/bradyhouse/house/issues/29)
     3.  Added [fiddles/angular2/fiddle-0040-CSVReporter](fiddles/angular2/fiddle-0040-CSVReporter) ~ [Issue 30](https://github.com/bradyhouse/house/issues/30)
     4.  Added [fiddles/angular2/fiddle-0041-JqueryCSV](fiddles/angular2/fiddle-0041-JqueryCSV) ~ [Issue 31](https://github.com/bradyhouse/house/issues/31)
-    5.  Started [fiddles/angular2/fiddle-0042-DeepLinks](fiddles/angular2/fiddle-0042-DeepLinks) ~ [Issue 42](https://github.com/bradyhouse/house/issues/42)
+    5.  Added [fiddles/angular2/fiddle-0042-DeepLinks](fiddles/angular2/fiddle-0042-DeepLinks) ~ [Issue 42](https://github.com/bradyhouse/house/issues/42)
     6.  Added [fiddles/angular2/fiddle-0043-ComponentRouting](fiddles/angular2/fiddle-0043-ComponentRouting) ~ [Issue 43](https://github.com/bradyhouse/house/issues/43)
 
 * **Angular2 CLI**
