@@ -1,9 +1,26 @@
 #!/usr/bin/env node --harmony
 
-"use strict";
+'use strict';
+const
+  express = require('express'),
+  redisClient = require('redis').createClient(),
+  RedisStore = require('connect-redis')(express),
+  app = express();
 
-const fs = require('fs');
-fs.watch('target.txt', function() {
-    console.log("File 'target.txt' just changed!");
+app.use(express.logger('dev'));
+app.use(express.cookieParser());
+app.use(express.session({
+  secret: 'unguessable',
+  store: new RedisStore({
+    client: redisClient
+  })
+}));
+
+app.get('/api/:name', function (req, res) {
+  res.json(200, {"hello": req.params.name});
 });
-console.log("Now watching target.txt for changes...");
+
+app.listen(3000, function () {
+  console.log("app.js started");
+});
+

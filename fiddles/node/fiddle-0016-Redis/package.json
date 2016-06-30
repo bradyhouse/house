@@ -1,18 +1,14 @@
 {
-  "name": "fiddle-0016-Redis",
-  "version": "0.0.0",
-  "description": "http://github.com/bradyhouse/house/node/fiddle-0016-Redis",
-  "repository": "",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
+  "name": "fiddle",
+  "version": "0.1.0",
+  "description": "#16 ~ redis",
   "author": "bradyhouse@gmail.com",
-  "license": "MIT",
-  "private": true,
   "scripts": {
-    "start": "node --harmony app.js"
+    "start": "node --harmony ./app.js"
   },
   "dependencies": {
-
+    "redis": "~0.8.5",
+    "connect-redis": "~1.4.5",
+    "express": "~3.4.0"
   }
 }

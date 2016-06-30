@@ -6,11 +6,16 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
 export const ContentRoutes:RouterConfig = [
     {
         path: '',
-        redirectTo: '/content/?id=report-a.csv',
+        redirectTo: '/app/',
         terminal: true
     },
     {
-        path: 'content',
+        path: 'app',
+        redirectTo: '/app/?id=report-a.csv',
+        terminal: true
+    },
+    {
+        path: 'app',
         component: ContentComponent,
         children: [
             {
