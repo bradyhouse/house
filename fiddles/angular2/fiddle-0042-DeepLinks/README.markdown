@@ -25,7 +25,8 @@ Deep Links
 
 This POC is a Fork of [Angular 2 Fiddle #40](https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0040-CSVReporter).  It extends the original design by introducing
 `deep links` for each report view.  In addition, it provides deep linking to specific field filters.  In addition,
-it uses a routing strategy that relies on QueryString parameter instead of path fragments making it [Jekyl](https://jekyllrb.com/).
+it uses a routing strategy that relies on QueryString parameter instead of path fragments making it [Jekyl](https://jekyllrb.com/)
+compatible.  In other words, the version published on [bradyhouse.github.io](bradyhouse.github.io) (link below) actually works.
 
 
 ### Published Version Link
