@@ -8,12 +8,12 @@ Deep Links
 
 ### Creation Date
 
-06-29-16
+06-30-16
 
 
 ### Location
 
-Odessa, Ukraine
+[Odessa, Ukraine](https://www.google.com.ua/maps/@46.5926263,30.7875891,14z?hl=en)
 
 
 ### Issue
@@ -31,7 +31,7 @@ it uses a routing strategy that relies on QueryString parameter instead of path 
 ### Published Version Link
 
 *   [bradyhouse.github.io > Angular 2 > #42](http://bradyhouse.github.io/angular2/fiddle-0042-DeepLinks)
-*   [plnkr.co](http://embed.plnkr.co/0J1pCu/)
+*   [plnkr.co](http://embed.plnkr.co/pfhjOP/)
 
 
 ### Tags

@@ -82,9 +82,9 @@ export class SidebarComponent extends Base {
         this.subscribeToDataResponse(true);
         if (this._selectedReportUrl !== $event.target.value) {
             this._selectedReportUrl = $event.target.value;
-            //this._router.navigate(['app'], <RouteSegment>{queryParams: {
+            //this._router.navigate([''], <RouteSegment>{queryParams: {
             //}});
-            this._router.navigate(['app'], <RouteSegment>{queryParams: {
+            this._router.navigate([''], <RouteSegment>{queryParams: {
                 id: $event.target.value
             }});
         }
@@ -135,10 +135,10 @@ export class SidebarComponent extends Base {
         if ($event.field && $event.value) {
             this._dataService.rowFilters = [];
             this._selectedFieldValues = [];
-            this._router.navigate(['app'], <RouteSegment>{
+            this._router.navigate([''], <RouteSegment>{
                 queryParams: {}
             });
-            this._router.navigate(['app'], <RouteSegment>{
+            this._router.navigate([''], <RouteSegment>{
                 queryParams: {
                     id: this._selectedReportUrl,
                     field: $event.field,
@@ -172,9 +172,9 @@ export class SidebarComponent extends Base {
             this._selectedFieldValues = [];
             window.setTimeout(() => {
                 this.rows = this._dataService.response.data;
-                this._router.navigate(['app'], <RouteSegment>{queryParams: {
+                this._router.navigate([''], <RouteSegment>{queryParams: {
                 }});
-                this._router.navigate(['app'], <RouteSegment>{queryParams: {
+                this._router.navigate([''], <RouteSegment>{queryParams: {
                     id: this._selectedReportUrl
                 }});
             }, 500);

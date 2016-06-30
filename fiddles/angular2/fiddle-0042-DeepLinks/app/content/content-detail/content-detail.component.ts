@@ -66,9 +66,6 @@ export class ContentDetailComponent extends Base {
     }
 
 
-
-
-
     onWindowResize() {
         this._width = jQuery('.content-component').width();
         this._height = jQuery('.sidebar-component').height();
