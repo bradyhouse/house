@@ -52,14 +52,6 @@ export class SidebarComponent extends Base {
                 (name:any) => this.onSelectedReportChange(name)
             ));
 
-
-        /*this.subscriptions.push(
-            this._router
-                .routerState
-                .queryParams
-                .subscribe(params => this.onRouteQueryParamsChange(params)
-                )); */
-
         this.subscriptions.push(
             this._route
                 .params

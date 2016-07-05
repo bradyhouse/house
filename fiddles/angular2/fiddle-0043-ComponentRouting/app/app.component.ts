@@ -13,5 +13,7 @@ import { DataService } from './global/data.service';
     providers: [DataService]
 })
 export class AppComponent {
-
+    constructor() {
+        document.body.style.background = '#ffffff';
+    }
 }
