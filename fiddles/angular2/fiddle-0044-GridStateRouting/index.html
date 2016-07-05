@@ -4,25 +4,19 @@
     <!-- Set the base href. THIS REQUIRED FOR ANGULAR2 ROUTING -->
 
     <script>document.write('<base href="' + document.location + '" />');</script>
-    <title>fiddle-0042-DeepLinks</title>
+    <title>Angular 2 - Deep Links</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="http://github/bradyhouse/house/fiddles/angular2/fiddle-0042-DeepLinks">
+    <meta name="description" content="http://github/bradyhouse/house/fiddles/angular2/fiddle-0044-GridStateRouting">
     <meta name="author" content="bradyhouse@gmail.com">
-    <!--<link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>-->
     <link rel="stylesheet" href="style.css">
     <script src="images.js"></script>
-
-
-</head>
-<body>
     <script>
         /**
          * NOTE - THIS MESS IS NECESSARY TO INSURE PLNKR.CO DOESN'T GENERATE A 504 ERROR WHEN IN PREVIEW MODE.  INSTEAD
          * A STATIC IMAGE OF THE RENDERED RESULT IS DISPLAYED.
          */
-        if (window === window.top || (window.innerWidth > 300)) {
-            console.log(window.innerHeight);
+        if (window === window.top || (window.innerHeight > 300)) {
             document.write('<script src="https://npmcdn.com/es6-shim@0.35.0/es6-shim.min.js"><\/script>');
             document.write('<script src="https://npmcdn.com/zone.js@0.6.12?main=browser"><\/script>');
             document.write('<script src="https://npmcdn.com/reflect-metadata@0.1.3"><\/script>');
@@ -30,18 +24,20 @@
             document.write('<link rel="stylesheet" href="https://npmcdn.com/ag-grid@4.2.6/dist/styles/ag-grid.css"\/>');
             document.write('<link rel="stylesheet" href="https://npmcdn.com/ag-grid@4.2.6/dist/styles/theme-material.css"\/>');
             document.write('<script src="systemjs.config.js"><\/script>');
-            document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0042-DeepLinks" target="_blank"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="'+ images.githubLink + '" alt="Fork me on GitHub"><\/a>');
-            document.write('<app>loading ...<\/app>');
-            window.setTimeout(function() {
-                System.import('app').catch(function (err) {
-                    console.error(err);
-                });
-            },500);
-        } else {
-            window.setTimeout(function() {
-                document.write('<img style="z-index: 3000; width: '+ window.innerWidth + ';" src="'+ images.preview +'" >');
-            }, 500);
+            document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0044-GridStateRouting" target="_blank"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="'+ images.githubLink + '" alt="Fork me on GitHub"><\/a>');
         }
     </script>
+
+</head>
+<body>
+<app>loading...</app>
+<script>
+    window.setTimeout(function() {
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
+    },2000);
+</script>
+
 </body>
 </html>

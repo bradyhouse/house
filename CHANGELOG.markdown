@@ -1141,4 +1141,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/python/fiddle-0009-CourseraDL](fiddles/python/fiddle-0009-CourseraDL) ~ [Issue 33](https://github.com/bradyhouse/house/issues/33)
 
 
+### 201607010420
 
+* **Angular2**
+    1.  Added [fiddles/angular2/fiddle-0044-GridStateRouting](fiddles/angular2/fiddle-0044-GridStateRouting) ~ [Issue 44](https://github.com/bradyhouse/house/issues/44)
