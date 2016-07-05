@@ -18,7 +18,7 @@ Grid State Routing
 
 ### Issue
 
-[Issue 44](https://github.com/bradyhouse/house/issues/44)
+[Issue 45](https://github.com/bradyhouse/house/issues/45)
 
 
 ### Description

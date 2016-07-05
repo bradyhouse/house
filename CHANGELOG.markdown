@@ -1144,4 +1144,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201607010420
 
 * **Angular2**
-    1.  Added [fiddles/angular2/fiddle-0044-GridStateRouting](fiddles/angular2/fiddle-0044-GridStateRouting) ~ [Issue 44](https://github.com/bradyhouse/house/issues/44)
+    1.  Added [fiddles/angular2/fiddle-0044-GridStateRouting](fiddles/angular2/fiddle-0044-GridStateRouting) ~ [Issue 45](https://github.com/bradyhouse/house/issues/45)
