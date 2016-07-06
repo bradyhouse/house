@@ -38,16 +38,15 @@ export class DataService {
     private _selectedReportId:string;
 
     set selectedReportId(id:string) {
-        if (id != this._selectedReportId) {
-            this._selectedReportId = id;
-            this.triggerReportIdObserver();
-        }
+        console.log('data.service > set selectedReportId( ' + id + ' )');
+        this._selectedReportId = id;
+        this.triggerReportIdObserver();
     }
 
     private _selectedReportIdObserver:Observer<any>;
 
     private triggerReportIdObserver() {
-        console.log('triggerReportIdObserver');
+        console.log('data.service > triggerReportIdObserver');
         if (this._selectedReportIdObserver) {
             this._selectedReportIdObserver.next(this._selectedReportId);
         }

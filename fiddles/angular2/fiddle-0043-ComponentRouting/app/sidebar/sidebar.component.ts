@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, RouteSegment } from '@angular/router';
 import { DataService } from '../global/data.service';
 import { Observable } from 'rxjs/Observable';
 import { Base } from '../base';
@@ -30,42 +30,33 @@ export class SidebarComponent extends Base {
     }
 
     constructor(private _dataService:DataService,
-                private _route:ActivatedRoute,
                 private _router:Router) {
         super();
         this.subscriptions.push( _dataService.selectedReportIdChange$
             .subscribe(
                 (id:any) => this.onSelectedReportIdChange(id)
             ));
-
-        this.subscriptions.push(
-            this._route
-                .params
-                .subscribe(params => {
-                    let id = params['id'],
-                        report = this._dataService.reports.filter((report:any) => {
-                            return report.id === id;
-                        }).pop();
-
-                    if (report) {
-                        this._selectedReportId = report.id;
-                    }
-                })
-        );
         this._reports = this._dataService.reports;
     }
 
-
     isSelected(id:string):boolean {
-        return this._selectedReportId === id ? true : false;
+        return this.selectedReportId === id ? true : false;
     }
 
-    onReportSelectChange($event) {
-        this._router.navigate(['/content', $event.target.value]);
-
+    onSelectChange($event) {
+        console.log('sidebar.component > onSelectChange');
+        this._dataService.selectedReportId = $event.target.value;
     }
+
     onSelectedReportIdChange(id:string) {
+        console.log('sidebar.component > onSelectedReportIdChange');
         this._selectedReportId = id;
+        this._router.navigate(['']);
+        this._router.navigate([''], <RouteSegment>{
+            queryParams: {
+                id: id
+            }
+        });
     }
 
 }

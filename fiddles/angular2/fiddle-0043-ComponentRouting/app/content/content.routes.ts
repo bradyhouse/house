@@ -3,14 +3,19 @@ import { ContentComponent } from './content.component';
 import { ContentRouterComponent } from './content-router/content-router.component';
 
 
-export const ContentRoutes: RouterConfig = [
+export const ContentRoutes:RouterConfig = [
     {
         path: '',
-        redirectTo: '/content/red',
+        redirectTo: '/',
         terminal: true
     },
     {
-        path: 'content',
+        path: '',
+        redirectTo: '?id=green',
+        terminal: true
+    },
+    {
+        path: '',
         component: ContentComponent,
         children: [
             {

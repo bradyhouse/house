@@ -3,6 +3,7 @@ import { bootstrap }            from '@angular/platform-browser-dynamic';
 import { enableProdMode }       from '@angular/core';
 import { AppComponent }         from './app.component';
 import { APP_ROUTER_PROVIDERS } from './app.routes';
+import { DataService }          from './global/data.service';
 import * as meta from './meta';
 
 console.log("%c" + meta.consoleTag, 'font-style: italic; font-size: 20px;');
@@ -11,7 +12,8 @@ console.group();
 
 enableProdMode();
 bootstrap(AppComponent, [
-    APP_ROUTER_PROVIDERS
+    APP_ROUTER_PROVIDERS,
+    DataService
 ])
     .catch(err => console.error(err));
 

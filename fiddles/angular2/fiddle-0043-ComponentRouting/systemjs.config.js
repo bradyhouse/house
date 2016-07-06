@@ -3,9 +3,10 @@
   var ngVer = '@2.0.0-rc.3'; // lock in the angular package version; do not let it float to current!
   var routerVer = '@3.0.0-alpha.7'; // lock router version
   var formsVer = '@0.1.1'; // lock forms version
+
+
   var map = {
     'app': 'app',
-
     '@angular': 'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
     '@angular/router': 'https://npmcdn.com/@angular/router' + routerVer,
     '@angular/forms': 'https://npmcdn.com/@angular/forms' + formsVer,
@@ -14,6 +15,7 @@
     'ts': 'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
     'typescript': 'https://npmcdn.com/typescript@1.9.0-dev.20160409/lib/typescript.js',
     'jquery': 'https://npmcdn.com/jquery@3.0.0'
+
   };
 
   var packages = {
@@ -38,7 +40,9 @@
   });
 
   ngPackageNames.forEach(function (pkgName) {
+
     packages['@angular/' + pkgName] = {main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js'};
+
   });
 
   packages['@angular/router'] = {main: 'index.js', defaultExtension: 'js'};
@@ -50,6 +54,7 @@
     typescriptOptions: {
       emitDecoratorMetadata: true
     },
+
     map: map,
     packages: packages
   }
@@ -57,5 +62,4 @@
   System.config(config);
 
 })(this);
-
 

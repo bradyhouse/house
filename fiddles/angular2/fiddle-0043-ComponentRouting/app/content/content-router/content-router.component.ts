@@ -1,8 +1,8 @@
-import { Component }            from '@angular/core';
-import { ActivatedRoute }       from '@angular/router';
-import { Observable }           from 'rxjs/Observable';
-import { DataService }          from '../../global/data.service';
-import { Base }                 from '../../base';
+import { Component }                from '@angular/core';
+import { ActivatedRoute, Router }   from '@angular/router';
+import { Observable }               from 'rxjs/Observable';
+import { DataService }              from '../../global/data.service';
+import { Base }                     from '../../base';
 import 'jquery';
 
 declare let jQuery:any;
@@ -20,29 +20,38 @@ export class ContentRouterComponent extends Base {
     url:string;
     private _width:number;
     private _height:number;
+    private _defaultReportId:string = 'green';
 
 
-    constructor(private _route:ActivatedRoute,
+    constructor(private _router:Router,
                 private _dataService:DataService) {
         super();
 
         this.subscriptions.push(
-            this._route
-                .params
-                .subscribe(params => {
-                    let id = params['id'],
-                        report = this._dataService.reports.filter((report:any) => {
-                            return report.id === id;
-                        }).pop();
-                    if (report) {
-                        console.log('report.id = ' + report.id);
-                        this.text = report.text;
-                        this.color = report.color;
-                        this.url = window.location;
-                        this._dataService.selectedReportId = report.id;
-                    }
-                })
-        );
+            this._router
+                .routerState
+                .queryParams
+                .subscribe(params => this.onRouteQueryParamsChange(params)
+                ));
+    }
+
+    onRouteQueryParamsChange(params:any):void {
+        console.log('content-router.component > onRouteQueryParamsChange');
+        console.log(params);
+
+        let id = params['id'],
+            report = this._dataService.reports.filter((report:any) => {
+                return report.id === id;
+            }).pop();
+        if (report) {
+            console.log('report.id = ' + report.id);
+            this.text = report.text;
+            this.color = report.color;
+            this.url = window.location;
+            this._dataService.selectedReportId = report.id;
+        } else {
+            this._dataService.selectedReportId = this._defaultReportId;
+        }
     }
 
     onWindowResize() {

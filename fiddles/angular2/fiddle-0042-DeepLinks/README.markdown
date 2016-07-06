@@ -37,6 +37,7 @@ are a few examples:
 
 ### Published Version Link
 
+*   [plnkr.co](http://plnkr.co/edit/pfhjOP?p=info)
 *   [bradyhouse.github.io > Angular 2 > #42](http://bradyhouse.github.io/angular2/fiddle-0042-DeepLinks)
 *   [github > bradyhouse > house > fiddles > Angular 2 > fiddle-0042-DeepLinks](https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0042-DeepLinks)
 

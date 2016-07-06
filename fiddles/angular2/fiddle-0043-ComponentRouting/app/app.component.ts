@@ -10,7 +10,7 @@ import { DataService } from './global/data.service';
     templateUrl: './app/app.component.html',
     styleUrls: ['./app/app.component.css'],
     directives: [[SidebarComponent, ContentComponent, ROUTER_DIRECTIVES]],
-    providers: [DataService]
+    providers: []
 })
 export class AppComponent {
     constructor() {
