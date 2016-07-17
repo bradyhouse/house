@@ -4,7 +4,7 @@ fiddle-0026-Images
 
 ### Title
 
-SVG Image Tag
+SVG - ES6 Image Tag Wrapper Class
 
 
 ### Creation Date
@@ -24,14 +24,15 @@ Chicago, IL
 ### Description
 
 POC exploring how to create a ES6 wrapper class for the SVG Image Tag.  This simple app also demonstrates how
-to use the shadow dom to render (inject) the SVG elements.
+to use the shadow dom to render (inject) the SVG element before the page is rendered by the browser.
 
 
 ### Published Version Link
 
-N/A
+*   [codepen.io](http://codepen.io/bradyhouse/pen/zBRxXJ/)
+*   [bradyhouse.github.io > SVG > fiddle #26](http://bradyhouse.github.io/svg/fiddle-0026-Images/index.html)
 
 
 ### Tags
 
-svg, image
+es6, svg, image, createshadowroot
