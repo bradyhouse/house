@@ -30,8 +30,8 @@ provided in the official user guide.
 
 ### Published Version Link
 
-N/A
-
+* [plnkr.co](http://embed.plnkr.co/H6Vr9v/)
+* [bradyhouse.github.io > angular2 > fiddle #45](http://bradyhouse.github.io/angular2/fiddle-0045-AttributeDirective/index.html)
 
 ### Tags
 
