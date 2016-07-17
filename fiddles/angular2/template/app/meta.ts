@@ -1,7 +1,7 @@
 var metadata = {
-     fiddleHeader: 'Angular 2 - JQuery CSV',
+     fiddleHeader: 'Angular 2 - {{FiddleName}}',
      urls: {
-          github: 'https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0041-JQueryCSV'
+          github: 'https://github.com/bradyhouse/house/tree/master/fiddles/angular2/{{FiddleName}}'
      },
-     consoleTag: 'H O U S E ~ f i d d l e s'
+     consoleTag: 'H O U S E  ~  f i d d l e s'
 };

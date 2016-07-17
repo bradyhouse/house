@@ -1,0 +1,18 @@
+{
+  "name": "fiddle-0017-XmlToJson",
+  "version": "0.0.0",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0017-XmlToJson",
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony app.js"
+  },
+  "dependencies": {
+    "xml-to-json": "^0.1.1"
+  }
+}

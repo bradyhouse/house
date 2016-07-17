@@ -2,9 +2,7 @@
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG) circle,
- * "<g>", tag.  This tag
- * is used to "group" elements within
- * a given SVG block.  For additional info,
+ * "<circle>", tag.  For additional info,
  * see [MDN ... Circle](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle).
  *
  */

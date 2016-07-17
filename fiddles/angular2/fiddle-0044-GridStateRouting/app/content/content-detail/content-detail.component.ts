@@ -1,5 +1,5 @@
 import { Component }                                                    from '@angular/core';
-import { ActivatedRoute, Router, RouteSegment }                         from '@angular/router';
+import { Router, RouteSegment }                                         from '@angular/router';
 import { Observable }                                                   from 'rxjs/Observable';
 import { DataService }                                                  from '../../global/data.service';
 import { GridComponent }                                                from '../../components/grid/grid.component';
@@ -29,8 +29,7 @@ export class ContentDetailComponent extends Base {
     private _rowData:Array<any> = [];
     private _queryString:QueryString;
 
-    constructor(private _route:ActivatedRoute,
-                private _dataService:DataService,
+    constructor(private _dataService:DataService,
                 private _router:Router) {
         super();
 

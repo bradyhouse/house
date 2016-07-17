@@ -1143,5 +1143,18 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201607010420
 
+* **Ember**
+    1.  Added [fiddles/ember/fiddle-0008-Templates](fiddles/ember/fiddle-0008-Templates) ~ [Issue 47](https://github.com/bradyhouse/house/issues/46)
+
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0044-GridStateRouting](fiddles/angular2/fiddle-0044-GridStateRouting) ~ [Issue 45](https://github.com/bradyhouse/house/issues/45)
+    2.  Added [fiddles/angular2/fiddle-0045-AttributeDirective](fiddles/angular2/fiddle-0045-AttributeDirective) ~ [Issue 49](https://github.com/bradyhouse/house/issues/49)
+    3.  Added [fiddles/angular2/fiddle-0046-StructuralDirective](fiddles/angular2/fiddle-0046-StructuralDirective) [Issue 50](https://github.com/bradyhouse/house/issues/50)
+
+* **SVG**
+    1.  Added [fiddles/svg/fiddle-0026-Images](fiddles/svg/fiddle-0026-Images) ~ [Issue 44](https://github.com/bradyhouse/house/issues/44)
+
+* **Node**
+    1.  Added [fiddles/node/fiddle-0017-WebApp](fiddles/node/fiddle-0017-WebApp) ~ [Issue 46](https://github.com/bradyhouse/house/issues/46)
+    2.  Added [fiddles/node/fiddle-0018-XmlToJson](fiddles/node/fiddle-0018-XmlToJson) ~ [Issue 48](https://github.com/bradyhouse/house/issues/48)
+

@@ -19,6 +19,11 @@ House SVG Fiddle - {{FiddleName}}
 Chicago, IL
 
 
+### Issue
+
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+
+
 ### Description
 
 Another SVG Fiddle.

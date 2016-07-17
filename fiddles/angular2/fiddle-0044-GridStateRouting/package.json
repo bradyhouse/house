@@ -29,6 +29,7 @@
     "jquery": "^3.0.0",
     "jquery-csv": "^0.8.1",
     "live-server": "^1.0.0",
+    "reflect-metadata": "^0.1.3",
     "systemjs": "0.19.26",
     "through": "^2.3.8",
     "walk-sync": "^0.2.6"

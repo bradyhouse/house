@@ -17,6 +17,7 @@
 
 this=$(pwd;);
 
+
 function emberCreate() {
     groupLog "emberCreate";
     fiddle=$1;
@@ -27,9 +28,11 @@ function emberCreate() {
         then
             rm -rf "${fiddle}" || exit 1;
         fi
-        ember new $1 || exit 2;
+        ember new $1 -sb || exit 2;
         cd ${fiddle};
         cp -rf ../template/README.markdown README.md || exit 3;
+        cp -rf ../template/.bowerrc .bowerrc || exit 4;
+        bower install || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 3;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 3;
     )
@@ -42,6 +45,10 @@ function emberCreate() {
         2)  echo "${this}: Call to ember CLI \"new\" failed";
             ;;
         3)  echo "${this}: Readme file update failed";
+            ;;
+        4)  echo "${this}: \".bowerrc\" file update failed";
+            ;;
+        5)  echo "${this}: \"bower install\" failed";
             ;;
         *)  echo "${this}: F U B A R ~ Something went wrong."
             ;;
