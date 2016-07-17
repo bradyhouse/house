@@ -18,6 +18,7 @@ node_modules
 fiddle
 typings
 
+
 # Users Environment Variables
 .lock-wscript
 .tsdrc
@@ -81,8 +82,8 @@ fiddles/python/fiddle-0009-*/*.json
 
 
 # node fiddle 13 ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
-
 fiddles/node/fiddle-0013-*/cache/
 fiddles/node/fiddle-0013-*/*.bz2
 
-# under construction
+# tmp directory
+fiddles/svg/resources/json/
