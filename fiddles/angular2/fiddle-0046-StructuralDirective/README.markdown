@@ -29,7 +29,7 @@ POC based on the [structural directive](https://angular.io/docs/ts/latest/guide/
 ### Published Version Link
 
 *   [bradyhouse.github.io > angular2 > fiddle #46](http://bradyhouse.github.io/angular2/fiddle-0046-StructuralDirective/index.html)
-*   [github > bradyhouse > house > fiddles > angular2 > fiddle #46](https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0046-StructuralDirective)
+*   [plnkr.co](http://embed.plnkr.co/3u2yE5/)
 
 
 ### Tags
