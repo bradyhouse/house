@@ -1153,8 +1153,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **SVG**
     1.  Added [fiddles/svg/fiddle-0026-Images](fiddles/svg/fiddle-0026-Images) ~ [Issue 44](https://github.com/bradyhouse/house/issues/44)
+    2.  Started [fiddles/svg/fiddle-0027-ImageCloud](fiddles/svg/fiddle-0027-ImageCloud) ~ [Issue 51](https://github.com/bradyhouse/house/issues/51)
 
 * **Node**
-    1.  Added [fiddles/node/fiddle-0017-WebApp](fiddles/node/fiddle-0017-WebApp) ~ [Issue 46](https://github.com/bradyhouse/house/issues/46)
+    1.  Started [fiddles/node/fiddle-0017-WebApp](fiddles/node/fiddle-0017-WebApp) ~ [Issue 46](https://github.com/bradyhouse/house/issues/46)
     2.  Added [fiddles/node/fiddle-0018-XmlToJson](fiddles/node/fiddle-0018-XmlToJson) ~ [Issue 48](https://github.com/bradyhouse/house/issues/48)
 
+* **JQuery**
+    1.  Started [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest)

@@ -30,7 +30,7 @@ class Image extends Base {
   constructor(config) {
     super();
     if (config) {
-      this.apply(this, config, this.config);
+      this.apply(this, config, this.config());
     }
     this.init();
   }

@@ -37,7 +37,7 @@ export class Base implements OnDestroy {
             this.apply(object, defaults);
         }
 
-        if (object && config && typeof config === 'object') {
+        if (object && config && config.constructor == Object) {
             let property:string;
             for (property in config) {
                 object[property] = config[property];
