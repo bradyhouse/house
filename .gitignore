@@ -9,7 +9,7 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
-scripts/fiddle-publish.sh
+
 
 # Dependency directory
 # Commenting this out is preferred by some people, see
