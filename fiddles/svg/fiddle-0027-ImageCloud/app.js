@@ -149,18 +149,45 @@
              * @returns {{x: number, y: number}}
              */
         static mapCircularPoint(centerX, centerY, radius, angle) {
-                var coorX = 0,
-                    coorY = 0;
-                try {
-                    coorX = Math.round(centerX + (radius * Math.cos(Util.convertToRadians(angle))));
-                    coorY = Math.round(centerY + (radius * Math.sin(Util.convertToRadians(angle))));
-                } catch (err) {
-                    console.log(err.stackTrace);
-                }
-                return {
-                    x: coorX,
-                    y: coorY
-                }
+            var coorX = 0,
+                coorY = 0;
+            try {
+                coorX = Math.round(centerX + (radius * Math.cos(Util.convertToRadians(angle))));
+                coorY = Math.round(centerY + (radius * Math.sin(Util.convertToRadians(angle))));
+            } catch (err) {
+                console.log(err.stackTrace);
+            }
+            return {
+                x: coorX,
+                y: coorY
+            }
+        }
+        static mapCircularPath(centerX, centerY, radius, axis) {
+                let _coor3pm = Util.mapCircularPoint(centerX, centerY, radius, 0),
+                    _coor4pm = Util.mapCircularPoint(centerX, centerY, radius, 30),
+                    _coor5pm = Util.mapCircularPoint(centerX, centerY, radius, 60),
+                    _coor6pm = Util.mapCircularPoint(centerX, centerY, radius, 90),
+                    _coor7pm = Util.mapCircularPoint(centerX, centerY, radius, 120),
+                    _coor8pm = Util.mapCircularPoint(centerX, centerY, radius, 150),
+                    _coor9pm = Util.mapCircularPoint(centerX, centerY, radius, 180),
+                    _coor10pm = Util.mapCircularPoint(centerX, centerY, radius, 210),
+                    _coor11pm = Util.mapCircularPoint(centerX, centerY, radius, 240),
+                    _coor12am = Util.mapCircularPoint(centerX, centerY, radius, 270),
+                    _coor1am = Util.mapCircularPoint(centerX, centerY, radius, 300),
+                    _coor2am = Util.mapCircularPoint(centerX, centerY, radius, 330);
+                return axis === 'x' || axis === 'y' ? _coor3pm[axis] + ';' +
+                    _coor4pm[axis] + ';' +
+                    _coor5pm[axis] + ';' +
+                    _coor6pm[axis] + ';' +
+                    _coor7pm[axis] + ';' +
+                    _coor8pm[axis] + ';' +
+                    _coor9pm[axis] + ';' +
+                    _coor10pm[axis] + ';' +
+                    _coor11pm[axis] + ';' +
+                    _coor12am[axis] + ';' +
+                    _coor1am[axis] + ';' +
+                    _coor2am[axis] + ';' +
+                    _coor3pm[axis] : '';
             }
             /**
              * Utility Method that can be used to convert an angle
@@ -1053,6 +1080,89 @@
 
     /**
      * Class used to wrap (or model)
+     * an Scalar Vector Graphic (SVG),=
+     * "<animate>" tag.  For example --
+     *
+     * <animate attributeName="cy" dur="10s" values="0%;100%" repeatCount="indefinite"></animate>
+     *
+     * For additional info,
+     * see [MDN ... Animate](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate).
+     *
+     */
+    class Animate extends Base {
+        config() {
+                return {
+                    attributeName: 'cy',
+                    attributeType: null,
+                    from: null,
+                    to: null,
+                    dur: '10s',
+                    values: '0%;100%',
+                    repeatCount: 'indefinite',
+                    autoBind: false
+                }
+            }
+            /**
+             * Class constructor.
+             *
+             * @param config
+             */
+        constructor(config) {
+                super();
+                if (config) {
+                    this.apply(this, config, this.config());
+                }
+                this.init();
+            }
+            /**
+             * Method used to append the docElement to
+             * configured hook element.
+             */
+        bind() {
+                if (this.hook && this.docElementNS) {
+                    this.hook.appendChild(this.docElementNS);
+                }
+            }
+            /**
+             * Method called by the constructor to create
+             * and assign docElement based
+             * on the properties exposed by the class.
+             *
+             * Note - if the autoBind flag is true,
+             * then it ends by invoking bind method.
+             */
+        init() {
+            this.docElementNS = document.createElementNS(this.xmlns, 'animate');
+            if (this.attributeName) {
+                this.docElementNS.setAttribute('attributeName', this.attributeName);
+            }
+            if (this.attributeType) {
+                this.docElementNS.setAttribute('attributeType', this.attributeType);
+            }
+            if (this.from) {
+                this.docElementNS.setAttribute('from', this.from);
+            }
+            if (this.to) {
+                this.docElementNS.setAttribute('to', this.to);
+            }
+            if (this.dur) {
+                this.docElementNS.setAttribute('dur', this.dur);
+            }
+            if (this.values) {
+                this.docElementNS.setAttribute('values', this.values);
+            }
+            if (this.repeatCount) {
+                this.docElementNS.setAttribute('repeatCount', this.repeatCount);
+            }
+            if (this.autoBind) {
+                this.bind();
+            }
+        }
+    }
+
+
+    /**
+     * Class used to wrap (or model)
      * an Scalar Vector Graphic (SVG) circle,
      * "<image>", tag.  For additional info,
      * see [MDN ... Image](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image).
@@ -1070,7 +1180,10 @@
                     docElementNS: null,
                     autoBind: false,
                     x: '0',
-                    y: '0'
+                    y: '0',
+                    opacity: 1,
+                    children: [],
+                    onclick: null
                 }
             }
             /**
@@ -1110,6 +1223,18 @@
             this.docElementNS.setAttribute('height', this.height);
             this.docElementNS.setAttribute('x', this.x);
             this.docElementNS.setAttribute('y', this.y);
+            this.docElementNS.setAttribute('opacity', this.opacity)
+            if (this.onclick) {
+                this.docElementNS.setAttribute('onclick', this.onclick);
+            }
+            if (this.children && this.children.length) {
+                this.children.map((child) => {
+                    child.parent = this;
+                    if (child.docElementNS) {
+                        this.docElementNS.appendChild(child.docElementNS);
+                    }
+                });
+            }
             if (this.autoBind) {
                 this.bind();
             }
@@ -1220,6 +1345,31 @@
                 app.controller.init();
             }
         },
+        topImage: null,
+        onImageClick: function(image) {
+            let fiddleHook = document.getElementById('fiddleHook'),
+                svg = fiddleHook ? fiddleHook.shadowRoot.getElementById('fiddle') : null,
+                topImage = new Image({
+                    id: image.getAttribute('id') + '_topImage',
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                    x: 0,
+                    y: 0,
+                    xlinkHref: image.getAttribute('xlink:href'),
+                    onclick: 'app.controller.onImageRestore(this)'
+                });
+            app.controller.topImage = topImage;
+            if (svg) {
+                svg.innerHTML += topImage.docElementNS.outerHTML;
+            }
+        },
+        onImageRestore: function(image) {
+            let fiddleHook = document.getElementById('fiddleHook'),
+                svg = fiddleHook ? fiddleHook.shadowRoot.getElementById('fiddle') : null;
+            if (svg) {
+                svg.removeChild(image);
+            }
+        },
         init: function() {
             /**
              * (4) Create an SVG element
@@ -1232,11 +1382,11 @@
             let fiddleHook = document.getElementById('fiddleHook'),
                 objects = [],
                 center = {
-                    x: window.innerWidth / 2,
-                    y: window.innerHeight / 2,
+                    x: window.innerWidth / 3.5,
+                    y: window.innerHeight / 3.5,
                 },
-                quadrantWidth = window.innerWidth / 3.5,
-                quadrantHeight = window.innerHeight / 3.5,
+                quadrantWidth = (window.innerWidth) / 3.5,
+                quadrantHeight = (window.innerHeight) / 3.5,
                 quadrant1 = {
                     range: {
                         x1: center.x,
@@ -1302,15 +1452,46 @@
                 width: window.innerWidth,
                 fill: 'url(#gridPattern)'
             }));
+            /**
+             * <animate attributeName="y" dur="10s" values="0%;218.5" repeatCount="indefinite"></animate>
+             */
             app.model.PhotoAlbum.children.map((photo) => {
-                let quad = pickQuadrant(objects);
+                let quad = pickQuadrant(objects),
+                    randX = Util.rand(quad.range.x1, quad.range.x2),
+                    randY = Util.rand(quad.range.y1, quad.range.y2),
+                    animatedAxis = objects.length % 2 === 0 ? 'x' : 'y',
+                    radius1 = (window.innerWidth / 2),
+                    radius2 = (window.innerHeight / 2),
+                    animatedValues1 = Util.mapCircularPath(randX, randY, radius1, 'x'),
+                    animatedValues2 = Util.mapCircularPath(randX, randY, radius2, 'y'),
+                    animateX = new Animate({
+                        attributeName: 'x',
+                        dur: Util.rand(60, 120) + 's',
+                        values: animatedValues1,
+                        repeatCount: 'indefinite'
+                    }),
+                    animateY = new Animate({
+                        attributeName: 'y',
+                        dur: Util.rand(60, 120) + 's',
+                        values: animatedValues2,
+                        repeatCount: 'indefinite'
+                    }),
+                    animateOpacity = new Animate({
+                        attributeName: 'opacity',
+                        values: '.5;1;1;1;1;.5',
+                        dur: Util.rand(60, 120) + 's',
+                        repeatCount: 'indefinite'
+                    })
                 objects.push(new Image({
                     id: photo.title,
                     width: objects.length % 4 === 0 ? Math.floor((+photo.width) / 4) : Math.floor((+photo.width) / 6),
                     height: objects.length % 4 === 0 ? Math.floor((+photo.height) / 4) : Math.floor((+photo.height) / 6),
                     x: Util.rand(quad.range.x1, quad.range.x2),
                     y: Util.rand(quad.range.y1, quad.range.y2),
-                    xlinkHref: photo.url
+                    xlinkHref: photo.url,
+                    opacity: '0',
+                    onclick: 'app.controller.onImageClick(this)',
+                    children: [animateX, animateY, animateOpacity]
                 }));
             });
             app.view.Viewport = new Viewport({
@@ -1318,7 +1499,7 @@
                 children: objects
             });
             document.body.style.background = '#000000';
-        },
+        }
     };
     document.body.addEventListener('DOMContentLoaded', app.controller.onDOMContentLoaded(), false);
 })(window.app = window.app || {})

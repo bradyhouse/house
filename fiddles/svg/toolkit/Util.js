@@ -146,6 +146,36 @@ class Util {
     }
   }
 
+  static mapCircularPath(centerX, centerY, radius, axis) {
+      let _coor3pm = Util.mapCircularPoint(centerX, centerY, radius,0),
+      _coor4pm = Util.mapCircularPoint(centerX, centerY, radius, 30),
+      _coor5pm = Util.mapCircularPoint(centerX, centerY, radius, 60),
+      _coor6pm = Util.mapCircularPoint(centerX, centerY, radius, 90),
+      _coor7pm = Util.mapCircularPoint(centerX, centerY, radius, 120),
+      _coor8pm = Util.mapCircularPoint(centerX, centerY, radius, 150),
+      _coor9pm = Util.mapCircularPoint(centerX, centerY, radius, 180),
+      _coor10pm =Util.mapCircularPoint(centerX, centerY, radius, 210),
+      _coor11pm =Util.mapCircularPoint(centerX, centerY, radius, 240),
+      _coor12am = Util.mapCircularPoint(centerX, centerY, radius, 270),
+      _coor1am = Util.mapCircularPoint(centerX, centerY, radius, 300),
+      _coor2am = Util.mapCircularPoint(centerX, centerY, radius, 330);
+
+      return axis === 'x' || axis === 'y' ? _coor3pm[axis] + ';' +
+            _coor4pm[axis] + ';' +
+            _coor5pm[axis] + ';' +
+            _coor6pm[axis] + ';' +
+            _coor7pm[axis] + ';' +
+            _coor8pm[axis] + ';' +
+            _coor9pm[axis] + ';' +
+            _coor10pm[axis] + ';' +
+            _coor11pm[axis]  + ';' +
+            _coor12am[axis] + ';' +
+            _coor1am[axis]+ ';' +
+            _coor2am[axis] + ';' +
+            _coor3pm[axis]: '';
+
+  }
+
   /**
    * Utility Method that can be used to convert an angle
    * to it's radian equivalent.

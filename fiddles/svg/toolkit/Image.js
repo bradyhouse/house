@@ -18,7 +18,10 @@ class Image extends Base {
       docElementNS: null,
       autoBind: false,
       x: '0',
-      y: '0'
+      y: '0',
+      opacity: 1,
+      children: [],
+      onclick: null
     }
   }
 
@@ -61,6 +64,19 @@ class Image extends Base {
     this.docElementNS.setAttribute('height', this.height);
     this.docElementNS.setAttribute('x', this.x);
     this.docElementNS.setAttribute('y', this.y);
+    this.docElementNS.setAttribute('opacity', this.opacity)
+    if (this.onclick) {
+      this.docElementNS.setAttribute('onclick', this.onclick);
+    }
+    if (this.children && this.children.length) {
+      this.children.map((child) => {
+        child.parent = this;
+        if (child.docElementNS) {
+          this.docElementNS.appendChild(child.docElementNS);
+        }
+      });
+    }
+
     if (this.autoBind) {
       this.bind();
     }
