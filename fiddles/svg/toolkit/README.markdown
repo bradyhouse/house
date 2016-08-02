@@ -21,7 +21,10 @@ For example, to include all of the classes, add the following entries:
     ../../toolkit/TextPath.js
     ../../toolkit/ViewController.js
     ../../toolkit/Path.js
+    ../../toolkit/Image.js
+    ../../toolkit/Animate.js
     ../../toolkit/Surface.js
+
 
 When you run the [fiddle.sh](scripts/fiddle.sh) shell script with the "combine svg <fiddle name> app.js 0"
 parameters, it will add the class definitions to the main closure of your app.js file.  For a working example

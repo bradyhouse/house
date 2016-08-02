@@ -1161,3 +1161,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **JQuery**
     1.  Started [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest)
+

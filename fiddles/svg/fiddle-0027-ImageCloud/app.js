@@ -149,19 +149,30 @@
              * @returns {{x: number, y: number}}
              */
         static mapCircularPoint(centerX, centerY, radius, angle) {
-            var coorX = 0,
-                coorY = 0;
-            try {
-                coorX = Math.round(centerX + (radius * Math.cos(Util.convertToRadians(angle))));
-                coorY = Math.round(centerY + (radius * Math.sin(Util.convertToRadians(angle))));
-            } catch (err) {
-                console.log(err.stackTrace);
+                var coorX = 0,
+                    coorY = 0;
+                try {
+                    coorX = Math.round(centerX + (radius * Math.cos(Util.convertToRadians(angle))));
+                    coorY = Math.round(centerY + (radius * Math.sin(Util.convertToRadians(angle))));
+                } catch (err) {
+                    console.log(err.stackTrace);
+                }
+                return {
+                    x: coorX,
+                    y: coorY
+                }
             }
-            return {
-                x: coorX,
-                y: coorY
-            }
-        }
+            /**
+             * Utility method used generate a "values" string containing
+             * points along the circumference of a circle given the
+             * coordinates points and the radius.
+             *
+             * @param centerX
+             * @param centerY
+             * @param radius
+             * @param axis
+             * @returns {string}
+             */
         static mapCircularPath(centerX, centerY, radius, axis) {
                 let _coor3pm = Util.mapCircularPoint(centerX, centerY, radius, 0),
                     _coor4pm = Util.mapCircularPoint(centerX, centerY, radius, 30),
@@ -188,6 +199,105 @@
                     _coor1am[axis] + ';' +
                     _coor2am[axis] + ';' +
                     _coor3pm[axis] : '';
+            }
+            /**
+             * Utility method used generate an array containing
+             * points along the circumference of a circle given the
+             * center coordinates and radius. The optional degrees
+             * parameter can be used to set degree offset between
+             * each point.  By default, it uses 30 degrees.
+             *
+             * @param centerX
+             * @param centerY
+             * @param radius
+             * @param degrees (optional)
+             * @returns {Array}
+             */
+        static toCircularPointArray(centerX, centerY, radius, degrees) {
+                let coors = [],
+                    angle = 0,
+                    delta = degrees ? degrees : 30;
+                while (angle <= 360) {
+                    coors.push(Util.mapCircularPoint(centerX, centerY, radius, angle));
+                    angle += delta;
+                }
+                return coors;
+            }
+            /**
+             * Utility method that can be used to convert an Array {x,y} points
+             * to a semicolon delimited string of either x or y values based
+             * on the value of the axis parameter.
+             * @param pointArray
+             * @param axis
+             * @returns {string}
+             */
+        static flattenToValues(pointArray, axis) {
+            let path = '';
+            if (pointArray.constructor === Array && pointArray.length) {
+                if (pointArray[0].hasOwnProperty(axis)) {
+                    pointArray.map((point, index) => {
+                        path += point[axis];
+                        if (index < (pointArray.length - 1)) {
+                            path += ';';
+                        }
+                    });
+                }
+            }
+            return path;
+        }
+        static reorderFrom(pointArray, startIndex) {
+                var newArray = [],
+                    startingPoint = {};
+                if (pointArray.constructor === Array && startIndex < pointArray.length) {
+                    startingPoint.x = pointArray[startIndex].x;
+                    startingPoint.y = pointArray[startIndex].y;
+                    newArray.push({
+                        x: startingPoint.x,
+                        y: startingPoint.y
+                    });
+                    // top
+                    pointArray.map((point, index) => {
+                        if (index > startIndex) {
+                            newArray.push({
+                                x: point.x,
+                                y: point.y
+                            })
+                        }
+                    });
+                    // bottom
+                    pointArray.map((point, index) => {
+                        if (index < startIndex) {
+                            newArray.push({
+                                x: point.x,
+                                y: point.y
+                            })
+                        }
+                    });
+                }
+                return newArray;
+            }
+            /**
+             * Utility method that can be used to pick a random
+             * point along a circle given array of the points
+             * that define its circumference.
+             *
+             * NOTE - This function was written to be used
+             * in concert with the toCircularPointArray method.
+             *
+             * @param circularPointArr
+             * @returns {{x: number, y: number}}
+             */
+        static pickRandomPoint(circularPointArr) {
+                let coor = {
+                        x: 0,
+                        y: 0
+                    },
+                    index = 0;
+                if (circularPointArr.constructor === Array) {
+                    index = Util.rand(0, circularPointArr.length - 1);
+                    coor = circularPointArr[index];
+                }
+                return coor;
             }
             /**
              * Utility Method that can be used to convert an angle
@@ -1311,8 +1421,8 @@
             super({
                 id: 'fiddle',
                 hook: config && config.hasOwnProperty('hook') ? config.hook : window.document.body,
-                height: Math.floor((window.innerHeight)) + 'px',
-                width: Math.floor((window.innerWidth)) + 'px',
+                height: $('#fiddleHook').height(),
+                width: $('#fiddleHook').width(),
                 autoBind: true,
                 children: config && config.hasOwnProperty('children') ? config.children : []
             });
@@ -1323,15 +1433,10 @@
     app.controller = app.controller || {
         responseText: null,
         onDOMContentLoaded: function() {
-            /**
-             * (1) Load feed.json
-             */
+            $('#fiddleHook').width($(document).width());
+            $('#fiddleHook').height($(document).height());
             $(document).load("feed.json");
             $(document).ajaxComplete(this.onAjaxComplete);
-            /*var fiddleHook = document.getElementById('fiddleHook');
-             app.view.Viewport = new Viewport({
-             hook: fiddleHook
-             });*/
         },
         onAjaxComplete: function(event, xhr, settings) {
             /**
@@ -1342,7 +1447,9 @@
                 app.model.PhotoAlbum = new PhotoAlbum({
                     json: JSON.parse(xhr.responseText)
                 });
-                app.controller.init();
+                window.setTimeout(() => {
+                    app.controller.init();
+                }, 500);
             }
         },
         topImage: null,
@@ -1382,53 +1489,8 @@
             let fiddleHook = document.getElementById('fiddleHook'),
                 objects = [],
                 center = {
-                    x: window.innerWidth / 3.5,
-                    y: window.innerHeight / 3.5,
-                },
-                quadrantWidth = (window.innerWidth) / 3.5,
-                quadrantHeight = (window.innerHeight) / 3.5,
-                quadrant1 = {
-                    range: {
-                        x1: center.x,
-                        y1: center.y,
-                        x2: center.x + quadrantWidth,
-                        y2: center.y + quadrantHeight
-                    }
-                },
-                quadrant2 = {
-                    range: {
-                        x1: center.x - quadrantWidth,
-                        y1: center.y,
-                        x2: center.x,
-                        y2: center.y + quadrantHeight
-                    }
-                },
-                quadrant3 = {
-                    range: {
-                        x1: center.x - quadrantWidth,
-                        y1: center.y,
-                        x2: center.x,
-                        y2: center.y - quadrantHeight
-                    }
-                },
-                quadrant4 = {
-                    range: {
-                        x1: center.x,
-                        y1: center.y,
-                        x2: center.x + quadrantWidth,
-                        y2: center.y - quadrantHeight
-                    }
-                },
-                pickQuadrant = function(arr) {
-                    if (arr.length % 4 === 0) {
-                        return quadrant4;
-                    } else if (arr.length % 3 === 0) {
-                        return quadrant3;
-                    } else if (arr.length % 2 === 0) {
-                        return quadrant2;
-                    } else {
-                        return quadrant1;
-                    }
+                    x: $(document).width() / 2,
+                    y: $(document).height() / 2,
                 };
             objects.push(new Pattern({
                 id: 'gridPattern',
@@ -1448,50 +1510,53 @@
                 id: 'root',
                 x: 0,
                 y: 0,
-                height: window.innerHeight,
-                width: window.innerWidth,
+                height: $(document).height(),
+                width: $(document).width(),
                 fill: 'url(#gridPattern)'
             }));
-            /**
-             * <animate attributeName="y" dur="10s" values="0%;218.5" repeatCount="indefinite"></animate>
-             */
-            app.model.PhotoAlbum.children.map((photo) => {
-                let quad = pickQuadrant(objects),
-                    randX = Util.rand(quad.range.x1, quad.range.x2),
-                    randY = Util.rand(quad.range.y1, quad.range.y2),
-                    animatedAxis = objects.length % 2 === 0 ? 'x' : 'y',
-                    radius1 = (window.innerWidth / 2),
-                    radius2 = (window.innerHeight / 2),
-                    animatedValues1 = Util.mapCircularPath(randX, randY, radius1, 'x'),
-                    animatedValues2 = Util.mapCircularPath(randX, randY, radius2, 'y'),
+            app.model.PhotoAlbum.children.map((photo, index) => {
+                let radius = $(document).width() < $(document).height() ? $(document).width() / 2 : $(document).height() / 2,
+                    randX = Util.rand(0, $(document).width()),
+                    randY = Util.rand(0, $(document).height()),
+                    dur = Util.rand(120, 240) + 's',
+                    circularPathArr = Util.toCircularPointArray(randX, randY, radius),
+                    startingIndex = Util.rand(0, circularPathArr.length - 1),
+                    startingPoint = circularPathArr[startingIndex],
+                    reorderedPathArr = Util.reorderFrom(circularPathArr, startingIndex),
+                    animatedValues1 = Util.flattenToValues(reorderedPathArr, 'x'),
+                    animatedValues2 = Util.flattenToValues(reorderedPathArr, 'y'),
                     animateX = new Animate({
                         attributeName: 'x',
-                        dur: Util.rand(60, 120) + 's',
+                        dur: dur,
                         values: animatedValues1,
                         repeatCount: 'indefinite'
                     }),
                     animateY = new Animate({
                         attributeName: 'y',
-                        dur: Util.rand(60, 120) + 's',
+                        dur: dur,
                         values: animatedValues2,
                         repeatCount: 'indefinite'
                     }),
                     animateOpacity = new Animate({
                         attributeName: 'opacity',
-                        values: '.5;1;1;1;1;.5',
-                        dur: Util.rand(60, 120) + 's',
+                        values: '1;.9;.8;.7;.6;.5;.6;.7;.8;.9',
+                        dur: dur,
                         repeatCount: 'indefinite'
-                    })
+                    });
+                if (index === 10) {
+                    console.log(startingPoint.x + ', ' + animatedValues1);
+                    console.log(startingPoint.y + ', ' + animatedValues2);
+                }
                 objects.push(new Image({
                     id: photo.title,
                     width: objects.length % 4 === 0 ? Math.floor((+photo.width) / 4) : Math.floor((+photo.width) / 6),
                     height: objects.length % 4 === 0 ? Math.floor((+photo.height) / 4) : Math.floor((+photo.height) / 6),
-                    x: Util.rand(quad.range.x1, quad.range.x2),
-                    y: Util.rand(quad.range.y1, quad.range.y2),
+                    x: startingPoint.x,
+                    y: startingPoint.y,
                     xlinkHref: photo.url,
-                    opacity: '0',
+                    opacity: '.5',
                     onclick: 'app.controller.onImageClick(this)',
-                    children: [animateX, animateY, animateOpacity]
+                    children: [animateOpacity, animateX, animateY]
                 }));
             });
             app.view.Viewport = new Viewport({

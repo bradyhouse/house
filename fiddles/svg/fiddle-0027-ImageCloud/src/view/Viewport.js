@@ -4,8 +4,8 @@ class Viewport extends Surface {
     super({
       id: 'fiddle',
       hook: config && config.hasOwnProperty('hook') ? config.hook : window.document.body,
-      height: Math.floor((window.innerHeight)) + 'px',
-      width: Math.floor((window.innerWidth)) + 'px',
+      height: $('#fiddleHook').height(),
+      width: $('#fiddleHook').width(),
       autoBind: true,
       children: config && config.hasOwnProperty('children') ? config.children : []
     });
