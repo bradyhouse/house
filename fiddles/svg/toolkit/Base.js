@@ -6,7 +6,9 @@ class Base {
     if (object && config && typeof config === 'object') {
       let property;
       for (property in config) {
-        object[property] = config[property];
+        if (config[property]) {
+          object[property] = config[property];
+        }
       }
     }
     return object;

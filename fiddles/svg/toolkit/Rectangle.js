@@ -28,7 +28,7 @@
  *
  *
  */
-class Rectangle {
+class Rectangle extends Base {
 
     /**
      * Static config method. Object returned defines the default properties of the class. This
@@ -67,6 +67,7 @@ class Rectangle {
      * @param config (optional)
      */
     constructor(config) {
+        super();
         this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
         this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
         this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;

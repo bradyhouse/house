@@ -1,11 +1,13 @@
 app.controller = app.controller || {
     responseText: null,
     onDOMContentLoaded: function () {
+      console.log("%c" + app.metadata.consoleTag, 'font-style: italic; font-size: 20px;');
+      console.log("%c" + app.metadata.gitHubUrl, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
 
       $('#fiddleHook').width($(document).width());
       $('#fiddleHook').height($(document).height());
 
-      $(document).load("feed.json");
+      $(document).load(app.metadata.dataUrl);
       $(document).ajaxComplete(this.onAjaxComplete);
 
     },
@@ -14,7 +16,7 @@ app.controller = app.controller || {
        * (2) On Ajax complete, parse a list of image urls
        * (3) Iterate the list (2) and build a collection of Images
        */
-      if (settings.url === "feed.json") {
+      if (settings.url === app.metadata.dataUrl) {
         app.model.PhotoAlbum = new PhotoAlbum({
           json: JSON.parse(xhr.responseText)
         });
@@ -118,11 +120,6 @@ app.controller = app.controller || {
           dur: dur,
           repeatCount: 'indefinite'
         });
-
-      if (index === 10) {
-        console.log(startingPoint.x + ', ' + animatedValues1);
-        console.log(startingPoint.y + ', ' + animatedValues2);
-      }
 
       objects.push(new Image({
         id: photo.title,

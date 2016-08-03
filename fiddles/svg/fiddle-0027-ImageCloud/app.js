@@ -3,7 +3,9 @@
 
 
     app.metadata = app.metadata || {
-        gitHubUrl: 'https://github.com/bradyhouse/house/tree/master/fiddles/svg/fiddle-0027-ImageCloud'
+        consoleTag: 'H O U S E ~ f i d d l e s',
+        gitHubUrl: 'https://github.com/bradyhouse/house/tree/master/fiddles/svg/fiddle-0027-ImageCloud',
+        dataUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/photo-album.json'
     };
 
 
@@ -19,7 +21,9 @@
             if (object && config && typeof config === 'object') {
                 let property;
                 for (property in config) {
-                    object[property] = config[property];
+                    if (config[property]) {
+                        object[property] = config[property];
+                    }
                 }
             }
             return object;
@@ -807,7 +811,7 @@
      *
      *
      */
-    class Rectangle {
+    class Rectangle extends Base {
         /**
          * Static config method. Object returned defines the default properties of the class. This
          * also defines the properties that may be passed to the class constructor.
@@ -844,6 +848,7 @@
              * @param config (optional)
              */
         constructor(config) {
+                super();
                 this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
                 this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
                 this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
@@ -1433,9 +1438,11 @@
     app.controller = app.controller || {
         responseText: null,
         onDOMContentLoaded: function() {
+            console.log("%c" + app.metadata.consoleTag, 'font-style: italic; font-size: 20px;');
+            console.log("%c" + app.metadata.gitHubUrl, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
             $('#fiddleHook').width($(document).width());
             $('#fiddleHook').height($(document).height());
-            $(document).load("feed.json");
+            $(document).load(app.metadata.dataUrl);
             $(document).ajaxComplete(this.onAjaxComplete);
         },
         onAjaxComplete: function(event, xhr, settings) {
@@ -1443,7 +1450,7 @@
              * (2) On Ajax complete, parse a list of image urls
              * (3) Iterate the list (2) and build a collection of Images
              */
-            if (settings.url === "feed.json") {
+            if (settings.url === app.metadata.dataUrl) {
                 app.model.PhotoAlbum = new PhotoAlbum({
                     json: JSON.parse(xhr.responseText)
                 });
@@ -1543,10 +1550,7 @@
                         dur: dur,
                         repeatCount: 'indefinite'
                     });
-                if (index === 10) {
-                    console.log(startingPoint.x + ', ' + animatedValues1);
-                    console.log(startingPoint.y + ', ' + animatedValues2);
-                }
+
                 objects.push(new Image({
                     id: photo.title,
                     width: objects.length % 4 === 0 ? Math.floor((+photo.width) / 4) : Math.floor((+photo.width) / 6),

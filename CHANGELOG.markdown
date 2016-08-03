@@ -1153,7 +1153,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **SVG**
     1.  Added [fiddles/svg/fiddle-0026-Images](fiddles/svg/fiddle-0026-Images) ~ [Issue 44](https://github.com/bradyhouse/house/issues/44)
-    2.  Started [fiddles/svg/fiddle-0027-ImageCloud](fiddles/svg/fiddle-0027-ImageCloud) ~ [Issue 51](https://github.com/bradyhouse/house/issues/51)
+    2.  Added [fiddles/svg/fiddle-0027-ImageCloud](fiddles/svg/fiddle-0027-ImageCloud) ~ [Issue 51](https://github.com/bradyhouse/house/issues/51)
+    3.  Started [fiddles/svg/fiddle-0028-BackgroundCarousel](fiddles/svg/fiddle-0028-BackgroundCarousel)
 
 * **Node**
     1.  Started [fiddles/node/fiddle-0017-WebApp](fiddles/node/fiddle-0017-WebApp) ~ [Issue 46](https://github.com/bradyhouse/house/issues/46)

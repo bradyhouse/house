@@ -1,13 +1,10 @@
 fiddle-0027-ImageCloud
 ======
 
-![Screenshot](screenshot.png)
-
 
 ### Title
 
-House SVG Fiddle - fiddle-0027-ImageCloud
-
+SVG Image Cloud
 
 ### Creation Date
 
@@ -26,14 +23,16 @@ Chicago, IL
 
 ### Description
 
-Another SVG Fiddle.
+You have heard of a "tag cloud" (or "word cloud"), what about a "photo album cloud"? Here you go.  This is an SVG element + google photo album rss (xml).  On `DOMContentLoaded`, 202 photos from a google photo album are randomly injected into an SVG element.  Each image then moves in a circular path to create the floating (cloud) effect.  
+
+ To look at a specific image, simply double-click.  To return it to the cloud, click it again.  NOTE -  for simplicity and to avoid `CORS` issues, I converted the album XML to JSON using [xml-to-json](https://www.npmjs.com/package/xml-to-json).
 
 
 ### Published Version Link
 
-N/A
+[codepen](https://codepen.io/bradyhouse/details/LkJqQO/)
 
 
 ### Tags
 
-svg
+svg, image, animate, google photo
