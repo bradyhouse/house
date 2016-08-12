@@ -4,6 +4,10 @@ _sourcePath='/Users/e13542/github/house/fiddles';
 
 function cprf() {
     cp -rf $1 ${_publishPath};
+    if [[ -d "${_publishPath}/$1/libs" ]]
+    then
+        rm -rf "${_publishPath}/$1/libs";
+    fi
 }
 
 cd ${_publishPath};

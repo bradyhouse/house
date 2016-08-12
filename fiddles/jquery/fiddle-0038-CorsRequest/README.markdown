@@ -6,7 +6,7 @@ fiddle-0038-CorsRequest
 
 ### Title
 
-House jQuery Fiddle - fiddle-0038-CorsRequest
+CORS Request
 
 
 ### Creation Date
@@ -17,6 +17,11 @@ House jQuery Fiddle - fiddle-0038-CorsRequest
 ### Location
 
 Chicago, IL
+
+
+### Issue
+
+[Issue 52](https://github.com/bradyhouse/house/issues/52)
 
 
 ### Description

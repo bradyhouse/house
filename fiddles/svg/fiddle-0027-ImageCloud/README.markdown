@@ -31,7 +31,7 @@ You have heard of a "tag cloud" (or "word cloud"), what about a "photo album clo
 ### Published Version Link
 
 [codepen](https://codepen.io/bradyhouse/details/LkJqQO/)
-
+[bradyhouse.github.io > svg > #27](http://bradyhouse.github.io/svg/fiddle-0027-ImageCloud/index.html)
 
 ### Tags
 

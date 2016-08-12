@@ -1550,7 +1550,6 @@
                         dur: dur,
                         repeatCount: 'indefinite'
                     });
-
                 objects.push(new Image({
                     id: photo.title,
                     width: objects.length % 4 === 0 ? Math.floor((+photo.width) / 4) : Math.floor((+photo.width) / 6),
