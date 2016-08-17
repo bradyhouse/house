@@ -1,81 +1,101 @@
+
 (function () {
 
-  var templates = {},
-      bundles,
-      getBundles = function () {
-        $.ajax({
-            url: '/api/user/bundles'
-          })
-          .then(function (data, status, xhr) {
-            bundles = data;
-            showBundles();
-          }, function (xhr, status, err) {
-            if (xhr.status >= 500) {
-              showErr(xhr, status, err);
-            }
-            bundles = {};
-            showBundles();
-          });
-      },
-      saveBundles = function (bundles, callback) {
-        $.ajax({
-            type: 'PUT',
-            url: '/api/user/bundles',
-            data: JSON.stringify(bundles),
-            contentType: 'application/json; charset=utf-8',
-            accepts: 'application/json'
-          })
-          .then(function (data, status, xhr) {
-            callback(null, data);
-          }, function (xhr, status, err) {
-            callback(err);
-          });
-      },
-      showErr = function (xhr, status, err) {
-        $('.alert-danger').fadeIn().find('.message').text(err);
-      },
-      showView = function (selected) {
-        window.location.hash = '#' + selected;
-        $('.view').hide().filter('#' + selected + '-view').show();
-      },
-      showBundles = function () {
-        showView('list-bundles');
-        $('.bundles').html(templates['list-bundles']({bundles: bundles}));
-      },
-      showBundle = function (bundle) {
-        showView('edit-bundle');
-        $('#edit-bundle-view')
-          .find('h2').data('id', bundle._id).end()
-          .find('h2 span').text(bundle.name).end()
-          .find('.bundle-books')
-          .html(templates['list-books']({books: bundle.books}));
-      };
+  var
 
+    templates = {},
+
+    bundles,
+
+  // START:get-bundles
+    getBundles = function () {
+      $.ajax({
+          url: '/api/user/bundles'
+        })
+        .then(function (data, status, xhr) {
+          bundles = data;
+          showBundles();
+        }, function (xhr, status, err) {
+          if (xhr.status >= 500) {
+            showErr(xhr, status, err);
+          }
+          bundles = {};
+          showBundles();
+        });
+    },
+  // END:get-bundles
+
+  // START:save-bundles
+    saveBundles = function (bundles, callback) {
+      $.ajax({
+          type: 'PUT',
+          url: '/api/user/bundles',
+          data: JSON.stringify(bundles),
+          contentType: 'application/json; charset=utf-8',
+          accepts: 'application/json'
+        })
+        .then(function (data, status, xhr) {
+          callback(null, data);
+        }, function (xhr, status, err) {
+          callback(err);
+        });
+    },
+  // END:save-bundles
+
+    showErr = function (xhr, status, err) {
+      $('.alert-danger').fadeIn().find('.message').text(err);
+    },
+
+  // START:show-view
+    showView = function (selected) {
+      window.location.hash = '#' + selected;
+      $('.view').hide().filter('#' + selected + '-view').show();
+    },
+  // END:show-view
+
+    showBundles = function () {
+      showView('list-bundles');
+      $('.bundles').html(templates['list-bundles']({bundles: bundles}));
+    },
+
+    showBundle = function (bundle) {
+      showView('edit-bundle');
+      $('#edit-bundle-view')
+        .find('h2').data('id', bundle._id).end()
+        .find('h2 span').text(bundle.name).end()
+        .find('.bundle-books')
+        .html(templates['list-books']({books: bundle.books}));
+    };
+
+// setup handlebars templates
   $('script[type="text/x-handlebars-template"]').each(function () {
     var name = this.id.replace(/-template$/, '');
     templates[name] = Handlebars.compile($(this).html());
   });
 
+// START:hashchange
   $(window).on('hashchange', function (event) {
     var view = (window.location.hash || '').replace(/^#/, '');
     if ($('#' + view + '-view').length) {
       showView(view);
     }
   });
+// END:hashchange
 
-  // get user data, proceed to list-bundles or welcome
+// get user data, proceed to list-bundles or welcome
+// START:startup-view
   $.ajax({
       url: '/api/user',
       accepts: 'application/json'
     })
-
     .then(function (data, status, xhr) {
       getBundles();
     }, function (xhr, status, err) {
       showView('welcome');
     });
+// END:startup-view
 
-  // implement adding a new bundle
+// implement adding a new bundle
   $('.new-bundle-form').submit(function (event) {
 
     event.preventDefault();
@@ -100,7 +120,7 @@
 
   });
 
-  // field search typeahead
+// field search typeahead
   $('.find-book.by-subject .search').typeahead({
     name: 'subject',
     limit: 10,
@@ -112,7 +132,7 @@
     remote: '/api/search/author?q=%QUERY'
   });
 
-  // field search results
+// field search results
   $('.find-book').submit(function (event) {
     event.preventDefault();
 
@@ -131,7 +151,7 @@
 
   });
 
-  // bundle book list results
+// bundle book list results
   $('.bundle-books').click(function (event) {
 
     var
@@ -165,7 +185,7 @@
 
   });
 
-  // book search results
+// book search results
   $('.books-results').click(function (event) {
 
     var
@@ -195,12 +215,12 @@
 
   });
 
-  // setup close button
+// setup close button
   $('.alert-danger .close').click(function (event) {
     $(event.target).closest('.alert-danger').hide();
   });
 
-  // edit bundle buttons
+// edit bundle buttons
   $('.bundles').click(function (event) {
 
     var

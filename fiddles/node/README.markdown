@@ -16,7 +16,7 @@ a necessary frontend evil.  It could be used to do cool things in the web browse
 the backend for the heavy lifting.  The web server and database tiers were beyond its reach. Node.js
 breaks this paradigm. Now JavaScript can be used for doing cool things on the backend as well.
 
-I have added this section to begin my study of and practise with this technology. 
+I have added this section to begin my study of and practise with this technology.
 
 
 ### Kindle Injection
@@ -65,3 +65,4 @@ _TBW_
     *   [events](http://nodejs.org/api/events.html)
     *   [buffer](http://nodejs.org/api/buffer.html)
 *   [json.org](json.org)
+*   [jimbojw > right-way](https://github.com/jimbojw/right-way)

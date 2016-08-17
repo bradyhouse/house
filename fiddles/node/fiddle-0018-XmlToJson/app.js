@@ -5,14 +5,12 @@
 var xml2json = require('xml-to-json')
 
 xml2json({
-  input: './storm-clouds.xml',
-  output: './storm-clouds.json'
-}, function(err, result) {
-
-  if(err) {
+  input: './input.xml',
+  output: './output.json'
+}, function (err, result) {
+  if (err) {
     console.error(err);
   } else {
-    console.log(result);
+    console.log('output.json generated.');
   }
-
 });

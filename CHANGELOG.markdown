@@ -1159,6 +1159,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Node**
     1.  Started [fiddles/node/fiddle-0017-WebApp](fiddles/node/fiddle-0017-WebApp) ~ [Issue 46](https://github.com/bradyhouse/house/issues/46)
     2.  Added [fiddles/node/fiddle-0018-XmlToJson](fiddles/node/fiddle-0018-XmlToJson) ~ [Issue 48](https://github.com/bradyhouse/house/issues/48)
+    3.  Added dependency (submodule) to [jimbojw > right-way](https://github.com/jimbojw/right-way)
 
 * **ES2015**
     1.  Started [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest) ~ [Issue 52](https://github.com/bradyhouse/house/issues/52)

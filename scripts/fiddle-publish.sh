@@ -1,6 +1,8 @@
+#!/usr/bin/env bash
 
-_publishPath='/Users/e13542/github/bradyhouse.github.io';
-_sourcePath='/Users/e13542/github/house/fiddles';
+_publishPath='/Users/bradyhouse/openshift/nine/static/fiddles';
+_sourcePath='/Users/bradyhouse/github/house/fiddles';
+
 
 function cprf() {
     cp -rf $1 ${_publishPath};
@@ -10,22 +12,29 @@ function cprf() {
     fi
 }
 
+function rmrf() {
+  if [[ -d "$1" ]]
+  then
+    rm -rf "$1";
+  fi
+}
+
+
 cd ${_publishPath};
 
-
-rm -rf angular2;
-rm -rf three;
-rm -rf extjs5;
-rm -rf d3;
-rm -rf dojo;
-rm -rf jquery;
-rm -rf aurelia;
-rm -rf tween;
-rm -rf svg;
-rm -rf resources;
-rm -rf rxjs;
-rm -rf index.html;
-rm -rf .gitignore;
+rmrf angular2;
+rmrf three;
+rmrf extjs5;
+rmrf d3;
+rmrf dojo;
+rmrf jquery;
+rmrf aurelia;
+rmrf tween;
+rmrf svg;
+rmrf resources;
+rmrf rxjs;
+rmrf index.html;
+rmrf .gitignore;
 
 cd ${_sourcePath};
 
@@ -41,5 +50,7 @@ cprf svg;
 cprf rxjs;
 cprf resources;
 cprf index.html;
+
 cd ..
+
 cprf .gitignore;

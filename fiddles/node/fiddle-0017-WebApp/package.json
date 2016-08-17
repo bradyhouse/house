@@ -1,19 +1,19 @@
 {
   "name": "fiddle",
   "version": "0.1.0",
-  "description": "fiddle #17.",
-  "author": "bradyhouse@gmail.com",
+  "description": "node fiddle 17",
+  "author": "Brady House",
   "scripts": {
     "start": "node --harmony ./server.js"
   },
   "dependencies": {
-    "express": "~3.3.8",
     "connect-redis": "~1.4.5",
-    "request": "~2.27.0",
-    "passport": "~0.1.17",
-    "passport-google": "~0.3.0",
+    "express": "~3.3.8",
+    "npmlog": "0.0.4",
+    "passport": "^0.1.18",
+    "passport-google-oauth20": "^1.0.0",
     "q": "~0.9.7",
     "redis": "~0.8.4",
-    "npmlog": "0.0.4"
+    "request": "~2.27.0"
   }
 }
