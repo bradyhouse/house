@@ -134,8 +134,9 @@ checkout [http://www.pragmaticprogrammer.com/titles/jwnode](http://www.pragmatic
         │ Run npm install -g bower to update.      │
         └──────────────────────────────────────────┘
 
-3.  Startup the app `npm start`
-4.  Open a browser and navigate to http://localhost:3000
+3.  Update the top of the [server.js](server.js) with the `{google client id}` and `{google secret key}`
+4.  Startup the app `npm start`
+5.  Open a browser and navigate to http://localhost:3000
 
 
 ### DISCLAIMER

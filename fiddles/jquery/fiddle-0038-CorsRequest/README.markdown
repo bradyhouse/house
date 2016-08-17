@@ -1,13 +1,9 @@
 fiddle-0038-CorsRequest
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 CORS Request
-
 
 ### Creation Date
 
@@ -26,7 +22,8 @@ Chicago, IL
 
 ### Description
 
-Another jQuery Fiddle. 
+Is there no way to perform a _cross domain_ AJAX request without getting a CORS error?  And I am not talking JSONP.
+In particular, is there no way to create an `XMLHttpRequest` to perform a get request to the [Apple Itunes RSS feed](https://itunes.apple.com/WebObjects/MZStore.woa/wpa/MRSS/featuredalbums/sf=143441/limit=100/genre=20/explicit=true/rss.xml).
 
 
 ### Published Version Link

@@ -2,7 +2,7 @@
 'use strict';
 const
   GOOGLE_CLIENT_ID = '{google client id}',
-  GOOGLE_CLIENT_SECRET = '{secret key}',
+  GOOGLE_CLIENT_SECRET = '{google secret key}',
   log = require('npmlog'),
   request = require('request'),
   express = require('express'),
