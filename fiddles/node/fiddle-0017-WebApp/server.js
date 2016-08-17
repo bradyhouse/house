@@ -1,8 +1,8 @@
 #!/usr/bin/env node --harmony
 'use strict';
 const
-  GOOGLE_CLIENT_ID = '909242311014-7h551f2k4uj1ihj4hvg45ghe6c6apqqj.apps.googleusercontent.com',
-  GOOGLE_CLIENT_SECRET = 'yXl13SFVUfxjErmu2eVDweL_',
+  GOOGLE_CLIENT_ID = '{google client id}',
+  GOOGLE_CLIENT_SECRET = '{secret key}',
   log = require('npmlog'),
   request = require('request'),
   express = require('express'),
@@ -88,15 +88,6 @@ require('./lib/bundle.js')(config, app);
 
 // START:get-auth
 
-/*app.get('/auth/google/:return?',
-  passport.authenticate('google', { successRedirect: '/' })
-);
-app.get('/auth/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});*/
-
-
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'], failureRedirect: '/auth/logout' }),
   function(req, res) {
@@ -108,7 +99,7 @@ app.get('/auth/google',
 // START:authed-middleware
 
 const authed = function (req, res, next) {
-  res.json(200, 'HI MOM!');
+  res.json(200, 'authenticated ~ loading app ...');
 };
 
 // START:get-user
