@@ -1,12 +1,9 @@
 fiddle-0041-FabricImageCloud
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
-House jQuery Fiddle - fiddle-0041-FabricImageCloud
+Fabric.js Image Cloud
 
 
 ### Creation Date
@@ -19,9 +16,14 @@ House jQuery Fiddle - fiddle-0041-FabricImageCloud
 Chicago, IL
 
 
+### Issue
+
+[Issue 57](https://github.com/bradyhouse/house/issues/57)
+
+
 ### Description
 
-Another jQuery Fiddle. 
+J
 
 
 ### Published Version Link
@@ -31,4 +33,4 @@ N/A
 
 ### Tags
 
-jQuery
+jQuery, fabric.js

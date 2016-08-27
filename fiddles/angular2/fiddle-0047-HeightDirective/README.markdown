@@ -8,7 +8,7 @@ fiddle-0047-HeightDirective
 
 ### Creation Date
 
-08-17-16
+08-27-16
 
 
 ### Location
@@ -18,13 +18,13 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 56](https://github.com/bradyhouse/house/issues/56)
 
 
 ### Description
 
-Angular2 fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
-it supports create/delete/refactor/list functionality for the "angular2" based POC's aka fiddles. This is only a test.
+Angular2 fiddle exploring if an attribute directive can be used to simplify the management and
+maintenance of a div's height attribute.
 
 
 ### Published Version Link

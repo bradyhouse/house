@@ -1150,6 +1150,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/angular2/fiddle-0044-GridStateRouting](fiddles/angular2/fiddle-0044-GridStateRouting) ~ [Issue 45](https://github.com/bradyhouse/house/issues/45)
     2.  Added [fiddles/angular2/fiddle-0045-AttributeDirective](fiddles/angular2/fiddle-0045-AttributeDirective) ~ [Issue 49](https://github.com/bradyhouse/house/issues/49)
     3.  Added [fiddles/angular2/fiddle-0046-StructuralDirective](fiddles/angular2/fiddle-0046-StructuralDirective) [Issue 50](https://github.com/bradyhouse/house/issues/50)
+    4.  Started [fiddles/angular2/fiddle-0047-HeightDirective](fiddles/angular2/fiddle-0046-HeightDirective) [Issue 56](https://github.com/bradyhouse/house/issues/56)
 
 * **SVG**
     1.  Added [fiddles/svg/fiddle-0026-Images](fiddles/svg/fiddle-0026-Images) ~ [Issue 44](https://github.com/bradyhouse/house/issues/44)
@@ -1160,8 +1161,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/node/fiddle-0018-XmlToJson](fiddles/node/fiddle-0018-XmlToJson) ~ [Issue 48](https://github.com/bradyhouse/house/issues/48)
     3.  Added dependency (submodule) to [jimbojw > right-way](https://github.com/jimbojw/right-way)
 
-* **ES2015**
+* **ES2015 / JQuery**
     1.  Started [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest) ~ [Issue 52](https://github.com/bradyhouse/house/issues/52)
     2.  Added [fiddles/jquery/fiddle-0039-MomentJs](fiddles/jquery/fiddle-0039-MomentJs) ~ [Issue 53](https://github.com/bradyhouse/house/issues/53)
     3.  Added [fiddles/jquery/fiddle-0040-FabricJs](fiddles/jquery/fiddle-0040-FabricJs) ~ [Issue 54](https://github.com/bradyhouse/house/issues/54)
+    4.  Started [fiddles/jquery/fiddle-0041-FabricImageCloud](fiddles/jquery/fiddle-0041-FabricImageCloud) ~ [Issue 57](https://github.com/bradyhouse/house/issues/57)
 
