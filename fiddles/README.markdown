@@ -11,10 +11,10 @@ Root fiddle collection directory.
 To start-up all fiddles at once, run the following command from the [scripts](../scripts) directory:
 
     ./fiddle.sh "start" "all"
-    
+
 On the command line, this should produce the following output:
 
-    
+
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
      888       8  `"'        888        888   888
@@ -23,12 +23,12 @@ On the command line, this should produce the following output:
      888          888  888   888  888   888   888  888ooo888
      888          888  888   888  888   888   888  888    .o
     o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
-    
+
     FIDDLE.SH
     FIDDLE-START.SH
     ├────STARTSERVER
-    Serving "/Users/e13542/github/house/fiddles" at http://127.0.0.1:1841
-    
+    Serving "/Users/bradyhouse/github/house/fiddles" at http://127.0.0.1:1841
+
 
 Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stop the
 web server, simply press `Ctrl`-`C`.
