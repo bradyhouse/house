@@ -36,7 +36,7 @@ configure a node.js based REST Service that will wrap any URL with the necessary
 1.  Using the open shift web console, create an app using the `Node.js (Latest)` Cartridge
 2.  Clone the app's repo
 3.  Delete the contents of the repo
-4.  Copy the contents [Node Fiddle #19 ~ PassThru Rest](../../node/fiddle-0019-PassThruRest) to the repo root directory
+4.  Copy the contents of the [Node Fiddle #19 ~ PassThru Rest](../../node/fiddle-0019-PassThruRest) fiddle to the repo root directory
 5.  Commit the changes
 6.  Update the url parameter of the [app.js](app.js) to point to your app's url + `/passthru`
 
@@ -48,4 +48,4 @@ configure a node.js based REST Service that will wrap any URL with the necessary
 
 ### Tags
 
-jquery, CORS
+jquery, CORS, openshift, node.js
