@@ -43,7 +43,7 @@ configure a node.js based REST Service that will wrap any URL with the necessary
 
 ### Published Version Link
 
-N/A
+[js fiddle](https://jsfiddle.net/bradyhouse/Lqemmdyv/)
 
 
 ### Tags

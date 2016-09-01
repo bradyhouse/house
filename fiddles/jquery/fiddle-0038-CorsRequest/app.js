@@ -1,15 +1,9 @@
 (function (app, $, undefined) {
-
-  app.URL = 'http://12-bradyhouse.rhcloud.com/passthru';
-
+  app.URL = 'https://12-bradyhouse.rhcloud.com/passthru';
   $(document).ready(function () {
-
     let url = window.location.port ? 'http://' + window.location.hostname + ':' + window.location.port :
-    'http://' + window.location.hostname;
-
+    'https://' + window.location.hostname;
     $('.log').height(window.innerHeight);
-
-
     $.ajax({
       type: 'POST',
       url: app.URL,
@@ -19,8 +13,5 @@
       },
       dataType: 'html'
     });
-
   });
-
-
 })(window.app = window.app || {}, jQuery)
