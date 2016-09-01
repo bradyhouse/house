@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-_publishPath='/Users/bradyhouse/openshift/nine/static/fiddles';
-_sourcePath='/Users/bradyhouse/github/house/fiddles';
+_publishPath='/Users/e13542/github/bradyhouse.github.io';
+_sourcePath='/Users/e13542/github/house/fiddles';
 
 
 function cprf() {

@@ -1160,9 +1160,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/node/fiddle-0017-WebApp](fiddles/node/fiddle-0017-WebApp) ~ [Issue 46](https://github.com/bradyhouse/house/issues/46)
     2.  Added [fiddles/node/fiddle-0018-XmlToJson](fiddles/node/fiddle-0018-XmlToJson) ~ [Issue 48](https://github.com/bradyhouse/house/issues/48)
     3.  Added dependency (submodule) to [jimbojw > right-way](https://github.com/jimbojw/right-way)
+    4.  Added [fiddles/node/fiddle-0019-PassThruRest](fiddles/node/fiddle-0019-PassThruRest) ~ [Issue 58](https://github.com/bradyhouse/house/issues/58)
+
 
 * **ES2015 / JQuery**
-    1.  Started [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest) ~ [Issue 52](https://github.com/bradyhouse/house/issues/52)
+    1.  Added [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest) ~ [Issue 52](https://github.com/bradyhouse/house/issues/52)
     2.  Added [fiddles/jquery/fiddle-0039-MomentJs](fiddles/jquery/fiddle-0039-MomentJs) ~ [Issue 53](https://github.com/bradyhouse/house/issues/53)
     3.  Added [fiddles/jquery/fiddle-0040-FabricJs](fiddles/jquery/fiddle-0040-FabricJs) ~ [Issue 54](https://github.com/bradyhouse/house/issues/54)
     4.  Started [fiddles/jquery/fiddle-0041-FabricImageCloud](fiddles/jquery/fiddle-0041-FabricImageCloud) ~ [Issue 57](https://github.com/bradyhouse/house/issues/57)

@@ -1,0 +1,16 @@
+{
+  "name": "openshift-cartridge-nodejs-template",
+  "version": "1.0.1",
+  "description": "Custom Node.js cartridge for OpenShift - sample application + passthru endpoint",
+  "private": true,
+  "main": "start.js",
+  "scripts": {
+    "start": "node --use_strict start.js"
+  },
+  "author": "Brady House <bradyhouse@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "npmlog": "^4.0.0",
+    "request": "^2.74.0"
+  }
+}
