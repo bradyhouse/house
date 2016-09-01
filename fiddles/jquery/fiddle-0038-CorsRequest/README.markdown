@@ -22,10 +22,10 @@ Chicago, IL
 
 ### Description
 
-Is there no way to perform a _cross domain_ AJAX request without getting a CORS error?  And I am not talking JSONP.
-In particular, is there no way to create an `XMLHttpRequest` to perform a get request to the [Apple Itunes RSS feed](https://itunes.apple.com/WebObjects/MZStore.woa/wpa/MRSS/featuredalbums/sf=143441/limit=100/genre=20/explicit=true/rss.xml).
+_CORS! CORS! CORS!_ Is there no way to perform a _cross domain_ AJAX request without getting CORS error?  And I am not talking JSONP.
+I simply want a AJAX Call that will return the [Apple Itunes RSS feed](https://itunes.apple.com/WebObjects/MZStore.woa/wpa/MRSS/featuredalbums/sf=143441/limit=100/genre=20/explicit=true/rss.xml).  _Is that so wrong??_
 
-Yes, there is a solution.  Its called a secondary server.  In other words, you can short circuit CORS Requests
+I am not sure if it is wrong or right, but there is a way:  Its called a secondary server.  You can short circuit CORS Requests
 errors using a secondary server to wrap the response with the required allow-* headers.  And this can
 be accomplished (for free) using [open shift](https://www.openshift.com/).  The subsequent section details how to
 configure a node.js based REST Service that will wrap any URL with the necessary headers.
@@ -44,7 +44,7 @@ configure a node.js based REST Service that will wrap any URL with the necessary
 ### Published Version Link
 
 [js fiddle](https://jsfiddle.net/bradyhouse/Lqemmdyv/)
-
+[bradyhouse.github.io > ES2015 > Fiddle #38](http://bradyhouse.github.io/jquery/fiddle-0038-CorsRequest/index.html)
 
 ### Tags
 
