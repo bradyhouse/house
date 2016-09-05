@@ -28,8 +28,8 @@ I love [SVG Fiddle #27](http://bradyhouse.github.io/svg/fiddle-0027-ImageCloud/i
 
 ### Published Version Link
 
-[bradyhouse.github.io > ES2015 > #27](http://bradyhouse.github.io/jquery/fiddle-0041-FabricImageCloud/index.html)
-
+* [bradyhouse.github.io > ES2015 > #27](http://bradyhouse.github.io/jquery/fiddle-0041-FabricImageCloud/index.html)
+* [codepen.io](http://codepen.io/bradyhouse/pen/GjgxqG)
 
 ### Tags
 
