@@ -23,12 +23,12 @@ Chicago, IL
 
 ### Description
 
-J
+I love [SVG Fiddle #27](http://bradyhouse.github.io/svg/fiddle-0027-ImageCloud/index.html).  However, it doesn't work on my iphone.  So can I create a similar POC using fabric.js that is accessible via my iphone?
 
 
 ### Published Version Link
 
-N/A
+[bradyhouse.github.io > ES2015 > #27](http://bradyhouse.github.io/jquery/fiddle-0041-FabricImageCloud/index.html)
 
 
 ### Tags

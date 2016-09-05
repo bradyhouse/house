@@ -2,7 +2,14 @@
 
 _publishPath='/Users/e13542/github/bradyhouse.github.io';
 _sourcePath='/Users/e13542/github/house/fiddles';
+_commitMessage='201607010420';
 
+
+function push() {
+  git add -A;
+  git commit -am ${_commitMessage};
+  git push;
+}
 
 function cprf() {
     cp -rf $1 ${_publishPath};
@@ -54,3 +61,7 @@ cprf index.html;
 cd ..
 
 cprf .gitignore;
+
+cd ${_publishPath};
+
+push;

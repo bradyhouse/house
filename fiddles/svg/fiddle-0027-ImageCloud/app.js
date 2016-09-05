@@ -19,7 +19,7 @@
                 this.apply(object, defaults);
             }
             if (object && config && typeof config === 'object') {
-                let property;
+                var property;
                 for (property in config) {
                     if (config[property]) {
                         object[property] = config[property];
@@ -178,7 +178,7 @@
              * @returns {string}
              */
         static mapCircularPath(centerX, centerY, radius, axis) {
-                let _coor3pm = Util.mapCircularPoint(centerX, centerY, radius, 0),
+                var _coor3pm = Util.mapCircularPoint(centerX, centerY, radius, 0),
                     _coor4pm = Util.mapCircularPoint(centerX, centerY, radius, 30),
                     _coor5pm = Util.mapCircularPoint(centerX, centerY, radius, 60),
                     _coor6pm = Util.mapCircularPoint(centerX, centerY, radius, 90),
@@ -218,7 +218,7 @@
              * @returns {Array}
              */
         static toCircularPointArray(centerX, centerY, radius, degrees) {
-                let coors = [],
+                var coors = [],
                     angle = 0,
                     delta = degrees ? degrees : 30;
                 while (angle <= 360) {
@@ -236,10 +236,10 @@
              * @returns {string}
              */
         static flattenToValues(pointArray, axis) {
-            let path = '';
+            var path = '';
             if (pointArray.constructor === Array && pointArray.length) {
                 if (pointArray[0].hasOwnProperty(axis)) {
-                    pointArray.map((point, index) => {
+                    pointArray.map(function(point, index) {
                         path += point[axis];
                         if (index < (pointArray.length - 1)) {
                             path += ';';
@@ -260,7 +260,7 @@
                         y: startingPoint.y
                     });
                     // top
-                    pointArray.map((point, index) => {
+                    pointArray.map(function(point, index) {
                         if (index > startIndex) {
                             newArray.push({
                                 x: point.x,
@@ -269,7 +269,7 @@
                         }
                     });
                     // bottom
-                    pointArray.map((point, index) => {
+                    pointArray.map(function(point, index) {
                         if (index < startIndex) {
                             newArray.push({
                                 x: point.x,
@@ -292,7 +292,7 @@
              * @returns {{x: number, y: number}}
              */
         static pickRandomPoint(circularPointArr) {
-                let coor = {
+                var coor = {
                         x: 0,
                         y: 0
                     },
@@ -1343,12 +1343,12 @@
                 this.docElementNS.setAttribute('onclick', this.onclick);
             }
             if (this.children && this.children.length) {
-                this.children.map((child) => {
+                this.children.map(function(child) {
                     child.parent = this;
                     if (child.docElementNS) {
                         this.docElementNS.appendChild(child.docElementNS);
                     }
-                });
+                }, this);
             }
             if (this.autoBind) {
                 this.bind();
@@ -1375,7 +1375,7 @@
             this.init();
         }
         init() {
-            let title = this.json && this.json.hasOwnProperty('title') ? this.json.title : '',
+            var title = this.json && this.json.hasOwnProperty('title') ? this.json.title : '',
                 mediaGroup = this.json && this.json.hasOwnProperty('media:group') ? this.json['media:group'] : null,
                 mediaContent = mediaGroup && mediaGroup.hasOwnProperty('media:content') ? mediaGroup['media:content'] : null,
                 content = mediaContent && mediaContent.hasOwnProperty('$') ? mediaContent['$'] : null;
@@ -1408,11 +1408,11 @@
                 if (this.json.rss) {
                     if (this.json.rss.channel) {
                         if (this.json.rss.channel.item) {
-                            this.json.rss.channel.item.map((item) => {
+                            this.json.rss.channel.item.map(function(item) {
                                 this.children.push(new Photo({
                                     json: item
                                 }))
-                            });
+                            }, this);
                         }
                     }
                 }
@@ -1454,14 +1454,14 @@
                 app.model.PhotoAlbum = new PhotoAlbum({
                     json: JSON.parse(xhr.responseText)
                 });
-                window.setTimeout(() => {
+                window.setTimeout(function() {
                     app.controller.init();
                 }, 500);
             }
         },
         topImage: null,
         onImageClick: function(image) {
-            let fiddleHook = document.getElementById('fiddleHook'),
+            var fiddleHook = document.getElementById('fiddleHook'),
                 svg = fiddleHook ? fiddleHook.shadowRoot.getElementById('fiddle') : null,
                 topImage = new Image({
                     id: image.getAttribute('id') + '_topImage',
@@ -1478,7 +1478,7 @@
             }
         },
         onImageRestore: function(image) {
-            let fiddleHook = document.getElementById('fiddleHook'),
+            var fiddleHook = document.getElementById('fiddleHook'),
                 svg = fiddleHook ? fiddleHook.shadowRoot.getElementById('fiddle') : null;
             if (svg) {
                 svg.removeChild(image);
@@ -1493,7 +1493,7 @@
              *  cx: app.util.rand(0, $("#fiddleHook").width()),
              cy: app.util.rand(0, $("#fiddleHook").height()),
              */
-            let fiddleHook = document.getElementById('fiddleHook'),
+            var fiddleHook = document.getElementById('fiddleHook'),
                 objects = [],
                 center = {
                     x: $(document).width() / 2,
@@ -1521,8 +1521,8 @@
                 width: $(document).width(),
                 fill: 'url(#gridPattern)'
             }));
-            app.model.PhotoAlbum.children.map((photo, index) => {
-                let radius = $(document).width() < $(document).height() ? $(document).width() / 2 : $(document).height() / 2,
+            app.model.PhotoAlbum.children.map(function(photo, index) {
+                var radius = $(document).width() < $(document).height() ? $(document).width() / 2 : $(document).height() / 2,
                     randX = Util.rand(0, $(document).width()),
                     randY = Util.rand(0, $(document).height()),
                     dur = Util.rand(120, 240) + 's',

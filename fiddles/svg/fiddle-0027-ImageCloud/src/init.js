@@ -93,48 +93,47 @@ app.controller = app.controller || {
 
       app.model.PhotoAlbum.children.map((photo, index) => {
         let radius = $(document).width() < $(document).height() ? $(document).width() / 2 : $(document).height() / 2,
-        randX = Util.rand(0, $(document).width()),
-        randY = Util.rand(0, $(document).height()),
-        dur = Util.rand(120, 240) + 's',
-        circularPathArr = Util.toCircularPointArray(randX, randY, radius),
-        startingIndex = Util.rand(0, circularPathArr.length-1),
-        startingPoint = circularPathArr[startingIndex],
-        reorderedPathArr = Util.reorderFrom(circularPathArr, startingIndex),
-        animatedValues1 = Util.flattenToValues(reorderedPathArr, 'x'),
-        animatedValues2 = Util.flattenToValues(reorderedPathArr, 'y'),
-        animateX = new Animate({
-          attributeName: 'x',
-          dur: dur,
-          values: animatedValues1,
-          repeatCount: 'indefinite'
-        }),
-        animateY = new Animate({
-          attributeName: 'y',
-          dur: dur,
-          values: animatedValues2,
-          repeatCount: 'indefinite'
-        }),
-        animateOpacity = new Animate({
-          attributeName: 'opacity',
-          values: '1;.9;.8;.7;.6;.5;.6;.7;.8;.9',
-          dur: dur,
-          repeatCount: 'indefinite'
-        });
+          randX = Util.rand(0, $(document).width()),
+          randY = Util.rand(0, $(document).height()),
+          dur = Util.rand(120, 240) + 's',
+          circularPathArr = Util.toCircularPointArray(randX, randY, radius),
+          startingIndex = Util.rand(0, circularPathArr.length - 1),
+          startingPoint = circularPathArr[startingIndex],
+          reorderedPathArr = Util.reorderFrom(circularPathArr, startingIndex),
+          animatedValues1 = Util.flattenToValues(reorderedPathArr, 'x'),
+          animatedValues2 = Util.flattenToValues(reorderedPathArr, 'y'),
+          animateX = new Animate({
+            attributeName: 'x',
+            dur: dur,
+            values: animatedValues1,
+            repeatCount: 'indefinite'
+          }),
+          animateY = new Animate({
+            attributeName: 'y',
+            dur: dur,
+            values: animatedValues2,
+            repeatCount: 'indefinite'
+          }),
+          animateOpacity = new Animate({
+            attributeName: 'opacity',
+            values: '1;.9;.8;.7;.6;.5;.6;.7;.8;.9',
+            dur: dur,
+            repeatCount: 'indefinite'
+          });
 
-      objects.push(new Image({
-        id: photo.title,
-        width: objects.length % 4 === 0 ? Math.floor((+photo.width) / 4) : Math.floor((+photo.width) / 6),
-        height: objects.length % 4 === 0 ? Math.floor((+photo.height) / 4) : Math.floor((+photo.height) / 6),
-        x: startingPoint.x,
-        y: startingPoint.y,
-        xlinkHref: photo.url,
-        opacity: '.5',
-        onclick: 'app.controller.onImageClick(this)',
-        children: [animateOpacity, animateX, animateY]
-      }));
+        objects.push(new Image({
+          id: photo.title,
+          width: objects.length % 4 === 0 ? Math.floor((+photo.width) / 4) : Math.floor((+photo.width) / 6),
+          height: objects.length % 4 === 0 ? Math.floor((+photo.height) / 4) : Math.floor((+photo.height) / 6),
+          x: startingPoint.x,
+          y: startingPoint.y,
+          xlinkHref: photo.url,
+          opacity: '.5',
+          onclick: 'app.controller.onImageClick(this)',
+          children: [animateOpacity, animateX, animateY]
+        }));
 
-    });
-
+      });
 
 
       app.view.Viewport = new Viewport({
@@ -143,7 +142,6 @@ app.controller = app.controller || {
       });
 
       document.body.style.background = '#000000';
-
 
 
     }

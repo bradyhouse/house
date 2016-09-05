@@ -8,7 +8,7 @@ class PhotoAlbum extends Base {
       }
   }
 
-  constructor(config = null) {
+  constructor(config) {
     super();
     if (config) {
       this.apply(this, config, this.config);
@@ -21,10 +21,10 @@ class PhotoAlbum extends Base {
      if (this.json.rss) {
        if (this.json.rss.channel) {
          if (this.json.rss.channel.item) {
-           this.json.rss.channel.item.map((item) => {
+           this.json.rss.channel.item.map(function(item) {
              this.children.push(new Photo({
              json: item
-           }))});
+           }))}, this);
          }
        }
      }

@@ -1167,5 +1167,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest) ~ [Issue 52](https://github.com/bradyhouse/house/issues/52)
     2.  Added [fiddles/jquery/fiddle-0039-MomentJs](fiddles/jquery/fiddle-0039-MomentJs) ~ [Issue 53](https://github.com/bradyhouse/house/issues/53)
     3.  Added [fiddles/jquery/fiddle-0040-FabricJs](fiddles/jquery/fiddle-0040-FabricJs) ~ [Issue 54](https://github.com/bradyhouse/house/issues/54)
-    4.  Started [fiddles/jquery/fiddle-0041-FabricImageCloud](fiddles/jquery/fiddle-0041-FabricImageCloud) ~ [Issue 57](https://github.com/bradyhouse/house/issues/57)
+    4.  Added [fiddles/jquery/fiddle-0041-FabricImageCloud](fiddles/jquery/fiddle-0041-FabricImageCloud) ~ [Issue 57](https://github.com/bradyhouse/house/issues/57)
 
