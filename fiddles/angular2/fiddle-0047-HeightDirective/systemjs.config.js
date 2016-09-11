@@ -4,13 +4,13 @@
     map = {
       'app': 'app',
 
-      '@angular': 'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
-      'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api', // get latest
-      'rxjs': 'https://npmcdn.com/rxjs@5.0.0-beta.6',
-      'ts': 'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
-      'typescript': 'https://npmcdn.com/typescript@1.8.10/lib/typescript.js',
-      'moment': 'https://npmcdn.com/moment@2.13.0/moment.js',
-      'ng2-bootstrap': 'https://npmcdn.com/ng2-bootstrap@1.0.17/ng2-bootstrap.js'
+      '@angular': 'https://unpkg.com/@angular', // sufficient if we didn't pin the version
+      'angular2-in-memory-web-api': 'https://unpkg.com/angular2-in-memory-web-api', // get latest
+      'rxjs': 'https://unpkg.com/rxjs@5.0.0-beta.6',
+      'ts': 'https://unpkg.com/plugin-typescript@4.0.10/lib/plugin.js',
+      'typescript': 'https://unpkg.com/typescript@1.8.10/lib/typescript.js',
+      'moment': 'https://unpkg.com/moment@2.13.0/moment.js',
+      'ng2-bootstrap': 'https://unpkg.com/ng2-bootstrap@1.0.17/ng2-bootstrap.js'
     },
     packages = {
       'app': {main: 'main.ts', defaultExtension: 'ts'},
@@ -30,7 +30,7 @@
     ];
 
   ngPackageNames.forEach(function (pkgName) {
-    map['@angular/' + pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
+    map['@angular/' + pkgName] = 'https://unpkg.com/@angular/' + pkgName + ngVer;
   });
 
   ngPackageNames.forEach(function (pkgName) {
