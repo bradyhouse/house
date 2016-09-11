@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-_publishPath='/Users/e13542/github/bradyhouse.github.io';
-_sourcePath='/Users/e13542/github/house/fiddles';
+_publishPath='/Users/bradyhouse/github/bradyhouse.github.io';
+_sourcePath='/Users/bradyhouse/github/house/fiddles';
 _commitMessage='201607010420';
 
 
