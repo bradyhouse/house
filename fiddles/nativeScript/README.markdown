@@ -52,7 +52,7 @@ If everything is working correctly, you should see a stream of output that looks
 
 Use the [.nativescriptrc](../../scripts/bin/nativescript/.nativescriptrc) file to configure machine specific variables.
 
-i##### Enabling Angular2 Template
+##### Enabling Angular2 Template
 
 The `fiddle.sh` script includes logic to initialize new nativeScript fiddles using _just JavaScript_ or using Angular2 and typeScript.
 By default, JavaScript is enabled. Its faster and cleaner, if you just want to get started fast.  To enable angular2 templating, open the [.nativescriptrc](../../scripts/bin/nativescript/.nativescriptrc) file
