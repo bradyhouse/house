@@ -11,8 +11,10 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 201605180420
+# 09/16/2016 - See CHANGELOG.MARKDOWN @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 
+source bin/nativescript/.nativescriptrc
 source bin/_utils.sh;
 source bin/nativescript/_create.sh;
 source bin/nativescript/_install.sh;
@@ -28,10 +30,8 @@ then
       echo "Please specify the name of the new fiddle"
       exit 59
 fi
-
 fiddleSubDir="../fiddles/nativescript/$1";
 bornOnDate=$(date +"%m-%d-%y";)
-echo ${bornOnDate};
 
 function catch() {
     case $1 in
@@ -53,6 +53,8 @@ function catch() {
             ;;
         8)  endLog "adbInstall failed";
             ;;
+        9)  endLog "Invalid name please use the format \"fiddle-####-[Name]\"."
+            ;;
         *)  echo "fubar! Something went wrong."
             ;;
     esac
@@ -60,15 +62,16 @@ function catch() {
 }
 # try
 (
-    if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
+    projectName=$(toLowerCase $(parseName $1;);) || exit 9;
+    groupLog "App Name: ";
+    echo "\"${projectName}\"";
     cd ../fiddles/nativescript;
     typescriptInstall || exit 1;
     nativescriptInstall || exit 2;
     nvmInstall || exit 3;
     adbInstall || exit 8;
-    nvmUseNodeVer5 || exit 4;
-    nativescriptCreate $1 ${bornOnDate} || exit 5;
-    nvmUseNodeVer426 || exit 6;
+    nvmUseNodeVer || exit 4;
+    nativescriptCreate $1 ${bornOnDate} ${projectName} ${__TEMPLATE_TYPE__} || exit 5;
 )
 rc=$?; catch ${rc};
 # finally

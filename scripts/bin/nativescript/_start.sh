@@ -13,10 +13,56 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
+# 09/16/2016 - See CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
+
+
+function nativeScriptRunAndroid() {
+  groupLog "nativeScriptRunAndroid";
+  nativescript run android --emulator;
+}
+
+function npmRunStartAndroid() {
+  groupLog "npmRunStartAndroid";
+   npm run start.android;
+}
+
+function isEmulatorRunning() {
+  if [[ ! $(lsof -i -P | grep :5554) ]]
+  then
+    echo "false";
+  else
+    echo "true";
+  fi
+}
+
+function startAndroidEmulator() {
+  groupLog "startEmulator";
+  if [[ $(isEmulatorRunning;) -eq "false" ]]
+  then
+    nohup ${__ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__ANDROID_EMULATOR_PROFILE__}" &
+    sleep 10;
+  else
+    groupLog "emulator is already running";
+  fi
+}
 
 function nativescriptAndroidStart() {
     groupLog "nativescriptAndroidStart";
-    npm run start.android;
+    type=$2;
+    if [[ ! -d $1 ]]
+    then
+      exit -1;
+    fi
+    cd $1;
+    case ${type} in
+        'js') # javascript
+          startAndroidEmulator;
+          nativeScriptRunAndroid;
+          ;;
+        'ng2') # angular 2
+          npmRunStartAndroid;
+          ;;
+    esac
     exit 0;
 }

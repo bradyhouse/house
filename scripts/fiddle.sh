@@ -69,6 +69,7 @@ function fiddleIndexAll() {
             ;;
         'create')
             if [ "$#" -lt 3 ]; then  ./fiddle-create.sh;  exit 0; fi
+            ./fiddle-delete.sh $2 $3 || exit 0;
             ./fiddle-create.sh $2 $3
             ;;
         'fork')

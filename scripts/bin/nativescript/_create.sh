@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
+# 09/16/2016 - See CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -25,35 +26,74 @@ function createTypingsRcFile() {
     echo "}" >> .typingsrc
 }
 
+function initJsProject() {
+  groupLog "initJsProject";
+  fiddle=$1;
+  bornOnDate=$2;
+  projectName=$3;
+  $(cp -rf "template" "${fiddle}") || exit 1;
+  cd ${fiddle};
+  $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
+  $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 5;
+  $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
+  nativescript create ${projectName} || exit 7;
+  cd ${projectName};
+  nativescript platform add android || exit 9;
+}
+
+function npmInstall() {
+  groupLog "npmInstall";
+  npm install;
+}
+
+function gitNg2SeederClone() {
+  groupLog "gitClone";
+  $(git clone --depth 1 ${__NG2_SEEDER__} ${projectName};) || exit 2;
+}
+
+function initNg2Project() {
+  groupLog "initNg2ProjectDirectory";
+  fiddle=$1;
+  bornOnDate=$2;
+  projectName=$3;
+  $(cp -rf "template" "${fiddle}") || exit 1;
+  cd "${fiddle}";
+  $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
+  $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 5;
+  $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
+  cd ${projectName};
+  createTypingsRcFile || exit $?;
+  gitNg2SeederClone || exit $?;
+  rm -rf .github || exit 3;
+  rm -rf .git || exit 3;
+  rm -rf README.md || exit 4;
+  rm -r LICENSE || exit 4;
+  rm -rf .editorconfig || exit 4;
+  npmInstall;
+}
+
 function nativescriptCreate() {
     groupLog "nativescriptCreate";
     fiddle=$1;
     bornOnDate=$2;
+    projectName=$3;
+    type=$4;
     # try
     (
-        if [[ -d "${fiddle}" ]]
-        then
-            rm -rf ${fiddle} || exit 1;
-        fi
-
-        $(git clone --depth 1 https://github.com/NathanWalker/angular2-seed-advanced.git ${fiddle};) || exit 2;
-        cd ${fiddle};
-        rm -rf .github || exit 3;
-        rm -rf .git || exit 3;
-        rm -rf README.md || exit 4;
-        rm -r LICENSE || exit 4;
-        rm -rf .editorconfig || exit 4;
-        cp -rf ../template/README.md README.md || exit 5;
-        $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
-        $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
-        nvm use 5.0;
-        npm install;
-    )
+      case ${type} in
+        'js') # javascript
+            initJsProject "${fiddle}" "${bornOnDate}" "${projectName}" || exit $?;
+          ;;
+        'ng2') # angular 2
+            initNg2Project "${fiddle}" "${bornOnDate}" "${projectName}" || exit $?;
+          ;;
+      esac
+   )
     # catch
     rc=$?; case ${rc} in
-        0)  echo ""
+        0)  exit 0;
             ;;
-        1)  groupLog "${this}: Failed while attempting to remove the existing \"${fiddle}\" directory.";
+        1)  groupLog "${this}: Failed while attempting to initialize \"${fiddle}\" directory.";
             ;;
         2)  groupLog "${this}: Failed while attempting to clone angular2-seeder repo";
             ;;
@@ -64,6 +104,14 @@ function nativescriptCreate() {
         5)  groupLog "${this}: Failed while attempting to update the README.md file.";
             ;;
         6)  groupLog "${this}: Failed while attempting to run \"npm install\".";
+            ;;
+        7)  groupLog "${this}: command \"nativescript create ${projectName}\" failed.";
+            ;;
+        9)  groupLog "${this}: command \"nativescript platform add android\" failed.";
+            ;;
+        10) groupLog "${this}: command \"nativescript platform add ios\" failed.";
+            ;;
+        11) groupLog "${this}: command \"npm install\" failed.";
             ;;
         *)  groupLog "${this}: F U B A R ~ Something went wrong."
             ;;

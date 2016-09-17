@@ -3,7 +3,7 @@
 
 ### Title
 
-{{FiddleName}}
+{{Title}}
 
 
 ### Creation Date

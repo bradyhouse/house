@@ -27,6 +27,7 @@
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/17/2016 - See CHANGELOG @ 201605020420
 # 05/18/2015 - See CHANGELOG @ 201605180420
+# 09/16/2016 - See CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -38,16 +39,19 @@ fiddleName=$(getFiddle "${fiddleType}" "${fiddleCriteria}";);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
 changeLogFile="../CHANGELOG.markdown"
 
-echo -e ""
-echo -e "fiddle type:\t${fiddleType}";
-echo -e "fiddle name:\t${fiddleName}";
-echo -e "";
-read -p "Are you sure you want to delete this fiddle? [Y/n] " CMD;
+function prompt() {
+  echo -e ""
+  echo -e "fiddle type:\t${fiddleType}";
+  echo -e "fiddle name:\t${fiddleName}";
+  echo -e "";
+  read -p "Are you sure you want to delete this fiddle? [Y/n] " CMD;
 
-if [[ ${CMD} == "n" ]]
-then
-    exit 0;
-fi
+  if [[ ${CMD} == "n" ]]
+  then
+      exit 92;
+  fi
+
+}
 
 function updateChangeLog() {
     changeLogFile=$1
@@ -66,12 +70,11 @@ function updateChangeLog() {
 
 #try
 (
-	if [[ "${fiddleName}" == "NA" ]]; then exit 91; fi
-
-	if [ "$#" -ne 2 ]; then  exit 86; fi
-
-    if [[ ! -d "${fiddlePath}" ]]; then exit 89; fi
-
+	if [[ -d "${fiddlePath}" ]]
+  then
+    if [[ "${fiddleName}" == "NA" ]]; then exit 91; fi
+	  if [ "$#" -ne 2 ]; then  exit 86; fi
+    prompt || exit $?;
     case ${fiddleType} in
         'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
@@ -85,12 +88,11 @@ function updateChangeLog() {
             esac
         ;;
         *)
-            exit 86
-            ;;
+          exit 86
+          ;;
     esac
-
     updateChangeLog "${changeLogFile}" "${fiddleName}" || exit 90
-
+  fi
 )
 #catch
 _rc=$?
@@ -121,6 +123,8 @@ case ${_rc} in
     90) echo "fubar! the failed while attempting to update \"${changeLogFile}\"."
         ;;
     91) echo "fubar! the specified fiddle criteria,\"${fiddleCriteria}\", doesn't exist."
+        ;;
+    92) echo "";
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

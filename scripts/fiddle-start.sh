@@ -24,7 +24,9 @@
 # 04/16/2016 - See CHANGELOG.MARKDOWN @ 201604160420
 # 05/17/2016 - See CHANGELOG.MARKDOWN @ 201605020420
 # 05/18/2015 - See CHANGELOG.MARKDOWN @ 201605180420
+# 09/16/2016 - See CHANGELOG.MARKDOWN @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
+source bin/nativescript/.nativescriptrc;
 source bin/_utils.sh;
 source bin/_types.sh;
 source bin/angular2-cli/_install.sh;
@@ -45,6 +47,8 @@ _type=$(echo $1);
 _fiddle=$(echo $2);
 _fiddleSubDir="../fiddles/${_type}";
 _fiddleRoot="${_fiddleSubDir}/${_fiddle}";
+_projectName=${_fiddle};
+
 _port=1841
 if [ "$#" -gt 2 ]; then _port=$3; fi
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
@@ -89,10 +93,11 @@ function startServer() {
             ;;
         'nativescript')
             cd ${_fiddleRoot};
+            _projectName=$(toLowerCase $(parseName ${_fiddle};);) || exit 107;
             nvmInstall || exit 100;
             adbInstall || exit 101;
-            nvmUseNodeVer426 || exit 102;
-            nativescriptAndroidStart || exit 103;
+            nvmUseNodeVer || exit 102;
+            nativescriptAndroidStart ${_projectName} ${__TEMPLATE_TYPE__} || exit 103;
             ;;
         'all')
             cd "../fiddles" || exit 88;
@@ -171,6 +176,8 @@ case ${rc} in
     105) echo -e "Fubar\t\"electronInstall\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     106) echo -e "Fubar\t\"electronStart\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    107) echo -e "Fubar\t\Failed while attempting to determine nativescript projectName.";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

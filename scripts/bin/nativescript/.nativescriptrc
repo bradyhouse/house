@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# ---------------------------------------------------------------------------------------------------|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
+#  Specification           : N/A_____________________________________________________________________|
+#  Specification Path      : N/A_____________________________________________________________________|
+#  Author                  : brady house_____________________________________________________________|
+#  Create date             : 05/02/2016______________________________________________________________|
+#  Description             : GLOBAL VARIABLE CONFIG USED BY NATIVESCRIPT CREATE/START SCRIPTS._______|
+# ---------------------------------------------------------------------------------------------------|
+#  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+# ---------------------------------------------------------------------------------------------------|
+# Baseline Ver - CHANGELOG @ 201609160420
+# ---------------------------------------------------------------------------------------------------|
+
+export __NODE_VERSION__="5.1.0";
+export __NG2_SEEDER__="https://github.com/NathanWalker/angular2-seed-advanced.git";
+export __ANDROID_EMULATOR_PROFILE__=320480QVGA;
+export __ANDROID_EMULATOR_EXE__="/Users/bradyhouse/bin/android-sdk-macosx/tools/emulator";
+
+# -------------------------------------------------
+# TEMPLATE TYPE SWITCH
+# This variable controls the template used by
+# the fiddle.sh when initializing a new nativescript
+# fiddle. 2 options are supported:
+#   "js"  JavaScript
+#   "ng2" Angular2
+# --------------------------------------------------
+export __TEMPLATE_TYPE__="js";

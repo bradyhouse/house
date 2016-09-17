@@ -1162,10 +1162,33 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Added dependency (submodule) to [jimbojw > right-way](https://github.com/jimbojw/right-way)
     4.  Added [fiddles/node/fiddle-0019-PassThruRest](fiddles/node/fiddle-0019-PassThruRest) ~ [Issue 58](https://github.com/bradyhouse/house/issues/58)
 
-
 * **ES2015 / JQuery**
     1.  Added [fiddles/jquery/fiddle-0038-CorsRequest](fiddles/jquery/fiddle-0038-CorsRequest) ~ [Issue 52](https://github.com/bradyhouse/house/issues/52)
     2.  Added [fiddles/jquery/fiddle-0039-MomentJs](fiddles/jquery/fiddle-0039-MomentJs) ~ [Issue 53](https://github.com/bradyhouse/house/issues/53)
     3.  Added [fiddles/jquery/fiddle-0040-FabricJs](fiddles/jquery/fiddle-0040-FabricJs) ~ [Issue 54](https://github.com/bradyhouse/house/issues/54)
     4.  Added [fiddles/jquery/fiddle-0041-FabricImageCloud](fiddles/jquery/fiddle-0041-FabricImageCloud) ~ [Issue 57](https://github.com/bradyhouse/house/issues/57)
 
+
+### 201609160420
+
+* **fiddle.sh**
+    1. Extended [scripts/bin/_util.sh](scripts/bin/_util.sh)
+      *   See [bash fiddle #91](fiddles/bash/fiddle-0091-SplitDelimitedString)
+    2. Fixed [Bug ~ Issue #60](https://github.com/bradyhouse/house/issues/60)
+      *   Reflected changes:
+        1.  Updated [scripts/bin/nativescript/_install.sh](scripts/bin/nativescript/_install.sh)
+        2.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
+        3.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
+        4.  Updated [scripts/bin/fiddle-start.sh](scripts/bin/fiddle-start.sh)
+        5.  Updated [scripts/bin/fiddle-nativescript.sh](scripts/bin/fiddle-nativescript.sh)
+        6.  Added [scripts/bin/nativescript/.nativescriptrc](scripts/bin/nativescript/.nativescriptrc)
+    3. Fixed [Bug ~ Issue #63](https://github.com/bradyhouse/house/issues/63)
+      * Reflected changes:
+        1.  Updated [scripts/bin/fiddle-create.sh](scripts/bin/fiddle-create.sh)
+        2.  Updated [scripts/bin/fiddle-delete.sh](scripts/bin/fiddle-delete.sh)
+
+* **Bash**
+    1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
+
+* **NativeScript**
+    1.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)

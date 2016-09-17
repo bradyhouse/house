@@ -4,8 +4,6 @@ Fiddles
 Root fiddle collection directory.
 
 
-### Using fiddle.sh ...
-
 #### To Start
 
 To start-up all fiddles at once, run the following command from the [scripts](../scripts) directory:
@@ -32,6 +30,8 @@ On the command line, this should produce the following output:
 
 Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stop the
 web server, simply press `Ctrl`-`C`.
+
+
 
 
 

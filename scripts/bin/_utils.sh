@@ -13,8 +13,31 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# 09/16/2016 - See CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 
+
+function split() {
+  str=$1;
+  delimiter=$2;
+  echo ${str//$delimiter/ };
+}
+
+function parseName() {
+  pieces=($(split $1 "-";));
+  if [[ ${#pieces[@]} -eq 3 ]]
+  then
+    if [[ ${pieces[0]} -eq "fiddle" ]]
+    then
+      # ToDo add logic to verify pieces[1] is numeric
+      echo ${pieces[2]};
+    else
+      exit -1;
+    fi
+  else
+    exit -1;
+  fi
+}
 
 function voidSubstr() {
     if [ $# -ne "3" ]
@@ -104,6 +127,10 @@ function voidEchoUpperCase() {
     echo "$1" | awk '{print toupper($0)}'
 }
 
+function toLowerCase() {
+    echo "$1" | awk '{print tolower($0)}'
+}
+
 function voidPathRecursiveList() {
     if [ $# -ne "3" ]
     then
@@ -138,7 +165,7 @@ function getFiddle() {
         cd ../fiddles/$1;
         echo $(ls -1 | grep $2 | sed -e 's/^[[:space:]]*//';);
     else
-        echo "";
+        echo "NA";
     fi
 }
 

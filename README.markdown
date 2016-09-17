@@ -50,3 +50,4 @@ To get started with any of the frameworks listed, use the above links to explore
 about my latest changes check out the detailed [change log](CHANGELOG.markdown).  To test drive the in-browser version
 of this collection checkout [bradyhouse.github.io](http://bradyhouse.github.io/).  Finally, to learn more about me
 and what I am up to these days checkout [bradyhouse.io](http://bradyhouse.io).
+

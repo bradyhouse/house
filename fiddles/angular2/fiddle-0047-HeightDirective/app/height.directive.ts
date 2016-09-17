@@ -14,7 +14,7 @@ export class HeightDirective {
   private _height:any = <any>null;
 
   constructor(private _el:ElementRef, private _zone:NgZone) {
-    _el.nativeElement.parentElement.addEventListener('onchange', () => this.onResize());
+    _el.nativeElement.parentElement.addEventListener('resize', () => this.onResize());
     this.init();
   }
 
