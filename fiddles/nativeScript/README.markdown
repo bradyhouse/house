@@ -52,14 +52,15 @@ If everything is working correctly, you should see a stream of output that looks
 
 Use the [.nativescriptrc](../../scripts/bin/nativescript/.nativescriptrc) file to configure machine specific variables.
 
-#### Enabling Angular2 Template
+#### Enabling Angular2 Templating
 
-The `fiddle.sh` script includes logic to initialize new nativeScript fiddles using _just JavaScript_ or Angular2 (aka _transpiled typeScript_)
+`fiddle.sh` includes logic to initialize new nativeScript fiddles using _just JavaScript_ or Angular2 (aka _transpiled typeScript_)
 By default, JavaScript is enabled. This means, fiddles are initialized using the `nativescript create ...` command.
 In my experience, this approach is faster and cleaner. That said, if you want get your feet wet with Angular2 and typeScript,
 then you will need to complete the following steps:
 
-1. Open the [.nativescriptrc](../../scripts/bin/nativescript/.nativescriptrc) file
+1. Open the [scripts/bin/nativescript/.nativescriptrc](../../scripts/bin/nativescript/.nativescriptrc) file
 2. Change the `__TEMPLATE_TYPE__` variable from `js` to `ng2`
 
+Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles using the [Angular2 Advanced Seeder](https://github.com/NathanWalker/angular2-seed-advanced.git) repo.
 
