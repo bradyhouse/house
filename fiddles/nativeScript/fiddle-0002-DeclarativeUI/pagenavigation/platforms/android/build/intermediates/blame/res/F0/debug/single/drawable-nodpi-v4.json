@@ -2,5 +2,9 @@
     {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/drawable-nodpi-v4/splash_screen.xml",
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/src/main/res/drawable-nodpi/splash_screen.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/drawable-nodpi-v4/splash_screen.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/src/main/res/drawable-nodpi/splash_screen.xml"
     }
 ]

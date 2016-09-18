@@ -36,6 +36,8 @@
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh
 source bin/_types.sh
+source bin/nativescript/.nativescriptrc
+source bin/nativescript/_fork.sh
 
 
 if [ "$#" -ne 3 ]
@@ -112,7 +114,10 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
-        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'meteor' | 'nativescript')
+        'nativescript')
+            nativeScriptFork "${fiddleName}" "${targetFiddle}" || exit 98;
+            ;;
+        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'meteor')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             # Add "Forked From" section to the readme file
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
@@ -212,6 +217,8 @@ case ${rc} in
     96) echo "fubar! update of the manifest.json file failed."
         ;;
     97) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
+        ;;
+    98) echo "fubar! call to nativeScriptFork failed."
         ;;
     *)  echo "fubar! Something went wrong."
         if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi

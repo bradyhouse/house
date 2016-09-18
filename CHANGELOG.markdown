@@ -1187,6 +1187,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       * Reflected changes:
         1.  Updated [scripts/bin/fiddle-create.sh](scripts/bin/fiddle-create.sh)
         2.  Updated [scripts/bin/fiddle-delete.sh](scripts/bin/fiddle-delete.sh)
+    4. Fixed [Bug ~ Issue #66](https://github.com/bradyhouse/house/issues/66)
+      * Reflected changes:
+        1.  Updated [scripts/bin/fiddle-fork.sh](scripts/bin/fiddle-fork.sh)
+        2.  Added [scripts/bin/nativescript/_fork.sh](scripts/bin/nativescript/_fork.sh)
+        3.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)

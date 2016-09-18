@@ -1,7 +1,17 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="PageNavigation"/>
   <StackLayout>
-    <Label text="Tap the button" class="title"/>
-    <Button text="TAP" tap="{{ onTap }}" />
+    <Label class="title">
+      <Label.formattedText>
+        <FormattedString>
+          <FormattedString.spans>
+            <Span text='Tap the' fontSize='10'/>
+            <Span text='button' fontAttribute='Bold'/>
+          </FormattedString.spans>
+        </FormattedString>
+      </Label.formattedText>
+    </Label>
+    <Button text="TAP" tap="{{ tapAction }}" />
     <Label text="{{ message }}" class="message" textWrap="true"/>
   </StackLayout>
 </Page>

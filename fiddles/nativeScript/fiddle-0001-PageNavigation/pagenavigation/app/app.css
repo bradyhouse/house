@@ -1,18 +1,26 @@
-﻿.title {
-    font-size: 30;
-    horizontal-align: center;
-    margin: 20;
+﻿Page {
+  background-color: white;
+}
+
+.title {
+  font-size: 30;
+  horizontal-align: center;
+  margin: 10;
+  font-weight: bold;
+  color: #FF0111;
 }
 
 button {
-    font-size: 42;
-    horizontal-align: center;
+  font-size: 50;
+  horizontal-align: center;
+  border-radius: 15;
+  width: 150;
+  background-color: #dddddd;
 }
 
 .message {
-    font-size: 20;
-    color: #284848;
-    horizontal-align: center;
-    margin: 0 20;
-    text-align: center;
+  margin-top: 10;
+  font-size: 20;
+  color: #3ca8dd;
+  horizontal-align: center;
 }

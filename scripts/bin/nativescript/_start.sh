@@ -54,9 +54,17 @@ function nativescriptAndroidStart() {
     type=$2;
     if [[ ! -d $1 ]]
     then
-      exit -1;
+      if [[ -e ".fiddlerc" ]]
+      then
+        source ".fiddlerc";
+        cd ${__PROJECT_DIR__};
+      else
+        exit -1;
+      fi
+    else
+      cd $1;
     fi
-    cd $1;
+
     case ${type} in
         'js') # javascript
           startAndroidEmulator;

@@ -4,11 +4,23 @@
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/src/main/res/drawable-ldpi/logo.png"
     },
     {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi-v4/logo.png",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/src/main/res/drawable-ldpi/logo.png"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi-v4/background.png",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/src/main/res/drawable-ldpi/background.png"
+    },
+    {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi-v4/icon.png",
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/src/main/res/drawable-ldpi/icon.png"
     },
     {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi-v4/background.png",
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/src/main/res/drawable-ldpi/background.png"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/drawable-ldpi-v4/icon.png",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/src/main/res/drawable-ldpi/icon.png"
     }
 ]
