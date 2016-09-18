@@ -29,7 +29,8 @@
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/17/2016 - See CHANGELOG @ 201605020420
-# 05/18/2015 - See CHANGELOG @ 201605180420
+# 05/18/2016 - See CHANGELOG @ 201605180420
+# 09/18/2016 - See CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -113,15 +114,33 @@ forkedOnDate=$(date +"%m-%d-%y";)
     case ${fiddleType} in
         'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'meteor' | 'nativescript')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
+            # Add "Forked From" section to the readme file
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             ;;
         'angular'|'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'extjs6' | 'php' | 'jquery' | 'three' |'rxjs' | 'd3' | 'dojo' | 'node' | 'tween' | 'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
+            # Add "Forked From" section to the readme file
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             ;;
         'svg')
-           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
-           updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
+            # Add "Forked From" section to the readme file
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             ;;
         'ant' | 'bash' | 'docker' | 'python')
             if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ]]
@@ -131,15 +150,14 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(cp -rf "../fiddles/${fiddleType}/template/README.markdown" "../fiddles/${fiddleType}/${targetFiddle}/README.markdown") || exit 92
             $(voidSubstr '{{FiddleName}}' ${targetFiddle} "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
             $(voidSubstr '{{BornOnDate}}' ${forkedOnDate} "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
+            # Add "Forked From" section to the readme file
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
+            $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             ;;
     esac
-
-    # Add "Forked From" section to the readme file
-    $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
-    $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
 
     # If the screenshot photo exists, delete the existing screenshot image
     if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png" ]]

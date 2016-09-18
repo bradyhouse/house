@@ -91,6 +91,11 @@ function fiddleIndexAll() {
             if [ "$#" -eq 4 ]; then port=$4; fi
             ./fiddle-start.sh  $2 $3 ${port}
             ;;
+        'emulate')
+            source bin/nativescript/.nativescriptrc;
+            source bin/nativescript/_start.sh;
+            startAndroidEmulator;
+            ;;
         'delete')
             if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh;  exit 0; fi
             ./fiddle-delete.sh $2 $3

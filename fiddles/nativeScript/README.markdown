@@ -1,4 +1,4 @@
-nativeScript
+NativeScript
 ======
 
 I discovered (or heard about) nativeScript on a recent javaScript jabber podcast.  NativeScript is a
@@ -12,7 +12,7 @@ to my exploration of this framework.  Each directory corresponds to separate mob
 
 [NativeScript](../nativeScript) fiddles are created using the [Angular2 Advanced-Seeder](https://github.com/NathanWalker/angular2-seed-advanced). The create logic baked into
 the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #84](../bash/fiddle-0084-NativeScript).  To create a new NativeScript
-fiddle, run the following command from the [scripts](../../scripts) directory like so:
+fiddle, run the following command from the [scripts](../../scripts) directory:
 
     ./fiddle.sh "create" "nativescript" "fiddle-####-<Name>"
 
@@ -24,19 +24,32 @@ If everything is working correctly, you should see a stream of output that looks
 
 #### To Remove
 
-_TBW_
+To completely delete a fiddle and remove any reference from the [CHANGELOG.markdown](../../CHANGELOG.markdown) file, execute
+the following command from the root [scripts](../../scripts) directory:
+
+    ./fiddle.sh "delete" "nativescript" "<< NAME CRITERIA >>"
+
+where `NAME CRITERIA` is the number or name of the fiddle to be deleted.  If everything is working correctly, you should
+see a stream of output that looks like this [sample delete output](delete.markdown).
 
 #### To Refactor
 
-_TBW_
+To rename a NativeScript fiddle and update any reference in the [CHANGELOG.markdown](../../CHANGELOG.markdown) file, execute
+the following command from the root [scripts](../../scripts) directory:
+
+    ./fiddle.sh "refactor" "nativescript" "<< CURRENT NAME >>" "<< NEW NAME >>"
+
+If everything is working correctly, you should see a stream of output that looks like this [sample refactor output](refactor.markdown).
 
 #### To Fork
 
-_TBW_
+To fork an existing NativeScript fiddle and use it as the basis of a new fiddle, execute the following command from the
+root [scripts](../../scripts) directory:
 
-#### To Index
+    ./fiddle.sh "fork" "nativescript" "<< SOURCE FIDDLE NAME >>" "<< NEW FIDDLE NAME >>"
 
-_TBW_
+where `<< SOURCE FIDDLE NAME >>` is the name of the existing fiddle and `<< NEW FIDDLE NAME >>` is name of the fiddle you want
+to create.  If everything is working correctly, you should see a stream of output that looks like this [sample fork output](fork.markdown).
 
 #### To Start
 
@@ -64,3 +77,11 @@ then you will need to complete the following steps:
 
 Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles using the [Angular2 Advanced Seeder](https://github.com/NathanWalker/angular2-seed-advanced.git) repo.
 
+
+### Online Resources
+
+* [Getting Started with NativeScript Repo](https://github.com/GettingStartedWithNativeScript?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93)
+
+#### Apple iOS
+
+* [Submitting Your App to the Store](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)

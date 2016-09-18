@@ -526,7 +526,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/three/fiddle-0005-EarthMoon](fiddles/three/fiddle-0005-EarthMoon)
 * Added [fiddles/jquery/fiddle-0036-NavBar](fiddles/jquery/fiddle-0036-NavBar)
 * Added [fiddles/nativeScript/fiddle-0001-SampleGroceries](fiddles/nativeScript/fiddle-0001-SampleGroceries)
-* Started [fiddles/nativeScript/fiddle-0002-Puzz](fiddles/nativeScript/fiddle-0002-Puzz)
+* Started [fiddles/nativeScript/fiddle-0020-Puzz](fiddles/nativeScript/fiddle-0020-Puzz)
 
 ### 201512240420
 
@@ -566,7 +566,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added dependency to [tween.js](https://github.com/tweenjs/tween.js.git) ~ [fiddles/tween/libs/tween.js](fiddles/tween/libs/tween.js)
 * Added dependency to [ITM455](https://github.com/bradyhouse/ITM455.git) ~ [fiddles/android/libs/ITM455](fiddles/android/libs/ITM455)
 * Added [fiddles/extjs6/fiddle-0031-ArrayStore](fiddles/extjs6/fiddle-0031-ArrayStore)
-* Continued [fiddles/nativeScript/fiddle-0002-Puzz](fiddles/nativeScript/fiddle-0002-Puzz)
+* Continued [fiddles/nativeScript/fiddle-0020-Puzz](fiddles/nativeScript/fiddle-0020-Puzz)
 * Added [fiddles/nativeScript/emulate.sh](fiddles/nativeScript/emulate.sh)
 * Added [fiddles/bash/fiddle-0049-InstallTypeScript](fiddles/bash/fiddle-0049-InstallTypeScript)
 * Added [fiddles/three/fiddle-0011-PlanetTween](fiddles/three/fiddle-0011-PlanetTween)
@@ -1038,7 +1038,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     9.  Added [fiddles/bash/fiddle-0086-Electron](fiddles/bash/fiddle-0086-Electron)
 
 * **Docker**
-    1.  Added [fiddles/docker/fiddle-0000-Template](fiddles/docker/fiddle-0000-Template)
+    1.  Added [fiddles/docker/fiddle-0100-EmptyTemplate](fiddles/docker/fiddle-0100-EmptyTemplate)
     2.  Added dependency (submodule) to [docker machine](https://github.com/docker/machine)
     3.  Added [fiddles/docker/fiddle-0001-MachineCreate](fiddles/docker/fiddle-0001-MachineCreate)
     4.  Added dependency (submodule) to [docker-node-hello](https://github.com/spkane/docker-node-hello)
@@ -1046,36 +1046,36 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0001-SuperRental](fiddles/ember/fiddle-0001-SuperRental)
-    2.  Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
+    2.  Added [fiddles/ember/fiddle-0100-EmptyTemplate](fiddles/ember/fiddle-0100-EmptyTemplate)
 
 
 * **NativeScript**
     1.  Added dependency (submodule) to [Angular2 Seed Advanced](https://github.com/NathanWalker/angular2-seed-advanced)
-    2.  Added [fiddles/nativeScript/fiddle-0000-Template](fiddles/nativeScript/fiddle-0000-Template)
+    2.  Added [fiddles/nativeScript/fiddle-0100-EmptyTemplate](fiddles/nativeScript/fiddle-0100-EmptyTemplate)
 
 * **Angular**
-    1.  Added [fiddles/angular/fiddle-0000-Template](fiddles/angular/fiddle-0000-Template)
+    1.  Added [fiddles/angular/fiddle-0100-EmptyTemplate](fiddles/angular/fiddle-0100-EmptyTemplate)
 
 * **Angular2**
-    1.  Added [fiddles/angular2/fiddle-0000-Template](fiddles/angular2/fiddle-0000-Template)
+    1.  Added [fiddles/angular2/fiddle-0100-EmptyTemplate](fiddles/angular2/fiddle-0100-EmptyTemplate)
     3.  Added [fiddles/angular2/fiddle-0036-ModalOverlay](fiddles/angular2/fiddle-0036-ModalOverlay)
     4.  Added [fiddles/angular2/fiddle-0037-ModalPopUp](fiddles/angular2/fiddle-0037-ModalPopUp)
 
 * **Angular2 CLI**
 
 * **Angular2 Seeder**
-    1.  Added [fiddles/angular2-seeder/fiddle-0000-Template](fiddles/angular2-seeder/fiddle-0000-Template)
+    1.  Added [fiddles/angular2-seeder/fiddle-0100-EmptyTemplate](fiddles/angular2-seeder/fiddle-0100-EmptyTemplate)
 
 * **Electron**
-    1.  Added [fiddles/electron/fiddle-0000-Template](fiddles/electron/fiddle-0000-Template)
+    1.  Added [fiddles/electron/fiddle-0100-EmptyTemplate](fiddles/electron/fiddle-0100-EmptyTemplate)
 
 * **Aurelia**
 
 * **D3**
-    1.  Added [fiddles/d3/fiddle-0000-Template](fiddles/d3/fiddle-0000-Template)
+    1.  Added [fiddles/d3/fiddle-0100-EmptyTemplate](fiddles/d3/fiddle-0100-EmptyTemplate)
 
 * **Meteor**
-    1.  Added [fiddles/meteor/fiddle-0000-Template](fiddles/meteor/fiddle-0000-Template)
+    1.  Added [fiddles/meteor/fiddle-0100-EmptyTemplate](fiddles/meteor/fiddle-0100-EmptyTemplate)
 
 
 ### 201605290420
@@ -1088,7 +1088,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added [fiddles/bash/fiddle-0090-Zmq](fiddles/bash/fiddle-0090-Zmq) ~ [Issue 19](https://github.com/bradyhouse/house/issues/19)
 
 * **Aurelia**
-    1.  Added [fiddles/aurelia/fiddle-0000-Template](fiddles/aurelia/fiddle-0000-Template)
+    1.  Added [fiddles/aurelia/fiddle-0100-EmptyTemplate](fiddles/aurelia/fiddle-0100-EmptyTemplate)
     2.  Started [fiddles/aurelia/fiddle-0037-ModalPopUp](fiddles/aurelia/fiddle-0037-ModalPopUp)
     3.  Started [fiddles/aurelia/fiddle-0001-Component](fiddles/aurelia/fiddle-0001-Component)
     4.  Added dependency (submodule) to [Patrick Walter's Aurelia Examples](https://github.com/PWKad/aurelia-samples)
@@ -1182,6 +1182,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         4.  Updated [scripts/bin/fiddle-start.sh](scripts/bin/fiddle-start.sh)
         5.  Updated [scripts/bin/fiddle-nativescript.sh](scripts/bin/fiddle-nativescript.sh)
         6.  Added [scripts/bin/nativescript/.nativescriptrc](scripts/bin/nativescript/.nativescriptrc)
+        7.  Updated [scripts/bin/fiddle-fork.sh](scripts/bin/fiddle-fork.sh)
     3. Fixed [Bug ~ Issue #63](https://github.com/bradyhouse/house/issues/63)
       * Reflected changes:
         1.  Updated [scripts/bin/fiddle-create.sh](scripts/bin/fiddle-create.sh)
@@ -1192,3 +1193,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **NativeScript**
     1.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
+    2.  Added [fiddles/nativescript/fiddle-0001-PageNavigation](fiddles/nativescript/fiddle-0001-PageNavigation) ~ [Issue #64](https://github.com/bradyhouse/house/issues/64)
+    3.  Added [fiddles/nativescript/fiddle-0002-DeclarativeUI](fiddles/nativescript/fiddle-0002-DeclarativeUI) ~ [Issue #65](https://github.com/bradyhouse/house/issues/65)

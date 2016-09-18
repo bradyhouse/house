@@ -19,7 +19,7 @@
 
 function nativeScriptRunAndroid() {
   groupLog "nativeScriptRunAndroid";
-  nativescript run android --emulator;
+  nativescript livesync --watch;
 }
 
 function npmRunStartAndroid() {
@@ -28,20 +28,22 @@ function npmRunStartAndroid() {
 }
 
 function isEmulatorRunning() {
-  if [[ ! $(lsof -i -P | grep :5554) ]]
+  isRunning=$(lsof -i -P | grep :5554 | awk '{print $2}' | wc -l | xargs);
+  if [[ ${isRunning} == "1" ]]
   then
-    echo "false";
-  else
     echo "true";
+  else
+    echo "false";
   fi
 }
 
 function startAndroidEmulator() {
   groupLog "startEmulator";
-  if [[ $(isEmulatorRunning;) -eq "false" ]]
+
+  if [[ $(isEmulatorRunning;) == "false" ]]
   then
     nohup ${__ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__ANDROID_EMULATOR_PROFILE__}" &
-    sleep 10;
+    sleep 30;
   else
     groupLog "emulator is already running";
   fi

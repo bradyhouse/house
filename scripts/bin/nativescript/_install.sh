@@ -61,7 +61,8 @@ function nvmInstall() {
     then
         groupLog "${this}: nvm is not installed or NVM_DIR is not configured.";
         groupLog "${this}: run the following command: ";
-        echo -e "\tnpm install -g nvm";
+        echo -e "";
+        echo -e "\tbrew install nvm";
         exit -1;
     else
         if [[ $(isNodeVerInstalled;) -eq 1 ]]
