@@ -26,13 +26,22 @@ function createTypingsRcFile() {
     echo "}" >> .typingsrc
 }
 
+function initFiddleConfigFile() {
+  groupLog "initFiddleConfigFile";
+  $(echo "" > ".fiddlerc";) || exit 2
+  $(echo "export __PROJECT_DIR__=$1;" >>".fiddlerc";) || exit 8
+  $(echo "export __PROJECT_TYPE__=$2;" >>".fiddlerc";) || exit 8
+}
+
 function initJsProject() {
   groupLog "initJsProject";
   fiddle=$1;
   bornOnDate=$2;
   projectName=$3;
+  type=$4;
   $(cp -rf "template" "${fiddle}") || exit 1;
   cd ${fiddle};
+  initFiddleConfigFile ${projectName} ${type} || exit $?;
   $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
   $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 5;
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
@@ -56,8 +65,10 @@ function initNg2Project() {
   fiddle=$1;
   bornOnDate=$2;
   projectName=$3;
+  type=$4;
   $(cp -rf "template" "${fiddle}") || exit 1;
   cd "${fiddle}";
+  initFiddleConfigFile ${projectName} ${type} || exit $?;
   $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
   $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 5;
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
@@ -106,6 +117,8 @@ function nativescriptCreate() {
         6)  groupLog "${this}: Failed while attempting to run \"npm install\".";
             ;;
         7)  groupLog "${this}: command \"nativescript create ${projectName}\" failed.";
+            ;;
+        8)  groupLog "${this}: Call to the initFiddleConfigFile function failed.";
             ;;
         9)  groupLog "${this}: command \"nativescript platform add android\" failed.";
             ;;

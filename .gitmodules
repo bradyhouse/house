@@ -103,3 +103,21 @@
 [submodule "fiddles/node/libs/right-way"]
 	path = fiddles/node/libs/right-way
 	url = https://github.com/jimbojw/right-way
+[submodule "fiddles/nativeScript/libs/Chapter_1"]
+	path = fiddles/nativeScript/libs/Chapter_1
+	url = https://github.com/GettingStartedWithNativeScript/Chapter_1
+[submodule "fiddles/nativeScript/libs/Chapter_2"]
+	path = fiddles/nativeScript/libs/Chapter_2
+	url = https://github.com/GettingStartedWithNativeScript/Chapter_2
+[submodule "fiddles/nativeScript/libs/Chapter_3"]
+	path = fiddles/nativeScript/libs/Chapter_3
+	url = https://github.com/GettingStartedWithNativeScript/Chapter_3
+[submodule "fiddles/nativeScript/libs/Chapter_4"]
+	path = fiddles/nativeScript/libs/Chapter_4
+	url = https://github.com/GettingStartedWithNativeScript/Chapter_4
+[submodule "fiddles/nativeScript/libs/Chapter_5"]
+	path = fiddles/nativeScript/libs/Chapter_5
+	url = https://github.com/GettingStartedWithNativeScript/Chapter_5
+[submodule "fiddles/nativeScript/libs/Chapter_6"]
+	path = fiddles/nativeScript/libs/Chapter_6
+	url = https://github.com/GettingStartedWithNativeScript/Chapter_6

@@ -125,6 +125,7 @@ case ${_rc} in
     91) echo "fubar! the specified fiddle criteria,\"${fiddleCriteria}\", doesn't exist."
         ;;
     92) echo "";
+        exit 0;
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

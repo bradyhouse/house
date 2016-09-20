@@ -1195,8 +1195,21 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
+    2.  Started [fiddles/bash/fiddle-0092-InitJavaProject](fiddles/bash/fiddle-0092-InitJavaProject)
 
 * **NativeScript**
     1.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
     2.  Added [fiddles/nativescript/fiddle-0001-PageNavigation](fiddles/nativescript/fiddle-0001-PageNavigation) ~ [Issue #64](https://github.com/bradyhouse/house/issues/64)
     3.  Added [fiddles/nativescript/fiddle-0002-DeclarativeUI](fiddles/nativescript/fiddle-0002-DeclarativeUI) ~ [Issue #65](https://github.com/bradyhouse/house/issues/65)
+    4.  Added dependency (submodule) to [Getting Started with NativeScript > Chapter 1 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_1)
+      *   [fiddles/nativeScript/libs/Chapter_1](fiddles/nativeScript/libs/Chapter_1)
+    5.  Added dependency (submodule) to [Getting Started with NativeScript > Chapter 2 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_2)
+      *   [fiddles/nativeScript/libs/Chapter_2](fiddles/nativeScript/libs/Chapter_2)
+    6.  Added dependency (submodule) to [Getting Started with NativeScript > Chapter 3 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_3)
+      *   [fiddles/nativeScript/libs/Chapter_3](fiddles/nativeScript/libs/Chapter_3)
+    7.  Added dependency (submodule) to [Getting Started with NativeScript > Chapter 4 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_4)
+      *   [fiddles/nativeScript/libs/Chapter_4](fiddles/nativeScript/libs/Chapter_4)
+    8.  Added dependency (submodule) to [Getting Started with NativeScript > Chapter 5 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_5)
+      *   [fiddles/nativeScript/libs/Chapter_5](fiddles/nativeScript/libs/Chapter_5)
+    9.  Added dependency (submodule) to [Getting Started with NativeScript > Chapter 6 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_6)
+      *   [fiddles/nativeScript/libs/Chapter_6](fiddles/nativeScript/libs/Chapter_6)

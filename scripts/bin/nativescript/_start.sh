@@ -57,6 +57,7 @@ function nativescriptAndroidStart() {
       if [[ -e ".fiddlerc" ]]
       then
         source ".fiddlerc";
+        type=${__PROJECT_TYPE__};
         cd ${__PROJECT_DIR__};
       else
         exit -1;

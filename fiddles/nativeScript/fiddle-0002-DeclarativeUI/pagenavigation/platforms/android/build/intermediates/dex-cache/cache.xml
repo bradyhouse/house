@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_991ef8814c93e58f0aaa5343ea9337659f67fb18.jar" />
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_b01e15f4c6b226f132c858ce6a2aef49ac0ab913.jar" />
     </item>
     <item
         jar="/usr/local/Cellar/android-sdk/24.1.2/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
@@ -16,25 +16,18 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/support-annotations-24.2.1_c5099a8604fd426c4dc92f53644ab6eb9d457c81.jar" />
     </item>
     <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f3064a6bb3bf091d8ef08a38816df98e4c033ce2">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/intermediates-exploded-aar-widgets-release_dcf5a4fe6686853cd1fe07dfb7da3e12f826aefe.jar" />
+    </item>
+    <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
         sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-animated-vector-drawable-24.2.1_95962e5f977f7cb53afc2f9da5c844ca9aa3cb61.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-fragment-24.2.1_da5bb93b906dd64aefbbfcec02e08011212314e2.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-utils-24.2.1_7266c36db9231fa9004419cfda550ef927cbd44f.jar" />
     </item>
     <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
@@ -44,25 +37,102 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-appcompat-v7-24.2.1_930c9228299814aed7668c9bff5d3b3642deccd9.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-v4-24.2.1_99ebb6dbe6b033114b6fbcafe40f9a057191c06b.jar" />
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-media-compat-24.2.1_9e84b2aa596a496716c051c70cf00259e78f1f9c.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-appcompat-v7-24.2.1_15a28c3c04a8db67e1446bb13c1f6ca771d37d70.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-media-compat-24.2.1_331e7904701308d1f154e5752ff5acfe12b3900c.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-vector-drawable-24.2.1_b83cb7a683e2e75411bc9c8b54f3cf35041a0d0d.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-fragment-24.2.1_8de0201fe7f6f99199adbc56efea9329f0caf66d.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-compat-24.2.1_263aced106909cc481d71cb4421d166cc054008c.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/pagenavigation/runtime/unspecified/jars/libs/binding-generator.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="4290aba11bda501dbadc2dd5c4b08282c0bbfeb8">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/binding-generator_bd8e9b3dffca459ba1b0d75fbed6f63c90370dae.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-utils-24.2.1_31a3d92e1faa7f60a7b7d747dde0e9209790d450.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/pagenavigation/runtime/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="9909ad5fcc13fcc60529cfa340ee7e0abc79af38">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/pagenavigation-runtime-unspecified_3287314b587be052147305a59f9e5b8547432d0e.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_bde7557db81df7f6369c5c2da7f88419e6c42a7d.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.2"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_5cd08d9c44fcd7d7ba464346ae9c540e8a83554c.jar" />
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_c5cb72fcdaf98ab7db2c1d8c046a0c6f48016fa2.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_d5d0ff98c367e3cfe293be9e433c28c2ddeacd6b.jar" />
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_991ef8814c93e58f0aaa5343ea9337659f67fb18.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_7e4120bdb79e0acf72726e91e22012389a22299c.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-v4-24.2.1_c4ee9509d070bae2e0d158ffb1cef5d756236a02.jar" />
     </item>
     <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
@@ -79,18 +149,11 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-vector-drawable-24.2.1_99835c5bf3bdeb0493f7960a43816d451e29e951.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/pagenavigation/runtime/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-compat-24.2.1_6502f0fb319ca8463fb3a1e70ea4b539afdf4786.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-appcompat-v7-24.2.1_8214e5052c96b060b59c8928fded913d7f348fab.jar" />
+        sha1="9909ad5fcc13fcc60529cfa340ee7e0abc79af38">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/pagenavigation-runtime-unspecified_c4439b5a11e5ed77d816901ce29792dcec3eaef6.jar" />
     </item>
     <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
@@ -100,18 +163,11 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-v4-24.2.1_228d7a8227eb8fb45464733a9884a8e8b9afef4e.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/pagenavigation/runtime/unspecified/jars/libs/binding-generator.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="4290aba11bda501dbadc2dd5c4b08282c0bbfeb8">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/binding-generator_e2ceecd0c8abe3aed68899583ed626a14f801549.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-media-compat-24.2.1_331e7904701308d1f154e5752ff5acfe12b3900c.jar" />
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-compat-24.2.1_b658725cd080e2e2062b085877058b268a12493f.jar" />
     </item>
     <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
@@ -121,60 +177,32 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-utils-24.2.1_34c65982fac24bfdb7b46a2afa37935c88fe234a.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/pagenavigation/runtime/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="9909ad5fcc13fcc60529cfa340ee7e0abc79af38">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/pagenavigation-runtime-unspecified_d4f089a0de12158831deee42d06cddc7be31f66c.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-animated-vector-drawable-24.2.1_bdf956b837a2f9fda429517f340fdfaf21a4cf85.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_4dee41f5a8c0ec43e928b0cc9a28e12a263ede6d.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
         sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-fragment-24.2.1_8de0201fe7f6f99199adbc56efea9329f0caf66d.jar" />
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-fragment-24.2.1_4a477fa64a2c704724576db8f769aa0c49b4fe79.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-media-compat-24.2.1_9420334571a3fb20ff664fd26d4fb8241d4cbb5e.jar" />
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-ui-24.2.1_cea38774c195bacd0fc9585511f46cd8c11901e1.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-vector-drawable-24.2.1_63f96a64a09f9b8e41421d0b1e9ecd38c2853645.jar" />
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_f80f87d28eb68071bc72e9574fd13b28af131892.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_5d2212621d2921b83aa199d7592629345552919c.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-compat-24.2.1_263aced106909cc481d71cb4421d166cc054008c.jar" />
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_b5dd53efeed0a15393e5caddf646ce1bbfb66ce5.jar" />
     </item>
     <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
@@ -184,13 +212,6 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_fe81cf5b2c7c566b146a6f518c6d77284d9b511f.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_aa4a7c1486036bcedec3ea84421f3d9677d8f36a.jar" />
-    </item>
-    <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
@@ -198,18 +219,11 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-ui-24.2.1_0e3e5d592057ceb8fd997fcdd294843dce5fc722.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-ui-24.2.1_50c1835314b3719e2fe9b70ebc156cc315ddb6cf.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/pagenavigation/runtime/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="9909ad5fcc13fcc60529cfa340ee7e0abc79af38">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/pagenavigation-runtime-unspecified_3287314b587be052147305a59f9e5b8547432d0e.jar" />
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_e1f24996971ba415944df99b84d84f62a2a60725.jar" />
     </item>
     <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/pagenavigation/runtime/unspecified/jars/libs/binding-generator.jar"
@@ -219,20 +233,6 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/binding-generator_1f81397ea08d45e795b281b5bff03ecff7231550.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="f3064a6bb3bf091d8ef08a38816df98e4c033ce2">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/pre-dexed/F0/debug/intermediates-exploded-aar-widgets-release_541862494cadb25b7cb67a52239383a5c3a01067.jar" />
-    </item>
-    <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_bde7557db81df7f6369c5c2da7f88419e6c42a7d.jar" />
-    </item>
-    <item
         jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="24.0.2"
@@ -240,11 +240,11 @@
         <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_9af548fe09503ca3b25fc560f74900d2d9441d1e.jar" />
     </item>
     <item
-        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_c5cb72fcdaf98ab7db2c1d8c046a0c6f48016fa2.jar" />
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-animated-vector-drawable-24.2.1_6f2c4d6ec1ac28c70240f0c34c57f10542b19424.jar" />
     </item>
 
 </items>

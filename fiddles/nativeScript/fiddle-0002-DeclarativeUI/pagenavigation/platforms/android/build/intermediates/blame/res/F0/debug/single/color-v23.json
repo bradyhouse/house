@@ -1,5 +1,41 @@
 [
     {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_switch_thumb.xml",
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_thumb.xml"
     },
@@ -8,12 +44,12 @@
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_edittext.xml",
-        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_edittext.xml"
-    },
-    {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_color_highlight_material.xml",
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_edittext.xml"
     },
     {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_default.xml",
@@ -24,8 +60,8 @@
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_default.xml",
-        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_default.xml"
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_track.xml"
     },
     {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_spinner.xml",
@@ -40,24 +76,24 @@
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_spinner.xml",
-        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_spinner.xml"
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_spinner.xml"
     },
     {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_seek_thumb.xml",
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_thumb.xml"
+    },
+    {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_btn_checkable.xml",
         "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0002-DeclarativeUI/declarativeui/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_switch_track.xml",
-        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
         "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0001-PageNavigation/pagenavigation/platforms/android/build/intermediates/res/merged/F0/debug/color-v23/abc_tint_seek_thumb.xml",

@@ -19,19 +19,27 @@ this=$0;
 fiddleType="nativeScript";
 
 function initFiddleConfigFile() {
+  groupLog "initFiddleConfigFile";
   $(echo "" > "../fiddles/${fiddleType}/$1/.fiddlerc";) || exit 2
   $(echo "export __PROJECT_DIR__=$2;" >>"../fiddles/${fiddleType}/$1/.fiddlerc";) || exit 2
+  $(echo "export __PROJECT_TYPE__=$3;" >>"../fiddles/${fiddleType}/$1/.fiddlerc";) || exit 2
 }
 
 function nativeScriptFork() {
   groupLog "nativeScriptFort";
   source=$1;
   target=$2;
+  type="js";
   # try
   (
     sourceProjectName=$(toLowerCase $(parseName ${source};);) || exit 1;
     targetProjectName=$(toLowerCase $(parseName ${target};);) || exit 1;
-    initFiddleConfigFile "${target}" "${sourceProjectName}" || exit $?;
+    if [[ -e "../../fiddles/${fiddleType}/${target}/.fiddlerc" ]]
+    then
+      source "../../fiddles/${fiddleType}/${target}/.fiddlerc";
+      type=${__PROJECT_TYPE__};
+
+    initFiddleConfigFile "${target}" "${sourceProjectName}" "${type}" || exit $?;
     updateFile "../../fiddles/${fiddleType}/${target}/README.md" ${target} ${source} || exit 3;
     $(echo  "" >> "../fiddles/${fiddleType}/${target}/README.md";) || exit 3
     $(echo  "" >> "../fiddles/${fiddleType}/${target}/README.md";) || exit 3
