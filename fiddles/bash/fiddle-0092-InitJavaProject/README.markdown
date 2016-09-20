@@ -3,7 +3,7 @@ fiddle-0092-InitJavaProject
 
 ### Title
 
-fiddle-0092-InitJavaProject
+Init Java Project
 
 
 ### Creation Date
@@ -18,14 +18,14 @@ Chicago, IL
 
 ### Issue
 
-N/A
+[Issue #67](https://github.com/bradyhouse/house/issues/67)
 
 
 ### Description
 
-Another shell script POC.
+Lately in _cubicle space/time_ I have been working with the [Spring JVM Framework](http://spring.io/).  Exposure to this framework has led me to wonder if `fiddle.sh` could be extended to provide Java based fiddle support. With that in mind, a bash POC is in order.  Specifically, can a simple Java project be initialized from the command line using Spring?
 
 
 ### Tags
 
-bash
+bash, java, spring
