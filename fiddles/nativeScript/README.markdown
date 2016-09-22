@@ -87,6 +87,8 @@ Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles u
   * [Chapter 4 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_4)
   * [Chapter 5 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_5)
   * [Chapter 6 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_6)
+* [Raymond Camden's NativeScript Demos](https://github.com/cfjedimaster/NativeScriptDemos)
+
 
 #### Apple iOS
 

@@ -1,10 +1,11 @@
 // Require the Observable class and create a new Model from it
-var Observable = require("data/observable").Observable;
-var mainViewModel = new Observable();
-var frame = require('ui/frame');
+var Observable = require("data/observable").Observable,
+    mainViewModel = new Observable(),
+    frame = require('ui/frame'),
+    Button = require("ui/button").Button;
 
 // Setup our default values
-mainViewModel.counter = 42;
+mainViewModel.counter = 5;
 mainViewModel.set("message", mainViewModel.counter + " taps left");
 
 // Setup the function that runs when a tap is detected.

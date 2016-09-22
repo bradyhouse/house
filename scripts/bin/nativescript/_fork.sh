@@ -38,7 +38,7 @@ function nativeScriptFork() {
     then
       source "../../fiddles/${fiddleType}/${target}/.fiddlerc";
       type=${__PROJECT_TYPE__};
-
+    fi
     initFiddleConfigFile "${target}" "${sourceProjectName}" "${type}" || exit $?;
     updateFile "../../fiddles/${fiddleType}/${target}/README.md" ${target} ${source} || exit 3;
     $(echo  "" >> "../fiddles/${fiddleType}/${target}/README.md";) || exit 3

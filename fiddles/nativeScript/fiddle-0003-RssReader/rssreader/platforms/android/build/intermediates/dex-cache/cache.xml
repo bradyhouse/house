@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/usr/local/Cellar/android-sdk/24.1.2/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/support-annotations-24.2.1_c5099a8604fd426c4dc92f53644ab6eb9d457c81.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_2c0d53dab11de36dbce4ad43788c5034472c4baa.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-fragment-24.2.1_3b18833d84ca05428ec3b6dfb015ff35edd6e1f1.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_ea0ca161aa6c39af58470ec392de5a011134fe5b.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-appcompat-v7-24.2.1_7b91edaec5015626cea84ba8dba3b7f0f39e0d1c.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/rssreader/runtime/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="9909ad5fcc13fcc60529cfa340ee7e0abc79af38">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/rssreader-runtime-unspecified_66a30a5fb38a63b10b1cffa12bb262b2c57db345.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-v4-24.2.1_507e14155e5d765e61ec3266de247929cd4aaa5c.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-media-compat-24.2.1_bc5c8ddb71fc88f7c05be04fd868ce3afa340db9.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_f8f76ddff224fd4698a5e0fc9fcc4530dfe6eb67.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_d9256d01fd7580644ab2cedbba3806a2b6e688d7.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f3064a6bb3bf091d8ef08a38816df98e4c033ce2">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/intermediates-exploded-aar-widgets-release_c00d8c2aa201e17fb0af0b3748df68ba3a43ee3b.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-animated-vector-drawable-24.2.1_783f14b6ad5d7619d8cb19cd68a7233d4c04c8e8.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/internal_impl-24.2.1_7f35761976ffcf1117cbfea63de30686c7abb14c.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-ui-24.2.1_eb5c28f2733b5499c3c06f7d04b2a48dfdaa0818.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/rssreader/runtime/unspecified/jars/libs/binding-generator.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="4290aba11bda501dbadc2dd5c4b08282c0bbfeb8">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/binding-generator_c532c5f2c8e06bdeb25f050be38a3195e0a436e6.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-compat-24.2.1_118033e949dc90b7d17dcdbadade1e8ef6739328.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-vector-drawable-24.2.1_2d0c8a522220ae53381757ed33bf242648c938d2.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0003-RssReader/rssreader/platforms/android/build/intermediates/pre-dexed/F0/debug/com.android.support-support-core-utils-24.2.1_9892145810768ae126bf8b58a3c277d15dfa6a1e.jar" />
+    </item>
+
+</items>

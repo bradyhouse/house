@@ -29,4 +29,4 @@ it supports create/delete/refactor/list functionality for "nativescript" based P
 
 ### Tags
 
-nativescript
+{N}, nativescript

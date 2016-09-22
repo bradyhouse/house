@@ -121,3 +121,9 @@
 [submodule "fiddles/nativeScript/libs/Chapter_6"]
 	path = fiddles/nativeScript/libs/Chapter_6
 	url = https://github.com/GettingStartedWithNativeScript/Chapter_6
+[submodule "fiddles/nativeScript/libs/NativeScriptDemos"]
+	path = fiddles/nativeScript/libs/NativeScriptDemos
+	url = https://github.com/cfjedimaster/NativeScriptDemos
+[submodule "fiddles/java/libs/gs-gradle"]
+	path = fiddles/java/libs/gs-gradle
+	url = https://github.com/spring-guides/gs-gradle

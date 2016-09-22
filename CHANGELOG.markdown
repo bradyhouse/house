@@ -1195,7 +1195,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
-    2.  Started [fiddles/bash/fiddle-0092-InitJavaProject](fiddles/bash/fiddle-0092-InitJavaProject) ~ [Issue #67](https://github.com/bradyhouse/house/issues/67)
+    2.  Added [fiddles/bash/fiddle-0092-InitJavaProject](fiddles/bash/fiddle-0092-InitJavaProject) ~ [Issue #67](https://github.com/bradyhouse/house/issues/67)
 
 * **NativeScript**
     1.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
@@ -1213,3 +1213,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       *   [fiddles/nativeScript/libs/Chapter_5](fiddles/nativeScript/libs/Chapter_5)
     9.  Added dependency (submodule) to [Getting Started with NativeScript > Chapter 6 Repo](https://github.com/GettingStartedWithNativeScript/Chapter_6)
       *   [fiddles/nativeScript/libs/Chapter_6](fiddles/nativeScript/libs/Chapter_6)
+    10. Added [fiddles/nativescript/fiddle-0003-RssReader](fiddles/nativescript/fiddle-0003-RssReader) ~ [Issue 68](https://github.com/bradyhouse/house/issues/68)
+    11. Added dependency (submodule) to [Raymond Camden's NativeScripts Demo Repo](https://github.com/cfjedimaster/NativeScriptDemos)
+      *   [fiddles/nativeScript/libs/NativeScriptDemos]
+
+* **Java**
+    1.  Added dependency (submodule) to [Spring Guide gs-gradle Repo](https://github.com/spring-guides/gs-gradle)
+      *   [fiddles/java/libs/gs-gradle](fiddles/java/libs/gs-gradle)

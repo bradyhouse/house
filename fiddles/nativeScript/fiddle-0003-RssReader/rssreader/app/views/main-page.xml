@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="loaded">
+
+  <Page.actionBar>
+    <ActionBar title="{{ title }}"/>
+  </Page.actionBar>
+
+  <StackLayout orientation="vertical">
+    <ListView items="{{ rssList.feedItems }}" itemTap="loadItem">
+      <ListView.itemTemplate>
+        <Label text="{{ title }}" horizontalAlignment="left" verticalAlignment="center"/>
+      </ListView.itemTemplate>
+    </ListView>
+  </StackLayout>
+</Page>

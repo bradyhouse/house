@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source bin/_utils.sh;
+source ../../../scripts/bin/_utils.sh;
+
 
 clear;
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
