@@ -1,4 +1,4 @@
-link:https://waffle.io/bradyhouse/house[![Stories in Progress](https://badge.waffle.io/bradyhouse/house.png?label=in%20progress&title=Stories%20In%20Progress)]
+link:++https://badge.waffle.io/bradyhouse/house.png?label=in%20progress&title=Stories%20In%20Progress++[![Stories in Progress]]
 
         H o u s e
         oooooooooooo  o8o        .o8        .o8  oooo
