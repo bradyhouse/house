@@ -4,7 +4,7 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/bradyhouse/house/blob/master/fiddles/electron/README.markdown",
   "devDependencies": {
-    "electron-prebuilt": "^1.2.0"
+    "electron": "^1.3.4"
   }
 }
