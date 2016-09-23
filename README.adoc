@@ -18,9 +18,9 @@ Essentially, it is Command Line Interface (CLI) for quickly getting started with
 libraries.  At present, it can be used to create a localized sandbox (aka _fiddle_) for any of the following languages
 and frameworks:
 
-[width="80%",options="header"]
+[width="99%"]
 |=========================================================
-|Framework|||
+||||||
 
 |link:fiddles/android[android]
 |link:fiddles/angular[angular]
