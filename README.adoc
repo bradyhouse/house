@@ -40,6 +40,7 @@ and frameworks:
 |link:fiddles/ember[ember]
 |link:fiddles/extjs5[extjs5]
 |link:fiddles/extjs6[extjs6]
+|link:fiddles/java[java]
 |link:fiddles/jquery[jquery]
 |link:fiddles/meteor[meteor]
 |link:fiddles/nativeScript[nativeScript]
