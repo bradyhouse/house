@@ -1,0 +1,11 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Grid Layout"/>
+  <GridLayout rows="auto,auto,auto,auto" columns="*,*,*,*">
+      <Label row="0" colSpan="4" text="This is a Blue Test" style="background-color: blue"/>
+      <Label row="3" colSpan="3" text="This is a Green Test" style="background-color: green" cssClass="green"/>
+      <Label row="1" col="0" colSpan="1" text="This is a Red test" style="background-color: red" cssClass="red" textWrap="true"/>
+      <Label row="1" col="2" colSpan="2" text="This is a Yellow Test" style="background-color: yellow"/>
+      <Label row="2" col="0" colSpan="2" text="This is a Orange Test" style="background-color: orange"/>
+      <Label row="2" col="2" colSpan="2" text="This is a Purple Test" style="background-color: purple"/>
+    </GridLayout>
+</Page>

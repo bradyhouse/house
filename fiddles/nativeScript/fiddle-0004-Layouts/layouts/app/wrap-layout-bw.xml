@@ -1,0 +1,11 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+    <ActionBar title="Wrap Layout"/>
+    <WrapLayout>
+        <Label text="This is a Shade 1 Test" style="background-color: #d0d0d0"/>
+        <Label text="This is a Shade 2 Test" style="background-color: #b0b0b0" cssClass="green"/>
+        <Label text="This is a Shade 3 Test" style="background-color: #909090" cssClass="red" textWrap="true"/>
+        <Label text="This is a Black Test" style="background-color: #000000" cssClass="white"/>
+        <Label text="This is a Light Black Test" style="background-color: #303030" cssClass="white"/>
+        <Label text="This is a Shade 4 Test" style="background-color: #505050" cssClass="white"/>
+    </WrapLayout>
+</Page>

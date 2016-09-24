@@ -1,0 +1,11 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Absolute Layout"/>
+  <AbsoluteLayout>
+      <Label top="10" left="10" text="This is a Shade 1 (10,10)" style="background-color: #d0d0d0"/>
+      <Label top="50" left="30" text="This is a Shade 2 Test (50,30)" style="background-color: #b0b0b0" cssClass="green"/>
+      <Label top="100" left="100" text="This is a Shade 3 test (100,100)" style="background-color: #909090" cssClass="red" textWrap="true"/>
+      <Label top="10" left="200" text="This is a Black (10,200)" style="background-color: #000000" cssClass="white"/>
+      <Label top="130" left="10" text="This is a Light Black Test (130,10)" style="background-color: #303030" cssClass="white"/>
+      <Label top="80" left="60" text="This is a Shade 4 Test (80,60)" style="background-color: #505050" cssClass="white"/>
+    </AbsoluteLayout>
+</Page>

@@ -1,0 +1,10 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Dock Layout"/>
+  <DockLayout stretchLastChild="true">
+      <Label dock="bottom" text="Dock Bottom" style="background-color: #d0d0d0" cssClass="green"/>
+      <Label dock="left" text=" Left " style="background-color: #b0b0b0" cssClass="red" textWrap="true"/>
+      <Label dock="top" text="Dock Top" style="background-color: #909090"/>
+      <Label dock="right" text="Right" style="background-color: #303030" textWrap="true" cssClass="white"/>
+      <Label text="Center/Fill" style="background-color: #000000" cssClass="white" textWrap="true"/>
+    </DockLayout>
+</Page>

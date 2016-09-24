@@ -1229,6 +1229,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     10. Added [fiddles/nativescript/fiddle-0003-RssReader](fiddles/nativescript/fiddle-0003-RssReader) ~ [Issue 68](https://github.com/bradyhouse/house/issues/68)
     11. Added dependency (submodule) to [Raymond Camden's NativeScripts Demo Repo](https://github.com/cfjedimaster/NativeScriptDemos)
       *   [fiddles/nativeScript/libs/NativeScriptDemos](fiddles/nativeScript/libs/NativeScriptDemos)
+    12. Added [fiddles/nativescript/fiddle-0004-Layouts](fiddles/nativescript/fiddle-0004-Layouts) ~ [Issue 70](https://github.com/bradyhouse/house/issues/70)
 
 * **Java**
     1.  Added dependency (submodule) to [Spring Guide gs-gradle Repo](https://github.com/spring-guides/gs-gradle)
