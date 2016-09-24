@@ -5,6 +5,7 @@ Having a .NET and C# background (5+ years), I really have little patience for Ja
 becoming a necessary evil.  As with everything, practise makes perfect.  This directory is dedicated to fiddles
 involving my exploration of link:http://spring.io/[Java Spring].  As a starting point, I will be working
 through the examples outlined in Ludovic Dewailly's book link:https://amzn.com/B0148S9GV8[Building a RESTful Web Service with Spring].
+The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
 
 === fiddle.sh Java Command Examples
 
