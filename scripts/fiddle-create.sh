@@ -85,6 +85,9 @@ source bin/_types.sh
             ./fiddle-combine.sh $1 $2 || exit 87;
             ./fiddle-index.sh "extjs6" || exit 87;
             ;;
+        'java')
+            ./fiddle-java.sh $2 || exit 106;
+            ;;
         'jquery')
             ./fiddle-jquery.sh $2 || exit 88;
             ./fiddle-index.sh "jquery" || exit 88;
@@ -198,6 +201,8 @@ case ${_rc} in
     104) echo "fubar! aurelia fiddle creation failed."
         ;;
     105) echo "fubar! nativescript fiddle creation failed."
+        ;;
+    106) echo "fubar! java fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

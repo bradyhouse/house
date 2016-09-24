@@ -1,4 +1,4 @@
 module.exports = {
-	rssURL:"http://feeds.feedburner.com/mollythebedlingtonterrier",
+	rssURL:"http://feeds.feedburner.com/raymondcamdensblog",
 	title:"Fiddle #3 - RSS Reader"
 }

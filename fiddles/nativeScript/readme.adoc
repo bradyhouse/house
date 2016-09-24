@@ -1,0 +1,63 @@
+= NativeScript
+
+NativeScript is a framework for developing cross-platform mobile apps using JavaScript.  This directory is dedicated
+to exploration of this framework.  Each directory corresponds to separate mobile app.  The `fiddle.sh` script
+can be used to extend or test drive this collection. The following tables outlines how.
+
+===== fiddle.sh NativeScript Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "nativescript" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "nativescript" "0001" "fiddle-0002-DeclarativeUI"`
+|link:fork.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "nativescript" "0000"`
+|link:delete.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "nativescript" "0000" "fiddle-0100-EmptyTemplate"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "nativescript" "0000"`
+|link:start.md[sample output]
+|List
+|`./fiddle.sh "list" "nativescript"`
+|link:list.md[sample output]
+|===
+
+
+==== Machine Specific Configuration
+
+Use the link:../../scripts/bin/nativescript/.nativescriptrc[scripts/bin/nativescript/.nativescriptrc] file to configure machine specific variables.
+
+
+==== Enabling Angular2 Templating
+
+`fiddle.sh` includes logic to initialize new nativeScript fiddles using _just JavaScript_ or Angular2 (aka _transpiled typeScript_)
+By default, JavaScript is enabled. This means, fiddles are initialized using the `nativescript create ...` command.
+In my experience, this approach is faster and cleaner. That said, if you want get your feet wet with Angular2 and typeScript,
+then you will need to complete the following steps:
+
+1. Open the link:../../scripts/bin/nativescript/.nativescriptrc[scripts/bin/nativescript/.nativescriptrc] file
+2. Change the `__TEMPLATE_TYPE__` variable from `js` to `ng2`
+
+Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles using the link:https://github.com/NathanWalker/angular2-seed-advanced.git[Angular2 Advanced Seeder] repo.
+
+
+==== Online Resources
+
+* link:https://github.com/GettingStartedWithNativeScript?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93[Getting Started with NativeScript Repo]
+** link:https://github.com/GettingStartedWithNativeScript/Chapter_1[Chapter 1 Repo]
+** link:https://github.com/GettingStartedWithNativeScript/Chapter_2[Chapter 2 Repo]
+** link:https://github.com/GettingStartedWithNativeScript/Chapter_3[Chapter 3 Repo]
+** link:https://github.com/GettingStartedWithNativeScript/Chapter_4[Chapter 4 Repo]
+** link:https://github.com/GettingStartedWithNativeScript/Chapter_5[Chapter 5 Repo]
+** link:https://github.com/GettingStartedWithNativeScript/Chapter_6[Chapter 6 Repo]
+* link:https://github.com/cfjedimaster/NativeScriptDemos[Raymond Camden's NativeScript Demos]
+
+===== Apple iOS
+
+* link:https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html[Submitting Your App to the Store]

@@ -40,7 +40,7 @@ _TBW_
 *   [Homebrew Repo](https://github.com/Homebrew/brew)
 *   [The Art of Command Line Repo](https://github.com/jlevy/the-art-of-command-line)
 *   [explainshell.com](http://explainshell.com/)
-
+*   [AsciiDoc Syntax Quick Reference](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference)
 
 
 

@@ -47,6 +47,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"php\"\t\tPHP Fiddle"
             echo -e "\t\"python\"\tPython Fiddle"
             echo -e "\t\"rxjs\"\t\tRxJS Fiddle"
+            echo -e "\t\"java\"\t\tJava Fiddle"
             echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
             echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
             echo -e "\t\"chrome\"\tChrome Extension Fiddle"

@@ -1172,26 +1172,39 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201609160420
 
 * **fiddle.sh**
-    1. Extended [scripts/bin/_util.sh](scripts/bin/_util.sh)
-      *   See [bash fiddle #91](fiddles/bash/fiddle-0091-SplitDelimitedString)
-    2. Fixed [Bug ~ Issue #60](https://github.com/bradyhouse/house/issues/60)
-      *   Reflected changes:
-        1.  Updated [scripts/bin/nativescript/_install.sh](scripts/bin/nativescript/_install.sh)
-        2.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
-        3.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
-        4.  Updated [scripts/bin/fiddle-start.sh](scripts/bin/fiddle-start.sh)
-        5.  Updated [scripts/bin/fiddle-nativescript.sh](scripts/bin/fiddle-nativescript.sh)
-        6.  Added [scripts/bin/nativescript/.nativescriptrc](scripts/bin/nativescript/.nativescriptrc)
-        7.  Updated [scripts/bin/fiddle-fork.sh](scripts/bin/fiddle-fork.sh)
-    3. Fixed [Bug ~ Issue #63](https://github.com/bradyhouse/house/issues/63)
-      * Reflected changes:
-        1.  Updated [scripts/bin/fiddle-create.sh](scripts/bin/fiddle-create.sh)
-        2.  Updated [scripts/bin/fiddle-delete.sh](scripts/bin/fiddle-delete.sh)
-    4. Fixed [Bug ~ Issue #66](https://github.com/bradyhouse/house/issues/66)
-      * Reflected changes:
-        1.  Updated [scripts/bin/fiddle-fork.sh](scripts/bin/fiddle-fork.sh)
-        2.  Added [scripts/bin/nativescript/_fork.sh](scripts/bin/nativescript/_fork.sh)
-        3.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
+    1.  Extended [scripts/bin/_util.sh](scripts/bin/_util.sh)
+        *   See [bash fiddle #91](fiddles/bash/fiddle-0091-SplitDelimitedString)
+    2.  Fixed [Bug ~ Issue #60](https://github.com/bradyhouse/house/issues/60)
+        *   Reflected changes:
+          1.  Updated [scripts/bin/nativescript/_install.sh](scripts/bin/nativescript/_install.sh)
+          2.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
+          3.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
+          4.  Updated [scripts/bin/fiddle-start.sh](scripts/bin/fiddle-start.sh)
+          5.  Updated [scripts/bin/fiddle-nativescript.sh](scripts/bin/fiddle-nativescript.sh)
+          6.  Added [scripts/bin/nativescript/.nativescriptrc](scripts/bin/nativescript/.nativescriptrc)
+          7.  Updated [scripts/bin/fiddle-fork.sh](scripts/bin/fiddle-fork.sh)
+    3.  Fixed [Bug ~ Issue #63](https://github.com/bradyhouse/house/issues/63)
+        * Reflected changes:
+          1.  Updated [scripts/bin/fiddle-create.sh](scripts/bin/fiddle-create.sh)
+          2.  Updated [scripts/bin/fiddle-delete.sh](scripts/bin/fiddle-delete.sh)
+    4.  Fixed [Bug ~ Issue #66](https://github.com/bradyhouse/house/issues/66)
+        * Reflected changes:
+          1.  Updated [scripts/bin/fiddle-fork.sh](scripts/bin/fiddle-fork.sh)
+          2.  Added [scripts/bin/nativescript/_fork.sh](scripts/bin/nativescript/_fork.sh)
+          3.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
+    5.  Added Java support
+        * See [fiddles/bash/fiddle-0092-InitJavaProject](fiddles/bash/fiddle-0092-InitJavaProject)
+        * Reflected changes:
+          1.  Added [scripts/bin/java](scripts/bin/java)
+          2.  Added [scripts/fiddle-java.sh](scripts/fiddle-java.sh)
+          3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+          4.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+          5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+          6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+          7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+          8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+          9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+          10. Updated [fiddles/java/README.md]
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
@@ -1220,3 +1233,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Java**
     1.  Added dependency (submodule) to [Spring Guide gs-gradle Repo](https://github.com/spring-guides/gs-gradle)
       *   [fiddles/java/libs/gs-gradle](fiddles/java/libs/gs-gradle)
+    2.  Added [fiddles/java/fiddle-0000-Template](fiddles/java/fiddle-0000-Template)

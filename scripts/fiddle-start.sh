@@ -40,6 +40,8 @@ source bin/nativescript/_install.sh;
 source bin/nativescript/_start.sh;
 source bin/electron/_install.sh;
 source bin/electron/_start.sh;
+source bin/java/_install.sh;
+source bin/java/_start.sh;
 
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
@@ -85,6 +87,11 @@ function startServer() {
             cd ${_fiddleRoot};
             electronInstall || exit 105;
             electronStart || exit 106;
+            ;;
+        'java')
+            cd ${_fiddleRoot};
+            isGradleInstalled || exit 108;
+            javaStart || exit 109;
             ;;
         'meteor')
             cd ${_fiddleRoot};
@@ -178,6 +185,10 @@ case ${rc} in
     106) echo -e "Fubar\t\"electronStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     107) echo -e "Fubar\t\Failed while attempting to determine nativescript projectName.";
+        ;;
+    108) echo -e "Fubar\tGradle is not installed or configured properly";
+        ;;
+    109) echo -e "Fubar\t\"javaStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

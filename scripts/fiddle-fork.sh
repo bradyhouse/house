@@ -30,7 +30,7 @@
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/17/2016 - See CHANGELOG @ 201605020420
 # 05/18/2016 - See CHANGELOG @ 201605180420
-# 09/18/2016 - See CHANGELOG @ 201609160420
+# 09/16/2016 - See CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -38,6 +38,8 @@ source bin/_utils.sh
 source bin/_types.sh
 source bin/nativescript/.nativescriptrc
 source bin/nativescript/_fork.sh
+source bin/java/.javarc
+source bin/java/_fork.sh
 
 
 if [ "$#" -ne 3 ]
@@ -95,7 +97,6 @@ forkedOnDate=$(date +"%m-%d-%y";)
 
 #try
 (
-    # Verify the new fiddle name contains the word "Fiddle" or "fiddle"
     if [[ ${targetFiddle} != *"fiddle"* ]]
     then
         if [[ ${targetFiddle} != *"Fiddle"* ]]
@@ -104,22 +105,21 @@ forkedOnDate=$(date +"%m-%d-%y";)
         fi
     fi
 
-    # Verify that the source fiddle directory exists
     if [[ ! -d "../fiddles/${fiddleType}/${fiddleName}" ]]; then exit 86; fi
-
-    # If the new fiddle directory already exists, then delete it
     if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then sudo rm -R "../fiddles/${fiddleType}/${targetFiddle}" || exit 88; fi
-
-    # Initialize the new fiddle directory based on the source fiddle directory
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
+        'java')
+          cd "../fiddles/java";
+          javaFork ${fiddleName} ${targetFiddle} || exit 99;
+          cd "../../scripts";
+          ;;
         'nativescript')
             nativeScriptFork "${fiddleName}" "${targetFiddle}" || exit 98;
             ;;
         'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'meteor')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
-            # Add "Forked From" section to the readme file
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
@@ -130,7 +130,6 @@ forkedOnDate=$(date +"%m-%d-%y";)
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
-            # Add "Forked From" section to the readme file
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
@@ -140,7 +139,6 @@ forkedOnDate=$(date +"%m-%d-%y";)
         'svg')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
-            # Add "Forked From" section to the readme file
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
@@ -155,7 +153,6 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(cp -rf "../fiddles/${fiddleType}/template/README.markdown" "../fiddles/${fiddleType}/${targetFiddle}/README.markdown") || exit 92
             $(voidSubstr '{{FiddleName}}' ${targetFiddle} "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
             $(voidSubstr '{{BornOnDate}}' ${forkedOnDate} "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 92
-            # Add "Forked From" section to the readme file
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
             $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.markdown";) || exit 93
@@ -219,6 +216,8 @@ case ${rc} in
     97) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
         ;;
     98) echo "fubar! call to nativeScriptFork failed."
+        ;;
+    99) echo "fubar! call to javaFork failed."
         ;;
     *)  echo "fubar! Something went wrong."
         if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi

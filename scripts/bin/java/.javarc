@@ -5,40 +5,11 @@
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
 #  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : FUNCTION SET FOR TESTING THE FIDDLE.SH SCRIPT___________________________|
-#  Entry Point             : testFiddleShell_________________________________________________________|
-#  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-test.sh_______________________________________________________|
+#  Description             : GLOBAL VARIABLE CONFIG USED BY JAVA CREATE/START SCRIPTS._______________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# Baseline Ver - CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 
-
-
-test-utils-listAndCount() {
-    groupLog "test-utils-listAndCount";
-
-
-
-}
-
-
-testFiddleShell() {
-    log "$0" "testFiddleShell";
-
-    #try
-    (
-        test-utils-listAndCount || exit 1;
-    )
-    #catch
-    rc=$?; case ${rc} in
-        0)  endLog "all tests succeeded";
-            ;;
-        1)  endLog "test-utils-listAndCount failed";
-            ;;
-    esac;
-    #finally
-    exit ${rc};
-}
+export __SEEDER__="https://github.com/spring-guides/gs-gradle";

@@ -1,5 +1,4 @@
-
-image::https://badge.waffle.io/bradyhouse/house.png?label=in%20progress&title=Stories%20In%20Progress[]
+image::https://badge.waffle.io/bradyhouse/house.png?label=in%20progress&title=Stories%20In%20Progress[link="https://waffle.io/bradyhouse/house", alt="Stories in Progress"]
 
 
         H o u s e
@@ -12,7 +11,7 @@ image::https://badge.waffle.io/bradyhouse/house.png?label=in%20progress&title=St
         o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
 
 
-As a JavaScript developer, much of my time is spent researching and attempting to master different frameworks.
+As a Web developer, much of my time is spent researching and attempting to master different frameworks.
 I have developed this repo in an attempt to capture this research. My thinking (hope) is driven by
 the adage _if everything begins in the house, then (perhaps) the "house always wins"._ At the same time, to
 learn _anything_, I am someone who has to build _something_.  The [fiddle.sh](scripts/fiddle.sh) script is that thing.
@@ -56,6 +55,6 @@ and frameworks:
 |=========================================================
 
 To get started with any of the frameworks listed, use the above links to explore the associated collection.  To learn
-about my latest changes check out the detailed link:CHANGELOG.markdown[change log].  To test drive the in-browser version
+about my latest changes check out the detailed link:CHANGELOG.md[change log].  To test drive the in-browser version
 of this collection checkout link:http://bradyhouse.github.io[bradyhouse.github.io].  Finally, to learn more about me
 and what I am up to these days checkout link:http://bradyhouse.io[bradyhouse.io].

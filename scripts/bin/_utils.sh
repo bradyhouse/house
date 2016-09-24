@@ -88,6 +88,13 @@ function groupLog() {
     tput sgr0;
 }
 
+function startLog() {
+    message=$(echo $1 | sed 's/\.\///g' | awk '{print toupper($0)}');
+    tput bold; tput rev;
+    echo -e "┌──${message}";
+    tput sgr0;
+}
+
 function endLog() {
     message=$(echo $1 | sed 's/\.\///g' | awk '{print toupper($0)}');
     tput bold; tput rev;

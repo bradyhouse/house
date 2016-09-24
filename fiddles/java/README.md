@@ -1,4 +1,4 @@
-java
+Java
 ======
 
 Having a .NET and C# background (5+ years), I really have little patience for Java. However, professionally it is
