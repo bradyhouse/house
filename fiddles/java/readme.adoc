@@ -1,16 +1,38 @@
-Java
-======
+= Java
+
 
 Having a .NET and C# background (5+ years), I really have little patience for Java. However, professionally it is
 becoming a necessary evil.  As with everything, practise makes perfect.  This directory is dedicated to fiddles
-involving my exploration of the new features of Java 8.
+involving my exploration of link:http://spring.io/[Java Spring].  As a starting point, I will be working
+through the examples outlined in Ludovic Dewailly's book link:https://amzn.com/B0148S9GV8[Building a RESTful Web Service with Spring}.
 
-**Note - at the outset I have not decided how I want to standardize the creation of new Java fiddles.
-In other words, the organization of this directory and code may change.**
+=== fiddle.sh Java Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "java" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "java" "0000" "fiddle-0003-TemplateFork"`
+|link:fork.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "java" "0000"`
+|link:delete.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "java" "0000" "fiddle-0100-EmptyTemplate"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "java" "0000"`
+|link:start.md[sample output]
+|List
+|`./fiddle.sh "list" "java"`
+|link:list.md[sample output]
+|===
 
 
-### Online Resources
+== Online Resources
 
-#### Spring Guides
+=== Spring Guides
 
-* [Building Java Projects with Gradle](http://spring.io/guides/gs/gradle/)
+* link:http://spring.io/guides/gs/gradle/[Building Java Projects with Gradle]
