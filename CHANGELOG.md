@@ -1204,7 +1204,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
           7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
           8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
           9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
-          10. Updated [fiddles/java/README.md]
+          10. Updated [fiddles/java/README.md](fiddles/java/README.md)
 
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
