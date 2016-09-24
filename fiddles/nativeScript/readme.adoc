@@ -49,6 +49,10 @@ Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles u
 
 == Online Resources
 
+* link:http://nativescript.rocks/new.php[NativeScript unofficial plugin list]
+
+=== Getting Started with NativeScript HowTo's / Demos
+
 * link:https://github.com/GettingStartedWithNativeScript?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93[Getting Started with NativeScript Repo]
 ** link:https://github.com/GettingStartedWithNativeScript/Chapter_1[Chapter 1 Repo]
 ** link:https://github.com/GettingStartedWithNativeScript/Chapter_2[Chapter 2 Repo]
@@ -58,6 +62,11 @@ Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles u
 ** link:https://github.com/GettingStartedWithNativeScript/Chapter_6[Chapter 6 Repo]
 * link:https://github.com/cfjedimaster/NativeScriptDemos[Raymond Camden's NativeScript Demos]
 
-===== Apple iOS
+=== Material Design
+
+* link:https://github.com/google/material-design-icons[Google Material Design Icons Font]
+* link:https://design.google.com/icons[Google Material Designs Icon Images]
+
+=== Apple iOS
 
 * link:https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html[Submitting Your App to the Store]

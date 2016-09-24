@@ -1230,6 +1230,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     11. Added dependency (submodule) to [Raymond Camden's NativeScripts Demo Repo](https://github.com/cfjedimaster/NativeScriptDemos)
       *   [fiddles/nativeScript/libs/NativeScriptDemos](fiddles/nativeScript/libs/NativeScriptDemos)
     12. Added [fiddles/nativescript/fiddle-0004-Layouts](fiddles/nativescript/fiddle-0004-Layouts) ~ [Issue 70](https://github.com/bradyhouse/house/issues/70)
+    13. Added [fiddles/nativescript/fiddle-0005-Chat](fiddles/nativescript/fiddle-0005-Chat)
+    14. Added dependency (submodule) to [Nathanael Anderson's Simple Web Server](https://github.com/GettingStartedWithNativeScript/crossCommunicator_Server)
+      *   [fiddles/nativeScript/libs/crossCommunicator_Server](fiddles/nativeScript/libs/crossCommunicator_Server) 
+
+* **Node**
+    1.  Added [fiddles/node/fiddle-0020-WebSocketServer](fiddles/node/fiddle-0020-WebSocketServer) ~ [Issue 72](https://github.com/bradyhouse/house/issues/72)
 
 * **Java**
     1.  Added dependency (submodule) to [Spring Guide gs-gradle Repo](https://github.com/spring-guides/gs-gradle)

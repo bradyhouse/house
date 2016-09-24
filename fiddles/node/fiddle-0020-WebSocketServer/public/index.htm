@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Simple (Ajax &amp;) WebSocket Chat</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color: #646464;
+        }
+        div#log {
+            margin: 10px;
+            background-color: #0066bb;
+            overflow-y: auto;
+        }
+        div#inputbox {
+            margin: 0px 10px 10px 10px;
+        }
+        div.singleDiv {
+            border: 1px;
+        }
+        span.singleFrom {
+            font-variant: all-small-caps;
+            font-size: smaller;
+            color: #F1EA00;
+            margin-right: 5px;
+        }
+        span.singleMessage {
+            color: #f1f1f1;
+        }
+
+    </style>
+    <script type="text/javascript" src="settings.js"></script>
+    <script type="text/javascript">
+
+        // Please note, this code base is a MESS -- it was hacked together to try and make a simple WS prototype, then hacked on more to make it Ajax compatible
+        // This is not production ready, and needs a lot of re-factoring....   But it works as a sample...
+
+        var message = null, log = null;
+        var ws = null;
+        var inSend = false;
+        var clientId = null;
+        var disableWebSockets = false;
+
+        function currentSize() {
+            "use strict";
+            var width = window.innerWidth || document.documentElement.clientWidth || document.body.offsetWidth;
+            var height = window.innerHeight || document.documentElement.clientHeight || document.body.offsetHeight;
+            return {w: width, h: height};
+        };
+
+        function setSizes() {
+            var cs = currentSize();
+            var body = document.getElementById("body");
+            body.style.height = (cs.h-10)+"px";
+            log.style.height = (cs.h-55)+"px";
+            message.style.width = (cs.w-170)+"px";
+        }
+
+        function setupListeners(fn) {
+            "use strict";
+            var resize = null;
+            window.addEventListener("resize", function () {
+                if (resize) {
+                    clearTimeout(resize);
+                }
+                resize = setTimeout(function () {
+                    resize = null;
+                    fn();
+                }, 100);
+            }, true);
+
+            window.addEventListener('orientationchange', function () {
+                if (resize) {
+                    clearTimeout(resize);
+                }
+                resize = setTimeout(function () {
+                    resize = null;
+                    fn();
+                }, 100);
+            }, true);
+
+            message.addEventListener("keydown", keyDown, false);
+
+            var send = document.getElementById("send");
+            send.addEventListener("click", sendClick, false);
+
+
+        }
+
+        function sendClick() {
+            if (message.value === "") return;
+            if (inSend) return;
+            inSend = true;
+
+            var m = message.value;
+            message.style.backgroundColor="yellow";
+            send.disabled = true;
+            message.disabled = true;
+
+            if (ws.readyState !== 1) {
+                setMessage("CONNECTION", "has been lost, reconnecting...");
+                tryToReconnect(m);
+                return;
+            }
+            sendMessage(m);
+            resetTyping();
+        }
+
+        function resetTyping() {
+            message.style.backgroundColor="";
+            message.value = "";
+            send.disabled = false;
+            message.disabled = false;
+            inSend = false;
+        }
+
+        function setMessage(from, message) {
+            var div = document.createElement('div');
+            div.className = "singleDiv";
+
+            var fr = document.createElement('span');
+            var frt = document.createTextNode(from);
+            fr.className = "singleFrom";
+            fr.appendChild(frt);
+
+            var zr = document.createElement('span');
+            var zrt = document.createTextNode(message);
+            zr.className = "singleMessage";
+            zr.appendChild(zrt);
+
+            div.appendChild(fr);
+            div.appendChild(zr);
+            log.appendChild(div);
+            log.scrollTop = log.scrollHeight;
+            console.log("Received", from, message);
+        }
+
+        function sendMessage(message) {
+            ws.send(JSON.stringify({from:"Browser", message: message}));
+        }
+
+        function sendCommand(command, data) {
+            var msg = {command: command};
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    msg[key] = data[key];
+                }
+            }
+			if (ws.readyState === WebSocket.OPEN) {
+              ws.send(JSON.stringify(msg));
+			}
+        }
+
+        var inc=50;
+		var st=null;
+        function tryToReconnect(message) {
+            if (ws.readyState === WebSocket.OPEN) {
+                sendMessage(message);
+                resetTyping();
+                return;
+            }
+			setupWebSocket();
+
+            if (ws.readyState !== WebSocket.OPEN) {
+                inc *= 2;
+                if (inc >= 5000) {
+                    inc = 5000;
+                }
+				if (!st) {
+					st = setTimeout(function() { st = null; tryToReconnect(message); }, inc);
+				}
+            } else {
+                sendMessage(message);
+                resetTyping();
+            }
+        }
+
+        function keyDown(evt) {
+            if (evt.keyCode === 13) {
+                evt.preventDefault();
+                evt.stopPropagation();
+                var send = document.getElementById("send");
+                send.click();
+            }
+            if (evt.keyCode === 27) {
+                evt.preventDefault();
+                evt.stopPropagation();
+                message.value = "";
+            }
+        }
+
+        function setupWebSocket() {
+			if (ws) {
+			  ws.close();
+			}
+            if (disableWebSockets !== true || typeof WebSocket === "undefined") {
+                ws = new WebSocket("ws://" + location.hostname + ":" + location.port);
+            } else {
+                ws = new AJAXSocket(location.hostname + ":" + location.port);
+            }
+           ws.addEventListener("message", onMessage);
+
+        }
+
+        var AJAXSocket = function(host) {
+            this._host = "http://"+host + "/direct/";
+            this._counter = 0;
+            this._messageHandler = function() {};
+
+            this._startListener(1);
+        };
+
+        AJAXSocket.prototype.send = function(msg) {
+            var url = this._host + "send/";
+            if (clientId) {
+                url += "?clientId="+clientId;
+            }
+            var self = this;
+            console.log("Creating Request");
+            var request = new XMLHttpRequest();
+            request.onload = function(d) {
+                self._handler("send", d.target.responseText);
+                console.log("Finished Request");
+            };
+            request.open("POST", url, true);
+            request.send(encodeURI(msg));
+            console.log("Sending Request");
+        };
+
+        AJAXSocket.prototype._startListener = function(cnt) {
+            cnt = cnt || 1;
+            var offset = 250;
+            if (cnt > 1) {
+                offset = 50;
+            }
+            var self = this;
+            for (var i=0;i<cnt;i++) {
+                setTimeout(function () {
+                    self._handleListener();
+                }, offset*cnt);
+            }
+        };
+
+        AJAXSocket.prototype._handleListener = function() {
+            var self = this;
+            this._counter++;
+            if (this._counter > 2) return;
+
+            var url = this._host + "get/";
+            if (clientId) {
+                url += "?clientId="+clientId;
+            }
+
+            var request = new XMLHttpRequest();
+            request.onload = function(d) {
+                self._counter--;
+                self._handler("get", d.target.responseText);
+                //self._startListener();
+            };
+            request.onerror = function(d) {
+                self._counter--;
+                self._handler("error", d);
+                self._startListener();
+            };
+            request.onabort = function(d) {
+                self._counter--;
+                self._handler("abort", d);
+                self._startListener();
+            };
+            request.open("GET", url, true);
+            request.send();
+        };
+
+        AJAXSocket.prototype._handler = function (event, result) {
+            console.log("Event: ", event, result);
+            if (!result) return;
+            var data = {};
+            if (result.length > 0) {
+                try {
+                    var data = JSON.parse(result);
+                }
+                catch (e) { }
+            }
+            if (event === "get" || event === "send") {
+                if (clientId === null && data.clientId) {
+                    console.log("Setting our Client Id:", data.clientId);
+                    clientId = data.clientId;
+                }
+                for (var i=0;i<data.messages.length;i++) {
+                    this._messageHandler({data: JSON.stringify(data.messages[i])});
+                }
+            }
+        };
+
+        AJAXSocket.prototype.addEventListener = function(eventName, fun) {
+            this._messageHandler = fun;
+        };
+        AJAXSocket.prototype.readyState = 1;
+
+        function onMessage(evt) {
+            if (evt.data instanceof Blob || evt.data instanceof ArrayBuffer) {
+                console.log("Got Binary");
+            } else {
+                console.log("Got", evt.data);
+                var result=null;
+                try {
+                    result = JSON.parse(evt.data);
+                } catch (err) {
+                    console.error("Unable to parse", err, evt.data);
+                }
+                if (result && result.from) {
+                    setMessage(result.from, result.message);
+                }
+                if (result && result.command) {
+                    if (result.command === "setClient") {
+                        if (clientId === null) {
+                            clientId = result.clientId;
+                        } else {
+                            sendCommand("setClient", {clientId: clientId});
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        function start() {
+            log = document.getElementById("log");
+            message = document.getElementById("message");
+            setSizes();
+            setupListeners(setSizes);
+            setupWebSocket();
+        }
+
+    </script>
+</head>
+<body id="body" onload="start()">
+<div id="log" name="log"></div>
+<div id="inputbox" name="inputbox"><label for="message">Message:&nbsp;</label><input type="text" id="message" name="message">&nbsp;<button id="send" value="send">Send</button></div>
+</body>
+</html>

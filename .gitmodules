@@ -127,3 +127,6 @@
 [submodule "fiddles/java/libs/gs-gradle"]
 	path = fiddles/java/libs/gs-gradle
 	url = https://github.com/spring-guides/gs-gradle
+[submodule "fiddles/nativeScript/libs/crossCommunicator_Server"]
+	path = fiddles/nativeScript/libs/crossCommunicator_Server
+	url = https://github.com/GettingStartedWithNativeScript/crossCommunicator_Server
