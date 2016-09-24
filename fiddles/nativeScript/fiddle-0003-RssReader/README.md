@@ -1,7 +1,7 @@
 fiddle-0003-RssReader
 ======
 
-image::screenshot.png[]
+![Screenshot](screenshot.png)
 
 
 ### Title
