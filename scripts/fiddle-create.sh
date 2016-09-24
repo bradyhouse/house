@@ -142,7 +142,7 @@ source bin/_types.sh
             ;;
     esac
     # Update the changelog
-    $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.markdown") || exit 96
+    $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.md") || exit 96
 )
 #catch
 _rc=$?
@@ -182,7 +182,7 @@ case ${_rc} in
         ;;
     95) echo "fubar! bash fiddle creation failed."
         ;;
-    96) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
+    96) echo "fubar! failed while attempting update the CHANGELOG.md file"
         ;;
     97) echo "fubar! svg fiddle creation failed."
         ;;

@@ -37,7 +37,7 @@ fiddleType=$1
 fiddleCriteria=$2
 fiddleName=$(getFiddle "${fiddleType}" "${fiddleCriteria}";);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
-changeLogFile="../CHANGELOG.markdown"
+changeLogFile="../CHANGELOG.md"
 
 function prompt() {
   echo -e ""

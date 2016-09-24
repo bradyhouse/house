@@ -31,14 +31,15 @@ source bin/_utils.sh
 source bin/_types.sh
 
 fiddleType=$1;
-fiddleName=$2;
+fiddleCriteria=$(echo $2);
+fiddleName=$(getFiddle "${fiddleType}" "${fiddleCriteria}";);
 newName=$3;
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}";
 newFiddlePath="../fiddles/${fiddleType}/${newName}";
 newIndexFile="../fiddles/${fiddleType}/${newName}/index.html";
 newReadmeFile="../fiddles/${fiddleType}/${newName}/README.markdown";
 altNewReadmeFile="../fiddles/${fiddleType}/${newName}/README.md";
-changeLogFile="../CHANGELOG.markdown";
+changeLogFile="../CHANGELOG.md";
 #try
 (
 	if [ "$#" -ne 3 ]; then  exit 86; fi

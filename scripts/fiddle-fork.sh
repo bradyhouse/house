@@ -180,7 +180,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     esac
 
     # Update the changelog
-    $(echo "* Added [fiddles/${fiddleType}/${targetFiddle}](fiddles/${fiddleType}/${targetFiddle})" >> "../CHANGELOG.markdown") || exit 97
+    $(echo "* Added [fiddles/${fiddleType}/${targetFiddle}](fiddles/${fiddleType}/${targetFiddle})" >> "../CHANGELOG.md") || exit 97
 
 )
 #catch
@@ -213,7 +213,7 @@ case ${rc} in
         ;;
     96) echo "fubar! update of the manifest.json file failed."
         ;;
-    97) echo "fubar! failed while attempting update the CHANGELOG.markdown file"
+    97) echo "fubar! failed while attempting update the CHANGELOG.md file"
         ;;
     98) echo "fubar! call to nativeScriptFork failed."
         ;;
