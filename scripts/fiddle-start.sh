@@ -46,7 +46,8 @@ source bin/java/_start.sh;
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
 _type=$(echo $1);
-_fiddle=$(echo $2);
+_fiddleCriteria=$(echo $2);
+_fiddle=$(getFiddle "${_type}" "${_fiddleCriteria}";);
 _fiddleSubDir="../fiddles/${_type}";
 _fiddleRoot="${_fiddleSubDir}/${_fiddle}";
 _projectName=${_fiddle};
