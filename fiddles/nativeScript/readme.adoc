@@ -4,7 +4,7 @@ NativeScript is a framework for developing cross-platform mobile apps using Java
 to exploration of this framework.  Each directory corresponds to separate mobile app.  The `fiddle.sh` script
 can be used to extend or test drive this collection. The following tables outlines how.
 
-===== fiddle.sh NativeScript Command Examples
+=== fiddle.sh NativeScript Command Examples
 
 [cols="2,2,5a"]
 |===
@@ -29,12 +29,12 @@ can be used to extend or test drive this collection. The following tables outlin
 |===
 
 
-==== Machine Specific Configuration
+== Machine Specific Configuration
 
 Use the link:../../scripts/bin/nativescript/.nativescriptrc[scripts/bin/nativescript/.nativescriptrc] file to configure machine specific variables.
 
 
-==== Enabling Angular2 Templating
+== Enabling Angular2 Templating
 
 `fiddle.sh` includes logic to initialize new nativeScript fiddles using _just JavaScript_ or Angular2 (aka _transpiled typeScript_)
 By default, JavaScript is enabled. This means, fiddles are initialized using the `nativescript create ...` command.
@@ -47,7 +47,7 @@ then you will need to complete the following steps:
 Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles using the link:https://github.com/NathanWalker/angular2-seed-advanced.git[Angular2 Advanced Seeder] repo.
 
 
-==== Online Resources
+== Online Resources
 
 * link:https://github.com/GettingStartedWithNativeScript?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93[Getting Started with NativeScript Repo]
 ** link:https://github.com/GettingStartedWithNativeScript/Chapter_1[Chapter 1 Repo]
