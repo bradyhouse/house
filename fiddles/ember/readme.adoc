@@ -6,11 +6,11 @@ I am not sure.  The truth is (_me thinks_), there is so no such thing as _legacy
 JavaScript.  The question is _What do you prefer?_ Ember (like ExtJS or Angular) ultimately transpile
 JavaScript.  The _ember-evangelical_ answer goes something like this _kindle says what!_:
 
-     Ember.js is a highly opinionated framework and takes a lot of inspiration from the Ruby on Rails conventions
-     over configuration philosophy.  Convention over configuration, also known as coding by conventions, is
-     a design philosophy wherein things work as expected, provided they follow a common set of guidelines.
+_Ember.js is a highly opinionated framework and takes a lot of inspiration from the Ruby on Rails conventions
+over configuration philosophy.  Convention over configuration, also known as coding by conventions, is
+a design philosophy wherein things work as expected, provided they follow a common set of guidelines._
 
-This collection explores the [ember.js](http://emberjs.com/) framework.The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
+This collection explores the link:http://emberjs.com/[ember.js] framework.The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
 
 === fiddle.sh Ember Command Examples
 
@@ -39,7 +39,7 @@ This collection explores the [ember.js](http://emberjs.com/) framework.The `fidd
 
 == Kindle Injection
 
-As a starting point, I worked through the examples outlined by Suchit Puri in his book  __[Ember.js Web Development with Ember CLI](https://amzn.com/B00YEVZ6WI)__.
+As a starting point, I worked through the examples outlined by Suchit Puri in his book  __link:https://amzn.com/B00YEVZ6WI[Ember.js Web Development with Ember CLI]__.
 
 
 == Online Resources
