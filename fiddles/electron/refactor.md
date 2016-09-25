@@ -1,8 +1,8 @@
-Java (sample list)
+Electron (sample refactor)
 ======
 
-Executing the command `./fiddle.sh "list" "java"` produces the following output.
-
+Executing the command `./fiddle.sh "refactor" "electron" "0001" "fiddle-0001-Refactor"` from
+the scripts directory produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -13,15 +13,10 @@ Executing the command `./fiddle.sh "list" "java"` produces the following output.
      888          888  888   888  888   888   888  888    .o
     o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
     
-    FIDDLE-LIST.SH
-    
-    --------------------------------------------------------
-    JAVA FIDDLES
-    --------------------------------------------------------
-    
-    fiddle-0000-Template
-    fiddle-0001-Lambda
-    fiddle-0002-StrategyPattern
-    
-    --------------------------------------------------------
-    Total:  3
+    FIDDLE.SH
+    FIDDLE-REFACTOR.SH
+    Refactor process completed successfully.
+    "fiddle-0001-TemplateFork" is now "fiddle-0001-Refactor".
+
+
+

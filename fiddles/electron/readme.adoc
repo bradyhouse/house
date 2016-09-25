@@ -1,0 +1,29 @@
+= Electron
+
+You can seemingly do everything in the browser using JavaScript (or some abstraction
+_aka framework_).  _But what about the desktop?_ Enter link:http://electron.atom.io[Electron]. This collection of fiddles
+is dedicated to my exploration of this framework.  The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
+
+=== fiddle.sh Electron Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "electron" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "electron" "0000" "fiddle-0003-TemplateFork"`
+|link:fork.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "electron" "0000"`
+|link:delete.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "electron" "0000" "fiddle-0100-EmptyTemplate"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "electron" "0000"`
+|link:start.md[sample output]
+|List
+|`./fiddle.sh "list" "electron"`
+|link:list.md[sample output]
+|===

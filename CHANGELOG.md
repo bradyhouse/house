@@ -1024,8 +1024,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
             9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
 
-* **Aurelia**
-
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0079-Aurelia](fiddles/bash/fiddle-0079-Aurelia)
     2.  Added [fiddles/bash/fiddle-0080-Ember](fiddles/bash/fiddle-0080-Ember)
@@ -1144,7 +1142,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201607010420
 
 * **Ember**
-    1.  Added [fiddles/ember/fiddle-0008-Templates](fiddles/ember/fiddle-0008-Templates) ~ [Issue 47](https://github.com/bradyhouse/house/issues/46)
 
 * **Angular2**
     1.  Added [fiddles/angular2/fiddle-0044-GridStateRouting](fiddles/angular2/fiddle-0044-GridStateRouting) ~ [Issue 45](https://github.com/bradyhouse/house/issues/45)
@@ -1209,6 +1206,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
     2.  Added [fiddles/bash/fiddle-0092-InitJavaProject](fiddles/bash/fiddle-0092-InitJavaProject) ~ [Issue #67](https://github.com/bradyhouse/house/issues/67)
+
+* **Ember**
+    1.  Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
 
 * **NativeScript**
     1.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)

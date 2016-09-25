@@ -11,7 +11,7 @@ fiddle-0000-Template
 
 ### Creation Date
 
-05-28-16
+09-25-16
 
 
 ### Location
@@ -19,9 +19,15 @@ fiddle-0000-Template
 Chicago, IL
 
 
+### Issues
+
+[Issue ##](https://github.com/bradyhouse/house/issues/##)
+
+
 ### Description
 
-Another ember POC.
+Ember fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
+it supports create/delete/refactor/list functionality for the `Ember` based POC's aka fiddles. This is only a test.
 
 
 ### Published Version Link

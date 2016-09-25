@@ -1,8 +1,7 @@
-Java (sample list)
+Ember (sample fork)
 ======
 
-Executing the command `./fiddle.sh "list" "java"` produces the following output.
-
+Executing the command `./fiddle.sh "fork" "ember" "fiddle-0000-Template" "fiddle-0100-Fork"` from the scripts directory produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -13,15 +12,9 @@ Executing the command `./fiddle.sh "list" "java"` produces the following output.
      888          888  888   888  888   888   888  888    .o
     o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
     
-    FIDDLE-LIST.SH
+    FIDDLE.SH
+    FIDDLE-FORK.SH
+    Done. The "../../fiddles/ember/fiddle-0100-Fork" directory has been initialized.
     
-    --------------------------------------------------------
-    JAVA FIDDLES
-    --------------------------------------------------------
+
     
-    fiddle-0000-Template
-    fiddle-0001-Lambda
-    fiddle-0002-StrategyPattern
-    
-    --------------------------------------------------------
-    Total:  3

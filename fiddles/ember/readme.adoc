@@ -1,0 +1,69 @@
+= Ember
+
+Recently, a developer said to me _ExtJS is so legacy ..._.  After holstering my laughter, I ended the IM
+thread with a simple _ok_. Afterwards, I thought: _If ExtJS is _legacy_ what does that make Ember? pre-historic_.
+I am not sure.  The truth is (_me thinks_), there is so no such thing as _legacy_ in the age of the transpiler.  Its all
+JavaScript.  The question is _What do you prefer?_ Ember (like ExtJS or Angular) ultimately transpile
+JavaScript.  The _ember-evangelical_ answer goes something like this _kindle says what!_:
+
+     Ember.js is a highly opinionated framework and takes a lot of inspiration from the Ruby on Rails conventions
+     over configuration philosophy.  Convention over configuration, also known as coding by conventions, is
+     a design philosophy wherein things work as expected, provided they follow a common set of guidelines.
+
+This collection explores the [ember.js](http://emberjs.com/) framework.The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
+
+=== fiddle.sh Ember Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "ember" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "ember" "0000" "fiddle-0003-TemplateFork"`
+|link:fork.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "ember" "0000"`
+|link:delete.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "ember" "0000" "fiddle-0100-EmptyTemplate"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "ember" "0000"`
+|link:start.md[sample output]
+|List
+|`./fiddle.sh "list" "ember"`
+|link:list.md[sample output]
+|===
+
+
+== Kindle Injection
+
+As a starting point, I worked through the examples outlined by Suchit Puri in his book  __[Ember.js Web Development with Ember CLI](https://amzn.com/B00YEVZ6WI)__.
+
+
+== Online Resources
+
+*   link:https://emberjs.com[Ember]
+*   link:http://www.ember-cli.com/[Ember CLI]
+     *   link:https://github.com/ember-cli/ember-resolver[Ember Resolver]
+*   link:https://ember-twiddle.com/[Ember Twiddle]
+*   link:https://github.com/broccolijs/broccoli[broccolijs]
+*   link:https://github.com/esnext/es6-module-transpiler[es6-module-transpiler]
+*   link:https://babeljs.io/[babel]
+*   link:http://requirejs.org[RequireJS]
+*   link:bower.io[bower]
+*   link:http://www.robotstxt.org[Robot Text]
+*   link:http://foldoc.org/contents.html[Free Online Dictionary of Computing (FOLDOC)]
+    *   link:http://foldoc.org/state[State]
+
+=== Special Topics
+
+==== Ember Prototype Extensions
+
+*   link:http://emberjs.com/api/classes/Ember.Array.html[Array Extensions]
+*   link:http://emberjs.com/api/classes/Ember.String.html[String Extensions]
+
+=== Examples
+
+*   link:https://github.com/suchitpuri/emberjs-essentials[EmberJS Essentials]

@@ -1,7 +1,7 @@
-Java (sample list)
+Electron (sample list)
 ======
 
-Executing the command `./fiddle.sh "list" "java"` produces the following output.
+Executing the command `./fiddle.sh "list" "electron"` from the `scripts` directory produces the following output.
 
 
     H o u s e
@@ -16,12 +16,10 @@ Executing the command `./fiddle.sh "list" "java"` produces the following output.
     FIDDLE-LIST.SH
     
     --------------------------------------------------------
-    JAVA FIDDLES
+    ELECTRON FIDDLES
     --------------------------------------------------------
     
     fiddle-0000-Template
-    fiddle-0001-Lambda
-    fiddle-0002-StrategyPattern
     
     --------------------------------------------------------
-    Total:  3
+    Total:  1

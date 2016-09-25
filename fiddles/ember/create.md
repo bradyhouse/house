@@ -62,6 +62,5 @@ Executing the command `./fiddle.sh "create" "ember" "fiddle-0000-Template"` prod
       create vendor/.gitkeep
     Installed packages for tooling via npm.
     Installed browser packages via Bower.
-    Password:
     
     └──".FIDDLES/EMBER/FIDDLE-0000-TEMPLATE" CREATED.

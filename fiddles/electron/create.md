@@ -1,4 +1,4 @@
-angular2-cli (sample create)
+Electron (sample create)
 ======
 
 Executing the command `./fiddle.sh "create" "electron" "fiddle-0000-Template"` produces the following output.
@@ -193,6 +193,10 @@ Executing the command `./fiddle.sh "create" "electron" "fiddle-0000-Template"` p
     
     0
     └──".FIDDLES/ELECTRON/FIDDLE-0000-TEMPLATE" CREATED.
+ 
+ 
+#### Additional Info
     
-    
-    
+[electron](../electron) fiddles are created based on the[electron-quick-start app](https://github.com/electron/electron-quick-start),
+which available on github.  The create logic baked into the [fiddle.sh](../../scripts/fiddle.sh) script is based on 
+[bash fiddle #86](../bash/fiddle-0086-Electron).  
