@@ -4,13 +4,13 @@ Recently, a developer said to me _ExtJS is so legacy ..._.  After holstering my 
 thread with a simple _ok_. Afterwards, I thought: _If ExtJS is _legacy_ what does that make Ember? pre-historic_.
 I am not sure.  The truth is (_me thinks_), there is so no such thing as _legacy_ in the age of the transpiler.  Its all
 JavaScript.  The question is _What do you prefer?_ Ember (like ExtJS or Angular) ultimately transpile
-JavaScript.  The _ember-evangelical_ answer goes something like this _kindle says what!_:
+JavaScript.  The _ember-evangelical_ answer goes something like this:
 
 _Ember.js is a highly opinionated framework and takes a lot of inspiration from the Ruby on Rails conventions
 over configuration philosophy.  Convention over configuration, also known as coding by conventions, is
 a design philosophy wherein things work as expected, provided they follow a common set of guidelines._
 
-This collection explores the link:http://emberjs.com/[ember.js] framework.The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
+This collection explores the link:http://emberjs.com/[ember.js] framework.  The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
 
 === fiddle.sh Ember Command Examples
 
