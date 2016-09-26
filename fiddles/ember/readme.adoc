@@ -10,7 +10,8 @@ _Ember.js is a highly opinionated framework and takes a lot of inspiration from 
 over configuration philosophy.  Convention over configuration, also known as coding by conventions, is
 a design philosophy wherein things work as expected, provided they follow a common set of guidelines._
 
-This collection explores the link:http://emberjs.com/[ember.js] framework.  The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
+This collection explores the link:http://emberjs.com/[ember.js] framework.  The `fiddle.sh` script can be used to
+extend or test drive this collection. The following table outlines how.
 
 === fiddle.sh Ember Command Examples
 

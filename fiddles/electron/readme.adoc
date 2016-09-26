@@ -2,7 +2,7 @@
 
 You can seemingly do everything in the browser using JavaScript (or some abstraction
 _aka framework_).  _But what about the desktop?_ Enter link:http://electron.atom.io[Electron]. This collection of fiddles
-is dedicated to my exploration of this framework.  The `fiddle.sh` script can be used to extend or test drive this collection. The following tables outlines how.
+is dedicated to my exploration of this framework.  The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
 
 === fiddle.sh Electron Command Examples
 
