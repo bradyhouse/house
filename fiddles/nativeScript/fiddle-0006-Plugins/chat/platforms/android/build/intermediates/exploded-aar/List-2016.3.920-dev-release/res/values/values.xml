@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="groupHeaderTextColor">#88000000</color>
+    <color name="listAccentColor">#FF009688</color>
+    <color name="listItemTextColor">#DF000000</color>
+    <color name="pressedColor">#16000000</color>
+    <color name="selectionColor">#20000000</color>
+    <color name="shadeColor">#22000000</color>
+    <color name="shadeColorCenter">#05000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <dimen name="card_deck_translation">8dp</dimen>
+    <string name="list_view_default_empty_content">No items</string>
+    <string name="on_demand_manual_button_busy">LOADING…</string>
+    <string name="on_demand_manual_button_idle">LOAD MORE</string>
+</resources>

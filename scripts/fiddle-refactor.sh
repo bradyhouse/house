@@ -43,41 +43,44 @@ changeLogFile="../CHANGELOG.md";
 #try
 (
 	if [ "$#" -ne 3 ]; then  exit 86; fi
-    if [[ -d "${newFiddlePath}" ]]; then exit 87; fi
-    if [[ ! -d "${fiddlePath}" ]]; then exit 88; fi
+  if [[ -d "${newFiddlePath}" ]]; then exit 87; fi
+  if [[ ! -d "${fiddlePath}" ]]; then exit 88; fi
 
-    sudo mv "${fiddlePath}" "${newFiddlePath}" || exit 90;
+  sudo mv "${fiddlePath}" "${newFiddlePath}" || exit 90;
 
+  if [[ "${fiddleName}" != "fiddle-0000-Template" ]]
+  then
     if [[ -f "${changeLogFile}" ]]
     then
         $(voidSubstr "${fiddleName}" "${newName}" "${changeLogFile}";) || exit 91;
     fi
+  fi
 
-	case ${fiddleType} in
-        'angular2-cli' | 'angular2-seeder' | 'ember' | 'electron' | 'java' | 'meteor' | 'nativescript' )
-            if [[ -f "${altNewReadmeFile}" ]]
-            then
-                $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
-            fi
-            ;;
-        'angular' | 'angular2' | 'aurelia' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
-            if [[ -f "${newIndexFile}" ]]
-            then
-                $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
-            fi
-            case ${fiddleType} in
-                'angular' | 'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
-                    ./fiddle-index.sh ${fiddleType} || exit 89;
-                ;;
-            esac
-            ;;
-        *)
-            if [[ -f "${newReadmeFile}" ]]
-            then
-                $(voidSubstr "${fiddleName}" "${newName}" "${newReadmeFile}";) || exit 91;
-            fi
+  case ${fiddleType} in
+    'angular2-cli' | 'angular2-seeder' | 'ember' | 'electron' | 'java' | 'meteor' | 'nativescript' )
+        if [[ -f "${altNewReadmeFile}" ]]
+        then
+            $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
+        fi
         ;;
-    esac
+    'angular' | 'angular2' | 'aurelia' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
+        if [[ -f "${newIndexFile}" ]]
+        then
+            $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
+        fi
+        case ${fiddleType} in
+            'angular' | 'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
+                ./fiddle-index.sh ${fiddleType} || exit 89;
+            ;;
+        esac
+        ;;
+    *)
+        if [[ -f "${newReadmeFile}" ]]
+        then
+            $(voidSubstr "${fiddleName}" "${newName}" "${newReadmeFile}";) || exit 91;
+        fi
+    ;;
+  esac
 )
 #catch
 _rc=$?;

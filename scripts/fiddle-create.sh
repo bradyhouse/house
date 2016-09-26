@@ -142,7 +142,10 @@ source bin/_types.sh
             ;;
     esac
     # Update the changelog
-    $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.md") || exit 96
+    if [[ $2 != "fiddle-0000-Template" ]]
+    then
+      $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.md") || exit 96
+    fi
 )
 #catch
 _rc=$?

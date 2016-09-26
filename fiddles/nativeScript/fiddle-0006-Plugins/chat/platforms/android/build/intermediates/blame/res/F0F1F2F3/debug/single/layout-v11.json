@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/res/merged/F0F1F2F3/debug/layout-v11/on_demand_manual.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/List-2016.3.920-dev-release/res/layout-v11/on_demand_manual.xml"
+    },
+    {
+        "merged": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/res/merged/F0F1F2F3/debug/layout-v11/simple_list_item.xml",
+        "source": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/List-2016.3.920-dev-release/res/layout-v11/simple_list_item.xml"
+    }
+]

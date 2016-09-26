@@ -1233,6 +1233,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     13. Added [fiddles/nativescript/fiddle-0005-Chat](fiddles/nativescript/fiddle-0005-Chat)
     14. Added dependency (submodule) to [Nathanael Anderson's Simple Web Server](https://github.com/GettingStartedWithNativeScript/crossCommunicator_Server)
       *   [fiddles/nativeScript/libs/crossCommunicator_Server](fiddles/nativeScript/libs/crossCommunicator_Server) 
+    15. Added [fiddles/nativescript/fiddle-0006-Plugins](fiddles/nativescript/fiddle-0006-Plugins) ~ [Issue 73](https://github.com/bradyhouse/house/issues/73)
 
 * **Node**
     1.  Added [fiddles/node/fiddle-0020-WebSocketServer](fiddles/node/fiddle-0020-WebSocketServer) ~ [Issue 72](https://github.com/bradyhouse/house/issues/72)

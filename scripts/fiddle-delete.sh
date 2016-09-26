@@ -58,12 +58,14 @@ function updateChangeLog() {
     changeLogFileTmp="${changeLogFile}.~"
     fiddleName=$2
     searchCriteria="fiddles/${fiddleType}/${fiddleName}";
-
-    if [[ -f "${changeLogFile}" ]]
+    if [[ ${fiddleName} != "fiddle-0000-Template" ]]
     then
-       cat "${changeLogFile}" | grep -v "${searchCriteria}" > "${changeLogFileTmp}"
-       cat "${changeLogFileTmp}" > "${changeLogFile}"
-       rm -f "${changeLogFileTmp}"
+      if [[ -f "${changeLogFile}" ]]
+      then
+         cat "${changeLogFile}" | grep -v "${searchCriteria}" > "${changeLogFileTmp}"
+         cat "${changeLogFileTmp}" > "${changeLogFile}"
+         rm -f "${changeLogFileTmp}"
+      fi
     fi
 }
 

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/usr/local/Cellar/android-sdk/24.1.2/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/support-annotations-24.2.1_c5099a8604fd426c4dc92f53644ab6eb9d457c81.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/node_modules/nativescript-websockets/platforms/android/libs/java_websocket.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6903b0aa522034863e09e3d8d8bddb137de3c436">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/java_websocket_16693baf62525582cbeee294a5ec8160f2675d5e.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/internal_impl-24.2.1_5335f4996a71483df9532df5279939ed11303f28.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-support-fragment-24.2.1_2c1704b2f568efb665f2f66d3cfb7fabc4eaf1e2.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-support-v4-24.2.1_9290a780a5e87d7fd6194cdd58e1cf17552e174d.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/internal_impl-24.2.1_9eb6b11daedbaa023b80ec57f9a931ed11b06855.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/internal_impl-24.2.1_e0f2239671aed3afd2af2515d9b125c1f28a932f.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/Primitives-2016.3.920-dev-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="e296c6ddd0f33757e8d66aefb852494ef02541af">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/intermediates-exploded-aar-Primitives-2016.3.920-dev-release_d6fcf5cd5aedc6986550a39560e30be6e4b1761e.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/List-2016.3.920-dev-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="8644d83c548cc6b3f28f96450fe1c1e3f800edeb">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/intermediates-exploded-aar-List-2016.3.920-dev-release_15186311caef3d6d358057da45df0c8ce31d3ced.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/Data-2016.3.920-dev-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="831bf7d7737d28726580ca59ea08cfaf948df276">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/intermediates-exploded-aar-Data-2016.3.920-dev-release_debdfd36580d00a242ef009a8aea6f49b105df67.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-animated-vector-drawable-24.2.1_9367dbdbbe26f382fe782ae0d0bd4855a2a88c47.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-support-media-compat-24.2.1_f6955f50bf0605ab80a4dbfef416f3e8ec6020dd.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/widgets-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f3064a6bb3bf091d8ef08a38816df98e4c033ce2">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/intermediates-exploded-aar-widgets-release_3396f6f19b92c461cc4534bd94710960433711ce.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-recyclerview-v7-23.1.0_58d8296f99943ea768f647d74b91bc40c7111f9f.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-support-core-utils-24.2.1_ee26a6d707942e68bd5637e8ee4d01eebba3e7ac.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/internal_impl-24.2.1_eafb774bbf79990483d1e84f03c78f8f15db2fb3.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-support-core-ui-24.2.1_214d56baf3f74d800f386220ec2c02c0b6089d72.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/internal_impl-24.2.1_93a169e960e301c192bbe86c5e90ac6a92e382bf.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/Common-2016.3.920-dev-release/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c62048aafe399ba0e0927c15b5a48e4b73766a2f">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/intermediates-exploded-aar-Common-2016.3.920-dev-release_b0f483b87abe91c19e8a507a46c9a670a7fb1cae.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-support-compat-24.2.1_d7113a3fdc036a5dc44b9c974a2b9d4ab1717aa6.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-appcompat-v7-24.2.1_152d7b66cc5bdb095f968d0f2eb135218a01f0bc.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/com.android.support-support-vector-drawable-24.2.1_28b78b44a95cbf994cf765f03241b19ad5dfdbfe.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/chat/runtime/unspecified/jars/libs/binding-generator.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="4290aba11bda501dbadc2dd5c4b08282c0bbfeb8">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/binding-generator_882b31df5b9686f66ed73e7fdbf7c85aed4363eb.jar" />
+    </item>
+    <item
+        jar="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/exploded-aar/chat/runtime/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="9909ad5fcc13fcc60529cfa340ee7e0abc79af38">
+        <dex dex="/Users/e13542/github/house/fiddles/nativeScript/fiddle-0006-Plugins/chat/platforms/android/build/intermediates/pre-dexed/F0F1F2F3/debug/chat-runtime-unspecified_3ed047cde69231954ebab61c200b1ab40832c6d8.jar" />
+    </item>
+
+</items>

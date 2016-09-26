@@ -1,0 +1,5 @@
+int color black 0x7f030000
+int color white 0x7f030001
+int layout trial_message 0x7f020000
+int string trial_message 0x7f040000
+int string trial_message_caption 0x7f040001

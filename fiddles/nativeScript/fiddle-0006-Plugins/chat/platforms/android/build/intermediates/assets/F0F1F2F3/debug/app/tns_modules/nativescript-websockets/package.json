@@ -1,0 +1,78 @@
+{
+  "name": "nativescript-websockets",
+  "version": "1.3.0",
+  "description": "A WebSocket NativeScript module for Android",
+  "main": "websockets.js",
+  "nativescript": {
+    "platforms": {
+      "android": "1.4.0",
+      "ios": "1.4.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanaela/nativescript-websockets.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "WebSockets",
+    "Development",
+    "JavaScript",
+    "Android",
+    "iOS",
+    "Sockets",
+    "Websocket"
+  ],
+  "author": {
+    "name": "Nathanael Anderson",
+    "email": "nathan@master-technology.com"
+  },
+  "contributors": [
+    {
+      "name": "Aleksey Gureiev",
+      "email": "spyromus@noizeramp.com",
+      "url": "https://github.com/alg"
+    },
+    {
+      "name": "Choi Won",
+      "email": "help@myso.kr",
+      "url": "https://github.com/myso-kr"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/nathanaela/nativescript-websockets/issues"
+  },
+  "license": {
+    "type": "MIT & Apache 2.0",
+    "url": "https://github.com/nathanaela/nativescript-sqlite/blob/master/LICENSE"
+  },
+  "homepage": "https://github.com/nathanaela/nativescript-websockets",
+  "gitHead": "1f35da70b2cb798acc635ddd713c898d485435a4",
+  "_id": "nativescript-websockets@1.3.0",
+  "scripts": {},
+  "_shasum": "abf7c759d4fb27279ac2bc13a9145dccebbec177",
+  "_from": "nativescript-websockets@latest",
+  "_npmVersion": "3.7.4",
+  "_nodeVersion": "4.3.1",
+  "_npmUser": {
+    "name": "nathanaela",
+    "email": "nathan@master-technology.com"
+  },
+  "dist": {
+    "shasum": "abf7c759d4fb27279ac2bc13a9145dccebbec177",
+    "tarball": "https://registry.npmjs.org/nativescript-websockets/-/nativescript-websockets-1.3.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "nathanaela",
+      "email": "nathanael.anderson@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/nativescript-websockets-1.3.0.tgz_1467786886662_0.5252262053545564"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nativescript-websockets/-/nativescript-websockets-1.3.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

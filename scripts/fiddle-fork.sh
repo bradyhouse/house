@@ -180,8 +180,10 @@ forkedOnDate=$(date +"%m-%d-%y";)
     esac
 
     # Update the changelog
-    $(echo "* Added [fiddles/${fiddleType}/${targetFiddle}](fiddles/${fiddleType}/${targetFiddle})" >> "../CHANGELOG.md") || exit 97
-
+    if [[ ${targetFiddle} != "fiddle-0000-Template" ]]
+    then
+      $(echo "* Added [fiddles/${fiddleType}/${targetFiddle}](fiddles/${fiddleType}/${targetFiddle})" >> "../CHANGELOG.md") || exit 97
+    fi
 )
 #catch
 rc=$?
