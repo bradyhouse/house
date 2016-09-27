@@ -35,5 +35,5 @@ drive this collection. The following table outlines how.
 == Online Resources
 
  *   link:https://github.com/angular/angular.js[Main Repo]
- *   link:https://cdnjs.com/libraries/angular.js/1.5.0-rc.2[NPM CDNS]
+ *   link:https://cdnjs.com/libraries/angular.js/1.5.0-rc.2[NPM CDN]
  *   link:https://docs.angularjs.org/guide[Angular Developers Guide]
