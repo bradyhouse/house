@@ -1,0 +1,39 @@
+ = Angular
+
+_Angular!_ Its ubiquitous.  This directory is dedicated to fiddles involving my exploration of the angular framework.
+This directory is dedicated to exploration of this framework.  The `fiddle.sh` script can be used to extend or test
+drive this collection. The following table outlines how.
+
+ === fiddle.sh Angular Command Examples
+
+ [cols="2,2,5a"]
+ |===
+ |Create
+ |`./fiddle.sh "create" "angular" "fiddle-0000-Template"`
+ |link:create.md[sample output]
+ |Delete
+ |`./fiddle.sh "delete" "angular" "0000"`
+ |link:delete.md[sample output]
+ |Fork
+ |`./fiddle.sh "fork" "angular" "0000" "fiddle-0001-Fork"`
+ |link:fork.md[sample output]
+ |Index
+ |`./fiddle.sh "index" "angular"`
+ |link:index.md[sample output]
+ |List
+ |`./fiddle.sh "list" "angular"`
+ |link:list.md[sample output]
+ |Refactor
+ |`./fiddle.sh "refactor" "angular" "0000" "fiddle-0100-Refactor"`
+ |link:refactor.md[sample output]
+ |Start
+ |`./fiddle.sh "start" "angular"`
+ |link:start.md[sample output]
+ |===
+
+
+ == Online Resources
+
+ *   link:https://github.com/angular/angular.js[Main Repo]
+ *   link:https://cdnjs.com/libraries/angular.js/1.5.0-rc.2[NPM CDNS]
+ *   link:https://docs.angularjs.org/guide[Angular Developers Guide]

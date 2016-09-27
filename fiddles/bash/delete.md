@@ -22,7 +22,7 @@ Executing the command `./fiddle.sh "delete" "bash" "0000"` from the `scripts` di
 
 Enter `Y` and press [Enter].  This will produce the following output:
 
-      The "fiddle-0000-Template" ember fiddle has been deleted successfully.
+      The "fiddle-0000-Template" bash fiddle has been deleted successfully.
       
       
       

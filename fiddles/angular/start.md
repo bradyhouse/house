@@ -1,7 +1,7 @@
 Angular (sample start)
 ======
 
-Executing the command `./fiddle.sh "start" "angular"` produces the following output.
+Executing the command `./fiddle.sh "start" "angular"` from the scripts directory produces the following output.
 
 
     H o u s e

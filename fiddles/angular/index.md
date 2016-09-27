@@ -1,8 +1,7 @@
-angular (sample create)
+Angular (sample index)
 ======
 
-Executing the command `./fiddle.sh "create" "angular" "fiddle-0000-Template"` produces the following output.
-
+Executing the command `./fiddle.sh "index" "angular"` from the `scripts` directory produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -14,11 +13,11 @@ Executing the command `./fiddle.sh "create" "angular" "fiddle-0000-Template"` pr
     o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
     
     FIDDLE.SH
-    FIDDLE-CREATE.SH
-    05-28-16
-    Password:
-    Done. The "../fiddles/angular/fiddle-0000-Template" directory has been initialized.
     FIDDLE-INDEX.SH
-    05-28-16
+    09-27-16
     Done. All "angular" fiddles have been re-indexed.
-    
+
+
+This command rebuilds the [index.html](index.html) page based on the angular fiddle collection. Provided the fiddle
+is not listed in the [.gitignore](../../.gitignore) file, a link to the fiddle's index.html page is added.
+

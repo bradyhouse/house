@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "fiddle-0000-Template",
+  "description": "fiddle-0000-Template - 09-26-16",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "resources/images/icon.png",
+    "default_popup": "index.html",
+    "default_title": "fiddle-0000-Template"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}

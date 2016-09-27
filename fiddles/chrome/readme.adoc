@@ -1,0 +1,34 @@
+= Chrome
+
+hrome extensions are simply JavaScript / HTML / CSS.  In this directory, you will find my exploration into the
+development of Chrome extensions.  To test out any of these fiddles, see the instructions published on the
+<a href="https://developer.chrome.com/extensions/getstarted" target="_blank">Getting Started: Building a Chrome Extension</a>.
+The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
+
+=== fiddle.sh Chrome Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "chrome" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "chrome" "0000" "fiddle-0100-Fork"`
+|link:fork.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "chrome" "0000"`
+|link:delete.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "chrome" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "chrome" "0000"`
+|link:start.md[sample output]
+|List
+|`./fiddle.sh "list" "chrome"`
+|link:list.md[sample output]
+|===
+
+== Online Resources
+
+* link:http://shop.oreilly.com/product/0636920033776.do[Programming Chrome Apps]
