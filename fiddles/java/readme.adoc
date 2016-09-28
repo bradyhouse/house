@@ -37,3 +37,5 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 === Spring Guides
 
 * link:http://spring.io/guides/gs/gradle/[Building Java Projects with Gradle]
+* link:http://spring.io/guides/gs/rest-service/[Building a RESTful Web Service]
+

@@ -12,4 +12,4 @@
 # Baseline Ver - CHANGELOG @ 201609160420
 # ---------------------------------------------------------------------------------------------------|
 
-export __SEEDER__="https://github.com/spring-guides/gs-gradle";
+export __SEEDER__="https://github.com/spring-guides/gs-rest-service";

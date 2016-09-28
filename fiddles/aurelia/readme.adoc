@@ -1,0 +1,46 @@
+= Aurelia
+
+The final lecture given by the keynote speaker at the link:https://angularsummit.com/conference/chicago/2016/05/home[2016 NFJS Angular 2 Summit],
+introduced a new framework called link:aurelia.io[Aurelia]. This directory is dedicated to fiddles involving my exploration of
+this framework. The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
+
+=== fiddle.sh Aurelia Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "aurelia" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "aurelia" "0000"`
+|link:delete.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "aurelia" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output]
+|Index
+|`./fiddle.sh "index" "aurelia"`
+|link:index.md[sample output]
+|List
+|`./fiddle.sh "list" "aurelia"`
+|link:list.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "aurelia" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "aurelia"`
+|link:start.md[sample output]
+|===
+
+== Online Resources
+
+*   link:http://aurelia.com[Main Site]
+*   link:http://aurelia.io/docs.html#/aurelia/framework/latest/doc/article/getting-started[Docs]
+*   link:http://blog.durandal.io/[Blog]
+*   link:http://jspm.io/[JSPM]
+
+=== Examples
+
+*   link:https://github.com/PWKad/aurelia-samples[Patrick Walter's Aurelia Examples]
+*   link:https://github.com/mhoyer/todomvc-aurelia[Marcel Hoyer's ToDoMVC App]
+*   link:https://github.com/jdanyow/aurelia-breeze-northwind[Jeremy Danyow's Northwind Breeze Example]
+*   link:https://github.com/softchris/aurelia[Master Detail Example]

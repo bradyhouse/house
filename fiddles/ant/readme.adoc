@@ -1,0 +1,33 @@
+= ANT
+
+__ANT__ (Another Neat Tool) is ubiquitous to Java types. If you want to do something on the stack involving Java,
+this usually means you will need to write some type of ANT build.xml file.  As with everything, practise makes perfect.
+This directory is dedicated to fiddles involving ANT.  On another front, (I think/believe) understanding ANT is fundamental to
+understanding the underpinnings of the Sencha CMD build tool.  link:docs.sencha.com/cmd/6.x/advanced_cmd/cmd_ant.html[Sencha CMD]
+supports ANT based automation.  This directory is dedicated to fiddles involving my exploration of ANT. The `fiddle.sh`
+script can be used to extend or test drive this collection. The following table outlines how.
+
+=== fiddle.sh ANT Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "ant" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "ant" "0000"`
+|link:delete.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "ant" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output]
+|List
+|`./fiddle.sh "list" "ant"`
+|link:list.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "ant" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "ant" "0000"`
+|link:start.md[sample output]
+|===
+

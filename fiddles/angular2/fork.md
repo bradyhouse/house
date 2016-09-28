@@ -22,6 +22,8 @@ the following output.
     Done. The "../../fiddles/angular2/fiddle-0100-Fork" directory has been initialized.
 
 
+Note, when an `angular2` fiddle is `forked`, the `fiddle.sh index angular2` command is automatically initiated.  This 
+command will add a reference to the fiddle to the root angular [index.html](index.html) page.
 
 
 

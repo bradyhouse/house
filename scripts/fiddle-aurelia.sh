@@ -27,10 +27,11 @@ echo "Bash version ${BASH_VERSION}..."
 
 fiddleSubDir="aurelia";
 bornOnDate=$(date +"%m-%d-%y";)
+fiddle=$1;
 
 function catch() {
     case $1 in
-        0)  endLog "\"${fiddleSubDir}\$1\" created.";
+        0)  endLog "${fiddle} created.";
             ;;
         *)  endLog "fubar! Something went wrong."
             ;;

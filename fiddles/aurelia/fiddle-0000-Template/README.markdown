@@ -8,12 +8,17 @@ fiddle-0000-Template
 
 ### Creation Date
 
-06-02-16
+09-28-16
 
 
 ### Location
 
 Chicago, IL
+
+
+### Issue
+
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
 
 
 ### Description
