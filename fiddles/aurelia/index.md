@@ -18,7 +18,7 @@ Executing the command `./fiddle.sh "index" "aurelia"` from the `scripts` directo
     Done. All "aurelia" fiddles have been re-indexed.
 
 
-This command rebuilds the [index.html](index.html) page based on the angular2 fiddle collection. Provided the fiddle
+This command rebuilds the [index.html](index.html) page based on the aurelia fiddle collection. Provided the fiddle
 is not listed in the [.gitignore](../../.gitignore) file and includes a root `index.html` file, then a link to it's
 root `index.html` page is added to the collection's [index.html](index.html) page.
 
