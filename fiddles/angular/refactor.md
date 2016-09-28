@@ -1,7 +1,7 @@
-NativeScript (sample refactor)
+Angular (sample refactor)
 ======
 
-Executing the command `./fiddle.sh "refactor" "nativescript" "fiddle-0000-Template" "fiddle-0100-EmptyTemplate"` produces
+Executing the command `./fiddle.sh "refactor" "angular" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces
 the following output.
 
     H o u s e
@@ -12,10 +12,17 @@ the following output.
      888          888  888   888  888   888   888  888ooo888
      888          888  888   888  888   888   888  888    .o
     o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
-
+    
     FIDDLE.SH
     FIDDLE-REFACTOR.SH
+    FIDDLE-INDEX.SH
+    09-28-16
+    Done. All "angular" fiddles have been re-indexed.
     Refactor process completed successfully.
-    "fiddle-0000-Template" is now "fiddle-0100-EmptyTemplate".
+    "fiddle-0000-Template" is now "fiddle-0100-Refactor".
+
+
+Note, when an `angular` fiddle is `refactored`, the `fiddle.sh index angular` command is automatically initiated.  This 
+command will add a reference to the fiddle to the root angular [index.html](index.html) page.
 
 

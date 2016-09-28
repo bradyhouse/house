@@ -1,7 +1,7 @@
 Angular2 (sample delete)
 ======
 
-Executing the command `./fiddle.sh "delete" "angular2" "0000"` from the `scripts` produces the following output.
+Executing the command `./fiddle.sh "delete" "angular2" "0000"` from the `scripts` directory produces the following output.
 
         H o u s e
         oooooooooooo  o8o        .o8        .o8  oooo
