@@ -1,4 +1,4 @@
-angular (sample create)
+Aurelia (sample create)
 ======
 
 Executing the command `./fiddle.sh "create" "aurelia" "fiddle-0000-Template"` produces the following output.

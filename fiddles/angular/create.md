@@ -1,4 +1,4 @@
-angular (sample create)
+Angular (sample create)
 ======
 
 Executing the command `./fiddle.sh "create" "angular" "fiddle-0000-Template"` produces the following output.
