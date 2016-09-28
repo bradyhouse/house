@@ -37,11 +37,11 @@ following table outlines how.
 
 * link:https://github.com/mgechev/angular2-seed[angular2 seed]
 
-#### Reference
+=== Reference
 
 *   link:https://angular.io/docs/ts/latest/[Angular 2 Docs]
-    *   link:https://angular.io/docs/ts/latest/guide/style-guide.html[Style Guide]
-    *   linkhttps://angular.io/docs/ts/latest/guide/cheatsheet.html[Cheat Sheet]
+**   link:https://angular.io/docs/ts/latest/guide/style-guide.html[Style Guide]
+**   link:https://angular.io/docs/ts/latest/guide/cheatsheet.html[Cheat Sheet]
 *   link:https://github.com/angular/angular-cli[Angular 2 CLI]
 *   link:http://valor-software.com/ng2-bootstrap/[ng2-bootstrap]
 *   link:https://code.angularjs.org/[code.angularjs.org]
@@ -60,12 +60,12 @@ following table outlines how.
 *   link:http://goo.gl/dd8922[Good blog entry on the new router]
 *   link:http://goo.gl/zZcVRq[Good slide deck on the router]
 
-##### Dependency Injection
+==== Dependency Injection
 
 *   link:http://goo.gl/KLlzNO[Vojta Jina’s talk on DI in 1.X]
 *   link:http://goo.gl/9Ca02H[Great article on DI in 2.0]
 
-##### Material Design
+==== Material Design
 
 *   link:https://github.com/angular/material-start[https://github.com/angular/material-start]
 *   link:https://material.angularjs.org/latest/[https://material.angularjs.org/latest/]
