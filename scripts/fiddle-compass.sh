@@ -27,9 +27,17 @@ fiddleSubDir="compass"
 bornOnDate=$(date +"%m-%d-%y";)
 echo ${bornOnDate}
 
+function isCompassInstalled() {
+  installed=$(isInstalled "compass";);
+  if [[ "${installed}" == "false" ]]
+  then
+      exit -1;
+  fi
+}
+
 #try
 (
-    if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+    isCompassInstalled || exit 5;
     $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1
     $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
     $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
@@ -47,13 +55,15 @@ case ${rc} in
     1)  echo "foo bar! failed to create the \"../fiddles/${fiddleSubDir}/$1\" directory."
         ;;
     2)  echo "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/app.js\" file."
-	if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-	    ;;
+	      if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+	      ;;
     3)  echo "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/index.html\" file."
         if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
         ;;
     4)  echo "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/README.markdown\" file."
         if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+        ;;
+    5)  echo "foo bar! compass is not installed. Run the command \"sudo gem install compass\" and try again.";
         ;;
     *)  echo "foo bar! Something went wrong."
         if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi

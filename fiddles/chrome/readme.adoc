@@ -3,7 +3,7 @@
 hrome extensions are simply JavaScript / HTML / CSS.  In this directory, you will find my exploration into the
 development of Chrome extensions.  To test out any of these fiddles, see the instructions published on the
 <a href="https://developer.chrome.com/extensions/getstarted" target="_blank">Getting Started: Building a Chrome Extension</a>.
-The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
+The `fiddle.sh` script can be used to extend this collection. The following table outlines how.
 
 === fiddle.sh Chrome Command Examples
 

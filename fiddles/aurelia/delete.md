@@ -28,5 +28,6 @@ Enter `Y` and press [Enter].  This will produce the following output:
         Done. All "aurelia" fiddles have been re-indexed.
         The "fiddle-0000-Template" aurelia fiddle has been deleted successfully.
         
+
 Note, when an `aurelia` fiddle is deleted, the `fiddle.sh index aurelia` command is automatically initiated.  This 
-command will remove the reference to the fiddle from the root angular [index.html](index.html) page.
+command will remove the reference to the fiddle from the root aurelia [index.html](index.html) page.

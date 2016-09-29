@@ -1,7 +1,7 @@
-Aurelia (sample fork)
+Compass (sample fork)
 ======
 
-Executing the command `./fiddle.sh "fork" "aurelia" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces
+Executing the command `./fiddle.sh "fork" "compass" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces
 the following output.
 
 
@@ -17,13 +17,13 @@ the following output.
     FIDDLE.SH
     FIDDLE-FORK.SH
     FIDDLE-INDEX.SH
-    09-28-16
-    Done. All "aurelia" fiddles have been re-indexed.
-    Done. The "../../fiddles/aurelia/fiddle-0100-Fork" directory has been initialized.
+    09-29-16
+    Done. All "compass" fiddles have been re-indexed.
+    Done. The "../../fiddles/compass/fiddle-0100-Fork" directory has been initialized.
 
 
-Note, when an `aurelia` fiddle is `forked`, the `fiddle.sh index aurelia` command is automatically initiated.  This 
-command will add a reference to the fiddle to the root aurelia [index.html](index.html) page.
+Note, when a `compass` fiddle is `forked`, the `fiddle.sh index compass` command is automatically initiated.  This 
+command will add a reference to the fiddle to the root compass [index.html](index.html) page.
 
 
 

@@ -1,0 +1,50 @@
+= Compass
+
+If you have ever explored the [ExtJS API pages](http://docs.sencha.com/extjs/6.0/6.0.0-classic/), you will soon notice
+that every component includes a collection of "CSS Variables" and "CSS Mixins".  Unfortunately, Sencha doesn't provide
+much explanation of these features. It as though they assume that all developers have some prior knowledge of
+(experience with) SASS, as though these features require no explanation.  Since I don't (yet) fall into this category,
+I feel like there is a whole facet of the framework that I have yet to explore.  This directory is dedicated to
+exploration of this framework.  The `fiddle.sh` script can be used to extend or test drive this collection. The
+following table outlines how.
+
+=== fiddle.sh Compass Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "compass" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "compass" "0000"`
+|link:delete.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "compass" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output]
+|Index
+|`./fiddle.sh "index" "compass"`
+|link:index.md[sample output]
+|List
+|`./fiddle.sh "list" "compass"`
+|link:list.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "compass" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "compass"`
+|link:start.md[sample output]
+|===
+
+
+== Kindle Injection
+
+In this case, I am working through Ben Frain's book link:http://amzn.com/B00M8PD926[Sass and Compass for Designers (Community Experience Distilled)].
+
+
+== Online Resources
+
+*   link:https://github.com/necolas/idiomatic-css[The Idiomatic CSS Principles]
+*   link:http://primercss.io/guidelines/#scss[Github's PrimerCSS Guidelines]
+*   link:https://google.github.io/styleguide/htmlcssguide.xml#CSS_Formatting_Rules[Google's CSS Style Guide]
+*   link:https://github.com/airbnb/css#css[Airbnb's Styleguide]
+*   link:http://codeguide.co/#css[@mdo's Code Guide]

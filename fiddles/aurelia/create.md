@@ -25,6 +25,10 @@ Executing the command `./fiddle.sh "create" "aurelia" "fiddle-0000-Template"` pr
     Done. All "aurelia" fiddles have been re-indexed.
 
 
+Note, when an `aurelia` fiddle is created, the `fiddle.sh index aurelia` command is automatically initiated.  This 
+command will add a reference to the fiddle to the root aurelia [index.html](index.html) page.
+
+
 ### Additional Info
 
 [Aurelia](../aurelia) fiddles are created to run in the browser.  This means, the resulting sandbox can
