@@ -21,9 +21,6 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 |Refactor
 |`./fiddle.sh "refactor" "chrome" "0000" "fiddle-0100-Refactor"`
 |link:refactor.md[sample output]
-|Start
-|`./fiddle.sh "start" "chrome" "0000"`
-|link:start.md[sample output]
 |List
 |`./fiddle.sh "list" "chrome"`
 |link:list.md[sample output]
