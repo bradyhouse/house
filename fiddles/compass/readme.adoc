@@ -1,6 +1,6 @@
 = Compass
 
-If you have ever explored the [ExtJS API pages](http://docs.sencha.com/extjs/6.0/6.0.0-classic/), you will soon notice
+If you have ever explored the link:http://docs.sencha.com/extjs/6.0/6.0.0-classic/[ExtJS API pages], you will soon notice
 that every component includes a collection of "CSS Variables" and "CSS Mixins".  Unfortunately, Sencha doesn't provide
 much explanation of these features. It as though they assume that all developers have some prior knowledge of
 (experience with) SASS, as though these features require no explanation.  Since I don't (yet) fall into this category,
