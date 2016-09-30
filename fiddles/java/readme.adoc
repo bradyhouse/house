@@ -34,8 +34,14 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 
 == Online Resources
 
-=== Spring Guides
+=== How To's & Tutorials
 
-* link:http://spring.io/guides/gs/gradle/[Building Java Projects with Gradle]
-* link:http://spring.io/guides/gs/rest-service/[Building a RESTful Web Service]
+*   link:http://spring.io/guides[Spring Guides]
+**   link:http://spring.io/guides/gs/gradle/[Building Java Projects with Gradle]
+**   link:http://spring.io/guides/gs/rest-service/[Building a RESTful Web Service]
+
+=== RESTful References
+
+*   link:http://www.restapitutorial.com/[Learn REST: A RESTful Tutorial]
+*   link:http://blog.teamtreehouse.com/the-definitive-guide-to-get-vs-post[The Definitive Guide to GET vs POST]
 
