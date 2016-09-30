@@ -10,25 +10,25 @@ this framework. The `fiddle.sh` script can be used to extend or test drive this 
 |===
 |Create
 |`./fiddle.sh "create" "aurelia" "fiddle-0000-Template"`
-|link:create.md[additional info]
+|link:create.md[sample output & additional details]
 |Delete
 |`./fiddle.sh "delete" "aurelia" "0000"`
-|link:delete.md[additional info]
+|link:delete.md[sample output & additional details]
 |Fork
 |`./fiddle.sh "fork" "aurelia" "0000" "fiddle-0001-Fork"`
-|link:fork.md[additional info]
+|link:fork.md[sample output & additional details]
 |Index
 |`./fiddle.sh "index" "aurelia"`
-|link:index.md[additional info]
+|link:index.md[sample output & additional details]
 |List
 |`./fiddle.sh "list" "aurelia"`
-|link:list.md[additional info]
+|link:list.md[sample output & additional details]
 |Refactor
 |`./fiddle.sh "refactor" "aurelia" "0000" "fiddle-0100-Refactor"`
-|link:refactor.md[additional info]
+|link:refactor.md[sample output & additional details]
 |Start
 |`./fiddle.sh "start" "aurelia"`
-|link:start.md[additional info]
+|link:start.md[sample output & additional details]
 |===
 
 == Online Resources

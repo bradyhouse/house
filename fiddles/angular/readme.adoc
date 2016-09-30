@@ -10,25 +10,25 @@ drive this collection. The following table outlines how.
 |===
 |Create
 |`./fiddle.sh "create" "angular" "fiddle-0000-Template"`
-|link:create.md[additional info]
+|link:create.md[sample output & additional details]
 |Delete
 |`./fiddle.sh "delete" "angular" "0000"`
-|link:delete.md[additional info]
+|link:delete.md[sample output & additional details]
 |Fork
 |`./fiddle.sh "fork" "angular" "0000" "fiddle-0001-Fork"`
-|link:fork.md[additional info]
+|link:fork.md[sample output & additional details]
 |Index
 |`./fiddle.sh "index" "angular"`
-|link:index.md[additional info]
+|link:index.md[sample output & additional details]
 |List
 |`./fiddle.sh "list" "angular"`
-|link:list.md[additional info]
+|link:list.md[sample output & additional details]
 |Refactor
 |`./fiddle.sh "refactor" "angular" "0000" "fiddle-0100-Refactor"`
-|link:refactor.md[additional info]
+|link:refactor.md[sample output & additional details]
 |Start
 |`./fiddle.sh "start" "angular"`
-|link:start.md[additional info]
+|link:start.md[sample output & additional details]
 |===
 
 
