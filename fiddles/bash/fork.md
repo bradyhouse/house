@@ -1,4 +1,4 @@
-Bash (sample fork)
+Bash (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "bash" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces the following output.

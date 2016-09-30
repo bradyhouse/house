@@ -1,4 +1,4 @@
-Dojo (sample delete)
+Dojo (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "dojo" "0000"` from the `scripts` directory produces the following output.

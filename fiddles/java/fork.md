@@ -1,4 +1,4 @@
-Java (sample fork)
+Java (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "java" "fiddle-0000-Template" "fiddle-0001-TemplateFork"`

@@ -1,4 +1,4 @@
-Angular (sample fork)
+Angular (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "angular" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

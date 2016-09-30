@@ -1,4 +1,4 @@
-NativeScript (sample fork)
+NativeScript (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "nativescript" "fiddle-0001-PageNavigation" "fiddle-0002-DeclarativeUI"`

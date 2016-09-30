@@ -1,4 +1,4 @@
-Compass (sample fork)
+Compass (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "compass" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

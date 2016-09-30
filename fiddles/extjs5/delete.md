@@ -1,4 +1,4 @@
-ExtJS 5 (sample delete)
+ExtJS 5 (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "extjs5" "0000"` from the `scripts` directory produces the following output.

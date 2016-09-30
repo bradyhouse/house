@@ -1,4 +1,4 @@
-ANT (sample refactor)
+ANT (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "ant" "0100" "fiddle-0100-Refactor"` from the `scripts` directory produces the following output.

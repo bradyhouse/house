@@ -1,4 +1,4 @@
-Angular2 Seeder (sample list)
+Angular2 Seeder (list)
 ======
 
 Executing the command `./fiddle.sh "list" "angular2-seeder"` from the `scripts` directory produces the following output.

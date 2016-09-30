@@ -1,4 +1,4 @@
-JQuery (sample delete)
+JQuery (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "jquery" "0000"` from the `scripts` directory produces the following output.

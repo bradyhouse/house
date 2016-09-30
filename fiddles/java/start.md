@@ -1,4 +1,4 @@
-NativeScript (sample start)
+NativeScript (start)
 ======
 
 Executing the command `./fiddle.sh "start" "nativescript" "fiddle-0000-Template` produces the following output.

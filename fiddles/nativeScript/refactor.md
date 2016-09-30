@@ -1,4 +1,4 @@
-NativeScript (sample refactor)
+NativeScript (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "nativescript" "fiddle-0000-Template" "fiddle-0100-EmptyTemplate"` produces

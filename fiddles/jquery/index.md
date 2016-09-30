@@ -1,4 +1,4 @@
-JQuery (sample index)
+JQuery (index)
 ======
 
 Executing the command `./fiddle.sh "index" "jquery"` from the `scripts` directory produces the following output.

@@ -1,4 +1,4 @@
-JQuery (sample list)
+JQuery (list)
 ======
 
 Executing the command `./fiddle.sh "list" "jquery"` from the `scripts` directory produces the following output.

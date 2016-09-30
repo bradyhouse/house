@@ -1,4 +1,4 @@
-Java (sample list)
+Java (list)
 ======
 
 Executing the command `./fiddle.sh "list" "java"` produces the following output.

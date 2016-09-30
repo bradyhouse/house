@@ -1,4 +1,4 @@
-D3 (sample create)
+D3 (create)
 ======
 
 Executing the command `./fiddle.sh "create" "d3" "fiddle-0000-Template"` produces the following output.

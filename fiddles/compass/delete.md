@@ -1,4 +1,4 @@
-Compass (sample delete)
+Compass (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "compass" "0000"` from the `scripts` directory produces the following output.

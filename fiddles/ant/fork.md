@@ -1,4 +1,4 @@
-ANT (sample fork)
+ANT (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "ant" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

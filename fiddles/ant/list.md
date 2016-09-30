@@ -1,4 +1,4 @@
-ANT (sample list)
+ANT (list)
 ======
 
 Executing the command `./fiddle.sh "list" "ant"` from the `scripts` directory produces the following output.

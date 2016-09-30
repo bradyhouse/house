@@ -1,4 +1,4 @@
-Dojo (sample refactor)
+Dojo (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "dojo" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces

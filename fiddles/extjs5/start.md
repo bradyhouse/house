@@ -1,4 +1,4 @@
-ExtJS 5 (sample start)
+ExtJS 5 (start)
 ======
 
 Executing the command `./fiddle.sh "start" "extjs5"` produces the following output.
@@ -18,5 +18,5 @@ Executing the command `./fiddle.sh "start" "extjs5"` produces the following outp
     Serving "/Users/e13542/github/house/fiddles/extjs5" at http://127.0.0.1:1841
     
 
-Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stup the
+Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stop the
 web server, simply press `Ctrl`-`C`.

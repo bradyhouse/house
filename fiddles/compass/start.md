@@ -1,4 +1,4 @@
-Compass (sample start)
+Compass (start)
 ======
 
 Executing the command `./fiddle.sh "start" "compass"` from the `scripts` directory produces the following output.

@@ -1,4 +1,4 @@
-Electron (sample refactor)
+Electron (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "electron" "0001" "fiddle-0001-Refactor"` from

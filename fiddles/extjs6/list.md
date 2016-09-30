@@ -1,4 +1,4 @@
-ExtJS 6 (sample list)
+ExtJS 6 (list)
 ======
 
 Executing the command `./fiddle.sh "list" "extjs6"` from the `scripts` directory produces the following output.

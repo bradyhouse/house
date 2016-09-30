@@ -1,4 +1,4 @@
-Aurelia (sample delete)
+Aurelia (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "aurelia" "0000"` from the `scripts` directory produces the following output.

@@ -1,4 +1,4 @@
-D3 (sample index)
+D3 (index)
 ======
 
 Executing the command `./fiddle.sh "index" "d3"` from the `scripts` directory produces the following output.

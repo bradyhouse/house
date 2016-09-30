@@ -1,4 +1,4 @@
-Aurelia (sample index)
+Aurelia (index)
 ======
 
 Executing the command `./fiddle.sh "index" "aurelia"` from the `scripts` directory produces the following output.

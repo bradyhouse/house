@@ -1,4 +1,4 @@
-Aurelia (sample fork)
+Aurelia (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "aurelia" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

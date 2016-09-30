@@ -1,4 +1,4 @@
-JQuery (sample combine)
+JQuery (combine)
 ======
 
 Executing the command `./fiddle.sh "combine" "jquery" "0041"` from the `scripts` directory produces

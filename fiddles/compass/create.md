@@ -1,4 +1,4 @@
-Compass (sample create)
+Compass (create)
 ======
 
 Executing the command `./fiddle.sh "create" "compass" "fiddle-0000-Template"` produces the following output.

@@ -1,4 +1,4 @@
-Aurelia (sample list)
+Aurelia (list)
 ======
 
 Executing the command `./fiddle.sh "list" "aurelia"` from the `scripts` directory produces the following output.

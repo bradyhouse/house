@@ -1,4 +1,4 @@
-Angular (sample index)
+Angular (index)
 ======
 
 Executing the command `./fiddle.sh "index" "angular2"` from the `scripts` directory produces the following output.

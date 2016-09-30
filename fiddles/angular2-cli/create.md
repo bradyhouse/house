@@ -1,4 +1,4 @@
-angular2-cli (sample create)
+angular2-cli (create)
 ======
 
 Executing the command `./fiddle.sh "create" "angular2-cli" "fiddle-0000-Template"` produces the following output.

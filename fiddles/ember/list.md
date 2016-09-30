@@ -1,4 +1,4 @@
-Ember (sample list)
+Ember (list)
 ======
 
 Executing the command `./fiddle.sh "list" "ember"` from the `scripts` directory produces the following output.

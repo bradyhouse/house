@@ -1,4 +1,4 @@
-Java (sample create)
+Java (create)
 ======
 
 Executing the command `./fiddle.sh "create" "java" "fiddle-0000-Template"` produces the following output.

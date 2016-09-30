@@ -1,4 +1,4 @@
-Angular2 CLI (sample refactor)
+Angular2 CLI (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "angular2-cli" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces

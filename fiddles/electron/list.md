@@ -1,4 +1,4 @@
-Electron (sample list)
+Electron (list)
 ======
 
 Executing the command `./fiddle.sh "list" "electron"` from the `scripts` directory produces the following output.

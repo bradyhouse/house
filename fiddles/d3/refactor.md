@@ -1,4 +1,4 @@
-D3 (sample refactor)
+D3 (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "d3" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces

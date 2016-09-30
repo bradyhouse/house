@@ -1,4 +1,4 @@
-NativeScript (sample delete)
+NativeScript (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "nativescript" "0000"` produces the following output.

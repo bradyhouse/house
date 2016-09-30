@@ -1,4 +1,4 @@
-ANT (sample delete)
+ANT (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "ant" "0000"` from the `scripts` directory produces the following output.

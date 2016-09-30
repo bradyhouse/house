@@ -1,4 +1,4 @@
-ExtJS 5 (sample fork)
+ExtJS 5 (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "extjs5" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

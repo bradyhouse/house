@@ -1,4 +1,4 @@
-Dojo (sample list)
+Dojo (list)
 ======
 
 Executing the command `./fiddle.sh "list" "dojo"` from the `scripts` directory produces the following output.

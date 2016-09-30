@@ -1,4 +1,4 @@
-Angular2 Seeder (sample fork)
+Angular2 Seeder (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "angular2-seeder" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

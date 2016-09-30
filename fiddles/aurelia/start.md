@@ -1,4 +1,4 @@
-Aurelia (sample start)
+Aurelia (start)
 ======
 
 Executing the command `./fiddle.sh "start" "aurelia"` from the scripts directory produces the following output.

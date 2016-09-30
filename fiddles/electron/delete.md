@@ -1,4 +1,4 @@
-Electron (sample delete)
+Electron (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "electron" "0000"` produces the following output.

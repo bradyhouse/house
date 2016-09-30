@@ -1,4 +1,4 @@
-Ember (sample refactor)
+Ember (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "ember" "0000" "fiddle-0100-Refactor"` from the scripts directory produces the following output.

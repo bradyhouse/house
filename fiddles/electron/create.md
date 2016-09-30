@@ -1,4 +1,4 @@
-Electron (sample create)
+Electron (create)
 ======
 
 Executing the command `./fiddle.sh "create" "electron" "fiddle-0000-Template"` produces the following output.

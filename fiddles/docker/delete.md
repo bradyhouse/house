@@ -1,4 +1,4 @@
-Docker (sample delete)
+Docker (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "docker" "0000"` from the `scripts` directory produces the following output.

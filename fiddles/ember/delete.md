@@ -1,4 +1,4 @@
-Ember (sample delete)
+Ember (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "ember" "0000"` produces the following output.

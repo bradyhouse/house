@@ -1,4 +1,4 @@
-Electron (sample fork)
+Electron (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "electron" "0000" "fiddle-0001-TemplateFork"`

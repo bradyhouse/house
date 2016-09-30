@@ -1,4 +1,4 @@
-JQuery (sample refactor)
+JQuery (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "jquery" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces

@@ -1,4 +1,4 @@
-Ember (sample fork)
+Ember (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "ember" "fiddle-0000-Template" "fiddle-0100-Fork"` from the scripts directory produces the following output.

@@ -1,4 +1,4 @@
-Chrome (sample refactor)
+Chrome (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "chrome" "0100" "fiddle-0100-Refactor"` from the `scripts` directory produces the following output.

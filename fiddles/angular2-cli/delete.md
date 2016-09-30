@@ -1,4 +1,4 @@
-Angular2 CLI (sample delete)
+Angular2 CLI (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "angular2-cli" "0000"` from the `scripts` directory produces the following output.

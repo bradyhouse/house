@@ -1,4 +1,4 @@
-D3 (sample fork)
+D3 (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "d3" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

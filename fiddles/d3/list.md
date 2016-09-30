@@ -1,4 +1,4 @@
-D3 (sample list)
+D3 (list)
 ======
 
 Executing the command `./fiddle.sh "list" "d3"` from the `scripts` directory produces the following output.

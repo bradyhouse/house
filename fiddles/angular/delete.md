@@ -1,4 +1,4 @@
-Angular (sample delete)
+Angular (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "angular" "0100"` from the `scripts` produces the following output.

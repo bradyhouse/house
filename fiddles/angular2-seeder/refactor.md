@@ -1,4 +1,4 @@
-Angular2 Seeder (sample refactor)
+Angular2 Seeder (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "angular2-seeder" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces

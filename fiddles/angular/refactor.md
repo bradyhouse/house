@@ -1,4 +1,4 @@
-Angular (sample refactor)
+Angular (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "angular" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces

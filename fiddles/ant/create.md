@@ -1,4 +1,4 @@
-ANT (sample create)
+ANT (create)
 ======
 
 Executing the command `./fiddle.sh "create" "ant" "fiddle-0000-Template"` from the `scripts` directory produces the following output.

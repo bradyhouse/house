@@ -1,4 +1,4 @@
-Angular2 CLI (sample list)
+Angular2 CLI (list)
 ======
 
 Executing the command `./fiddle.sh "list" "angular2-cli"` from the `scripts` directory produces the following output.

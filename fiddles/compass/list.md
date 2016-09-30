@@ -1,4 +1,4 @@
-Compass (sample list)
+Compass (list)
 ======
 
 Executing the command `./fiddle.sh "list" "compass"` from the `scripts` directory produces the following output.

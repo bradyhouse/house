@@ -1,4 +1,4 @@
-Docker (sample fork)
+Docker (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "docker" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces the following output.

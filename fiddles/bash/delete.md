@@ -1,4 +1,4 @@
-Bash (sample delete)
+Bash (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "bash" "0000"` from the `scripts` directory produces the following output.

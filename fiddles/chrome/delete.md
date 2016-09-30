@@ -1,4 +1,4 @@
-Chrome (sample delete)
+Chrome (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "chrome" "0000"` from the `scripts` directory produces the following output.

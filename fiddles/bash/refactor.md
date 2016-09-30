@@ -1,4 +1,4 @@
-Bash (sample refactor)
+Bash (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "bash" "0100" "fiddle-0100-Refactor"` from the `scripts` directory produces the following output.

@@ -1,4 +1,4 @@
-JQuery (sample fork)
+JQuery (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "jquery" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

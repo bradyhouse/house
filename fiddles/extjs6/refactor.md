@@ -1,4 +1,4 @@
-ExtJS 6 (sample refactor)
+ExtJS 6 (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "extjs6" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces

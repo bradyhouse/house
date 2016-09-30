@@ -1,4 +1,4 @@
-ExtJS 6 (sample index)
+ExtJS 6 (index)
 ======
 
 Executing the command `./fiddle.sh "index" "extjs6"` from the `scripts` directory produces the following output.

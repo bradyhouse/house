@@ -1,4 +1,4 @@
-Chrome (sample create)
+Chrome (create)
 ======
 
 Executing the command `./fiddle.sh "create" "chrome" "fiddle-0000-Template"` from the `scripts` directory produces the following output.

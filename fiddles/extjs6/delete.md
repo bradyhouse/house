@@ -1,4 +1,4 @@
-ExtJS 6 (sample delete)
+ExtJS 6 (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "extjs6" "0000"` from the `scripts` directory produces the following output.

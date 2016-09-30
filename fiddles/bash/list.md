@@ -1,4 +1,4 @@
-Bash (sample list)
+Bash (list)
 ======
 
 Executing the command `./fiddle.sh "list" "bash"` from the `scripts` directory produces the following output.

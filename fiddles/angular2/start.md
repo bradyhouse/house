@@ -1,4 +1,4 @@
-Angular2 (sample start)
+Angular2 (start)
 ======
 
 Executing the command `./fiddle.sh "start" "angular2"` from the scripts directory produces the following output.

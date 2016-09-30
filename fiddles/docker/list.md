@@ -1,4 +1,4 @@
-Docker (sample list)
+Docker (list)
 ======
 
 Executing the command `./fiddle.sh "list" "docker"` from the `scripts` directory produces the following output.

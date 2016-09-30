@@ -26,8 +26,5 @@ script can be used to extend or test drive this collection. The following table 
 |Refactor
 |`./fiddle.sh "refactor" "ant" "0000" "fiddle-0100-Refactor"`
 |link:refactor.md[sample output & additional details]
-|Start
-|`./fiddle.sh "start" "ant" "0000"`
-|link:start.md[sample output & additional details]
 |===
 

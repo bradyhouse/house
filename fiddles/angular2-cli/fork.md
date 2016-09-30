@@ -1,4 +1,4 @@
-Angular2 CLI (sample fork)
+Angular2 CLI (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "angular2-cli" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

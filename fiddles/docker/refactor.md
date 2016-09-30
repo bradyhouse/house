@@ -1,4 +1,4 @@
-Docker (sample refactor)
+Docker (refactor)
 ======
 
 Executing the command `./fiddle.sh "refactor" "docker" "0100" "fiddle-0100-Refactor"` from the `scripts` directory produces the following output.

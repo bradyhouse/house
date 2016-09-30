@@ -1,4 +1,4 @@
-Java (sample delete)
+Java (delete)
 ======
 
 Executing the command `./fiddle.sh "delete" "java" "0000"` produces the following output.

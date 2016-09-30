@@ -1,4 +1,4 @@
-Dojo (sample index)
+Dojo (index)
 ======
 
 Executing the command `./fiddle.sh "index" "dojo"` from the `scripts` directory produces the following output.

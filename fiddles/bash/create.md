@@ -1,4 +1,4 @@
-Bash (sample create)
+Bash (create)
 ======
 
 Executing the command `./fiddle.sh "create" "bash" "fiddle-0000-Template"` from the `scripts` directory produces the following output.

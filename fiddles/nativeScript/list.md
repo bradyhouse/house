@@ -1,4 +1,4 @@
-NativeScript (sample list)
+NativeScript (list)
 ======
 
 Executing the command `./fiddle.sh "list" "nativescript"` produces

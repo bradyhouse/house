@@ -1,4 +1,4 @@
-Compass (sample index)
+Compass (index)
 ======
 
 Executing the command `./fiddle.sh "index" "compass"` from the `scripts` directory produces the following output.

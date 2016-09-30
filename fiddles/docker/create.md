@@ -1,4 +1,4 @@
-Docker (sample create)
+Docker (create)
 ======
 
 Executing the command `./fiddle.sh "create" "docker" "fiddle-0000-Template"` produces the following output.

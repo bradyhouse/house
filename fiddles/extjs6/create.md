@@ -1,4 +1,4 @@
-ExtJS 6 (sample create)
+ExtJS 6 (create)
 ======
 
 Executing the command `./fiddle.sh "create" "extjs6" "fiddle-0000-Template"` from `scripts` directory produces the following output.

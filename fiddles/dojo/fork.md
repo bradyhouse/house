@@ -1,4 +1,4 @@
-Dojo (sample fork)
+Dojo (fork)
 ======
 
 Executing the command `./fiddle.sh "fork" "dojo" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces

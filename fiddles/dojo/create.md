@@ -1,4 +1,4 @@
-Dojo (sample create)
+Dojo (create)
 ======
 
 Executing the command `./fiddle.sh "create" "dojo" "fiddle-0000-Template"` from `scripts` directory produces the following output.

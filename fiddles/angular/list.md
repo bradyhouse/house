@@ -1,4 +1,4 @@
-Angular (sample list)
+Angular (list)
 ======
 
 Executing the command `./fiddle.sh "list" "angular"` from the `scripts` directory produces the following output.
