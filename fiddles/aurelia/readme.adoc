@@ -4,7 +4,7 @@ The final lecture given by the keynote speaker at the link:https://angularsummit
 introduced a new framework called link:aurelia.io[Aurelia]. This directory is dedicated to fiddles involving my exploration of
 this framework. The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh Aurelia Command Examples
+=== fiddle.sh Aurelia Commands
 
 [cols="2,2,5a"]
 |===

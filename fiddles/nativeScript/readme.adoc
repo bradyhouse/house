@@ -4,7 +4,7 @@ NativeScript is a framework for developing cross-platform mobile apps using Java
 to exploration of this framework.  Each directory corresponds to separate mobile app.  The `fiddle.sh` script
 can be used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh NativeScript Command Examples
+=== fiddle.sh NativeScript Commands
 
 [cols="2,2,5a"]
 |===

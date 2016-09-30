@@ -5,7 +5,7 @@ development of Chrome extensions.  To test out any of these fiddles, see the ins
 <a href="https://developer.chrome.com/extensions/getstarted" target="_blank">Getting Started: Building a Chrome Extension</a>.
 The `fiddle.sh` script can be used to extend this collection. The following table outlines how.
 
-=== fiddle.sh Chrome Command Examples
+=== fiddle.sh Chrome Commands
 
 [cols="2,2,5a"]
 |===

@@ -4,7 +4,7 @@ _Angular?_ No, now its: _Angular2!_  Its ubiquitous. This directory is dedicated
 version 2 of the Angular framework. The `fiddle.sh` script can be used to extend or test drive this collection. The
 following table outlines how.
 
-=== fiddle.sh Angular2 Command Examples
+=== fiddle.sh Angular2 Commands
 
 [cols="2,2,5a"]
 |===

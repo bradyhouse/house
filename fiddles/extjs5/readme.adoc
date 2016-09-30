@@ -6,7 +6,7 @@ error, the best approach I have found is link:https://fiddle.sencha.com/#home[Se
 until it makes sense.  This directory is dedicated to exploration of this framework.  The `fiddle.sh` script can be used
 to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh ExtJS 5 Command Examples
+=== fiddle.sh ExtJS 5 Commands
 
 [cols="2,2,5a"]
 |===

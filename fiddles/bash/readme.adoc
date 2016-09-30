@@ -5,7 +5,7 @@ some type of shell script.  As with everything, practise makes perfect. This dir
 dedicated to fiddles involving bash (sh, ksh, csh ... etc).  The `fiddle.sh` script can be
 used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh Bash Command Examples
+=== fiddle.sh Bash Commands
 
 [cols="2,2,5a"]
 |===

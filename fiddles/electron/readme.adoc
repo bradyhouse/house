@@ -5,7 +5,7 @@ _aka framework_).  _But what about the desktop?_ Enter link:http://electron.atom
 is dedicated to my exploration of this framework.  The `fiddle.sh` script can be used to extend or test drive this
 collection. The following table outlines how.
 
-=== fiddle.sh Electron Command Examples
+=== fiddle.sh Electron Commands
 
 [cols="2,2,5a"]
 |===

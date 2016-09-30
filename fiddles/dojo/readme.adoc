@@ -6,7 +6,7 @@ If I am unfamiliar with or (simply) don’t understand a specific piece of the f
 publish a fiddle (or fiddles) until it makes sense.  This directory is dedicated to exploration of this framework.
 The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh Dojo Command Examples
+=== fiddle.sh Dojo Commands
 
 [cols="2,2,5a"]
 |===

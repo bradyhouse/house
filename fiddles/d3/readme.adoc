@@ -5,7 +5,7 @@ good luck.  Actually, there is Data-Driven Documents -- aka link:https://d3js.or
 pen involving my exploration of this framework. This directory is dedicated to exploration of this framework.
 The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh D3 Command Examples
+=== fiddle.sh D3 Commands
 
 [cols="2,2,5a"]
 |===

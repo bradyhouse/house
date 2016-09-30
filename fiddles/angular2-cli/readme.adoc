@@ -9,7 +9,7 @@ the way _smells_ alot like link:http://docs.sencha.com/cmd/5.x/intro_to_cmd.html
 pain (or delay) of entry.  This collection is aimed at my exploration and study of this new tool.  The `fiddle.sh` script
 can be used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh Angular2 CLI Command Examples
+=== fiddle.sh Angular2 CLI Commands
 
 [cols="2,2,5a"]
 |===

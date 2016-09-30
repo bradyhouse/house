@@ -7,7 +7,7 @@ and publish a fiddle (or fiddles) until it makes sense. This directory is dedica
 and straight ES6.  The `fiddle.sh` script can be used to extend or test drive this collection. The following table
 outlines how.
 
-=== fiddle.sh JQuery Command Examples
+=== fiddle.sh JQuery Commands
 
 [cols="2,2,5a"]
 |===

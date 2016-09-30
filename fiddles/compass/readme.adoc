@@ -8,7 +8,7 @@ I feel like there is a whole facet of the framework that I have yet to explore. 
 exploration of this framework.  The `fiddle.sh` script can be used to extend or test drive this collection. The
 following table outlines how.
 
-=== fiddle.sh Compass Command Examples
+=== fiddle.sh Compass Commands
 
 [cols="2,2,5a"]
 |===

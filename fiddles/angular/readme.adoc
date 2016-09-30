@@ -4,7 +4,7 @@ _Angular!_ Its ubiquitous.  This directory is dedicated to fiddles involving my 
 This directory is dedicated to exploration of this framework.  The `fiddle.sh` script can be used to extend or test
 drive this collection. The following table outlines how.
 
-=== fiddle.sh Angular Command Examples
+=== fiddle.sh Angular Commands
 
 [cols="2,2,5a"]
 |===

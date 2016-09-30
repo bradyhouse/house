@@ -13,7 +13,7 @@ a design philosophy wherein things work as expected, provided they follow a comm
 This collection explores the link:http://emberjs.com/[ember.js] framework.  The `fiddle.sh` script can be used to
 extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh Ember Command Examples
+=== fiddle.sh Ember Commands
 
 [cols="2,2,5a"]
 |===

@@ -11,7 +11,7 @@ of this _markdown_) is not quite ready for _production_, there are _seeder proje
 This collection is aimed at POC's experimenting with the link:https://github.com/mgechev/angular2-seed[angular2 seed]
 template.  The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh Angular2 Seeder Command Examples
+=== fiddle.sh Angular2 Seeder Commands
 
 [cols="2,2,5a"]
 |===

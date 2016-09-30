@@ -7,7 +7,7 @@ understanding the underpinnings of the Sencha CMD build tool.  link:docs.sencha.
 supports ANT based automation.  This directory is dedicated to fiddles involving my exploration of ANT. The `fiddle.sh`
 script can be used to extend or test drive this collection. The following table outlines how.
 
-=== fiddle.sh ANT Command Examples
+=== fiddle.sh ANT Commands
 
 [cols="2,2,5a"]
 |===
