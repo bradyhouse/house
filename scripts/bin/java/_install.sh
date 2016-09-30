@@ -39,6 +39,14 @@ function isGitInstalled() {
   fi
 }
 
+function isMvnInstalled() {
+  installed=$(isInstalled "mvn";);
+  if [[ "${installed}" == "false" ]]
+  then
+      exit -1;
+  fi
+}
+
 function isBrewInstalled() {
   installed=$(isInstalled "brew";);
   if [[ "${installed}" == "false" ]]

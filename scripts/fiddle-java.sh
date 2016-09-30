@@ -47,6 +47,8 @@ function catch() {
             ;;
         6)  endLog "cannot not parse project name";
             ;;
+        7)  endLog "maven is not installed or configured properly";
+            ;;
         *)  endLog "fubar! Something went wrong."
             ;;
     esac
@@ -63,6 +65,7 @@ function catch() {
     isJavaInstalled || exit 1;
     isGradleInstalled || exit 2;
     isGitInstalled || exit 3;
+    isMvnInstalled || exit 7;
     javaCreate $1 ${bornOnDate} ${projectName} ${__SEEDER__} || exit 4;
 )
 rc=$?; catch ${rc};

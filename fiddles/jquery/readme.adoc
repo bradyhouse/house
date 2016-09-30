@@ -1,0 +1,38 @@
+= JQuery (Bootstrap / ES6)
+
+Before you can build something with jQuery and twitter bootstrap, you have to understand jQuery and twitter bootstrap.
+Based on books, research, and trial and error, the best approach I have found is link:https://jsfiddle.net[jsFiddle].
+If I am unfamiliar with or (simply) don’t understand a specific piece of these frameworks, then step one is to build
+and publish a fiddle (or fiddles) until it makes sense. This directory is dedicated to exploration of jQuery, bootstrap
+and straight ES6.  The `fiddle.sh` script can be used to extend or test drive this collection. The following table
+outlines how.
+
+=== fiddle.sh JQuery Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "jquery" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Combine
+|`./fiddle.sh "combine" "jquery" "fiddle-0000-Template"`
+|link:combine.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "jquery" "0000"`
+|link:delete.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "jquery" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output]
+|Index
+|`./fiddle.sh "index" "jquery"`
+|link:index.md[sample output]
+|List
+|`./fiddle.sh "list" "jquery"`
+|link:list.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "jquery" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "jquery"`
+|link:start.md[sample output]
+|===

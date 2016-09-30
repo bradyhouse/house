@@ -1,0 +1,48 @@
+= Docker
+
+[Digging around in the angular-cli github repo recently I found an interesting
+markdown (*.md) file entitled link:http://three-bradyhouse.rhcloud.com/?p=807[docker-deploy].  The file begins
+`"Add convenience for users to containerize and deploy their Angular application via Docker. …”`.  And then, a
+2x4 materialized and bounced off my head: _Huh, maybe I can't simply dismiss this Docker thing as something
+beyond the pale of JavaScript/frontend and my so-called expertise._ This collection (aka directory, aka _barrel_) is
+aimed at gaining some experience with link:http://docker.com[docker].
+
+
+=== fiddle.sh Docker Command Examples
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "docker" "fiddle-0000-Template"`
+|link:create.md[sample output]
+|Delete
+|`./fiddle.sh "delete" "docker" "0000"`
+|link:delete.md[sample output]
+|Fork
+|`./fiddle.sh "fork" "docker" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output]
+|List
+|`./fiddle.sh "list" "docker"`
+|link:list.md[sample output]
+|Refactor
+|`./fiddle.sh "refactor" "docker" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output]
+|Start
+|`./fiddle.sh "start" "docker"`
+|link:start.md[sample output]
+|===
+
+
+== Kindle Injection
+
+As a starting point, I will be working through Karl Mathias and Sean P. Kane’s book link:https://amzn.com/B00ZGRS4XM[Docker: Up and Running].
+
+
+== Online Resources
+
+*   link:http://docker.com[docker]
+*   link:https://docs.docker.com[docker docs]
+*   link:https://github.com/docker/machine[docker machine repo]
+*   link:https://www.virtualbox.org[virtual box]
+*   link:https://hub.docker.com/[docker hub]
+*   link:https://hub.docker.com/_/node/[docker node repo]

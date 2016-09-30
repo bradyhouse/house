@@ -1,31 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
 
-mainClassName = 'hello.HelloWorld'
-
-// tag::repositories[]
-repositories { 
-    mavenCentral() 
-}
-// end::repositories[]
-
-// tag::jar[]
 jar {
-    baseName = 'gs-gradle'
+    baseName = 'gs-rest-service'
     version =  '0.1.0'
 }
-// end::jar[]
 
-// tag::dependencies[]
+repositories {
+    mavenCentral()
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile "joda-time:joda-time:2.2"
-    testCompile "junit:junit:4.12"
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('com.jayway.jsonpath:json-path')
 }
-// end::dependencies[]
 
-// tag::wrapper[]
-// end::wrapper[]

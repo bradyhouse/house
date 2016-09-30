@@ -1206,9 +1206,13 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
     2.  Added [fiddles/bash/fiddle-0092-InitJavaProject](fiddles/bash/fiddle-0092-InitJavaProject) ~ [Issue #67](https://github.com/bradyhouse/house/issues/67)
+    3.  Added [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject) ~ 
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
+
+* **ExtJS 6**
+    1.  Started [fiddles/extjs6/fiddle-0036-ItunesTop100](fiddles/extjs6/fiddle-0036-ItunesTop100) ~ [Issue #74](https://github.com/bradyhouse/house/issues/74)
 
 * **NativeScript**
     1.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
@@ -1242,3 +1246,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added dependency (submodule) to [Spring Guide gs-gradle Repo](https://github.com/spring-guides/gs-gradle)
       *   [fiddles/java/libs/gs-gradle](fiddles/java/libs/gs-gradle)
     2.  Added [fiddles/java/fiddle-0000-Template](fiddles/java/fiddle-0000-Template)
+    

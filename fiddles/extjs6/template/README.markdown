@@ -15,7 +15,12 @@ House extJS Fiddle - {{FiddleName}}
 
 ### Description
 
-Another ExtJS Fiddle. 
+Another ExtJS Fiddle.
+
+
+### Issue
+
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
 
 
 ### Published Version Link
@@ -25,4 +30,4 @@ N/A
 
 ### Tags
 
-ExtJS-5-1
+ExtJS-6-1

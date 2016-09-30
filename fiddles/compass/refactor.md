@@ -21,6 +21,8 @@ the following output.
       Refactor process completed successfully.
       "fiddle-0000-Template" is now "fiddle-0100-Refactor".
 
+Note, when an `compass` fiddle is `refactored`, the `fiddle.sh index compass` command is automatically initiated.  This 
+command will add a reference to the fiddle to the root angular [index.html](index.html) page.
 
 
 

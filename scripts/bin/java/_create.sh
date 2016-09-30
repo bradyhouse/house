@@ -35,6 +35,22 @@ function gitCloneSeeder() {
   esac
 }
 
+function mvnInstall() {
+  groupLog "mvnInstall";
+  #try
+  (
+    cd $1
+    mvn install;
+  )
+  rc=$?; case ${rc} in
+    0)  groupLog "maven install - successful."
+        ;;
+    *)  exit 8;
+        ;;
+  esac
+
+}
+
 function gradlewCheck() {
   groupLog "gradlewCheck";
   #try
@@ -65,6 +81,7 @@ function initJavaProject() {
   gitCloneSeeder ${seeder} "tmp" || exit $?;
   cp -rf tmp/complete "${projectName}";
   rm -rf tmp;
+  mvnInstall "${projectName}";
   gradlewCheck "${projectName}";
 }
 
@@ -99,6 +116,8 @@ function javaCreate() {
         6)  groupLog "Failed while attempting delete tmp directory.";
             ;;
         7)  groupLog "Failed while attempting command \"gradlew check\"";
+            ;;
+        8)  groupLog "Failed while attempting command \"mvn install\"";
             ;;
         *)  groupLog "F U B A R ~ Something went wrong."
             ;;
