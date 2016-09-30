@@ -1,0 +1,6 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:svg="nativescript-svg" navigatingTo="onNavigatingTo">
+  <StackLayout>
+    <svg:SVGImage src="~/images/circle.svg" />
+  </StackLayout>
+</Page>

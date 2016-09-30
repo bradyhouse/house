@@ -1238,6 +1238,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     14. Added dependency (submodule) to [Nathanael Anderson's Simple Web Server](https://github.com/GettingStartedWithNativeScript/crossCommunicator_Server)
       *   [fiddles/nativeScript/libs/crossCommunicator_Server](fiddles/nativeScript/libs/crossCommunicator_Server) 
     15. Added [fiddles/nativescript/fiddle-0006-Plugins](fiddles/nativescript/fiddle-0006-Plugins) ~ [Issue 73](https://github.com/bradyhouse/house/issues/73)
+    16. Added [fiddles/nativescript/fiddle-0007-SvgPlugin](fiddles/nativescript/fiddle-0007-SvgPlugin) ~ [Issue #79](https://github.com/bradyhouse/house/issues/79)
 
 * **Node**
     1.  Added [fiddles/node/fiddle-0020-WebSocketServer](fiddles/node/fiddle-0020-WebSocketServer) ~ [Issue 72](https://github.com/bradyhouse/house/issues/72)
@@ -1245,5 +1246,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Java**
     1.  Added dependency (submodule) to [Spring Guide gs-gradle Repo](https://github.com/spring-guides/gs-gradle)
       *   [fiddles/java/libs/gs-gradle](fiddles/java/libs/gs-gradle)
-    2.  Added [fiddles/java/fiddle-0000-Template](fiddles/java/fiddle-0000-Template)
+    2.  Added [fiddles/java/fiddle-0003-SpringFox](fiddles/java/fiddle-0003-SpringFox) ~ [Issue #78](https://github.com/bradyhouse/house/issues/78)
     
+ 

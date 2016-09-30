@@ -1,0 +1,21 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+  }
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'idea'
+
+dependencies {
+  compile libs.springBoot
+  compile libs.springfoxPetstore
+  compile libs.springfoxSwagger2
+  compile "io.springfox:springfox-swagger1:${springfoxVersion}"
+  compile libs.springfoxSwaggerUi
+  testCompile libs.test
+}

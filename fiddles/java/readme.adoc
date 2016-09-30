@@ -33,15 +33,23 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 
 
 == Online Resources
+*   link:http://spring.io[Spring]
+*   link:http://springfox.github.io/springfox/[SpringFox]
+**  link:https://github.com/springfox/springfox[github repo]
+**  link:https://github.com/springfox/springfox-demos[demo repo]
 
 === How To's & Tutorials
-
 *   link:http://spring.io/guides[Spring Guides]
 **   link:http://spring.io/guides/gs/gradle/[Building Java Projects with Gradle]
 **   link:http://spring.io/guides/gs/rest-service/[Building a RESTful Web Service]
 
 === RESTful References
-
 *   link:http://www.restapitutorial.com/[Learn REST: A RESTful Tutorial]
 *   link:http://blog.teamtreehouse.com/the-definitive-guide-to-get-vs-post[The Definitive Guide to GET vs POST]
 
+=== Special Topics
+
+==== Gradle Peer Authentication Workarounds
+*   link:http://stackoverflow.com/questions/26734738/android-studio-gradle-build-failed-errorcause-peer-not-authenticated#29078949:[Gradle build failed. Error:Cause: peer not authenticated]
+*   link:http://docs.bvstools.com/home/ssl-documentation/exporting-certificate-authorities-cas-from-a-website[Exporting Certificate Authorities (CAs) from a Website]
+*   link:http://stackoverflow.com/questions/27206040/android-studio-intellij-gradle-errorcause-peer-not-authenticated[Intellij, Gradle Error:Cause: peer not authenticated]

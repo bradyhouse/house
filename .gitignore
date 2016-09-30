@@ -89,3 +89,15 @@ fiddles/node/fiddle-0013-*/*.bz2
 # tmp directory
 fiddles/svg/resources/json/
 
+# java gradle
+.gradle
+build/
+classes/
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+
+!gradle-wrapper.jar
+.java-version
+
