@@ -11,19 +11,19 @@ The `fiddle.sh` script can be used to extend this collection. The following tabl
 |===
 |Create
 |`./fiddle.sh "create" "chrome" "fiddle-0000-Template"`
-|link:create.md[sample output]
+|link:create.md[additional info]
 |Fork
 |`./fiddle.sh "fork" "chrome" "0000" "fiddle-0100-Fork"`
-|link:fork.md[sample output]
+|link:fork.md[additional info]
 |Delete
 |`./fiddle.sh "delete" "chrome" "0000"`
-|link:delete.md[sample output]
+|link:delete.md[additional info]
 |Refactor
 |`./fiddle.sh "refactor" "chrome" "0000" "fiddle-0100-Refactor"`
-|link:refactor.md[sample output]
+|link:refactor.md[additional info]
 |List
 |`./fiddle.sh "list" "chrome"`
-|link:list.md[sample output]
+|link:list.md[additional info]
 |===
 
 == Online Resources

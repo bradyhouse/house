@@ -10,22 +10,22 @@ can be used to extend or test drive this collection. The following table outline
 |===
 |Create
 |`./fiddle.sh "create" "nativescript" "fiddle-0000-Template"`
-|link:create.md[sample output]
+|link:create.md[additional info]
 |Fork
 |`./fiddle.sh "fork" "nativescript" "0001" "fiddle-0002-DeclarativeUI"`
-|link:fork.md[sample output]
+|link:fork.md[additional info]
 |Delete
 |`./fiddle.sh "delete" "nativescript" "0000"`
-|link:delete.md[sample output]
+|link:delete.md[additional info]
 |Refactor
 |`./fiddle.sh "refactor" "nativescript" "0000" "fiddle-0100-EmptyTemplate"`
-|link:refactor.md[sample output]
+|link:refactor.md[additional info]
 |Start
 |`./fiddle.sh "start" "nativescript" "0000"`
-|link:start.md[sample output]
+|link:start.md[additional info]
 |List
 |`./fiddle.sh "list" "nativescript"`
-|link:list.md[sample output]
+|link:list.md[additional info]
 |===
 
 

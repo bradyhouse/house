@@ -12,23 +12,23 @@ to extend or test drive this collection. The following table outlines how.
 |===
 |Create
 |`./fiddle.sh "create" "extjs6" "fiddle-0000-Template"`
-|link:create.md[sample output]
+|link:create.md[additional info]
 |Delete
 |`./fiddle.sh "delete" "extjs6" "0000"`
-|link:delete.md[sample output]
+|link:delete.md[additional info]
 |Fork
 |`./fiddle.sh "fork" "extjs6" "0000" "fiddle-0001-Fork"`
-|link:fork.md[sample output]
+|link:fork.md[additional info]
 |Index
 |`./fiddle.sh "index" "extjs6"`
-|link:index.md[sample output]
+|link:index.md[additional info]
 |List
 |`./fiddle.sh "list" "extjs6"`
-|link:list.md[sample output]
+|link:list.md[additional info]
 |Refactor
 |`./fiddle.sh "refactor" "extjs6" "0000" "fiddle-0100-Refactor"`
-|link:refactor.md[sample output]
+|link:refactor.md[additional info]
 |Start
 |`./fiddle.sh "start" "extjs6"`
-|link:start.md[sample output]
+|link:start.md[additional info]
 |===

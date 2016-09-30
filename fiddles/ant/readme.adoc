@@ -13,21 +13,21 @@ script can be used to extend or test drive this collection. The following table 
 |===
 |Create
 |`./fiddle.sh "create" "ant" "fiddle-0000-Template"`
-|link:create.md[sample output]
+|link:create.md[additional info]
 |Delete
 |`./fiddle.sh "delete" "ant" "0000"`
-|link:delete.md[sample output]
+|link:delete.md[additional info]
 |Fork
 |`./fiddle.sh "fork" "ant" "0000" "fiddle-0001-Fork"`
-|link:fork.md[sample output]
+|link:fork.md[additional info]
 |List
 |`./fiddle.sh "list" "ant"`
-|link:list.md[sample output]
+|link:list.md[additional info]
 |Refactor
 |`./fiddle.sh "refactor" "ant" "0000" "fiddle-0100-Refactor"`
-|link:refactor.md[sample output]
+|link:refactor.md[additional info]
 |Start
 |`./fiddle.sh "start" "ant" "0000"`
-|link:start.md[sample output]
+|link:start.md[additional info]
 |===
 

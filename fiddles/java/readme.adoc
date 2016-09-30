@@ -13,22 +13,22 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 |===
 |Create
 |`./fiddle.sh "create" "java" "fiddle-0000-Template"`
-|link:create.md[sample output]
+|link:create.md[additional info]
 |Fork
 |`./fiddle.sh "fork" "java" "0000" "fiddle-0003-TemplateFork"`
-|link:fork.md[sample output]
+|link:fork.md[additional info]
 |Delete
 |`./fiddle.sh "delete" "java" "0000"`
-|link:delete.md[sample output]
+|link:delete.md[additional info]
 |Refactor
 |`./fiddle.sh "refactor" "java" "0000" "fiddle-0100-EmptyTemplate"`
-|link:refactor.md[sample output]
+|link:refactor.md[additional info]
 |Start
 |`./fiddle.sh "start" "java" "0000"`
-|link:start.md[sample output]
+|link:start.md[additional info]
 |List
 |`./fiddle.sh "list" "java"`
-|link:list.md[sample output]
+|link:list.md[additional info]
 |===
 
 

@@ -19,22 +19,22 @@ extend or test drive this collection. The following table outlines how.
 |===
 |Create
 |`./fiddle.sh "create" "ember" "fiddle-0000-Template"`
-|link:create.md[sample output]
+|link:create.md[additional info]
 |Fork
 |`./fiddle.sh "fork" "ember" "0000" "fiddle-0003-TemplateFork"`
-|link:fork.md[sample output]
+|link:fork.md[additional info]
 |Delete
 |`./fiddle.sh "delete" "ember" "0000"`
-|link:delete.md[sample output]
+|link:delete.md[additional info]
 |Refactor
 |`./fiddle.sh "refactor" "ember" "0000" "fiddle-0100-EmptyTemplate"`
-|link:refactor.md[sample output]
+|link:refactor.md[additional info]
 |Start
 |`./fiddle.sh "start" "ember" "0000"`
-|link:start.md[sample output]
+|link:start.md[additional info]
 |List
 |`./fiddle.sh "list" "ember"`
-|link:list.md[sample output]
+|link:list.md[additional info]
 |===
 
 
