@@ -1,0 +1,34 @@
+= Tween.js
+
+link:https://github.com/tweenjs/tween.js[Tween.js] is a JavaScript tweening engine for easy animations, incorporating
+optimised Robert Penner's equations.  This directory is dedicated to exploration of this framework.  The `fiddle.sh`
+script can be used to extend or test drive this collection. The following table outlines how.
+
+=== fiddle.sh Tween.js Commands
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "tween" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Delete
+|`./fiddle.sh "delete" "tween" "0000"`
+|link:delete.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "tween" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output & additional details]
+|Index
+|`./fiddle.sh "index" "tween"`
+|link:index.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "tween"`
+|link:list.md[sample output & additional details]
+|Refactor
+|`./fiddle.sh "refactor" "tween" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output & additional details]
+|Start
+|`./fiddle.sh "start" "tween"`
+|link:start.md[sample output & additional details]
+|===
+
+
