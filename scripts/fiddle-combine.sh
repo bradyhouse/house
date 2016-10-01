@@ -198,7 +198,7 @@ function catch() {
             echo ""
             echo "Usage:"
             echo ""
-            echo "$0 \"[t]\" \"[f]\" \"[a]\" \"[c]\""
+            echo "./fiddle.sh \"combine\" \"[t]\" \"[f]\" \"[a]\" \"[c]\""
             echo ""
             echo "[t] - type. Valid types include: "
             echo ""

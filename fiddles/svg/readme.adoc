@@ -1,0 +1,42 @@
+= SVG
+
+All modern browser support scalar vector graphics (SVG) markup.  _What, what, what?_
+Consult link:https://en.wikipedia.org/wiki/Scalable_Vector_Graphics[the source of all knowledge], 
+link:https://developer.mozilla.org/en-US/docs/SVG_In_HTML_Introduction[MDN].  This directory is dedicated to exploration
+of integrating JavaScript and SVG. The `fiddle.sh` script can be used to extend or test drive this collection. The following 
+table outlines how.
+
+=== fiddle.sh SVG Commands
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "svg" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Combine
+|`./fiddle.sh "combine" "svg" "fiddle-0000-Template"`
+|link:combine.md[sample output & additional details]
+|Delete
+|`./fiddle.sh "delete" "svg" "0000"`
+|link:delete.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "svg" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output & additional details]
+|Index
+|`./fiddle.sh "index" "svg"`
+|link:index.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "svg"`
+|link:list.md[sample output & additional details]
+|Refactor
+|`./fiddle.sh "refactor" "svg" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output & additional details]
+|Start
+|`./fiddle.sh "start" "svg"`
+|link:start.md[sample output & additional details]
+|===
+
+
+== Kindle Injection
+
+I am currently reading a book by David Dailey, Jon Frost and Domenico Strazzullo entitled [Building Web Applications with SVG (Developer Reference)](http://amzn.com/0735660123).

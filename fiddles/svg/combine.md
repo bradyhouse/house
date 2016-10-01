@@ -1,7 +1,7 @@
-JQuery (combine)
+SVG (combine)
 ======
 
-Executing the command `./fiddle.sh "combine" "jquery" "0041"` from the `scripts` directory produces
+Executing the command `./fiddle.sh "combine" "svg" "0027" "app.js" "0""` from the `scripts` directory produces
 the following output.
 
     H o u s e
@@ -19,7 +19,7 @@ the following output.
     ├────INITAPPFILE
     ├────ADDAPPFILEBODY
     ├────COMPLETEAPPFILE
-    └──THE APP.JS FILE FOR "FIDDLE-0041-FABRICIMAGECLOUD" HAS BEEN UPDATED.
+    └──THE APP.JS FILE FOR "FIDDLE-0027-IMAGECLOUD" HAS BEEN UPDATED.
       
 
 ### Purpose
@@ -36,20 +36,27 @@ a script tag link to the combined file.
 ### Use Case
 
 Files from the src sub-directory are assembled based on the contents of the `src/sequence.conf` file. In the case of the
-above example, which is an actual working fiddle, the [src/sequence.conf](fiddle-0041-FabricImageCloud/src/sequence.conf) 
+above example, which is an actual working fiddle, the [src/sequence.conf](fiddle-0027-ImageCloud/src/sequence.conf) 
 file contains the following:
 
-    meta.js
-    namespace.js
-    toolkit/base.js
-    toolkit/util.js
-    toolkit/canvas.js
-    toolkit/image.js
+    metadata.js
+    namespaces.js
+    ../../toolkit/Base.js
+    ../../toolkit/Util.js
+    ../../toolkit/Pattern.js
+    ../../toolkit/Definitions.js
+    ../../toolkit/Path.js
+    ../../toolkit/Rectangle.js
+    ../../toolkit/Surface.js
+    ../../toolkit/Animate.js
+    ../../toolkit/Image.js
     model/Photo.js
     model/PhotoAlbum.js
+    view/Viewport.js
     init.js
 
-After the command completes, the [app.js](fiddle-0041-FabricImageCloud/app.js) file in the root directory then contains 
+
+After the command completes, the [app.js](fiddle-0027-ImageCloud/app.js) file in the root directory then contains 
 the contents of all of these files.  
 
 

@@ -1,0 +1,12 @@
+= Android
+
+Adventures in Android development.
+
+**Note - at the outset I have not decided how I want to standardize the creation of new Android fiddles.
+In other words, the organization of this directory and code may change.**
+
+
+== Online Resources
+
+*   link:http://www.androidcentral.com/android-201-10-basic-terminal-commands-you-should-know[Ten basic Android terminal commands you should know]
+*   link:http://stackoverflow.com/questions/20801042/how-to-create-android-project-with-gradle-from-command-line[How to create android project with gradle from command line?]

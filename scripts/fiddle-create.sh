@@ -105,7 +105,6 @@ source bin/_types.sh
             ;;
         'php')
             ./fiddle-php.sh $2 || exit 90
-            ./fiddle-index.sh "php" || exit 90
             ;;
         'python')
             ./fiddle-python.sh $2 || exit 98

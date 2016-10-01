@@ -168,7 +168,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${fiddleType} in
-        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'node'|'tween'|'svg')
+        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'node'|'tween'|'svg')
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')

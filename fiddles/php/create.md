@@ -1,7 +1,8 @@
-angular (sample create)
+PHP (create)
 ======
 
-Executing the command `./fiddle.sh "create" "svg" "fiddle-0000-Template"` produces the following output.
+Executing the command `./fiddle.sh "create" "php" "fiddle-0000-Template"` from `scripts` directory produces the following output.
+
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -13,13 +14,16 @@ Executing the command `./fiddle.sh "create" "svg" "fiddle-0000-Template"` produc
     o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
     
     FIDDLE.SH
-    FIDDLE-CREATE.SH
-    06-13-16
-    Done. The "../fiddles/svg/fiddle-0000-Template" directory has been initialized.
-    FIDDLE-INDEX.SH
-    06-13-16
-    Done. All "svg" fiddles have been re-indexed.
+    FIDDLE-DELETE.SH
     
+    FIDDLE-CREATE.SH
+    FIDDLE-PHP.SH
+    Done. The "../fiddles/php/fiddle-0000-Template" directory has been initialized.
     
 
     
+
+    
+
+
+
