@@ -19,7 +19,7 @@ Essentially, it is Command Line Interface (CLI) for quickly getting started with
 libraries.  At present, it can be used to create a localized sandbox (aka _fiddle_) for any of the following languages
 and frameworks:
 
-[width="90%",cols="5"]
+[width="90%",cols="4"]
 |=========================================================
 
 |link:fiddles/android[Android]
@@ -46,7 +46,7 @@ and frameworks:
 |link:fiddles/node[Node]
 |link:fiddles/php[Php]
 |link:fiddles/python[Python]
-|link:fiddles/rxjs[Rx]
+|link:fiddles/rxjs[RxJS]
 |link:fiddles/svg[SVG]
 |link:fiddles/three[Three]
 |link:fiddles/tween[Tween]
