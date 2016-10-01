@@ -48,8 +48,8 @@ and frameworks:
 |link:fiddles/python[Python]
 |link:fiddles/rxjs[RxJS]
 |link:fiddles/svg[SVG]
-|link:fiddles/three[Three]
-|link:fiddles/tween[Tween]
+|link:fiddles/three[Three.js]
+|link:fiddles/tween[Tween.js]
 |link:fiddles/typescript[TypeScript]
 
 |=========================================================
