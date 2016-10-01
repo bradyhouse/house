@@ -1,9 +1,6 @@
 fiddle-0000-Template
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 fiddle-0000-Template
@@ -19,9 +16,14 @@ fiddle-0000-Template
 Chicago, IL
 
 
+### Issue
+
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+
+
 ### Description
 
-Another meteor fiddle.
+Another Node fiddle.
 
 
 ### Published Version Link
@@ -31,4 +33,4 @@ N/A
 
 ### Tags
 
-meteor
+node.js, hamony, process, argv, fs

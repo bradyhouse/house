@@ -58,7 +58,7 @@ echo ${bornOnDate}
 #try
 (
     case ${type} in
-        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'node'|'tween'|'svg')
+        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;
@@ -77,7 +77,8 @@ echo ${bornOnDate}
                ignore=$(echo $(cat "../../.gitignore" | grep "${line}" | wc -l;))
                if [[ "${ignore}" -eq "0" ]]
                then
-                  echo "<a href=\"$line/$fiddleName\" target=\"_self\">$line</a></br>" >> $indexFile;
+                  linkText=$(parseText ${line};) || exit 87;
+                  echo "<a href=\"$line/$fiddleName\" target=\"_self\">${linkText}</a></br>" >> $indexFile;
                fi
             done < index.tmp
             rm -r index.tmp

@@ -1,30 +1,48 @@
 = Meteor
 
 link:http://www.meteor.com[Meteor] is a _complete, full-stack, open-source, all-JavaScript platform for building
-reactive, top-quality web apps._ ... _Yah-dah, Yah-dah, Yah-dah_.  This directory is dedicated to POC's targetting
-this framework.
+reactive, top-quality web apps._ ... _Yah-dah, Yah-dah, Yah-dah_.  This directory is dedicated to exploration of this framework.
+The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
+
+=== fiddle.sh Meteor Commands
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "meteor" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Delete
+|`./fiddle.sh "delete" "meteor" "0000"`
+|link:delete.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "meteor" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "meteor"`
+|link:list.md[sample output & additional details]
+|Refactor
+|`./fiddle.sh "refactor" "meteor" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output & additional details]
+|===
 
 
+== Online Resources
+
+*   link:http://www.meteor.com[main site]
+*   link:http://atmospherejs.com[package repo]
+
+=== News & Community
+
+*   link:http://crater.io[http://crater.io]
+*   link:http://meteorhacks.com[http://meteorhacks.com]
+*   link:http://www.meteorpodcast.com[http://www.meteorpodcast.com]
 
 
-### Online Resources
+===== How-To's & Tutorials
 
-*   [main site](http://www.meteor.com)
-*   [package repo](http://atmospherejs.com)
-
-
-#### News & Community
-
-*   [http://crater.io](http://crater.io)
-*   [http://meteorhacks.com](http://meteorhacks.com)
-*   [http://www.meteorpodcast.com](http://www.meteorpodcast.com)
-
-
-#### How-To's & Tutorials
-
-*   [http://discovermeteor.com](http://discovermeteor.com)
-*   [http://meteortips.com](http://meteortips.com)
-*   [https://www.eventedmind.com](https://www.eventedmind.com)
-*   [http://javascriptissexy.com](http://javascriptissexy.com)
-*   [http://practical.meteor.com](http://practical.meteor.com)
-*   [http://www.meteorpedia.com](http://www.meteorpedia.com)
+*   link:http://discovermeteor.com[http://discovermeteor.com]
+*   link:http://meteortips.com[http://meteortips.com]
+*   link:https://www.eventedmind.com[https://www.eventedmind.com]
+*   link:http://javascriptissexy.com[http://javascriptissexy.com]
+*   link:http://practical.meteor.com[http://practical.meteor.com]
+*   link:http://www.meteorpedia.com[http://www.meteorpedia.com]

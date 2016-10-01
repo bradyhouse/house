@@ -30,7 +30,7 @@ command will add a reference to the fiddle to the root angular [index.html](inde
 
 ### Additional Info
 
-[Angular2](../dojo) fiddles are created to simply run in the browser.  This means, the resulting sandbox can
+[Dojo](../dojo) fiddles are created to simply run in the browser.  This means, the resulting sandbox can
 be hosted using [live-server](https://www.npmjs.com/package/live-server) or any type of vanilla web server
 package. The contents of the sandbox is based entirely on the contents of the [template](template) directory.
 

@@ -39,6 +39,21 @@ function parseName() {
   fi
 }
 
+function parseText() {
+  pieces=($(split $1 "-";));
+  if [[ ${#pieces[@]} -eq 3 ]]
+  then
+    if [[ ${pieces[0]} -eq "fiddle" ]]
+    then
+      echo ${pieces[2]};
+    else
+      echo $1;
+    fi
+  else
+    echo $1;
+  fi
+}
+
 function voidSubstr() {
     if [ $# -ne "3" ]
     then
