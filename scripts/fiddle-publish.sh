@@ -2,7 +2,7 @@
 
 _publishPath='/Users/bradyhouse/github/bradyhouse.github.io';
 _sourcePath='/Users/bradyhouse/github/house/fiddles';
-_commitMessage='201607010420';
+_commitMessage='201609160420';
 
 
 function push() {
@@ -16,6 +16,11 @@ function cprf() {
     if [[ -d "${_publishPath}/$1/libs" ]]
     then
         rm -rf "${_publishPath}/$1/libs";
+    fi
+    if [[ -d "${_publishPath}/$1" ]]
+    then
+        rm -rf "${_publishPath}/$1/*.md";
+        rm -rf "${_publishPath}/$1/*.adoc";
     fi
 }
 
