@@ -1,0 +1,38 @@
+= Three.js
+
+Before you can build a website using link:http://threejs.org/[three.js], you have to understand the API.  Based on books, 
+research, and trial and error, the best approach I have found is link:http://jsfiddle.net/[js fiddle].  If I am unfamiliar
+with or (simply) don’t understand a specific piece of the framework, then step one is to build and publish a fiddle 
+(or fiddles) until it makes sense.  This directory is dedicated to exploration of this framework.  The `fiddle.sh` script
+can be used to extend or test drive this collection. The following table outlines how.
+
+=== fiddle.sh Three.js Commands
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "three" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Combine
+|`./fiddle.sh "combine" "three" "fiddle-0000-Template"`
+|link:combine.md[sample output & additional details]
+|Delete
+|`./fiddle.sh "delete" "three" "0000"`
+|link:delete.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "three" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output & additional details]
+|Index
+|`./fiddle.sh "index" "three"`
+|link:index.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "three"`
+|link:list.md[sample output & additional details]
+|Refactor
+|`./fiddle.sh "refactor" "three" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output & additional details]
+|Start
+|`./fiddle.sh "start" "three"`
+|link:start.md[sample output & additional details]
+|===
+

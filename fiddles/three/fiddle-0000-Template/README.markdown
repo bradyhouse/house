@@ -1,4 +1,4 @@
-fiddle-0000-TemplateTest
+fiddle-0000-Template
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,12 +6,12 @@ fiddle-0000-TemplateTest
 
 ### Title
 
-House three.js Fiddle - fiddle-0000-TemplateTest
+House three.js Fiddle - fiddle-0000-Template
 
 
 ### Creation Date
 
-fiddle-0000-TemplateTest
+fiddle-0000-Template
 
 
 ### Location
