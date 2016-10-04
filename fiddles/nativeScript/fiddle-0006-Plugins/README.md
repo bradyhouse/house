@@ -36,7 +36,7 @@ Develop a POC based on the 2nd example discussed in chapter 4 of Nathanael Ander
 
         ➜  fiddle-0020-WebSocketServer git:(master) ✗ npm start
         
-        > fiddle-0020-WebSocketServer@0.0.0 start /Users/e13542/github/house/fiddles/node/fiddle-0020-WebSocketServer
+        > fiddle-0020-WebSocketServer@0.0.0 start /Users/bradyhouse/github/house/fiddles/node/fiddle-0020-WebSocketServer
         > node --harmony app.js
         
         lo0 127.0.0.1

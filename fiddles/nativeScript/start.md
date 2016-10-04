@@ -33,16 +33,16 @@ Executing the command `./fiddle.sh "start" "nativescript" "fiddle-0000-Template`
       +found plugins: tns-core-modules-widgets
 
     :config phase:  createPluginsConfigFile
-       Creating product flavors include.gradle file in /Users/e13542/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/configurations folder...
+       Creating product flavors include.gradle file in /Users/bradyhouse/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/configurations folder...
 
     :config phase:  pluginExtend
-      +applying configuration from: /Users/e13542/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/configurations/include.gradle
-      +applying configuration from: /Users/e13542/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/configurations/tns-core-modules-widgets/include.gradle
+      +applying configuration from: /Users/bradyhouse/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/configurations/include.gradle
+      +applying configuration from: /Users/bradyhouse/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/configurations/tns-core-modules-widgets/include.gradle
 
     :config phase:  copyAarDependencies
 
     :config phase:  addAarDependencies
-      +adding dependency: /Users/e13542/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/libs/aar/widgets-release.aar
+      +adding dependency: /Users/bradyhouse/github/house/fiddles/nativeScript/fiddle-0000-Template/template/platforms/android/libs/aar/widgets-release.aar
     Observed package id '..;..;..;var;lib;android-sdk;samples;android-19' in inconsistent location '/usr/local/Cellar/android-sdk/24.1.2/samples/android-19' (Expected '/usr/local/Cellar/android-sdk/24.1.2/../../../var/lib/android-sdk/samples/android-19')
     Observed package id '..;..;..;var;lib;android-sdk;samples;android-23' in inconsistent location '/usr/local/Cellar/android-sdk/24.1.2/samples/android-23' (Expected '/usr/local/Cellar/android-sdk/24.1.2/../../../var/lib/android-sdk/samples/android-23')
     Incremental java compilation is an incubating feature.

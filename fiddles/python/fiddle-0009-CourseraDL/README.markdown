@@ -31,18 +31,18 @@ Chicago, IL
 1.  Install `coursera-dl` using `pip3`
 
         pip3 install coursera-dl --user
-    
+
     If successful, this should produce the following output:
-    
+
         Downloading/unpacking coursera-dl
           Downloading coursera-dl-0.6.0.tar.gz (49kB): 49kB downloaded
-          Running setup.py (path:/private/var/folders/9r/d_7dtbbj7s14y76lvxjk3hs171n8xq/T/pip_build_e13542/coursera-dl/setup.py) egg_info for package coursera-dl
-        
+          Running setup.py (path:/private/var/folders/9r/d_7dtbbj7s14y76lvxjk3hs171n8xq/T/pip_build_bradyhouse/coursera-dl/setup.py) egg_info for package coursera-dl
+
         Requirement already satisfied (use --upgrade to upgrade): beautifulsoup4>=4.1.3 in /Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages (from coursera-dl)
         Downloading/unpacking html5lib>=1.0b2 (from coursera-dl)
           Downloading html5lib-1.0b8.tar.gz (889kB): 889kB downloaded
-          Running setup.py (path:/private/var/folders/9r/d_7dtbbj7s14y76lvxjk3hs171n8xq/T/pip_build_e13542/html5lib/setup.py) egg_info for package html5lib
-        
+          Running setup.py (path:/private/var/folders/9r/d_7dtbbj7s14y76lvxjk3hs171n8xq/T/pip_build_bradyhouse/html5lib/setup.py) egg_info for package html5lib
+
         Downloading/unpacking requests>=2.4.3 (from coursera-dl)
           Downloading requests-2.10.0-py2.py3-none-any.whl (506kB): 506kB downloaded
         Requirement already satisfied (use --upgrade to upgrade): six>=1.5.0 in /Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages (from coursera-dl)
@@ -53,13 +53,13 @@ Chicago, IL
           Downloading keyring-9.0-py2.py3-none-any.whl
         Installing collected packages: coursera-dl, html5lib, requests, urllib3, keyring
           Running setup.py install for coursera-dl
-        
-            Installing coursera-dl script to /Users/e13542/Library/Python/3.4/bin
+
+            Installing coursera-dl script to /Users/bradyhouse/Library/Python/3.4/bin
           Running setup.py install for html5lib
-        
+
         Successfully installed coursera-dl html5lib requests urllib3 keyring
         Cleaning up...
-    
+
     If unsuccessful, then refer to the [coursera-dl setup instructions](https://github.com/coursera-dl/coursera-dl).
 
 2.  Create a .netrc file. This file should have the following format:
@@ -67,12 +67,12 @@ Chicago, IL
         machine coursera-dl login <coursera user login> password <coursera password>
 
 3.  Enroll in the following coursera classes:
-    
+
     *   [Social Psychology](https://www.class-central.com/mooc/555/coursera-social-psychology)
     *   [Probabilistic Graphical Models](https://www.class-central.com/mooc/309/coursera-probabilistic-graphical-models)
     *   [Algorithms: Design and Analysis, Part 1](https://www.class-central.com/mooc/374/coursera-algorithms-design-and-analysis-part-1)
     *   [Algorithms: Design and Analysis, Part 2](https://www.class-central.com/mooc/426/coursera-algorithms-design-and-analysis-part-2)
-    *   [Introduction to Mathematical Thinking](https://www.class-central.com/mooc/370/coursera-introduction-to-mathematical-thinking)  
+    *   [Introduction to Mathematical Thinking](https://www.class-central.com/mooc/370/coursera-introduction-to-mathematical-thinking)
     *   [Automata](https://www.class-central.com/mooc/376/coursera-automata)
     *   [Mining Massive Dataset](https://www.class-central.com/mooc/2406/coursera-mining-massive-datasets)
     *   [Princeton’s Algorithms, Part 1](https://www.class-central.com/mooc/339/coursera-algorithms-part-i)
@@ -219,7 +219,7 @@ Chicago, IL
             ├── 05_WEEK_5-_Mid-Course_Break
             ├── 06_WEEK_6-_Conflict_Peacemaking_and_Intervention
             └── 07_WEEK_7-_A_Happy_End_to_the_Course
-        
+
         138 directories
 
 ### Tags

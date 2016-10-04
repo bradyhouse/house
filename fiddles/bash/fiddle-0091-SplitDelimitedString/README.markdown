@@ -24,7 +24,7 @@ Chicago, IL
 ### Description
 
 I awoke this morning with a recurring question: _How do you split a delimited string in bash shell???_. This
-POC answers this question. It adds a `parseName` and `split` function to the existing [_util.sh](/Users/e13542/github/house/scripts/bin/_utils.sh) script.
+POC answers this question. It adds a `parseName` and `split` function to the existing [_util.sh](/Users/bradyhouse/github/house/scripts/bin/_utils.sh) script.
 The `parseName` function accepts a single input string of the form `fiddle-####-<name>`. For example, "fiddle-0010-CrossCom".
 The `split` function accepts two input parameters the target string and the string delimiter and returns an array. The `parseName` function
 invokes the `split` function passing `-` as the delimiter.  It then returns the second element of result. For example, `parseName fiddle-0010-CrossCom` returns `CrossCom`. To see this in action, execute the

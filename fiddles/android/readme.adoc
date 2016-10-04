@@ -1,10 +1,31 @@
 = Android
 
-Adventures in Android development.
+Adventures in Android development. This directory is dedicated to exploration of android app development.
+The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
 
-**Note - at the outset I have not decided how I want to standardize the creation of new Android fiddles.
-In other words, the organization of this directory and code may change.**
+=== fiddle.sh Android Commands
 
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "android" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "android" "0000" "fiddle-0003-TemplateFork"`
+|link:fork.md[sample output & additional details]
+|Delete
+|`./fiddle.sh "delete" "android" "0000"`
+|link:delete.md[sample output & additional details]
+|Refactor
+|`./fiddle.sh "refactor" "android" "0000" "fiddle-0100-EmptyTemplate"`
+|link:refactor.md[sample output & additional details]
+|Start
+|`./fiddle.sh "start" "android" "0000"`
+|link:start.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "android"`
+|link:list.md[sample output & additional details]
+|===
 
 == Online Resources
 

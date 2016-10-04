@@ -22,32 +22,32 @@ Executing the command `./fiddle.sh "create" "angular2-seeder" "fiddle-0000-Templ
     ├────SEEDERCREATE
     ├──--CREATETYPINGSRCFILE
     
-    > fsevents@1.0.12 install /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents
+    > fsevents@1.0.12 install /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents
     > node-pre-gyp install --fallback-to-build
     
-    [fsevents] Success: "/Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents/lib/binding/Release/node-v47-darwin-x64/fse.node" is installed via remote
+    [fsevents] Success: "/Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents/lib/binding/Release/node-v47-darwin-x64/fse.node" is installed via remote
     
-    > phantomjs-prebuilt@2.1.7 install /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt
+    > phantomjs-prebuilt@2.1.7 install /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt
     > node install.js
     
-    Considering PhantomJS found at /Users/e13542/github/phantomjs/bin/phantomjs
-    Found PhantomJS at /Users/e13542/github/phantomjs/bin/phantomjs ...verifying
-    PhantomJS detected, but wrong version 2.0.1-development @ /Users/e13542/github/phantomjs/bin/phantomjs.
+    Considering PhantomJS found at /Users/bradyhouse/github/phantomjs/bin/phantomjs
+    Found PhantomJS at /Users/bradyhouse/github/phantomjs/bin/phantomjs ...verifying
+    PhantomJS detected, but wrong version 2.0.1-development @ /Users/bradyhouse/github/phantomjs/bin/phantomjs.
     Download already available at /var/folders/9r/d_7dtbbj7s14y76lvxjk3hs171n8xq/T/phantomjs/phantomjs-2.1.1-macosx.zip
     Verified checksum of previously downloaded file
     Extracting zip contents
-    Removing /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt/lib/phantom
-    Copying extracted folder /var/folders/9r/d_7dtbbj7s14y76lvxjk3hs171n8xq/T/phantomjs/phantomjs-2.1.1-macosx.zip-extract-1464355727093/phantomjs-2.1.1-macosx -> /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt/lib/phantom
+    Removing /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt/lib/phantom
+    Copying extracted folder /var/folders/9r/d_7dtbbj7s14y76lvxjk3hs171n8xq/T/phantomjs/phantomjs-2.1.1-macosx.zip-extract-1464355727093/phantomjs-2.1.1-macosx -> /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt/lib/phantom
     Writing location.js file
-    Done. Phantomjs binary available at /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs
+    Done. Phantomjs binary available at /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs
     
-    > fsevents@1.0.12 install /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents
+    > fsevents@1.0.12 install /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents
     > node-pre-gyp install --fallback-to-build
     
-    [fsevents] Success: "/Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents/lib/binding/Release/node-v47-darwin-x64/fse.node" already installed
+    [fsevents] Success: "/Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/node_modules/fsevents/lib/binding/Release/node-v47-darwin-x64/fse.node" already installed
     Pass --update-binary to reinstall or --build-from-source to recompile
     
-    > angular2-seed@0.0.0 postinstall /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template
+    > angular2-seed@0.0.0 postinstall /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template
     > typings install && gulp check.versions && npm prune && gulp webdriver
     
     
@@ -86,7 +86,7 @@ Executing the command `./fiddle.sh "create" "angular2-seeder" "fiddle-0000-Templ
     └── zone.js (global)
     
     [09:29:10] Requiring external module ts-node/register
-    [09:29:13] Loading tasks folder /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed
+    [09:29:13] Loading tasks folder /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed
     [09:29:13] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/build.assets.dev
     [09:29:13] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/build.assets.prod
     [09:29:13] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/build.bundles.app
@@ -119,13 +119,13 @@ Executing the command `./fiddle.sh "create" "angular2-seeder" "fiddle-0000-Templ
     [09:29:13] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/watch.e2e
     [09:29:13] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/watch.test
     [09:29:13] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/webdriver
-    [09:29:13] Loading tasks folder /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/project
+    [09:29:13] Loading tasks folder /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/project
     [09:29:13] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/project/sample.task
     [09:29:13] Using gulpfile ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/gulpfile.ts
     [09:29:13] Starting 'check.versions'...
     [09:29:13] Finished 'check.versions' after 15 ms
     [09:29:16] Requiring external module ts-node/register
-    [09:29:19] Loading tasks folder /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed
+    [09:29:19] Loading tasks folder /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed
     [09:29:19] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/build.assets.dev
     [09:29:19] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/build.assets.prod
     [09:29:19] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/build.bundles.app
@@ -158,7 +158,7 @@ Executing the command `./fiddle.sh "create" "angular2-seeder" "fiddle-0000-Templ
     [09:29:19] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/watch.e2e
     [09:29:19] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/watch.test
     [09:29:19] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/seed/webdriver
-    [09:29:19] Loading tasks folder /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/project
+    [09:29:19] Loading tasks folder /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/project
     [09:29:19] Registering task ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/tools/tasks/project/sample.task
     [09:29:19] Using gulpfile ~/github/house/fiddles/angular2-seeder/fiddle-0000-Template/gulpfile.ts
     [09:29:19] Starting 'webdriver'...
@@ -167,7 +167,7 @@ Executing the command `./fiddle.sh "create" "angular2-seeder" "fiddle-0000-Templ
     Updating chromedriver to version 2.21
     downloading https://chromedriver.storage.googleapis.com/2.21/chromedriver_mac32.zip...
     [09:29:20] Finished 'webdriver' after 850 ms
-    angular2-seed@0.0.0 /Users/e13542/github/house/fiddles/angular2-seeder/fiddle-0000-Template
+    angular2-seed@0.0.0 /Users/bradyhouse/github/house/fiddles/angular2-seeder/fiddle-0000-Template
     ├── @angular/common@2.0.0-rc.1 
     ├── @angular/compiler@2.0.0-rc.1 
     ├── @angular/core@2.0.0-rc.1 

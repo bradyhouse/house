@@ -28,6 +28,7 @@
 # 05/17/2016 - See CHANGELOG @ 201605020420
 # 05/18/2015 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
+# 10/01/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -38,6 +39,9 @@ source bin/_types.sh
 (
 	if [ "$#" -ne 2 ]; then  exit 86; fi
     case $1 in
+        'android')
+            ./fiddle-android.sh $2 || exit 107;
+            ;;
         'angular')
             ./fiddle-angular.sh $2 || exit 87;
             ./fiddle-index.sh "angular" || exit 87;
@@ -205,6 +209,8 @@ case ${_rc} in
     105) echo "fubar! nativescript fiddle creation failed."
         ;;
     106) echo "fubar! java fiddle creation failed."
+        ;;
+    107) echo "fubar! android fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

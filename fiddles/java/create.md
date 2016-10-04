@@ -46,23 +46,23 @@ Executing the command `./fiddle.sh "create" "java" "fiddle-0000-Template"` produ
     [INFO]
     [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ gs-rest-service ---
     [INFO] Using 'UTF-8' encoding to copy filtered resources.
-    [INFO] skip non existing resourceDirectory /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/src/main/resources
-    [INFO] skip non existing resourceDirectory /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/src/main/resources
+    [INFO] skip non existing resourceDirectory /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/src/main/resources
+    [INFO] skip non existing resourceDirectory /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/src/main/resources
     [INFO]
     [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ gs-rest-service ---
     [INFO] Changes detected - recompiling the module!
-    [INFO] Compiling 3 source files to /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes
+    [INFO] Compiling 3 source files to /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes
     [INFO]
     [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ gs-rest-service ---
     [INFO] Using 'UTF-8' encoding to copy filtered resources.
-    [INFO] skip non existing resourceDirectory /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/src/test/resources
+    [INFO] skip non existing resourceDirectory /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/src/test/resources
     [INFO]
     [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ gs-rest-service ---
     [INFO] Changes detected - recompiling the module!
-    [INFO] Compiling 1 source file to /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes
+    [INFO] Compiling 1 source file to /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes
     [INFO]
     [INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ gs-rest-service ---
-    [INFO] Surefire report directory: /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/surefire-reports
+    [INFO] Surefire report directory: /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/surefire-reports
     
     -------------------------------------------------------
      T E S T S
@@ -80,13 +80,13 @@ Executing the command `./fiddle.sh "create" "java" "fiddle-0000-Template"` produ
     05:32:11.067 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
     05:32:11.068 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
     05:32:11.069 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-    05:32:11.079 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [hello/] to resources [URL [file:/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello/], URL [file:/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/]]
-    05:32:11.079 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello]
-    05:32:11.080 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello] for files matching pattern [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello/*.class]
-    05:32:11.083 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello]
-    05:32:11.083 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello] for files matching pattern [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/*.class]
-    05:32:11.084 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:hello/*.class] to resources [file [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello/GreetingControllerTests.class], file [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/Application.class], file [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/Greeting.class], file [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/GreetingController.class]]
-    05:32:11.123 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/Application.class]
+    05:32:11.079 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [hello/] to resources [URL [file:/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello/], URL [file:/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/]]
+    05:32:11.079 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello]
+    05:32:11.080 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello] for files matching pattern [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello/*.class]
+    05:32:11.083 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello]
+    05:32:11.083 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello] for files matching pattern [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/*.class]
+    05:32:11.084 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:hello/*.class] to resources [file [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/test-classes/hello/GreetingControllerTests.class], file [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/Application.class], file [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/Greeting.class], file [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/GreetingController.class]]
+    05:32:11.123 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/classes/hello/Application.class]
     05:32:11.129 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration hello.Application for test class hello.GreetingControllerTests
     05:32:11.132 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [hello.GreetingControllerTests]: using defaults.
     05:32:11.134 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
@@ -136,7 +136,7 @@ Executing the command `./fiddle.sh "create" "java" "fiddle-0000-Template"` produ
      =========|_|==============|___/=/_/_/_/
      :: Spring Boot ::        (v1.4.1.RELEASE)
     
-    2016-09-30 05:32:11.899  INFO 13645 --- [           main] hello.GreetingControllerTests            : Starting GreetingControllerTests on LCHI091328 with PID 13645 (started by e13542 in /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template)
+    2016-09-30 05:32:11.899  INFO 13645 --- [           main] hello.GreetingControllerTests            : Starting GreetingControllerTests on LCHI091328 with PID 13645 (started by bradyhouse in /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template)
     2016-09-30 05:32:11.900  INFO 13645 --- [           main] hello.GreetingControllerTests            : No active profile set, falling back to default profiles: default
     2016-09-30 05:32:11.921  INFO 13645 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1a75e76a: startup date [Fri Sep 30 05:32:11 EDT 2016]; root of context hierarchy
     2016-09-30 05:32:12.939  INFO 13645 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
@@ -229,13 +229,13 @@ Executing the command `./fiddle.sh "create" "java" "fiddle-0000-Template"` produ
     
     [INFO]
     [INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ gs-rest-service ---
-    [INFO] Building jar: /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/gs-rest-service-0.1.0.jar
+    [INFO] Building jar: /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/gs-rest-service-0.1.0.jar
     [INFO]
     [INFO] --- spring-boot-maven-plugin:1.4.1.RELEASE:repackage (default) @ gs-rest-service ---
     [INFO]
     [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ gs-rest-service ---
-    [INFO] Installing /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/target/gs-rest-service-0.1.0.jar to /Users/e13542/.m2/repository/org/springframework/gs-rest-service/0.1.0/gs-rest-service-0.1.0.jar
-    [INFO] Installing /Users/e13542/github/house/fiddles/java/fiddle-0000-Template/template/pom.xml to /Users/e13542/.m2/repository/org/springframework/gs-rest-service/0.1.0/gs-rest-service-0.1.0.pom
+    [INFO] Installing /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/target/gs-rest-service-0.1.0.jar to /Users/bradyhouse/.m2/repository/org/springframework/gs-rest-service/0.1.0/gs-rest-service-0.1.0.jar
+    [INFO] Installing /Users/bradyhouse/github/house/fiddles/java/fiddle-0000-Template/template/pom.xml to /Users/bradyhouse/.m2/repository/org/springframework/gs-rest-service/0.1.0/gs-rest-service-0.1.0.pom
     [INFO] ------------------------------------------------------------------------
     [INFO] BUILD SUCCESS
     [INFO] ------------------------------------------------------------------------

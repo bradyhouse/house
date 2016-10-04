@@ -1254,5 +1254,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
     1.  Finished [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject) ~ [Issue 77](https://github.com/bradyhouse/house/issues/77)
 
+* **fiddle.sh**
+    1.  Added Android support ~ ~ [Issue 80](https://github.com/bradyhouse/house/issues/80)
+      * See [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject)
+      * Reflected changes:
+        1.  Added [scripts/bin/android](scripts/bin/android)
+        2.  Added [scripts/fiddle-android.sh](scripts/fiddle-android.sh)
+        3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        4.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+        5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+        6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+        7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+        8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+        9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+        10. Updated [fiddles/android/README.md](fiddles/android/README.md)
 
  

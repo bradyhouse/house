@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
 # 05/18/2015 - See CHANGELOG @ 201605180420
+# 10/01/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -27,6 +28,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
             ;;
         *)
+            echo -e "\t\"android\"\t\tAndroid Fiddle"
             echo -e "\t\"ant\"\t\tAnt Fiddle"
             echo -e "\t\"angular\"\tAngular Fiddle"
             echo -e "\t\"angular2\"\tAngular2 Fiddle"

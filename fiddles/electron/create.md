@@ -18,7 +18,7 @@ Executing the command `./fiddle.sh "create" "electron" "fiddle-0000-Template"` p
     Bash version 3.2.57(1)-release...
     05-28-16
     ├────ELECTRONINSTALL
-    /Users/e13542/.nvm/versions/node/v5.0.0/lib
+    /Users/bradyhouse/.nvm/versions/node/v5.0.0/lib
     └── electron@0.4.1
     
     ├────ELECTRONCREATE
@@ -29,10 +29,10 @@ Executing the command `./fiddle.sh "create" "electron" "fiddle-0000-Template"` p
     Unpacking objects: 100% (9/9), done.
     Checking connectivity... done.
     
-    > electron-prebuilt@1.2.0 postinstall /Users/e13542/github/house/fiddles/electron/fiddle-0000-Template/node_modules/electron-prebuilt
+    > electron-prebuilt@1.2.0 postinstall /Users/bradyhouse/github/house/fiddles/electron/fiddle-0000-Template/node_modules/electron-prebuilt
     > node install.js
     
-    fiddle-0000-Template@1.0.0 /Users/e13542/github/house/fiddles/electron/fiddle-0000-Template
+    fiddle-0000-Template@1.0.0 /Users/bradyhouse/github/house/fiddles/electron/fiddle-0000-Template
     └─┬ electron-prebuilt@1.2.0
       ├─┬ electron-download@2.1.2
       │ ├─┬ debug@2.2.0

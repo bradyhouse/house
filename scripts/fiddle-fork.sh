@@ -31,6 +31,7 @@
 # 05/17/2016 - See CHANGELOG @ 201605020420
 # 05/18/2016 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
+# 10/01/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -38,8 +39,8 @@ source bin/_utils.sh
 source bin/_types.sh
 source bin/nativescript/.nativescriptrc
 source bin/nativescript/_fork.sh
-source bin/java/.javarc
-source bin/java/_fork.sh
+
+
 
 
 if [ "$#" -ne 3 ]
@@ -110,7 +111,16 @@ forkedOnDate=$(date +"%m-%d-%y";)
     cp -rf "../fiddles/${fiddleType}/${fiddleName}" "../fiddles/${fiddleType}/${targetFiddle}" || exit 89
 
     case ${fiddleType} in
+        'android')
+          source bin/android/.androidrc;
+          source bin/android/_fork.sh;
+          cd "../fiddles/android";
+          androidFork ${fiddleName} ${targetFiddle} || exit 100;
+          cd "../../scripts";
+          ;;
         'java')
+          source bin/java/.javarc;
+          source bin/java/_fork.sh;
           cd "../fiddles/java";
           javaFork ${fiddleName} ${targetFiddle} || exit 99;
           cd "../../scripts";
@@ -161,7 +171,6 @@ forkedOnDate=$(date +"%m-%d-%y";)
             ;;
     esac
 
-    # If the screenshot photo exists, delete the existing screenshot image
     if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png" ]]
     then
         $(rm -R "../fiddles/${fiddleType}/${targetFiddle}/screenshot.png";) || exit 94
@@ -179,7 +188,6 @@ forkedOnDate=$(date +"%m-%d-%y";)
             ;;
     esac
 
-    # Update the changelog
     if [[ ${targetFiddle} != "fiddle-0000-Template" ]]
     then
       $(echo "* Added [fiddles/${fiddleType}/${targetFiddle}](fiddles/${fiddleType}/${targetFiddle})" >> "../CHANGELOG.md") || exit 97
@@ -220,6 +228,8 @@ case ${rc} in
     98) echo "fubar! call to nativeScriptFork failed."
         ;;
     99) echo "fubar! call to javaFork failed."
+        ;;
+    100) echo "fubar! call to androidFork failed."
         ;;
     *)  echo "fubar! Something went wrong."
         if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi

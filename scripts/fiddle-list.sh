@@ -22,6 +22,7 @@
 # 05/17/2016 - See CHANGELOG @ 201605020420
 # 05/18/2015 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
+# 10/01/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh
 source bin/_types.sh
@@ -32,7 +33,7 @@ thisFile=$(echo "$0" | sed 's/\.\///g');
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'python' | 'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'android' | 'python' | 'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'typescript' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
             voidShowTitle ${thisFile} > log;
             echo -e "" >> log;

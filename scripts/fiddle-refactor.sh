@@ -25,6 +25,7 @@
 # 05/17/2016 - See CHANGELOG @ 201605020420
 # 05/18/2015 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
+# 10/01/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -57,7 +58,7 @@ changeLogFile="../CHANGELOG.md";
   fi
 
   case ${fiddleType} in
-    'angular2-cli' | 'angular2-seeder' | 'ember' | 'electron' | 'java' | 'meteor' | 'nativescript' )
+    'android' | 'angular2-cli' | 'angular2-seeder' | 'ember' | 'electron' | 'java' | 'meteor' | 'nativescript' )
         if [[ -f "${altNewReadmeFile}" ]]
         then
             $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;

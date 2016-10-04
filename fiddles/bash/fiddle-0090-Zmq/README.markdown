@@ -30,13 +30,13 @@ POC exploring how to install and configure [zeromq](http://zeromq.org/).  The sc
     3. install the node zmq module using npm
     4. test the configuration using the node CLI
 
-This recipe is based on the steps outlined at the beginning of Chapter 4 of Jim R. Wilson's book 
+This recipe is based on the steps outlined at the beginning of Chapter 4 of Jim R. Wilson's book
 [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
 
 
 ### STDOUT
 
-Executing the `run.sh` script on a Mac Book Pro configured with [homebrew](https://github.com/Homebrew/brew) should 
+Executing the `run.sh` script on a Mac Book Pro configured with [homebrew](https://github.com/Homebrew/brew) should
 produce the following output:
 
 
@@ -51,13 +51,13 @@ produce the following output:
     Uninstalling zeromq... (64 files, 3.2M)
     ├────ZMQINSTALL
     ==> Downloading https://homebrew.bintray.com/bottles/zeromq-4.1.4.el_capitan.bottle.tar.gz
-    Already downloaded: /Users/e13542/Library/Caches/Homebrew/zeromq-4.1.4.el_capitan.bottle.tar.gz
+    Already downloaded: /Users/bradyhouse/Library/Caches/Homebrew/zeromq-4.1.4.el_capitan.bottle.tar.gz
     ==> Pouring zeromq-4.1.4.el_capitan.bottle.tar.gz
     🍺  /usr/local/Cellar/zeromq/4.1.4: 64 files, 3.2M
     |
-    > zmq@2.15.3 install /Users/e13542/github/node_modules/zmq
+    > zmq@2.15.3 install /Users/bradyhouse/github/node_modules/zmq
     > node-gyp rebuild
-    
+
     2016-06-07 21:27:54.228 xcodebuild[20570:86775] [MT] DVTPlugInManager: Required plug-in compatibility UUID C4A681B0-4A26-480E-93EC-1218098B9AA0 for IDEInterfaceBuilderCocoaTouchEditingSupport.ideplugin (com.apple.dt.IDE.IDEInterfaceBuilderCocoaTouchEditingSupport) not present
     2016-06-07 21:27:54.229 xcodebuild[20570:86775] [MT] DVTPlugInManager: Required plug-in compatibility UUID C4A681B0-4A26-480E-93EC-1218098B9AA0 for IDEiOSDebugger.ideplugin (com.apple.dt.IDE.IDEiOSDebugger) not present
     2016-06-07 21:27:54.230 xcodebuild[20570:86775] [MT] DVTPlugInManager: Required plug-in compatibility UUID C4A681B0-4A26-480E-93EC-1218098B9AA0 for IDEiOSSupportCore.ideplugin (com.apple.dt.IDE.IDEiOSSupportCore) not present
@@ -101,7 +101,7 @@ produce the following output:
          setMaxSockets: [Function],
          getMaxSockets: [Function] },
       SocketBinding: [Function],
-      path: '/Users/e13542/github/node_modules/zmq/build/Release/zmq.node',
+      path: '/Users/bradyhouse/github/node_modules/zmq/build/Release/zmq.node',
       version: '4.1.4',
       curveKeypair: [Function: zmqCurveKeypair],
       types:

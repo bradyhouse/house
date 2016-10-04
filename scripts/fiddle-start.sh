@@ -12,36 +12,23 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver.
-# 04/09/2015 - See CHANGELOG.MARKDOWN @ 201504091810
-# 05/08/2015 - See CHANGELOG.MARKDOWN @ 201505061810
-# 07/05/2015 - See CHANGELOG.MARKDOWN @ 201506290420
-# 07/11/2015 - See CHANGELOG.MARKDOWN @ 201507110420
-# 07/26/2015 - See CHANGELOG.MARKDOWN @ 201507260420
-# 12/06/2015 - See CHANGELOG.MARKDOWN @ 201511100420
-# 02/13/2016 - See CHANGELOG.MARKDOWN @ 201602130420
-# 03/02/2016 - See CHANGELOG.MARKDOWN @ 201603020420
-# 03/10/2016 - See CHANGELOG.MARKDOWN @ 201603050420
-# 04/16/2016 - See CHANGELOG.MARKDOWN @ 201604160420
-# 05/17/2016 - See CHANGELOG.MARKDOWN @ 201605020420
-# 05/18/2015 - See CHANGELOG.MARKDOWN @ 201605180420
-# 09/16/2016 - See CHANGELOG.MARKDOWN @ 201609160420
+# 04/09/2015 - See CHANGELOG @ 201504091810
+# 05/08/2015 - See CHANGELOG @ 201505061810
+# 07/05/2015 - See CHANGELOG @ 201506290420
+# 07/11/2015 - See CHANGELOG @ 201507110420
+# 07/26/2015 - See CHANGELOG @ 201507260420
+# 12/06/2015 - See CHANGELOG @ 201511100420
+# 02/13/2016 - See CHANGELOG @ 201602130420
+# 03/02/2016 - See CHANGELOG @ 201603020420
+# 03/10/2016 - See CHANGELOG @ 201603050420
+# 04/16/2016 - See CHANGELOG @ 201604160420
+# 05/17/2016 - See CHANGELOG @ 201605020420
+# 05/18/2015 - See CHANGELOG @ 201605180420
+# 09/16/2016 - See CHANGELOG @ 201609160420
+# 10/01/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
-source bin/nativescript/.nativescriptrc;
 source bin/_utils.sh;
 source bin/_types.sh;
-source bin/angular2-cli/_install.sh;
-source bin/angular2-cli/_start.sh;
-source bin/angular2-seeder/_start.sh;
-source bin/meteor/_install.sh;
-source bin/meteor/_start.sh;
-source bin/ember/_install.sh;
-source bin/ember/_start.sh;
-source bin/nativescript/_install.sh;
-source bin/nativescript/_start.sh;
-source bin/electron/_install.sh;
-source bin/electron/_start.sh;
-source bin/java/_install.sh;
-source bin/java/_start.sh;
 
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
@@ -68,7 +55,19 @@ function isLiveServerInstalled() {
 function startServer() {
     groupLog "startServer";
     case ${_type} in
+        'android')
+            source bin/android/.androidrc;
+            source bin/android/_install.sh;
+            source bin/android/_start.sh;
+            cd ${_fiddleRoot};
+            isGradleInstalled || exit 108;
+            isAndroidInstalled || exit 110;
+            androidStart || exit 111;
+            ;;
+
         'angular2-cli')
+            source bin/angular2-cli/_install.sh;
+            source bin/angular2-cli/_start.sh;
             cd ${_fiddleRoot};
             installed=$(isNgInstalled;);
             if [[ "${installed}" == "false" ]]; then exit 97; fi
@@ -76,30 +75,43 @@ function startServer() {
             ngStart || exit 92;
             ;;
         'angular2-seeder')
+            source bin/angular2-seeder/_start.sh;
             cd ${_fiddleRoot};
             seederStart || exit 104;
             ;;
         'ember')
+            source bin/ember/_install.sh;
+            source bin/ember/_start.sh;
             cd ${_fiddleRoot};
             emberInstall || exit 97;
             emberStart || exit 98;
             ;;
         'electron')
+            source bin/electron/_install.sh;
+            source bin/electron/_start.sh;
             cd ${_fiddleRoot};
             electronInstall || exit 105;
             electronStart || exit 106;
             ;;
         'java')
+            source bin/java/.javarc;
+            source bin/java/_install.sh;
+            source bin/java/_start.sh;
             cd ${_fiddleRoot};
             isGradleInstalled || exit 108;
             javaStart || exit 109;
             ;;
         'meteor')
+            source bin/meteor/_install.sh;
+            source bin/meteor/_start.sh;
             cd ${_fiddleRoot};
             meteorInstall || exit 93;
             meteorStart || exit 94;
             ;;
         'nativescript')
+            source bin/nativescript/.nativescriptrc;
+            source bin/nativescript/_install.sh;
+            source bin/nativescript/_start.sh;
             cd ${_fiddleRoot};
             _projectName=$(toLowerCase $(parseName ${_fiddle};);) || exit 107;
             nvmInstall || exit 100;
@@ -190,6 +202,10 @@ case ${rc} in
     108) echo -e "Fubar\tGradle is not installed or configured properly";
         ;;
     109) echo -e "Fubar\t\"javaStart\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    110) echo -e "Fubar\tAndroid is not installed or configured properly";
+        ;;
+    111) echo -e "Fubar\t\"androidStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

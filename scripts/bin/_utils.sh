@@ -14,6 +14,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
 # 09/16/2016 - See CHANGELOG @ 201609160420
+# 10/01/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -21,6 +22,11 @@ function split() {
   str=$1;
   delimiter=$2;
   echo ${str//$delimiter/ };
+}
+
+function capitalize() {
+    A=$1;
+    for i in $A; do B=`echo -n "${i:0:1}" | tr "[:lower:]" "[:upper:]"`; echo -n "${B}${i:1} "; done
 }
 
 function parseName() {

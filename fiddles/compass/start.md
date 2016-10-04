@@ -16,7 +16,7 @@ Executing the command `./fiddle.sh "start" "compass"` from the `scripts` directo
     FIDDLE.SH
     FIDDLE-START.SH
     ├────STARTSERVER
-    Serving "/Users/e13542/github/house/fiddles/compass" at http://127.0.0.1:1841
+    Serving "/Users/bradyhouse/github/house/fiddles/compass" at http://127.0.0.1:1841
 
     
 

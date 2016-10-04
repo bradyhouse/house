@@ -20,7 +20,6 @@ source bin/java/.javarc;
 source bin/java/_install.sh;
 source bin/java/_create.sh;
 
-clear;
 
 if [ "$#" -ne 1 ]
 then

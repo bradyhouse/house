@@ -64,20 +64,20 @@ Alternately for more info regarding this book, checkout [http://www.pragmaticpro
               `-._    `-.__.-'    _.-'
                   `-._        _.-'
                       `-.__.-'
-        
+
         28624:M 30 Jun 19:26:27.058 # Server started, Redis version 3.2.0
         28624:M 30 Jun 19:26:27.058 * The server is now ready to accept connections on port 6379
 
 4.  Start a secondary terminal
 5.  Install node project dependencies `npm install`
 6.  Startup the rest service `npm start`
-        
-        > fiddle@0.1.0 start /Users/e13542/github/house/fiddles/node/fiddle-0016-Redis
+
+        > fiddle@0.1.0 start /Users/bradyhouse/github/house/fiddles/node/fiddle-0016-Redis
         > node --harmony ./app.js
-        
+
 7.  Start a third terminal session
 8.  Test out the HTTP headers `curl -i -X HEAD http://localhost:3000/api/test`
-        
+
         HTTP/1.1 200 OK
         X-Powered-By: Express
         Content-Type: application/json; charset=utf-8
