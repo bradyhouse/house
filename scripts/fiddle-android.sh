@@ -55,8 +55,8 @@ function catch() {
     groupLog "App Name: ";
     echo "\"${projectName}\"";
     cd "${fiddleSubDir}" || exit 4;
-    isAndroidInstalled || exit 1;
-    isGradleInstalled || exit 2;
+    $(isAndroidInstalled) || exit 1;
+    $(isGradleInstalled) || exit 2;
     androidCreate $1 ${bornOnDate} ${projectName} || exit 3;
 )
 rc=$?; catch ${rc};

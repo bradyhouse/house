@@ -1,0 +1,48 @@
+ext {
+  springVersion = "4.3.3.RELEASE"
+  springBootVersion = "1.4.1.RELEASE"
+  springfoxVersion = '2.6.0-SNAPSHOT'
+  jacksonVersion = '2.7.4'
+  groovy = "2.4.5"
+  spock = "1.0-groovy-2.4"
+
+  libs = [
+
+          spring            : [
+                  "org.springframework:spring-core:$springVersion",
+                  "org.springframework:spring-web:$springVersion",
+                  "org.springframework:spring-webmvc:$springVersion"
+
+          ],
+          springBoot        : [
+                  "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+          ],
+
+          springfoxPetstore : [
+                  "io.springfox:springfox-petstore:${springfoxVersion}"
+          ],
+          springfoxSwagger2 : [
+                  "io.springfox:springfox-swagger2:${springfoxVersion}"
+          ],
+          springfoxSwaggerUi: [
+                  "io.springfox:springfox-swagger-ui:${springfoxVersion}"
+
+          ],
+          jackson           : [
+                  "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}",
+                  "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+          ],
+          test              : [
+                  "org.codehaus.groovy:groovy-all:${groovy}",
+                  "org.spockframework:spock-spring:${spock}",
+                  "org.spockframework:spock-core:${spock}",
+                  "org.springframework:spring-test:${springVersion}",
+                  "cglib:cglib-nodep:3.2.4",
+                  "org.objenesis:objenesis:2.4",
+                  "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+          ],
+          springfoxStaticDocs: [
+                  "io.springfox:springfox-staticdocs:${springfoxVersion}"
+          ],
+  ]
+}

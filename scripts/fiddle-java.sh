@@ -62,9 +62,9 @@ function catch() {
     groupLog "App Name: \"${projectName}\"";
     cd "${fiddleSubDir}" || exit 5;
     isJavaInstalled || exit 1;
-    isGradleInstalled || exit 2;
-    isGitInstalled || exit 3;
-    isMvnInstalled || exit 7;
+    $(isGradleInstalled;) || exit 2;
+    $(isGitInstalled;) || exit 3;
+    $(isMvnInstalled;) || exit 7;
     javaCreate $1 ${bornOnDate} ${projectName} ${__SEEDER__} || exit 4;
 )
 rc=$?; catch ${rc};
