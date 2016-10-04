@@ -1206,7 +1206,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0091-SplitDelimitedString](fiddles/bash/fiddle-0091-SplitDelimitedString) ~ [Issue #62](https://github.com/bradyhouse/house/issues/62)
     2.  Added [fiddles/bash/fiddle-0092-InitJavaProject](fiddles/bash/fiddle-0092-InitJavaProject) ~ [Issue #67](https://github.com/bradyhouse/house/issues/67)
-    3.  Started [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject) ~ 
+    3.  Started [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject) ~ [Issue 77](https://github.com/bradyhouse/house/issues/77)
  
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
@@ -1247,6 +1247,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added dependency (submodule) to [Spring Guide gs-gradle Repo](https://github.com/spring-guides/gs-gradle)
       *   [fiddles/java/libs/gs-gradle](fiddles/java/libs/gs-gradle)
     2.  Added [fiddles/java/fiddle-0003-SpringFox](fiddles/java/fiddle-0003-SpringFox) ~ [Issue #78](https://github.com/bradyhouse/house/issues/78)
+
+
+### 201610010420
+
+* **Bash**
+    1.  Finished [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject) ~ [Issue 77](https://github.com/bradyhouse/house/issues/77)
 
 
  

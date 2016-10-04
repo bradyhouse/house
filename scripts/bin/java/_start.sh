@@ -21,7 +21,7 @@ function gradlewRun() {
   cd $1;
   #try
   (
-    ./gradlew run;
+    ./gradlew bootRun;
   )
   rc=$?; case ${rc} in
     0)  groupLog "gradlew run - successful."

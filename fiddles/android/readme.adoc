@@ -10,3 +10,4 @@ In other words, the organization of this directory and code may change.**
 
 *   link:http://www.androidcentral.com/android-201-10-basic-terminal-commands-you-should-know[Ten basic Android terminal commands you should know]
 *   link:http://stackoverflow.com/questions/20801042/how-to-create-android-project-with-gradle-from-command-line[How to create android project with gradle from command line?]
+*   link:http://tools.android.com/tech-docs/new-build-system/version-compatibility[Android Gradle Plugin Gradle Version Requirements]
