@@ -42,6 +42,7 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 *   link:http://spring.io/guides[Spring Guides]
 **   link:http://spring.io/guides/gs/gradle/[Building Java Projects with Gradle]
 **   link:http://spring.io/guides/gs/rest-service/[Building a RESTful Web Service]
+*   link:https://www.java.com/en/download/help/mac_install.xml[How do I install Java for my Mac?]
 
 === RESTful References
 *   link:http://www.restapitutorial.com/[Learn REST: A RESTful Tutorial]
