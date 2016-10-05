@@ -8,26 +8,6 @@ body#ext-element-1 {
     -webkit-animation-name: slide-up;
 }
 
-div.x-panel-header {
-    padding-top: 5px;
-    background: linear-gradient(to bottom, #000000, #3a3432);
-}
-div.x-panel-header div.x-title-text {
-    color: #ffffff;
-}
-div.custom-menu-title {
-    background-color: #2A3F5D !important;
-    padding: 5px;
-}
-div.custom-menu-title div.x-title-text {
-    color: #ffffff;
-}
-div.custom-menu-title-close-btn {
-    background-color: #2A3F5D !important;
-    padding: 5px;
-    margin-left: -1px;
-    margin-bottom: -1px;
-}
 
 
 div.console {

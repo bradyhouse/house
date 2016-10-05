@@ -1,7 +1,9 @@
 const
   request = require('request'),
   parameter = require('../../utils/get-parameter.js'),
-  log = require('../../utils/log');
+  log = require('../../utils/log'),
+  jsonConverter = require('xml-to-json-promise');
+
 
 
 
@@ -12,6 +14,7 @@ var post = function (params, callback) {
       allowCredentials = parameter.get(params, 'allowCredentials'),
       allowMethods = parameter.get(params, 'allowMethods'),
       allowHeaders = parameter.get(params, 'allowHeaders'),
+      convertToJson = parameter.get(params, 'convertToJson'),
       headers = {};
 
   if (!url) {
@@ -43,7 +46,13 @@ var post = function (params, callback) {
 
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      return callback(200, "OK", headers, body);
+      if (convertToJson) {
+        jsonConverter.xmlDataToJSON(body).then(json => {
+          return callback(200, "OK", headers, json);
+        });
+      } else {
+        return callback(200, "OK", headers, body);
+      }
     }
   })
 

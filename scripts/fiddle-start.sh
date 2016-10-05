@@ -108,6 +108,11 @@ function startServer() {
             meteorInstall || exit 93;
             meteorStart || exit 94;
             ;;
+        'node')
+            cd ${_fiddleRoot};
+            npm install;
+            npm start;
+            ;;
         'nativescript')
             source bin/nativescript/.nativescriptrc;
             source bin/nativescript/_install.sh;

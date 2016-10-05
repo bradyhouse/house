@@ -1272,5 +1272,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Java**
   1.  Started [fiddles/java/fiddle-0004-CSVToJsonEndpoint](fiddles/java/fiddle-0004-CSVToJsonEndpoint)
 
+* **NativeScript**
+  1.  Started [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle)
+
 * **Node**
   1.  Started [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher)

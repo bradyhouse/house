@@ -43,7 +43,7 @@ function isMvnInstalled() {
   installed=$(isInstalled "mvn";);
   if [[ "${installed}" == "false" ]]
   then
-      echo -1;
+      exit -1;
   fi
 }
 
@@ -59,6 +59,6 @@ function isGradleInstalled() {
   installed=$(isInstalled "gradle";);
   if [[ "${installed}" == "false" ]]
   then
-   echo -1;
+    exit -1;
   fi
 }
