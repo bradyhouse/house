@@ -128,7 +128,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
         'nativescript')
             nativeScriptFork "${fiddleName}" "${targetFiddle}" || exit 98;
             ;;
-        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'meteor')
+        'angular2-cli' | 'angular2-seeder' | 'aurelia' | 'electron' | 'ember' | 'extjs6' | 'meteor')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
@@ -136,7 +136,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             ;;
-        'angular'|'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'extjs6' | 'php' | 'jquery' | 'three' |'rxjs' | 'd3' | 'dojo' | 'node' | 'tween' | 'chrome')
+        'angular'|'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'php' | 'jquery' | 'three' |'rxjs' | 'd3' | 'dojo' | 'node' | 'tween' | 'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;

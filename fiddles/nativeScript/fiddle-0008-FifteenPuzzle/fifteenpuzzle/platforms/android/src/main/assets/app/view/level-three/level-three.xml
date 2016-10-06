@@ -1,0 +1,31 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Level 3"/>
+  <GridLayout rows="auto,auto,auto,auto,auto" columns="*,*,*,*,*">
+
+    <Button row="0" col="0" text="1" tap="onButtonClick" />
+    <Button row="0" col="1" text="2" tap="onButtonClick" />
+    <Button row="0" col="2" text="3" tap="onButtonClick" />
+    <Button row="0" col="3" text="4" tap="onButtonClick" />
+    <Button row="0" col="4" text="5" tap="onButtonClick" />
+
+    <Button row="1" col="0" text="6" tap="onButtonClick" />
+    <Button row="1" col="1" text="7" tap="onButtonClick" />
+    <Button row="1" col="2" text="8" tap="onButtonClick" />
+    <Button row="1" col="3" text="9" tap="onButtonClick" />
+    <Button row="1" col="4" text="10" tap="onButtonClick" />
+
+    <Button row="2" col="0" text="11" tap="onButtonClick" />
+    <Button row="2" col="1" text="12" tap="onButtonClick" />
+    <Button row="2" col="2" text="13" tap="onButtonClick" />
+    <Button row="2" col="3" text="14" tap="onButtonClick" />
+    <Button row="2" col="4" text="15" tap="onButtonClick" />
+
+    <Button row="3" col="0" text="16" tap="onButtonClick" />
+    <Button row="3" col="1" text="17" tap="onButtonClick" />
+    <Button row="3" col="2" text="18" tap="onButtonClick" />
+    <Button row="3" col="3" text="19" tap="onButtonClick" />
+    <Button row="3" col="4" text="_" tap="onButtonClick" />
+
+
+  </GridLayout>
+</Page>

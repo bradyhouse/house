@@ -36,7 +36,7 @@ Ext.define('App.Box', {
     ]
 });
 Ext.onReady(function () {
-    var fiddle = Ext.create('tunes.view.Viewport'),
+    var fiddle = Ext.create('Fiddle.View'),
         win = Ext.create('Ext.Window', {
             title: meta.fiddleHeader,
             closable: false,

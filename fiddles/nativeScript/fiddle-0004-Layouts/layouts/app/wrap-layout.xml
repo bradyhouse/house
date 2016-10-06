@@ -7,5 +7,5 @@
       <Label text="This is a Yellow Test" style="background-color: yellow" cssClass="yellow"/>
       <Label text="This is a Orange Test" style="background-color: orange"/>
       <Label text="This is a Purple Test" style="background-color: purple"/>
-    </WrapLayout>
+  </WrapLayout>
 </Page>

@@ -1,0 +1,6 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Fifteen Puzzle - About"/>
+  <WrapLayout>
+    <Label text="Fifteen puzzle game.  Each level offer 15 ways to win." />
+  </WrapLayout>
+</Page>

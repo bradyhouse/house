@@ -1,0 +1,14 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Level 1"/>
+  <GridLayout rows="auto,auto,auto" columns="*,*,*">
+    <Button row="0" col="0" text="1" tap="onButtonClick" />
+    <Button row="0" col="1" text="2" tap="onButtonClick" />
+    <Button row="0" col="2" text="3" tap="onButtonClick" />
+    <Button row="1" col="0" text="4" tap="onButtonClick" />
+    <Button row="1" col="1" text="5" tap="onButtonClick" />
+    <Button row="1" col="2" text="6" tap="onButtonClick" />
+    <Button row="2" col="0" text="7" tap="onButtonClick" />
+    <Button row="2" col="1" text="8" tap="onButtonClick" />
+    <Button row="2" col="2" text="_" tap="onButtonClick" />
+  </GridLayout>
+</Page>

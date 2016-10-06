@@ -1,9 +1,8 @@
 var meta = {
-    fiddleHeader: 'Ext Itunes',
-    fiddleSubHeader: 'Open Source Itunes <i>like</i> UI' +
+    fiddleHeader: 'Simple Grid',
+    fiddleSubHeader: 'Just a simple grid and store.' +
     '<br />'
 };
 
-var fiddleStore = null;
 
 
