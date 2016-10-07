@@ -24,7 +24,7 @@
     <Button row="3" col="1" text="17" tap="onButtonClick" />
     <Button row="3" col="2" text="18" tap="onButtonClick" />
     <Button row="3" col="3" text="19" tap="onButtonClick" />
-    <Button row="3" col="4" text="_" tap="onButtonClick" />
+    <Button row="3" col="4" text="&nbsp;" tap="onButtonClick" />
 
 
   </GridLayout>

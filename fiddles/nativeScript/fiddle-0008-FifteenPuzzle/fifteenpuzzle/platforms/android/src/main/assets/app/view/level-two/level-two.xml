@@ -20,7 +20,7 @@
     <Button row="3" col="0" text="13" tap="onButtonClick" />
     <Button row="3" col="1" text="14" tap="onButtonClick" />
     <Button row="3" col="2" text="15" tap="onButtonClick" />
-    <Button row="3" col="3" text="_" tap="onButtonClick" />
+    <Button row="3" col="3" text="&nbsp;" tap="onButtonClick" />
 
   </GridLayout>
 </Page>

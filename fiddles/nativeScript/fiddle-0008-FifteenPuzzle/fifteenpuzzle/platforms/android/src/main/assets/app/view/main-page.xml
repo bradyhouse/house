@@ -2,10 +2,11 @@
   <ActionBar title="Fifteen Puzzle"/>
   <ScrollView>
     <StackLayout>
-      <Button text="Rules" style="width: 100%;" tap="onAboutClick"/>
       <Button text="level 1" style="width: 100%;" tap="onLevelOneClick" />
       <Button text="level 2" style="width: 100%;" tap="onLevelTwoClick" />
       <Button text="level 3" style="width: 100%;" tap="onLevelThreeClick" />
+      <Button text="Rules" style="width: 100%;" tap="onAboutClick"/>
+
     </StackLayout>
   </ScrollView>
 </Page>

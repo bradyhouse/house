@@ -48,9 +48,21 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 *   link:http://www.restapitutorial.com/[Learn REST: A RESTful Tutorial]
 *   link:http://blog.teamtreehouse.com/the-definitive-guide-to-get-vs-post[The Definitive Guide to GET vs POST]
 
+=== Persistence & Db's
+*   link:http://hibernate.org/orm/[Hibernate ORM]
+*   link:http://www.h2database.com/html/main.html[H2 Database Engine ~ Java SQL Database]
+*   link:https://en.wikipedia.org/wiki/Java_Persistence_API[Java Persistence API]
+
+=== Project Management & Automation
+*   link:http://maven.apache.org/[Maven]
+**  link:http://search.maven.org/[Maven Central Repository]
+*   link:https://gradle.org[Gradle]
+**  link:http://www.groovy-lang.org/[Groovy]
+
 === Special Topics
 
 ==== Gradle Peer Authentication Workarounds
 *   link:http://stackoverflow.com/questions/26734738/android-studio-gradle-build-failed-errorcause-peer-not-authenticated#29078949:[Gradle build failed. Error:Cause: peer not authenticated]
 *   link:http://docs.bvstools.com/home/ssl-documentation/exporting-certificate-authorities-cas-from-a-website[Exporting Certificate Authorities (CAs) from a Website]
 *   link:http://stackoverflow.com/questions/27206040/android-studio-intellij-gradle-errorcause-peer-not-authenticated[Intellij, Gradle Error:Cause: peer not authenticated]
+
