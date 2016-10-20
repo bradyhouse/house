@@ -7,7 +7,7 @@
     $.ajax({
       type: 'POST',
       url: app.URL,
-      data: 'url=https://itunes.apple.com/WebObjects/MZStore.woa/wpa/MRSS/featuredalbums/sf=143441/limit=100/genre=20/explicit=true/rss.xml&allowOrigin=' + url + '&allowCredentials=true&allowMethods=GET&allowHeaders=content-type',
+      data: 'url=http://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml&convertToJson=true&allowOrigin=' + url + '&allowCredentials=true&allowMethods=GET&allowHeaders=content-type',
       success: function(data) {
         $('.log').text(data);
       },

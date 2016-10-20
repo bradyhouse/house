@@ -24,8 +24,13 @@
     <Button row="3" col="1" text="17" tap="onButtonClick" />
     <Button row="3" col="2" text="18" tap="onButtonClick" />
     <Button row="3" col="3" text="19" tap="onButtonClick" />
-    <Button row="3" col="4" text="&nbsp;" tap="onButtonClick" />
+    <Button row="3" col="4" text="20" tap="onButtonClick" />
 
+    <Button row="4" col="0" text="21" tap="onButtonClick" />
+    <Button row="4" col="1" text="22" tap="onButtonClick" />
+    <Button row="4" col="2" text="23" tap="onButtonClick" />
+    <Button row="4" col="3" text="24" tap="onButtonClick" />
+    <Button row="4" col="4" text="&nbsp;" tap="onButtonClick" />
 
   </GridLayout>
 </Page>

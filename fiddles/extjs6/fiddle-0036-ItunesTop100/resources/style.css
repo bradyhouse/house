@@ -1,0 +1,23 @@
+.video figure {
+	float: left;
+	text-align: center;
+	height: 125px;
+	padding: 10px;
+	width: 120px;
+}
+
+.video figcaption {
+	font-size: 8pt;
+}
+
+.overvideo figure {
+	background: #EDEDED;
+}
+
+.selectvideo figure {
+    background: #DFE8F7;
+}
+
+a img {
+	border: none;
+}

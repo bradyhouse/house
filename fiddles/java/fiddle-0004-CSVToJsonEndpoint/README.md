@@ -26,7 +26,8 @@ Chicago, IL
 
 ### Description
 
-POC exploring how to create an endpoint that returns a static CSV file in JSON format.
+POC exploring how to create an endpoint that returns a static CSV file in JSON format.  Specifically, it explores
+the following [StackOverFlow Posted Solution](http://stackoverflow.com/questions/9524191/converting-an-csv-file-to-a-json-object-in-java#9524327).
 
 
 ### Use Case

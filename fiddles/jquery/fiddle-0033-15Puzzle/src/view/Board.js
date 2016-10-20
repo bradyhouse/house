@@ -118,6 +118,7 @@
             store.load();
         }
     }
+
     onLevelSelect() {
         var level = this,
             header = level.store.parent,

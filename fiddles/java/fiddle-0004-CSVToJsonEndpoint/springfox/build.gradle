@@ -9,6 +9,7 @@ buildscript {
   }
 
   dependencies {
+    classpath 'net.sf.opencsv:opencsv:2.3'
     classpath "com.github.adrianbk:gradle-jvmsrc-plugin:0.6.1"
     classpath 'com.ofg:uptodate-gradle-plugin:1.6.0'
     classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'

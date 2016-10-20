@@ -13,7 +13,13 @@
     "start": "node --harmony app.js"
   },
   "dependencies": {
-    "fb-watchman": "^1.9.0",
-    "simple-watcher": "^1.0.5"
+    "cluster": "^0.7.7",
+    "create-file": "^1.0.1",
+    "file-move": "0.0.3",
+    "jfile": "^1.1.12",
+    "moment": "^2.15.1",
+    "npmlog": "^4.0.0",
+    "verify-path": "^1.0.3",
+    "watchdirectory": "^0.1.5"
   }
 }

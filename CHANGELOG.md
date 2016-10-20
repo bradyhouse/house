@@ -1276,4 +1276,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Started [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
 
 * **Node**
-  1.  Started [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~  [Issue 82](https://github.com/bradyhouse/house/issues/82)
+  1.  Added [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~  [Issue 82](https://github.com/bradyhouse/house/issues/82)

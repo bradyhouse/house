@@ -53,7 +53,7 @@ The `url` parameters is used to initiate a secondary HTTP request using the npm 
 2.  Startup the service `npm start`
 3.  Test the pass thru service using curl
 
-        curl --data "url=https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml&convertToJson=true" 'http://localhost:3000/passthru'
+        curl --data "url=https://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml&convertToJson=true&allowOrigin=true&allowCredentials=true&allowMethods=" 'http://localhost:3000/passthru'
 
     Note - this should return the [itunes rss feed](https://itunes.apple.com/WebObjects/MZStore.woa/wpa/MRSS/featuredalbums/sf=143441/limit=100/genre=20/explicit=true/rss.xml).
 

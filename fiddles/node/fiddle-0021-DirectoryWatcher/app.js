@@ -1,43 +1,47 @@
-#!/usr/bin/env node --harmony
+const cluster = require('cluster'),
+  stopSignals = [
+    'SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
+    'SIGBUS', 'SIGFPE', 'SIGUSR1', 'SIGSEGV', 'SIGUSR2', 'SIGTERM'
+  ],
+  production = process.env.NODE_ENV == 'production',
+  log = require('./util/log');
 
-"use strict";
 
-var watchman = require('fb-watchman'),
-  client = new watchman.Client(),
-  dir_of_interest = "../../../fiddles";
+let stopping = false;
 
-client.capabilityCheck({optional:[], required:['relative_root']},
-  function (error, resp) {
-    if (error) {
-      console.log(error);
-      client.end();
-      return;
+cluster.on('disconnect', function(worker) {
+  if (production) {
+    if (!stopping) {
+      cluster.fork();
     }
+  } else {
+    process.exit(1);
+  }
+});
 
-    // Initiate the watch
-    client.command(['watch-project', dir_of_interest],
-      function (error, resp) {
-        if (error) {
-          console.error('Error initiating watch:', error);
-          return;
-        }
+if (cluster.isMaster) {
+  const workerCount = process.env.NODE_CLUSTER_WORKERS || 1;
 
-        // It is considered to be best practice to show any 'warning' or
-        // 'error' information to the user, as it may suggest steps
-        // for remediation
-        if ('warning' in resp) {
-          console.log('warning: ', resp.warning);
-        }
-
-        // `watch-project` can consolidate the watch for your
-        // dir_of_interest with another watch at a higher level in the
-        // tree, so it is very important to record the `relative_path`
-        // returned in resp
-
-        console.log('watch established on ', resp.watch,
-          ' relative_path', resp.relative_path);
+  let timeout = 100;
+  log.info(`Starting ${workerCount} workers...`);
+  for (let i = 0; i < workerCount; i++) {
+    setTimeout(function() {
+      timeout += 350;
+      cluster.fork();
+    }, timeout);
+  }
+  if (production) {
+    stopSignals.forEach(function (signal) {
+      process.on(signal, function () {
+        log.info(`Got ${signal}, stopping workers...`);
+        stopping = true;
+        cluster.disconnect(function () {
+          log.info('All workers stopped, exiting.');
+          process.exit(0);
+        });
       });
-  });
-
-
-
+    });
+  }
+} else {
+  require('./server/server.js');
+}

@@ -71,4 +71,45 @@ div.error {
         margin-top: 0%;
     }
 }
+.video {
+    background-color: black;
+    vertical-align: center;
+    text-align: center;
+}
+.video figure {
+    background-color: black;
+    margin: 10px;
+    color: white;
+    float: left;
+    text-align: center;
+    height: 125px;
+    padding: 0px;
+    width: 120px;
+}
+
+.video figcaption {
+    font-size: 8pt;
+}
+
+.overvideo figure {
+    background: black;
+    color: white;
+    cursor: hand;
+}
+
+.selectvideo figure {
+    background: black;
+}
+
+a img {
+    border: none;
+}
+
+div#imagegrid-1010-body.x-panel-body {
+    background-color: black;
+}
+
+div#ext-comp-1027-innerCt.x-autocontainer-innerCt {
+    background-color: black;
+}
 
