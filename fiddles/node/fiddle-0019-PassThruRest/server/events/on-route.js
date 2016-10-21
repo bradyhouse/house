@@ -12,18 +12,20 @@ const
 
 exports.trigger = function (req, res, body) {
   log.info('app > onRouteCall');
-
+  log.info('body: ');
+  log.info(body);
   var urlObj = require("url").parse(req.url, true);
   var params = urlObj.query;
   var endPoint = endPointerConverter.convert(req.url);
   var bodyParams = require("querystring").parse(body);
 
-  log.info('app > onRouteCall > ' + req.url);
 
   for (var p in bodyParams) {
     log.info('app > onRouteCall > ' + p + ' = ' + bodyParams[p]);
     params[p] = bodyParams[p];
   }
+
+  //params['requestOrigin'] = 'http://127.0.0.1:1841';
 
   params["path"] = urlObj.pathname.split("/");
 

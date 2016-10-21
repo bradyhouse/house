@@ -22,5 +22,7 @@ module.exports = {
   'bmpr'    : 'application/octet-stream',
   'dmg'     : 'application/octet-stream',
   'webloc'  : 'application/xml',
-  'docx'    : 'application/zip'
+  'docx'    : 'application/zip',
+  'jpg'     : 'image/jpeg',
+  'bmml'    : 'text/plain'
 }

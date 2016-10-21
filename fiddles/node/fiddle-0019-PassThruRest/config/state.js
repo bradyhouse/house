@@ -1,3 +1,5 @@
 module.exports = {
-  isDev: true
+  isDev: true,
+  isLogFile: true,
+  logFile: 'server.log'
 };

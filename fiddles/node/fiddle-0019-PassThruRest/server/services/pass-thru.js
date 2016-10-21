@@ -7,6 +7,9 @@ const
 
 var post = function (params, callback) {
     log.info('services > passthru > post');
+    log.info('params:');
+    log.console(params);
+
     var url = parameter.get(params, 'url'),
       allowOrigin = parameter.get(params, 'allowOrigin'),
       allowCredentials = parameter.get(params, 'allowCredentials'),
@@ -14,7 +17,7 @@ var post = function (params, callback) {
       allowHeaders = parameter.get(params, 'allowHeaders'),
       convertToJson = parameter.get(params, 'convertToJson'),
       headers = {};
-
+    log.info('url: ' + url);
     if (!url) {
       return callback(403, 'MUST SPECIFY A "URL"', {}, {
         status: 403,
@@ -56,13 +59,20 @@ var post = function (params, callback) {
   },
   options = function (params, callback) {
     log.info('services > passthru > options');
+    let originUrl = parameter.get(params, 'requestOrigin') ? parameter.get(params, 'requestOrigin') : '*';
+    /*
+     header('Access-Control-Allow-Origin: *');
+     header('Access-Control-Allow-Methods: POST,GET,OPTIONS');
+     header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
+     */
     var headers = {
-      'Access-Control-Allow-Origin': 'http://127.0.0.1:1841',
-      'Access-Control-Request-Headers': 'accepts, x-requested-with, content-type',
-      'Access-Control-Allow-Methods': 'POST',
+      'Access-Control-Allow-Origin': originUrl,
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      'Access-Control-Allow-Methods': 'POST,GET,OPTIONS',
       'Access-Control-Allow-Credentials': true
     };
-
+    // status, statusText, headers, result
+    // res, params, status, statusText, headers, result
     return callback(200, "OK", headers, {});
   };
 

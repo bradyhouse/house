@@ -20,7 +20,7 @@ cluster.on('disconnect', function(worker) {
 });
 
 if (cluster.isMaster) {
-  const workerCount = process.env.NODE_CLUSTER_WORKERS || 4;
+  const workerCount = process.env.NODE_CLUSTER_WORKERS || 1;
 
   let timeout = 100;
   log.info(`Starting ${workerCount} workers...`);

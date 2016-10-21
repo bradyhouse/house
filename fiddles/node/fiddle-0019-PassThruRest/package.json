@@ -10,8 +10,10 @@
   "author": "Brady House <bradyhouse@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.15.1",
     "node-beautify": "0.0.5",
     "npmlog": "^4.0.0",
+    "npmlog-file": "^0.1.4",
     "request": "^2.74.0",
     "xml-to-json-promise": "0.0.3"
   }
