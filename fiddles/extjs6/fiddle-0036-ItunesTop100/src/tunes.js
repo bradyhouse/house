@@ -22,19 +22,19 @@ Ext.define('Fiddle.Tunes', {
   },
   onStoreBeforeLoad: function (store, operation) {
     console.log('onStoreBeforeLoad');
-    var url = window.location.port ? 'http://' + window.location.hostname + ':' + window.location.port :
-      'https://' + window.location.hostname,
-      //params = 'url=http://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml&convertToJson=true&allowOrigin=' + url + '&allowCredentials=true&allowMethods=GET&allowHeaders=content-type',
+    var url = window.location.port ? 'https://' + window.location.hostname + ':' + window.location.port :
+      'http://' + window.location.hostname,
       params = {
-        url: 'http://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json',
+        url: meta.itunesRSSFeed,
         allowOrigin: url,
+        convertToJson: false,
         allowCredentials: true,
         allowMethods: 'POST',
         allowHeaders: 'Content-Type'
       };
 
     encodedParams = window.encodeURIComponent(params),
-      targetUrl = 'http://localhost:3000/passthru';
+      targetUrl = 'https://12-bradyhouse.rhcloud.com/passthru';
     store.proxy.setUrl(targetUrl);
     operation.setParams(params);
   },
@@ -98,9 +98,9 @@ Ext.define('Fiddle.Tunes', {
 
 
 }, function () {
-  Ext.create('Fiddle.Tunes', {
+  /*Ext.create('Fiddle.Tunes', {
     storeId: 'tunes'
-  });
+  });*/
 });
 
 

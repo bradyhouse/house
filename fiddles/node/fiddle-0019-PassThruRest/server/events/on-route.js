@@ -8,6 +8,7 @@ const
   log = require('../../utils/log'),
   endPointerConverter = require('../../utils/converters/to-end-point'),
   response = require('./on-response'),
+  queryString = require("querystring"),
   env = process.env;
 
 exports.trigger = function (req, res, body) {
@@ -17,15 +18,15 @@ exports.trigger = function (req, res, body) {
   var urlObj = require("url").parse(req.url, true);
   var params = urlObj.query;
   var endPoint = endPointerConverter.convert(req.url);
-  var bodyParams = require("querystring").parse(body);
+  var bodyParams = body && typeof body === 'string' ? JSON.parse(body) : {};
 
+  log.info('bodyParams:');
+  log.info(bodyParams);
 
   for (var p in bodyParams) {
     log.info('app > onRouteCall > ' + p + ' = ' + bodyParams[p]);
     params[p] = bodyParams[p];
   }
-
-  //params['requestOrigin'] = 'http://127.0.0.1:1841';
 
   params["path"] = urlObj.pathname.split("/");
 

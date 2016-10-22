@@ -7,10 +7,6 @@ const
 
 let server = http.createServer(function (req, res) {
   log.info('server > createServer');
-  log.info('req: ');
-  log.info(req);
-  log.info('res:');
-  log.info(res);
   requestEvent.trigger(req, res);
 });
 

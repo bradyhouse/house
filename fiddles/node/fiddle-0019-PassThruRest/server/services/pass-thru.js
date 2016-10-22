@@ -17,7 +17,9 @@ var post = function (params, callback) {
       allowHeaders = parameter.get(params, 'allowHeaders'),
       convertToJson = parameter.get(params, 'convertToJson'),
       headers = {};
+
     log.info('url: ' + url);
+
     if (!url) {
       return callback(403, 'MUST SPECIFY A "URL"', {}, {
         status: 403,
@@ -46,13 +48,18 @@ var post = function (params, callback) {
     }
 
     request(url, function (error, response, body) {
+      log.info('pass-thru > request > body:');
       if (!error && response.statusCode == 200) {
         if (convertToJson) {
           jsonConverter.xmlDataToJSON(body).then(json => {
             return callback(200, "OK", headers, json);
           });
         } else {
-          return callback(200, "OK", headers, body);
+          if (typeof body == 'string') {
+            return callback(200, "OK", headers, JSON.parse(body));
+          } else {
+            return callback(200, "OK", headers, body);
+          }
         }
       }
     })

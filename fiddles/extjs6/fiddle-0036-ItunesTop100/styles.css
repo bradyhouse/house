@@ -21,6 +21,7 @@ div.x-panel-header {
     padding-top: 10px;
     background-image: url(http://dev.sencha.com/ext/5.1.0/examples/kitchensink/crisp-en/resources/images/header-bg.png) !important;
 }
+
 div.x-panel-header div.x-title-text {
     color: #ffffff;
 }

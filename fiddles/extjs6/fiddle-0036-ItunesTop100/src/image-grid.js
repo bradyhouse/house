@@ -19,9 +19,20 @@ Ext.define('Fiddle.ImageGrid', {
         '</figure>'
       ],
       overItemCls: 'overvideo',
-      store: Ext.data.StoreManager.lookup('tunes'),
       trackOver: true
     }
-  ]
+  ],
+  constructor: function(config) {
+    let store = Ext.data.StoreManager.lookup('tunes');
+    if (store) {
+      config.store = store;
+    } else {
+      config.store = new Fiddle.Tunes({
+        storeId: 'tunes'
+      });
+    }
+    this.callParent([config]);
+  }
+
 });
 

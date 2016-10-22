@@ -5,41 +5,36 @@ Ext.define('Fiddle.ViewportController', {
     {
       ref: 'grid',
       selector: '#grid'
-    },
-    {
-      ref: 'imagegrid',
-      selector: '#imagegrid'
     }
   ],
   init: function(application) {
     this.control({
-      '#grid, #imagegrid': {
+      '#grid, #previewpanel': {
         itemdblclick: this.onItemDblClick,
         select: this.onRecordSelect
       }
-    });
+      });
   },
+
   onItemDblClick: function(component, record) {
-    var win = Ext.create('Fiddle.PreviewWindow', {
-      title: record.get('title') + ', provided courtesy of iTunes',
-      width: 853,
-      height: 480,
-      itemCls: 'video'
-    });
-    win.update(record.data);
-    win.show();
-
-
+    var view = this.getView(),
+      preview = view.items.items[0];
+    preview.update(record.data);
   },
+
   onRecordSelect: function(component, record) {
     var view = this.getView(),
-        preview = view.items.items[0],
-        grid = view.items.items[1],
-        previewDataView = preview.items.items[0],
-        gridDataView = grid.items.items[0];
-
-    previewDataView.getSelectionModel().select(record);
+      grid = view.items.items[1],
+      gridDataView = grid.items.items[0];
     gridDataView.getSelectionModel().select(record);
+  },
+
+  onTunesStoreLoad: function(store, records, successful, operation, node) {
+    var view = this.getView(),
+      preview = view.items.items[0],
+      grid = view.items.items[1],
+      firstRecord = store.data.first();
+    preview.update(firstRecord);
   }
 
 });

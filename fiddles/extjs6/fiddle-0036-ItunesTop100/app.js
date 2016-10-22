@@ -1,11 +1,9 @@
 var meta = {
-    fiddleHeader: 'Itunes Top 100',
-    fiddleSubHeader: 'Just a simple grid and store.' +
-        '<br />'
+    fiddleHeader: 'Itunes Top 100 Videos',
+    fiddleSubHeader: 'POC that uses ExtJS to serve up the <a href="https://itunes.apple.com/us/rss/topsongs/limit=100/genre=20/explicit=true/xml" target="_blank">itunes top 100 videos rss feed</a>.  It accesses the feed via a CORS POST request to a <a href="http://12-bradyhouse.rhcloud.com/](http://12-bradyhouse.rhcloud.com/">node.js REST Service hosted on OpenShift.com</a>.  See <a href="https://github.com/bradyhouse/house/tree/master/fiddles/node/fiddle-0019-PassThruRest" target="_blank">Node POC #19</a>.' +
+        '<br />',
+    itunesRSSFeed: 'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/genre=1614/explicit=true/json'
 };
-
-
-
 
 
 Ext.define('Fiddle.Msg', {
@@ -188,17 +186,17 @@ Ext.define('Fiddle.Tunes', {
     onStoreBeforeLoad: function(store, operation) {
         console.log('onStoreBeforeLoad');
         var url = window.location.port ? 'http://' + window.location.hostname + ':' + window.location.port :
-            'https://' + window.location.hostname,
-            //params = 'url=http://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/xml&convertToJson=true&allowOrigin=' + url + '&allowCredentials=true&allowMethods=GET&allowHeaders=content-type',
+            'http://' + window.location.hostname,
             params = {
-                url: 'http://itunes.apple.com/us/rss/topsongs/limit=100/explicit=true/json',
+                url: meta.itunesRSSFeed,
                 allowOrigin: url,
+                convertToJson: false,
                 allowCredentials: true,
                 allowMethods: 'POST',
                 allowHeaders: 'Content-Type'
             };
         encodedParams = window.encodeURIComponent(params),
-            targetUrl = 'http://localhost:3000/passthru';
+            targetUrl = 'https://12-bradyhouse.rhcloud.com/passthru';
         store.proxy.setUrl(targetUrl);
         operation.setParams(params);
     },
@@ -249,15 +247,17 @@ Ext.define('Fiddle.Tunes', {
         return inflatedRecords;
     }
 }, function() {
-    Ext.create('Fiddle.Tunes', {
-        storeId: 'tunes'
-    });
+    /*Ext.create('Fiddle.Tunes', {
+      storeId: 'tunes'
+    });*/
 });
 
 
 Ext.define('Fiddle.DetailGrid', {
     extend: 'Ext.grid.Panel',
-    store: Ext.data.StoreManager.lookup('tunes'),
+    requires: [
+        'Fiddle.Tunes'
+    ],
     xtype: 'detailgrid',
     columns: [{
         xtype: 'gridcolumn',
@@ -288,7 +288,18 @@ Ext.define('Fiddle.DetailGrid', {
         width: 60,
         dataIndex: 'link',
         text: 'Link'
-    }]
+    }],
+    constructor: function(config) {
+        let store = Ext.data.StoreManager.lookup('tunes');
+        if (store) {
+            config.store = store;
+        } else {
+            config.store = new Fiddle.Tunes({
+                storeId: 'tunes'
+            });
+        }
+        this.callParent([config]);
+    }
 });
 
 
@@ -311,22 +322,31 @@ Ext.define('Fiddle.ImageGrid', {
             '</figure>'
         ],
         overItemCls: 'overvideo',
-        store: Ext.data.StoreManager.lookup('tunes'),
         trackOver: true
-    }]
+    }],
+    constructor: function(config) {
+        let store = Ext.data.StoreManager.lookup('tunes');
+        if (store) {
+            config.store = store;
+        } else {
+            config.store = new Fiddle.Tunes({
+                storeId: 'tunes'
+            });
+        }
+        this.callParent([config]);
+    }
 });
 
 
-Ext.define('Fiddle.PreviewWindow', {
-    extend: 'Ext.window.Window',
-    resizable: true,
-    title: 'My Window',
-    modal: true,
+Ext.define('Fiddle.PreviewPanel', {
+    extend: 'Ext.panel.Panel',
+    xtype: 'previewpanel',
+    itemCls: 'video',
     initComponent: function() {
         var me = this;
         Ext.applyIf(me, {
             tpl: [
-                '<video autoplay preload="auto">',
+                '<video autoplay preload="auto" controls style="width: 100%; height: 95%; background-color: black;">',
                 '    <source src="{preview}" type="video/mp4" > ',
                 '</video>'
             ]
@@ -342,36 +362,32 @@ Ext.define('Fiddle.ViewportController', {
     refs: [{
         ref: 'grid',
         selector: '#grid'
-    }, {
-        ref: 'imagegrid',
-        selector: '#imagegrid'
     }],
     init: function(application) {
         this.control({
-            '#grid, #imagegrid': {
+            '#grid, #previewpanel': {
                 itemdblclick: this.onItemDblClick,
                 select: this.onRecordSelect
             }
         });
     },
     onItemDblClick: function(component, record) {
-        var win = Ext.create('Fiddle.PreviewWindow', {
-            title: record.get('title') + ', provided courtesy of iTunes',
-            width: 853,
-            height: 480,
-            itemCls: 'video'
-        });
-        win.update(record.data);
-        win.show();
+        var view = this.getView(),
+            preview = view.items.items[0];
+        preview.update(record.data);
     },
     onRecordSelect: function(component, record) {
         var view = this.getView(),
+            grid = view.items.items[1],
+            gridDataView = grid.items.items[0];
+        gridDataView.getSelectionModel().select(record);
+    },
+    onTunesStoreLoad: function(store, records, successful, operation, node) {
+        var view = this.getView(),
             preview = view.items.items[0],
             grid = view.items.items[1],
-            previewDataView = preview.items.items[0],
-            gridDataView = grid.items.items[0];
-        previewDataView.getSelectionModel().select(record);
-        gridDataView.getSelectionModel().select(record);
+            firstRecord = store.data.first();
+        preview.update(firstRecord);
     }
 });
 
@@ -382,7 +398,8 @@ Ext.define('Fiddle.Viewport', {
         'Fiddle.ViewportController',
         'Fiddle.DetailGrid',
         'Fiddle.ImageGrid',
-        'Fiddle.PreviewWindow'
+        'Fiddle.PreviewPanel',
+        'Ext.resizer.Splitter'
     ],
     controller: 'viewport',
     layout: {
@@ -390,11 +407,19 @@ Ext.define('Fiddle.Viewport', {
         type: 'vbox'
     },
     items: [{
-        xtype: 'imagegrid',
-        flex: 1
+        xtype: 'previewpanel',
+        itemId: 'previewpanel',
+        flex: 2
+    }, {
+        xtype: 'splitter'
     }, {
         xtype: 'detailgrid',
         itemId: 'grid',
+        listeners: {
+            store: {
+                load: 'onTunesStoreLoad'
+            }
+        },
         flex: 1
     }]
 });
@@ -448,7 +473,7 @@ Ext.onReady(function() {
     Ext.QuickTips.init();
     window.setTimeout(function() {
         win.maximize(true);
-    }, 2500);
+    }, 3500);
     Ext.create('App.Box', {
         renderTo: Ext.getBody()
     });

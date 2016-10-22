@@ -4,7 +4,8 @@ Ext.define('Fiddle.Viewport', {
     'Fiddle.ViewportController',
     'Fiddle.DetailGrid',
     'Fiddle.ImageGrid',
-    'Fiddle.PreviewWindow'
+    'Fiddle.PreviewPanel',
+    'Ext.resizer.Splitter'
   ],
   controller: 'viewport',
   layout: {
@@ -12,11 +13,19 @@ Ext.define('Fiddle.Viewport', {
     type: 'vbox'
   },
   items: [{
-    xtype: 'imagegrid',
-    flex: 1
+    xtype: 'previewpanel',
+    itemId: 'previewpanel',
+    flex: 2
+  }, {
+    xtype: 'splitter'
   }, {
     xtype: 'detailgrid',
     itemId: 'grid',
+    listeners: {
+      store: {
+        load: 'onTunesStoreLoad'
+      }
+    },
     flex: 1
   }]
 });

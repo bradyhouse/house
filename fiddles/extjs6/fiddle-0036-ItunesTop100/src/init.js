@@ -52,7 +52,7 @@ Ext.onReady(function () {
     Ext.QuickTips.init();
     window.setTimeout(function () {
         win.maximize(true);
-    }, 2500);
+    }, 3500);
     Ext.create('App.Box', {
         renderTo: Ext.getBody()
     });

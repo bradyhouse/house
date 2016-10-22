@@ -1212,7 +1212,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/ember/fiddle-0000-Template](fiddles/ember/fiddle-0000-Template)
 
 * **ExtJS 6**
-    1.  Started [fiddles/extjs6/fiddle-0036-ItunesTop100](fiddles/extjs6/fiddle-0036-ItunesTop100) ~ [Issue #74](https://github.com/bradyhouse/house/issues/74)
+    1.  Added [fiddles/extjs6/fiddle-0036-ItunesTop100](fiddles/extjs6/fiddle-0036-ItunesTop100) ~ [Issue #74](https://github.com/bradyhouse/house/issues/74)
 
 * **NativeScript**
     1.  Added [fiddles/nativescript/fiddle-0000-Template](fiddles/nativescript/fiddle-0000-Template)
