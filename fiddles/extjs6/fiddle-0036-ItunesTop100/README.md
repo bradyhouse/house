@@ -24,8 +24,8 @@ A _Refresher_ POC, lest I forget ExtJS.  In this case, the goal was to build a P
 
 ### Published Version Link
 
-[Code Pen](http://codepen.io/bradyhouse/pen/xEmmoO/)
-
+*   [Code Pen](http://codepen.io/bradyhouse/pen/xEmmoO/)
+*   [bradyhouse.github.io > ExtJS 6 > fiddle #36](http://bradyhouse.github.io/extjs6/fiddle-0036-ItunesTop100/index.html)
 
 
 ### Tags
