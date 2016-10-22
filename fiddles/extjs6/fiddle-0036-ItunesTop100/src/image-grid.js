@@ -2,6 +2,9 @@
 Ext.define('Fiddle.ImageGrid', {
   extend: 'Ext.panel.Panel',
   xtype: 'imagegrid',
+  requires: [
+    'Fiddle.Tunes'
+  ],
   autoScroll: true,
   layout: {
     type: 'fit'

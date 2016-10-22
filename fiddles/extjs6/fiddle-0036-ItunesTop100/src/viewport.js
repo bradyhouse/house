@@ -12,10 +12,18 @@ Ext.define('Fiddle.Viewport', {
     align: 'stretch',
     type: 'vbox'
   },
-  items: [{
+  items: (window.innerHeight <= 450) ? [{
+    xtype: 'previewpanel',
+    flex: 1,
+    listeners: {
+      store: {
+        load: 'onTunesStoreLoad'
+      }
+    }
+  }] : [{
     xtype: 'previewpanel',
     itemId: 'previewpanel',
-    flex: 2
+    flex: 3
   }, {
     xtype: 'splitter'
   }, {

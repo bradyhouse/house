@@ -11,10 +11,6 @@
 body#ext-element-1 {
     background-image: url(http://dev.sencha.com/ext/5.1.0/examples/kitchensink/crisp-en/resources/images/square.gif) !important;
     background-repeat: repeat;
-    -moz-animation-duration: 3s;
-    -webkit-animation-duration: 3s;
-    -moz-animation-name: slide-up;
-    -webkit-animation-name: slide-up;
 }
 
 div.x-panel-header {
@@ -39,14 +35,6 @@ div.custom-menu-title-close-btn {
     margin-bottom: -1px;
 }
 
-
-div.console {
-    margin-top: 20px;
-    margin-left: 750px;
-    text-align: left;
-    font-family: Courier, "Courier New";
-    font-size: x-small;
-}
 div.error {
     color: red;
     font-weight: bold;
@@ -79,13 +67,10 @@ div.error {
 }
 .video figure {
     background-color: black;
-    margin: 10px;
     color: white;
     float: left;
     text-align: center;
-    height: 125px;
     padding: 0px;
-    width: 120px;
 }
 
 .video figcaption {
@@ -100,6 +85,14 @@ div.error {
 
 .selectvideo figure {
     background: black;
+}
+
+.fiddleWindow {
+    z-index: 10;
+}
+
+div#window {
+    z-index: 0;
 }
 
 a img {

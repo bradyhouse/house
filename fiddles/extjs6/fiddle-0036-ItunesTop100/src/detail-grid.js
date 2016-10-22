@@ -33,7 +33,7 @@ Ext.define('Fiddle.DetailGrid', {
             xtype: 'templatecolumn',
             tpl: [
                 '<a href="{link}" target="itunes_store">',
-                '    <img src="resources/images/badge_itunes-sm.gif" />',
+                '    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/badge_itunes-sm.gif" />',
                 '</a>'
             ],
             width: 60,

@@ -8,12 +8,13 @@ Ext.define('Fiddle.ViewportController', {
     }
   ],
   init: function(application) {
-    this.control({
-      '#grid, #previewpanel': {
-        itemdblclick: this.onItemDblClick,
-        select: this.onRecordSelect
-      }
+    if (window == window.top || window.innerHeight > 450) {
+      this.control({
+        '#grid': {
+          itemdblclick: this.onItemDblClick
+        }
       });
+    }
   },
 
   onItemDblClick: function(component, record) {
@@ -22,17 +23,9 @@ Ext.define('Fiddle.ViewportController', {
     preview.update(record.data);
   },
 
-  onRecordSelect: function(component, record) {
-    var view = this.getView(),
-      grid = view.items.items[1],
-      gridDataView = grid.items.items[0];
-    gridDataView.getSelectionModel().select(record);
-  },
-
   onTunesStoreLoad: function(store, records, successful, operation, node) {
     var view = this.getView(),
       preview = view.items.items[0],
-      grid = view.items.items[1],
       firstRecord = store.data.first();
     preview.update(firstRecord);
   }

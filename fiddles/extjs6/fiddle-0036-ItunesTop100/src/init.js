@@ -11,7 +11,7 @@ Ext.define('App.BoxModel', {
 Ext.define('App.Box', {
     extend: "Ext.container.Container",
     border: true,
-    padding: 25,
+    padding: 0,
     viewModel: {
         type: 'box'
     },
@@ -36,24 +36,36 @@ Ext.define('App.Box', {
     ]
 });
 Ext.onReady(function () {
-    var fiddle = Ext.create('Fiddle.Viewport'),
-        win = Ext.create('Ext.Window', {
-            title: meta.fiddleHeader,
-            closable: false,
-            maximizable: true,
-            height: 500,
-            width: 700,
-            layout: 'fit',
-            items: fiddle
-        }),
-        positionX = 25,
-        positionY = 192;
-    win.showAt([positionX, positionY]);
-    Ext.QuickTips.init();
-    window.setTimeout(function () {
-        win.maximize(true);
-    }, 3500);
+    var win = Ext.create('Ext.Window', {
+          title: meta.fiddleHeader,
+          closable: false,
+          maximizable: true,
+          resizable: true,
+          height: window.innerHeight - 100,
+          width: window.innerWidth - 20,
+          layout: 'fit',
+          items: Ext.create('Fiddle.Viewport')
+      }),
+      positionX = 0,
+      positionY = 92;
+
     Ext.create('App.Box', {
         renderTo: Ext.getBody()
     });
+
+    if (window.innerHeight <= 450) {
+        win.showAt([positionX, positionY]).maximize(true).setZIndex(10);
+    } else {
+        win.showAt([positionX, positionY]);
+        Ext.QuickTips.init();
+        window.setTimeout(function () {
+            win.maximize(true);
+        }, 2500);
+    }
+
+
+    console.log("%c" + meta.consoleTag, 'font-style: italic; font-size: 20px;');
+    console.log("%c" + meta.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
+    console.group();
+
 });

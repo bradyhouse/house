@@ -21,11 +21,10 @@ Ext.define('Fiddle.Tunes', {
     autoLoad: true
   },
   onStoreBeforeLoad: function (store, operation) {
-    console.log('onStoreBeforeLoad');
-    var url = window.location.port ? 'https://' + window.location.hostname + ':' + window.location.port :
+    var url = window.location.port ? 'http://' + window.location.hostname + ':' + window.location.port :
       'http://' + window.location.hostname,
       params = {
-        url: meta.itunesRSSFeed,
+        url: meta.urls.itunesRSSFeed,
         allowOrigin: url,
         convertToJson: false,
         allowCredentials: true,

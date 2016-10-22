@@ -2,7 +2,11 @@ var meta = {
     fiddleHeader: 'Itunes Top 100 Videos',
     fiddleSubHeader: 'POC that uses ExtJS to serve up the <a href="https://itunes.apple.com/us/rss/topsongs/limit=100/genre=20/explicit=true/xml" target="_blank">itunes top 100 videos rss feed</a>.  It accesses the feed via a CORS POST request to a <a href="http://12-bradyhouse.rhcloud.com/](http://12-bradyhouse.rhcloud.com/">node.js REST Service hosted on OpenShift.com</a>.  See <a href="https://github.com/bradyhouse/house/tree/master/fiddles/node/fiddle-0019-PassThruRest" target="_blank">Node POC #19</a>.' +
         '<br />',
-    itunesRSSFeed: 'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/genre=1614/explicit=true/json'
+    urls: {
+        github: 'https://github.com/bradyhouse/house/tree/master/fiddles/extjs6/fiddle-0036-ItunesTop100',
+        itunesRSSFeed: 'https://itunes.apple.com/us/rss/topmusicvideos/limit=100/genre=1614/explicit=true/json'
+    },
+    consoleTag: 'H O U S E  ~  f i d d l e s'
 };
 
 
@@ -184,11 +188,10 @@ Ext.define('Fiddle.Tunes', {
         autoLoad: true
     },
     onStoreBeforeLoad: function(store, operation) {
-        console.log('onStoreBeforeLoad');
         var url = window.location.port ? 'http://' + window.location.hostname + ':' + window.location.port :
             'http://' + window.location.hostname,
             params = {
-                url: meta.itunesRSSFeed,
+                url: meta.urls.itunesRSSFeed,
                 allowOrigin: url,
                 convertToJson: false,
                 allowCredentials: true,
@@ -282,7 +285,7 @@ Ext.define('Fiddle.DetailGrid', {
         xtype: 'templatecolumn',
         tpl: [
             '<a href="{link}" target="itunes_store">',
-            '    <img src="resources/images/badge_itunes-sm.gif" />',
+            '    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/badge_itunes-sm.gif" />',
             '</a>'
         ],
         width: 60,
@@ -306,6 +309,9 @@ Ext.define('Fiddle.DetailGrid', {
 Ext.define('Fiddle.ImageGrid', {
     extend: 'Ext.panel.Panel',
     xtype: 'imagegrid',
+    requires: [
+        'Fiddle.Tunes'
+    ],
     autoScroll: true,
     layout: {
         type: 'fit'
@@ -342,16 +348,27 @@ Ext.define('Fiddle.PreviewPanel', {
     extend: 'Ext.panel.Panel',
     xtype: 'previewpanel',
     itemCls: 'video',
+    constructor: function(config) {
+        var me = this,
+            store = Ext.data.StoreManager.lookup('tunes');
+        if (!store) {
+            config.store = new Fiddle.Tunes({
+                storeId: 'tunes'
+            });
+        }
+        this.callParent([config]);
+    },
     initComponent: function() {
         var me = this;
         Ext.applyIf(me, {
             tpl: [
-                '<video autoplay preload="auto" controls style="width: 100%; height: 95%; background-color: black;">',
+                '<video id="videoPlayer" autoplay preload="auto" controls style="width: 100%; height: 100%; background-color: black;">',
                 '    <source src="{preview}" type="video/mp4" > ',
                 '</video>'
             ]
         });
         me.callParent(arguments);
+        console.log('next step');
     }
 });
 
@@ -364,28 +381,22 @@ Ext.define('Fiddle.ViewportController', {
         selector: '#grid'
     }],
     init: function(application) {
-        this.control({
-            '#grid, #previewpanel': {
-                itemdblclick: this.onItemDblClick,
-                select: this.onRecordSelect
-            }
-        });
+        if (window == window.top || window.innerHeight > 450) {
+            this.control({
+                '#grid': {
+                    itemdblclick: this.onItemDblClick
+                }
+            });
+        }
     },
     onItemDblClick: function(component, record) {
         var view = this.getView(),
             preview = view.items.items[0];
         preview.update(record.data);
     },
-    onRecordSelect: function(component, record) {
-        var view = this.getView(),
-            grid = view.items.items[1],
-            gridDataView = grid.items.items[0];
-        gridDataView.getSelectionModel().select(record);
-    },
     onTunesStoreLoad: function(store, records, successful, operation, node) {
         var view = this.getView(),
             preview = view.items.items[0],
-            grid = view.items.items[1],
             firstRecord = store.data.first();
         preview.update(firstRecord);
     }
@@ -406,10 +417,18 @@ Ext.define('Fiddle.Viewport', {
         align: 'stretch',
         type: 'vbox'
     },
-    items: [{
+    items: (window.innerHeight <= 450) ? [{
+        xtype: 'previewpanel',
+        flex: 1,
+        listeners: {
+            store: {
+                load: 'onTunesStoreLoad'
+            }
+        }
+    }] : [{
         xtype: 'previewpanel',
         itemId: 'previewpanel',
-        flex: 2
+        flex: 3
     }, {
         xtype: 'splitter'
     }, {
@@ -436,7 +455,7 @@ Ext.define('App.BoxModel', {
 Ext.define('App.Box', {
     extend: "Ext.container.Container",
     border: true,
-    padding: 25,
+    padding: 0,
     viewModel: {
         type: 'box'
     },
@@ -457,24 +476,36 @@ Ext.define('App.Box', {
     }]
 });
 Ext.onReady(function() {
-    var fiddle = Ext.create('Fiddle.Viewport'),
-        win = Ext.create('Ext.Window', {
+    var win = Ext.create('Ext.Window', {
             title: meta.fiddleHeader,
             closable: false,
             maximizable: true,
-            height: 500,
-            width: 700,
+            resizable: true,
+            height: window.innerHeight - 100,
+            width: window.innerWidth - 20,
             layout: 'fit',
-            items: fiddle
+            items: Ext.create('Fiddle.Viewport')
         }),
-        positionX = 25,
-        positionY = 192;
-    win.showAt([positionX, positionY]);
-    Ext.QuickTips.init();
-    window.setTimeout(function() {
-        win.maximize(true);
-    }, 3500);
+        positionX = 0,
+        positionY = 92;
+
     Ext.create('App.Box', {
         renderTo: Ext.getBody()
     });
+
+    if (window.innerHeight <= 450) {
+        win.showAt([positionX, positionY]).maximize(true).setZIndex(10);
+    } else {
+        win.showAt([positionX, positionY]);
+        Ext.QuickTips.init();
+        window.setTimeout(function() {
+            win.maximize(true);
+        }, 2500);
+    }
+
+
+    console.log("%c" + meta.consoleTag, 'font-style: italic; font-size: 20px;');
+    console.log("%c" + meta.urls.github, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
+    console.group();
+
 });
