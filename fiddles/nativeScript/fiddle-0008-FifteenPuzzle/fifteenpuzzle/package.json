@@ -10,7 +10,8 @@
     }
   },
   "dependencies": {
-    "tns-core-modules": "2.3.0"
+    "tns-core-modules": "2.3.0",
+    "nativescript-theme-core": "0.1.2"
   },
   "devDependencies": {
     "babel-traverse": "6.16.0",

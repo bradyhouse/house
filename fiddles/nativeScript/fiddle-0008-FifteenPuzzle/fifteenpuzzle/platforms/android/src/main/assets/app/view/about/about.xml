@@ -1,6 +1,9 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
   <ActionBar title="Fifteen Puzzle - About"/>
-  <WrapLayout>
-    <Label text="Fifteen puzzle game.  Each level offer 15 ways to win." />
-  </WrapLayout>
+  <StackLayout style="padding: 10%;">
+    <Image src="~/images/fifteen_puzzle.png" stretch="aspectFit" />
+    <WrapLayout>
+      <Label textWrap="true" text='Fifteen Puzzle is game inspired by the classic "Fifteen Puzzle" game (above).  It has 3 levels corresponding to 8 (3x3), 14 (4x4), or 24 (5x5) block grid.  In order to complete (or win) a level, simply put the squares in sequential order.  ' />
+    </WrapLayout>
+  </StackLayout>
 </Page>

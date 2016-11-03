@@ -1273,7 +1273,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Started [fiddles/java/fiddle-0004-CSVToJsonEndpoint](fiddles/java/fiddle-0004-CSVToJsonEndpoint) ~  [Issue 81](https://github.com/bradyhouse/house/issues/81)
 
 * **NativeScript**
-  1.  Started [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
+  1.  Added [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
+  2.  Started [fiddles/nativescript/fiddle-0009-SqliteDb](fiddles/nativescript/fiddle-0009-SqliteDb) ~ [Issue 84](https://github.com/bradyhouse/house/issues/84)        
+
 
 * **Node**
   1.  Added [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~  [Issue 82](https://github.com/bradyhouse/house/issues/82)

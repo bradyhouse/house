@@ -1,0 +1,12 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Fifteen Puzzle"/>
+  <ScrollView>
+    <StackLayout style="padding: 10%;">
+      <Button text="level 1"  tap="onLevelOneClick" />
+      <Button text="level 2"  tap="onLevelTwoClick" />
+      <Button text="level 3" tap="onLevelThreeClick" />
+      <Button text="About" tap="onAboutClick"/>
+      <Button text="High Scores" tap="onHighScoreClick"/>
+  </StackLayout>
+  </ScrollView>
+</Page>

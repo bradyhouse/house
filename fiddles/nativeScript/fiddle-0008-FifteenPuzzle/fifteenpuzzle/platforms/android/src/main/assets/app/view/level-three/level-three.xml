@@ -1,36 +1,41 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <ActionBar title="Level 3"/>
-  <GridLayout rows="auto,auto,auto,auto,auto" columns="*,*,*,*,*">
+  <ActionBar title="Fifteen Puzzle - Level 3"/>
+  <GridLayout rows="auto,auto,auto,auto,auto,auto" columns="*,*,*,*,*">
 
-    <Button row="0" col="0" text="1" tap="onButtonClick" />
-    <Button row="0" col="1" text="2" tap="onButtonClick" />
-    <Button row="0" col="2" text="3" tap="onButtonClick" />
-    <Button row="0" col="3" text="4" tap="onButtonClick" />
-    <Button row="0" col="4" text="5" tap="onButtonClick" />
+    <button row="0" col="0" text="reset" class="reset" tap="resetTap" />
+    <label row="0" col="1" text=" " />
+    <label row="0" col="2" text=" " />
+    <label row="0" col="3"  colSpan="2" text="{{ moves }}" />
 
-    <Button row="1" col="0" text="6" tap="onButtonClick" />
-    <Button row="1" col="1" text="7" tap="onButtonClick" />
-    <Button row="1" col="2" text="8" tap="onButtonClick" />
-    <Button row="1" col="3" text="9" tap="onButtonClick" />
-    <Button row="1" col="4" text="10" tap="onButtonClick" />
+    <Button row="1" col="0" id="b1-0-0" text="{{ b1 }}" class="{{ b1Cls }}" tap="squareTap" />
+    <Button row="1" col="1" id="b2-0-1" text="{{ b2 }}" class="{{ b2Cls }}" tap="squareTap" />
+    <Button row="1" col="2" id="b3-0-2" text="{{ b3 }}" class="{{ b3Cls }}" tap="squareTap" />
+    <Button row="1" col="3" id="b4-0-3" text="{{ b4 }}" class="{{ b4Cls }}" tap="squareTap" />
+    <Button row="1" col="4" id="b5-0-4" text="{{ b5 }}" class="{{ b5Cls }}" tap="squareTap" />
 
-    <Button row="2" col="0" text="11" tap="onButtonClick" />
-    <Button row="2" col="1" text="12" tap="onButtonClick" />
-    <Button row="2" col="2" text="13" tap="onButtonClick" />
-    <Button row="2" col="3" text="14" tap="onButtonClick" />
-    <Button row="2" col="4" text="15" tap="onButtonClick" />
+    <Button row="2" col="0" id="b6-1-0" text="{{ b6 }}" class="{{ b6Cls }}" tap="squareTap" />
+    <Button row="2" col="1" id="b7-1-1" text="{{ b7 }}" class="{{ b7Cls }}" tap="squareTap" />
+    <Button row="2" col="2" id="b8-1-2" text="{{ b8 }}" class="{{ b8Cls }}" tap="squareTap" />
+    <Button row="2" col="3" id="b9-1-3" text="{{ b9 }}" class="{{ b9Cls }}" tap="squareTap" />
+    <Button row="2" col="4" id="b10-1-4" text="{{ b10 }}" class="{{ b10Cls }}" tap="squareTap" />
 
-    <Button row="3" col="0" text="16" tap="onButtonClick" />
-    <Button row="3" col="1" text="17" tap="onButtonClick" />
-    <Button row="3" col="2" text="18" tap="onButtonClick" />
-    <Button row="3" col="3" text="19" tap="onButtonClick" />
-    <Button row="3" col="4" text="20" tap="onButtonClick" />
+    <Button row="3" col="0" id="b11-2-0" text="{{ b11 }}" class="{{ b11Cls }}" tap="squareTap" />
+    <Button row="3" col="1" id="b12-2-1" text="{{ b12 }}" class="{{ b12Cls }}" tap="squareTap" />
+    <Button row="3" col="2" id="b13-2-2" text="{{ b13 }}" class="{{ b13Cls }}" tap="squareTap" />
+    <Button row="3" col="3" id="b14-2-3" text="{{ b14 }}" class="{{ b14Cls }}" tap="squareTap" />
+    <Button row="3" col="4" id="b15-2-4" text="{{ b15 }}" class="{{ b15Cls }}" tap="squareTap" />
 
-    <Button row="4" col="0" text="21" tap="onButtonClick" />
-    <Button row="4" col="1" text="22" tap="onButtonClick" />
-    <Button row="4" col="2" text="23" tap="onButtonClick" />
-    <Button row="4" col="3" text="24" tap="onButtonClick" />
-    <Button row="4" col="4" text="&nbsp;" tap="onButtonClick" />
+    <Button row="4" col="0" id="b16-3-0" text="{{ b16 }}" class="{{ b16Cls }}" tap="squareTap" />
+    <Button row="4" col="1" id="b17-3-1" text="{{ b17 }}" class="{{ b17Cls }}" tap="squareTap" />
+    <Button row="4" col="2" id="b18-3-2" text="{{ b18 }}" class="{{ b18Cls }}" tap="squareTap" />
+    <Button row="4" col="3" id="b19-3-3" text="{{ b19 }}" class="{{ b19Cls }}" tap="squareTap" />
+    <Button row="4" col="4" id="b20-3-4" text="{{ b20 }}" class="{{ b20Cls }}" tap="squareTap" />
+
+    <Button row="5" col="0" id="b21-4-0" text="{{ b21 }}" class="{{ b21Cls }}" tap="squareTap" />
+    <Button row="5" col="1" id="b22-4-1" text="{{ b22 }}" class="{{ b22Cls }}" tap="squareTap" />
+    <Button row="5" col="2" id="b23-4-2" text="{{ b23 }}" class="{{ b23Cls }}" tap="squareTap" />
+    <Button row="5" col="3" id="b24-4-3" text="{{ b24 }}" class="{{ b24Cls }}" tap="squareTap" />
+    <Button row="5" col="4" id="b25-4-4" text="{{ b25 }}" class="{{ b25Cls }}" tap="squareTap" />
 
   </GridLayout>
 </Page>

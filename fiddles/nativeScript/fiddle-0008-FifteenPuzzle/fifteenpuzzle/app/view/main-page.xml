@@ -1,12 +1,13 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
   <ActionBar title="Fifteen Puzzle"/>
   <ScrollView>
-    <StackLayout>
-      <Button text="level 1" style="width: 100%;" tap="onLevelOneClick" />
-      <Button text="level 2" style="width: 100%;" tap="onLevelTwoClick" />
-      <Button text="level 3" style="width: 100%;" tap="onLevelThreeClick" />
-      <Button text="Rules" style="width: 100%;" tap="onAboutClick"/>
+    <StackLayout style="padding: 10%;">
+      <Image src="~/images/fifteen_puzzle.png" stretch="aspectFit" />
 
-    </StackLayout>
+      <Button text="level 1"  tap="onLevelOneClick" />
+      <Button text="level 2"  tap="onLevelTwoClick" />
+      <Button text="level 3" tap="onLevelThreeClick" />
+      <Button text="About" tap="onAboutClick"/>
+  </StackLayout>
   </ScrollView>
 </Page>

@@ -20,7 +20,7 @@ function dumpTreeNodes(bookmarkNodes, query) {
     return list;
 }
 function dumpNode(bookmarkNode, query) {
-    if (bookmarkNode.title) {
+    if (bookmarkNode.title && !bookmarkNode.children) {
         if (query && !bookmarkNode.children) {
             if (String(bookmarkNode.title).indexOf(query) == -1) {
                 return $('<span></span>');
@@ -116,7 +116,7 @@ function dumpNode(bookmarkNode, query) {
                 options.remove();
             }).append(anchor);
     }
-    var li = $(bookmarkNode.title ? '<li>' : '<div>').append(span);
+    var li = $(bookmarkNode.title && !bookmarkNode.children ? '<li>' : '<div>').append(span);
     if (bookmarkNode.children && bookmarkNode.children.length > 0) {
         li.append(dumpTreeNodes(bookmarkNode.children, query));
     }
@@ -124,5 +124,5 @@ function dumpNode(bookmarkNode, query) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    //dumpBookmarks();
+    dumpBookmarks();
 });

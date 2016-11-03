@@ -87,6 +87,6 @@ exports.dialogs = function() {
     }).then(function() {
         return Dialogs.login({userName: "Username", password: "password", title: "My Login Title", message: "My Login Message", okButtonText: "Ok Button!", cancelButtonText: "Cancel Me"});
     }).then(function() {
-        return Dialogs.action({tzitle: "My Action Title", message: "My Action Message", cancelButtonText: "Cancel Me", actions: ["Apple", "Orange", "Grape"]});
+        return Dialogs.action({title: "My Action Title", message: "My Action Message", cancelButtonText: "Cancel Me", actions: ["Apple", "Orange", "Grape"]});
     });
 };

@@ -15,7 +15,7 @@
 export __NODE_VERSION__="5.1.0";
 export __NG2_SEEDER__="https://github.com/NathanWalker/angular2-seed-advanced.git";
 export __ANDROID_EMULATOR_PROFILE__=320480QVGA;
-export __ANDROID_EMULATOR_EXE__="/Users/e13542/bin/android-sdk-macosx/tools/emulator";
+export __ANDROID_EMULATOR_EXE__="/Users/bradyhouse/bin/android-sdk-macosx/tools/emulator";
 
 # -------------------------------------------------
 # TEMPLATE TYPE SWITCH
