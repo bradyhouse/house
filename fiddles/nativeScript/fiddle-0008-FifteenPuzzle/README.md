@@ -21,13 +21,13 @@ Chicago, IL
 
 ### Issue
 
-[Issue ??](https://github.com/bradyhouse/house/issues/??)
+[Issue 83](https://github.com/bradyhouse/house/issues/83)
 
 
 ### Description
 
-NativeScript fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
-it supports create/delete/refactor/list functionality for "nativescript" based POC's aka fiddles. This is only a test.
+Using [JQuery Fiddle #33](https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0033-15Puzzle) as a blue print, build a 15 Puzzle Game.
+
 
 
 ### Use Case
