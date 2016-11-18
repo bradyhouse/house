@@ -5,7 +5,6 @@ var platform_1 = require("platform");
 var proxy_1 = require("ui/core/proxy");
 var types = require("utils/types");
 var trace = require("trace");
-var color = require("color");
 var AffectsLayout = platform_1.isAndroid ? dependency_observable_1.PropertyMetadataSettings.None : dependency_observable_1.PropertyMetadataSettings.AffectsLayout;
 exports.traceCategory = "TabView";
 var TabViewItem = (function (_super) {
@@ -63,16 +62,12 @@ exports.TabViewItem = TabViewItem;
 var TAB_VIEW = "TabView";
 var ITEMS = "items";
 var SELECTED_INDEX = "selectedIndex";
-var SELECTED_COLOR = "selectedColor";
-var TABS_BACKGROUND_COLOR = "tabsBackgroundColor";
 var knownCollections;
 (function (knownCollections) {
     knownCollections.items = "items";
 })(knownCollections = exports.knownCollections || (exports.knownCollections = {}));
 var itemsProperty = new dependency_observable_1.Property(ITEMS, TAB_VIEW, new proxy_1.PropertyMetadata(undefined, AffectsLayout));
 var selectedIndexProperty = new dependency_observable_1.Property(SELECTED_INDEX, TAB_VIEW, new proxy_1.PropertyMetadata(undefined, AffectsLayout));
-var selectedColorProperty = new dependency_observable_1.Property(SELECTED_COLOR, TAB_VIEW, new proxy_1.PropertyMetadata(undefined));
-var tabsBackgroundColorProperty = new dependency_observable_1.Property(TABS_BACKGROUND_COLOR, TAB_VIEW, new proxy_1.PropertyMetadata(undefined));
 selectedIndexProperty.metadata.onSetNativeValue = function (data) {
     var tabView = data.object;
     tabView._onSelectedIndexPropertyChangedSetNativeValue(data);
@@ -170,20 +165,81 @@ var TabView = (function (_super) {
     });
     Object.defineProperty(TabView.prototype, "selectedColor", {
         get: function () {
-            return this._getValue(TabView.selectedColorProperty);
+            if (platform_1.isAndroid) {
+                return this.style.androidSelectedTabHighlightColor;
+            }
+            else {
+                return this.style.selectedTabTextColor;
+            }
         },
         set: function (value) {
-            this._setValue(TabView.selectedColorProperty, value instanceof color.Color ? value : new color.Color(value));
+            if (platform_1.isAndroid) {
+                this.style.androidSelectedTabHighlightColor = value;
+                ;
+            }
+            else {
+                this.style.selectedTabTextColor = value;
+            }
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(TabView.prototype, "tabsBackgroundColor", {
         get: function () {
-            return this._getValue(TabView.tabsBackgroundColorProperty);
+            return this.style.tabBackgroundColor;
         },
         set: function (value) {
-            this._setValue(TabView.tabsBackgroundColorProperty, value instanceof color.Color ? value : new color.Color(value));
+            this.style.tabBackgroundColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TabView.prototype, "tabTextColor", {
+        get: function () {
+            return this.style.tabTextColor;
+        },
+        set: function (value) {
+            this.style.tabTextColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TabView.prototype, "tabBackgroundColor", {
+        get: function () {
+            return this.style.tabBackgroundColor;
+        },
+        set: function (value) {
+            this.style.tabBackgroundColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TabView.prototype, "selectedTabTextColor", {
+        get: function () {
+            return this.style.selectedTabTextColor;
+        },
+        set: function (value) {
+            this.style.selectedTabTextColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TabView.prototype, "androidSelectedTabHighlightColor", {
+        get: function () {
+            return this.style.androidSelectedTabHighlightColor;
+        },
+        set: function (value) {
+            this.style.androidSelectedTabHighlightColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TabView.prototype, "textTransform", {
+        get: function () {
+            return this.style.textTransform;
+        },
+        set: function (value) {
+            this.style.textTransform = value;
         },
         enumerable: true,
         configurable: true
@@ -264,8 +320,6 @@ var TabView = (function (_super) {
     };
     TabView.itemsProperty = itemsProperty;
     TabView.selectedIndexProperty = selectedIndexProperty;
-    TabView.selectedColorProperty = selectedColorProperty;
-    TabView.tabsBackgroundColorProperty = tabsBackgroundColorProperty;
     TabView.selectedIndexChangedEvent = "selectedIndexChanged";
     return TabView;
 }(view_1.View));

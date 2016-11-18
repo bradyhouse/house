@@ -6,6 +6,11 @@ function ensureHttp() {
     }
 }
 var definition = require("image-source");
+function fromAsset(asset) {
+    var image = new definition.ImageSource();
+    return image.fromAsset(asset);
+}
+exports.fromAsset = fromAsset;
 function fromResource(name) {
     var image = new definition.ImageSource();
     return image.loadFromResource(name) ? image : null;

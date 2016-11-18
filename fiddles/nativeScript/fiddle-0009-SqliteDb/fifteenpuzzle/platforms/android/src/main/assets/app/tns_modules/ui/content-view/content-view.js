@@ -66,6 +66,7 @@ var ContentView = (function (_super) {
         }
     };
     ContentView.prototype.onMeasure = function (widthMeasureSpec, heightMeasureSpec) {
+        view.View.adjustChildLayoutParams(this.layoutView, widthMeasureSpec, heightMeasureSpec);
         var result = view.View.measureChild(this, this.layoutView, widthMeasureSpec, heightMeasureSpec);
         var width = utils.layout.getMeasureSpecSize(widthMeasureSpec);
         var widthMode = utils.layout.getMeasureSpecMode(widthMeasureSpec);
@@ -80,6 +81,7 @@ var ContentView = (function (_super) {
     };
     ContentView.prototype.onLayout = function (left, top, right, bottom) {
         view.View.layoutChild(this, this.layoutView, 0, 0, right - left, bottom - top);
+        view.View.restoreChildOriginalParams(this.layoutView);
     };
     return ContentView;
 }(view.CustomLayoutView));

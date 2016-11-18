@@ -46,19 +46,6 @@ function onItemsPropertyChanged(data) {
         }
         var tabHost = view.android;
         var tabIndex;
-        if (view.selectedBackgroundColor) {
-            ensureSegmentedBarColorDrawableClass();
-            for (tabIndex = 0; tabIndex < tabHost.getTabWidget().getTabCount(); tabIndex++) {
-                var vg = tabHost.getTabWidget().getChildTabViewAt(tabIndex);
-                var stateDrawable = new android.graphics.drawable.StateListDrawable();
-                var arr = Array.create("int", 1);
-                arr[0] = R_ATTR_STATE_SELECTED;
-                var colorDrawable = new SegmentedBarColorDrawableClass(view.selectedBackgroundColor.android);
-                stateDrawable.addState(arr, colorDrawable);
-                stateDrawable.setBounds(0, 15, vg.getRight(), vg.getBottom());
-                vg.setBackgroundDrawable(stateDrawable);
-            }
-        }
         for (tabIndex = 0; tabIndex < tabHost.getTabWidget().getTabCount(); tabIndex++) {
             var tabChild = tabHost.getTabWidget().getChildTabViewAt(tabIndex);
             var t = tabChild.getChildAt(1);
@@ -249,9 +236,41 @@ var SegmentedBarStyler = (function () {
             size: textView.getTextSize()
         };
     };
+    SegmentedBarStyler.setSelectedBackgroundColorProperty = function (v, newValue) {
+        ensureSegmentedBarColorDrawableClass();
+        var tabHost = v._nativeView;
+        for (var tabIndex = 0; tabIndex < tabHost.getTabWidget().getTabCount(); tabIndex++) {
+            var vg = tabHost.getTabWidget().getChildTabViewAt(tabIndex);
+            var stateDrawable = new android.graphics.drawable.StateListDrawable();
+            var arr = Array.create("int", 1);
+            arr[0] = R_ATTR_STATE_SELECTED;
+            var colorDrawable = new SegmentedBarColorDrawableClass(newValue);
+            stateDrawable.addState(arr, colorDrawable);
+            stateDrawable.setBounds(0, 15, vg.getRight(), vg.getBottom());
+            vg.setBackground(stateDrawable);
+        }
+    };
+    SegmentedBarStyler.resetSelectedBackgroundColorProperty = function (v, nativeValue) {
+        var tabHost = v._nativeView;
+        ensureSegmentedBarColorDrawableClass();
+        for (var tabIndex = 0; tabIndex < tabHost.getTabWidget().getTabCount(); tabIndex++) {
+            var vg = tabHost.getTabWidget().getChildTabViewAt(tabIndex);
+            vg.setBackground(nativeValue[tabIndex]);
+        }
+    };
+    SegmentedBarStyler.getSelectedBackgroundColorProperty = function (v) {
+        var tabHost = v._nativeView;
+        var result = [];
+        for (var tabIndex = 0; tabIndex < tabHost.getTabWidget().getTabCount(); tabIndex++) {
+            var background = tabHost.getTabWidget().getChildTabViewAt(tabIndex).getBackground();
+            result.push(background);
+        }
+        return result;
+    };
     SegmentedBarStyler.registerHandlers = function () {
         style.registerHandler(style.colorProperty, new style.StylePropertyChangedHandler(SegmentedBarStyler.setColorProperty, SegmentedBarStyler.resetColorProperty, SegmentedBarStyler.getColorProperty), "SegmentedBar");
         style.registerHandler(style.fontInternalProperty, new style.StylePropertyChangedHandler(SegmentedBarStyler.setFontInternalProperty, SegmentedBarStyler.resetFontInternalProperty, SegmentedBarStyler.getFontInternalProperty), "SegmentedBar");
+        style.registerHandler(style.selectedBackgroundColorProperty, new style.StylePropertyChangedHandler(SegmentedBarStyler.setSelectedBackgroundColorProperty, SegmentedBarStyler.resetSelectedBackgroundColorProperty, SegmentedBarStyler.getSelectedBackgroundColorProperty), "SegmentedBar");
     };
     return SegmentedBarStyler;
 }());

@@ -112,6 +112,7 @@ var ad;
         }
         return result;
     }
+    ad.getTransformedString = getTransformedString;
     function getCapitalizedString(str) {
         var words = str.split(" ");
         var newWords = [];

@@ -102,13 +102,25 @@ function generateSequence (min, max, count) {
   return range;
 }
 
-module.exports = {
-  generateGameSequence(min, max, count) {
-    var sequence = generateSequence(min, max, count);
-    while (!isValid(sequence)) {
-      sequence = generateSequence(min, max, count);
-    }
-    return sequence;
+function onGenerateGameSequence(min, max, count) {
+  var sequence = generateSequence(min, max, count);
+  while (!isValid(sequence)) {
+    sequence = generateSequence(min, max, count);
   }
-};
+  return sequence;
+}
+
+function onCallback(args, fn, scope) {
+  if (typeof fn === 'function') {
+    if (scope) {
+      fn.apply(scope, args);
+    } else {
+      fn(args);
+    }
+  }
+}
+
+
+exports.generateGameSequence = onGenerateGameSequence;
+exports.callBack = onCallback;
 

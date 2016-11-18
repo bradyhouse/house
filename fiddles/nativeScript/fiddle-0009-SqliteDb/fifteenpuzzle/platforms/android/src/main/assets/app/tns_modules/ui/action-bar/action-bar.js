@@ -185,10 +185,12 @@ var ActionBar = (function (_super) {
                 var drawableOrId = getDrawableOrResourceId(navButton.icon, this._appResources);
                 this._toolbar.setNavigationIcon(drawableOrId);
             }
+            var navBtn_1 = new WeakRef(navButton);
             this._toolbar.setNavigationOnClickListener(new android.view.View.OnClickListener({
                 onClick: function (v) {
-                    if (navButton) {
-                        navButton._raiseTap();
+                    var owner = navBtn_1.get();
+                    if (owner) {
+                        owner._raiseTap();
                     }
                 }
             }));

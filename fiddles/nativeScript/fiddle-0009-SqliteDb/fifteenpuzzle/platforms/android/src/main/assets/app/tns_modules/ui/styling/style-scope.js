@@ -16,12 +16,6 @@ function ensureTypes() {
         types = require("utils/types");
     }
 }
-var utils;
-function ensureUtils() {
-    if (!utils) {
-        utils = require("utils/utils");
-    }
-}
 var fs;
 function ensureFS() {
     if (!fs) {
@@ -124,19 +118,14 @@ var StyleScope = (function () {
                 var match = importItem && importItem.match(pattern);
                 var url = match && match[2];
                 if (!types.isNullOrUndefined(url)) {
-                    ensureUtils();
-                    if (utils.isFileOrResourcePath(url)) {
-                        ensureFS();
-                        var fileName = types.isString(url) ? url.trim() : "";
-                        if (fileName.indexOf("~/") === 0) {
-                            fileName = fs.path.join(fs.knownFolders.currentApp().path, fileName.replace("~/", ""));
-                        }
-                        if (fs.File.exists(fileName)) {
-                            var file = fs.File.fromPath(fileName);
-                            var text = file.readTextSync();
-                            if (text) {
-                                selectors = selectors.concat(StyleScope.createSelectorsFromCss(text, fileName, keyframes));
-                            }
+                    ensureFS();
+                    var appDirectory = fs.knownFolders.currentApp().path;
+                    var fileName = resolveFileNameFromUrl(url, appDirectory, fs.File.exists);
+                    if (fileName !== null) {
+                        var file = fs.File.fromPath(fileName);
+                        var text = file.readTextSync();
+                        if (text) {
+                            selectors = selectors.concat(StyleScope.createSelectorsFromCss(text, fileName, keyframes));
                         }
                     }
                 }
@@ -170,10 +159,8 @@ var StyleScope = (function () {
     StyleScope.prototype.applySelectors = function (view) {
         this.ensureSelectors();
         var state = this._selectors.query(view);
-        var previousState = view._cssState;
         var nextState = new CssState(view, state);
-        view._cssState = nextState;
-        view._onCssStateChange(previousState, nextState);
+        view._setCssState(nextState);
     };
     StyleScope.prototype.query = function (node) {
         this.ensureSelectors();
@@ -211,6 +198,22 @@ var StyleScope = (function () {
     return StyleScope;
 }());
 exports.StyleScope = StyleScope;
+function resolveFileNameFromUrl(url, appDirectory, fileExists) {
+    var fileName = types.isString(url) ? url.trim() : "";
+    if (fileName.indexOf("~/") === 0) {
+        fileName = fileName.replace("~/", "");
+    }
+    var local = fs.path.join(appDirectory, fileName);
+    if (fileExists(local)) {
+        return local;
+    }
+    var external = fs.path.join(appDirectory, "tns_modules", fileName);
+    if (fileExists(external)) {
+        return external;
+    }
+    return null;
+}
+exports.resolveFileNameFromUrl = resolveFileNameFromUrl;
 function applyInlineSyle(view, style) {
     try {
         var syntaxTree = cssParser.parse("local { " + style + " }", undefined);

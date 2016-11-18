@@ -1,9 +1,8 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <ActionBar title="Fifteen Puzzle - Level 2"/>
+  <ActionBar title="{{ title }}"/>
   <GridLayout rows="auto,auto,auto,auto,auto" columns="*,*,*,*">
     <button row="0" col="0" text="reset" class="reset" tap="resetTap" />
-    <label row="0" col="1" text=" " />
-    <label row="0" col="2" colspan="2" text="{{ moves }}" />
+    <label row="0" col="1" colspan="3" text="{{ moves }}" />
 
     <Button row="1" col="0" id="b1-0-0" text="{{ b1 }}" class="{{ b1Cls }}" tap="squareTap" />
     <Button row="1" col="1" id="b2-0-1" text="{{ b2 }}" class="{{ b2Cls }}" tap="squareTap" />

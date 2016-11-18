@@ -10,9 +10,10 @@
     }
   },
   "dependencies": {
+    "moment": "^2.15.2",
     "nativescript-sqlite": "^1.1.2",
     "nativescript-theme-core": "0.1.2",
-    "tns-core-modules": "2.3.0"
+    "tns-core-modules": "^2.3.0"
   },
   "devDependencies": {
     "babel-traverse": "6.16.0",

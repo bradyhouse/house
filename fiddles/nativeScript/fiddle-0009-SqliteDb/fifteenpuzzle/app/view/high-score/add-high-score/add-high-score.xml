@@ -1,0 +1,26 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <Page.actionBar>
+        <ActionBar title="{{ title }}"/>
+    </Page.actionBar>
+    <ScrollView id="scroller" cssClass="border">
+        <StackLayout orientation="vertical">
+            <StackLayout orientation="horizontal">
+                <TextField text="Moves: " class="labelAddHighScore" isEnabled="false"></TextField>
+                <TextField id="moves" text="{{ moves }}" class="disabled" isEnabled="false"></TextField>
+            </StackLayout>
+            <StackLayout orientation="horizontal">
+                <TextField text="Level: " class="labelAddHighScore" isEnabled="false"></TextField>
+                <TextField id="level" text="{{ level }}" class="disabled" isEnabled="false"></TextField>
+            </StackLayout>
+            <StackLayout orientation="horizontal">
+                <TextField text="Name: " class="labelAddHighScore" isEnabled="false"></TextField>
+                <TextField id="user" hint="<Enter your name>" class="textFieldAddHighScore"/>
+            </StackLayout>
+            <StackLayout orientation="horizontal" class="pushRight">
+                <Button id="cancelButton" text="Cancel" class="buttonAddHighScore" tap="cancelButtonTap"/>
+                <Button id="addButton" text="Add" class="buttonAddHighScore" tap="addButtonTap"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</Page>

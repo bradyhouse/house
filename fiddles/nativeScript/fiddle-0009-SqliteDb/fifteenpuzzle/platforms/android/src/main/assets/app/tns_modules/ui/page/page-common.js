@@ -28,6 +28,14 @@ function onActionBarHiddenPropertyChanged(data) {
     }
 }
 actionBarHiddenProperty.metadata.onSetNativeValue = onActionBarHiddenPropertyChanged;
+var enableSwipeBackNavigationProperty = new dependency_observable_1.Property("isoSwipeBackNavigationEnabled", "Page", new proxy.PropertyMetadata(true));
+function enableSwipeBackNavigationPropertyChanged(data) {
+    var page = data.object;
+    if (page.isLoaded) {
+        page._updateEnableSwipeBackNavigation(data.newValue);
+    }
+}
+enableSwipeBackNavigationProperty.metadata.onSetNativeValue = enableSwipeBackNavigationPropertyChanged;
 var Page = (function (_super) {
     __extends(Page, _super);
     function Page() {
@@ -64,7 +72,19 @@ var Page = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Page.prototype, "enableSwipeBackNavigation", {
+        get: function () {
+            return this._getValue(Page.iosSwipeBackNavigationEnabledProperty);
+        },
+        set: function (value) {
+            this._setValue(Page.iosSwipeBackNavigationEnabledProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
     Page.prototype._updateActionBar = function (hidden) {
+    };
+    Page.prototype._updateEnableSwipeBackNavigation = function (hidden) {
     };
     Object.defineProperty(Page.prototype, "navigationContext", {
         get: function () {
@@ -296,6 +316,7 @@ var Page = (function (_super) {
     };
     Page.backgroundSpanUnderStatusBarProperty = backgroundSpanUnderStatusBarProperty;
     Page.actionBarHiddenProperty = actionBarHiddenProperty;
+    Page.iosSwipeBackNavigationEnabledProperty = enableSwipeBackNavigationProperty;
     Page.navigatingToEvent = "navigatingTo";
     Page.navigatedToEvent = "navigatedTo";
     Page.navigatingFromEvent = "navigatingFrom";

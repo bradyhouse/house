@@ -1,80 +1,95 @@
 {
   "_args": [
     [
-      "tns-core-modules",
-      "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0008-FifteenPuzzle/fifteenpuzzle"
+      {
+        "raw": "tns-core-modules@^2.3.0",
+        "scope": null,
+        "escapedName": "tns-core-modules",
+        "name": "tns-core-modules",
+        "rawSpec": "^2.3.0",
+        "spec": ">=2.3.0 <3.0.0",
+        "type": "range"
+      },
+      "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0009-SqliteDb/fifteenpuzzle"
     ]
   ],
-  "_from": "tns-core-modules@*",
-  "_id": "tns-core-modules@2.3.0",
+  "_from": "tns-core-modules@>=2.3.0 <3.0.0",
+  "_id": "tns-core-modules@2.4.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/tns-core-modules",
-  "_nodeVersion": "6.4.0",
+  "_nodeVersion": "6.7.0",
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/tns-core-modules-2.3.0.tgz_1473938931074_0.6924647802952677"
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/tns-core-modules-2.4.0.tgz_1479302612579_0.1057890506926924"
   },
   "_npmUser": {
-    "email": "hristo@deshev.com",
-    "name": "hdeshev"
+    "name": "tns-bot",
+    "email": "nativescript@telerik.com"
   },
   "_npmVersion": "3.10.3",
   "_phantomChildren": {},
   "_requested": {
-    "name": "tns-core-modules",
-    "raw": "tns-core-modules",
-    "rawSpec": "",
+    "raw": "tns-core-modules@^2.3.0",
     "scope": null,
-    "spec": "*",
+    "escapedName": "tns-core-modules",
+    "name": "tns-core-modules",
+    "rawSpec": "^2.3.0",
+    "spec": ">=2.3.0 <3.0.0",
     "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.3.0.tgz",
-  "_shasum": "8484a6a639cdcf845326e874f438b081a1c35900",
+  "_resolved": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.4.0.tgz",
+  "_shasum": "2fbcb3162ab0a1bb6396f3ebad07ff859d4a19f5",
   "_shrinkwrap": null,
-  "_spec": "tns-core-modules",
-  "_where": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0008-FifteenPuzzle/fifteenpuzzle",
+  "_spec": "tns-core-modules@^2.3.0",
+  "_where": "/Users/e13542/github/house/fiddles/nativeScript/fiddle-0009-SqliteDb/fifteenpuzzle",
   "dependencies": {
-    "tns-core-modules-widgets": "2.3.0"
+    "tns-core-modules-widgets": "2.4.0"
   },
   "description": "Telerik NativeScript Core Modules",
-  "devDependencies": {},
+  "devDependencies": {
+    "tns-platform-declarations": "*"
+  },
   "directories": {},
   "dist": {
-    "shasum": "8484a6a639cdcf845326e874f438b081a1c35900",
-    "tarball": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.3.0.tgz"
+    "shasum": "2fbcb3162ab0a1bb6396f3ebad07ff859d4a19f5",
+    "tarball": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-2.4.0.tgz"
   },
   "files": [
+    "**/*.d.ts",
+    "**/*.js",
     "!android17.d.ts",
-    "!apps/",
+    "!ios.d.ts",
     "!bin/",
+    "!apps/",
     "!build/",
+    "!node-tests/",
     "!declarations.android.d.ts",
     "!declarations.ios.d.ts",
     "!gruntfile.js",
-    "!ios.d.ts",
-    "!node-tests/",
-    "!org.nativescript.widgets.d.ts",
-    "**/*.d.ts",
-    "**/*.js"
+    "!org.nativescript.widgets.d.ts"
   ],
   "homepage": "https://www.nativescript.org",
   "license": "Apache-2.0",
   "maintainers": [
     {
-      "name": "nsndeck",
-      "email": "nedyalko.nikolov@telerik.com"
-    },
-    {
       "name": "enchev",
       "email": "vladimir.enchev@gmail.com"
     },
     {
+      "name": "erjangavalji",
+      "email": "erjan.gavalji@gmail.com"
+    },
+    {
       "name": "fatme",
       "email": "hfatme@gmail.com"
+    },
+    {
+      "name": "hamorphis",
+      "email": "rossen.hristov@progress.com"
     },
     {
       "name": "hdeshev",
@@ -89,8 +104,8 @@
       "email": "stefan.dobrev@gmail.com"
     },
     {
-      "name": "erjangavalji",
-      "email": "erjan.gavalji@gmail.com"
+      "name": "nsndeck",
+      "email": "nedyalko.nikolov@telerik.com"
     },
     {
       "name": "panayot.cankov",
@@ -99,6 +114,10 @@
     {
       "name": "sdobrev",
       "email": "stefan.dobrev@gmail.com"
+    },
+    {
+      "name": "tns-bot",
+      "email": "nativescript@telerik.com"
     },
     {
       "name": "tzraikov",
@@ -116,17 +135,17 @@
   "name": "tns-core-modules",
   "nativescript": {
     "platforms": {
-      "android": "2.1.1",
-      "ios": "2.1.1"
+      "ios": "2.3.0",
+      "android": "2.3.0"
     }
   },
   "optionalDependencies": {},
   "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NativeScript/NativeScript/commit/dbeb0360c8567a803bb92d104f2683fed61aa541"
+    "url": "https://github.com/NativeScript/NativeScript/commit/bc3910f9c8212bc2685f1f43ec183a3c848fe39f"
   },
   "scripts": {},
   "typings": "tns-core-modules.d.ts",
-  "version": "2.3.0"
+  "version": "2.4.0"
 }

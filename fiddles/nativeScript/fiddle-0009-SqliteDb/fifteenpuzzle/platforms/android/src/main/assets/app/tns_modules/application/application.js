@@ -6,34 +6,26 @@ var typedExports = exports;
 function initLifecycleCallbacks() {
     var lifecycleCallbacks = new android.app.Application.ActivityLifecycleCallbacks({
         onActivityCreated: function (activity, bundle) {
-            if (!androidApp.startActivity) {
-                var activityInfo = activity.getPackageManager().getActivityInfo(activity.getComponentName(), android.content.pm.PackageManager.GET_META_DATA);
-                if (activityInfo.metaData) {
-                    var setThemeOnLaunch = activityInfo.metaData.getInt("SET_THEME_ON_LAUNCH", -1);
-                    if (setThemeOnLaunch !== -1) {
-                        activity.setTheme(setThemeOnLaunch);
-                    }
-                }
-                androidApp.startActivity = activity;
-                androidApp.notify({ eventName: "activityCreated", object: androidApp, activity: activity, bundle: bundle });
-                if (androidApp.onActivityCreated) {
-                    androidApp.onActivityCreated(activity, bundle);
+            var activityInfo = activity.getPackageManager().getActivityInfo(activity.getComponentName(), android.content.pm.PackageManager.GET_META_DATA);
+            if (activityInfo.metaData) {
+                var setThemeOnLaunch = activityInfo.metaData.getInt("SET_THEME_ON_LAUNCH", -1);
+                if (setThemeOnLaunch !== -1) {
+                    activity.setTheme(setThemeOnLaunch);
                 }
             }
-            androidApp.currentContext = activity;
+            if (!androidApp.startActivity) {
+                androidApp.startActivity = activity;
+            }
+            androidApp.notify({ eventName: "activityCreated", object: androidApp, activity: activity, bundle: bundle });
+            if (androidApp.onActivityCreated) {
+                androidApp.onActivityCreated(activity, bundle);
+            }
         },
         onActivityDestroyed: function (activity) {
             if (activity === androidApp.foregroundActivity) {
                 androidApp.foregroundActivity = undefined;
             }
-            if (activity === androidApp.currentContext) {
-                androidApp.currentContext = undefined;
-            }
             if (activity === androidApp.startActivity) {
-                if (typedExports.onExit) {
-                    typedExports.onExit();
-                }
-                typedExports.notify({ eventName: typedExports.exitEvent, object: androidApp, android: activity });
                 androidApp.startActivity = undefined;
             }
             androidApp.notify({ eventName: "activityDestroyed", object: androidApp, activity: activity });
@@ -43,8 +35,8 @@ function initLifecycleCallbacks() {
             gc();
         },
         onActivityPaused: function (activity) {
-            androidApp.paused = true;
-            if (activity === androidApp.foregroundActivity) {
+            if (activity.isNativeScriptActivity) {
+                androidApp.paused = true;
                 if (typedExports.onSuspend) {
                     typedExports.onSuspend();
                 }
@@ -56,12 +48,14 @@ function initLifecycleCallbacks() {
             }
         },
         onActivityResumed: function (activity) {
-            androidApp.paused = false;
             androidApp.foregroundActivity = activity;
-            if (typedExports.onResume) {
-                typedExports.onResume();
+            if (activity.isNativeScriptActivity) {
+                if (typedExports.onResume) {
+                    typedExports.onResume();
+                }
+                typedExports.notify({ eventName: typedExports.resumeEvent, object: androidApp, android: activity });
+                androidApp.paused = false;
             }
-            typedExports.notify({ eventName: typedExports.resumeEvent, object: androidApp, android: activity });
             androidApp.notify({ eventName: "activityResumed", object: androidApp, activity: activity });
             if (androidApp.onActivityResumed) {
                 androidApp.onActivityResumed(activity);
@@ -74,7 +68,6 @@ function initLifecycleCallbacks() {
             }
         },
         onActivityStarted: function (activity) {
-            androidApp.foregroundActivity = activity;
             androidApp.notify({ eventName: "activityStarted", object: androidApp, activity: activity });
             if (androidApp.onActivityStarted) {
                 androidApp.onActivityStarted(activity);
@@ -137,6 +130,13 @@ var AndroidApplication = (function (_super) {
         this._registeredReceivers = {};
         this._pendingReceiverRegistrations = new Array();
     }
+    Object.defineProperty(AndroidApplication.prototype, "currentContext", {
+        get: function () {
+            return this.foregroundActivity;
+        },
+        enumerable: true,
+        configurable: true
+    });
     AndroidApplication.prototype.init = function (nativeApp) {
         if (this.nativeApp) {
             throw new Error("application.android already initialized.");

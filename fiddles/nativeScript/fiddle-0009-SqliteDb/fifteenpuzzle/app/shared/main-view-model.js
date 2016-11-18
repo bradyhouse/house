@@ -1,15 +1,21 @@
-var Observable = require("data/observable").Observable,
+var dbConnect = require("./db.service").open,
+  dbSelectMin = require("./db.service").selectMin,
+  dbUpdateLevel = require("./db.service").updateLevel,
+  Observable = require("data/observable").Observable,
   util = require('./util'),
   startingSequence = [],
   gameboard = [],
   viewModel = null,
-  emptyValue = '  ';
+  emptyValue = '  ',
+  startTime = null,
+  endTime = null,
+  elapsedTime = null;
 
 function printSquare(i, square) {
   console.log('Square' + (i + 1) + ' = { id: ' + square.id + ', row: ' + square.row + ', col: ' + square.col + ', value: ' + square.value + ', ' + square.expectedValue + ', class: ' + square.class + ' }');
 }
 
-function createViewModel(cols, rows) {
+function createViewModel(cols, rows, suffix) {
   var range = cols * rows,
     lastRow = rows - 1,
     lastCol = cols - 1,
@@ -20,11 +26,14 @@ function createViewModel(cols, rows) {
     buttonCls = null,
     i = 0,
     expectedValue = 0,
-    value = 0;
+    value = 0,
+    square = {};
+
   gameboard = [];
   viewModel = new Observable();
   startingSequence = util.generateGameSequence(1, squareCount, squareCount),
   square = {};
+
 
   for (; row < rows; row++) {
     for (; col < cols; col++) {
@@ -71,7 +80,20 @@ function createViewModel(cols, rows) {
   gameboard.push(square);
   viewModel.set(buttonId, '  ');
   viewModel.set('moves', 'Moves:   ' + 0);
+
   return viewModel;
+}
+
+function onCompleteLevel(level, fn, scope) {
+  console.log("onCompleteLevel");
+  if (level < 3) {
+    var newLevel = level+1;
+    dbConnect(function(db){
+      dbUpdateLevel(db, newLevel, fn, scope);
+    }, scope);
+  } else {
+    util.callBack([level], fn, scope);
+  }
 }
 
 function updateColors(pageContext) {
@@ -151,8 +173,57 @@ function isGameSolved() {
   return moves && moves.length === gameboard.length ? true : false;
 }
 
+function onIsHighScore(moves, level) {
+  console.log("onIsHighScore");
+  var scope = {
+    moves: moves,
+    level: level
+  },
+  rc = true;
+  dbConnect(function(db) {
+    dbSelectMin(db, scope.level, function(data) {
+      var minHighScore = data && data.hasOwnProperty("moves") ? data.moves : 0;
+      console.log("minHighScore = " + minHighScore);
+      if (minHighScore > 0) {
+        if (minHighScore < scope.moves) {
+          rc=true;
+        } else {
+          rc=false;
+        }
+      } else {
+        rc=true;
+      }
+    }, scope);
+  }, scope);
+  console.log("rc = " + rc);
+
+  return rc;
+}
+
+function startClock() {
+  var date = new Date();
+  startTime = date.getTime();
+}
+
+function stopClock() {
+  var date = new Date();
+  endTime = date.getTime();
+  if (!startTime) {
+    startClock();
+  }
+  elapsedTime = endTime - startTime;
+}
+
+function getElapsedTime() {
+  if(!endTime) {
+    stopClock();
+  }
+  return elapsedTime;
+}
+
 
 exports.createViewModel = createViewModel;
+exports.completeLevel = onCompleteLevel;
 exports.emptySquare = emptySquare;
 exports.isValidMove = isValidMove;
 exports.isEmpty = isEmpty;
@@ -160,3 +231,7 @@ exports.updateViewModel = updateViewModel;
 exports.updateGameBoard = updateGameBoard;
 exports.updateColors = updateColors;
 exports.isGameSolved = isGameSolved;
+exports.startClock = startClock;
+exports.stopClock = stopClock;
+exports.getElapsedTime = getElapsedTime;
+exports.isHighScore = onIsHighScore;

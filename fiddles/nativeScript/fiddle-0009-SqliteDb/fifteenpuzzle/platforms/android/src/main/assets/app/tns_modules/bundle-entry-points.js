@@ -1,4 +1,5 @@
 if (global.TNS_WEBPACK) {
+    require("globals");
     global.registerModule("text/formatted-string", function () { return require("text/formatted-string"); });
     global.registerModule("text/span", function () { return require("text/span"); });
     global.registerModule("ui/action-bar", function () { return require("ui/action-bar"); });
@@ -26,8 +27,10 @@ if (global.TNS_WEBPACK) {
     global.registerModule("ui/slider", function () { return require("ui/slider"); });
     global.registerModule("ui/switch", function () { return require("ui/switch"); });
     global.registerModule("ui/tab-view", function () { return require("ui/tab-view"); });
+    global.registerModule("ui/web-view", function () { return require("ui/web-view"); });
     global.registerModule("ui/text-field", function () { return require("ui/text-field"); });
     global.registerModule("ui/text-view", function () { return require("ui/text-view"); });
     global.registerModule("ui/time-picker", function () { return require("ui/time-picker"); });
+    global.registerModule("ui/list-view", function () { return require("ui/list-view"); });
 }
 //# sourceMappingURL=bundle-entry-points.js.map

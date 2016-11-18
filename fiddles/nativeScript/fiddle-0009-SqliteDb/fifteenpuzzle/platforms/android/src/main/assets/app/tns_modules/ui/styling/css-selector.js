@@ -173,16 +173,6 @@ var AttributeSelector = (function (_super) {
             return;
         }
     }
-    Object.defineProperty(AttributeSelector.prototype, "specificity", {
-        get: function () { return 256; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(AttributeSelector.prototype, "rarity", {
-        get: function () { return 256; },
-        enumerable: true,
-        configurable: true
-    });
     AttributeSelector.prototype.toString = function () { return "[" + this.attribute + wrap(this.test) + ((this.test && this.value) || '') + "]" + wrap(this.combinator); };
     AttributeSelector.prototype.match = function (node) { return false; };
     AttributeSelector.prototype.mayMatch = function (node) { return true; };
@@ -309,15 +299,15 @@ var Selector = (function (_super) {
             return mayMatch;
         }
         for (var i = 0; i < this.groups.length; i++) {
-            var group = this.groups[i];
-            if (!group.dynamic) {
+            var group_1 = this.groups[i];
+            if (!group_1.dynamic) {
                 continue;
             }
             var bound = bounds[i];
             var node_1 = bound.left;
             do {
-                if (group.mayMatch(node_1)) {
-                    group.trackChanges(node_1, map);
+                if (group_1.mayMatch(node_1)) {
+                    group_1.trackChanges(node_1, map);
                 }
             } while ((node_1 !== bound.right) && (node_1 = node_1.parent));
         }

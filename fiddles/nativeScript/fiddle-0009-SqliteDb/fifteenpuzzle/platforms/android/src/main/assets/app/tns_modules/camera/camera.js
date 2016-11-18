@@ -61,19 +61,6 @@ exports.takePicture = function (options) {
                         else {
                             scaledSizeImage = bitmap;
                         }
-                        var ei = new android.media.ExifInterface(picturePath_1);
-                        var orientation = ei.getAttributeInt(android.media.ExifInterface.TAG_ORIENTATION, android.media.ExifInterface.ORIENTATION_NORMAL);
-                        switch (orientation) {
-                            case android.media.ExifInterface.ORIENTATION_ROTATE_90:
-                                scaledSizeImage = rotateBitmap(scaledSizeImage, 90);
-                                break;
-                            case android.media.ExifInterface.ORIENTATION_ROTATE_180:
-                                scaledSizeImage = rotateBitmap(scaledSizeImage, 180);
-                                break;
-                            case android.media.ExifInterface.ORIENTATION_ROTATE_270:
-                                scaledSizeImage = rotateBitmap(scaledSizeImage, 270);
-                                break;
-                        }
                         resolve(imageSource.fromNativeSource(scaledSizeImage));
                     }
                 };
@@ -116,10 +103,5 @@ var createDateTimeStamp = function () {
         date.getMinutes().toString() +
         date.getSeconds().toString();
     return result;
-};
-var rotateBitmap = function (source, angle) {
-    var matrix = new android.graphics.Matrix();
-    matrix.postRotate(angle);
-    return android.graphics.Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
 };
 //# sourceMappingURL=camera.js.map

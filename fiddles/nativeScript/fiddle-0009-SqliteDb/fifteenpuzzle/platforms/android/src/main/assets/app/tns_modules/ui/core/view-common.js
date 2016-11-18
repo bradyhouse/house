@@ -137,6 +137,12 @@ var View = (function (_super) {
         this._gestureObservers = {};
         this.cssClasses = new Set();
         this.cssPseudoClasses = new Set();
+        this.pseudoClassAliases = {
+            'highlighted': [
+                'active',
+                'pressed'
+            ]
+        };
         this._style = new style.Style(this);
         this._domId = viewIdCounter++;
         this._goToVisualState("normal");
@@ -233,12 +239,52 @@ var View = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(View.prototype, "borderRadius", {
+    Object.defineProperty(View.prototype, "borderColor", {
         get: function () {
-            return this.style.borderRadius;
+            return this.style.borderColor;
         },
         set: function (value) {
-            this.style.borderRadius = value;
+            this.style.borderColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderTopColor", {
+        get: function () {
+            return this.style.borderTopColor;
+        },
+        set: function (value) {
+            this.style.borderTopColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderRightColor", {
+        get: function () {
+            return this.style.borderRightColor;
+        },
+        set: function (value) {
+            this.style.borderRightColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderBottomColor", {
+        get: function () {
+            return this.style.borderBottomColor;
+        },
+        set: function (value) {
+            this.style.borderBottomColor = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderLeftColor", {
+        get: function () {
+            return this.style.borderLeftColor;
+        },
+        set: function (value) {
+            this.style.borderLeftColor = value;
         },
         enumerable: true,
         configurable: true
@@ -253,12 +299,92 @@ var View = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(View.prototype, "borderColor", {
+    Object.defineProperty(View.prototype, "borderTopWidth", {
         get: function () {
-            return this.style.borderColor;
+            return this.style.borderTopWidth;
         },
         set: function (value) {
-            this.style.borderColor = value;
+            this.style.borderTopWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderRightWidth", {
+        get: function () {
+            return this.style.borderRightWidth;
+        },
+        set: function (value) {
+            this.style.borderRightWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderBottomWidth", {
+        get: function () {
+            return this.style.borderBottomWidth;
+        },
+        set: function (value) {
+            this.style.borderBottomWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderLeftWidth", {
+        get: function () {
+            return this.style.borderLeftWidth;
+        },
+        set: function (value) {
+            this.style.borderLeftWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderRadius", {
+        get: function () {
+            return this.style.borderRadius;
+        },
+        set: function (value) {
+            this.style.borderRadius = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderTopLeftRadius", {
+        get: function () {
+            return this.style.borderTopLeftRadius;
+        },
+        set: function (value) {
+            this.style.borderTopLeftRadius = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderTopRightRadius", {
+        get: function () {
+            return this.style.borderTopRightRadius;
+        },
+        set: function (value) {
+            this.style.borderTopRightRadius = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderBottomRightRadius", {
+        get: function () {
+            return this.style.borderBottomRightRadius;
+        },
+        set: function (value) {
+            this.style.borderBottomRightRadius = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(View.prototype, "borderBottomLeftRadius", {
+        get: function () {
+            return this.style.borderBottomLeftRadius;
+        },
+        set: function (value) {
+            this.style.borderBottomLeftRadius = value;
         },
         enumerable: true,
         configurable: true
@@ -499,6 +625,12 @@ var View = (function (_super) {
         },
         set: function (value) {
             this._setValue(View.isEnabledProperty, value);
+            if (value === false) {
+                this._goToVisualState('disabled');
+            }
+            else {
+                this._goToVisualState('normal');
+            }
         },
         enumerable: true,
         configurable: true
@@ -620,8 +752,7 @@ var View = (function (_super) {
         }
     };
     View.prototype.onUnloaded = function () {
-        this._onCssStateChange(this._cssState, null);
-        this._cssState = null;
+        this._setCssState(null);
         this._unloadEachChildView();
         this._isLoaded = false;
         this._emit("unloaded");
@@ -691,6 +822,11 @@ var View = (function (_super) {
     View.prototype.getMeasuredHeight = function () {
         return this._measuredHeight & utils.layout.MEASURED_SIZE_MASK;
     };
+    View.prototype.getMeasuredState = function () {
+        return (this._measuredWidth & utils.layout.MEASURED_STATE_MASK)
+            | ((this._measuredHeight >> utils.layout.MEASURED_HEIGHT_STATE_SHIFT)
+                & (utils.layout.MEASURED_STATE_MASK >> utils.layout.MEASURED_HEIGHT_STATE_SHIFT));
+    };
     View.prototype.setMeasuredDimension = function (measuredWidth, measuredHeight) {
         this._measuredWidth = measuredWidth;
         this._measuredHeight = measuredHeight;
@@ -707,16 +843,32 @@ var View = (function (_super) {
     };
     View.prototype.layoutNativeView = function (left, top, right, bottom) {
     };
+    View.prototype.getAllAliasedStates = function (name) {
+        var allStates = [];
+        allStates.push(name);
+        if (name in this.pseudoClassAliases) {
+            for (var i = 0; i < this.pseudoClassAliases[name].length; i++) {
+                allStates.push(this.pseudoClassAliases[name][i]);
+            }
+        }
+        return allStates;
+    };
     View.prototype.addPseudoClass = function (name) {
-        if (!this.cssPseudoClasses.has(name)) {
-            this.cssPseudoClasses.add(name);
-            this.notifyPseudoClassChanged(name);
+        var allStates = this.getAllAliasedStates(name);
+        for (var i = 0; i < allStates.length; i++) {
+            if (!this.cssPseudoClasses.has(allStates[i])) {
+                this.cssPseudoClasses.add(allStates[i]);
+                this.notifyPseudoClassChanged(allStates[i]);
+            }
         }
     };
     View.prototype.deletePseudoClass = function (name) {
-        if (this.cssPseudoClasses.has(name)) {
-            this.cssPseudoClasses.delete(name);
-            this.notifyPseudoClassChanged(name);
+        var allStates = this.getAllAliasedStates(name);
+        for (var i = 0; i < allStates.length; i++) {
+            if (this.cssPseudoClasses.has(allStates[i])) {
+                this.cssPseudoClasses.delete(allStates[i]);
+                this.notifyPseudoClassChanged(allStates[i]);
+            }
         }
     };
     View.resolveSizeAndState = function (size, specSize, specMode, childMeasuredState) {
@@ -735,6 +887,9 @@ var View = (function (_super) {
                 break;
         }
         return Math.round(result + 0.499) | (childMeasuredState & utils.layout.MEASURED_STATE_MASK);
+    };
+    View.combineMeasuredStates = function (curState, newState) {
+        return curState | newState;
     };
     View.layoutChild = function (parent, child, left, top, right, bottom) {
         if (!child || !child._isVisible) {
@@ -871,6 +1026,62 @@ var View = (function (_super) {
         this._oldWidthMeasureSpec = widthMeasureSpec;
         this._oldHeightMeasureSpec = heightMeasureSpec;
         return changed;
+    };
+    View.adjustChildLayoutParams = function (view, widthMeasureSpec, heightMeasureSpec) {
+        if (!view) {
+            return;
+        }
+        var availableWidth = utils.layout.getMeasureSpecSize(widthMeasureSpec);
+        var widthSpec = utils.layout.getMeasureSpecMode(widthMeasureSpec);
+        var availableHeight = utils.layout.getMeasureSpecSize(heightMeasureSpec);
+        var heightSpec = utils.layout.getMeasureSpecMode(heightMeasureSpec);
+        var lp = view.style._getValue(style.nativeLayoutParamsProperty);
+        if (widthSpec !== utils.layout.UNSPECIFIED) {
+            if (lp.widthPercent > 0) {
+                lp.width = Math.round(availableWidth * lp.widthPercent);
+            }
+            if (lp.leftMarginPercent > 0) {
+                lp.leftMargin = Math.round(availableWidth * lp.leftMarginPercent);
+            }
+            if (lp.rightMarginPercent > 0) {
+                lp.rightMargin = Math.round(availableWidth * lp.rightMarginPercent);
+            }
+        }
+        if (heightSpec !== utils.layout.UNSPECIFIED) {
+            if (lp.heightPercent > 0) {
+                lp.height = Math.round(availableHeight * lp.heightPercent);
+            }
+            if (lp.topMarginPercent > 0) {
+                lp.topMargin = Math.round(availableHeight * lp.topMarginPercent);
+            }
+            if (lp.bottomMarginPercent > 0) {
+                lp.bottomMargin = Math.round(availableHeight * lp.bottomMarginPercent);
+            }
+        }
+    };
+    View.restoreChildOriginalParams = function (view) {
+        if (!view) {
+            return;
+        }
+        var lp = view.style._getValue(style.nativeLayoutParamsProperty);
+        if (lp.widthPercent > 0) {
+            lp.width = -1;
+        }
+        if (lp.heightPercent > 0) {
+            lp.height = -1;
+        }
+        if (lp.leftMarginPercent > 0) {
+            lp.leftMargin = 0;
+        }
+        if (lp.topMarginPercent > 0) {
+            lp.topMargin = 0;
+        }
+        if (lp.rightMarginPercent > 0) {
+            lp.rightMargin = 0;
+        }
+        if (lp.bottomMarginPercent > 0) {
+            lp.bottomMargin = 0;
+        }
     };
     View.prototype._getCurrentLayoutBounds = function () {
         return { left: this._oldLeft, top: this._oldTop, right: this._oldRight, bottom: this._oldBottom };
@@ -1139,8 +1350,10 @@ var View = (function (_super) {
     View.prototype.notifyPseudoClassChanged = function (pseudoClass) {
         this.notify({ eventName: ":" + pseudoClass, object: this });
     };
-    View.prototype._onCssStateChange = function (previous, next) {
+    View.prototype._setCssState = function (next) {
         var _this = this;
+        var previous = this._cssState;
+        this._cssState = next;
         if (!this._invalidateCssHandler) {
             this._invalidateCssHandler = function () {
                 if (_this._invalidateCssHandlerSuspended) {

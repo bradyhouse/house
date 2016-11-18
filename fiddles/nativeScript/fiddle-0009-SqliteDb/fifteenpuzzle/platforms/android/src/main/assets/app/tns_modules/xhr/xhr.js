@@ -14,6 +14,11 @@ var XMLHttpRequest = (function () {
         this.LOADING = 3;
         this.DONE = 4;
         this._responseType = "";
+        this.textTypes = [
+            'text/plain',
+            'application/xml',
+            'text/html'
+        ];
         this._listeners = new Map();
         this._readyState = this.UNSENT;
     }
@@ -69,7 +74,7 @@ var XMLHttpRequest = (function () {
     };
     XMLHttpRequest.prototype._loadResponse = function (r) {
         this._status = r.statusCode;
-        this._response = r.content.raw;
+        this._response = r.content.raw + "";
         this._headers = r.headers;
         this._setReadyState(this.HEADERS_RECEIVED);
         this._setReadyState(this.LOADING);
@@ -78,6 +83,9 @@ var XMLHttpRequest = (function () {
         this._addToStringOnResponse();
         if (this.responseType === XMLHttpRequestResponseType.json) {
             this._response = JSON.parse(this.responseText);
+        }
+        else if (this.responseType === XMLHttpRequestResponseType.text) {
+            this._response = this.responseText;
         }
         this._setReadyState(this.DONE);
     };
@@ -92,6 +100,16 @@ var XMLHttpRequest = (function () {
             });
         }
     };
+    XMLHttpRequest.prototype.isTextContentType = function (contentType) {
+        var result = false;
+        for (var i = 0; i < this.textTypes.length; i++) {
+            if (contentType.toLowerCase().indexOf(this.textTypes[i]) >= 0) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    };
     XMLHttpRequest.prototype._setResponseType = function () {
         var header = this.getResponseHeader('Content-Type');
         var contentType = header && header.toLowerCase();
@@ -99,7 +117,7 @@ var XMLHttpRequest = (function () {
             if (contentType.indexOf('application/json') >= 0 || contentType.indexOf('+json') >= 0) {
                 this.responseType = XMLHttpRequestResponseType.json;
             }
-            else if (contentType.indexOf('text/plain') >= 0) {
+            else if (this.isTextContentType(contentType)) {
                 this.responseType = XMLHttpRequestResponseType.text;
             }
         }

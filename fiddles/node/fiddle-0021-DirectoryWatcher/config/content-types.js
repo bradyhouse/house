@@ -24,5 +24,7 @@ module.exports = {
   'webloc'  : 'application/xml',
   'docx'    : 'application/zip',
   'jpg'     : 'image/jpeg',
-  'bmml'    : 'text/plain'
+  'bmml'    : 'text/plain',
+  'log'     : 'text/plain',
+  'sh'      : 'text/plain'	
 }

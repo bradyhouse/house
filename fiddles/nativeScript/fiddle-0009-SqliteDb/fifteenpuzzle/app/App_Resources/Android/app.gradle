@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.fifteenpuzzle"  
+    applicationId = "org.nativescript.puzzle"
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  

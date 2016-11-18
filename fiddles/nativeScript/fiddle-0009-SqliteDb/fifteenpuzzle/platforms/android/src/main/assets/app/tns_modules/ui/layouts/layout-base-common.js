@@ -1,8 +1,6 @@
 var types = require("utils/types");
 var view = require("ui/core/view");
 var dependencyObservable = require("ui/core/dependency-observable");
-var utils = require("utils/utils");
-var style = require("ui/styling/style");
 var dependency_observable_1 = require("ui/core/dependency-observable");
 var proxy_1 = require("ui/core/proxy");
 var clipToBoundsProperty = new dependency_observable_1.Property("clipToBounds", "LayoutBase", new proxy_1.PropertyMetadata(true, dependencyObservable.PropertyMetadataSettings.None));
@@ -165,59 +163,15 @@ var LayoutBase = (function (_super) {
         }
     };
     LayoutBase.adjustChildrenLayoutParams = function (layoutBase, widthMeasureSpec, heightMeasureSpec) {
-        var availableWidth = utils.layout.getMeasureSpecSize(widthMeasureSpec);
-        var widthSpec = utils.layout.getMeasureSpecMode(widthMeasureSpec);
-        var availableHeight = utils.layout.getMeasureSpecSize(heightMeasureSpec);
-        var heightSpec = utils.layout.getMeasureSpecMode(heightMeasureSpec);
         for (var i = 0, count = layoutBase.getChildrenCount(); i < count; i++) {
             var child = layoutBase.getChildAt(i);
-            var lp = child.style._getValue(style.nativeLayoutParamsProperty);
-            if (widthSpec !== utils.layout.UNSPECIFIED) {
-                if (lp.widthPercent > 0) {
-                    lp.width = Math.round(availableWidth * lp.widthPercent);
-                }
-                if (lp.leftMarginPercent > 0) {
-                    lp.leftMargin = Math.round(availableWidth * lp.leftMarginPercent);
-                }
-                if (lp.rightMarginPercent > 0) {
-                    lp.rightMargin = Math.round(availableWidth * lp.rightMarginPercent);
-                }
-            }
-            if (heightSpec !== utils.layout.UNSPECIFIED) {
-                if (lp.heightPercent > 0) {
-                    lp.height = Math.round(availableHeight * lp.heightPercent);
-                }
-                if (lp.topMarginPercent > 0) {
-                    lp.topMargin = Math.round(availableHeight * lp.topMarginPercent);
-                }
-                if (lp.bottomMarginPercent > 0) {
-                    lp.bottomMargin = Math.round(availableHeight * lp.bottomMarginPercent);
-                }
-            }
+            view.View.adjustChildLayoutParams(child, widthMeasureSpec, heightMeasureSpec);
         }
     };
     LayoutBase.restoreOriginalParams = function (layoutBase) {
         for (var i = 0, count = layoutBase.getChildrenCount(); i < count; i++) {
             var child = layoutBase.getChildAt(i);
-            var lp = child.style._getValue(style.nativeLayoutParamsProperty);
-            if (lp.widthPercent > 0) {
-                lp.width = -1;
-            }
-            if (lp.heightPercent > 0) {
-                lp.height = -1;
-            }
-            if (lp.leftMarginPercent > 0) {
-                lp.leftMargin = 0;
-            }
-            if (lp.topMarginPercent > 0) {
-                lp.topMargin = 0;
-            }
-            if (lp.rightMarginPercent > 0) {
-                lp.rightMargin = 0;
-            }
-            if (lp.bottomMarginPercent > 0) {
-                lp.bottomMargin = 0;
-            }
+            view.View.restoreChildOriginalParams(child);
         }
     };
     LayoutBase.clipToBoundsProperty = clipToBoundsProperty;

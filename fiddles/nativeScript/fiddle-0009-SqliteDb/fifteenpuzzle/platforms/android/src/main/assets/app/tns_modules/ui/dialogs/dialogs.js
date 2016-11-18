@@ -3,7 +3,7 @@ var appmodule = require("application");
 var types = require("utils/types");
 global.moduleMerge(dialogsCommon, exports);
 function createAlertDialog(options) {
-    var alert = new android.app.AlertDialog.Builder(appmodule.android.currentContext);
+    var alert = new android.app.AlertDialog.Builder(appmodule.android.foregroundActivity);
     alert.setTitle(options && types.isString(options.title) ? options.title : "");
     alert.setMessage(options && types.isString(options.message) ? options.message : "");
     if (options && options.cancelable === false) {
@@ -82,19 +82,19 @@ function alert(arg) {
     return new Promise(function (resolve, reject) {
         try {
             var options = !dialogsCommon.isDialogOptions(arg) ? { title: dialogsCommon.ALERT, okButtonText: dialogsCommon.OK, message: arg + "" } : arg;
-            var alert = createAlertDialog(options);
-            alert.setPositiveButton(options.okButtonText, new android.content.DialogInterface.OnClickListener({
+            var alert_1 = createAlertDialog(options);
+            alert_1.setPositiveButton(options.okButtonText, new android.content.DialogInterface.OnClickListener({
                 onClick: function (dialog, id) {
                     dialog.cancel();
                     resolve();
                 }
             }));
-            alert.setOnDismissListener(new android.content.DialogInterface.OnDismissListener({
+            alert_1.setOnDismissListener(new android.content.DialogInterface.OnDismissListener({
                 onDismiss: function () {
                     resolve();
                 }
             }));
-            showDialog(alert);
+            showDialog(alert_1);
         }
         catch (ex) {
             reject(ex);
@@ -106,9 +106,9 @@ function confirm(arg) {
     return new Promise(function (resolve, reject) {
         try {
             var options = !dialogsCommon.isDialogOptions(arg) ? { title: dialogsCommon.CONFIRM, okButtonText: dialogsCommon.OK, cancelButtonText: dialogsCommon.CANCEL, message: arg + "" } : arg;
-            var alert = createAlertDialog(options);
-            addButtonsToAlertDialog(alert, options, function (result) { resolve(result); });
-            showDialog(alert);
+            var alert_2 = createAlertDialog(options);
+            addButtonsToAlertDialog(alert_2, options, function (result) { resolve(result); });
+            showDialog(alert_2);
         }
         catch (ex) {
             reject(ex);
@@ -142,16 +142,16 @@ function prompt(arg) {
     }
     return new Promise(function (resolve, reject) {
         try {
-            var alert = createAlertDialog(options);
-            var input = new android.widget.EditText(appmodule.android.currentContext);
+            var alert_3 = createAlertDialog(options);
+            var input_1 = new android.widget.EditText(appmodule.android.foregroundActivity);
             if (options && options.inputType === dialogsCommon.inputType.password) {
-                input.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                input_1.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
             }
-            input.setText(options && options.defaultText || "");
-            alert.setView(input);
-            var getText = function () { return input.getText().toString(); };
-            addButtonsToAlertDialog(alert, options, function (r) { resolve({ result: r, text: getText() }); });
-            showDialog(alert);
+            input_1.setText(options && options.defaultText || "");
+            alert_3.setView(input_1);
+            var getText_1 = function () { return input_1.getText().toString(); };
+            addButtonsToAlertDialog(alert_3, options, function (r) { resolve({ result: r, text: getText_1() }); });
+            showDialog(alert_3);
         }
         catch (ex) {
             reject(ex);
@@ -188,26 +188,26 @@ function login(arg) {
     }
     return new Promise(function (resolve, reject) {
         try {
-            var context = appmodule.android.currentContext;
-            var alert = createAlertDialog(options);
-            var userNameInput = new android.widget.EditText(context);
-            userNameInput.setText(options.userName ? options.userName : "");
-            var passwordInput = new android.widget.EditText(context);
-            passwordInput.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
-            passwordInput.setText(options.password ? options.password : "");
-            var layout = new android.widget.LinearLayout(context);
+            var context_1 = appmodule.android.foregroundActivity;
+            var alert_4 = createAlertDialog(options);
+            var userNameInput_1 = new android.widget.EditText(context_1);
+            userNameInput_1.setText(options.userName ? options.userName : "");
+            var passwordInput_1 = new android.widget.EditText(context_1);
+            passwordInput_1.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            passwordInput_1.setText(options.password ? options.password : "");
+            var layout = new android.widget.LinearLayout(context_1);
             layout.setOrientation(1);
-            layout.addView(userNameInput);
-            layout.addView(passwordInput);
-            alert.setView(layout);
-            addButtonsToAlertDialog(alert, options, function (r) {
+            layout.addView(userNameInput_1);
+            layout.addView(passwordInput_1);
+            alert_4.setView(layout);
+            addButtonsToAlertDialog(alert_4, options, function (r) {
                 resolve({
                     result: r,
-                    userName: userNameInput.getText().toString(),
-                    password: passwordInput.getText().toString()
+                    userName: userNameInput_1.getText().toString(),
+                    password: passwordInput_1.getText().toString()
                 });
             });
-            showDialog(alert);
+            showDialog(alert_4);
         }
         catch (ex) {
             reject(ex);
@@ -245,37 +245,37 @@ function action(arg) {
     return new Promise(function (resolve, reject) {
         try {
             var activity = appmodule.android.foregroundActivity || appmodule.android.startActivity;
-            var alert = new android.app.AlertDialog.Builder(activity);
+            var alert_5 = new android.app.AlertDialog.Builder(activity);
             var message = options && types.isString(options.message) ? options.message : "";
             var title = options && types.isString(options.title) ? options.title : "";
             if (options && options.cancelable === false) {
-                alert.setCancelable(false);
+                alert_5.setCancelable(false);
             }
             if (title) {
-                alert.setTitle(title);
+                alert_5.setTitle(title);
                 if (!options.actions) {
-                    alert.setMessage(message);
+                    alert_5.setMessage(message);
                 }
             }
             else {
-                alert.setTitle(message);
+                alert_5.setTitle(message);
             }
             if (options.actions) {
-                alert.setItems(options.actions, new android.content.DialogInterface.OnClickListener({
+                alert_5.setItems(options.actions, new android.content.DialogInterface.OnClickListener({
                     onClick: function (dialog, which) {
                         resolve(options.actions[which]);
                     }
                 }));
             }
             if (types.isString(options.cancelButtonText)) {
-                alert.setNegativeButton(options.cancelButtonText, new android.content.DialogInterface.OnClickListener({
+                alert_5.setNegativeButton(options.cancelButtonText, new android.content.DialogInterface.OnClickListener({
                     onClick: function (dialog, id) {
                         dialog.cancel();
                         resolve(options.cancelButtonText);
                     }
                 }));
             }
-            alert.setOnDismissListener(new android.content.DialogInterface.OnDismissListener({
+            alert_5.setOnDismissListener(new android.content.DialogInterface.OnDismissListener({
                 onDismiss: function () {
                     if (types.isString(options.cancelButtonText)) {
                         resolve(options.cancelButtonText);
@@ -285,7 +285,7 @@ function action(arg) {
                     }
                 }
             }));
-            showDialog(alert);
+            showDialog(alert_5);
         }
         catch (ex) {
             reject(ex);

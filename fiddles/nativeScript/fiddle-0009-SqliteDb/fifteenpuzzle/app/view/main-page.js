@@ -1,29 +1,44 @@
-var createViewModel = require("../shared/main-view-model").createViewModel;
-var frame = require('ui/frame');
+var frame = require("ui/frame"),
+  levels = require("../shared/levels"),
+  dbConnect = require("../shared/db.service").open,
+  dbSelectLevel = require("../shared/db.service").selectLevel,
+  application = require("application"),
+  page;
 
-function onNavigatingTo(args) {
-    var page = args.object;
-    page.bindingContext = createViewModel();
+function onPageLoaded(args) {
+  page = args.object;
+  page.bindingContext = {
+    title: application.title
+  };
+
 }
 
-function onLevelOneClick(args) {
-  frame.topmost().navigate('view/level-one/level-one');
+function onPlayTap(args) {
+  screen = levels[1];
+  dbConnect(function(db) {
+    if (db) {
+      dbSelectLevel(db, function(level) {
+        var currentLevel = level[0].level;
+        console.log(currentLevel);
+        if (currentLevel && levels[currentLevel]) {
+          frame.topmost().navigate(levels[currentLevel]);
+        }
+      }, levels)
+    } else {
+      frame.topmost(screen);
+    }
+  }, levels);
 }
 
-function onLevelTwoClick(args) {
-  frame.topmost().navigate('view/level-two/level-two');
-}
-
-function onLevelThreeClick(args) {
-  frame.topmost().navigate('view/level-three/level-three');
-}
-
-function onAboutClick(args) {
+function onAboutTap() {
   frame.topmost().navigate('view/about/about');
 }
 
-exports.onNavigatingTo = onNavigatingTo;
-exports.onLevelOneClick = onLevelOneClick;
-exports.onLevelTwoClick = onLevelTwoClick;
-exports.onLevelThreeClick = onLevelThreeClick;
-exports.onAboutClick = onAboutClick;
+function onHighScoreTap() {
+  frame.topmost().navigate('view/high-score/high-score');
+}
+
+exports.pageLoaded = onPageLoaded;
+exports.playTap = onPlayTap;
+exports.aboutTap = onAboutTap;
+exports.highScoreTap = onHighScoreTap;

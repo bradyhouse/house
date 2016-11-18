@@ -16,14 +16,14 @@ function onMonthPropertyChanged(data) {
 common.DatePicker.monthProperty.metadata.onSetNativeValue = onMonthPropertyChanged;
 function onDayPropertyChanged(data) {
     var picker = data.object;
-    if (picker.android && picker.android.getDayOfMonth !== data.newValue) {
+    if (picker.android && picker.android.getDayOfMonth() !== data.newValue) {
         updateNativeDate(picker);
     }
 }
 common.DatePicker.dayProperty.metadata.onSetNativeValue = onDayPropertyChanged;
 function updateNativeDate(picker) {
     var year = types.isNumber(picker.year) ? picker.year : picker.android.getYear();
-    var month = types.isNumber(picker.month) ? (picker.month - 1) : picker.android.getMonth();
+    var month = types.isNumber(picker.month) ? (picker.month - 1) : Math.max(0, picker.android.getMonth() - 1);
     var day = types.isNumber(picker.day) ? picker.day : picker.android.getDayOfMonth();
     picker.date = new Date(year, month, day);
 }
@@ -46,7 +46,7 @@ common.DatePicker.minDateProperty.metadata.onSetNativeValue = onMinDatePropertyC
 function onDatePropertyChanged(data) {
     var picker = data.object;
     var newValue = data.newValue;
-    if (picker.android && (picker.android.getDayOfMonth() !== newValue.getDay()
+    if (picker.android && (picker.android.getDayOfMonth() !== newValue.getDate()
         || picker.android.getMonth() !== newValue.getMonth()
         || picker.android.getYear() !== newValue.getFullYear())) {
         picker.android.updateDate(newValue.getFullYear(), newValue.getMonth(), newValue.getDate());

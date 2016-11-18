@@ -51,8 +51,6 @@ var PropertyMetadata = (function () {
         if (options === void 0) { options = PropertyMetadataSettings.None; }
         this.defaultValue = defaultValue;
         this.options = options;
-        this.onValidateValue = onValidateValue;
-        this.equalityComparer = equalityComparer;
         this.defaultValue = defaultValue;
         this.options = options;
         this.onValueChanged = onChanged;
@@ -70,7 +68,6 @@ var Property = (function () {
         this.name = name;
         this.ownerType = ownerType;
         this.metadata = metadata;
-        this.valueConverter = valueConverter;
         this.key = generatePropertyKey(name, ownerType, true);
         if (propertyFromKey[this.key]) {
             throw new Error("Property " + name + " already registered for type " + ownerType + ".");
@@ -157,7 +154,7 @@ var DependencyObservable = (function (_super) {
             var defaultValue = defaultValueResult.result;
             if (defaultValueResult.cacheable) {
                 var entry = new PropertyEntry(property);
-                entry.effectiveValue = defaultValue;
+                entry.effectiveValue = entry.defaultValue = defaultValue;
                 this._propertyEntries[property.id] = entry;
             }
             return defaultValue;
@@ -201,7 +198,12 @@ var DependencyObservable = (function (_super) {
         var currentValue = entry.effectiveValue;
         var newValue = this.getEffectiveValueAndUpdateEntry(currentValueSource, entry, property);
         if (!property.equalityComparer(currentValue, newValue)) {
-            entry.effectiveValue = newValue;
+            if (entry.valueSource === ValueSource.Default && !property.defaultValueGetter) {
+                delete this._propertyEntries[property.id];
+            }
+            else {
+                entry.effectiveValue = newValue;
+            }
             this._onPropertyChanged(property, currentValue, newValue);
         }
     };
@@ -245,6 +247,9 @@ var DependencyObservable = (function (_super) {
         for (var i = 0, keys = Object.keys(this._propertyEntries); i < keys.length; i++) {
             var key = keys[i];
             var entry = this._propertyEntries[key];
+            if (entry.valueSource === ValueSource.Default) {
+                continue;
+            }
             if (!callback(entry.property, entry.effectiveValue)) {
                 break;
             }
@@ -315,7 +320,7 @@ var DependencyObservable = (function (_super) {
                     entry.valueSource = ValueSource.Inherited;
                 }
                 else {
-                    newValue = property.defaultValue;
+                    newValue = entry.defaultValue !== undefined ? entry.defaultValue : property.defaultValue;
                     entry.valueSource = ValueSource.Default;
                 }
                 break;
@@ -329,7 +334,7 @@ var DependencyObservable = (function (_super) {
                     entry.valueSource = ValueSource.Inherited;
                 }
                 else {
-                    newValue = property.defaultValue;
+                    newValue = entry.defaultValue !== undefined ? entry.defaultValue : property.defaultValue;
                     entry.valueSource = ValueSource.Default;
                 }
                 break;
@@ -347,7 +352,7 @@ var DependencyObservable = (function (_super) {
                     entry.valueSource = ValueSource.Inherited;
                 }
                 else {
-                    newValue = property.defaultValue;
+                    newValue = entry.defaultValue !== undefined ? entry.defaultValue : property.defaultValue;
                     entry.valueSource = ValueSource.Default;
                 }
                 break;

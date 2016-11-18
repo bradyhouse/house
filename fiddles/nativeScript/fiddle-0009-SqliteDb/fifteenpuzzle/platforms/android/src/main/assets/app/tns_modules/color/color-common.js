@@ -164,6 +164,9 @@ var Color = (function () {
         }
         return hexStr;
     };
+    Color.prototype.toString = function () {
+        return this.hex;
+    };
     return Color;
 }());
 exports.Color = Color;

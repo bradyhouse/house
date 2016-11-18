@@ -36,8 +36,8 @@ var ad;
         if (v instanceof button.Button
             && !types.isNullOrUndefined(backgroundDrawable)
             && types.isFunction(backgroundDrawable.setColorFilter)
-            && background.borderWidth === 0
-            && background.borderRadius === 0
+            && !background.hasBorderWidth()
+            && !background.hasBorderRadius()
             && !background.clipPath
             && types.isNullOrUndefined(background.image)
             && !types.isNullOrUndefined(background.color)) {
@@ -58,7 +58,7 @@ var ad;
             else {
                 refreshBorderDrawable(v, backgroundDrawable);
             }
-            if ((background.borderWidth || background.borderRadius || background.clipPath) && getSDK() < 18) {
+            if ((background.hasBorderWidth() || background.hasBorderRadius() || background.clipPath) && getSDK() < 18) {
                 cache.layerType = cache.getLayerType();
                 cache.setLayerType(android.view.View.LAYER_TYPE_SOFTWARE, null);
             }
@@ -79,7 +79,11 @@ var ad;
                 cache.layerType = undefined;
             }
         }
-        nativeView.setPadding(Math.round((background.borderWidth + v.style.paddingLeft) * density), Math.round((background.borderWidth + v.style.paddingTop) * density), Math.round((background.borderWidth + v.style.paddingRight) * density), Math.round((background.borderWidth + v.style.paddingBottom) * density));
+        var leftPadding = Math.round(((background.borderLeftWidth || 0) + (v.style.paddingLeft || 0)) * density);
+        var topPadding = Math.round(((background.borderTopWidth || 0) + (v.style.paddingTop || 0)) * density);
+        var rightPadding = Math.round(((background.borderRightWidth || 0) + (v.style.paddingRight || 0)) * density);
+        var bottomPadding = Math.round(((background.borderBottomWidth || 0) + (v.style.paddingBottom || 0)) * density);
+        nativeView.setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
     }
     ad.onBackgroundOrBorderPropertyChanged = onBackgroundOrBorderPropertyChanged;
 })(ad = exports.ad || (exports.ad = {}));
@@ -94,7 +98,7 @@ function refreshBorderDrawable(view, borderDrawable) {
         if (background.size) {
             backgroundSizeParsedCSSValues = createNativeCSSValueArray(background.size);
         }
-        borderDrawable.refresh(background.borderWidth, (background.borderColor && background.borderColor.android) ? background.borderColor.android : 0, background.borderRadius, background.clipPath, (background.color && background.color.android) ? background.color.android : 0, (background.image && background.image.android) ? background.image.android : null, background.repeat, background.position, backgroundPositionParsedCSSValues, background.size, backgroundSizeParsedCSSValues);
+        borderDrawable.refresh((background.borderTopColor && background.borderTopColor.android) ? background.borderTopColor.android : 0, (background.borderRightColor && background.borderRightColor.android) ? background.borderRightColor.android : 0, (background.borderBottomColor && background.borderBottomColor.android) ? background.borderBottomColor.android : 0, (background.borderLeftColor && background.borderLeftColor.android) ? background.borderLeftColor.android : 0, background.borderTopWidth, background.borderRightWidth, background.borderBottomWidth, background.borderLeftWidth, background.borderTopLeftRadius, background.borderTopRightRadius, background.borderBottomRightRadius, background.borderBottomLeftRadius, background.clipPath, (background.color && background.color.android) ? background.color.android : 0, (background.image && background.image.android) ? background.image.android : null, background.repeat, background.position, backgroundPositionParsedCSSValues, background.size, backgroundSizeParsedCSSValues);
     }
 }
 function createNativeCSSValueArray(css) {

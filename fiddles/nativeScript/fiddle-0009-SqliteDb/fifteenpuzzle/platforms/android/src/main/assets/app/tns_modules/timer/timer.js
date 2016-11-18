@@ -3,7 +3,7 @@ var timeoutCallbacks = {};
 var timerId = 0;
 function createHandlerAndGetId() {
     if (!timeoutHandler) {
-        timeoutHandler = new android.os.Handler(android.os.Looper.getMainLooper());
+        timeoutHandler = new android.os.Handler(android.os.Looper.myLooper());
     }
     timerId++;
     return timerId;

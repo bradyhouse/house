@@ -22,6 +22,21 @@ function ensureEnums() {
 var ImageSource = (function () {
     function ImageSource() {
     }
+    ImageSource.prototype.fromAsset = function (asset) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            asset.getImageAsync(function (image, err) {
+                if (image) {
+                    _this.setRotationAngleFromFile(asset.android);
+                    _this.setNativeSource(image);
+                    resolve(_this);
+                }
+                else {
+                    reject(err);
+                }
+            });
+        });
+    };
     ImageSource.prototype.loadFromResource = function (name) {
         this.android = null;
         ensureUtils();
@@ -43,12 +58,29 @@ var ImageSource = (function () {
             resolve(_this.loadFromResource(name));
         });
     };
+    ImageSource.prototype.setRotationAngleFromFile = function (filename) {
+        this.rotationAngle = 0;
+        var ei = new android.media.ExifInterface(filename);
+        var orientation = ei.getAttributeInt(android.media.ExifInterface.TAG_ORIENTATION, android.media.ExifInterface.ORIENTATION_NORMAL);
+        switch (orientation) {
+            case android.media.ExifInterface.ORIENTATION_ROTATE_90:
+                this.rotationAngle = 90;
+                break;
+            case android.media.ExifInterface.ORIENTATION_ROTATE_180:
+                this.rotationAngle = 180;
+                break;
+            case android.media.ExifInterface.ORIENTATION_ROTATE_270:
+                this.rotationAngle = 270;
+                break;
+        }
+    };
     ImageSource.prototype.loadFromFile = function (path) {
         ensureFS();
         var fileName = types.isString(path) ? path.trim() : "";
         if (fileName.indexOf("~/") === 0) {
             fileName = fs.path.join(fs.knownFolders.currentApp().path, fileName.replace("~/", ""));
         }
+        this.setRotationAngleFromFile(fileName);
         this.android = android.graphics.BitmapFactory.decodeFile(fileName, null);
         return this.android != null;
     };
@@ -130,13 +162,23 @@ var ImageSource = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(ImageSource.prototype, "rotationAngle", {
+        get: function () {
+            return this._rotationAngle;
+        },
+        set: function (value) {
+            this._rotationAngle = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return ImageSource;
 }());
 exports.ImageSource = ImageSource;
 function getTargetFormat(format) {
     ensureEnums();
     switch (format) {
-        case enums.ImageFormat.jpeg:
+        case enums.ImageFormat.jpeg || enums.ImageFormat.jpg:
             return android.graphics.Bitmap.CompressFormat.JPEG;
         default:
             return android.graphics.Bitmap.CompressFormat.PNG;

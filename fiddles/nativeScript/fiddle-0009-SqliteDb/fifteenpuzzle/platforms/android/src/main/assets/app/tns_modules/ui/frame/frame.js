@@ -727,6 +727,11 @@ var ActivityCallbacksImplementation = (function () {
         if (trace.enabled) {
             trace.write("NativeScriptActivity.onDestroy();", trace.categories.NativeLifecycle);
         }
+        var exitArgs = { eventName: application.exitEvent, object: application.android, android: activity };
+        application.notify(exitArgs);
+        if (application.onExit) {
+            application.onExit();
+        }
     };
     ActivityCallbacksImplementation.prototype.onBackPressed = function (activity, superFunc) {
         if (trace.enabled) {

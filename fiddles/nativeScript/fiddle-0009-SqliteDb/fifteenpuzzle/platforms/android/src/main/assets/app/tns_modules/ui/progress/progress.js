@@ -62,9 +62,6 @@ var ProgressStyler = (function () {
     ProgressStyler.registerHandlers = function () {
         style.registerHandler(style.colorProperty, new style.StylePropertyChangedHandler(ProgressStyler.setColorProperty, ProgressStyler.resetColorProperty), "Progress");
         style.registerHandler(style.backgroundColorProperty, new style.StylePropertyChangedHandler(ProgressStyler.setBackgroundAndBorderProperty, ProgressStyler.resetBackgroundAndBorderProperty), "Progress");
-        style.registerHandler(style.borderWidthProperty, style.ignorePropertyHandler, "Progress");
-        style.registerHandler(style.borderColorProperty, style.ignorePropertyHandler, "Progress");
-        style.registerHandler(style.borderRadiusProperty, style.ignorePropertyHandler, "Progress");
         style.registerHandler(style.backgroundInternalProperty, style.ignorePropertyHandler, "Progress");
     };
     return ProgressStyler;

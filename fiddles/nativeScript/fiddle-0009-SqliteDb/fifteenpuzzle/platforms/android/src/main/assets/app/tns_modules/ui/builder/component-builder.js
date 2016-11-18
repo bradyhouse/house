@@ -19,6 +19,7 @@ var MODULES = {
 };
 var CODEFILE = "codeFile";
 var CSSFILE = "cssFile";
+var IMPORT = "import";
 var platform;
 function ensurePlatform() {
     if (!platform) {
@@ -60,6 +61,14 @@ function getComponentModule(elementName, namespace, attributes, exports) {
         throw new debug.ScopeError(ex, "Module '" + moduleId + "' not found for element '" + (namespace ? namespace + ":" : "") + elementName + "'.");
     }
     if (attributes) {
+        if (attributes[IMPORT]) {
+            var importPath = attributes[IMPORT].trim();
+            if (importPath.indexOf("~/") === 0) {
+                importPath = file_system_1.path.join(file_system_1.knownFolders.currentApp().path, importPath.replace("~/", ""));
+            }
+            exports = global.loadModule(importPath);
+            instance.exports = exports;
+        }
         if (attributes[CODEFILE]) {
             if (instance instanceof page_1.Page) {
                 var codeFilePath = attributes[CODEFILE].trim();
@@ -150,6 +159,9 @@ function setPropertyValue(instance, instanceModule, exports, propertyName, prope
             instance.on(propertyName, handler);
         }
     }
+    else if (isKnownFunction(propertyName, instance) && types_1.isFunction(exports && exports[propertyValue])) {
+        instance[propertyName] = exports[propertyValue];
+    }
     else {
         var attrHandled = false;
         var specialSetter = special_properties_1.getSpecialPropertySetter(propertyName);
@@ -176,5 +188,11 @@ function isBinding(value) {
         isBinding = str.indexOf("{{") === 0 && str.lastIndexOf("}}") === str.length - 2;
     }
     return isBinding;
+}
+var KNOWN_FUNCTIONS = "knownFunctions";
+function isKnownFunction(name, instance) {
+    return instance.constructor
+        && KNOWN_FUNCTIONS in instance.constructor
+        && instance.constructor[KNOWN_FUNCTIONS].indexOf(name) !== -1;
 }
 //# sourceMappingURL=component-builder.js.map

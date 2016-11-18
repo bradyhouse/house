@@ -6,6 +6,10 @@ function isNumber(value) {
     return typeof value === "number" || value instanceof Number;
 }
 exports.isNumber = isNumber;
+function isBoolean(value) {
+    return typeof value === "boolean" || value instanceof Boolean;
+}
+exports.isBoolean = isBoolean;
 function isFunction(value) {
     if (!value) {
         return false;

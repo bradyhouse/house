@@ -34,6 +34,11 @@ function parseMargin(value) {
             top = bottom = arr[0];
             right = left = arr[1];
         }
+        else if (arr.length === 3) {
+            top = arr[0];
+            right = left = arr[1];
+            bottom = arr[2];
+        }
         else if (arr.length === 4) {
             top = arr[0];
             right = arr[1];
@@ -61,31 +66,6 @@ function parseMargin(value) {
     else {
         return value;
     }
-}
-function parseThickness(value) {
-    var result = { top: 0, right: 0, bottom: 0, left: 0 };
-    if (types.isString(value)) {
-        var arr = value.split(/[ ,]+/);
-        var top = parseInt(arr[0]);
-        top = isNaN(top) ? 0 : top;
-        var right = parseInt(arr[1]);
-        right = isNaN(right) ? top : right;
-        var bottom = parseInt(arr[2]);
-        bottom = isNaN(bottom) ? top : bottom;
-        var left = parseInt(arr[3]);
-        left = isNaN(left) ? right : left;
-        result.top = top;
-        result.right = right;
-        result.bottom = bottom;
-        result.left = left;
-    }
-    else if (types.isNumber(value)) {
-        result.top = result.right = result.bottom = result.left = value;
-    }
-    else {
-        result = value;
-    }
-    return result;
 }
 function layoutParamsComparer(x, y) {
     return x.width === y.width
@@ -215,109 +195,6 @@ function isWidthHeightValid(value) {
 }
 function isMinWidthHeightValid(value) {
     return !isNaN(value) && value >= 0.0 && isFinite(value);
-}
-function onBackgroundColorPropertyChanged(data) {
-    var style = data.object;
-    var currentBackground = style._getValue(exports.backgroundInternalProperty);
-    if (!color_1.Color.equals(currentBackground.color, data.newValue)) {
-        style._setValue(exports.backgroundInternalProperty, currentBackground.withColor(data.newValue));
-    }
-}
-function onBackgroundImagePropertyChanged(data) {
-    var style = data.object;
-    var url = data.newValue;
-    var currentBackground = style._getValue(exports.backgroundInternalProperty);
-    var isValid = false;
-    if (types.isString(data.newValue)) {
-        var pattern = /url\(('|")(.*?)\1\)/;
-        var match = url.match(pattern);
-        if (match && match[2]) {
-            url = match[2];
-        }
-        ensureImageSource();
-        if (utils.isDataURI(url)) {
-            var base64Data = url.split(",")[1];
-            if (types.isDefined(base64Data)) {
-                style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(imageSource.fromBase64(base64Data)));
-                isValid = true;
-            }
-        }
-        else if (utils.isFileOrResourcePath(url)) {
-            style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(imageSource.fromFileOrResource(url)));
-            isValid = true;
-        }
-        else if (url.indexOf("http") !== -1) {
-            style["_url"] = url;
-            style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(undefined));
-            imageSource.fromUrl(url).then(function (r) {
-                if (style && style["_url"] === url) {
-                    currentBackground = style._getValue(exports.backgroundInternalProperty);
-                    style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(r));
-                }
-            });
-            isValid = true;
-        }
-    }
-    if (!isValid) {
-        style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(undefined));
-    }
-}
-function onBackgroundRepeatPropertyChanged(data) {
-    var style = data.object;
-    var currentBackground = style._getValue(exports.backgroundInternalProperty);
-    if (data.newValue !== currentBackground.repeat) {
-        style._setValue(exports.backgroundInternalProperty, currentBackground.withRepeat(data.newValue));
-    }
-}
-function onBackgroundPositionPropertyChanged(data) {
-    var style = data.object;
-    var currentBackground = style._getValue(exports.backgroundInternalProperty);
-    if (data.newValue !== currentBackground.position) {
-        style._setValue(exports.backgroundInternalProperty, currentBackground.withPosition(data.newValue));
-    }
-}
-function onBackgroundSizePropertyChanged(data) {
-    var style = data.object;
-    var currentBackground = style._getValue(exports.backgroundInternalProperty);
-    if (data.newValue !== currentBackground.size) {
-        style._setValue(exports.backgroundInternalProperty, currentBackground.withSize(data.newValue));
-    }
-}
-function onBorderWidthPropertyChanged(data) {
-    if (platform.isAndroid) {
-        var style = data.object;
-        var currentBackground = style._getValue(exports.backgroundInternalProperty);
-        if (data.newValue !== currentBackground.borderWidth) {
-            style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderWidth(data.newValue));
-        }
-    }
-}
-function onBorderColorPropertyChanged(data) {
-    if (platform.isAndroid) {
-        var style = data.object;
-        var currentBackground = style._getValue(exports.backgroundInternalProperty);
-        if (data.newValue !== currentBackground.borderColor) {
-            style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderColor(data.newValue));
-        }
-    }
-}
-function onBorderRadiusPropertyChanged(data) {
-    if (platform.isAndroid) {
-        var style = data.object;
-        var currentBackground = style._getValue(exports.backgroundInternalProperty);
-        if (data.newValue !== currentBackground.borderRadius) {
-            style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderRadius(data.newValue));
-        }
-    }
-}
-function onClipPathPropertyChanged(data) {
-    if (platform.isAndroid) {
-        var style = data.object;
-        var currentBackground = style._getValue(exports.backgroundInternalProperty);
-        if (data.newValue !== currentBackground.clipPath) {
-            style._setValue(exports.backgroundInternalProperty, currentBackground.withClipPath(data.newValue));
-        }
-    }
 }
 function getHandlerInternal(propertyId, classInfo) {
     var className = classInfo ? classInfo.name : "default";
@@ -497,6 +374,16 @@ var Style = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Style.prototype, "tintColor", {
+        get: function () {
+            return this._getValue(exports.tintColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.tintColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Style.prototype, "placeholderColor", {
         get: function () {
             return this._getValue(exports.placeholderColorProperty);
@@ -559,30 +446,174 @@ var Style = (function (_super) {
     });
     Object.defineProperty(Style.prototype, "borderColor", {
         get: function () {
-            return this._getValue(exports.borderColorProperty);
+            if (color_1.Color.equals(this.borderTopColor, this.borderRightColor) &&
+                color_1.Color.equals(this.borderTopColor, this.borderBottomColor) &&
+                color_1.Color.equals(this.borderTopColor, this.borderLeftColor)) {
+                return this.borderTopColor;
+            }
+            else {
+                return this.borderTopColor + " " + this.borderRightColor + " " + this.borderBottomColor + " " + this.borderLeftColor;
+            }
         },
         set: function (value) {
-            this._setValue(exports.borderColorProperty, value);
+            if (value instanceof color_1.Color) {
+                value = value.hex;
+            }
+            this._setShorthandProperty("border-color", value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderTopColor", {
+        get: function () {
+            return this._getValue(exports.borderTopColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderTopColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderRightColor", {
+        get: function () {
+            return this._getValue(exports.borderRightColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderRightColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderBottomColor", {
+        get: function () {
+            return this._getValue(exports.borderBottomColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderBottomColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderLeftColor", {
+        get: function () {
+            return this._getValue(exports.borderLeftColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderLeftColorProperty, value);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Style.prototype, "borderWidth", {
         get: function () {
-            return this._getValue(exports.borderWidthProperty);
+            if (this.borderTopWidth === this.borderRightWidth &&
+                this.borderTopWidth === this.borderBottomWidth &&
+                this.borderTopWidth === this.borderLeftWidth) {
+                return this.borderTopWidth;
+            }
+            else {
+                return this.borderTopWidth + " " + this.borderRightWidth + " " + this.borderBottomWidth + " " + this.borderLeftWidth;
+            }
         },
         set: function (value) {
-            this._setValue(exports.borderWidthProperty, value);
+            this._setShorthandProperty("border-width", value.toString());
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderTopWidth", {
+        get: function () {
+            return this._getValue(exports.borderTopWidthProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderTopWidthProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderRightWidth", {
+        get: function () {
+            return this._getValue(exports.borderRightWidthProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderRightWidthProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderBottomWidth", {
+        get: function () {
+            return this._getValue(exports.borderBottomWidthProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderBottomWidthProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderLeftWidth", {
+        get: function () {
+            return this._getValue(exports.borderLeftWidthProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderLeftWidthProperty, value);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Style.prototype, "borderRadius", {
         get: function () {
-            return this._getValue(exports.borderRadiusProperty);
+            if (this.borderTopLeftRadius === this.borderTopRightRadius &&
+                this.borderTopLeftRadius === this.borderBottomRightRadius &&
+                this.borderTopLeftRadius === this.borderBottomLeftRadius) {
+                return this.borderTopLeftRadius;
+            }
+            else {
+                return this.borderTopLeftRadius + " " + this.borderTopRightRadius + " " + this.borderBottomRightRadius + " " + this.borderBottomLeftRadius;
+            }
         },
         set: function (value) {
-            this._setValue(exports.borderRadiusProperty, value);
+            this._setShorthandProperty("border-radius", value.toString());
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderTopLeftRadius", {
+        get: function () {
+            return this._getValue(exports.borderTopLeftRadiusProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderTopLeftRadiusProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderTopRightRadius", {
+        get: function () {
+            return this._getValue(exports.borderTopRightRadiusProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderTopRightRadiusProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderBottomRightRadius", {
+        get: function () {
+            return this._getValue(exports.borderBottomRightRadiusProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderBottomRightRadiusProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "borderBottomLeftRadius", {
+        get: function () {
+            return this._getValue(exports.borderBottomLeftRadiusProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.borderBottomLeftRadiusProperty, value);
         },
         enumerable: true,
         configurable: true
@@ -897,6 +928,56 @@ var Style = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Style.prototype, "tabTextColor", {
+        get: function () {
+            return this._getValue(exports.tabTextColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.tabTextColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "tabBackgroundColor", {
+        get: function () {
+            return this._getValue(exports.tabBackgroundColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.tabBackgroundColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "selectedTabTextColor", {
+        get: function () {
+            return this._getValue(exports.selectedTabTextColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.selectedTabTextColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "androidSelectedTabHighlightColor", {
+        get: function () {
+            return this._getValue(exports.androidSelectedTabHighlightColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.androidSelectedTabHighlightColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Style.prototype, "selectedBackgroundColor", {
+        get: function () {
+            return this._getValue(exports.selectedBackgroundColorProperty);
+        },
+        set: function (value) {
+            this._setValue(exports.selectedBackgroundColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
     Style.prototype._updateTextDecoration = function () {
         if (this._getValue(exports.textDecorationProperty) !== enums.TextDecoration.none) {
             this._applyProperty(exports.textDecorationProperty, this._getValue(exports.textDecorationProperty));
@@ -1052,17 +1133,8 @@ exports.scaleYProperty = new styleProperty.Property("scaleY", "scaleY", new depe
 exports.translateXProperty = new styleProperty.Property("translateX", "translateX", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, null));
 exports.translateYProperty = new styleProperty.Property("translateY", "translateY", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, null));
 exports.colorProperty = new styleProperty.Property("color", "color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.Inheritable, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.tintColorProperty = new styleProperty.Property("tintColor", "tint-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.Inheritable, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
 exports.placeholderColorProperty = new styleProperty.Property("placeholderColor", "placeholder-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
-exports.backgroundImageProperty = new styleProperty.Property("backgroundImage", "background-image", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundImagePropertyChanged));
-exports.backgroundColorProperty = new styleProperty.Property("backgroundColor", "background-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
-exports.backgroundRepeatProperty = new styleProperty.Property("backgroundRepeat", "background-repeat", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundRepeatPropertyChanged));
-exports.backgroundSizeProperty = new styleProperty.Property("backgroundSize", "background-size", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundSizePropertyChanged));
-exports.backgroundPositionProperty = new styleProperty.Property("backgroundPosition", "background-position", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundPositionPropertyChanged));
-exports.borderWidthProperty = new styleProperty.Property("borderWidth", "border-width", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderWidthPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
-exports.borderColorProperty = new styleProperty.Property("borderColor", "border-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBorderColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
-exports.borderRadiusProperty = new styleProperty.Property("borderRadius", "border-radius", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderRadiusPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
-exports.clipPathProperty = new styleProperty.Property("clipPath", "clip-path", new dependency_observable_1.PropertyMetadata(undefined, AffectsLayout, onClipPathPropertyChanged, isClipPathValid));
-exports.backgroundInternalProperty = new styleProperty.Property("_backgroundInternal", "_backgroundInternal", new dependency_observable_1.PropertyMetadata(background.Background.default, dependency_observable_1.PropertyMetadataSettings.None, undefined, undefined, background.Background.equals));
 exports.fontSizeProperty = new styleProperty.Property("fontSize", "font-size", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.Inheritable, onFontSizeChanged), converters.fontSizeConverter);
 exports.fontFamilyProperty = new styleProperty.Property("fontFamily", "font-family", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.Inheritable, onFontFamilyChanged));
 exports.fontStyleProperty = new styleProperty.Property("fontStyle", "font-style", new dependency_observable_1.PropertyMetadata(enums.FontStyle.normal, dependency_observable_1.PropertyMetadataSettings.Inheritable, onFontStyleChanged, isFontStyleValid));
@@ -1078,6 +1150,11 @@ exports.textTransformProperty = new styleProperty.Property("textTransform", "tex
 exports.whiteSpaceProperty = new styleProperty.Property("whiteSpace", "white-space", new dependency_observable_1.PropertyMetadata(undefined, AffectsLayout, undefined, isWhiteSpaceValid), converters.whiteSpaceConverter);
 exports.letterSpacingProperty = new styleProperty.Property("letterSpacing", "letter-spacing", new dependency_observable_1.PropertyMetadata(Number.NaN, AffectsLayout, undefined, isFloatValueValid), converters.floatConverter);
 exports.zIndexProperty = new styleProperty.Property("zIndex", "z-index", new dependency_observable_1.PropertyMetadata(Number.NaN, AffectsLayout, undefined, isFloatValueValid), converters.floatConverter);
+exports.tabTextColorProperty = new styleProperty.Property("tabTextColor", "tab-text-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.tabBackgroundColorProperty = new styleProperty.Property("tabBackgroundColor", "tab-background-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.selectedTabTextColorProperty = new styleProperty.Property("selectedTabTextColor", "selected-tab-text-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.androidSelectedTabHighlightColorProperty = new styleProperty.Property("androidSelectedTabHighlightColor", "android-selected-tab-highlight-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.selectedBackgroundColorProperty = new styleProperty.Property("selectedBackgroundColor", "selected-background-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, undefined, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
 exports.nativeLayoutParamsProperty = new styleProperty.Property("nativeLayoutParams", "nativeLayoutParams", new dependency_observable_1.PropertyMetadata({
     width: -1,
     widthPercent: -1,
@@ -1178,9 +1255,13 @@ function onTransformChanged(value) {
             case "scale":
             case "scale3d":
                 values = newTransform[transform].split(",");
-                if (values.length === 2 || values.length === 3) {
+                if (values.length >= 2) {
                     array.push({ property: exports.scaleXProperty, value: parseFloat(values[0]) });
                     array.push({ property: exports.scaleYProperty, value: parseFloat(values[1]) });
+                }
+                else if (values.length === 1) {
+                    array.push({ property: exports.scaleXProperty, value: parseFloat(values[0]) });
+                    array.push({ property: exports.scaleYProperty, value: parseFloat(values[0]) });
                 }
                 break;
             case "translateX":
@@ -1192,9 +1273,13 @@ function onTransformChanged(value) {
             case "translate":
             case "translate3d":
                 values = newTransform[transform].split(",");
-                if (values.length === 2 || values.length === 3) {
+                if (values.length >= 2) {
                     array.push({ property: exports.translateXProperty, value: parseFloat(values[0]) });
                     array.push({ property: exports.translateYProperty, value: parseFloat(values[1]) });
+                }
+                else if (values.length === 1) {
+                    array.push({ property: exports.translateXProperty, value: parseFloat(values[0]) });
+                    array.push({ property: exports.translateYProperty, value: parseFloat(values[0]) });
                 }
                 break;
             case "rotate":
@@ -1251,4 +1336,316 @@ exports.ignorePropertyHandler = new StylePropertyChangedHandler(function (view, 
 }, function (view, val) {
 });
 registerNoStylingClass("Frame");
+function onBackgroundColorPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (!color_1.Color.equals(currentBackground.color, data.newValue)) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withColor(data.newValue));
+    }
+}
+function onBackgroundImagePropertyChanged(data) {
+    var style = data.object;
+    var url = data.newValue;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    var isValid = false;
+    if (types.isString(data.newValue)) {
+        var pattern = /url\(('|")(.*?)\1\)/;
+        var match = url.match(pattern);
+        if (match && match[2]) {
+            url = match[2];
+        }
+        ensureImageSource();
+        if (utils.isDataURI(url)) {
+            var base64Data = url.split(",")[1];
+            if (types.isDefined(base64Data)) {
+                style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(imageSource.fromBase64(base64Data)));
+                isValid = true;
+            }
+        }
+        else if (utils.isFileOrResourcePath(url)) {
+            style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(imageSource.fromFileOrResource(url)));
+            isValid = true;
+        }
+        else if (url.indexOf("http") !== -1) {
+            style["_url"] = url;
+            style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(undefined));
+            imageSource.fromUrl(url).then(function (r) {
+                if (style && style["_url"] === url) {
+                    currentBackground = style._getValue(exports.backgroundInternalProperty);
+                    style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(r));
+                }
+            });
+            isValid = true;
+        }
+    }
+    if (!isValid) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withImage(undefined));
+    }
+}
+function onBackgroundRepeatPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.repeat) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withRepeat(data.newValue));
+    }
+}
+function onBackgroundPositionPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.position) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withPosition(data.newValue));
+    }
+}
+function onBackgroundSizePropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.size) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withSize(data.newValue));
+    }
+}
+function onBorderTopColorPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderTopColor) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderTopColor(data.newValue));
+    }
+}
+function onBorderRightColorPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderRightColor) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderRightColor(data.newValue));
+    }
+}
+function onBorderBottomColorPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderBottomColor) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderBottomColor(data.newValue));
+    }
+}
+function onBorderLeftColorPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderLeftColor) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderLeftColor(data.newValue));
+    }
+}
+function onBorderTopWidthPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderTopWidth) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderTopWidth(data.newValue));
+    }
+}
+function onBorderRightWidthPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderRightWidth) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderRightWidth(data.newValue));
+    }
+}
+function onBorderBottomWidthPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderBottomWidth) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderBottomWidth(data.newValue));
+    }
+}
+function onBorderLeftWidthPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderLeftWidth) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderLeftWidth(data.newValue));
+    }
+}
+function onBorderTopLeftRadiusPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderTopLeftRadius) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderTopLeftRadius(data.newValue));
+    }
+}
+function onBorderTopRightRadiusPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderTopRightRadius) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderTopRightRadius(data.newValue));
+    }
+}
+function onBorderBottomRightRadiusPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderBottomRightRadius) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderBottomRightRadius(data.newValue));
+    }
+}
+function onBorderBottomLeftRadiusPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.borderBottomLeftRadius) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withBorderBottomLeftRadius(data.newValue));
+    }
+}
+function onClipPathPropertyChanged(data) {
+    var style = data.object;
+    var currentBackground = style._getValue(exports.backgroundInternalProperty);
+    if (data.newValue !== currentBackground.clipPath) {
+        style._setValue(exports.backgroundInternalProperty, currentBackground.withClipPath(data.newValue));
+    }
+}
+exports.backgroundInternalProperty = new styleProperty.Property("_backgroundInternal", "_backgroundInternal", new dependency_observable_1.PropertyMetadata(background.Background.default, dependency_observable_1.PropertyMetadataSettings.None, undefined, undefined, background.Background.equals));
+exports.backgroundImageProperty = new styleProperty.Property("backgroundImage", "background-image", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundImagePropertyChanged));
+exports.backgroundColorProperty = new styleProperty.Property("backgroundColor", "background-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.backgroundRepeatProperty = new styleProperty.Property("backgroundRepeat", "background-repeat", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundRepeatPropertyChanged));
+exports.backgroundSizeProperty = new styleProperty.Property("backgroundSize", "background-size", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundSizePropertyChanged));
+exports.backgroundPositionProperty = new styleProperty.Property("backgroundPosition", "background-position", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBackgroundPositionPropertyChanged));
+exports.borderTopColorProperty = new styleProperty.Property("borderTopColor", "border-top-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBorderTopColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.borderRightColorProperty = new styleProperty.Property("borderRightColor", "border-right-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBorderRightColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.borderBottomColorProperty = new styleProperty.Property("borderBottomColor", "border-bottom-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBorderBottomColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.borderLeftColorProperty = new styleProperty.Property("borderLeftColor", "border-left-color", new dependency_observable_1.PropertyMetadata(undefined, dependency_observable_1.PropertyMetadataSettings.None, onBorderLeftColorPropertyChanged, color_1.Color.isValid, color_1.Color.equals), converters.colorConverter);
+exports.borderTopWidthProperty = new styleProperty.Property("borderTopWidth", "border-top-width", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderTopWidthPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderRightWidthProperty = new styleProperty.Property("borderRightWidth", "border-right-width", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderRightWidthPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderBottomWidthProperty = new styleProperty.Property("borderBottomWidth", "border-bottom-width", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderBottomWidthPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderLeftWidthProperty = new styleProperty.Property("borderLeftWidth", "border-left-width", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderLeftWidthPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderTopLeftRadiusProperty = new styleProperty.Property("borderTopLeftRadius", "border-top-left-radius", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderTopLeftRadiusPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderTopRightRadiusProperty = new styleProperty.Property("borderTopRightRadius", "border-top-right-radius", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderTopRightRadiusPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderBottomRightRadiusProperty = new styleProperty.Property("borderBottomRightRadius", "border-bottom-right-radius", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderBottomRightRadiusPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.borderBottomLeftRadiusProperty = new styleProperty.Property("borderBottomLeftRadius", "border-bottom-left-radius", new dependency_observable_1.PropertyMetadata(0, AffectsLayout, onBorderBottomLeftRadiusPropertyChanged, isNonNegativeFiniteNumber), converters.numberConverter);
+exports.clipPathProperty = new styleProperty.Property("clipPath", "clip-path", new dependency_observable_1.PropertyMetadata(undefined, AffectsLayout, onClipPathPropertyChanged, isClipPathValid));
+function parseThickness(value) {
+    var result = { top: 0, right: 0, bottom: 0, left: 0 };
+    if (types.isString(value)) {
+        var arr = value.split(/[ ,]+/);
+        if (arr.length === 1) {
+            var arr0 = parseInt(arr[0]);
+            result.top = arr0;
+            result.right = arr0;
+            result.bottom = arr0;
+            result.left = arr0;
+        }
+        else if (arr.length === 2) {
+            var arr0 = parseInt(arr[0]);
+            var arr1 = parseInt(arr[1]);
+            result.top = arr0;
+            result.right = arr1;
+            result.bottom = arr0;
+            result.left = arr1;
+        }
+        else if (arr.length === 3) {
+            var arr0 = parseInt(arr[0]);
+            var arr1 = parseInt(arr[1]);
+            var arr2 = parseInt(arr[2]);
+            result.top = arr0;
+            result.right = arr1;
+            result.bottom = arr2;
+            result.left = arr1;
+        }
+        else if (arr.length === 4) {
+            var arr0 = parseInt(arr[0]);
+            var arr1 = parseInt(arr[1]);
+            var arr2 = parseInt(arr[2]);
+            var arr3 = parseInt(arr[3]);
+            result.top = arr0;
+            result.right = arr1;
+            result.bottom = arr2;
+            result.left = arr3;
+        }
+    }
+    else if (types.isNumber(value)) {
+        result.top = result.right = result.bottom = result.left = value;
+    }
+    else {
+        result = value;
+    }
+    return result;
+}
+function parseBorderColor(value) {
+    var result = { top: undefined, right: undefined, bottom: undefined, left: undefined };
+    try {
+        if (types.isString(value)) {
+            if (value.indexOf("rgb") === 0) {
+                result.top = result.right = result.bottom = result.left = new color_1.Color(value);
+                return result;
+            }
+            var arr = value.split(/[ ,]+/);
+            if (arr.length === 1) {
+                var arr0 = new color_1.Color(arr[0]);
+                result.top = arr0;
+                result.right = arr0;
+                result.bottom = arr0;
+                result.left = arr0;
+            }
+            else if (arr.length === 2) {
+                var arr0 = new color_1.Color(arr[0]);
+                var arr1 = new color_1.Color(arr[1]);
+                result.top = arr0;
+                result.right = arr1;
+                result.bottom = arr0;
+                result.left = arr1;
+            }
+            else if (arr.length === 3) {
+                var arr0 = new color_1.Color(arr[0]);
+                var arr1 = new color_1.Color(arr[1]);
+                var arr2 = new color_1.Color(arr[2]);
+                result.top = arr0;
+                result.right = arr1;
+                result.bottom = arr2;
+                result.left = arr1;
+            }
+            else if (arr.length === 4) {
+                var arr0 = new color_1.Color(arr[0]);
+                var arr1 = new color_1.Color(arr[1]);
+                var arr2 = new color_1.Color(arr[2]);
+                var arr3 = new color_1.Color(arr[3]);
+                result.top = arr0;
+                result.right = arr1;
+                result.bottom = arr2;
+                result.left = arr3;
+            }
+        }
+        else if (value instanceof color_1.Color) {
+            result.top = result.right = result.bottom = result.left = value;
+        }
+        else {
+            result = value;
+        }
+    }
+    catch (ex) {
+        if (trace.enabled) {
+            trace.write("Error parsing border color " + value + ": " + ex + "'", trace.categories.Style, trace.messageType.error);
+        }
+    }
+    return result;
+}
+function onBorderColorChanged(value) {
+    var fourColors = parseBorderColor(value);
+    var array = new Array();
+    array.push({ property: exports.borderTopColorProperty, value: fourColors.top });
+    array.push({ property: exports.borderRightColorProperty, value: fourColors.right });
+    array.push({ property: exports.borderBottomColorProperty, value: fourColors.bottom });
+    array.push({ property: exports.borderLeftColorProperty, value: fourColors.left });
+    return array;
+}
+function onBorderWidthChanged(value) {
+    var thickness = parseThickness(value);
+    var array = new Array();
+    array.push({ property: exports.borderTopWidthProperty, value: thickness.top });
+    array.push({ property: exports.borderRightWidthProperty, value: thickness.right });
+    array.push({ property: exports.borderBottomWidthProperty, value: thickness.bottom });
+    array.push({ property: exports.borderLeftWidthProperty, value: thickness.left });
+    return array;
+}
+function onBorderRadiusChanged(value) {
+    var thickness = parseThickness(value);
+    var array = new Array();
+    array.push({ property: exports.borderTopLeftRadiusProperty, value: thickness.top });
+    array.push({ property: exports.borderTopRightRadiusProperty, value: thickness.right });
+    array.push({ property: exports.borderBottomRightRadiusProperty, value: thickness.bottom });
+    array.push({ property: exports.borderBottomLeftRadiusProperty, value: thickness.left });
+    return array;
+}
+styleProperty.registerShorthandCallback("border-color", onBorderColorChanged);
+styleProperty.registerShorthandCallback("border-width", onBorderWidthChanged);
+styleProperty.registerShorthandCallback("border-radius", onBorderRadiusChanged);
 //# sourceMappingURL=style.js.map

@@ -93,9 +93,6 @@ var SliderStyler = (function () {
     SliderStyler.registerHandlers = function () {
         style.registerHandler(style.colorProperty, new style.StylePropertyChangedHandler(SliderStyler.setColorProperty, SliderStyler.resetColorProperty), "Slider");
         style.registerHandler(style.backgroundColorProperty, new style.StylePropertyChangedHandler(SliderStyler.setBackgroundAndBorderProperty, SliderStyler.resetBackgroundAndBorderProperty), "Slider");
-        style.registerHandler(style.borderWidthProperty, style.ignorePropertyHandler, "Slider");
-        style.registerHandler(style.borderColorProperty, style.ignorePropertyHandler, "Slider");
-        style.registerHandler(style.borderRadiusProperty, style.ignorePropertyHandler, "Slider");
         style.registerHandler(style.backgroundInternalProperty, style.ignorePropertyHandler, "Slider");
     };
     return SliderStyler;

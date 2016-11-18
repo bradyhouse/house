@@ -350,7 +350,7 @@ var FileSystemAccess = (function () {
     FileSystemAccess.prototype.joinPath = function (left, right) {
         var file1 = new java.io.File(left);
         var file2 = new java.io.File(file1, right);
-        return file2.getAbsolutePath();
+        return file2.getPath();
     };
     FileSystemAccess.prototype.joinPaths = function (paths) {
         if (!paths || paths.length === 0) {
@@ -363,7 +363,7 @@ var FileSystemAccess = (function () {
         for (i = 1; i < paths.length; i++) {
             result = this.joinPath(result, paths[i]);
         }
-        return this.normalizePath(result);
+        return result;
     };
     return FileSystemAccess;
 }());

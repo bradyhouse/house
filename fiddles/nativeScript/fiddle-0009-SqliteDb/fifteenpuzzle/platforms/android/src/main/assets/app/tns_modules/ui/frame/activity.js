@@ -6,6 +6,7 @@ var NativeScriptActivity = (function (_super) {
         return global.__native(this);
     }
     NativeScriptActivity.prototype.onCreate = function (savedInstanceState) {
+        this.isNativeScriptActivity = true;
         if (!this._callbacks) {
             frame_1.setActivityCallbacks(this);
         }

@@ -59,6 +59,7 @@ var layout;
     layout.UNSPECIFIED = 0 << MODE_SHIFT;
     layout.EXACTLY = 1 << MODE_SHIFT;
     layout.AT_MOST = 2 << MODE_SHIFT;
+    layout.MEASURED_HEIGHT_STATE_SHIFT = 0x00000010;
     layout.MEASURED_STATE_TOO_SMALL = 0x01000000;
     layout.MEASURED_STATE_MASK = 0xff000000;
     layout.MEASURED_SIZE_MASK = 0x00ffffff;

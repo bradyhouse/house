@@ -2,7 +2,6 @@ var common = require("./tab-view-common");
 var trace = require("trace");
 var types = require("utils/types");
 var utils = require("utils/utils");
-var color = require("color");
 var style = require("ui/styling/style");
 var imageSource;
 function ensureImageSource() {
@@ -140,20 +139,6 @@ function ensurePageChangedListenerClass() {
     }(android.support.v4.view.ViewPager.SimpleOnPageChangeListener));
     PageChangedListenerClass = PageChangedListener;
 }
-function selectedColorPropertyChanged(data) {
-    var tabLayout = data.object._getAndroidTabView();
-    if (tabLayout && data.newValue instanceof color.Color) {
-        tabLayout.setSelectedIndicatorColors([data.newValue.android]);
-    }
-}
-common.TabView.selectedColorProperty.metadata.onSetNativeValue = selectedColorPropertyChanged;
-function tabsBackgroundColorPropertyChanged(data) {
-    var tabLayout = data.object._getAndroidTabView();
-    if (tabLayout && data.newValue instanceof color.Color) {
-        tabLayout.setBackgroundColor(data.newValue.android);
-    }
-}
-common.TabView.tabsBackgroundColorProperty.metadata.onSetNativeValue = tabsBackgroundColorPropertyChanged;
 var TabView = (function (_super) {
     __extends(TabView, _super);
     function TabView() {
@@ -185,15 +170,15 @@ var TabView = (function (_super) {
         if (primaryColor) {
             this._tabLayout.setBackgroundColor(primaryColor);
         }
+        if (this._androidViewId < 0) {
+            this._androidViewId = android.view.View.generateViewId();
+        }
         this._viewPager = new android.support.v4.view.ViewPager(this._context);
+        this._viewPager.setId(this._androidViewId);
         var lp = new org.nativescript.widgets.CommonLayoutParams();
         lp.row = 1;
         this._viewPager.setLayoutParams(lp);
         this._grid.addView(this._viewPager);
-        if (this._androidViewId < 0) {
-            this._androidViewId = android.view.View.generateViewId();
-        }
-        this._grid.setId(this._androidViewId);
         ensurePageChangedListenerClass();
         this._pageChagedListener = new PageChangedListenerClass(this);
         this._viewPager.addOnPageChangeListener(this._pageChagedListener);
@@ -292,37 +277,6 @@ exports.TabView = TabView;
 var TabViewStyler = (function () {
     function TabViewStyler() {
     }
-    TabViewStyler.setColorProperty = function (v, newValue) {
-        var tab = v;
-        if (tab.items && tab.items.length > 0) {
-            var tabLayout = tab._getAndroidTabView();
-            for (var i = 0; i < tab.items.length; i++) {
-                tabLayout.getTextViewForItemAt(i).setTextColor(newValue);
-            }
-        }
-    };
-    TabViewStyler.resetColorProperty = function (v, nativeValue) {
-        if (types.isNullOrUndefined(nativeValue)) {
-            return;
-        }
-        var tab = v;
-        if (tab.items && tab.items.length > 0) {
-            var tabLayout = tab._getAndroidTabView();
-            for (var i = 0; i < tab.items.length; i++) {
-                tabLayout.getTextViewForItemAt(i).setTextColor(nativeValue);
-            }
-        }
-    };
-    TabViewStyler.getColorProperty = function (v) {
-        var tab = v;
-        var tv = tab._getAndroidTabView().getTextViewForItemAt(0);
-        if (tv) {
-            return tv.getTextColors().getDefaultColor();
-        }
-        else {
-            return null;
-        }
-    };
     TabViewStyler.setFontInternalProperty = function (v, newValue, nativeValue) {
         var tab = v;
         var fontValue = newValue;
@@ -370,9 +324,86 @@ var TabViewStyler = (function () {
             return null;
         }
     };
+    TabViewStyler.setTabTextColorProperty = function (v, newValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setTabTextColor(types.isNumber(newValue) ? new java.lang.Integer(newValue) : newValue);
+    };
+    TabViewStyler.resetTabTextColorProperty = function (v, nativeValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setTabTextColor(types.isNumber(nativeValue) ? new java.lang.Integer(nativeValue) : nativeValue);
+    };
+    TabViewStyler.getTabTextColorProperty = function (v) {
+        var tabLayout = v._getAndroidTabView();
+        return tabLayout.getTabTextColor();
+    };
+    TabViewStyler.setTabBackgroundColorProperty = function (v, newValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setBackgroundColor(newValue);
+    };
+    TabViewStyler.resetTabBackgroundColorProperty = function (v, nativeValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setBackgroundColor(nativeValue);
+    };
+    TabViewStyler.getTabBackgroundColorProperty = function (v) {
+        var tabLayout = v._getAndroidTabView();
+        var background = tabLayout.getBackground();
+        if (background instanceof android.graphics.drawable.ColorDrawable) {
+            return background.getColor();
+        }
+        return null;
+    };
+    TabViewStyler.setSelectedTabTextColorProperty = function (v, newValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setSelectedTabTextColor(types.isNumber(newValue) ? new java.lang.Integer(newValue) : newValue);
+    };
+    TabViewStyler.resetSelectedTabTextColorProperty = function (v, nativeValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setSelectedTabTextColor(types.isNumber(nativeValue) ? new java.lang.Integer(nativeValue) : nativeValue);
+    };
+    TabViewStyler.getSelectedTabTextColorProperty = function (v) {
+        var tabLayout = v._getAndroidTabView();
+        return tabLayout.getSelectedTabTextColor();
+    };
+    TabViewStyler.setAndroidSelectedTabHighlightColorProperty = function (v, newValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setSelectedIndicatorColors([newValue]);
+    };
+    TabViewStyler.resetAndroidSelectedTabHighlightColorProperty = function (v, nativeValue) {
+        var tabLayout = v._getAndroidTabView();
+        tabLayout.setSelectedIndicatorColors([nativeValue]);
+    };
+    TabViewStyler.getAndroidSelectedTabHighlightColorProperty = function (v) {
+        var tabLayout = v._getAndroidTabView();
+        var selectedIndicatorColors = tabLayout.getSelectedIndicatorColors();
+        return selectedIndicatorColors.length > 0 ? selectedIndicatorColors[0] : null;
+    };
+    TabViewStyler.setTextTransformProperty = function (v, newValue) {
+        var tabView = v;
+        var tabLayout = tabView._getAndroidTabView();
+        for (var i = 0; i < tabView.items.length; i++) {
+            var textView = tabLayout.getTextViewForItemAt(i);
+            var str = tabView.items[i].title;
+            var result = utils.ad.getTransformedString(newValue, textView, str);
+            textView.setText(result);
+        }
+    };
+    TabViewStyler.resetTextTransformProperty = function (v, nativeValue) {
+        var tabView = v;
+        var tabLayout = tabView._getAndroidTabView();
+        for (var i = 0; i < tabView.items.length; i++) {
+            var textView = tabLayout.getTextViewForItemAt(i);
+            var str = tabView.items[i].title;
+            var result = utils.ad.getTransformedString(nativeValue, textView, str);
+            textView.setText(result);
+        }
+    };
     TabViewStyler.registerHandlers = function () {
-        style.registerHandler(style.colorProperty, new style.StylePropertyChangedHandler(TabViewStyler.setColorProperty, TabViewStyler.resetColorProperty, TabViewStyler.getColorProperty), "TabView");
         style.registerHandler(style.fontInternalProperty, new style.StylePropertyChangedHandler(TabViewStyler.setFontInternalProperty, TabViewStyler.resetFontInternalProperty, TabViewStyler.getNativeFontInternalValue), "TabView");
+        style.registerHandler(style.tabTextColorProperty, new style.StylePropertyChangedHandler(TabViewStyler.setTabTextColorProperty, TabViewStyler.resetTabTextColorProperty, TabViewStyler.getTabTextColorProperty), "TabView");
+        style.registerHandler(style.tabBackgroundColorProperty, new style.StylePropertyChangedHandler(TabViewStyler.setTabBackgroundColorProperty, TabViewStyler.resetTabBackgroundColorProperty, TabViewStyler.getTabBackgroundColorProperty), "TabView");
+        style.registerHandler(style.selectedTabTextColorProperty, new style.StylePropertyChangedHandler(TabViewStyler.setSelectedTabTextColorProperty, TabViewStyler.resetSelectedTabTextColorProperty, TabViewStyler.getSelectedTabTextColorProperty), "TabView");
+        style.registerHandler(style.androidSelectedTabHighlightColorProperty, new style.StylePropertyChangedHandler(TabViewStyler.setAndroidSelectedTabHighlightColorProperty, TabViewStyler.resetAndroidSelectedTabHighlightColorProperty, TabViewStyler.getAndroidSelectedTabHighlightColorProperty), "TabView");
+        style.registerHandler(style.textTransformProperty, new style.StylePropertyChangedHandler(TabViewStyler.setTextTransformProperty, TabViewStyler.resetTextTransformProperty), "TabView");
     };
     return TabViewStyler;
 }());

@@ -1,0 +1,29 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+    <Page.actionBar>
+        <ActionBar title="{{ title }}"/>
+    </Page.actionBar>
+    <GridLayout rows="*,auto" columns="*">
+        <ScrollView id="scroller">
+            <StackLayout orientation="vertical">
+                <GridLayout rows="*" columns="*,*,*">
+                    <Label row="0" col="0" text="user" class="highScoreHeader" />
+                    <Label row="0" col="1" text="moves" class="highScoreHeader" />
+                    <Label row="0" col="2" text="level" class="highScoreHeader" />
+                </GridLayout>
+                <Repeater items="{{ highscores }}">
+                    <Repeater.itemTemplate>
+                        <GridLayout rows="*" columns="*,*,*">
+                            <Label row="0" col="0" text="{{ user }}" class="{{ cssClass }}" />
+                            <Label row="0" col="1" text="{{ moves }}" class="{{ cssClass }}" />
+                            <Label row="0" col="2" text="{{ level }}" class="{{ cssClass }}" />
+                        </GridLayout>
+                    </Repeater.itemTemplate>
+                </Repeater>
+                <StackLayout orientation="vertical" class="pushRight">
+                    <!--<button id="addButton" text="Add" class="reset" tap="addButtonTap" />-->
+                    <button id="resetButton" text="Reset" class="reset" tap="resetButtonTap" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>

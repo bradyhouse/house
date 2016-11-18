@@ -460,10 +460,12 @@ var knownFolders;
         ios.library = function () {
             _checkPlatform("library");
             if (!_library) {
-                var path = getFileAccess().getKnownPath(5);
-                _library = Folder.fromPath(path);
-                _library[pathProperty] = path;
-                _library[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(5);
+                if (existingFolderInfo) {
+                    _library = existingFolderInfo.folder;
+                    _library[pathProperty] = existingFolderInfo.path;
+                    _library[isKnownProperty] = true;
+                }
             }
             return _library;
         };
@@ -471,10 +473,12 @@ var knownFolders;
         ios.developer = function () {
             _checkPlatform("developer");
             if (!_developer) {
-                var path = getFileAccess().getKnownPath(6);
-                _developer = Folder.fromPath(path);
-                _developer[pathProperty] = path;
-                _developer[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(6);
+                if (existingFolderInfo) {
+                    _developer = existingFolderInfo.folder;
+                    _developer[pathProperty] = existingFolderInfo.path;
+                    _developer[isKnownProperty] = true;
+                }
             }
             return _developer;
         };
@@ -482,10 +486,12 @@ var knownFolders;
         ios.desktop = function () {
             _checkPlatform("desktop");
             if (!_desktop) {
-                var path = getFileAccess().getKnownPath(12);
-                _desktop = Folder.fromPath(path);
-                _desktop[pathProperty] = path;
-                _desktop[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(12);
+                if (existingFolderInfo) {
+                    _desktop = existingFolderInfo.folder;
+                    _desktop[pathProperty] = existingFolderInfo.path;
+                    _desktop[isKnownProperty] = true;
+                }
             }
             return _desktop;
         };
@@ -493,10 +499,12 @@ var knownFolders;
         ios.downloads = function () {
             _checkPlatform("downloads");
             if (!_downloads) {
-                var path = getFileAccess().getKnownPath(15);
-                _downloads = Folder.fromPath(path);
-                _downloads[pathProperty] = path;
-                _downloads[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(15);
+                if (existingFolderInfo) {
+                    _downloads = existingFolderInfo.folder;
+                    _downloads[pathProperty] = existingFolderInfo.path;
+                    _downloads[isKnownProperty] = true;
+                }
             }
             return _downloads;
         };
@@ -504,10 +512,12 @@ var knownFolders;
         ios.movies = function () {
             _checkPlatform("movies");
             if (!_movies) {
-                var path = getFileAccess().getKnownPath(17);
-                _movies = Folder.fromPath(path);
-                _movies[pathProperty] = path;
-                _movies[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(17);
+                if (existingFolderInfo) {
+                    _movies = existingFolderInfo.folder;
+                    _movies[pathProperty] = existingFolderInfo.path;
+                    _movies[isKnownProperty] = true;
+                }
             }
             return _movies;
         };
@@ -515,10 +525,12 @@ var knownFolders;
         ios.music = function () {
             _checkPlatform("music");
             if (!_music) {
-                var path = getFileAccess().getKnownPath(18);
-                _music = Folder.fromPath(path);
-                _music[pathProperty] = path;
-                _music[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(18);
+                if (existingFolderInfo) {
+                    _music = existingFolderInfo.folder;
+                    _music[pathProperty] = existingFolderInfo.path;
+                    _music[isKnownProperty] = true;
+                }
             }
             return _music;
         };
@@ -526,10 +538,12 @@ var knownFolders;
         ios.pictures = function () {
             _checkPlatform("pictures");
             if (!_pictures) {
-                var path = getFileAccess().getKnownPath(19);
-                _pictures = Folder.fromPath(path);
-                _pictures[pathProperty] = path;
-                _pictures[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(19);
+                if (existingFolderInfo) {
+                    _pictures = existingFolderInfo.folder;
+                    _pictures[pathProperty] = existingFolderInfo.path;
+                    _pictures[isKnownProperty] = true;
+                }
             }
             return _pictures;
         };
@@ -537,13 +551,27 @@ var knownFolders;
         ios.sharedPublic = function () {
             _checkPlatform("sharedPublic");
             if (!_sharedPublic) {
-                var path = getFileAccess().getKnownPath(21);
-                _sharedPublic = Folder.fromPath(path);
-                _sharedPublic[pathProperty] = path;
-                _sharedPublic[isKnownProperty] = true;
+                var existingFolderInfo = getExistingFolderInfo(21);
+                if (existingFolderInfo) {
+                    _sharedPublic = existingFolderInfo.folder;
+                    _sharedPublic[pathProperty] = existingFolderInfo.path;
+                    _sharedPublic[isKnownProperty] = true;
+                }
             }
             return _sharedPublic;
         };
+        function getExistingFolderInfo(pathDirectory) {
+            var fileAccess = getFileAccess();
+            var folderPath = fileAccess.getKnownPath(pathDirectory);
+            var folderInfo = fileAccess.getExistingFolder(folderPath);
+            if (folderInfo) {
+                return {
+                    folder: createFolder(folderInfo),
+                    path: folderPath
+                };
+            }
+            return undefined;
+        }
     })(ios = knownFolders.ios || (knownFolders.ios = {}));
 })(knownFolders = exports.knownFolders || (exports.knownFolders = {}));
 var path;
