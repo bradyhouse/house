@@ -36,12 +36,12 @@ Note - You may also want to explore using the database to persist game state.  H
 ### Use Case
 
 1.  Using your terminal app of choice navigate to the `scripts` directory
-2.  Startup the POC `fiddle.sh start fiddle-0008-FifteenPuzzle`
+2.  Startup the POC `fiddle.sh "start" "nativeScript" 0009`
 
 
 ### Tags
 
-{N}, nativescript
+{N}, nativescript, nativescript-sqlite
 
 
 ### Forked From
