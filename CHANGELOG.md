@@ -1275,6 +1275,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**
   1.  Added [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
   2.  Added [fiddles/nativescript/fiddle-0009-SqliteDb](fiddles/nativescript/fiddle-0009-SqliteDb) ~ [Issue 84](https://github.com/bradyhouse/house/issues/84)        
+  3.  Started [fiddles/nativescript/fiddle-0010-Puzzle](fiddles/nativescript/fiddle-0010-Puzzle) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
 
 * **Node**
   1.  Added [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~  [Issue 82](https://github.com/bradyhouse/house/issues/82)

@@ -56,8 +56,8 @@ function npmInstall() {
 }
 
 function gitNg2SeederClone() {
-  groupLog "gitClone";
-  $(git clone --depth 1 ${__NG2_SEEDER__} ${projectName};) || exit 2;
+  groupLog "gitNg2SeederClone";
+  $(git clone --depth 1 ${__NG2_SEEDER__} $1;) || exit 2;
 }
 
 function initNg2Project() {
@@ -72,9 +72,9 @@ function initNg2Project() {
   $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
   $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 5;
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
+  gitNg2SeederClone "${projectName}" || exit $?;
   cd ${projectName};
   createTypingsRcFile || exit $?;
-  gitNg2SeederClone || exit $?;
   rm -rf .github || exit 3;
   rm -rf .git || exit 3;
   rm -rf README.md || exit 4;

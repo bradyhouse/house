@@ -6,6 +6,7 @@ module.exports = {
   'txt'     : 'text/plain',
   'adoc'    : 'text/plain',
   'md'      : 'text/x-markdown',
+  'mdx'     : 'text/mdx',
   'markdown': 'text/x-markdown',
   'htm'     : 'text/html',
   'html'    : 'text/html',
@@ -26,5 +27,5 @@ module.exports = {
   'jpg'     : 'image/jpeg',
   'bmml'    : 'text/plain',
   'log'     : 'text/plain',
-  'sh'      : 'text/plain'	
+  'sh'      : 'text/plain'
 }
