@@ -1,0 +1,60 @@
+{
+  "name": "nativescript-vibrate",
+  "version": "1.1.2",
+  "description": "A vibrate NativeScript plugin for Android and iOS",
+  "main": "vibrate.js",
+  "nativescript": {
+    "platforms": {
+      "ios": "1.1.2",
+      "android": "1.1.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anarchicknight/nativescript-vibrate.git"
+  },
+  "keywords": [
+    "NativeScript"
+  ],
+  "author": {
+    "name": "Anarchic Knight",
+    "email": "anarchicknight@gmail.com",
+    "url": "http://www.anarchicknight.co.uk"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/anarchicknight/nativescript-vibrate/blob/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/anarchicknight/nativescript-vibrate/issues"
+  },
+  "homepage": "https://github.com/anarchicknight/nativescript-vibrate",
+  "gitHead": "af10abd07473a21d2cd4c5ee50b062201fd17510",
+  "_id": "nativescript-vibrate@1.1.2",
+  "scripts": {},
+  "_shasum": "a3199971988dae78b3c15afb597bab4ac23c7fb9",
+  "_from": "nativescript-vibrate@latest",
+  "_npmVersion": "3.10.7",
+  "_nodeVersion": "6.7.0",
+  "_npmUser": {
+    "name": "anarchicknight",
+    "email": "anarchicknight@gmail.com"
+  },
+  "dist": {
+    "shasum": "a3199971988dae78b3c15afb597bab4ac23c7fb9",
+    "tarball": "https://registry.npmjs.org/nativescript-vibrate/-/nativescript-vibrate-1.1.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "anarchicknight",
+      "email": "anarchicknight@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/nativescript-vibrate-1.1.2.tgz_1476615076896_0.24621752300299704"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nativescript-vibrate/-/nativescript-vibrate-1.1.2.tgz",
+  "readme": "ERROR: No README data found!"
+}

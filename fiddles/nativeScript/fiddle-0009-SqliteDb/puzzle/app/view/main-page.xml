@@ -1,0 +1,14 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="{{ title }}"/>
+  <ScrollView>
+    <StackLayout style="padding: 10%;" orientation="vertical">
+      <Image src="~/images/main-page-logo.png" stretch ="none" />
+      <WrapLayout>
+        <label text=" " ></label>
+        <Button text="Play"  tap="playTap" />
+        <Button text="About" tap="aboutTap"/>
+        <Button text="High Scores" tap="highScoreTap" visibility="{{ highscoreVisibility }}" />
+      </WrapLayout>
+  </StackLayout>
+  </ScrollView>
+</Page>

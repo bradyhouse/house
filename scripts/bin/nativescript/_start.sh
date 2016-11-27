@@ -14,6 +14,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
+# 11/26/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -72,7 +73,8 @@ function nativescriptAndroidStart() {
           nativeScriptRunAndroid;
           ;;
         'ng2') # angular 2
-          npmRunStartAndroid;
+          startAndroidEmulator;
+          nativeScriptRunAndroid;
           ;;
     esac
     exit 0;

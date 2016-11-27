@@ -1,6 +1,9 @@
 fiddle-0000-Template
 ======
 
+![Screenshot](screenshot.png)
+
+
 ### Title
 
 template
@@ -8,7 +11,7 @@ template
 
 ### Creation Date
 
-09-18-16
+11-26-16
 
 
 ### Location
@@ -27,6 +30,12 @@ NativeScript fiddle template test.  This is a smoke test of the [fiddle.sh](../.
 it supports create/delete/refactor/list functionality for "nativescript" based POC's aka fiddles. This is only a test.
 
 
+### Use Case
+
+1.  Using your terminal app of choice navigate to the `scripts` directory
+2.  Startup the POC `fiddle.sh start fiddle-0000-Template`
+
+
 ### Tags
 
-nativescript
+{N}, nativescript

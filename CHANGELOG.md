@@ -1255,7 +1255,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Finished [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject) ~ [Issue 77](https://github.com/bradyhouse/house/issues/77)
 
 * **fiddle.sh**
-    1.  Added Android support ~ ~ [Issue 80](https://github.com/bradyhouse/house/issues/80)
+    1.  Added Android support ~ [Issue 80](https://github.com/bradyhouse/house/issues/80)
       * See [fiddles/bash/fiddle-0093-InitAndroidProject](fiddles/bash/fiddle-0093-InitAndroidProject)
       * Reflected changes:
         1.  Added [scripts/bin/android](scripts/bin/android)
@@ -1268,14 +1268,20 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
         9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
         10. Updated [fiddles/android/README.md](fiddles/android/README.md)
-
+    2.  Removed angular-seed-advanced dependency ~ [Issue 86](https://github.com/bradyhouse/house/issues/86)
+      * Reflected changes:
+        1.  Updated [scripts/bin/nativescript/.nativescriptrc](scripts/bin/nativescript/.nativescriptrc)
+        2.  Updated [scripts/bin/nativescript/_install.sh](scripts/bin/nativescript/_install.sh)
+        3.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
+        
 * **Java**
   1.  Started [fiddles/java/fiddle-0004-CSVToJsonEndpoint](fiddles/java/fiddle-0004-CSVToJsonEndpoint) ~  [Issue 81](https://github.com/bradyhouse/house/issues/81)
 
 * **NativeScript**
   1.  Added [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
   2.  Added [fiddles/nativescript/fiddle-0009-SqliteDb](fiddles/nativescript/fiddle-0009-SqliteDb) ~ [Issue 84](https://github.com/bradyhouse/house/issues/84)        
-  3.  Started [fiddles/nativescript/fiddle-0010-Puzzle](fiddles/nativescript/fiddle-0010-Puzzle) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
+  3.  Started [fiddles/nativescript/fiddle-0010-Groceries](fiddles/nativescript/fiddle-0010-Groceries) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
 
 * **Node**
   1.  Added [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~  [Issue 82](https://github.com/bradyhouse/house/issues/82)
+

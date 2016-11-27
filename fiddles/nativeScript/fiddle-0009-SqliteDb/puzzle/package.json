@@ -1,0 +1,25 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.puzzle",
+    "tns-android": {
+      "version": "2.3.0"
+    }
+  },
+  "dependencies": {
+    "moment": "^2.15.2",
+    "nativescript-sqlite": "^1.1.2",
+    "nativescript-theme-core": "0.1.2",
+    "nativescript-vibrate": "^1.1.2",
+    "tns-core-modules": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.16.0",
+    "babel-types": "6.16.0",
+    "babylon": "6.11.4",
+    "lazy": "1.0.11"
+  }
+}

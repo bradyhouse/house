@@ -14,6 +14,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
+# 11/26/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -55,10 +56,6 @@ function npmInstall() {
   npm install;
 }
 
-function gitNg2SeederClone() {
-  groupLog "gitNg2SeederClone";
-  $(git clone --depth 1 ${__NG2_SEEDER__} $1;) || exit 2;
-}
 
 function initNg2Project() {
   groupLog "initNg2ProjectDirectory";
@@ -72,15 +69,14 @@ function initNg2Project() {
   $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
   $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 5;
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
-  gitNg2SeederClone "${projectName}" || exit $?;
+
+  nativescript create ${projectName} --ng || exit 7;
+  cd ${projectName};
+  nativescript platform add android || exit 9;
+
   cd ${projectName};
   createTypingsRcFile || exit $?;
-  rm -rf .github || exit 3;
-  rm -rf .git || exit 3;
-  rm -rf README.md || exit 4;
-  rm -r LICENSE || exit 4;
-  rm -rf .editorconfig || exit 4;
-  npmInstall;
+
 }
 
 function nativescriptCreate() {

@@ -1,0 +1,41 @@
+@import url('~/css/core.dark.android.css');
+
+/*Page {
+    background-image: url('~/images/background.png');
+}*/
+
+actionbar{
+    background-color: black;
+    color: white;
+    font-family: Courier;
+}
+
+Image {
+    display: block;
+    margin: 0 auto;
+}
+
+stacklayout button {
+    font-size: 50vw;
+    horizontal-align: center;
+    /*border-radius: 13;
+    opacity: .9;
+    background-color:  #676E5F;
+    border-color: #CCD5AB;
+    border-width: 1;
+    color: white; */
+    height: 30%;
+    width: 100%;
+    padding: 10%;
+}
+
+.hidden {
+    visibility: collapsed;
+}
+
+.show {
+    visibility: visible;
+}
+
+
+

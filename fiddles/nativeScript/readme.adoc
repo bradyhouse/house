@@ -44,7 +44,7 @@ then you will need to complete the following steps:
 1. Open the link:../../scripts/bin/nativescript/.nativescriptrc[scripts/bin/nativescript/.nativescriptrc] file
 2. Change the `__TEMPLATE_TYPE__` variable from `js` to `ng2`
 
-Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles using the link:https://github.com/NathanWalker/angular2-seed-advanced.git[Angular2 Advanced Seeder] repo.
+Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles using Angular2 and Typescript.
 
 
 == Online Resources

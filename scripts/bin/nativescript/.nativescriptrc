@@ -10,10 +10,10 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 201609160420
+# 11/26/2016 - See CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
 export __NODE_VERSION__="5.1.0";
-export __NG2_SEEDER__="https://github.com/NathanWalker/angular2-seed-advanced.git";
 export __ANDROID_EMULATOR_PROFILE__=320480QVGA;
 export __ANDROID_EMULATOR_EXE__="/Users/bradyhouse/bin/android-sdk-macosx/tools/emulator";
 
