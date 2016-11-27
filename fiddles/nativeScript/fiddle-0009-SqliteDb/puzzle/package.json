@@ -7,6 +7,9 @@
     "id": "org.nativescript.puzzle",
     "tns-android": {
       "version": "2.3.0"
+    },
+    "tns-ios": {
+      "version": "2.5.0-2016-11-25-1"
     }
   },
   "dependencies": {
@@ -14,7 +17,7 @@
     "nativescript-sqlite": "^1.1.2",
     "nativescript-theme-core": "0.1.2",
     "nativescript-vibrate": "^1.1.2",
-    "tns-core-modules": "^2.3.0"
+    "tns-core-modules": "^2.5.0-2016-11-25-4869"
   },
   "devDependencies": {
     "babel-traverse": "6.16.0",
