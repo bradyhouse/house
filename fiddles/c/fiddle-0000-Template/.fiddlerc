@@ -1,0 +1,4 @@
+
+export __PROJECT_DIR__=template;
+export __SOURCE_FILE__=main.c;
+export __COMPILED_FILE__=template;

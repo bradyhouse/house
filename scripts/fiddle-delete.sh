@@ -29,6 +29,7 @@
 # 05/18/2015 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 10/01/2016 - See CHANGELOG @ 201610010420
+# 11/30/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -79,7 +80,7 @@ function updateChangeLog() {
 	  if [ "$#" -ne 2 ]; then  exit 86; fi
     prompt || exit $?;
     case ${fiddleType} in
-        'android' | 'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+        'android' | 'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
                 rm -rf "${fiddlePath}" || exit 87

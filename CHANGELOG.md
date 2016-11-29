@@ -1290,3 +1290,25 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Bash**
   1.  Added [fiddles/bash/fiddle-0094-InitCProject](fiddles/bash/fiddle-0094-InitCProject) ~ [Issue 89](https://github.com/bradyhouse/house/issues/89)
+
+* **fiddle.sh**
+    1.  Added C support ~ [Issue 88](https://github.com/bradyhouse/house/issues/88)
+      * See [fiddles/bash/fiddle-0094-InitCProject](fiddles/bash/fiddle-0094-InitCProject)
+          * Reflected changes:
+            1.  Added [scripts/bin/c](scripts/bin/c)
+            2.  Added [scripts/fiddle-c.sh](scripts/fiddle-c.sh)
+            3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+            4.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+            5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+            6.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+            7.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+            8.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+            9.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+            10. Added [fiddles/c/readme.adoc](fiddles/c/readme.adoc)
+            11. Added [fiddles/c/create.md](fiddles/c/create.md)
+            12. Added [fiddles/c/delete.md](fiddles/c/delete.md)
+            13. Added [fiddles/c/fork.md](fiddles/c/fork.md)
+            14. Added [fiddles/c/list.md](fiddles/c/list.md)
+            15. Added [fiddles/c/refactor.md](fiddles/c/refactor.md)
+            16. Updated [readme.adoc](readme.adoc)
+            

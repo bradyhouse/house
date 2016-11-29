@@ -26,6 +26,7 @@
 # 05/18/2015 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 10/01/2016 - See CHANGELOG @ 201610010420
+# 11/30/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -64,7 +65,6 @@ function startServer() {
             isAndroidInstalled || exit 110;
             androidStart || exit 111;
             ;;
-
         'angular2-cli')
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_start.sh;
@@ -78,6 +78,14 @@ function startServer() {
             source bin/angular2-seeder/_start.sh;
             cd ${_fiddleRoot};
             seederStart || exit 104;
+            ;;
+        'c')
+            source bin/c/.gccrc;
+            source bin/c/_install.sh;
+            source bin/c/_start.sh;
+            cd ${_fiddleRoot};
+            isGccInstalled || exit 112;
+            gccStart || exit 113;
             ;;
         'ember')
             source bin/ember/_install.sh;
@@ -211,6 +219,10 @@ case ${rc} in
     110) echo -e "Fubar\tAndroid is not installed or configured properly";
         ;;
     111) echo -e "Fubar\t\"androidStart\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    112) echo -e "Fubar\t\"GNU C Compiler, GCC\" is not installed or configured properly";
+        ;;
+    113) echo -e "Fubar\t\"gccStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

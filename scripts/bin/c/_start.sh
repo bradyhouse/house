@@ -4,29 +4,41 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 10/02/2016______________________________________________________________|
-#  Description             : MASTER ANDROID INSTALL FUNCTION(S)______________________________________|
-#  Entry Point             : isAndroidInstalled______________________________________________________|
+#  Create date             : 11/28/2016______________________________________________________________|
+#  Description             : MASTER C STARTUP FUNCTION_______________________________________________|
+#  Entry Point             : gccStart________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-android.sh____________________________________________________|
+#  Initial Consumer        : ../fiddle-start.sh______________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG @ 201610010420
+# Baseline Ver - CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 
-function isGradleInstalled() {
-  installed=$(isInstalled "gradle";);
-  if [[ "${installed}" == "false" ]]
-  then
-    exit -1;
-  fi
+
+
+function gccBuild() {
+    if [[ -e ${__COMPILED_FILE__} ]]
+    then
+        rm -rf ${__COMPILED_FILE__};
+    fi
+    ${__C_COMPILER__} ${__SOURCE_FILE__} -o ${__COMPILED_FILE__};
+
 }
 
-function isAndroidInstalled() {
-  installed=$(isInstalled "android";);
-  if [[ "${installed}" == "false" ]]
+function gccStart() {
+  groupLog "gccStart";
+  if [[ ! -e ".fiddlerc" ]]; then exit -1; fi
+  source ".fiddlerc";
+  if [[ -d "${__PROJECT_DIR__}" ]]
   then
-      exit -1;
+    cd ${__PROJECT_DIR__};
+    gccBuild || exit $?;
+    if [[ ! -e ${__COMPILED_FILE__} ]]
+    then
+        exit -1;
+    fi
+    groupLog "Invoking executable";
+    echo -e "$(./${__COMPILED_FILE__}) \n";
   fi
 }

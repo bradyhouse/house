@@ -4,20 +4,22 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : GLOBAL VARIABLE CONFIG USED BY ANDROID CREATE/START SCRIPTS.____________|
+#  Create date             : 10/02/2016______________________________________________________________|
+#  Description             : MASTER C INSTALL FUNCTION(S)____________________________________________|
+#  Entry Point             : isGccInstalled__________________________________________________________|
+#  Input Parameters        : N/A_____________________________________________________________________|
+#  Initial Consumer        : ../fiddle-c.sh__________________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG @ 201610010420
+# Baseline Ver - CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 
-export __CREATE_PROJECT_TARGET__="5";
-export __CREATE_PROJECT_PACKAGE__="fiddle.android";
-export __CREATE_ANDROID_GRADLE_VERSION__="2.1.2";
-export __CREATE_ANDROID_VERSION__="24.0.2";
-export __CREATE_GOOGLE_API_VERSION__="19";
-export __CREATE_GRADLE_VERSION__="2.10";
 
-export __START_ANDROID_EMULATOR_PROFILE__=320480QVGA;
-export __START_ANDROID_EMULATOR_EXE__="/Users/e13542/bin/android-sdk-macosx/tools/emulator";
+function isGccInstalled() {
+  installed=$(if [[ ! -e "${__C_COMPILER__}" ]]; then echo "false"; fi);
+  if [[ "${installed}" == "false" ]]
+  then
+      exit -1;
+  fi
+}

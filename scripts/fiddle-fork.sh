@@ -32,6 +32,7 @@
 # 05/18/2016 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 10/01/2016 - See CHANGELOG @ 201610010420
+# 11/30/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -116,6 +117,13 @@ forkedOnDate=$(date +"%m-%d-%y";)
           source bin/android/_fork.sh;
           cd "../fiddles/android";
           androidFork ${fiddleName} ${targetFiddle} || exit 100;
+          cd "../../scripts";
+          ;;
+        'c')
+          source bin/c/.gccrc;
+          source bin/c/_fork.sh;
+          cd "../fiddles/c";
+          gccFork ${fiddleName} ${targetFiddle} || exit 101;
           cd "../../scripts";
           ;;
         'java')
@@ -230,6 +238,8 @@ case ${rc} in
     99) echo "fubar! call to javaFork failed."
         ;;
     100) echo "fubar! call to androidFork failed."
+        ;;
+    101) echo "fubar! call to gccFork failed."
         ;;
     *)  echo "fubar! Something went wrong."
         if [[ -d "../fiddles/${fiddleType}/${targetFiddle}" ]]; then rm -R "../fiddles/${fiddleType}/${targetFiddle}"; fi

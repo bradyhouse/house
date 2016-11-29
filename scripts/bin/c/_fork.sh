@@ -4,7 +4,7 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 11/28/2016______________________________________________________________|
+#  Create date             : 09/22/2016______________________________________________________________|
 #  Description             : MASTER C FORK FUNCTION__________________________________________________|
 #  Entry Point             : gccFork_________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
@@ -19,10 +19,13 @@ function initForkedConfigFile() {
   groupLog "initFiddleConfigFile";
   $(echo "" > "$1/.fiddlerc";) || exit 2
   $(echo "export __PROJECT_DIR__=$2;" >>"$1/.fiddlerc";) || exit 2
+  $(echo "export __SOURCE_FILE__=${__DEFAULT_SOURCE_FILE__};" >>$1/".fiddlerc";) || exit 8
+  $(echo "export __COMPILED_FILE__=$2;" >>$1/".fiddlerc";) || exit 8
+
 }
 
 function gccFork() {
-  groupLog "gccFork";
+  groupLog "cFork";
   this=$0;
   forkSource=$1;
   forkTarget=$2;
@@ -32,7 +35,7 @@ function gccFork() {
     sourceProjectName=$(toLowerCase ${forkSource};) || exit 1;
     targetSuffix=$(parseName ${forkTarget};) || exit 1;
     targetProjectName=$(toLowerCase ${targetSuffix};) || exit 1;
-    initForkedConfigFile "${forkTarget}" "${sourceProjectName}" || exit $?;
+    initForkedConfigFile "${forkTarget}" "${targetProjectName}" || exit $?;
     $(voidSubstr "${forkSource}" ${forkTarget} "${forkTarget}/README.md";) || exit 3;
     $(echo  "" >> "${forkTarget}/README.md";) || exit 3
     $(echo  "" >> "${forkTarget}/README.md";) || exit 3

@@ -29,6 +29,7 @@
 # 05/18/2015 - See CHANGELOG @ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 10/01/2016 - See CHANGELOG @ 201610010420
+# 11/30/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -62,6 +63,9 @@ source bin/_types.sh
         'aurelia')
             ./fiddle-aurelia.sh $2 || exit 104;
             ./fiddle-index.sh "aurelia" || exit 104;
+            ;;
+        'c')
+            ./fiddle-c.sh $2 || exit 108;
             ;;
         'compass')
             ./fiddle-compass.sh $2 || exit 87;
@@ -211,6 +215,8 @@ case ${_rc} in
     106) echo "fubar! java fiddle creation failed."
         ;;
     107) echo "fubar! android fiddle creation failed."
+        ;;
+    108) echo "fubar! c fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;
