@@ -1,4 +1,6 @@
-﻿@import url("~/css/core.light.css");
+﻿@import '~/css/core.light.css'; 
+
+@import url("~/css/core.light.css");
 @import url("~/platform.css");
 
 Page {

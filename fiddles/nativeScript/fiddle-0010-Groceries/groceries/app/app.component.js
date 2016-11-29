@@ -2,9 +2,10 @@
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.email = "nativescriptrocks@telerik.com";
     }
     AppComponent.prototype.submit = function () {
-        console.log("hello");
+        alert("You’re using: " + this.email);
     };
     AppComponent = __decorate([
         core_1.Component({

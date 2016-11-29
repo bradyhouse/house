@@ -6,7 +6,8 @@ import {Component} from "@angular/core";
     styleUrls: ["pages/login/login-common.css", "pages/login/login.css"]
 })
 export class AppComponent {
+    email = "nativescriptrocks@telerik.com";
     submit() {
-        console.log("hello");
+        alert("You’re using: " + this.email);
     }
 }

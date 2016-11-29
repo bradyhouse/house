@@ -1283,5 +1283,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   3.  Started [fiddles/nativescript/fiddle-0010-Groceries](fiddles/nativescript/fiddle-0010-Groceries) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
 
 * **Node**
-  1.  Added [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~  [Issue 82](https://github.com/bradyhouse/house/issues/82)
+  1.  Added [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~ [Issue 82](https://github.com/bradyhouse/house/issues/82)
 
+
+### 201611280420
+
+* **Bash**
+  1.  Added [fiddles/bash/fiddle-0094-InitCProject](fiddles/bash/fiddle-0094-InitCProject) ~ [Issue 89](https://github.com/bradyhouse/house/issues/89)

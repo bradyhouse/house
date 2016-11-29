@@ -5,28 +5,16 @@
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
 #  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : MASTER NATIVESCRIPT STARTUP FUNCTION____________________________________|
-#  Entry Point             : nativescriptAndroidStart________________________________________________|
+#  Description             : MASTER ANDROID STARTUP FUNCTION_________________________________________|
+#  Entry Point             : androidStart____________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
 #  Initial Consumer        : ../fiddle-start.sh______________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
-# 09/16/2016 - See CHANGELOG @ 201609160420
-# 11/26/2016 - See CHANGELOG @ 201610010420
+# Baseline Ver - CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
-
-function nativeScriptRunAndroid() {
-  groupLog "nativeScriptRunAndroid";
-  nativescript livesync --watch;
-}
-
-function npmRunStartAndroid() {
-  groupLog "npmRunStartAndroid";
-   npm run start.android;
-}
 
 function isEmulatorRunning() {
   isRunning=$(lsof -i -P | grep :5554 | awk '{print $2}' | wc -l | xargs);
@@ -43,45 +31,33 @@ function startAndroidEmulator() {
 
   if [[ $(isEmulatorRunning;) == "false" ]]
   then
-    nohup ${__ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__ANDROID_EMULATOR_PROFILE__}" &
+    nohup ${__START_ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__START_ANDROID_EMULATOR_PROFILE__}" &
     sleep 30;
   else
     groupLog "emulator is already running";
   fi
 }
 
+function gradlewInstallDebug() {
+  groupLog "gradlewInstallDebug";
+  cd $1;
+  #try
+  (
+    ./gradlew installDebug;
+  )
+  rc=$?; case ${rc} in
+    0)  groupLog "gradlew run - successful."
+        ;;
+    *)  exit -1;
+        ;;
+  esac
 
-function nativescriptAndroidStart() {
-    groupLog "nativescriptAndroidStart";
-    type=$2;
-    if [[ ! -d $1 ]]
-    then
-      if [[ -e ".fiddlerc" ]]
-      then
-        source ".fiddlerc";
-        type=${__PROJECT_TYPE__};
-        cd ${__PROJECT_DIR__};
-        if [[ -d platforms ]]
-        then
-            rm -rf platforms
-        fi
-        tns platform add android
-      else
-        exit -1;
-      fi
-    else
-      cd $1;
-    fi
+}
 
-    case ${type} in
-        'js') # javascript
-          startAndroidEmulator;
-          nativeScriptRunAndroid;
-          ;;
-        'ng2') # angular 2
-          startAndroidEmulator;
-          nativeScriptRunAndroid;
-          ;;
-    esac
-    exit 0;
+function androidStart() {
+  groupLog "androidStart";
+  if [[ ! -e ".fiddlerc" ]]; then exit -1; fi
+  source ".fiddlerc";
+  startAndroidEmulator;
+  gradlewInstallDebug ${__PROJECT_DIR__};
 }

@@ -5,25 +5,19 @@
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
 #  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : GLOBAL VARIABLE CONFIG USED BY NATIVESCRIPT CREATE/START SCRIPTS._______|
+#  Description             : GLOBAL VARIABLE CONFIG USED BY ANDROID CREATE/START SCRIPTS.____________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG @ 201609160420
-# 11/26/2016 - See CHANGELOG @ 201610010420
+# Baseline Ver - CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
-export __NODE_VERSION__="5.1.0";
-export __PLATFORM__="ANDROID";
-export __ANDROID_EMULATOR_PROFILE__=320480QVGA;
-export __ANDROID_EMULATOR_EXE__="/Users/e13542/bin/android-sdk-macosx/tools/emulator";
+export __CREATE_PROJECT_TARGET__="5";
+export __CREATE_PROJECT_PACKAGE__="fiddle.android";
+export __CREATE_ANDROID_GRADLE_VERSION__="2.1.2";
+export __CREATE_ANDROID_VERSION__="24.0.2";
+export __CREATE_GOOGLE_API_VERSION__="19";
+export __CREATE_GRADLE_VERSION__="2.10";
 
-# -------------------------------------------------
-# TEMPLATE TYPE SWITCH
-# This variable controls the template used by
-# the fiddle.sh when initializing a new nativescript
-# fiddle. 2 options are supported:
-#   "js"  JavaScript
-#   "ng2" Angular2
-# --------------------------------------------------
-export __TEMPLATE_TYPE__="ng2";
+export __START_ANDROID_EMULATOR_PROFILE__=320480QVGA;
+export __START_ANDROID_EMULATOR_EXE__="/Users/e13542/bin/android-sdk-macosx/tools/emulator";

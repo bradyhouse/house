@@ -4,26 +4,29 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : GLOBAL VARIABLE CONFIG USED BY NATIVESCRIPT CREATE/START SCRIPTS._______|
+#  Create date             : 10/02/2016______________________________________________________________|
+#  Description             : MASTER ANDROID INSTALL FUNCTION(S)______________________________________|
+#  Entry Point             : isAndroidInstalled______________________________________________________|
+#  Input Parameters        : N/A_____________________________________________________________________|
+#  Initial Consumer        : ../fiddle-android.sh____________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG @ 201609160420
-# 11/26/2016 - See CHANGELOG @ 201610010420
+# Baseline Ver - CHANGELOG @ 201610010420
 # ---------------------------------------------------------------------------------------------------|
 
-export __NODE_VERSION__="5.1.0";
-export __PLATFORM__="ANDROID";
-export __ANDROID_EMULATOR_PROFILE__=320480QVGA;
-export __ANDROID_EMULATOR_EXE__="/Users/e13542/bin/android-sdk-macosx/tools/emulator";
+function isGradleInstalled() {
+  installed=$(isInstalled "gradle";);
+  if [[ "${installed}" == "false" ]]
+  then
+    exit -1;
+  fi
+}
 
-# -------------------------------------------------
-# TEMPLATE TYPE SWITCH
-# This variable controls the template used by
-# the fiddle.sh when initializing a new nativescript
-# fiddle. 2 options are supported:
-#   "js"  JavaScript
-#   "ng2" Angular2
-# --------------------------------------------------
-export __TEMPLATE_TYPE__="ng2";
+function isAndroidInstalled() {
+  installed=$(isInstalled "android";);
+  if [[ "${installed}" == "false" ]]
+  then
+      exit -1;
+  fi
+}
