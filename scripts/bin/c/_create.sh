@@ -20,7 +20,7 @@ function initFiddleConfigFile() {
   $(echo "" > ".fiddlerc";) || exit 2
   $(echo "export __PROJECT_DIR__=$1;" >>".fiddlerc";) || exit 8
   $(echo "export __SOURCE_FILE__=${__DEFAULT_SOURCE_FILE__};" >>".fiddlerc";) || exit 8
-  $(echo "export __COMPILED_FILE__=$1;" >>".fiddlerc";) || exit 8
+  $(echo "export __COMPILED_FILE__=target/$1;" >>".fiddlerc";) || exit 8
 }
 
 function initFiddleDirectory() {
@@ -37,7 +37,8 @@ function initFiddleDirectory() {
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 3;
   $(voidSubstr '{{projectName}}' ${projectName} "main.c";) || exit 3;
   mkdir "${projectName}";
-  mv "main.c" "${projectName}";
+  mkdir "${projectName}/src";
+  mv "main.c" "${projectName}/src";
 
 }
 

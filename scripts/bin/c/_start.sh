@@ -33,6 +33,12 @@ function gccStart() {
   if [[ -d "${__PROJECT_DIR__}" ]]
   then
     cd ${__PROJECT_DIR__};
+    if [[ -d "target" ]]
+    then
+        rm -rf target;
+    fi
+    mkdir target;
+
     gccBuild || exit $?;
     if [[ ! -e ${__COMPILED_FILE__} ]]
     then

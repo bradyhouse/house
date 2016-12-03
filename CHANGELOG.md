@@ -1310,5 +1310,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             13. Added [fiddles/c/fork.md](fiddles/c/fork.md)
             14. Added [fiddles/c/list.md](fiddles/c/list.md)
             15. Added [fiddles/c/refactor.md](fiddles/c/refactor.md)
-            16. Updated [readme.adoc](readme.adoc)
-            
+            16. Added [fiddles/c/start.md](fiddles/c/start.md)
+            17. Updated [readme.adoc](readme.adoc)
+
+* **NativeScript**
+    1.  Started [fiddles/nativescript/fiddle-0011-Puzzle](fiddles/nativescript/fiddle-0011-Puzzle)
+
+

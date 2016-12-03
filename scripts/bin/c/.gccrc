@@ -12,5 +12,5 @@
 # Baseline Ver - CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 
-export __DEFAULT_SOURCE_FILE__="main.c";
+export __DEFAULT_SOURCE_FILE__="src/main.c";
 export __C_COMPILER__="/usr/bin/gcc";

@@ -58,11 +58,19 @@ jspm_packages
 # misc
 .sass-cache
 connect.lock
+
 coverage/*
 libpeerconnection.log
 npm-debug.log
 testem.log
 fiddles/angular2/fiddle-0*/app-example
+
+# c fiddles
+fiddles/c/fiddle-*/*/target/
+
+# nativeScript fiddles
+fiddles/nativeScript/fiddle-*/*/platforms/
+
 
 # under construction
 fiddles/aurelia/fiddle-0037-ModalPopUp/*

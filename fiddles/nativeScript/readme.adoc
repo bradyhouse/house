@@ -49,7 +49,12 @@ Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles u
 
 == Online Resources
 
+* link:https://github.com/NativeScript/nativescript[Main NativeScript GitHub repo]
+
+=== Plugins
+
 * link:http://nativescript.rocks/new.php[NativeScript unofficial plugin list]
+
 
 === Getting Started with NativeScript HowTo's / Demos
 
@@ -61,6 +66,8 @@ Once this change is made, `fiddle.sh` will initialize new nativeScript fiddles u
 ** link:https://github.com/GettingStartedWithNativeScript/Chapter_5[Chapter 5 Repo]
 ** link:https://github.com/GettingStartedWithNativeScript/Chapter_6[Chapter 6 Repo]
 * link:https://github.com/cfjedimaster/NativeScriptDemos[Raymond Camden's NativeScript Demos]
+* link:https://docs.nativescript.org/angular/core-concepts/angular-navigation.html[NativeScript / Angular 2 Routing]
+
 
 === Material Design
 

@@ -10,15 +10,18 @@ should probably begin with C.  This directory is dedicated to fiddles involving 
 |Create
 |`./fiddle.sh "create" "c" "fiddle-0000-Template"`
 |link:create.md[sample output & additional details]
-|Fork
-|`./fiddle.sh "fork" "c" "0000" "fiddle-0003-TemplateFork"`
-|link:fork.md[sample output & additional details]
 |Delete
 |`./fiddle.sh "delete" "c" "0000"`
 |link:delete.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "c" "0000" "fiddle-0003-TemplateFork"`
+|link:fork.md[sample output & additional details]
 |Refactor
 |`./fiddle.sh "refactor" "c" "0000" "fiddle-0100-Refactor"`
 |link:refactor.md[sample output & additional details]
+|Start
+|`./fiddle.sh "start" "c" "0000"`
+|link:start.md[sample output & additional details]
 |List
 |`./fiddle.sh "list" "c"`
 |link:list.md[sample output & additional details]
