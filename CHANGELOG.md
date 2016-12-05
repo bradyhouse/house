@@ -1320,4 +1320,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/c/fiddle-0001-DataTypes](fiddles/c/fiddle-0001-DataTypes) ~ [Issue 90](https://github.com/bradyhouse/house/issues/90)
     2.  Added [fiddles/c/fiddle-0002-ArithmeticOperators](fiddles/c/fiddle-0002-ArithmeticOperators) ~ [Issue 91](https://github.com/bradyhouse/house/issues/91)
     3.  Added [fiddles/c/fiddle-0003-ModulusOperator](fiddles/c/fiddle-0003-ModulusOperator) ~ [Issue 92](https://github.com/bradyhouse/house/issues/92)
-
+    4.  Added [fiddles/c/fiddle-0004-IntFloatConversion](fiddles/c/fiddle-0004-IntFloatConversion) ~ [Issue 93](https://github.com/bradyhouse/house/issues/93)
