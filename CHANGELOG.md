@@ -1316,4 +1316,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**
     1.  Started [fiddles/nativescript/fiddle-0011-Puzzle](fiddles/nativescript/fiddle-0011-Puzzle)
 
-
+* **C**
+    1.  Added [fiddles/c/fiddle-0001-DataTypes](fiddles/c/fiddle-0001-DataTypes) ~ [Issue 90](https://github.com/bradyhouse/house/issues/90)
+    2.  Added [fiddles/c/fiddle-0002-ArithmeticOperators](fiddles/c/fiddle-0002-ArithmeticOperators) ~ [Issue 91](https://github.com/bradyhouse/house/issues/91)
