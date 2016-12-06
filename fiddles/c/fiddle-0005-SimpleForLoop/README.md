@@ -3,7 +3,7 @@ fiddle-0005-SimpleForLoop
 
 ### Title
 
-triangularnumbers
+Simple For Loop
 
 
 ### Creation Date
