@@ -45,6 +45,6 @@ function gccStart() {
         exit -1;
     fi
     groupLog "Invoking executable";
-    echo -e "$(./${__COMPILED_FILE__}) \n";
+    ./${__COMPILED_FILE__};
   fi
 }
