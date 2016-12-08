@@ -1,0 +1,32 @@
+fiddle-0008-DoWhileLoop
+======
+
+### Title
+
+Do While Loop
+
+
+### Creation Date
+
+12-07-16
+
+
+### Location
+
+Chicago, IL
+
+
+### Issue
+
+[Issue ??](https://github.com/bradyhouse/house/issues/??)
+
+
+### Description
+
+Create a fiddle based on Program 5.9 from Stephen Kochan's book [Programming in C (Developer's Library) 4th Edition](http://a.co/1QJ9MDN).  This program
+reverses the digits of any number using a do/while loop.
+
+
+### Tags
+
+gcc, c, do, while, printf, scanf

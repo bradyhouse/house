@@ -1324,8 +1324,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added [fiddles/c/fiddle-0005-SimpleForLoop](fiddles/c/fiddle-0005-SimpleForLoop) ~ [Issue 95](https://github.com/bradyhouse/house/issues/95)
     6.  Added [fiddles/c/fiddle-0006-ScanfInput](fiddles/c/fiddle-0006-ScanfInput) ~ [Issue 96](https://github.com/bradyhouse/house/issues/96)
     7.  Added [fiddles/c/fiddle-0007-GCDWhileLoop](fiddles/c/fiddle-0007-GCDWhileLoop) ~ [Issue 97](https://github.com/bradyhouse/house/issues/97)
-    8.  Added [fiddles/c/fiddle-0008-DoWhileLoop](fiddles/c/fiddle-0008-DoWhileLoop) ~ [Issue 98](https://github.com/bradyhouse/house/issues/98)
-    9.  Added [fiddles/c/fiddle-0009-LogicalOperators](fiddles/c/fiddle-0009-LogicalOperators) ~ [Issue 99](https://github.com/bradyhouse/house/issues/99)
-    10. Added [fiddles/c/fiddle-0010-CharOperations](fiddles/c/fiddle-0010-CharOperations) ~ [Issue 100](https://github.com/bradyhouse/house/issues/100)
-    11. Added [fiddles/c/fiddle-0011-ExpressionEvaluation](fiddles/c/fiddle-0011-ExpressionEvaluation) ~ [Issue 101](https://github.com/bradyhouse/house/issues/101)
-
+* Added [fiddles/c/fiddle-0008-DoWhileLoop](fiddles/c/fiddle-0008-DoWhileLoop)
+* Added [fiddles/java/fiddle-0005-LogForging](fiddles/java/fiddle-0005-LogForging)
+* Added [fiddles/c/fiddle-0009-LogicalOperators](fiddles/c/fiddle-0009-LogicalOperators)
+* Added [fiddles/c/fiddle-0010-CharOperations](fiddles/c/fiddle-0010-CharOperations)
