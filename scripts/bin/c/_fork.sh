@@ -35,13 +35,13 @@ function gccFork() {
     sourceProjectName=$(toLowerCase ${forkSource};) || exit 1;
     targetSuffix=$(parseName ${forkTarget};) || exit 1;
     targetProjectName=$(toLowerCase ${targetSuffix};) || exit 1;
-    initForkedConfigFile "${forkTarget}" "${targetProjectName}" || exit $?;
+    initForkedConfigFile "${forkTarget}" "${sourceProjectName}" || exit $?;
     $(voidSubstr "${forkSource}" ${forkTarget} "${forkTarget}/README.md";) || exit 3;
     $(echo  "" >> "${forkTarget}/README.md";) || exit 3
     $(echo  "" >> "${forkTarget}/README.md";) || exit 3
     $(echo "### Forked From" >> "${forkTarget}/README.md";) || exit 3
     $(echo  "" >> "${forkTarget}/README.md";) || exit 3
-    $(echo "[${forkTarget}](../${forkSource})" >> "${forkTarget}/README.md";) || exit 3
+    $(echo "[${forkSource}](../${forkSource})" >> "${forkTarget}/README.md";) || exit 3
   )
   # catch
   rc=$?; case ${rc} in

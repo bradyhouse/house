@@ -66,4 +66,4 @@ This should produce the following output:
 
 ### Tags
 
-gcc, c, for, printf, int
+gcc, c, for, printf, int, stdio.h

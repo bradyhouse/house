@@ -57,4 +57,4 @@ Enter the value `2222` and press `[enter]`
 
 ### Tags
 
-gcc, c, printf, scanf, &&, ||
+gcc, c, printf, scanf, &&, ||, stdio.h

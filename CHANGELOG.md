@@ -1328,4 +1328,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     9.  Added [fiddles/c/fiddle-0009-LogicalOperators](fiddles/c/fiddle-0009-LogicalOperators) ~ [Issue 99](https://github.com/bradyhouse/house/issues/99)
     10. Added [fiddles/c/fiddle-0010-CharOperations](fiddles/c/fiddle-0010-CharOperations) ~ [Issue 100](https://github.com/bradyhouse/house/issues/100)
     11. Added [fiddles/c/fiddle-0011-ExpressionEvaluation](fiddles/c/fiddle-0011-ExpressionEvaluation) ~ [Issue 101](https://github.com/bradyhouse/house/issues/101)
-
+    12. Added [fiddles/c/fiddle-0012-SwitchStatements](fiddles/c/fiddle-0012-SwitchStatements) ~ [Issue 102](https://github.com/bradyhouse/house/issues/102)
+    13. Added [fiddles/c/fiddle-0013-BooleanDataType](fiddles/c/fiddle-0013-BooleanDataType) ~ [Issue 103](https://github.com/bradyhouse/house/issues/103)

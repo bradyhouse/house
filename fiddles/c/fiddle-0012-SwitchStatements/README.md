@@ -1,14 +1,14 @@
-fiddle-0002-ArithmeticOperators
+fiddle-0012-SwitchStatements
 ======
 
 ### Title
 
-arithmeticoperators
+Expression Evaluation
 
 
 ### Creation Date
 
-12-05-16
+12-08-16
 
 
 ### Location
@@ -18,19 +18,20 @@ Chicago, IL
 
 ### Issue
 
-[Issue 91](https://github.com/bradyhouse/house/issues/91)
+[Issue 102](https://github.com/bradyhouse/house/issues/102)
 
 
 ### Description
 
-Create a fiddle based on Program 4.2 from Stephen Kochan's book [Programming in C (Developer's Library) 4th Edition](http://a.co/1QJ9MDN).
+Create a fiddle based on Program 6.9 from Stephen Kochan's book [Programming in C (Developer's Library) 4th Edition](http://a.co/1QJ9MDN).  
+This program is a rewrite of Program 6.8 (see [fiddle #11](../fiddle-0011-ExpressionEvaluation)) using a switch statement.
 
 
 ### Use Case
 
 Navigate to the scripts directory and execute the following command:
 
-    ./fiddle.sh "start" "c" "0002"
+    ./fiddle.sh "start" "c" "0012"
     
 This should produce the following output:
 
@@ -48,13 +49,19 @@ This should produce the following output:
     ├────STARTSERVER
     ├────GCCSTART
     ├────INVOKING EXECUTABLE
-    a - b = 98
-    b * c = 50
-    a / c = 4
-    a + b * c = 150
-    a * b + c * d = 300
+    Type in your expression.
+
+Enter the value `25 * 4` and press `[enter]`
+    
+    100.00
+
 
 
 ### Tags
 
-gcc, c, stdio.h
+gcc, c, printf, scanf, %.2f, switch, stdio.h
+
+
+### Forked From
+
+[fiddle-0011-ExpressionEvaluation](../fiddle-0011-ExpressionEvaluation)

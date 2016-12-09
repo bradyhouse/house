@@ -58,4 +58,4 @@ Enter the value `100` and press `[enter]`
 
 ### Tags
 
-gcc, c, scanf, printf
+gcc, c, scanf, printf, stdio.h

@@ -57,4 +57,4 @@ Enter the value `222 987` and press `[enter]`
 
 ### Tags
 
-gcc, c, while, printf, scanf
+gcc, c, while, printf, scanf, stdio.h

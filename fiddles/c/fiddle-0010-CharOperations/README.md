@@ -29,4 +29,4 @@ uses comparison operators to determine whether an inputted character is numeric 
 
 ### Tags
 
-gcc, c, printf, scanf, if, else if, else, &&, ||, <=, >=, ascii
+gcc, c, printf, scanf, if, else if, else, &&, ||, <=, >=, ascii, stdio.h

@@ -59,4 +59,4 @@ Enter the value `25 * 4` and press `[enter]`
 
 ### Tags
 
-gcc, c, printf, scanf, %.2f
+gcc, c, printf, scanf, %.2f, stdio.h

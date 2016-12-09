@@ -58,4 +58,4 @@ This should produce the following output:
 
 ### Tags
 
-gcc, c
+gcc, c, stdio.h

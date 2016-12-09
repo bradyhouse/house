@@ -60,4 +60,4 @@ Enter the value `123456789` and press `[enter]`
 
 ### Tags
 
-gcc, c, do, while, printf, scanf
+gcc, c, do, while, printf, scanf, stdio.h
