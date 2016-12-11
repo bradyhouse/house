@@ -112,3 +112,6 @@ gradle-app.setting
 
 # key files
 *.keystore
+
+# nativescript configuration file
+/scripts/bin/nativescript/.nativescriptrc

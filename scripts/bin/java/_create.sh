@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 201609160420
+# 12/11/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 
 function initFiddleConfigFile() {
@@ -127,3 +128,54 @@ function javaCreate() {
 }
 
 
+function catch() {
+    case $1 in
+        0)  endLog "${this}";
+            ;;
+        1)  endLog "java is not installed or configured properly.";
+            ;;
+        2)  endLog "gradle is not installed or configured properly";
+            ;;
+        3)  endLog "git is not installed or configured properly";
+            ;;
+        4)  endLog "call to javaCreate function failed";
+            ;;
+        5)  endLog "cannot access root java fiddle directory.";
+            ;;
+        6)  endLog "cannot not parse project name";
+            ;;
+        7)  endLog "maven is not installed or configured properly";
+            ;;
+        *)  endLog "fubar! Something went wrong."
+            ;;
+    esac
+    exit $1
+}
+
+function create() {
+  if [ "$#" -ne 1 ]
+  then
+        echo "Incorrect number of arguments"
+        echo "Please specify the name of the new fiddle"
+        exit 59
+  fi
+  fiddleSubDir="../fiddles/java";
+  bornOnDate=$(date +"%m-%d-%y";)
+  # try
+  (
+      startLog $(echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}');
+      name=$1;
+      suffix=$(parseName ${name};);
+      projectName=$(toLowerCase ${suffix};);
+      groupLog "App Name: \"${projectName}\"";
+      cd "${fiddleSubDir}" || exit 5;
+      isJavaInstalled || exit 1;
+      $(isGradleInstalled;) || exit 2;
+      $(isGitInstalled;) || exit 3;
+      $(isMvnInstalled;) || exit 7;
+      javaCreate $1 ${bornOnDate} ${projectName} ${__SEEDER__} || exit 4;
+  )
+  rc=$?; catch ${rc};
+  # finally
+  exit ${rc};
+}

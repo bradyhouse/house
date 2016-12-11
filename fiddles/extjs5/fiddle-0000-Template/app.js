@@ -1,6 +1,6 @@
 var meta = {
     fiddleHeader: 'fiddle-0000-Template',
-    fiddleSubHeader: 'Template Fiddle created @ 09-30-16' +
+    fiddleSubHeader: 'Template Fiddle created @ 12-11-16' +
     '<br />'
 };
 Ext.define('Fiddle.Records', {

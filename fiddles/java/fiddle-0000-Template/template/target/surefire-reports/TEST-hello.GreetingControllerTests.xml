@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hello.GreetingControllerTests" time="0.285" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="hello.GreetingControllerTests" time="0.322" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib"/>
@@ -61,6 +61,6 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="noParamGreetingShouldReturnDefaultMessage" classname="hello.GreetingControllerTests" time="0.277"/>
+  <testcase name="noParamGreetingShouldReturnDefaultMessage" classname="hello.GreetingControllerTests" time="0.314"/>
   <testcase name="paramGreetingShouldReturnTailoredMessage" classname="hello.GreetingControllerTests" time="0.008"/>
 </testsuite>

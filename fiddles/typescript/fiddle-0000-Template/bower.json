@@ -1,13 +1,12 @@
 {
   "name": "template",
-  "description": "fiddle template test",
-  "main": "app.js",
+  "description": "template",
+  "main": "index.js",
   "authors": [
     "bradyhouse@gmail.com <bradyhouse@gmail.com>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/bradyhouse/house",
-  "moduleType": [],
   "ignore": [
     "**/.*",
     "node_modules",

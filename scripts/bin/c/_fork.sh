@@ -20,7 +20,7 @@ function initForkedConfigFile() {
   $(echo "" > "$1/.fiddlerc";) || exit 2
   $(echo "export __PROJECT_DIR__=$2;" >>"$1/.fiddlerc";) || exit 2
   $(echo "export __SOURCE_FILE__=${__DEFAULT_SOURCE_FILE__};" >>$1/".fiddlerc";) || exit 8
-  $(echo "export __COMPILED_FILE__=$2;" >>$1/".fiddlerc";) || exit 8
+  $(echo "export __COMPILED_FILE__=target/$2;" >>$1/".fiddlerc";) || exit 8
 
 }
 
@@ -32,7 +32,7 @@ function gccFork() {
   # try
   (
     sourceSuffix=$(parseName ${forkSource};) || exit 1;
-    sourceProjectName=$(toLowerCase ${forkSource};) || exit 1;
+    sourceProjectName=$(toLowerCase ${sourceSuffix};) || exit 1;
     targetSuffix=$(parseName ${forkTarget};) || exit 1;
     targetProjectName=$(toLowerCase ${targetSuffix};) || exit 1;
     initForkedConfigFile "${forkTarget}" "${sourceProjectName}" || exit $?;

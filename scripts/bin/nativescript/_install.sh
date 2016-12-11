@@ -71,7 +71,7 @@ function nvmInstall() {
             exit -1;
         fi
     fi
-    . ~/.nvm/nvm.sh;
+    . $(brew --prefix nvm)/nvm.sh;
 }
 
 function nvmUseNodeVer() {

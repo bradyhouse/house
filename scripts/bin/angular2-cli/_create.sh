@@ -70,3 +70,49 @@ function ngCreate() {
     exit ${rc};
 }
 
+function catch() {
+    case $1 in
+        0)  endLog "\"${fiddleSubDir}\" created.";
+            ;;
+        1)  endLog "_install.sh: ngInstall() failed";
+            ;;
+        2)  endLog "_create.sh: ngCreate() failed";
+            ;;
+        *)  endLog "fubar! Something went wrong.";
+            ;;
+    esac
+    exit $1
+}
+
+function create() {
+  if [ "$#" -ne 1 ]
+  then
+        echo "Incorrect number of arguments"
+        echo "Please specify the name of the new fiddle"
+        exit 59
+  fi
+
+  clear;
+  echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
+  echo "Bash version ${BASH_VERSION}..."
+
+  fiddleSubDir="../fiddles/angular2/$1";
+  fiddleTemplateDir="../fiddles/angular2/template";
+  bornOnDate=$(date +"%m-%d-%y";)
+  echo ${bornOnDate};
+
+  # try
+  (
+      if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
+      cd ../fiddles/angular2-cli;
+      ngInstall || exit 1;
+      ngCreate $1 ${bornOnDate} || exit 2;
+  )
+
+  # catch
+  rc=$?; catch ${rc};
+
+  #finally
+  exit ${rc};
+
+}

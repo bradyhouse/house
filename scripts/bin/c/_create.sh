@@ -72,4 +72,47 @@ function gccCreate() {
     return ${rc};
 }
 
+function catch() {
+    case $1 in
+        0)  endLog "${this}";
+            ;;
+        1)  endLog "gcc is not installed or configured properly.";
+            ;;
+        2)  endLog "call to cCreate function failed";
+            ;;
+        3)  endLog "cannot access root android fiddle directory.";
+            ;;
+        *)  endLog "fubar! Something went wrong."
+            ;;
+    esac
+    exit $1
+}
+
+function create() {
+  clear;
+  if [ "$#" -ne 1 ]
+  then
+        echo "Incorrect number of arguments"
+        echo "Please specify the name of the new fiddle"
+        exit 59
+  fi
+  fiddleSubDir="../fiddles/c";
+  bornOnDate=$(date +"%m-%d-%y";)
+  # try
+  (
+      startLog $(echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}');
+      name=$1;
+      suffix=$(parseName ${name};);
+      projectName=$(toLowerCase ${suffix};);
+      groupLog "App Name: ";
+      echo "\"${projectName}\"";
+      cd "${fiddleSubDir}" || exit 3;
+      isGccInstalled || exit 1;
+      gccCreate $1 ${bornOnDate} ${projectName} || exit 2;
+  )
+  rc=$?; catch ${rc};
+  # finally
+  exit ${rc};
+
+}
 

@@ -11,12 +11,17 @@ House SVG Fiddle - fiddle-0000-Template
 
 ### Creation Date
 
-06-13-16
+12-11-16
 
 
 ### Location
 
 Chicago, IL
+
+
+### Issue
+
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
 
 
 ### Description

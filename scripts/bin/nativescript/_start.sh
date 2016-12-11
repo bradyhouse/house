@@ -28,6 +28,7 @@ function npmRunStartAndroid() {
    npm run start.android;
 }
 
+
 function isEmulatorRunning() {
   isRunning=$(lsof -i -P | grep :5554 | awk '{print $2}' | wc -l | xargs);
   if [[ ${isRunning} == "1" ]]

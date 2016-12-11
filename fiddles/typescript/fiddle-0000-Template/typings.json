@@ -1,6 +1,0 @@
-{
-  "ambientDependencies": {
-    "d3": "registry:dt/d3#2.10.0+20130105065035",
-    "jquery": "registry:dt/jquery#2.0.0+20160303223636"
-  }
-}

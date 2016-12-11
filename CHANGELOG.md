@@ -1312,7 +1312,108 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             15. Added [fiddles/c/refactor.md](fiddles/c/refactor.md)
             16. Added [fiddles/c/start.md](fiddles/c/start.md)
             17. Updated [readme.adoc](readme.adoc)
-
+    2.  Refactor script root directory ~ [Issue 106](https://github.com/bradyhouse/house/issues/106)
+      * Reflected changes:
+        1.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+        2.  Deleted scripts/fiddle-angular.sh
+        3.  Added [scripts/bin/angular](scripts/bin/angular)
+        4.  Added [scripts/bin/angular/_create.sh](scripts/bin/angular/_create.sh)
+        5.  Added [scripts/bin/angular/README.md](scripts/bin/angular/README.md)
+        6.  Deleted scripts/fiddle-angular-cli.sh
+        7.  Added [scripts/bin/angular-cli](scripts/bin/angular-cli)
+        8.  Added [scripts/bin/angular-cli/_create.sh](scripts/bin/angular-cli/_create.sh)
+        9.  Added [scripts/bin/angular-cli/README.md](scripts/bin/angular-cli/README.md)
+        10. Deleted scripts/fiddle-angular2.sh
+        11. Added [scripts/bin/angular2](scripts/bin/angular2)
+        12. Added [scripts/bin/angular2/_create.sh](scripts/bin/angular2/_create.sh)
+        13. Added [scripts/bin/angular2/README.md](scripts/bin/angular2/README.md)
+        14. Deleted scripts/fiddle-android.sh
+        15. Updated [scripts/bin/android/_create.sh](scripts/bin/android/_create.sh)
+        16. Deleted scripts/fiddle-bash.sh
+        17. Added [scripts/bin/bash](scripts/bin/bash)
+        18. Added [scripts/bin/bash/_create.sh](scripts/bin/bash/_create.sh)
+        19. Added [scripts/bin/bash/README.md](scripts/bin/bash/README.md)
+        20. Deleted scripts/fiddle-ant.sh
+        21. Added [scripts/bin/ant](scripts/bin/ant)
+        22. Added [scripts/bin/ant/_create.sh](scripts/bin/ant/_create.sh)
+        23. Added [scripts/bin/ant/README.md](scripts/bin/ant/README.md)
+        24. Deleted scripts/fiddle-aurelia.sh
+        25. Added [scripts/bin/aurelia](scripts/bin/aurelia)
+        26. Added [scripts/bin/aurelia/_create.sh](scripts/bin/aurelia/_create.sh)
+        27. Added [scripts/bin/aurelia/README.md](scripts/bin/aurelia/README.md)
+        28. Deleted scripts/fiddle-electron.sh
+        29. Updated [scripts/bin/electron/_create.sh](scripts/bin/electron/_create.sh)
+        30. Deleted scripts/fiddle-compass.sh
+        31. Added [scripts/bin/compass](scripts/bin/compass)
+        32. Added [scripts/bin/compass/_create.sh](scripts/bin/compass/_create.sh)
+        33. Added [scripts/bin/compass/README.md](scripts/bin/compass/README.md)
+        34. Deleted scripts/fiddle-d3.sh
+        35. Added [scripts/bin/d3](scripts/bin/d3)
+        36. Added [scripts/bin/d3/_create.sh](scripts/bin/d3/_create.sh)
+        37. Added [scripts/bin/d3/README.md](scripts/bin/d3/README.md)
+        38. Deleted scripts/fiddle-docker.sh
+        39. Updated [scripts/bin/docker/_create.sh](scripts/bin/docker/_create.sh)
+        40. Deleted scripts/fiddle-chrome.sh
+        41. Added [scripts/bin/chrome](scripts/bin/chrome)
+        42. Added [scripts/bin/chrome/_create.sh](scripts/bin/chrome/_create.sh)
+        43. Added [scripts/bin/chrome/README.md](scripts/bin/chrome/README.md)
+        44. Deleted scripts/fiddle-c.sh
+        45. Updated [scripts/bin/c/_create.sh](scripts/bin/c/_create.sh)
+        46. Deleted scripts/fiddle-dojo.sh
+        47. Added [scripts/bin/dojo](scripts/bin/dojo)
+        48. Added [scripts/bin/dojo/_create.sh](scripts/bin/dojo/_create.sh)
+        49. Added [scripts/bin/dojo/README.md](scripts/bin/dojo/README.md) 
+        50. Deleted scripts/fiddle-ember.sh
+        51. Updated [scripts/bin/ember/_create.sh](scripts/bin/ember/_create.sh)
+        52. Deleted scripts/fiddle-extjs-5.sh
+        53. Added [scripts/bin/extjs5](scripts/bin/extjs5)
+        54. Added [scripts/bin/extjs5/_create.sh](scripts/bin/extjs5/_create.sh)
+        55. Added [scripts/bin/extjs5/README.md](scripts/bin/extjs5/README.md) 
+        56. Deleted scripts/fiddle-extjs-6.sh
+        57. Added [scripts/bin/extjs6](scripts/bin/extjs6)
+        58. Added [scripts/bin/extjs6/_create.sh](scripts/bin/extjs6/_create.sh)
+        59. Added [scripts/bin/extjs6/README.md](scripts/bin/extjs6/README.md) 
+        60. Deleted scripts/fiddle-java.sh
+        61. Updated [scripts/bin/java/_create.sh](scripts/bin/java/_create.sh)
+        62. Deleted scripts/fiddle-jquery.sh
+        63. Added [scripts/bin/jquery](scripts/bin/jquery)
+        64. Added [scripts/bin/jquery/_create.sh](scripts/bin/jquery/_create.sh)
+        65. Added [scripts/bin/jquery/README.md](scripts/bin/jquery/README.md) 
+        66. Deleted scripts/fiddle-meteor.sh
+        67. Updated [scripts/bin/meteor/_create.sh](scripts/bin/meteor/_create.sh)
+        68. Deleted scripts/fiddle-nativescript.sh
+        69. Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
+        70. Deleted scripts/fiddle-node.sh
+        71. Added [scripts/bin/node](scripts/bin/node)
+        72. Added [scripts/bin/node/_create.sh](scripts/bin/node/_create.sh)
+        73. Added [scripts/bin/node/README.md](scripts/bin/node/README.md) 
+        74. Deleted scripts/fiddle-php.sh
+        75. Added [scripts/bin/php](scripts/bin/php)
+        76. Added [scripts/bin/php/_create.sh](scripts/bin/php/_create.sh)
+        77. Added [scripts/bin/php/README.md](scripts/bin/php/README.md) 
+        78. Deleted scripts/fiddle-python.sh
+        79. Added [scripts/bin/python](scripts/bin/python)
+        80. Added [scripts/bin/python/_create.sh](scripts/bin/python/_create.sh)
+        81. Added [scripts/bin/python/README.md](scripts/bin/python/README.md) 
+        82. Deleted scripts/fiddle-rxjs.sh
+        83. Added [scripts/bin/rxjs](scripts/bin/rxjs)
+        84. Added [scripts/bin/rxjs/_create.sh](scripts/bin/rxjs/_create.sh)
+        85. Added [scripts/bin/rxjs/README.md](scripts/bin/rxjs/README.md) 
+        86. Deleted scripts/fiddle-three.sh
+        87. Added [scripts/bin/three](scripts/bin/three)
+        88. Added [scripts/bin/three/_create.sh](scripts/bin/three/_create.sh)
+        89. Added [scripts/bin/three/README.md](scripts/bin/three/README.md) 
+        90. Deleted scripts/fiddle-typescript.sh
+        91. Added [scripts/bin/typescript/_create.sh](scripts/bin/typescript/_create.sh)
+        92. Deleted scripts/fiddle-tween.sh
+        93. Added [scripts/bin/tween](scripts/bin/tween)
+        94. Added [scripts/bin/tween/_create.sh](scripts/bin/tween/_create.sh)
+        95. Added [scripts/bin/tween/README.md](scripts/bin/tween/README.md)
+        96. Deleted scripts/fiddle-svg.sh
+        97. Added [scripts/bin/svg](scripts/bin/svg)
+        98. Added [scripts/bin/svg/_create.sh](scripts/bin/svg/_create.sh)
+        99. Added [scripts/bin/svg/README.md](scripts/bin/svg/README.md)
+       
 * **NativeScript**
     1.  Started [fiddles/nativescript/fiddle-0011-Puzzle](fiddles/nativescript/fiddle-0011-Puzzle)
 
@@ -1330,3 +1431,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     11. Added [fiddles/c/fiddle-0011-ExpressionEvaluation](fiddles/c/fiddle-0011-ExpressionEvaluation) ~ [Issue 101](https://github.com/bradyhouse/house/issues/101)
     12. Added [fiddles/c/fiddle-0012-SwitchStatements](fiddles/c/fiddle-0012-SwitchStatements) ~ [Issue 102](https://github.com/bradyhouse/house/issues/102)
     13. Added [fiddles/c/fiddle-0013-BooleanDataType](fiddles/c/fiddle-0013-BooleanDataType) ~ [Issue 103](https://github.com/bradyhouse/house/issues/103)
+    14. Added [fiddles/c/fiddle-0014-StdboolLib](fiddles/c/fiddle-0014-StdboolLib) ~ [Issue 104](https://github.com/bradyhouse/house/issues/104)
+    15. Added [fiddles/c/fiddle-0015-Arrays](fiddles/c/fiddle-0015-Arrays) ~ [Issue 105](https://github.com/bradyhouse/house/issues/105)

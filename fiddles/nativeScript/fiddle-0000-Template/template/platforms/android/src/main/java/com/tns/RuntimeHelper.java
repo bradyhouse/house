@@ -5,27 +5,38 @@ import java.io.File;
 import android.app.Application;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import java.io.IOException;
 
 public final class RuntimeHelper {
-	private RuntimeHelper() {}
+	private RuntimeHelper() {
+	}
 
 	// hasErrorIntent tells you if there was an event (with an uncaught
 	// exception) raised from ErrorReport
-	public static boolean hasErrorIntent(Application app) {
+	private static boolean hasErrorIntent(Application app) {
 		boolean hasErrorIntent = false;
 
 		try {
 			// empty file just to check if there was a raised uncaught error by
 			// ErrorReport
-			File errFile = new File(app.getFilesDir(), ErrorReport.ERROR_FILE_NAME);
+			if (AndroidJsDebugger.isDebuggableApp(app)) {
+				String fileName = "";
 
-			if (errFile.exists()) {
-				errFile.delete();
-				hasErrorIntent = true;
+				try {
+					java.lang.Class ErrReport = java.lang.Class.forName("com.tns.ErrorReport");
+					java.lang.reflect.Field field = ErrReport.getDeclaredField("ERROR_FILE_NAME");
+					fileName = (String)field.get(null);
+				} catch (Exception e) {
+					return false;
+				}
+
+				File errFile = new File(app.getFilesDir(), fileName);
+
+				if (errFile.exists()) {
+					errFile.delete();
+					hasErrorIntent = true;
+				}
 			}
 		} catch (Exception e) {
 			Log.d(logTag, e.getMessage());
@@ -42,10 +53,11 @@ public final class RuntimeHelper {
 		
 		System.loadLibrary("NativeScript");
 
-		Runtime runtime = null;
 		Logger logger = new LogcatLogger(app);
+
 		Debugger debugger = AndroidJsDebugger.isDebuggableApp(app) ? new AndroidJsDebugger(app, logger) : null;
 
+		Runtime runtime = null;
 		boolean showErrorIntent = hasErrorIntent(app);
 		if (!showErrorIntent) {
 			NativeScriptUncaughtExceptionHandler exHandler = new NativeScriptUncaughtExceptionHandler(logger, app);
@@ -92,8 +104,8 @@ public final class RuntimeHelper {
 				extractPolicy.setAssetsThumb(app);
 			}
 
-			Object[] v8Config = V8Config.fromPackageJSON(appDir);
-			
+			AppConfig appConfig = new AppConfig(appDir);
+
 			ClassLoader classLoader = app.getClassLoader();
 			File dexDir = new File(rootDir, "code_cache/secondary-dexes");
 			String dexThumb = null;
@@ -104,13 +116,20 @@ public final class RuntimeHelper {
 					logger.write("Error while getting current proxy thumb");
 				e.printStackTrace();
 			}
-			ThreadScheduler workThreadScheduler = new WorkThreadScheduler(new Handler(Looper.getMainLooper()));
-			Configuration config = new Configuration(workThreadScheduler, logger, debugger, appName, null, rootDir,
-					appDir, classLoader, dexDir, dexThumb, v8Config);
-			runtime = new Runtime(config);
 
-			exHandler.setRuntime(runtime);
+            String nativeLibDir = null;
+            try {
+                nativeLibDir = app.getPackageManager().getApplicationInfo(appName, 0).nativeLibraryDir;
+            } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
 
+            StaticConfiguration config = new StaticConfiguration(logger, debugger, appName, nativeLibDir, rootDir,
+                    appDir, classLoader, dexDir, dexThumb, appConfig);
+
+			runtime = Runtime.initializeRuntimeWithConfiguration(config);
+
+			// runtime needs to be initialized before the NativeScriptSyncService is enabled because it uses runtime.runScript(...)
 			if (NativeScriptSyncService.isSyncEnabled(app)) {
 				NativeScriptSyncService syncService = new NativeScriptSyncService(runtime, logger, app);
 
@@ -128,7 +147,6 @@ public final class RuntimeHelper {
 				}
 			}
 
-			runtime.init();
 			runtime.runScript(new File(appDir, "internal/ts_helpers.js"));
 
 			File javaClassesModule = new File(appDir, "app/tns-java-classes.js");
@@ -138,10 +156,16 @@ public final class RuntimeHelper {
 
 			try {
 				// put this call in a try/catch block because with the latest changes in the modules it is not granted that NativeScriptApplication is extended through JavaScript.
-				Runtime.initInstance(app);
+				JavaScriptImplementation jsImpl = app.getClass().getAnnotation(JavaScriptImplementation.class);
+				if (jsImpl != null) {
+					Runtime.initInstance(app);
+				}
 			}
 			catch (Exception e) {
-				
+				if (logger.isEnabled()) {
+					logger.write("Cannot initialize application instance.");
+				}
+				e.printStackTrace();
 			}
 		}
 		return runtime;

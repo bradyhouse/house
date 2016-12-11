@@ -16,7 +16,7 @@
 export __NODE_VERSION__="5.1.0";
 export __PLATFORM__="ANDROID";
 export __ANDROID_EMULATOR_PROFILE__=320480QVGA;
-export __ANDROID_EMULATOR_EXE__="/Users/bradyhouse/bin/android-sdk-macosx/tools/emulator";
+export __ANDROID_EMULATOR_EXE__="/usr/local/bin/emulator";
 
 # -------------------------------------------------
 # TEMPLATE TYPE SWITCH

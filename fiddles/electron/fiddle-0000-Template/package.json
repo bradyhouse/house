@@ -6,22 +6,16 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bradyhouse/house.git"
-  },
+  "repository": "https://github.com/electron/fiddle-0000-Template",
   "keywords": [
     "Electron",
     "start",
-    "node"
+    "node",
+    "demo"
   ],
   "author": "bradyhouse@gmail.com",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bradyhouse/house/issues"
-  },
-  "homepage": "https://github.com/bradyhouse/house/blob/master/fiddles/electron/README.markdown",
   "devDependencies": {
-    "electron": "^1.3.4"
+    "electron": "^1.4.1"
   }
 }

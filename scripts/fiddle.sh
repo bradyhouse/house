@@ -72,7 +72,11 @@ function fiddleIndexAll() {
         'create')
             if [ "$#" -lt 3 ]; then  ./fiddle-create.sh;  exit 0; fi
             ./fiddle-delete.sh $2 $3 || exit 0;
-            ./fiddle-create.sh $2 $3
+            ./fiddle-create.sh $2 $3;
+            ;;
+        'edit')
+            if [ "$#" -lt 3 ]; then  ./fiddle-edit.sh;  exit 0; fi
+            ./fiddle-edit.sh $2 $3;
             ;;
         'fork')
             if [ "$#" -lt 4 ]; then  ./fiddle-fork.sh;  exit 0; fi
@@ -152,6 +156,8 @@ case ${_rc} in
         echo -e "\t\"delete\"\tDelete an existing fiddle"
         echo -e "\t\"refactor\"\tRename (\"refactor\") an existing fiddle"
         echo -e "\t\"test\"\t\tInvoke JsTestDriver for a given fiddle"
+        echo -e "\t\"emulate\"\tStartup the configured android emulator"
+        echo -e "\t\"edit\"\tModify a fiddle"
         echo ""
         echo -e "[a1-3]\targuments. The arguments required by the "
         echo -e "\tspecified command. There can be up to 3 arguments."

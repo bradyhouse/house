@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 201610010420
+# 12/11/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -131,3 +132,50 @@ function androidCreate() {
 }
 
 
+function catch() {
+    case $1 in
+        0)  endLog "${this}";
+            ;;
+        1)  endLog "android is not installed or configured properly.";
+            ;;
+        2)  endLog "gradle is not installed or configured properly";
+            ;;
+        3)  endLog "call to javaCreate function failed";
+            ;;
+        4)  endLog "cannot access root android fiddle directory.";
+            ;;
+        *)  endLog "fubar! Something went wrong."
+            ;;
+    esac
+    exit $1
+}
+
+function create() {
+
+  if [ "$#" -ne 1 ]
+  then
+        echo "Incorrect number of arguments"
+        echo "Please specify the name of the new fiddle"
+        exit 59
+  fi
+  fiddleSubDir="../fiddles/android";
+  bornOnDate=$(date +"%m-%d-%y";)
+
+  # try
+  (
+      startLog $(echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}');
+      name=$1;
+      suffix=$(parseName ${name};);
+      projectName=$(toLowerCase ${suffix};);
+      groupLog "App Name: ";
+      echo "\"${projectName}\"";
+      cd "${fiddleSubDir}" || exit 4;
+      $(isAndroidInstalled) || exit 1;
+      $(isGradleInstalled) || exit 2;
+      androidCreate $1 ${bornOnDate} ${projectName} || exit 3;
+  )
+  rc=$?; catch ${rc};
+  # finally
+  exit ${rc};
+
+}

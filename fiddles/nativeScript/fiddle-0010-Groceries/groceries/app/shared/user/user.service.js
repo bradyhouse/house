@@ -23,11 +23,25 @@ var UserService = (function () {
         console.log(JSON.stringify(error.json()));
         return Rx_1.Observable.throw(error);
     };
-    UserService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], UserService);
+    UserService.prototype.login = function (user) {
+        var headers = new http_1.Headers();
+        headers.append("Content-Type", "application/json");
+        return this.http.post(config_1.Config.apiUrl + "oauth/token", JSON.stringify({
+            username: user.email,
+            password: user.password,
+            grant_type: "password"
+        }), { headers: headers })
+            .map(function (response) { return response.json(); })
+            .do(function (data) {
+            config_1.Config.token = data.Result.access_token;
+        })
+            .catch(this.handleErrors);
+    };
     return UserService;
 }());
+UserService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

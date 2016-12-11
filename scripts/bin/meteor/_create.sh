@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# 12/11/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
 
 function meteorCreate() {
@@ -45,4 +46,50 @@ function meteorCreate() {
             ;;
     esac
     exit ${rc};
+}
+
+function catch() {
+    case $1 in
+        0)  endLog "\"${fiddleSubDir}\" created.";
+            ;;
+        1)  echo "_install.sh: meteorInstall() failed";
+            ;;
+        2)  echo "_create.sh: meteorCreate() failed";
+            ;;
+        *)  echo "fubar! Something went wrong."
+            ;;
+    esac
+    exit $1
+}
+
+function create() {
+  if [ "$#" -ne 1 ]
+  then
+        echo "Incorrect number of arguments"
+        echo "Please specify the name of the new fiddle"
+        exit 59
+  fi
+
+  echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
+  echo "Bash version ${BASH_VERSION}..."
+
+  fiddleSubDir="../fiddles/meteor/$1";
+  fiddleTemplateDir="../fiddles/meteor/template";
+  bornOnDate=$(date +"%m-%d-%y";)
+  echo ${bornOnDate};
+
+  # try
+  (
+      if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
+      cd ../fiddles/meteor;
+      meteorInstall || exit 1;
+      meteorCreate $1 ${bornOnDate} || exit 2;
+  )
+
+  # catch
+  rc=$?; catch ${rc};
+
+  #finally
+  exit ${rc};
+
 }

@@ -31,6 +31,8 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # ---------------------------------------------------------------------------------------------------|
+
+this=$0;
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
 source bin/_types.sh
@@ -41,108 +43,161 @@ source bin/_types.sh
 	if [ "$#" -ne 2 ]; then  exit 86; fi
     case $1 in
         'android')
-            ./fiddle-android.sh $2 || exit 107;
+            source bin/android/.androidrc;
+            source bin/android/_install.sh;
+            source bin/android/_create.sh;
+            create $2 || exit 107;
             ;;
         'angular')
-            ./fiddle-angular.sh $2 || exit 87;
+            source bin/angular/_create.sh;
+            create $2 || exit 87;
             ./fiddle-index.sh "angular" || exit 87;
             ;;
         'angular2')
-            ./fiddle-angular2.sh $2 || exit 87;
+            source bin/angular2/_create.sh;
+            create $2 || exit 87;
             ./fiddle-index.sh "angular2" || exit 87;
             ;;
         'angular2-cli')
-            ./fiddle-angular2-cli.sh $2 || exit 87;
+            source bin/angular2-cli/_install.sh;
+            source bin/angular2-cli/_create.sh;
+            create $2 || exit 87;
             ;;
         'angular2-seeder')
-            ./fiddle-angular2-seeder.sh $2 || exit 87;
+            source bin/angular2-seeder/_create.sh;
+            create $2 || exit 87;
             ;;
         'ant')
-            ./fiddle-ant.sh $2 || exit 87;
+            source bin/ant/_create.sh;
+            create $2 || exit 87;
             ;;
         'aurelia')
-            ./fiddle-aurelia.sh $2 || exit 104;
+            source bin/aurelia/_create.sh;
+            create $2 || exit 104;
             ./fiddle-index.sh "aurelia" || exit 104;
             ;;
+        'bash')
+            source bin/bash/_create.sh;
+            create $2 || exit 95;
+            ;;
         'c')
-            ./fiddle-c.sh $2 || exit 108;
+            source bin/c/.gccrc;
+            source bin/c/_install.sh;
+            source bin/c/_create.sh;
+            create $2 || exit 108;
+            ;;
+        'chrome')
+            source bin/chrome/_create.sh;
+            create $2 || exit 92;
             ;;
         'compass')
-            ./fiddle-compass.sh $2 || exit 87;
+            source bin/compass/_create.sh;
+            create $2 || exit 87;
             ./fiddle-index.sh "compass" || exit 87;
             ;;
         'd3')
-            ./fiddle-d3.sh $2 || exit 99;
+            source bin/d3/_create.sh;
+            create $2 || exit 99;
             ./fiddle-index.sh "d3" || exit 99;
             ;;
         'docker')
-            ./fiddle-docker.sh $2 || exit 105;
+            source bin/docker/_brew_update.sh;
+            source bin/docker/_brew_install_virtualbox.sh;
+            source bin/docker/_brew_install_docker.sh;
+            source bin/docker/_create.sh;
+            create $2 || exit 105;
             ;;
+        'dojo')
+            source bin/dojo/_create.sh;
+            create $2 || exit 91;
+            ./fiddle-index.sh "dojo" || exit 91
+        ;;
         'electron')
-            ./fiddle-electron.sh $2 || exit 105;
+            source bin/electron/_install.sh;
+            source bin/electron/_create.sh;
+            create $2 || exit 105;
             ;;
         'ember')
-            ./fiddle-ember.sh $2 || exit 103;
+            source bin/ember/_install.sh;
+            source bin/ember/_create.sh;
+            create $2 || exit 103;
             ;;
         'extjs5')
-            ./fiddle-extjs-5.sh $2 || exit 87;
+            source bin/extjs5/_create.sh;
+            create $2 || exit 87;
             ./fiddle-index.sh "extjs5" || exit 87;
             ;;
         'extjs6')
-            ./fiddle-extjs-6.sh $2 || exit 87;
+            source bin/extjs6/_create.sh;
+            create $2 || exit 87;
             ./fiddle-combine.sh $1 $2 || exit 87;
             ./fiddle-index.sh "extjs6" || exit 87;
             ;;
         'java')
-            ./fiddle-java.sh $2 || exit 106;
+            source bin/java/.javarc;
+            source bin/java/_install.sh;
+            source bin/java/_create.sh;
+            create $2 || exit 106;
             ;;
         'jquery')
-            ./fiddle-jquery.sh $2 || exit 88;
+            source bin/jquery/_create.sh;
+            create $2 || exit 88;
             ./fiddle-index.sh "jquery" || exit 88;
             ;;
         'meteor')
-            ./fiddle-meteor.sh $2 || exit 102
+            source bin/meteor/_install.sh;
+            source bin/meteor/_create.sh;
+            create $2 || exit 102;
             ;;
         'nativescript')
-            ./fiddle-nativescript.sh $2 || exit 105
+            source bin/nativescript/.nativescriptrc
+            source bin/nativescript/_create.sh;
+            source bin/nativescript/_install.sh;
+            source bin/nativescript/_start.sh;
+            create $2 || exit 105;
+            ;;
+        'node')
+            source bin/node/_create.sh;
+            create $2 || exit 93;
+            ;;
+        'php')
+            source bin/php/_create.sh;
+            create $2 || exit 90;
+            ;;
+        'python')
+            source bin/python/_create.sh;
+            create $2 || exit 98;
+            ;;
+        'rxjs')
+            source bin/rxjs/_create.sh;
+            create $2 || exit 100;
+            ./fiddle-index.sh "rxjs" || exit 100
             ;;
         'three')
-            ./fiddle-three.sh $2 || exit 89
+            source bin/three/_create.sh;
+            create $2 || exit 89;
             ./fiddle-combine.sh "three" "$2" "app.js" "0" || exit 89
             ./fiddle-index.sh "three" || exit 89
             ;;
-        'php')
-            ./fiddle-php.sh $2 || exit 90
-            ;;
-        'python')
-            ./fiddle-python.sh $2 || exit 98
-            ;;
-        'rxjs')
-            ./fiddle-rxjs.sh $2 || exit 100
-            ./fiddle-index.sh "rxjs" || exit 100
-            ;;
         'typescript')
-            ./fiddle-typescript.sh $2 || exit 101
-            ;;
-        'dojo')
-            ./fiddle-dojo.sh $2 || exit 91
-            ./fiddle-index.sh "dojo" || exit 91
-            ;;
-        'chrome')
-            ./fiddle-chrome.sh $2 || exit 92
-            ;;
-        'node')
-            ./fiddle-node.sh $2 || exit 93
+            source bin/typescript/_install_global.sh;
+            source bin/typescript/_add_directories.sh;
+            source bin/typescript/_init.sh;
+            source bin/typescript/_add_typingsrc.sh;
+            source bin/typescript/_install_save.sh;
+            source bin/typescript/_add_gulpfile.sh;
+            source bin/typescript/_add_karma_conf.sh;
+            source bin/typescript/_create.sh;
+            create $2 || exit 101;
             ;;
         'tween')
-            ./fiddle-tween.sh $2 || exit 94
+            source bin/tween/_create.sh;
+            create $2 || exit 94;
             ./fiddle-index.sh "tween" || exit 94
             ;;
-        'bash')
-            ./fiddle-bash.sh $2 || exit 95
-            ;;
         'svg')
-            ./fiddle-svg.sh $2 || exit 97
+            source bin/svg/_create.sh;
+            create $2 || exit 97;
             ./fiddle-index.sh "svg" || exit 97
             ;;
         *)  exit 86
