@@ -1433,3 +1433,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     13. Added [fiddles/c/fiddle-0013-BooleanDataType](fiddles/c/fiddle-0013-BooleanDataType) ~ [Issue 103](https://github.com/bradyhouse/house/issues/103)
     14. Added [fiddles/c/fiddle-0014-StdboolLib](fiddles/c/fiddle-0014-StdboolLib) ~ [Issue 104](https://github.com/bradyhouse/house/issues/104)
     15. Added [fiddles/c/fiddle-0015-Arrays](fiddles/c/fiddle-0015-Arrays) ~ [Issue 105](https://github.com/bradyhouse/house/issues/105)
+    16. Added [fiddles/c/fiddle-0016-FibonacciSequence](fiddles/c/fiddle-0016-FibonacciSequence) ~ [Issue 107](https://github.com/bradyhouse/house/issues/107)

@@ -1,14 +1,14 @@
-fiddle-0015-Arrays
+fiddle-0016-FibonacciSequence
 ======
 
 ### Title
 
-Arrays
+fibonaccisequence
 
 
 ### Creation Date
 
-12-10-16
+12-11-16
 
 
 ### Location
@@ -18,19 +18,19 @@ Chicago, IL
 
 ### Issue
 
-[Issue 105](https://github.com/bradyhouse/house/issues/105)
+[Issue 107](https://github.com/bradyhouse/house/issues/107)
 
 
 ### Description
 
-Create a fiddle based on Program 7.2 from Stephen Kochan's book [Programming in C (Developer's Library) 4th Edition](http://a.co/1QJ9MDN).  This program introduces how to create and populate arrays.
+Create a fiddle based on Program 7.3 from Stephen Kochan's book Programming in C (Developer's Library) 4th Edition. This program further explores arrays generating a table of the first 15 numbers of the [fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
 
 
 ### Use Case
 
 Navigate to the scripts directory and execute the following command:
 
-    ./fiddle.sh "start" "c" "0015"
+    ./fiddle.sh "start" "c" "0016"
     
 This should produce the following output:
 
@@ -48,24 +48,8 @@ This should produce the following output:
     ├────STARTSERVER
     ├────GCCSTART
     ├────INVOKING EXECUTABLE
-    Enter your responses
-
-Enter the value `1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 1 2` and press `[enter]`
-
-    Rating  Number of Responses
-    ------  -------------------
-       1             3
-       2             3
-       3             2
-       4             2
-       5             2
-       6             2
-       7             2
-       8             2
-       9             2
-      10             0
-
+    0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 17711 28657 46368 75025 121393 196418 317811 514229 832040 1346269 2178309 3524578 5702887 9227465 14930352 24157817 39088169 63245986
 
 ### Tags
 
-gcc, c, stdio.h, array, printf, scanf, for
+gcc, c, stdio.h, for, array, for, int, %i 
