@@ -1434,3 +1434,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     14. Added [fiddles/c/fiddle-0014-StdboolLib](fiddles/c/fiddle-0014-StdboolLib) ~ [Issue 104](https://github.com/bradyhouse/house/issues/104)
     15. Added [fiddles/c/fiddle-0015-Arrays](fiddles/c/fiddle-0015-Arrays) ~ [Issue 105](https://github.com/bradyhouse/house/issues/105)
     16. Added [fiddles/c/fiddle-0016-FibonacciSequence](fiddles/c/fiddle-0016-FibonacciSequence) ~ [Issue 107](https://github.com/bradyhouse/house/issues/107)
+
+
+### 201612120420
+
+* **fiddle.sh**
+     1.  Add edit support for C fiddles ~ [Issue 109](https://github.com/bradyhouse/house/issues/109)
+        * Reflected changes:
+            1.  Added [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)
+            2.  Added [scripts/bin/c/_edit.sh](scripts/bin/c/_edit.sh)            
+
+* **C**
+    1.  Added [fiddles/c/fiddle-0017-PrimeNumberArray](fiddles/c/fiddle-0017-PrimeNumberArray) ~ [Issue 108](https://github.com/bradyhouse/house/issues/108)

@@ -40,7 +40,14 @@ source bin/_types.sh
 
 #try
 (
-	if [ "$#" -ne 2 ]; then  exit 86; fi
+
+    if [ "$#" -ne 2 ]; then  exit 86; fi
+
+    if [[ $2 != "fiddle-0000-Template" ]]
+    then
+      $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.md") || exit 96
+    fi
+
     case $1 in
         'android')
             source bin/android/.androidrc;
@@ -203,11 +210,7 @@ source bin/_types.sh
         *)  exit 86
             ;;
     esac
-    # Update the changelog
-    if [[ $2 != "fiddle-0000-Template" ]]
-    then
-      $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.md") || exit 96
-    fi
+
 )
 #catch
 _rc=$?
