@@ -54,6 +54,11 @@ function isNvmInstalled() {
     fi
 }
 
+function nvmExecAttempt1() {
+
+
+}
+
 function nvmInstall() {
     groupLog "nvmInstall";
     installed=$(isNvmInstalled;);
@@ -71,7 +76,9 @@ function nvmInstall() {
             exit -1;
         fi
     fi
-    . $(brew --prefix nvm)/nvm.sh;
+    #. $(brew --prefix nvm)/nvm.sh;
+    . $NVM_DIR/nvm.sh;
+
 }
 
 function nvmUseNodeVer() {

@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+void printMessage (void) {
+    printf ( "{{ ʕ・ɭ・ʔ }}" );
+}
+
+int main(void) {
+
+    printMessage ();    
+
+    return 0;
+}

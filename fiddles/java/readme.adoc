@@ -33,6 +33,7 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 
 
 == Online Resources
+*   link:http://docs.oracle.com/javase/specs/jls/se8/jls8.pdf[Java 8 Specification]
 *   link:http://spring.io[Spring]
 *   link:http://springfox.github.io/springfox/[SpringFox]
 **  link:https://github.com/springfox/springfox[github repo]

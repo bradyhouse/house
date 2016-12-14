@@ -1446,3 +1446,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **C**
     1.  Added [fiddles/c/fiddle-0017-PrimeNumberArray](fiddles/c/fiddle-0017-PrimeNumberArray) ~ [Issue 108](https://github.com/bradyhouse/house/issues/108)
+    2.  Added [fiddles/c/fiddle-0019-Constants](fiddles/c/fiddle-0019-Constants) ~ [Issue 111](https://github.com/bradyhouse/house/issues/111)
+    3.  Added [fiddles/c/fiddle-0020-VariableLengthArrays](fiddles/c/fiddle-0020-VariableLengthArrays) ~ [Issue 112](https://github.com/bradyhouse/house/issues/112)
+    4.  Added [fiddles/c/fiddle-0021-Functions](fiddles/c/fiddle-0021-Functions) ~ [Issue 113](https://github.com/bradyhouse/house/issues/113)
