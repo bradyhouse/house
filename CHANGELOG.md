@@ -1462,6 +1462,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
              14. Added [fiddles/javac/refactor.md](fiddles/c/refactor.md)
              15. Added [fiddles/javac/start.md](fiddles/c/start.md)
              16. Updated [readme.adoc](readme.adoc)
+
 * **C**
     1.  Added [fiddles/c/fiddle-0017-PrimeNumberArray](fiddles/c/fiddle-0017-PrimeNumberArray) ~ [Issue 108](https://github.com/bradyhouse/house/issues/108)
     2.  Added [fiddles/c/fiddle-0019-Constants](fiddles/c/fiddle-0019-Constants) ~ [Issue 111](https://github.com/bradyhouse/house/issues/111)
@@ -1469,7 +1470,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/c/fiddle-0021-Functions](fiddles/c/fiddle-0021-Functions) ~ [Issue 113](https://github.com/bradyhouse/house/issues/113)
     5.  Added [fiddles/c/fiddle-0018-CharArray](fiddles/c/fiddle-0018-CharArray) ~ [Issue 110](https://github.com/bradyhouse/house/issues/110)
     6.  Added [fiddles/c/fiddle-0022-FunctionArguments](fiddles/c/fiddle-0022-FunctionArguments) ~ [Issue 116](https://github.com/bradyhouse/house/issues/116)
-    
+    7.  Added [fiddles/c/fiddle-0023-NewtonRaphsonMethod](fiddles/c/fiddle-0023-NewtonRaphsonMethod) ~ [Issue 117](https://github.com/bradyhouse/house/issues/117)
+
 * **Bash**  
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
 
