@@ -1471,7 +1471,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     5.  Added [fiddles/c/fiddle-0018-CharArray](fiddles/c/fiddle-0018-CharArray) ~ [Issue 110](https://github.com/bradyhouse/house/issues/110)
     6.  Added [fiddles/c/fiddle-0022-FunctionArguments](fiddles/c/fiddle-0022-FunctionArguments) ~ [Issue 116](https://github.com/bradyhouse/house/issues/116)
     7.  Added [fiddles/c/fiddle-0023-NewtonRaphsonMethod](fiddles/c/fiddle-0023-NewtonRaphsonMethod) ~ [Issue 117](https://github.com/bradyhouse/house/issues/117)
-
+    8.  Added [fiddles/c/fiddle-0024-ArrayMinValue](fiddles/c/fiddle-0024-ArrayMinValue) ~ [Issue 118](https://github.com/bradyhouse/house/issues/118)
+    
 * **Bash**  
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
+
 
