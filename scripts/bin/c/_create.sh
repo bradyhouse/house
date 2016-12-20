@@ -78,9 +78,9 @@ function catch() {
             ;;
         1)  endLog "gcc is not installed or configured properly.";
             ;;
-        2)  endLog "call to cCreate function failed";
+        2)  endLog "call to gccCreate function failed";
             ;;
-        3)  endLog "cannot access root android fiddle directory.";
+        3)  endLog "cannot access root c fiddle directory.";
             ;;
         *)  endLog "fubar! Something went wrong."
             ;;

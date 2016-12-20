@@ -53,7 +53,7 @@ via the [.gccrc](scripts/bin/c/.gccrc) file:
 
 #### To Run ...
 
-To create a new Android project, from the root directory, execute the `run.sh` script:
+To create a new `C` project, from the root directory, execute the `run.sh` script:
 
     ./run.sh
 

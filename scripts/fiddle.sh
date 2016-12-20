@@ -49,7 +49,8 @@ function fiddleIndexAll() {
 
 #try
 (
-    voidShowTitle ${thisFile};
+
+    voidShowSlug ${thisFile};
 
     if [ "$#" -lt 1 ]; then  exit 86; fi
     case $1 in
@@ -137,7 +138,9 @@ _rc=$?
 case ${_rc} in
     0)  echo ""
         ;;
-    86) echo ""
+    86) clear
+        voidShowTitle ${thisFile};
+        echo ""
         echo "Nope ~ Incorrect number of arguments"
         echo ""
         echo "Usage:"

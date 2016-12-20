@@ -16,16 +16,6 @@
 # ---------------------------------------------------------------------------------------------------|
 
 
-
-function gccBuild() {
-    if [[ -e ${__COMPILED_FILE__} ]]
-    then
-        rm -rf ${__COMPILED_FILE__};
-    fi
-    ${__C_COMPILER__} ${__SOURCE_FILE__} -o ${__COMPILED_FILE__};
-
-}
-
 function gccEdit() {
   groupLog "gccEdit";
   if [[ ! -e ".fiddlerc" ]]; then exit -1; fi

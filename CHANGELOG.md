@@ -1439,13 +1439,34 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201612120420
 
 * **fiddle.sh**
-     1.  Add edit support for C fiddles ~ [Issue 109](https://github.com/bradyhouse/house/issues/109)
+     1. Add edit support for C fiddles ~ [Issue 109](https://github.com/bradyhouse/house/issues/109)
         * Reflected changes:
             1.  Added [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)
-            2.  Added [scripts/bin/c/_edit.sh](scripts/bin/c/_edit.sh)            
-
+            2.  Added [scripts/bin/c/_edit.sh](scripts/bin/c/_edit.sh)
+     2. Added C support ~ [Issue 115](https://github.com/bradyhouse/house/issues/115)
+       * See [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject)
+           * Reflected changes:
+             1.  Added [scripts/bin/javac](scripts/bin/c)
+             2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+             3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+             4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+             5.  Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+             6.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+             7.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+             8.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+             9.  Added [fiddles/javac/readme.adoc](fiddles/c/readme.adoc)
+             10. Added [fiddles/javac/create.md](fiddles/c/create.md)
+             11. Added [fiddles/javac/delete.md](fiddles/c/delete.md)
+             12. Added [fiddles/javac/fork.md](fiddles/c/fork.md)
+             13. Added [fiddles/javac/list.md](fiddles/c/list.md)
+             14. Added [fiddles/javac/refactor.md](fiddles/c/refactor.md)
+             15. Added [fiddles/javac/start.md](fiddles/c/start.md)
+             16. Updated [readme.adoc](readme.adoc)
 * **C**
     1.  Added [fiddles/c/fiddle-0017-PrimeNumberArray](fiddles/c/fiddle-0017-PrimeNumberArray) ~ [Issue 108](https://github.com/bradyhouse/house/issues/108)
     2.  Added [fiddles/c/fiddle-0019-Constants](fiddles/c/fiddle-0019-Constants) ~ [Issue 111](https://github.com/bradyhouse/house/issues/111)
     3.  Added [fiddles/c/fiddle-0020-VariableLengthArrays](fiddles/c/fiddle-0020-VariableLengthArrays) ~ [Issue 112](https://github.com/bradyhouse/house/issues/112)
     4.  Added [fiddles/c/fiddle-0021-Functions](fiddles/c/fiddle-0021-Functions) ~ [Issue 113](https://github.com/bradyhouse/house/issues/113)
+
+* **Bash**
+    1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)

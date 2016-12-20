@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # 12/12/2016 - Baseline Ver ~ See CHANGELOG @ 201612120420
+# 12/15/2016 - See CHANGELOG @ 201612120420
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh
 source bin/_types.sh
@@ -62,6 +63,12 @@ function editFiddle() {
             source bin/c/_edit.sh;
             cd ${_fiddleRoot};
             gccEdit
+            ;;
+        'javac')
+            source bin/javac/.javacrc;
+            source bin/javac/_edit.sh;
+            cd ${_fiddleRoot};
+            javacEdit
             ;;
         *)  exit 87;
             ;;
