@@ -1468,6 +1468,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Added [fiddles/c/fiddle-0020-VariableLengthArrays](fiddles/c/fiddle-0020-VariableLengthArrays) ~ [Issue 112](https://github.com/bradyhouse/house/issues/112)
     4.  Added [fiddles/c/fiddle-0021-Functions](fiddles/c/fiddle-0021-Functions) ~ [Issue 113](https://github.com/bradyhouse/house/issues/113)
     5.  Added [fiddles/c/fiddle-0018-CharArray](fiddles/c/fiddle-0018-CharArray) ~ [Issue 110](https://github.com/bradyhouse/house/issues/110)
+    6.  Added [fiddles/c/fiddle-0022-FunctionArguments](fiddles/c/fiddle-0022-FunctionArguments) ~ [Issue 116](https://github.com/bradyhouse/house/issues/116)
     
 * **Bash**  
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
