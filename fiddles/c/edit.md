@@ -1,4 +1,4 @@
-Javac (edit)
+C (edit)
 ======
 
 Executing the command `./fiddle.sh "edit" "c" "0000"` from the scripts directory will open the `main.cs` 
