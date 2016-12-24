@@ -13,6 +13,6 @@ Executing the command `./fiddle.sh "emulate" "nativescript"` from the `scripts` 
     
 Based on your fiddler avd configuration, this should startup the android emulator:
 
-| ![Emulator](https://i.imgur.com/I17AkFb.gifv) |
+![Emulator](https://i.imgur.com/I17AkFb.gif)
 
 
