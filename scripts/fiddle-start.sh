@@ -168,11 +168,8 @@ case ${rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
-        echo "[t] - type. Valid types include: "
-        echo -e "";
-        echo -e "\t\"all\"\t\tStartup all Fiddles";
-        voidEchoFiddleTypes;
-        echo ""
+        voidEchoFiddleTypes "start";
+        echo "";
         echo "[[n]] - OPTIONAL fiddle name. When specified the fiddle's path will be used as the root directory."
         echo ""
         echo "[[p]] - OPTIONAL port number. If not specified then port 8889 will be used."

@@ -28,6 +28,18 @@ voidEchoFiddleTypes() {
             echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
             echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
             ;;
+        'emulate')
+            echo -e "\t\"android\"\t\tAndroid Fiddle"
+            echo -e "\t\"nativescript\"\tNativeScript Fiddle"
+            ;;
+        'edit')
+            echo -e "\t\"javac\"\t\tCommandline Java Fiddle"
+            echo -e "\t\"c\"\t\tC Fiddle"
+            ;;
+        'start')
+            voidEchoFiddleTypes;
+            echo -e "\t\"all\"\t\tstartup all Web based JS Fiddles"
+            ;;
         *)
             echo -e "\t\"android\"\t\tAndroid Fiddle"
             echo -e "\t\"ant\"\t\tAnt Fiddle"

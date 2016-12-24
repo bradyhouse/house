@@ -46,6 +46,22 @@ function parseName() {
   fi
 }
 
+function parseId() {
+  pieces=($(split $1 "-";));
+  if [[ ${#pieces[@]} -eq 3 ]]
+  then
+    if [[ ${pieces[0]} -eq "fiddle" ]]
+    then
+      # ToDo add logic to verify pieces[1] is numeric
+      echo ${pieces[1]};
+    else
+      exit -1;
+    fi
+  else
+    exit -1;
+  fi
+}
+
 function parseText() {
   pieces=($(split $1 "-";));
   if [[ ${#pieces[@]} -eq 3 ]]

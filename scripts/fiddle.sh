@@ -99,9 +99,8 @@ function fiddleIndexAll() {
             ./fiddle-start.sh  $2 $3 ${port}
             ;;
         'emulate')
-            source bin/nativescript/.nativescriptrc;
-            source bin/nativescript/_start.sh;
-            startAndroidEmulator;
+            if [ "$#" -lt 2 ]; then  ./fiddle-emulate.sh;  exit 0; fi
+            ./fiddle-emulate.sh $2;
             ;;
         'delete')
             if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh;  exit 0; fi

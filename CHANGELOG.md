@@ -1443,10 +1443,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         * Reflected changes:
             1.  Added [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)
             2.  Added [scripts/bin/c/_edit.sh](scripts/bin/c/_edit.sh)
-     2. Added C support ~ [Issue 115](https://github.com/bradyhouse/house/issues/115)
+     2. Added JavaC fiddle support ~ [Issue 115](https://github.com/bradyhouse/house/issues/115)
        * See [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject)
            * Reflected changes:
-             1.  Added [scripts/bin/javac](scripts/bin/c)
+             1.  Added [scripts/bin/javac](scripts/bin/javac)
              2.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
              3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
              4.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
@@ -1462,7 +1462,20 @@ Alternately, the _Daily Diary of my Programming Dreams_.
              14. Added [fiddles/javac/refactor.md](fiddles/c/refactor.md)
              15. Added [fiddles/javac/start.md](fiddles/c/start.md)
              16. Updated [readme.adoc](readme.adoc)
-
+     3. Added start support for Bash Fiddles ~ [Issue 120](https://github.com/bradyhouse/house/issues/120)
+        * Reflected changes:
+            1.  Added [scripts/bin/bash/_start.sh](scripts/bin/bash/_start.sh)
+            2.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+     4. Refactored emulate support ~ [Issue 123](https://github.com/bradyhouse/house/issues/123)
+         * Reflected changes:
+            1.  Added [scripts/bin/android/_emulate.sh](scripts/bin/android/_emulate.sh)
+            2.  Added [scripts/fiddle-emulate.sh](scripts/fiddle-emulate.sh) 
+            3.  Added [fiddles/android/emulate.md](fiddles/android/emulate.md)
+            4.  Updated [fiddles/android/readme.adoc](fiddles/android/readme.adoc)
+            5.  Added [fiddles/nativescript/emulate.md](fiddles/nativescript/emulate.md)
+            6.  Updated [fiddles/nativescript/readme.adoc](fiddles/nativescript/readme.adoc)
+            7.  Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+                    
 * **C**
     1.  Added [fiddles/c/fiddle-0017-PrimeNumberArray](fiddles/c/fiddle-0017-PrimeNumberArray) ~ [Issue 108](https://github.com/bradyhouse/house/issues/108)
     2.  Added [fiddles/c/fiddle-0019-Constants](fiddles/c/fiddle-0019-Constants) ~ [Issue 111](https://github.com/bradyhouse/house/issues/111)
@@ -1473,8 +1486,13 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     7.  Added [fiddles/c/fiddle-0023-NewtonRaphsonMethod](fiddles/c/fiddle-0023-NewtonRaphsonMethod) ~ [Issue 117](https://github.com/bradyhouse/house/issues/117)
     8.  Added [fiddles/c/fiddle-0024-ArrayMinValue](fiddles/c/fiddle-0024-ArrayMinValue) ~ [Issue 118](https://github.com/bradyhouse/house/issues/118)
     9.  Added [fiddles/c/fiddle-0025-ArraySort](fiddles/c/fiddle-0025-ArraySort) ~ [Issue 119](https://github.com/bradyhouse/house/issues/119)
+    10. Added [fiddles/c/fiddle-0026-RecursiveFunctions](fiddles/c/fiddle-0026-RecursiveFunctions) ~ [Issue 121](https://github.com/bradyhouse/house/issues/121)
     
 * **Bash**  
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
+    
+* **JavaC**
+    1.  Started [fiddles/javac/fiddle-0001-LogForging](fiddles/javac/fiddle-0001-LogForging) ~ [Issue 122](https://github.com/bradyhouse/house/issues/122)
+
 
 

@@ -54,10 +54,7 @@ function isNvmInstalled() {
     fi
 }
 
-function nvmExecAttempt1() {
 
-
-}
 
 function nvmInstall() {
     groupLog "nvmInstall";

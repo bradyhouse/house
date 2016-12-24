@@ -11,6 +11,9 @@ can be used to extend or test drive this collection. The following table outline
 |Create
 |`./fiddle.sh "create" "nativescript" "fiddle-0000-Template"`
 |link:create.md[sample output & additional details]
+|Emulate
+|`./fiddle.sh "emulate" "android"`
+|link:emulate.md[sample output & additional details]
 |Fork
 |`./fiddle.sh "fork" "nativescript" "0001" "fiddle-0002-DeclarativeUI"`
 |link:fork.md[sample output & additional details]

@@ -28,6 +28,7 @@ function initFiddleDirectory() {
   local fiddle=$1;
   local bornOnDate=$2;
   local projectName=$3;
+  local id=$4;
 
   $(cp -rf "template" "${fiddle}") || exit 1;
   cd "${fiddle}";
@@ -35,6 +36,7 @@ function initFiddleDirectory() {
   $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 3;
   $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 3;
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 3;
+  $(voidSubstr '{{FiddleId}}' ${id} "README.md";) || exit 3;
   $(voidSubstr '{{projectName}}' ${projectName} "main.c";) || exit 3;
   mkdir "${projectName}";
   mkdir "${projectName}/src";
@@ -47,13 +49,14 @@ function gccCreate() {
     local fiddle=$1;
     local bornOnDate=$2;
     local projectName=$3;
+    local id=$4;
     # try
     (
       if [[ -d "${fiddle}" ]]
       then
         rm -rf "${fiddle}";
       fi
-      initFiddleDirectory "${fiddle}" "${bornOnDate}" "${projectName}" || exit $?;
+      initFiddleDirectory "${fiddle}" "${bornOnDate}" "${projectName}" "${id}" || exit $?;
     )
     # catch
     rc=$?; case ${rc} in
@@ -102,13 +105,14 @@ function create() {
   (
       startLog $(echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}');
       name=$1;
+      id=$(parseId ${name};);
       suffix=$(parseName ${name};);
       projectName=$(toLowerCase ${suffix};);
       groupLog "App Name: ";
       echo "\"${projectName}\"";
       cd "${fiddleSubDir}" || exit 3;
       isGccInstalled || exit 1;
-      gccCreate $1 ${bornOnDate} ${projectName} || exit 2;
+      gccCreate $1 ${bornOnDate} ${projectName} ${id} || exit 2;
   )
   rc=$?; catch ${rc};
   # finally

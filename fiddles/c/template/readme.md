@@ -31,7 +31,7 @@ it supports create/delete/refactor/list functionality for "c" based POC's aka fi
 
 Navigate to the scripts directory and execute the following command:
 
-    ./fiddle.sh "start" "c" "0000"
+    ./fiddle.sh "start" "c" "{{FiddleId}}"
     
 This should produce the following output:
 
@@ -41,7 +41,10 @@ This should produce the following output:
     ├────STARTSERVER
     ├────GCCSTART
     ├────INVOKING EXECUTABLE
-    template compiled!
+    
+    {{Title}} started
+    
+    {{Title}} ended
 
 
 ### Tags

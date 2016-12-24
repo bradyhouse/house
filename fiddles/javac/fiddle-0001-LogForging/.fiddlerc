@@ -1,0 +1,5 @@
+
+export __PROJECT_DIR__=logforging;
+export __TARGET_DIR__=target;
+export __SOURCE_FILE__=src/Fiddle.java;
+export __COMPILED_CLASS__=Fiddle;
