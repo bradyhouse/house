@@ -1,0 +1,32 @@
+.main-container {
+  height: 360;
+  width: 275;
+}
+.initial-label {
+  font-size: 32;
+  letter-spacing: 0.35;
+}
+.main-label {
+  font-size: 28;
+  margin-top: 32;
+  margin-bottom: 32;
+  letter-spacing: 0.3;
+}
+TextField {
+  margin-bottom: 10;
+}
+.submit-button {
+  margin-top: 15;
+}
+.sign-up-stack Label {
+  padding-top: 5;
+  height: 200;
+  text-transform: uppercase;
+}
+.forgot-password-label {
+  font-size: 13;
+  text-transform: uppercase;
+}
+.logo-container Image {
+  top: 90;
+}

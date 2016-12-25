@@ -29,7 +29,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
             ;;
         'emulate')
-            echo -e "\t\"android\"\t\tAndroid Fiddle"
+            echo -e "\t\"android\"\tAndroid Fiddle"
             echo -e "\t\"nativescript\"\tNativeScript Fiddle"
             ;;
         'edit')

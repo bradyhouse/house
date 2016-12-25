@@ -31,11 +31,44 @@ can be used to extend or test drive this collection. The following table outline
 |link:list.md[sample output & additional details]
 |===
 
+== Envrionment Setup (Mac OS X)
+
+=== Android
+
+1. Install JDK 8 or a later stable official release.
+2. Go to Java SE Downloads and click Download for JDK.
+3. In the Java SE Development Kit section, accept the license agreement and click the download link for Mac OS X.
+4. Wait for the download to complete and install the JDK.
+5. In your `~/.bashrc` file, set the JAVA_HOME system environment variable.
+    `export JAVA_HOME=$(/usr/libexec/java_home)`
+6. In the terminal, run the following command
+    `brew install android-sdk`
+7. In the terminal, run the following command
+    `android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui`
+8. In the terminal, run the following command
+    `brew info android`
+9. Add the `export ANDROID_HOME=...` statement to your .bashrc file
+10. In the terminal, run the following command
+    `android avd`
+11. In the `Android Virtual Device (AVD) Manager`, create an Android Virtual Device, called `fiddler`
+12. To test your android configuration, use the link:start.md[fiddle.sh start ...] command
+
+=== Node.js
+
+1. Install Node.js v6.x. In the terminal, run the following command
+    `brew install homebrew/versions/node6-lts`
+
+=== NativeScript CLI
+
+1. In the terminal run the following command
+    `npm i -g nativescript'
+2. Exit the terminal and restart
+3. To check if your system is configured properly, in the terminal run the following command
+    `tns doctor`
 
 == Machine Specific Configuration
 
 Use the link:../../scripts/bin/nativescript/.nativescriptrc[scripts/bin/nativescript/.nativescriptrc] file to configure machine specific variables.
-
 
 == Enabling Angular2 Templating
 
