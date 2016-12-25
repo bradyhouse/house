@@ -1279,8 +1279,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **NativeScript**
   1.  Added [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
-  2.  Added [fiddles/nativescript/fiddle-0009-Fifteen](fiddles/nativescript/fiddle-0009-Fifteen) ~ [Issue 84](https://github.com/bradyhouse/house/issues/84)        
-  3.  Started [fiddles/nativescript/fiddle-0010-Groceries](fiddles/nativescript/fiddle-0010-Groceries) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
+  2.  Added [fiddles/nativescript/fiddle-0009-SqliteDb](fiddles/nativescript/fiddle-0009-SqliteDb) ~ [Issue 84](https://github.com/bradyhouse/house/issues/84)        
+  3.  Started [fiddles/nativescript/fiddle-0010-Ng2](fiddles/nativescript/fiddle-0010-Ng2) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
 
 * **Node**
   1.  Added [fiddles/node/fiddle-0021-DirectoryWatcher](fiddles/node/fiddle-0021-DirectoryWatcher) ~ [Issue 82](https://github.com/bradyhouse/house/issues/82)
@@ -1415,7 +1415,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         99. Added [scripts/bin/svg/README.md](scripts/bin/svg/README.md)
        
 * **NativeScript**
-    1.  Added [fiddles/nativescript/fiddle-0011-Sixteen](fiddles/nativescript/fiddle-0011-Sixteen)  ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
+    1.  Added [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
 
 * **C**
     1.  Added [fiddles/c/fiddle-0001-DataTypes](fiddles/c/fiddle-0001-DataTypes) ~ [Issue 90](https://github.com/bradyhouse/house/issues/90)

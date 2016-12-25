@@ -1,4 +1,4 @@
-fiddle-0011-Sixteen
+fiddle-0011-SqliteNg2
 ======
 
 ![Screenshot](screenshot.png)
@@ -33,7 +33,7 @@ it supports create/delete/refactor/list functionality for "nativescript" based P
 ### Use Case
 
 1.  Using your terminal app of choice navigate to the `scripts` directory
-2.  Startup the POC `fiddle.sh start fiddle-0011-Sixteen`
+2.  Startup the POC `fiddle.sh start fiddle-0011-SqliteNg2`
 
 
 ### Tags
