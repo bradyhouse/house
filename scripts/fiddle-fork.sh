@@ -42,7 +42,8 @@ source bin/_types.sh
 
 if [ "$#" -ne 3 ]
 then
-    echo ""
+    clear
+    voidShowTitle ${thisFile};
     echo "Incorrect number of arguments"
     echo ""
     echo "Usage:"

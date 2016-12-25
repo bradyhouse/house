@@ -30,17 +30,18 @@ source bin/_types.sh
 
 if [ "$#" -ne 1 ]
 then
-    echo ""
-    echo "Nope ~ Incorrect number of arguments"
-    echo ""
-    echo "Usage:"
-    echo ""
-    echo "$0 \"[t]\""
-    echo ""
-    echo "[t] - type. Valid types include: "
-    echo ""
-    voidEchoFiddleTypes;
-    echo ""
+    clear
+    voidShowTitle ${thisFile};
+    echo "Nope ~ Incorrect number of arguments";
+    echo "";
+    echo "Usage:";
+    echo "";
+    echo "$0 \"[t]\"";
+    echo "";
+    echo "[t] - type. Valid types include: ";
+    echo "";
+    voidEchoFiddleTypes "index";
+    echo "";
     exit
 fi
 

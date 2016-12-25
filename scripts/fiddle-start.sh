@@ -161,7 +161,8 @@ rc=$?
 case ${rc} in
     0)  echo ""
         ;;
-    86) echo ""
+    86) clear
+        voidShowTitle ${thisFile};
         echo "Usage:"
         echo ""
         echo "$0 \"[t]\" \"[[n]]\" \"[[p]]\""

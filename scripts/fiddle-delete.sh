@@ -106,7 +106,9 @@ _rc=$?
 case ${_rc} in
     0)  echo "The \"${fiddleName}\" ${fiddleType} fiddle has been deleted successfully."
         ;;
-    86) echo ""
+    86) clear
+        voidShowTitle ${thisFile};
+        echo ""
         echo "Nope ~ Incorrect number of arguments"
         echo ""
         echo "Usage:"

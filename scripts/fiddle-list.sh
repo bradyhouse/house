@@ -65,7 +65,8 @@ _rc=$?;
 case ${_rc} in
     0)  echo "";
         ;;
-    86) echo "";
+    86) clear
+        voidShowTitle ${thisFile};
         echo "Nope ~ Incorrect number of arguments";
         echo "";
         echo "Usage:";

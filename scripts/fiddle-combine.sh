@@ -193,7 +193,9 @@ function catch() {
     case $1 in
         0)  endLog "The ${appFileName} file for \"${fiddleName}\" has been updated."
             ;;
-        86) echo ""
+        86) clear
+            voidShowTitle ${thisFile};
+            echo ""
             echo "Nope ~ Incorrect number of arguments"
             echo ""
             echo "Usage:"

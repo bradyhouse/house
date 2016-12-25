@@ -159,7 +159,7 @@ case ${_rc} in
         echo -e "\t\"refactor\"\tRename (\"refactor\") an existing fiddle"
         echo -e "\t\"test\"\t\tInvoke JsTestDriver for a given fiddle"
         echo -e "\t\"emulate\"\tStartup the configured android emulator"
-        echo -e "\t\"edit\"\tModify a fiddle"
+        echo -e "\t\"edit\"\t\tModify a fiddle"
         echo ""
         echo -e "[a1-3]\targuments. The arguments required by the "
         echo -e "\tspecified command. There can be up to 3 arguments."

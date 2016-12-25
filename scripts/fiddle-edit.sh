@@ -70,7 +70,7 @@ function editFiddle() {
             cd ${_fiddleRoot};
             javacEdit
             ;;
-        *)  exit 87;
+        *)  exit 86;
             ;;
     esac
 }
@@ -79,7 +79,9 @@ function catch() {
     case $1 in
         0)  endLog "${this}";
             ;;
-        86) echo "";
+        86) clear
+            voidShowTitle ${thisFile};
+            echo "";
             echo "Nope ~ Incorrect number of arguments";
             echo "";
             echo "Usage:";
@@ -88,7 +90,7 @@ function catch() {
             echo "";
             echo "[t] - type. Valid types include: ";
             echo "";
-            voidEchoFiddleTypes;
+            voidEchoFiddleTypes "edit";
             echo "";
             ;;
         *)  endLog "fubar! Something went wrong."

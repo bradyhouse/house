@@ -91,7 +91,8 @@ case ${_rc} in
     0)  echo "Refactor process completed successfully.";
         echo "\"${fiddleName}\" is now \"${newName}\".";
         ;;
-    86) echo "";
+    86) clear;
+        voidShowTitle ${thisFile};
         echo "Nope ~ Incorrect number of arguments";
         echo "";
         echo "Usage:";
