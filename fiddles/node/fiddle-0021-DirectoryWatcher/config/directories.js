@@ -1,4 +1,4 @@
 module.exports = {
-  watchDir: '/Users/bradyhouse/Desktop',
-  archiveDir: '/Users/bradyhouse/Desktop/@'
+  watchDir: '/Users/e13542/Desktop',
+  archiveDir: '/Users/e13542/Desktop/@'
 }

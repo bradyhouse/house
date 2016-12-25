@@ -1279,7 +1279,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **NativeScript**
   1.  Added [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
-  2.  Added [fiddles/nativescript/fiddle-0009-SqliteDb](fiddles/nativescript/fiddle-0009-SqliteDb) ~ [Issue 84](https://github.com/bradyhouse/house/issues/84)        
+  2.  Added [fiddles/nativescript/fiddle-0009-Fifteen](fiddles/nativescript/fiddle-0009-Fifteen) ~ [Issue 84](https://github.com/bradyhouse/house/issues/84)        
   3.  Started [fiddles/nativescript/fiddle-0010-Groceries](fiddles/nativescript/fiddle-0010-Groceries) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
 
 * **Node**
