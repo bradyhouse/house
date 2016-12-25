@@ -112,19 +112,22 @@ var GroceriesComponent = (function () {
         this.loginService.logoff();
         this.router.navigate(["/login"]);
     };
-    __decorate([
-        core_1.ViewChild("groceryTextField"), 
-        __metadata('design:type', core_1.ElementRef)
-    ], GroceriesComponent.prototype, "groceryTextField", void 0);
-    GroceriesComponent = __decorate([
-        core_1.Component({
-            selector: "gr-groceries",
-            templateUrl: "groceries/groceries.component.html",
-            styleUrls: ["groceries/groceries-common.css", "groceries/groceries.component.css"],
-            providers: [shared_1.GroceryService]
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, shared_1.GroceryService, shared_2.LoginService, page_1.Page])
-    ], GroceriesComponent);
     return GroceriesComponent;
 }());
+__decorate([
+    core_1.ViewChild("groceryTextField"),
+    __metadata("design:type", core_1.ElementRef)
+], GroceriesComponent.prototype, "groceryTextField", void 0);
+GroceriesComponent = __decorate([
+    core_1.Component({
+        selector: "gr-groceries",
+        templateUrl: "groceries/groceries.component.html",
+        styleUrls: ["groceries/groceries-common.css", "groceries/groceries.component.css"],
+        providers: [shared_1.GroceryService]
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        shared_1.GroceryService,
+        shared_2.LoginService,
+        page_1.Page])
+], GroceriesComponent);
 exports.GroceriesComponent = GroceriesComponent;

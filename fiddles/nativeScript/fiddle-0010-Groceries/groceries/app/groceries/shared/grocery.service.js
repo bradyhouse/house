@@ -118,10 +118,10 @@ var GroceryService = (function () {
         console.log(error);
         return Rx_1.Observable.throw(error);
     };
-    GroceryService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, core_1.NgZone])
-    ], GroceryService);
     return GroceryService;
 }());
+GroceryService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http, core_1.NgZone])
+], GroceryService);
 exports.GroceryService = GroceryService;

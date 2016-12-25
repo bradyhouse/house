@@ -1,9 +1,12 @@
-import { AuthGuard } from "./auth-guard.service";
+import { LoginComponent } from "./pages/login/login.component";
+import { ListComponent } from "./pages/list/list.component";
 
-export const authProviders = [
-    AuthGuard
+export const routes = [
+    { path: "", component: LoginComponent },
+    { path: "list", component: ListComponent }
 ];
 
-export const appRoutes = [
-    { path: "", redirectTo: "/groceries", pathMatch: "full" }
+export const navigatableComponents = [
+    LoginComponent,
+    ListComponent
 ];

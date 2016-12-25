@@ -63,31 +63,31 @@ var GroceryListComponent = (function () {
                 .subscribe(successHandler, errorHandler);
         }
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], GroceryListComponent.prototype, "showDeleted", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], GroceryListComponent.prototype, "row", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], GroceryListComponent.prototype, "loading", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], GroceryListComponent.prototype, "loaded", void 0);
-    GroceryListComponent = __decorate([
-        core_1.Component({
-            selector: "gr-grocery-list",
-            templateUrl: "groceries/grocery-list/grocery-list.component.html",
-            styleUrls: ["groceries/grocery-list/grocery-list.component.css"],
-            changeDetection: core_1.ChangeDetectionStrategy.OnPush
-        }), 
-        __metadata('design:paramtypes', [shared_1.GroceryService])
-    ], GroceryListComponent);
     return GroceryListComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], GroceryListComponent.prototype, "showDeleted", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], GroceryListComponent.prototype, "row", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], GroceryListComponent.prototype, "loading", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], GroceryListComponent.prototype, "loaded", void 0);
+GroceryListComponent = __decorate([
+    core_1.Component({
+        selector: "gr-grocery-list",
+        templateUrl: "groceries/grocery-list/grocery-list.component.html",
+        styleUrls: ["groceries/grocery-list/grocery-list.component.css"],
+        changeDetection: core_1.ChangeDetectionStrategy.OnPush
+    }),
+    __metadata("design:paramtypes", [shared_1.GroceryService])
+], GroceryListComponent);
 exports.GroceryListComponent = GroceryListComponent;

@@ -1,8 +1,8 @@
-﻿@import '~/css/core.light.css'; 
-
-@import url("~/css/core.light.css");
 @import url("~/platform.css");
-
+ActionBar {
+    background-color: black;
+    color: white;
+}
 Page {
     background-color: white;
     font-size: 15;
@@ -10,4 +10,10 @@ Page {
 TextField {
     padding: 10;
     font-size: 13;
+}
+.small-spacing {
+    margin: 5;
+}
+.medium-spacing {
+    margin: 10;
 }

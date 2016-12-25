@@ -1,7 +1,7 @@
 fiddle-0010-Groceries
 ======
 
-![Screenshot](screenshot.png)
+![Screenshot](http://i.imgur.com/hpNAqgT.gif)
 
 
 ### Title
@@ -32,9 +32,9 @@ Develop a NativeScript fiddle based on the [NativeScript Angular2 Tutorial](http
 ### Use Case
 
 1.  Using your terminal app of choice navigate to the `scripts` directory
-2.  Startup the POC `fiddle.sh start fiddle-0010-Groceries`
+2.  Startup the POC `fiddle.sh start 0010`
 
 
 ### Tags
 
-{N}, nativescript, Typescript, Angular 2
+{N}, nativescript, Typescript, Angular 2, email-validator, nativescript-social-share

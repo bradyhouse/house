@@ -15,8 +15,6 @@ var LoginComponent = (function () {
         this.isLoggingIn = true;
         this.isAuthenticating = false;
         this.user = new shared_1.User();
-        this.user.email = "user@nativescript.org";
-        this.user.password = "password";
     }
     LoginComponent.prototype.ngOnInit = function () {
         this.page.actionBarHidden = true;
@@ -135,38 +133,40 @@ var LoginComponent = (function () {
             new animation_1.Animation(animations, false).play();
         });
     };
-    __decorate([
-        core_1.ViewChild("initialContainer"), 
-        __metadata('design:type', core_1.ElementRef)
-    ], LoginComponent.prototype, "initialContainer", void 0);
-    __decorate([
-        core_1.ViewChild("mainContainer"), 
-        __metadata('design:type', core_1.ElementRef)
-    ], LoginComponent.prototype, "mainContainer", void 0);
-    __decorate([
-        core_1.ViewChild("logoContainer"), 
-        __metadata('design:type', core_1.ElementRef)
-    ], LoginComponent.prototype, "logoContainer", void 0);
-    __decorate([
-        core_1.ViewChild("formControls"), 
-        __metadata('design:type', core_1.ElementRef)
-    ], LoginComponent.prototype, "formControls", void 0);
-    __decorate([
-        core_1.ViewChild("signUpStack"), 
-        __metadata('design:type', core_1.ElementRef)
-    ], LoginComponent.prototype, "signUpStack", void 0);
-    __decorate([
-        core_1.ViewChild("password"), 
-        __metadata('design:type', core_1.ElementRef)
-    ], LoginComponent.prototype, "password", void 0);
-    LoginComponent = __decorate([
-        core_1.Component({
-            selector: "gr-login",
-            templateUrl: "login/login.component.html",
-            styleUrls: ["login/login-common.css", "login/login.component.css"],
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, shared_1.LoginService, page_1.Page])
-    ], LoginComponent);
     return LoginComponent;
 }());
+__decorate([
+    core_1.ViewChild("initialContainer"),
+    __metadata("design:type", core_1.ElementRef)
+], LoginComponent.prototype, "initialContainer", void 0);
+__decorate([
+    core_1.ViewChild("mainContainer"),
+    __metadata("design:type", core_1.ElementRef)
+], LoginComponent.prototype, "mainContainer", void 0);
+__decorate([
+    core_1.ViewChild("logoContainer"),
+    __metadata("design:type", core_1.ElementRef)
+], LoginComponent.prototype, "logoContainer", void 0);
+__decorate([
+    core_1.ViewChild("formControls"),
+    __metadata("design:type", core_1.ElementRef)
+], LoginComponent.prototype, "formControls", void 0);
+__decorate([
+    core_1.ViewChild("signUpStack"),
+    __metadata("design:type", core_1.ElementRef)
+], LoginComponent.prototype, "signUpStack", void 0);
+__decorate([
+    core_1.ViewChild("password"),
+    __metadata("design:type", core_1.ElementRef)
+], LoginComponent.prototype, "password", void 0);
+LoginComponent = __decorate([
+    core_1.Component({
+        selector: "gr-login",
+        templateUrl: "login/login.component.html",
+        styleUrls: ["login/login-common.css", "login/login.component.css"],
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        shared_1.LoginService,
+        page_1.Page])
+], LoginComponent);
 exports.LoginComponent = LoginComponent;

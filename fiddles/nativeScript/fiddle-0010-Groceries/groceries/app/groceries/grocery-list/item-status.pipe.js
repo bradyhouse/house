@@ -12,12 +12,12 @@ var ItemStatusPipe = (function () {
         }
         return this.value;
     };
-    ItemStatusPipe = __decorate([
-        core_1.Pipe({
-            name: "itemStatus"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ItemStatusPipe);
     return ItemStatusPipe;
 }());
+ItemStatusPipe = __decorate([
+    core_1.Pipe({
+        name: "itemStatus"
+    }),
+    __metadata("design:paramtypes", [])
+], ItemStatusPipe);
 exports.ItemStatusPipe = ItemStatusPipe;

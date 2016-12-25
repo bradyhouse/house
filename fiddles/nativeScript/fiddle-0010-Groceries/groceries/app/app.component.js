@@ -8,7 +8,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: "main",
-        template: "app.component.html"
+        template: "<page-router-outlet></page-router-outlet>"
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
