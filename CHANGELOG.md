@@ -1415,7 +1415,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         99. Added [scripts/bin/svg/README.md](scripts/bin/svg/README.md)
        
 * **NativeScript**
-    1.  Added [fiddles/nativescript/fiddle-0011-Puzzle](fiddles/nativescript/fiddle-0011-Puzzle)  ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
+    1.  Added [fiddles/nativescript/fiddle-0011-Sixteen](fiddles/nativescript/fiddle-0011-Sixteen)  ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
 
 * **C**
     1.  Added [fiddles/c/fiddle-0001-DataTypes](fiddles/c/fiddle-0001-DataTypes) ~ [Issue 90](https://github.com/bradyhouse/house/issues/90)

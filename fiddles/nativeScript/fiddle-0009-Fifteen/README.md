@@ -26,8 +26,8 @@ Chicago, IL
 
 ### Published Version Link
 
-[Google Play](https://play.google.com/store/apps/details?id=org.nativescript.puzzle)
-[App Store](https://itunes.apple.com/us/app/15-puzzle/id1180443503?mt=8)
+* [Google Play](https://play.google.com/store/apps/details?id=org.nativescript.puzzle)
+* [App Store](https://itunes.apple.com/us/app/15-puzzle/id1180443503?mt=8)
 
 
 ### Description
