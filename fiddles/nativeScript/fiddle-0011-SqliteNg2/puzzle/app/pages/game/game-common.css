@@ -1,0 +1,28 @@
+
+
+actionbar{
+    background-color: black;
+    color: white;
+    font-family: Courier;
+}
+
+Image {
+    display: block;
+    margin: 0 auto;
+}
+
+stacklayout button {
+    font-size: 15vw;
+    horizontal-align: center;
+    height: 30%;
+    width: 100%;
+    padding: 10%;
+}
+
+.hidden {
+    visibility: collapsed;
+}
+
+.show {
+    visibility: visible;
+}

@@ -6,7 +6,7 @@ fiddle-0011-SqliteNg2
 
 ### Title
 
-puzzle
+Sqlite Ng2
 
 
 ### Creation Date
@@ -21,7 +21,7 @@ Chicago, IL
 
 ### Issue
 
-[Issue ??](https://github.com/bradyhouse/house/issues/??)
+[Issue 124](https://github.com/bradyhouse/house/issues/124)
 
 
 ### Description

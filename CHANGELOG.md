@@ -1414,9 +1414,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         98. Added [scripts/bin/svg/_create.sh](scripts/bin/svg/_create.sh)
         99. Added [scripts/bin/svg/README.md](scripts/bin/svg/README.md)
        
-* **NativeScript**
-    1.  Added [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
-
 * **C**
     1.  Added [fiddles/c/fiddle-0001-DataTypes](fiddles/c/fiddle-0001-DataTypes) ~ [Issue 90](https://github.com/bradyhouse/house/issues/90)
     2.  Added [fiddles/c/fiddle-0002-ArithmeticOperators](fiddles/c/fiddle-0002-ArithmeticOperators) ~ [Issue 91](https://github.com/bradyhouse/house/issues/91)
@@ -1493,6 +1490,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     
 * **JavaC**
     1.  Started [fiddles/javac/fiddle-0001-LogForging](fiddles/javac/fiddle-0001-LogForging) ~ [Issue 122](https://github.com/bradyhouse/house/issues/122)
+
+* **NativeScript**
+    1.  Finished [fiddles/nativescript/fiddle-0010-Ng2](fiddles/nativescript/fiddle-0010-Ng2) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
+    2.  Started [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
 
 
 

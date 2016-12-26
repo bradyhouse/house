@@ -40,11 +40,11 @@ var GroceryListService = (function () {
         console.log(JSON.stringify(error.json()));
         return Rx_1.Observable.throw(error);
     };
+    GroceryListService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], GroceryListService);
     return GroceryListService;
 }());
-GroceryListService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], GroceryListService);
 exports.GroceryListService = GroceryListService;
 //# sourceMappingURL=grocery-list.service.js.map

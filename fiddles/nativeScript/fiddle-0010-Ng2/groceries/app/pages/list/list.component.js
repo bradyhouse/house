@@ -51,20 +51,20 @@ var ListComponent = (function () {
         var listString = list.join(", ").trim();
         SocialShare.shareText(listString);
     };
+    __decorate([
+        core_1.ViewChild("groceryTextField"), 
+        __metadata('design:type', core_1.ElementRef)
+    ], ListComponent.prototype, "groceryTextField", void 0);
+    ListComponent = __decorate([
+        core_1.Component({
+            selector: "list",
+            templateUrl: "pages/list/list.html",
+            styleUrls: ["pages/list/list-common.css", "pages/list/list.css"],
+            providers: [grocery_list_service_1.GroceryListService]
+        }), 
+        __metadata('design:paramtypes', [grocery_list_service_1.GroceryListService])
+    ], ListComponent);
     return ListComponent;
 }());
-__decorate([
-    core_1.ViewChild("groceryTextField"),
-    __metadata("design:type", core_1.ElementRef)
-], ListComponent.prototype, "groceryTextField", void 0);
-ListComponent = __decorate([
-    core_1.Component({
-        selector: "list",
-        templateUrl: "pages/list/list.html",
-        styleUrls: ["pages/list/list-common.css", "pages/list/list.css"],
-        providers: [grocery_list_service_1.GroceryListService]
-    }),
-    __metadata("design:paramtypes", [grocery_list_service_1.GroceryListService])
-], ListComponent);
 exports.ListComponent = ListComponent;
 //# sourceMappingURL=list.component.js.map

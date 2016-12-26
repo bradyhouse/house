@@ -64,28 +64,28 @@ var LoginComponent = (function () {
         hint_util_1.setHintColor({ view: emailTextField, color: hintColor });
         hint_util_1.setHintColor({ view: passwordTextField, color: hintColor });
     };
+    __decorate([
+        core_1.ViewChild("container"), 
+        __metadata('design:type', core_1.ElementRef)
+    ], LoginComponent.prototype, "container", void 0);
+    __decorate([
+        core_1.ViewChild("email"), 
+        __metadata('design:type', core_1.ElementRef)
+    ], LoginComponent.prototype, "email", void 0);
+    __decorate([
+        core_1.ViewChild("password"), 
+        __metadata('design:type', core_1.ElementRef)
+    ], LoginComponent.prototype, "password", void 0);
+    LoginComponent = __decorate([
+        core_1.Component({
+            selector: "my-app",
+            providers: [user_service_1.UserService],
+            templateUrl: "pages/login/login.html",
+            styleUrls: ["pages/login/login-common.css", "pages/login/login.css"],
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, user_service_1.UserService, page_1.Page])
+    ], LoginComponent);
     return LoginComponent;
 }());
-__decorate([
-    core_1.ViewChild("container"),
-    __metadata("design:type", core_1.ElementRef)
-], LoginComponent.prototype, "container", void 0);
-__decorate([
-    core_1.ViewChild("email"),
-    __metadata("design:type", core_1.ElementRef)
-], LoginComponent.prototype, "email", void 0);
-__decorate([
-    core_1.ViewChild("password"),
-    __metadata("design:type", core_1.ElementRef)
-], LoginComponent.prototype, "password", void 0);
-LoginComponent = __decorate([
-    core_1.Component({
-        selector: "my-app",
-        providers: [user_service_1.UserService],
-        templateUrl: "pages/login/login.html",
-        styleUrls: ["pages/login/login-common.css", "pages/login/login.css"],
-    }),
-    __metadata("design:paramtypes", [router_1.Router, user_service_1.UserService, page_1.Page])
-], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

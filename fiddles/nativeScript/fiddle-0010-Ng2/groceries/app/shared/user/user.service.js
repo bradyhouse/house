@@ -37,11 +37,11 @@ var UserService = (function () {
         })
             .catch(this.handleErrors);
     };
+    UserService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], UserService);
     return UserService;
 }());
-UserService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map
