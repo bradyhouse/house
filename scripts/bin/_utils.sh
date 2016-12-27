@@ -220,6 +220,15 @@ function getFiddle() {
     fi
 }
 
+function isJavaClassPath() {
+    if [[ "x${CLASS_PATH}" = "x" ]]
+    then
+        echo "false";
+    else
+        echo "true";
+    fi
+}
+
 function isInstalled() {
     if [[ ! $(which $1;) ]]
     then

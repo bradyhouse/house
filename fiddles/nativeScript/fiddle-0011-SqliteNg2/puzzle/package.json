@@ -4,9 +4,9 @@
   "readme": "NativeScript Application",
   "repository": "https://github.com/bradyhouse/house",
   "nativescript": {
-    "id": "org.nativescript.groceries",
+    "id": "org.nativescript.puzzle",
     "tns-android": {
-      "version": "2.3.0"
+      "version": "2.4.1"
     }
   },
   "dependencies": {

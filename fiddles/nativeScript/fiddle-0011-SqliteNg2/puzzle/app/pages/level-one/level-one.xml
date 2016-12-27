@@ -1,0 +1,16 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" class="level1" loaded="pageLoaded">
+  <ActionBar title="{{ title }}"/>
+  <GridLayout class="level1" rows="auto,auto,auto,auto" columns="*,*,*">
+    <button row="0" col="0" text="reset" class="reset" tap="resetTap" />
+    <label row="0" col="1" colspan="2" text="{{ moves }}" />
+    <button row="1" col="0" id="b1-0-0" text="{{ b1 }}" class="{{ b1Cls }}" tap="squareTap" />
+    <Button row="1" col="1" id="b2-0-1" text="{{ b2 }}" class="{{ b2Cls }}" tap="squareTap" />
+    <Button row="1" col="2" id="b3-0-2" text="{{ b3 }}" class="{{ b3Cls }}" tap="squareTap" />
+    <Button row="2" col="0" id="b4-1-0" text="{{ b4 }}" class="{{ b4Cls }}" tap="squareTap" />
+    <Button row="2" col="1" id="b5-1-1" text="{{ b5 }}" class="{{ b5Cls }}" tap="squareTap" />
+    <Button row="2" col="2" id="b6-1-2" text="{{ b6 }}" class="{{ b6Cls }}" tap="squareTap" />
+    <Button row="3" col="0" id="b7-2-0" text="{{ b7 }}" class="{{ b7Cls }}" tap="squareTap" />
+    <Button row="3" col="1" id="b8-2-1" text="{{ b8 }}" class="{{ b8Cls }}" tap="squareTap" />
+    <Button row="3" col="2" id="b9-2-2" text="{{ b9 }}" class="{{ b9Cls }}" tap="squareTap" />
+  </GridLayout>
+</Page>

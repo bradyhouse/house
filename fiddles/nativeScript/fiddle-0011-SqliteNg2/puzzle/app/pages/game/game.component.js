@@ -2,19 +2,20 @@
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var page_1 = require("ui/page");
+var config_1 = require("../../shared/config");
 var GameComponent = (function () {
     function GameComponent(router, page) {
         this.router = router;
         this.page = page;
     }
     GameComponent.prototype.ngOnInit = function () {
-        this.page.actionBarHidden = true;
         this.highscoreVisibility = "collapsed";
-        this.title = "15 Puzzle";
+        this.title = config_1.Config.title;
     };
     GameComponent.prototype.onPlayTap = function () {
     };
     GameComponent.prototype.onAboutTap = function () {
+        this.router.navigate(["/about"]);
     };
     GameComponent.prototype.onHighScoreTap = function () {
     };

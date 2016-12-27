@@ -1,5 +1,7 @@
 
 export __PROJECT_DIR__=template;
-export __TARGET_DIR__=target;
+export __TARGET_DIR__=classes;
 export __SOURCE_FILE__=src/Fiddle.java;
 export __COMPILED_CLASS__=Fiddle;
+export __CLASS_PATH__=classes;
+export __SOURCE_PATH__=src;

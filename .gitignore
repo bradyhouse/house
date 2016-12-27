@@ -122,3 +122,8 @@ gradle-app.setting
 
 # curl installer downloads
 *.dmg
+
+# javac local directories
+fiddles/javac/fiddle-*/*/classes
+fiddles/javac/fiddle-*/*/lib
+

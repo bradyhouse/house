@@ -1,0 +1,32 @@
+
+StackLayout {
+    background-image: url('~/images/gameboard_logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+actionbar {
+    background-color: black;
+    color: white;
+}
+
+WrapLayout {
+    padding-top: 20;
+}
+
+Image {
+    display: block;
+    margin: 0 auto;
+}
+
+WrapLayout label {
+    font-size: 15vw;
+    background-color: gray;
+    color: white;
+    padding: 20;
+    opacity: .9;
+}
+
+Image {
+    padding: 10%;
+}

@@ -22,6 +22,16 @@ function initFiddleConfigFile() {
   $(echo "export __TARGET_DIR__=${__DEFAULT_TARGET_DIR__};" >>".fiddlerc";) || exit 8
   $(echo "export __SOURCE_FILE__=${__DEFAULT_SOURCE_FILE__};" >>".fiddlerc";) || exit 8
   $(echo "export __COMPILED_CLASS__=${__DEFAULT_COMPILED_CLASS__};" >>".fiddlerc";) || exit 8
+
+  if [[ "x${CLASS_PATH}" = "x" ]]
+  then
+     $(echo "export __CLASS_PATH__=${__DEFAULT_CLASSPATH__};" >>".fiddlerc";) || exit 8
+  else
+     $(echo "export __CLASS_PATH__=${__DEFAULT_CLASSPATH__};${CLASS_PATH};" >>".fiddlerc";) || exit 8
+  fi
+
+  $(echo "export __SOURCE_PATH__=${__DEFAULT_SOURCEPATH__};" >>".fiddlerc";) || exit 8
+
 }
 
 function initFiddleDirectory() {

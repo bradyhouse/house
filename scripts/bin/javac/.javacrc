@@ -14,7 +14,9 @@
 
 export __DEFAULT_SOURCE_FILE__="src/Fiddle.java";
 export __DEFAULT_COMPILED_CLASS__="Fiddle";
-export __DEFAULT_TARGET_DIR__="target";
+export __DEFAULT_TARGET_DIR__="classes";
 export __JAVA_COMPILER__="/usr/bin/javac";
 export __JAVA_RUNTIME__="/usr/bin/java";
-export __DEFAULT_CLASSPATH__=${CLASSPATH};
+export __DEFAULT_CLASSPATH__="classes";
+export __DEFAULT_SOURCEPATH__="src";
+
