@@ -43,6 +43,12 @@ function ngCreate() {
 
         ng new ${appName} --skip-npm --directory ${fiddle} || exit 2;
         cd ${fiddle};
+
+        if [[ -e .gitignore ]]
+        then
+            rm -rf .gitignore;
+        fi
+
         cp -rf ../template/README.markdown README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;

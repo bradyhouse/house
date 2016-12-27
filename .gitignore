@@ -76,19 +76,6 @@ fiddles/nativeScript/fiddle-*/*/platforms/
 # under construction
 fiddles/aurelia/fiddle-0037-ModalPopUp/*
 
-# python fiddle 9 ~ See [Issue 33](https://github.com/bradyhouse/house/issues/33)
-fiddles/python/fiddle-0009-*/pgm-003/
-fiddles/python/fiddle-0009-*/bitcointech-001/
-fiddles/python/fiddle-0009-*/algorithm-design-analysis/
-fiddles/python/fiddle-0009-*/algorithm-design-analysis-2/
-fiddles/python/fiddle-0009-*/socialpsychology-002/
-fiddles/python/fiddle-0009-*/maththink-006/
-fiddles/python/fiddle-0009-*/automata-003/
-fiddles/python/fiddle-0009-*/mmds-002/
-fiddles/python/fiddle-0009-*/algs4partI-010/
-fiddles/python/fiddle-0009-*/algs4partII-007/
-fiddles/python/fiddle-0009-*/.netrc
-fiddles/python/fiddle-0009-*/*.json
 
 
 # node fiddle 13 ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
