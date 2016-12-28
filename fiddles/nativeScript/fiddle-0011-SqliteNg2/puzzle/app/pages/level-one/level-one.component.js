@@ -10,6 +10,7 @@ var LevelOneComponent = (function () {
     }
     LevelOneComponent.prototype.ngOnInit = function () {
         this.title = config_1.Config.title + ' - About';
+        this.nextScreen = '/view/level-two/level-two';
     };
     return LevelOneComponent;
 }());

@@ -23,7 +23,7 @@ Chicago, IL
 
 ### Description
 
-Create a fiddle based on Program 8.16 from Stephen Kochan's book Programming in C (Developer's Library) 4th Edition.  This program demonstrates to calculate the [factorial](https://en.wikipedia.org/wiki/Factorial) of a given number using a recursive function.
+Create a fiddle based on Program 9.1 from Stephen Kochan's book Programming in C (Developer's Library) 4th Edition.  This program demonstrates to calculate the [factorial](https://en.wikipedia.org/wiki/Factorial) of a given number using a recursive function.
 
 
 ### Use Case

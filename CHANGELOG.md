@@ -1487,12 +1487,13 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     8.  Added [fiddles/c/fiddle-0024-ArrayMinValue](fiddles/c/fiddle-0024-ArrayMinValue) ~ [Issue 118](https://github.com/bradyhouse/house/issues/118)
     9.  Added [fiddles/c/fiddle-0025-ArraySort](fiddles/c/fiddle-0025-ArraySort) ~ [Issue 119](https://github.com/bradyhouse/house/issues/119)
     10. Added [fiddles/c/fiddle-0026-RecursiveFunctions](fiddles/c/fiddle-0026-RecursiveFunctions) ~ [Issue 121](https://github.com/bradyhouse/house/issues/121)
+    11. Added [fiddles/c/fiddle-0027-DateStruct](fiddles/c/fiddle-0027-DateStruct)
     
 * **Bash**  
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
     
 * **JavaC**
-    1.  Added [fiddles/javac/fiddle-0001-LogForging](fiddles/javac/fiddle-0001-LogForging)
+    1.  Started [fiddles/javac/fiddle-0001-LogForging](fiddles/javac/fiddle-0001-LogForging)
 
 * **NativeScript**
     1.  Finished [fiddles/nativescript/fiddle-0010-Ng2](fiddles/nativescript/fiddle-0010-Ng2) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
