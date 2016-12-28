@@ -1472,6 +1472,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             5.  Added [fiddles/nativescript/emulate.md](fiddles/nativescript/emulate.md)
             6.  Updated [fiddles/nativescript/readme.adoc](fiddles/nativescript/readme.adoc)
             7.  Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+     5. Travis CLI and Configuration ~ [Issue 125](https://github.com/bradyhouse/house/issues/125)
+          * Reflected changes:
+             1.  Added [.travis.yml](.travis.yml)
                     
 * **C**
     1.  Added [fiddles/c/fiddle-0017-PrimeNumberArray](fiddles/c/fiddle-0017-PrimeNumberArray) ~ [Issue 108](https://github.com/bradyhouse/house/issues/108)
@@ -1489,11 +1492,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
     
 * **JavaC**
+    1.  Added [fiddles/javac/fiddle-0001-LogForging](fiddles/javac/fiddle-0001-LogForging)
 
 * **NativeScript**
     1.  Finished [fiddles/nativescript/fiddle-0010-Ng2](fiddles/nativescript/fiddle-0010-Ng2) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
     2.  Started [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
 
-
-
-* Added [fiddles/javac/fiddle-0001-LogForging](fiddles/javac/fiddle-0001-LogForging)
