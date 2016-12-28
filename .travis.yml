@@ -1,0 +1,10 @@
+language: generic
+
+sudo: false
+
+branches:
+  only:
+  - master
+
+env:
+  global:
