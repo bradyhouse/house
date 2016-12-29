@@ -18,19 +18,23 @@
 
 
 function javacBuild() {
+    groupLog "javacBuild";
+
     if [[ -e ${__TARGET_DIR__} ]]
     then
         rm -rf ${__TARGET_DIR__};
     fi
     mkdir ${__TARGET_DIR__};
-
-    # javac -sourcepath src -classpath classes;lib\Banners.jar \src\farewells\GoodBye.java -d classes
-
+    echo -e "${__JAVA_COMPILER__} -sourcepath ${__SOURCE_PATH__} -classpath ${__CLASS_PATH__} ${__SOURCE_FILE__} -d ${__TARGET_DIR__}";
+    echo -e "\n";
     ${__JAVA_COMPILER__} -sourcepath ${__SOURCE_PATH__} -classpath ${__CLASS_PATH__} ${__SOURCE_FILE__} -d ${__TARGET_DIR__};
 }
 
 function javaStart() {
+    groupLog "javaStart";
     cd ${__TARGET_DIR__};
+    echo -e "${__JAVA_RUNTIME__} ${__COMPILED_CLASS__};";
+    echo -e "\n";
     ${__JAVA_RUNTIME__} ${__COMPILED_CLASS__};
 }
 

@@ -112,5 +112,5 @@ gradle-app.setting
 
 # javac local directories
 fiddles/javac/fiddle-*/*/classes
-fiddles/javac/fiddle-*/*/lib
+fiddles/javac/fiddle-*/*/libs
 

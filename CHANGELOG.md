@@ -1494,10 +1494,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
     
 * **JavaC**
-    1.  Started [fiddles/javac/fiddle-0001-LogForging](fiddles/javac/fiddle-0001-LogForging)
+    1.  Added [fiddles/javac/fiddle-0001-Log4j_1.2.x](fiddles/javac/fiddle-0001-Log4j_1.2.x) ~ [Issue 122](https://github.com/bradyhouse/house/issues/122)
 
 * **NativeScript**
-    1.  Finished [fiddles/nativescript/fiddle-0010-Ng2](fiddles/nativescript/fiddle-0010-Ng2) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
+    1.  Added [fiddles/nativescript/fiddle-0010-Ng2](fiddles/nativescript/fiddle-0010-Ng2) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
     2.  Started [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
 
 

@@ -3,5 +3,5 @@ export __PROJECT_DIR__=logforging;
 export __TARGET_DIR__=classes;
 export __SOURCE_FILE__=src/Fiddle.java;
 export __COMPILED_CLASS__=Fiddle;
-export __CLASS_PATH__=classes;
+export __CLASS_PATH__="${CLASSPATH}:libs/log4j.properties:";
 export __SOURCE_PATH__=src;
