@@ -46,7 +46,7 @@ and frameworks:
 |link:fiddles/meteor[Meteor]
 |link:fiddles/nativeScript[NativeScript]
 |link:fiddles/node[Node]
-|link:fiddles/php[Php]
+|link:fiddles/php[PHP]
 |link:fiddles/python[Python]
 |link:fiddles/rxjs[RxJS]
 |link:fiddles/svg[SVG]
