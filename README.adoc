@@ -30,7 +30,7 @@ and frameworks:
 |link:fiddles/ant[Ant]
 |link:fiddles/aurelia[Aurelia]
 |link:fiddles/bash[Bash]
-|link:fiddles/c[GCC]
+|link:fiddles/c[C]
 |link:fiddles/chrome[Chrome]
 |link:fiddles/compass[Compass]
 |link:fiddles/d3[D3]
