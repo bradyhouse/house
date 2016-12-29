@@ -1,0 +1,4 @@
+
+export __PROJECT_DIR__=structsarray;
+export __SOURCE_FILE__=src/main.c;
+export __COMPILED_FILE__=target/structsarray;

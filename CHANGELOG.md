@@ -1489,6 +1489,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     10. Added [fiddles/c/fiddle-0026-RecursiveFunctions](fiddles/c/fiddle-0026-RecursiveFunctions) ~ [Issue 121](https://github.com/bradyhouse/house/issues/121)
     11. Added [fiddles/c/fiddle-0027-DateStruct](fiddles/c/fiddle-0027-DateStruct)    
     12. Added [fiddles/c/fiddle-0028-TimeStruct](fiddles/c/fiddle-0028-TimeStruct) ~ [Issue 127](https://github.com/bradyhouse/house/issues/127)
+    13. Added [fiddles/c/fiddle-0029-StructsArray](fiddles/c/fiddle-0029-StructsArray) ~ [Issue 129](https://github.com/bradyhouse/house/issues/129)
 
 * **Bash**  
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
