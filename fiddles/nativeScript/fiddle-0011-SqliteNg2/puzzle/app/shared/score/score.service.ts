@@ -1,77 +1,156 @@
-const Sqlite = require("nativescript-sqlite"),
-    frame = require("ui/frame"),
-    dbFile = "highscore.sqlite",
-    dbName = "highscore.sqlite";
+const Sqlite = require('nativescript-sqlite'),
+    frame = require('ui/frame'),
+    dbFile = 'highscore.db';
 
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Rx";
-import "rxjs/add/operator/do";
-import "rxjs/add/operator/map";
+import { Injectable }             from '@angular/core';
+import {Observable}               from 'rxjs/Observable';
+import {Observer}                 from 'rxjs/Observer';
 
-import { Score } from "./score";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/share';
+
+import { Score } from './score';
+import { Sql } from './sql';
 
 @Injectable()
 export class ScoreService {
 
-    sql: Object = {
-        insertHighScore: "insert into high_scores(id, user, time, moves, level) values(?,?,?,?,?)",
-        nextIdHighScore: "select seq from sqlite_sequence where name='high_scores'",
-        selectHighScore: "select * from (select id, user, time, moves, level, (moves/level) * -1 as rank from high_scores) order by rank desc",
-        selectMinHighScore: "select min(moves) as moves from high_scores where level = ",
-        dropHighScore: "drop table 'main'.'high_scores';",
-        createHighScore: "create table 'high_scores' ('id' integer primary key  autoincrement  not null  unique , 'user' text not null , 'time' text, 'moves' text, 'level' integer not null  default 1)",
-        createConfig: "create table 'config' ('id' integer primary key  autoincrement  not null  unique , 'key' text not null , 'value' text not null)"
-    };
+    highScoreChange$:Observable<Score>;
 
-    constructor() {}
+    private _dbName:string;
+    private _dbFile:string;
+    private _dbPromise:any;
+    private _highScore:Score;
+    private _highScoreObserver:Observer<Score>;
 
-    create(score: Score) {
-
+    set highScore(score:Score) {
+        if (this._highScore !== score) {
+            this._highScore = score;
+            if (this._highScoreObserver) {
+                this._highScoreObserver.next(score);
+            }
+        }
     }
 
-    handleErrors(error: any) {
+    get highScore():Score {
+        return this._highScore;
+    }
+
+
+    constructor() {
+        this.highScoreChange$ = new Observable<Score>(
+            (observer:any) => this._highScoreObserver = observer
+        ).share();
+        this._dbFile = this._dbName = dbFile;
+    }
+
+    connect(fn:Function, scope:any) {
+      this.consoleLogMsg('score.service', 'connect');
+      if (!Sqlite.exists(this._dbFile)) {
+        Sqlite.copyDatabase(this._dbFile);
+      }
+      this._dbPromise = new Sqlite(this._dbName, (err:any, dbConnection:any) => {
+        if (err) {
+          this.handleErrors(err);
+        } else {
+          dbConnection.resultType(Sqlite.RESULTSASOBJECT);
+          if (typeof fn === 'function') {
+            if (scope) {
+              fn.apply(scope, [dbConnection]);
+            } else {
+              fn(dbConnection);
+            }
+          }
+          dbConnection.close();
+        }
+      });
+    }
+
+    insert(db:any, record:Score, fn:Function, scope:any) {
+      this.consoleLogMsg('score.service', 'insert');
+      let rs = null;
+      if (db) {
+        db.execSQL(Sql.insertHighScore, [record.id, record.user, record.time, record.moves, record.level], (err:any, rs:any) => {
+          if (err) {
+            this.handleErrors(err);
+          } else {
+            this.consoleLogRecord(record.id, record);
+            if (typeof fn === 'function') {
+              if (scope) {
+                fn.apply(scope, [record]);
+              } else {
+                fn(record);
+              }
+            }
+          }
+        });
+      } else {
+        if (typeof fn === 'function') {
+          if (scope) {
+            fn.apply(scope, [null]);
+          } else {
+            fn(null);
+          }
+        }
+      }
+    }
+
+    select(db:any, fn:Function, scope:any) {
+      this.consoleLogMsg('score.service', 'select');
+
+      let scores:Score[] = [];
+
+      if (db) {
+        db.resultType(Sqlite.RESULTSASOBJECT);
+        db.valueType(Sqlite.VALUESARENATIVE);
+        db.all(Sql.selectHighScore, (err:any, items:any[]) => {
+          if (err) {
+            this.handleErrors(err);
+          } else {
+            if (items && items.length) {
+              items.forEach((item:any, index:number) => {
+                let score:Score = new Score();
+                score.id = item.hasOwnProperty('id') ? +(item.id) : 1,
+                score.user = item.hasOwnProperty('user') ? item.user : null,
+                score.time = item.hasOwnProperty('time') ? item.time : null,
+                score.moves = item.hasOwnProperty('moves') ? +(item.moves) : 0,
+                score.level = item.hasOwnProperty('level') ? +(item.level) : 1,
+                score.cssClass = score.id % 2 === 0 ? 'highScoreEven' : 'highScoreOdd';
+                this.consoleLogRecord(index, score);
+                scores.push(score);
+              });
+            }
+            if (typeof fn === 'function') {
+              if (scope) {
+                fn.apply(scope, [scores]);
+              } else {
+                fn(scores);
+              }
+            }
+          }
+        });
+      } else {
+        if (typeof fn === 'function') {
+          if (scope) {
+            fn.apply(scope, [null]);
+          } else {
+            fn(null);
+          }
+        }
+      }
+    }
+
+    private handleErrors(error: any):any {
         console.log(JSON.stringify(error.json()));
         return Observable.throw(error);
     }
 
-    register(user: User) {
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-
-        return this.http.post(
-            Config.apiUrl + "Users",
-            JSON.stringify({
-                Username: user.email,
-                Email: user.email,
-                Password: user.password
-            }),
-            { headers: headers }
-        )
-            .catch(this.handleErrors);
+    private consoleLogMsg(tag:string, msg:string):void {
+        console.log(tag + ': ' + msg);
     }
 
-    handleErrors(error: Response) {
-        console.log(JSON.stringify(error.json()));
-        return Observable.throw(error);
+    private consoleLogRecord(i, model:Score) {
+        console.log('high score #' + i + ' = { id: ' + model.id + ', user: ' + model.user + ', time: ' + model.time + ', moves: ' + model.moves + ', level: ' + model.level + ' }');
     }
 
-    login(user: User) {
-        let headers = new Headers();
-        headers.append("Content-Type", "application/json");
-
-        return this.http.post(
-            Config.apiUrl + "oauth/token",
-            JSON.stringify({
-                username: user.email,
-                password: user.password,
-                grant_type: "password"
-            }),
-            { headers: headers }
-        )
-            .map(response => response.json())
-            .do(data => {
-                Config.token = data.Result.access_token;
-            })
-            .catch(this.handleErrors);
-    }
 }

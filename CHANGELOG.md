@@ -1490,6 +1490,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     11. Added [fiddles/c/fiddle-0027-DateStruct](fiddles/c/fiddle-0027-DateStruct)    
     12. Added [fiddles/c/fiddle-0028-TimeStruct](fiddles/c/fiddle-0028-TimeStruct) ~ [Issue 127](https://github.com/bradyhouse/house/issues/127)
     13. Added [fiddles/c/fiddle-0029-StructsArray](fiddles/c/fiddle-0029-StructsArray) ~ [Issue 129](https://github.com/bradyhouse/house/issues/129)
+    14. Added [fiddles/c/fiddle-0030-CombineCharArrays](fiddles/c/fiddle-0030-CombineCharArrays) ~ [Issue 131](https://github.com/bradyhouse/house/issues/131)
+    15. Added [fiddles/c/fiddle-0031-StringEquality](fiddles/c/fiddle-0031-StringEquality) ~ [Issue 132](https://github.com/bradyhouse/house/issues/132)
+    16. Added [fiddles/c/fiddle-0032-ReadLine](fiddles/c/fiddle-0032-ReadLine) ~ [Issue 133](https://github.com/bradyhouse/house/issues/133)
+    17. Added [fiddles/c/fiddle-0033-WordCount](fiddles/c/fiddle-0033-WordCount) ~ [Issue 134](https://github.com/bradyhouse/house/issues/134)
 
 * **Bash**  
     1.  Added [fiddles/bash/fiddle-0095-JavaCProject](fiddles/bash/fiddle-0095-JavaCProject) ~ [Issue #114](https://github.com/bradyhouse/house/issues/114)
@@ -1501,4 +1505,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/nativescript/fiddle-0010-Ng2](fiddles/nativescript/fiddle-0010-Ng2) ~ [Issue 85](https://github.com/bradyhouse/house/issues/85)
     2.  Started [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
 
-
+* **RxJS**
+    1.  Added [fiddles/rxjs/fiddle-0004-SequenceReduce](fiddles/rxjs/fiddle-0004-SequenceReduce) ~ [Issue 130](https://github.com/bradyhouse/house/issues/130)
+    2.  Added [fiddles/rxjs/fiddle-0005-ScanOperator](fiddles/rxjs/fiddle-0005-ScanOperator) ~ [Issue 135](https://github.com/bradyhouse/house/issues/135)
+    3.  Added [fiddles/rxjs/fiddle-0006-FlatMap](fiddles/rxjs/fiddle-0006-FlatMap) ~ [Issue 136](https://github.com/bradyhouse/house/issues/136)

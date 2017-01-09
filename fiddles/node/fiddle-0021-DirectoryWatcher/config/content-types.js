@@ -27,5 +27,10 @@ module.exports = {
   'jpg'     : 'image/jpeg',
   'bmml'    : 'text/plain',
   'log'     : 'text/plain',
-  'sh'      : 'text/plain'
+  'sh'      : 'text/plain',
+  'jsp'     : 'application/octet-stream',
+  'gif'     : 'image/gif',
+  'xml'     : 'application/xml',
+  'java'    : 'text/x-java-source',
+  'xcf'     : 'application/octet-stream'
 }

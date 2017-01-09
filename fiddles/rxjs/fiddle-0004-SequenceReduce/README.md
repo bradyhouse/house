@@ -1,4 +1,4 @@
-{{FiddleName}}
+fiddle-0004-SequenceReduce
 ======
 
 ![Screenshot](screenshot.png)
@@ -6,12 +6,17 @@
 
 ### Title
 
-{{FiddleName}}
+Sequence Reduce
 
 
 ### Creation Date
 
-{{BornOnDate}}
+01-04-17
+
+
+### Issue
+
+[Issue 130](https://github.com/bradyhouse/house/issues/130)
 
 
 ### Location

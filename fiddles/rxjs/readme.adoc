@@ -32,3 +32,23 @@ exploration of this framework.  The `fiddle.sh` script can be used to extend or 
 |`./fiddle.sh "start" "rxjs"`
 |link:start.md[sample output & additional details]
 |===
+
+== Kindle Injection
+
+As a starting point, I will work through the examples outlined by Sergi Mansilla in the book link:http://a.co/au0EOZC[Reactive Programming with RxJS: Untangle Your Asynchronous JavaScript Code].
+
+== Online Resources
+
+*   link:https://github.com/Reactive-Extensions/RxJS[github > reactive-extensions > RxJS]
+*   link:http://reactivex.io/documentation[ReactiveX Documentation]
+**  link:http://reactivex.io/documentation/operators.html[Operators]
+**  link:http://reactivex.io/documentation/observable.html[Observables]
+**  link:http://reactivex.io/documentation/single.html[Single]
+**  link:http://reactivex.io/documentation/subject.html[Subject]
+**  link:http://reactivex.io/documentation/scheduler.html[Scheduler]
+*   link:http://rxmarbles.com/[RxMarbles]
+
+
+
+
+\
