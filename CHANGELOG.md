@@ -1509,3 +1509,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/rxjs/fiddle-0004-SequenceReduce](fiddles/rxjs/fiddle-0004-SequenceReduce) ~ [Issue 130](https://github.com/bradyhouse/house/issues/130)
     2.  Added [fiddles/rxjs/fiddle-0005-ScanOperator](fiddles/rxjs/fiddle-0005-ScanOperator) ~ [Issue 135](https://github.com/bradyhouse/house/issues/135)
     3.  Added [fiddles/rxjs/fiddle-0006-FlatMap](fiddles/rxjs/fiddle-0006-FlatMap) ~ [Issue 136](https://github.com/bradyhouse/house/issues/136)
+    4.  Added [fiddles/rxjs/fiddle-0007-OnErrorHandler](fiddles/rxjs/fiddle-0007-OnErrorHandler) ~ [Issue 137](https://github.com/bradyhouse/house/issues/137)
