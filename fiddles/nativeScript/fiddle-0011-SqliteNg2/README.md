@@ -38,4 +38,4 @@ it supports create/delete/refactor/list functionality for "nativescript" based P
 
 ### Tags
 
-{N}, nativescript
+{N}, nativescript, immutable

@@ -1510,3 +1510,14 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/rxjs/fiddle-0005-ScanOperator](fiddles/rxjs/fiddle-0005-ScanOperator) ~ [Issue 135](https://github.com/bradyhouse/house/issues/135)
     3.  Added [fiddles/rxjs/fiddle-0006-FlatMap](fiddles/rxjs/fiddle-0006-FlatMap) ~ [Issue 136](https://github.com/bradyhouse/house/issues/136)
     4.  Added [fiddles/rxjs/fiddle-0007-OnErrorHandler](fiddles/rxjs/fiddle-0007-OnErrorHandler) ~ [Issue 137](https://github.com/bradyhouse/house/issues/137)
+
+
+### 201701180420
+
+* **C**
+    1.  Added [fiddles/c/fiddle-0034-StructDictionary](fiddles/c/fiddle-0034-StructDictionary) ~ [Issue 138](https://github.com/bradyhouse/house/issues/138)
+    2.  Added [fiddles/c/fiddle-0035-BinarySearch](fiddles/c/fiddle-0035-BinarySearch) ~ [Issue 139](https://github.com/bradyhouse/house/issues/139)
+    3.  Added [fiddles/c/fiddle-0036-StringToInteger](fiddles/c/fiddle-0036-StringToInteger) ~ [Issue 140](https://github.com/bradyhouse/house/issues/140)
+
+* **NativeScript**
+    1.  Continued [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)

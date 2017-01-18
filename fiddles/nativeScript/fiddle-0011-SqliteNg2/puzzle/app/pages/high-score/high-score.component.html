@@ -1,0 +1,27 @@
+<ActionBar [title]="title"></ActionBar>
+
+<DockLayout stretchLastChild="false">
+  <GridLayout rows="*" columns="*,*,*" orientation="horizontal" dock="top" class="header">
+    <Label row="0" col="0" text="user" class="highScoreHeader"></Label>
+    <Label row="0" col="1" text="moves" class="highScoreHeader"></Label>
+    <Label row="0" col="2" text="level" class="highScoreHeader"></Label>
+  </GridLayout>
+  <ScrollView dock="top">
+    <ListView [items]="highScores" [class.visible]="isHighScores" dock="top">
+      <template let-item="item">
+        <GridLayout rows="*" columns="*,*,*" dock="top">
+          <Label row="0" col="0" [text]="item.user" [class]="item.cssClass"></Label>
+          <Label row="0" col="1" [text]="item.moves" [class]="item.cssClass"></Label>
+          <Label row="0" col="2" [text]="item.level" [class]="item.cssClass"></Label>
+        </GridLayout>
+      </template>
+    </ListView>
+  </ScrollView>
+  <GridLayout rows="*" columns="*,*" dock="bottom">
+    <button row="0" col="0" [class.visible]="isDev" id="addButton" class="reset" text="Add"
+            (tap)="onAddButtonTap()"></button>
+    <button row="0" col="1" id="resetButton" text="Reset" class="reset" (tap)="onResetButtonTap()"></button>
+  </GridLayout>
+  <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" horizontalAlignment="center"
+                     verticalAlignment="center"></ActivityIndicator>
+</DockLayout>

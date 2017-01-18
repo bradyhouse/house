@@ -8,19 +8,18 @@ import {Config} from '../../shared/config';
 
 
 @Component({
-    selector: 'about',
-    templateUrl: 'pages/about/about.html',
-    styleUrls: ['pages/about/about-common.css', 'pages/about/about.css']
+  selector: 'about',
+  templateUrl: 'pages/about/about.component.html',
+  styleUrls: ['pages/about/about-common.css', 'pages/about/about.css']
 })
 export class AboutComponent implements OnInit {
-    title: string;
+  title: string;
 
-    constructor(private router: Router, private page: Page) {
-    }
+  constructor(private router: Router, private page: Page) {
+  }
 
-    ngOnInit() {
-        this.title = Config.title + ' - About';
-
-    }
+  ngOnInit() {
+    this.title = Config.title + ' - About';
+  }
 
 }

@@ -1,4 +1,4 @@
-export const Sql = {
+export const ScoreSql = {
   insertHighScore: "insert into high_scores(id, user, time, moves, level) values(?,?,?,?,?)",
   nextIdHighScore: "select seq from sqlite_sequence where name='high_scores'",
   selectHighScore: "select * from (select id, user, time, moves, level, (moves/level) * -1 as rank from high_scores) order by rank desc",

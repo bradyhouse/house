@@ -1,0 +1,18 @@
+<ActionBar [title]="title"></ActionBar>
+
+<GridLayout rows="*,*,*,*" columns="*,*">
+
+  <TextField row="0" col="0" text="Moves: " class="labelAddHighScore" isEnabled="false"></TextField>
+  <TextField row="0" col="1" id="moves" [text]="moves" class="disabled" isEnabled="false"></TextField>
+
+  <TextField row="1" col="0" text="Level: " class="labelAddHighScore" isEnabled="false"></TextField>
+  <TextField row="1" col="1" id="level" [text]="level" class="disabled" isEnabled="false"></TextField>
+
+  <TextField row="2" col="0" text="Name: " class="labelAddHighScore" isEnabled="false"></TextField>
+  <TextField row="2" col="1" #nameTextField [(ngModel)]="name" hint="<Enter your name>" class="textFieldAddHighScore" ></TextField>
+
+  <Button row="3" col="0" id="cancelButton" text="Cancel" class="buttonAddHighScore" (tap)="onCancelButtonTap()"></Button>
+  <Button row="3" col="1" id="addButton" text="Add" class="buttonAddHighScore" (tap)="onAddButtonTap()"></Button>
+
+</GridLayout>
+

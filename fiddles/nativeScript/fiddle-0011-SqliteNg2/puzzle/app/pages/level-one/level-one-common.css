@@ -1,0 +1,81 @@
+GridLayout {
+    background-image: url('~/images/background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+actionbar{
+    background-color: black;
+    color: white;
+}
+
+button.square {
+    font-size: 50vw;
+    horizontal-align: center;
+    opacity: .9;
+    border-radius: 20;
+    border-color: #CCD5AB;
+    border-width: 2;
+    color: white;
+    height: 30%;
+    width: 33%;
+    padding: 0;
+}
+
+button.reset {
+    font-size: 15vw;
+    height: 9%;
+    cursor: hand;
+    border-radius: 10;
+    horizontal-align: left;
+    background-color: #676E5F;
+    opacity: .9;
+    border-color: #CCD5AB;
+    border-width: 2;
+    color: white;
+    padding: 0;
+    width: 100%;
+}
+
+button.reset:active {
+    background-color: #97A786;
+}
+
+GridLayout label {
+    font-size: 15vw;
+    horizontal-align: right;
+    font-weight: 500;
+    color: white;
+    background-color:  #DA8D6F;
+    opacity: .8;
+    height: 8%;
+    padding-right: 10;
+    padding-left: 10;
+    text-align: center;
+}
+
+.empty {
+    background-color:  transparent;
+    border-color: transparent;
+    border-radius: 20;
+    border-width: 0;
+    color: white;
+}
+
+.correct {
+    background-color: #97A786;
+    opacity: .9;
+    border-color: #CCD5AB;
+    border-width: 1;
+    color: white;
+
+}
+
+.incorrect {
+    background-color: #676E5F;
+    opacity: .9;
+    color: white;
+
+}

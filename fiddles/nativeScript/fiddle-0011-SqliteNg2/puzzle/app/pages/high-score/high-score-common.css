@@ -1,0 +1,74 @@
+
+
+
+
+ScrollView {
+  background-image: url('~/images/game-board-logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+actionbar{
+  background-color: black;
+  color: white;
+}
+button.reset {  font-size: 15vw;  height: 45vw;  }
+
+DockLayout {
+  height: 100%;
+}
+
+GridLayout {  border-width: 1;  border-color: gray; }
+
+GridLayout.header {
+  height: 40vw;
+}
+
+GridLayout label {
+  font-size: 15vw;
+  horizontal-align: right;
+  font-weight: 500;
+  /*color: white;
+  background-color:  #DA8D6F;
+  opacity: .9;*/
+  padding-left: 10;
+  padding-top: 10;
+  padding-bottom: 10;
+  padding-right: 10;
+  height: 40vw;
+}
+
+label.highScoreOdd {  font-size: 15vw;  horizontal-align: right;  font-weight: 500;  background-color:  gray;  color: white;  width: 100%;  }
+label.highScoreEven {  font-size: 15vw;  horizontal-align: right;  font-weight: 500;  width: 100%;  }
+label.highScoreHeader {
+  font-size: 15vw;
+  font-variant-caps: unicase;
+  horizontal-align: center;
+  font-weight: 500;
+  opacity: .7;
+  background-color:  black;
+  color: white;
+  width: 100%;
+  height: 40vw;
+
+}
+
+
+StackLayout.pushRight {  width: 100%;  horizontal-align: right;  padding: 5;  }
+
+ScrollView {
+  height: 80%;
+}
+
+visible {
+  animation-name: show;
+  animation-duration: 1s;
+}
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+

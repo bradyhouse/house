@@ -20,7 +20,7 @@ Image {
 }
 
 WrapLayout label {
-    font-size: 15vw;
+    font-size: 10vw;
     background-color: gray;
     color: white;
     padding: 20;

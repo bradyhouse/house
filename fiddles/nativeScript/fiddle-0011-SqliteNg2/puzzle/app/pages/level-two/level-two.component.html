@@ -1,0 +1,14 @@
+<ActionBar [title]="board.title"></ActionBar>
+<GridLayout class="level2" rows="auto,auto,auto,auto,auto" columns="*,*,*,*">
+    <button row="0" col="0" text="reset" class="reset" (tap)="onResetTap()"></button>
+    <button row="0" col="1" [class.visible]="isDev" id="nextLevel" class="reset" text="Skip Level"
+          (tap)="onSkipLevelTap()"></button>
+    <label  row="0" col="2" colspan="2" [text]="board.moves"></label>
+    <Button *ngFor="let square of board.squares"
+            [row]="square.row + 1"
+            [col]="square.col"
+            [id]="square.id"
+            [text]="square.value"
+            [class]="square.cssClass"
+            (tap)="onSquareTap(square)"></Button>
+</GridLayout>

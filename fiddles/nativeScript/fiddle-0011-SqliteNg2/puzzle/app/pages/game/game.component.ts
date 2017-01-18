@@ -1,61 +1,105 @@
+const Dialogs = require('ui/dialogs'),
+  frame = require('ui/frame');
+
 import {Component, ElementRef, ViewEncapsulation, OnInit, ViewChild} from "@angular/core";
 import {View} from "ui/core/view";
 import {Router} from "@angular/router";
 import {Page} from "ui/page";
 import {Color} from "color";
 
-import { Config } from '../../shared/config';
-import { Base } from '../../base';
-import { ScoreService } from '../../shared/score/score.service';
+import {Config} from '../../shared/config';
+import {Base} from '../../base';
+import {ScoreService} from '../../shared/score/score.service';
+import {Score} from '../../shared/score/score';
+import {State} from '../../shared/state/State';
+import {StateService} from '../../shared/state/state.service';
 
 @Component({
   selector: "my-app",
-  templateUrl: "pages/game/game.html",
-  providers: [ScoreService],
+  templateUrl: "pages/game/game.component.html",
+  providers: [StateService, ScoreService],
   styleUrls: ["pages/game/game-common.css", "pages/game/game.css"],
   encapsulation: ViewEncapsulation.None
 
 })
 export class GameComponent extends Base implements OnInit {
   @ViewChild("container") container: ElementRef;
-  highscoreVisibility: string;
+  isHighScoreButton: Boolean;
+  isDev: Boolean;
   title: string;
+  highScores: Score[];
+  level: number;
+  isLoading: Boolean;
 
+  constructor(private _router: Router,
+              private _page: Page,
+              private _scoreService: ScoreService,
+              private _stateService: StateService) {
+    super();
+    this.isLoading = true;
+    this.isHighScoreButton = false;
+    this.isDev = Config.isDev;
 
-constructor(private _router: Router,
-            private _page: Page,
-            private _scoreService:ScoreService) {
-  super();
-}
+    this.subscriptions.push(_stateService.stateChange$
+      .subscribe(
+        (state: any) => this.onStateServiceDataChange(state)
+      ));
 
-ngOnInit() {
-  this.highscoreVisibility = "collapsed";
-  this.title = Config.title;
-  let me = this;
+    this.subscriptions.push(_scoreService.dataChange$
+      .subscribe(
+        (scores: any) => this.onScoreServiceDataChange(scores)
+      ));
+  }
 
-  this._scoreService.connect(function(db:any) {
-    me._scoreService.select(db, function(data:any[]) {
-      if (data && data.length) {
-        me.highscoreVisibility = "visible";
+  ngOnInit() {
+    this.title = Config.title;
+  }
+
+  onStateServiceDataChange(state: State[]) {
+    this.consoleLogMsg('game.component', 'onStateServiceDataChange');
+    let level: string = this._stateService.getKeyValue('level');
+    this.consoleLogMsg('game.component', 'level = ' + level);
+    if (level) {
+      this._scoreService.level = this.level = Number(level);
+    } else {
+      this._scoreService.level = this.level = Config.defaultLevel;
+    }
+  }
+
+  onScoreServiceDataChange(scores: Score[]) {
+    this.consoleLogMsg('game.component', 'onScoreServiceDataChange');
+    if (scores) {
+      this.highScores = scores;
+      if (this.highScores && this.highScores.length) {
+        this.isHighScoreButton = true;
       }
-    }, me);
-  }, me);
-}
+      this.isLoading = false;
+    }
+  }
 
+  onPlayTap() {
+    this.consoleLogMsg('game.component', 'onPlayTap');
+    switch(this.level) {
+      case 3:
+        this._router.navigate(['/level-three']);
+        break;
+      case 2:
+        this._router.navigate(['/level-two']);
+        break;
+      default:
+        this._router.navigate(['/level-one']);
+        break;
+    }
+  }
 
+  onAboutTap() {
+    this.consoleLogMsg('game.component', 'onAboutTap');
+    this._router.navigate(["/about"]);
+  }
 
-
-onPlayTap() {
-  this._router.navigate(["/level-one"]);
-}
-
-onAboutTap() {
-  this._router.navigate(["/about"]);
-}
-
-onHighScoreTap() {
-
-}
-
+  onHighScoreTap() {
+    this.consoleLogMsg('game.component', 'onHighScoreTap');
+    this._router.navigate(["/high-score"]);
+  }
 
 }

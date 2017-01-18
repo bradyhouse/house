@@ -2,14 +2,23 @@
 var game_component_1 = require("./pages/game/game.component");
 var about_component_1 = require("./pages/about/about.component");
 var level_one_component_1 = require("./pages/level-one/level-one.component");
+var level_two_component_1 = require("./pages/level-two/level-two.component");
+var high_score_component_1 = require("./pages/high-score/high-score.component");
+var add_high_score_component_1 = require("./pages/high-score/add-high-score/add-high-score.component");
 exports.routes = [
-    { path: "", component: game_component_1.GameComponent },
-    { path: "about", component: about_component_1.AboutComponent },
-    { path: "level-one", component: level_one_component_1.LevelOneComponent }
+    { path: '', component: game_component_1.GameComponent },
+    { path: 'about', component: about_component_1.AboutComponent },
+    { path: 'level-one', component: level_one_component_1.LevelOneComponent },
+    { path: 'level-two', component: level_two_component_1.LevelTwoComponent },
+    { path: 'high-score', component: high_score_component_1.HighScoreComponent },
+    { path: 'add-high-score/:level:moves:caller', component: add_high_score_component_1.AddHighScoreComponent }
 ];
 exports.navigatableComponents = [
     game_component_1.GameComponent,
     about_component_1.AboutComponent,
-    level_one_component_1.LevelOneComponent
+    level_one_component_1.LevelOneComponent,
+    level_two_component_1.LevelTwoComponent,
+    high_score_component_1.HighScoreComponent,
+    add_high_score_component_1.AddHighScoreComponent
 ];
-//# sourceMappingURL=app.routing.js.map
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLnJvdXRpbmcuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJhcHAucm91dGluZy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsOERBQTBEO0FBQzFELGlFQUE2RDtBQUM3RCw2RUFBd0U7QUFDeEUsNkVBQXdFO0FBQ3hFLGdGQUEyRTtBQUMzRSx1R0FBaUc7QUFFcEYsUUFBQSxNQUFNLEdBQUc7SUFDcEIsRUFBQyxJQUFJLEVBQUUsRUFBRSxFQUFFLFNBQVMsRUFBRSw4QkFBYSxFQUFDO0lBQ3BDLEVBQUMsSUFBSSxFQUFFLE9BQU8sRUFBRSxTQUFTLEVBQUUsZ0NBQWMsRUFBQztJQUMxQyxFQUFDLElBQUksRUFBRSxXQUFXLEVBQUUsU0FBUyxFQUFFLHVDQUFpQixFQUFDO0lBQ2pELEVBQUMsSUFBSSxFQUFFLFdBQVcsRUFBRSxTQUFTLEVBQUUsdUNBQWlCLEVBQUM7SUFDakQsRUFBQyxJQUFJLEVBQUUsWUFBWSxFQUFFLFNBQVMsRUFBRSx5Q0FBa0IsRUFBQztJQUNuRCxFQUFDLElBQUksRUFBRSxvQ0FBb0MsRUFBRSxTQUFTLEVBQUUsZ0RBQXFCLEVBQUM7Q0FDL0UsQ0FBQztBQUVXLFFBQUEscUJBQXFCLEdBQUc7SUFDbkMsOEJBQWE7SUFDYixnQ0FBYztJQUNkLHVDQUFpQjtJQUNqQix1Q0FBaUI7SUFDakIseUNBQWtCO0lBQ2xCLGdEQUFxQjtDQUN0QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtHYW1lQ29tcG9uZW50fSBmcm9tICcuL3BhZ2VzL2dhbWUvZ2FtZS5jb21wb25lbnQnO1xuaW1wb3J0IHtBYm91dENvbXBvbmVudH0gZnJvbSAnLi9wYWdlcy9hYm91dC9hYm91dC5jb21wb25lbnQnO1xuaW1wb3J0IHtMZXZlbE9uZUNvbXBvbmVudH0gZnJvbSAnLi9wYWdlcy9sZXZlbC1vbmUvbGV2ZWwtb25lLmNvbXBvbmVudCc7XG5pbXBvcnQge0xldmVsVHdvQ29tcG9uZW50fSBmcm9tICcuL3BhZ2VzL2xldmVsLXR3by9sZXZlbC10d28uY29tcG9uZW50JztcbmltcG9ydCB7SGlnaFNjb3JlQ29tcG9uZW50fSBmcm9tICcuL3BhZ2VzL2hpZ2gtc2NvcmUvaGlnaC1zY29yZS5jb21wb25lbnQnO1xuaW1wb3J0IHtBZGRIaWdoU2NvcmVDb21wb25lbnR9IGZyb20gJy4vcGFnZXMvaGlnaC1zY29yZS9hZGQtaGlnaC1zY29yZS9hZGQtaGlnaC1zY29yZS5jb21wb25lbnQnO1xuXG5leHBvcnQgY29uc3Qgcm91dGVzID0gW1xuICB7cGF0aDogJycsIGNvbXBvbmVudDogR2FtZUNvbXBvbmVudH0sXG4gIHtwYXRoOiAnYWJvdXQnLCBjb21wb25lbnQ6IEFib3V0Q29tcG9uZW50fSxcbiAge3BhdGg6ICdsZXZlbC1vbmUnLCBjb21wb25lbnQ6IExldmVsT25lQ29tcG9uZW50fSxcbiAge3BhdGg6ICdsZXZlbC10d28nLCBjb21wb25lbnQ6IExldmVsVHdvQ29tcG9uZW50fSxcbiAge3BhdGg6ICdoaWdoLXNjb3JlJywgY29tcG9uZW50OiBIaWdoU2NvcmVDb21wb25lbnR9LFxuICB7cGF0aDogJ2FkZC1oaWdoLXNjb3JlLzpsZXZlbDptb3ZlczpjYWxsZXInLCBjb21wb25lbnQ6IEFkZEhpZ2hTY29yZUNvbXBvbmVudH1cbl07XG5cbmV4cG9ydCBjb25zdCBuYXZpZ2F0YWJsZUNvbXBvbmVudHMgPSBbXG4gIEdhbWVDb21wb25lbnQsXG4gIEFib3V0Q29tcG9uZW50LFxuICBMZXZlbE9uZUNvbXBvbmVudCxcbiAgTGV2ZWxUd29Db21wb25lbnQsXG4gIEhpZ2hTY29yZUNvbXBvbmVudCxcbiAgQWRkSGlnaFNjb3JlQ29tcG9uZW50XG5dO1xuIl19

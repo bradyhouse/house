@@ -1,0 +1,15 @@
+<ActionBar [title]="title">
+</ActionBar>
+<ScrollView #container>
+  <StackLayout style="padding: 10%;" orientation="vertical">
+    <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" horizontalAlignment="center"
+                       verticalAlignment="center"></ActivityIndicator>
+    <Image src="~/images/main_page_logo.png" stretch="none"></Image>
+    <WrapLayout>
+      <label text=" "></label>
+      <Button text="Play" (tap)="onPlayTap()"></Button>
+      <Button text="About" (tap)="onAboutTap()"></Button>
+      <Button text="High Scores" (tap)="onHighScoreTap()" *ngIf="isHighScoreButton || isDev"></Button>
+    </WrapLayout>
+  </StackLayout>
+</ScrollView>

@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 int main(void) {
-    printf ("\n{{projectName}} started\n\n");
+  printf ("\n{{projectName}} started\n\n");
 
-    // Do stuff
+  // Do stuff
 
-    printf ("{{projectName}} ended\n\n");
+  printf ("{{projectName}} ended\n\n");
 
-    return 0;
+  return 0;
 }
