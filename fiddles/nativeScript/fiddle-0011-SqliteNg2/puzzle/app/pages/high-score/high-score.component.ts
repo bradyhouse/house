@@ -3,7 +3,8 @@ const Dialogs = require('ui/dialogs'),
 
 import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {View} from 'ui/core/view';
-import {Router} from '@angular/router';
+import { RouterExtensions } from "nativescript-angular/router";
+
 import {Page} from 'ui/page';
 import {Color} from 'color';
 
@@ -29,7 +30,7 @@ export class HighScoreComponent extends Base {
   lastRow: number;
   level: number;
 
-  constructor(private _router: Router,
+  constructor(private _router: RouterExtensions,
               private _page: Page,
               private _scoreService: ScoreService,
               private _stateService: StateService) {
@@ -102,7 +103,9 @@ export class HighScoreComponent extends Base {
         level: '1',
         caller: 'high-score'
       }
-    ]);
+    ], {
+      clearHistory: true
+    });
   }
 
   onHighScore() {

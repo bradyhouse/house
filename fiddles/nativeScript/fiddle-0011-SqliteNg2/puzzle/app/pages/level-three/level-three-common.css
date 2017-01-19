@@ -1,0 +1,73 @@
+GridLayout {
+    background-image: url('~/images/background_l_3.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+actionbar{
+    background-color: black;
+    color: white;
+}
+
+button.square {
+  font-size: 30vw;
+  horizontal-align: center;
+  opacity: .9;
+  border-radius: 20;
+  background-color:  #40663F;
+  border-color: #CCD5AB;
+  border-width: 2;
+  color: white;
+  height: 18%;
+  width: 30%;
+  padding: 0%;
+}
+
+button.reset {
+  font-size: 15vw;
+  height: 8%;
+  horizontal-align: center;
+  background-color:  #676E5F;
+  opacity: .9;
+  border-color: #CCD5AB;
+  border-width: 2;
+  color: white;
+}
+
+GridLayout label {
+  font-size: 15vw;
+  horizontal-align: right;
+  font-weight: 500;
+  color: white;
+  background-color:  #D457CF;
+  opacity: .8;
+  padding-right: 10;
+  padding-left: 10;
+  height: 8%;
+
+}
+
+.empty {
+  background-color:  transparent;
+  border-color: #CCD5AB;
+  border-width: 1;
+  color: white;
+}
+
+.correct {
+  background-color:  #497381;
+  opacity: .9;
+  border-color: #CCD5AB;
+  border-width: 1;
+  color: white;
+
+}
+
+.incorrect {
+  background-color: #40663F;
+  opacity: .9;
+  color: white;
+
+}

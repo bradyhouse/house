@@ -19,12 +19,12 @@ import {StateService} from '../../shared/state/state.service';
 
 
 @Component({
-  selector: 'level-two',
-  templateUrl: 'pages/level-two/level-two.component.html',
-  styleUrls: ['pages/level-two/level-two-common.css', 'pages/level-two/level-two.css'],
+  selector: 'level-three',
+  templateUrl: 'pages/level-three/level-three.component.html',
+  styleUrls: ['pages/level-three/level-three-common.css', 'pages/level-three/level-three.css'],
   providers: [BoardService, ScoreService, StateService]
 })
-export class LevelTwoComponent extends Base implements OnInit {
+export class LevelThreeComponent extends Base implements OnInit {
 
   board: Board;
   isDev: Boolean;
@@ -51,17 +51,17 @@ export class LevelTwoComponent extends Base implements OnInit {
   }
 
   ngOnInit() {
-    this.consoleLogMsg('level-two.component', 'ngOnInit');
+    this.consoleLogMsg('level-three.component', 'ngOnInit');
     this.onInit();
   }
 
   onInit(): void {
-    this.consoleLogMsg('level-two.component', 'onInitChange');
-    this._boardService.initBoard(4, 4, Config.title + ' - Level 2', 2, 0, 'level-three');
+    this.consoleLogMsg('level-three.component', 'onInitChange');
+    this._boardService.initBoard(5, 5, Config.title + ' - Level 3', 3, 0, 'level-n');
   }
 
   onGameBoardChange(board: Board) {
-    this.consoleLogMsg('level-two.component', 'onGameBoardChange');
+    this.consoleLogMsg('level-three.component', 'onGameBoardChange');
     this.board = board;
     if (this._boardService.isGameOver()) {
       if (this._scoreService.isHighScore(this.board.moves, this.board.level)) {
@@ -73,7 +73,7 @@ export class LevelTwoComponent extends Base implements OnInit {
   }
 
   onStateChange(state: State[]) {
-    this.consoleLogMsg('level-two.component', 'onStateChange');
+    this.consoleLogMsg('level-three.component', 'onStateChange');
     if (state && state.length) {
       let levelValue: any = this._stateService.getKeyValue('level'),
         stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
@@ -85,16 +85,16 @@ export class LevelTwoComponent extends Base implements OnInit {
   }
 
   onResetTap(): void {
-    this.consoleLogMsg('level-two.component', 'onResetTap');
     this.onInit();
   }
 
   onSquareTap(square: Square): void {
-    this.consoleLogMsg('level-two.component', 'onSquareTap');
     let squareB: Square = this._boardService.emptySquare;
+
     if (!this._boardService.isEmpty(square) && this._boardService.isValidMove(square, squareB)) {
       this._boardService.moveSquare(square, squareB);
     }
+
   }
 
   onLowScore(): void {
@@ -125,7 +125,7 @@ export class LevelTwoComponent extends Base implements OnInit {
   }
 
   onSkipLevelTap(): void {
-    this.consoleLogMsg('level-two.component', 'onSkipLevelTap');
+    this.consoleLogMsg('level-three.component', 'onSkipLevelTap');
     this.onHighScore();
   }
 

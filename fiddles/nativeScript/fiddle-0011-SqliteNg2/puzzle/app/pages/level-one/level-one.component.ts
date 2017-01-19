@@ -6,6 +6,7 @@ import {View} from 'ui/core/view';
 import {Router} from '@angular/router';
 import {Page} from 'ui/page';
 import {Color} from 'color';
+import {RouterExtensions} from "nativescript-angular/router";
 
 import {Base} from '../../base';
 import {Config} from '../../shared/config';
@@ -28,7 +29,7 @@ export class LevelOneComponent extends Base implements OnInit {
   board: Board;
   isDev: Boolean;
 
-  constructor(private _router: Router,
+  constructor(private _router: RouterExtensions,
               private _page: Page,
               private _boardService: BoardService,
               private _scoreService: ScoreService,
@@ -50,14 +51,17 @@ export class LevelOneComponent extends Base implements OnInit {
   }
 
   ngOnInit() {
+    this.consoleLogMsg('level-one.component', 'ngOnInit');
     this.onInit();
   }
 
   onInit(): void {
+    this.consoleLogMsg('level-one.component', 'onInitChange');
     this._boardService.initBoard(3, 3, Config.title + ' - Level 1', 1, 0, 'level-two');
   }
 
   onGameBoardChange(board: Board) {
+    this.consoleLogMsg('level-one.component', 'onGameBoardChange');
     this.board = board;
     if (this._boardService.isGameOver()) {
       if (this._scoreService.isHighScore(this.board.moves, this.board.level)) {
@@ -72,10 +76,10 @@ export class LevelOneComponent extends Base implements OnInit {
     this.consoleLogMsg('level-one.component', 'onStateChange');
     if (state && state.length) {
       let levelValue: any = this._stateService.getKeyValue('level'),
-        stateLevel: number = levelValue && levelValue !== 'undefined' ? Number(levelValue) : 1,
-        boardLevel: number = this.board.level;
+        stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
+        boardLevel: number = this.board && this.board.level ? this.board.level : 1;
       if (stateLevel > boardLevel) {
-        this._router.navigate([this.board.nextScreen]);
+        this._router.navigate([this.board.nextScreen], Config.transitionWithoutHistory);
       }
     }
   }
@@ -114,10 +118,9 @@ export class LevelOneComponent extends Base implements OnInit {
         'add-high-score/:level:moves:caller', {
           moves: this.board.moves,
           level: this.board.level,
-          caller: this.board.nextScreen,
-          clearHistory: true
+          caller: this.board.nextScreen
         }
-      ]);
+      ], Config.transitionWithoutHistory);
     });
   }
 

@@ -2,8 +2,8 @@
 
 
 
-ScrollView {
-  background-image: url('~/images/game-board-logo.png');
+DockLayout.page {
+  background-image: url('~/images/gameboard-logo.png');
   background-repeat: no-repeat;
   background-position: center;
 }

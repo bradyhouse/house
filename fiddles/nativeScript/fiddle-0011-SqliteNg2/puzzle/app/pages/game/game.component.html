@@ -8,8 +8,8 @@
     <WrapLayout>
       <label text=" "></label>
       <Button text="Play" (tap)="onPlayTap()"></Button>
-      <Button text="About" (tap)="onAboutTap()"></Button>
-      <Button text="High Scores" (tap)="onHighScoreTap()" *ngIf="isHighScoreButton || isDev"></Button>
+      <Button text="About" [nsRouterLink]="['/about']" pageTransition="flip"></Button>
+      <Button text="High Scores" [nsRouterLink]="['/high-score']" pageTransition="flip" *ngIf="isHighScoreButton || isDev"></Button>
     </WrapLayout>
   </StackLayout>
 </ScrollView>

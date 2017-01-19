@@ -3,7 +3,8 @@ const Dialogs = require('ui/dialogs'),
 
 import {Component, ElementRef, ViewEncapsulation, OnInit, ViewChild} from "@angular/core";
 import {View} from "ui/core/view";
-import {Router} from "@angular/router";
+import { RouterExtensions } from "nativescript-angular/router";
+
 import {Page} from "ui/page";
 import {Color} from "color";
 
@@ -31,7 +32,7 @@ export class GameComponent extends Base implements OnInit {
   level: number;
   isLoading: Boolean;
 
-  constructor(private _router: Router,
+  constructor(private _router: RouterExtensions,
               private _page: Page,
               private _scoreService: ScoreService,
               private _stateService: StateService) {
@@ -79,27 +80,18 @@ export class GameComponent extends Base implements OnInit {
 
   onPlayTap() {
     this.consoleLogMsg('game.component', 'onPlayTap');
+
     switch(this.level) {
       case 3:
-        this._router.navigate(['/level-three']);
+        this._router.navigate(['/level-three'], Config.transitionWithHistory);
         break;
       case 2:
-        this._router.navigate(['/level-two']);
+        this._router.navigate(['/level-two'], Config.transitionWithHistory);
         break;
       default:
-        this._router.navigate(['/level-one']);
+        this._router.navigate(['/level-one'], Config.transitionWithHistory);
         break;
     }
-  }
-
-  onAboutTap() {
-    this.consoleLogMsg('game.component', 'onAboutTap');
-    this._router.navigate(["/about"]);
-  }
-
-  onHighScoreTap() {
-    this.consoleLogMsg('game.component', 'onHighScoreTap');
-    this._router.navigate(["/high-score"]);
   }
 
 }

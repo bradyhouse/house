@@ -5,14 +5,12 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Observer}   from 'rxjs/Observer';
 
-import {List} from 'immutable';
-
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 
 import {StateSql} from './state.sql';
 import {State} from './state';
-import {DbBaseService } from '../db-base.service';
+import {DbBaseService} from '../db-base.service';
 import {SharedUtils} from '../shared-utils';
 
 @Injectable()
@@ -20,16 +18,16 @@ export class StateService extends DbBaseService {
 
   stateChange$: Observable<State[]>;
 
-  private _state:List<State>;
+  private _state: State[];
   private _stateObserver: Observer<State[]>;
+  private _isEmpty: Boolean;
 
   get state(): State[] {
-    return this._state.toArray();
+    return this._state;
   }
 
   set state(value: State[]) {
-    let list: List<State> = List(value);
-    this._state = list;
+    this._state = value;
     if (this._stateObserver) {
       this._stateObserver.next(value);
     }
@@ -38,7 +36,8 @@ export class StateService extends DbBaseService {
   constructor() {
     super();
 
-    this._state = List([]);
+    this._state = [];
+    this._isEmpty = true;
 
     this.stateChange$ = new Observable<State[]>(
       (observer: any) => this._stateObserver = observer
@@ -51,7 +50,7 @@ export class StateService extends DbBaseService {
 
   }
 
-  onDatabaseChange(database:any) {
+  onDatabaseChange(database: any) {
     this.consoleLogMsg('state.service', 'onDatabaseChange');
     this.fetch();
   }
@@ -61,6 +60,7 @@ export class StateService extends DbBaseService {
     let data: State[] = [];
 
     if (this.database) {
+      this.consoleLogMsg('state.service', StateSql.selectAll);
       this.database.all(StateSql.selectAll).then((items: any[]) => {
         if (items && items.length) {
           items.forEach((item: any, index: number) => {
@@ -70,31 +70,49 @@ export class StateService extends DbBaseService {
               item.hasOwnProperty('value') ? item.value : null
             );
             this.consoleLogRecord(index, state);
+            this._isEmpty = false;
             data.push(state);
           });
-          this.state = data;
         } else {
           let state = new State(
             0,
             'level',
             '1'
           );
-          this.state = [state];
+          data.push(state);
         }
+        this.state = data;
       }, error => {
         this.consoleLogMsg('state.service', 'fetch error: ' + error);
       });
     }
   }
 
+  insert(state: State, fetch: Boolean = false) {
+    this.consoleLogMsg('state.service', 'insert');
+    if (this.database) {
+      this.database.execSQL(StateSql.insert, [state.id, state.key, state.value])
+        .then((item: any) => {
+          this.consoleLogRecord(0, item);
+          if (fetch) {
+            this.fetch();
+          }
+        });
+    }
+  }
+
   updateLevel(level: number) {
     this.consoleLogMsg('state.service', 'updateLevel');
     if (this.database) {
-      this.database.execSQL(StateSql.updateLevel, [level])
-        .then((item: any) => {
-          this.consoleLogRecord(0, item);
-          this.fetch();
-        });
+      if (this._isEmpty) {
+        this.insert(new State(0, 'level', String(level)));
+      } else {
+        this.database.execSQL(StateSql.updateLevel, [level])
+          .then((item: any) => {
+            this.consoleLogRecord(0, item);
+            this.fetch();
+          });
+      }
     }
   }
 
@@ -113,18 +131,21 @@ export class StateService extends DbBaseService {
                 this.consoleLogMsg('state.service', 'ERROR: Attempt to create the config table failed.');
                 return;
               }
-              this._state = List([]);
-              this.fetch();
+              this.insert(new State(
+                0,
+                'level',
+                '1'
+              ), true);
             });
         });
     }
   }
 
-  getKeyValue(key:string): any {
+  getKeyValue(key: string): any {
     this.consoleLogMsg('state.service', 'getKeyValue');
-    let arr:any[];
+    let arr: any[];
     if (this.state) {
-      arr = this.state.filter((item:State) => {
+      arr = this.state.filter((item: State) => {
         return item.key.toLowerCase() === key.toLowerCase();
       });
       if (arr && arr.length) {
