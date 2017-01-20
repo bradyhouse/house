@@ -1,5 +1,7 @@
 const Dialogs = require('ui/dialogs'),
-  frame = require('ui/frame');
+  frame = require('ui/frame'),
+  application = require('application');
+
 
 import {Component, OnInit} from '@angular/core';
 import {View} from 'ui/core/view';
@@ -28,6 +30,7 @@ export class LevelThreeComponent extends Base implements OnInit {
 
   board: Board;
   isDev: Boolean;
+  isBoardLoaded: Boolean;
 
   constructor(private _router: RouterExtensions,
               private _page: Page,
@@ -37,6 +40,11 @@ export class LevelThreeComponent extends Base implements OnInit {
     super();
 
     this.isDev = Config.isDev;
+    this.isBoardLoaded = false;
+
+    if (application.android) {
+      application.android.on(application.AndroidApplication.activityBackPressedEvent, () => this.onBackButtonPressed);
+    }
 
     this.subscriptions.push(_boardService.gameBoardChange$
       .subscribe(
@@ -57,12 +65,13 @@ export class LevelThreeComponent extends Base implements OnInit {
 
   onInit(): void {
     this.consoleLogMsg('level-three.component', 'onInitChange');
-    this._boardService.initBoard(5, 5, Config.title + ' - Level 3', 3, 0, 'level-n');
+    this._boardService.initBoard(5, 5, Config.title + ' - Level 3', 3, 0, 'level-three');
   }
 
   onGameBoardChange(board: Board) {
     this.consoleLogMsg('level-three.component', 'onGameBoardChange');
     this.board = board;
+    this.isBoardLoaded = true;
     if (this._boardService.isGameOver()) {
       if (this._scoreService.isHighScore(this.board.moves, this.board.level)) {
         this.onHighScore();
@@ -74,7 +83,7 @@ export class LevelThreeComponent extends Base implements OnInit {
 
   onStateChange(state: State[]) {
     this.consoleLogMsg('level-three.component', 'onStateChange');
-    if (state && state.length) {
+    if (this.isBoardLoaded && state && state.length) {
       let levelValue: any = this._stateService.getKeyValue('level'),
         stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
         boardLevel: number = this.board && this.board.level ? this.board.level : 1;
@@ -88,7 +97,9 @@ export class LevelThreeComponent extends Base implements OnInit {
     this.onInit();
   }
 
-  onSquareTap(square: Square): void {
+  onSquareGesture(square: Square): void {
+    this.consoleLogMsg('level-three.component', 'onSquareGesture');
+
     let squareB: Square = this._boardService.emptySquare;
 
     if (!this._boardService.isEmpty(square) && this._boardService.isValidMove(square, squareB)) {
@@ -108,6 +119,7 @@ export class LevelThreeComponent extends Base implements OnInit {
   }
 
   onHighScore(): void {
+    this.consoleLogMsg('level-three.component', 'onHighScore');
     Dialogs.confirm({
       title: 'W i n n e r',
       message: 'You solved the puzzle in ' + this.board.moves + ' moves!',
@@ -120,7 +132,7 @@ export class LevelThreeComponent extends Base implements OnInit {
           level: this.board.level,
           caller: this.board.nextScreen
         }
-      ], Config.transitionWithoutHistory);
+      ], Config.transitionWithHistory);
     });
   }
 
@@ -129,5 +141,8 @@ export class LevelThreeComponent extends Base implements OnInit {
     this.onHighScore();
   }
 
+  onBackButtonPressed(): void {
+    this._router.navigate([''], Config.transitionWithoutHistory);
+  }
 
 }

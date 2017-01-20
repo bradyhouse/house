@@ -1,7 +1,8 @@
 <ActionBar [title]="board.title"></ActionBar>
 <GridLayout class="level1" rows="auto,auto,auto,auto" columns="*,*,*">
     <button row="0" col="0" text="reset" class="reset" (tap)="onResetTap()"></button>
-    <button row="0" col="1" [class.visible]="isDev" id="nextLevel" class="reset" text="Skip Level"
+
+    <button row="0" col="1" [class.visible]="isDev" id="nextLevel" class="reset" text="Skip"
           (tap)="onSkipLevelTap()"></button>
     <label  row="0" col="2" [text]="board.moves"></label>
     <Button *ngFor="let square of board.squares"
@@ -10,5 +11,6 @@
             [id]="square.id"
             [text]="square.value"
             [class]="square.cssClass"
-            (tap)="onSquareTap(square)"></Button>
+            (tap)="onSquareGesture(square)"
+            (swipe)="onSquareGesture(square)"></Button>
 </GridLayout>

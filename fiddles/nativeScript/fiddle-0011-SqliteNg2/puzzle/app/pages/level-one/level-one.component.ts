@@ -1,5 +1,6 @@
 const Dialogs = require('ui/dialogs'),
-  frame = require('ui/frame');
+  frame = require('ui/frame'),
+  application = require('application');
 
 import {Component, OnInit} from '@angular/core';
 import {View} from 'ui/core/view';
@@ -7,6 +8,7 @@ import {Router} from '@angular/router';
 import {Page} from 'ui/page';
 import {Color} from 'color';
 import {RouterExtensions} from "nativescript-angular/router";
+
 
 import {Base} from '../../base';
 import {Config} from '../../shared/config';
@@ -28,6 +30,7 @@ export class LevelOneComponent extends Base implements OnInit {
 
   board: Board;
   isDev: Boolean;
+  isBoardLoaded: Boolean;
 
   constructor(private _router: RouterExtensions,
               private _page: Page,
@@ -37,6 +40,11 @@ export class LevelOneComponent extends Base implements OnInit {
     super();
 
     this.isDev = Config.isDev;
+    this.isBoardLoaded = false;
+
+    if (application.android) {
+      application.android.on(application.AndroidApplication.activityBackPressedEvent, () => this.onBackButtonPressed);
+    }
 
     this.subscriptions.push(_boardService.gameBoardChange$
       .subscribe(
@@ -63,6 +71,7 @@ export class LevelOneComponent extends Base implements OnInit {
   onGameBoardChange(board: Board) {
     this.consoleLogMsg('level-one.component', 'onGameBoardChange');
     this.board = board;
+    this.isBoardLoaded = true;
     if (this._boardService.isGameOver()) {
       if (this._scoreService.isHighScore(this.board.moves, this.board.level)) {
         this.onHighScore();
@@ -74,7 +83,7 @@ export class LevelOneComponent extends Base implements OnInit {
 
   onStateChange(state: State[]) {
     this.consoleLogMsg('level-one.component', 'onStateChange');
-    if (state && state.length) {
+    if (this.isBoardLoaded && state && state.length) {
       let levelValue: any = this._stateService.getKeyValue('level'),
         stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
         boardLevel: number = this.board && this.board.level ? this.board.level : 1;
@@ -88,7 +97,9 @@ export class LevelOneComponent extends Base implements OnInit {
     this.onInit();
   }
 
-  onSquareTap(square: Square): void {
+  onSquareGesture(square: Square): void {
+    this.consoleLogMsg('level-one.component', 'onSquareGesture');
+
     let squareB: Square = this._boardService.emptySquare;
 
     if (!this._boardService.isEmpty(square) && this._boardService.isValidMove(square, squareB)) {
@@ -120,13 +131,17 @@ export class LevelOneComponent extends Base implements OnInit {
           level: this.board.level,
           caller: this.board.nextScreen
         }
-      ], Config.transitionWithoutHistory);
+      ], Config.transitionWithHistory);
     });
   }
 
   onSkipLevelTap(): void {
     this.consoleLogMsg('level-one.component', 'onSkipLevelTap');
     this.onHighScore();
+  }
+
+  onBackButtonPressed(): void {
+    this._router.navigate([''], Config.transitionWithoutHistory);
   }
 
 

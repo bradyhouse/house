@@ -4,7 +4,9 @@ const Dialogs = require('ui/dialogs'),
 
 import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import { NgModule } from "@angular/core";
+import {RouterExtensions} from "nativescript-angular/router";
+
+import {NgModule} from "@angular/core";
 
 import {TextField} from "ui/text-field";
 
@@ -31,7 +33,7 @@ export class AddHighScoreComponent extends Base implements OnInit {
   title: string;
   caller: string;
 
-  constructor(private _router: Router,
+  constructor(private _router: RouterExtensions,
               private _route: ActivatedRoute,
               private _scoreService: ScoreService) {
     super();
@@ -66,17 +68,17 @@ export class AddHighScoreComponent extends Base implements OnInit {
       return;
     }
 
-    let score:Score = new Score(this._scoreService.nextId,
+    let score: Score = new Score(this._scoreService.nextId,
       this.name, '00:00:00', +this.moves, this.level, <string>null);
 
     this._scoreService.insert(score);
 
-    this._router.navigate([this.caller, { clearHistory: true }]);
+    this._router.navigate([this.caller], Config.transitionWithoutHistory);
 
   }
 
   onCancelButtonTap() {
-    this._router.navigate([this.caller, { clearHistory: true } ]);
+    this._router.navigate([this.caller, {clearHistory: true}]);
   }
 
 }

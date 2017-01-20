@@ -10,5 +10,6 @@
             [id]="square.id"
             [text]="square.value"
             [class]="square.cssClass"
-            (tap)="onSquareTap(square)"></Button>
+            (tap)="onSquareGesture(square)"
+            (swipe)="onSquareGesture(square)"></Button>
 </GridLayout>

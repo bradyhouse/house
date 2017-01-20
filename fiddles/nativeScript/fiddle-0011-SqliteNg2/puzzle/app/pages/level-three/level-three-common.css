@@ -26,8 +26,9 @@ button.square {
 }
 
 button.reset {
-  font-size: 15vw;
+  font-size: 10vw;
   height: 8%;
+  border-radius: 10;
   horizontal-align: center;
   background-color:  #676E5F;
   opacity: .9;
@@ -51,8 +52,9 @@ GridLayout label {
 
 .empty {
   background-color:  transparent;
-  border-color: #CCD5AB;
-  border-width: 1;
+  border-color: transparent;
+  border-radius: 20;
+  border-width: 0;
   color: white;
 }
 

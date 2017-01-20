@@ -90,7 +90,7 @@ export class HighScoreComponent extends Base {
         this.isLoading = true;
         this._scoreService.truncate();
         this._stateService.truncate();
-        this._router.navigate(['']);
+        this._router.navigate([''], Config.transitionWithoutHistory);
       }
     });
   }
@@ -103,25 +103,7 @@ export class HighScoreComponent extends Base {
         level: '1',
         caller: 'high-score'
       }
-    ], {
-      clearHistory: true
-    });
-  }
-
-  onHighScore() {
-    console.log('onHighScore');
-
-
-    /*var navigationEntry = {
-     moduleName: "view/high-score/add-high-score/add-high-score",
-     context: {
-     moves: 43,
-     level: 1,
-     callingModuleName: "view/high-score/high-score"
-     },
-     animated: false
-     };
-     frame.topmost().navigate(navigationEntry);*/
+    ], Config.transitionWithoutHistory);
   }
 
 }
