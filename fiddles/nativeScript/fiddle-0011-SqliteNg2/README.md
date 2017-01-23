@@ -26,9 +26,7 @@ Chicago, IL
 
 ### Description
 
-Re-write [fiddle #9](../fiddle-0011-SqliteDb) (from scratch) using typescript and Angular2.  
-The end result should look and feel like the above animation of the existing app. In addition
-it should be publishable as an update to the App Store and Google Play.
+Re-write [fiddle #9](../fiddle-0011-SqliteDb) (from scratch) using typescript and Angular2. 
 
 
 ### Use Case
