@@ -41,6 +41,12 @@ export class HighScoreComponent extends Base {
     this.isDev = Config.isDev === true ? true : false;
     this.title = Config.title + ' - High Scores';
 
+    if (Config.isDev) {
+      this.title += ' (Dev Mode)';
+    }
+
+    _page.className = 'page';
+
     this.subscriptions.push(_stateService.stateChange$
       .subscribe(
         (state: any) => this.onStateServiceDataChange(state)
@@ -90,7 +96,7 @@ export class HighScoreComponent extends Base {
         this.isLoading = true;
         this._scoreService.truncate();
         this._stateService.truncate();
-        this._router.navigate([''], Config.transitionWithoutHistory);
+        this._router.navigate([''], Config.transition);
       }
     });
   }
@@ -103,7 +109,15 @@ export class HighScoreComponent extends Base {
         level: '1',
         caller: 'high-score'
       }
-    ], Config.transitionWithoutHistory);
+    ], Config.transition);
+  }
+
+  onExitButtonTap(): void {
+    this._router.backToPreviousPage();
+  }
+
+  onNavBtnTap(): void {
+    this._router.navigate([''], Config.transition);
   }
 
 }

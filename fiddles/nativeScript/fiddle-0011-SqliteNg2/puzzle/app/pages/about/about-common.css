@@ -1,8 +1,10 @@
 
-StackLayout {
-    background-image: url('~/images/gameboard_logo.png');
-    background-repeat: no-repeat;
-    background-position: center;
+.page {
+  background-image: url('~/images/gameboard_logo.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 actionbar {
@@ -20,7 +22,7 @@ Image {
 }
 
 WrapLayout label {
-    font-size: 10vw;
+    font-size: 11vw;
     background-color: gray;
     color: white;
     padding: 20;

@@ -3,7 +3,7 @@
 
 
 .page {
-  background-image: url('~/images/game-board-logo.png') no-repeat center center fixed;
+  background-image: url('~/images/gameboard_logo.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -71,6 +71,18 @@ visible {
   to { opacity: 1; }
 }
 
-
+button {
+  font-size: 20vw;
+  horizontal-align: center;
+  opacity: .9;
+  border-radius: 5;
+  border-color: white;
+  border-width: 1vw;
+  background-color: transparent;
+  color: black;
+  height: 60vw;
+  width: 100%;
+  padding: 0%;
+}
 
 

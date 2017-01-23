@@ -1518,10 +1518,14 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/c/fiddle-0034-StructDictionary](fiddles/c/fiddle-0034-StructDictionary) ~ [Issue 138](https://github.com/bradyhouse/house/issues/138)
     2.  Added [fiddles/c/fiddle-0035-BinarySearch](fiddles/c/fiddle-0035-BinarySearch) ~ [Issue 139](https://github.com/bradyhouse/house/issues/139)
     3.  Added [fiddles/c/fiddle-0036-StringToInteger](fiddles/c/fiddle-0036-StringToInteger) ~ [Issue 140](https://github.com/bradyhouse/house/issues/140)
-    4.  Added [fiddles/c/fiddle-0037-PointerVariables](fiddles/c/fiddle-0037-PointerVariables)
-    5.  Added [fiddles/c/fiddle-0038-StructurePointers](fiddles/c/fiddle-0038-StructurePointers)
-    6.  Added [fiddles/c/fiddle-0039-PointersInStructures](fiddles/c/fiddle-0039-PointersInStructures)
+    4.  Added [fiddles/c/fiddle-0037-PointerVariables](fiddles/c/fiddle-0037-PointerVariables) ~ [Issue 141](https://github.com/bradyhouse/house/issues/141)
+    5.  Added [fiddles/c/fiddle-0038-StructurePointers](fiddles/c/fiddle-0038-StructurePointers) ~ [Issue 142](https://github.com/bradyhouse/house/issues/142)
+    6.  Added [fiddles/c/fiddle-0039-PointersInStructures](fiddles/c/fiddle-0039-PointersInStructures) ~ [Issue 143](https://github.com/bradyhouse/house/issues/143)
 
 * **NativeScript**
-    1.  Continued [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
+    1.  Finished [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
 
+* **fiddle.sh**
+     1. NativeScript startup should remove hooks directory ~ [Issue 144](https://github.com/bradyhouse/house/issues/144)
+        * Reflected changes:
+          1.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh) 

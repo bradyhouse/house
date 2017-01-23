@@ -42,10 +42,6 @@ export class LevelThreeComponent extends Base implements OnInit {
     this.isDev = Config.isDev;
     this.isBoardLoaded = false;
 
-    if (application.android) {
-      application.android.on(application.AndroidApplication.activityBackPressedEvent, () => this.onBackButtonPressed);
-    }
-
     this.subscriptions.push(_boardService.gameBoardChange$
       .subscribe(
         (board: any) => this.onGameBoardChange(board)
@@ -65,7 +61,14 @@ export class LevelThreeComponent extends Base implements OnInit {
 
   onInit(): void {
     this.consoleLogMsg('level-three.component', 'onInitChange');
-    this._boardService.initBoard(5, 5, Config.title + ' - Level 3', 3, 0, 'level-three');
+
+    let title = Config.title + ' - Level 3';
+
+    if (Config.isDev) {
+      title += ' (Dev Mode)';
+    }
+
+    this._boardService.initBoard(5, 5, title, 3, 0, 'level-three');
   }
 
   onGameBoardChange(board: Board) {
@@ -88,7 +91,11 @@ export class LevelThreeComponent extends Base implements OnInit {
         stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
         boardLevel: number = this.board && this.board.level ? this.board.level : 1;
       if (stateLevel > boardLevel) {
-        this._router.navigate([this.board.nextScreen], Config.transitionWithoutHistory);
+        this._router.navigate([
+          'game/:target', {
+            target: this.board.nextScreen
+          }
+        ], Config.transition);
       }
     }
   }
@@ -114,7 +121,11 @@ export class LevelThreeComponent extends Base implements OnInit {
       message: 'You solved the puzzle in ' + this.board.moves + ' moves!',
       okButtonText: 'Ok'
     }).then(() => {
-      this._stateService.updateLevel(2);
+      this._router.navigate([
+        '/:target', {
+          target: this.board.nextScreen
+        }
+      ], Config.transition);
     });
   }
 
@@ -125,14 +136,13 @@ export class LevelThreeComponent extends Base implements OnInit {
       message: 'You solved the puzzle in ' + this.board.moves + ' moves!',
       okButtonText: 'Ok'
     }).then(() => {
-      this._stateService.updateLevel(2);
       this._router.navigate([
         'add-high-score/:level:moves:caller', {
           moves: this.board.moves,
           level: this.board.level,
           caller: this.board.nextScreen
         }
-      ], Config.transitionWithHistory);
+      ], Config.transition);
     });
   }
 
@@ -141,8 +151,8 @@ export class LevelThreeComponent extends Base implements OnInit {
     this.onHighScore();
   }
 
-  onBackButtonPressed(): void {
-    this._router.navigate([''], Config.transitionWithoutHistory);
+  onNavBtnTap(): void {
+    this._router.navigate([''], Config.transition);
   }
 
 }

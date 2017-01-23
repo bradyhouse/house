@@ -1,5 +1,7 @@
-<ActionBar [title]="title"></ActionBar>
-
+<ActionBar [title]="title">
+  <NavigationButton text="Go Back" android.systemIcon="ic_menu_back"
+                    (tap)="onNavBtnTap()"></NavigationButton>
+</ActionBar>
 <DockLayout class="page" stretchLastChild="false">
   <GridLayout rows="*" columns="*,*,*" orientation="horizontal" dock="top" class="header">
     <Label row="0" col="0" text="user" class="highScoreHeader"></Label>

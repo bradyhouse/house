@@ -8,6 +8,7 @@ import {AddHighScoreComponent} from './pages/high-score/add-high-score/add-high-
 
 export const routes = [
   {path: '', component: GameComponent},
+  {path: 'game/:target', component: GameComponent},
   {path: 'about', component: AboutComponent},
   {path: 'level-one', component: LevelOneComponent},
   {path: 'level-two', component: LevelTwoComponent},

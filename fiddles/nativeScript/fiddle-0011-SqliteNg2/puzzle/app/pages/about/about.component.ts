@@ -15,11 +15,19 @@ import {Config} from '../../shared/config';
 export class AboutComponent implements OnInit {
   title: string;
 
-  constructor(private router: Router, private page: Page) {
+  constructor(private _router: Router, private _page: Page) {
+    _page.className = 'page';
   }
 
   ngOnInit() {
     this.title = Config.title + ' - About';
+    if (Config.isDev) {
+      this.title += ' (Dev Mode)';
+    }
+  }
+
+  onNavBtnTap(): void {
+    this._router.navigate([''], Config.transition);
   }
 
 }

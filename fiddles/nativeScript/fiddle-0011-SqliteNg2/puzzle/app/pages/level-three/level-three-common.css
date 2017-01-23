@@ -16,7 +16,6 @@ button.square {
   horizontal-align: center;
   opacity: .9;
   border-radius: 20;
-  background-color:  #40663F;
   border-color: #CCD5AB;
   border-width: 2;
   color: white;
@@ -59,7 +58,7 @@ GridLayout label {
 }
 
 .correct {
-  background-color:  #497381;
+  background-color: #497381;
   opacity: .9;
   border-color: #CCD5AB;
   border-width: 1;

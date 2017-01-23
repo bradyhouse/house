@@ -3,11 +3,10 @@ const Dialogs = require('ui/dialogs'),
 
 import {Component, ElementRef, ViewEncapsulation, OnInit, ViewChild} from "@angular/core";
 import {View} from "ui/core/view";
-import { RouterExtensions } from "nativescript-angular/router";
-
+import {RouterExtensions } from "nativescript-angular/router";
+import {ActivatedRoute} from '@angular/router';
 import {Page} from "ui/page";
 import {Color} from "color";
-
 import {Config} from '../../shared/config';
 import {Base} from '../../base';
 import {ScoreService} from '../../shared/score/score.service';
@@ -16,7 +15,7 @@ import {State} from '../../shared/state/State';
 import {StateService} from '../../shared/state/state.service';
 
 @Component({
-  selector: "my-app",
+  selector: "game",
   templateUrl: "pages/game/game.component.html",
   providers: [StateService, ScoreService],
   styleUrls: ["pages/game/game-common.css", "pages/game/game.css"],
@@ -34,12 +33,14 @@ export class GameComponent extends Base implements OnInit {
 
   constructor(private _router: RouterExtensions,
               private _page: Page,
+              private _route: ActivatedRoute,
               private _scoreService: ScoreService,
               private _stateService: StateService) {
     super();
     this.isLoading = true;
     this.isHighScoreButton = false;
     this.isDev = Config.isDev;
+    _page.className = 'page';
 
     this.subscriptions.push(_stateService.stateChange$
       .subscribe(
@@ -50,10 +51,21 @@ export class GameComponent extends Base implements OnInit {
       .subscribe(
         (scores: any) => this.onScoreServiceDataChange(scores)
       ));
+
+    _route.params.subscribe((params: any) => {
+      this.isLoading = false;
+      if (params && params.hasOwnProperty('target')) {
+        this._router.navigate([params['target']], Config.transition);
+      }
+    });
+
   }
 
   ngOnInit() {
     this.title = Config.title;
+    if (Config.isDev) {
+      this.title += ' (Dev Mode)';
+    }
   }
 
   onStateServiceDataChange(state: State[]) {
@@ -80,16 +92,15 @@ export class GameComponent extends Base implements OnInit {
 
   onPlayTap() {
     this.consoleLogMsg('game.component', 'onPlayTap');
-
     switch(this.level) {
       case 3:
-        this._router.navigate(['/level-three'], Config.transitionWithHistory);
+        this._router.navigate(['/level-three'], Config.transition);
         break;
       case 2:
-        this._router.navigate(['/level-two'], Config.transitionWithHistory);
+        this._router.navigate(['/level-two'], Config.transition);
         break;
       default:
-        this._router.navigate(['/level-one'], Config.transitionWithHistory);
+        this._router.navigate(['/level-one'], Config.transition);
         break;
     }
   }

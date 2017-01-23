@@ -44,10 +44,6 @@ export class LevelTwoComponent extends Base implements OnInit {
     this.isDev = Config.isDev;
     this.isBoardLoaded = false;
 
-    if (application.android) {
-      application.android.on(application.AndroidApplication.activityBackPressedEvent, (data: AndroidActivityBackPressedEventData) => this.onBackButtonPressed);
-    }
-
     this.subscriptions.push(_boardService.gameBoardChange$
       .subscribe(
         (board: any) => this.onGameBoardChange(board)
@@ -67,7 +63,14 @@ export class LevelTwoComponent extends Base implements OnInit {
 
   onInit(): void {
     this.consoleLogMsg('level-two.component', 'onInitChange');
-    this._boardService.initBoard(4, 4, Config.title + ' - Level 2', 2, 0, 'level-three');
+
+    let title = Config.title + ' - Level 2';
+
+    if (Config.isDev) {
+      title += ' (Dev Mode)';
+    }
+
+    this._boardService.initBoard(4, 4, title, 2, 0, 'level-three');
   }
 
   onGameBoardChange(board: Board) {
@@ -90,8 +93,12 @@ export class LevelTwoComponent extends Base implements OnInit {
         stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
         boardLevel: number = this.board && this.board.level ? this.board.level : 1;
 
-      if (stateLevel > boardLevel) {
-        this._router.navigate([this.board.nextScreen], Config.transitionWithoutHistory);
+      if (this.isBoardLoaded && stateLevel > boardLevel) {
+        this._router.navigate([
+          'game/:target', {
+            target: this.board.nextScreen
+          }
+        ], Config.transition);
       }
     }
   }
@@ -126,6 +133,7 @@ export class LevelTwoComponent extends Base implements OnInit {
       message: 'You solved the puzzle in ' + this.board.moves + ' moves!',
       okButtonText: 'Ok'
     }).then(() => {
+      this.isBoardLoaded = false;
       this._stateService.updateLevel(3);
       this._router.navigate([
         'add-high-score/:level:moves:caller', {
@@ -133,7 +141,7 @@ export class LevelTwoComponent extends Base implements OnInit {
           level: this.board.level,
           caller: this.board.nextScreen
         }
-      ], Config.transitionWithHistory);
+      ], Config.transition);
     });
   }
 
@@ -142,9 +150,8 @@ export class LevelTwoComponent extends Base implements OnInit {
     this.onHighScore();
   }
 
-  onBackButtonPressed(data: AndroidActivityBackPressedEventData): void {
-    this.consoleLogMsg('level-two.component', 'onBackButtonPressed');
-    data.cancel = true;
+  onNavBtnTap(): void {
+    this._router.navigate([''], Config.transition);
   }
 
 }

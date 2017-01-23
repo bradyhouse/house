@@ -71,6 +71,8 @@ fiddles/c/fiddle-*/*/target/
 
 # nativeScript fiddles
 fiddles/nativeScript/fiddle-*/*/platforms/
+fiddles/nativeScript/fiddle-*/*/hooks/
+
 
 
 # under construction

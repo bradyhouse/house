@@ -52,6 +52,9 @@ export class AddHighScoreComponent extends Base implements OnInit {
   ngOnInit() {
     this.consoleLogMsg('add-high-score.component', 'ngOnInit');
     this.title = Config.title + ' - Add High Score';
+    if (Config.isDev) {
+      this.title += ' (Dev Mode)';
+    }
   }
 
   onAddButtonTap() {
@@ -73,12 +76,20 @@ export class AddHighScoreComponent extends Base implements OnInit {
 
     this._scoreService.insert(score);
 
-    this._router.navigate([this.caller], Config.transitionWithoutHistory);
+    this._router.navigate([
+      'game/:target', {
+        target: this.caller
+      }
+    ], Config.transition);
 
   }
 
   onCancelButtonTap() {
-    this._router.navigate([this.caller, {clearHistory: true}]);
+    this._router.navigate([
+      'game/:target', {
+        target: this.caller
+      }
+    ], Config.transition);
   }
 
 }

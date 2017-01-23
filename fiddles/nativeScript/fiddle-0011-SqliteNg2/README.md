@@ -1,7 +1,7 @@
 fiddle-0011-SqliteNg2
 ======
 
-![Screenshot](http://i.imgur.com/JPlDpIh.gif)
+![Screen Scrape](http://i.imgur.com/pIdMFPS.gif)
 
 
 ### Title
@@ -39,4 +39,4 @@ it should be publishable as an update to the App Store and Google Play.
 
 ### Tags
 
-{N}, nativescript, immutable, angular2, typescript
+{N}, nativescript, immutable, angular2, typescript, nativescript-sqlite, nativescript-vibrator

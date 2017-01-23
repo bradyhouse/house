@@ -15,11 +15,13 @@
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 11/26/2016 - See CHANGELOG @ 201610010420
+# 01/21/2017 - See CHANGELOG @ 201701180420
 # ---------------------------------------------------------------------------------------------------|
 
 
 function nativeScriptRunAndroid() {
   groupLog "nativeScriptRunAndroid";
+  nativescript build android;
   nativescript livesync --watch;
 }
 
@@ -62,9 +64,20 @@ function nativescriptAndroidStart() {
         source ".fiddlerc";
         type=${__PROJECT_TYPE__};
         cd ${__PROJECT_DIR__};
+
+        if [[ -d hooks ]]
+        then
+          rm -rf hooks;
+        fi
+
+        if [[ -d node_modules ]]
+        then
+          rm -rf node_modules;
+        fi
+
         if [[ -d platforms ]]
         then
-            rm -rf platforms
+            rm -rf platforms;
         fi
         tns platform add android
       else

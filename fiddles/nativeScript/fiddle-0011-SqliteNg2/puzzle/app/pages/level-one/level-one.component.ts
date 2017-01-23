@@ -42,10 +42,6 @@ export class LevelOneComponent extends Base implements OnInit {
     this.isDev = Config.isDev;
     this.isBoardLoaded = false;
 
-    if (application.android) {
-      application.android.on(application.AndroidApplication.activityBackPressedEvent, () => this.onBackButtonPressed);
-    }
-
     this.subscriptions.push(_boardService.gameBoardChange$
       .subscribe(
         (board: any) => this.onGameBoardChange(board)
@@ -65,7 +61,14 @@ export class LevelOneComponent extends Base implements OnInit {
 
   onInit(): void {
     this.consoleLogMsg('level-one.component', 'onInitChange');
-    this._boardService.initBoard(3, 3, Config.title + ' - Level 1', 1, 0, 'level-two');
+
+    let title = Config.title + ' - Level 1';
+
+    if (Config.isDev) {
+      title += ' (Dev Mode)';
+    }
+
+    this._boardService.initBoard(3, 3, title, 1, 0, 'level-two');
   }
 
   onGameBoardChange(board: Board) {
@@ -87,8 +90,12 @@ export class LevelOneComponent extends Base implements OnInit {
       let levelValue: any = this._stateService.getKeyValue('level'),
         stateLevel: number = levelValue && levelValue !== undefined ? Number(levelValue) : 1,
         boardLevel: number = this.board && this.board.level ? this.board.level : 1;
-      if (stateLevel > boardLevel) {
-        this._router.navigate([this.board.nextScreen], Config.transitionWithoutHistory);
+      if (this.isBoardLoaded && stateLevel > boardLevel) {
+        this._router.navigate([
+          'game/:target', {
+            target: this.board.nextScreen
+          }
+        ], Config.transition);
       }
     }
   }
@@ -124,6 +131,7 @@ export class LevelOneComponent extends Base implements OnInit {
       message: 'You solved the puzzle in ' + this.board.moves + ' moves!',
       okButtonText: 'Ok'
     }).then(() => {
+      this.isBoardLoaded = false;
       this._stateService.updateLevel(2);
       this._router.navigate([
         'add-high-score/:level:moves:caller', {
@@ -131,7 +139,7 @@ export class LevelOneComponent extends Base implements OnInit {
           level: this.board.level,
           caller: this.board.nextScreen
         }
-      ], Config.transitionWithHistory);
+      ], Config.transition);
     });
   }
 
@@ -140,9 +148,8 @@ export class LevelOneComponent extends Base implements OnInit {
     this.onHighScore();
   }
 
-  onBackButtonPressed(): void {
-    this._router.navigate([''], Config.transitionWithoutHistory);
+  onNavBtnTap(): void {
+    this._router.navigate([''], Config.transition);
   }
-
 
 }
