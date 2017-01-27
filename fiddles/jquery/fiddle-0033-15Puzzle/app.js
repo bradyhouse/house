@@ -1058,5 +1058,7 @@
             })
         }
     };
+
     document.body.addEventListener('DOMContentLoaded', app.controller.onDomContentLoaded(), false);
+
 })(window.app = window.app || {})

@@ -18,7 +18,7 @@ Chicago, IL
 
 ### Issue
 
-[Issue ??](https://github.com/bradyhouse/house/issues/??)
+[Issue 143](https://github.com/bradyhouse/house/issues/143)
 
 
 ### Description

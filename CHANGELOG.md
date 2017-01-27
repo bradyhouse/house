@@ -1275,7 +1275,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         3.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
         
 * **Java**
-  1.  Started [fiddles/java/fiddle-0004-CSVToJsonEndpoint](fiddles/java/fiddle-0004-CSVToJsonEndpoint) ~  [Issue 81](https://github.com/bradyhouse/house/issues/81)
 
 * **NativeScript**
   1.  Added [fiddles/nativescript/fiddle-0008-FifteenPuzzle](fiddles/nativescript/fiddle-0008-FifteenPuzzle) ~ [Issue 83](https://github.com/bradyhouse/house/issues/83)
@@ -1521,11 +1520,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/c/fiddle-0037-PointerVariables](fiddles/c/fiddle-0037-PointerVariables) ~ [Issue 141](https://github.com/bradyhouse/house/issues/141)
     5.  Added [fiddles/c/fiddle-0038-StructurePointers](fiddles/c/fiddle-0038-StructurePointers) ~ [Issue 142](https://github.com/bradyhouse/house/issues/142)
     6.  Added [fiddles/c/fiddle-0039-PointersInStructures](fiddles/c/fiddle-0039-PointersInStructures) ~ [Issue 143](https://github.com/bradyhouse/house/issues/143)
+    7.  Added [fiddles/c/fiddle-0040-LinkedLists](fiddles/c/fiddle-0040-LinkedLists) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
 
 * **NativeScript**
-    1.  Finished [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2)  ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
+    1.  Finished [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2) ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
 
 * **fiddle.sh**
      1. NativeScript startup should remove hooks directory ~ [Issue 144](https://github.com/bradyhouse/house/issues/144)
         * Reflected changes:
           1.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh) 
+
+* **Jquery**
+    1.  Added [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle)
