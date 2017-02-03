@@ -1533,4 +1533,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Jquery**
     1.  Started [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
     2.  Added [fiddles/jquery/fiddle-0043-DragAndDropApi](fiddles/jquery/fiddle-0043-DragAndDropApi) ~ [Issue 147](https://github.com/bradyhouse/house/issues/147)
-cd
+
