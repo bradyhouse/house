@@ -1,0 +1,56 @@
+.anti-drop-zone {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  background-color: red;
+  left: 0%;
+  color: white;
+  vertical-align: top;
+  padding: 1%;
+}
+
+.drop-zone {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  vertical-align: top;
+  padding: 1%;
+}
+
+.drag-zone {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  vertical-align: top;
+  padding: 1%;
+}
+
+
+
+.infinite-slide-left {
+  animation: 15s infinite;
+  -moz-animation-name: slide-left;
+  -webkit-animation-name: slide-left;
+}
+
+@-moz-keyframes slide-left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: -100%;
+  }
+}
+
+@-webkit-keyframes slide-left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: -100%;
+  }
+}

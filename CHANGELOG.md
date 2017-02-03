@@ -1531,5 +1531,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
           1.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh) 
 
 * **Jquery**
-    1.  Added [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle)
-* Added [fiddles/jquery/fiddle-0043-DragAndDropApi](fiddles/jquery/fiddle-0043-DragAndDropApi)
+    1.  Started [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
+    2.  Added [fiddles/jquery/fiddle-0043-DragAndDropApi](fiddles/jquery/fiddle-0043-DragAndDropApi) ~ [Issue 147](https://github.com/bradyhouse/house/issues/147)
+cd

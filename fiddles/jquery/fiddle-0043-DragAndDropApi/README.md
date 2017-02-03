@@ -3,7 +3,7 @@ fiddle-0043-DragAndDropApi
 
 ### Title
 
-fiddle-0043-DragAndDropApi
+HTML Drag And Drop API
 
 
 ### Creation Date
@@ -18,7 +18,8 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 147](https://github.com/bradyhouse/house/issues/147)
+
 
 ### Description
 
@@ -27,9 +28,9 @@ Simple fiddle exploring the features of the [HTML Drag and Drop API](https://dev
 
 ### Published Version Link
 
-N/A
+[jsfiddle.net](https://jsfiddle.net/bradyhouse/wcp34476/)
 
 
 ### Tags
 
-jQuery draggagle, 
+jQuery draggagle, ondragstart, ondrop, ondragover, preventdefaults

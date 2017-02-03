@@ -10,7 +10,7 @@ class Squares {
       css: {
         rows: 'row',
         cells: 'btn-group-justified',
-        empty: 'btn btn-warning',
+        empty: 'btn empty',
         square: 'btn',
         table: 'table-bordered'
       },
@@ -140,13 +140,12 @@ class Squares {
         rowElement.setAttribute('id', this.id + '-row' + row);
         var btnGroupElement = window.document.createElement('div');
         btnGroupElement.setAttribute('id', this.id + '-btngroup' + row);
-        btnGroupElement.setAttribute('class', this.css.cells);
         if (row == 1) {
-          btnGroupElement.setAttribute('style', 'background-color: #ffffff; padding-top: 5px; padding-left: 5px; padding-right: 5px;');
+          btnGroupElement.setAttribute('class', this.css.cells + ' top-row');
         } else if (row == this.rows) {
-          btnGroupElement.setAttribute('style', 'background-color: #ffffff; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;');
+          btnGroupElement.setAttribute('class', this.css.cells + ' body-row');
         } else {
-          btnGroupElement.setAttribute('style', 'background-color: #ffffff; padding-left: 5px; padding-right: 5px;');
+          btnGroupElement.setAttribute('class', this.css.cells + ' bottom-row');
         }
         rowElement.appendChild(btnGroupElement);
         for (; col <= this.cols; col++) {
@@ -213,7 +212,7 @@ class Squares {
   init() {
     var docElement = document.createElement('div');
     docElement.setAttribute('id', this.id);
-    docElement.setAttribute('style', 'background-color: #222222;');
+    docElement.setAttribute('style', 'background-color: white;');
     this._docElement = docElement;
     this.load();
 
