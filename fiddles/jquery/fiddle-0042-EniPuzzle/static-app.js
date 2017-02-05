@@ -55,7 +55,7 @@
     };
 
   $(document).ready(function () {
-    app.view.init();
+    //app.view.init();
   });
 
 })(window.app = window.app || {}, jQuery)

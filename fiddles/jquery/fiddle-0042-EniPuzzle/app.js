@@ -377,6 +377,7 @@
             this.docElement.setAttribute('row', this.row);
             this.docElement.setAttribute('col', this.col);
             this.docElement.setAttribute('id', this.id);
+            this.docElement.setAttribute('draggable', 'true');
             if (this.value) {
                 this.docElement.innerHTML = this.value;
             }

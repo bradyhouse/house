@@ -73,7 +73,7 @@ function nvmInstall() {
             exit -1;
         fi
     fi
-    . $(brew --prefix nvm)/nvm.sh || ${NVM_DIR}/nvm.sh;
+    . ${NVM_DIR}/nvm.sh || . $(brew --prefix nvm)/nvm.sh;
 
 }
 

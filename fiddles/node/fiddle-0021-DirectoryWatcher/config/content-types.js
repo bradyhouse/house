@@ -33,5 +33,6 @@ module.exports = {
   'gif'     : 'image/gif',
   'xml'     : 'application/xml',
   'java'    : 'text/x-java-source',
-  'xcf'     : 'application/octet-stream'
+  'xcf'     : 'application/octet-stream',
+  'rtf'     : 'application/rtf'
 }

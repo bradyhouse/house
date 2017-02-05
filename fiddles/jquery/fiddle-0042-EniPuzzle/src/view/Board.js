@@ -187,17 +187,6 @@ class Board {
     this._docElement = window.document.createElement('div');
     this.docElement.setAttribute('class', this.css.base);
 
-
-    /*this._header = new Header({
-      hook: colEl,
-      autoBind: true,
-      levels: this.levels,
-      parent: this,
-      listeners: {
-        levelselect: this.onLevelSelect
-      }
-    }); */
-
     this._store = new Squares({
       hook: colEl,
       cols: this.cols,

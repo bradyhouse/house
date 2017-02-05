@@ -20,7 +20,7 @@
     </ListView>
   </ScrollView>
   <GridLayout rows="*" columns="*,*" dock="bottom">
-    <button row="0" col="0" [class.visible]="isDev" id="addButton" class="reset" text="Add"
+    <button row="0" col="0" *ngIf="isDev" id="addButton" class="reset" text="Add"
             (tap)="onAddButtonTap()"></button>
     <button row="0" col="1" id="resetButton" text="Reset" class="reset" (tap)="onResetButtonTap()"></button>
   </GridLayout>

@@ -38,7 +38,7 @@ export class HighScoreComponent extends Base {
     this.isHighScores = false;
     this.isLoading = true;
     this.lastRow = 2;
-    this.isDev = Config.isDev === true ? true : false;
+    this.isDev = Config.isDev;
     this.title = Config.title + ' - High Scores';
 
     if (Config.isDev) {
