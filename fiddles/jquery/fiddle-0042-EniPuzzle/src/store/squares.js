@@ -4,16 +4,19 @@ class Squares {
     return {
       id: 'squares',
       model: 'Square',
+      index: 0,
+      isLast: false,
       parent: null,
       cols: 4,
       rows: 4,
       css: {
-        rows: 'row',
-        cells: 'btn-group-justified',
+        base: 'row',
+        group: 'form-group',
         empty: 'btn empty',
         square: 'btn',
         table: 'table-bordered'
       },
+      sequence: null,
       data: [],
       listeners: {
         squareclick: null
@@ -27,8 +30,13 @@ class Squares {
   }
 
   constructor(config) {
+    this._docElement = document.createElement('div');
+
     this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+    this._index = config && config.hasOwnProperty('index') ? config.index : this.config().index;
+    this._isLast = config && config.hasOwnProperty('isLast') ? config.isLast : this.config().isLast;
     this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+    this._sequence = config && config.hasOwnProperty('sequence') ? config.sequence : this.config().sequence;
     this._model = config && config.hasOwnProperty('model') ? config.model : this.config().model;
     this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
     this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
@@ -51,6 +59,14 @@ class Squares {
 
   get id() {
     return this._id;
+  }
+
+  get index() {
+    return this._index;
+  }
+
+  get isLast() {
+    return this._isLast;
   }
 
   get parent() {
@@ -108,7 +124,7 @@ class Squares {
   }
 
   isValidMove(squareA, squareB) {
-    var rowDelta = Math.abs(squareA.row - squareB.row),
+    let rowDelta = Math.abs(squareA.row - squareB.row),
       colDelta = Math.abs(squareA.col - squareB.col);
     if (squareA.col == squareB.col) {
       return (rowDelta == 1) && (colDelta == 0);
@@ -118,7 +134,7 @@ class Squares {
 
   unload() {
     this.data.map(function (square) {
-      var rowEl = window.document.getElementById(this.id + '-row' + square.row);
+      let rowEl = window.document.getElementById(this.id + '-row' + square.row);
       square.destroy();
       if (rowEl) {
         this.docElement.removeChild(rowEl);
@@ -128,48 +144,52 @@ class Squares {
   }
 
   load() {
-    var squareCount = this.range - 1,
+    let squareCount = this.range - 1,
       col = 1,
       row = 1,
-      i = 0;
-    if (this.data.length === 0) {
-      this._sequence = Util.generateGameSequence(1, squareCount, squareCount);
+      i = this.index;
+    if (this.data.length === 0 && this.sequence) {
       for (; row <= this.rows; row++) {
-        var rowElement = window.document.createElement('div');
-        rowElement.setAttribute('class', this.css.rows);
-        rowElement.setAttribute('id', this.id + '-row' + row);
-        var btnGroupElement = window.document.createElement('div');
-        btnGroupElement.setAttribute('id', this.id + '-btngroup' + row);
-        if (row == 1) {
-          btnGroupElement.setAttribute('class', this.css.cells + ' top-row');
-        } else if (row == this.rows) {
-          btnGroupElement.setAttribute('class', this.css.cells + ' body-row');
-        } else {
-          btnGroupElement.setAttribute('class', this.css.cells + ' bottom-row');
-        }
-        rowElement.appendChild(btnGroupElement);
         for (; col <= this.cols; col++) {
-          this.data.push(new Square({
-            id: 'square' + i,
-            row: row,
-            col: col,
-            value: i < this.sequence.length ? this.sequence[i] : this.text.empty,
-            css: {
-              base: i < this.sequence.length ? this.css.square : this.css.empty
-            },
-            expectedValue: i < this.sequence.length ? i + 1 : null,
-            listeners: {
-              click: this.listeners.squareclick
-            },
-            store: this,
-            hook: btnGroupElement,
-            autoBind: true
-          }));
+          if (i < (this.sequence.length - 1) || (i < this.sequence.length && !this.isLast)) {
+            this.data.push(new Square({
+              id: 'squ-' + i,
+              row: row,
+              col: col,
+              value: this.sequence[i],
+              css: {
+                base: this.css.square
+              },
+              expectedValue: this.index,
+              listeners: {
+                click: this.listeners.squareclick
+              },
+              store: this,
+              hook: this.docElement,
+              autoBind: true
+            }));
+          } else {
+            this.data.push(new Square({
+              id: 'squ-' + i,
+              row: row,
+              col: col,
+              value: null,
+              css: {
+                base: this.css.empty
+              },
+              expectedValue: this.index,
+              listeners: {
+                click: this.listeners.squareclick
+              },
+              store: this,
+              hook: this.docElement,
+              autoBind: true
+            }));
+          }
           i++;
-        }
-        ;
+        };
         col = 1;
-        this.docElement.appendChild(rowElement);
+        //this.docElement.appendChild(rowElement);
       }
     }
   }
@@ -179,14 +199,14 @@ class Squares {
   }
 
   get solved() {
-    var moves = this.data.filter(function (square) {
+    let moves = this.data.filter(function (square) {
       return square.isCorrect;
     });
     return moves && moves.length == (this.range - 1) ? true : false;
   }
 
   reset(store) {
-    var squareCount = store.range - 1,
+    let squareCount = store.range - 1,
       i = 0,
       sequence = Util.generateGameSequence(1, squareCount, squareCount);
     store.data.map(function (square) {
@@ -210,15 +230,14 @@ class Squares {
   }
 
   init() {
-    var docElement = document.createElement('div');
-    docElement.setAttribute('id', this.id);
-    docElement.setAttribute('style', 'background-color: white;');
-    this._docElement = docElement;
+    this.docElement.setAttribute('id', this.id);
+    this.docElement.setAttribute('style', 'background-color: white;');
+
     this.load();
 
     if (this.autoBind) {
       this.bind();
     }
-
   }
+
 }

@@ -9,9 +9,9 @@ class Board {
       cols: 8,
       rows: 8,
       css: {
-        base: 'container-fluid',
+        base: 'container',
         row: 'row',
-        form: 'form-group',
+        form: 'form-inline',
         cols: 'col-lg-4'
       }
     }
@@ -65,7 +65,7 @@ class Board {
   }
 
   set css(updates) {
-    var colsEl;
+    let colsEl;
     if (updates.hasOwnProperty('cols') && updates.cols != this.css.cols) {
       this._css = Util.overlay(updates, this._css);
       colsEl = window.document.getElementById(this.id + '-cols');
@@ -84,26 +84,26 @@ class Board {
   }
 
   get colsEl() {
-    var el = window.document.createElement('div');
+    let el = window.document.createElement('div');
     el.setAttribute('id', this.id + '-cols');
     el.setAttribute('class', this.css.cols);
     return el;
   }
 
   get rowEl() {
-    var el = window.document.createElement('div');
+    let el = window.document.createElement('div');
     el.setAttribute('class', this.css.row);
     return el;
   }
 
   get formEl() {
-    var el = window.document.createElement('div');
+    let el = window.document.createElement('div');
     el.setAttribute('class', this.css.form);
     return el;
   }
 
   selectLevel(level) {
-    var header = level.store.parent,
+    let header = level.store.parent,
       board = header.parent,
       store = board.store,
       currentLevel = header.text.right,
@@ -120,7 +120,7 @@ class Board {
   }
 
   onLevelSelect() {
-    var level = this,
+    let level = this,
       header = level.store.parent,
       board = header.parent;
     board.selectLevel(level);
@@ -131,14 +131,14 @@ class Board {
   }
 
   onHelpClick() {
-    var link = document.createElement('a');
+    let link = document.createElement('a');
     link.setAttribute('href', window.app.metadata.helpUrl);
     link.setAttribute('target', '_blank');
     link.click();
   }
 
   onSquareClick() {
-    var store = this.store,
+    let store = this.store,
       squareA = this,
       squareB = store.emptySquare,
       board = store.parent,
@@ -172,34 +172,23 @@ class Board {
 
   }
 
+  onSquareDrag() {
+    console.log('onSquareDrag');
+
+  }
+
   bind() {
     this.hook.appendChild(this.docElement);
   }
 
   init() {
-    var rowEl = this.rowEl,
-      formEl = this.formEl,
-      colEl = this.colsEl;
-
-    formEl.appendChild(colEl);
-    rowEl.appendChild(formEl);
-
     this._docElement = window.document.createElement('div');
     this.docElement.setAttribute('class', this.css.base);
 
-    this._store = new Squares({
-      hook: colEl,
-      cols: this.cols,
-      rows: this.rows,
-      parent: this,
-      listeners: {
-        squareclick: this.onSquareClick
-      },
-      autoBind: true
-    });
+
 
     this._toolBar = new Toolbar({
-      hook: colEl,
+      hook: this.docElement,
       autoBind: true,
       listeners: {
         reset: this.onResetClick,
@@ -207,9 +196,6 @@ class Board {
       },
       parent: this
     });
-
-    this.docElement.appendChild(rowEl);
-
 
     if (this.autoBind) {
       this.bind();

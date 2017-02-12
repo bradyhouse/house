@@ -58,7 +58,6 @@ class Util {
     return Util.isEven(inversionSum);
   }
 
-
   static mapLevelDimensions(level) {
     switch (level) {
       case 8:
@@ -182,5 +181,22 @@ class Util {
         return 'col-h';
     }
   }
+
+  static parseSubSequence(sequence, pos, range) {
+    let subSequence = [],
+      i = pos,
+      lim = pos + range;
+
+    sequence.map((element) -> {
+      while(i < lim) {
+        subSequence.push(sequence[i]);
+        i++;
+      }
+    });
+
+    return subSequence;
+
+  }
+
 
 }

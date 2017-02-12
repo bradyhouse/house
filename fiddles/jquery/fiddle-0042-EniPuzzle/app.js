@@ -178,100 +178,6 @@
     }
 
 
-    class Level {
-        config() {
-            return {
-                id: 'level1',
-                value: null,
-                cols: 3,
-                rows: 3,
-                selected: false,
-                hook: window.document.body,
-                autoBind: false,
-                text: 1,
-                store: null,
-                listeners: {
-                    click: null
-                }
-            }
-        }
-        constructor(config) {
-            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-            this._value = config && config.hasOwnProperty('value') ? config.value : this.config().value;
-            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-            this._store = config && config.hasOwnProperty('store') ? config.store : this.config().store;
-            this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
-            this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
-            this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
-            this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
-            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-            this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
-            this._selected = config && config.hasOwnProperty('selected') ? config.selected : this.config().selected;
-            this.init();
-        }
-        get docElement() {
-            return this._docElement;
-        }
-        get id() {
-            return this._id;
-        }
-        get selected() {
-            return this._selected;
-        }
-        set selected(value) {
-            this._selected = value;
-        }
-        get value() {
-            return this._value;
-        }
-        get cols() {
-            return this._cols;
-        }
-        get rows() {
-            return this._rows;
-        }
-        get hook() {
-            return this._hook;
-        }
-        get text() {
-            return this._text;
-        }
-        get store() {
-            return this._store;
-        }
-        get listeners() {
-            return this._listeners;
-        }
-        get autoBind() {
-            return this._autoBind;
-        }
-        destroy() {
-            var domSquare = window.document.getElementById(this.id);
-            if (domSquare) {
-                this.hook.removeChild(domSquare);
-            }
-        }
-        bind() {
-            this.hook.appendChild(this.docElement);
-        }
-        init() {
-            var link = window.document.createElement('a');
-            this._docElement = window.document.createElement('li');
-            this.docElement.setAttribute('id', this.id);
-            link.setAttribute('href', '#');
-            link.setAttribute('id', this.id + '-link');
-            link.innerText = this.text;
-            if (this.listeners && this.listeners.click) {
-                link.addEventListener('click', this.listeners.click.bind(this), false);
-            }
-            this.docElement.appendChild(link);
-            if (this.autoBind) {
-                this.bind();
-            }
-        }
-    }
-
-
     class Square {
         config() {
             return {
@@ -292,6 +198,7 @@
             }
         }
         constructor(config) {
+            this._docElement = window.document.createElement('a');
             this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
             this._row = config && config.hasOwnProperty('row') ? config.row : this.config().row;
             this._col = config && config.hasOwnProperty('col') ? config.col : this.config().col;
@@ -367,7 +274,6 @@
         }
         init() {
             let colClass = Util.mapColClass(this.value);
-            this._docElement = window.document.createElement('a');
             this.docElement.setAttribute('href', '#');
             if (this.expectedValue < 64) {
                 this.docElement.setAttribute('class', this.css.base + ' ' + colClass);
@@ -378,8 +284,9 @@
             this.docElement.setAttribute('col', this.col);
             this.docElement.setAttribute('id', this.id);
             this.docElement.setAttribute('draggable', 'true');
+            this.docElement.setAttribute('val', this.value);
             if (this.value) {
-                this.docElement.innerHTML = this.value;
+                this.docElement.innerHTML = '&nbsp;';
             }
             if (this.listeners && this.listeners.click) {
                 this.docElement.addEventListener('click', this.listeners.click.bind(this), false);
@@ -391,118 +298,171 @@
     }
 
 
-    class Levels {
+    class Row {
         config() {
             return {
-                id: 'levels',
-                parent: null,
-                size: 2,
-                selected: 1,
-                model: function(config) {
-                    return new Level(config);
-                },
-                css: {
-                    base: 'dropdown-menu'
-                },
-                data: [],
-                listeners: {
-                    levelclick: null
-                },
+                id: 'row',
+                index: 0,
                 hook: window.document.body,
-                autoBind: false
+                autoBind: false,
+                isLast: false,
+                css: {
+                    base: 'row',
+                    group: 'form-inline',
+                    subgroup: 'form-group',
+                    left: 'btn empty',
+                    right: 'btn empty'
+                },
+                sequence: null,
+                listeners: {
+                    ondragstart: null,
+                    onleftdrop: null,
+                    onleftclick: null,
+                    onleftdragover: null,
+                    onrightdrop: null,
+                    onrightclick: null,
+                    onrightdragover: null,
+                    onsquareclick: null
+                }
             }
         }
         constructor(config) {
+            this._docElement = window.document.createElement('div');
+            this._leftGroupElement = window.document.createElement('div');
+            this._rightGroupElement = window.document.createElement('div');
+            this._bodyGroupElement = window.document.createElement('div');
+            this._leftElement = window.document.createElement('a');
+            this._rightElement = window.document.createElement('a');
+            this._index = config && config.hasOwnProperty('index') ? config.index : this.config().index;
+            this._isLast = config && config.hasOwnProperty('isLast') ? config.isLast : this.config().isLast;
             this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-            this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
             this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-            this._model = config && config.hasOwnProperty('model') ? config.model : this.config().model;
-            this._size = config && config.hasOwnProperty('size') ? config.size : this.config().size;
-            this._data = config && config.hasOwnProperty('data') ? config.data : this.config().data;
+            this._sequence = config && config.hasOwnProperty('sequence') ? config.sequence : this.config().sequence;
             this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
-            this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
             this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-            this._selected = config && config.hasOwnProperty('selected') ? config.selected : this.config().selected;
+            this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
             this.init();
         }
         get docElement() {
             return this._docElement;
         }
-        get autoBind() {
-            return this._autoBind;
+        get leftGroupElement() {
+            return this._leftGroupElement;
+        }
+        get leftElement() {
+            return this._leftElement;
+        }
+        get rightGroupElement() {
+            return this._rightGroupElement;
+        }
+        get rightElement() {
+            return this._rightElement;
+        }
+        get bodyGroupElement() {
+            return this._bodyGroupElement;
+        }
+        get isLast() {
+            return this._isLast;
+        }
+        get index() {
+            return this._index;
         }
         get id() {
             return this._id;
         }
-        get parent() {
-            return this._parent;
-        }
-        get size() {
-            return this._size;
-        }
         get hook() {
             return this._hook;
         }
-        get model() {
-            return this._model;
+        get sequence() {
+            return this._sequence;
+        }
+        get store() {
+            return this._store;
         }
         get css() {
             return this._css;
         }
-        get data() {
-            return this._data;
-        }
         get listeners() {
             return this._listeners;
         }
-        get menuEl() {
-            var el = window.document.createElement('ul');
-            el.setAttribute('class', this.css.menu);
-            return el;
-        }
-        get selected() {
-            return this._selected;
-        }
-        set selected(value) {
-            this._selected = value;
-            this.data.map(function(level) {
-                if (level.value == this.selected) {
-                    level.selected = true;
-                } else {
-                    level.selected = false;
-                }
-            }, this);
+        get autoBind() {
+            return this._autoBind;
         }
         bind() {
             this.hook.appendChild(this.docElement);
         }
         init() {
-            var level = 1,
-                dimensions;
-            this._docElement = window.document.createElement('ul');
             this.docElement.setAttribute('class', this.css.base);
-            this.docElement.appendChild(this.menuEl);
-            if (this.data.length === 0) {
-                for (; level <= this.size; level++) {
-                    dimensions = Util.mapLevelDimensions(level);
-                    this.data.push(this.model({
-                        selected: level == this.selected ? true : false,
-                        value: level,
-                        cols: dimensions.cols,
-                        rows: dimensions.rows,
-                        text: 'Level ' + level,
-                        hook: this.docElement,
-                        autoBind: true,
-                        store: this,
-                        listeners: {
-                            click: this.listeners.levelclick
-                        }
-                    }));
+            this.docElement.setAttribute('id', this.id + '-' + this.index);
+            this.initLeft();
+            this.initBody();
+            this.initRight();
+        }
+        initBody() {
+            this.bodyGroupElement.setAttribute('class', this.css.subgroup);
+            this.bodyGroupElement.setAttribute('id', this.id + '-' + this.index + 'group-body');
+            if (this.listeners) {
+                if (this.listeners.ondragstart) {
+                    this.bodyGroupElement.setAttribute('draggable', true);
+                    this.bodyGroupElement.addEventListener('ondragstart', this.listeners.ondragstart.bind(this), false);
                 }
             }
-            if (this.autoBind) {
-                this.bind();
+            if (this.sequence) {
+                this._store = new Squares({
+                    hook: this.bodyGroupElement,
+                    cols: 8,
+                    rows: 1,
+                    index: this.index,
+                    parent: this,
+                    sequence: this.sequence,
+                    isLast: this.isLast,
+                    listeners: {
+                        squareclick: this.onsquareclick
+                    },
+                    autoBind: true
+                });
+            } else {
+                this._store = null;
             }
+        }
+        initRight() {
+            this.rightElement.setAttribute('id', this.id + '-' + this.index + '-right');
+            this.rightElement.setAttribute('class', this.css.right);
+            this.rightGroupElement.setAttribute('id', this.id + '-' + this.index + 'group-right');
+            this.rightGroupElement.setAttribute('class', this.css.subgroup);
+            if (this.listeners) {
+                if (this.listeners.onrightclick) {
+                    this.rightElement.addEventListener('click', this.listeners.onrightclick.bind(this), false);
+                }
+                if (this.listeners.onrightdrop) {
+                    this.rightGroupElement.addEventListener('ondrop', this.listeners.onrightdrop.bind(this), false);
+                }
+                if (this.listeners.onrightdragover) {
+                    this.rightGroupElement.addEventListener('ondragover', this.listeners.onrightdragover.bind(this), false);
+                }
+            }
+            this.rightGroupElement.appendChild(this.rightElement);
+            this.docElement.appendChild(this.rightGroupElement);
+        }
+        initLeft() {
+            this.leftElement.setAttribute('id', this.id + '-' + this.index + '-left');
+            this.leftElement.setAttribute('class', this.css.left);
+            this.leftGroupElement.setAttribute('id', this.id + '-' + this.index + 'group-left');
+            this.leftGroupElement.setAttribute('class', this.css.subgroup);
+            this.leftGroupElement.addEventListener('ondrop', this.listeners.onleftdrop.bind(this), false);
+            if (this.listeners) {
+                if (this.listeners.onleftclick) {
+                    this.leftElement.addEventListener('click', this.listeners.onleftclick.bind(this), false);
+                }
+                if (this.listeners.onleftdrop) {
+                    this.leftGroupElement.addEventListener('ondrop', this.listeners.onleftdrop.bind(this), false);
+                }
+                if (this.listeners.onleftdragover) {
+                    this.leftGroupElement.addEventListener('ondragover', this.listeners.onleftdragover.bind(this), false);
+                }
+            }
+            this.leftGroupElement.appendChild(this.leftElement);
+            this.docElement.appendChild(this.leftGroupElement);
         }
     }
 
@@ -512,16 +472,19 @@
             return {
                 id: 'squares',
                 model: 'Square',
+                index: 0,
+                isLast: false,
                 parent: null,
                 cols: 4,
                 rows: 4,
                 css: {
-                    rows: 'row',
-                    cells: 'btn-group-justified',
+                    base: 'row',
+                    group: 'form-group',
                     empty: 'btn empty',
                     square: 'btn',
                     table: 'table-bordered'
                 },
+                sequence: null,
                 data: [],
                 listeners: {
                     squareclick: null
@@ -534,8 +497,12 @@
             }
         }
         constructor(config) {
+            this._docElement = document.createElement('div');
             this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._index = config && config.hasOwnProperty('index') ? config.index : this.config().index;
+            this._isLast = config && config.hasOwnProperty('isLast') ? config.isLast : this.config().isLast;
             this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._sequence = config && config.hasOwnProperty('sequence') ? config.sequence : this.config().sequence;
             this._model = config && config.hasOwnProperty('model') ? config.model : this.config().model;
             this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
             this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
@@ -555,6 +522,12 @@
         }
         get id() {
             return this._id;
+        }
+        get index() {
+            return this._index;
+        }
+        get isLast() {
+            return this._isLast;
         }
         get parent() {
             return this._parent;
@@ -598,7 +571,7 @@
             }).pop();
         }
         isValidMove(squareA, squareB) {
-            var rowDelta = Math.abs(squareA.row - squareB.row),
+            let rowDelta = Math.abs(squareA.row - squareB.row),
                 colDelta = Math.abs(squareA.col - squareB.col);
             if (squareA.col == squareB.col) {
                 return (rowDelta == 1) && (colDelta == 0);
@@ -607,7 +580,7 @@
         }
         unload() {
             this.data.map(function(square) {
-                var rowEl = window.document.getElementById(this.id + '-row' + square.row);
+                let rowEl = window.document.getElementById(this.id + '-row' + square.row);
                 square.destroy();
                 if (rowEl) {
                     this.docElement.removeChild(rowEl);
@@ -616,43 +589,48 @@
             this._data = [];
         }
         load() {
-            var squareCount = this.range - 1,
+            let squareCount = this.range - 1,
                 col = 1,
                 row = 1,
-                i = 0;
-            if (this.data.length === 0) {
-                this._sequence = Util.generateGameSequence(1, squareCount, squareCount);
+                i = this.index;
+            if (this.data.length === 0 && this.sequence) {
                 for (; row <= this.rows; row++) {
-                    var rowElement = window.document.createElement('div');
-                    rowElement.setAttribute('class', this.css.rows);
-                    rowElement.setAttribute('id', this.id + '-row' + row);
-                    var btnGroupElement = window.document.createElement('div');
-                    btnGroupElement.setAttribute('id', this.id + '-btngroup' + row);
-                    if (row == 1) {
-                        btnGroupElement.setAttribute('class', this.css.cells + ' top-row');
-                    } else if (row == this.rows) {
-                        btnGroupElement.setAttribute('class', this.css.cells + ' body-row');
-                    } else {
-                        btnGroupElement.setAttribute('class', this.css.cells + ' bottom-row');
-                    }
-                    rowElement.appendChild(btnGroupElement);
                     for (; col <= this.cols; col++) {
-                        this.data.push(new Square({
-                            id: 'square' + i,
-                            row: row,
-                            col: col,
-                            value: i < this.sequence.length ? this.sequence[i] : this.text.empty,
-                            css: {
-                                base: i < this.sequence.length ? this.css.square : this.css.empty
-                            },
-                            expectedValue: i < this.sequence.length ? i + 1 : null,
-                            listeners: {
-                                click: this.listeners.squareclick
-                            },
-                            store: this,
-                            hook: btnGroupElement,
-                            autoBind: true
-                        }));
+                        if (i < (this.sequence.length - 1) || (i < this.sequence.length && !this.isLast)) {
+                            this.data.push(new Square({
+                                id: 'squ-' + i,
+                                row: row,
+                                col: col,
+                                value: this.sequence[i],
+                                css: {
+                                    base: this.css.square
+                                },
+                                expectedValue: this.index,
+                                listeners: {
+                                    click: this.listeners.squareclick
+                                },
+                                store: this,
+                                hook: this.docElement,
+                                autoBind: true
+                            }));
+                        } else {
+                            this.data.push(new Square({
+                                id: 'squ-' + i,
+                                row: row,
+                                col: col,
+                                value: null,
+                                css: {
+                                    base: this.css.empty
+                                },
+                                expectedValue: this.index,
+                                listeners: {
+                                    click: this.listeners.squareclick
+                                },
+                                store: this,
+                                hook: this.docElement,
+                                autoBind: true
+                            }));
+                        }
                         i++;
                     };
                     col = 1;
@@ -664,13 +642,13 @@
             return (this.cols * this.rows);
         }
         get solved() {
-            var moves = this.data.filter(function(square) {
+            let moves = this.data.filter(function(square) {
                 return square.isCorrect;
             });
             return moves && moves.length == (this.range - 1) ? true : false;
         }
         reset(store) {
-            var squareCount = store.range - 1,
+            let squareCount = store.range - 1,
                 i = 0,
                 sequence = Util.generateGameSequence(1, squareCount, squareCount);
             store.data.map(function(square) {
@@ -692,10 +670,8 @@
             this.hook.appendChild(this.docElement);
         }
         init() {
-            var docElement = document.createElement('div');
-            docElement.setAttribute('id', this.id);
-            docElement.setAttribute('style', 'background-color: white;');
-            this._docElement = docElement;
+            this.docElement.setAttribute('id', this.id);
+            this.docElement.setAttribute('style', 'background-color: white;');
             this.load();
             if (this.autoBind) {
                 this.bind();
@@ -802,134 +778,6 @@
     }
 
 
-    class Header {
-        config() {
-            return {
-                id: 'puzzle-header',
-                levels: 6,
-                parent: null,
-                hook: window.document.body,
-                autoBind: false,
-                css: {
-                    base: 'row',
-                    left: 'nav navbar-collapse navbar-left navbar-brand dropdown',
-                    right: 'nav navbar-collapse navbar-right navbar-brand',
-                    link: 'dropdown-toggle',
-                    caret: 'caret'
-                },
-                text: {
-                    left: 'Level',
-                    right: '1'
-                },
-                store: null,
-                listeners: {
-                    levelselect: null
-                }
-            }
-        }
-        constructor(config) {
-            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-            this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
-            this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
-            this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
-            this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
-            this._levels = config && config.hasOwnProperty('levels') ? config.levels : this.config().levels;
-            this.init();
-        }
-        get id() {
-            return this._id;
-        }
-        get hook() {
-            return this._hook;
-        }
-        get levels() {
-            return this._levels;
-        }
-        get docElement() {
-            return this._docElement;
-        }
-        get listeners() {
-            return this._listeners;
-        }
-        get parent() {
-            return this._parent;
-        }
-        get css() {
-            return this._css;
-        }
-        get text() {
-            return this._text;
-        }
-        set text(value) {
-            var rightEl = document.getElementById(this.id + '-right');
-            this._text.left = value.hasOwnProperty('left') ? value.left : this._text.left;
-            this._text.right = value.hasOwnProperty('right') ? value.right : this._text.right;
-            if (rightEl) {
-                rightEl.innerText = this.text.right;
-            }
-        }
-        get store() {
-            return this._store;
-        }
-        get autoBind() {
-            return this._autoBind;
-        }
-        get menuLabelEl() {
-            var href = window.document.createElement('a'),
-                caret = window.document.createElement('span');
-            caret.setAttribute('class', 'caret');
-            href.setAttribute('id', this.id + '-menulabel');
-            href.setAttribute('href', '#');
-            href.setAttribute('class', this.css.link);
-            href.setAttribute('data-toggle', 'dropdown');
-            href.setAttribute('role', 'button');
-            href.setAttribute('aria-expanded', 'false');
-            href.innerHTML = this.text.left;
-            href.appendChild(caret);
-            return href;
-        }
-        get leftEl() {
-            var el = window.document.createElement('ul');
-            el.setAttribute('class', this.css.left);
-            el.setAttribute('id', this.id + '-left');
-            el.appendChild(this.menuLabelEl);
-            this._store = new Levels({
-                size: this.levels,
-                parent: this,
-                autoBind: true,
-                hook: el,
-                listeners: {
-                    levelclick: this.listeners.levelselect
-                }
-            });
-            return el;
-        }
-        get rightEl() {
-            var el = window.document.createElement('div');
-            el.setAttribute('id', this.id + '-right');
-            el.setAttribute('style', 'padding-right: 30px;');
-            el.setAttribute('class', this.css.right);
-            el.innerText = this.text.right;
-            return el;
-        }
-        bind() {
-            this.hook.appendChild(this.docElement);
-        }
-        init() {
-            this._docElement = window.document.createElement('div');
-            this.docElement.setAttribute('class', this.css.base);
-            this.docElement.setAttribute('id', this.id);
-            this.docElement.appendChild(this.leftEl);
-            this.docElement.appendChild(this.rightEl);
-            if (this.autoBind) {
-                this.bind();
-            }
-        }
-    }
-
-
     class Board {
         config() {
             return {
@@ -940,9 +788,9 @@
                 cols: 8,
                 rows: 8,
                 css: {
-                    base: 'container-fluid',
+                    base: 'container',
                     row: 'row',
-                    form: 'form-group',
+                    form: 'form-inline',
                     cols: 'col-lg-4'
                 }
             }
@@ -985,7 +833,7 @@
             return this._css;
         }
         set css(updates) {
-            var colsEl;
+            let colsEl;
             if (updates.hasOwnProperty('cols') && updates.cols != this.css.cols) {
                 this._css = Util.overlay(updates, this._css);
                 colsEl = window.document.getElementById(this.id + '-cols');
@@ -1001,23 +849,23 @@
             return this._rows;
         }
         get colsEl() {
-            var el = window.document.createElement('div');
+            let el = window.document.createElement('div');
             el.setAttribute('id', this.id + '-cols');
             el.setAttribute('class', this.css.cols);
             return el;
         }
         get rowEl() {
-            var el = window.document.createElement('div');
+            let el = window.document.createElement('div');
             el.setAttribute('class', this.css.row);
             return el;
         }
         get formEl() {
-            var el = window.document.createElement('div');
+            let el = window.document.createElement('div');
             el.setAttribute('class', this.css.form);
             return el;
         }
         selectLevel(level) {
-            var header = level.store.parent,
+            let header = level.store.parent,
                 board = header.parent,
                 store = board.store,
                 currentLevel = header.text.right,
@@ -1034,7 +882,7 @@
             }
         }
         onLevelSelect() {
-            var level = this,
+            let level = this,
                 header = level.store.parent,
                 board = header.parent;
             board.selectLevel(level);
@@ -1043,13 +891,13 @@
             this.parent.store.reset(this.parent.store);
         }
         onHelpClick() {
-            var link = document.createElement('a');
+            let link = document.createElement('a');
             link.setAttribute('href', window.app.metadata.helpUrl);
             link.setAttribute('target', '_blank');
             link.click();
         }
         onSquareClick() {
-            var store = this.store,
+            let store = this.store,
                 squareA = this,
                 squareB = store.emptySquare,
                 board = store.parent,
@@ -1079,38 +927,28 @@
                 }
             }
         }
+        onSquareDrag() {
+            console.log('onSquareDrag');
+        }
         bind() {
             this.hook.appendChild(this.docElement);
         }
         init() {
-            var rowEl = this.rowEl,
-                formEl = this.formEl,
-                colEl = this.colsEl;
-            formEl.appendChild(colEl);
-            rowEl.appendChild(formEl);
             this._docElement = window.document.createElement('div');
             this.docElement.setAttribute('class', this.css.base);
-            /*this._header = new Header({
-              hook: colEl,
-              autoBind: true,
-              levels: this.levels,
-              parent: this,
-              listeners: {
-                levelselect: this.onLevelSelect
-              }
-            }); */
             this._store = new Squares({
-                hook: colEl,
+                hook: this.docElement,
                 cols: this.cols,
                 rows: this.rows,
                 parent: this,
                 listeners: {
-                    squareclick: this.onSquareClick
+                    squareclick: this.onSquareClick,
+                    squareDrag: this.onSquareDrag
                 },
                 autoBind: true
             });
             this._toolBar = new Toolbar({
-                hook: colEl,
+                hook: this.docElement,
                 autoBind: true,
                 listeners: {
                     reset: this.onResetClick,
@@ -1118,7 +956,6 @@
                 },
                 parent: this
             });
-            this.docElement.appendChild(rowEl);
             if (this.autoBind) {
                 this.bind();
             }

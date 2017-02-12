@@ -20,6 +20,7 @@ class Square {
   }
 
   constructor(config) {
+    this._docElement = window.document.createElement('a');
     this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
     this._row = config && config.hasOwnProperty('row') ? config.row : this.config().row;
     this._col = config && config.hasOwnProperty('col') ? config.col : this.config().col;
@@ -112,26 +113,21 @@ class Square {
   }
 
   init() {
-
     let colClass = Util.mapColClass(this.value);
-
-    this._docElement = window.document.createElement('a');
     this.docElement.setAttribute('href', '#');
-
     if (this.expectedValue < 64) {
       this.docElement.setAttribute('class', this.css.base + ' ' + colClass);
     } else {
       this.docElement.setAttribute('class', this.css.base);
     }
-
     this.docElement.setAttribute('row', this.row);
     this.docElement.setAttribute('col', this.col);
     this.docElement.setAttribute('id', this.id);
     this.docElement.setAttribute('draggable', 'true');
+    this.docElement.setAttribute('val', this.value);
     if (this.value) {
-      this.docElement.innerHTML = this.value;
+      this.docElement.innerHTML = '&nbsp;';
     }
-
     if (this.listeners && this.listeners.click) {
       this.docElement.addEventListener('click', this.listeners.click.bind(this), false);
     }
@@ -140,4 +136,5 @@ class Square {
       this.bind();
     }
   }
+
 }
