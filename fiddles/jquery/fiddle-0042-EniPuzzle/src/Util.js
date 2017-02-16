@@ -187,7 +187,7 @@ class Util {
       i = pos,
       lim = pos + range;
 
-    sequence.map((element) -> {
+    sequence.map(function(element) {
       while(i < lim) {
         subSequence.push(sequence[i]);
         i++;

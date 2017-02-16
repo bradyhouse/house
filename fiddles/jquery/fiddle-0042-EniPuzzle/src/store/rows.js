@@ -84,27 +84,10 @@ class Rows {
   }
 
   load() {
-    /**
-     *  id: 'row',
-     index: 0,
-     hook: window.document.body,
-     autoBind: false,
-     isLast: false,
-     css: {
-        base: 'row',
-        group: 'form-inline',
-        subgroup: 'form-group',
-        left: 'btn empty',
-        right: 'btn empty'
-      },
-     sequence: null,
-     listeners: {
 
-      }
-     */
     let row = 1,
         i = this.index,
-      seq = [];
+        seq = [];
 
     for (; row <= this.rows; row++) {
       seq = Util.parseSubSequence(this.sequence, i, this.cols);

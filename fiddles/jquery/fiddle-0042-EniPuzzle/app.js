@@ -175,6 +175,18 @@
                     return 'col-h';
             }
         }
+        static parseSubSequence(sequence, pos, range) {
+            let subSequence = [],
+                i = pos,
+                lim = pos + range;
+            sequence.map(function(element) {
+                while (i < lim) {
+                    subSequence.push(sequence[i]);
+                    i++;
+                }
+            });
+            return subSequence;
+        }
     }
 
 
@@ -387,6 +399,12 @@
         }
         get autoBind() {
             return this._autoBind;
+        }
+        destroy() {
+            var el = window.document.getElementById(this.id);
+            if (el) {
+                this.hook.removeChild(el);
+            }
         }
         bind() {
             this.hook.appendChild(this.docElement);
@@ -634,7 +652,7 @@
                         i++;
                     };
                     col = 1;
-                    this.docElement.appendChild(rowElement);
+                    //this.docElement.appendChild(rowElement);
                 }
             }
         }
@@ -936,17 +954,6 @@
         init() {
             this._docElement = window.document.createElement('div');
             this.docElement.setAttribute('class', this.css.base);
-            this._store = new Squares({
-                hook: this.docElement,
-                cols: this.cols,
-                rows: this.rows,
-                parent: this,
-                listeners: {
-                    squareclick: this.onSquareClick,
-                    squareDrag: this.onSquareDrag
-                },
-                autoBind: true
-            });
             this._toolBar = new Toolbar({
                 hook: this.docElement,
                 autoBind: true,

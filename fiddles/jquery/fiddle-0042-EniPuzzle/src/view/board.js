@@ -187,6 +187,7 @@ class Board {
 
 
 
+
     this._toolBar = new Toolbar({
       hook: this.docElement,
       autoBind: true,
