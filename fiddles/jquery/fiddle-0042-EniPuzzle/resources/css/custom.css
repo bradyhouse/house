@@ -161,21 +161,15 @@ p {
 .top-row {
   background-color: white;
   padding-top: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 .body-row {
   background-color: white;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 .bottom-row {
   background-color: white;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-bottom: 5px;
 }
 
 

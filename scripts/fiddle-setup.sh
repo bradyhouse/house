@@ -10,37 +10,21 @@
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# 09/16/2016 - Baseline Ver ~ See CHANGELOG @ 201609160420
-# 10/01/2016 - See CHANGELOG @ 201610010420
-# 11/30/2016 - See CHANGELOG @ 201611280420
-# 12/15/2016 - See CHANGELOG @ 201612120420
+# 02/11/2017 - Baseline Ver ~ See CHANGELOG @ 201702110420
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
+source bin/setup/_setup.sh;
 
-_type=$(echo $1);
+_os=$(echo $1);
+_app=$(echo $2);
 
-function emulate() {
-    groupLog "emulate";
-    case ${_type} in
-        'android')
-            source bin/android/.androidrc;
-            source bin/android/_emulate.sh;
-            emulate || exit 87;
-            ;;
-        'nativescript')
-            source bin/nativescript/.nativescriptrc;
-            source bin/nativescript/_emulate.sh;
-            startAndroidEmulator || exit 87;
-            ;;
-        *)  exit 86;
-            ;;
-    esac
-}
+
+
 #try
 (
-    if [ "$#" -lt 1 ]; then  exit 86; fi
-    emulate || exit $?;
+    if [ "$#" -lt 2 ]; then  exit 86; fi
+    setup "${_os}" "${_app}" || exit 87;
 )
 #catch
 rc=$?
@@ -54,16 +38,18 @@ case ${rc} in
         echo "";
         echo "Usage:";
         echo "";
-        echo "$0 \"[t]\"";
+        echo "$0 \"[o]\" \"[a]\"";
         echo "";
-        echo "[t] - type. Valid types include: ";
+        echo "[o] - operating system. Valid operating systems include: mac";
         echo "";
-        voidEchoFiddleTypes "emulate";
+        echo "[a] - application. Valid applications include:";
+        echo "";
+        voidEchoFiddleTypes "setup";
         echo "";
         ;;
-    87) echo -e "Fubar\t\"emulate\" failed for \"${_type}\".";
+    87) groupLog "Fubar\t\"setup\" of \"${_app}\" for \"${_os}\" failed.";
         ;;
-    *)  echo "fubar! Something went wrong.";
+    *)  groupLog "fubar! Something went wrong.";
         ;;
 esac
 #finally

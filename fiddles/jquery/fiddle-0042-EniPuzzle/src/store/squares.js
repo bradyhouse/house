@@ -2,7 +2,7 @@ class Squares {
 
   config() {
     return {
-      id: 'squares',
+      idPrefix: 'squares',
       model: 'Square',
       index: 0,
       isLast: false,
@@ -17,6 +17,7 @@ class Squares {
         table: 'table-bordered'
       },
       sequence: null,
+      expectedSequence: null,
       data: [],
       listeners: {
         squareclick: null
@@ -31,12 +32,12 @@ class Squares {
 
   constructor(config) {
     this._docElement = document.createElement('div');
-
-    this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+    this._idPrefix = config && config.hasOwnProperty('idPrefix') ? config.idPrefix : this.config().idPrefix;
     this._index = config && config.hasOwnProperty('index') ? config.index : this.config().index;
     this._isLast = config && config.hasOwnProperty('isLast') ? config.isLast : this.config().isLast;
     this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
     this._sequence = config && config.hasOwnProperty('sequence') ? config.sequence : this.config().sequence;
+    this._expectedSequence = config && config.hasOwnProperty('expectedSequence') ? config.expectedSequence : this.config()._expectedSequence;
     this._model = config && config.hasOwnProperty('model') ? config.model : this.config().model;
     this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
     this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
@@ -46,6 +47,7 @@ class Squares {
     this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
     this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
     this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
+    this._id = this._idPrefix + '-' + this._index;
     this.init();
   }
 
@@ -61,6 +63,10 @@ class Squares {
     return this._id;
   }
 
+  get idPrefix() {
+    return this._idPrefix;
+  }
+
   get index() {
     return this._index;
   }
@@ -71,6 +77,10 @@ class Squares {
 
   get parent() {
     return this._parent;
+  }
+
+  get row() {
+    return this.parent && this.parent.isRow ? this.parent : null;
   }
 
   get hook() {
@@ -113,26 +123,70 @@ class Squares {
     return this._sequence;
   }
 
+  get expectedSequence() {
+    return this._expectedSequence;
+  }
+
+  get size() {
+    return this.data.length;
+  }
+
   get listeners() {
     return this._listeners;
   }
 
+  get containsEmpty() {
+    return this.emptySquare ? true : false;
+  }
+
   get emptySquare() {
-    return this.data.filter(function (square) {
+    let emptySquares = this.data.filter(function (square) {
       return square.isEmpty;
-    }).pop();
-  }
-
-  isValidMove(squareA, squareB) {
-    let rowDelta = Math.abs(squareA.row - squareB.row),
-      colDelta = Math.abs(squareA.col - squareB.col);
-    if (squareA.col == squareB.col) {
-      return (rowDelta == 1) && (colDelta == 0);
+    });
+    if (emptySquares && emptySquares.length) {
+      return emptySquares.pop();
     }
-    return false;
+    return null;
   }
 
-  unload() {
+  get firstSquare() {
+    return this.data && this.data.length ? this.data[0] : null;
+  }
+
+  get lastSquare() {
+    return this.data && this.data.length ? this.data[this.data.length - 1] : null;
+  }
+
+  shiftLeft() {
+    if (this.data && this.data.length === 8) {
+
+      Util.swap(this.data[0], this.data[1]);
+      Util.swap(this.data[1], this.data[2]);
+      Util.swap(this.data[2], this.data[3]);
+      Util.swap(this.data[3], this.data[4]);
+      Util.swap(this.data[4], this.data[5]);
+      Util.swap(this.data[5], this.data[6]);
+      Util.swap(this.data[6], this.data[7]);
+
+    }
+  }
+
+  shiftRight() {
+
+    if (this.data && this.data.length === 8) {
+      
+      Util.swap(this.data[7], this.data[6]);
+      Util.swap(this.data[6], this.data[5]);
+      Util.swap(this.data[5], this.data[4]);
+      Util.swap(this.data[4], this.data[3]);
+      Util.swap(this.data[3], this.data[2]);
+      Util.swap(this.data[2], this.data[1]);
+      Util.swap(this.data[1], this.data[0]);
+
+    }
+  }
+
+  zero() {
     this.data.map(function (square) {
       let rowEl = window.document.getElementById(this.id + '-row' + square.row);
       square.destroy();
@@ -147,40 +201,38 @@ class Squares {
     let squareCount = this.range - 1,
       col = 1,
       row = 1,
-      i = this.index;
-    if (this.data.length === 0 && this.sequence) {
+      i = 0;
+    if (this.data.length === 0 && this.sequence && this.expectedSequence) {
       for (; row <= this.rows; row++) {
         for (; col <= this.cols; col++) {
           if (i < (this.sequence.length - 1) || (i < this.sequence.length && !this.isLast)) {
             this.data.push(new Square({
-              id: 'squ-' + i,
-              row: row,
+              row: this.index,
               col: col,
+              parent: this.parent,
               value: this.sequence[i],
               css: {
                 base: this.css.square
               },
-              expectedValue: this.index,
-              listeners: {
-                click: this.listeners.squareclick
-              },
+              isEmpty: false,
+              expectedValue: this.expectedSequence[i],
+              listeners: this.listeners,
               store: this,
               hook: this.docElement,
               autoBind: true
             }));
           } else {
             this.data.push(new Square({
-              id: 'squ-' + i,
-              row: row,
+              row: this.index,
               col: col,
+              parent: this.parent,
               value: null,
               css: {
                 base: this.css.empty
               },
-              expectedValue: this.index,
-              listeners: {
-                click: this.listeners.squareclick
-              },
+              isEmpty: true,
+              expectedValue: this.expectedSequence[i],
+              listeners: this.listeners,
               store: this,
               hook: this.docElement,
               autoBind: true
@@ -189,7 +241,6 @@ class Squares {
           i++;
         };
         col = 1;
-        //this.docElement.appendChild(rowElement);
       }
     }
   }

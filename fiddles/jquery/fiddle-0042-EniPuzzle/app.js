@@ -4,7 +4,7 @@
 
     app.metadata = app.metadata || {
         gitHubUrl: 'https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0042-EniPuzzle',
-        helpUrl: 'http://mathworld.wolfram.com/15Puzzle.html'
+        helpUrl: 'http://www.enipuzzles.com/'
     };
 
 
@@ -13,34 +13,44 @@
             return (x % 2) == 0;
         }
         static generateSequence(min, max, count) {
-            var range = [],
+            let range = [],
                 number = 0,
-                matches = [],
                 i = 0;
             while (i < count) {
                 number = Math.floor(Math.random() * (max - min + 1)) + min;
-                matches = range.filter(function(elem) {
-                    return elem == number;
-                });
-                if (matches.length == 0) {
+                if (range.indexOf(number) === -1) {
                     range.push(number);
                     i++;
                 }
             }
             return range;
         }
+        static generateSequentialSequence(min, max) {
+            let sequence = [],
+                i = 0,
+                number = min,
+                count = (max - min);
+            if (count > 0) {
+                while (i < (count + 1)) {
+                    sequence.push(number);
+                    number++;
+                    i++;
+                }
+            }
+            return sequence;
+        }
         static generateGameSequence(min, max, count) {
-            var sequence = Util.generateSequence(min, max, count);
+            let sequence = Util.generateSequence(min, max, count);
             while (!Util.isValid(sequence)) {
                 sequence = Util.generateSequence(min, max, count);
             }
             return sequence;
         }
         static isValid(sequence) {
-            var inversionCounts = [],
+            let inversionCounts = [],
                 inversionSum = 0;
-            sequence.map(function(a, x, arr) {
-                var inversions = arr.filter(function(b, y) {
+            sequence.forEach(function(a, x, arr) {
+                let inversions = arr.filter(function(b, y) {
                     return y > x && b < a;
                 });
                 if (inversions.length) {
@@ -49,7 +59,7 @@
                     inversionCounts.push(0);
                 }
             });
-            inversionCounts.map(function(cnt) {
+            inversionCounts.forEach(function(cnt) {
                 inversionSum += cnt;
             });
             return Util.isEven(inversionSum);
@@ -187,15 +197,44 @@
             });
             return subSequence;
         }
+        static isValidMove(squareA, squareB) {
+            let rowDelta = Math.abs(squareA.row - squareB.row),
+                colDelta = Math.abs(squareA.col - squareB.col);
+            if (squareA.col == squareB.col) {
+                return (rowDelta == 1) && (colDelta == 0);
+            }
+            if (squareA.row == squareB.row) {
+                return (rowDelta == 0) && (colDelta == 1);
+            }
+            return false;
+        }
+        static swap(squareA, squareB) {
+            if (squareA && squareB && squareA.isSquare && squareB.isSquare) {
+                let squareAValue = squareA.value,
+                    squareAIsEmpty = squareA.isEmpty,
+                    squareAClass = squareA.docElement.getAttribute('class'),
+                    squareBValue = squareB.value,
+                    squareBIsEmpty = squareB.isEmpty,
+                    squareBClass = squareB.docElement.getAttribute('class');
+                squareA.value = squareBValue;
+                squareA.isEmpty = squareBIsEmpty;
+                squareA.docElement.setAttribute('class', squareBClass);
+                squareB.value = squareAValue;
+                squareB.isEmpty = squareAIsEmpty;
+                squareB.docElement.setAttribute('class', squareAClass);
+            }
+        }
     }
 
 
     class Square {
         config() {
             return {
-                id: 'square1',
+                idPrefix: 'square',
+                isEmpty: false,
                 row: 1,
                 col: 1,
+                parent: null,
                 value: null,
                 expectedValue: null,
                 hook: window.document.body,
@@ -211,7 +250,8 @@
         }
         constructor(config) {
             this._docElement = window.document.createElement('a');
-            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._idPrefix = config && config.hasOwnProperty('idPrefix') ? config.idPrefix : this.config().idPrefix;
+            this._isEmpty = config && config.hasOwnProperty('isEmpty') ? config.isEmpty : this.config().isEmpty;
             this._row = config && config.hasOwnProperty('row') ? config.row : this.config().row;
             this._col = config && config.hasOwnProperty('col') ? config.col : this.config().col;
             this._value = config && config.hasOwnProperty('value') ? config.value : this.config().value;
@@ -221,6 +261,8 @@
             this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
             this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
             this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
+            this._id = this._idPrefix + '-r' + this._row + '-c' + this._col + '-link';
+            this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
             this.init();
         }
         get docElement() {
@@ -229,21 +271,38 @@
         get id() {
             return this._id;
         }
+        get idPrefix() {
+            return this._idPrefix;
+        }
+        set isEmpty(val) {
+            this._isEmpty = val;
+        }
+        get isEmpty() {
+            return this._isEmpty ? true : false;
+        }
+        get isSquare() {
+            return true;
+        }
         get row() {
             return this._row;
         }
         get col() {
             return this._col;
         }
+        get parent() {
+            return this._parent;
+        }
         get value() {
             return this._value;
         }
         set value(val) {
             this._value = val;
-            this.docElement.innerHTML = val;
         }
         get expectedValue() {
             return this._expectedValue;
+        }
+        set expectedValue(val) {
+            this._expectedValue = val;
         }
         get hook() {
             return this._hook;
@@ -265,9 +324,6 @@
         get listeners() {
             return this._listeners;
         }
-        get isEmpty() {
-            return this._value == '&nbsp;' ? true : false;
-        }
         get isCorrect() {
             return this._expectedValue == this._value ? true : false;
         }
@@ -275,7 +331,7 @@
             return this._autoBind;
         }
         destroy() {
-            var domSquare = window.document.getElementById(this.id);
+            let domSquare = window.document.getElementById(this.id);
             if (domSquare) {
                 domSquare.setAttribute('class', 'exit-stage-right');
                 this.hook.removeChild(domSquare);
@@ -283,6 +339,12 @@
         }
         bind() {
             this.hook.appendChild(this.docElement);
+        }
+        click() {
+            if (typeof this.listeners.click === 'function') {
+                return this.listeners.click(this);
+            }
+            return false;
         }
         init() {
             let colClass = Util.mapColClass(this.value);
@@ -292,17 +354,10 @@
             } else {
                 this.docElement.setAttribute('class', this.css.base);
             }
-            this.docElement.setAttribute('row', this.row);
-            this.docElement.setAttribute('col', this.col);
             this.docElement.setAttribute('id', this.id);
             this.docElement.setAttribute('draggable', 'true');
-            this.docElement.setAttribute('val', this.value);
-            if (this.value) {
-                this.docElement.innerHTML = '&nbsp;';
-            }
-            if (this.listeners && this.listeners.click) {
-                this.docElement.addEventListener('click', this.listeners.click.bind(this), false);
-            }
+            this.docElement.innerHTML = '&nbsp;';
+            this.docElement.addEventListener('click', this.click.bind(this), false);
             if (this.autoBind) {
                 this.bind();
             }
@@ -313,9 +368,10 @@
     class Row {
         config() {
             return {
-                id: 'row',
+                idPrefix: 'row',
                 index: 0,
                 hook: window.document.body,
+                parent: null,
                 autoBind: false,
                 isLast: false,
                 css: {
@@ -325,21 +381,23 @@
                     left: 'btn empty',
                     right: 'btn empty'
                 },
-                sequence: null,
+                sequence: [],
+                expectedSequence: [],
                 listeners: {
-                    ondragstart: null,
-                    onleftdrop: null,
-                    onleftclick: null,
-                    onleftdragover: null,
-                    onrightdrop: null,
-                    onrightclick: null,
-                    onrightdragover: null,
-                    onsquareclick: null
+                    dragstart: null,
+                    leftdrop: null,
+                    leftclick: null,
+                    leftdragover: null,
+                    rightdrop: null,
+                    rightclick: null,
+                    rightdragover: null,
+                    squareclick: null
                 }
             }
         }
         constructor(config) {
             this._docElement = window.document.createElement('div');
+            this._groupElement = window.document.createElement('div');
             this._leftGroupElement = window.document.createElement('div');
             this._rightGroupElement = window.document.createElement('div');
             this._bodyGroupElement = window.document.createElement('div');
@@ -347,16 +405,25 @@
             this._rightElement = window.document.createElement('a');
             this._index = config && config.hasOwnProperty('index') ? config.index : this.config().index;
             this._isLast = config && config.hasOwnProperty('isLast') ? config.isLast : this.config().isLast;
-            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._idPrefix = config && config.hasOwnProperty('idPrefix') ? config.idPrefix : this.config().idPrefix;
             this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
             this._sequence = config && config.hasOwnProperty('sequence') ? config.sequence : this.config().sequence;
+            this._expectedSequence = config && config.hasOwnProperty('expectedSequence') ? config.expectedSequence : this.config().expectedSequence;
             this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
             this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
             this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
+            this._id = this._idPrefix + '-' + this._index;
             this.init();
+        }
+        get containsEmpty() {
+            return this.store.containsEmpty;
         }
         get docElement() {
             return this._docElement;
+        }
+        get groupElement() {
+            return this._groupElement;
         }
         get leftGroupElement() {
             return this._leftGroupElement;
@@ -382,11 +449,26 @@
         get id() {
             return this._id;
         }
+        get idPrefix() {
+            return this._idPrefix;
+        }
+        get isRow() {
+            return true;
+        }
         get hook() {
             return this._hook;
         }
+        get parent() {
+            return this._parent;
+        }
+        get board() {
+            return this.parent && this.parent.isBoard ? this.parent : null;
+        }
         get sequence() {
             return this._sequence;
+        }
+        get expectedSequence() {
+            return this._expectedSequence;
         }
         get store() {
             return this._store;
@@ -401,9 +483,10 @@
             return this._autoBind;
         }
         destroy() {
-            var el = window.document.getElementById(this.id);
+            let el = window.document.getElementById(this.id);
             if (el) {
                 this.hook.removeChild(el);
+                el = null;
             }
         }
         bind() {
@@ -411,21 +494,27 @@
         }
         init() {
             this.docElement.setAttribute('class', this.css.base);
-            this.docElement.setAttribute('id', this.id + '-' + this.index);
+            this.docElement.setAttribute('id', this.id);
+            this.groupElement.setAttribute('class', this.css.group);
+            this.initSubGroupCss();
             this.initLeft();
             this.initBody();
             this.initRight();
+            this.docElement.appendChild(this.groupElement);
+            if (this.autoBind) {
+                this.bind();
+            }
         }
         initBody() {
             this.bodyGroupElement.setAttribute('class', this.css.subgroup);
-            this.bodyGroupElement.setAttribute('id', this.id + '-' + this.index + 'group-body');
+            this.bodyGroupElement.setAttribute('id', this.id + '-body-group');
             if (this.listeners) {
-                if (this.listeners.ondragstart) {
+                if (this.listeners.dragstart) {
                     this.bodyGroupElement.setAttribute('draggable', true);
-                    this.bodyGroupElement.addEventListener('ondragstart', this.listeners.ondragstart.bind(this), false);
+                    this.bodyGroupElement.addEventListener('ondragstart', this.listeners.dragstart.bind(this), false);
                 }
             }
-            if (this.sequence) {
+            if (this.sequence.length > 0 && this.sequence.length === this.expectedSequence.length) {
                 this._store = new Squares({
                     hook: this.bodyGroupElement,
                     cols: 8,
@@ -433,54 +522,266 @@
                     index: this.index,
                     parent: this,
                     sequence: this.sequence,
+                    expectedSequence: this.expectedSequence,
                     isLast: this.isLast,
                     listeners: {
-                        squareclick: this.onsquareclick
+                        click: this.listeners.squareclick
                     },
                     autoBind: true
                 });
             } else {
                 this._store = null;
             }
+            this.groupElement.appendChild(this.bodyGroupElement);
         }
         initRight() {
-            this.rightElement.setAttribute('id', this.id + '-' + this.index + '-right');
+            this.rightElement.setAttribute('id', this.id + '-right-link');
             this.rightElement.setAttribute('class', this.css.right);
-            this.rightGroupElement.setAttribute('id', this.id + '-' + this.index + 'group-right');
+            this.rightGroupElement.setAttribute('id', this.id + '-right-group');
             this.rightGroupElement.setAttribute('class', this.css.subgroup);
             if (this.listeners) {
-                if (this.listeners.onrightclick) {
-                    this.rightElement.addEventListener('click', this.listeners.onrightclick.bind(this), false);
+                this.rightElement.addEventListener('click', this.onRightClick.bind(this), false);
+                if (this.listeners.rightdrop) {
+                    this.rightGroupElement.addEventListener('ondrop', this.listeners.rightdrop.bind(this), false);
                 }
-                if (this.listeners.onrightdrop) {
-                    this.rightGroupElement.addEventListener('ondrop', this.listeners.onrightdrop.bind(this), false);
-                }
-                if (this.listeners.onrightdragover) {
-                    this.rightGroupElement.addEventListener('ondragover', this.listeners.onrightdragover.bind(this), false);
+                if (this.listeners.rightdragover) {
+                    this.rightGroupElement.addEventListener('ondragover', this.listeners.rightdragover.bind(this), false);
                 }
             }
+            this.rightElement.innerHTML = '&gt;';
             this.rightGroupElement.appendChild(this.rightElement);
-            this.docElement.appendChild(this.rightGroupElement);
+            this.groupElement.appendChild(this.rightGroupElement);
         }
         initLeft() {
-            this.leftElement.setAttribute('id', this.id + '-' + this.index + '-left');
+            this.leftElement.setAttribute('id', this.id + '-left-link');
             this.leftElement.setAttribute('class', this.css.left);
-            this.leftGroupElement.setAttribute('id', this.id + '-' + this.index + 'group-left');
+            this.leftGroupElement.setAttribute('id', this.id + '-left-group');
             this.leftGroupElement.setAttribute('class', this.css.subgroup);
-            this.leftGroupElement.addEventListener('ondrop', this.listeners.onleftdrop.bind(this), false);
             if (this.listeners) {
-                if (this.listeners.onleftclick) {
-                    this.leftElement.addEventListener('click', this.listeners.onleftclick.bind(this), false);
+                this.leftElement.addEventListener('click', this.onLeftClick.bind(this), false);
+                if (this.listeners.leftdrop) {
+                    this.leftGroupElement.addEventListener('ondrop', this.listeners.leftdrop.bind(this), false);
                 }
-                if (this.listeners.onleftdrop) {
-                    this.leftGroupElement.addEventListener('ondrop', this.listeners.onleftdrop.bind(this), false);
-                }
-                if (this.listeners.onleftdragover) {
-                    this.leftGroupElement.addEventListener('ondragover', this.listeners.onleftdragover.bind(this), false);
+                if (this.listeners.leftdragover) {
+                    this.leftGroupElement.addEventListener('ondragover', this.listeners.leftdragover.bind(this), false);
                 }
             }
+            this.leftElement.innerHTML = '&lt;';
             this.leftGroupElement.appendChild(this.leftElement);
-            this.docElement.appendChild(this.leftGroupElement);
+            this.groupElement.appendChild(this.leftGroupElement);
+        }
+        initSubGroupCss() {
+            if (this.css && this.css.hasOwnProperty('subgroup')) {
+                if (this.index === 1) {
+                    this.css.subgroup += ' top-row';
+                } else if (this.isLast) {
+                    this.css.subgroup += ' bottom-row';
+                } else {
+                    this.css.subgroup += ' body-row';
+                }
+            }
+        }
+        click(isLeft) {
+            if (isLeft) {
+                return this.onLeftClick();
+            }
+            return this.onRightClick();
+        }
+        onLeftClick() {
+            if (this.listeners && typeof this.listeners.leftclick === 'function') {
+                return this.listeners.leftclick(this);
+            }
+            return false;
+        }
+        onRightClick() {
+            if (this.listeners && typeof this.listeners.rightclick === 'function') {
+                return this.listeners.rightclick(this);
+            }
+            return false;
+        }
+    }
+
+
+    class Rows {
+        config() {
+            return {
+                autoBind: false,
+                id: 'rows-store',
+                isSolved: false,
+                parent: null,
+                hook: window.document.body,
+                listeners: {
+                    dragstart: null,
+                    leftdrop: null,
+                    leftclick: null,
+                    leftdragover: null,
+                    rightdrop: null,
+                    rightclick: null,
+                    rightdragover: null,
+                    squareclick: null
+                },
+                css: {
+                    base: 'container-fluid'
+                },
+                rows: 8,
+                cols: 8
+            }
+        }
+        constructor(config) {
+            this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
+            this._docElement = window.document.createElement('div');
+            this._data = [];
+            this._sequence = [];
+            this._expectedSequence = [];
+            this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
+            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._isSolved = config && config.hasOwnProperty('isSolved') ? config.isSolved : this.config().isSolved;
+            this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
+            this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
+            this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
+            this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
+            this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
+            this.init();
+        }
+        get autoBind() {
+            return this._autoBind;
+        }
+        get emptySquare() {
+            let emptyRows = this.data.filter(function(row) {
+                return row.containsEmpty;
+            });
+            if (emptyRows && emptyRows.length) {
+                return emptyRows[0].store.emptySquare;
+            }
+            return null;
+        }
+        get parent() {
+            return this._parent;
+        }
+        get id() {
+            return this._id;
+        }
+        get isSolved() {
+            return this._isSolved;
+        }
+        set isSolved(val) {
+            this._isSolved = val;
+        }
+        get hook() {
+            return this._hook;
+        }
+        get docElement() {
+            return this._docElement;
+        }
+        get size() {
+            let count = 0;
+            this.data.forEach((row) => {
+                count += row.store.size;
+            });
+            return count;
+        }
+        get sequence() {
+            return this._sequence;
+        }
+        get expectedSequence() {
+            return this._expectedSequence;
+        }
+        get listeners() {
+            return this._listeners;
+        }
+        get css() {
+            return this._css;
+        }
+        get rows() {
+            return this._rows;
+        }
+        get cols() {
+            return this._cols;
+        }
+        set data(arr) {
+            this._data = [];
+        }
+        get data() {
+            return this._data;
+        }
+        zero() {
+            this.data.map(function(row) {
+                row.destroy();
+            }, this);
+            this._data = [];
+            this.hook.removeChild(this.docElement);
+        }
+        solve() {
+            this.zero();
+            this.isSolved = true;
+            this.init();
+        }
+        play() {
+            this.zero();
+            this.isSolved = false;
+            this.init();
+        }
+        load() {
+            let row = 1,
+                i = 1,
+                pos = 0,
+                seq = [],
+                expectedSeq = [];
+            for (; row <= this.rows; row++) {
+                if (this.isSolved) {
+                    seq = Util.parseSubSequence(this.expectedSequence, pos, this.cols);
+                } else {
+                    seq = Util.parseSubSequence(this.sequence, pos, this.cols);
+                }
+                expectedSeq = Util.parseSubSequence(this.expectedSequence, pos, this.cols);
+                this.data.push(new Row({
+                    index: i,
+                    parent: this.parent,
+                    hook: this.docElement,
+                    autoBind: true,
+                    isLast: row === this.rows ? true : false,
+                    sequence: seq,
+                    expectedSequence: expectedSeq,
+                    listeners: this.listeners
+                }));
+                i++;
+                pos += this.cols;
+            }
+        }
+        reset() {
+            this.data = [];
+            this.load();
+        }
+        bind() {
+            this.hook.appendChild(this.docElement);
+        }
+        init() {
+            this.docElement.setAttribute('class', this.css.base);
+            this.docElement.setAttribute('id', this.id);
+            this.initSequence();
+            this.initExpectedSequence();
+            if (this.sequence.length > 0 && this.sequence.length === this.expectedSequence.length) {
+                this.load();
+                if (this.data.length) {
+                    if (this.autoBind) {
+                        this.bind();
+                    }
+                }
+            }
+        }
+        initSequence() {
+            let min = 1,
+                max = this.rows && this.cols ? this.rows * this.cols : 0;
+            if (max > 0) {
+                this._sequence = Util.generateSequence(min, max, max);
+            }
+        }
+        initExpectedSequence() {
+            let min = 1,
+                max = this.rows && this.cols ? this.rows * this.cols : 0;
+            if (max > 0) {
+                this._expectedSequence = Util.generateSequentialSequence(min, max);
+            }
         }
     }
 
@@ -488,7 +789,7 @@
     class Squares {
         config() {
             return {
-                id: 'squares',
+                idPrefix: 'squares',
                 model: 'Square',
                 index: 0,
                 isLast: false,
@@ -503,6 +804,7 @@
                     table: 'table-bordered'
                 },
                 sequence: null,
+                expectedSequence: null,
                 data: [],
                 listeners: {
                     squareclick: null
@@ -516,11 +818,12 @@
         }
         constructor(config) {
             this._docElement = document.createElement('div');
-            this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._idPrefix = config && config.hasOwnProperty('idPrefix') ? config.idPrefix : this.config().idPrefix;
             this._index = config && config.hasOwnProperty('index') ? config.index : this.config().index;
             this._isLast = config && config.hasOwnProperty('isLast') ? config.isLast : this.config().isLast;
             this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
             this._sequence = config && config.hasOwnProperty('sequence') ? config.sequence : this.config().sequence;
+            this._expectedSequence = config && config.hasOwnProperty('expectedSequence') ? config.expectedSequence : this.config()._expectedSequence;
             this._model = config && config.hasOwnProperty('model') ? config.model : this.config().model;
             this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
             this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
@@ -530,6 +833,7 @@
             this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
             this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
             this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
+            this._id = this._idPrefix + '-' + this._index;
             this.init();
         }
         get docElement() {
@@ -541,6 +845,9 @@
         get id() {
             return this._id;
         }
+        get idPrefix() {
+            return this._idPrefix;
+        }
         get index() {
             return this._index;
         }
@@ -549,6 +856,9 @@
         }
         get parent() {
             return this._parent;
+        }
+        get row() {
+            return this.parent && this.parent.isRow ? this.parent : null;
         }
         get hook() {
             return this._hook;
@@ -580,23 +890,57 @@
         get sequence() {
             return this._sequence;
         }
+        get expectedSequence() {
+            return this._expectedSequence;
+        }
+        get size() {
+            return this.data.length;
+        }
         get listeners() {
             return this._listeners;
         }
+        get containsEmpty() {
+            return this.emptySquare ? true : false;
+        }
         get emptySquare() {
-            return this.data.filter(function(square) {
+            let emptySquares = this.data.filter(function(square) {
                 return square.isEmpty;
-            }).pop();
-        }
-        isValidMove(squareA, squareB) {
-            let rowDelta = Math.abs(squareA.row - squareB.row),
-                colDelta = Math.abs(squareA.col - squareB.col);
-            if (squareA.col == squareB.col) {
-                return (rowDelta == 1) && (colDelta == 0);
+            });
+            if (emptySquares && emptySquares.length) {
+                return emptySquares.pop();
             }
-            return false;
+            return null;
         }
-        unload() {
+        get firstSquare() {
+            return this.data && this.data.length ? this.data[0] : null;
+        }
+        get lastSquare() {
+            return this.data && this.data.length ? this.data[this.data.length - 1] : null;
+        }
+        shiftLeft() {
+            if (this.data && this.data.length === 8) {
+                Util.swap(this.data[0], this.data[1]);
+                Util.swap(this.data[1], this.data[2]);
+                Util.swap(this.data[2], this.data[3]);
+                Util.swap(this.data[3], this.data[4]);
+                Util.swap(this.data[4], this.data[5]);
+                Util.swap(this.data[5], this.data[6]);
+                Util.swap(this.data[6], this.data[7]);
+            }
+        }
+        shiftRight() {
+            if (this.data && this.data.length === 8) {
+
+                Util.swap(this.data[7], this.data[6]);
+                Util.swap(this.data[6], this.data[5]);
+                Util.swap(this.data[5], this.data[4]);
+                Util.swap(this.data[4], this.data[3]);
+                Util.swap(this.data[3], this.data[2]);
+                Util.swap(this.data[2], this.data[1]);
+                Util.swap(this.data[1], this.data[0]);
+            }
+        }
+        zero() {
             this.data.map(function(square) {
                 let rowEl = window.document.getElementById(this.id + '-row' + square.row);
                 square.destroy();
@@ -610,40 +954,38 @@
             let squareCount = this.range - 1,
                 col = 1,
                 row = 1,
-                i = this.index;
-            if (this.data.length === 0 && this.sequence) {
+                i = 0;
+            if (this.data.length === 0 && this.sequence && this.expectedSequence) {
                 for (; row <= this.rows; row++) {
                     for (; col <= this.cols; col++) {
                         if (i < (this.sequence.length - 1) || (i < this.sequence.length && !this.isLast)) {
                             this.data.push(new Square({
-                                id: 'squ-' + i,
-                                row: row,
+                                row: this.index,
                                 col: col,
+                                parent: this.parent,
                                 value: this.sequence[i],
                                 css: {
                                     base: this.css.square
                                 },
-                                expectedValue: this.index,
-                                listeners: {
-                                    click: this.listeners.squareclick
-                                },
+                                isEmpty: false,
+                                expectedValue: this.expectedSequence[i],
+                                listeners: this.listeners,
                                 store: this,
                                 hook: this.docElement,
                                 autoBind: true
                             }));
                         } else {
                             this.data.push(new Square({
-                                id: 'squ-' + i,
-                                row: row,
+                                row: this.index,
                                 col: col,
+                                parent: this.parent,
                                 value: null,
                                 css: {
                                     base: this.css.empty
                                 },
-                                expectedValue: this.index,
-                                listeners: {
-                                    click: this.listeners.squareclick
-                                },
+                                isEmpty: true,
+                                expectedValue: this.expectedSequence[i],
+                                listeners: this.listeners,
                                 store: this,
                                 hook: this.docElement,
                                 autoBind: true
@@ -652,7 +994,6 @@
                         i++;
                     };
                     col = 1;
-                    //this.docElement.appendChild(rowElement);
                 }
             }
         }
@@ -701,8 +1042,7 @@
     class Toolbar {
         config() {
             return {
-                id: 'puzzle-toolbar',
-                parent: null,
+                id: 'toolbar',
                 hook: window.document.body,
                 autoBind: false,
                 css: {
@@ -726,7 +1066,6 @@
             this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
             this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
             this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
-            this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
             this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
             this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
             this.init();
@@ -743,9 +1082,6 @@
         get listeners() {
             return this._listeners;
         }
-        get parent() {
-            return this._parent;
-        }
         get css() {
             return this._css;
         }
@@ -759,7 +1095,7 @@
             this.hook.appendChild(this.docElement);
         }
         init() {
-            var btnGroup = window.document.createElement('div'),
+            let btnGroup = window.document.createElement('div'),
                 btnReset = window.document.createElement('div'),
                 btnHelp = window.document.createElement('div'),
                 lineBreak = window.document.createElement('br');
@@ -799,44 +1135,48 @@
     class Board {
         config() {
             return {
-                id: 'puzzleBoard',
+                id: 'board',
                 hook: window.document.body,
                 autoBind: false,
-                levels: 1,
+                isToolBar: false,
+                isSolved: false,
                 cols: 8,
                 rows: 8,
                 css: {
-                    base: 'container',
-                    row: 'row',
-                    form: 'form-inline',
-                    cols: 'col-lg-4'
+                    base: 'container-fluid'
                 }
             }
         }
         constructor(config) {
+            this._docElement = window.document.createElement('div');
+            this._toolBar = null;
             this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+            this._isSolved = config && config.hasOwnProperty('isSolved') ? config.isSolved : this.config().isSolved;
+            this._isToolBar = config && config.hasOwnProperty('isToolBar') ? config.isToolBar : this.config().isToolBar;
             this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
             this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
             this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
             this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
             this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
-            this._levels = config && config.hasOwnProperty('levels') ? config.levels : this.config().levels;
             this.init();
         }
         get id() {
             return this._id;
         }
-        get levels() {
-            return this._levels;
+        get isToolBar() {
+            return this._isToolBar;
+        }
+        get isBoard() {
+            return true;
+        }
+        get isSolved() {
+            return this._isSolved;
         }
         get docElement() {
             return this._docElement;
         }
         get toolBar() {
             return this._toolBar;
-        }
-        get header() {
-            return this._header;
         }
         get hook() {
             return this._hook;
@@ -850,63 +1190,11 @@
         get css() {
             return this._css;
         }
-        set css(updates) {
-            let colsEl;
-            if (updates.hasOwnProperty('cols') && updates.cols != this.css.cols) {
-                this._css = Util.overlay(updates, this._css);
-                colsEl = window.document.getElementById(this.id + '-cols');
-                if (colsEl) {
-                    colsEl.setAttribute('class', this.css.cols);
-                }
-            }
-        }
         get cols() {
             return this._cols;
         }
         get rows() {
             return this._rows;
-        }
-        get colsEl() {
-            let el = window.document.createElement('div');
-            el.setAttribute('id', this.id + '-cols');
-            el.setAttribute('class', this.css.cols);
-            return el;
-        }
-        get rowEl() {
-            let el = window.document.createElement('div');
-            el.setAttribute('class', this.css.row);
-            return el;
-        }
-        get formEl() {
-            let el = window.document.createElement('div');
-            el.setAttribute('class', this.css.form);
-            return el;
-        }
-        selectLevel(level) {
-            let header = level.store.parent,
-                board = header.parent,
-                store = board.store,
-                currentLevel = header.text.right,
-                cssCols = 'col-lg-' + level.cols;
-            if (currentLevel != level.value) {
-                header.text = {
-                    right: level.value
-                };
-                board.css.cols = cssCols;
-                store.unload();
-                store.cols = level.cols;
-                store.rows = level.rows;
-                store.load();
-            }
-        }
-        onLevelSelect() {
-            let level = this,
-                header = level.store.parent,
-                board = header.parent;
-            board.selectLevel(level);
-        }
-        onResetClick() {
-            this.parent.store.reset(this.parent.store);
         }
         onHelpClick() {
             let link = document.createElement('a');
@@ -914,57 +1202,76 @@
             link.setAttribute('target', '_blank');
             link.click();
         }
-        onSquareClick() {
-            let store = this.store,
-                squareA = this,
-                squareB = store.emptySquare,
-                board = store.parent,
-                emptyCssClass = squareB.docElement.getAttribute('class'),
-                emptyHTML = squareB.docElement.innerHTML,
-                emptyValue = squareB.value,
-                levels;
-            if (!squareA.isEmpty && store.isValidMove(squareA, squareB)) {
-                squareB.value = squareA.value;
-                squareB.docElement.innerHTML = squareA.docElement.innerHTML;
-                squareB.docElement.setAttribute('class', squareA.docElement.getAttribute('class'));
-                squareA.docElement.innerHTML = emptyHTML;
-                squareA.docElement.setAttribute('class', emptyCssClass);
-                squareA.value = emptyValue;
+        onRightClick(row) {
+            row.store.shiftRight();
+        }
+        onLeftClick(row) {
+            row.store.shiftLeft();
+        }
+        onSquareClick(square) {
+            let row = square.parent,
+                board = row ? row.parent : null,
+                store = board ? board.store : null,
+                squareA = square,
+                squareB = store.emptySquare;
+            if (!squareA.isEmpty && Util.isValidMove(squareA, squareB)) {
+                Util.swap(squareA, squareB);
             }
-            if (store.solved) {
-                if (store.cols == 5) {
-                    alert('You win!');
-                } else {
-                    alert('Genius!');
-                    levels = store.parent.header.store.data.filter(function(level) {
-                        return level.cols == (store.cols + 1);
-                    }, store);
-                    if (levels.length == 1) {
-                        board.selectLevel(levels[0]);
-                    }
-                }
+            if (window.document.activeElement !== window.document.body) {
+                window.document.activeElement.blur();
             }
         }
-        onSquareDrag() {
-            console.log('onSquareDrag');
+        onResetClick() {
+            this.store.reset();
         }
         bind() {
             this.hook.appendChild(this.docElement);
         }
         init() {
-            this._docElement = window.document.createElement('div');
             this.docElement.setAttribute('class', this.css.base);
-            this._toolBar = new Toolbar({
+            this.docElement.setAttribute('id', this.id);
+            this._store = new Rows({
+                rows: this.rows,
+                cols: this.cols,
+                parent: this,
                 hook: this.docElement,
                 autoBind: true,
+                isSolved: this.isSolved,
                 listeners: {
-                    reset: this.onResetClick,
-                    help: this.onHelpClick
-                },
-                parent: this
+                    squareclick: this.onSquareClick,
+                    leftclick: this.onLeftClick,
+                    rightclick: this.onRightClick
+                }
             });
+            if (this.isToolBar) {
+                this._toolBar = new Toolbar({
+                    hook: this.docElement,
+                    autoBind: true,
+                    listeners: {
+                        reset: this.onResetClick,
+                        help: this.onHelpClick
+                    }
+                });
+            }
             if (this.autoBind) {
                 this.bind();
+            }
+        }
+        solve() {
+            this.store.solve();
+        }
+        play() {
+            this.store.play();
+        }
+        toggle(el) {
+            if (el.innerHTML === 'play') {
+                this.play();
+                el.innerHTML = 'solve';
+                el.setAttribute('title', 'Solve the puzzle');
+            } else {
+                this.solve();
+                el.innerHTML = 'play';
+                el.setAttribute('title', 'Begin the game');
             }
         }
     }
@@ -972,12 +1279,35 @@
 
     app.controller = app.controller || {
         onDomContentLoaded: function() {
-            var docElement = window.document.getElementById('fiddleHook');
-            app.docElement = new Board({
+            let docElement = window.document.getElementById('fiddleHook');
+            app.board = app.board || new Board({
                 hook: docElement,
+                isSolved: true,
                 autoBind: true
             })
         }
     };
-    document.body.addEventListener('DOMContentLoaded', app.controller.onDomContentLoaded(), false);
+    /**
+     * "Debug" Jasmine testing hooks.
+     */
+    app.test = window.location.pathname.match('test') ? app.test || {
+        board: function(config) {
+            return new Board(config);
+        },
+        row: function(config) {
+            return new Row(config);
+        },
+        rows: function(config) {
+            return new Rows(config);
+        },
+        square: function(config) {
+            return new Square(config);
+        },
+        util: function() {
+            return Util;
+        }
+    } : null;
+    if (!window.location.pathname.match('test')) {
+        document.body.addEventListener('DOMContentLoaded', app.controller.onDomContentLoaded(), false);
+    }
 })(window.app = window.app || {})

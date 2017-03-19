@@ -2,29 +2,30 @@ class Board {
 
   config() {
     return {
-      id: 'puzzleBoard',
+      id: 'board',
       hook: window.document.body,
       autoBind: false,
-      levels: 1,
+      isToolBar: false,
+      isSolved: false,
       cols: 8,
       rows: 8,
       css: {
-        base: 'container',
-        row: 'row',
-        form: 'form-inline',
-        cols: 'col-lg-4'
+        base: 'container-fluid'
       }
     }
   }
 
   constructor(config) {
+    this._docElement = window.document.createElement('div');
+    this._toolBar = null;
     this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
+    this._isSolved = config && config.hasOwnProperty('isSolved') ? config.isSolved : this.config().isSolved;
+    this._isToolBar = config && config.hasOwnProperty('isToolBar') ? config.isToolBar : this.config().isToolBar;
     this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
     this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
     this._cols = config && config.hasOwnProperty('cols') ? config.cols : this.config().cols;
     this._rows = config && config.hasOwnProperty('rows') ? config.rows : this.config().rows;
     this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
-    this._levels = config && config.hasOwnProperty('levels') ? config.levels : this.config().levels;
     this.init();
   }
 
@@ -32,8 +33,16 @@ class Board {
     return this._id;
   }
 
-  get levels() {
-    return this._levels;
+  get isToolBar() {
+    return this._isToolBar;
+  }
+
+  get isBoard() {
+    return true;
+  }
+
+  get isSolved() {
+    return this._isSolved;
   }
 
   get docElement() {
@@ -42,10 +51,6 @@ class Board {
 
   get toolBar() {
     return this._toolBar;
-  }
-
-  get header() {
-    return this._header;
   }
 
   get hook() {
@@ -64,17 +69,6 @@ class Board {
     return this._css;
   }
 
-  set css(updates) {
-    let colsEl;
-    if (updates.hasOwnProperty('cols') && updates.cols != this.css.cols) {
-      this._css = Util.overlay(updates, this._css);
-      colsEl = window.document.getElementById(this.id + '-cols');
-      if (colsEl) {
-        colsEl.setAttribute('class', this.css.cols);
-      }
-    }
-  }
-
   get cols() {
     return this._cols;
   }
@@ -83,52 +77,7 @@ class Board {
     return this._rows;
   }
 
-  get colsEl() {
-    let el = window.document.createElement('div');
-    el.setAttribute('id', this.id + '-cols');
-    el.setAttribute('class', this.css.cols);
-    return el;
-  }
 
-  get rowEl() {
-    let el = window.document.createElement('div');
-    el.setAttribute('class', this.css.row);
-    return el;
-  }
-
-  get formEl() {
-    let el = window.document.createElement('div');
-    el.setAttribute('class', this.css.form);
-    return el;
-  }
-
-  selectLevel(level) {
-    let header = level.store.parent,
-      board = header.parent,
-      store = board.store,
-      currentLevel = header.text.right,
-      cssCols = 'col-lg-' + level.cols;
-
-    if (currentLevel != level.value) {
-      header.text = {right: level.value};
-      board.css.cols = cssCols;
-      store.unload();
-      store.cols = level.cols;
-      store.rows = level.rows;
-      store.load();
-    }
-  }
-
-  onLevelSelect() {
-    let level = this,
-      header = level.store.parent,
-      board = header.parent;
-    board.selectLevel(level);
-  }
-
-  onResetClick() {
-    this.parent.store.reset(this.parent.store);
-  }
 
   onHelpClick() {
     let link = document.createElement('a');
@@ -137,44 +86,32 @@ class Board {
     link.click();
   }
 
-  onSquareClick() {
-    let store = this.store,
-      squareA = this,
-      squareB = store.emptySquare,
-      board = store.parent,
-      emptyCssClass = squareB.docElement.getAttribute('class'),
-      emptyHTML = squareB.docElement.innerHTML,
-      emptyValue = squareB.value,
-      levels;
-
-    if (!squareA.isEmpty && store.isValidMove(squareA, squareB)) {
-      squareB.value = squareA.value;
-      squareB.docElement.innerHTML = squareA.docElement.innerHTML;
-      squareB.docElement.setAttribute('class', squareA.docElement.getAttribute('class'));
-      squareA.docElement.innerHTML = emptyHTML;
-      squareA.docElement.setAttribute('class', emptyCssClass);
-      squareA.value = emptyValue;
-    }
-
-    if (store.solved) {
-      if (store.cols == 5) {
-        alert('You win!');
-      } else {
-        alert('Genius!');
-        levels = store.parent.header.store.data.filter(function (level) {
-          return level.cols == (store.cols + 1);
-        }, store);
-        if (levels.length == 1) {
-          board.selectLevel(levels[0]);
-        }
-      }
-    }
-
+  onRightClick(row) {
+    row.store.shiftRight();
   }
 
-  onSquareDrag() {
-    console.log('onSquareDrag');
+  onLeftClick(row) {
+    row.store.shiftLeft();
+  }
 
+  onSquareClick(square) {
+
+    let row = square.parent,
+        board = row ? row.parent : null,
+        store = board ? board.store : null,
+        squareA = square,
+        squareB = store.emptySquare;
+
+    if (!squareA.isEmpty && Util.isValidMove(squareA, squareB)) {
+      Util.swap(squareA, squareB);
+    }
+    if (window.document.activeElement !== window.document.body) {
+      window.document.activeElement.blur();
+    }
+  }
+
+  onResetClick() {
+    this.store.reset();
   }
 
   bind() {
@@ -182,26 +119,59 @@ class Board {
   }
 
   init() {
-    this._docElement = window.document.createElement('div');
     this.docElement.setAttribute('class', this.css.base);
+    this.docElement.setAttribute('id', this.id);
 
-
-
-
-    this._toolBar = new Toolbar({
+    this._store = new Rows({
+      rows: this.rows,
+      cols: this.cols,
+      parent: this,
       hook: this.docElement,
       autoBind: true,
+      isSolved: this.isSolved,
       listeners: {
-        reset: this.onResetClick,
-        help: this.onHelpClick
-      },
-      parent: this
+        squareclick: this.onSquareClick,
+        leftclick: this.onLeftClick,
+        rightclick: this.onRightClick
+      }
     });
+
+    if (this.isToolBar) {
+      this._toolBar = new Toolbar({
+        hook: this.docElement,
+        autoBind: true,
+        listeners: {
+          reset: this.onResetClick,
+          help: this.onHelpClick
+        }
+      });
+    }
 
     if (this.autoBind) {
       this.bind();
     }
 
+  }
+
+  solve() {
+    this.store.solve();
+  }
+
+  play() {
+    this.store.play();
+  }
+
+  toggle(el) {
+    if(el.innerHTML === 'play') {
+      this.play();
+      el.innerHTML = 'solve';
+      el.setAttribute('title', 'Solve the puzzle');
+
+    } else {
+      this.solve();
+      el.innerHTML = 'play';
+      el.setAttribute('title', 'Begin the game');
+    }
   }
 
 }

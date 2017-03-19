@@ -6,17 +6,13 @@ class Util {
 
   static generateSequence(min, max, count) {
 
-    var range = [],
+    let range = [],
       number = 0,
-      matches = [],
       i = 0;
 
     while (i < count) {
       number = Math.floor(Math.random() * (max - min + 1)) + min;
-      matches = range.filter(function (elem) {
-        return elem == number;
-      });
-      if (matches.length == 0) {
+      if (range.indexOf(number) === -1) {
         range.push(number);
         i++;
       }
@@ -25,8 +21,23 @@ class Util {
     return range;
   }
 
+  static generateSequentialSequence(min, max) {
+    let sequence = [],
+      i = 0,
+      number = min,
+      count = (max - min);
+    if (count > 0) {
+      while (i < (count + 1)) {
+        sequence.push(number);
+        number++;
+        i++;
+      }
+    }
+    return sequence;
+  }
+
   static generateGameSequence(min, max, count) {
-    var sequence = Util.generateSequence(min, max, count);
+    let sequence = Util.generateSequence(min, max, count);
     while (!Util.isValid(sequence)) {
       sequence = Util.generateSequence(min, max, count);
     }
@@ -35,12 +46,11 @@ class Util {
 
   static isValid(sequence) {
 
-    var inversionCounts = [],
+    let inversionCounts = [],
       inversionSum = 0;
 
-
-    sequence.map(function (a, x, arr) {
-      var inversions = arr.filter(function (b, y) {
+    sequence.forEach(function (a, x, arr) {
+      let inversions = arr.filter(function (b, y) {
         return y > x && b < a;
       });
 
@@ -51,7 +61,7 @@ class Util {
       }
     });
 
-    inversionCounts.map(function (cnt) {
+    inversionCounts.forEach(function (cnt) {
       inversionSum += cnt;
     });
 
@@ -198,5 +208,36 @@ class Util {
 
   }
 
+  static isValidMove(squareA, squareB) {
+    let rowDelta = Math.abs(squareA.row - squareB.row),
+      colDelta = Math.abs(squareA.col - squareB.col);
+    if (squareA.col == squareB.col) {
+      return (rowDelta == 1) && (colDelta == 0);
+    }
+    if (squareA.row == squareB.row) {
+      return (rowDelta == 0) && (colDelta == 1);
+    }
+
+    return false;
+  }
+
+  static swap(squareA, squareB) {
+    if (squareA && squareB && squareA.isSquare && squareB.isSquare) {
+      let squareAValue = squareA.value,
+        squareAIsEmpty = squareA.isEmpty,
+        squareAClass = squareA.docElement.getAttribute('class'),
+        squareBValue = squareB.value,
+        squareBIsEmpty = squareB.isEmpty,
+        squareBClass = squareB.docElement.getAttribute('class');
+
+      squareA.value = squareBValue;
+      squareA.isEmpty = squareBIsEmpty;
+      squareA.docElement.setAttribute('class', squareBClass);
+
+      squareB.value = squareAValue;
+      squareB.isEmpty = squareAIsEmpty;
+      squareB.docElement.setAttribute('class', squareAClass);
+    }
+  }
 
 }

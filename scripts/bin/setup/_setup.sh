@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+# ---------------------------------------------------------------------------------------------------|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
+#  Specification           : N/A_____________________________________________________________________|
+#  Specification Path      : N/A_____________________________________________________________________|
+#  Author                  : brady house_____________________________________________________________|
+#  Create date             : 02/11/2017______________________________________________________________|
+#  Description             : MASTER SETUP SCRIPT_____________________________________________________|
+#  Command line Arguments  : N/A_____________________________________________________________________|
+# ---------------------------------------------------------------------------------------------------|
+#  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+# ---------------------------------------------------------------------------------------------------|
+# Baseline   - See CHANGELOG @ 201702110420
+# 03/10/2017 - See CHANGELOG @ 201703100420
+# ---------------------------------------------------------------------------------------------------|
+
+function setup() {
+    groupLog "setup";
+    if [ "$#" -lt 2 ]; then  exit 86; fi
+    _os=$1;
+    _app=$2;
+    case ${_os} in
+        'mac')
+            case ${_app} in
+              'brew')
+                source bin/setup/mac/_brew.sh;
+                install || exit $?;
+                ;;
+              'joe')
+                source bin/setup/mac/_joe.sh;
+                install || exit $?;
+                ;;
+              'js-beautify')
+                source bin/setup/mac/_js-beautify.sh;
+                install || exit $?;
+                ;;
+              'live-server')
+                source bin/setup/mac/_live-server.sh;
+                install || exit $?;
+                ;;
+              'zsh')
+                source bin/setup/mac/_zsh.sh;
+                install || exit $?;
+                ;;
+              'node')
+                source bin/setup/mac/_node.sh;
+                install || exit $?;
+                ;;
+              'nvm')
+                source bin/setup/mac/_nvm.sh;
+                install || exit $?;
+                ;;
+              'all')
+                setup ${_os} "brew" || exit $?;
+                setup ${_os} "node" || exit $?;
+                setup ${_os} "nvm" || exit $?;
+                setup ${_os} "joe" || exit $?;
+                setup ${_os} "js-beautify" || exit $?;
+                setup ${_os} "live-server" || exit $?;
+                setup ${_os} "zsh" || exit $?;
+                ;;
+               *) exit 86;
+                ;;
+            esac
+            ;;
+        *)  exit 86;
+            ;;
+    esac
+}

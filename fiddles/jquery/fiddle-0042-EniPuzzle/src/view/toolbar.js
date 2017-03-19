@@ -2,8 +2,7 @@ class Toolbar {
 
   config() {
     return {
-      id: 'puzzle-toolbar',
-      parent: null,
+      id: 'toolbar',
       hook: window.document.body,
       autoBind: false,
       css: {
@@ -28,7 +27,6 @@ class Toolbar {
     this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
     this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
     this._css = config && config.hasOwnProperty('css') ? config.css : this.config().css;
-    this._parent = config && config.hasOwnProperty('parent') ? config.parent : this.config().parent;
     this._listeners = config && config.hasOwnProperty('listeners') ? config.listeners : this.config().listeners;
     this._text = config && config.hasOwnProperty('text') ? config.text : this.config().text;
     this.init();
@@ -50,10 +48,6 @@ class Toolbar {
     return this._listeners;
   }
 
-  get parent() {
-    return this._parent;
-  }
-
   get css() {
     return this._css;
   }
@@ -72,7 +66,7 @@ class Toolbar {
 
   init() {
 
-    var btnGroup = window.document.createElement('div'),
+    let btnGroup = window.document.createElement('div'),
       btnReset = window.document.createElement('div'),
       btnHelp = window.document.createElement('div'),
       lineBreak = window.document.createElement('br');

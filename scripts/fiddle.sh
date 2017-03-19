@@ -18,6 +18,7 @@
 # 09/23/2015 - See CHANGELOG @ 201509220420
 # 03/12/2015 - See CHANGELOG @ 201603100420
 # 05/02/2015 - See CHANGELOG @ 201605020420
+# 02/11/2017 - See CHANGELOG @ 201702110420
 # ---------------------------------------------------------------------------------------------------|
 clear;
 source bin/_utils.sh;
@@ -106,6 +107,10 @@ function fiddleIndexAll() {
             if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh;  exit 0; fi
             ./fiddle-delete.sh $2 $3
             ;;
+         'list')
+            if [ "$#" -lt 2 ]; then  ./fiddle-list.sh;  exit 0; fi
+            ./fiddle-list.sh $2;
+            ;;
         'refactor')
             if [ "$#" -lt 4 ]; then  ./fiddle-refactor.sh;  exit 0; fi
             ./fiddle-refactor.sh $2 $3 $4;
@@ -124,9 +129,9 @@ function fiddleIndexAll() {
             esac
             exit 0;
             ;;
-        'list')
-            if [ "$#" -lt 2 ]; then  ./fiddle-list.sh;  exit 0; fi
-            ./fiddle-list.sh $2;
+         'setup')
+            if [ "$#" -lt 3 ]; then  ./fiddle-setup.sh;  exit 0; fi
+            ./fiddle-setup.sh $2 $3;
             ;;
         *)  exit 86
             ;;
@@ -153,6 +158,7 @@ case ${_rc} in
         echo -e "\t\"fork\"\t\tFork an existing fiddle"
         echo -e "\t\"index\"\t\tRe-index a specific fiddle type"
         echo -e "\t\"list\"\t\tList the fiddles defined for a specific type"
+        echo -e "\t\"setup\"\t\tSetup the local machine"
         echo -e "\t\"start\"\t\tStart the fiddle web service process"
         echo -e "\t\"stop\"\t\tStop the web service process"
         echo -e "\t\"delete\"\tDelete an existing fiddle"

@@ -1258,7 +1258,7 @@ if (!Function.prototype.bind) {
 House.Boot.load({
     charset: "UTF-8",
     url: [
-        '../app.js',
+        '../app.min.js',
         'jasmine.js',
         'json2.js',
         'spec/Util.js',

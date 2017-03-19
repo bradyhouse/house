@@ -1520,7 +1520,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/c/fiddle-0037-PointerVariables](fiddles/c/fiddle-0037-PointerVariables) ~ [Issue 141](https://github.com/bradyhouse/house/issues/141)
     5.  Added [fiddles/c/fiddle-0038-StructurePointers](fiddles/c/fiddle-0038-StructurePointers) ~ [Issue 142](https://github.com/bradyhouse/house/issues/142)
     6.  Added [fiddles/c/fiddle-0039-PointersInStructures](fiddles/c/fiddle-0039-PointersInStructures) ~ [Issue 143](https://github.com/bradyhouse/house/issues/143)
-    7.  Added [fiddles/c/fiddle-0040-LinkedLists](fiddles/c/fiddle-0040-LinkedLists) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
 
 * **NativeScript**
     1.  Finished [fiddles/nativescript/fiddle-0011-SqliteNg2](fiddles/nativescript/fiddle-0011-SqliteNg2) ~ [Issue 124](https://github.com/bradyhouse/house/issues/124)
@@ -1533,4 +1532,22 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Jquery**
     1.  Started [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
     2.  Added [fiddles/jquery/fiddle-0043-DragAndDropApi](fiddles/jquery/fiddle-0043-DragAndDropApi) ~ [Issue 147](https://github.com/bradyhouse/house/issues/147)
+
+
+### 201703100420
+
+* **C**
+    1.  Added [fiddles/c/fiddle-0040-LinkedLists](fiddles/c/fiddle-0040-LinkedLists) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
+
+* **Setup**
+    1.  Added js-beautify support
+      * Reflected changes:
+        1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+        2.  Addded [scripts/bin/setup/mac/_js-beautify.sh](scripts/bin/setup/mac/_js-beautify.sh)
+        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+
+* **Jquery**
+    1.  Added [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
+
+
 
