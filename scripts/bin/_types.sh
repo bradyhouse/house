@@ -22,11 +22,14 @@ voidEchoFiddleTypes() {
     case $1 in
         'setup')
            echo -e "\t\"brew\"\t\tinstall homebrew\thttp://brew.sh/";
+           echo -e "\t\"gh\"\t\tinstall github terminal\thttps://www.npmjs.com/package/gh";
+           echo -e "\t\"js-beautify\"\tinstall js-beautify\thttps://www.npmjs.com/package/js-beautify";
+           echo -e "\t\"live-server\"\tinstall live-server\thttps://www.npmjs.com/package/live-server";
+           echo -e "\t\"nativescript\"\tinstall nativeScript\thttps://www.npmjs.com/package/nativescript";
            echo -e "\t\"node\"\t\tinstall node.js\t\thttps://nodejs.org/en/";
            echo -e "\t\"nvm\"\t\tinstall nvm\t\thttps://github.com/creationix/nvm";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\thttp://ohmyz.sh/";
-           echo -e "\t\"live-server\"\tinstall live-server\thttps://www.npmjs.com/package/live-server";
-           echo -e "\t\"js-beautify\"\tinstall js-beautify\thttps://www.npmjs.com/package/js-beautify";
+
            echo -e "";
            echo -e "\t\"all\"\t\tinstall everything";
           ;;

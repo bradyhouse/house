@@ -1538,6 +1538,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **C**
     1.  Added [fiddles/c/fiddle-0040-LinkedLists](fiddles/c/fiddle-0040-LinkedLists) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
+    2.  Added [fiddles/c/fiddle-0041-FunctionArgPointer](fiddles/c/fiddle-0041-FunctionArgPointer) ~ [Issue 148](https://github.com/bradyhouse/house/issues/148)
+    3.  Added [fiddles/c/fiddle-0042-FunctionReturnPointer](fiddles/c/fiddle-0042-FunctionReturnPointer) ~ [Issue 149](https://github.com/bradyhouse/house/issues/149)
+    4.  Added [fiddles/c/fiddle-0043-ArrElementPointer](fiddles/c/fiddle-0043-ArrElementPointer) ~ [Issue 150](https://github.com/bradyhouse/house/issues/150)
 
 * **Setup**
     1.  Added js-beautify support
@@ -1545,9 +1548,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
         1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
         2.  Addded [scripts/bin/setup/mac/_js-beautify.sh](scripts/bin/setup/mac/_js-beautify.sh)
         3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+    2.  Added gh support
+      * Reflected changes:
+        1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+        2.  Addded [scripts/bin/setup/mac/_gh.sh](scripts/bin/setup/mac/_gh.sh)
+        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)    
 
 * **Jquery**
     1.  Added [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
+
 
 
 

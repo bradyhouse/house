@@ -77,8 +77,6 @@ class Board {
     return this._rows;
   }
 
-
-
   onHelpClick() {
     let link = document.createElement('a');
     link.setAttribute('href', window.app.metadata.helpUrl);
@@ -104,10 +102,17 @@ class Board {
 
     if (!squareA.isEmpty && Util.isValidMove(squareA, squareB)) {
       Util.swap(squareA, squareB);
+      if (window.document.activeElement !== window.document.body) {
+        window.document.activeElement.blur();
+      }
+    } else if (squareA.row === squareB.row) {
+        if (squareA.col < squareB.col) {
+          row.store.shiftLeft();
+        } else {
+          row.store.shiftRight();
+        }
     }
-    if (window.document.activeElement !== window.document.body) {
-      window.document.activeElement.blur();
-    }
+
   }
 
   onResetClick() {

@@ -214,10 +214,7 @@ class Util {
     if (squareA.col == squareB.col) {
       return (rowDelta == 1) && (colDelta == 0);
     }
-    if (squareA.row == squareB.row) {
-      return (rowDelta == 0) && (colDelta == 1);
-    }
-
+    
     return false;
   }
 

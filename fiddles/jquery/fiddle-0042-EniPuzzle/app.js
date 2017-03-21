@@ -203,9 +203,7 @@
             if (squareA.col == squareB.col) {
                 return (rowDelta == 1) && (colDelta == 0);
             }
-            if (squareA.row == squareB.row) {
-                return (rowDelta == 0) && (colDelta == 1);
-            }
+
             return false;
         }
         static swap(squareA, squareB) {
@@ -1216,9 +1214,15 @@
                 squareB = store.emptySquare;
             if (!squareA.isEmpty && Util.isValidMove(squareA, squareB)) {
                 Util.swap(squareA, squareB);
-            }
-            if (window.document.activeElement !== window.document.body) {
-                window.document.activeElement.blur();
+                if (window.document.activeElement !== window.document.body) {
+                    window.document.activeElement.blur();
+                }
+            } else if (squareA.row === squareB.row) {
+                if (squareA.col < squareB.col) {
+                    row.store.shiftLeft();
+                } else {
+                    row.store.shiftRight();
+                }
             }
         }
         onResetClick() {
