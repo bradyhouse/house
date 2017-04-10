@@ -13,7 +13,7 @@
 # Baseline Ver - See CHANGELOG @ 201703100420
 # ---------------------------------------------------------------------------------------------------|
 
-export HOME_ROOT="/Users/bradyhouse";
+export HOME_ROOT="/Users/e13542";
 export GITHUB_ROOT="${HOME_ROOT}/github";
 export BUILD_NUM="201703100420";
 
