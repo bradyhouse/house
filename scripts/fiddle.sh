@@ -111,6 +111,9 @@ function fiddleIndexAll() {
             if [ "$#" -lt 2 ]; then  ./fiddle-list.sh;  exit 0; fi
             ./fiddle-list.sh $2;
             ;;
+         'publish')
+            ./fiddle-publish.sh;
+            ;;
         'refactor')
             if [ "$#" -lt 4 ]; then  ./fiddle-refactor.sh;  exit 0; fi
             ./fiddle-refactor.sh $2 $3 $4;

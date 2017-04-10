@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="http://github/bradyhouse/house/fiddles/jquery/fiddle-0042-EniPuzzle">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <title>fiddle-0042-EniPuzzle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css"/>
+    <link rel="stylesheet" href="resources/css/custom.css"/>
+</head>
+<body>
+<script>
+    document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0042-EniPuzzle"' +
+            '><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" ' +
+            'src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" ' +
+            'alt="Fork me on GitHub"><\/a>');
+</script>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 id="navbar">&nbsp;16</h3>
+    </div>
+    <div id="fiddleHook" class="panel-body">
+        <div class="container-fluid" id="board">
+            <div class="container-fluid" id="rows-store">
+                <div class="row" id="row-1">
+                    <div class="form-inline">
+                        <div id="row-1-left-group" class="form-group top-row">
+                            <a id="row-1-left-link" class="btn empty">
+                            &lt;</a>
+                        </div>
+                        <div class="form-group top-row" id="row-1-body-group">
+                            <div id="squares-1" style="background-color: white;">
+                                <a href="#" class="btn col-a" id="square-r1-c1-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r1-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r1-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r1-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r1-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r1-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r1-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-h" id="square-r1-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-1-right-group" class="form-group top-row">
+                            <a id="row-1-right-link" class="btn empty">&gt;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="row-2">
+                    <div class="form-inline">
+                        <div id="row-2-left-group" class="form-group body-row"><a id="row-2-left-link"
+                                                                                  class="btn empty">&lt;</a></div>
+                        <div class="form-group body-row" id="row-2-body-group">
+                            <div id="squares-2" style="background-color: white;"><a href="#" class="btn col-a"
+                                                                                    id="square-r2-c1-link"
+                                                                                    draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r2-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r2-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r2-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r2-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r2-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r2-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-h" id="square-r2-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-2-right-group" class="form-group body-row"><a id="row-2-right-link"
+                                                                                   class="btn empty">&gt;</a></div>
+                    </div>
+                </div>
+                <div class="row" id="row-3">
+                    <div class="form-inline">
+                        <div id="row-3-left-group" class="form-group body-row"><a id="row-3-left-link"
+                                                                                  class="btn empty">&lt;</a></div>
+                        <div class="form-group body-row" id="row-3-body-group">
+                            <div id="squares-3" style="background-color: white;"><a href="#" class="btn col-a"
+                                                                                    id="square-r3-c1-link"
+                                                                                    draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r3-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r3-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r3-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r3-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r3-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r3-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-h" id="square-r3-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-3-right-group" class="form-group body-row"><a id="row-3-right-link"
+                                                                                   class="btn empty">&gt;</a></div>
+                    </div>
+                </div>
+                <div class="row" id="row-4">
+                    <div class="form-inline">
+                        <div id="row-4-left-group" class="form-group body-row"><a id="row-4-left-link"
+                                                                                  class="btn empty">&lt;</a></div>
+                        <div class="form-group body-row" id="row-4-body-group">
+                            <div id="squares-4" style="background-color: white;"><a href="#" class="btn col-a"
+                                                                                    id="square-r4-c1-link"
+                                                                                    draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r4-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r4-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r4-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r4-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r4-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r4-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-h" id="square-r4-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-4-right-group" class="form-group body-row"><a id="row-4-right-link"
+                                                                                   class="btn empty">&gt;</a></div>
+                    </div>
+                </div>
+                <div class="row" id="row-5">
+                    <div class="form-inline">
+                        <div id="row-5-left-group" class="form-group body-row"><a id="row-5-left-link"
+                                                                                  class="btn empty">&lt;</a></div>
+                        <div class="form-group body-row" id="row-5-body-group">
+                            <div id="squares-5" style="background-color: white;"><a href="#" class="btn col-a"
+                                                                                    id="square-r5-c1-link"
+                                                                                    draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r5-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r5-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r5-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r5-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r5-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r5-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-h" id="square-r5-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-5-right-group" class="form-group body-row"><a id="row-5-right-link"
+                                                                                   class="btn empty">&gt;</a></div>
+                    </div>
+                </div>
+                <div class="row" id="row-6">
+                    <div class="form-inline">
+                        <div id="row-6-left-group" class="form-group body-row"><a id="row-6-left-link"
+                                                                                  class="btn empty">&lt;</a></div>
+                        <div class="form-group body-row" id="row-6-body-group">
+                            <div id="squares-6" style="background-color: white;"><a href="#" class="btn col-a"
+                                                                                    id="square-r6-c1-link"
+                                                                                    draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r6-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r6-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r6-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r6-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r6-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r6-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-h" id="square-r6-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-6-right-group" class="form-group body-row"><a id="row-6-right-link"
+                                                                                   class="btn empty">&gt;</a></div>
+                    </div>
+                </div>
+                <div class="row" id="row-7">
+                    <div class="form-inline">
+                        <div id="row-7-left-group" class="form-group body-row"><a id="row-7-left-link"
+                                                                                  class="btn empty">&lt;</a></div>
+                        <div class="form-group body-row" id="row-7-body-group">
+                            <div id="squares-7" style="background-color: white;"><a href="#" class="btn col-a"
+                                                                                    id="square-r7-c1-link"
+                                                                                    draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r7-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r7-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r7-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r7-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r7-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r7-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-h" id="square-r7-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-7-right-group" class="form-group body-row"><a id="row-7-right-link"
+                                                                                   class="btn empty">&gt;</a></div>
+                    </div>
+                </div>
+                <div class="row" id="row-8">
+                    <div class="form-inline">
+                        <div id="row-8-left-group" class="form-group bottom-row"><a id="row-8-left-link"
+                                                                                    class="btn empty">&lt;</a></div>
+                        <div class="form-group bottom-row" id="row-8-body-group">
+                            <div id="squares-8" style="background-color: white;"><a href="#" class="btn col-a"
+                                                                                    id="square-r8-c1-link"
+                                                                                    draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-b" id="square-r8-c2-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-c" id="square-r8-c3-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-d" id="square-r8-c4-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-e" id="square-r8-c5-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-f" id="square-r8-c6-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn col-g" id="square-r8-c7-link" draggable="true">&nbsp;</a><a
+                                    href="#" class="btn empty" id="square-r8-c8-link" draggable="true">&nbsp;</a></div>
+                        </div>
+                        <div id="row-8-right-group" class="form-group bottom-row"><a id="row-8-right-link"
+                                                                                     class="btn empty">&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="btn-group">
+            <a class="btn btn-default" href="#" onclick="app.board.toggle(this)" title="Play">play</a>
+            <a class="btn btn-default" href="app.js" title="source code">src</a>
+            <a class="btn btn-default" href="README.md" title="additional details">readme</a>
+            <a class="btn btn-default" href="test/index.html?remote=true&amp;showPassed=true&amp;collapseAll=true"
+               title="jasmine spec runner">test</a>
+        </div>
+    </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<!--<script src="app.js"></script>-->
+</body>
+</html>

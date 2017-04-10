@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node --harmony app.js"
+    "start": "node --use_strict --harmony app.js"
   },
   "dependencies": {
     "cluster": "^0.7.7",

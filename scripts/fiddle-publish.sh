@@ -1,8 +1,24 @@
 #!/usr/bin/env bash
+# ---------------------------------------------------------------------------------------------------|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
+#  Specification           : N/A_____________________________________________________________________|
+#  Specification Path      : N/A_____________________________________________________________________|
+#  Author                  : brady house_____________________________________________________________|
+#  Create date             : 05/31/2015______________________________________________________________|
+#  Description             : UTILITY USED SUPPORT FIDDLE.SH PUBLISH FUNCTION.                        |
+# ---------------------------------------------------------------------------------------------------|
+#  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+# ---------------------------------------------------------------------------------------------------|
+# Baseline Ver
+# 04/10/2016 - See CHANGELOG @ 201703100420
+# ---------------------------------------------------------------------------------------------------|
 
-_publishPath='/Users/bradyhouse/github/bradyhouse.github.io';
-_sourcePath='/Users/bradyhouse/github/house/fiddles';
-_commitMessage='201609160420';
+source bin/_env.sh
+
+
+_publishPath='${GITHUB_ROOT}/bradyhouse.github.io';
+_sourcePath='${GITHUB_ROOT}/house/fiddles';
+_commitMessage='${BUILD_NUM}';
 
 
 function push() {

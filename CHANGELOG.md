@@ -1541,7 +1541,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/c/fiddle-0041-FunctionArgPointer](fiddles/c/fiddle-0041-FunctionArgPointer) ~ [Issue 148](https://github.com/bradyhouse/house/issues/148)
     3.  Added [fiddles/c/fiddle-0042-FunctionReturnPointer](fiddles/c/fiddle-0042-FunctionReturnPointer) ~ [Issue 149](https://github.com/bradyhouse/house/issues/149)
     4.  Added [fiddles/c/fiddle-0043-ArrElementPointer](fiddles/c/fiddle-0043-ArrElementPointer) ~ [Issue 150](https://github.com/bradyhouse/house/issues/150)
-
+    5.  Added [fiddles/c/fiddle-0044-CharStringPointer](fiddles/c/fiddle-0044-CharStringPointer) ~ [Issue 151](https://github.com/bradyhouse/house/issues/151)   
+    
 * **Setup**
     1.  Added js-beautify support
       * Reflected changes:
@@ -1552,11 +1553,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       * Reflected changes:
         1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
         2.  Addded [scripts/bin/setup/mac/_gh.sh](scripts/bin/setup/mac/_gh.sh)
-        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)    
+        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)  
+    2.  Added nativeScript support
+      * Reflected changes:
+        1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+        2.  Addded [scripts/bin/setup/mac/_nativescript.sh](scripts/bin/setup/mac/_nativescript.sh)
+        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)  
+    3.  Added global env config script
+      * Reflected changes:
+        1.  Added [scripts/bin/_env.sh](scripts/bin/_env.sh)
+        2.  Updated [scripts/bin/fiddle-publish.sh](scripts/bin/fiddle-publish.sh)
 
 * **Jquery**
     1.  Added [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
 
-
-
-
+* **Angular2 Seeder**
+    1.  Added [fiddles/angular2-seeder/fiddle-0001-EniPuzzle](fiddles/angular2-seeder/fiddle-0001-EniPuzzle)

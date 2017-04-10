@@ -37,7 +37,7 @@ function seederCreate() {
         then
             rm -rf ${fiddle} || exit 1;
         fi
-        $(git clone --depth 1 https://github.com/mgechev/angular2-seed.git ${fiddle};) || exit 2;
+        $(git clone --depth 1 https://github.com/NathanWalker/angular-seed-advanced ${fiddle};) || exit 2;
         cd ${fiddle};
         rm -rf .github || exit 3;
         rm -rf .git || exit 3;

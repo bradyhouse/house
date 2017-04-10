@@ -7,7 +7,7 @@ const cluster = require('cluster'),
   log = require('./util/log');
 
 
-let stopping = false;
+var stopping = false;
 
 cluster.on('disconnect', function(worker) {
   if (production) {
@@ -22,9 +22,9 @@ cluster.on('disconnect', function(worker) {
 if (cluster.isMaster) {
   const workerCount = process.env.NODE_CLUSTER_WORKERS || 1;
 
-  let timeout = 100;
+  var timeout = 100;
   log.info(`Starting ${workerCount} workers...`);
-  for (let i = 0; i < workerCount; i++) {
+  for (var i = 0; i < workerCount; i++) {
     setTimeout(function() {
       timeout += 350;
       cluster.fork();
