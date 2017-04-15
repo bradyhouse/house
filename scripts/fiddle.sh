@@ -55,6 +55,10 @@ function fiddleIndexAll() {
 
     if [ "$#" -lt 1 ]; then  exit 86; fi
     case $1 in
+        'build')
+          if [ "$#" -lt 3 ]; then  ./fiddle-build.sh;  exit 0; fi
+          ./fiddle-build.sh $2 $3;
+          ;;
         'combine')
             case "$#" in
                 1 | 2)
@@ -156,11 +160,13 @@ case ${_rc} in
         echo ""
         echo -e "[c]\tcommand. Valid types include: "
         echo ""
+        echo -e "\t\"build\"\t\tBuild (minify) a fiddle"
         echo -e "\t\"create\"\tCreate a new fiddle"
         echo -e "\t\"combine\"\tCombine src files into an app.js file"
         echo -e "\t\"fork\"\t\tFork an existing fiddle"
         echo -e "\t\"index\"\t\tRe-index a specific fiddle type"
         echo -e "\t\"list\"\t\tList the fiddles defined for a specific type"
+        echo -e "\t\"publish\"\tUpdate/Synchronize the configured GITHUB_PUBLISH_REPO"
         echo -e "\t\"setup\"\t\tSetup the local machine"
         echo -e "\t\"start\"\t\tStart the fiddle web service process"
         echo -e "\t\"stop\"\t\tStop the web service process"

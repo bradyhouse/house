@@ -7,7 +7,7 @@
 
   var map = {
     'app': 'app',
-    '@angular': 'https://unpkg.com/@angular', // sufficient if we didn't pin the version
+    '@angular': 'https://unpkg.com/@angular/core', // sufficient if we didn't pin the version
     '@angular/router': 'https://unpkg.com/@angular/router' + routerVer,
     '@angular/forms': 'https://unpkg.com/@angular/forms' + formsVer,
     'angular2-in-memory-web-api': 'https://unpkg.com/angular2-in-memory-web-api', // get latest

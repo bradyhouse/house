@@ -1,6 +1,8 @@
 fiddle-0001-EniPuzzle
 ======
 
+![Screen Scrape](http://i.imgur.com/uiozNWD.gif)
+
 
 ### Title
 
@@ -24,7 +26,7 @@ Create Angular 2 POC that virtualizes [enipuzzle](http://www.enipuzzles.com/).  
 
 ### Published Version Link
 
-N/A
+[github](http://bradyhouse.github.io/angular2-seeder/fiddle-0001-EniPuzzle)
 
 
 ### Tags

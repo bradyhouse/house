@@ -29,6 +29,7 @@ Create a straight Javascript POC (ES6 + JQuery + bootstrap) that virtualizes [en
 ### Published Version Link
 
 [JS Fiddle](https://jsfiddle.net/bradyhouse/njhh85ve/)
+[bradyhouse.github.io](http://bradyhouse.github.io/jquery/fiddle-0042-EniPuzzle/index.html#)
 
 
 ### Tags

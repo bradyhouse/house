@@ -58,8 +58,13 @@ echo ${bornOnDate}
 
 #try
 (
+    if [[ "${type}" == "angular2-seeder" ]]
+    then
+      fiddleDir="${fiddleDir}/dist";
+      indexFile=$(echo "$fiddleDir/index.html";)
+    fi
     case ${type} in
-        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
+        'angular'|'angular2'|'angular2-seeder'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
             case ${type} in
                 'php') fiddleName=$(echo "$fiddleNameStub.php";)
                     ;;

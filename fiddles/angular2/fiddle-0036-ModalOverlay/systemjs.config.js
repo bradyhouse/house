@@ -6,7 +6,7 @@
   var  map = {
     'app':                        'app',
 
-    '@angular':                   'https://unpkg.com/@angular', // sufficient if we didn't pin the version
+    '@angular':                   'https://unpkg.com/@angular/core', // sufficient if we didn't pin the version
     'angular2-in-memory-web-api': 'https://unpkg.com/angular2-in-memory-web-api', // get latest
     'rxjs':                       'https://unpkg.com/rxjs@5.0.0-beta.6',
     'ts':                         'https://unpkg.com/plugin-typescript@4.0.10/lib/plugin.js',

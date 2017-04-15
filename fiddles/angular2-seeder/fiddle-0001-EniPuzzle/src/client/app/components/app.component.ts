@@ -13,7 +13,7 @@ import {Config, LogService, AppService} from '../shared/core/index';
  */
 @Component({
   moduleId: module.id,
-  selector: 'sd-app',
+  selector: 'fi-app',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {

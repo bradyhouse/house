@@ -15,6 +15,9 @@ template.  The `fiddle.sh` script can be used to extend or test drive this colle
 
 [cols="2,2,5a"]
 |===
+|Build
+|`./fiddle.sh "build" "angular2-seeder" "fiddle-0000-Template"`
+|link:build.md[sample output & additional details]
 |Create
 |`./fiddle.sh "create" "angular2-seeder" "fiddle-0000-Template"`
 |link:create.md[sample output & additional details]

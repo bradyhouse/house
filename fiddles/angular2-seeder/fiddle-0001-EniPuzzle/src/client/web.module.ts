@@ -29,9 +29,6 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
   Config.DEBUG.LEVEL_4 = true;
 }
 
-// sample config (extra)
-import {MultilingualService} from './app/shared/i18n/services/multilingual.service';
-// custom i18n language support
 
 let routerModule = RouterModule.forRoot(routes);
 

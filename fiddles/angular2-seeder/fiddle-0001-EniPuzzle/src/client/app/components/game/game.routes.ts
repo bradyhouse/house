@@ -2,7 +2,7 @@ import {GameComponent} from './game.component';
 
 export const GameRoutes: Array<any> = [
   {
-    path: '',
+    path: '**',
     component: GameComponent
   }
 ];

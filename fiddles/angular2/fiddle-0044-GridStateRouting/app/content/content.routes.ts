@@ -1,4 +1,4 @@
-import { RouterConfig }          from '@angular/router';
+import { RouterConfig } from '@angular/router';
 import { ContentComponent } from './content.component';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 

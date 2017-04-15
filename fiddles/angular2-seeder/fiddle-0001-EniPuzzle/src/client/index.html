@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <base href="<%= APP_BASE %>">
+  <!-- Set the base href. THIS REQUIRED FOR ANGULAR2 ROUTING -->
+  <script>document.write('<base href="' + document.location + '" />');</script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><%= APP_TITLE %></title>
@@ -58,7 +59,7 @@
 </head>
 <body>
 
-<sd-app>Loading...</sd-app>
+<fi-app>Loading...</fi-app>
 
 <script>
   // Fixes undefined module function in SystemJS bundle

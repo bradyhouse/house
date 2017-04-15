@@ -20,6 +20,9 @@
 voidEchoFiddleTypes() {
 
     case $1 in
+        'build')
+          echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddle"
+          ;;
         'setup')
            echo -e "\t\"brew\"\t\tinstall homebrew\thttp://brew.sh/";
            echo -e "\t\"gh\"\t\tinstall github terminal\thttps://www.npmjs.com/package/gh";

@@ -14,6 +14,7 @@
 # ---------------------------------------------------------------------------------------------------|
 
 HOME_ROOT="/Users/e13542";
+GITHUB_PUBLISH_REPO="bradyhouse.github.io";
 GITHUB_ROOT="${HOME_ROOT}/github";
 BUILD_NUM="201703100420";
 

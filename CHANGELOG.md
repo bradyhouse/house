@@ -1543,29 +1543,41 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     4.  Added [fiddles/c/fiddle-0043-ArrElementPointer](fiddles/c/fiddle-0043-ArrElementPointer) ~ [Issue 150](https://github.com/bradyhouse/house/issues/150)
     5.  Added [fiddles/c/fiddle-0044-CharStringPointer](fiddles/c/fiddle-0044-CharStringPointer) ~ [Issue 151](https://github.com/bradyhouse/house/issues/151)   
     
-* **Setup**
-    1.  Added js-beautify support
-      * Reflected changes:
-        1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
-        2.  Addded [scripts/bin/setup/mac/_js-beautify.sh](scripts/bin/setup/mac/_js-beautify.sh)
-        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
-    2.  Added gh support
-      * Reflected changes:
-        1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
-        2.  Addded [scripts/bin/setup/mac/_gh.sh](scripts/bin/setup/mac/_gh.sh)
-        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)  
-    2.  Added nativeScript support
-      * Reflected changes:
-        1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
-        2.  Addded [scripts/bin/setup/mac/_nativescript.sh](scripts/bin/setup/mac/_nativescript.sh)
-        3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)  
-    3.  Added global env config script
-      * Reflected changes:
-        1.  Added [scripts/bin/_env.sh](scripts/bin/_env.sh)
-        2.  Updated [scripts/bin/fiddle-publish.sh](scripts/bin/fiddle-publish.sh)
+* **fiddle.sh**
+    1. add "setup" function
+      1.  Added js-beautify support
+        * Reflected changes:
+          1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+          2.  Addded [scripts/bin/setup/mac/_js-beautify.sh](scripts/bin/setup/mac/_js-beautify.sh)
+          3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      2.  Added gh support
+        * Reflected changes:
+          1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+          2.  Addded [scripts/bin/setup/mac/_gh.sh](scripts/bin/setup/mac/_gh.sh)
+          3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)  
+      2.  Added nativeScript support
+        * Reflected changes:
+          1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+          2.  Addded [scripts/bin/setup/mac/_nativescript.sh](scripts/bin/setup/mac/_nativescript.sh)
+          3.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)  
+      3.  Added global env config script
+        * Reflected changes:
+          1.  Added [scripts/bin/_env.sh](scripts/bin/_env.sh)
+          2.  Updated [scripts/bin/fiddle-publish.sh](scripts/bin/fiddle-publish.sh)
+    2. add "build" function ~ [Issue 152](https://github.com/bradyhouse/house/issues/152)
+      * Added [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+        * Reflected changes:
+          1. Added [scripts/bin/angular2-seeder/_build.sh](scripts/bin/angular2-seeder/_build.sh)
+          2. Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+          3. Added [scripts/bin/_env.sh](scripts/bin/_env.sh)
+          4. Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+          5. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
 
 * **Jquery**
     1.  Added [fiddles/jquery/fiddle-0042-EniPuzzle](fiddles/jquery/fiddle-0042-EniPuzzle) ~ [Issue 146](https://github.com/bradyhouse/house/issues/146)
 
 * **Angular2 Seeder**
-    1.  Added [fiddles/angular2-seeder/fiddle-0001-EniPuzzle](fiddles/angular2-seeder/fiddle-0001-EniPuzzle)
+    1.  Added [fiddles/angular2-seeder/fiddle-0001-EniPuzzle](fiddles/angular2-seeder/fiddle-0001-EniPuzzle) ~ [Issue 151](https://github.com/bradyhouse/house/issues/151)
+
+* **Three.js**
+    1.  Started [fiddles/three/fiddle-0014-EniPuzzle](fiddles/three/fiddle-0014-EniPuzzle) ~ ~ [Issue 153](https://github.com/bradyhouse/house/issues/153)

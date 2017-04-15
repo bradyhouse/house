@@ -37,7 +37,7 @@ function seederCreate() {
         then
             rm -rf ${fiddle} || exit 1;
         fi
-        $(git clone --depth 1 https://github.com/NathanWalker/angular-seed-advanced ${fiddle};) || exit 2;
+        $(git clone --depth 1 https://github.com/bradyhouse/angular-seed-advanced ${fiddle};) || exit 2;
         cd ${fiddle};
         rm -rf .github || exit 3;
         rm -rf .git || exit 3;
@@ -45,6 +45,9 @@ function seederCreate() {
         rm -r LICENSE || exit 4;
         rm -rf .editorconfig || exit 4;
         cp -rf ../template/README.markdown README.md || exit 5;
+        rm -rf src/client/assets/favicon/favicon-PROD.ico || exit 7;
+        cp -rf ../template/favicon.ico src/client/assets/favicon/favicon-PROD.ico || exit 7;
+
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
         createTypingsRcFile || exit 6;
@@ -64,7 +67,9 @@ function seederCreate() {
             ;;
         5)  endLog "seederCreate: Failed while attempting to update the README.MD file.";
             ;;
-        5)  endLog "seederCreate: Failed while attempting to create the .typingsrc file.";
+        6)  endLog "seederCreate: Failed while attempting to create the .typingsrc file.";
+            ;;
+        7)  endLog "seederCreate: Failed while attempting to update favicon files";
             ;;
         *)  endLog "seederCreate: F U B A R ~ Something went wrong."
             ;;

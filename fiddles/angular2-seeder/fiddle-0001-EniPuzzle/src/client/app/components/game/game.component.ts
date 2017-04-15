@@ -1,12 +1,10 @@
 import {Component} from '@angular/core';
 import {
   BoardOptionsInterface,
-  ToolbarComponent,
   ToolbarOptionsInterface,
   ToolbarStateEnum,
   ActionsService,
   DatabaseServiceInterface,
-  StateServiceInterface,
   Config
 } from '../../shared/fiddle/index';
 
@@ -14,7 +12,7 @@ import {GameStateService} from './game-state.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'sd-home',
+  selector: 'fi-game',
   providers: [GameStateService],
   templateUrl: 'game.component.html',
   styleUrls: ['game.component.css']

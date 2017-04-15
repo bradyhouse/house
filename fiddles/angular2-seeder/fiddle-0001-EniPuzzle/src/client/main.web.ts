@@ -5,8 +5,6 @@
 import {enableProdMode} from '@angular/core';
 // The browser platform with a compiler
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-// Load i18n providers
-// import { TranslationProviders } from './i18n.providers';
 
 // platfrom module
 import {WebModule} from './web.module';
@@ -16,11 +14,4 @@ if (String('<%= BUILD_TYPE %>') === 'prod' || String('<%= TARGET_DESKTOP_BUILD %
   enableProdMode();
 }
 
-// NOTE: Commented lines come from parent (angular-seed)
-// TODO: In future, may pivot from ng2-translate to parent seed implementation
-// Compile and launch the module with i18n providers
-// let TP = new TranslationProviders();
-// TP.getTranslationFile().then((providers: any) => {
-// const options: any = { providers };
-platformBrowserDynamic().bootstrapModule(WebModule/*, options*/);
-// });
+platformBrowserDynamic().bootstrapModule(WebModule);

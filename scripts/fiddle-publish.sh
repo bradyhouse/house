@@ -15,10 +15,9 @@
 
 source bin/_env.sh
 
-
-_publishPath='${GITHUB_ROOT}/bradyhouse.github.io';
-_sourcePath='${GITHUB_ROOT}/house/fiddles';
-_commitMessage='${BUILD_NUM}';
+_publishPath="${GITHUB_ROOT}/${GITHUB_PUBLISH_REPO}";
+_sourcePath="${GITHUB_ROOT}/house/fiddles";
+_commitMessage="${BUILD_NUM}";
 
 
 function push() {
@@ -27,16 +26,43 @@ function push() {
   git push;
 }
 
+function cprfdist() {
+
+    fiddleType=$1;
+
+    if [[ -d "${fiddleType}/dist" ]]
+    then
+      dir=$(pwd;);
+      cd ${fiddleType};
+      cp -rf dist "${_publishPath}/${fiddleType}";
+      cd ${dir};
+    fi
+}
+
 function cprf() {
     cp -rf $1 ${_publishPath};
-    if [[ -d "${_publishPath}/$1/libs" ]]
-    then
-        rm -rf "${_publishPath}/$1/libs";
-    fi
+
     if [[ -d "${_publishPath}/$1" ]]
     then
-        rm -rf "${_publishPath}/$1/*.md";
-        rm -rf "${_publishPath}/$1/*.adoc";
+        dir=$(pwd;);
+
+        cd "${_publishPath}/$1";
+
+        if [[ -d "template" ]]
+        then
+          rm -rf "template";
+        fi
+
+        if [[ -d "libs" ]]
+        then
+            rm -rf "libs";
+        fi
+
+        rm -rf *.md;
+        rm -rf *.adoc;
+        rm -rf *.markdown;
+
+        cd ${dir};
     fi
 }
 
@@ -50,6 +76,7 @@ function rmrf() {
 
 cd ${_publishPath};
 
+rmrf angular2-seeder;
 rmrf angular2;
 rmrf three;
 rmrf extjs5;
@@ -67,6 +94,7 @@ rmrf .gitignore;
 
 cd ${_sourcePath};
 
+cprfdist angular2-seeder;
 cprf angular2;
 cprf three;
 cprf extjs5;
