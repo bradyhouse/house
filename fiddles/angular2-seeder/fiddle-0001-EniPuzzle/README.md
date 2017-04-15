@@ -14,6 +14,11 @@ Eni Puzzle
 03-22-17
 
 
+### Issue
+
+[Issue 151](https://github.com/bradyhouse/house/issues/151)
+
+
 ### Location
 
 Chicago, IL
