@@ -8,7 +8,7 @@ with deciding how your code base will go from typescript to transpiled javascrip
 Short of playing with the link:https://cli.angular.io/[Angular Cmd Line Interface (CLI)], which (as of the writing
 of this _markdown_) is not quite ready for _production_, there are _seeder project templates_.
 
-This collection is aimed at POC's experimenting with the link:https://github.com/mgechev/angular2-seed[angular2 seed]
+This collection is aimed at POC's experimenting with the link:https://github.com/NathanWalker/angular-seed-advanced[angular2 seed advanced]
 template.  The `fiddle.sh` script can be used to extend or test drive this collection. The following table outlines how.
 
 === fiddle.sh Angular2 Seeder Commands
@@ -39,6 +39,8 @@ template.  The `fiddle.sh` script can be used to extend or test drive this colle
 |===
 
 == Online Resources
+
+*   link:https://github.com/NathanWalker/angular-seed-advanced[angular-seed-advanced repo]
 
 === Reference
 
