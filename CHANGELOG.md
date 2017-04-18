@@ -30,7 +30,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     * This fiddle is a response to fiddle-20150401-BufferedColumnFiltering. It illustrates how to enable column filter on a grid panel bound to a vanilla data store--i.e. Ext.data.Store.  It combines the structure from fiddle-20150331-ExtJS4ColumnFiltering with the json data file (781 records) from fiddle-20150330-BufferedDataGrid using a DataStore.  Additionally, its an example of using the "bufferedrender" plugin as per the forum post ~ http://www.sencha.com/forum/showthread.php?259314.
 * Added **fiddles/extjs/fiddle-20150402-CustomColumnHeaderMenu** ~ (Under Construction)
     * Fiddle exploring how to override the default menu exposed by the column collection of the Ext.grid.Panel.
-* Added **fiddles/three/fiddleParabola**
+* Added **fiddles/three/fiddle-0021-Parabola**
     * Fiddle used to rewrite the fiddles/three/template/app.js template using a global window.app variable.
 * Added **fiddles/extjs/fiddle-20150403-SpreadSheetSelection** ~ [Sencha Fiddle](https://fiddle.sencha.com/#fiddle/kqj)
     * Fiddle exploring how to leverage the spreadsheet selection model and clipboard plugin introduced in 5.1.
@@ -1580,4 +1580,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/angular2-seeder/fiddle-0001-EniPuzzle](fiddles/angular2-seeder/fiddle-0001-EniPuzzle) ~ [Issue 151](https://github.com/bradyhouse/house/issues/151)
 
 * **Three.js**
-    1.  Started [fiddles/three/fiddle-0014-EniPuzzle](fiddles/three/fiddle-0014-EniPuzzle) ~ ~ [Issue 153](https://github.com/bradyhouse/house/issues/153)
+    1.  Started [fiddles/three/fiddle-0023-EniPuzzle](fiddles/three/fiddle-0023-EniPuzzle) ~ [Issue 153](https://github.com/bradyhouse/house/issues/153)
+
+
+### 201704170420
+
+* **node**
+
+  1.  Added [fiddles/node/fiddle-0022-Gulp](fiddles/node/fiddle-0022-Gulp) ~ [Issue 154](https://github.com/bradyhouse/house/issues/154)

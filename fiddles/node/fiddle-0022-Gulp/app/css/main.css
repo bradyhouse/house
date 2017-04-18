@@ -1,0 +1,12 @@
+/* Myth Variables */
+:root {
+    /* Colors */
+    --red: #F05D5D;
+    --green: #59C946;
+    --blue: #6F7AF1;
+    --white: #FFFFFF;
+    --grey: #EEEEEE;
+    --black: #000000;
+}
+
+body {font:16px 300 sans-serif; background:var(--grey);}

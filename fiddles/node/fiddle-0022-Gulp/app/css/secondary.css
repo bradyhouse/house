@@ -1,0 +1,7 @@
+#header {padding:2em; background: var(--blue);}
+#core {width:80%; max-width:900px; margin:0 auto;}
+#footer {padding:2em; background: var(--red);}
+
+.box {padding:2em; background:var(--white);}
+
+.surface-material {width:125px; margin:0 auto; display:block;}
