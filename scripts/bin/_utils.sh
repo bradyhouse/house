@@ -229,6 +229,15 @@ function isJavaClassPath() {
     fi
 }
 
+function isNvmInstalled() {
+  if [[ ! $(nvm version;) ]]
+  then
+    echo "false";
+  else
+    echo "true";
+  fi
+}
+
 function isInstalled() {
     if [[ ! $(which $1;) ]]
     then

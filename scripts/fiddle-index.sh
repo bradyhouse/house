@@ -24,8 +24,9 @@
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
-source bin/_utils.sh
-source bin/_types.sh
+source bin/_utils.sh;
+source bin/_types.sh;
+source bin/_env.sh;
 
 
 if [ "$#" -ne 1 ]
@@ -92,7 +93,7 @@ echo ${bornOnDate}
             $(voidSubstr "{{FiddleType}}" "${type}" "${indexFile}";) || exit 86
             $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexFile}";) || exit 86
             ;;
-        *)  exit 5000
+        *)  exit 87
             ;;
     esac
 )
@@ -102,6 +103,9 @@ case ${rc} in
     0)  echo "Done. All \"$1\" fiddles have been re-indexed."
         ;;
     86) echo "Error:  Call to the \"bin/house-substr.sh\" script failed."
+        ;;
+    87) echo "";
+        rc=0;
         ;;
     *)  echo "Error: Something went wrong."
         ;;

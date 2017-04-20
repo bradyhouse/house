@@ -22,6 +22,10 @@ function setup() {
     case ${_os} in
         'mac')
             case ${_app} in
+              'android')
+                source bin/setup/map/_android.sh;
+                install || exit $?;
+                ;;
               'brew')
                 source bin/setup/mac/_brew.sh;
                 install || exit $?;
@@ -46,6 +50,10 @@ function setup() {
                 source bin/setup/mac/_nativescript.sh;
                 install || exit $?;
                 ;;
+              'ng')
+                 source bin/setup/mac/_ng.sh;
+                 install || exit $?;
+                 ;;
               'zsh')
                 source bin/setup/mac/_zsh.sh;
                 install || exit $?;
@@ -59,6 +67,7 @@ function setup() {
                 install || exit $?;
                 ;;
               'all')
+                setup ${_os} "android" || exit $?;
                 setup ${_os} "brew" || exit $?;
                 setup ${_os} "gh" || exit $?;
                 setup ${_os} "node" || exit $?;
@@ -67,6 +76,7 @@ function setup() {
                 setup ${_os} "js-beautify" || exit $?;
                 setup ${_os} "live-server" || exit $?;
                 setup ${_os} "nativescript" || exit $?;
+                setup ${_os} "ng" || exit $?;
                 setup ${_os} "zsh" || exit $?;
                 ;;
                *) exit 86;

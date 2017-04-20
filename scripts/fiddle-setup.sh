@@ -14,6 +14,7 @@
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
+source bin/_env.sh;
 source bin/setup/_setup.sh;
 
 _os=$(echo $1);

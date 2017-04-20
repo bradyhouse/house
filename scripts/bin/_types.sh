@@ -24,11 +24,13 @@ voidEchoFiddleTypes() {
           echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddle"
           ;;
         'setup')
+           echo -e "\t\"android\"\tinstall android-sdk\thttps://developer.android.com";
            echo -e "\t\"brew\"\t\tinstall homebrew\thttp://brew.sh/";
            echo -e "\t\"gh\"\t\tinstall github terminal\thttps://www.npmjs.com/package/gh";
            echo -e "\t\"js-beautify\"\tinstall js-beautify\thttps://www.npmjs.com/package/js-beautify";
            echo -e "\t\"live-server\"\tinstall live-server\thttps://www.npmjs.com/package/live-server";
            echo -e "\t\"nativescript\"\tinstall nativeScript\thttps://www.npmjs.com/package/nativescript";
+           echo -e "\t\"ng\"\t\tinstall angular2-cli\thttps://cli.angular.io/";
            echo -e "\t\"node\"\t\tinstall node.js\t\thttps://nodejs.org/en/";
            echo -e "\t\"nvm\"\t\tinstall nvm\t\thttps://github.com/creationix/nvm";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\thttp://ohmyz.sh/";

@@ -31,8 +31,8 @@ function create() {
       if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
       $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1;
       $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/package.json";) || exit 2;
-      $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3;
-      $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3;
+      $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3;
+      $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3;
       cd "../fiddles/${fiddleSubDir}/$1"
       npm install || exit 4;
   )
@@ -45,7 +45,7 @@ function create() {
           ;;
       2)  endLog "foo bar! failed trying to update the ../fiddles/${fiddleSubDir}/$1/package.json file."
           ;;
-      3)  endLog "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/$1/README.markdown file."
+      3)  endLog "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/$1/README.md file."
           ;;
       4)  endLog "foo bar! failed trying to run npm install."
           ;;

@@ -19,4 +19,4 @@ export __CREATE_ANDROID_VERSION__="24.0.2";
 export __CREATE_GOOGLE_API_VERSION__="19";
 export __CREATE_GRADLE_VERSION__="2.10";
 export __START_ANDROID_EMULATOR_PROFILE__=fiddler;
-export __START_ANDROID_EMULATOR_EXE__="/usr/local/bin/emulator";
+export __START_ANDROID_EMULATOR_EXE__="/Users/e13542/homebrew/share/android-sdk/emulator/emulator";

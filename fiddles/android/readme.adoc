@@ -39,7 +39,7 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 5. In your `~/.bashrc` file, set the JAVA_HOME system environment variable.
     `export JAVA_HOME=$(/usr/libexec/java_home)`
 6. In the terminal, run the following command
-    `brew install android-sdk`
+    `brew cask install android-sdk`
 7. In the terminal, run the following command
     `android update sdk --filter tools,platform-tools,android-23,build-tools-23.0.3,extra-android-m2repository,extra-google-m2repository,extra-android-support --all --no-ui`
 8. In the terminal, run the following command

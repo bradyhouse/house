@@ -78,7 +78,8 @@ function fiddleIndexAll() {
         'create')
             if [ "$#" -lt 3 ]; then  ./fiddle-create.sh;  exit 0; fi
             ./fiddle-delete.sh $2 $3 || exit 0;
-            ./fiddle-create.sh $2 $3;
+            ./fiddle-create.sh $2 $3 || exit $?;
+            ./fiddle-index.sh $2 || exit $?;
             ;;
         'edit')
             if [ "$#" -lt 3 ]; then  ./fiddle-edit.sh;  exit 0; fi
@@ -86,7 +87,8 @@ function fiddleIndexAll() {
             ;;
         'fork')
             if [ "$#" -lt 4 ]; then  ./fiddle-fork.sh;  exit 0; fi
-            ./fiddle-fork.sh $2 $3 $4
+            ./fiddle-fork.sh $2 $3 $4;
+            ./fiddle-index.sh $2;
             ;;
         'index')
             if [ "$#" -lt 2 ]; then  ./fiddle-index.sh;  exit 0; fi
@@ -109,7 +111,8 @@ function fiddleIndexAll() {
             ;;
         'delete')
             if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh;  exit 0; fi
-            ./fiddle-delete.sh $2 $3
+            ./fiddle-delete.sh $2 $3;
+            ./fiddle-index.sh $2;
             ;;
          'list')
             if [ "$#" -lt 2 ]; then  ./fiddle-list.sh;  exit 0; fi

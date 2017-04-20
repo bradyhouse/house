@@ -150,7 +150,17 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             ;;
-        'angular'|'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'php' | 'three' | 'd3' | 'dojo' | 'node' | 'tween' | 'chrome')
+        'node' | 'three')
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
+            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            ;;
+        'angular'|'angular2' | 'aurelia' | 'compass' | 'extjs5' | 'php' | 'd3' | 'dojo' | 'tween' | 'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
@@ -201,7 +211,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${fiddleType} in
-        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'node'|'tween'|'svg')
+        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'tween'|'svg')
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')

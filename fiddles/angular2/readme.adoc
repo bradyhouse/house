@@ -41,6 +41,7 @@ following table outlines how.
 
 *   link:https://angular.io/docs/ts/latest/[Angular 2 Docs]
 **   link:https://angular.io/docs/ts/latest/guide/style-guide.html[Style Guide]
+**   link:https://angular.io/docs/ts/latest/tutorial/[Tour of Heroes]
 **   link:https://angular.io/docs/ts/latest/guide/cheatsheet.html[Cheat Sheet]
 *   link:https://github.com/angular/angular-cli[Angular 2 CLI]
 *   link:http://valor-software.com/ng2-bootstrap/[ng2-bootstrap]

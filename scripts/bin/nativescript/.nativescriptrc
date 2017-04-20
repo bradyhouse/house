@@ -16,7 +16,7 @@
 export __NODE_VERSION__="5.1.0";
 export __PLATFORM__="ANDROID";
 export __ANDROID_EMULATOR_PROFILE__=fiddler;
-export __ANDROID_EMULATOR_EXE__="/usr/local/bin/emulator";
+export __ANDROID_EMULATOR_EXE__="/Users/e13542/homebrew/share/android-sdk/emulator/emulator";
 
 # -------------------------------------------------
 # TEMPLATE TYPE SWITCH

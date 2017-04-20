@@ -1,6 +1,5 @@
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
-import { NgZone } from
 import * as meta        from './meta';
 import * as fatalError  from './fatal-error';
 

@@ -29,6 +29,6 @@ function ngInstall() {
     installed=$(isNgInstalled;);
     if [[ "${installed}" == "false" ]]
     then
-        npm install -g angular-cli;
+       npm install -g @angular/cli;
     fi
 }

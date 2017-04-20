@@ -1588,3 +1588,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **node**
 
   1.  Added [fiddles/node/fiddle-0022-Gulp](fiddles/node/fiddle-0022-Gulp) ~ [Issue 154](https://github.com/bradyhouse/house/issues/154)
+  2.  Added [fiddles/node/fiddle-0023-BrowserSync](fiddles/node/fiddle-0023-BrowserSync) ~ [Issue 155](https://github.com/bradyhouse/house/issues/155)
+  3.  Added [fiddles/node/fiddle-0024-Browserify](fiddles/node/fiddle-0024-Browserify) ~ [Issue 156](https://github.com/bradyhouse/house/issues/156)
+
+* **angular2** 
+
+  1.  Started [fiddles/angular2/fiddle-0048-SlickGridTree](fiddles/angular2/fiddle-0048-SlickGridTree)
+  2.  Started [fiddles/angular2/fiddle-0049-TourOfHeroes](fiddles/angular2/fiddle-0049-TourOfHeroes)

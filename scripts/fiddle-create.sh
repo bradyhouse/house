@@ -34,8 +34,9 @@
 
 this=$0;
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
-source bin/_utils.sh
-source bin/_types.sh
+source bin/_env.sh;
+source bin/_utils.sh;
+source bin/_types.sh;
 
 
 #try
@@ -58,14 +59,13 @@ source bin/_types.sh
         'angular')
             source bin/angular/_create.sh;
             create $2 || exit 87;
-            ./fiddle-index.sh "angular" || exit 87;
             ;;
         'angular2')
             source bin/angular2/_create.sh;
             create $2 || exit 87;
-            ./fiddle-index.sh "angular2" || exit 87;
             ;;
         'angular2-cli')
+            source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_create.sh;
             create $2 || exit 87;
@@ -132,13 +132,11 @@ source bin/_types.sh
         'extjs5')
             source bin/extjs5/_create.sh;
             create $2 || exit 87;
-            ./fiddle-index.sh "extjs5" || exit 87;
             ;;
         'extjs6')
             source bin/extjs6/_create.sh;
             create $2 || exit 87;
             ./fiddle-combine.sh $1 $2 || exit 87;
-            ./fiddle-index.sh "extjs6" || exit 87;
             ;;
         'java')
             source bin/java/.javarc;
@@ -155,7 +153,6 @@ source bin/_types.sh
         'jquery')
             source bin/jquery/_create.sh;
             create $2 || exit 88;
-            ./fiddle-index.sh "jquery" || exit 88;
             ;;
         'meteor')
             source bin/meteor/_install.sh;
@@ -184,13 +181,11 @@ source bin/_types.sh
         'rxjs')
             source bin/rxjs/_create.sh;
             create $2 || exit 100;
-            ./fiddle-index.sh "rxjs" || exit 100
             ;;
         'three')
             source bin/three/_create.sh;
             create $2 || exit 89;
             ./fiddle-combine.sh "three" "$2" "app.js" "0" || exit 89
-            ./fiddle-index.sh "three" || exit 89
             ;;
         'typescript')
             source bin/typescript/_install_global.sh;
@@ -206,12 +201,10 @@ source bin/_types.sh
         'tween')
             source bin/tween/_create.sh;
             create $2 || exit 94;
-            ./fiddle-index.sh "tween" || exit 94
             ;;
         'svg')
             source bin/svg/_create.sh;
             create $2 || exit 97;
-            ./fiddle-index.sh "svg" || exit 97
             ;;
         *)  exit 86
             ;;

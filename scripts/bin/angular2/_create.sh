@@ -23,7 +23,7 @@ function catch() {
         2)  echo "foo bar! failed trying to update the ../fiddles/${fiddleSubDir}/${fiddleName}/index.html file."
             if [[ -d "../fiddles/${fiddleSubDir}/${fiddleName}" ]]; then rm -R "../fiddles/${fiddleSubDir}/${fiddleName}"; fi
             ;;
-        3)  echo "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/${fiddleName}/README.markdown file."
+        3)  echo "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/${fiddleName}/README.md file."
             if [[ -d "../fiddles/${fiddleSubDir}/${fiddleName}" ]]; then rm -R "../fiddles/${fiddleSubDir}/${fiddleName}"; fi
             ;;
         4)  echo "foo bar! failed trying to update the ../fiddles/${_fiddleSubDir}/${fiddleName}/package.json file."
@@ -60,8 +60,11 @@ function create() {
       $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1
       $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 2
       $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/app/meta.ts";) || exit 2
-      $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
-      $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 3
+      $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3
+      $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3
+      cd "../fiddles/${fiddleSubDir}/$1";
+      npm install;
+      exit 0;
   )
 
   # catch

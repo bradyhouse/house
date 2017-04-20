@@ -29,7 +29,8 @@ this POC is adapted from the example discussed in Chapter 2 of Travis Maynard's 
 
 ### Use Case
 
-From the root directory, enter the command `npm install`.  This should produce the following output:
+To install and run the fiddle, from the root [scripts](../../scripts), directory enter the command: `./fiddle.sh "start"
+ "node" "0022"`.  This should produce the following output in the console.
 
     npm WARN package.json fiddle-0022-Gulp@0.0.0 No repository field.
     npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
@@ -37,30 +38,30 @@ From the root directory, enter the command `npm install`.  This should produce t
     npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
     npm WARN deprecated graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
     |
-    > pngquant-bin@3.1.1 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-pngquant/node_modules/pngquant-bin
+    > pngquant-bin@3.1.1 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-pngquant/node_modules/pngquant-bin
     > node lib/install.js
     
       ✔ pngquant pre-build test passed successfully
     
-    > optipng-bin@3.1.4 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-optipng/node_modules/optipng-bin
+    > optipng-bin@3.1.4 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-optipng/node_modules/optipng-bin
     > node lib/install.js
     
       ✔ optipng pre-build test passed successfully
     
-    > gifsicle@3.0.4 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle
+    > gifsicle@3.0.4 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle
     > node lib/install.js
     
       ✔ gifsicle pre-build test passed successfully
     
-    > jpegtran-bin@3.2.0 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-jpegtran/node_modules/jpegtran-bin
+    > jpegtran-bin@3.2.0 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-jpegtran/node_modules/jpegtran-bin
     > node lib/install.js
     
       ✔ jpegtran pre-build test passed successfully
     
-    > fsevents@1.1.1 install /Users/e13542/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents
+    > fsevents@1.1.1 install /Users/bradyhouse/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents
     > node install
     
-    [fsevents] Success: "/Users/e13542/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents/lib/binding/Release/node-v46-darwin-x64/fse.node" already installed
+    [fsevents] Success: "/Users/bradyhouse/github/house/fiddles/node/fiddle-0022-Gulp/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents/lib/binding/Release/node-v46-darwin-x64/fse.node" already installed
     Pass --update-binary to reinstall or --build-from-source to recompile
     gulp-concat@2.6.1 node_modules/gulp-concat
     ├── vinyl@2.0.1 (replace-ext@1.0.0, clone-buffer@1.0.0, is-stream@1.1.0, remove-trailing-separator@1.0.1, clone-stats@1.0.0, clone@1.0.2, cloneable-readable@1.0.0)
@@ -105,9 +106,6 @@ From the root directory, enter the command `npm install`.  This should produce t
     ├── undertaker@1.1.0 (arr-flatten@1.0.3, undertaker-registry@1.0.0, last-run@1.1.1, object.defaults@0.3.0, object.reduce@0.1.7, arr-map@2.0.2, collection-map@0.1.0, bach@1.1.0, es6-weak-map@2.0.2)
     └── glob-watcher@3.1.0 (lodash.debounce@4.0.8, lodash.assignwith@4.2.0, async-done@1.2.2, chokidar@1.6.1)
 
-Once installed, you can then test drive the build script, [gulpfile.js](gulpfile.js), by entering the command `gulp`.
-This should produce the following output:
-
     [18:22:17] Using gulpfile ~/github/house/fiddles/node/fiddle-0022-Gulp/gulpfile.js
     [18:22:17] Starting 'default'...
     [18:22:17] Starting 'styles'...
@@ -128,8 +126,8 @@ This will result in  [dist](dist) directory:
         └── surface.jpg
 
 
-To test drive the resulting html page, from the root directory run `live-server`.  NOTE - If you have installed live-server
-you can do so using the command `npm install -g live-server`.
+To test drive the resulting html page, from the fiddle root directory run `live-server`.  NOTE - If you not have installed live-server
+you can do so using the command `fiddle.sh install mac live-server`.
 
 
 ### Tags

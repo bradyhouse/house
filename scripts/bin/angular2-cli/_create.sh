@@ -15,6 +15,20 @@
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 
+
+function nvmInstall() {
+  groupLog "nvmInstall";
+
+  if [[ -d ${NVM_DIR} ]]
+  then
+    source ${NVM_DIR}/nvm.sh;
+    nvm install ${NVM_VERSION};
+  else
+    exit 3;
+  fi
+}
+
+
 function createTypingsRcFile() {
     groupLog "createTypingsRcFile";
     touch .typingsrc
@@ -84,6 +98,8 @@ function catch() {
             ;;
         2)  endLog "_create.sh: ngCreate() failed";
             ;;
+        3)  endLog "nvmInstall: call to nvm install ${NVM_VERSION} failed.";
+            ;;
         *)  endLog "fubar! Something went wrong.";
             ;;
     esac
@@ -111,6 +127,7 @@ function create() {
   (
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
       cd ../fiddles/angular2-cli;
+      nvmInstall || exit $?;
       ngInstall || exit 1;
       ngCreate $1 ${bornOnDate} || exit 2;
   )

@@ -36,8 +36,8 @@ function create() {
       $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/app.js";) || exit 2
       $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 3
       $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/index.html";) || exit 3
-      $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
-      $(voidSubstr '{{BornOnDate}}' $1 "../fiddles/${fiddleSubDir}/$1/README.markdown";) || exit 4
+      $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 4
+      $(voidSubstr '{{BornOnDate}}' $1 "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 4
       $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/src/metadata.js";) || exit 4
 
       exit
@@ -55,7 +55,7 @@ function create() {
       3)  echo "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/index.html\" file."
           if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
           ;;
-      4)  echo "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/README.markdown\" file."
+      4)  echo "foo bar! failed trying to update the \"../fiddles/${fiddleSubDir}/$1/README.md\" file."
           if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
           ;;
       *)  echo "foo bar! Something went wrong."
