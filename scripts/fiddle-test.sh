@@ -13,18 +13,19 @@
 # 06/20/2015 - See CHANGELOG @ 201506200420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/02/2015 - See CHANGELOG @ 201605020420
+# 04/24/2017 - See CHANGELOG @ 201704170420
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh;
 source bin/_types.sh;
-source bin/_test.sh;
+source bin/_env.sh;
 source bin/jstestdriver/_run_jstestdriver.sh;
 
 thisFile=$(echo "$0" | sed 's/\.\///g')
 fiddleType=$1
 fiddleName=$2
-fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
-
+fiddle=$(getFiddle "${fiddleType}" "${fiddleName}";);
+fiddlePath="../fiddles/${fiddleType}/${fiddle}"
 
 #try
 (
@@ -47,6 +48,10 @@ fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
                 cd bin
                 runJsTestDriver "../${fiddlePath}";
                 exit $?;
+                ;;
+            'node')
+                source bin/node/_test.sh
+                test ${fiddle};
                 ;;
             *)
                 exit 86

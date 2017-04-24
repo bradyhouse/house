@@ -77,3 +77,8 @@ following table outlines how.
 *   link:https://getmdl.io/[https://getmdl.io/]
 *   link:https://www.youtube.com/watch?v=rrT6v5sOwJg[https://www.youtube.com/watch?v=rrT6v5sOwJg]
 *   link:http://materializecss.com/[http://materializecss.com/]
+
+==== Other Stuff
+
+*   link:https://github.com/stickfigure/blog/wiki/Opinionated-Comparison-of-React%2C-Angular2%2C-and-Aurelia?utm_source=javascriptweekly&utm_medium=email[Opinionated Comparison of React, Angular2, and Aurelia]
+

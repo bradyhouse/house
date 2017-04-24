@@ -31,6 +31,7 @@
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
+source bin/_env.sh;
 
 _path=$(pwd;)  # Capture Path
 _bin="${_path}/bin"
@@ -67,6 +68,7 @@ function startServer() {
             androidStart || exit 111;
             ;;
         'angular2-cli')
+            source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_start.sh;
             cd ${_fiddleRoot};

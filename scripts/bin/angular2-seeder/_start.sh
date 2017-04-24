@@ -17,6 +17,7 @@
 
 function seederStart() {
     groupLog "seederStart";
+    npm install;
     npm start;
     exit 0;
 }

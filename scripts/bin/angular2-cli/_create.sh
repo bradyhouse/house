@@ -62,11 +62,15 @@ function ngCreate() {
         then
             rm -rf .gitignore;
         fi
-
         cp -rf ../template/README.markdown README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
         createTypingsRcFile || exit 6;
+        rm -rf src/favicon.ico || exit 8;
+        cp -rf ../template/favicon.ico src/favicon.ico || exit 8;
+        rm -rf src/index.html || exit 9;
+        cp -rf ../template/index.html src/index.html || exit 9;
+        $(voidSubstr '{{FiddleName}}' ${fiddle} "src/index.html";) || exit 9;
         npm install || exit 7;
 
     )
@@ -83,6 +87,10 @@ function ngCreate() {
         6)  endLog "ngCreate: Call to createTypingsRcFile failed.";
             ;;
         7)  endLog "ngCreate: call to npm install failed.";
+            ;;
+        8)  endLog "ngCreate: Failed while attempting to update favicon.ico file.";
+            ;;
+        9)  endLog "ngCreate: Failed while attempting to update index.html file.";
             ;;
         *)  endLog "ngCreate: F U B A R ~ Something went wrong."
             ;;

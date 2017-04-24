@@ -58,6 +58,7 @@ function fiddleIndexAll() {
         'build')
           if [ "$#" -lt 3 ]; then  ./fiddle-build.sh;  exit 0; fi
           ./fiddle-build.sh $2 $3;
+          ./fiddle-index.sh $2;
           ;;
         'combine')
             case "$#" in

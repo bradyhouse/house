@@ -21,12 +21,15 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "css-element-queries": "^0.4.0",
     "jquery": "^3.2.1",
     "jquery-ui-dist": "^1.12.1",
     "live-server": "^1.0.0",
     "rxjs": "^5.1.0",
+    "slickgrid": "^2.3.3",
     "slickgrid-kunovsky": "^2.2.0",
     "systemjs": "^0.19.27",
+    "underscore": "^1.8.3",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

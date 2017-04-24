@@ -1,4 +1,6 @@
-.header {
+.header-component {
+    height: calc(5vmax);
+    padding: 1.25rem;
     list-style: none;
     margin: 0;
     display: -webkit-box;
@@ -7,8 +9,9 @@
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
-    justify-content: flex-end;
-    background-color: red;
+    justify-content: flex-start;
+    background-color: tomato;
+    color: white;
 }
 
 .header a {

@@ -15,6 +15,7 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 03/10/2017 - See CHANGELOG @ 201703100420
+# 04/24/2017 - See CHANGELOG @ 201704170420
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -33,6 +34,8 @@ voidEchoFiddleTypes() {
            echo -e "\t\"ng\"\t\tinstall angular2-cli\thttps://cli.angular.io/";
            echo -e "\t\"node\"\t\tinstall node.js\t\thttps://nodejs.org/en/";
            echo -e "\t\"nvm\"\t\tinstall nvm\t\thttps://github.com/creationix/nvm";
+           echo -e "\t\"typescript\"\tinstall typeScript\thttps://www.npmjs.com/package/typescript";
+           echo -e "\t\"yarn\"\t\tinstall yarn\t\thttps://yarnpkg.com/lang/en/";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\thttp://ohmyz.sh/";
 
            echo -e "";

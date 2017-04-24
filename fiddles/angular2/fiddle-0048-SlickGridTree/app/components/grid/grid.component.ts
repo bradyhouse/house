@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+ import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {AgGridNg2} from 'ag-grid-ng2/main';
 import {GridOptions, GridApi} from 'ag-grid/main';
 

@@ -15,6 +15,19 @@
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
 # ---------------------------------------------------------------------------------------------------|
 
+function nvmInstall() {
+  groupLog "nvmInstall";
+
+  if [[ -d ${NVM_DIR} ]]
+  then
+    source ${NVM_DIR}/nvm.sh;
+    nvm install ${NVM_VERSION};
+  else
+    exit 3;
+  fi
+}
+
+
 function ngStart() {
     groupLog "ngStart";
     _port=1841
@@ -22,6 +35,7 @@ function ngStart() {
     then
         _port=$2;
     fi
+    nvmInstall;
     ng serve --port ${_port};
     exit 0;
 }

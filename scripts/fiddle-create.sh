@@ -71,6 +71,7 @@ source bin/_types.sh;
             create $2 || exit 87;
             ;;
         'angular2-seeder')
+            source bin/angular2-seeder/.seederrc;
             source bin/angular2-seeder/_create.sh;
             create $2 || exit 87;
             ;;

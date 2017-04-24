@@ -54,6 +54,10 @@ function setup() {
                  source bin/setup/mac/_ng.sh;
                  install || exit $?;
                  ;;
+              'yarn')
+                 source bin/setup/mac/_yarn.sh;
+                 install || exit $?;
+                 ;;
               'zsh')
                 source bin/setup/mac/_zsh.sh;
                 install || exit $?;
@@ -64,6 +68,10 @@ function setup() {
                 ;;
               'nvm')
                 source bin/setup/mac/_nvm.sh;
+                install || exit $?;
+                ;;
+              'typescript')
+                source bin/setup/mac/_typescript.sh;
                 install || exit $?;
                 ;;
               'all')
@@ -77,6 +85,8 @@ function setup() {
                 setup ${_os} "live-server" || exit $?;
                 setup ${_os} "nativescript" || exit $?;
                 setup ${_os} "ng" || exit $?;
+                setup ${_os} "typescript" || exit $?;
+                setup ${_os} "yarn" || exit $?;
                 setup ${_os} "zsh" || exit $?;
                 ;;
                *) exit 86;

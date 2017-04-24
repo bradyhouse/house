@@ -18,18 +18,17 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 157](https://github.com/bradyhouse/house/issues/157)
 
 
 ### Description
 
-Angular2 fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
-it supports create/delete/refactor/list functionality for the "angular2" based POC's aka fiddles. This is only a test.
+Build an in-browser Angular2 fiddle based on the Angular2 tour of [heroes tutorial](https://angular.io/docs/ts/latest/tutorial/).
 
 
 ### Published Version Link
 
-N/A
+[bradyhouse.github.io](http://bradyhouse.github.io/angular2/fiddle-0049-TourOfHeroes/index.html)
 
 
 ### Tags

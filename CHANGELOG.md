@@ -923,7 +923,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/angular2/fiddle-0035-ModalForm](fiddles/angular2/fiddle-0035-ModalForm)
     2.  Added [fiddles/angular2/fiddle-0036-SiblingComponents](fiddles/angular2/fiddle-0036-SiblingComponents)
     3.  Added [fiddles/angular2/fiddle-0037-ModalPopUp](fiddles/angular2/fiddle-0037-ModalPopUp)
-    4.  Added [fiddles/angular2/fiddle-0038-ComponentResolver](fiddles/angular2/fiddle-0038-ComponentResolver)
+    4.  Added [fiddles/angular2/fiddle-0003-ComponentResolver](fiddles/angular2/fiddle-0003-ComponentResolver)
     5.  Added dependency (submodule) to [Farata / angular2typescript](https://github.com/Farata/angular2typescript)
     6.  Added dependency (submodule) to [angular-cli](https://github.com/angular/angular-cli)
 
@@ -1585,13 +1585,23 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 201704170420
 
-* **node**
+* **Node**
 
   1.  Added [fiddles/node/fiddle-0022-Gulp](fiddles/node/fiddle-0022-Gulp) ~ [Issue 154](https://github.com/bradyhouse/house/issues/154)
   2.  Added [fiddles/node/fiddle-0023-BrowserSync](fiddles/node/fiddle-0023-BrowserSync) ~ [Issue 155](https://github.com/bradyhouse/house/issues/155)
   3.  Added [fiddles/node/fiddle-0024-Browserify](fiddles/node/fiddle-0024-Browserify) ~ [Issue 156](https://github.com/bradyhouse/house/issues/156)
+  4.  Started [fiddles/node/fiddle-0025-CouchDbCli](fiddles/node/fiddle-0025-CouchDbCli) ~ [Issue 161](https://github.com/bradyhouse/house/issues/161)
 
-* **angular2** 
+* **Angular2** 
 
-  1.  Started [fiddles/angular2/fiddle-0048-SlickGridTree](fiddles/angular2/fiddle-0048-SlickGridTree)
-  2.  Started [fiddles/angular2/fiddle-0049-TourOfHeroes](fiddles/angular2/fiddle-0049-TourOfHeroes)
+  1.  Started [fiddles/angular2/fiddle-0048-SlickGridTree](fiddles/angular2/fiddle-0048-SlickGridTree) ~ [Issue 159](https://github.com/bradyhouse/house/issues/159)
+  2.  Added [fiddles/angular2/fiddle-0049-TourOfHeroes](fiddles/angular2/fiddle-0049-TourOfHeroes) ~ [Issue 157](https://github.com/bradyhouse/house/issues/157)
+
+* **Angular2 Seeder**
+
+  1.  Added [fiddles/angular2-seeder/fiddle-0002-TourOfHeroes](fiddles/angular2-seeder/fiddle-0002-TourOfHeroes) ~ [Issue 158](https://github.com/bradyhouse/house/issues/158)
+
+* **Angular2 CLI**
+
+  1.  Added [fiddles/angular2-cli/fiddle-0004-TourOfHeroes](fiddles/angular2-cli/fiddle-0004-TourOfHeroes) ~ [Issue 160](https://github.com/bradyhouse/house/issues/160)
+

@@ -1,8 +1,6 @@
 fiddle-0000-Template
 ======
 
-![Screenshot](screenshot.png)
-
 
 ### Title
 
@@ -11,7 +9,7 @@ fiddle-0000-Template
 
 ### Creation Date
 
-12-10-16
+04-22-17
 
 
 ### Location
@@ -19,9 +17,14 @@ fiddle-0000-Template
 Chicago, IL
 
 
+### Issue
+
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+
+
 ### Description
 
-Another simple Angular 2 fiddle.
+Another full-blown Angular 2 Seeder fiddle.
 
 
 ### Published Version Link

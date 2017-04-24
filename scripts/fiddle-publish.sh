@@ -77,6 +77,7 @@ function rmrf() {
 cd ${_publishPath};
 
 rmrf angular2-seeder;
+rmrf angular2-cli;
 rmrf angular2;
 rmrf three;
 rmrf extjs5;
@@ -95,6 +96,7 @@ rmrf .gitignore;
 cd ${_sourcePath};
 
 cprfdist angular2-seeder;
+cprfdist angular2-cli;
 cprf angular2;
 cprf three;
 cprf extjs5;
