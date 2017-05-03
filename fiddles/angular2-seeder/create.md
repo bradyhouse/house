@@ -1,4 +1,4 @@
-angular2-seeder
+Angular2 Seeder
 ======
 
 Executing the command `./fiddle.sh "create" "angular2-seeder" "fiddle-0000-Template"` produces the following output.

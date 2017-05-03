@@ -3,7 +3,7 @@
   var map = {
       'app': 'app',
       '@angular': 'node_modules/@angular',
-      'angular2-in-memory-web-api': 'node_modules/angular-in-memory-web-api/bundles/angular-in-memory-web-api.umd.js',
+      'angular2-in-memory-web-api': 'node_modules/angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'rxjs': 'node_modules/rxjs',
       'ts': 'node_modules/plugin-typescript/lib/plugin.js',
       'typescript': 'node_modules/typescript/lib/typescript.js',

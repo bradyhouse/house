@@ -1,5 +1,6 @@
 .content-component {
-    padding: 1.25rem;
-    background-color: yellowgreen;
-    color: white;
+  padding: 0rem;
+  background-color: yellowgreen;
+  color: white;
+  height: 100%;
 }

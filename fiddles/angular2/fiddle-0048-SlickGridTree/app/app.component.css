@@ -1,90 +1,88 @@
 
 .wrapper {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-    font-weight: bold;
-    text-align: left;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  font-weight: bold;
+  text-align: left;
 }
 
 .wrapper > * {
-    padding: 0rem;
-    flex: 1 100%;
+  padding: 0rem;
+  flex: 1 calc(98vh);
 }
 
 .north {
-    background: tomato;
+  background: tomato;
 }
 
 .south {
-    background: lightgreen;
+  background: lightgreen;
 }
 
 .main {
-    justify-content: flex-start;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-    flex-grow: 1;
+  justify-content: flex-start;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  flex-grow: 1;
 }
 
 .main > * {
-    padding: 0rem;
-    flex: 1 100%;
-    height: 100%;
+  padding: 0rem;
+  flex: 1 100%;
+  height: calc(97vh);
+  overflow: hidden;
 }
 
 .west {
-    padding-top: 0.625rem; /* 10 / 16 */
-    padding-left: 0.3125rem; /* 5 / 16  */
-    padding-bottom: 0rem;
-    padding-right: 0.3125rem; /* 5 / 16 */
-    min-width: 20.69523039611964%; /* 256 / 1237 */
-    max-width: 20.69523039611964%; /* 256 / 1237 */
-    justify-content: flex-start;
-    text-align: left;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-    flex-grow: 0;
-    flex-shrink: 0;
+  padding: 0px;
+  min-width: 300px;
+  max-width: calc(20vw);
+  justify-content: flex-start;
+  text-align: left;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .west > * {
-    flex: 1 100%;
-    flex-shrink: 0;
+  flex: 1 100%;
+  flex-shrink: 0;
 }
 
 @media all and (min-width: 37.5rem) {
-    .west {
-        flex: 1 auto;
-    }
+  .west {
+    flex: 1 auto;
+  }
 
 }
 
 @media all and (min-width: 50rem) {
-    .main {
-        flex: 5 0rem;
-    }
+  .main {
+    flex: 5 0rem;
+  }
 
-    .west {
-        order: 1;
-    }
+  .west {
+    order: 1;
+  }
 
-    .main {
-        order: 4;
-    }
+  .main {
+    order: 4;
+  }
 }
 

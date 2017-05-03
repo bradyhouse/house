@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-
+import {Component, OnInit} from '@angular/core';
+import {BaseComponent} from '../components/base.component';
+import {DataService} from '../shared/data.service';
+declare let _: any;
 
 @Component({
   selector: 'sidebar',
@@ -7,39 +9,35 @@ import { Component } from '@angular/core';
   templateUrl: './app/sidebar/sidebar.component.html',
   styleUrls: ['./app/sidebar/sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent extends BaseComponent {
 
   options: any;
+  columns: any[];
 
-  get height():number {
-    return window.innerHeight - (Math.floor(.09 * window.innerHeight));
-  }
-  get width():number {
-    return Math.floor(.20 * window.innerWidth);
-  }
-
-  constructor() {
+  constructor(private _dataService: DataService) {
+    super();
     this.options = {
-      columns: [
-        {
-          field: 'value'
-        }
-      ],
-      rows: [
-        {
-          value: 'a'
-        },
-        {
-          value: 'b'
-        },
-        {
-          value: 'c'
-        },
-        {
-          value: 'd'
-        }
-      ]
-    }
+      rows: [],
+      columns: []
+    };
+
+    this.columns = [
+      {id: "title", field: "title"}
+    ];
+
+    this.subscriptions.push(
+      _dataService.responseChange$
+        .subscribe(
+          (data: any) => this.dataLoaded(data)
+        ));
+
+  }
+
+  private dataLoaded(data: any) {
+    this.options = {
+      rows: data.data.children,
+      columns: this.columns
+    };
   }
 
 }

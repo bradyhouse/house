@@ -66,7 +66,7 @@ export class DataService {
       if (req.status == 200) {
         window.setTimeout(() => {
           data = req.responseText.trimLeft().trimRight();
-          self._json.data = data;
+          self._json.data = JSON.parse(data);
           self.response = self._json;
         }, 1000);
       } else {
@@ -78,5 +78,5 @@ export class DataService {
     }
     req.send();
   }
-  
+
 }

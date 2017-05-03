@@ -27,6 +27,9 @@ template.  The `fiddle.sh` script can be used to extend or test drive this colle
 |Fork
 |`./fiddle.sh "fork" "angular2-seeder" "0000" "fiddle-0001-Fork"`
 |link:fork.md[sample output & additional details]
+|Index
+|`./fiddle.sh "index" "angular2-seeder"`
+|link:index.md[sample output & additional details]
 |List
 |`./fiddle.sh "list" "angular2-seeder"`
 |link:list.md[sample output & additional details]

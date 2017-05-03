@@ -1,4 +1,4 @@
-angular2-seeder
+Angular2 Seeder (build)
 ======
 
 Executing the command `./fiddle.sh "build" "angular2-seeder" "fiddle-0001-EniPuzzle"` produces the following output 

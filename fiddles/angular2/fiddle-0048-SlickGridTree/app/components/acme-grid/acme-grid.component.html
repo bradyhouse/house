@@ -1,0 +1,9 @@
+<div *ngIf="loading" class="acme-grid-loader"></div>
+<search-bar *ngIf="!loading" [filter]="filter"
+            (changed)="onFilterChanged($event)">
+</search-bar>
+
+<div #containerEl>
+  <div #gridEl>
+  </div>
+</div>

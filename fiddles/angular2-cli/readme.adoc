@@ -13,6 +13,9 @@ can be used to extend or test drive this collection. The following table outline
 
 [cols="2,2,5a"]
 |===
+|Build
+|`./fiddle.sh "build" "angular2-cli" "fiddle-0000-Template"`
+|link:build.md[sample output & additional details]
 |Create
 |`./fiddle.sh "create" "angular2-cli" "fiddle-0000-Template"`
 |link:create.md[sample output & additional details]
@@ -22,6 +25,9 @@ can be used to extend or test drive this collection. The following table outline
 |Fork
 |`./fiddle.sh "fork" "angular2-cli" "0000" "fiddle-0001-Fork"`
 |link:fork.md[sample output & additional details]
+|Index
+|`./fiddle.sh "index" "angular2-cli"`
+|link:index.md[sample output & additional details]
 |List
 |`./fiddle.sh "list" "angular2-cli"`
 |link:list.md[sample output & additional details]

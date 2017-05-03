@@ -13,9 +13,11 @@
 # Baseline Ver - See CHANGELOG @ 201703100420
 # ---------------------------------------------------------------------------------------------------|
 
-HOME_ROOT="/Users/e13542";
+HOME_ROOT=$(mapHomePath;);
 GITHUB_PUBLISH_REPO="bradyhouse.github.io";
 GITHUB_ROOT="${HOME_ROOT}/github";
 BUILD_NUM="201704170420";
-BASH_PROFILE="${HOME_ROOT}/.bash_profile"
+BASH_PROFILE="${HOME_ROOT}/.bash_profile";
+
+
 

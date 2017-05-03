@@ -1,0 +1,39 @@
+
+.fill-image-component[min-width~="400px"] {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+.fill-image-component[min-width~="450px"] {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+.fill-image-component[min-width~="500px"]  {
+  width: 40px;
+  height: 40px;
+}
+
+.fill-image-component[min-width~="550px"] {
+  width: 30px;
+  height: 30px;
+}
+
+.fill-image-component[min-width~="600px"]  {
+  width: 20px;
+  height: 20px;
+}
+
+.fill-image-component[min-width~="650px"]  {
+  width: 10px;
+  height: 10px;
+}
+
+.fill-image-component[min-width~="700px"]  {
+  width: 5px;
+  height: 5px;
+}

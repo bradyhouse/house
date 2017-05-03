@@ -1,25 +1,23 @@
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }  from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { ContentComponent } from './content/content.component';
-import { SlickGrid } from './components/ms-slick-grid/index';
-import { TreeGridComponent } from './components/tree-grid/tree-grid.component';
-import { DataService } from './shared/data.service';
+import {NgModule}      from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent}  from './app.component';
+import {ContentComponent} from './content/content.component';
+import {SidebarComponent} from './sidebar/sidebar.component';
+
+import {DataService} from './shared/data.service';
+import {AcmeGridModule} from './components/acme-grid/acme-grid.module';
 
 @NgModule({
-  imports:      [
-      BrowserModule
+  imports: [
+    BrowserModule,
+    AcmeGridModule
   ],
-  declarations: [ AppComponent,
-    HeaderComponent,
+  declarations: [AppComponent,
     SidebarComponent,
-    ContentComponent,
-    SlickGrid,
-    TreeGridComponent
+    ContentComponent
   ],
   providers: [DataService],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import {ContentComponent} from '../app/content/content.component';
-import {SidebarComponent} from '../app/sidebar/sidebar.component';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -10,4 +8,6 @@ import {SidebarComponent} from '../app/sidebar/sidebar.component';
   styleUrls: ['./app/app.component.css']
 })
 export class AppComponent {
+
+
 }

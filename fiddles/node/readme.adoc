@@ -9,14 +9,14 @@ Microsoft Windows, Linux, FreeBSD, NonStop and PCs … Node.js contains a built-
 to allow applications to act as a Web server without software such as Apache HTTP Server or
 IIS (Node.js, Wikipedia).”
 
-In other words, if you are an aspiring web developer trying to decide on a platform (.NET, PHP, 
-Java, Ruby), then Node.js is the writing the wall.  The answer is JavaScript. Pre-_Node.js_, 
-JavaScript was seen as purely a necessary frontend evil.  It could be used to do cool things in 
-the web browser, but it was beholding to the backend for the heavy lifting.  The web server and 
-database tiers were beyond its reach. Node.js breaks this paradigm. Now JavaScript can be used for 
-doing cool things on the backend as well. 
+In other words, if you are an aspiring web developer trying to decide on a platform (.NET, PHP,
+Java, Ruby), then Node.js is the writing the wall.  The answer is JavaScript. Pre-_Node.js_,
+JavaScript was seen as purely a necessary frontend evil.  It could be used to do cool things in
+the web browser, but it was beholding to the backend for the heavy lifting.  The web server and
+database tiers were beyond its reach. Node.js breaks this paradigm. Now JavaScript can be used for
+doing cool things on the backend as well.
 
-This directory is dedicated to exploration of this framework.  The `fiddle.sh` script can be used 
+This directory is dedicated to exploration of this framework.  The `fiddle.sh` script can be used
 to extend or test drive this collection. The following table outlines how.
 
 === fiddle.sh Node Commands
@@ -44,9 +44,16 @@ to extend or test drive this collection. The following table outlines how.
 |===
 
 
-== Kindle Injection
+== Kindle Injections
 
 As a starting point, I will be working through Jim R. Wilson book link:https://pragprog.com/book/jwnode/node-js-the-right-way[Node.js the Right Way].
+
+
+https://images-na.ssl-images-amazon.com/images/I/41VrUOwEEuL.jpg
+
+link:https://github.com/packtPublishing/Building-Bots-with-Nodejs[Building Bots with Node.js]
+
+
 
 
 == Online Resources
@@ -59,3 +66,5 @@ As a starting point, I will be working through Jim R. Wilson book link:https://p
 **  link:http://nodejs.org/api/buffer.html[buffer]
 *   link:http://json.org[json.org]
 *   link:https://github.com/jimbojw/right-way[jimbojw > right-way]
+
+

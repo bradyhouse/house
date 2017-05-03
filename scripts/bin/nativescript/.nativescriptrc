@@ -16,7 +16,7 @@
 export __NODE_VERSION__="6.9.0";
 export __PLATFORM__="ANDROID";
 export __ANDROID_EMULATOR_PROFILE__=fiddler;
-export __ANDROID_EMULATOR_EXE__="/Users/bradyhouse/homebrew/share/android-sdk/emulator/emulator";
+export __ANDROID_EMULATOR_EXE__="${HOME_ROOT}/homebrew/share/android-sdk/emulator/emulator";
 
 # -------------------------------------------------
 # TEMPLATE TYPE SWITCH

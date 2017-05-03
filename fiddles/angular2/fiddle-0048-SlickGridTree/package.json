@@ -25,6 +25,7 @@
     "jquery": "^3.2.1",
     "jquery-ui-dist": "^1.12.1",
     "live-server": "^1.0.0",
+    "mdi": "^1.9.33",
     "rxjs": "^5.1.0",
     "slickgrid": "^2.3.3",
     "slickgrid-kunovsky": "^2.2.0",

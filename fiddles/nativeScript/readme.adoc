@@ -35,7 +35,12 @@ can be used to extend or test drive this collection. The following table outline
 
 === Android
 
-1. Install JDK 8 or a later stable official release.
+==== Mac OS
+
+1. Install homebrew. Navigate to the root scripts directory and run the following command:
+
+    ./fiddle.sh setup mac brew
+
 2. Go to Java SE Downloads and click Download for JDK.
 3. In the Java SE Development Kit section, accept the license agreement and click the download link for Mac OS X.
 4. Wait for the download to complete and install the JDK.
@@ -104,7 +109,7 @@ more nativescript and its CLI, enter the command `tns` => tns.md[tns.md].
 ** link:https://github.com/GettingStartedWithNativeScript/Chapter_6[Chapter 6 Repo]
 * link:https://github.com/cfjedimaster/NativeScriptDemos[Raymond Camden's NativeScript Demos]
 * link:https://docs.nativescript.org/angular/core-concepts/angular-navigation.html[NativeScript / Angular 2 Routing]
-
+* link:http://www.nativescriptsnacks.com/videos/2016/06/13/zoned-callbacks.html[Handle View Updates with zonedCallback]
 
 === Material Design
 
