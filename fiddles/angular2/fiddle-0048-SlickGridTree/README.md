@@ -29,7 +29,7 @@ checkbox tree.  This POC uses, the kunovsky fork the control, [slickgrid-kunovsk
 
 ### Published Version Link
 
-N/A
+[bradyhouse.github.io](http://bradyhouse.github.io/angular2/fiddle-0048-SlickGridTree/#)
 
 
 ### Tags

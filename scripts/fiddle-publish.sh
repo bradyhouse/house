@@ -12,8 +12,8 @@
 # Baseline Ver
 # 04/10/2016 - See CHANGELOG @ 201703100420
 # ---------------------------------------------------------------------------------------------------|
-
-source bin/_env.sh
+source bin/_utils.sh;
+source bin/_env.sh;
 
 _publishPath="${GITHUB_ROOT}/${GITHUB_PUBLISH_REPO}";
 _sourcePath="${GITHUB_ROOT}/house/fiddles";

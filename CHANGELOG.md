@@ -1594,7 +1594,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Angular2** 
 
-  1.  Started [fiddles/angular2/fiddle-0048-SlickGridTree](fiddles/angular2/fiddle-0048-SlickGridTree) ~ [Issue 159](https://github.com/bradyhouse/house/issues/159)
+  1.  Added [fiddles/angular2/fiddle-0048-SlickGridTree](fiddles/angular2/fiddle-0048-SlickGridTree) ~ [Issue 159](https://github.com/bradyhouse/house/issues/159)
   2.  Added [fiddles/angular2/fiddle-0049-TourOfHeroes](fiddles/angular2/fiddle-0049-TourOfHeroes) ~ [Issue 157](https://github.com/bradyhouse/house/issues/157)
   3.  Added [fiddles/angular2/fiddle-0050-CssElementQueries](fiddles/angular2/fiddle-0050-CssElementQueries) ~ [Issue 165](https://github.com/bradyhouse/house/issues/165)
 
