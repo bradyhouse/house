@@ -1605,4 +1605,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2 CLI**
 
   1.  Added [fiddles/angular2-cli/fiddle-0004-TourOfHeroes](fiddles/angular2-cli/fiddle-0004-TourOfHeroes) ~ [Issue 160](https://github.com/bradyhouse/house/issues/160)
-
+  2.  Added [fiddles/angular2-cli/fiddle-0005-SlickGridTree](fiddles/angular2-cli/fiddle-0005-SlickGridTree) ~ [Issue 166](https://github.com/bradyhouse/house/issues/166)

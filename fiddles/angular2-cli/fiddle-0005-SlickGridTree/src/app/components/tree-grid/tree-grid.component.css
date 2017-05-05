@@ -1,0 +1,134 @@
+
+.acme-grid-loader {
+  width: calc(20vw);
+  height: calc(90vh);
+  background: url('../../../assets/img/ajax-loader-small.gif') no-repeat center center;
+}
+
+.acme-grid-container {
+  min-width: 300px;
+  width: calc(20vw);
+}
+
+.acme-grid-container .ui-widget {
+  width: 100%;
+  height: calc(89vh);
+  border: none;
+  padding: 0px;
+}
+
+.acme-grid-container .mdi {
+  vertical-align: middle;
+  cursor: pointer !important;
+}
+
+.acme-grid-container .slick-viewport {
+  background: white;
+  border: none;
+}
+
+.acme-grid-container .slick-pane.slick-pane-header.slick-pane-left {
+  display: none;
+}
+
+.acme-grid-container .slick-cell .slick-cell span,
+.acme-grid-container .slick-cell .slick-cell {
+  font-size: .8rem;
+}
+
+.acme-grid-container .slick-header-column .fa,
+.acme-grid-container .slick-group-toggle {
+  vertical-align: middle;
+  font: normal normal normal 20px/1 'Material Design Icons';
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.acme-grid-container .slick-group-toggle.expanded:before {
+  content: "\F143";
+}
+
+.acme-grid-container .slick-group-toggle.unselected:before {
+  content: "\F131";
+}
+
+.acme-grid-container .slick-group-toggle.selected:before {
+  content: "\F132";
+}
+
+.acme-grid-container .slick-group-toggle.collapsed:before {
+  content: "\F140";
+}
+
+.slick-group-toggle.child-selected:before {
+  content: "\F132";
+}
+
+.slick-group-toggle.child-unselected:before {
+  content: "\F131";
+}
+
+.acme-grid-container .slick-header-column {
+  display: none;
+  float: none;
+  position: absolute;
+}
+
+.acme-grid-container .slick-row.odd {
+  background: white;
+  font-family: "Helvetica";
+  font-size: 1.4rem;
+}
+
+.acme-grid-container .slick-row.even,
+.acme-grid-container .slick-group.odd {
+  background: white;
+  font-family: "Helvetica";
+  font-size: 1.4rem;
+}
+
+.acme-grid-container .slick-group .slick-cell {
+  text-align: left;
+  cursor: pointer !important;
+}
+
+.acme-grid-container .slick-cell {
+  border: none;
+}
+
+.acme-grid-container .slick-cell .slick-group-toggle {
+  cursor: pointer;
+}
+
+.acme-grid-container .slick-cell .bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.acme-grid-container .slick-cell .red-bg {
+  background: #d9534f;
+  color: white;
+}
+
+.acme-grid-container .slick-cell .green-bg {
+  background: #8ce196;
+  color: white;
+}
+
+.acme-grid-container input[type="checkbox"] {
+  margin: 2px 0 0 0;
+  cursor: pointer !important;
+}
+
+.acme-grid-container .slick-header-column input[type="checkbox"] {
+  margin-top: 7px;
+}
+
+.acme-grid-container .slick-cell-checkboxsel {
+  text-align: center;
+}
+

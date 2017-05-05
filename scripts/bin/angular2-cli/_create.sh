@@ -71,7 +71,7 @@ function ngCreate() {
         rm -rf src/index.html || exit 9;
         cp -rf ../template/index.html src/index.html || exit 9;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "src/index.html";) || exit 9;
-        npm install || exit 7;
+        # npm install || exit 7;
 
     )
     # catch

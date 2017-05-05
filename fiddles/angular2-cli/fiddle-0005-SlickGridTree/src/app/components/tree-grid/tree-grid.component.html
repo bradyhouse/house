@@ -1,0 +1,8 @@
+<div *ngIf="loading" class="acme-grid-loader"></div>
+<nav-bar *ngIf="!loading" [options]="navBarOptions"
+            (changed)="onNavBarChanged($event)">
+</nav-bar>
+<div #containerEl>
+  <div #gridEl>
+  </div>
+</div>
