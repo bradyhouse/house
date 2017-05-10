@@ -37,7 +37,7 @@ should allow the user to:
 
 ### Published Version Link
 
-N/A
+[bradyhouse.github.io](http://bradyhouse.github.io/angular2-cli/fiddle-0005-SlickGridTree/#)
 
 
 ### Tags

@@ -3,12 +3,16 @@ import {
   Output,
   Input,
   EventEmitter,
-  OnChanges
+  OnChanges,
+  KeyValueDiffer,
+  KeyValueDiffers,
+  ChangeDetectorRef,
+  DoCheck
 } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {BaseComponent} from '../../base.component';
 import 'rxjs/add/operator/debounceTime';
-import {NavBarOptions, NavBarChanges, NavBarCmd, NavBarEvent} from './interfaces/index';
+import {NavBarOptions, NavBarCmd, NavBarEvent} from './interfaces/index';
 import {NavBarCmds, NavBarEvents} from './enums/index';
 
 @Component({
@@ -16,7 +20,7 @@ import {NavBarCmds, NavBarEvents} from './enums/index';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent extends BaseComponent implements OnChanges {
+export class NavBarComponent extends BaseComponent implements OnChanges, DoCheck {
   @Input() options: NavBarOptions;
   @Output() changed: EventEmitter<NavBarEvent>;
   enabled: boolean;
@@ -24,9 +28,10 @@ export class NavBarComponent extends BaseComponent implements OnChanges {
   commands: NavBarCmd[];
   showMenu: boolean;
 
-  private _changes: NavBarChanges;
+  private _differ: KeyValueDiffer<string, any> = null;
 
-  constructor() {
+  constructor(private _changeDetector: ChangeDetectorRef,
+              private _differs: KeyValueDiffers,) {
     super();
     this.changed = new EventEmitter<NavBarEvent>();
     this.filterControl = new FormControl();
@@ -36,30 +41,80 @@ export class NavBarComponent extends BaseComponent implements OnChanges {
     this.subscriptions.push(this.filterControl.valueChanges
       .debounceTime(300)
       .subscribe(
-        (filter: string) => this.changeFilter(filter)
+        (filter: string) => this._changeFilter(filter)
       ));
 
   }
 
+
   ngOnChanges(changes: any) {
-
-    if (changes.options && changes.options.currentValue) {
-      this._changes = this.parseOptionsChange(changes.options.previousValue, changes.options.currentValue);
-      if (this._changes.isDisabled) {
-        this.enabled = !this.options.isDisabled;
-      }
-
-      if (this._changes.filter) {
-        this.filterControl.setValue(this.options.filter, {});
-      }
-
-      if (this._changes.commands) {
-        this.initCommands();
+    if ('options' in changes) {
+      const value = changes['options'].currentValue;
+      if (!this._differ && value) {
+        try {
+          this._differ = this._differs.find(value).create(this._changeDetector);
+        } catch (e) {
+          throw new Error(
+            `Cannot find a differ supporting object '${value}'`);
+        }
       }
     }
   }
 
-  initCommands() {
+
+  ngDoCheck(): void {
+    if (this._differ) {
+      const changes: any = this._differ.diff(this.options);
+      if (changes) this._applyChanges(changes);
+    }
+  }
+
+  onClearClick() {
+    this.filterControl.setValue('', {});
+  }
+
+  onCommandClick(command: NavBarCmd) {
+    let event: NavBarEvent = {
+      event: NavBarEvents.menu,
+      cmd: command.cmd
+    };
+    this.changed.emit(event);
+  }
+
+  private _applyChanges(changes: any): void {
+    if (changes) {
+      changes.forEachItem((item: any) => {
+        switch (item.key) {
+          case 'isDisabled':
+            this.enabled = !this.options.isDisabled;
+            break;
+          case 'filter':
+            if (this.options.filter) {
+              this.filterControl.setValue(this.options.filter, {});
+            }
+            break;
+          case 'commands':
+            if (this.options.commands) {
+              this._changeCommands();
+            }
+            break;
+        }
+      })
+    }
+
+  }
+
+  private _changeFilter(value: string) {
+    let event: NavBarEvent = {
+      event: NavBarEvents.filter,
+      data: value
+    };
+
+    this.options.filter = value;
+    this.changed.emit(event);
+  }
+
+  private _changeCommands() {
     let cmdItems: NavBarCmd[] = [];
 
     this.options.commands.forEach((cmd: NavBarCmds) => {
@@ -113,52 +168,6 @@ export class NavBarComponent extends BaseComponent implements OnChanges {
       this.commands = cmdItems;
     }
 
-  }
-
-  onClearClick() {
-    this.filterControl.setValue('', {});
-  }
-
-  onCommandClick(command: NavBarCmd) {
-    let event: NavBarEvent = {
-      event: NavBarEvents.menu,
-      cmd: command.cmd
-    };
-    this.changed.emit(event);
-  }
-
-  private parseOptionsChange(previousOptions: NavBarOptions,
-                             currentOptions: NavBarOptions): NavBarChanges {
-
-    if (previousOptions && currentOptions) {
-      return {
-        isDisabled: previousOptions.isDisabled !== currentOptions.isDisabled,
-        filter: previousOptions.filter !== currentOptions.filter,
-        commands: JSON.stringify(previousOptions.commands) !== JSON.stringify(currentOptions.commands)
-      };
-    } else if (currentOptions) {
-      return {
-        isDisabled: currentOptions.hasOwnProperty('isDisabled'),
-        filter: currentOptions.hasOwnProperty('filter'),
-        commands: currentOptions.hasOwnProperty('commands')
-      }
-    } else {
-      return {
-        isDisabled: false,
-        filter: false,
-        commands: false
-      };
-    }
-  }
-
-  private changeFilter(value: string) {
-    let event: NavBarEvent = {
-      event: NavBarEvents.filter,
-      data: value
-    };
-
-    this.options.filter = value;
-    this.changed.emit(event);
   }
 
 }

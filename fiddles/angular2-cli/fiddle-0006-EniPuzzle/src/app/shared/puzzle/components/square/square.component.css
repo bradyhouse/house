@@ -1,0 +1,60 @@
+.col-a {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: yellow;
+}
+
+.col-b {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: orange;
+}
+
+.col-c {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: red;
+}
+
+.col-d {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: darkred;
+}
+
+.col-e {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: blueviolet;
+}
+
+.col-f {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: blue;
+}
+
+.col-g {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: turquoise;
+}
+
+.col-h {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: green;
+}
+
+.empty {
+  width: calc(8vw);
+  height: calc(8vh);
+  background-color: white;
+  border-radius: none;
+  box-shadow: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+

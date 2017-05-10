@@ -1,0 +1,6 @@
+<h1 *nodes="let row of rows; let i = index; trackBy: trackByFn">
+  {{row.value}}
+</h1>
+
+<input type="button" (click)="onAddClick($event)" value="Add">
+<input type="button" (click)="onClearClick($event)" value="Clear">

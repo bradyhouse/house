@@ -1,9 +1,11 @@
 import {
-  ElementRef
+  ElementRef,
+  Injectable
 } from '@angular/core';
 
 declare let ResizeSensor: any, ElementQueries: any, $: any;
 
+@Injectable()
 export class ResizeService {
 
   private _targetEl: ElementRef;

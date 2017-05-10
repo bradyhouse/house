@@ -1,4 +1,4 @@
 export enum TreeGridEvents {
   reload,
-  nodesSelected
+  nodeChange
 }

@@ -22,7 +22,7 @@
 function nativeScriptRunAndroid() {
   groupLog "nativeScriptRunAndroid";
   nativescript build android;
-  nativescript livesync --watch;
+  tns run android;
 }
 
 function npmRunStartAndroid() {

@@ -1591,6 +1591,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   2.  Added [fiddles/node/fiddle-0023-BrowserSync](fiddles/node/fiddle-0023-BrowserSync) ~ [Issue 155](https://github.com/bradyhouse/house/issues/155)
   3.  Added [fiddles/node/fiddle-0024-Browserify](fiddles/node/fiddle-0024-Browserify) ~ [Issue 156](https://github.com/bradyhouse/house/issues/156)
   4.  Started [fiddles/node/fiddle-0025-CouchDbCli](fiddles/node/fiddle-0025-CouchDbCli) ~ [Issue 161](https://github.com/bradyhouse/house/issues/161)
+  5.  Added [fiddles/node/fiddle-0026-Sqlite3](fiddles/node/fiddle-0026-Sqlite3)
 
 * **Angular2** 
 
@@ -1606,3 +1607,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/angular2-cli/fiddle-0004-TourOfHeroes](fiddles/angular2-cli/fiddle-0004-TourOfHeroes) ~ [Issue 160](https://github.com/bradyhouse/house/issues/160)
   2.  Added [fiddles/angular2-cli/fiddle-0005-SlickGridTree](fiddles/angular2-cli/fiddle-0005-SlickGridTree) ~ [Issue 166](https://github.com/bradyhouse/house/issues/166)
+  3.  Started [fiddles/angular2-cli/fiddle-0006-EniPuzzle](fiddles/angular2-cli/fiddle-0006-EniPuzzle) ~ [Issue 168](https://github.com/bradyhouse/house/issues/168)
+  4.  Added [fiddles/angular2-cli/fiddle-0007-StructuralDirective](fiddles/angular2-cli/fiddle-0007-StructuralDirective) ~ [Issue 169](https://github.com/bradyhouse/house/issues/169)

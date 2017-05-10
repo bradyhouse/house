@@ -7,7 +7,11 @@ import {
   ElementRef,
   ViewChild,
   ViewEncapsulation,
-  AfterViewInit
+  AfterViewInit,
+  KeyValueDiffer,
+  KeyValueDiffers,
+  ChangeDetectorRef,
+  DoCheck
 } from '@angular/core';
 
 import {
@@ -27,8 +31,7 @@ import {
 } from './nav-bar/interfaces/index';
 
 import {
-  Options,
-  OptionsChange
+  Options
 } from './interfaces/index';
 
 
@@ -46,7 +49,8 @@ declare let Slick: any;
     NodeService
   ]
 })
-export class TreeGridComponent implements OnChanges, AfterViewInit {
+export class TreeGridComponent implements OnChanges, AfterViewInit, DoCheck {
+
   @Output() events: EventEmitter<any>;
   @Input() options: Options;
   @ViewChild('containerEl') containerEl: ElementRef;
@@ -56,14 +60,17 @@ export class TreeGridComponent implements OnChanges, AfterViewInit {
   loading: boolean;
   navBarOptions: NavBarOptions;
 
-  private _changes: OptionsChange;
-  private _dataView: any;
+  private _differ: KeyValueDiffer<string, any> = null;
   private _grid: any;
   private _gridOptions: any;
 
-  constructor(private _resizeService: ResizeService,
-              private _eventService: EventsService,
-              private _nodesService: NodeService) {
+  constructor(
+    private _changeDetector: ChangeDetectorRef,
+    private _differs: KeyValueDiffers,
+    private _resizeService: ResizeService,
+    private _eventService: EventsService,
+    private _nodesService: NodeService
+  ) {
     this.loading = true;
     this.filter = null;
     this.events = new EventEmitter();
@@ -83,145 +90,114 @@ export class TreeGridComponent implements OnChanges, AfterViewInit {
         NavBarCmds.ShowSelected
       ]
     };
-
   }
 
   ngOnChanges(changes: any): void {
-    if (changes.options && changes.options.currentValue) {
-      this._changes = this.parseOptionsChange(changes.options.previousValue, changes.options.currentValue);
-
-      if (this._changes.menuOptions) {
-        this.navBarOptions.commands = this.options.menuOptions;
-      }
-
-      if (this._changes.nodes) {
-        this._nodesService.nodes = this._nodesService.transform(
-          this.options.nodes, []
-        );
-        if (!this._grid) {
-          this.renderDOM();
-          this.initDOMServices();
-        } else {
-          this.updateDOM();
+    if ('options' in changes) {
+      const value = changes['options'].currentValue;
+      if (!this._differ && value) {
+        try {
+          this._differ = this._differs.find(value).create(this._changeDetector);
+        } catch (e) {
+          throw new Error(
+            `Cannot find a differ supporting object '${value}'`);
         }
       }
+    }
+  }
 
+  ngDoCheck(): void {
+    if (this._differ) {
+      const changes: any = this._differ.diff(this.options);
+      if (changes) this._applyChanges(changes);
     }
   }
 
   ngAfterViewInit(): void {
-    this.containerEl.nativeElement.setAttribute('class', 'acme-grid-container');
+    this.containerEl.nativeElement.setAttribute('class', 'tree-grid-container');
   }
 
   onNavBarChanged(event: NavBarEvent) {
     switch(event.event) {
       case NavBarEvents.filter:
         this.filter = event.data;
-        this._dataView.refresh();
+        this._nodesService.dataView.refresh();
         break;
       case NavBarEvents.menu:
         switch(event.cmd) {
           case NavBarCmds.ShowSelected:
             this.filter = this.navBarOptions.filter = null;
             this.filter = this.navBarOptions.filter = 'selected';
-            this._dataView.refresh();
+            this._nodesService.dataView.refresh();
             break;
           case NavBarCmds.ClearSelected:
             this.filter = this.navBarOptions.filter = null;
-            this._eventService.clearSelectedRows();
-            this._dataView.refresh();
+            this._nodesService.clearAll();
             break;
           case NavBarCmds.ExpandAll:
-            this._eventService.collapsedRows = [];
-            this._nodesService.expandAll(this._dataView);
-            this._dataView.refresh();
+            this._nodesService.expandAll();
             break;
           case NavBarCmds.CollapseAll:
-            this._eventService.collapsedRows = this._nodesService.collapseAll(this._dataView);
-            this._dataView.refresh();
+            this._nodesService.collapseAll();
           case NavBarCmds.Reload:
             break;
           case NavBarCmds.SelectAll:
-            this._eventService.selectedRows = this._nodesService.selectAll(this._dataView);
-            this._dataView.refresh();
+            this._nodesService.selectAll();
             break;
         }
         break;
     }
   }
 
-  private parseOptionsChange(previousOptions: Options,
-                             currentOptions: Options): OptionsChange {
-
-    if (previousOptions && currentOptions) {
-      return {
-        nodes: JSON.stringify(previousOptions.nodes) !== JSON.stringify(currentOptions.nodes),
-        menuOptions: JSON.stringify(previousOptions.menuOptions) !== JSON.stringify(currentOptions.menuOptions),
-        filter: JSON.stringify(previousOptions.filter) !== JSON.stringify(currentOptions.filter)
-      };
+  private _applyChanges(changes: any): void {
+    if (changes) {
+      changes.forEachItem((item:any) => {
+        switch(item.key) {
+          case 'nodes':
+            if (this.options.nodes && this.options.nodes.length) {
+              this._nodesService.nodes = this._nodesService.transform(
+                this.options.nodes, []
+              );
+              if (!this._grid) {
+                this._renderDOM();
+                this._initDOMServices();
+              } else {
+                this._updateDOM();
+              }
+            }
+            break;
+          case 'menuOptions':
+            if (this.options.menuOptions) {
+              this.navBarOptions.commands = this.options.menuOptions;
+            }
+            break;
+        }
+      })
     }
 
-    return {
-      nodes: false,
-      menuOptions: false,
-      filter: false
-    };
   }
 
-  private renderDOM(): void {
-    this._dataView = new Slick.Data.DataView();
-    this._dataView.inlineFilters = true;
-    this._dataView.setItems(this._nodesService.nodes);
-    this._dataView.setFilter((node: any) => {
-      return this.dataViewFilter(node);
+  private _renderDOM(): void {
+    this._nodesService.dataView = new Slick.Data.DataView();
+    this._nodesService.dataView.inlineFilters = true;
+    this._nodesService.dataView.setItems(this._nodesService.nodes);
+    this._nodesService.dataView.setFilter((node: any) => {
+      return this._nodesService.filter(node, this.filter);
     });
-    this._grid = new Slick.Grid(this.gridEl.nativeElement, this._dataView, this._nodesService.schema, this._gridOptions);
+    this._grid = new Slick.Grid(this.gridEl.nativeElement, this._nodesService.dataView, this._nodesService.schema, this._gridOptions);
     this.loading = false;
-    window.setTimeout(() => {
-      this._resizeService.resize();
-    }, 66);
+
   }
 
-  private initDOMServices(): void {
+  private _initDOMServices(): void {
     this._resizeService.init(this.containerEl.nativeElement, this._grid);
-    this._eventService.init(this._grid, this._dataView, this.events);
+    this._eventService.init(this._grid, this._nodesService.dataView, this.events);
   }
 
-  private updateDOM(): void {
-    if (this._changes.nodes) {
-      this._dataView.setItems(this._nodesService.nodes);
+  private _updateDOM(): void {
+    if (this._differ) {
+      this._nodesService.dataView.setItems(this._nodesService.nodes);
     }
-  }
-
-  private dataViewFilter(node: any): boolean {
-    if (node.parent >= 0) {
-      var parent = this._nodesService.nodes[node.parent];
-      while (parent) {
-        if (!parent.expanded) {
-          return false;
-        }
-        parent = this._nodesService.nodes[parent.parent];
-      }
-    }
-    return this.searchBarFilter(node);
-  }
-
-  private searchBarFilter(node: any): boolean {
-    if (this.filter) {
-      if (this.filter.toLowerCase().indexOf('selected')!== -1) {
-        if (this._eventService.selectedRows.indexOf(node.id) !== -1) {
-          return true;
-        }
-      }
-      if (node['title'].toLowerCase() === this.filter.toLowerCase()) {
-        return true;
-      }
-      if (node['title'].toLowerCase().indexOf(this.filter.toLowerCase()) !== -1) {
-        return true;
-      }
-      return false;
-    }
-    return true;
   }
 
 }

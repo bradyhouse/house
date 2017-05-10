@@ -34,8 +34,8 @@
 
 this=$0;
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
-source bin/_env.sh;
 source bin/_utils.sh;
+source bin/_env.sh;
 source bin/_types.sh;
 
 

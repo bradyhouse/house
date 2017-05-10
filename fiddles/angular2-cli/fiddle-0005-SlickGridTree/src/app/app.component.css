@@ -45,7 +45,7 @@
 
 .west {
   padding: 0px;
-  min-width: 300px;
+  min-width: 333px;
   max-width: calc(20vw);
   justify-content: flex-start;
   text-align: left;

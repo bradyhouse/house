@@ -1,4 +1,16 @@
 .nav-bar-component {
   padding-bottom: 0px;
-  min-width: 300px;
+}
+.form-control {
+  width: calc(80%);
+  margin-left: 0px;
+}
+
+.navbar-left {
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+nav {
+  padding-bottom: 0px;
 }

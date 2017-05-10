@@ -1,0 +1,33 @@
+
+
+<!--<Button row="0"
+        col="0"
+        text="&lt"
+        class="btn col-shift"
+        (tap)="onLeftClick()"></Button>
+<pz-square *ngFor="let square of squares"
+           [options]="square"
+           (tap)="onSquareClick(square)"
+           (swipe)="onSquareClick(square)">
+</pz-square>
+<Button row="8"
+        col="9"
+        text="&lt"
+        class="btn col-shift"
+        (tap)="onRightClick()"></Button>-->
+
+<td>
+  <input type="button" value="<" (click)="onLeftClick()" />
+</td>
+<td *ngFor="let square of squares">
+  <pz-square [options]="square"
+             (click)="onSquareClick(square)">
+  </pz-square>
+</td>
+<td>
+  <input type="button" value=">" (click)="onRightClick()" />
+</td>
+
+
+
+

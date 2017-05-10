@@ -1,16 +1,14 @@
 <nav *ngIf="enabled" class="nav-bar-component navbar navbar-default">
   <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav">
       <li>
         <div class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" [formControl]="filterControl" placeholder="Enter Search Criteria">
-          </div>
+          <input type="text" class="form-control" [formControl]="filterControl" placeholder="Enter Search Criteria">
           <button (click)="onClearClick()" class="btn btn-default"><i class="mdi mdi-close"></i></button>
         </div>
       </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="mdi mdi-dots-vertical"></i></a>
+        <a href="#" class="dropdown-toggle navbar-right" data-toggle="dropdown" role="button" aria-expanded="false"><i class="mdi mdi-dots-vertical"></i></a>
         <ul class="dropdown-menu" role="menu">
           <li *ngFor="let command of commands"
               (click)="onCommandClick(command)">
