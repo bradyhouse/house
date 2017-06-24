@@ -45,8 +45,9 @@ export class SidebarComponent extends Subscriptions {
   }
 
   onGridEvent(args: any) {
-    console.log('sidebar > onGridEvent');
-    this._stateService.selectedNodes = args.data;
+    if (args.type === 2) {
+      this._stateService.selectedNodes = args.data;
+    }
   }
 
   onTreeCmd(cmd: TreeGridCmds) {

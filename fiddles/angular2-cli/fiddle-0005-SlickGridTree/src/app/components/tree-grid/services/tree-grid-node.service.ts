@@ -12,6 +12,7 @@ export class TreeGridNodeService {
 
   selectedNodes: TreeGridNodeInterface[];
   selectedNodesChange$: Observable<Array<any>>;
+
   dataView: any;
   nodes: TreeGridNodeInterface[];
   collapsedNodeGuids: string[];
@@ -52,6 +53,7 @@ export class TreeGridNodeService {
     this._keywords = ['is'];
     this.dataView = null;
 
+
     this.selectedNodesChange$ = new Observable<Array<any>>(
       (observer: any) => this._selectedNodesObserver = observer
     ).share();
@@ -70,27 +72,10 @@ export class TreeGridNodeService {
       flatNodes = this._flattenNodes(node, flatNodes, -1, 0, true);
     });
 
-   treeGridNodes = flatNodes.map((node: TreeGridNodeInterface, index: number) => {
+    treeGridNodes = flatNodes.map((node: TreeGridNodeInterface, index: number) => {
       node = Object.assign({}, node);
       node.order = index;
-      if (ids[node.order]) {
-        node.order += index;
-      }
       ids[node.order] = true;
-      if (!node.hasOwnProperty('expanded')) {
-        node.expanded = false;
-      }
-
-      if (!node.hasOwnProperty('guid')) {
-        node.guid = SharedUtils.guid();
-      }
-
-      if (!node.hasOwnProperty('selected')) {
-        node.selected = false;
-      }
-      if (node.hasOwnProperty('children') && node.children.length === 0 && this.childlessNodeGuids.indexOf(node.guid) === -1) {
-        this.childlessNodeGuids.push(node.guid);
-      }
       return node;
     });
 
@@ -112,12 +97,16 @@ export class TreeGridNodeService {
       parentGuid: string = parentNode ? parentNode.guid : null;
 
     if (parentNode) {
-      children.forEach((child: any, childIndex: number) => {
-        childNodes.push(this._generateTreeGridNode(child, childIndex, nodeId, 1, parentGuid));
-        index++;
-      });
-      parentNode.children = childNodes;
-      parentNode.expanded = true;
+      if (children && children.length) {
+        children.forEach((child: any, childIndex: number) => {
+          childNodes.push(this._generateTreeGridNode(child, childIndex, nodeId, 1, parentGuid));
+          index++;
+        });
+        parentNode.children = childNodes;
+        parentNode.expanded = true;
+      } else {
+        parentNode.barren = true;
+      }
       top.push(parentNode);
       top = top.concat(childNodes);
       bottom.forEach((currentNode: any) => {
@@ -138,15 +127,19 @@ export class TreeGridNodeService {
   }
 
   expandAll(): void {
-    this.nodes.forEach((node: TreeGridNodeInterface) => {
-      let dataNode: any = this.dataView ? this.dataView.getItemById(node.order) : this._findNodeByOrderId(node.order);
-      if (dataNode && dataNode.children && dataNode.children.length > 0) {
-        dataNode.expanded = true;
-        if (this.dataView) {
-          this.dataView.updateItem(node.order, dataNode);
+    let collapsedGuids = this.collapsedNodeGuids;
+
+    if (collapsedGuids && collapsedGuids.length) {
+      collapsedGuids.forEach((guid: string) => {
+        let node: TreeGridNodeInterface = this._findNodeByGuid(guid);
+        if (node) {
+          node.expanded = true;
+          if (this.dataView) {
+            this.dataView.updateItem(node.order, node);
+          }
         }
-      }
-    });
+      });
+    }
     this.collapsedNodeGuids = [];
     if (this.dataView) {
       this.dataView.refresh();
@@ -156,7 +149,7 @@ export class TreeGridNodeService {
   collapseAll(): void {
     let collapsedNodes: any[] = [];
     this.nodes.forEach((node: TreeGridNodeInterface) => {
-      let dataNode: any = this.dataView ?  this.dataView.getItemById(node.order) : this._findNodeByOrderId(node.order);
+      let dataNode: any = this.dataView ? this.dataView.getItemById(node.order) : this._findNodeByOrderId(node.order);
       if (dataNode && dataNode.children && dataNode.children.length > 0) {
         if (!collapsedNodes[node.order]) {
           collapsedNodes.push(node.order);
@@ -212,9 +205,6 @@ export class TreeGridNodeService {
                 }
               }
             });
-            if (this.collapsedNodeGuids[node.guid]) {
-              this.collapsedNodeGuids.splice(this.collapsedNodeGuids.indexOf(node.guid), 1);
-            }
           }
           if (this.dataView) {
             this.dataView.updateItem(node.order, node);
@@ -231,7 +221,7 @@ export class TreeGridNodeService {
   isSiblingSelected(node: any, skipGuid: string): boolean {
     let selectedChildren: any[] = node.children && node.children.length > 0 ?
       node.children.filter((child: any) => {
-        let childRow = this.dataView? this.dataView.getItemById(child.order) : this._findNodeByOrderId(child.order);
+        let childRow = this.dataView ? this.dataView.getItemById(child.order) : this._findNodeByOrderId(child.order);
         return childRow && childRow.guid !== skipGuid && childRow.selected;
       }) : null;
     return selectedChildren && selectedChildren.length ? true : false;
@@ -263,7 +253,7 @@ export class TreeGridNodeService {
 
   }
 
-  updateNode(node: any, selected: boolean, expanded: boolean = false, isChild: boolean = false): any {
+  updateNode(node: any, selected: boolean, expanded: boolean = false, isChild: boolean = false): boolean {
     let selectedNodeGuids: string[] = this.selectedNodeGuids,
       parentNode: any = null;
 
@@ -304,7 +294,7 @@ export class TreeGridNodeService {
         }
       }
 
-      if (node.selectable) {
+      if (node.hasOwnProperty('selectable') && node.selectable) {
         node.selected = selected;
       }
 
@@ -334,32 +324,37 @@ export class TreeGridNodeService {
       }
 
       if (parentNode) {
-        this.updateNode(parentNode, parentNode.selected, parentNode.expanded, true);
+        return this.updateNode(parentNode, parentNode.selected, parentNode.expanded, true);
       }
-
     }
+    return true;
+
+
   }
 
-  updateNodeChildren(node: any, selected: boolean): void {
-    if (node.children && node.children.length) {
-      node.children.forEach((child: any) => {
-        this.updateNode(child, selected);
-      });
-    }
-    if (selected && !node.expanded) {
-      node.expanded = true;
-      if (this.dataView) {
-        this.dataView.updateItem(node.order, node);
+  updateNodeChildren(node: any, selected: boolean): boolean {
+    if (node) {
+      if (node.children && node.children.length) {
+        node.children.forEach((child: any) => {
+          this.updateNode(child, selected);
+        });
       }
-    } else if (!selected && node.expanded) {
-      node.expanded = false;
-      if (this.dataView) {
-        this.dataView.updateItem(node.order, node);
+      if (selected && !node.expanded) {
+        node.expanded = true;
+        if (this.dataView) {
+          this.dataView.updateItem(node.order, node);
+        }
+      } else if (!selected && node.expanded) {
+        node.expanded = false;
+        if (this.dataView) {
+          this.dataView.updateItem(node.order, node);
+        }
       }
     }
+    return true;
   }
 
-  private _findNodeByGuid(guid: string) {
+  private _findNodeByGuid(guid: string): TreeGridNodeInterface {
     let filteredNodes: TreeGridNodeInterface[] = guid !== null ? this.nodes.filter((node: TreeGridNodeInterface) => {
       return node.guid === guid ? true : false;
     }) : null;
@@ -369,7 +364,7 @@ export class TreeGridNodeService {
     return null;
   }
 
-  private _findNodeByOrderId(orderId: number) {
+  private _findNodeByOrderId(orderId: number): TreeGridNodeInterface {
     let filteredNodes: TreeGridNodeInterface[] = orderId !== null ? this.nodes.filter((node: TreeGridNodeInterface) => {
       return node.order === orderId ? true : false;
     }) : null;
@@ -416,6 +411,9 @@ export class TreeGridNodeService {
         formattedValue += '<a class="pull-right see-more select-all">' +
           '<i class="slick-group-toggle tree-toggle select-children"></i>&nbsp;</a>';
       }
+    } else if (data.barren) {
+      formattedValue = indent + '<span class="slick-group-toggle tree-toggle childless"></span>' +
+        this._formatChildNode(value, data);
     } else {
       formattedValue = indent + '<span class="slick-group-toggle tree-toggle childless"></span>' +
         this._formatChildNode(value, data);
@@ -466,7 +464,7 @@ export class TreeGridNodeService {
 
   private _initSelectedNodeGuids(nodes: TreeGridNodeInterface[]): void {
 
-    let selectedGridNodes:TreeGridNodeInterface[] = nodes.filter((treeGridNode: TreeGridNodeInterface) => {
+    let selectedGridNodes: TreeGridNodeInterface[] = nodes.filter((treeGridNode: TreeGridNodeInterface) => {
       return treeGridNode.selectable && treeGridNode.selected ? true : false;
     });
 
@@ -643,7 +641,7 @@ export class TreeGridNodeService {
             this._flattenNodes(child, nodes, parent, indent);
           }
         });
-        if(!node.expanded && this.collapsedNodeGuids.indexOf(node.guid) === -1) {
+        if (!node.expanded && this.collapsedNodeGuids.indexOf(node.guid) === -1) {
           this.collapsedNodeGuids.push(node.guid);
         }
       }
@@ -684,11 +682,6 @@ export class TreeGridNodeService {
         } else {
           treeGridNode.selected = false;
         }
-      }
-
-      if (node.title === '06 - SOYBEAN MEAL FUT') {
-        console.log(node);
-        console.log(treeGridNode);
       }
 
       if (node.hasOwnProperty('children')) {

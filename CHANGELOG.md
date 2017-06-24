@@ -30,7 +30,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     * This fiddle is a response to fiddle-20150401-BufferedColumnFiltering. It illustrates how to enable column filter on a grid panel bound to a vanilla data store--i.e. Ext.data.Store.  It combines the structure from fiddle-20150331-ExtJS4ColumnFiltering with the json data file (781 records) from fiddle-20150330-BufferedDataGrid using a DataStore.  Additionally, its an example of using the "bufferedrender" plugin as per the forum post ~ http://www.sencha.com/forum/showthread.php?259314.
 * Added **fiddles/extjs/fiddle-20150402-CustomColumnHeaderMenu** ~ (Under Construction)
     * Fiddle exploring how to override the default menu exposed by the column collection of the Ext.grid.Panel.
-* Added **fiddles/three/fiddle-0021-Parabola**
     * Fiddle used to rewrite the fiddles/three/template/app.js template using a global window.app variable.
 * Added **fiddles/extjs/fiddle-20150403-SpreadSheetSelection** ~ [Sencha Fiddle](https://fiddle.sencha.com/#fiddle/kqj)
     * Fiddle exploring how to leverage the spreadsheet selection model and clipboard plugin introduced in 5.1.
@@ -371,7 +370,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/svg/fiddle-0019-ClockFace](fiddles/svg/fiddle-0019-ClockFace)
 * Added [fiddles/bash/fiddle-0020-GitBranchCommand](fiddles/bash/fiddle-0020-GitBranchCommand)
 * Added [fiddles/jquery/fiddle-0025-ScrollableDiv](fiddles/jquery/fiddle-0025-ScrollableDiv)
-* Started [fiddles/svg/fiddle-0022-Spirograph](fiddles/svg/fiddle-0022-Spirograph)
 * Added [fiddles/bash/fiddle-0021-InstallPhantomJs](fiddles/bash/fiddle-0021-InstallPhantomJs)
 * Added [fiddles/bash/fiddle-0022-OSVersion](fiddles/bash/fiddle-0022-OSVersion)
 * Added [fiddles/jquery/fiddle-0026-ScrollableDatagrid](fiddles/jquery/fiddle-0026-ScrollableDatagrid)
@@ -522,7 +520,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/nativeScript](fiddles/nativeScript)
 * Added [fiddles/jquery/fiddle-0035-JqueryCSV](fiddles/jquery/fiddle-0035-JqueryCSV)
 * Added [fiddles/angular/fiddle-0001-SimpleUIGrid](fiddles/angular/fiddle-0001-SimpleUIGrid)
-* Started [fiddles/svg/fiddle-0025-15Puzzle](fiddles/svg/fiddle-0025-15Puzzle)
 * Added [fiddles/three/fiddle-0005-EarthMoon](fiddles/three/fiddle-0005-EarthMoon)
 * Added [fiddles/jquery/fiddle-0036-NavBar](fiddles/jquery/fiddle-0036-NavBar)
 * Added [fiddles/nativeScript/fiddle-0001-SampleGroceries](fiddles/nativeScript/fiddle-0001-SampleGroceries)
@@ -928,7 +925,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added dependency (submodule) to [angular-cli](https://github.com/angular/angular-cli)
 
 * **SVG**
-    1.  Started (~ restored) [fiddles/svg/fiddle-0022-Spirograph](fiddles/svg/fiddle-0022-Spirograph)
     2.  Started (~ restored) [fiddles/svg/fiddle-0023-Menubar](fiddles/svg/fiddle-0023-Menubar)
 
 * **Meteor**
@@ -1580,7 +1576,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/angular2-seeder/fiddle-0001-EniPuzzle](fiddles/angular2-seeder/fiddle-0001-EniPuzzle) ~ [Issue 151](https://github.com/bradyhouse/house/issues/151)
 
 * **Three.js**
-    1.  Started [fiddles/three/fiddle-0023-EniPuzzle](fiddles/three/fiddle-0023-EniPuzzle) ~ [Issue 153](https://github.com/bradyhouse/house/issues/153)
 
 
 ### 201704170420

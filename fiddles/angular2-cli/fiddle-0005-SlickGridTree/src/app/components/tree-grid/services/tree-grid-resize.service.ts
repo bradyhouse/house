@@ -8,10 +8,14 @@ export class TreeGridResizeService {
   private _resizeTimeout: any;
 
   init(element: ElementRef, grid: any, table: ElementRef) {
-    this.resize(grid, table);
-    this._resizeSensor = new ResizeSensor(element, () => {
+    if (element && grid && table) {
       this.resize(grid, table);
-    });
+      if (ResizeSensor) {
+        this._resizeSensor = new ResizeSensor(element, () => {
+          this.resize(grid, table);
+        });
+      }
+    }
   }
 
   resize(grid: any, table: ElementRef) {

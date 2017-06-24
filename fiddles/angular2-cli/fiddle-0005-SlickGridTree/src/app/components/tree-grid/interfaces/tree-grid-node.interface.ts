@@ -42,6 +42,14 @@ export interface TreeGridNodeInterface {
   parent?: number;
 
   /**
+   * Flag used to prevent subsequent child injection requests.  If a node is barren, then it means
+   * an AJAX call was already made to populate its sub-node (aka children) collection.  However, nothing
+   * was returned--i.e. there are no children; it is "barren".
+   */
+  barren?: boolean;
+
+
+  /**
    * Optional field used to store the guid of the node's parent.  This value is assigned
    * by the node load (and/or append) process.
    */

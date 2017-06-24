@@ -14,6 +14,7 @@ import {
   DoCheck
 } from '@angular/core';
 
+
 import {Subscriptions} from '../shared/subscriptions';
 
 import {
@@ -21,10 +22,6 @@ import {
   TreeGridResizeService,
   TreeGridNodeService
 } from './services/index';
-
-import {
-  FilterBarInterface
-} from './filter-bar/index';
 
 import {
   TreeGridInterface,
@@ -58,16 +55,15 @@ export class TreeGridComponent extends Subscriptions implements OnChanges, After
   @ViewChild('gridEl') gridEl: ElementRef;
 
   filter: string;
-  width: number;
   height: number;
   loading: boolean;
-  searchBarOptions: FilterBarInterface;
+  isDataValid: boolean;
 
   private _differ: KeyValueDiffer<string, any> = null;
   private _grid: any;
   private _gridOptions: any;
-  private _renderTimeout:any;
-  private _isUpdate:boolean;
+  private _renderTimeout: any;
+  private _isUpdate: boolean;
 
   constructor(private _changeDetector: ChangeDetectorRef,
               private _differs: KeyValueDiffers,
@@ -78,34 +74,35 @@ export class TreeGridComponent extends Subscriptions implements OnChanges, After
     this.loading = true;
     this.filter = null;
     this.events = new EventEmitter();
-    this.width = 0;
     this.height = 0;
     this._gridOptions = {
       nodeHeight: 27,
       headerRowHeight: 0,
       topPanelHeight: 0,
+      enableColumnReorder: false,
       showHeaderRow: false,
       editable: false
     };
-    this.searchBarOptions = {
-    };
+    this.isDataValid = false;
+
 
     this.subscriptions.push(_nodesService.selectedNodesChange$
       .subscribe(
         (nodes: any) => this.onSelectedNodesChange(nodes)
       ));
+
+    this.subscriptions.push(_eventService.dataViewRowsChange$
+      .subscribe(
+        () => this.onDataViewRowsChange()
+      ));
+
   }
 
   ngOnChanges(changes: any): void {
     if ('options' in changes) {
       const value = changes['options'].currentValue;
       if (!this._differ && value) {
-        try {
-          this._differ = this._differs.find(value).create(this._changeDetector);
-        } catch (e) {
-          throw new Error(
-            `Cannot find a differ supporting object '${value}'`);
-        }
+        this._differ = this._differs.find(value).create(this._changeDetector);
       }
     }
   }
@@ -128,50 +125,98 @@ export class TreeGridComponent extends Subscriptions implements OnChanges, After
     this.containerEl.nativeElement.setAttribute('class', 'tree-grid-container');
   }
 
-  onSearchBarChanged(event: any) {
-    switch (event.type) {
-      case 'filter':
-        this.filter = event.data;
+  onFilterChanged(filter: string): void {
+    if (this.filter !== filter) {
+      this.filter = filter;
+      if (this._nodesService.dataView) {
         this._nodesService.dataView.refresh();
-        break;
+      }
     }
   }
 
-  onSelectedNodesChange(nodes: any) {
+  onDataViewRowsChange(): void {
+    this._resize();
+  }
+
+  onWindowResize(): void {
+    this._resize();
+  }
+
+  onSelectedNodesChange(nodes: any): void {
     this.events.emit({
       type: TreeGridEvents.nodeChange,
       data: nodes
     });
   }
 
-  onFiltered() {
-    this.events.emit({
-      type: TreeGridEvents.filter,
-      data: this.filter
-    });
-  }
-
-  bubbleCmd(cmd: TreeGridCmds) {
+  bubbleCmd(cmd: TreeGridCmds): void {
     this.events.emit({
       type: TreeGridEvents.cmd,
       data: cmd
     });
   }
 
+  toggleLoader(state: boolean): void {
+    this.loading = state;
+    window.setTimeout(() => {
+      if (!state) {
+        this._resizeService.init(this.containerEl.nativeElement, this._grid, this.gridEl.nativeElement);
+      }
+    }, 66);
+  }
+
+  renderDOM(): void {
+    if (Slick) {
+      this._nodesService.dataView = new Slick.Data.DataView();
+      this._nodesService.dataView.inlineFilters = true;
+      this._nodesService.dataView.setItems(this._nodesService.nodes, 'order');
+      this._nodesService.dataView.setFilter((node: any) => {
+        return this._nodesService.filter(node, this.filter);
+      });
+      this._grid = new Slick.Grid(this.gridEl.nativeElement, this._nodesService.dataView, this._nodesService.schema, this._gridOptions);
+    }
+  }
+
+  updateDOM(): void {
+
+    this._nodesService.dataView.setItems(this._nodesService.nodes);
+    this._isUpdate = true;
+
+    if (this._renderTimeout) {
+      clearTimeout(this._renderTimeout);
+    }
+
+    this._renderTimeout = setTimeout(() => {
+      if (this._isUpdate === true) {
+        this._isUpdate = false;
+        this._grid.invalidate();
+        this._grid.render();
+      }
+    }, 66);
+  }
+
+  initEventServices(): void {
+    this._eventService.init(this._grid, this._nodesService.dataView, this.events);
+  }
+
   private _applyChange(item: any): void {
     switch (item.key) {
       case 'nodes':
         if (this.options.nodes && this.options.nodes.length) {
+          this.toggleLoader(true);
           this._nodesService.nodes = this._nodesService.transform(
             this.options.nodes
           );
           if (!this._grid) {
-            this._renderDOM();
-            this._initDOMServices();
+            this.renderDOM();
+            this.initEventServices();
           } else {
-            this._updateDOM();
+            this.updateDOM();
           }
+          this.toggleLoader(false);
         }
+        break;
+      case 'notification':
         break;
       case 'nodesRequest':
         item.currentValue.then((data: any) => {
@@ -187,7 +232,7 @@ export class TreeGridComponent extends Subscriptions implements OnChanges, After
         });
         break;
       case 'filter':
-        this.filter = this.searchBarOptions.filter = this.options.filter;
+        this.filter = this.options.filter;
         break;
       case 'macro':
         if (this.options.macro) {
@@ -197,31 +242,18 @@ export class TreeGridComponent extends Subscriptions implements OnChanges, After
         break;
       case 'height':
         this.height = this.options.height;
-        if (this._grid) {
-          this._resizeService.resize(this._grid, this.gridEl.nativeElement);
-        }
+        this._resize();
         break;
     }
   }
 
-  private _renderDOM(): void {
-
-    this._nodesService.dataView = new Slick.Data.DataView();
-    this._nodesService.dataView.inlineFilters = true;
-    this._nodesService.dataView.setItems(this._nodesService.nodes, 'order');
-    this._nodesService.dataView.setFilter((node: any) => {
-      return this._nodesService.filter(node, this.filter);
-    });
-    this._grid = new Slick.Grid(this.gridEl.nativeElement, this._nodesService.dataView, this._nodesService.schema, this._gridOptions);
-    this.loading = false;
-
+  private _resize(): void {
+    if (this._grid) {
+      this._resizeService.resize(this._grid, this.gridEl.nativeElement);
+    }
   }
 
-  private _initDOMServices(): void {
-    this._resizeService.init(this.containerEl.nativeElement, this._grid, this.gridEl.nativeElement);
-  }
-
-  private _runCmdMacro(cmd: TreeGridCmds) {
+  private _runCmdMacro(cmd: TreeGridCmds): void {
     if (cmd) {
       switch (cmd) {
         case TreeGridCmds.ShowAll:
@@ -245,29 +277,12 @@ export class TreeGridComponent extends Subscriptions implements OnChanges, After
           this._nodesService.selectAll();
           break;
         case TreeGridCmds.Reload:
+          this.isDataValid = false;
           break;
       }
       this.bubbleCmd(cmd);
     }
-
   }
 
-  private _updateDOM() {
 
-    this._nodesService.dataView.setItems(this._nodesService.nodes);
-    this._isUpdate = true;
-
-    if (this._renderTimeout) {
-      clearTimeout(this._renderTimeout);
-    }
-
-    this._renderTimeout = setTimeout(() => {
-      if(this._isUpdate === true) {
-        this._isUpdate = false;
-        this._grid.invalidate();
-        this._grid.render();
-      }
-    }, 66);
-  }
-
- }
+}

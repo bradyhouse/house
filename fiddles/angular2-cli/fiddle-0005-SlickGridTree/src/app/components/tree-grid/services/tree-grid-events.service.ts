@@ -3,6 +3,9 @@ import {
   Injectable
 } from '@angular/core';
 
+import {Observable} from 'rxjs/Observable';
+import {Observer} from 'rxjs/Observer';
+
 import {
   TreeGridNodeService
 } from './tree-grid-node.service';
@@ -19,29 +22,31 @@ import {
 @Injectable()
 export class TreeGridEventsService {
 
+  dataViewRowsChange$: Observable<any>;
+
+  private _dataViewRowsObserver: Observer<any>;
 
   constructor(private _nodeService: TreeGridNodeService) {
-
+    this.dataViewRowsChange$ = new Observable<any>(
+      (observer: any) => this._dataViewRowsObserver = observer
+    ).share();
   }
 
   init(grid: any, dataView: any, events: EventEmitter<any>) {
-
-    grid.onClick.subscribe((e: any, args: any) => this.onGridCellClick(e, args, dataView, events));
-
-    this._nodeService.dataView.onRowCountChanged.subscribe((e: any, args: any) => this.onDataViewRowCountChanged(e, args, grid));
-
-    this._nodeService.dataView.onRowsChanged.subscribe((e: any, args: any) => this.onDataViewRowsChanged(e, args, grid));
-
+    if (grid && dataView && events) {
+      grid.onClick.subscribe((e: any, args: any) => this.onGridCellClick(e, args, dataView, events));
+      if (this._nodeService.dataView) {
+        this._nodeService.dataView.onRowsChanged.subscribe((e: any, args: any) => this.onDataViewRowsChanged(e, args, grid));
+      }
+    }
   }
 
   onDataViewRowsChanged(e: any, args: any, grid: any): void {
     grid.invalidateRows(args.rows);
     grid.render();
-  }
-
-  onDataViewRowCountChanged(e: any, args: any, grid: any): void {
-    grid.updateRowCount();
-    grid.render();
+    if (this._dataViewRowsObserver) {
+      this._dataViewRowsObserver.next(e);
+    }
   }
 
   onGridCellClick(e: any, args: any, dataView: any, events: EventEmitter<any>): void {

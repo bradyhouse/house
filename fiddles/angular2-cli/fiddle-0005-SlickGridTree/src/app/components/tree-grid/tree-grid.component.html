@@ -1,7 +1,11 @@
-<div [ngStyle]="{height: height + 'px'}">
-  <filter-bar *ngIf="!loading" [options]="searchBarOptions"
-                            (changed)="onSearchBarChanged($event)">
-  </filter-bar>
+<div [ngStyle]="{'height': !isDataValid ? height + 'px' : '0px'}"
+     (window:resize)="onWindowResize()">
+
+  <div class="list-group-item border-bottom">
+    <search-bar [filter]="filter"
+                    (changed)="onFilterChanged($event)">
+    </search-bar>
+  </div>
   <div #containerEl>
     <div #gridEl>
     </div>
