@@ -1,6 +1,7 @@
 .content-component {
-  padding: 0rem;
-  background-color: yellowgreen;
+  padding: .3rem;
+  background-color: white;
+  border: 1px solid gainsboro;
   color: white;
   height: 100%;
 }

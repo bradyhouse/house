@@ -53,7 +53,7 @@ export class DataService {
       (observer: any) => this._errorObserver = observer
     ).share();
 
-    this.request('assets/json/data.json');
+    this.request('assets/json/big-data.json');
 
   }
 

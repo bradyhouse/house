@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-declare let jQuery: any;
+import {StateService} from '../shared/index';
+import {Subscriptions, TreeGridCmds} from '../components/index';
+
 
 
 @Component({
@@ -8,28 +10,54 @@ declare let jQuery: any;
   templateUrl: 'content.component.html',
   styleUrls: ['content.component.css']
 })
-export class ContentComponent {
+export class ContentComponent extends Subscriptions {
 
-  private _width: number;
-  private _height: number;
+  json: string;
+  emptyJson: string = 'No nodes selected.';
 
-  onWindowResize() {
-    this._width = jQuery('.content-component').width();
-    this._height = jQuery('.sidebar-component').height();
+  constructor(
+    private _stateService: StateService
+  ) {
+    super();
+    this.json = this.emptyJson;
+
+    this.subscriptions.push(_stateService.selectedNodesChange$
+      .subscribe(
+        (nodes:any) => this.onSelectedNodesChange(nodes)
+      ));
   }
 
-  get width() {
-    if (!this._width) {
-      this._width = jQuery('.content-component').width();
+
+  onSelectedNodesChange(nodes: any[]) {
+    if (nodes && nodes.length) {
+      this.json = JSON.stringify(nodes);
+    } else {
+      this.json = this.emptyJson;
     }
-    return this._width;
   }
 
-  get height() {
-    if (!this._height) {
-      this._height = jQuery('.sidebar-component').height();
-    }
-    return this._height;
+  onShowSelectedClick() {
+    this._stateService.updateTreeGrid(TreeGridCmds.ShowSelected);
+  }
+
+  onClearSelectedClick() {
+    this._stateService.updateTreeGrid(TreeGridCmds.ClearSelected);
+  }
+
+  onExpandAllClick() {
+    this._stateService.updateTreeGrid(TreeGridCmds.ExpandAll);
+  }
+
+  onCollapseAllClick() {
+    this._stateService.updateTreeGrid(TreeGridCmds.CollapseAll);
+  }
+
+  onSelectAllClick() {
+    this._stateService.updateTreeGrid(TreeGridCmds.SelectAll);
+  }
+
+  onShowAllClick() {
+    this._stateService.updateTreeGrid(TreeGridCmds.ShowAll);
   }
 
 }

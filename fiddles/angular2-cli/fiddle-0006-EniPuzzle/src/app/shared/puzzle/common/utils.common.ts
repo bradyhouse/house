@@ -1,5 +1,3 @@
-import {SquareOptionsInterface} from '../index';
-
 export class Utils {
 
   static isEven(x) {
@@ -210,17 +208,16 @@ export class Utils {
 
   }
 
-  static isValidMove(a: SquareOptionsInterface, b: SquareOptionsInterface): boolean {
+  static isValidMove(a: any, b: any): boolean {
     let rowDelta = Math.abs(a.row - b.row),
       colDelta = Math.abs(a.col - b.col);
     if (a.col === b.col) {
       return (rowDelta === 1) && (colDelta === 0);
     }
-
     return false;
   }
 
-  static swap(a: SquareOptionsInterface, b: SquareOptionsInterface): void {
+  static swap(a: any, b: any): void {
     let valueA: number = a.value,
       isEmptyA: boolean = a.isEmpty,
       cssClassA: string = a.cssClass,
@@ -236,5 +233,6 @@ export class Utils {
     b.isEmpty = isEmptyA;
     b.cssClass = cssClassA;
   }
+
 
 }

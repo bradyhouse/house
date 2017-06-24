@@ -42,4 +42,5 @@ should allow the user to:
 
 ### Tags
 
-node, angular-cli, slickgrid-kunovsky, mdi, jquery, underscore, css-element-queries
+node, angular-cli, slickgrid-kunovsky, mdi, jquery, underscore, css-element-queries, @ngrx/core, @ngrx/db,
+@ngrx/store, @ngrx/effects, @ngrx/router-store, @ngrx/store-devtools

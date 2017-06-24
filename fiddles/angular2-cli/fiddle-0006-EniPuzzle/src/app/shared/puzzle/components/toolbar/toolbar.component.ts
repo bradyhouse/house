@@ -1,7 +1,6 @@
 import {Component, Input, Output, OnChanges, SimpleChanges, EventEmitter} from '@angular/core';
 import {ToolbarInterface} from './toolbar.interface';
 import {ToolbarOptionsInterface} from './toolbar-options.interface';
-import {ToolbarStateEnum} from './toolbar-state.enum';
 import {ActionsEnum, DatabaseServiceInterface, StateServiceInterface} from '../../index';
 import {BaseComponent} from '../base.component';
 
@@ -41,15 +40,15 @@ export class ToolbarComponent extends BaseComponent implements ToolbarInterface,
     let action: ActionsEnum = this.options && this.options.actionService ? this.options.actionService.action : null;
 
 
-    if (this.options.state === ToolbarStateEnum.PLAY) {
-      this.options.state = ToolbarStateEnum.SOLVE;
+    if (this.options.state === 'PLAY') {
+      this.options.state = 'SOLVE';
     } else {
-      this.options.state = ToolbarStateEnum.PLAY;
+      this.options.state = 'PLAY';
     }
     this.persist(this.options);
     this.options = this.transform(this.options);
     if (action !== null) {
-      action = this.options.state === ToolbarStateEnum.PLAY ? ActionsEnum.SOLVE : ActionsEnum.PLAY;
+      action = this.options.state === 'PLAY' ? ActionsEnum.SOLVE : ActionsEnum.PLAY;
       this.options.actionService.action = action;
     }
     this.toggle.emit(this);
@@ -60,14 +59,14 @@ export class ToolbarComponent extends BaseComponent implements ToolbarInterface,
   }
 
   onActionChange(action: ActionsEnum): void {
-    let state: ToolbarStateEnum = this.options ? this.options.state : null;
+    let state: string = this.options ? this.options.state : null;
     if (state) {
       switch (action) {
         case ActionsEnum.PLAY:
-          state = ToolbarStateEnum.SOLVE;
+          state = 'SOLVE';
           break;
         case ActionsEnum.SOLVE:
-          state = ToolbarStateEnum.PLAY;
+          state = 'PLAY';
           break;
       }
       if (state !== this.options.state) {
@@ -80,7 +79,7 @@ export class ToolbarComponent extends BaseComponent implements ToolbarInterface,
 
   transform(options: ToolbarOptionsInterface): ToolbarOptionsInterface {
 
-    let state: ToolbarStateEnum = this.isToolbarPersisted(options.id) ?
+    let state: string = this.isToolbarPersisted(options.id) ?
       this.restoreToolbarOptions(options.id) : options.state;
 
     if (this.subscriptions.length === 0) {
@@ -93,7 +92,7 @@ export class ToolbarComponent extends BaseComponent implements ToolbarInterface,
     }
 
     switch (state) {
-      case ToolbarStateEnum.PLAY: {
+      case 'PLAY': {
         options.toggleText = 'Play';
         options.toggleTitle = 'Play game';
       }
@@ -117,9 +116,9 @@ export class ToolbarComponent extends BaseComponent implements ToolbarInterface,
     return false;
   }
 
-  restoreToolbarOptions(id: string): ToolbarStateEnum {
+  restoreToolbarOptions(id: string): string {
     let databaseService: DatabaseServiceInterface = this.database,
-      state: ToolbarStateEnum = null;
+      state: string = null;
     if (databaseService) {
       state = databaseService.pull(id);
     }

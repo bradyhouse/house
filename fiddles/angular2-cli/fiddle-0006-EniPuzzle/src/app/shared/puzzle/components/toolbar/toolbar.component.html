@@ -1,2 +1,2 @@
-<button class="btn btn-lg" (click)="onToggleClick()" text="{{options?.toggleText}}"></button>
-<button *ngIf="options?.isBack" class="btn btn-lg" text="{{options?.backText}}"></button>
+<input type="button" (click)="onToggleClick()" value="{{options?.toggleText}}">
+<input type="button" *ngIf="options?.isBack" value="{{options?.backText}}">

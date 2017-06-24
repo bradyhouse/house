@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {TreeGridComponent} from './tree-grid.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import {FilterBarComponent} from './filter-bar/filter-bar.component';
 
 @NgModule({
   imports: [
@@ -11,7 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   ],
   declarations: [
     TreeGridComponent,
-    NavBarComponent
+    FilterBarComponent
   ],
   exports: [
     TreeGridComponent

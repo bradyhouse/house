@@ -7,7 +7,7 @@ import {
 
 @Injectable()
 export class AppStateService extends StateService {
-  constructor(private _databaseService: LocalStorageService) {
-    super( _databaseService);
+  constructor(databaseService: LocalStorageService) {
+    super(databaseService);
   }
 }

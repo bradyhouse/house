@@ -1,0 +1,30 @@
+<div class="app-component">
+  <h3>@ngrx/store Hello World</h3>
+  <div class="margin-bottom-10">
+    Percent Attendance: {{percentAttendance | async}}%
+  </div>
+  <app-party-stats
+    [invited]="(model | async)?.total"
+    [attending]="(model | async)?.attending"
+    [guests]="(model | async)?.guests"
+  >
+    {{guests | async | json}}
+  </app-party-stats>
+  <app-filter-select
+    (updateFilter)="updateFilter($event)"
+  >
+  </app-filter-select>
+  <app-person-input
+    (addPerson)="addPerson($event)"
+  >
+  </app-person-input>
+  <app-person-list
+    [people]="(model | async)?.people"
+    (addGuest)="addGuest($event)"
+    (removeGuest)="removeGuest($event)"
+    (removePerson)="removePerson($event)"
+    (toggleAttending)="toggleAttending($event)"
+  >
+  </app-person-list>
+
+</div>

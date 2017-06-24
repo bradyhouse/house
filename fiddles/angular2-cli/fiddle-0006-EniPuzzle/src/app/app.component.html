@@ -1,13 +1,11 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4>&nbsp;{{fiddleTitle}}</h4>
-  </div>
-  <div class="panel-body">
-    <pz-board [options]="boardOptions">
-    </pz-board>
-  </div>
-  <div class="panel-footer">
-    <pz-toolbar [options]="toolbarOptions">
-    </pz-toolbar>
-  </div>
-</div>
+<span class="app-component" *ngIf="!isLoading">
+  <input type="button" *ngFor="let square of board.squares"
+         [id]="square.id"
+         value=""
+         [class]="square.cssClass"
+         [draggable]="!square.isEmpty"
+         (dragstart)="onSquareDragStart($event, square)"
+         (dragend)="onSquareDragEnd($event, square)"
+         (dragover)="onSquareDragOver($event, square)"
+         (click)="onSquareClick(square)" >
+</span>

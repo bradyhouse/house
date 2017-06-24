@@ -30,7 +30,7 @@ import {TreeNodeCheckedPipe} from './TreeNodeCheckedPipe';
             <ul class="{{uiClassPrefix}}-view" *ngSwitchDefault>
                 <li *ngFor="#node of store | treeNodeSearch:queryEl.value">
                     <span class="{{uiClassPrefix}}-nodeButton" (click)="node.toggle()">{{node.icon}}</span>
-                    <input type="checkbox" [checked]="node.checked" (click)="node.check(changed())" />
+                    <input *ngIf="node.selectable" type="checkbox" [checked]="node.checked" (click)="node.check(changed())" />
                     {{ node.name }}
                     <div *ngIf="node.expanded">
                         <treeview [store]="node.nodes" [uiClassPrefix]="uiClassPrefix" [queryEl]="queryEl"></treeview>
@@ -52,9 +52,7 @@ export class TreeViewController {
         this.change = new EventEmitter();
     }
     changed() {
-        console.log('changed');
-        console.log(this.change);
-        this.change.next();
+         this.change.next();
     }
 
 

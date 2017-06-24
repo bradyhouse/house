@@ -8,14 +8,13 @@ import {StateServiceInterface} from './state-service.interface';
 @Injectable()
 export class StateService implements StateServiceInterface {
 
-  databaseService: LocalStorageService;
 
   stateEventChange$: Observable<string>;
 
   private _stateEvent: string;
   private _stateEventObserver: Observer<string>;
 
-  constructor(databaseService: LocalStorageService) {
+  constructor(public databaseService: LocalStorageService) {
 
     this._stateEvent = 'init';
 

@@ -1,10 +1,13 @@
+.navbar .navbar-default {
+  padding-bottom: 0px;
+
+}
+
 .sidebar-component {
-  width: calc(20vw);
+  width: 333px;
   padding: 0;
   margin: 0;
-  height: calc(90vh);
-  min-width: 300px;
-
+  height: calc(100vh);
 }
 
 .sidebar-component .btn .btn-primary {

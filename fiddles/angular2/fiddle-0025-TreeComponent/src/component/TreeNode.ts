@@ -1,11 +1,13 @@
 export class TreeNode {
-    expanded:boolean = false;
-    checked:boolean = false;
-    _selectedNodes:String[];
+    expanded: boolean = false;
+    checked: boolean = false;
+    selectable: boolean = false;
+    _selectedNodes: String[];
 
-    constructor(public name:String,
-                public nodes:Array<TreeNode>,
-                public parent:TreeNode) {
+    constructor(public name: String,
+                public selectable: boolean,
+                public nodes: Array<TreeNode>,
+                public parent: TreeNode) {
         if (!parent) {
             this._selectedNodes = [];
         } else {
@@ -48,9 +50,9 @@ export class TreeNode {
     }
 
     containsChecked() {
-        checkedNodes:TreeNode;
+        let checkedNodes:TreeNode[];
         if (this.nodes && this.nodes.length) {
-            checkedNodes = this.nodes.filter(function (node) {
+            checkedNodes = this.nodes.filter((node: TreeNode) => {
                 return node.checked;
             });
         }
@@ -59,23 +61,24 @@ export class TreeNode {
     }
 
     containsName(name) {
-        var query = name;
-        matchingNodes:TreeNode;
+        let query = name,
+            matchingNodes:TreeNode[];
+
         if (this.nodes && this.nodes.length) {
-            matchingNodes = this.nodes.filter(node => {
-                return node.name.includes(query);
+            matchingNodes = this.nodes.filter((node: TreeNode) => {
+                return node.name && node.name.indexOf(query) !== -1;
             });
         }
         return matchingNodes.length > 0;
     }
 
     check(callback) {
-        var me = this;
+        let me = this;
 
         me.checked = me.expanded = !me.checked;
         if (me.parent) {
             me.parent.checked = me.parent.containsChecked();
-            if(me.parent.isRoot) {
+            if (me.parent.isRoot) {
                 me.select(callback);
             }
         }
@@ -83,7 +86,7 @@ export class TreeNode {
 
     }
 
-    checkRecursive(state:boolean) {
+    checkRecursive(state: boolean) {
         this.nodes.forEach(node => {
             node.checked = node.expanded = state;
             node.checkRecursive(state);
@@ -91,7 +94,7 @@ export class TreeNode {
     }
 
     select(callback) {
-        var me = this,
+        let me = this,
             nodeName = me.name;
         if (me.checked) {
             if (me.selectedNodes.indexOf(nodeName) == -1) {

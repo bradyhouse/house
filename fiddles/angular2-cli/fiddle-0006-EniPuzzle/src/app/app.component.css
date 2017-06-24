@@ -1,0 +1,72 @@
+.app-component {
+
+}
+
+.app-component input[type="button"] {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  border-color: white;
+  border-width: 1px;
+}
+
+.app-component .col-a {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: yellow;
+}
+
+.app-component .col-b {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: orange;
+}
+
+.app-component .col-c {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: red;
+}
+
+.app-component .col-d {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: darkred;
+}
+
+.app-component .col-e {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: blueviolet;
+}
+
+.app-component .col-f {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: blue;
+}
+
+.app-component .col-g {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: turquoise;
+}
+
+.app-component .col-h {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: green;
+}
+
+.app-component .empty {
+  width: calc(12vw);
+  height: calc(12vh);
+  background-color: white;
+  border-radius: none;
+  box-shadow: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}

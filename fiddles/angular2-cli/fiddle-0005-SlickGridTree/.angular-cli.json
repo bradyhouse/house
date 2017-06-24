@@ -31,6 +31,7 @@
         "../node_modules/slickgrid-kunovsky/slick.grid.css"
       ],
       "scripts": [
+        "../node_modules/lodash/lodash.js",
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/underscore/underscore-min.js",
@@ -44,7 +45,8 @@
         "../node_modules/slickgrid-kunovsky/plugins/slick.checkboxselectcolumn.js",
         "../node_modules/slickgrid-kunovsky/plugins/slick.rowselectionmodel.js",
         "../node_modules/css-element-queries/src/ResizeSensor.js",
-        "../node_modules/css-element-queries/src/ElementQueries.js"
+        "../node_modules/css-element-queries/src/ElementQueries.js",
+        "../node_modules/immutable/dist/immutable.js"
       ]
     }
   ],

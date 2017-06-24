@@ -28,8 +28,8 @@ Simple fiddle exploring the features of the [HTML Drag and Drop API](https://dev
 
 ### Published Version Link
 
-[jsfiddle.net](https://jsfiddle.net/bradyhouse/wcp34476/)
-
+* [jsfiddle.net](https://jsfiddle.net/bradyhouse/wcp34476/)
+* [bradyhouse.github.io > ES2015 > #43](http://bradyhouse.github.io/jquery/fiddle-0043-DragAndDropApi/index.html)
 
 ### Tags
 

@@ -1,0 +1,11 @@
+input[type="button"] {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  border: none;
+  background-color: aliceblue;
+  font-size: 1.4rem;
+  width: calc(99vw);
+  height: calc(8vh);
+}

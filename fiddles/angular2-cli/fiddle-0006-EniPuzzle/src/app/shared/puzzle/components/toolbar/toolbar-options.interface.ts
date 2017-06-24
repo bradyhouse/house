@@ -1,4 +1,3 @@
-import {ToolbarStateEnum} from './toolbar-state.enum';
 import {
   ActionsServiceInterface,
   StateServiceInterface
@@ -6,10 +5,10 @@ import {
 
 export interface ToolbarOptionsInterface {
   id: string;
-  state: ToolbarStateEnum;
+  state?: string;
   actionService?: ActionsServiceInterface;
   stateService?: StateServiceInterface;
-  isBack: boolean;
+  isBack?: boolean;
   toggleText?: string;
   toggleTitle?: string;
   backRouterLink?: string;

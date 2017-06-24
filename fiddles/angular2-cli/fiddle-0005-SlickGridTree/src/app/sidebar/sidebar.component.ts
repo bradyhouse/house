@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {BaseComponent} from '../components/base.component';
-import {DataService} from '../shared/data.service';
-import { NavBarCmds } from '../components/tree-grid/index';
-declare let _: any;
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import {Subscriptions, TreeGridCmds} from '../components/index';
+import {DataService, StateService} from '../shared/index';
+declare let $: any;
 
 @Component({
   selector: 'sidebar',
@@ -10,18 +9,18 @@ declare let _: any;
   templateUrl: 'sidebar.component.html',
   styleUrls: ['sidebar.component.css']
 })
-export class SidebarComponent extends BaseComponent {
-
+export class SidebarComponent extends Subscriptions {
+  @ViewChild('sidebarEl') el: ElementRef;
   options: any;
   columns: any[];
 
-  constructor(private _dataService: DataService) {
+  constructor(private _dataService: DataService,
+              private _stateService: StateService) {
     super();
     this.options = {
       nodes: [],
-      menuOptions: []
+      cmd: null
     };
-
 
 
     this.subscriptions.push(
@@ -30,19 +29,31 @@ export class SidebarComponent extends BaseComponent {
           (data: any) => this.dataLoaded(data)
         ));
 
+    this.subscriptions.push(
+      _stateService.treeGridCommandChange$
+        .subscribe(
+          (cmd: any) => this.onTreeCmd(cmd)
+        ));
+
   }
 
   private dataLoaded(data: any) {
     this.options = {
       nodes: data.data.children,
-      menuOptions: [
-        NavBarCmds.ShowSelected,
-        NavBarCmds.ClearSelected,
-        NavBarCmds.ExpandAll,
-        NavBarCmds.CollapseAll,
-        NavBarCmds.SelectAll
-      ]
+      height: $(this.el.nativeElement).height()
     };
   }
+
+  onGridEvent(args: any) {
+    console.log('sidebar > onGridEvent');
+    this._stateService.selectedNodes = args.data;
+  }
+
+  onTreeCmd(cmd: TreeGridCmds) {
+    this.options.macro = cmd;
+  }
+
+
+
 
 }

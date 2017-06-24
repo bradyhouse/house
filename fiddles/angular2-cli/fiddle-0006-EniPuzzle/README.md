@@ -24,7 +24,9 @@ Chicago, IL
 
 ### Description
 
-Another simple Angular 2 fiddle.
+Translate [Angular2 Seeder Fiddle #1 ~ Eni Puzzle](https://github.com/bradyhouse/house/tree/master/fiddles/angular2-seeder/fiddle-0001-EniPuzzle)
+into an Angular2 Cli fiddle.  Once operational, refactor the state management services to work with sqlite.  Additionally,
+the UI should be stripped down (simplified) to use a table and buttons. 
 
 
 ### Published Version Link

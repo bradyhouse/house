@@ -14,26 +14,27 @@ import {
   DoCheck
 } from '@angular/core';
 
+import {Subscriptions} from '../shared/subscriptions';
+
 import {
-  EventsService,
-  ResizeService,
-  NodeService
+  TreeGridEventsService,
+  TreeGridResizeService,
+  TreeGridNodeService
 } from './services/index';
 
 import {
-  NavBarCmds,
-  NavBarEvents
-} from './nav-bar/enums/index';
+  FilterBarInterface
+} from './filter-bar/index';
 
 import {
-  NavBarOptions,
-  NavBarEvent
-} from './nav-bar/interfaces/index';
-
-import {
-  Options
+  TreeGridInterface,
+  TreeGridEventInterface
 } from './interfaces/index';
 
+import {
+  TreeGridCmds,
+  TreeGridEvents
+} from './enums/index';
 
 declare let Slick: any;
 
@@ -44,36 +45,41 @@ declare let Slick: any;
   styleUrls: ['tree-grid.component.css'],
   encapsulation: ViewEncapsulation.None,
   providers: [
-    EventsService,
-    ResizeService,
-    NodeService
+    TreeGridEventsService,
+    TreeGridResizeService,
+    TreeGridNodeService
   ]
 })
-export class TreeGridComponent implements OnChanges, AfterViewInit, DoCheck {
+export class TreeGridComponent extends Subscriptions implements OnChanges, AfterViewInit, DoCheck {
 
-  @Output() events: EventEmitter<any>;
-  @Input() options: Options;
+  @Output() events: EventEmitter<TreeGridEventInterface>;
+  @Input() options: TreeGridInterface;
   @ViewChild('containerEl') containerEl: ElementRef;
   @ViewChild('gridEl') gridEl: ElementRef;
 
   filter: string;
+  width: number;
+  height: number;
   loading: boolean;
-  navBarOptions: NavBarOptions;
+  searchBarOptions: FilterBarInterface;
 
   private _differ: KeyValueDiffer<string, any> = null;
   private _grid: any;
   private _gridOptions: any;
+  private _renderTimeout:any;
+  private _isUpdate:boolean;
 
-  constructor(
-    private _changeDetector: ChangeDetectorRef,
-    private _differs: KeyValueDiffers,
-    private _resizeService: ResizeService,
-    private _eventService: EventsService,
-    private _nodesService: NodeService
-  ) {
+  constructor(private _changeDetector: ChangeDetectorRef,
+              private _differs: KeyValueDiffers,
+              private _resizeService: TreeGridResizeService,
+              private _eventService: TreeGridEventsService,
+              private _nodesService: TreeGridNodeService) {
+    super();
     this.loading = true;
     this.filter = null;
     this.events = new EventEmitter();
+    this.width = 0;
+    this.height = 0;
     this._gridOptions = {
       nodeHeight: 27,
       headerRowHeight: 0,
@@ -81,15 +87,13 @@ export class TreeGridComponent implements OnChanges, AfterViewInit, DoCheck {
       showHeaderRow: false,
       editable: false
     };
-    this.navBarOptions = {
-      commands: [
-        NavBarCmds.ClearSelected,
-        NavBarCmds.ExpandAll,
-        NavBarCmds.SelectAll,
-        NavBarCmds.Reload,
-        NavBarCmds.ShowSelected
-      ]
+    this.searchBarOptions = {
     };
+
+    this.subscriptions.push(_nodesService.selectedNodesChange$
+      .subscribe(
+        (nodes: any) => this.onSelectedNodesChange(nodes)
+      ));
   }
 
   ngOnChanges(changes: any): void {
@@ -109,7 +113,14 @@ export class TreeGridComponent implements OnChanges, AfterViewInit, DoCheck {
   ngDoCheck(): void {
     if (this._differ) {
       const changes: any = this._differ.diff(this.options);
-      if (changes) this._applyChanges(changes);
+      if (changes) {
+        changes.forEachChangedItem((item: any) => {
+          this._applyChange(item);
+        });
+        changes.forEachAddedItem((item: any) => {
+          this._applyChange(item);
+        });
+      }
     }
   }
 
@@ -117,70 +128,87 @@ export class TreeGridComponent implements OnChanges, AfterViewInit, DoCheck {
     this.containerEl.nativeElement.setAttribute('class', 'tree-grid-container');
   }
 
-  onNavBarChanged(event: NavBarEvent) {
-    switch(event.event) {
-      case NavBarEvents.filter:
+  onSearchBarChanged(event: any) {
+    switch (event.type) {
+      case 'filter':
         this.filter = event.data;
         this._nodesService.dataView.refresh();
         break;
-      case NavBarEvents.menu:
-        switch(event.cmd) {
-          case NavBarCmds.ShowSelected:
-            this.filter = this.navBarOptions.filter = null;
-            this.filter = this.navBarOptions.filter = 'selected';
-            this._nodesService.dataView.refresh();
-            break;
-          case NavBarCmds.ClearSelected:
-            this.filter = this.navBarOptions.filter = null;
-            this._nodesService.clearAll();
-            break;
-          case NavBarCmds.ExpandAll:
-            this._nodesService.expandAll();
-            break;
-          case NavBarCmds.CollapseAll:
-            this._nodesService.collapseAll();
-          case NavBarCmds.Reload:
-            break;
-          case NavBarCmds.SelectAll:
-            this._nodesService.selectAll();
-            break;
+    }
+  }
+
+  onSelectedNodesChange(nodes: any) {
+    this.events.emit({
+      type: TreeGridEvents.nodeChange,
+      data: nodes
+    });
+  }
+
+  onFiltered() {
+    this.events.emit({
+      type: TreeGridEvents.filter,
+      data: this.filter
+    });
+  }
+
+  bubbleCmd(cmd: TreeGridCmds) {
+    this.events.emit({
+      type: TreeGridEvents.cmd,
+      data: cmd
+    });
+  }
+
+  private _applyChange(item: any): void {
+    switch (item.key) {
+      case 'nodes':
+        if (this.options.nodes && this.options.nodes.length) {
+          this._nodesService.nodes = this._nodesService.transform(
+            this.options.nodes
+          );
+          if (!this._grid) {
+            this._renderDOM();
+            this._initDOMServices();
+          } else {
+            this._updateDOM();
+          }
+        }
+        break;
+      case 'nodesRequest':
+        item.currentValue.then((data: any) => {
+          let node: any = this._nodesService.append(data.id, data.children);
+          if (node && node.selected) {
+            this._eventService.bubbleSelect(node, this.events);
+          }
+        });
+        break;
+      case 'nodesUpdate':
+        item.currentValue.then((data: any) => {
+          this._nodesService.updateNode(data.node, data.selected, data.expanded);
+        });
+        break;
+      case 'filter':
+        this.filter = this.searchBarOptions.filter = this.options.filter;
+        break;
+      case 'macro':
+        if (this.options.macro) {
+          this._runCmdMacro(this.options.macro);
+          this.options.macro = null;
+        }
+        break;
+      case 'height':
+        this.height = this.options.height;
+        if (this._grid) {
+          this._resizeService.resize(this._grid, this.gridEl.nativeElement);
         }
         break;
     }
   }
 
-  private _applyChanges(changes: any): void {
-    if (changes) {
-      changes.forEachItem((item:any) => {
-        switch(item.key) {
-          case 'nodes':
-            if (this.options.nodes && this.options.nodes.length) {
-              this._nodesService.nodes = this._nodesService.transform(
-                this.options.nodes, []
-              );
-              if (!this._grid) {
-                this._renderDOM();
-                this._initDOMServices();
-              } else {
-                this._updateDOM();
-              }
-            }
-            break;
-          case 'menuOptions':
-            if (this.options.menuOptions) {
-              this.navBarOptions.commands = this.options.menuOptions;
-            }
-            break;
-        }
-      })
-    }
-
-  }
-
   private _renderDOM(): void {
+
     this._nodesService.dataView = new Slick.Data.DataView();
     this._nodesService.dataView.inlineFilters = true;
-    this._nodesService.dataView.setItems(this._nodesService.nodes);
+    this._nodesService.dataView.setItems(this._nodesService.nodes, 'order');
     this._nodesService.dataView.setFilter((node: any) => {
       return this._nodesService.filter(node, this.filter);
     });
@@ -190,14 +218,56 @@ export class TreeGridComponent implements OnChanges, AfterViewInit, DoCheck {
   }
 
   private _initDOMServices(): void {
-    this._resizeService.init(this.containerEl.nativeElement, this._grid);
-    this._eventService.init(this._grid, this._nodesService.dataView, this.events);
+    this._resizeService.init(this.containerEl.nativeElement, this._grid, this.gridEl.nativeElement);
   }
 
-  private _updateDOM(): void {
-    if (this._differ) {
-      this._nodesService.dataView.setItems(this._nodesService.nodes);
+  private _runCmdMacro(cmd: TreeGridCmds) {
+    if (cmd) {
+      switch (cmd) {
+        case TreeGridCmds.ShowAll:
+          this.filter = null;
+          this._nodesService.dataView.refresh();
+          break;
+        case TreeGridCmds.ClearSelected:
+          this._nodesService.deselectAll();
+          break;
+        case TreeGridCmds.ShowSelected:
+          this.filter = 'selected';
+          this._nodesService.dataView.refresh();
+          break;
+        case TreeGridCmds.CollapseAll:
+          this._nodesService.collapseAll();
+          break;
+        case TreeGridCmds.ExpandAll:
+          this._nodesService.expandAll();
+          break;
+        case TreeGridCmds.SelectAll:
+          this._nodesService.selectAll();
+          break;
+        case TreeGridCmds.Reload:
+          break;
+      }
+      this.bubbleCmd(cmd);
     }
+
   }
 
-}
+  private _updateDOM() {
+
+    this._nodesService.dataView.setItems(this._nodesService.nodes);
+    this._isUpdate = true;
+
+    if (this._renderTimeout) {
+      clearTimeout(this._renderTimeout);
+    }
+
+    this._renderTimeout = setTimeout(() => {
+      if(this._isUpdate === true) {
+        this._isUpdate = false;
+        this._grid.invalidate();
+        this._grid.render();
+      }
+    }, 66);
+  }
+
+ }

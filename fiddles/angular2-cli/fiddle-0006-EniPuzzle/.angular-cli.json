@@ -22,7 +22,6 @@
         "styles.css"
       ],
       "scripts": [
-        "../node_modules/sqlite3/lib/sqlite3.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

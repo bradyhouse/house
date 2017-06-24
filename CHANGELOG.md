@@ -1607,5 +1607,16 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/angular2-cli/fiddle-0004-TourOfHeroes](fiddles/angular2-cli/fiddle-0004-TourOfHeroes) ~ [Issue 160](https://github.com/bradyhouse/house/issues/160)
   2.  Added [fiddles/angular2-cli/fiddle-0005-SlickGridTree](fiddles/angular2-cli/fiddle-0005-SlickGridTree) ~ [Issue 166](https://github.com/bradyhouse/house/issues/166)
-  3.  Started [fiddles/angular2-cli/fiddle-0006-EniPuzzle](fiddles/angular2-cli/fiddle-0006-EniPuzzle) ~ [Issue 168](https://github.com/bradyhouse/house/issues/168)
+  3.  Added [fiddles/angular2-cli/fiddle-0006-EniPuzzle](fiddles/angular2-cli/fiddle-0006-EniPuzzle) ~ [Issue 168](https://github.com/bradyhouse/house/issues/168)
   4.  Added [fiddles/angular2-cli/fiddle-0007-StructuralDirective](fiddles/angular2-cli/fiddle-0007-StructuralDirective) ~ [Issue 169](https://github.com/bradyhouse/house/issues/169)
+  5.  Added [fiddles/angular2-cli/fiddle-0008-NgRxStateManagement](fiddles/angular2-cli/fiddle-0008-NgRxStateManagement) ~ [Issue 170](https://github.com/bradyhouse/house/issues/170)
+
+* **Jquery**
+
+  1.  Added [fiddles/jquery/fiddle-0044-HashSet](fiddles/jquery/fiddle-0044-HashSet) ~ [Issue 171](https://github.com/bradyhouse/house/issues/171)
+  2.  Added [fiddles/jquery/fiddle-0045-IsPalindrome](fiddles/jquery/fiddle-0045-IsPalindrome) ~ [Issue 172](https://github.com/bradyhouse/house/issues/172)
+  3.  Added [fiddles/jquery/fiddle-0046-WordLadder](fiddles/jquery/fiddle-0046-WordLadder) ~ [Issue 173](https://github.com/bradyhouse/house/issues/173)
+  4.  Added [fiddles/jquery/fiddle-0047-RemoveKFromList](fiddles/jquery/fiddle-0047-RemoveKFromList) ~ [Issue 174](https://github.com/bradyhouse/house/issues/174)
+  5.  Added [fiddles/jquery/fiddle-0048-AddTwoHugeNumbers](fiddles/jquery/fiddle-0048-AddTwoHugeNumbers) ~ [Issue 175](https://github.com/bradyhouse/house/issues/175)
+  6.  Added [fiddles/jquery/fiddle-0049-SlickGridColGroups](fiddles/jquery/fiddle-0049-SlickGridColGroups)
+  7.  Added [fiddles/jquery/fiddle-0050-SlickGridCustomColGroups](fiddles/jquery/fiddle-0050-SlickGridCustomColGroups)

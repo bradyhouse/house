@@ -1,0 +1,8 @@
+<div class="margin-bottom-10">
+  <select #selectList (change)="updateFilter.emit(selectList.value)">
+    <option *ngFor="let filter of filters" value="{{filter.action}}">
+      {{filter.friendly}}
+    </option>
+  </select>
+  <hr>
+</div>

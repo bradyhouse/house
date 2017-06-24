@@ -1,8 +1,10 @@
-<div *ngIf="loading" class="tree-grid-loader"></div>
-<nav-bar *ngIf="!loading" [options]="navBarOptions"
-            (changed)="onNavBarChanged($event)">
-</nav-bar>
-<div #containerEl>
-  <div #gridEl>
+<div [ngStyle]="{height: height + 'px'}">
+  <filter-bar *ngIf="!loading" [options]="searchBarOptions"
+                            (changed)="onSearchBarChanged($event)">
+  </filter-bar>
+  <div #containerEl>
+    <div #gridEl>
+    </div>
   </div>
 </div>
+

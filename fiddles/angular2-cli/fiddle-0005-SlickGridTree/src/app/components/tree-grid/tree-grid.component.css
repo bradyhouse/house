@@ -1,22 +1,12 @@
 
-
-.tree-grid-loader {
-  width: calc(20vw);
-  height: calc(90vh);
-  background: url('../../../assets/img/ajax-loader-small.gif') no-repeat center center;
-}
-
 .tree-grid-container {
-  width: calc(100%);
+  width: 100%;
+  height: 100%;
 }
 
 .tree-grid-container .ui-widget {
   width: 100%;
-  height: calc(89vh);
-  border: none;
-  padding: 0px;
-  position: absolute;
-
+  height: 100%;
 }
 
 .tree-grid-container .mdi {
@@ -33,9 +23,25 @@
   display: none;
 }
 
-.tree-grid-container .slick-cell .slick-cell span,
-.tree-grid-container .slick-cell .slick-cell {
-  font-size: .8rem;
+
+.tree-grid-container .fs-8
+{
+  font-size: .7rem;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+.tree-grid-container .fs-11
+{
+  font-size: .85rem;
+  line-height: 1.4;
+}
+
+.tree-grid-container .text-pull-right {
+  font-size: inherit;
+  line-height: inherit;
+  vertical-align: text-bottom;
+  padding-top: .2rem;
 }
 
 .tree-grid-container .slick-header-column .fa,
@@ -43,14 +49,21 @@
   vertical-align: middle;
   font: normal normal normal 20px/1 'Material Design Icons';
   text-rendering: auto;
+  font-size: 1.1rem;
+  line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
 }
+
 
 .tree-grid-container .slick-group-toggle.expanded:before {
   content: "\F143";
+}
+
+.tree-grid-container .slick-group-toggle.childless:before {
+  content: "\F143";
+  color: white;
+  cursor: none;
 }
 
 .tree-grid-container .slick-group-toggle.unselected:before {
@@ -63,6 +76,21 @@
 
 .tree-grid-container .slick-group-toggle.collapsed:before {
   content: "\F140";
+}
+
+.tree-grid-container .slick-group-toggle.request-children:before
+{
+  content: "\F415";
+}
+
+.tree-grid-container .slick-group-toggle.select-children:before
+{
+  content: "\F63C";
+}
+
+.tree-grid-container .slick-group-toggle.unselect-children:before
+{
+  content: "\F63E";
 }
 
 .slick-group-toggle.child-selected:before {
@@ -79,17 +107,15 @@
   position: absolute;
 }
 
-.tree-grid-container .slick-row.odd {
-  background: white;
-  font-family: "Helvetica";
-  font-size: 1.4rem;
-}
 
 .tree-grid-container .slick-row.even,
-.tree-grid-container .slick-group.odd {
-  background: white;
-  font-family: "Helvetica";
-  font-size: 1.4rem;
+.tree-grid-container .slick-row.odd {
+  border-bottom: 1px solid #DDD;
+}
+
+.tree-grid-container .slick-group.odd,
+.tree-grid-container .slick-group.even {
+  border-bottom: 1px solid #DDD;
 }
 
 .tree-grid-container .slick-group .slick-cell {
@@ -99,6 +125,8 @@
 
 .tree-grid-container .slick-cell {
   border: none;
+  line-height: 20px;
+
 }
 
 .tree-grid-container .slick-cell .slick-group-toggle {

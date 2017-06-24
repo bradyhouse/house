@@ -1,3 +1,28 @@
-<div class="content-component" (window:resize)="onWindowResize()">
-  <code>CONTENT</code>
+<div class="content-component">
+  <nav class="navbar">
+    <ul class="nav navbar-nav">
+      <li>
+        <button (click)="onShowSelectedClick()" class="btn btn-default" title="show selected"><i class="mdi mdi-checkbox-marked-outline"></i></button>
+      </li>
+      <li>
+        <button (click)="onShowAllClick()" class="btn btn-default" title="show all"><i class="mdi mdi-checkbox-blank-outline"></i></button>
+      </li>
+
+      <li>
+        <button (click)="onClearSelectedClick()" class="btn btn-default" title="clear selected"><i class="mdi mdi-notification-clear-all"></i></button>
+      </li>
+      <li>
+        <button (click)="onExpandAllClick()" class="btn btn-default" title="expand all"><i class="mdi mdi-plus"></i></button>
+      </li>
+      <li>
+        <button (click)="onCollapseAllClick()" class="btn btn-default" title="collapse all"><i class="mdi mdi-playlist-minus"></i></button>
+      </li>
+      <li>
+        <button (click)="onSelectAllClick()" class="btn btn-default" title="select all"><i class="mdi mdi-playlist-check"></i></button>
+      </li>
+    </ul>
+  </nav>
+  <code>
+    {{json}}
+  </code>
 </div>

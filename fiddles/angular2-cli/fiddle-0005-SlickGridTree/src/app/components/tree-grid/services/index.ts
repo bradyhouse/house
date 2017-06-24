@@ -1,3 +1,3 @@
-export * from './events.service';
-export * from './resize.service';
-export * from './node.service';
+export * from './tree-grid-events.service';
+export * from './tree-grid-resize.service';
+export * from './tree-grid-node.service';

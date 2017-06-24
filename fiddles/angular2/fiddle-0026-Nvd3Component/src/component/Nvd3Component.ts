@@ -131,8 +131,8 @@ export class Nvd3Component implements OnChanges {
 
 
     private configureDimensions() : void {
-        let chartHeight = this.options.chart.height,
-            chartWidth = this.options.chart.width;
+        let chartHeight: any = this.options.chart.height,
+            chartWidth: any = this.options.chart.width;
 
         d3.select(this.el).select('svg').remove();
         this.svg = d3.select(this.el).append('svg');
@@ -159,7 +159,7 @@ export class Nvd3Component implements OnChanges {
 
     private configureGradients(gradientOptions:any) : void {
         if (gradientOptions) {
-            let svgDefs = this.svg.append("svg:defs");
+            let svgDefs: any = this.svg.append("svg:defs");
             gradientOptions.map(function(gradientOption:any) {
                 let gradient:any = svgDefs
                     .append("svg:" + gradientOption.type);
@@ -182,11 +182,10 @@ export class Nvd3Component implements OnChanges {
 
     private configureChart(chart : any, options : any, chartType : string) : void {
         if (chart && options) {
-            for (let key in chart) {
+            for (let key: any in chart) {
                 if (!chart.hasOwnProperty(key)) {
                     continue;
                 }
-                let value:any = chart[key];
                 if (key[0] === '_') {
                     continue;
                 } else if (key === 'dispatch') {

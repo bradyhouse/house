@@ -53,26 +53,17 @@ export class TreeController implements OnInit {
     selectedNodes:String[];
 
     constructor(private treeDataService:TreeDataService) {
-        this.root = new TreeNode("root", [], null);
+        this.root = new TreeNode("root", false, [], null);
     }
 
     changed() {
     }
 
     ngOnInit() {
-        this.treeDataService.request(this.url).subscribe((res:Response) => {
+        this.treeDataService.request(this.url).subscribe((res:any) => {
             if (res.children) {
-                res.children.map(function (parentNode) {
-                    var rootChildNode = new TreeNode(parentNode.title, [], this.root);
-                    if (!parentNode.leaf) {
-                        parentNode.children.map(function (child) {
-                            rootChildNode.nodes.push(new TreeNode(child.title, [], rootChildNode));
-                        });
-                        rootChildNode.nodes.sort(function (a, b) {
-                            return a.name < b.name;
-                        });
-                    }
-                    this.root.nodes.push(rootChildNode);
+                res.children.map((parentNode: any) => {
+                    this.root.nodes.push(this._transform(parentNode, this.root));
                 }, this);
             }
         });
@@ -94,5 +85,32 @@ export class TreeController implements OnInit {
     onShowSelectedClick() {
         this.isChecked = !this.isChecked;
     }
+
+    private _transform(parentNode: any, root: any): any {
+        let rootChildNode: any = new TreeNode(parentNode.title,
+            parentNode.hasOwnProperty('selectable') ? parentNode.selectable : true,
+            [],
+            root);
+        if (!parentNode.leaf) {
+            if (parentNode.children && parentNode.children) {
+                parentNode.children.map((child: any) => {
+                    if (!child.leaf) {
+                        rootChildNode.nodes.push(this._transform(child, rootChildNode));
+                    } else {
+                        rootChildNode.nodes.push(new TreeNode(
+                            child.title,
+                            child.hasOwnProperty('selectable') ? child.selectable : true,
+                            [],
+                            rootChildNode));
+                    }
+                });
+                rootChildNode.nodes.sort((a: any, b: any) => {
+                    return a.name < b.name;
+                });
+            }
+        }
+        return rootChildNode;
+    }
+
 
 }

@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {PuzzleModule} from './shared/puzzle/puzzle.module';
 import { AppComponent } from './app.component';
+import { AppStateService } from './app-state.service';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     PuzzleModule
   ],
-  providers: [],
+  providers: [AppStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
