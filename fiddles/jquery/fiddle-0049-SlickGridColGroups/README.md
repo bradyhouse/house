@@ -18,7 +18,8 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+N/A
+
 
 ### Description
 
