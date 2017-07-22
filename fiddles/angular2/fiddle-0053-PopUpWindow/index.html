@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>document.write('<base href="' + document.location + '" />');</script>
+  <title>fiddle-0053-PopUpWindow</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="http://github/bradyhouse/house/fiddles/angular2/fiddle-0053-PopUpWindow">
+  <link rel="shortcut icon" href="../resources/images/favicon.ico" id="favicon"/>
+  <meta name="author" content="bradyhouse@gmail.com">
+  <link rel="stylesheet" href="style.css">
+  <script src="images.js"></script>
+  <script>
+    // Fixes undefined module function in SystemJS bundle
+    function module() {}
+  </script>
+  <script>
+    let useLocal = false;
+    if (window === window.top || (window.innerHeight > 300)) {
+      document.write('<script src="https://npmcdn.com/es6-shim@0.35.3/es6-shim.min.js"><\/script>');
+      document.write('<script src="https://npmcdn.com/zone.js@0.8.4?main=browser"><\/script>');
+      document.write('<script src="https://npmcdn.com/reflect-metadata@0.1.3"><\/script>');
+      document.write('<script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"><\/script>');
+      document.write('<script src="systemjs.config.js"><\/script>');
+      document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/angular2/fiddle-0053-PopUpWindow" target="_blank"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="'+ images.githubLink + '" alt="Fork me on GitHub"><\/a>');
+    }
+  </script>
+</head>
+<body>
+<app>loading...</app>
+<script>
+  window.setTimeout(function() {
+    System.import('app').catch(function (err) {
+      console.error(err);
+    });
+  },2000);
+</script>
+
+</body>
+</html>

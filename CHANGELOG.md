@@ -1575,9 +1575,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2 Seeder**
     1.  Added [fiddles/angular2-seeder/fiddle-0001-EniPuzzle](fiddles/angular2-seeder/fiddle-0001-EniPuzzle) ~ [Issue 151](https://github.com/bradyhouse/house/issues/151)
 
-* **Three.js**
-
-
 ### 201704170420
 
 * **Node**
@@ -1615,3 +1612,18 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   5.  Added [fiddles/jquery/fiddle-0048-AddTwoHugeNumbers](fiddles/jquery/fiddle-0048-AddTwoHugeNumbers) ~ [Issue 175](https://github.com/bradyhouse/house/issues/175)
   6.  Added [fiddles/jquery/fiddle-0049-SlickGridColGroups](fiddles/jquery/fiddle-0049-SlickGridColGroups)
   7.  Added [fiddles/jquery/fiddle-0050-SlickGridCustomColGroups](fiddles/jquery/fiddle-0050-SlickGridCustomColGroups)
+
+
+### 201706270420
+
+* **Angular2**
+
+  1.  Added [fiddles/angular2/fiddle-0051-KunovskyGridColGroups](fiddles/angular2/fiddle-0051-KunovskyGridColGroups) ~ [Issue 176](https://github.com/bradyhouse/house/issues/176)
+  2.  Added [fiddles/angular2/fiddle-0052-SlickGridColFix](fiddles/angular2/fiddle-0052-SlickGridColFix) ~ [Issue 177](https://github.com/bradyhouse/house/issues/177)
+  3.  Added [fiddles/angular2/fiddle-0053-PopUpWindow](fiddles/angular2/fiddle-0053-PopUpWindow) ~ [Issue 179](https://github.com/bradyhouse/house/issues/179)
+
+* **Jquery**
+
+  1.  Added [fiddles/jquery/fiddle-0051-AlmostIncreasingSequence](fiddles/jquery/fiddle-0051-AlmostIncreasingSequence) ~ [Issue 178](https://github.com/bradyhouse/house/issues/178)
+  2.  Added [fiddles/jquery/fiddle-0052-ReverseParentheses](fiddles/jquery/fiddle-0052-ReverseParentheses) ~ [Issue 180](https://github.com/bradyhouse/house/issues/180)
+

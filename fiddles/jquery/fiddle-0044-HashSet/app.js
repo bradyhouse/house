@@ -16,6 +16,7 @@
     };
 
   };
+  
   app.isListPalindrome = (l) => {
     if(l.length > 0) {
       return (JSON.stringfy(l) === JSON.stringify(l.sort()))

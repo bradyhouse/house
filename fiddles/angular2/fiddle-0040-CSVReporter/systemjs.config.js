@@ -12,7 +12,7 @@
         'ts': 'https://unpkg.com/plugin-typescript@4.0.10/lib/plugin.js',
         'typescript': 'https://unpkg.com/typescript@1.8.10/lib/typescript.js',
         'ag-grid-ng2': 'https://unpkg.com/ag-grid-ng2@4.2.0',
-        'ag-grid': 'https://unpkg.com/ag-grid@4.2.6',
+        'ag-grid': 'https://unpkg.com/ag-grid',
         'jquery': 'https://unpkg.com/jquery@3.0.0',
         'jquery-csv':'https://unpkg.com/jquery-csv@0.8.1'
     };
