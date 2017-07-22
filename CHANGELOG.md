@@ -1620,7 +1620,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/angular2/fiddle-0051-KunovskyGridColGroups](fiddles/angular2/fiddle-0051-KunovskyGridColGroups) ~ [Issue 176](https://github.com/bradyhouse/house/issues/176)
   2.  Added [fiddles/angular2/fiddle-0052-SlickGridColFix](fiddles/angular2/fiddle-0052-SlickGridColFix) ~ [Issue 177](https://github.com/bradyhouse/house/issues/177)
-  3.  Added [fiddles/angular2/fiddle-0053-PopUpWindow](fiddles/angular2/fiddle-0053-PopUpWindow) ~ [Issue 179](https://github.com/bradyhouse/house/issues/179)
+  3.  Started [fiddles/angular2/fiddle-0053-PopUpWindow](fiddles/angular2/fiddle-0053-PopUpWindow) ~ [Issue 179](https://github.com/bradyhouse/house/issues/179)
 
 * **Jquery**
 
