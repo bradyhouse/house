@@ -30,7 +30,7 @@ function nvmInstall() {
 function npmBuildProd() {
   groupLog "npmBuildProd";
   pwd;
-  npm run build;
+  ng build;
 
 }
 

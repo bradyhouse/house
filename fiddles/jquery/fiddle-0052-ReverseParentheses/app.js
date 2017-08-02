@@ -68,7 +68,7 @@
 
       '<hr>' +
       '<h4>Test 2: reverseParentheses("a(bcdefghijkl(mno)p)q"):</h4>' +
-      '<pre>' + JSON.stringify(app.reverseParentheses('test2', 'a(bcdefghijkl(mno)p)q')) +'</pre>'; /*+
+      '<pre>' + JSON.stringify(app.reverseParentheses('test2', 'a(bcdefghijkl(mno)p)q')) +'</pre>'+
 
       '<hr>' +
       '<h4>Test 3: reverseParentheses([1, 2, 1, 2]):</h4>' +
@@ -80,7 +80,7 @@
 
       '<hr>' +
       '<h4>Test 6: reverseParentheses([1, 1, 1, 2, 3]):</h4>' +
-      '<pre>' + JSON.stringify(app.reverseParentheses('test6', [1, 1, 1, 2, 3])) +'</pre>';*/
+      '<pre>' + JSON.stringify(app.reverseParentheses('test6', [1, 1, 1, 2, 3])) +'</pre>';
 
 
 

@@ -1622,8 +1622,24 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   2.  Added [fiddles/angular2/fiddle-0052-SlickGridColFix](fiddles/angular2/fiddle-0052-SlickGridColFix) ~ [Issue 177](https://github.com/bradyhouse/house/issues/177)
   3.  Started [fiddles/angular2/fiddle-0053-PopUpWindow](fiddles/angular2/fiddle-0053-PopUpWindow) ~ [Issue 179](https://github.com/bradyhouse/house/issues/179)
 
+* **Angular2 CLI**
+
+  1.  Added [fiddles/angular2-cli/fiddle-0009-NgStoreCounter](fiddles/angular2-cli/fiddle-0009-NgStoreCounter) ~ [Issue 187](https://github.com/bradyhouse/house/issues/187)
+  2.  Started [fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter](fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter) ~ [Issue 188](https://github.com/bradyhouse/house/issues/188)
+
 * **Jquery**
 
   1.  Added [fiddles/jquery/fiddle-0051-AlmostIncreasingSequence](fiddles/jquery/fiddle-0051-AlmostIncreasingSequence) ~ [Issue 178](https://github.com/bradyhouse/house/issues/178)
   2.  Added [fiddles/jquery/fiddle-0052-ReverseParentheses](fiddles/jquery/fiddle-0052-ReverseParentheses) ~ [Issue 180](https://github.com/bradyhouse/house/issues/180)
+  3.  Added [fiddles/jquery/fiddle-0053-AreSimilar](fiddles/jquery/fiddle-0053-AreSimilar) ~ [Issue 182](https://github.com/bradyhouse/house/issues/182)
+  4.  Added [fiddles/jquery/fiddle-0054-ArrayChange](fiddles/jquery/fiddle-0054-ArrayChange) ~ [Issue 183](https://github.com/bradyhouse/house/issues/183)
+  5.  Added [fiddles/jquery/fiddle-0055-PalindromeRearranging](fiddles/jquery/fiddle-0055-PalindromeRearranging) ~ [Issue 183](https://github.com/bradyhouse/house/issues/183)
+  6.  Added [fiddles/jquery/fiddle-0056-AvoidObstacles](fiddles/jquery/fiddle-0056-AvoidObstacles) ~ [Issue 184](https://github.com/bradyhouse/house/issues/184)
+  7.  Added [fiddles/jquery/fiddle-0057-MineSweeper](fiddles/jquery/fiddle-0057-MineSweeper) ~ [Issue 185](https://github.com/bradyhouse/house/issues/185)
+  8.  Added [fiddles/jquery/fiddle-0058-VariableName](fiddles/jquery/fiddle-0058-VariableName) ~ [Issue 186](https://github.com/bradyhouse/house/issues/186)
+
+
+* **NativeScript**
+
+  1.  Started [fiddles/nativescript/fiddle-0012-LocalStorage](fiddles/nativescript/fiddle-0012-LocalStorage) ~ [Issue 189](https://github.com/bradyhouse/house/issues/189)
 

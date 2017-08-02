@@ -29,7 +29,7 @@ Build a fiddle based on Brian Troncone's [Comprehensive Introduction to @ngrx/st
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > angular2-cli > #8](http://bradyhouse.github.io/angular2-cli/fiddle-0008-NgRxStateManagement/#)
 
 
 ### Tags

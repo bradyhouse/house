@@ -8,6 +8,7 @@
       'rxjs': 'https://npmcdn.com/rxjs@5.3.0',
       'ts': 'https://npmcdn.com/plugin-typescript@7.0.6/lib/plugin.js',
       'typescript': 'https://npmcdn.com/typescript@2.2.2/lib/typescript.js',
+      'immutable': 'https://npmcdn.com/immutable@3.8.1/dist/immutable.js'
     },
     packages = {
       'app': {main: 'main.ts', defaultExtension: 'ts'},

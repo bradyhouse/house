@@ -55,7 +55,7 @@ function ngCreate() {
             appName="fiddle";
         fi
 
-        ng new ${appName} --skip-npm --directory ${fiddle} || exit 2;
+        ng new ${appName} --directory ${fiddle} || exit 2;
         cd ${fiddle};
 
         if [[ -e .gitignore ]]

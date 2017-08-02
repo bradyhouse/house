@@ -74,7 +74,6 @@ function initNg2Project() {
   cd ${projectName};
   nativescript platform add android || exit 9;
 
-  cd ${projectName};
   createTypingsRcFile || exit $?;
 
 }

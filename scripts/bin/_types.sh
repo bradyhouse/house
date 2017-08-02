@@ -22,7 +22,8 @@ voidEchoFiddleTypes() {
 
     case $1 in
         'build')
-          echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddle"
+          echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddle";
+          echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle";
           ;;
         'setup')
            echo -e "\t\"android\"\tinstall android-sdk\thttps://developer.android.com";

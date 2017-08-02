@@ -34,5 +34,8 @@ module.exports = {
   'xml'     : 'application/xml',
   'java'    : 'text/x-java-source',
   'xcf'     : 'application/octet-stream',
-  'rtf'     : 'application/rtf'
+  'rtf'     : 'application/rtf',
+  'm4v'     : 'video/x-m4v',
+  'tiff'    : 'image/tiff',
+  'exr'     : 'application/octet-stream'
 }
