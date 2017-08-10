@@ -1620,12 +1620,17 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/angular2/fiddle-0051-KunovskyGridColGroups](fiddles/angular2/fiddle-0051-KunovskyGridColGroups) ~ [Issue 176](https://github.com/bradyhouse/house/issues/176)
   2.  Added [fiddles/angular2/fiddle-0052-SlickGridColFix](fiddles/angular2/fiddle-0052-SlickGridColFix) ~ [Issue 177](https://github.com/bradyhouse/house/issues/177)
-  3.  Started [fiddles/angular2/fiddle-0053-PopUpWindow](fiddles/angular2/fiddle-0053-PopUpWindow) ~ [Issue 179](https://github.com/bradyhouse/house/issues/179)
+  3.  Added [fiddles/angular2/fiddle-0053-PopUpWindow](fiddles/angular2/fiddle-0053-PopUpWindow) ~ [Issue 179](https://github.com/bradyhouse/house/issues/179)
 
 * **Angular2 CLI**
 
   1.  Added [fiddles/angular2-cli/fiddle-0009-NgStoreCounter](fiddles/angular2-cli/fiddle-0009-NgStoreCounter) ~ [Issue 187](https://github.com/bradyhouse/house/issues/187)
-  2.  Started [fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter](fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter) ~ [Issue 188](https://github.com/bradyhouse/house/issues/188)
+  2.  Added [fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter](fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter) ~ [Issue 188](https://github.com/bradyhouse/house/issues/188)
+  3.  Added [fiddles/angular2-cli/fiddle-0011-CssAnimation](fiddles/angular2-cli/fiddle-0011-CssAnimation) ~ [Issue 192](https://github.com/bradyhouse/house/issues/192)
+
+* **Bash**
+
+  1.  Started [fiddles/bash/fiddle-0096-AndroidDeviceScreenShot](fiddles/bash/fiddle-0096-AndroidDeviceScreenShot) ~  [Issue 193](https://github.com/bradyhouse/house/issues/193)
 
 * **Jquery**
 
@@ -1637,9 +1642,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   6.  Added [fiddles/jquery/fiddle-0056-AvoidObstacles](fiddles/jquery/fiddle-0056-AvoidObstacles) ~ [Issue 184](https://github.com/bradyhouse/house/issues/184)
   7.  Added [fiddles/jquery/fiddle-0057-MineSweeper](fiddles/jquery/fiddle-0057-MineSweeper) ~ [Issue 185](https://github.com/bradyhouse/house/issues/185)
   8.  Added [fiddles/jquery/fiddle-0058-VariableName](fiddles/jquery/fiddle-0058-VariableName) ~ [Issue 186](https://github.com/bradyhouse/house/issues/186)
-
+  9.  Added [fiddles/jquery/fiddle-0059-BeautifulString](fiddles/jquery/fiddle-0059-BeautifulString) ~ [Issue 191](https://github.com/bradyhouse/house/issues/191)
 
 * **NativeScript**
 
-  1.  Started [fiddles/nativescript/fiddle-0012-LocalStorage](fiddles/nativescript/fiddle-0012-LocalStorage) ~ [Issue 189](https://github.com/bradyhouse/house/issues/189)
+  1.  Added [fiddles/nativeScript/fiddle-0012-LocalStorage](fiddles/nativeScript/fiddle-0012-LocalStorage) ~ [Issue 189](https://github.com/bradyhouse/house/issues/189) 
+
+
+
 

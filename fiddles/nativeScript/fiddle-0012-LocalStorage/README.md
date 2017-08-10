@@ -1,6 +1,7 @@
 fiddle-0012-LocalStorage
 ======
 
+![Screenshot](screenshot.png)
 
 ### Title
 
@@ -41,3 +42,7 @@ state in [Puzzle 16](https://github.com/bradyhouse/16).
 ### Tags
 
 {N}, nativescript, nativescript-localstorage
+
+### Forked From
+
+[fiddle-0012-LocalStorage](../fiddle-0001-PageNavigation)

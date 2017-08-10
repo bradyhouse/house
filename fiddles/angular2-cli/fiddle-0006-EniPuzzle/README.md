@@ -31,7 +31,8 @@ the UI should be stripped down (simplified) to use a table and buttons.
 
 ### Published Version Link
 
-N/A
+* [bradyhouse.github.io > angular2-cli > #6](http://bradyhouse.github.io/angular2-cli/fiddle-0006-EniPuzzle/#)
+
 
 
 ### Tags

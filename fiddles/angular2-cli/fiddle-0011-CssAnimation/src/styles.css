@@ -1,0 +1,65 @@
+
+
+.loader {
+
+}
+
+.loader > div {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  padding-left: 4rem;
+  text-align: center;
+  background-color: darkslategray;
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 2s infinite ease-in-out both;
+}
+
+.loader .bounce1 {
+  animation-delay: -.16s;
+  padding: 1rem;
+}
+
+.loader .bounce2 {
+  animation-delay: -.32s;
+  padding: 1rem;
+}
+
+.loader .bounce3 {
+  animation-delay: -.64s;
+  padding: 1rem;
+}
+.loader .bounce4 {
+  animation-delay: -.80s;
+  padding: 1rem;
+}
+.loader .bounce5 {
+  animation-delay: -.96s;
+  padding: 1rem;
+}
+
+.loader .bounce6 {
+  animation-delay: -.128s;
+  padding: 1rem;
+}
+
+
+@keyframes sk-bouncedelay {
+  0%, 150% {
+    transform: scale(-1);
+  }
+  40% {
+    transform: scale(2);
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+      transform: scale(1.0);
+      opacity: 0;
+    }
+}
+

@@ -47,11 +47,11 @@ export class AppComponent implements AfterViewInit{
         }
       }),
       _columnFilters: any = {},
-      filter = (item)  => {
-        for (var columnId in _columnFilters) {
-          if (columnId !== undefined && _columnFilters[columnId] !== "") {
-            var c: any = this._grid.getColumns()[this._grid.getColumnIndex(columnId)];
-            if (item[c.field] != _columnFilters[columnId]) {
+      filter: Function = (item)  => {
+        for (var columnId in this.columnFilters) {
+          if (columnId !== undefined && this.columnFilters[columnId] !== "") {
+            var c: any = grid.getColumns()[grid.getColumnIndex(columnId)];
+            if (item[c.field] != this.columnFilters[columnId]) {
               return false;
             }
           }

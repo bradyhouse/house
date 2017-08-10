@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="panel panel-default" (window:resize)="onWindowResize()">
+  <div class="panel-heading">CSS Anime</div>
+  <div class="panel-body">
+    <div class="jumbotron">
+      <p style="padding-left: 3rem">
+         <app-loading-anime [options]="options"
+                            [ngStyle]="{
+                 'height': height + 'px',
+                 'width': width + 'px'}"
+                            (widthChange)="onAnimeWidthChange($event)"
+                            (heightChange)="onAnimeHeightChange($event)">
+        </app-loading-anime>
+      </p>
+      </div>
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col">
+        <a href="#" (click)="onError()" class="btn btn-danger">Error</a>
+        <a href="#" (click)="onWarning()" class="btn btn-warning">Warning</a>
+        <a href="#" (click)="onLoad()" class="btn btn-default">Load</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

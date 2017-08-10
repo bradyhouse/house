@@ -1,0 +1,21 @@
+<div class="loading-anime" #el (window:resize)="onWindowResize()">
+  <div *ngIf="!options?.isDataValid && !options?.isLoading"
+       class="loading-anime"
+       [ngClass]="options?.cssClass">
+    <p class="error" *ngIf="options?.error">{{options?.error}}</p>
+    <p class="notification" *ngIf="!options?.error">{{options?.warning}}</p>
+  </div>
+
+  <div class="loader"
+       [ngClass]="options?.cssClass"
+       *ngIf="options?.isLoading">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+    <div class="bounce4"></div>
+    <div class="bounce5"></div>
+    <div class="bounce6"></div>
+  </div>
+</div>
+
+
