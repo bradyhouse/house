@@ -5,19 +5,19 @@ import {
   AfterViewInit
 } from '@angular/core';
 
-import { SlickGridAutoSizeService } from './slick-grid-auto-size.service';
-import { SlickGridResizeService } from './slick-grid-resize.service';
+import {SlickGridAutoSizeService} from './slick-grid-auto-size.service';
+import {SlickGridResizeService} from './slick-grid-resize.service';
 
-declare let Slick:any, $: any;
+declare let Slick: any, $: any;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   providers: [SlickGridAutoSizeService, SlickGridResizeService]
 })
-export class AppComponent implements AfterViewInit{
-  @ViewChild('table') table:ElementRef;
-  @ViewChild('container') container:ElementRef;
+export class AppComponent implements AfterViewInit {
+  @ViewChild('table') table: ElementRef;
+  @ViewChild('container') container: ElementRef;
   private _grid: any;
   private _dataView: any;
 
@@ -35,7 +35,6 @@ export class AppComponent implements AfterViewInit{
   }
 
 
-
   private _render() {
     let alphabet: string = 'abcdefghijklmnopqrstuvwxyz',
       columns: any[] = alphabet.split('').map((l: any, i: number) => {
@@ -47,11 +46,11 @@ export class AppComponent implements AfterViewInit{
         }
       }),
       _columnFilters: any = {},
-      filter: Function = (item)  => {
-        for (var columnId in this.columnFilters) {
-          if (columnId !== undefined && this.columnFilters[columnId] !== "") {
-            var c: any = grid.getColumns()[grid.getColumnIndex(columnId)];
-            if (item[c.field] != this.columnFilters[columnId]) {
+      filter: Function = (item) => {
+        for (var columnId in _columnFilters) {
+          if (columnId !== undefined && _columnFilters[columnId] !== "") {
+            var c: any = this._grid.getColumns()[this._grid.getColumnIndex(columnId)];
+            if (item[c.field] != _columnFilters[columnId]) {
               return false;
             }
           }
@@ -67,14 +66,14 @@ export class AppComponent implements AfterViewInit{
       data: any[] = [];
 
 
-    for (var i = 0; i < 500; i++) {
+    for (var i = 0; i < 150000; i++) {
       let item: any = {};
       item['id'] = i;
       alphabet.split('').forEach((l: string, li: number) => {
         if (li === 0) {
           item[l] = i;
         } else {
-          item[l] = Math.round(Math.random() * 100);
+          item[l] = Math.round(Math.random() * 1000);
         }
       });
 
@@ -100,6 +99,7 @@ export class AppComponent implements AfterViewInit{
       this._grid.render();
     });
 
+
     $(this._grid.getHeaderRow()).delegate(":input", "change keyup", (e) => {
       var columnId = $(e.currentTarget).data('columnId');
       if (columnId !== null) {
@@ -123,7 +123,7 @@ export class AppComponent implements AfterViewInit{
     this._grid.render();
 
     let mainGrid = $('.grid').eq(2),
-        colFixedGrid = $('.grid').eq(1);
+      colFixedGrid = $('.grid').eq(1);
 
     colFixedGrid.find('.slick-header').height(mainGrid.find('.slick-header').height());
     colFixedGrid.find('.slick-header-columns').height(mainGrid.find('.slick-header-columns').outerHeight() * 3);

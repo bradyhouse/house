@@ -1627,6 +1627,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/angular2-cli/fiddle-0009-NgStoreCounter](fiddles/angular2-cli/fiddle-0009-NgStoreCounter) ~ [Issue 187](https://github.com/bradyhouse/house/issues/187)
   2.  Added [fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter](fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter) ~ [Issue 188](https://github.com/bradyhouse/house/issues/188)
   3.  Added [fiddles/angular2-cli/fiddle-0011-CssAnimation](fiddles/angular2-cli/fiddle-0011-CssAnimation) ~ [Issue 192](https://github.com/bradyhouse/house/issues/192)
+  4.  Started [fiddles/angular2-cli/fiddle-0012-PanelReOrdering](fiddles/angular2-cli/fiddle-0012-PanelReOrdering) ~ [Issue 196](https://github.com/bradyhouse/house/issues/196)
 
 * **Bash**
 
@@ -1643,11 +1644,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   7.  Added [fiddles/jquery/fiddle-0057-MineSweeper](fiddles/jquery/fiddle-0057-MineSweeper) ~ [Issue 185](https://github.com/bradyhouse/house/issues/185)
   8.  Added [fiddles/jquery/fiddle-0058-VariableName](fiddles/jquery/fiddle-0058-VariableName) ~ [Issue 186](https://github.com/bradyhouse/house/issues/186)
   9.  Added [fiddles/jquery/fiddle-0059-BeautifulString](fiddles/jquery/fiddle-0059-BeautifulString) ~ [Issue 191](https://github.com/bradyhouse/house/issues/191)
+  10. Added [fiddles/jquery/fiddle-0060-SpiralNumbers](fiddles/jquery/fiddle-0060-SpiralNumbers) ~ [Issue 194](https://github.com/bradyhouse/house/issues/194)
+  11. Added [fiddles/jquery/fiddle-0061-Sudoku](fiddles/jquery/fiddle-0061-Sudoku) ~ [Issue 195](https://github.com/bradyhouse/house/issues/195)
 
 * **NativeScript**
 
   1.  Added [fiddles/nativeScript/fiddle-0012-LocalStorage](fiddles/nativeScript/fiddle-0012-LocalStorage) ~ [Issue 189](https://github.com/bradyhouse/house/issues/189) 
-
-
-
 

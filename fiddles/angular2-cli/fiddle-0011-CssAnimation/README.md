@@ -34,7 +34,7 @@ state of the options passed to the component.  It combines:
 
 ### Published Version Link
 
-  * [bradyhouse.github.io > angular2-cli > #11](http://bradyhouse.github.io/angular2-cli/fiddle-0011-CssAnimation/#)
+[bradyhouse.github.io > angular2-cli > #11](http://bradyhouse.github.io/angular2-cli/fiddle-0011-CssAnimation/#)
 
 
 ### Tags
