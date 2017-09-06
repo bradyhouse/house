@@ -16,7 +16,7 @@
 HOME_ROOT=$(mapHomePath;);
 GITHUB_PUBLISH_REPO="bradyhouse.github.io";
 GITHUB_ROOT="${HOME_ROOT}/github";
-BUILD_NUM="201704170420";
+BUILD_NUM="201708290420";
 BASH_PROFILE="${HOME_ROOT}/.bash_profile";
 
 

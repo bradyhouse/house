@@ -1,0 +1,8 @@
+<div class="panel-heading"
+     [draggable]="true"
+     (dragstart)="onDragStart($event)"
+     (dragend)="onDragEnd($event)"
+     (dragover)="onDragOver($event)"
+>
+  <h3 class="panel-title">{{title}}</h3>
+</div>

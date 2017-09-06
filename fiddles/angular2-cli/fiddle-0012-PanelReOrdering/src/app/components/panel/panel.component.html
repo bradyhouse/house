@@ -1,0 +1,12 @@
+
+<div class="panel panel-primary">
+  <app-panel-header [options]="panelHeaderOptions" (events)="onPanelHeaderEvent($event)"></app-panel-header>
+  <div class="panel-body">
+    <iframe frameborder="no" [src]="sanitizer.bypassSecurityTrustResourceUrl(url)"
+              [ngStyle]="{ 'width': width +'px', 'height': height + 'px'}"></iframe>
+
+  </div>
+</div>
+
+
+

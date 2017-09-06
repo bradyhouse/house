@@ -1651,3 +1651,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/nativeScript/fiddle-0012-LocalStorage](fiddles/nativeScript/fiddle-0012-LocalStorage) ~ [Issue 189](https://github.com/bradyhouse/house/issues/189) 
 
+
+### 201708290420
+
+* **NativeScript**
+
+  1.  Started [fiddles/nativescript/fiddle-0013-WindowSize](fiddles/nativescript/fiddle-0013-WindowSize) ~ [Issue 197](https://github.com/bradyhouse/house/issues/197)
+
+* **Bash**
+
+  1.  Added [fiddles/bash/fiddle-0097-Protractor](fiddles/bash/fiddle-0097-Protractor) ~ [Issue #198](https://github.com/bradyhouse/house/issues/198)
+
+

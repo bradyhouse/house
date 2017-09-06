@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  width: 80%;
+  height: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 1200px;
+  min-height: 300px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}

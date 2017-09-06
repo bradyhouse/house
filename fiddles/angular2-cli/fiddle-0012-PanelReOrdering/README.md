@@ -29,7 +29,13 @@ re-ordered by moving (dragging and dropping) the window's title bar.  It combine
  
   * angular (v4.0.0)
   * bootstrap (v3.3.7)
-
+  * jquery (v3.2.1)
+  * select2 (v4.0.3)
+  * lodash (v4.17.4)
+  * bootswatch (v3.3.7)
+  * ngrx/core (v1.2.0)
+  * ngrx/store (v4.0.3)
+  * ngrx/effects (v4.0.5)
 
 ### Published Version Link
 
@@ -39,4 +45,4 @@ re-ordered by moving (dragging and dropping) the window's title bar.  It combine
 
 ### Tags
 
-node, angular2, systemjs, es6-shim, reflect-metadata, rxjs, zone.js, concurrently, lite-server, typings
+node, angular2, angular2-cli, bootstrap, jquery, select2, lodash, DomSanitizer

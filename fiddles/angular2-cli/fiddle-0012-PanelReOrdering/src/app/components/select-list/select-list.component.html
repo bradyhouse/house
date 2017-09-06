@@ -1,0 +1,11 @@
+<span class="app-select-list">
+  <select [disabled]="options?.isDisabled">
+    <option *ngIf="options?.placeholder"></option>
+    <option
+      *ngFor="let item of data"
+      class="{{item.className}}"
+      [value]="item.id">
+      {{item.text}}
+    </option>
+  </select>
+</span>

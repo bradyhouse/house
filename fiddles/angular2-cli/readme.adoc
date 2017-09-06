@@ -57,6 +57,14 @@ can be used to extend or test drive this collection. The following table outline
 
 === Special Topics
 
+==== Protractor
+
+*   link:http://www.protractortest.org/#[Protractor API]
+*   link:https://github.com/angular/protractor/blob/master/docs/tutorial.md[Getting Started Tutorial]
+*   link:https://github.com/angular/protractor/blob/master/docs/locators.md[Locators]
+*   link:https://github.com/angular/protractor/blob/master/lib/config.ts[Config File]
+*   link:https://github.com/angular/protractor/blob/master/docs/toc.md[Protractor HowTo Docs]
+
 ==== Component Router
 
 *   link:https://goo.gl/JKeMe5[Angular 2 Weekly meeting notes]
@@ -82,4 +90,7 @@ can be used to extend or test drive this collection. The following table outline
 *   link:https://www.youtube.com/watch?v=rrT6v5sOwJg[https://www.youtube.com/watch?v=rrT6v5sOwJg]
 *   link:http://materializecss.com/[http://materializecss.com/]
 
+==== Technical Articles
 
+*   link:https://github.com/stickfigure/blog/wiki/Opinionated-Comparison-of-React%2C-Angular2%2C-and-Aurelia?utm_source=javascriptweekly&utm_medium=email[Opinionated Comparison of React, Angular2, and Aurelia]
+*   link:https://blog.thoughtram.io/angular/2015/06/29/shadow-dom-strategies-in-angular2.html[View Encapsulation in Angular]
