@@ -2,8 +2,15 @@
 
 <div class="grid grid-pad">
   <app-header [options]="headerOptions" (itemSelected)="onItemSelected($event)"></app-header>
-  <div *ngFor="let panel of panels">
-    <app-panel [options]="panel" (events)="onPanelEvent($event)"></app-panel>
+  <div *ngIf="noPanels()">
+    <div class="container-fluid">
+      <p class="lead">Open some panels <i class="mdi mdi-arrow-up"></i><i class="mdi mdi-arrow-up"></i></p>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div *ngFor="let panel of panels">
+      <app-panel [options]="panel" (events)="onPanelEvent($event)"></app-panel>
+    </div>
   </div>
 </div>
 

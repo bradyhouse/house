@@ -8,7 +8,8 @@ import {
   KeyValueDiffer,
   KeyValueDiffers,
   ChangeDetectorRef,
-  DoCheck
+  DoCheck,
+  OnInit
 } from '@angular/core';
 import { HeaderOptions } from './header';
 import { SelectListOptions } from '../index';
@@ -18,10 +19,12 @@ import { SelectListOptions } from '../index';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnChanges, DoCheck {
+export class HeaderComponent implements OnChanges, DoCheck, OnInit {
   @Input() options: HeaderOptions;
   @Output() itemSelected:EventEmitter<string>;
   selectListOptions: SelectListOptions;
+  width: number;
+  timeOut: any;
 
   private _differ: KeyValueDiffer<string, any> = null;
 
@@ -29,6 +32,11 @@ export class HeaderComponent implements OnChanges, DoCheck {
   constructor(private _changeDetector: ChangeDetectorRef,
               private _differs: KeyValueDiffers) {
     this.itemSelected = new EventEmitter();
+  }
+
+
+  ngOnInit(): void {
+    this._calcWidth();
   }
 
   ngOnChanges(changes: any): void {
@@ -54,6 +62,16 @@ export class HeaderComponent implements OnChanges, DoCheck {
     }
   }
 
+  onWindowResize(event: any) {
+    if (this.timeOut) {
+      window.clearTimeout(this.timeOut);
+    }
+    this.timeOut = window.setTimeout(() => {
+      this._calcWidth();
+    }, 64);
+  }
+
+
   onSelectListChange(value: string) {
     this.itemSelected.emit(value);
   }
@@ -66,6 +84,8 @@ export class HeaderComponent implements OnChanges, DoCheck {
     };
   }
 
-
+  private _calcWidth() {
+      this.width = window.innerWidth - Math.floor(window.innerWidth * .10);
+  }
 
 }

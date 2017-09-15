@@ -20,7 +20,9 @@
       "prefix": "app",
       "styles": [
         "../node_modules/select2/dist/css/select2.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/bootswatch/cosmo/bootstrap.min.css",
+        "../node_modules/mdi/css/materialdesignicons.css",
         "styles.css"
 
       ],

@@ -1,13 +1,15 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-      <ul class="nav navbar-nav">
-        <li>
-          <app-select-list [options]="selectListOptions"
-                           (changed)="onSelectListChange($event)">
-          </app-select-list>
-        </li>
-      </ul>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fixed" [ngStyle]="{'width': width + 'px' }" (resize)="onWindowResize($event)">
+      <div class="collapse navbar-collapse pull-left" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
+          <li>
+            <app-select-list [options]="selectListOptions"
+                             (changed)="onSelectListChange($event)">
+            </app-select-list>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+

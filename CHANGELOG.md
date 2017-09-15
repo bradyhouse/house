@@ -1627,7 +1627,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/angular2-cli/fiddle-0009-NgStoreCounter](fiddles/angular2-cli/fiddle-0009-NgStoreCounter) ~ [Issue 187](https://github.com/bradyhouse/house/issues/187)
   2.  Added [fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter](fiddles/angular2-cli/fiddle-0010-SlickGridQuickFilter) ~ [Issue 188](https://github.com/bradyhouse/house/issues/188)
   3.  Added [fiddles/angular2-cli/fiddle-0011-CssAnimation](fiddles/angular2-cli/fiddle-0011-CssAnimation) ~ [Issue 192](https://github.com/bradyhouse/house/issues/192)
-  4.  Started [fiddles/angular2-cli/fiddle-0012-PanelReOrdering](fiddles/angular2-cli/fiddle-0012-PanelReOrdering) ~ [Issue 196](https://github.com/bradyhouse/house/issues/196)
+  4.  Added [fiddles/angular2-cli/fiddle-0012-PanelReOrdering](fiddles/angular2-cli/fiddle-0012-PanelReOrdering) ~ [Issue 196](https://github.com/bradyhouse/house/issues/196)
 
 * **Bash**
 

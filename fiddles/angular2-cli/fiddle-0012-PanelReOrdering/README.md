@@ -33,9 +33,7 @@ re-ordered by moving (dragging and dropping) the window's title bar.  It combine
   * select2 (v4.0.3)
   * lodash (v4.17.4)
   * bootswatch (v3.3.7)
-  * ngrx/core (v1.2.0)
-  * ngrx/store (v4.0.3)
-  * ngrx/effects (v4.0.5)
+  * mdi (v2.0.46)
 
 ### Published Version Link
 
@@ -45,4 +43,4 @@ re-ordered by moving (dragging and dropping) the window's title bar.  It combine
 
 ### Tags
 
-node, angular2, angular2-cli, bootstrap, jquery, select2, lodash, DomSanitizer
+node, angular2, angular2-cli, bootstrap, jquery, select2, lodash, bootswatch, mdi

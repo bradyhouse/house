@@ -57,6 +57,11 @@ can be used to extend or test drive this collection. The following table outline
 
 === Special Topics
 
+==== Fav Icon Generation
+
+* link:https://realfavicongenerator.net/[Favicon Generator]
+
+
 ==== Protractor
 
 *   link:http://www.protractortest.org/#[Protractor API]

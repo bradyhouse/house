@@ -3,7 +3,12 @@ export interface SelectListData {
   /**
    * Unique identifier.
    */
-  id?: string | number;
+  id?: number;
+
+  /**
+   * id using for sorting the list.
+   */
+  order?: number;
 
   /**
    * The text which will be displayed.

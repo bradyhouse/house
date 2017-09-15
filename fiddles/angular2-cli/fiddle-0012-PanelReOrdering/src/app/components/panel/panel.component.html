@@ -1,12 +1,26 @@
-
-<div class="panel panel-primary">
-  <app-panel-header [options]="panelHeaderOptions" (events)="onPanelHeaderEvent($event)"></app-panel-header>
-  <div class="panel-body">
-    <iframe frameborder="no" [src]="sanitizer.bypassSecurityTrustResourceUrl(url)"
-              [ngStyle]="{ 'width': width +'px', 'height': height + 'px'}"></iframe>
-
+<div (resize)="onWindowResize($event)">
+  <div [ngClass]="cssClasses" [ngStyle]="{'height': height + 'px', 'width': width + 'px'}">
+    <div class="panel-heading move"
+         [draggable]="true"
+         (dragstart)="onDragStart($event)"
+         (dragend)="onDragEnd($event)"
+         (dragover)="onDragOver($event)"
+    >
+      <div class="panel-title">{{title}}
+        <a *ngIf="isClose" class="round pull-right">
+          <i class="mdi mdi-close hand"
+             (click)="onEvents({type: 'close'})">
+          </i>
+        </a>
+      </div>
+    </div>
+    <div class="panel-body">
+      Drag the Panel Header up or down.
+    </div>
   </div>
 </div>
+
+
 
 
 
