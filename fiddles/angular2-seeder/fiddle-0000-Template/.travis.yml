@@ -6,7 +6,8 @@ sudo: false
 install: true  # yarn bug
 
 addons:
-  firefox: "45.0"
+  firefox: latest
+  chrome: stable
 
 os:
   - linux
@@ -20,7 +21,10 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
 
 before_script:
+  - npm i -g npm@^5.3.0 && npm --version
+  - npm install webdriver-manager
   - npm install
+  - npm run webdriver-update
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi  # Protractor CI
 
@@ -42,4 +46,4 @@ cache:
   directories: node_modules
 
 script:
-  - npm run tests.all && npm run build.prod.exp
+  - npm run tests.all

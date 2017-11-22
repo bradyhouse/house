@@ -1661,5 +1661,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
 
   1.  Added [fiddles/bash/fiddle-0097-Protractor](fiddles/bash/fiddle-0097-Protractor) ~ [Issue #198](https://github.com/bradyhouse/house/issues/198)
+  2.  Added [fiddles/bash/fiddle-0098-NodeProcessManager](fiddles/bash/fiddle-0098-NodeProcessManager) ~ [Issue #203](https://github.com/bradyhouse/house/issues/203)
 
+* **Angular2 CLI**
 
+  1.  Added [fiddles/angular2-cli/fiddle-0013-AngularAnimation](fiddles/angular2-cli/fiddle-0013-AngularAnimation) ~ [Issue 199](https://github.com/bradyhouse/house/issues/199)
+  3.  Added [fiddles/angular2-cli/fiddle-0015-NgxBootstrapModals](fiddles/angular2-cli/fiddle-0015-NgxBootstrapModals) ~ [Issue #201](https://github.com/bradyhouse/house/issues/201)
+
+* **fiddle.sh**
+  
+  1.  Added sleepFor utility function
+    * Reflected changes:
+      1. Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)

@@ -52,10 +52,9 @@ function seederCreate() {
         rm -rf src/client/index.html || exit 8;
         cp -rf ../template/index.html src/client/index.html || exit 8;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "src/client/index.html";) || exit 8;
-        rm -rf tools/config/seed.config.ts || exit 9;
-        cp -rf ../template/seed.config.ts tools/config/seed.config.ts || exit 9;
+
         createTypingsRcFile || exit 6;
-        npm install;
+        yarn install;
     )
     # catch
     rc=$?; case ${rc} in
@@ -122,10 +121,10 @@ function create() {
 
        case ${SEEDER} in
           'default')
-            seederCreate $1 ${bornOnDate} "https://github.com/bradyhouse/angular-seed"  || exit 1;
+            seederCreate $1 ${bornOnDate} "https://github.com/mgechev/angular-seed"  || exit 1;
           ;;
           'advanced')
-            seederCreate $1 ${bornOnDate} "https://github.com/bradyhouse/angular-seed-advanced" || exit 1;
+            seederCreate $1 ${bornOnDate} "https://github.com/NathanWalker/angular-seed-advanced" || exit 1;
           ;;
        esac
   )

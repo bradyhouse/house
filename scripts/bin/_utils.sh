@@ -16,7 +16,21 @@
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 12/15/2016 - See CHANGELOG @ 201612120420
+# 11/22/2017 - See CHANGELOG @ 201708290420
 # ---------------------------------------------------------------------------------------------------|
+
+function sleepFor() {
+  LBAR="  [";
+  RBAR="]";
+  BAR="#";
+  for (( c=1; c<=$1; c++ ))
+  do
+    BAR="${BAR}#";
+    echo -ne "${LBAR}${BAR}${RBAR}\r";
+    sleep 1;
+  done
+  echo "\n";
+}
 
 function mapHomePath() {
   cd ~;

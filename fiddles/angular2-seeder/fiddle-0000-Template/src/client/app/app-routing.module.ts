@@ -1,16 +1,15 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent }   from './shared/components/dashboard/dashboard.component';
-import { HeroesComponent }      from './shared/components/heroes/heroes.component';
-import { HeroDetailComponent }  from './shared/components/hero-detail/hero-detail.component';
-const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard',  component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'heroes',     component: HeroesComponent }
-];
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [
+    RouterModule.forRoot([
+      /* define app module routes here, e.g., to lazily load a module
+         (do not place feature module routes here, use an own -routing.module.ts in the feature instead)
+       */
+    ])
+  ],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
+

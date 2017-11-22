@@ -1,0 +1,66 @@
+{
+    "clientUrl": "http://localhost",
+    "port": "8090",
+    "development" : true,
+	  "clientUrlExcludesPort": true,
+    "logLevel": "DEBUG",
+    "logFile" : "logs/jive-sdk.log",
+    "logFileSize" : 20480,
+    "logFileNumBackups" : 3,
+	  "extensionInfo": {
+		"id": "5f145f2c-91ed-44bf-a899-a5dbb7eab299",
+		"uuid": "5f145f2c-91ed-44bf-a899-a5dbb7eab299",
+		"name": "sampletile-list",
+		"description": "Description for sampletile-list",
+		"icon_16": "extension-16.png",
+		"icon_48": "extension-48.png",
+		"icon_128": "extension-128.png",
+		"releasedOn": "2017-11-09T04:30:23.173Z"
+	},
+	"ext" : {
+		"your-recommended-place" : "to-store-your-app-system-config"
+	},
+	"otherPropertiesToConsider" : {
+		"ignoreExtensionRegistrationSource": true,
+    "packageApps" : false,
+    "skipCreateExtension" : true,
+		"suppressAddonRegistration" : true,
+    "suppressHttpLogging": false,
+    "customServiceLogger": {},
+    "persistence": "mongo",
+    "persistenceInitializer" : {},
+    "suppressMonitoring" : false,
+    "monitoringInterval": 1000,
+    "codeVersionString": "jive",
+    "adminPort" : 8091,
+    "statsdClientConfig": {
+      "host" : "localhost",
+      "port" : 8125,
+      "interval" : 1000,
+      "servicePrefix" : "jive"
+    },
+    "role" : "worker",
+    "scheduler": {},
+		"extensionInfo": {
+			"register_url": "%serviceURL%/jive/oauth/register",
+			"unregister_url": "%serviceURL%/jive/oauth/unregister",
+			"redirect_url" : "%serviceURL%/oauth/authorize",
+			"health_url": "%serviceURL%/monitor/health",
+			"config_url": "%serviceURL%/configure",
+			"author" : "Developer Name",
+			"author_affiliation" : "Developer Company",
+			"author_email" : "Developer Email",
+			"website_url": "http://www.somedomain.com",
+			"community_url": "https://community.jivesoftware.com/xxxx",
+			"support_info": "http://support.somedomain.com",
+			"info_email": "info@somedomain.com",
+			"tags": "jive,integration,service,addon",
+			"overview": "overview.html",
+			"install_instructions": "install_instructions.html",
+			"eula_filename": "eula.html",
+			"privacy_policy": "privacy_policy.html",
+			"screen_shots": ["screenshot_1.png","screenshot_2.png"]
+		}
+	},
+	"forPropertyDocumentation" : "https://community.jivesoftware.com/docs/DOC-103487"
+}

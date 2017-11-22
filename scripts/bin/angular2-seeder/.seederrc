@@ -15,8 +15,8 @@
 # SEEDER TEMPLATE ALIAS
 #
 # ALIASES INCLUDE:
-#   "default"   =>  https://github.com/bradyhouse/angular-seed
-#   "advanced"  =>  https://github.com/bradyhouse/angular-seed-advanced
+#   "default"   =>  https://github.com/mgechev/angular-seed
+#   "advanced"  =>  https://github.com/NathanWalker/angular-seed-advanced
 # ---------------------------------------------------------------------------------------------------|
 SEEDER="default";
 
@@ -28,4 +28,4 @@ SEEDER="default";
 # PRIOR TO CREATE, BUILD OR START, NVM WILL BE INVOKED TO RESET THE SYSTEM'S NODE VERSION TO THIS
 # VERSION
 # ---------------------------------------------------------------------------------------------------|
-NODE_VERSION="v4.2.6";
+NODE_VERSION="v7.9.0";

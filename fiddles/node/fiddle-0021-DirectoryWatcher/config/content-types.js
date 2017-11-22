@@ -20,6 +20,7 @@ module.exports = {
   'zip'     : 'application/zip',
   'pdf'     : 'application/pdf',
   'xlsx'    : 'application/zip',
+  'xls'     : 'application/vnd.ms-excel',
   'bmpr'    : 'application/octet-stream',
   'dmg'     : 'application/octet-stream',
   'webloc'  : 'application/xml',

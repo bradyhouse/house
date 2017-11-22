@@ -1,6 +1,8 @@
-import Config from '../../config';
+import { parallel } from 'async';
 import { writeFile } from 'fs';
 import { join } from 'path';
+
+import Config from '../../config';
 
 const nodeResolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
@@ -8,10 +10,10 @@ const includePaths = require('rollup-plugin-includepaths');
 const rollup = require('rollup');
 
 const config = {
-  entry: join(Config.TMP_DIR, Config.BOOTSTRAP_FACTORY_PROD_MODULE),
-  sourceMap: true,
+  input: join(Config.TMP_DIR, Config.BOOTSTRAP_FACTORY_PROD_MODULE),
+  sourcemap: true,
   treeshake: true,
-  moduleName: 'main',
+  name: 'main',
   plugins: [
     includePaths({
       include: {},
@@ -32,13 +34,15 @@ const config = {
 
 export = (done: any) => {
   rollup.rollup(config)
-    .then((bundle: any) => {
-      const result = bundle.generate({
-        format: 'iife'
-      });
+    .then((bundle: any) => bundle.generate({
+      format: 'iife',
+      sourcemap: Config.PRESERVE_SOURCE_MAPS
+    }))
+    .then((result: any) => {
       const path = join(Config.TMP_DIR, 'bundle.js');
-      writeFile(path, result.code, (error: any) => {
-        if (error) {
+
+      parallel(getTasks(path, result), (error: any, results: boolean[]) => {
+        if (error && results.indexOf(false) === -1) {
           console.error(error);
           process.exit(0);
         }
@@ -50,3 +54,18 @@ export = (done: any) => {
       process.exit(0);
     });
 };
+
+function getTasks(path: string, result: any): any[] {
+  const tasks = [
+    (callback: any) =>
+      writeFile(path,
+        result.code + (Config.PRESERVE_SOURCE_MAPS ? '\n//# sourceMappingURL=bundle.js.map' : ''),
+        (error: any) => callback(null, !error))
+  ];
+  if (Config.PRESERVE_SOURCE_MAPS) {
+    tasks.push((callback: any) => writeFile(path + '.map',
+      result.map.toString(),
+      (error: any) => callback(null, !error)));
+  }
+  return tasks;
+}

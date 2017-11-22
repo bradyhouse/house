@@ -58,6 +58,14 @@ export =
       }
 
       return result.js
-        .pipe(plugins.sourcemaps.write()).pipe(gulp.dest(Config.APP_DEST));
+        .pipe(plugins.sourcemaps.write())
+        // Use for debugging with Webstorm/IntelliJ
+        // https://github.com/mgechev/angular-seed/issues/1220
+        //    .pipe(plugins.sourcemaps.write('.', {
+        //      includeContent: false,
+        //      sourceRoot: (file: any) =>
+        //        relative(file.path, PROJECT_ROOT + '/' + APP_SRC).replace(sep, '/') + '/' + APP_SRC
+        //    }))
+        .pipe(gulp.dest(Config.APP_DEST));
     }
 };
