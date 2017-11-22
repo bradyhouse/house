@@ -1,5 +1,6 @@
 image:https://travis-ci.org/bradyhouse/house.svg?branch=master["Build Status", link="https://travis-ci.org/bradyhouse/house"]
 image:https://badge.waffle.io/bradyhouse/house.png?label=in%20progress&title=Stories%20In%20Progress[link="https://waffle.io/bradyhouse/house", alt="Stories in Progress", role="right"]
+image:http://img.shields.io/badge/license-MIT-brightgreen.svg["MIT license", link="http://opensource.org/licenses/MIT"]
 
         H o u s e
         oooooooooooo  o8o        .o8        .o8  oooo
@@ -59,4 +60,4 @@ and frameworks:
 To get started with any of the frameworks listed, use the above links to explore the associated collection.  To learn
 about my latest changes check out the detailed link:CHANGELOG.md[change log].  To test drive the in-browser version
 of this collection checkout link:http://bradyhouse.github.io[bradyhouse.github.io].  Finally, to learn more about me
-and what I am up to these days checkout my link:https://www.instagram.com/bradylhouse[instagram feed]. 
+and what I am up to these days checkout my link:https://www.instagram.com/bradylhouse[instagram feed].
