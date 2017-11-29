@@ -9,9 +9,9 @@ interface AuthConfig {
 };
 
 export const AUTH_CONFIG: AuthConfig = {
-  CLIENT_ID: '[AUTH0_CLIENT_ID]',
-  CLIENT_DOMAIN: '[AUTH0_CLIENT_DOMAIN]',
-  AUDIENCE: '[YOUR_AUTH0_API_AUDIENCE]', // likely http://localhost:8083/api/
+  CLIENT_ID: 'CLIENT_ID',
+  CLIENT_DOMAIN: 'CLIENT_DOMAIN',
+  AUDIENCE: 'http://localhost:8083/api/',
   REDIRECT: `${ENV.BASE_URI}/callback`,
   SCOPE: 'openid profile'
 };
