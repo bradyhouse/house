@@ -1673,3 +1673,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added sleepFor utility function
     * Reflected changes:
       1. Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+      
+      
+### 201711250420
+
+* **Angular2 CLI**
+
+  1.  Added [fiddles/angular2-cli/fiddle-0014-FacebookAuthO](fiddles/angular2-cli/fiddle-0014-FacebookAuthO) ~ [Issue #204](https://github.com/bradyhouse/house/issues/204)
