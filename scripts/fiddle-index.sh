@@ -64,46 +64,53 @@ echo ${bornOnDate}
       fiddleDir="${fiddleDir}/dist";
       indexFile=$(echo "${fiddleDir}/index.html";)
     fi
-    case ${type} in
-        'angular'|'angular2'|'angular2-cli'|'angular2-seeder'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
-            case ${type} in
-                'php') fiddleName=$(echo "$fiddleNameStub.php";)
-                    ;;
-                'python') fiddleName=$(echo "fiddle.py";)
-                    ;;
-                'angular2-cli'|'angular2-seeder'|'angular2')
-                    fiddleName="#";
-                    ;;
-                *) fiddleName=$(echo "${fiddleNameStub}.html";)
-                    ;;
-            esac
-            cd $binDir
-            cat tpl/indexheader > $indexFile
-            cd $fiddleDir
-            ls -1 | grep 'fiddle' > index.tmp
-            mv index.tmp $binDir
-            cd $binDir
-            while read line; do
-               ignore=$(echo $(cat "../../.gitignore" | grep "${line}" | wc -l;))
-               if [[ "${ignore}" -eq "0" ]]
-               then
-                  linkText=$(parseText ${line};) || exit 87;
-                  echo "<a href=\"$line/$fiddleName\" target=\"_self\">${linkText}</a></br>" >> $indexFile;
-               fi
-            done < index.tmp
-            rm -r index.tmp
-            cat tpl/indexfooter >> $indexFile
-            $(voidSubstr "{{FiddleType}}" "${type}" "${indexFile}";) || exit 86
-            $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexFile}";) || exit 86
-            ;;
-        *)  exit 87
-            ;;
-    esac
+    if [[ -d "${fiddleDir}" ]]
+    then
+      case ${type} in
+          'angular'|'angular2'|'angular2-cli'|'angular2-seeder'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
+              case ${type} in
+                  'php') fiddleName=$(echo "$fiddleNameStub.php";)
+                      ;;
+                  'python') fiddleName=$(echo "fiddle.py";)
+                      ;;
+                  'angular2-cli'|'angular2-seeder'|'angular2')
+                      fiddleName="#";
+                      ;;
+                  *) fiddleName=$(echo "${fiddleNameStub}.html";)
+                      ;;
+              esac
+              cd $binDir
+              cat tpl/indexheader > $indexFile
+              cd $fiddleDir
+              ls -1 | grep 'fiddle' > index.tmp
+              mv index.tmp $binDir
+              cd $binDir
+              while read line; do
+                 ignore=$(echo $(cat "../../.gitignore" | grep "${line}" | wc -l;))
+                 if [[ "${ignore}" -eq "0" ]]
+                 then
+                    linkText=$(parseText ${line};) || exit 87;
+                    echo "<a href=\"$line/$fiddleName\" target=\"_self\">${linkText}</a></br>" >> $indexFile;
+                 fi
+              done < index.tmp
+              rm -r index.tmp
+              cat tpl/indexfooter >> $indexFile
+              $(voidSubstr "{{FiddleType}}" "${type}" "${indexFile}";) || exit 86
+              $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexFile}";) || exit 86
+              ;;
+          *)  exit 87
+              ;;
+      esac
+    else
+      exit 1;
+    fi
 )
 #catch
 rc=$?
 case ${rc} in
     0)  echo "Done. All \"$1\" fiddles have been re-indexed."
+        ;;
+    1)  echo "Doh! Nothing to index.";
         ;;
     86) echo "Error:  Call to the \"bin/house-substr.sh\" script failed."
         ;;

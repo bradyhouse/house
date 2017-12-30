@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular-animation App', () => {
+describe('stock-carousel App', () => {
   let page: AppPage;
 
   beforeEach(() => {

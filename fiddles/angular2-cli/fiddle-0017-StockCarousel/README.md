@@ -1,15 +1,15 @@
-fiddle-0013-AngularAnimation
+fiddle-0017-StockCarousel
 ======
 
 
 ### Title
 
-fiddle-0013-AngularAnimation
+fiddle-0017-StockCarousel
 
 
 ### Creation Date
 
-12-10-17
+12-29-17
 
 
 ### Location

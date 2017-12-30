@@ -1665,7 +1665,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Angular2 CLI**
 
-  1.  Added [fiddles/angular2-cli/fiddle-0013-AngularAnimation](fiddles/angular2-cli/fiddle-0013-AngularAnimation) ~ [Issue 199](https://github.com/bradyhouse/house/issues/199)
   3.  Added [fiddles/angular2-cli/fiddle-0015-NgxBootstrapModals](fiddles/angular2-cli/fiddle-0015-NgxBootstrapModals) ~ [Issue #201](https://github.com/bradyhouse/house/issues/201)
 
 * **fiddle.sh**
@@ -1680,3 +1679,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2 CLI**
 
   1.  Added [fiddles/angular2-cli/fiddle-0014-FacebookAuthO](fiddles/angular2-cli/fiddle-0014-FacebookAuthO) ~ [Issue #204](https://github.com/bradyhouse/house/issues/204)
+* Added [fiddles/angular2-cli/fiddle-0013-AngularAnimation](fiddles/angular2-cli/fiddle-0013-AngularAnimation)
+* Added [fiddles/angular2-cli/fiddle-0017-StockCarousel](fiddles/angular2-cli/fiddle-0017-StockCarousel)
