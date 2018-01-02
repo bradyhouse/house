@@ -3,7 +3,7 @@ fiddle-0062-AlphaVantageAjax
 
 ### Title
 
-fiddle-0062-AlphaVantageAjax
+AlphaVantage GET Request
 
 
 ### Creation Date
