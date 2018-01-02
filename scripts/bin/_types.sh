@@ -79,6 +79,24 @@ voidEchoFiddleTypes() {
             voidEchoFiddleTypes;
             echo -e "\t\"all\"\t\tstartup all Web based JS Fiddles"
             ;;
+        'publish')
+            echo -e "\t\"angular\"\t\tAngular Fiddles";
+            echo -e "\t\"angular2\"\t\tAngular2 Fiddles";
+            echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddles";
+            echo -e "\t\"aurelia\"\t\tAurelia Fiddles";
+            echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
+            echo -e "\t\"dojo\"\t\t\tDojo Fiddles";
+            echo -e "\t\"ember\"\t\t\tEmber Fiddles";
+            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddles";
+            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddles";
+            echo -e "\t\"meteor\"\t\tMeteor Fiddles";
+            echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles";
+            echo -e "\t\"jquery\"\t\tjQuery / Bootstrap Fiddles";
+            echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles";
+            echo -e "\t\"tween\"\t\t\ttween.js Fiddles";
+            echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddles";
+            echo -e "\t\"all\"\t\t\tAll of the above";
+            ;;
         *)
             echo -e "\t\"android\"\t\tAndroid Fiddle"
             echo -e "\t\"ant\"\t\t\tAnt Fiddle"
