@@ -14,11 +14,20 @@
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_env.sh;
+source bin/_types.sh;
 
 _publishPath="${GITHUB_ROOT}/${GITHUB_PUBLISH_REPO}";
 _sourcePath="${GITHUB_ROOT}/house/fiddles";
 _commitMessage="${BUILD_NUM}";
 
+function isPublishPath() {
+  if [[ ! -d ${_publishPath} ]]
+  then
+    cd ${GITHUB_ROOT};
+    git clone https://github.com/bradyhouse/bradyhouse.github.io;
+
+  fi
+}
 
 function push() {
   git add -A;
@@ -73,48 +82,145 @@ function rmrf() {
   fi
 }
 
+function publish() {
 
-cd ${_publishPath};
+  if [[ ! -d $1 ]]; then exit 1000; fi;
 
-rmrf angular2-seeder;
-rmrf angular2-cli;
-rmrf angular2;
-rmrf three;
-rmrf extjs5;
-rmrf extjs6;
-rmrf d3;
-rmrf dojo;
-rmrf jquery;
-rmrf aurelia;
-rmrf tween;
-rmrf svg;
-rmrf resources;
-rmrf rxjs;
-rmrf index.html;
-rmrf .gitignore;
+  rmrf $1;
+  rmrf .gitignore;
 
-cd ${_sourcePath};
+  cd ${_sourcePath};
 
-cprfdist angular2-seeder;
-cprfdist angular2-cli;
-cprf angular2;
-cprf three;
-cprf extjs5;
-cprf extjs6;
-cprf d3;
-cprf dojo;
-cprf jquery;
-cprf aurelia;
-cprf tween;
-cprf svg;
-cprf rxjs;
-cprf resources;
-cprf index.html;
+  cprf $1;
+  cprf resources;
+  cprf index.html;
 
-cd ..
+  cd ..
 
-cprf .gitignore;
+  cprf .gitignore;
 
-cd ${_publishPath};
+  cd ${_publishPath};
 
-push;
+  push;
+}
+
+function publishDist() {
+  rmrf $1;
+  rmrf .gitignore;
+
+  cd ${_sourcePath};
+
+  cprfdist $1;
+  cprf resources;
+  cprf index.html;
+
+  cd ..
+
+  cprf .gitignore;
+
+  cd ${_publishPath};
+
+  push;
+
+}
+
+function publishAll() {
+
+    rmrf angular2-seeder;
+    rmrf angular2-cli;
+    rmrf angular2;
+    rmrf three;
+    rmrf extjs5;
+    rmrf extjs6;
+    rmrf d3;
+    rmrf dojo;
+    rmrf jquery;
+    rmrf aurelia;
+    rmrf tween;
+    rmrf svg;
+    rmrf resources;
+    rmrf rxjs;
+    rmrf index.html;
+    rmrf .gitignore;
+
+    cd ${_sourcePath};
+
+    cprfdist angular2-seeder;
+    cprfdist angular2-cli;
+    cprf angular2;
+    cprf three;
+    cprf extjs5;
+    cprf extjs6;
+    cprf d3;
+    cprf dojo;
+    cprf jquery;
+    cprf aurelia;
+    cprf tween;
+    cprf svg;
+    cprf rxjs;
+    cprf resources;
+    cprf index.html;
+
+    cd ..
+
+    cprf .gitignore;
+
+    cd ${_publishPath};
+
+    push;
+
+}
+
+#try
+(
+  if [ "$#" -ne 1 ]; then  exit 86; fi
+
+  isPublishPath || exit 1001;
+
+  cd ${_publishPath};
+
+  case $1 in
+    'angular2-seeder')
+      publishDist $1;
+      ;;
+    'angular2-cli')
+      publishDist $1;
+      ;;
+    'all')
+      publishAll;
+      ;;
+    *) publish $1;
+      ;;
+  esac
+)
+#catch
+rc=$?
+case ${rc} in
+    0)  echo "Done. All \"$1\" fiddles have been re-indexed."
+        ;;
+    86) clear
+        voidShowTitle ${thisFile};
+        echo "";
+        echo "Nope ~ Incorrect number of arguments";
+        echo "";
+        echo "Usage:";
+        echo "";
+        echo "$0 \"[t]\"";
+        echo ""
+        echo "[t] - type. Valid types include: "
+        echo ""
+        voidEchoFiddleTypes "publish";
+        echo ""
+        echo ""
+        ;;
+    87) echo "";
+        rc=0;
+        ;;
+    *)  echo "Error: Something went wrong."
+        ;;
+esac
+#finally
+exit ${rc}
+
+
+

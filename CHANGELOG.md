@@ -1680,3 +1680,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2 CLI**
 
   1.  Added [fiddles/angular2-cli/fiddle-0014-FacebookAuthO](fiddles/angular2-cli/fiddle-0014-FacebookAuthO) ~ [Issue #204](https://github.com/bradyhouse/house/issues/204)
+
+* **JQuery**
+
+  1.  Added [fiddles/jquery/fiddle-0062-AlphaVantageAjax](fiddles/jquery/fiddle-0062-AlphaVantageAjax) ~ [Issue #204](https://github.com/bradyhouse/house/issues/204) 
+
+
