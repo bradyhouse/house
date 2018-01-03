@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 import { BaseComponent } from '../base.component';
+
+import { IntradayService, ComplaintsWithPercent } from './intraday.service';
 
 
 @Component({
@@ -8,5 +10,11 @@ import { BaseComponent } from '../base.component';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })
-export class LineChartComponent extends BaseComponent {
+export class LineChartComponent extends BaseComponent implements AfterViewInit {
+  timeSeries: ComplaintsWithPercent[];
+  ngAfterViewInit() {
+    if (this.dataService) {
+      this.timeSeries = this.dataService.getData();
+    }
+  }
 }

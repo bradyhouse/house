@@ -2,9 +2,8 @@ import {
   ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, KeyValueDiffer, KeyValueDiffers, OnChanges,
   Output
 } from '@angular/core';
-import { Event, Options } from './interfaces';
+import { Event, Options, DataService } from './interfaces';
 import { Base } from './base';
-import { TimeSeriesService, ComplaintsWithPercent } from './time-series.service';
 
 
 @Component({
@@ -23,17 +22,14 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
   chartType: string = 'bar';
   chartHeight: number;
   chartWidth: number;
-  timeSeries: ComplaintsWithPercent[];
+  dataService: DataService;
 
   private _differ: KeyValueDiffer<string, any> = null;
 
-
   constructor(private _changeDetector: ChangeDetectorRef,
-              private _differs: KeyValueDiffers,
-              private _timeSeries: TimeSeriesService) {
+              private _differs: KeyValueDiffers) {
     super();
     this.events = new EventEmitter();
-    this.timeSeries = _timeSeries.getData();
     this.title = 'ECorp';
   }
 
@@ -79,6 +75,10 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
       case 'title':
         if (this.options.title) {
           this.title = this.options.title;
+        }
+      case 'dataService':
+        if (this.options.dataService) {
+          this.dataService = this.options.dataService;
         }
     }
   }

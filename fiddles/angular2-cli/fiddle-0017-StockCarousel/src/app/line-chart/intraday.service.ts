@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { DataService } from '../interfaces/index';
 class Complaints {
   complaint: string;
   count: number
@@ -35,7 +35,7 @@ let complaintsData: Complaints[] = [{
 }];
 
 @Injectable()
-export class TimeSeriesService {
+export class IntradayService implements DataService {
   getData(): ComplaintsWithPercent[] {
     var data = complaintsData.sort(function (a, b) {
         return b.count - a.count;

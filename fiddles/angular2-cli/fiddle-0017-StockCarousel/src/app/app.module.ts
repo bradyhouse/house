@@ -8,9 +8,12 @@ import { VolumeComponent } from './volume/volume.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BaseComponent } from './base.component';
-import { TimeSeriesService } from './time-series.service';
 
 import { DxChartModule} from 'devextreme-angular';
+import { QuoteService } from './quote/quote.service';
+import { VolumeService } from './volume/volume.service';
+import { BaseService } from './base.service';
+import { IntradayService } from './line-chart/intraday.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,7 @@ import { DxChartModule} from 'devextreme-angular';
     NgbModule.forRoot(),
     DxChartModule
   ],
-  providers: [TimeSeriesService],
+  providers: [QuoteService, VolumeService, BaseService, IntradayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
