@@ -1,3 +1,73 @@
-<p>
-  quote works!
-</p>
+<div class="quote-component" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
+
+  <div class="card text-white bg-info mb-3" style="width: calc(100%); height: calc(100%);">
+    <div class="card-header" style="background: black;"><h3>{{title}} Stock Ticker</h3></div>
+    <div class="card-body stock-drop">
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-offset-1"><!-- left side -->
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="currentPrice"><span style="font-size: calc(20vh); text-shadow: 1px 1px 1px #000;">$145.455</span></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-md-offset-1">
+                  <span>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <span class="percentChange"
+                                style="font-size: calc(10vh); float: right; text-shadow: 1px 1px 1px #000;">-0.414%</span>
+                        </div>
+                        <div class="col">
+                          <span class="numberChange"
+                                style="font-size: calc(10vh); float: right; text-shadow: 1px 1px 1px #000;">$-0.605</span>
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col"><!-- right side -->
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-left"
+                        style="background: black;">
+                      <div class="high" style="width: calc(100%); font-size: calc(4.5vh);">High: <span class="highvalue"
+                                                                                                       style="float: right;">$146.22</span>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-left"
+                        style="background: black;">
+                      <div class="low" style="width: calc(100%); font-size: calc(4.5vh);">Low: <span class="lowvalue"
+                                                                                                     style="float: right;">$145.16</span>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-left"
+                        style="background: black;">
+                      <div class="volume" style="width: calc(100%); font-size: calc(4.5vh);">Volume: <span
+                        class="volvalue" style="float: right;">284,156</span></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-auto"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer" style="background: black;">
+      <div class="cmeDisclaimerText" style="color: lime; font-family: arial;">
+        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span><br>
+        <i class="text-muted">Quotes are delayed by at least 20 minutes.</i>
+      </div>
+    </div>
+  </div>
+</div>

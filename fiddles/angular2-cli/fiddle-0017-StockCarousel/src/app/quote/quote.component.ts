@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component
+} from '@angular/core';
+
+import { BaseComponent } from '../base.component';
 
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.css']
 })
-export class QuoteComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class QuoteComponent extends BaseComponent {
 
 }

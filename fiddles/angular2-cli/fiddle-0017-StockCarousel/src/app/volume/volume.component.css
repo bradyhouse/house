@@ -1,0 +1,15 @@
+/* Volume Widget*/
+.cmeVolumeWidgetContainer {max-width: 400px; clear:both;}
+.cmeVolumeWidgetTitle th {background: #0079c1 !important; color: #fff;}
+.cmeVolumeWidgetTitle h3 {margin: 0; font-size: 14px;}
+.cmeVolumeWidgetContainer table {width: 100%; border-collapse: collapse; min-height: 100px;}
+.cmeVolumeWidgetTable .dateField {text-align: center; border-left: none;}
+.cmeVolumeWidgetTable td {font-size: 12px; text-align: right; background: #f4f4f4; padding: 3px 6px;}
+#volDataAreaTable th {text-align: center; font-size: 12px; background: #00447C; padding: 3px 6px; color: #fff; font-family: Roboto, Arial, sans-serif; font-weight: 700;}
+
+.container{
+  display: table;
+  vertical-align: middle;
+  width: calc(100%);
+  height: calc(100%);
+}

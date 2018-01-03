@@ -34,4 +34,4 @@ N/A
 
 ### Tags
 
-node, angular2, systemjs, es6-shim, reflect-metadata, rxjs, zone.js, concurrently, lite-server, typings
+node, angular2, typescript, devextreme, devextreme-angular, @ng-bootstrap/ng-bootstrap, bootswatch
