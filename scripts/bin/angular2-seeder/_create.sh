@@ -54,7 +54,7 @@ function seederCreate() {
         $(voidSubstr '{{FiddleName}}' ${fiddle} "src/client/index.html";) || exit 8;
 
         createTypingsRcFile || exit 6;
-        yarn install;
+        yarn install --force;
     )
     # catch
     rc=$?; case ${rc} in

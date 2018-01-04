@@ -3,28 +3,16 @@
     <ngb-carousel (window:resize)="onWindowResize()" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }"
       (slide)="onCarouselSlide($event)">
       <ng-template ngbSlide>
-        <app-quote [options]="options"></app-quote>
+        <app-quote [options]="options" (events)="onPanelEvent($event)"></app-quote>
       </ng-template>
       <ng-template ngbSlide>
-        <app-line-chart [options]="options"></app-line-chart>
+        <app-line-chart [options]="options" (events)="onPanelEvent($event)"></app-line-chart>
       </ng-template>
       <ng-template ngbSlide>
-        <div class="container container-table">
-          <div class="row vertical-center-row">
-            <div class="col">
-              <app-volume [options]="options"></app-volume>
-            </div>
-          </div>
-        </div>
+        <app-volume [options]="options" (events)="onPanelEvent($event)"></app-volume>
       </ng-template>
       <ng-template ngbSlide>
-        <div class="container container-table">
-          <div class="row vertical-center-row">
-            <div class="col">
-              <app-pie-chart [options]="options"></app-pie-chart>
-            </div>
-          </div>
-        </div>
+        <app-pie-chart [options]="options" (events)="onPanelEvent($event)"></app-pie-chart>
       </ng-template>
     </ngb-carousel>
 </div>

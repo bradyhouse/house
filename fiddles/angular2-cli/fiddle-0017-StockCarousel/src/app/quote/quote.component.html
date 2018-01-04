@@ -1,9 +1,22 @@
 <div class="quote-component" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
 
   <div class="card text-white bg-info mb-3" style="width: calc(100%); height: calc(100%);">
-    <div class="card-header" style="background: black;"><h3>{{title}} Stock Ticker</h3></div>
+    <div class="card-header" style="background: black;"><h3>{{ title }} Stock Quote</h3></div>
     <div class="card-body stock-drop">
-      <div class="container">
+      <div class="container" *ngIf="!isLoaded">
+        <div class="row">
+          <div class="col col-md-offset-1">
+            <div class="container container-table" >
+              <div class="row vertical-center-row">
+                <div class="alert alert-danger">
+                  <strong>Oh snap!</strong> There is no <i>Price</i> data.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" *ngIf="isLoaded">
         <div class="row">
           <div class="col col-md-offset-1"><!-- left side -->
             <div class="container">

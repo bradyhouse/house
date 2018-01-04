@@ -1,11 +1,19 @@
 <div class="line-chart" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
   <div class="card text-white bg-info mb-3" style="width: calc(100%); height: calc(100%);">
-    <div class="card-header" style="background: black;"><h3>{{title}} Market Price</h3></div>
+    <div class="card-header" style="background: black;"><h3>{{title}} Stock Quote</h3></div>
     <div class="card-body">
       <div class="container">
         <div class="row">
           <div class="col col-md-offset-1" ><!-- left side -->
-            <dx-chart id="chart"
+            <div class="container container-table" *ngIf="!isLoaded">
+              <div class="row vertical-center-row">
+                <div class="alert alert-danger">
+                  <strong>Oh snap!</strong> There is no <i>Activity</i> data.
+                </div>
+              </div>
+            </div>
+            <dx-chart *ngIf="isLoaded"
+                      id="chart"
                       [dataSource]="timeSeries"
                       palette="Dark Violet"
                       [valueAxis]="[{

@@ -9,10 +9,9 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BaseComponent } from './base.component';
 
-import { DxChartModule} from 'devextreme-angular';
+import { DxChartModule, DxDataGridModule, DxSparklineModule, DxTemplateModule } from 'devextreme-angular';
 import { QuoteService } from './quote/quote.service';
 import { VolumeService } from './volume/volume.service';
-import { BaseService } from './base.service';
 import { IntradayService } from './line-chart/intraday.service';
 
 @NgModule({
@@ -26,10 +25,13 @@ import { IntradayService } from './line-chart/intraday.service';
   ],
   imports: [
     BrowserModule,
+    DxSparklineModule,
+    DxTemplateModule,
     NgbModule.forRoot(),
-    DxChartModule
+    DxChartModule,
+    DxDataGridModule
   ],
-  providers: [QuoteService, VolumeService, BaseService, IntradayService],
+  providers: [QuoteService, VolumeService, IntradayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

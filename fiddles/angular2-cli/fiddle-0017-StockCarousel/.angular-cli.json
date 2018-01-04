@@ -20,8 +20,9 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootswatch/dist/darkly/bootstrap.css",
+        "../node_modules/devextreme/dist/css/dx.spa.css",
         "../node_modules/devextreme/dist/css/dx.common.css",
-        "../node_modules/devextreme/dist/css/dx.darkviolet.css",
+        "../node_modules/devextreme/dist/css/dx.contrast.css",
         "styles.css"
       ],
       "scripts": [],

@@ -15,15 +15,22 @@ export class AppComponent extends Base {
   width: number;
   height: number;
 
-  constructor(config: NgbCarouselConfig) {
+  constructor(private _config: NgbCarouselConfig) {
     super();
     this.options = {
       width: window.innerWidth,
       height: window.innerHeight
     };
-    config.interval =0;
+    _config.interval = 5000;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
+  }
+
+  onPanelEvent(event: Event) {
+    switch (event.type) {
+
+    }
+
   }
 
   onWindowResize(): void {
@@ -34,7 +41,9 @@ export class AppComponent extends Base {
       height: this.height
     };
   }
+
   onCarouselSlide(event: any) {
+    this._config.interval = 5000;
     console.log(event);
     window.setTimeout(() => {
       this.onWindowResize();

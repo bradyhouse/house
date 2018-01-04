@@ -1681,3 +1681,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/angular2-cli/fiddle-0014-FacebookAuthO](fiddles/angular2-cli/fiddle-0014-FacebookAuthO) ~ [Issue #204](https://github.com/bradyhouse/house/issues/204)
   2.  Added [fiddles/angular2-cli/fiddle-0013-AngularAnimation](fiddles/angular2-cli/fiddle-0013-AngularAnimation)  
   3.  Added [fiddles/angular2-cli/fiddle-0017-StockCarousel](fiddles/angular2-cli/fiddle-0017-StockCarousel) ~ ~ [Issue 210](https://github.com/bradyhouse/house/issues/210)
+* Added [fiddles/angular2-seeder/fiddle-0005-StockCarousel](fiddles/angular2-seeder/fiddle-0005-StockCarousel)

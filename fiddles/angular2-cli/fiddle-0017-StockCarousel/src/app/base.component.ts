@@ -22,7 +22,7 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
   chartType: string = 'bar';
   chartHeight: number;
   chartWidth: number;
-  dataService: DataService;
+  isLoaded: boolean;
 
   private _differ: KeyValueDiffer<string, any> = null;
 
@@ -56,6 +56,10 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
     }
   }
 
+  load(dataService: DataService): void {
+    throw new Error('Method not implemented');
+  }
+
   private _applyChange(item: any): void {
     switch (item.key) {
       case 'width':
@@ -63,24 +67,30 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
           this.width = this.options.width;
           this.chartWidth = this.width - 140;
         }
+        break;
       case 'height':
         if (this.options.height) {
           this.height = this.options.height;
           this.chartHeight = this.height - 20;
         }
+        break;
       case 'chartType':
         if (this.options.chartType) {
           this.chartType = this.options.chartType;
         }
+        break;
       case 'title':
         if (this.options.title) {
           this.title = this.options.title;
         }
+        break;
       case 'dataService':
         if (this.options.dataService) {
-          this.dataService = this.options.dataService;
+          this.load(this.options.dataService);
         }
+        break;
     }
   }
+
 
 }
