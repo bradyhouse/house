@@ -43,8 +43,8 @@
   background-color: #0a5794;
   position: fixed;
   z-index: 1000;
-  width: 535px;
-  height: 535px;
+  width: calc(100%);
+  height: calc(100%);
   padding: 0;
 }
 
