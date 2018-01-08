@@ -1,7 +1,12 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import {
+  ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, KeyValueDiffer, KeyValueDiffers, OnChanges,
+  Output
+} from '@angular/core';
 
-import { BaseComponent } from '../base.component';
-import { VolumeService, WeekData } from './volume.service';
+import { Options, BubbleEvent, DataService } from '../interfaces/index';
+import { Base } from '../base';
+import { VolumeService } from './volume.service';
+
 
 @Component({
   selector: 'app-volume',
@@ -9,25 +14,104 @@ import { VolumeService, WeekData } from './volume.service';
   templateUrl: './volume.component.html',
   styleUrls: ['./volume.component.css']
 })
-export class VolumeComponent extends BaseComponent {
+export class VolumeComponent extends Base implements OnChanges, DoCheck {
 
-  dataSource: WeekData[];
+  @Output() events: EventEmitter<BubbleEvent>;
+  @Input() options: Options;
 
-  load(dataService: VolumeService) {
-    if (dataService) {
-      this.dataSource = dataService.getData();
+  volumes: any[];
+  title: string;
+  width: number;
+  height: number;
+
+  chartHeight: number;
+  chartWidth: number;
+  isLoaded: boolean;
+
+  private _differ: KeyValueDiffer<string, any> = null;
+
+  load(dataService: DataService = null) {
+    if (dataService !== null) {
+      this.volumes = dataService.getData();
+    } else {
+      if (this._volumeService) {
+        this.volumes = this._volumeService.getData();
+      }
+    }
+
+    if (this.volumes && this.volumes.length) {
+      this.isLoaded = true;
+    }
+
+  }
+
+  constructor(private _volumeService: VolumeService,
+              private _changeDetector: ChangeDetectorRef,
+              private _differs: KeyValueDiffers) {
+    super();
+    this.events = new EventEmitter();
+    this.title = '';
+    this.load();
+
+  }
+
+  ngOnChanges(changes: any): void {
+    if ('options' in changes) {
+      const value = changes['options'].currentValue;
+      if (!this._differ && value) {
+        this._differ = this._differs.find(value).create();
+      }
     }
   }
 
-  abs(value: any) {
-    return Math.abs(value);
+  ngDoCheck(): void {
+    if (this._differ) {
+      const changes: any = this._differ.diff(this.options);
+      if (changes) {
+        changes.forEachChangedItem((item: any) => {
+          this._applyChange(item);
+        });
+        changes.forEachAddedItem((item: any) => {
+          this._applyChange(item);
+        });
+      }
+    }
   }
 
-}
-
-@Pipe({ name: 'gridCellData' })
-export class GridCellDataPipe implements PipeTransform {
-  transform(gridData: any) {
-    return gridData.data[gridData.column.caption.toLowerCase()];
+  onMouseOver() {
+    this.events.emit({
+      type: 'mouseOver'
+    });
   }
+
+  private _applyChange(item: any): void {
+    switch (item.key) {
+      case 'width':
+        if (this.options.width) {
+          this.width = this.options.width;
+          this.chartWidth = this.width - 230;
+        }
+        break;
+      case 'height':
+        if (this.options.height) {
+          this.height = this.options.height;
+          this.chartHeight = this.height - 300;
+        }
+        break;
+      case 'title':
+        if (this.options.title) {
+          this.title = this.options.title;
+        }
+        break;
+      case 'dataService':
+        if (this.options.dataService) {
+          this.load(this.options.dataService);
+        }
+        break;
+      case 'loaded':
+        this.isLoaded = this.options.loaded;
+        break;
+    }
+  }
+
 }

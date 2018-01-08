@@ -17,7 +17,8 @@ export = (done: any) => {
   builder.config({
     paths: {
       'n:*': 'node_modules/*',
-      'rxjs/*': 'node_modules/rxjs/*.js'
+      'rxjs/*': 'node_modules/rxjs/*.js',
+      'rxjs/operators': 'node_modules/rxjs/operators.js'
     },
     map: {
       'rxjs': 'n:rxjs',

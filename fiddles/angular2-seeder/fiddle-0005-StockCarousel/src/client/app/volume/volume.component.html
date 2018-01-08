@@ -1,10 +1,10 @@
 <div class="volume" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
-  <div class="card text-white bg-info mb-3" style="width: calc(100%); height: calc(100%);">
+  <div class="card text-white bg-light mb-3" style="width: calc(100%); height: calc(95%);">
     <div class="card-header" style="background: black;"><h3>{{ title }} Market Volume</h3></div>
-    <div class="card-body volume-drop">
+    <div class="card-body volume-drop" [ngStyle]="{ 'width': width + 'px' }">
     <div class="container">
         <div class="row">
-          <div class="col col-md-offset-1">
+          <div class="col">
             <div class="container container-table" *ngIf="!isLoaded">
               <div class="row vertical-center-row">
                 <div class="alert alert-danger">
@@ -12,29 +12,31 @@
                 </div>
               </div>
            </div>
-            <dx-data-grid *ngIf="isLoaded" id="gridContainer"
-                          [dataSource]="dataSource"
+            <dx-data-grid [ngStyle]="{ 'width': gridWidth + 'px' }"
+                          *ngIf="isLoaded" id="gridContainer"
+                          [dataSource]="volumes"
                           [showRowLines]="true"
                           [showBorders]="true">
-
               <dxo-sorting mode="none"></dxo-sorting>
-              <dxo-paging [pageSize]="10"></dxo-paging>
+              <dxo-paging [pageSize]="2"></dxo-paging>
 
-              <dxi-column dataField="date" [width]="90" dataType="date"></dxi-column>
-              <dxi-column caption="Open" cellTemplate="diffCellTemplate"></dxi-column>
-              <dxi-column caption="Close" cellTemplate="diffCellTemplate"></dxi-column>
+              <dxi-column dataField="date" dataType="date"></dxi-column>
+              <dxi-column caption="Globex" dataField="volume"  dataType="number"></dxi-column>
+              <dxi-column caption="Floor" dataField="high.value"  dataType="number"></dxi-column>
+              <dxi-column caption="ClearPort" dataField="high.value" dataType="number"></dxi-column>
+              <dxi-column caption="Total Vol" dataField="volume" dataType="number"></dxi-column>
 
             </dx-data-grid>
           </div>
-          <div class="col-sm-auto"></div>
+
         </div>
       </div>
     </div>
     <div class="card-footer" style="background: black;">
-      <div class="cmeDisclaimerText" style="color: lime; font-family: arial;">
-        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span><br>
-        <i class="text-muted">Quotes are delayed by at least 20 minutes.</i>
+      <div class="cmeDisclaimerText" style="color: lime; font-family: arial; font-size: 13px; text-align: center;">
+        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>
+        <!--    Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>&nbsp;&nbsp;-->
       </div>
     </div>
+
   </div>
-</div>

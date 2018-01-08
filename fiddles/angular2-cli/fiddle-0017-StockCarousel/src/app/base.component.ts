@@ -31,6 +31,7 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
     super();
     this.events = new EventEmitter();
     this.title = 'ECorp';
+    this.isLoaded = true;
   }
 
   ngOnChanges(changes: any): void {
@@ -89,6 +90,10 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
           this.load(this.options.dataService);
         }
         break;
+      case 'loaded':
+        if (this.options.loaded) {
+          this.isLoaded = this.options.loaded;
+        }
     }
   }
 

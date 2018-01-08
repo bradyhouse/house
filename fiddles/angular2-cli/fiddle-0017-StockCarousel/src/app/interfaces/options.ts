@@ -7,4 +7,5 @@ export interface Options {
   chartType?: string;
   title?: string;
   dataService?: DataService;
+  loaded?: boolean;
 }

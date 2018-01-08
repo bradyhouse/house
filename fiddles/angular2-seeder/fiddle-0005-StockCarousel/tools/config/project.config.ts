@@ -23,13 +23,9 @@ export class ProjectConfig extends SeedConfig {
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
-      // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
-      // {src: 'lodash/lodash.min.js', inject: 'libs'},
-      {src: 'bootswatch/dist/darkly/bootstrap.css', inject: true, vendor: true },
-      {src: 'devextreme/dist/css/dx.spa.css', inject: true, vendor: true },
-      {src: 'devextreme/dist/css/dx.common.css', inject: true, vendor: true },
+      {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       {src: 'jszip/dist/jszip.min.js', inject: true, vendor: true},
-      {src: 'devextreme/dist/js/dx.all.js', inject: true, vendor: true}
+      {src: 'bootswatch/dist/darkly/bootstrap.min.css', inject: true, vendor: true }
     ];
 
     // Add `local` third-party libraries to be injected/bundled.

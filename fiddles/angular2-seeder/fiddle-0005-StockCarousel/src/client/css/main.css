@@ -8,20 +8,20 @@
 }
 
 .carousel-control-prev-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='silver' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
 }
 
 .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='silver' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
 .carousel-control-prev:focus, .carousel-control-prev:hover,
 .carousel-control-next:focus,
 .carousel-control-next:hover {
-  color: red;
+  background-color: red;
   text-decoration: none;
-  outline: 0;
-  opacity: 1;
+  outline: 1;
+  opacity: .5;
 }
 
 .container-table {
@@ -34,3 +34,65 @@
   vertical-align: middle;
   text-align: center;
 }
+
+.card {
+  border: none !important;
+}
+
+.cover {
+  background-color: #0a5794;
+  position: fixed;
+  z-index: 1000;
+  width: 535px;
+  height: 535px;
+  padding: 0;
+}
+
+.cover .row {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+
+.cover .col-md-12 {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+
+.cover h1 {
+  margin: 0;
+}
+
+.cover .loader {
+  padding-top: 15px;
+}
+
+.cover.loaded {
+  display: none;
+}
+
+.cover .loader > div {
+  background-color: #fff;
+}
+
+.loaded {
+  display: none;
+}
+
+.logo {
+  width: 154px;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

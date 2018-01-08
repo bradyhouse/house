@@ -2,7 +2,7 @@ import {
   ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, KeyValueDiffer, KeyValueDiffers, OnChanges,
   Output
 } from '@angular/core';
-import { Event, Options, DataService } from './interfaces';
+import { BubbleEvent, Options, DataService } from './interfaces';
 import { Base } from './base';
 
 
@@ -14,13 +14,12 @@ import { Base } from './base';
 })
 export class BaseComponent extends Base implements OnChanges, DoCheck {
 
-  @Output() events: EventEmitter<Event>;
+  @Output() events: EventEmitter<BubbleEvent>;
   @Input() options: Options;
 
   title: string;
   width: number;
   height: number;
-  chartType = 'bar';
   chartHeight: number;
   chartWidth: number;
   isLoaded: boolean;
@@ -32,7 +31,7 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
     super();
     this.events = new EventEmitter();
     this.title = 'ECorp';
-    this.isLoaded = true;
+    this.isLoaded = false;
   }
 
   ngOnChanges(changes: any): void {
@@ -74,11 +73,6 @@ export class BaseComponent extends Base implements OnChanges, DoCheck {
         if (this.options.height) {
           this.height = this.options.height;
           this.chartHeight = this.height - 20;
-        }
-        break;
-      case 'chartType':
-        if (this.options.chartType) {
-          this.chartType = this.options.chartType;
         }
         break;
       case 'title':

@@ -10,21 +10,24 @@ import { VolumeComponent } from './volume/volume.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BaseComponent } from './base.component';
-
-import { DxChartModule, DxDataGridModule, DxSparklineModule, DxTemplateModule } from 'devextreme-angular';
+import { DxChartModule } from 'devextreme-angular/ui/chart';
+import { DxRangeSelectorModule } from 'devextreme-angular/ui/range-selector';
+import { DxDataGridModule } from 'devextreme-angular/ui/data-grid';
+import { DxTemplateModule } from 'devextreme-angular/core/template';
 import { QuoteService } from './quote/quote.service';
 import { VolumeService } from './volume/volume.service';
 import { IntradayService } from './line-chart/intraday.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    DxSparklineModule,
+    DxRangeSelectorModule,
     DxTemplateModule,
-    NgbModule.forRoot(),
+    NgbCarouselModule,
     DxChartModule,
     DxDataGridModule
   ],

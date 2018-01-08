@@ -26,9 +26,12 @@ export class AppComponent extends Base {
     this.height = window.innerHeight;
   }
 
-  onPanelEvent(event: Event) {
-    switch (event.type) {
-
+  onPanelEvent(event: any) {
+    switch (event.current) {
+      case 'quote':
+        this.options.loaded =true;
+      default:
+        this.options.loaded = false;
     }
 
   }

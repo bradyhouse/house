@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Base } from './base';
-import { Options, Event } from './interfaces/index';
-
+import { Options, BubbleEvent } from './interfaces/index';
 
 @Component({
   selector: 'sd-app',
@@ -16,34 +15,58 @@ export class AppComponent extends Base {
   width: number;
   height: number;
 
+  private _preloader: any;
+
+
   constructor(private _config: NgbCarouselConfig) {
     super();
-    this.options = {
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
-    _config.interval = 5000;
+    const titleOverrideField: any = document.getElementById('titleOverride'),
+          title: string = titleOverrideField ? titleOverrideField.value : 'ECorp';
+    _config.interval = 0;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
+
+    this.options = {
+      width: this.width,
+      height: this.height,
+      title: title
+    };
+    this._preloader = document.getElementsByClassName('preloader')[0];
+
+    window.setTimeout(() => {
+      this._togglePreloader(false);
+    }, 1000);
   }
 
-  onPanelEvent(event: Event) {
-    console.log(event);
+  onPanelEvent(event: any) {
+    switch (event.type) {
+      case 'resize':
+        this.onWindowResize();
+        break;
+      case 'mouseOver':
+        console.log('disabling carousel');
+        this._config.interval = 0;
+        break;
+    }
   }
 
   onWindowResize(): void {
     this.width = window.innerWidth;
     this.height = window.innerHeight;
-    this.options = {
-      width: this.width,
-      height: this.height
-    };
+    this.options.width = this.width;
+    this.options.height = this.height;
   }
 
   onCarouselSlide(event: any) {
-    this._config.interval = 5000;
+    this._config.interval = 0;
     switch (event.current) {
+      case 'line-chart':
+        this.options.loaded = true;
+        break;
       case 'quote':
+        this.options.loaded = true;
+        break;
+      case 'volume':
         this.options.loaded = true;
         break;
       default:
@@ -54,6 +77,16 @@ export class AppComponent extends Base {
       this.onWindowResize();
     }, 1000);
 
+  }
+
+  private _togglePreloader(isPreloader: boolean) {
+    if (this._preloader) {
+      if (isPreloader) {
+        this._preloader.classList.remove('loaded');
+      } else {
+        this._preloader.classList.add('loaded');
+      }
+    }
   }
 
 }

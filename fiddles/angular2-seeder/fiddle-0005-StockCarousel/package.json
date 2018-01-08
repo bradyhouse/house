@@ -1,10 +1,10 @@
 {
   "name": "angular-seed",
   "version": "1.0.0",
-  "description": "Modular starter project for Angular 2 (and beyond) with statically typed build and AoT compilation",
+  "description": "Stock Quote",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mgechev/angular-seed"
+    "url": "https://E13542@cmestash.chicago.cme.com/scm/~e13542/stock-quote.git"
   },
   "scripts": {
     "build.tools": "tsc && gulp build.tools --color",
@@ -48,11 +48,11 @@
     "compodoc": "./node_modules/.bin/compodoc -p src/client/tsconfig.json",
     "serve.compodoc": "./node_modules/.bin/compodoc -s"
   },
-  "author": "Minko Gechev <mgechev>",
+  "author": "Brady House <brady.houseknecht@cmegroup.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=6.9.0",
-    "npm": ">=3.10.3"
+    "node": "7.9.0",
+    "npm": "4.2.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^5.0.1",
@@ -163,7 +163,8 @@
     "devextreme": "^17.2.4",
     "devextreme-angular": "^17.2.4",
     "intl": "^1.2.5",
-    "rxjs": "5.5.2",
+    "jquery": "^3.2.1",
+    "rxjs": "5.4.2",
     "systemjs": "0.20.19",
     "zone.js": "0.8.19"
   }

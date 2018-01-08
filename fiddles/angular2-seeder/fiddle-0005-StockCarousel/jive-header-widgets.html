@@ -1,0 +1,200 @@
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/etc/clientlibs/foundation/main.css" type="text/css">
+    <script type="text/javascript" src="/etc/clientlibs/granite/jquery.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/utils.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/jquery/granite.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/foundation/jquery.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/foundation/main.js"></script>
+
+    <link href="/etc/designs/default.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/etc/designs/default/favicon.ico">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/etc/designs/default/favicon.ico">
+
+    <title>jive-header-widgets</title>
+</head>
+
+
+
+<body class="blankTemplate">
+<div class="parbase clientcontext"><script type="text/javascript" src="/etc/clientlibs/foundation/shared.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/granite/lodash/modern.js"></script>
+    <script type="text/javascript" src="/etc/clientlibs/foundation/personalization/kernel.js"></script>
+    <script type="text/javascript">
+        $CQ(function() {
+            CQ_Analytics.SegmentMgr.loadSegments("/etc/segmentation");
+            CQ_Analytics.ClientContextUtils.init("/etc/clientcontext/default", "/content/cmegroup/en/misc/iframes/jive-header-widgets");
+
+
+        });
+    </script>
+</div>
+
+<div class="bg" id="main_bg">
+
+
+    <div>
+        <div class="par parsys"><div class="section cmeInjectContent">
+
+
+
+
+
+
+
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700">
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+            <script>
+                moment().format();
+                $('document').ready(function(){
+                    $.ajax({
+                        url: "/CmeWS/mvc/Volume/ExchangeVol?&days=2&exchange=CBT,CME,NYMEX,COMEX,OTC&_="+getRandomInt(1, 10000000000),
+                        success: function(data) {
+                            var timeStamp = data.timeStamp;
+                            $(".volumeLastUpdated").append(timeStamp + ' CDT');
+                        }
+                    }).done(function(data) {
+                        $( "#volDataAreaTable tbody" ).empty();
+                        data=data.exchangeData;
+                        for(var i = 0 ; i < data.length; i++){
+                            tradeDate = data[i]["tradeDate"]["dateOnlyLongFormat"];
+                            globexVol = data[i]["volume"]["globexVol"];
+                            cpcVol = data[i]["volume"]["clearingVol"];
+                            floorVol = data[i]["volume"]["floorVol"];
+                            totalVol = data[i]["volume"]["totalVolume"];
+                            var rowHTML = "<tr><td class='dateField' data-th='Trade Date'><b>"+tradeDate+"</b></td><td class='numberField'  data-th='Globex Vol'>"+addCommas(globexVol)+"</td><td class='numberField'  data-th='Floor Vol'>"+addCommas(floorVol)+"</td><td class='numberField'  data-th='CME ClearPort Vol'>"+addCommas(cpcVol)+"</td><td class='numberField' data-th='Total Volume'>"+addCommas(totalVol)+"</td></tr>";
+                            $( "#volDataAreaTable tbody" ).append(rowHTML);
+                        }
+                    });
+                })
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+                }
+                function addCommas(intNum) {
+                    return (intNum + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+                }
+            </script>
+            <script src="//apps.shareholder.com/irxml/irxml.aspx?FUNCTION=STOCKQUOTE&amp;COMPANYID=CME&amp;PIN=791048460&amp;OUTPUT=JS2&amp;TICKER=CME"></script>
+            <script>
+                $('document').ready(function(){
+                    var data = irxmlstockquote[0];
+                    $(".currentPrice").text('$'+data.lastprice);
+                    if(data.change >0){
+                        $(".change").addClass("positivechange")
+                    }
+                    if(data.change < 0){
+                        $(".change").addClass("negativechange")
+                    }
+                    $(".numberChange").text('$'+data.change);
+                    $(".percentChange").text(data.pchange + '%');
+                    $(".highvalue").text('$'+data.high);
+                    $(".lowvalue").text('$'+data.low);
+                    $(".volvalue").text(addCommas(data.volume));
+                    $(".lastUpdated").text(moment(data.datetime).format( ' DD MMM YYYY, h:mm a \\E\\T'));
+
+                })
+
+                function addCommas(intNum) {
+                    return (intNum + '').replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+                }
+            </script>
+            <style type="text/css">
+                html {font-family: "Roboto", helvetica, arial, sans-serif; font-size: 1em; line-height: 1.5;}
+                body {margin: 0;}
+                .cmeDisclaimerText {font-size: 10px; text-align: center; clear: both; padding: 4px 0 8px;}
+                .cmeJiveHeaderWidgetContainer {clear: both;}
+                .cmeJiveHeaderVolumeWidget, .cmeJiveHeaderStockWidget {float: left;}
+                .cmeJiveHeaderStockWidget {margin-right: 10px;}
+
+                /* Volume Widget*/
+                .cmeVolumeWidgetContainer {max-width: 400px; clear:both;}
+                .cmeVolumeWidgetTitle th {background: #0079c1 !important; color: #fff;}
+                .cmeVolumeWidgetTitle h3 {margin: 0; font-size: 14px;}
+                .cmeVolumeWidgetContainer table {width: 100%; border-collapse: collapse; min-height: 100px;}
+                .cmeVolumeWidgetTable .dateField {text-align: center; border-left: none;}
+                .cmeVolumeWidgetTable td {font-size: 12px; text-align: right; background: #f4f4f4; padding: 3px 6px;}
+                #volDataAreaTable th {text-align: center; font-size: 12px; background: #00447C; padding: 3px 6px; color: #fff; font-family: Roboto, Arial, sans-serif; font-weight: 700;}
+
+                /* Stock Widget */
+                .currentPrice {font-size: 185%;}
+                .cmeStockWidgetContainer {min-width: 280px; clear:both;}
+                .percentChange, .numberChange {padding: 8px;}
+                .dataArea {clear: both;}
+                .dataTitle h3 {text-align: center; margin: 0; font-size: 14px; background: #0079c1; padding: 3px 0; color: #fff;}
+                .dataBody {clear: both; background: #f4f4f4; min-height: 72px;}
+                .leftArea {width: 50%; float: left; text-align: center; padding:0;}
+                .change.negativechange {color: #ff0000; font-weight: bold;}
+                .change.positivechange {color: #259637; font-weight: bold;}
+                .positivechange .percentChange:before {content: "+"}
+                .rightArea {width: 40%; float: left; padding: 8px 6px 0; font-size: 12px;}
+                .high, .low, .volume {margin-bottom: 0.25em; font-weight: bold;}
+                .highvalue, .lowvalue, .volvalue {font-weight: normal;}
+            </style>
+
+            <div class="cmeJiveHeaderWidgetContainer">
+                <div class="cmeJiveHeaderStockWidget">
+                    <div class="cmeStockWidgetContainer">
+                        <div class="dataArea">
+                            <div class="dataTitle"><h3>CME Group Stock Quote</h3></div>
+                            <div class="dataBody">
+                                <div class="leftArea">
+                                    <div class="currentPrice">$149.65</div>
+                                    <div class="change positivechange"><span class="percentChange">0.652%</span><span class="numberChange">$0.97</span></div>
+                                </div>
+                                <div class="rightArea">
+                                    <div class="high">High: <span class="highvalue">$149.77</span></div>
+                                    <div class="low">Low: <span class="lowvalue">$148.246</span></div>
+                                    <div class="volume">Volume: <span class="volvalue">953,983</span></div>
+                                </div>
+                            </div>
+                            <div class="cmeDisclaimerText">
+                                Last updated: <span class="lastUpdated"> 05 Jan 2018, 4:00 pm ET</span><br>
+                                Quotes are delayed by at least 20 minutes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cmeJiveHeaderVolumeWidget">
+                    <div id="volDataArea" class="cmeVolumeWidgetContainer">
+                        <table id="volDataAreaTable" class="cmeVolumeWidgetTable" cellspacing="0" cellpadding="0" border-collapse="collapse">
+                            <thead><tr class="cmeVolumeWidgetTitle"><th colspan="5"><h3>CME Group Market Volume</h3></th></tr>
+                            <tr><th>Trade Date</th><th>Globex</th><th>Floor</th><th>CME ClearPort</th><th>Total Volume</th></tr></thead>
+                            <tbody><tr><td class="dateField" data-th="Trade Date"><b>08 Jan 2018</b></td><td class="numberField" data-th="Globex Vol">0</td><td class="numberField" data-th="Floor Vol">0</td><td class="numberField" data-th="CME ClearPort Vol">0</td><td class="numberField" data-th="Total Volume">0</td></tr><tr><td class="dateField" data-th="Trade Date"><b>05 Jan 2018</b></td><td class="numberField" data-th="Globex Vol">14,576,558</td><td class="numberField" data-th="Floor Vol">928,832</td><td class="numberField" data-th="CME ClearPort Vol">1,087,966</td><td class="numberField" data-th="Total Volume">16,593,356</td></tr></tbody>
+                        </table>
+                        <div class="cmeDisclaimerText">Last updated: <span class="volumeLastUpdated">07 Jan 2018 02:50:51 PM CDT</span><br>Market data is delayed by at least 10 minutes.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="servicecomponents cloudservices">
+</div>
+
+
+
+
+</body></html>
