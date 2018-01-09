@@ -1,0 +1,8 @@
+<button (click)="toggleMenu()" [ngClass]="{ 'mdi arrow-expand-right': right, 'mdi arrow-collapse-right': right } q q">
+</button>
+
+<h6>
+  {{title}}
+</h6>
+
+<app-menu [@slideInOut]="menuState"></app-menu>

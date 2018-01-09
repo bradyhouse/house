@@ -1,0 +1,82 @@
+<div class="pie-chart" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
+  <div class="card text-white bg-info mb-3" style="width: calc(100%); height: calc(100%);">
+    <div class="card-header" style="background: black;"><h3>{{title}} Market Volume</h3></div>
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-offset-1" ><!-- left side -->
+            <div class="container container-table" *ngIf="!isLoaded">
+              <div class="row vertical-center-row">
+                <div class="alert alert-danger">
+                  <strong>Oh snap!</strong> There is no <i>Volume</i> data.
+                </div>
+              </div>
+            </div>
+            <dx-chart *ngIf="isLoaded"
+                      id="chart"
+                      [dataSource]="timeSeries"
+                      palette="Dark Violet"
+                      [valueAxis]="[{
+                        name: 'frequency',
+                        position: 'left',
+                        tickInterval: 300
+                    }, {
+                        name: 'percentage',
+                        position: 'right',
+                        showZero: true,
+                        label: {
+                            customizeText: customizeLabelText
+                        },
+                        constantLines: [{
+                            value: 80,
+                            color: 'red',
+                            dashStyle: 'dash',
+                            width: 2,
+                            label: { visible: false }
+                        }],
+                        tickInterval: 10,
+                        valueMarginsEnabled: false
+                    }]">
+              <dxo-argument-axis>
+                <dxo-label overlappingBehavior="stagger"></dxo-label>
+              </dxo-argument-axis>
+              <dxo-tooltip
+                [enabled]="true"
+                [shared]="true"
+                [customizeTooltip]="customizeTooltip">
+              </dxo-tooltip>
+              <dxo-common-series-settings
+                argumentField="complaint">
+              </dxo-common-series-settings>
+              <dxi-series
+                type="bar"
+                valueField="count"
+                axis="frequency"
+                name="Complaints frequency"
+                color="blue">
+              </dxi-series>
+              <dxi-series
+                type="spline"
+                valueField="cumulativePercent"
+                axis="percentage"
+                name="Cumulative percentage"
+                color="white">
+              </dxi-series>
+              <dxo-legend
+                verticalAlignment="top"
+                horizontalAlignment="center">
+              </dxo-legend>
+            </dx-chart>
+          </div>
+          <div class="col-sm-auto"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer" style="background: black;">
+      <div class="cmeDisclaimerText" style="color: lime; font-family: arial;">
+        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span><br>
+        <i class="text-muted">Quotes are delayed by at least 20 minutes.</i>
+      </div>
+    </div>
+  </div>
+</div>

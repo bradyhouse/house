@@ -1,0 +1,21 @@
+
+
+.app-component {
+
+}
+
+.app-component .row-center {
+  margin: 0 auto;
+}
+
+
+.app-component .ngb-carousel .carousel .slide {
+  margin-right: 0px;
+}
+
+.app-component .viewport {
+  overflow: auto;
+  max-height: 100vh;
+}
+
+

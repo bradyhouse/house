@@ -1,10 +1,10 @@
-import { AngularAnimationPage } from './app.po';
+import { AppPage } from './app.po';
 
 describe('angular-animation App', () => {
-  let page: AngularAnimationPage;
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new AngularAnimationPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {

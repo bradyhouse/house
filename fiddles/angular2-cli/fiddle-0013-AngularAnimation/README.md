@@ -4,12 +4,12 @@ fiddle-0013-AngularAnimation
 
 ### Title
 
-Angular Animation
+fiddle-0013-AngularAnimation
 
 
 ### Creation Date
 
-09-20-17
+12-10-17
 
 
 ### Location
@@ -19,17 +19,17 @@ Chicago, IL
 
 ### Issue
 
-[Issue 199](https://github.com/bradyhouse/house/issues/199)
+[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
 
 
 ### Description
 
-Fiddle based on the example discussed in the [Angular Animation guide](https://angular.io/guide/animations).
+Another simple Angular 2 fiddle.
 
 
 ### Published Version Link
 
-[bradyhouse.github.io > angular2-cli > #13](http://bradyhouse.github.io/angular2-cli/fiddle-0013-AngularAnimation/#)
+N/A
 
 
 ### Tags

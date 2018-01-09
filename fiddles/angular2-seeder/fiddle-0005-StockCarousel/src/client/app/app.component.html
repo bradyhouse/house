@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="app-component">
+    <ngb-carousel (window:resize)="onWindowResize()" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }"
+      (slide)="onCarouselSlide($event)">
+      <ng-template id="quote" ngbSlide>
+        <app-quote [options]="options" (events)="onPanelEvent($event)"></app-quote>
+      </ng-template>
+      <ng-template id="line-chart" ngbSlide>
+        <app-line-chart [options]="options" (events)="onPanelEvent($event)"></app-line-chart>
+      </ng-template>
+      <ng-template id="volume" ngbSlide>
+        <app-volume [options]="options" (events)="onPanelEvent($event)"></app-volume>
+      </ng-template>
+    </ngb-carousel>
+</div>
+

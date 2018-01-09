@@ -489,7 +489,6 @@ export class SeedConfig {
         'node_modules/@angular/compiler/bundles/compiler.umd.js',
       '@angular/core': 'node_modules/@angular/core/bundles/core.umd.js',
       '@angular/forms': 'node_modules/@angular/forms/bundles/forms.umd.js',
-      '@angular/http': 'node_modules/@angular/http/bundles/http.umd.js',
       '@angular/platform-browser':
         'node_modules/@angular/platform-browser/bundles/platform-browser.umd.js',
       '@angular/platform-browser-dynamic':
@@ -507,14 +506,13 @@ export class SeedConfig {
         'node_modules/@angular/compiler/bundles/compiler-testing.umd.js',
       '@angular/core/testing':
         'node_modules/@angular/core/bundles/core-testing.umd.js',
-      '@angular/http/testing':
-        'node_modules/@angular/http/bundles/http-testing.umd.js',
       '@angular/platform-browser/testing':
         'node_modules/@angular/platform-browser/bundles/platform-browser-testing.umd.js',
       '@angular/platform-browser-dynamic/testing':
         'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing':
         'node_modules/@angular/router/bundles/router-testing.umd.js',
+      'rxjs/operators': 'node_modules/rxjs/operators/index.js',
 
       'app/': `${this.APP_BASE}app/`,
       // For test config
@@ -562,6 +560,7 @@ export class SeedConfig {
       '@angular/common/http':
         'node_modules/@angular/common/bundles/common-http.umd.js',
       'tslib': 'node_modules/tslib/tslib.js',
+      'rxjs/operators': 'node_modules/rxjs/operators/index.js',
       'dist/tmp/node_modules/*': 'dist/tmp/node_modules/*',
       'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
@@ -589,10 +588,6 @@ export class SeedConfig {
       },
       '@angular/forms': {
         main: 'bundles/forms.umd.js',
-        defaultExtension: 'js'
-      },
-      '@angular/http': {
-        main: 'bundles/http.umd.js',
         defaultExtension: 'js'
       },
       '@angular/platform-browser': {
@@ -686,7 +681,7 @@ export class SeedConfig {
      * Example: `npm start -- --b`
      * @return {any}
      */
-    let defaults = {
+    const defaults = {
       'browser-sync': {
         middleware: [
           require('connect-history-api-fallback')({
@@ -854,7 +849,7 @@ function filterDependency(type: string, d: InjectableDependency): boolean {
  * @return {number} The applications version.
  */
 function appVersion(): number | string {
-  var pkg = require('../../package.json');
+  const pkg = require('../../package.json');
   return pkg.version;
 }
 
@@ -862,9 +857,9 @@ function appVersion(): number | string {
  * Returns the application build type.
  */
 function getBuildType() {
-  let type = (argv['build-type'] || argv['env'] || '').toLowerCase();
-  let base: string[] = argv['_'];
-  let prodKeyword = !!base
+  const type = (argv['build-type'] || argv['env'] || '').toLowerCase();
+  const base: string[] = argv['_'];
+  const prodKeyword = !!base
     .filter(o => o.indexOf(BUILD_TYPES.PRODUCTION) >= 0)
     .pop();
   if ((base && prodKeyword) || type === BUILD_TYPES.PRODUCTION) {
@@ -875,6 +870,6 @@ function getBuildType() {
 }
 
 function getSmeOutFormat() {
-  let format = (argv['sme-out-format'] || '').toUpperCase();
+  const format = (argv['sme-out-format'] || '').toUpperCase();
   return SME_OUTPUT_FORMATS[format] || SME_OUTPUT_FORMATS.HTML;
 }

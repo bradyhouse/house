@@ -1,0 +1,17 @@
+
+
+.app-component {
+  padding-right: 0px;
+  overflow-y: auto;
+}
+
+.app-component .row-center {
+  margin: 0 auto;
+}
+
+
+.ngb-carousel .carousel .slide {
+  margin-right: 0px;
+}
+
+
