@@ -120,7 +120,8 @@ function fiddleIndexAll() {
             ./fiddle-list.sh $2;
             ;;
          'publish')
-            ./fiddle-publish.sh;
+          if [ "$#" -lt 2 ]; then  ./fiddle-publish.sh;  exit 0; fi
+            ./fiddle-publish.sh $2;
             ;;
         'refactor')
             if [ "$#" -lt 4 ]; then  ./fiddle-refactor.sh;  exit 0; fi
