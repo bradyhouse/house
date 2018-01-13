@@ -1,14 +1,14 @@
 
-*** Region
-
+Region
+======
 	geographical area consisting of 2 or more availability zones.
 
-*** Availability Zone
-	
+Availability Zone
+======	
 	one or more data centers.
 
-*** Edge Location
-
+Edge Location
+======
 	endpoints for AWS which are used for caching content. Typically
 	this consists of CloudFront, Amazon's Content Delivery Network 
 	(CDN). There are many more edge Locations than Regions. 
