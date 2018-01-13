@@ -12,8 +12,9 @@ Global Infrastructure
 
 ### Edge Location
 
-	endpoints for AWS which are used for caching content. Typically this consists of CloudFront, Amazon's Content Delivery Network 
-	(CDN). There are many more edge Locations than Regions. Currently there are over 96 edge locations vs 16 regions consisting of 44 availability zones.
+	endpoints for AWS which are used for caching content. Typically this consists of CloudFront, Amazon's Content Delivery
+	Network (CDN). There are many more edge Locations than Regions. Currently there are over 96 edge locations vs 16 
+	regions consisting of 44 availability zones.
 
 Compute
 ===
@@ -28,8 +29,8 @@ Compute
 
 ### Elastic Beanstalk
 
-	service intended for developers who don't understand AWS. This service can be used to upload code. The service will then
-	handle the provisioning of EC2 resources like auto scaling groups or load balancers.
+	service intended for developers who don't understand AWS. This service can be used to upload code. The service will 
+	then handle the provisioning of EC2 resources like auto scaling groups or load balancers.
 
 ### Lambda
 
@@ -57,8 +58,8 @@ Storage
 
 ### EFS
 
-    Elastic File System (EFS). Network attached storage service. Using this service you can upload files to volumes which 
-    then can be mounted and accessed by virtual machines (aka EC2 instances).
+    Elastic File System (EFS). Network attached storage service. Using this service you can upload files to volumes 
+    which then can be mounted and accessed by virtual machines (aka EC2 instances).
 
 ### Glacier
 
