@@ -57,8 +57,8 @@ Storage
 
 ### EFS
 
-  Elastic File System (EFS). Network attached storage service. Using this service you can upload files to volumes which
-  then can be mounted and accessed by virtual machines (aka EC2 instances).
+    Elastic File System (EFS). Network attached storage service. Using this service you can upload files to volumes which 
+    then can be mounted and accessed by virtual machines (aka EC2 instances).
 
 ### Glacier
 
