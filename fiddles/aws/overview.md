@@ -53,7 +53,7 @@ Storage
 	
 ### S3
 
-	Simple Storage Service (S3). Amazon's object based service. 
+	Simple Storage Service (S3). Amazon's object (file) based storage service. 
 
 ### EFS
 
