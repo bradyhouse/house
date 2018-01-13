@@ -5,7 +5,8 @@ Region
 
 Availability Zone
 ======	
-	one or more data centers.
+	one or more data centers, each with redundant power, networking
+	and connectivity, housed in seperate facilities.
 
 Edge Location
 ======
