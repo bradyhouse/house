@@ -1,4 +1,7 @@
 
+Global Infrastructure
+=====
+
 Region
 ======
 	geographical area consisting of 2 or more availability zones.
@@ -15,4 +18,5 @@ Edge Location
 	(CDN). There are many more edge Locations than Regions. 
 	Currently there are over 96 edge locations vs 16 regions 
 	consisting of 44 availability zones.
+
 
