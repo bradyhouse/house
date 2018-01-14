@@ -1,6 +1,6 @@
 import {
   ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, KeyValueDiffer, KeyValueDiffers, OnChanges,
-  Output
+  Output, ViewChild, ElementRef
 } from '@angular/core';
 
 import { Options, BubbleEvent, DataService } from '../interfaces/index';
@@ -18,7 +18,10 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
 
   @Output() events: EventEmitter<BubbleEvent>;
   @Input() options: Options;
+  @ViewChild('grid') gridEl: ElementRef;
+  pieChartOptions: Options;
 
+  grid: any;
   volumes: any[];
   title: string;
   width: number;
@@ -30,20 +33,6 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
 
   private _differ: KeyValueDiffer<string, any> = null;
 
-  load(dataService: DataService = null) {
-    if (dataService !== null) {
-      this.volumes = dataService.getData();
-    } else {
-      if (this._volumeService) {
-        this.volumes = this._volumeService.getData();
-      }
-    }
-
-    if (this.volumes && this.volumes.length) {
-      this.isLoaded = true;
-    }
-
-  }
 
   constructor(private _volumeService: VolumeService,
               private _changeDetector: ChangeDetectorRef,
@@ -51,7 +40,15 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
     super();
     this.events = new EventEmitter();
     this.title = '';
-    this.load();
+    this.pieChartOptions = {
+      width: 0,
+      height: 0,
+      loaded: false
+    };
+
+    this.subscriptions.push(_volumeService.responseChange$.subscribe(
+      (data: any) => this.onVolumeServiceResponseChange(data)
+    ));
 
   }
 
@@ -84,6 +81,40 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
     });
   }
 
+  onVolumeServiceResponseChange(data: any) {
+    console.log('onVolumeServiceResponseChange');
+    this.volumes = data;
+    if (this.grid) {
+      this.grid.selectRowsByIndexes([0]);
+    }
+  }
+
+  calculateCellValue(data: any) {
+    const formatNumber: Function = (val: any) => {
+      const parts: any = val.toString().split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      return parts.join('.');
+    };
+
+    return formatNumber(data);
+  }
+
+  onGridContentReady(args: any) {
+   this.grid = args.component;
+   if (this.volumes && this.volumes.length > 0) {
+     this.grid.selectRowsByIndexes([0]);
+   }
+  }
+
+  onGridCellClick(cell: any) {
+    this.grid.selectRowsByIndexes(cell.rowIndex);
+  }
+
+  onGridSelectionChanged(data: any) {
+    const volume: any = data.selectedRowsData[0];
+    console.log(volume);
+  }
+
   private _applyChange(item: any): void {
     switch (item.key) {
       case 'width':
@@ -104,9 +135,6 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
         }
         break;
       case 'dataService':
-        if (this.options.dataService) {
-          this.load(this.options.dataService);
-        }
         break;
       case 'loaded':
         this.isLoaded = this.options.loaded;
