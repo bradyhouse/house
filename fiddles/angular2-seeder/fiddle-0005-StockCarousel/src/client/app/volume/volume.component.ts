@@ -3,7 +3,7 @@ import {
   Output, ViewChild, ElementRef
 } from '@angular/core';
 
-import { Options, BubbleEvent, DataService } from '../interfaces/index';
+import { Options, BubbleEvent } from '../interfaces/index';
 import { Base } from '../base';
 import { VolumeService } from './volume.service';
 
@@ -82,7 +82,6 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
   }
 
   onVolumeServiceResponseChange(data: any) {
-    console.log('onVolumeServiceResponseChange');
     this.volumes = data;
     if (this.grid) {
       this.grid.selectRowsByIndexes([0]);
@@ -111,8 +110,24 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
   }
 
   onGridSelectionChanged(data: any) {
-    const volume: any = data.selectedRowsData[0];
-    console.log(volume);
+    const rawData: any = data.selectedRowsData[0];
+    this.pieChartOptions.data = [
+      {
+        text: 'Globex',
+        value: rawData.volume.globexVol
+      },
+      {
+        text: 'Clearport',
+        value: rawData.volume.clearingVol
+      },
+      {
+        text: 'Floor',
+        value: rawData.volume.floorVol
+      }
+    ];
+    this.pieChartOptions.width = this.chartWidth;
+
+    this.pieChartOptions.height = this.chartHeight;
   }
 
   private _applyChange(item: any): void {
@@ -120,13 +135,13 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
       case 'width':
         if (this.options.width) {
           this.width = this.options.width;
-          this.chartWidth = this.width - 230;
+          this.chartWidth = this.width;
         }
         break;
       case 'height':
         if (this.options.height) {
           this.height = this.options.height;
-          this.chartHeight = this.height - 300;
+          this.chartHeight = (Math.floor(.4 * this.height)) - 300;
         }
         break;
       case 'title':

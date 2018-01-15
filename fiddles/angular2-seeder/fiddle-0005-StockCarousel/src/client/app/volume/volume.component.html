@@ -29,7 +29,7 @@
               <dxi-column caption="ClearPort" dataField="volume.clearingVol" [format]="calculateCellValue"></dxi-column>
               <dxi-column caption="Total Volume" dataField="volume.totalVolume" [format]="calculateCellValue"></dxi-column>
             </dx-data-grid>
-            <!--<app-pie-chart [options]="pieChartOptions"></app-pie-chart>-->
+            <app-pie-chart [options]="pieChartOptions" [ngStyle]="{ 'width': chartWidth + 'px', 'height': chartHeight + 'px' }"></app-pie-chart>
           </div>
         </div>
 

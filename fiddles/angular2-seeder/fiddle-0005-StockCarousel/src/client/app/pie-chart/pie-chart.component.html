@@ -1,24 +1,27 @@
 <div class="pie-chart" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
-    <dx-pie-chart
-            id="pie"
-            title=""
-            palette="bright"
-            [dataSource]="volume">
-        <dxo-legend
-                visible="false"
-                [columnCount]="3"></dxo-legend>
-        <dxi-series
-                argumentField="text"
-                valueField="value">
-            <dxo-label
-                    [visible]="true"
-                    position="columns"
-                    [customizeText]="customizeLabel">
-                <dxo-font [size]="16"></dxo-font>
-                <dxo-connector
-                        [visible]="true"
-                        [width]="0.5"></dxo-connector>
-            </dxo-label>
-        </dxi-series>
-    </dx-pie-chart>
+    <div class="container container-table" style="width: calc(100%); height: calc(50%);">
+        <div class="row vertical-center-row">
+            <dx-pie-chart id="pie"
+                    palette="bright"
+                    [dataSource]="volume">
+                <dxo-legend
+                        [visible]="false">
+                </dxo-legend>
+                <dxi-series
+                        argumentField="text"
+                        valueField="value">
+                    <dxo-label
+                            [visible]="true"
+                            position="columns"
+                            [customizeText]="customizeLabel">
+                        <dxo-font [size]="8"></dxo-font>
+                        <dxo-connector
+                                [visible]="true"
+                                [width]="0.5"></dxo-connector>
+                    </dxo-label>
+                </dxi-series>
+            </dx-pie-chart>
+        </div>
+    </div>
+
 </div>
