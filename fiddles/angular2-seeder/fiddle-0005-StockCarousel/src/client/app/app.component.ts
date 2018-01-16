@@ -32,10 +32,6 @@ export class AppComponent extends Base {
       title: title
     };
     this._preloader = document.getElementsByClassName('preloader')[0];
-
-    window.setTimeout(() => {
-      this._togglePreloader(false);
-    }, 1000);
   }
 
   onPanelEvent(event: any) {
@@ -46,6 +42,9 @@ export class AppComponent extends Base {
       case 'mouseOver':
         console.log('disabling carousel');
         this._config.interval = 0;
+        break;
+      case 'ready':
+        this._togglePreloader(false);
         break;
     }
   }

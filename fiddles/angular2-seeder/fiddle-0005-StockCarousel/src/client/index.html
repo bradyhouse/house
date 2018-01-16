@@ -17,7 +17,15 @@
 </head>
 <body>
 <input type="hidden" id="titleOverride" value="ECorp">
+<input type="hidden" id="symbolOverride" value="EC">
+
 <input type="hidden" id="passThruProxyUrlOverride" value="http://54.200.61.172/passthru">
+
+<!-- Line Chart Data Source Confg -->
+<input type="hidden" id="intradayUrlOverride" value="https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=CME&interval=1min&outputsize=compact&apikey=7ZI2H1Y6J0ZRVGCQ">
+<input type="hidden" id="intradayUsePassThruProxyOverride" value="true">
+
+<!-- Volume Data Source Config -->
 <input type="hidden" id="volumeUrlOverride" value="http://www.cmegroup.com/misc/iframes/CmeWS/mvc/Volume/ExchangeVol?&days=4&exchange=CBT,CME,NYMEX,COMEX,OTC&_=">
 <input type="hidden" id="volumeUrlIsUniqueOverride" value="true">
 <input type="hidden" id="volumeUsePassThruProxyOverride" value="true">

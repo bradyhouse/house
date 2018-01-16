@@ -21,6 +21,7 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
   @Input() options: Options;
 
   stockPrices: StockPrice[];
+  lastUpdated: string;
   title: string;
   width: number;
   height: number;
@@ -29,16 +30,6 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
   isLoaded: boolean;
 
   private _differ: KeyValueDiffer<string, any> = null;
-
-  load(dataService: DataService = null) {
-    if (dataService !== null) {
-      this.stockPrices = dataService.getData();
-    } else {
-      if (this._intradayService) {
-        this.stockPrices = this._intradayService.getData();
-      }
-    }
-  }
 
   onValueChanged(e: any) {
     this.chart.instance.zoomArgument(new Date(e.value[0]), new Date(e.value[1]));
@@ -52,8 +43,9 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
     this.events = new EventEmitter();
     this.title = '';
     this.isLoaded = false;
-    this.load();
-
+    this.subscriptions.push(_intradayService.responseChange$.subscribe(
+      (data: any) => this.onIntradayServiceResponseChange(data)
+    ));
   }
 
   ngOnChanges(changes: any): void {
@@ -91,6 +83,15 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
     });
   }
 
+  onIntradayServiceResponseChange(data: any) {
+    this.stockPrices = data;
+    this.lastUpdated = this._intradayService.lastUpdated;
+    this.isLoaded = true;
+    this.events.emit({
+      type: 'ready'
+    });
+  }
+
   private _applyChange(item: any): void {
     switch (item.key) {
       case 'width':
@@ -115,14 +116,6 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
         if (this.options.title) {
           this.title = this.options.title;
         }
-        break;
-      case 'dataService':
-        if (this.options.dataService) {
-          this.load(this.options.dataService);
-        }
-        break;
-      case 'loaded':
-        this.isLoaded = this.options.loaded;
         break;
     }
   }

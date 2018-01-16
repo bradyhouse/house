@@ -19,11 +19,11 @@
                     [dataSource]="stockPrices"
                     [useAggregation]="true">
               <dxi-series
-                      openValueField="Open"
-                      highValueField="High"
-                      lowValueField="Low"
-                      closeValueField="Close"
-                      argumentField="Date">
+                      openValueField="open"
+                      highValueField="high"
+                      lowValueField="low"
+                      closeValueField="close"
+                      argumentField="date">
               </dxi-series>
               <dxo-common-series-settings type="candleStick"></dxo-common-series-settings>
               <dxi-value-axis valueType="numeric"></dxi-value-axis>
@@ -36,15 +36,15 @@
               <dxo-legend [visible]="false"></dxo-legend>
               <dxo-tooltip [enabled]="true"></dxo-tooltip>
             </dx-chart>
-            <dx-range-selector
+            <dx-range-selector *ngIf="isLoaded"
                     [ngStyle]="{ 'width': chartWidth + 'px' }"
                     [dataSource]="stockPrices"
                     (onValueChanged)="onValueChanged($event)">
               <dxo-size [height]="130"></dxo-size>
               <dxo-scale
-                      minorTickInterval="day"
-                      tickInterval="month"
-                      valueType="datetime"
+                      minorTickInterval="hour"
+                      tickInterval="minute"
+                      valueType="time"
                       [placeholderHeight]="20">
               </dxo-scale>
               <dxo-behavior
@@ -56,8 +56,8 @@
                 <dxo-value-axis valueType="numeric"></dxo-value-axis>
                 <dxi-series
                         type="line"
-                        valueField="Open"
-                        argumentField="Date">
+                        valueField="open"
+                        argumentField="date">
                 </dxi-series>
               </dxo-chart>
             </dx-range-selector>
@@ -67,8 +67,7 @@
     </div>
     <div class="card-footer" style="background: black;">
       <div class="cmeDisclaimerText" style="color: lime; font-family: arial; font-size: 13px; text-align: center;">
-        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>
-        <!--    Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>&nbsp;&nbsp;-->
+        Last updated: <span class="lastUpdated">{{ lastUpdated }}</span>
       </div>
     </div>
   </div>
