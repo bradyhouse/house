@@ -71,45 +71,62 @@ export class VolumeService {
   private request() {
     const urlOverrideField: any = document.getElementById('volumeUrlOverride'),
       isUniqueOverrideField: any = document.getElementById('volumeUrlIsUniqueOverride'),
+      isPassThruField: any = document.getElementById('volumeUsePassThruProxyOverride'),
+      proxyUrlField: any = document.getElementById('passThruProxyUrlOverride'),
+      proxyUrl: string = proxyUrlField && proxyUrlField.value !== '' ? proxyUrlField.value : null,
       isUnique: boolean = isUniqueOverrideField && isUniqueOverrideField.value === 'true' ? true : false,
+      isPassThru: boolean = proxyUrl && isPassThruField && isPassThruField.value === 'true' ? true : false,
+      hostUrl: string = window.location.port ? 'http://' + window.location.hostname + ':' + window.location.port :
+        'http://' + window.location.hostname,
       self: VolumeService = this,
-      req: any = new XMLHttpRequest();
+      req: any = new XMLHttpRequest(),
+      params: any =  {
+        url: '',
+        allowOrigin: '',
+        convertToJson: false,
+        allowCredentials: true,
+        allowMethods: 'POST',
+        allowHeaders: 'Content-Type'
+      };
 
-    let url: string = urlOverrideField && urlOverrideField.value ? urlOverrideField.value : null;
+    let url: string = urlOverrideField && urlOverrideField.value ? urlOverrideField.value : null,
+      data: any = null,
+      encodedParams = null;
+    req.onload = () => {
+      if (req.status === 200) {
+        data = req.responseText.trimLeft().trimRight();
+        self._json.data = JSON.parse(data);
+        self.response = self._json.data.exchangeData;
+      } else {
+        self.error = req.statusText;
+      }
+    };
+
+    req.onerror = (error: any) => {
+      const msg: string = error && error.message ? error.message : 'Unknown server error';
+      if (this._errorObserver) {
+        this._errorObserver.next(msg);
+      }
+      self.error = error ? error : new Error(msg);
+    };
 
     if (isUnique) {
       url += this.randomInt(1, 10000000000);
     }
-
-    let data: any = null;
-
-    if (url) {
+    if (isPassThru && url) {
+      params.url = url;
+      params.allowOrigin = hostUrl;
+      encodedParams = JSON.stringify(params);
+      console.log('proxyUrl = ' + proxyUrl);
+      console.log('encoded params = ' + encodedParams);
+      req.open('POST', proxyUrl);
+      req.setRequestHeader('Content-type', 'application/json');
+      req.send(encodedParams);
+    } else if (url) {
       req.open('GET', url);
-      req.onload = () => {
-        if (req.status === 200) {
-          window.setTimeout(() => {
-            data = req.responseText.trimLeft().trimRight();
-            self._json.data = JSON.parse(data);
-            self.response = self._json.data.exchangeData;
-          }, 1000);
-        } else {
-          self.error = req.statusText;
-        }
-      };
-      req.onerror = (error: any) => {
-
-        const msg: string = error && error.message ? error.message : 'Unknown server error';
-
-        if (this._errorObserver) {
-          this._errorObserver.next(msg);
-        }
-        self.error = error ? error : new Error(msg);
-      };
       req.send();
     } else {
-      if (this._errorObserver) {
-        this._errorObserver.next('Oh snap! The "List Link URL" field is missing or is now not populated.');
-      }
+      this.error = 'Oh snap! The "Volume Data Source URL" field is missing or is now not populated.';
     }
   }
 

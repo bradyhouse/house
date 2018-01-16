@@ -63,7 +63,7 @@ export class PieChartComponent extends Base implements OnChanges, DoCheck, After
     }
   }
 
-  customizeLabel(arg: any) {
+  customizeText(arg: any) {
     return arg.text + arg.value;
   }
 

@@ -13,7 +13,7 @@
                     <dxo-label
                             [visible]="true"
                             position="columns"
-                            [customizeText]="customizeLabel">
+                            (customizeText)="customizeText($event)">
                         <dxo-font [size]="8"></dxo-font>
                         <dxo-connector
                                 [visible]="true"
