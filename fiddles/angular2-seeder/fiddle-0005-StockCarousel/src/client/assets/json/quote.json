@@ -1,229 +1,96 @@
 {
-  "exchangeData": [
-    {
-      "exchangeVols": [
-        {
-          "clearingVol": 0,
-          "floorVol": 171611,
-          "globexVol": 4582311,
-          "oi": "-",
-          "id": "CBOT",
-          "totalVolume": 4753922
-        },
-        {
-          "clearingVol": 0,
-          "floorVol": 889675,
-          "globexVol": 6031083,
-          "oi": "-",
-          "id": "CME",
-          "totalVolume": 6920758
-        },
-        {
-          "clearingVol": 0,
-          "floorVol": 0,
-          "globexVol": 0,
-          "oi": "-",
-          "id": "COMEX",
-          "totalVolume": 0
-        },
-        {
-          "clearingVol": 290042,
-          "floorVol": 0,
-          "globexVol": 3670966,
-          "oi": "-",
-          "id": "NYMEX",
-          "totalVolume": 3961008
-        }
-      ],
-      "tradeDate": {
-        "timestamp": 1515477600000,
-        "dateOnlyLongFormat": "09 Jan 2018",
-        "default24": "01/09/2018, 00:00:00 CST",
-        "default12": "01/09/2018, 12:00:00 AM CST",
-        "verbose": "January 09, 2018 12:00:00 AM CST"
-      },
-      "volume": {
-        "clearingVol": 290042,
-        "floorVol": 1061286,
-        "globexVol": 14284360,
-        "oi": "-",
-        "totalVolume": 15635688
-      }
+  "STOCKQUOTE": {
+    "$": {
+      "ROWCOUNT": "1"
     },
-    {
-      "exchangeVols": [
-        {
-          "clearingVol": 400,
-          "floorVol": 0,
-          "globexVol": 0,
-          "oi": "-",
-          "id": "OTC",
-          "totalVolume": 400
-        },
-        {
-          "clearingVol": 252145,
-          "floorVol": 0,
-          "globexVol": 2418414,
-          "oi": 23143618,
-          "id": "NYMEX",
-          "totalVolume": 2670559
-        },
-        {
-          "clearingVol": 16595,
-          "floorVol": 0,
-          "globexVol": 507923,
-          "oi": 2149628,
-          "id": "COMEX",
-          "totalVolume": 524518
-        },
-        {
-          "clearingVol": 134248,
-          "floorVol": 442480,
-          "globexVol": 4583642,
-          "oi": 64031133,
-          "id": "CME",
-          "totalVolume": 5160370
-        },
-        {
-          "clearingVol": 102578,
-          "floorVol": 159098,
-          "globexVol": 3007971,
-          "oi": 23385160,
-          "id": "CBOT",
-          "totalVolume": 3269647
-        }
-      ],
-      "tradeDate": {
-        "timestamp": 1515391200000,
-        "dateOnlyLongFormat": "08 Jan 2018",
-        "default24": "01/08/2018, 00:00:00 CST",
-        "default12": "01/08/2018, 12:00:00 AM CST",
-        "verbose": "January 08, 2018 12:00:00 AM CST"
-      },
-      "volume": {
-        "clearingVol": 505966,
-        "floorVol": 601578,
-        "globexVol": 10517950,
-        "oi": 112709539,
-        "totalVolume": 11625494
+    "RESULT": [
+      {
+        "ROW": [
+          {
+            "ASK": [
+              "152.130"
+            ],
+            "BID": [
+              "152.030"
+            ],
+            "CHANGE": [
+              "-0.130"
+            ],
+            "COMPANYNAME": [
+              "Evil Corporation"
+            ],
+            "DATETIME": [
+              "2018-01-17 12:30:07"
+            ],
+            "DIVIDEND": [
+              "3.500"
+            ],
+            "EPS": [
+              "4.420"
+            ],
+            "EXCHANGE": [
+              "NASDAQ"
+            ],
+            "HIGH": [
+              "153.980"
+            ],
+            "LASTDATETIME": [
+              "2018-01-17 12:30:07"
+            ],
+            "LASTPRICE": [
+              "152.070"
+            ],
+            "LONGNAME": [
+              "ECORP Inc."
+            ],
+            "LOW": [
+              "151.270"
+            ],
+            "OPEN": [
+              "153.240"
+            ],
+            "PCHANGE": [
+              "-0.085"
+            ],
+            "PE": [
+              "34.405"
+            ],
+            "PREVIOUSCLOSE": [
+              "152.200"
+            ],
+            "SHARES": [
+              "340290"
+            ],
+            "SHORTNAME": [
+              "CME"
+            ],
+            "TICKER": [
+              "CME"
+            ],
+            "TRADES": [
+              "100"
+            ],
+            "VOLUME": [
+              "449189"
+            ],
+            "YEARHIGH": [
+              "155.290"
+            ],
+            "YEARLOW": [
+              "114.818"
+            ],
+            "YIELD": [
+              "1.736"
+            ]
+          }
+        ]
       }
-    },
-    {
-      "exchangeVols": [
-        {
-          "clearingVol": 120,
-          "floorVol": 0,
-          "globexVol": 0,
-          "oi": "-",
-          "id": "OTC",
-          "totalVolume": 120
-        },
-        {
-          "clearingVol": 243348,
-          "floorVol": 0,
-          "globexVol": 2264048,
-          "oi": 23068573,
-          "id": "NYMEX",
-          "totalVolume": 2507396
-        },
-        {
-          "clearingVol": 13442,
-          "floorVol": 0,
-          "globexVol": 570789,
-          "oi": 2135870,
-          "id": "COMEX",
-          "totalVolume": 584231
-        },
-        {
-          "clearingVol": 657993,
-          "floorVol": 766717,
-          "globexVol": 7124439,
-          "oi": 63741138,
-          "id": "CME",
-          "totalVolume": 8549149
-        },
-        {
-          "clearingVol": 173063,
-          "floorVol": 162115,
-          "globexVol": 4617282,
-          "oi": 23058902,
-          "id": "CBOT",
-          "totalVolume": 4952460
-        }
-      ],
-      "tradeDate": {
-        "timestamp": 1515132000000,
-        "dateOnlyLongFormat": "05 Jan 2018",
-        "default24": "01/05/2018, 00:00:00 CST",
-        "default12": "01/05/2018, 12:00:00 AM CST",
-        "verbose": "January 05, 2018 12:00:00 AM CST"
-      },
-      "volume": {
-        "clearingVol": 1087966,
-        "floorVol": 928832,
-        "globexVol": 14576558,
-        "oi": 112004483,
-        "totalVolume": 16593356
-      }
-    },
-    {
-      "exchangeVols": [
-        {
-          "clearingVol": 30,
-          "floorVol": 0,
-          "globexVol": 0,
-          "oi": "-",
-          "id": "OTC",
-          "totalVolume": 30
-        },
-        {
-          "clearingVol": 273328,
-          "floorVol": 0,
-          "globexVol": 2722796,
-          "oi": 22926408,
-          "id": "NYMEX",
-          "totalVolume": 2996124
-        },
-        {
-          "clearingVol": 39711,
-          "floorVol": 0,
-          "globexVol": 661088,
-          "oi": 2121751,
-          "id": "COMEX",
-          "totalVolume": 700799
-        },
-        {
-          "clearingVol": 269479,
-          "floorVol": 1408406,
-          "globexVol": 7695453,
-          "oi": 63451985,
-          "id": "CME",
-          "totalVolume": 9373338
-        },
-        {
-          "clearingVol": 174715,
-          "floorVol": 264491,
-          "globexVol": 4380431,
-          "oi": 22979459,
-          "id": "CBOT",
-          "totalVolume": 4819637
-        }
-      ],
-      "tradeDate": {
-        "timestamp": 1515045600000,
-        "dateOnlyLongFormat": "04 Jan 2018",
-        "default24": "01/04/2018, 00:00:00 CST",
-        "default12": "01/04/2018, 12:00:00 AM CST",
-        "verbose": "January 04, 2018 12:00:00 AM CST"
-      },
-      "volume": {
-        "clearingVol": 757263,
-        "floorVol": 1672897,
-        "globexVol": 15459768,
-        "oi": 111479603,
-        "totalVolume": 17889928
-      }
-    }
-  ],
-  "timeStamp": "09 Jan 2018 01:54:38 PM"
+    ],
+    "STATUS": [
+      "No Error"
+    ],
+    "STATUSCODE": [
+      "0"
+    ]
+  }
 }
