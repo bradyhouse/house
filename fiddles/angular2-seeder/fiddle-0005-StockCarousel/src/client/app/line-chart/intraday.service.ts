@@ -173,10 +173,11 @@ export class IntradayService {
       busDateStr: string = date + timeZoneSuffix,
       localDate: Date = new Date(busDateStr),
       localBusDateStr: string = moment(localDate).format('MM/DD/YYYY  HH:mm'),
+      timeStr: string = moment(localDate).format('HH:mm'),
       localBusDatePieces: any[] = localBusDateStr.split(' ');
       prices.push({
         date: localBusDateStr,
-        time: localBusDatePieces[1],
+        time: timeStr,
         open: item['1. open'],
         high: item['2. high'],
         low: item['3. low'],

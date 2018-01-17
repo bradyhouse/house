@@ -16,3 +16,6 @@
   background-size: cover;
 }
 
+.volume .dxrs-range-selector-elements {
+    display: none !important;
+}

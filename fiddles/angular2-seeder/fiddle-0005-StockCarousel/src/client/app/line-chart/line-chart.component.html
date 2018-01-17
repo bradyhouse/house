@@ -13,7 +13,7 @@
               </div>
             </div>
             <dx-chart *ngIf="isLoaded" (mouseover)="onMouseOver()"
-                    [ngStyle]="{ 'width': chartWidth + 'px', 'height': chartHeight + 'px' }"
+                      [ngStyle]="{ 'width': chartWidth + 'px', 'height': chartHeight + 'px' }"
                     id="zoomedChart"
                     title=""
                     [dataSource]="stockPrices"
@@ -42,22 +42,25 @@
                     (onValueChanged)="onValueChanged($event)">
               <dxo-size [height]="130"></dxo-size>
               <dxo-scale
-                      minorTickInterval="hour"
+                      majorTickInterval="hour"
                       tickInterval="minute"
                       valueType="time"
                       [placeholderHeight]="20">
               </dxo-scale>
               <dxo-behavior
                       callValueChanged="onMoving"
-                      [snapToTicks]="false">
+                      [snapToTicks]="true"
+                      >
               </dxo-behavior>
               <dxo-chart
                       [useAggregation]="true">
-                <dxo-value-axis valueType="numeric"></dxo-value-axis>
+                <dxo-value-axis valueType="numeric">
+                </dxo-value-axis>
                 <dxi-series
                         type="line"
                         valueField="open"
-                        argumentField="date">
+                        argumentField="date"
+                        >
                 </dxi-series>
               </dxo-chart>
             </dx-range-selector>

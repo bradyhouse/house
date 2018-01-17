@@ -1,6 +1,6 @@
 import {
   ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, KeyValueDiffer, KeyValueDiffers, OnChanges,
-  Output, AfterViewChecked
+  Output, AfterViewInit
 } from '@angular/core';
 import { BubbleEvent, Options, DataService } from '../interfaces/index';
 import { Base } from '../base';
@@ -12,7 +12,7 @@ import { Base } from '../base';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.css']
 })
-export class PieChartComponent extends Base implements OnChanges, DoCheck, AfterViewChecked {
+export class PieChartComponent extends Base implements OnChanges, DoCheck, AfterViewInit {
 
   @Output() events: EventEmitter<BubbleEvent>;
   @Input() options: Options;
@@ -34,7 +34,7 @@ export class PieChartComponent extends Base implements OnChanges, DoCheck, After
 
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     this.events.emit({
       type: 'resize'
     });
@@ -64,6 +64,7 @@ export class PieChartComponent extends Base implements OnChanges, DoCheck, After
   }
 
   customizeText(arg: any) {
+    console.log(arg);
     return arg.text + arg.value;
   }
 
@@ -80,7 +81,7 @@ export class PieChartComponent extends Base implements OnChanges, DoCheck, After
           this.width = this.options.width;
           this.chartWidth = this.width - 140;
           window.setTimeout(() => {
-            this.ngAfterViewChecked();
+            this.ngAfterViewInit();
           }, 1000);
         }
         break;
@@ -89,7 +90,7 @@ export class PieChartComponent extends Base implements OnChanges, DoCheck, After
           this.height = this.options.height;
           this.chartHeight = this.height - 305;
           window.setTimeout(() => {
-            this.ngAfterViewChecked();
+            this.ngAfterViewInit();
           }, 1000);
         }
         break;

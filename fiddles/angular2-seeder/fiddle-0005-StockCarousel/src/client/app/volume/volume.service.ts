@@ -4,12 +4,14 @@ import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 
+declare let moment: any;
 
 @Injectable()
 export class VolumeService {
 
   public responseChange$: Observable<any>;
   public errorChange$: Observable<any>;
+  public lastUpdated: string;
 
   private _response: any;
   private _responseObserver: Observer<any>;
@@ -91,11 +93,14 @@ export class VolumeService {
 
     let url: string = urlOverrideField && urlOverrideField.value ? urlOverrideField.value : null,
       data: any = null,
+      timeStamp: Date = null,
       encodedParams = null;
     req.onload = () => {
       if (req.status === 200) {
         data = req.responseText.trimLeft().trimRight();
         self._json.data = JSON.parse(data);
+        timeStamp = new Date(self._json.data.timeStamp);
+        self.lastUpdated = moment(timeStamp).format('MM/DD/YYYY  HH:mm');
         self.response = self._json.data.exchangeData;
       } else {
         self.error = req.statusText;
@@ -117,8 +122,6 @@ export class VolumeService {
       params.url = url;
       params.allowOrigin = hostUrl;
       encodedParams = JSON.stringify(params);
-      console.log('proxyUrl = ' + proxyUrl);
-      console.log('encoded params = ' + encodedParams);
       req.open('POST', proxyUrl);
       req.setRequestHeader('Content-type', 'application/json');
       req.send(encodedParams);

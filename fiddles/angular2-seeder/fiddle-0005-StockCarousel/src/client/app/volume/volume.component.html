@@ -1,9 +1,9 @@
 <div class="volume" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
   <div class="card text-white bg-light mb-3" style="width: calc(100%); height: calc(95%);">
     <div class="card-header" style="background: black;"><h3>{{ title }} Market Volume</h3></div>
-    <div class="card-body volume-drop" [ngStyle]="{ 'width': width + 'px' }">
-    <div class="container">
-        <div class="row">
+    <div class="card-body volume-drop" [ngStyle]="{ 'width': width + 'px', 'height': chartHeight + 'px' }">
+    <div class="container" (mouseover)="onMouseOver()">
+        <div class="row" style="height: calc(40%);">
           <div class="col">
             <div class="container container-table" *ngIf="!isLoaded">
               <div class="row vertical-center-row">
@@ -29,7 +29,7 @@
               <dxi-column caption="ClearPort" dataField="volume.clearingVol" [format]="calculateCellValue"></dxi-column>
               <dxi-column caption="Total Volume" dataField="volume.totalVolume" [format]="calculateCellValue"></dxi-column>
             </dx-data-grid>
-            <app-pie-chart [options]="pieChartOptions" [ngStyle]="{ 'width': chartWidth + 'px', 'height': chartHeight + 'px' }"></app-pie-chart>
+              <app-pie-chart *ngIf="isLoaded && !hideChart" [options]="pieChartOptions" (events)="onChartEvent($event)"></app-pie-chart>
           </div>
         </div>
 
@@ -37,8 +37,7 @@
     </div>
     <div class="card-footer" style="background: black;">
       <div class="cmeDisclaimerText" style="color: lime; font-family: arial; font-size: 13px; text-align: center;">
-        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>
-        <!--    Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>&nbsp;&nbsp;-->
+        Last updated: <span class="lastUpdated" *ngIf="isLoaded">{{ lastUpdated }}</span>
       </div>
     </div>
 

@@ -1,6 +1,6 @@
 import {
   ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, KeyValueDiffer, KeyValueDiffers, OnChanges,
-  AfterViewChecked, Output, ViewChild
+  AfterViewInit, Output, ViewChild
 } from '@angular/core';
 
 import { Base } from '../base';
@@ -15,7 +15,7 @@ import { BubbleEvent, Options, DataService } from '../interfaces';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })
-export class LineChartComponent extends Base implements OnChanges, DoCheck, AfterViewChecked {
+export class LineChartComponent extends Base implements OnChanges, DoCheck, AfterViewInit {
   @ViewChild(DxChartComponent) chart: DxChartComponent;
   @Output() events: EventEmitter<BubbleEvent>;
   @Input() options: Options;
@@ -71,7 +71,7 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
     }
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     this.events.emit({
       type: 'resize'
     });
@@ -99,7 +99,7 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
           this.width = this.options.width;
           this.chartWidth = this.width - 140;
           window.setTimeout(() => {
-            this.ngAfterViewChecked();
+            this.ngAfterViewInit();
           }, 1000);
         }
         break;
@@ -108,7 +108,7 @@ export class LineChartComponent extends Base implements OnChanges, DoCheck, Afte
           this.height = this.options.height;
           this.chartHeight = this.height - 305;
           window.setTimeout(() => {
-            this.ngAfterViewChecked();
+            this.ngAfterViewInit();
           }, 1000);
         }
         break;

@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { BubbleEvent, Options, DataService } from '../interfaces/index';
 import { Base } from '../base';
+import { QuoteService, Quote } from './quote.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class QuoteComponent extends Base implements OnChanges, DoCheck {
   @Output() events: EventEmitter<BubbleEvent>;
   @Input() options: Options;
 
-  stockQuotes: any;
+  quote: Quote;
   title: string;
   width: number;
   height: number;
@@ -27,16 +28,16 @@ export class QuoteComponent extends Base implements OnChanges, DoCheck {
 
   private _differ: KeyValueDiffer<string, any> = null;
 
-  load(dataService: DataService = null) {
-    throw new Error('method is not implemented');
-  }
-
-  constructor(private _changeDetector: ChangeDetectorRef,
+  constructor(private _quoteService: QuoteService,
+              private _changeDetector: ChangeDetectorRef,
               private _differs: KeyValueDiffers) {
     super();
     this.events = new EventEmitter();
     this.title = '';
-    this.isLoaded = true;
+    this.isLoaded = false;
+    this.subscriptions.push(_quoteService.responseChange$.subscribe(
+      (data: any) => this.onQuoteServiceResponseChange(data)
+    ));
 
   }
 
@@ -69,6 +70,11 @@ export class QuoteComponent extends Base implements OnChanges, DoCheck {
     });
   }
 
+  onQuoteServiceResponseChange(data: any) {
+    this.quote = data;
+    this.isLoaded = true;
+  }
+
   private _applyChange(item: any): void {
     switch (item.key) {
       case 'width':
@@ -87,14 +93,6 @@ export class QuoteComponent extends Base implements OnChanges, DoCheck {
         if (this.options.title) {
           this.title = this.options.title;
         }
-        break;
-      case 'dataService':
-        if (this.options.dataService) {
-          this.load(this.options.dataService);
-        }
-        break;
-      case 'loaded':
-        this.isLoaded = this.options.loaded;
         break;
     }
   }

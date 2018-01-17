@@ -16,13 +16,18 @@
   <!-- endinject -->
 </head>
 <body>
+<!-- GLOBAL SETTINGS -->
 <input type="hidden" id="titleOverride" value="ECorp">
 <input type="hidden" id="symbolOverride" value="EC">
-
+<input type="hidden" id="intervalOverride" value="10000">
 <input type="hidden" id="passThruProxyUrlOverride" value="http://54.200.61.172/passthru">
+<!-- Quote Data Source Config -->
+<input type="hidden" id="quoteUrlOverride" value="http://apps.shareholder.com/irxml/irxml.aspx?FUNCTION=STOCKQUOTE&COMPANYID=CME&PIN=791048460&OUTPUT=XML&TICKER=CME">
+<input type="hidden" id="quoteUsePassThruProxyOverride" value="true">
+<input type="hidden" id="quoteConvertToJsonOverride" value="true">
 
 <!-- Line Chart Data Source Confg -->
-<input type="hidden" id="intradayUrlOverride" value="https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=CME&interval=1min&outputsize=compact&apikey=7ZI2H1Y6J0ZRVGCQ">
+<input type="hidden" id="intradayUrlOverride" value="">
 <input type="hidden" id="intradayUsePassThruProxyOverride" value="true">
 
 <!-- Volume Data Source Config -->
@@ -61,12 +66,12 @@
 <% if (BUILD_TYPE === 'dev') { %>
 <script>
   System.import('<%= BOOTSTRAP_MODULE %>')
-    .then(function(viz) {
+    /*.then(function(viz) {
       System.import("devextreme/viz/themes").then(function(viz) {
         viz.currentTheme("generic.contrast");
         viz.refreshTheme();
       });
-    })
+    })*/
     .catch(function (e) {
       console.error(e);
     });

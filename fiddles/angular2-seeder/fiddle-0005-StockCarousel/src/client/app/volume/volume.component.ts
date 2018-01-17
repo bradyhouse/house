@@ -1,6 +1,6 @@
 import {
   ChangeDetectorRef, Component, DoCheck, EventEmitter, Input, KeyValueDiffer, KeyValueDiffers, OnChanges,
-  Output, ViewChild, ElementRef
+  Output, ViewChild, ElementRef, AfterViewInit
 } from '@angular/core';
 
 import { Options, BubbleEvent } from '../interfaces/index';
@@ -14,19 +14,20 @@ import { VolumeService } from './volume.service';
   templateUrl: './volume.component.html',
   styleUrls: ['./volume.component.css']
 })
-export class VolumeComponent extends Base implements OnChanges, DoCheck {
+export class VolumeComponent extends Base implements OnChanges, DoCheck, AfterViewInit {
 
   @Output() events: EventEmitter<BubbleEvent>;
   @Input() options: Options;
   @ViewChild('grid') gridEl: ElementRef;
   pieChartOptions: Options;
+  lastUpdated: string;
 
   grid: any;
   volumes: any[];
   title: string;
   width: number;
   height: number;
-
+  hideChart: boolean;
   chartHeight: number;
   chartWidth: number;
   isLoaded: boolean;
@@ -52,6 +53,11 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
 
   }
 
+  ngAfterViewInit() {
+    this.events.emit({
+      type: 'resize'
+    });
+  }
   ngOnChanges(changes: any): void {
     if ('options' in changes) {
       const value = changes['options'].currentValue;
@@ -83,9 +89,11 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
 
   onVolumeServiceResponseChange(data: any) {
     this.volumes = data;
+    this.lastUpdated = this._volumeService.lastUpdated;
     if (this.grid) {
       this.grid.selectRowsByIndexes([0]);
     }
+    this.isLoaded = true;
   }
 
   calculateCellValue(data: any) {
@@ -110,49 +118,62 @@ export class VolumeComponent extends Base implements OnChanges, DoCheck {
   }
 
   onGridSelectionChanged(data: any) {
-    const rawData: any = data.selectedRowsData[0];
+    const rawData: any = data.selectedRowsData[0],
+      totalVolume: number = Number(rawData.volume.totalVolume),
+      globexVol: number = !isNaN(rawData.volume.globexVol) ?  Number(rawData.volume.globexVol) : 0,
+      clearportVol: number = !isNaN(rawData.volume.clearingVol) ? Number(rawData.volume.clearingVol) : 0,
+      floorVol: number = !isNaN(rawData.volume.floorVol) ? Number(rawData.volume.floorVol) : 0,
+      globexPer: number = Math.floor(globexVol / totalVolume) * 100,
+      clearportPer: number = Math.floor(clearportVol / totalVolume) * 100,
+      floorPer: number = Math.floor(floorVol / totalVolume) * 100;
     this.pieChartOptions.data = [
       {
         text: 'Globex',
-        value: rawData.volume.globexVol
+        value: globexVol,
+        percent: globexPer
       },
       {
         text: 'Clearport',
-        value: rawData.volume.clearingVol
+        value: clearportVol,
+        percent: clearportPer
       },
       {
         text: 'Floor',
-        value: rawData.volume.floorVol
+        value: floorVol,
+        percent: floorPer
       }
     ];
-    this.pieChartOptions.width = this.chartWidth;
-
-    this.pieChartOptions.height = this.chartHeight;
   }
-
+  onChartEvent(args: any) {
+    this.events.emit(args);
+  }
   private _applyChange(item: any): void {
     switch (item.key) {
       case 'width':
         if (this.options.width) {
           this.width = this.options.width;
-          this.chartWidth = this.width;
+          this.pieChartOptions.width =  this.width;
+          window.setTimeout(() => {
+            this.ngAfterViewInit();
+          }, 500);
         }
         break;
       case 'height':
         if (this.options.height) {
           this.height = this.options.height;
-          this.chartHeight = (Math.floor(.4 * this.height)) - 300;
+          this.chartHeight = this.height - 305;
+          const chartBaseHeight: number = Math.floor(.7 * this.chartHeight);
+          this.pieChartOptions.height = chartBaseHeight;
+          window.setTimeout(() => {
+            this.ngAfterViewInit();
+          }, 500);
+
         }
         break;
       case 'title':
         if (this.options.title) {
           this.title = this.options.title;
         }
-        break;
-      case 'dataService':
-        break;
-      case 'loaded':
-        this.isLoaded = this.options.loaded;
         break;
     }
   }

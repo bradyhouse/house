@@ -1,20 +1,19 @@
-<div class="pie-chart" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
-    <div class="container container-table" style="width: calc(100%); height: calc(50%);">
+<div  class="pie-chart">
+    <div class="container containter-table" [ngStyle]="{'width': width + 'px', 'height': height + 'px' }">
         <div class="row vertical-center-row">
-            <dx-pie-chart id="pie"
-                    palette="bright"
-                    [dataSource]="volume">
-                <dxo-legend
-                        [visible]="false">
-                </dxo-legend>
+            <dx-pie-chart [ngStyle]="{'height': height + 'px' }"
+                          id="pie"
+                          title="&nbsp;"
+                          palette="bright"
+                          [dataSource]="volume">
                 <dxi-series
                         argumentField="text"
-                        valueField="value">
+                        valueField="value"
+                        >
                     <dxo-label
                             [visible]="true"
-                            position="columns"
-                            (customizeText)="customizeText($event)">
-                        <dxo-font [size]="8"></dxo-font>
+                            position="columns">
+                        <dxo-font [size]="10"></dxo-font>
                         <dxo-connector
                                 [visible]="true"
                                 [width]="0.5"></dxo-connector>
