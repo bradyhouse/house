@@ -23,6 +23,7 @@ export class ProjectConfig extends SeedConfig {
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
+      {src: 'moment/min/moment.min.js', inject: 'libs'},
       {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       {src: 'jszip/dist/jszip.min.js', inject: true, vendor: true},
       {src: 'bootswatch/dist/darkly/bootstrap.min.css', inject: true, vendor: true }
@@ -36,7 +37,7 @@ export class ProjectConfig extends SeedConfig {
 
     this.ROLLUP_INCLUDE_DIR = [
       ...this.ROLLUP_INCLUDE_DIR,
-      //'node_modules/moment/**'
+      'node_modules/moment/**'
     ];
 
     this.ROLLUP_NAMED_EXPORTS = [

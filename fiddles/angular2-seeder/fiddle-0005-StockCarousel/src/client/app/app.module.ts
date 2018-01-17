@@ -11,6 +11,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BaseComponent } from './base.component';
 import { DxChartModule } from 'devextreme-angular/ui/chart';
+import { DxPieChartModule } from 'devextreme-angular/ui/pie-chart';
 import { DxRangeSelectorModule } from 'devextreme-angular/ui/range-selector';
 import { DxDataGridModule } from 'devextreme-angular/ui/data-grid';
 import { DxTemplateModule } from 'devextreme-angular/core/template';
@@ -29,6 +30,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     DxTemplateModule,
     NgbCarouselModule,
     DxChartModule,
+    DxPieChartModule,
     DxDataGridModule
   ],
   declarations: [ AppComponent,

@@ -1,0 +1,96 @@
+{
+  "STOCKQUOTE": {
+    "$": {
+      "ROWCOUNT": "1"
+    },
+    "RESULT": [
+      {
+        "ROW": [
+          {
+            "ASK": [
+              "152.130"
+            ],
+            "BID": [
+              "152.030"
+            ],
+            "CHANGE": [
+              "-0.130"
+            ],
+            "COMPANYNAME": [
+              "Evil Corporation"
+            ],
+            "DATETIME": [
+              "2018-01-17 12:30:07"
+            ],
+            "DIVIDEND": [
+              "3.500"
+            ],
+            "EPS": [
+              "4.420"
+            ],
+            "EXCHANGE": [
+              "NASDAQ"
+            ],
+            "HIGH": [
+              "153.980"
+            ],
+            "LASTDATETIME": [
+              "2018-01-17 12:30:07"
+            ],
+            "LASTPRICE": [
+              "152.070"
+            ],
+            "LONGNAME": [
+              "ECORP Inc."
+            ],
+            "LOW": [
+              "151.270"
+            ],
+            "OPEN": [
+              "153.240"
+            ],
+            "PCHANGE": [
+              "-0.085"
+            ],
+            "PE": [
+              "34.405"
+            ],
+            "PREVIOUSCLOSE": [
+              "152.200"
+            ],
+            "SHARES": [
+              "340290"
+            ],
+            "SHORTNAME": [
+              "CME"
+            ],
+            "TICKER": [
+              "CME"
+            ],
+            "TRADES": [
+              "100"
+            ],
+            "VOLUME": [
+              "449189"
+            ],
+            "YEARHIGH": [
+              "155.290"
+            ],
+            "YEARLOW": [
+              "114.818"
+            ],
+            "YIELD": [
+              "1.736"
+            ]
+          }
+        ]
+      }
+    ],
+    "STATUS": [
+      "No Error"
+    ],
+    "STATUSCODE": [
+      "0"
+    ]
+  }
+}

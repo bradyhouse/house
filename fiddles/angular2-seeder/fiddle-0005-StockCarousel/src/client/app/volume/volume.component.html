@@ -1,9 +1,9 @@
 <div class="volume" [ngStyle]="{ 'width': width + 'px', 'height': height + 'px' }">
   <div class="card text-white bg-light mb-3" style="width: calc(100%); height: calc(95%);">
     <div class="card-header" style="background: black;"><h3>{{ title }} Market Volume</h3></div>
-    <div class="card-body volume-drop" [ngStyle]="{ 'width': width + 'px' }">
-    <div class="container">
-        <div class="row">
+    <div class="card-body volume-drop" [ngStyle]="{ 'width': width + 'px', 'height': chartHeight + 'px' }">
+    <div class="container" (mouseover)="onMouseOver()">
+        <div class="row" style="height: calc(40%);">
           <div class="col">
             <div class="container container-table" *ngIf="!isLoaded">
               <div class="row vertical-center-row">
@@ -12,30 +12,32 @@
                 </div>
               </div>
            </div>
-            <dx-data-grid [ngStyle]="{ 'width': gridWidth + 'px' }"
+            <dx-data-grid #grid [ngStyle]="{ 'width': gridWidth + 'px' }"
                           *ngIf="isLoaded" id="gridContainer"
                           [dataSource]="volumes"
+                          (onContentReady)="onGridContentReady($event)"
+                          (onCellClick)="onGridCellClick($event)"
+                          (onSelectionChanged)="onGridSelectionChanged($event)"
                           [showRowLines]="true"
                           [showBorders]="true">
               <dxo-sorting mode="none"></dxo-sorting>
-              <dxo-paging [pageSize]="2"></dxo-paging>
+              <dxo-paging [pageSize]="4"></dxo-paging>
 
-              <dxi-column dataField="date" dataType="date"></dxi-column>
-              <dxi-column caption="Globex" dataField="volume"  dataType="number"></dxi-column>
-              <dxi-column caption="Floor" dataField="high.value"  dataType="number"></dxi-column>
-              <dxi-column caption="ClearPort" dataField="high.value" dataType="number"></dxi-column>
-              <dxi-column caption="Total Vol" dataField="volume" dataType="number"></dxi-column>
-
+              <dxi-column caption="Trade Date" dataField="tradeDate.dateOnlyLongFormat" dataType="date"></dxi-column>
+              <dxi-column caption="Globex" dataField="volume.globexVol"  [format]="calculateCellValue"></dxi-column>
+              <dxi-column caption="Floor" dataField="volume.floorVol"  [format]="calculateCellValue"></dxi-column>
+              <dxi-column caption="ClearPort" dataField="volume.clearingVol" [format]="calculateCellValue"></dxi-column>
+              <dxi-column caption="Total Volume" dataField="volume.totalVolume" [format]="calculateCellValue"></dxi-column>
             </dx-data-grid>
+              <app-pie-chart *ngIf="isLoaded && !hideChart" [options]="pieChartOptions" (events)="onChartEvent($event)"></app-pie-chart>
           </div>
-
         </div>
+
       </div>
     </div>
     <div class="card-footer" style="background: black;">
       <div class="cmeDisclaimerText" style="color: lime; font-family: arial; font-size: 13px; text-align: center;">
-        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>
-        <!--    Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>&nbsp;&nbsp;-->
+        Last updated: <span class="lastUpdated" *ngIf="isLoaded">{{ lastUpdated }}</span>
       </div>
     </div>
 

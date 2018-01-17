@@ -1,0 +1,113 @@
+{
+  "exchangeData": [
+    {
+      "exchangeVols": [
+        {
+          "clearingVol": 0,
+          "floorVol": 85982,
+          "globexVol": 3517427,
+          "oi": "-",
+          "id": "ECOT",
+          "totalVolume": 3603409
+        },
+        {
+          "clearingVol": 0,
+          "floorVol": 721812,
+          "globexVol": 5532799,
+          "oi": "-",
+          "id": "EC",
+          "totalVolume": 6254611
+        },
+        {
+          "clearingVol": 0,
+          "floorVol": 0,
+          "globexVol": 0,
+          "oi": "-",
+          "id": "ECEX",
+          "totalVolume": 0
+        },
+        {
+          "clearingVol": 232696,
+          "floorVol": 0,
+          "globexVol": 2386791,
+          "oi": "-",
+          "id": "ECMEX",
+          "totalVolume": 2619487
+        }
+      ],
+      "tradeDate": {
+        "timestamp": 1516168800000,
+        "dateOnlyLongFormat": "17 Jan 2018",
+        "default24": "01/17/2018, 00:00:00 CST",
+        "default12": "01/17/2018, 12:00:00 AM CST",
+        "verbose": "January 17, 2018 12:00:00 AM CST"
+      },
+      "volume": {
+        "clearingVol": 232696,
+        "floorVol": 807794,
+        "globexVol": 11437017,
+        "oi": "-",
+        "totalVolume": 12477507
+      }
+    },
+    {
+      "exchangeVols": [
+        {
+          "clearingVol": 245,
+          "floorVol": 0,
+          "globexVol": 0,
+          "oi": "-",
+          "id": "OTC",
+          "totalVolume": 245
+        },
+        {
+          "clearingVol": 295757,
+          "floorVol": 0,
+          "globexVol": 3396186,
+          "oi": 23894341,
+          "id": "ECMEX",
+          "totalVolume": 3691943
+        },
+        {
+          "clearingVol": 67354,
+          "floorVol": 0,
+          "globexVol": 1029447,
+          "oi": 2302816,
+          "id": "COMEX",
+          "totalVolume": 1096801
+        },
+        {
+          "clearingVol": 211924,
+          "floorVol": 1610390,
+          "globexVol": 10055145,
+          "oi": 65732634,
+          "id": "EC",
+          "totalVolume": 11877459
+        },
+        {
+          "clearingVol": 166688,
+          "floorVol": 187869,
+          "globexVol": 5070520,
+          "oi": 24997712,
+          "id": "ECOT",
+          "totalVolume": 5425077
+        }
+      ],
+      "tradeDate": {
+        "timestamp": 1516082400000,
+        "dateOnlyLongFormat": "16 Jan 2018",
+        "default24": "01/16/2018, 00:00:00 CST",
+        "default12": "01/16/2018, 12:00:00 AM CST",
+        "verbose": "January 16, 2018 12:00:00 AM CST"
+      },
+      "volume": {
+        "clearingVol": 741968,
+        "floorVol": 1798259,
+        "globexVol": 19551298,
+        "oi": 116927503,
+        "totalVolume": 22091525
+      }
+    }
+  ],
+  "timeStamp": "17 Jan 2018 11:50:00 AM"
+}

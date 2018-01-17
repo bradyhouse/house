@@ -7,4 +7,5 @@ export interface Options {
   title?: string;
   dataService?: DataService;
   loaded?: boolean;
+  data?: any;
 }

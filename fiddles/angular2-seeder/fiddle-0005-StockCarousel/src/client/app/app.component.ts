@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Base } from './base';
-import { Options, BubbleEvent } from './interfaces/index';
-
+import { Options } from './interfaces/index';
+import * as Viz from 'devextreme/viz/themes';
 @Component({
   selector: 'sd-app',
   moduleId: module.id,
@@ -10,19 +10,23 @@ import { Options, BubbleEvent } from './interfaces/index';
   styleUrls: ['./app.component.css'],
   providers: [NgbCarouselConfig]
 })
-export class AppComponent extends Base {
+export class AppComponent extends Base implements OnInit {
   options: Options;
   width: number;
   height: number;
+  interval: number;
 
   private _preloader: any;
 
 
   constructor(private _config: NgbCarouselConfig) {
     super();
-    const titleOverrideField: any = document.getElementById('titleOverride'),
+    const intervalOverrideField: any = document.getElementById('intervalOverride'),
+          titleOverrideField: any = document.getElementById('titleOverride'),
           title: string = titleOverrideField ? titleOverrideField.value : 'ECorp';
-    _config.interval = 0;
+    this.interval = intervalOverrideField && !isNaN(intervalOverrideField.value) ?
+      Number(intervalOverrideField.value) : 0;
+    _config.interval = this.interval;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
 
@@ -32,10 +36,11 @@ export class AppComponent extends Base {
       title: title
     };
     this._preloader = document.getElementsByClassName('preloader')[0];
+  }
 
-    window.setTimeout(() => {
-      this._togglePreloader(false);
-    }, 1000);
+  ngOnInit(): void {
+    Viz.currentTheme('generic.contrast');
+    Viz.refreshTheme();
   }
 
   onPanelEvent(event: any) {
@@ -44,8 +49,10 @@ export class AppComponent extends Base {
         this.onWindowResize();
         break;
       case 'mouseOver':
-        console.log('disabling carousel');
         this._config.interval = 0;
+        break;
+      case 'ready':
+        this._togglePreloader(false);
         break;
     }
   }
@@ -58,24 +65,10 @@ export class AppComponent extends Base {
   }
 
   onCarouselSlide(event: any) {
-    this._config.interval = 0;
-    switch (event.current) {
-      case 'line-chart':
-        this.options.loaded = true;
-        break;
-      case 'quote':
-        this.options.loaded = true;
-        break;
-      case 'volume':
-        this.options.loaded = true;
-        break;
-      default:
-        this.options.loaded = false;
-        break;
-    }
+    this._config.interval = this.interval;
     window.setTimeout(() => {
       this.onWindowResize();
-    }, 1000);
+    }, 2000);
 
   }
 

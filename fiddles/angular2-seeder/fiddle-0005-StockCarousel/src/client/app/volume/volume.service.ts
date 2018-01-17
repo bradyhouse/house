@@ -1,102 +1,136 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/share';
 
-import { DataService } from '../interfaces/index';
-
-export class Value {
-  value: number;
-  diff: number;
-}
-
-export class DayClose {
-  close: number;
-  date: Date;
-}
-
-export class WeekData {
-  date: Date;
-  open: Value;
-  high: Value;
-  low: Value;
-  close: Value;
-  volume: number;
-  adjClose: number;
-  dayClose: DayClose[];
-}
-
-const weekData: WeekData[] = [{
-  'date': new Date('2013/12/23'),
-  'open': {
-    'value': 0,
-    'diff': 92.76
-  },
-  'high': {
-    'value': 359111,
-    'diff': 50.34
-  },
-  'low': {
-    'value': 3552.3,
-    'diff': 129.44
-  },
-  'close': {
-    'value': 3574.02,
-    'diff': 42.83
-  },
-  'volume': 125434000,
-  'adjClose': 3574.02,
-  'dayClose': [{
-    'close': 3569.4,
-    'date': new Date('2013/12/23')
-  }, {
-    'close': 3572.8,
-    'date': new Date('2013/12/24')
-  }, {
-    'close': 3584.58,
-    'date': new Date('2013/12/26')
-  }, {
-    'close': 3574.02,
-    'date': new Date('2013/12/27')
-  }]
-}, {
-  'date': new Date('2013/12/16'),
-  'open': {
-    'value': 0,
-    'diff': -45.24
-  },
-  'high': {
-    'value': 420022,
-    'diff': 16.96
-  },
-  'low': {
-    'value': 3422.86,
-    'diff': -26.88
-  },
-  'close': {
-    'value': 3531.19,
-    'diff': 74.79
-  },
-  'volume': 226135200,
-  'adjClose': 3531.19,
-  'dayClose': [{
-    'close': 3475.79,
-    'date': new Date('2013/12/16')
-  }, {
-    'close': 3469.32,
-    'date': new Date('2013/12/17')
-  }, {
-    'close': 3509.63,
-    'date': new Date('2013/12/18')
-  }, {
-    'close': 3498.63,
-    'date': new Date('2013/12/19')
-  }, {
-    'close': 3531.19,
-    'date': new Date('2013/12/20')
-  }]
-}];
+declare let moment: any;
 
 @Injectable()
-export class VolumeService implements DataService {
-  getData() {
-    return weekData;
+export class VolumeService {
+
+  public responseChange$: Observable<any>;
+  public errorChange$: Observable<any>;
+  public lastUpdated: string;
+
+  private _response: any;
+  private _responseObserver: Observer<any>;
+
+  private _error: any;
+  private _errorObserver: Observer<any>;
+
+  private _json: any = {
+    data: []
+  };
+
+  set response(resp: any) {
+    this._response = resp;
+    if (this._responseObserver) {
+      this._responseObserver.next(resp);
+    }
   }
+
+  get response(): any {
+    return this._response;
+  }
+
+  set error(err: any) {
+    this._error = err;
+    if (this._errorObserver) {
+      this._errorObserver.next(err);
+    }
+  }
+
+  get error(): any {
+    return this._error;
+  }
+
+  constructor() {
+
+    this.responseChange$ = new Observable(
+      (observer: any) => this._responseObserver = observer
+    ).share();
+
+    this.errorChange$ = new Observable(
+      (observer: any) => this._errorObserver = observer
+    ).share();
+    this.request();
+
+  }
+
+  private randomInt(min: number, max: number) {
+    const byteArray: any = new Uint8Array(1);
+
+    window.crypto.getRandomValues(byteArray);
+
+    let randomNum: any = '0.' + byteArray[0].toString();
+
+    randomNum = Math.floor(randomNum * (max - min + 1)) + min;
+
+    return randomNum;
+  }
+
+  private request() {
+    const urlOverrideField: any = document.getElementById('volumeUrlOverride'),
+      isUniqueOverrideField: any = document.getElementById('volumeUrlIsUniqueOverride'),
+      isPassThruField: any = document.getElementById('volumeUsePassThruProxyOverride'),
+      proxyUrlField: any = document.getElementById('passThruProxyUrlOverride'),
+      proxyUrl: string = proxyUrlField && proxyUrlField.value !== '' ? proxyUrlField.value : null,
+      isUnique: boolean = isUniqueOverrideField && isUniqueOverrideField.value === 'true' ? true : false,
+      isPassThru: boolean = proxyUrl && isPassThruField && isPassThruField.value === 'true' ? true : false,
+      hostUrl: string = window.location.port ? 'http://' + window.location.hostname + ':' + window.location.port :
+        'http://' + window.location.hostname,
+      self: VolumeService = this,
+      req: any = new XMLHttpRequest(),
+      params: any =  {
+        url: '',
+        allowOrigin: '',
+        convertToJson: false,
+        allowCredentials: true,
+        allowMethods: 'POST',
+        allowHeaders: 'Content-Type'
+      };
+
+    let url: string = urlOverrideField && urlOverrideField.value ? urlOverrideField.value : null,
+      data: any = null,
+      timeStamp: Date = null,
+      encodedParams = null;
+    req.onload = () => {
+      if (req.status === 200) {
+        data = req.responseText.trimLeft().trimRight();
+        self._json.data = JSON.parse(data);
+        timeStamp = new Date(self._json.data.timeStamp);
+        self.lastUpdated = moment(timeStamp).format('MM/DD/YYYY  HH:mm');
+        self.response = self._json.data.exchangeData;
+      } else {
+        self.error = req.statusText;
+      }
+    };
+
+    req.onerror = (error: any) => {
+      const msg: string = error && error.message ? error.message : 'Unknown server error';
+      if (this._errorObserver) {
+        this._errorObserver.next(msg);
+      }
+      self.error = error ? error : new Error(msg);
+    };
+
+    if (isUnique) {
+      url += this.randomInt(1, 10000000000);
+    }
+    if (isPassThru && url) {
+      params.url = url;
+      params.allowOrigin = hostUrl;
+      encodedParams = JSON.stringify(params);
+      req.open('POST', proxyUrl);
+      req.setRequestHeader('Content-type', 'application/json');
+      req.send(encodedParams);
+    } else if (url) {
+      req.open('GET', url);
+      req.send();
+    } else {
+      this.error = 'Oh snap! The "Volume Data Source URL" field is missing or is now not populated.';
+    }
+  }
+
 }

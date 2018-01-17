@@ -2,7 +2,7 @@
   <div class="card text-white bg-light mb-3" style="width: calc(100%); height: calc(95%);">
     <div class="card-header" style="background: black;"><h3>{{ title }} Stock Quote</h3></div>
     <div class="card-body stock-drop" style="height: calc(50%);">
-      <div class="container" *ngIf="!isLoaded">
+      <div class="container" *ngIf="!isLoaded" (mouseover)="onMouseOver()">
         <div class="row">
           <div class="col col-md-offset-1">
             <div class="container container-table" >
@@ -21,7 +21,7 @@
             <div class="container">
               <div class="row">
                 <div class="col">
-                  <div class="currentPrice" style="text-align: right;"><span style="font-size: 70px; text-shadow: 1px 1px 1px #000;">&#36;145.455</span></div>
+                  <div class="currentPrice" style="text-align: right;"><span style="font-size: 70px; text-shadow: 1px 1px 1px #000;">&#36;{{ quote.lastPrice }}</span></div>
                 </div>
               </div>
               <div class="row" style="background: black;">
@@ -29,34 +29,34 @@
               </div>
             </div>
           </div>
-          <div class="col"><!-- right side -->
+          <div class="col" *ngIf="isLoaded"><!-- right side -->
             <div class="container">
               <div class="row">
                 <div class="col">
                   <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-left"
                         style="background: black;">
-                          <span class="percentChange"
-                                style="font-size: 25px; color: red; text-shadow: 1px 1px 1px darkred;">-0.414%</span>
-                      <span class="numberChange"
-                            style="font-size: 25px; color: red; text-shadow: 1px 1px 1px darkred;">$-0.605</span>
+                          <span class="percentChange" [ngClass]="{'negative': quote.isChangeNegative, 'postive': !quote.isChangeNegative}"
+                                style="font-size: 25px; color: red; text-shadow: 1px 1px 1px;">{{ quote.percentChange }}%</span>
+                      <span class="numberChange" [ngClass]="{'negative': quote.isChangeNegative, 'postive': !quote.isChangeNegative}"
+                            style="font-size: 25px; color: red; text-shadow: 1px 1px 1px;">${{ quote.valueChange }}</span>
 
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-left"
                         style="background: black;">
-                      <div class="high" style="width: calc(100%); font-size: 18px;">High: <span class="highvalue" style="float: right;">&#36;146.22</span>
+                      <div class="high" style="width: calc(100%); font-size: 18px;">High: <span class="highvalue" style="float: right;">&#36;{{ quote.high }}</span>
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-left"
                         style="background: black;">
                       <div class="low" style="width: calc(100%); font-size: 18px;">Low: <span class="lowvalue"
-                                                                                                     style="float: right;">&#36;145.16</span>
+                                                                                                     style="float: right;">&#36;{{ quote.low }}</span>
                       </div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-left"
                         style="background: black;">
                       <div class="volume" style="width: calc(100%); font-size: 18px;">Volume: <span
-                        class="volvalue" style="float: right;">284,156</span></div>
+                        class="volvalue" style="float: right;">{{ quote.volume }}</span></div>
                     </li>
                   </ul>
                 </div>
@@ -66,10 +66,9 @@
         </div>
       </div>
     </div>
-    <div class="card-footer" style="background: black;">
+    <div class="card-footer" style="background: black;" *ngIf="isLoaded">
       <div class="cmeDisclaimerText" style="color: lime; font-family: arial; font-size: 13px; text-align: center;">
-        Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>
-        <!--    Last updated: <span class="lastUpdated">02 Jan 2018, 12:39 pm ET</span>&nbsp;&nbsp;-->
+        Last updated: <span class="lastUpdated">{{ quote.lastUpdated }}</span>
       </div>
     </div>
   </div>

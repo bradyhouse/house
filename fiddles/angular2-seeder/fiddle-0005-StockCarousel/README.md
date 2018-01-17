@@ -4,7 +4,7 @@ fiddle-0005-StockCarousel
 
 ### Title
 
-fiddle-0005-StockCarousel
+Stock Carousel
 
 
 ### Creation Date
@@ -19,17 +19,18 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 210](https://github.com/bradyhouse/house/issues/210)
 
 
 ### Description
 
-Another full-blown Angular 2 Seeder fiddle.
+POC exploring how to present time series data using the [ng-bootstrap carousel control](https://ng-bootstrap.github.io/#/components/carousel/examples) and [Dev Extreme Chart Controls](https://js.devexpress.com/Demos/WidgetsGallery/Demo/Charts/Overview/jQuery/Light/).  
+Data will be sourced from [https://www.alphavantage.co/](https://www.alphavantage.co/).  
 
 
 ### Published Version Link
 
-N/A
+[bradyhouse.github.io > angular2-seeder > #5](http://bradyhouse.github.io/angular2-seeder/fiddle-0005-StockCarousel/#)
 
 
 ### Tags
