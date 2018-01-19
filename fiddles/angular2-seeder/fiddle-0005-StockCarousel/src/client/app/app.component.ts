@@ -26,7 +26,7 @@ export class AppComponent extends Base implements OnInit {
           title: string = titleOverrideField ? titleOverrideField.value : 'ECorp';
     this.interval = intervalOverrideField && !isNaN(intervalOverrideField.value) ?
       Number(intervalOverrideField.value) : 0;
-    _config.interval = this.interval;
+    _config.interval = 0;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
 
@@ -52,6 +52,7 @@ export class AppComponent extends Base implements OnInit {
         this._config.interval = 0;
         break;
       case 'ready':
+        this._config.interval = this.interval;
         this._togglePreloader(false);
         break;
     }

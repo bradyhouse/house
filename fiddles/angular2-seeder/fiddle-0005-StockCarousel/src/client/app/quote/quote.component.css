@@ -8,11 +8,12 @@
   border: none !important;
 }
 
-.quote-component .positive {
-  color: lime;
+.quote-component span.positive {
+  color: lime !important;
+  text-shadow: 1px 1px 1px limegreen;
 }
-.quote-component .negative {
-  color: darkred;
+.quote-component span.negative {
+  color: red !important;
 }
 
 
