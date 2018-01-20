@@ -56,12 +56,12 @@ Storage
 	
 ### S3
 
-	Simple Storage Service (S3). Amazon's object (file) based storage service. 
+    	Simple Storage Service (S3). Amazon's object (file) based storage service. 
 
 ### EFS
 
-    Elastic File System (EFS). Network attached storage service. Using this service you can upload files
-    to volumes which then can be mounted and accessed by virtual machines (aka EC2 instances).
+    	Elastic File System (EFS). Network attached storage service. Using this service you can upload files
+    	to volumes which then can be mounted and accessed by virtual machines (aka EC2 instances).
 
 ### Glacier
 
@@ -78,5 +78,103 @@ Storage
 	
 
 
- 
+Databases
+===
+
+### RDS
 	
+	Relational Database Service (RDS). SQL Server, MySQL, PostGres, Oracle. It also includes Aurora, which is Amazon's version of MySQL.
+
+### DynamoDB
+
+	No relational databases. 
+
+### Elasticache
+
+	Caching service. It provides a mechanism for caching commonly used things from your database server.
+
+### Red Shift
+
+	Data Warehousing or Business Intelligence services.
+
+
+
+Migration
+===
+
+### AWS Migration Hub
+
+	Tracking service. It allows you to track your applications as you migrate them to AWS. It provides a mechanism for tracking (and visualizing) the migration services that you are currently using with a given application.	
+	 
+### Application Discovery Service
+
+	Automated collection of tools that can be used to detect what applications you have and their dependencies.
+	
+### Database Migration Service
+
+	Service that can used to migrate your databases from onsite to AWS.
+
+### Server Migration Service
+
+	Service that is similar to the Database Migration Service. It can be used to migrate an onsite server to AWS.
+
+### Snowball
+
+	Service that falls somewhere between storage and migration. Again, it can be used to upload large amounts of data to AWS via physical disk.
+
+
+Networking & Content Delivery
+===
+
+### VPC
+
+	Virtual Private Cloud (VPC). Essentially its a virtual data center--firewalls, availability zones ... etc. Everything normally found in an actual data center based network. Note - In order to pass any associates exam you need to understand VPC inside out.
+
+### CloudFront
+
+	Amazon's Content Delivery Network (CDN). 
+
+### Route53
+
+	Amazon's Domain Name System (DNS) service.
+
+### API Gateway
+
+	Big subject on the Developer's Associates exam. Provides a way of creating your own API's for your other services to talk too.
+
+### Direct Connect
+	
+	Provides a way for running a "dedicated line" from a physical data center directly into your VPC. It is an important topic for the Solution's Architect exam.
+
+
+Developer Tools
+===
+
+### CodeStar
+
+	Service that can be used for developer collaboration. It provides continous delivery tool chain.
+
+### CodeCommit
+
+	Git based source control service.
+
+### CodeBuild
+
+	Service used to compile test and package code.
+
+### CodeDeploy
+
+	Deployment service. Automates code deployment to your EC2 instances and/or your on-premises machines. It can also be used for Lambda function deployment.
+
+### CodePipeline
+
+	Continous delivery service. Used to model, visualize and automate the steps required to release your software.
+
+### X-Ray
+
+	Service that can be used to debug and analyze your serverless applications. It allows for request tracing.
+
+### Cloud9
+
+	Web based Integrated Development Environment (IDE). It allows you to develop code inside the AWS console. Note, cloud9 was actually a private company that was acquired by Amazon. It became a part of AWS in 2017.
+
