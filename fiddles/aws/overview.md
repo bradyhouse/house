@@ -284,7 +284,8 @@ Note, these services are brand new as of 2017 and are not featured (yet) on any 
 
 ### SageMaker
 
-	Service designed to make really easy for developers to use [deep learning](https://en.wikipedia.org/wiki/Deep_learning). It is brand new as of 2017. 
+	Service designed to make really easy for developers to use deep learning. It is brand new as of 2017. 
+	For an explanation of "deep learning", see https://en.wikipedia.org/wiki/Deep_learning.
 
 ### Comprehend
 	
@@ -301,7 +302,7 @@ Note, these services are brand new as of 2017 and are not featured (yet) on any 
 
 ### Machine Learning
 
-	Normal machine learning service. In other words, unlike SageMaker it is not based on [deep learning](https://en.wikipedia.org/wiki/Deep_learning).
+	Normal machine learning service. In other words, unlike SageMaker it is not based on deep learning 
 	Essentially, you give it a data set and some rules and it will predict an outcome. In the case of Amazon,
 	whenever you see a suggested product, that is machine learning.
 
@@ -328,6 +329,43 @@ Analytics
 
 ### Athena
 
-	Service that allows you to run SQL queries against files in your S3 buckets.
+	Service that allows you to run SQL queries against files (objects) in your S3 buckets. This service 
+	was introduced in 2016 and does not feature in any exams.
 
+### EMR
+
+	Elastic Map Reducer (EMR) service. This service is featured in the Solutions Architect Exam. The 
+	service is intended for "Big Data" solutions.
+
+### CloudSearch & ElasticSearch Service
+
+	Search services for AWS. Both are relatively new (2016) and are not covered on any exam.
+
+### Kinesis
+
+	Service that allows you to perform real-time analytics on large amounts of data, which is uploaded 
+	to the service. It is featured prominently in the Solutions Architect exam. 
+
+### Kinesis Video Streams
 	
+	Version of Kinesis tailored for video media analytics. This is a new service added in 2018. 
+	It is not covered on any exam.
+
+### QuickSight
+
+	Amazon's Business Intelligence (BI) service. This is a relatively new service (2016). It is not 
+	currently featured on any exams.  
+
+### Data Pipelines
+
+	Service that can be used to move data between different AWS services. It comes up in the 
+	Solutions Architect Professional and Developers associate exams.
+
+### Glue
+
+	New service introduced in 2017. It is Amazon's Extract Transform Load (ETL) service offering.  
+	It is not currently featured on any exam.
+	
+
+
+
