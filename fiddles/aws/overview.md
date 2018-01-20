@@ -367,5 +367,37 @@ Analytics
 	It is not currently featured on any exam.
 	
 
+Security, Identity & Compliance
+===
 
+### IAM
 
+	Identity Access Management (IAM) service. This service is featured heavily in the Solutions 
+	Architect exam. 
+
+### Cognito
+
+	Device authentication service and provides mobile device users temporary access to AWS resources.
+
+### GuardDuty
+
+	Brand new AWS offering (2017). It can be used to monitor for malicious activities on your AWS account.
+	This service is not currently covered on any of the exams.
+
+### Inspector
+
+	Agent service that can be installed on your virtual machines (EC2 instances). Once in place it can 
+	then be used to run a suite of tests to verify whether or not their are any security vulnerabilities.
+
+### Macie
+
+	S3 bucket security scanning service.
+
+### Certificate Manager
+
+	Amazon's Secure Socket Layer (SSL) offering. It provides free SSL certificate service for 
+	Route 53 registered domains.
+
+### CloudHSM
+
+	Amazon's Hardward Security Module (HSM) offering.  
