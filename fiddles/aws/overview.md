@@ -157,6 +157,8 @@ Networking & Content Delivery
 Developer Tools
 ===
 
+Note, none of the developer tool services are featured in any of the associates exams.
+
 ### CodeStar
 
 	Service that can be used for developer collaboration. It provides continous delivery tool chain.
@@ -188,3 +190,144 @@ Developer Tools
 	Web based Integrated Development Environment (IDE). It allows you to develop code inside the AWS console. 
 	Note, cloud9 was actually a private company that was acquired by Amazon. It became a part of AWS in 2017.
 
+
+
+Management Tools
+===
+
+### CloudWatch
+
+	Monitoring Service. Bread and Butter of the SysOps Administrator Associates Exam.
+
+### CloudFormation
+
+	Service for scripting infrastructure. Features heavily in the Solutions Architect associates exam 
+	as well as the Professional exams.
+
+### CloudTrail
+
+	Audit trail service. Service used to log changes to your AWS environment. The service is turned on by 
+	default, but it only stores things for one week.
+
+### Config
+
+	Service used to monitor the configuration of your entire AWS environment. It offers point in time 
+	snapshots that can be used to analyze the change of your configuration over time.
+
+### OpsWorks
+	
+	Service that is very similar to Elastic Beanstalk. It integrates both Chef and Puppet. Features 
+	prominently in the SysOps Administrator exam.
+
+### Service Catalog
+
+	Service for managing a catalog of services that are available for use on AWS. Catalogs can include 
+	anything from EC2 images, operating systems, software ... etc. It is intended for large organizations 
+	with goverance and compliance requirements. It is not currently featured in any of the associates exams.
+
+### Systems Manager
+	
+	Interface for managing your AWS resources.  Typically, its used for EC2 instances. A good example 
+	would patch maintenance. If you wanted to apply patches to 1000 of EC2 instances, the Systems 
+	Manager service is where you would do that. It is currently not featured in any of the associates exams.
+
+### Trusted Advisor
+
+	Featured in the Solutions Architect exam. Service that analyzes your AWS environment and 
+	provides "advice" on how it can be improved.
+
+### Managed Services
+
+	This is a relatively new service. Essentially it is AWS's managed service offering. If you don't 
+	want to worry about your EC2 instances or auto scaling, managed services can be used instead.
+	It is not currently featured in any of the exams.
+
+
+Media Services
+===
+
+Note, these services are brand new as of 2017 and are not featured (yet) on any of the exams.
+
+### Elastic Transcoder
+
+	This service is not brand new. It has been around for a long time. The service can be used to 
+	automate media file formatting.
+	
+### MediaConvert
+
+	File based video transcoding service with broadcast grade features. It allows you to create 
+	video and on-demand content for broadcast and multi-screen delivery at scale.
+
+### MediaLive
+
+	Broadcast grade live video processing service. It can be used to create high quality video 
+	streams to deliver to broadcast televisions and internet connected multi-screen devices.
+
+### MediaPackage
+
+	Service that can be used to prepare and protect your videos for delivery over the internet.
+
+### MediaStore
+	
+	Storage service optimized for media. It can be used to deliver live and on demand video.
+
+### MediaTailor
+	
+	Service that allows you do targeted advertising into video streams without sacrificing 
+	broadcast level quality.
+
+
+Machine Learning
+===
+
+Note, these services are brand new as of 2017 and are not featured (yet) on any of the exams.
+
+### SageMaker
+
+	Service designed to make really easy for developers to use [deep learning](https://en.wikipedia.org/wiki/Deep_learning). It is brand new as of 2017. 
+
+### Comprehend
+	
+	Service for doing sentiment data analysis. In other words, are people saying good things or bad 
+	things about your products.
+
+### DeepLens
+
+	Artificially aware camera. It is a physical piece of hardware. 
+
+### Lex
+
+	Service behind the Amazon Alexa service.  
+
+### Machine Learning
+
+	Normal machine learning service. In other words, unlike SageMaker it is not based on [deep learning](https://en.wikipedia.org/wiki/Deep_learning).
+	Essentially, you give it a data set and some rules and it will predict an outcome. In the case of Amazon,
+	whenever you see a suggested product, that is machine learning.
+
+### Polly
+
+	Service that can be used to convert text into speech.
+
+### Rekognition
+
+	Image and video recognition service. It allows you to upload a media file and the service will provide 
+	a description of its contents.
+
+### Amazon Translate
+
+	Amazon's machine translation service. It's similar to google's translate service.
+
+### Amazon Transcribe
+
+	Service for extracting speech as text from uploaded media files.
+
+
+Analytics
+===
+
+### Athena
+
+	Service that allows you to run SQL queries against files in your S3 buckets.
+
+	
