@@ -400,4 +400,14 @@ Security, Identity & Compliance
 
 ### CloudHSM
 
-	Amazon's Hardward Security Module (HSM) offering.  
+	Amazon's Hardward Security Module (HSM) offering. A security module is a dedicated piece of hardware 
+	used to store private and public authentication keys. These keys can be used for anything within AWS
+	requiring authentication such as EC2 instances. The keys can also be used to encrypt objects on AWS. 
+	The service used be very expensive and required a 5K setup fee. However, Amazon recently released 
+	per hour billing costing a 1.20$ per hour.  
+
+### Directory Service
+
+	Service that can be used to integrate Microsoft Active Directory services into AWS.
+	It is featured at high level on the Solutions Architects exam.
+  
