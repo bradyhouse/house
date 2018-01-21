@@ -411,3 +411,22 @@ Security, Identity & Compliance
 	Service that can be used to integrate Microsoft Active Directory services into AWS.
 	It is featured at high level on the Solutions Architects exam.
   
+### WAF
+
+	Web Application Firewall (WAF) service. It can be used to prevent cross site scripting and SQL 
+	injection attacks. It targets the application layer and analyzes user's interactions with web based 
+	applications. The service is featured in the Security Specialists exam.
+
+### Shield
+
+	Distrubited Denial of Service (DDoS) mitigation service. It is provided (or enabled) by default 
+	for alot of other services including CloudFront, Load Balancers, and Route 53. There is also an 
+	advanced version of the service that can be used for 24Hr protection. It cost 3K per month.
+
+### Artifact
+
+	Portal for on-demand access to download AWS Audit and Compliance reports. It also allows for the 
+	management of certain agreement documents. For example, using the interface you can download the 
+	details of their Service Organization Controls (SOC) or Payment Card Industry (PCI) reports.
+
+	 
