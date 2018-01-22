@@ -429,4 +429,165 @@ Security, Identity & Compliance
 	management of certain agreement documents. For example, using the interface you can download the 
 	details of their Service Organization Controls (SOC) or Payment Card Industry (PCI) reports.
 
-	 
+
+Mobile Services
+===
+
+Note, these services are new and are not featured (yet) on any of the exams.
+
+### Mobile Hub
+
+	Management console for mobile apps. If already have a mobile app, then using the service you create 
+	a "mobile hub". This will setup AWS services for you generating a cloud configuration file. You 
+	then use the AWS mobile SDK to connect your mobile app to your new AWS backend.
+ 
+### Pinpoint
+
+	New service that allows the user to create push notifications to drive mobile engagement.
+	For example one of your users is near a specific restaurant. Pinpoint might
+	be used to send them a notification of a coupon should they decide to visit
+	that restaurant.
+
+### AWS AppSync
+
+	New service (2017). It can be used to update data in mobile and web applications in real time. It can 
+	also be used to update data for offline users as soon as they reconnect.
+
+### Device Farm
+
+	Service that can be used to test mobile apps on real live devices. 
+
+### Mobile Analytics
+
+	Amazon's analytics service designed for mobile apps.
+
+
+AR / VR
+===
+
+Note, Augmented Reality (AR) and Virtual Reality (VR) services are new and are not featured (yet) on any of the exams.
+
+### Sumerian
+
+	Service that can be used for AR, VR and 3D application design. It was launched in 2017. It is still 
+	in preview (or beta) mode. The service does not require any prior development (or coding) experience 
+	to develop 3D environments.
+
+
+Application Integration
+===
+
+### Step Functions
+
+	Service that can be used to manage and design workflows around lamba functions. It is a brand new 
+	service and not currently featured on any exam.
+
+### Amazon MQ
+
+	Service for creating message queues within an application. It is similar to RabbitMQ. 
+     	 
+### SNS
+	Simple Notification Service (SNS). The original AWS push notification service launched in 2006.
+
+### SQS
+
+	Simple Queue Service (SQS). One of the original AWS offerings. It can be used to "decouple" your 
+	infrastructure services.
+
+### SWF
+
+	Simple WorkFlow Service (SWF). One of the original AWS offerings. This service is actually employed 
+	by Amazon's warehouses to process orders.
+
+
+Customer Engagement
+===
+
+### Connect
+
+	Contact center as a service interface. Think of having your own call center in the cloud. 
+	This is a new service. It is not (yet) covered on any exam.
+
+### SES
+
+	Simple Email Service (SES). It is a highly scaleable service that can be used to send and 
+	manage email communication with application users. This service is covered at high level on the 
+	Solutions Architect exam.
+
+
+Business Productivity
+===
+
+### Alexa for Business
+	
+	Brand new service launched at re-invent in 2017.  It provides a whole bunch of services (or functions).  
+	For example it can be used to dial into a meeting room or re-order ink for a printer.  It is not 
+	covered on any exam.
+
+### Chime
+
+	Service similar to Google Hangouts or Zoom Meetings. It can be used for video conferencing within AWS. 
+	Meetings can be recorded even with very low bandwidth. 
+
+### Work Docs
+
+	Service similar to Dropbox. It provides a way of safely and securely storing your work related 
+	documents in AWS. This service is featured on the Solutions Architect exam.
+
+### WorkMail
+
+	Service similar to Gmail. It provides a way of managing and sending email via AWS. 
+
+
+Desktop & App Streaming
+===
+
+Note, these services are new and are not featured (yet) on any of the exams.
+
+### Workspaces
+
+	Virtual Desktop Infrastructure (VDI) service. It allows you to run different operating systems 
+	in the cloud.
+
+### AppStream 2.0
+
+	AWS version Citrix. It can be used to stream actual desktop applications, which are running in 
+	the cloud, to different devices. Interesting, it is the only service in AWS that actually 
+	includes a version number--2.0.
+	
+
+Internet Of Things
+===
+
+Note, these services are new and are not featured (yet) on any of the exams.
+
+### iOT
+
+	Service for capturing data from mutiple iOT devices.
+	
+
+### iOT Device Management
+
+	Scalable service that can be used managing mutiple iOT devices. 
+
+### Amazon FreeRTOS
+
+	Amazon's Real Time Operating System (RTOS) offering. It is essentially an operating system 
+	designed for micro controllers.
+
+### Greengrass
+
+	Service that allows you to run local compute, messsaging, data caching, sync, and machine learning 
+	interface capabilities for connected devices in a secure way. 
+
+
+Game Development
+===
+
+### GameLift
+
+	Service designed to help in the development of games. This service was launched in 2016 and is
+	not currently not featured on any exams.
+
+
+	
