@@ -53,7 +53,7 @@ and frameworks:
 |link:fiddles/three[Three.js]
 |link:fiddles/tween[Tween.js]
 |link:fiddles/typescript[TypeScript]
-|link:fiddles/aws[Amazon Web Services]
+|link:fiddles/aws[AWS]
 |=========================================================
 
 To get started with any of the frameworks listed, use the above links to explore the associated collection.  To learn
