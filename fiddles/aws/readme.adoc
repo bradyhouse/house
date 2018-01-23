@@ -1,6 +1,6 @@
 = Amazon Web Services
 
-I finally finished by bachelor's degree in 2016.  At 40 I graduated Cum Laude from the Illinois Institute of
+I finally finished by bachelor's degree in 2015.  At 40 I graduated Cum Laude from the Illinois Institute of
 Technology's Information and Technology Management program.  The achievement took nearly eight years of
 my life, cost nearly 80K and ultimately played a major role in destroying my marriage.  In hind sight, I wish I
 would have just spent that time (and money) studying and mastering AWS.  Anyway, life goes on and here we are--
