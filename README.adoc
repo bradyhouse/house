@@ -22,7 +22,6 @@ and frameworks:
 
 [width="90%",cols="4"]
 |=========================================================
-
 |link:fiddles/android[Android]
 |link:fiddles/angular[Angular]
 |link:fiddles/angular2[Angular2]
@@ -54,9 +53,9 @@ and frameworks:
 |link:fiddles/three[Three.js]
 |link:fiddles/tween[Tween.js]
 |link:fiddles/typescript[TypeScript]
-
+|link:fiddles/aws[Amazon Web Services]
 |=========================================================
 
 To get started with any of the frameworks listed, use the above links to explore the associated collection.  To learn
 about my latest changes check out the detailed link:CHANGELOG.md[change log].  To test drive the in-browser version
-of this collection checkout link:http://bradyhouse.github.io[bradyhouse.github.io].  
+of this collection checkout link:http://bradyhouse.github.io[bradyhouse.github.io].
