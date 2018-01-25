@@ -126,8 +126,8 @@ function create() {
   echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
   echo "Bash version ${BASH_VERSION}..."
 
-  fiddleSubDir="../fiddles/angular2/$1";
-  fiddleTemplateDir="../fiddles/angular2/template";
+  fiddleSubDir="../fiddles/angular2-cli/$1";
+  fiddleTemplateDir="../fiddles/angular2-cli/template";
   bornOnDate=$(date +"%m-%d-%y";)
   echo ${bornOnDate};
 

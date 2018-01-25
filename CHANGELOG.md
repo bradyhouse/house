@@ -1083,7 +1083,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Aurelia**
     1.  Added [fiddles/aurelia/fiddle-0100-EmptyTemplate](fiddles/aurelia/fiddle-0100-EmptyTemplate)
-    2.  Started [fiddles/aurelia/fiddle-0037-ModalPopUp](fiddles/aurelia/fiddle-0037-ModalPopUp)
     3.  Started [fiddles/aurelia/fiddle-0001-Component](fiddles/aurelia/fiddle-0001-Component)
     4.  Added dependency (submodule) to [Patrick Walter's Aurelia Examples](https://github.com/PWKad/aurelia-samples)
     5.  Added dependency (submodule) to [Marcel Hoyer's ToDoMVC App](https://github.com/mhoyer/todomvc-aurelia)
@@ -1684,3 +1683,32 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0062-AlphaVantageAjax](fiddles/jquery/fiddle-0062-AlphaVantageAjax) ~ [Issue #204](https://github.com/bradyhouse/house/issues/204) 
+
+
+### aurelia-dependencies-update
+
+* **fiddle.sh (Enhancement)**
+  
+  1.  Added aurelia-cli setup support ~ [Issue #217](https://github.com/bradyhouse/house/issues/217)
+    * Reflected changes:
+      1.  Added [scripts/bin/setup/mac/_au.sh](scripts/bin/setup/mac/_au.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+      4.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+      5.  Added [scripts/bin/aurelia/_install.sh](scripts/bin/aurelia/_install.sh)
+      6.  Updated [scripts/bin/angular2-cli/_install.sh](scripts/bin/angular2-cli/_install.sh)
+      7.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
+      8.  Updated [scripts/bin/aurelia/_create.sh](scripts/bin/aurelia/_create.sh)
+      9.  Added [scripts/bin/aurelia/_build.sh](scripts/bin/aurelia/_build.sh)
+      10. Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+      11. Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+      12. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+      13. Added [scripts/bin/aurelia/_start.sh](scripts/bin/aurelia/_start.sh)
+      14. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+
+* **Aurelia**
+
+  1.  Added [fiddles/aurelia/fiddle-0001-SimpleComponent](fiddles/aurelia/fiddle-0001-SimpleComponent)
+  2.  Added [fiddles/aurelia/fiddle-0002-SimpleDependencyInjection](fiddles/aurelia/fiddle-0002-SimpleDependencyInjection)
+  3.  Added [fiddles/aurelia/fiddle-0003-ObjectLifeCycle](fiddles/aurelia/fiddle-0003-ObjectLifeCycle) ~ [Issue #23](https://github.com/bradyhouse/house/issues/23)
+  4.  Added [fiddles/aurelia/fiddle-0004-SimpleHttpService](fiddles/aurelia/fiddle-0004-SimpleHttpService) ~ [Issue #28](https://github.com/bradyhouse/house/issues/28)

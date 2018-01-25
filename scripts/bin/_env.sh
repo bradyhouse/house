@@ -11,13 +11,14 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 201703100420
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 
-HOME_ROOT=$(mapHomePath;);
-GITHUB_PUBLISH_REPO="bradyhouse.github.io";
-GITHUB_ROOT="${HOME_ROOT}/github";
-BUILD_NUM="201711250420";
-BASH_PROFILE="${HOME_ROOT}/.bash_profile";
-
-
-
+export HOME_ROOT=$(mapHomePath;);
+export GITHUB_PUBLISH_REPO="bradyhouse.github.io";
+export GITHUB_ROOT="${HOME_ROOT}/github";
+export BUILD_NUM="201801240420";
+export BASH_PROFILE="${HOME_ROOT}/.bash_profile";
+export OS=$(getOS;);
+export NVM_VERSION="v7.9.0";
+export AUTHOR="bradyhouse@gmail.com";

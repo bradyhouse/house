@@ -22,6 +22,7 @@
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -49,21 +50,24 @@ fi
 location=$(pwd;)
 home=$(cd ~; pwd)
 type=$1
-
-fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
 fiddleNameStub=$(echo "index";)
-indexFile=$(echo "$fiddleDir/index.html";)
 binDir=$(echo "$location/bin";)
 bornOnDate=$(date +"%m-%d-%y";)
-echo ${bornOnDate}
+fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
+
+case ${type} in
+  'angular2-seeder'|'angular2-cli'|'aurelia')
+    fiddleDir="${fiddleDir}/dist";
+    indexFile=$(echo "${fiddleDir}/index.html";)
+    ;;
+  *)
+    indexFile=$(echo "$fiddleDir/index.html";)
+    ;;
+esac
 
 #try
 (
-    if [[ "${type}" == "angular2-seeder" || "${type}" == "angular2-cli" ]]
-    then
-      fiddleDir="${fiddleDir}/dist";
-      indexFile=$(echo "${fiddleDir}/index.html";)
-    fi
+    echo ${bornOnDate};
     if [[ -d "${fiddleDir}" ]]
     then
       case ${type} in

@@ -28,6 +28,7 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -81,6 +82,11 @@ function startServer() {
             source bin/angular2-seeder/_start.sh;
             cd ${_fiddleRoot};
             seederStart || exit 104;
+            ;;
+        'aurelia')
+            source bin/aurelia/_start.sh;
+            cd ${_fiddleRoot};
+            auStart || exit 117;
             ;;
         'c')
             source bin/c/.gccrc;
@@ -239,6 +245,8 @@ case ${rc} in
     115) echo -e "Fubar\t\"javac\" is not installed or configured correctly.";
         ;;
     116) echo -e "Fubar\t\"javacStart\" function call failed for \"${_fiddleSubDir}\".";
+        ;;
+    117) echo -e echo -e "Fubar\t\"auStart\" function call failed for \"${_fiddleRoot}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

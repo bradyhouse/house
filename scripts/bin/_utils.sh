@@ -17,7 +17,17 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 11/22/2017 - See CHANGELOG @ 201708290420
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
+
+function getOS() {
+  os=$(uname;);
+  if [[ "${os}" -eq "Darwin" ]]
+  then
+    os="mac";
+  fi
+  echo "${os}";
+}
 
 function sleepFor() {
   LBAR="  [";

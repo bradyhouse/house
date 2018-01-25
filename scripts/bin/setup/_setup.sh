@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline   - See CHANGELOG @ 201702110420
 # 03/10/2017 - See CHANGELOG @ 201703100420
+# 01/24/2018 - See aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -23,7 +24,11 @@ function setup() {
         'mac')
             case ${_app} in
               'android')
-                source bin/setup/map/_android.sh;
+                source bin/setup/mac/_android.sh;
+                install || exit $?;
+                ;;
+              'au')
+                source bin/setup/mac/_au.sh;
                 install || exit $?;
                 ;;
               'brew')
@@ -76,6 +81,7 @@ function setup() {
                 ;;
               'all')
                 setup ${_os} "android" || exit $?;
+                setup ${_os} "au" || exit $?;
                 setup ${_os} "brew" || exit $?;
                 setup ${_os} "gh" || exit $?;
                 setup ${_os} "node" || exit $?;
