@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # 03/10/2017 - Baseline Ver.
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -35,6 +36,10 @@ source bin/_env.sh;
         'angular2-cli')
             source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_build.sh;
+            build ${_fiddle} || exit 87;
+            ;;
+        'aurelia')
+            source bin/aurelia/_build.sh;
             build ${_fiddle} || exit 87;
             ;;
         *)  exit 86

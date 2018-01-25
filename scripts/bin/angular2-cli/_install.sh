@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 
 function isNgInstalled() {
@@ -29,6 +30,7 @@ function ngInstall() {
     installed=$(isNgInstalled;);
     if [[ "${installed}" == "false" ]]
     then
-       npm install -g @angular/cli;
+      os=$(getOS;);
+      ./fiddle.sh "setup" "${OS}" "ng";
     fi
 }

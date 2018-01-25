@@ -16,6 +16,7 @@
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 03/10/2017 - See CHANGELOG @ 201703100420
 # 04/24/2017 - See CHANGELOG @ 201704170420
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -27,6 +28,7 @@ voidEchoFiddleTypes() {
           ;;
         'setup')
            echo -e "\t\"android\"\tinstall android-sdk\thttps://developer.android.com";
+           echo -e "\t\"au\"\t\tinstall aurelia-cli\thttps://www.npmjs.com/package/aurelia-cli";
            echo -e "\t\"brew\"\t\tinstall homebrew\thttp://brew.sh/";
            echo -e "\t\"gh\"\t\tinstall github terminal\thttps://www.npmjs.com/package/gh";
            echo -e "\t\"js-beautify\"\tinstall js-beautify\thttps://www.npmjs.com/package/js-beautify";
