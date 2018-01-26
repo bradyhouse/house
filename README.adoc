@@ -29,6 +29,7 @@ and frameworks:
 |link:fiddles/angular2-seeder[Angular2 Seeder]
 |link:fiddles/ant[Ant]
 |link:fiddles/aurelia[Aurelia]
+|link:fiddles/aws[Aws]
 |link:fiddles/bash[Bash]
 |link:fiddles/c[C]
 |link:fiddles/chrome[Chrome]
