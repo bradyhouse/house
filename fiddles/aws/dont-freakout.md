@@ -8,19 +8,22 @@ exam does not (yet) require knowing everything. The above big picture can
 be revised as follows based on the associates exam.
 
 
-Solution Architect Associates Exam
+
+Solution Architect Associates 
 ===
 
 ![Imgur](https://i.imgur.com/Mv33nJI.png)
 
 
-Developer Associates Exam
+
+Developer Associates
 ===
 
 ![Imgur](https://i.imgur.com/H8OyQBm.png)
 
 
-Sysops Administrator Associates Exam
+
+Sysops Administrator Associates
 ===
 
 ![Imgur](https://i.imgur.com/WOimHFQ.png)
