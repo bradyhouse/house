@@ -1,0 +1,87 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "slick-grid-quick-filter"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css",
+        "../node_modules/slickgrid/css/smoothness/jquery-ui-1.11.3.custom.css",
+        "../node_modules/slickgrid/slick.grid.css",
+        "../node_modules/slickgrid/slick-default-theme.css"
+      ],
+
+
+      "scripts": [
+        "../node_modules/moment/min/moment-with-locales.min.js",
+        "../node_modules/lodash/lodash.js",
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/underscore/underscore-min.js",
+        "../node_modules/slickgrid/lib/jquery-1.11.2.min.js",
+        "../node_modules/slickgrid/lib/jquery-ui-1.11.3.js",
+        "../node_modules/slickgrid/lib/jquery.event.drag-2.2.js",
+        "../node_modules/slickgrid/lib/jquery.sparkline-2-1-2.min.js",
+        "../node_modules/slickgrid/slick.core.js",
+        "../node_modules/slickgrid/slick.grid.js",
+        "../node_modules/slickgrid/slick.dataview.js",
+        "../node_modules/slickgrid/plugins/slick.cellselectionmodel.js",
+        "../node_modules/slickgrid/plugins/slick.cellrangeselector.js",
+        "../node_modules/slickgrid/slick.editors.js",
+        "../node_modules/slickgrid/plugins/slick.cellrangedecorator.js",
+        "../node_modules/slickgrid-colgroup-plugin/dist/slick.colgroup.js",
+        "../node_modules/slickgrid-colfix-plugin/dist/slick.colfix.js",
+        "../node_modules/css-element-queries/src/ResizeSensor.js",
+        "../node_modules/css-element-queries/src/ElementQueries.js",
+        "../node_modules/immutable/dist/immutable.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

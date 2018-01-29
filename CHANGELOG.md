@@ -1644,7 +1644,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   8.  Added [fiddles/jquery/fiddle-0058-VariableName](fiddles/jquery/fiddle-0058-VariableName) ~ [Issue 186](https://github.com/bradyhouse/house/issues/186)
   9.  Added [fiddles/jquery/fiddle-0059-BeautifulString](fiddles/jquery/fiddle-0059-BeautifulString) ~ [Issue 191](https://github.com/bradyhouse/house/issues/191)
   10. Added [fiddles/jquery/fiddle-0060-SpiralNumbers](fiddles/jquery/fiddle-0060-SpiralNumbers) ~ [Issue 194](https://github.com/bradyhouse/house/issues/194)
-  11. Added [fiddles/jquery/fiddle-0061-Sudoku](fiddles/jquery/fiddle-0061-Sudoku) ~ [Issue 195](https://github.com/bradyhouse/house/issues/195)
+  11. Added [fiddles/jquery/fiddle-0061-SlickGridSparkLine](fiddles/jquery/fiddle-0061-SlickGridSparkLine) ~ [Issue 195](https://github.com/bradyhouse/house/issues/195)
 
 * **NativeScript**
 
@@ -1712,3 +1712,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   2.  Added [fiddles/aurelia/fiddle-0002-SimpleDependencyInjection](fiddles/aurelia/fiddle-0002-SimpleDependencyInjection)
   3.  Added [fiddles/aurelia/fiddle-0003-ObjectLifeCycle](fiddles/aurelia/fiddle-0003-ObjectLifeCycle) ~ [Issue #23](https://github.com/bradyhouse/house/issues/23)
   4.  Added [fiddles/aurelia/fiddle-0004-SimpleHttpService](fiddles/aurelia/fiddle-0004-SimpleHttpService) ~ [Issue #28](https://github.com/bradyhouse/house/issues/28)
+
+
+### angular2-cli-0017-SlickGridTreePlus
+
+* **Angular2-CLI**
+
+  1.  Added [fiddles/angular2-cli/fiddle-0017-SlickGridTreePlus](fiddles/angular2-cli/fiddle-0017-SlickGridTreePlus) ~ [Issue 219](https://github.com/bradyhouse/house/issues/219)
+* Added [fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine](fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine)
