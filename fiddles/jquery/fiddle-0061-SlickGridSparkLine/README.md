@@ -18,7 +18,7 @@ Chicago, IL
 
 ### Issue
 
-[Issue 195](https://github.com/bradyhouse/house/issues/195)
+[Issue 219](https://github.com/bradyhouse/house/issues/219)
 
 
 ### Description
@@ -28,7 +28,7 @@ Fiddle based on [Slickgrid Example 10](https://github.com/mleibman/SlickGrid/blo
 
 ### Published Version Link
 
-* [bradyhouse.github.io > ES2015 > #61](http://bradyhouse.github.io/jquery/fiddle-0061-Sudoku/index.html#)
+* [bradyhouse.github.io > Jquery / ES2015 > #61](http://bradyhouse.github.io/jquery/fiddle-0061-SlickgridSparkline/index.html#)
 
 
 ### Tags

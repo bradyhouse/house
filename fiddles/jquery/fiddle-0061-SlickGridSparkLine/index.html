@@ -3,9 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title>SlickGrid example 10: Async post render</title>
-    <link rel="stylesheet" href="https://unpkg.com/slickgrid-kunovsky@2.2.0/slick.grid.css" type="text/css"/>
-    <link rel="stylesheet" href="https://unpkg.com/slickgrid-kunovsky@2.2.0/css/smoothness/jquery-ui-1.8.24.custom.css" type="text/css"/>
-    <link rel="stylesheet" href="https://unpkg.com/slickgrid-kunovsky@2.2.0/examples/examples.css" type="text/css"/>
+    <link rel="stylesheet" href="http://unpkg.com/slickgrid-kunovsky@2.2.0/slick.grid.css" type="text/css"/>
+    <link rel="stylesheet" href="http://unpkg.com/slickgrid-kunovsky@2.2.0/css/smoothness/jquery-ui-1.8.24.custom.css" type="text/css"/>
+    <link rel="stylesheet" href="http://unpkg.com/slickgrid-kunovsky@2.2.0/examples/examples.css" type="text/css"/>
     <style>
         .cell-title {
             font-weight: bold;
@@ -21,21 +21,21 @@
     </style>
 </head>
 <body style="backgroud-color: black;">
-<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0061-Sodoku" target="_blank"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0061-SlickGridSparkLine" target="_blank"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
 <div style="width:calc(100%);float:left;">
     <div id="myGrid" style="width:100%;height:calc(98vh);"></div>
 </div>
 
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/lib/firebugx.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/lib/firebugx.js"></script>
 
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery-1.7.min.js"></script>
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery-ui-1.8.16.custom.min.js"></script>
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery.event.drag-2.2.js"></script>
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery.sparkline.min.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery-1.7.min.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery-ui-1.8.16.custom.min.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery.event.drag-2.2.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/lib/jquery.sparkline.min.js"></script>
 
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/slick.core.js"></script>
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/slick.editors.js"></script>
-<script src="https://unpkg.com/slickgrid-kunovsky@2.2.0/slick.grid.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/slick.core.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/slick.editors.js"></script>
+<script src="http://unpkg.com/slickgrid-kunovsky@2.2.0/slick.grid.js"></script>
 
 <script>
   function requiredFieldValidator(value) {
