@@ -1,0 +1,15 @@
+{
+    "title": "root",
+    "children": [
+        {
+            "title": "GREEN_KIRBY",
+            "children": [
+                {
+                    "title": "COMTRAIL",
+                    "latitude": -14.440434,
+                    "longitude": -68.188629
+                }
+            ]
+        }
+    ]
+}
