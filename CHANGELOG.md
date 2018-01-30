@@ -1718,5 +1718,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **Angular2-CLI**
 
-  1.  Added [fiddles/angular2-cli/fiddle-0017-SlickGridTreePlus](fiddles/angular2-cli/fiddle-0017-SlickGridTreePlus) ~ [Issue 219](https://github.com/bradyhouse/house/issues/219)
-* Added [fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine](fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine)
+  1.  Added [fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine](fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine) ~ [Issue 219](https://github.com/bradyhouse/house/issues/219)
