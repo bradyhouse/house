@@ -15,7 +15,7 @@ Review Questions
   9.  What are the two types of accesses offered in IAM when setting up new users?
   10. What is a policy?
   11. What is the format of Policy documents?
-  12. What 2 policies would you include to create a "System Admin" group? 
+  12. What policy grants the same access as root? 
 
 
 Answers
@@ -32,5 +32,5 @@ Answers
   9.  Programmatic and Console
   10. A document that attach to users or groups defining their access priveleges
   11. JSON
-  12. SystemAdministrator, SystemAdministratorAccess
+  12. SystemAdministratorAccess
   
