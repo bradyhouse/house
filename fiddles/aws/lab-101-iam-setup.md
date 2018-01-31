@@ -17,9 +17,9 @@ Review Questions
   11. What is the format of Policy documents?
   12. What policy grants the same access as root? 
   13. What do you need to programmatically access AWS?
-  14. In the console, when creating a new user why should you download their credentials?
+  14. In the console, when creating a new user why should you download the credentials?
   15. Can you use your username and password for programmatic access to AWS?
-  16. Can you use your programmatic access tokens to access the tokens?
+  16. Can you use your programmatic access tokens to access the console?
   17. Can policies be added to individual users?
   18. If a user loses their Secret Access Key, what must you do?
   19. What four things must you do in IAM after signing up for AWS?
