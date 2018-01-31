@@ -10,6 +10,12 @@ this just means markdown files written while watching lectures on link:http://ac
 
 === Lecture Notes
 
-==== link:overview.md[10,000 Foot Overview]
-==== link:dont-freakout.md[Don't Freakout]
+==== Intro
 
+===== link:overview.md[10,000 Foot Overview]
+===== link:dont-freakout.md[Don't Freakout]
+
+
+==== Labs
+
+===== link:lab-101-iam-setup.md[Lab 101 - IAM Setup]
