@@ -8,14 +8,11 @@ time to make-up for lost time. This directory is dedicated to my notes and `fidd
 this just means markdown files written while watching lectures on link:http://acloud.guru[acloud.guru].
 
 
-=== Lecture Notes
+== Lecture Notes
 
-==== Intro
+=== Intro
+==== link:overview.md[10,000 Foot Overview]
+==== link:dont-freakout.md[Don't Freakout]
 
-===== link:overview.md[10,000 Foot Overview]
-===== link:dont-freakout.md[Don't Freakout]
-
-
-==== Labs
-
-===== link:lab-101-iam-setup.md[Lab 101 - IAM Setup]
+=== Labs
+==== link:lab-101-iam-setup.md[Lab 101 - IAM Setup]
