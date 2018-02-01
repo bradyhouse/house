@@ -7,7 +7,7 @@ it is a practical concern.  AWS charges can accrue when you least expect them to
 therefore this one is a necessary precaution--**Just do it!**
 
 
-Recipe
+Steps
 ====
 
 1.  login into the AWS Console
