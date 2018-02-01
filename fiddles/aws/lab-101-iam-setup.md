@@ -77,7 +77,8 @@ Answers
 White Papers
 ====
 
-  1. [AWS Security Best Practices](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)
+  * [AWS Security Best Practices](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)
+
 
   
   
