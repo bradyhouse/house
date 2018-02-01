@@ -16,3 +16,5 @@ this just means markdown files written while watching lectures on link:http://ac
 
 === Labs
 ==== link:lab-101-iam-setup.md[Lab 101 - IAM Setup]
+==== link:lab-102-billing-alarm.md[Lab 102 - Billing Alarm]
+
