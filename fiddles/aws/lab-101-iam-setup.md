@@ -70,7 +70,7 @@ Answers
   27. Yes
   28. Access to all AWS services except the management of groups and users within IAM.
   29. No
-  30. AWS Security Best Practices
+  30. [AWS Security Best Practices](https://github.com/bradyhouse/house/blob/aws-baseline/fiddles/aws/lab-101-iam-setup.md#aws-security-best-practices)
   31. No access to any AWS services
   
     
