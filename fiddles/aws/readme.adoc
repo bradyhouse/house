@@ -11,10 +11,10 @@ this just means markdown files written while watching lectures on link:http://ac
 == Lecture Notes
 
 === Intro
-==== link:overview.md[10,000 Foot Overview]
-==== link:dont-freakout.md[Don't Freakout]
+#### link:overview.md[10,000 Foot Overview]
+#### link:dont-freakout.md[Don't Freakout]
 
 === IAM
-==== link:iam.md[IAM 101]
-==== link:billing-alarm.md[Creating a Billing Alarm]
+#### link:iam.md[IAM 101]
+#### link:billing-alarm.md[Creating a Billing Alarm]
 
