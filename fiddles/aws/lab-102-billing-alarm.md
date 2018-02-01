@@ -2,9 +2,9 @@ Lab 102 - Creating a Billing Alarm
 ======
 
 The following lab outlines how to create a billing alarm when charges on your
-AWS account exceed 10$/month.  It is not part of certification exam prep.  However,
-as AWS charges can accrue when you least expect them to, the exercise is a necessary
-precaution--**Just do it!**
+AWS account exceed 10$/month.  It can come up on the exams, but more then that
+it is a practical concern.  AWS charges can accrue when you least expect them to,
+therefore this one is a necessary precaution--**Just do it!**
 
 
 Recipe
