@@ -1,5 +1,11 @@
-Lab 101 - Identity Access Management
+Identity Access Management (IAM) 101
 ======
+
+
+White Papers
+====
+
+##### [AWS Security Best Practices](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)
 
 
 Review Questions
@@ -73,12 +79,6 @@ Answers
   30. [AWS Security Best Practices](https://github.com/bradyhouse/house/blob/aws-baseline/fiddles/aws/lab-101-iam-setup.md#aws-security-best-practices)
   31. No access to any AWS services
   
-    
-White Papers
-====
-
-##### [AWS Security Best Practices](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)
-
 
   
   
