@@ -11,12 +11,12 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 == Lecture Notes
 
 === Intro
-#### link:overview.md[10,000 Foot Overview]
-#### link:dont-freakout.md[Don't Freakout]
+1.  link:overview.md[10,000 Foot Overview]
+2.  link:dont-freakout.md[Don't Freakout]
 
 === IAM
-#### link:iam.md[IAM 101]
-#### link:billing-alarm.md[Creating a Billing Alarm]
+1.  link:iam.md[IAM 101]
+2.  link:billing-alarm.md[Creating a Billing Alarm]
 
 === S3
-#### link:s3.md[S3 101]
+1.  link:s3.md[S3 101]
