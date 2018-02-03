@@ -10,11 +10,14 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 
 == Lecture Notes
 
-[width="90%",cols="2"]
+[cols="e,>s", width="90%"]
 |=========================================================
-| **Intro** |link:overview.md[10,000 Foot Overview]
+| **Intro** 1+>
+|link:overview.md[10,000 Foot Overview]
 ||link:dont-freakout.md[Don't Freakout]
-| **IAM** |link:iam.md[IAM 101]
+| **IAM** 1+>
+|link:iam.md[IAM 101]
 ||link:billing-alarm.md[Creating a Billing Alarm]
-| **S3** |link:s3.md[S3 101]
+| **S3** 1+>
+|link:s3.md[S3 101]
 |=========================================================
