@@ -10,7 +10,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 
 == Lecture Notes
 
-[cols="m^,>s", width="90%"]
+[cols="m,>s", width="50%"]
 |=========================================================
 2+>| **Intro**
 ||link:overview.md[10,000 Foot Overview]
