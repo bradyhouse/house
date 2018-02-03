@@ -2,10 +2,10 @@
 
 I finally finished my bachelor's degree in 2015.  At 40 I graduated Cum Laude from the Illinois Institute of
 Technology's Information and Technology Management program.  The achievement took nearly eight years of
-my life, cost nearly 80K and ultimately played a major role in destroying my marriage.  In hind sight, I wish I
-would have just spent that time (and money) studying and mastering AWS.  Anyway, life goes on and here we are--
-time to make-up for lost time. This directory is dedicated to my notes and `fiddles` involving AWS.  At the outset,
-this just means markdown files written while watching lectures on link:http://acloud.guru[acloud.guru].
+my life, cost nearly 80K.  In hind sight, I wish I would have just spent that time (and money) studying and
+mastering AWS.  Anyway, life goes on and here we are--time to make-up for lost time. This directory is
+dedicated to my notes and `fiddles` involving AWS.  At the outset, this just means markdown files written
+while watching lectures on link:http://acloud.guru[acloud.guru].
 
 
 == Lecture Notes
@@ -18,3 +18,5 @@ this just means markdown files written while watching lectures on link:http://ac
 #### link:iam.md[IAM 101]
 #### link:billing-alarm.md[Creating a Billing Alarm]
 
+=== S3
+#### link:s3.md[S3 101]
