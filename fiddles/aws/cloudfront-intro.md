@@ -5,8 +5,7 @@ CloudFront
 ======
 
 
-Review Questions
-====
+### Review Questions
 
 1.  What is a CDN?
 2.  What is an Edge Location?
@@ -28,8 +27,7 @@ Review Questions
 18. Can you clear cached objects and is there a "but"?
 
 
-Answers
-====
+### Answers
 
 1.  A Content Delivery Network (CDN) is a system of distributed servers (network) that delivers webpages and other web
     content to a user based on the geographical location of the user, the origin of the web page and a content delivery 
