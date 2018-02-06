@@ -7,8 +7,7 @@ it is a practical concern.  AWS charges can accrue when you least expect them to
 therefore this one is a necessary precaution--**Just do it!**
 
 
-Steps
-====
+### Steps
 
 1.  login into the AWS Console
 2.  Under your name (top right), click "My Billing Dashboard"

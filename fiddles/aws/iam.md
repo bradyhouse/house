@@ -2,14 +2,12 @@ Identity Access Management (IAM) 101
 ======
 
 
-White Papers
-====
+### White Papers
 
 #### [AWS Security Best Practices](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)
 
 
-Review Questions
-====
+### Review Questions
 
   1.  Do all regions offer the same services? 
   2.  What region does the IAM service belong?
@@ -44,8 +42,7 @@ Review Questions
   31. What is the default level of access a newly created IAM User is granted?
 
 
-Answers
-====
+### Answers
 
   1.  No
   2.  None.  It is a "global service" effecting all regions.

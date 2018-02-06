@@ -9,21 +9,18 @@ be revised as follows based on the associates exam.
 
 
 
-Solution Architect Associates 
-===
+### Solution Architect Associates 
 
 ![Imgur](https://i.imgur.com/Mv33nJI.png)
 
 
 
-Developer Associates
-===
+### Developer Associates
 
 ![Imgur](https://i.imgur.com/H8OyQBm.png)
 
 
 
-Sysops Administrator Associates
-===
+### Sysops Administrator Associates
 
 ![Imgur](https://i.imgur.com/WOimHFQ.png)
