@@ -12,7 +12,7 @@ Lab outlining how to use AWS to create a CloudFront "distribution" (aka CDN) fro
 2.  Note your region - "N. Virginia"
 3.  Open S3
 4.  Click the "Create bucket" button
-5.  Set the "Name" to "<username>-distant-dist"
+5.  Set the "Name" to "{username}-distant-dist"
 6.  Set the "Region" to the farthest possible region from your current. For example, "Asia Pacific (Sydney)"
 7.  Click "Create" 
 8.  Select the newly created bucket and upload an image and enable public read permissions
@@ -21,9 +21,9 @@ Lab outlining how to use AWS to create a CloudFront "distribution" (aka CDN) fro
 10. Under "Networking and Content Delivery", click "CloudFront"
 11. Click the "Create Distribution" button
 12. Under "Web" click the "Get Started" button
-13. In the "Create Distribution" set the "Origin Domain Name" to "<username>-distant-dist.s3.amazonaws.com"
+13. In the "Create Distribution" set the "Origin Domain Name" to "{username}-distant-dist.s3.amazonaws.com"
 14. Leave the "Origin Path" blank
-15. Set the "Origin Id" to "S3-<username>-distant-dist" (default)
+15. Set the "Origin Id" to "S3-{username}-distant-dist" (default)
 16. Set "Restrict Bucket Access" to "Yes"
 17. Set "Origin Access Identity" to "Create a New Identity" (default)
 18. Set "Grant Read Permissions on Bucket" to "Yes, Update Bucket Policy"
@@ -37,7 +37,7 @@ Lab outlining how to use AWS to create a CloudFront "distribution" (aka CDN) fro
 
 24. Wait (15-20 mins) for the "status" to change to "Deployed"
 25. Open S3
-26. Open the "<username>-distant-dist"
+26. Open the "{username}-distant-dist"
 27. Click on the uploaded image
 28. Click the "Permissions" tab
 29. Under "Public Access" click "Everyone"
