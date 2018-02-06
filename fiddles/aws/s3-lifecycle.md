@@ -4,8 +4,7 @@ S3/IA/Glacier Life Cycle Management
 How to configure lifecycle rules on an S3 bucket.
 
 
-Steps
-===
+### Steps
 
 1.  Log into the AWS console
 2.  Navigate to S3 
@@ -39,8 +38,7 @@ Steps
 24. Click "Save"
 
 
-Review Questions
-====
+### Review Questions
 
 1.  Is Glacier available in every region?
 2.  What is the minimum file size in order for it to "transition"?
@@ -53,8 +51,8 @@ Review Questions
 9.  What 3 actions can be established using life cycle management rules?
 10. What is the minimum time period for configuring a transition?
 
-Answers
-====
+
+### Answers
 
 1.  No.
 2.  More than 128K
