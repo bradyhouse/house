@@ -23,5 +23,5 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:s3-versioning.md[S3 Versioning]
 ||link:s3-lifecycle.md[Life Cycle Management]
 2+>| **CloudFront**
-||link:cloudfront-intro.md[What is a CDN?]
+||link:cloudfront-intro.md[Intro]
 |=========================================================
