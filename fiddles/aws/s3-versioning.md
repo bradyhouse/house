@@ -4,20 +4,17 @@ Simple Storage Service (S3) Versioning
 How to configure a S3 bucket with version control.
 
 
-Pre-Requisites
-===
+### Pre-Requisites
 
 Complete the [S3](s3.md) lab.  Specifically, this lab assumes you already have created an S3 bucket.
 
 
-White Papers
-===
+### White Papers
 
 #### [Using Versioning](https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html)
 
 
-Steps
-===
+### Steps
 
 1.  Log into the AWS Console
 2.  Click "Services"
@@ -36,8 +33,7 @@ Steps
 
 
 
-Review Questions
-====
+### Review Questions
 
 1.  Once you enable versioning on a bucket, can you disable it?
 2.  What is the easiest way to go back a version on a given S3 file?
@@ -46,8 +42,7 @@ Review Questions
 5.  What is a way of preventing people from inadvertently deleting files?
 6.  In general when versioning is enabled, what does it store?
 
-Answers
-====
+### Answers
 
 1.  No. But you "suspend" it
 2.  Delete the current version
