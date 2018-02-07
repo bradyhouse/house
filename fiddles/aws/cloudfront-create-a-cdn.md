@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/VcdZTNZ.png)
+![Imgur](https://i.imgur.com/byQ9u6q.png)
 
 
 CloudFront - Create a Distribution
