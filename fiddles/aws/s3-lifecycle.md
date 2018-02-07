@@ -1,4 +1,7 @@
-S3/IA/Glacier Life Cycle Management
+![Imgur](https://i.imgur.com/M32RGmj.png)
+
+
+S3 Life Cycle Management
 ======
 
 How to configure lifecycle rules on an S3 bucket.

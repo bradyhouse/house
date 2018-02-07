@@ -1,4 +1,5 @@
-![Imgur](https://i.imgur.com/M32RGmj.png)
+![Imgur](https://i.imgur.com/VcdZTNZ.png)
+
 
 CloudFront - Create a Distribution
 ======

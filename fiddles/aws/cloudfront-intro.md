@@ -1,5 +1,5 @@
+![Imgur](https://i.imgur.com/VcdZTNZ.png)
 
-![Imgur](https://i.imgur.com/M32RGmj.png)
 
 CloudFront
 ======
