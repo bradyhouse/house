@@ -11,11 +11,9 @@ Programmatically, the product is a "virtual machine image" that is mounted via a
 Microsoft Hyper-V) running on-premise. This local gateway is then used to propagate (or asynchronous replicate) data 
 to S3. The virtual machine can be configured to establish one of 3 types of storage work flows:
 
-  1.  File Gateway
-  2.  Volume Gateway
-  3.  Tape Gateway
-
-The details of each are outlined in the subsequent sections. 
+  * File Gateway
+  * Volume Gateway
+  * Tape Gateway
 
 
 ### File Gateways
