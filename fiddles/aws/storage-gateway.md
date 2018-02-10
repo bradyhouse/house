@@ -32,16 +32,17 @@ something like this:
 
 ## Volume Gateway
 
-This type of gateway is intended block storage -- think operating system or database server. Essentially, you need
-cloud accessible volumes. Volumes come in 2 varieties: 
+This type of gateway is intended for `block` storage. Think operating system or database server. Essentially, an 
+organization has an application or database server that they want to backup using the cloud.  With this goal in
+mind, Amazon offer two configuration options: 
 
-  * Stored
-  * Cached
+  * Stored Volume Gateway
+  * Cached Volume Gateway
 
 
 ### Stored Volume Gateway
 
-Stored volume gateways allow the enterpise to store the volume locally, while asynchronously backing it up to S3. Using
+Stored volume gateways allows the enterprise to store the volume locally, while asynchronously backing it up to S3. Using
 this approach, the gateway provides on-premise applications with low-latency access to the entire dataset, while providing
 durable off-site backups. Storage volumes can be created and mounted as iSCSI devices via on-premise
 application servers. Data written to the volumes is then stored using on-premise storage hardware. This data is then 
