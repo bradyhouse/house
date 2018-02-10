@@ -16,7 +16,7 @@ to S3. The virtual machine can be configured to establish one of 3 types of stor
   * Tape Gateway
 
 
-### File Gateways
+## File Gateways
 
 This type of gateway is intended for flat file storage. Files are stored as objects in your S3 buckets, 
 accessed through a Network File System (NFS) mount point. Ownership, permissions, and timestamps are durably stored 
@@ -30,7 +30,7 @@ something like this:
 
 
 
-### Volume Gateway
+## Volume Gateway
 
 This type of gateway is intended block storage -- think operating system or database server. Essentially, you need
 cloud accessible volumes. Volumes come in 2 varieties: 
@@ -39,7 +39,7 @@ cloud accessible volumes. Volumes come in 2 varieties:
   * Cached
 
 
-#### Stored Volume Gateway
+### Stored Volume Gateway
 
 Stored volume gateways allow the enterpise to store the volume locally, while asynchronously backing it up to S3. Using
 this approach, the gateway provides on-premise applications with low-latency access to the entire dataset, while providing
@@ -53,7 +53,7 @@ in size from 1 GB to 16TB. In practise, the network diagram would looks somethin
 
 
 
-#### Cached Volume Gateway
+### Cached Volume Gateway
 
 Cached volume gateways allow an organization to use S3 as the primary data storage while retaining frequently 
 accessed data locally in their storage gateway. This approach minimize the need to scale on-premises storage 
@@ -68,7 +68,7 @@ In practise, it's complicated, but the big picture looks something like this:
 
 
 
-### Tape Gateway (VTL)
+## Tape Gateway (VTL)
 
 Tape (or Virtual Tape Library (VTL)) architecture is a durable, cost-effective solution to archive data in S3 using
 a tape archival approach. The VTL interface allows an organization to leverage their existing tape-based backup 
@@ -83,7 +83,7 @@ practise the network (or storage) diagram looks something like this:
 
 
 
-### Review Questions
+## Review Questions
 
 Here is what you should know for the exam.
 
@@ -104,7 +104,7 @@ Here is what you should know for the exam.
 15. What is Gateway VTL-- aka "Tape Storage"?
 
 
-### Answers
+## Answers
 
 1.  An "S3 product" enterprise solution for using S3 to store or archive data.
 2.  Storage gateway is a "virtual appliance" you install into a hyper-visor running in your data center.  And then
