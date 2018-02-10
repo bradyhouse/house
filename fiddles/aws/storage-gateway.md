@@ -4,20 +4,18 @@
 Storage Gateway
 =====
 
-Storage Gateway is an "S3" product. The service can be used to connect an on-premises software appliance with 
-cloud-based storage to provide seamless and secure integration between an organization's IT environment and AWS's 
-storage infrastructure.  It enables organizations to securely store data in the AWS cloud using a scalable 
-cost-effective approach.
+Storage Gateway is an "S3" product. The service can be used to connect an on-premise virtual gateway directly with 
+S3 enabling an organizations to securely store data in the cloud using a scalable, cost-effective approach.
 
-Programmatically, the product is a "virtual appliance" you install into a hyper-visor (VMWare ESXi or Microsoft Hyper-V) 
-running in an on-premise data center.  This interface is then used to propagate (or asynchronous replicate) data to S3.
-It can be configured to establish one of 3 types of gateway architectures.  These include:
+Programmatically, the product is a "virtual machine image" that is mounted via a hyper-visor client (VMWare ESXi or 
+Microsoft Hyper-V) running on-premise. This local gateway is then used to propagate (or asynchronous replicate) data 
+to S3. The virtual machine can be configured to establish one of 3 types storage workflows (or architectures):
 
 1.  File Gateway
 2.  Volume Gateway
 3.  Tape Gateway
 
-The (gory) details of each are outlined in the subsequent sections. 
+The details of each are outlined in the subsequent sections. 
 
 
 ### File Gateways
@@ -29,7 +27,9 @@ managed as native S3 objects, and bucket policies such as versioning, lifecycle 
 replication apply directly to objects stored in your bucket.  In practise, the network diagram would look like
 this:
 
+
 ![Imgur](https://i.imgur.com/XH55twX.png)
+
 
 
 ### Volume Gateway
@@ -47,7 +47,9 @@ application servers. Data written to the volumes is then stored using on-premise
 asynchronously backed up to S3 in the form of Amazon Elastic Block Store (EBS) snapshots. Individual volumes can range
 in size from 1 GB to 16TB. In practise, the network diagram would looks something like this:
     
+
 ![Imgur](https://i.imgur.com/T37FLbP.png)
+
 
 
 #### Cached Volume Gateway
@@ -60,7 +62,9 @@ volumes are created and mounted as iSCSI devices via on-premise application serv
 gateway stores the data in S3 and only retain recently read data in an on-premises cache and upload buffer.  
 In practise, it's complicated, but the big picture looks something like this:
     
+
 ![Imgur](https://i.imgur.com/je2OFhY.png)
+
 
 
 ### Tape Gateway (VTL)
@@ -73,10 +77,14 @@ existing client backup applications as iSCSI devices.  Tape cartridges are then 
 can be used in concert with a variety tape backup software clients including NetBackup and Backup Exec Veeam. In 
 practise the network (or storage) diagram looks something like this:
     
+
 ![Imgur](https://i.imgur.com/CLipMpR.png)
 
 
+
 ### Review Questions
+
+Here is what you should know for the exam.
 
 1.  What is Storage Gateway?
 2.  How does it work?
