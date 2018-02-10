@@ -9,11 +9,11 @@ S3 enabling an organizations to securely store data in the cloud using a `scalab
 
 Programmatically, the product is a "virtual machine image" that is mounted via a hyper-visor client (VMWare ESXi or 
 Microsoft Hyper-V) running on-premise. This local gateway is then used to propagate (or asynchronous replicate) data 
-to S3. The virtual machine can be configured to establish one of 3 types storage workflows (or architectures):
+to S3. The virtual machine can be configured to establish one of 3 types of storage work flows:
 
-1.  File Gateway
-2.  Volume Gateway
-3.  Tape Gateway
+  1.  File Gateway
+  2.  Volume Gateway
+  3.  Tape Gateway
 
 The details of each are outlined in the subsequent sections. 
 
