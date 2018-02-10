@@ -33,7 +33,10 @@ something like this:
 ### Volume Gateway
 
 This type of gateway is intended block storage -- think operating system or database server. Essentially, you need
-cloud accessible volumes. Volumes come in 2 varieties: "Stored" or "Cached".
+cloud accessible volumes. Volumes come in 2 varieties: 
+
+  * Stored
+  * Cached
 
 
 #### Stored Volume Gateway
