@@ -7,7 +7,7 @@ Storage Gateway
 Storage Gateway is an "S3" product. The service can be used to connect an on-premise virtual gateway directly with 
 S3 enabling an organizations to securely store data in the cloud using a `scalable, cost-effective approach`.
 
-Programmatically, the product is a "virtual machine image" that is mounted via a hyper-visor client (VMWare ESXi or 
+Programmatically, the product is a `virtual machine image` that is mounted via a hyper-visor client (VMWare ESXi or 
 Microsoft Hyper-V) running on-premise. This local gateway is then used to propagate (or asynchronous replicate) data 
 to S3. The virtual machine can be configured to establish one of 3 types of storage work flows:
 
@@ -22,8 +22,8 @@ This type of gateway is intended for flat file storage. Files are stored as obje
 accessed through a Network File System (NFS) mount point. Ownership, permissions, and timestamps are durably stored 
 in S3 in the user-metadata of the object associated with the file. Once objects are transferred to S3, they can be 
 managed as native S3 objects, and bucket policies such as versioning, lifecycle management, and cross-region 
-replication apply directly to objects stored in your bucket.  In practise, the network diagram would look like
-this:
+replication apply directly to objects stored in your bucket.  In practise, the workflow (or network diagram) looks
+something like this:
 
 
 ![Imgur](https://i.imgur.com/XH55twX.png)
