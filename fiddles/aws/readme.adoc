@@ -24,6 +24,8 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:s3-lifecycle.md[Life Cycle Management]
 ||link:s3-encryption.md[Encryption]
 2+>| **CloudFront**
-||link:cloudfront-intro.md[Intro]
+||link:cloudfront-intro.md[CloudFront 101]
 ||link:cloudfront-create-a-cdn.md[Create a Distribution]
+2+>| **Storage Gateway**
+||link:storage-gateway.md[Storage Gateway 101]
 |=========================================================
