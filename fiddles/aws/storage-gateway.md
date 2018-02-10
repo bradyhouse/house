@@ -5,7 +5,7 @@ Storage Gateway
 =====
 
 Storage Gateway is an "S3" product. The service can be used to connect an on-premise virtual gateway directly with 
-S3 enabling an organizations to securely store data in the cloud using a scalable, cost-effective approach.
+S3 enabling an organizations to securely store data in the cloud using a `scalable, cost-effective approach`.
 
 Programmatically, the product is a "virtual machine image" that is mounted via a hyper-visor client (VMWare ESXi or 
 Microsoft Hyper-V) running on-premise. This local gateway is then used to propagate (or asynchronous replicate) data 
