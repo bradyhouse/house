@@ -23,8 +23,7 @@ How to configure an S3 bucket as a static website host.
 10. Click the `Save` button
 11. Open a text editor and paste in the following text:
       
-     
-      `<!DOCTYPE html>
+      ```<!DOCTYPE html>
       <html lang="en">
       <head>
           <meta charset="utf-8">
@@ -142,14 +141,14 @@ How to configure an S3 bucket as a static website host.
       
           </script>
       </body>
-      </html>`
+      </html>```
       
 
 12. Save the file as `index.html`
 13. Using the text editor, create a second a file and paste in the following content:
 
       
-      `<html>
+      ```<html>
         <head>
           <title>Error!</title>
         </head>
@@ -157,7 +156,7 @@ How to configure an S3 bucket as a static website host.
           <h2>F U B A R</h2>
           <h3>Things are not good. The requested page cannot be found. So (I guess) try again or come back later...</h3>
         </body>
-      </html>`
+      </html>```
 
 14. Save the file as `error.html`
 15. Return to AWS and upload the new files to your new bucket
