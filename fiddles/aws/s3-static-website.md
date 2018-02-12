@@ -22,7 +22,8 @@ How to configure an S3 bucket as a static website host.
 9.  Set the `Error document` to `error.html`
 10. Click the `Save` button
 11. Open a text editor and paste in the following text:
-
+      
+     
       <!DOCTYPE html>
       <html lang="en">
       <head>
@@ -142,10 +143,12 @@ How to configure an S3 bucket as a static website host.
           </script>
       </body>
       </html>
+      
 
 12. Save the file as `index.html`
 13. Using the text editor, create a second a file and paste in the following content:
 
+      
       <html>
         <head>
           <title>Error!</title>
