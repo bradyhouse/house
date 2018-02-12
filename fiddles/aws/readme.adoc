@@ -23,6 +23,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:s3-versioning.md[S3 Versioning]
 ||link:s3-lifecycle.md[Life Cycle Management]
 ||link:s3-encryption.md[Encryption]
+||link:s3-static-website.md[Static Website Hosting]
 2+>| **CloudFront**
 ||link:cloudfront-intro.md[CloudFront 101]
 ||link:cloudfront-create-a-cdn.md[Create a Distribution]
