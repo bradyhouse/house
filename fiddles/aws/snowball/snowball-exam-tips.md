@@ -4,11 +4,11 @@
 Snowball Exam Tips
 ======
 
-* 3 Different types
+* 3 Different types:
   
-  1.  `Snowball` - pure storage. Comes in different sizes starting at 50 TB in the US; 80 TB outside the US
-  2.  `Snowball Edge` -  storage + compute functionality-- mini AWS data center. lambda functions can be run locally 
-  3.  `Snowmobile` - 45 foot container arriving by truck. 
+  * `Snowball` - pure storage. Comes in different sizes starting at 50 TB in the US; 80 TB outside the US
+  * `Snowball Edge` -  storage + compute functionality-- mini AWS data center. lambda functions can be run locally 
+  * `Snowmobile` - 45 foot container arriving by truck. 
       * Offers a 100 Petabytes of storage
       * Can come with security guards
       * Currently only available in the continental United States

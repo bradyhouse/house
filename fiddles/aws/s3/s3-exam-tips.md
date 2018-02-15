@@ -79,10 +79,10 @@ S3 Summary Exam Tips
 * Can be applied to current and previous versions
 * Following `class transition` actions can be configured:
   
-  1.  Transition from Standard to S3-IA Storage Class (128 KB min / 30 days after creation)
-  2.  Transition from Standard to Glacier Storage Class (128 KB min / 1 day after creation) 
-  3.  Transition from S3-IA to Glacier Storage Class (128 KB min / 30 days after transition to S3-IA)
-  4.  Permanently delete objects
+  * Transition from Standard to S3-IA Storage Class (128 KB min / 30 days after creation)
+  * Transition from Standard to Glacier Storage Class (128 KB min / 1 day after creation) 
+  * Transition from S3-IA to Glacier Storage Class (128 KB min / 30 days after transition to S3-IA)
+  * Permanently delete objects
 
 
 ## CloudFront
@@ -94,10 +94,8 @@ See [CloudFront Exam Tips](../cloudfront/cloudfront-exam-tips.md)
 
 * By default all newly created buckets are PRIVATE
 * You can setup access control to your buckets using:
-  
-  1.  Bucket Policies
-  2.  Access Control Lists
-
+  *  Bucket Policies
+  *  Access Control Lists
 * S3 buckets can be configured to create access logs 
   * This can be configured to written to a secondary bucket belong to same of different account
   
@@ -147,7 +145,7 @@ See [Snowball Exam Tips](../snowball/snowball-exam-tips.md)
 
 * Write to S3 - HTTP 200 Code is returned upon success
 * You can load files to S3 much faster by enabling multipart upload
-* _Read the S3 FAQ before taking the exam -- IT COMES UP A LOT!_
+* **Read the S3 FAQ before taking the exam -- IT COMES UP A LOT!**
 
 
 
