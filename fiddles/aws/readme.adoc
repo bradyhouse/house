@@ -16,19 +16,23 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:overview.md[10,000 Foot Overview]
 ||link:dont-freakout.md[Don't Freakout]
 2+>| **IAM**
-||link:iam.md[IAM 101]
-||link:billing-alarm.md[Creating a Billing Alarm]
+||link:iam/iam.md[IAM 101]
+||link:iam/billing-alarm.md[Creating a Billing Alarm]
 2+>| **S3**
-||link:s3.md[S3 101]
-||link:s3-versioning.md[S3 Versioning]
-||link:s3-lifecycle.md[Life Cycle Management]
-||link:s3-encryption.md[Encryption]
-||link:s3-static-website.md[Static Website Hosting]
+||link:s3/s3.md[S3 101]
+||link:s3/s3-versioning.md[S3 Versioning]
+||link:s3/s3-lifecycle.md[Life Cycle Management]
+||link:s3/s3-encryption.md[Encryption]
+||link:s3/s3-static-website.md[Static Website Hosting]
+||link:s3/s3-exam-tips.md[Exam Tips]
 2+>| **CloudFront**
-||link:cloudfront-intro.md[CloudFront 101]
-||link:cloudfront-create-a-cdn.md[Create a Distribution]
+||link:cloudfront/cloudfront-intro.md[CloudFront 101]
+||link:cloudfront/cloudfront-create-a-cdn.md[Create a Distribution]
+||link:cloudfront/cloudfront-exam-tips.md[Exam Tips]
 2+>| **Storage Gateway**
-||link:storage-gateway.md[Storage Gateway 101]
+||link:storage-gateway/storage-gateway.md[Storage Gateway 101]
+||link:storage-gateway/storage-gateway-exam-tips.md[Exam Tips]
 2+>| **Snowball**
-||link:snowball.md[Snowball 101]
+||link:snowball/snowball.md[Snowball 101]
+||link:snowball/snowball-exam-tips.md[Exam Tips]
 |=========================================================
