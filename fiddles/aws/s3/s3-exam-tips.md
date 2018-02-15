@@ -148,8 +148,10 @@ See [Snowball Exam Tips](../snowball/snowball-exam-tips.md)
 * **Read the [S3 FAQ](https://aws.amazon.com/s3/faqs/) before taking the exam -- IT COMES UP A LOT!**
 
 
+## Additional Reading
 
- 
+* [AWS Storage Update – New Lower Cost S3 Storage Option & Glacier Price Reduction](https://aws.amazon.com/blogs/aws/aws-storage-update-new-lower-cost-s3-storage-option-glacier-price-reduction/)
+* [Storage Classes](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html) 
 
   
 
