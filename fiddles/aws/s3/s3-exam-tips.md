@@ -145,7 +145,7 @@ See [Snowball Exam Tips](../snowball/snowball-exam-tips.md)
 
 * Write to S3 - HTTP 200 Code is returned upon success
 * You can load files to S3 much faster by enabling multipart upload
-* **Read the S3 FAQ before taking the exam -- IT COMES UP A LOT!**
+* **Read the [S3 FAQ](https://aws.amazon.com/s3/faqs/) before taking the exam -- IT COMES UP A LOT!**
 
 
 
