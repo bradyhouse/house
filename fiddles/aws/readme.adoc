@@ -17,7 +17,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:dont-freakout.md[Don't Freakout]
 2+>| **IAM**
 ||link:iam/iam.md[IAM 101]
-||link:iam/billing-alarm.md[Creating a Billing Alarm]|
+||link:iam/billing-alarm.md[Creating a Billing Alarm]
 2+>| **S3**
 ||link:s3/s3.md[S3 101]
 ||link:s3/s3-versioning.md[S3 Versioning]
