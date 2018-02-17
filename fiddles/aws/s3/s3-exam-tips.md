@@ -13,7 +13,7 @@ S3 Summary Exam Tips
 * S3 names always look like this `s3-eu-west-1.amazonaws.com/bradyhouse`
 
 
-## The Consistency Model
+== The Consistency Model
 
 * Read after Write consistency for PUTS of new Objects
 
@@ -25,7 +25,7 @@ S3 Summary Exam Tips
     ```you may get the old object.```
     
 
-## Storage Classes/Tiers
+== Storage Classes/Tiers
 
 * S3 (durable, immediately available, frequently accessed)
   * Most durable (`11 9's`)
@@ -42,7 +42,7 @@ S3 Summary Exam Tips
   * Cheapest of all the storage classes
   
 
-## Core Fundamentals
+== Core Fundamentals
 
 * `Key` - name
 * `Value` - data
@@ -53,7 +53,7 @@ S3 Summary Exam Tips
 * __Not suitable to install an operating system__
 
 
-## Versioning
+== Versioning
 
 * Stores all versions of an object
   * This includes all writes even if you delete an object
@@ -73,7 +73,7 @@ S3 Summary Exam Tips
 * Cross Region Replication, requires versioning enabled on the source bucket as well as the destination bucket
 
 
-## LifeCycle Management
+== LifeCycle Management
 
 * Can be used in conjunction with versioning
 * Can be applied to current and previous versions
@@ -85,12 +85,12 @@ S3 Summary Exam Tips
   * Permanently delete objects
 
 
-## CloudFront
+== CloudFront
 
 See [CloudFront Exam Tips](../cloudfront/cloudfront-exam-tips.md)
 
 
-## Bucket Security
+== Bucket Security
 
 * By default all newly created buckets are PRIVATE
 * You can setup access control to your buckets using:
@@ -100,7 +100,7 @@ See [CloudFront Exam Tips](../cloudfront/cloudfront-exam-tips.md)
   * This can be configured to written to a secondary bucket belong to same of different account
   
   
-## Encryption
+== Encryption
 
 * In Transit
   * SSL/TLS (aka HTTPS)
@@ -114,24 +114,24 @@ See [CloudFront Exam Tips](../cloudfront/cloudfront-exam-tips.md)
     * download encrypted files and decrypt
 
 
-## Storage Gateway
+== Storage Gateway
 
 See [Storage Gateway Exam Tips](../storage-gateway/storage-gateway-exam-tips.md)
 
 
-## Snowball
+== Snowball
 
 See [Snowball Exam Tips](../snowball/snowball-exam-tips.md)
 
 
-## Transfer Acceleration
+== Transfer Acceleration
 
 * It can be used to speed up transfers to S3
 * Costs Extra and has the greatest impact on people who are in far away locations
 * Essential people are uploading files to an Edge Location which is then being written to your S3 Bucket
 
 
-## Static Websites
+== Static Websites
 
 * S3 can be used to host static websites
 * It is serverless
@@ -141,14 +141,14 @@ See [Snowball Exam Tips](../snowball/snowball-exam-tips.md)
   * No PHP or ASP.NET
   
   
-## Finally ...
+== Finally ...
 
 * Write to S3 - HTTP 200 Code is returned upon success
 * You can load files to S3 much faster by enabling multipart upload
 * **Read the [S3 FAQ](https://aws.amazon.com/s3/faqs/) before taking the exam -- IT COMES UP A LOT!**
 
 
-## Additional Reading
+== Additional Reading
 
 * [AWS Storage Update – New Lower Cost S3 Storage Option & Glacier Price Reduction](https://aws.amazon.com/blogs/aws/aws-storage-update-new-lower-cost-s3-storage-option-glacier-price-reduction/)
 * [Storage Classes](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html) 

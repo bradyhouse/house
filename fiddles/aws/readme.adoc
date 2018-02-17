@@ -19,7 +19,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:iam/iam.md[IAM 101]
 ||link:iam/billing-alarm.md[Creating a Billing Alarm]
 2+>| **S3**
-||link:s3/s3.md[S3 101]
+|link:s3/s3.md[S3 101]|link:https://aws.amazon.com/s3/faqs/[S3 FAQ]
 ||link:s3/s3-versioning.md[S3 Versioning]
 ||link:s3/s3-lifecycle.md[Life Cycle Management]
 ||link:s3/s3-encryption.md[Encryption]
@@ -35,4 +35,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 2+>| **Snowball**
 ||link:snowball/snowball.md[Snowball 101]
 ||link:snowball/snowball-exam-tips.md[Exam Tips]
+2+>| **EC2**
+|link:ec2-101.md[EC2 101]|link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 |=========================================================
+
