@@ -37,7 +37,9 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:snowball/snowball.md[Snowball 101]
 ||link:snowball/snowball-exam-tips.md[Exam Tips]
 2+>| **EC2**
-||link:ec2/ec2-101.md[EC2 101]
+||link:ec2/ec2-101-pt1.md[EC2 101 - Part 1]
+||link:ec2/ec2-101-pt2.md[EC2 101 - Part 2]
+||link:ec2/ec2-instance-lab.md[EC2 Instance Lab]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 |=========================================================
 

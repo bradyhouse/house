@@ -29,7 +29,6 @@ something like this:
 ![Imgur](https://i.imgur.com/XH55twX.png)
 
 
-
 ## Volume Gateway
 
 This type of gateway is intended for `block` storage. Think operating system or database server. Essentially, an 
