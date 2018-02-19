@@ -57,7 +57,7 @@ multiple security groups. It is your first line of defense against hackers.
     ![Imgur](https://i.imgur.com/wxWOwKb.png)
     
 23. Add the `Default` security group and click the `Assign Security Groups` button
-24. The End.  Proceed to the next lab (or complete steps 54-60 of the [EC2 Instance Lab](ec2-instance-lab.md))
+24. The End.  Continue to the [next lecture/lab](ec2-ebs-volumes-lab.md)
 
 
 ## Exam Tips
@@ -89,3 +89,6 @@ What did we learn?
 2.  Yes
 3.  No
 4.  Network Control Lists
+
+
+[Previous Lab/Lecture](ec2-instance-lab.md) [Table of Contents](../readme.adoc) [Next Lab/Lecture](ec2-ebs-volumes-lab.md)

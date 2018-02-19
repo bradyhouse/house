@@ -282,7 +282,7 @@ showing you how to terminate the instance.
   ![Imgur](https://i.imgur.com/pZw1vxp.png)
   
 59. In the `Terminate Instances` pop-up, click the `Yes, Terminate` button
-60. The End, logout out of the console and continue to the next lab
+60. The End, logout out of the console and continue to the [next lecture/lab](ec2-security-groups-lab.md)
 
 
 ## Exam Tips
@@ -322,3 +322,5 @@ What did we learn?
 8.  No
 9.  Using third party tools
 
+
+[Previous Lab/Lecture](ec2-101-pt2.md) [Table of Contents](../readme.adoc) [Next Lab/Lecture](ec2-security-groups-lab.md)
