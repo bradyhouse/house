@@ -122,15 +122,19 @@ showing you how to terminate the instance.
 
     ```yum install httpd -y```
 
-44. Navigate to the apache root html directory
+44. Configure apache to startup automatically
+
+    ```chkconfig httpd on```
+  
+45. Navigate to the apache root html directory
 
     ```cd /var/www/html```
     
-45. In this directory create a new index.html file
+46. In this directory create a new index.html file
 
     ```nano index.html```
     
-46. In the nano text editor, paste in the following HTML:
+47. In the nano text editor, paste in the following HTML:
 
     ``` <html lang="en">
         <head>
@@ -251,34 +255,34 @@ showing you how to terminate the instance.
         </body>
         </html>```
 
-47. Press `CTRL + X` 
-48. Enter `Y` and press `Enter` to save your changes to the `index.html` file to exit `nano`
-49. Startup apache on your EC2 instance
+48. Press `CTRL + X` 
+49. Enter `Y` and press `Enter` to save your changes to the `index.html` file to exit `nano`
+50. Startup apache on your EC2 instance
     
     ```service httpd start```
     
-50. Return to your web browser. 
-51. Open a new tab, and paste in the public IP of your EC2 instance (39)
+51. Return to your web browser. 
+52. Open a new tab, and paste in the public IP of your EC2 instance (39)
 
   ![Imgur](https://i.imgur.com/yNJznVv.png)
 
-52. Close your terminal window
-52. Go back to the AWS Console page, click `Action > Instance State > Terminate`
+53. Close your terminal window
+54. Go back to the AWS Console page, click `Action > Instance State > Terminate`
     
   ![Imgur](https://i.imgur.com/Ny3ohfH.png)
   
-53. Click `cancel` to close the pop-up
-54. Click `Action > Instance Settings > Change Terminate Protection`
+55. Click `cancel` to close the pop-up
+56. Click `Action > Instance Settings > Change Terminate Protection`
 
   ![Imgur](https://i.imgur.com/LfoUPuU.png)
   
-55. In the `Disable Termination Protection` pop-up, click the `Yes, Disable` button
-56. In the AWS Console EC2 page, click `Action > Instance State > Terminate`
+57. In the `Disable Termination Protection` pop-up, click the `Yes, Disable` button
+58. In the AWS Console EC2 page, click `Action > Instance State > Terminate`
 
   ![Imgur](https://i.imgur.com/pZw1vxp.png)
   
-57. In the `Terminate Instances` pop-up, click the `Yes, Terminate` button
-58. The End, logout out of the console and continue to the next lab
+59. In the `Terminate Instances` pop-up, click the `Yes, Terminate` button
+60. The End, logout out of the console and continue to the next lab
 
 
 ## Exam Tips
