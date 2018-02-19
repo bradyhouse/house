@@ -263,12 +263,37 @@ showing you how to stop the instance so no charges accrue.
   ![Imgur](https://i.imgur.com/yNJznVv.png)
 
 52. Close your terminal window
-52. Go back to the AWS Console page, click `Action > Instance State > Stop`
+52. Go back to the AWS Console page, click `Action > Instance State > Terminate`
     
-  ![Imgur](https://i.imgur.com/nRnok3H.png)
+  ![Imgur](https://i.imgur.com/Ny3ohfH.png)
+  
+53. Click `cancel` to close the pop-up
+54. Click `Action > Instance Settings > Change Terminate Protection`
+
+  ![Imgur](https://i.imgur.com/LfoUPuU.png)
+  
+55. In the `Disable Termination Protection` pop-up, click the `Yes, Disable` button
+56. In the AWS Console EC2 page, click `Action > Instance State > Terminate`
+
+  ![Imgur](https://i.imgur.com/pZw1vxp.png)
+  
+57. In the `Terminate Instances` pop-up, click the `Yes, Terminate` button
+58. The End, logout out of the console and continue to the next lab
 
 
-## Review Questions
+## Exam Tips
+
+What did we learn?
+
+* Termination protection is turned off by default, you must turn it on
+* On an EBS-backed instance, the default action if for the root EBS volume to be deleted when the instance is terminated
+* EBS Root Volumes of your DEFAULT AMI's cannot be encrypted. You can also use a third party tool (such as a bit
+  locker etc) to encrypt the root volume, or this can be done when creating AMI's (lab to follow) in the AWS
+  console or using the API
+* Additional volumes can be encrypted
+
+
+### Review Questions
 
 1.  What does one subnet equal?
 2.  Can a subnet go across availability zones?
@@ -277,8 +302,11 @@ showing you how to stop the instance so no charges accrue.
 5.  What is a security group?
 6.  What's a good analogy for understanding public/private keys?
 7.  Can the same public/private key pair be used on multiple EC2 instances?
+8.  Can encrypt the EBS Root volume (by default)?
+9.  How can you encrypt the EBS Root volume?
 
-## Answer
+
+### Answer
 
 1.  One availability zone
 2.  No
@@ -287,4 +315,6 @@ showing you how to stop the instance so no charges accrue.
 5.  Virtual Firewall
 6.  a `public key` is a padlock which your `private key` unlocks
 7.  Yes
+8.  No
+9.  Using third party tools
 
