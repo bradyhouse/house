@@ -6,7 +6,7 @@ EC2 Instance Lab
 
 Lab outlining how to create and launch an EC2 instance. The lab then show you how to connect to the 
 instance using ssh and configure it as a simple Apache web server. Finally, the lab ends by
-showing you how to stop the instance so no charges accrue.
+showing you how to terminate the instance.
 
 
 ## Pre-Requisites
