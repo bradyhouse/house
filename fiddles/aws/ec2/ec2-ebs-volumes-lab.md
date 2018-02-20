@@ -64,3 +64,6 @@ What did we learn?
 10. Yes. Probably not. You should probably stop the EC2 instance first.
 11. Yes automatically.
 12. Encrypted snapshots.
+
+
+[Previous Lab/Lecture](ec2-security-groups-lab.md) | [AWS (Root)](../readme.adoc) 

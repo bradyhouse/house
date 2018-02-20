@@ -91,4 +91,4 @@ What did we learn?
 4.  Network Control Lists
 
 
-[Previous Lab/Lecture](ec2-instance-lab.md) [Table of Contents](../readme.adoc) [Next Lab/Lecture](ec2-ebs-volumes-lab.md)
+[Previous Lab/Lecture](ec2-instance-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-ebs-volumes-lab.md)
