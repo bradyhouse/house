@@ -68,6 +68,11 @@ How to configure lifecycle rules on an S3 bucket.
 9.  Transition to IA,  Transition to Glacier, Permanently delete
 10. 30 days to IA, and 30 days to Glacier after IA (if relevant)
 
+
+## 
+
+**[Previous Lab/Lecture](s3-versioning.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](s3-encryption.md)**
+
   
   
      

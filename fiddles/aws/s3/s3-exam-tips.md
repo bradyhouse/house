@@ -154,7 +154,9 @@ See [Snowball Exam Tips](../snowball/snowball-exam-tips.md)
 * [Storage Classes](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html) 
 
   
+## 
 
+**[Previous Lab/Lecture](s3-static-website.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../ec2/ec2-101-pt1.md)**
   
   
   

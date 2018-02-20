@@ -54,6 +54,11 @@ Complete the [S3](s3.md) lab.  Specifically, this lab assumes you already have c
 5.  Enabling MFA Delete
 6.  Stores all versioning of an object (including all writes and even if you delete the object)
 
+
+## 
+
+**[Previous Lab/Lecture](s3.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](s3-lifecycle.md)**
+
   
   
      

@@ -189,3 +189,8 @@ How to configure an S3 bucket as a static website host.
 3.  Public read access on all files
 4.  Yes, they scale infinitely
 
+
+## 
+
+**[Previous Lab/Lecture](s3-encryption.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](s3-static-website.md)**
+
