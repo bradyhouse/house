@@ -77,5 +77,9 @@ Identity Access Management (IAM) 101
   31. No access to any AWS services
   
 
+## 
+
+**[Previous Lab/Lecture](../dont-freakout.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](billing-alarm.md)**
+
   
   
