@@ -323,4 +323,6 @@ What did we learn?
 9.  Using third party tools
 
 
+======
+
 **[Previous Lab/Lecture](ec2-101-pt2.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-security-groups-lab.md)**
