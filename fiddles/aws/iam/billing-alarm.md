@@ -24,3 +24,7 @@ therefore this one is a necessary precaution--**Just do it!**
 13. After a minute or two, the "CloudWatch > Billing" dashboard should show your new "BillingAlarm"
 
 
+## 
+
+**[Previous Lab/Lecture](iam.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../s3/s3.md)**
+
