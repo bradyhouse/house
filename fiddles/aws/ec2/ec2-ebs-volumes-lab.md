@@ -66,4 +66,4 @@ What did we learn?
 12. Encrypted snapshots.
 
 
-[Previous Lab/Lecture](ec2-security-groups-lab.md) | [AWS (Root)](../readme.adoc) 
+**[Previous Lab/Lecture](ec2-security-groups-lab.md) | [AWS (Root)](../readme.adoc)**
