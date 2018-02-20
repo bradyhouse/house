@@ -597,7 +597,7 @@ Game Development
 
 ## 
 
-**[AWS (Root)](readme.adoc) | [Next Lab/Lecture](overview.md)**
+**[AWS (Root)](readme.adoc) | [Next Lab/Lecture](dont-freakout.md)**
 
 
 	
