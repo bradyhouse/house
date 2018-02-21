@@ -64,7 +64,7 @@ What did we learn?
   * These snapshots can be shared with other AWS accounts or made public
  
 
-##$ Review Questions
+### Review Questions
 
 1.  Why should you stop an EC2 instance before making a snapshot?
 2.  Can an encrypted AMI's be made public? Why not?
