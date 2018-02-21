@@ -29,7 +29,7 @@
               value;
 
             for (; i < this.fields.length; i++) {
-              field = this.fields[i];
+              field =  this.fields[i];
 
               if (this.data.hasOwnProperty(field) && this.data[field]) {
                 value = isNaN(this.data[field]) ? this.data[field] : +(this.data[field]);

@@ -4,9 +4,8 @@
 EC2 EBS Volumes Lab
 ======
 
-This lab explores the EC2 `Volumes` page.  I watched the lab and simply made notes of the
-the exam related info discussed.  In other words, nothing mention happened. I am not
-going to `hyper-document` this one.
+This lab explores the EC2 `Volumes` page.  I watched the lab and simply made notes of the exam related info discussed.  
+In other words, nothing mention happened. I am not going to `hyper-document` this one.
 
 
 ## Exam Tips
@@ -69,4 +68,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](ec2-security-groups-lab.md) | [AWS (Root)](../readme.adoc)**
+**[Previous Lab/Lecture](ec2-security-groups-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-encrypted-root-lab.md)**

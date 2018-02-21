@@ -25,9 +25,6 @@ multiple security groups. It is your first line of defense against hackers.
 7.  In the web browser tab you opened to the public IP address (step 52 of the [EC2 Instance Lab](ec2-instance-lab.md)),
     click `Refresh`
 8.  Connection should timeout
-
-    ```Exam Tip: Security Group Rule changes are instantaneous```  
-
 9.  Return back to the AWS Console page, and restore the inbound HTTP rule to the `MyWebDMZ` security group
 10. Go to the `Outbound` tab and click the `Edit` button
 11. In the `Edit outbound rules` pop-up, delete the `All traffic` Rule and click `Save` button
