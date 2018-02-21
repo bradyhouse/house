@@ -31,10 +31,8 @@ multiple security groups. It is your first line of defense against hackers.
 12. In the web browser tab you opened to the public IP address (step 52 of the [EC2 Instance Lab](ec2-instance-lab.md)),
     click `Refresh`
 13. The page still works 
-
-    ```Exam Tip: As soon as you add an Inbound rule, Outbound rules are added automatically. This means 
-      security group rules are STATEFUL```
-
+  * __Exam Tip: As soon as you add an Inbound rule, Outbound rules are added automatically. This means 
+    security group rules are STATEFUL__
 14. Go to the `Outbound` tab and click the `Edit` button and restore the `All Traffic` rule
 
     ![Imgur](https://i.imgur.com/2AevHPF.png)
