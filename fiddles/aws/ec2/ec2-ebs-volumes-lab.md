@@ -8,6 +8,13 @@ This lab explores the EC2 `Volumes` page.  I watched the lab and simply made not
 In other words, nothing mention happened. I am not going to `hyper-document` this one.
 
 
+## Video Link
+
+[![Imgur](https://i.imgur.com/umrTiq1.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/ec2-volumes-snapshots/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.*
+
+
 ## Exam Tips
 
 What did we learn?

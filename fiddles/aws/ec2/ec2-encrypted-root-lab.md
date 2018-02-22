@@ -7,6 +7,13 @@ EC2 Encrypted Root Volume Lab
 This lab builds on the EC2 instance lab outlining how to encrypt the EBS root volume and then create a snapshot.
 
 
+## Video Link
+
+[![Imgur](https://i.imgur.com/dZtkgrO.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/create-ami/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.*
+
+
 ## Pre-Requisites
 
 Complete the [EC2 Instance Lab](ec2-instance-lab.md).
@@ -82,4 +89,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](ec2-ebs-volumes-lab.md) | [AWS (Root)](../readme.adoc)
+**[Previous Lab/Lecture](ec2-ebs-volumes-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-ami-types.md)**

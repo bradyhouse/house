@@ -8,6 +8,13 @@ This lab builds on the [EC2 Instance Lab](ec2-instance-lab.md) demonstrating how
 groups with a single EC2 instance.
 
 
+## Video Link
+
+[![Imgur](https://i.imgur.com/e3q7fNA.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/security-groups/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.*
+
+
 ## Intro: What is a Security Group
 
 A security group is a virtual firewall. It controls traffic to an EC2 instance. A single instance can have 

@@ -9,6 +9,13 @@ instance using ssh and configure it as a simple Apache web server. Finally, the 
 showing you how to terminate the instance.
 
 
+## Video Link
+
+[![Imgur](https://i.imgur.com/Wyx3hk5.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/launch-instance/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.*
+
+
 ## Pre-Requisites
 
 * Mac configured with iTerm
