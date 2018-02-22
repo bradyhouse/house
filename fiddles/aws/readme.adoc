@@ -46,5 +46,6 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:ec2/ec2-ami-types.md[EC2 AMI Types: EBS vs Instance Store]
 ||link:ec2/ec2-elastic-load-balancer-lab.md[EC2 Elastic Load Balancer Lab]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
+||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
 |=========================================================
 

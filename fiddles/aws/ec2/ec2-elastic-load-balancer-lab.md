@@ -174,7 +174,7 @@ What did we learn?
   * This done over HTTP or HTTPS by looking for a configured file
 * Elastic Load balancers have their own DNS name. Although AWS manages the IP, the console
   does not provide you with the physical address--ie Unknown IP.
-* Read the [ELB FAQ for Classic Load Balancers](https://aws.amazon.com/elasticloadbalancing/faqs/)
+* Read the [ELB FAQ for Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/faqs/)
 
 
 ##
