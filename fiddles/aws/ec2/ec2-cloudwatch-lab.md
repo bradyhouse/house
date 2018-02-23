@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/9awJmtb.png) + ![Imgur](https://i.imgur.com/CcwL2Ph.png)
+![Imgur](https://i.imgur.com/9awJmtb.png) 
 
 
 EC2 CloudWatch Lab
