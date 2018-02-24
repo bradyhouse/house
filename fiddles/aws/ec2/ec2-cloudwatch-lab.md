@@ -1,10 +1,10 @@
-![Imgur](https://i.imgur.com/9awJmtb.png) 
+![Imgur](https://i.imgur.com/9awJmtb.png) <img src="https://i.imgur.com/CcwL2Ph.png" width="50%" title="source: imgur.com" />
 
 
 EC2 CloudWatch Lab
 ======
 
-    TBW
+Lab exploring how to use CloudWatch to 
 
 
 ## Video Link
