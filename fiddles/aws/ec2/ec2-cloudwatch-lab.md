@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/9awJmtb.png) <img src="https://i.imgur.com/CcwL2Ph.png" width="50" title="source: imgur.com" />
+![Imgur](https://i.imgur.com/9awJmtb.png) <img src="https://i.imgur.com/CcwL2Ph.png" width="70" title="source: imgur.com" />
 
 
 EC2 CloudWatch Lab
