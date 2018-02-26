@@ -18,7 +18,6 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 2+>| **IAM**
 ||link:iam/iam.md[IAM 101]
 ||link:iam/billing-alarm.md[Creating a Billing Alarm]
-||link:iam/iam-roles-lab.md[IAM Roles Lab]
 2+>| **S3**
 ||link:s3/s3.md[S3 101]
 ||link:s3/s3-versioning.md[S3 Versioning]
@@ -48,6 +47,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:ec2/ec2-elastic-load-balancer-lab.md[EC2 Elastic Load Balancer Lab]
 ||link:ec2/ec2-cloudwatch-lab.md[EC2 Cloudwatch Lab]
 ||link:ec2/ec2-commandline-lab.md[AWS Commandline Lab]
+||link:ec2/ec2-iam-roles-lab.md[EC2 IAM Roles Lab]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 ||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
 |=========================================================

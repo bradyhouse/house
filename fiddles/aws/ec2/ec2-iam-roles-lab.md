@@ -1,7 +1,7 @@
-![Imgur](https://i.imgur.com/GRo5Rud.png)
+![Imgur](https://i.imgur.com/9awJmtb.png) <img src="https://i.imgur.com/GRo5Rud.png" height="100" title="source: imgur.com" />
 
 
-IAM Roles Lab
+EC2 IAM Roles Lab
 ======
 
     TBW
@@ -38,4 +38,4 @@ What did we learn?
 
 ##
 
-**[Previous Lab/Lecture](../ec2/ec2-commandline-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](iam-roles-lab.md)** 
+**[Previous Lab/Lecture](ec2-commandline-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-iam-roles-lab.md)** 
