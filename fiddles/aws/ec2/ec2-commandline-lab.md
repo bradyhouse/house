@@ -16,6 +16,16 @@ this lab is actually an example of something you shouldn't do.**
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
+## Review Questions
+
+1.  Why shouldn't you store AWS Credential keys on an EC2 instance?
+2.  What's the alternative to storing credentials locally?
+
+
+## Answers
+
+1.  If the instance is hacked, then your AWS account is compromised
+2.  IAM roles
 
 ##
 

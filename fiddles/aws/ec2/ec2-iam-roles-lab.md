@@ -4,7 +4,7 @@
 EC2 IAM Roles Lab
 ======
 
-    TBW
+Lab outline how to create a R
 
 
 ## Video Link
