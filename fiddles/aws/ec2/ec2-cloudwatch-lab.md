@@ -37,11 +37,11 @@ Lab detailing how to configure a dashboard and alarm in CloudWatch to monitor CP
  9.   In the pop-up, enter the name `MyWebServer` and click the `Create Dashboard`
  10.  Select the `Text` widget and click the `Configure` button
  
-    ![Imgur](https://i.imgur.com/qABzEmO.png)
+  ![Imgur](https://i.imgur.com/qABzEmO.png)
     
  11.  In the `New Text widget` form, enter the the following:
  
-    ![Imgur](https://i.imgur.com/H1sSVpK.png)
+  ![Imgur](https://i.imgur.com/H1sSVpK.png)
  
  12.  Click the `Create widget` button
  13.  In the `Dashboards > MyWebServer` click the `Add widget` button
@@ -50,7 +50,7 @@ Lab detailing how to configure a dashboard and alarm in CloudWatch to monitor CP
  16.  Click the `Per-Instance Metrics` button
  17.  Select the `CPUUtilization` metric for `MyWebServer`
  
-    ![Imgur](https://i.imgur.com/7CQ04JV.png)
+  ![Imgur](https://i.imgur.com/7CQ04JV.png)
     
  18.  Click the `Create widget` button
  19.  In the `Dashboards > MyWebServer` click the `Add widget` button
@@ -67,7 +67,7 @@ Lab detailing how to configure a dashboard and alarm in CloudWatch to monitor CP
  30.  Select the `CPUUtilization` metric for `MyWebServer`
  31.  Click the `Create widget` button
  
-    ![Imgur](https://i.imgur.com/7qbBSjg.png)
+  ![Imgur](https://i.imgur.com/7qbBSjg.png)
     
  
  ### Create an Alarm
@@ -77,7 +77,7 @@ Lab detailing how to configure a dashboard and alarm in CloudWatch to monitor CP
  34.  In the `Create Alarm` popup, under `EC2 Metrics` click the `Per-Instance Metrics` link
  35.  In the `EC2 > Per-Instance Metrics` list, select the `CPUUtilization` metric for `MyWebServer`  
    
-    ![Imgur](https://i.imgur.com/3Z92WzA.png)
+  ![Imgur](https://i.imgur.com/3Z92WzA.png)
  
  36.  Click the `next` button
  37.  Set the name to `CPUUtilization`
@@ -87,18 +87,18 @@ Lab detailing how to configure a dashboard and alarm in CloudWatch to monitor CP
  41.  Set the `topic` to `CPUUtilization`
  42.  In the `Email list` enter your email
  
-    ![Imgur](https://i.imgur.com/VYA5572.png)
+  ![Imgur](https://i.imgur.com/VYA5572.png)
  
  43.  Click the `Create Alarm` button
  
-    ![Imgur](https://i.imgur.com/l0RZDe5.png)
+  ![Imgur](https://i.imgur.com/l0RZDe5.png)
  
  44.  Log into your email
  45.  Open the `AWS Notification - Subscription Confirmation` message and click the `Confirm Subscription` link
  46.  Return to the AWS Console window
  47.  In the `Confirm new email addresses` pop-up click the `View alarm` button
  
-    ![Imgur](https://i.imgur.com/r4BBD25.png)
+  ![Imgur](https://i.imgur.com/r4BBD25.png)
     
  48.  The end 
  
