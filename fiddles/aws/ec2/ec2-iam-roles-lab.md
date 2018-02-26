@@ -7,8 +7,6 @@ EC2 IAM Roles Lab
 Lab outlining how to configure an EC2 instance with S3 service access using an IAM Role.
 
 
-
-
 ## Video Link
 
 [![Imgur](https://i.imgur.com/tErMrRY.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/iam-roles-ec2/watch)
@@ -110,4 +108,4 @@ What did we learn?
 
 ##
 
-**[Previous Lab/Lecture](ec2-commandline-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-iam-roles-lab.md)** 
+**[Previous Lab/Lecture](ec2-commandline-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-s3-regions-lab.md)** 
