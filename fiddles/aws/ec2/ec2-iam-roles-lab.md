@@ -80,9 +80,10 @@ Lab outlining how to configure an EC2 instance with S3 service access using an I
 
 19. The End
  
- ### Clean Up
+
+### Clean Up
   
- 19. Go into EC2 instances and stop `MyWebServer` 
+20. Go into EC2 instances and stop `MyWebServer` 
 
 
 ## Exam Tips
