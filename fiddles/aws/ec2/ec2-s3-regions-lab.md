@@ -4,12 +4,12 @@
 EC2 S3 CLI and Regions Lab
 ======
 
-Lab outlining how to configure an EC2 instance with S3 service access using an IAM Role.
+    TBW
 
 
 ## Video Link
 
-[![[Imgur](https://i.imgur.com/8M5pikA.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/ab0c35c2-107a-ef34-d433-4ec0f9acdbec/watch)
+[![Imgur](https://i.imgur.com/8M5pikA.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/ab0c35c2-107a-ef34-d433-4ec0f9acdbec/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
