@@ -124,13 +124,19 @@ What did we learn?
 ### Review Questions
 
 1.  What the difference between CloudWatch and CloudTrail?
+2.  What is the standard monitoring time interval?
+3.  What is the detailed monitoring time interval?
+4.  What are the four types of monitors offered by CloudWatch?
 
 
 ### Answers
 
 1.  CloudWatch is for monitoring. CloudTrail is for auditing.
+2.  5 minutes
+3.  1 minute
+4.  Dashobards, Alarms, Events and Logs
 
 
 ##
 
-**[Previous Lab/Lecture](ec2-elastic-load-balancer-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-cloudwatch-lab.md)** 
+**[Previous Lab/Lecture](ec2-elastic-load-balancer-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-commandline-lab.md)** 
