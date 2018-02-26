@@ -77,6 +77,8 @@ Lab outlining how to configure an EC2 instance with S3 service access using an I
 
   ![Imgur](https://i.imgur.com/PTYKyZf.png)
   
+
+19. The End
  
  ### Clean Up
   
@@ -85,17 +87,25 @@ Lab outlining how to configure an EC2 instance with S3 service access using an I
 
 ## Exam Tips
 
+What did we learn?
+
+* IAM Roles are global
+* Using IAM roles, there is no need to download (and/or configure) actual AWS command line credentials
+
 
 ### Review Questions
 
 1.  Do you have to create a new role in a new region?
 2.  Is it possible to change roles on a running EC2 instance?
+3.  For an EC2 instance, how do you configure programmatic AWS access without explicit credentials?
 
 
 ### Answers
 
 1.  No, roles are global
-2.  It is, but this is a recent enhancement. As far as the exams are concerned, the answer is no.
+2.  It is, but this is a recent enhancement. As far as the exams are concerned, the answer is no
+3.  Define an IAM Role and assign it to the instance
+
 
 ##
 
