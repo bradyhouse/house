@@ -4,7 +4,8 @@
 EC2 Command Line Lab
 ======
 
-    TBW
+Short lab detailing how to access the AWS CLI within an EC2 instance to self-destruct
+that instance. For this one, I just watched the video and completed the steps.
 
 
 ## Video Link
@@ -14,29 +15,6 @@ EC2 Command Line Lab
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-## Prerequisites
-
-*   Mac configured with iTerm
-*   AWS Console free-tier account
-
-
-## Steps
-
-    TBW
-   
-## Exam Tips
-
-What did we learn?
-
-    TBW
-
-### Review Questions
-
-    TBW
-
-### Answers
-
-    TBW
 
 ##
 
