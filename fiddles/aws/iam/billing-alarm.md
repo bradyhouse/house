@@ -1,3 +1,6 @@
+![Imgur](https://i.imgur.com/GRo5Rud.png)
+
+
 Lab 102 - Creating a Billing Alarm
 ======
 
