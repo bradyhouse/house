@@ -1,4 +1,4 @@
-[Imgur](https://i.imgur.com/GRo5Rud.png)
+![Imgur](https://i.imgur.com/GRo5Rud.png)
 
 
 Identity Access Management Roles Lab
