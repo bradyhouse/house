@@ -18,4 +18,4 @@ that instance. For this one, I just watched the video and completed the steps.
 
 ##
 
-**[Previous Lab/Lecture](ec2-cloudwatch-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-commandline-lab.md)** 
+**[Previous Lab/Lecture](ec2-cloudwatch-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../iam/iam-roles-lab.md)** 
