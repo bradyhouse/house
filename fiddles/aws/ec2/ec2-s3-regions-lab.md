@@ -4,7 +4,9 @@
 EC2 S3 CLI and Regions Lab
 ======
 
-Short lab detailing how the command line changes when interacting with S3 buckets residing in 3 different regions.
+Short lab detailing how the command line changes when interacting with S3 buckets residing in 3 different regions. 
+Specifically, this lab demonstrates why you should always include `--region` flag when using the `aws s3 cp ...`
+command.  Lab video is 8 minutes, documenting all these steps took like 2 hours--_doh!_.
 
 
 ## Video Link
@@ -56,7 +58,7 @@ Short lab detailing how the command line changes when interacting with S3 bucket
   ![Imgur](https://i.imgur.com/QuZtmiX.png)
 
 
-### Create 3 S3 Buckets 
+### Create S3 Buckets 
 
 21. Under `Services > Storage` click `S3`
 22. Click the `Create bucket` button
@@ -180,6 +182,10 @@ Short lab detailing how the command line changes when interacting with S3 bucket
 75. Click `Actions > Instance State > Terminate`
 76. In the `Terminate Instances` pop-up click the `Yes, Terminate` button
 
+
+## Exam Tips
+
+    N/A
     
 ## Review Questions
 
