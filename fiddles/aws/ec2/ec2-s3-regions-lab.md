@@ -168,7 +168,7 @@ command.  Lab video is 8 minutes, documenting all these steps took like 2 hours-
   ```aws s3 cp --recursive s3://<login>-apsoutheast2 /home/ec2-user```  
    
     
-### CleanUp
+### Clean Up
 
 66. Quit out of iTerm and return to the AWS Console
 67. Under `Services > Security, Identity & Compliance` click `IAM`
