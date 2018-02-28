@@ -4,7 +4,8 @@
 EC2 Bash Scripting Lab
 ======
 
-    TBW
+15 minute lab demonstrating how to create an EC2 instance and automatically provision it using a series of bash commands. 
+Since there are no explicit `Exam Tips`, I just watched the video and followed the steps.
 
 
 ## Video Link
@@ -14,26 +15,28 @@ EC2 Bash Scripting Lab
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-## Steps
-
-    TBW
-
-
 ## Exam Tips
 
-What did we learn?
-
-    TBW
-
+    N/A
 
 ### Review Questions
 
-    TBW
+1.  On a t2.micro loaded with the Amazon linux AMI, what is the command to install all security updates?
+2.  What is the command to install apache?
+3.  What is the command to start apache?
+4.  What is the command to insure that apache is automatically started?
+5.  What is the root path of the apache web server--i.e. where do static html files live?
+6.  When creating an EC2 instance, where are staging bash script commands entered?
 
 
 ### Answers
 
-    TBW
+1.  `yum update -y`
+2.  `yum install httpd -y`
+3.  `service httpd start`
+4.  `chkconfig httpd on`
+5.  /var/www/html
+6.  Configure Instance Details > User data
 
 ##
 
