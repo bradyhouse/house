@@ -28,6 +28,7 @@ Since there are no explicit `Exam Tips`, I just watched the video and followed t
 4.  What is the command to insure that apache is automatically started?
 5.  What is the root path of the apache web server--i.e. where do static html files live?
 6.  When creating an EC2 instance, where are staging bash script commands entered?
+7.  When creating an EC2 instance, how is S3 access granted to the instance?
 
 
 ### Answers
@@ -37,7 +38,8 @@ Since there are no explicit `Exam Tips`, I just watched the video and followed t
 3.  `service httpd start`
 4.  `chkconfig httpd on`
 5.  /var/www/html
-6.  Configure Instance Details > User data
+6.  Configure Instance Details > Advanced Details > User data
+7.  Configure Instance Details > IAM Role
 
 ##
 
