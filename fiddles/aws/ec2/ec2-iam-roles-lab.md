@@ -81,7 +81,15 @@ Lab outlining how to configure an EC2 instance with S3 service access using an I
 
 ### Clean Up
   
-20. Go into EC2 instances and stop `MyWebServer` 
+21. Under `Services > Security, Identity & Compliance` click `IAM`
+22. In the IAM sidebar click `Roles`
+23. Select the `S3-Admin-Access` role
+24. Click the `Delete role` button
+25. In the `Delete role` confirmation pop-up, click the `Yes, delete` button
+26. Under `Services > Compute` click `EC2`
+27. In the EC2 sidebar click `INSTANCES > Instances`
+28. Select the `MyWebServer` instance
+29. Click `Actions > Instance State > Stop`
 
 
 ## Exam Tips
