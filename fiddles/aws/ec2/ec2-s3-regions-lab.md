@@ -86,7 +86,7 @@ command.  Lab video is 8 minutes, documenting all these steps took like 2 hours-
     <img src="https://images-na.ssl-images-amazon.com/images/I/91dvLZoDtfL._RI_SX300_.jpg" height="100" />
 
 
-### Create a new IAM Role
+### Create an S3 Admin IAM Role
 
 37. Under `Services > Security, Identity & Compliance` click `IAM`
 38. In the `IAM` sidebar click `Roles`
