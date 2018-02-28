@@ -5,6 +5,7 @@ EC2 Bash Scripting Lab
 ======
 
 15 minute lab demonstrating how to create an EC2 instance and automatically provision it using a series of bash commands. 
+As part of these provisioning steps, a static website is created by copying an html file directly from an S3 bucket.
 Since there are no explicit `Exam Tips`, I just watched the video and followed the steps.
 
 
