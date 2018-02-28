@@ -181,6 +181,8 @@ command.  Lab video is 8 minutes, documenting all these steps took like 2 hours-
 74. Select the `IAMEC2-Instance` instance
 75. Click `Actions > Instance State > Terminate`
 76. In the `Terminate Instances` pop-up click the `Yes, Terminate` button
+77. Under `Services > Storage` click `S3`
+78. Delete the 3 buckets created as part of this lab
 
 
 ## Exam Tips
