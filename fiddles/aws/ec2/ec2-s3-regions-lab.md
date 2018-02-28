@@ -203,7 +203,7 @@ command.  Lab video is 8 minutes, documenting all these steps took like 2 hours-
     
 ##
 
-**[Previous Lab/Lecture](ec2-iam-roles-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-s3-regions-lab.md)** 
+**[Previous Lab/Lecture](ec2-iam-roles-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-bash-scripting-lab.md)** 
 
 
 

@@ -49,6 +49,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:ec2/ec2-commandline-lab.md[AWS Commandline Lab]
 ||link:ec2/ec2-iam-roles-lab.md[EC2 IAM Roles Lab]
 ||link:ec2/ec2-s3-regions-lab.md[EC2 S3 CLI and Regions Lab]
+||link:ec2/ec2-bash-scripting-lab.md[EC2 Bash Scripting Lab]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 ||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
 |=========================================================
