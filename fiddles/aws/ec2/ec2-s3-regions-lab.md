@@ -18,9 +18,9 @@ command.  Lab video is 8 minutes, documenting all these steps took like 2 hours-
 
 ## Prerequisites
 
-*   Mac configured with iTerm
+*   Mac configured with [iTerm](https://iterm2.com/)
 *   AWS Console free-tier account
-*   *Complete the [EC2 Instance Lab](ec2-instance-lab.md)*
+*   *Completed the last lab, [EC2 IAM Roles Lab](ec2-iam-roles-lab.md)*
 
 
 ## Steps
