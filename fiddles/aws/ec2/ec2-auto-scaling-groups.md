@@ -1,7 +1,7 @@
 ![Imgur](https://i.imgur.com/9awJmtb.png) 
 
 
-EC2 Launch Configurations & Auto Scaling Groups
+EC2 Auto Scaling Groups Lab
 ======
 
     TBW
