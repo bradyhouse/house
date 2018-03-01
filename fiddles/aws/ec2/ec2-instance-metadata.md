@@ -39,4 +39,4 @@ What did we learn?
 
 ##
 
-**[Previous Lab/Lecture](ec2-bash-scripting-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-instance-metadata.md)** 
+**[Previous Lab/Lecture](ec2-bash-scripting-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-auto-scaling-groups.md)** 
