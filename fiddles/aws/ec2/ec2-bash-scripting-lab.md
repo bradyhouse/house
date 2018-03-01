@@ -44,4 +44,4 @@ Since there are no explicit `Exam Tips`, I just watched the video and followed t
 
 ##
 
-**[Previous Lab/Lecture](ec2-s3-regions-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-bash-scripting-lab.md)** 
+**[Previous Lab/Lecture](ec2-s3-regions-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-instance-metadata.md)** 
