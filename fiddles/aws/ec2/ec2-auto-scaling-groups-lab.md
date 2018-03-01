@@ -133,7 +133,6 @@ EC2 Auto Scaling Groups Lab
 
   ![Imgur](https://i.imgur.com/jWOU1R3.png)
 
-
 ### EC2 Instances Test
 
     TBW
