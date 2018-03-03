@@ -176,9 +176,14 @@ What did we learn? _N/A_ The lecture did not include any `Exam Tip` bullets. How
 
 * One EC2 instance just won't do because Availability Zones can go down
 * To create an auto scaling group, you begin with a launch configuration
-  * A Launch configuration is your template EC2 instance for the group
-* A subnet is an availability zone
-* When configuring an autoscaling group, always select all available subnets
+  * A `Launch Configuration` is an EC2 configuration template for an `Auto Scaling Group` 
+* An `Auto Scaling Group` is a group of running EC2 instances that can be scaled based on configuration
+  rules
+* Elastic Load Balancing can be used to distribute web traffic across an `Auto Scaling Group` via a public
+  DNS
+* A `subnet` is an availability zone within a region
+* When configuring an `Auto Scaling Group`, always select all available subnets
+  * This further insures that you are not dependent on the stability of any one availability zone
 * An S3 bucket and several bash commands is all you need to automate the instance provisioning process
 * An auto scaling group cannot be deleted by simply terminating the instances
   * Terminating the instances simulate a zone failure and triggers the creation of new instances
