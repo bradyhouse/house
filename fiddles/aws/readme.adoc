@@ -5,7 +5,9 @@ Technology's Information and Technology Management program.  The achievement too
 my life and cost over 80K.  In hindsight, I wish I would have just spent that time (and money) studying and
 mastering AWS.  Anyway, life goes on and here we are--making-up for lost time. This directory is
 dedicated to my notes and `fiddles` involving AWS.  At the outset, this just means markdown files written
-while watching lectures and doing labs presented on link:http://acloud.guru[acloud.guru].
+while watching lectures/labs on link:http://acloud.guru[acloud.guru]. Aside from purchasing the
+AWS Certified Solutions Architect - Associate course on cloud guru, all of my studies have been
+done using an [AWS free tier account](https://aws.amazon.com/free/).
 
 
 == Lecture / Lab Notes
