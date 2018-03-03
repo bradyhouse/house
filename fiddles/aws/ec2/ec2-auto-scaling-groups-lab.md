@@ -171,8 +171,8 @@ EC2 Auto Scaling Groups Lab
 
 ## Exam Tips
 
-What did we learn? _N/A_ The lecture did include any `Exam Tip` bullets. However, here are
-my bullet points:
+What did we learn? _N/A_ The lecture did not include any `Exam Tip` bullets. However, here is
+`what I learned`:
 
 * One EC2 instance just won't do because Availability Zones can go down
 * To create an auto scaling group, you begin with a launch configuration
