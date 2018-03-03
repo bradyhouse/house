@@ -52,6 +52,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:ec2/ec2-bash-scripting-lab.md[EC2 Bash Scripting Lab]
 ||link:ec2/ec2-instance-metadata.md[EC2 Instance Metadata]
 ||link:ec2/ec2-auto-scaling-groups-lab.md[EC2 Auto Scaling Groups Lab]
+||link:ec2/ec2-placement-groups.md[EC2 Placement Groups]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 ||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
 |=========================================================

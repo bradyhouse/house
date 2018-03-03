@@ -145,7 +145,7 @@ EC2 Auto Scaling Groups Lab
 
 53. Open a new tab in your web browser and paste in the address + `/healthcheck.html`
 
-  ![Imgur](https://i.imgur.com/wcBTGGX.png)
+  ![Imgur](https://i.imgur.com/sx8rn3b.png)
   
 
 ### Simulate Zone Failure
@@ -210,6 +210,7 @@ What did we learn? _N/A_ The lecture did not include any `Exam Tip` bullets. How
 4.  `Services > Compute > EC2 > LOAD BALANCING > Load Balancers`
 5.  It simulates an availability zone failure resulting in the creation of more instances
 
+
 ##
 
-**[Previous Lab/Lecture](ec2-instance-metadata.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-auto-scaling-groups-lab.md)** 
+**[Previous Lab/Lecture](ec2-instance-metadata.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-placement-groups.md)** 
