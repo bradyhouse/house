@@ -63,4 +63,4 @@ recommended for applications that benefit from low network latency, high network
 
 ##
 
-**[Previous Lab/Lecture](ec2-auto-scaling-groups-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-placement-groups.md)** 
+**[Previous Lab/Lecture](ec2-auto-scaling-groups-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-efs-lab.md)** 

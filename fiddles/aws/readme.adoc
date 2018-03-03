@@ -2,13 +2,13 @@
 
 I finally finished my bachelor's degree in 2015.  At 40 I graduated Cum Laude from the Illinois Institute of
 Technology's Information and Technology Management program.  The achievement took nearly eight years of
-my life and cost over 80K.  In hind sight, I wish I would have just spent that time (and money) studying and
-mastering AWS.  Anyway, life goes on and here we are--time to make-up for lost time. This directory is
+my life and cost over 80K.  In hindsight, I wish I would have just spent that time (and money) studying and
+mastering AWS.  Anyway, life goes on and here we are--making-up for lost time. This directory is
 dedicated to my notes and `fiddles` involving AWS.  At the outset, this just means markdown files written
-while watching lectures on link:http://acloud.guru[acloud.guru].
+while watching lectures and doing labs presented on link:http://acloud.guru[acloud.guru].
 
 
-== Lecture Notes
+== Lecture / Lab Notes
 
 [cols=">s,m", width="100%"]
 |=========================================================
@@ -53,6 +53,7 @@ while watching lectures on link:http://acloud.guru[acloud.guru].
 ||link:ec2/ec2-instance-metadata.md[EC2 Instance Metadata]
 ||link:ec2/ec2-auto-scaling-groups-lab.md[EC2 Auto Scaling Groups Lab]
 ||link:ec2/ec2-placement-groups.md[EC2 Placement Groups]
+||link:ec2/ec2-efs-lab.md[EC2 EFS Lab]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 ||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
 |=========================================================
