@@ -133,27 +133,77 @@ EC2 Auto Scaling Groups Lab
 
   ![Imgur](https://i.imgur.com/jWOU1R3.png)
 
-### EC2 Instances Test
 
-    TBW
+### Get the Public DNS Name
+
+49. Under `Services > Compute` click `EC2`
+50. In the `EC2` sidebar, under `LOAD BALANCING` click `Load Balancers`
+51. Select the `MyClassicELB` load balancer
+52. In the description tab, copy the `DNS Name` address
+
+  ![Imgur](https://i.imgur.com/PU00kfF.png)
+
+53. Open a new tab in your web browser and paste in the address + `/healthcheck.html`
+
+  ![Imgur](https://i.imgur.com/wcBTGGX.png)
+  
+
+### Simulate Zone Failure
+
+54. Under `Services > Compute` click `EC2` 
+53. In the `EC2` sidebar, under `INSTANCES` click `Instances`
+54. Select 2 of the instances
+55. Click `Actions > Instances State > Terminate`
+56. In the `Terminate Instances` pop-up click the `Yes, Terminate` button
+57. Go back to the `healthcheck` page (tab), and reload the page -- no disruption in service
+58. Go back to the `EC2` instances dashboard and watch what happens after 10 minutes
+
+
+### Clean Up
+
+59. Under `Services > Compute` click `EC2` 
+60. In the `EC2` sidebar, under `AUTO SCALING` click `Auto Scaling Groups`
+61. Select the `MyAutoScalingGroup` group
+62. Click `Actions > Delete`
+63. In the `Delete Auto Scaling group` pop-up, click the `Yes, Delete` button
+64. The End 
 
 
 ## Exam Tips
 
-What did we learn?
+What did we learn? _N/A_ The lecture did include any `Exam Tip` bullets. However, here are
+my bullet points:
 
-    TBW
+* One EC2 instance just won't do because Availability Zones can go down
+* To create an auto scaling group, you begin with a launch configuration
+  * A Launch configuration is your template EC2 instance for the group
+* A subnet is an availability zone
+* When configuring an autoscaling group, always select all available subnets
+* An S3 bucket and several bash commands is all you need to automate the instance provisioning process
+* An auto scaling group cannot be deleted by simply terminating the instances
+  * Terminating the instances simulate a zone failure and triggers the creation of new instances
 
 
 ### Review Questions
 
-    TBW
+1.  Why shouldn't you use a single EC2 instance to host a website?
+2.  What is a launch configuration?
+3.  What is necessary to configure an AutoScaling group with elastic load balancing 
+    that is provisioned via S3 bucket to host a static website?
+4.  After configuring and auto scaling group with elastic load balancing, how do you obtain
+    the public DNS address?
+5.  Why can't you delete an auto scaling group by simply terminating all of the instances?
 
 
 ### Answers
 
-    TBW
-    
+1.  Because availability zones can go down
+2.  An Auto Scaling group's EC2 configuration template
+3.  (1) an S3 bucket containing the index.html; (2) S3 IAM Access Role;
+    (3) Elastic Load balancing group, (4) bash provisioning routine; (5) Security Group defining inbound
+    traffic rules
+4.  `Services > Compute > EC2 > LOAD BALANCING > Load Balancers`
+5.  It simulates an availability zone failure resulting in the creation of more instances
 
 ##
 
