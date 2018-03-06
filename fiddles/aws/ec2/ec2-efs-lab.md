@@ -374,4 +374,4 @@ What did we learn?
 
 ##
 
-**[Previous Lab/Lecture](ec2-placement-groups.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-efs-lab.md)** 
+**[Previous Lab/Lecture](ec2-placement-groups.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-lambda.md)** 
