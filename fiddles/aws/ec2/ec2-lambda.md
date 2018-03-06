@@ -8,14 +8,14 @@ EC2 Lambda
 
 ## Video Link
 
-[![Imgur](https://i.imgur.com/DO4JBkm.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/lambda/watch)
+[![EC2 Lambda Lecture](https://i.imgur.com/DO4JBkm.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/ec2/lambda/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
 ## Cloud History (in 2 minutes)
 
-![History of Cloud](https://i.imgur.com/hQHw2U8.png)
+![2 minute history of cloud](https://i.imgur.com/ljKuvQk.png)
 
 
 * Developers hate hardware
