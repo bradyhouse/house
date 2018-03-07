@@ -4,7 +4,8 @@
 EC2 Lambda
 ======
 
-    TBW
+Introductory / Overview lecture on the Amazon Lambda service.
+
 
 ## Video Link
 
@@ -51,6 +52,7 @@ operating systems, patching, scaling, etc. You can use Lambda in the following w
 
 * _As a compute service to run your code in response to HTTP requests using Amazon API Gateway or API calls made using
   AWS SDKs._
+
   
 ### What does this mean?
 
@@ -61,26 +63,68 @@ operating systems, patching, scaling, etc. You can use Lambda in the following w
 * Operating Systems
 * Application Layer / AWS APIs
 
-      TBW
 
+### What Languages are supported?
+
+* Node.js
+* Java
+* Python
+* C#
+
+
+### How is Lambda Priced?
+
+* First 1 million requests are free. $0.20 per 1 million requests thereafter
+* Duration
+  * Duration is calculated from the time your code begins executing until it returns or otherwise terminates, rounded
+    up to the nearest 100ms. The price depends on the amount of memory you allocate to your function. You ar charged
+    $0.00001667 for every GB-second used
+    
+
+### Why Is Lambda Cool?
+
+* No servers
+* Continous scaling
+* Super cheap
+    
 
 ## Exam Tips
 
 What did we learn? 
 
-    TBW
+* Lambda scales out (not up) automatically
+* Lambda functions are independent, 1 event = 1 function
+* Lambda is serverless
+* Know what services are serverless
+  * S3, API Gateway, Lambda, DynamoDB ... etc.
+  * EC2 is not serverless
+* Lambda can trigger other lambda functions, 1 event can = x functions if functions trigger other functions
+* Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening
+* Lambda can do things globally, you can use it to back up S3 buckets to other S3 buckets etc
+* Know your triggers
+* Lambda supports a maximum duration of 5 minutes
 
 
 ### Review Questions
 
-    TBW
+1.  What is scaling up?
+2.  What is scaling out?
+3.  How can Lambda functions be used to service HTTP requests?
+4.  If a million users hit an API Gatway configured to call Lambda how many functions are invoked?
+5.  What languages are supported?  
+6.  What is the maximum duration threshold of a Lambda function call?
 
 
 ### Answers
 
-    TBW
+1.  Increasing instance resources
+2.  More instances
+3.  Via API Gateway
+4.  million
+5.  Node.js, Java, Python, C#
+6.  5 mins
 
-
+  
 ##
 
 **[Previous Lab/Lecture](ec2-efs-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-lambda.md)** 

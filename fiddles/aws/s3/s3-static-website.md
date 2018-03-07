@@ -192,5 +192,5 @@ How to configure an S3 bucket as a static website host.
 
 ## 
 
-**[Previous Lab/Lecture](s3-encryption.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](s3-static-website.md)**
+**[Previous Lab/Lecture](s3-encryption.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](s3-exam-tips.md)**
 
