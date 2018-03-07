@@ -57,7 +57,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:ec2/ec2-placement-groups.md[EC2 Placement Groups]
 ||link:ec2/ec2-efs-lab.md[EC2 EFS Lab]
 ||link:ec2/ec2-lambda.md[EC2 Lambda]
-||link:ec2/ec2-serverless-webpage.md[EC2 Serverless Webpage Lab]
+||link:ec2/ec2-serverless-webpage-lab.md[EC2 Serverless Webpage Lab]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 ||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
 |=========================================================
