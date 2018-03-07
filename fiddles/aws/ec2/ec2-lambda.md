@@ -102,6 +102,16 @@ What did we learn?
 * Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening
 * Lambda can do things globally, you can use it to back up S3 buckets to other S3 buckets etc
 * Know your triggers
+  * API Gateway
+  * Alexa Skill Kit
+  * CloudFront
+  * CloudWatch Events
+  * CloudWatch Logs 
+  * DynamoDB
+  * S3
+  * SNS
+  * Kinesis 
+* Know what languages are supported
 * Lambda supports a maximum duration of 5 minutes
 
 
@@ -113,6 +123,9 @@ What did we learn?
 4.  If a million users hit an API Gatway configured to call Lambda how many functions are invoked?
 5.  What languages are supported?  
 6.  What is the maximum duration threshold of a Lambda function call?
+7.  What triggers are supported by Lambda?
+8.  What are some examples of serverless AWS services?
+9.  What are some of examples of `server based` AWS services?
 
 
 ### Answers
@@ -123,8 +136,11 @@ What did we learn?
 4.  million
 5.  Node.js, Java, Python, C#
 6.  5 mins
+7.  API Gateway, IoT, Alexa Skill Kit, CloudFront, CloudWatch Events, CloudWatch Logs, DynamoDB, S3, SNS, Kinesis 
+8.  API Gateway, CloudFront, CloudWatch
+9.  EC2, Auto Scaling, EFS
 
   
 ##
 
-**[Previous Lab/Lecture](ec2-efs-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-lambda.md)** 
+**[Previous Lab/Lecture](ec2-efs-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-serverless-webpage-lab.md)** 
