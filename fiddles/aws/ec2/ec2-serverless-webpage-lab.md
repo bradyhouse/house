@@ -1,10 +1,10 @@
-![AWS Elastic Compute Cloud](https://i.imgur.com/9awJmtb.png) <img src="https://i.imgur.com/Zjwx7ca.png" height="100" title="AWS Lambda" />
+![AWS Elastic Compute Cloud](https://i.imgur.com/9awJmtb.png) <img src="https://i.imgur.com/7MCFLgi.png" height="100" title="API Gateway" /> <img src="https://i.imgur.com/Zjwx7ca.png" height="100" title="AWS Lambda" />
 
 
 EC2 Serverless Webpage Lab
 ======
 
-    TBW
+18 minute lab detailing how to host a web page using API Gateway and Lambda.
 
 
 ## Video Link
