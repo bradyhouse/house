@@ -130,6 +130,10 @@ Here is what you should know for the exam.
     cartridges that are then asynchronously written to S3. Supported by NetBackup, Backup Exec Veeam etc.
     
 
+## 
+
+**[Previous Lab/Lecture](../s3/s3-encryption.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](storage-gateway-exam-tips.md)**
+
     
 
 

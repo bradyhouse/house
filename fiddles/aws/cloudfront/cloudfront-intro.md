@@ -4,6 +4,15 @@
 CloudFront
 ======
 
+Introductory overview of the CloudFront service and the concept of a CDN.
+
+
+## Video Link
+
+[![Imgur](https://i.imgur.com/ilIqZeq.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/storage/cloudfront-overview/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.*
+
 
 ### Review Questions
 
@@ -52,4 +61,7 @@ CloudFront
 18. Yes, objects can be cleared, but you will be charged
 
 
+##
+
+**[Previous Lab/Lecture](../s3/s3-lifecycle.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](cloudfront-create-a-cdn.md)** 
     

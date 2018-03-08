@@ -4,6 +4,8 @@
 Snowball Exam Tips
 ======
 
+What did we learn?
+
 * 3 Different types:
   
   * `Snowball` - pure storage. Comes in different sizes starting at 50 TB in the US; 80 TB outside the US
@@ -19,4 +21,7 @@ Snowball Exam Tips
   * Export from S3
   
       
-      
+## 
+
+**[Previous Lab/Lecture](snowball-101.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../s3/s3-static-website.md)**
+  

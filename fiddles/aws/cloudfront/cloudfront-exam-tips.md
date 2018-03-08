@@ -4,6 +4,8 @@
 CloudFront Exam Tips
 ======
 
+What did we learn?
+
 * `Edge Location` - This is a location where content will be cached. This is separate to
   an AWS Region / Availability Zone
 * `Origin` - This is the origin of all the files that the CDN will distribute. This can be either an S3 Bucket,
@@ -18,6 +20,10 @@ CloudFront Exam Tips
   * By default objects are cached for 24 hours
 * You can clear cached objects but you will be charged
 
+
+##
+
+**[Previous Lab/Lecture](cloudfront-create-a-cdn.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../s3/s3-encryption.md)** 
 
 
 

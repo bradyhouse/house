@@ -49,7 +49,7 @@ S3 Encryption
 
 ## 
 
-**[Previous Lab/Lecture](s3-lifecycle.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](s3-static-website.md)**
+**[Previous Lab/Lecture](s3-lifecycle.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../storage-gateway/storage-gateway.md)**
 
  
 

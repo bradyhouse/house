@@ -126,6 +126,7 @@ What did we learn?
 1.  Rule of least permissions
 2.  Violates the rule of least permissions for HTTP request--ie `ANY` are allowed
 
+
 ##
 
 **[Previous Lab/Lecture](ec2-lambda.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-serverless-webpage-lab.md)** 

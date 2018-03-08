@@ -71,7 +71,7 @@ How to configure lifecycle rules on an S3 bucket.
 
 ## 
 
-**[Previous Lab/Lecture](s3-versioning.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](s3-encryption.md)**
+**[Previous Lab/Lecture](s3-versioning.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../cloudfront/cloudfront-intro.md)**
 
   
   

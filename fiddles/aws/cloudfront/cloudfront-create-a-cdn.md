@@ -7,6 +7,13 @@ CloudFront - Create a Distribution
 Lab outlining how to use AWS to create a CloudFront "distribution" (aka CDN) from an S3 bucket.
 
 
+## Video Link
+
+[![Imgur](https://i.imgur.com/ZB4PgKp.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/storage/cloudfront-create-cdn/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.*
+
+
 ### Steps
 
 1.  Login to the AWS console
@@ -102,3 +109,8 @@ Lab outlining how to use AWS to create a CloudFront "distribution" (aka CDN) fro
 15. White List or Black List
 16. Create an Invalidation
 17. Versioning
+
+
+##
+
+**[Previous Lab/Lecture](cloudfront-intro.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](cloudfront-exam-tips.md)** 

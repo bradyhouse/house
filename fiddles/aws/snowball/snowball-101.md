@@ -81,4 +81,7 @@ Here is what you should know for the exam.
 3.  Import data to S3, Export from S3
 
 
+## 
+
+**[Previous Lab/Lecture](../storage-gateway/storage-gateway-exam-tips.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](snowball-exam-tips.md)**
 
