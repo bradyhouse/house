@@ -103,8 +103,10 @@ EC2 Serverless Webpage Lab
 ![Imgur](https://i.imgur.com/0mWM67F.png)
 
 
-    TBW 
+### S3: Create Bucket
 
+    TBW
+    
 
 ## Exam Tips
 

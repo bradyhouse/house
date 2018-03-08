@@ -10,6 +10,13 @@ it is a practical concern.  AWS charges can accrue when you least expect them to
 therefore this one is a necessary precaution--**Just do it!**
 
 
+## Video Link
+
+[![Imgur](https://i.imgur.com/4Meb3zL.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/iam/e2984b70-613a-6801-3d80-6b4d4d86cd73/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.* 
+
+
 ### Steps
 
 1.  login into the AWS Console
