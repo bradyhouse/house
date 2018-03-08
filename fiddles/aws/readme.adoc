@@ -27,7 +27,6 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:s3/s3-encryption.md[Encryption]
 ||link:s3/s3-static-website.md[Static Website Hosting]
 ||link:s3/s3-exam-tips.md[Exam Tips]
-||link:https://aws.amazon.com/s3/faqs/[S3 FAQ]
 2+>| **CloudFront**
 ||link:cloudfront/cloudfront-intro.md[CloudFront 101]
 ||link:cloudfront/cloudfront-create-a-cdn.md[Create a Distribution]

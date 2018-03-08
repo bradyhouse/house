@@ -9,18 +9,24 @@ Global Infrastructure
 
 ### Region
 
-	geographical area consisting of 2 or more availability zones.
+	Geographical area consisting of 2 or more availability zones.
+
+  * [Regions and Availability Zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
+  * [Region and Availability Zone Concepts](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions-availability-zones)
 
 ### Availability Zone
 
-	one or more data centers, each with redundant power, networking and connectivity, housed 
+	One or more data centers, each with redundant power, networking and connectivity, housed 
 	in seperate facilities.
+	
+  * [AWS Regions and Availability Zones](https://aws.amazon.com/about-aws/global-infrastructure/)
 
 ### Edge Location
 
-	endpoints for AWS which are used for caching content. Typically this consists of CloudFront, 
+	Endpoints for AWS which are used for caching content. Typically this consists of CloudFront, 
 	Amazon's Content Delivery Network (CDN). There are many more edge Locations than Regions. 
 	Currently there are over 96 edge locations vs 16 regions consisting of 44 availability zones.
+
 
 Compute
 ===
@@ -35,18 +41,21 @@ Compute
 
 ### Elastic Beanstalk
 
-	service intended for developers who don't understand AWS. This service can be used to upload code. 
+	Service intended for developers who don't understand AWS. This service can be used to upload code. 
 	The service will then handle the provisioning of EC2 resources like auto scaling groups or load 
 	balancers.
 
 ### Lambda
 
-	service providing cloud based functions. Essentially you upload code to the cloud and then you 
-	control when it executes. There are no operating system or virtual machines.
+	Service providing cloud based functions. Essentially you upload code to the cloud and then you 
+	control when it executes. There are no operating system or virtual machines. 
+	
+  * [AWS Lambda](https://aws.amazon.com/lambda/)
+
 
 ### LightSail
 
-	amazon's Virtual Private Server service (VPS). Intended for users who don't want to learn anything 
+	Amazon's Virtual Private Server service (VPS). Intended for users who don't want to learn anything 
 	about AWS and want a private server to use. It will provision you with a server and a fixed IP address. 
 	It provides RDP access for windows and ssh access for linux. It also provides a management console for
 	the server. Essentially it's a watered down version of the EC2 service.
@@ -62,10 +71,15 @@ Storage
 ### S3
 
 	Simple Storage Service (S3). Amazon's object (file) based storage service. 
+	
+  * [Getting Started with Amazon Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html) 
+  * [S3 FAQ](https://aws.amazon.com/s3/faqs/)
 
 ### EFS
 	Elastic File System (EFS). Network attached storage service. Using this service you can upload files 
 	to volumes which then can be mounted and accessed by virtual machines (aka EC2 instances).
+
+  * [What Is Amazon Elastic File System?](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)
 
 ### Glacier
 
@@ -74,6 +88,8 @@ Storage
 ### Snowball
 
 	Service that can be used to upload large amounts of data to AWS via physical disk.
+
+  * [What Is an AWS Snowball Appliance?](https://docs.aws.amazon.com/snowball/latest/ug/whatissnowball.html)
 
 ### Storage Gateway
 
@@ -89,12 +105,16 @@ Databases
 	
 	Relational Database Service (RDS). SQL Server, MySQL, PostGreSQL, Oracle. It also includes Aurora, 
 	which is Amazon's version of MySQL.
+	
+  * [What Is Amazon Relational Database Service (Amazon RDS)?](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
 
 ### DynamoDB
 
-	No relational databases. 
+	No-SQL relational database service.
+	
+  * [Amazon DynamoDB Documentation](https://aws.amazon.com/documentation/dynamodb/) 
 
-### Elasticache
+### ElastiCache
 
 	Caching service. It provides a mechanism for caching commonly used things from your database server.
 
@@ -118,9 +138,12 @@ Migration
 	Automated collection of tools that can be used to detect what applications you have and their 
 	dependencies.
 	
-### Database Migration Service
+### Database Migration Service (DMS)
 
 	Service that can used to migrate your databases from onsite to AWS.
+
+  * [What Is AWS Database Migration Service?](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html)
+	
 
 ### Server Migration Service
 
@@ -140,13 +163,20 @@ Networking & Content Delivery
 
 	Virtual Private Cloud (VPC). Essentially its a virtual data center--firewalls, availability zones ... etc. Everything normally found in an actual data center based network. Note - In order to pass any associates exam you need to understand VPC inside out.
 
+  * [Amazon Virtual Private Cloud](https://aws.amazon.com/vpc/)
+  * [Getting Started Resource Center](https://aws.amazon.com/getting-started/)
+
 ### CloudFront
 
 	Amazon's Content Delivery Network (CDN). 
+	
+  * [Amazon CloudFront](https://aws.amazon.com/cloudfront/)
 
-### Route53
+### Route 53
 
 	Amazon's Domain Name System (DNS) service.
+	
+  * [Amazon Route 53](https://aws.amazon.com/route53/)
 
 ### API Gateway
 
@@ -213,6 +243,8 @@ Management Tools
 
 	Audit trail service. Service used to log changes to your AWS environment. The service is turned on by 
 	default, but it only stores things for one week.
+	
+  * [What Is AWS CloudTrail?](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
 
 ### Config
 
@@ -223,6 +255,8 @@ Management Tools
 	
 	Service that is very similar to Elastic Beanstalk. It integrates both Chef and Puppet. Features 
 	prominently in the SysOps Administrator exam.
+	
+  * [What Is AWS OpsWorks?](https://docs.aws.amazon.com/opsworks/latest/userguide/welcome.html)
 
 ### Service Catalog
 
@@ -239,7 +273,7 @@ Management Tools
 ### Trusted Advisor
 
 	Featured in the Solutions Architect exam. Service that analyzes your AWS environment and 
-	provides "advice" on how it can be improved.
+	provides "advice" on how it can be improved. [AWS Trusted Advisor](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#trusted-advisor)
 
 ### Managed Services
 
@@ -342,6 +376,8 @@ Analytics
 	Elastic Map Reducer (EMR) service. This service is featured in the Solutions Architect Exam. The 
 	service is intended for "Big Data" solutions.
 
+  * [What Is Amazon EMR?](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html)
+
 ### CloudSearch & ElasticSearch Service
 
 	Search services for AWS. Both are relatively new (2016) and are not covered on any exam.
@@ -351,6 +387,8 @@ Analytics
 	Service that allows you to perform real-time analytics on large amounts of data, which is uploaded 
 	to the service. It is featured prominently in the Solutions Architect exam. 
 
+  * [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/)
+
 ### Kinesis Video Streams
 	
 	Version of Kinesis tailored for video media analytics. This is a new service added in 2018. 
@@ -359,7 +397,9 @@ Analytics
 ### QuickSight
 
 	Amazon's Business Intelligence (BI) service. This is a relatively new service (2016). It is not 
-	currently featured on any exams.  
+	currently featured on any exams. 
+	
+  * [Welcome to Amazon QuickSight!](https://docs.aws.amazon.com/quicksight/latest/user/welcome.html) 
 
 ### Data Pipelines
 
@@ -553,6 +593,8 @@ Note, these services are new and are not featured (yet) on any of the exams.
 
 	Virtual Desktop Infrastructure (VDI) service. It allows you to run different operating systems 
 	in the cloud.
+	
+  * [Amazon WorkSpaces](https://aws.amazon.com/workspaces/)
 
 ### AppStream 2.0
 

@@ -16,7 +16,7 @@ EC2 Serverless Webpage Lab
 
 ## Big Picture
 
-![Imgur](https://i.imgur.com/0qJV5HL.png)
+![Imgur](https://i.imgur.com/VXo5zzI.png)
 
 
 ## Prerequisites
@@ -103,7 +103,7 @@ EC2 Serverless Webpage Lab
 ![Imgur](https://i.imgur.com/0mWM67F.png)
 
 
-### S3: Create Bucket
+### S3: Create an S3 Bucket
 
     TBW
     
