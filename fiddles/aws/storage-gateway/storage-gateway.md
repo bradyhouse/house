@@ -4,6 +4,18 @@
 Storage Gateway
 =====
 
+Introductory lecture about Storage Gateway.
+
+
+## Video Link
+
+[![Imgur](https://i.imgur.com/pcEFrzP.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/storage/storage-gateway/watch)
+
+*Note - You will need an [acloud.guru](acloud.guru) account.*
+
+
+## What is Storage Gateway?
+
 Storage Gateway is an "S3" product. The service can be used to connect an on-premise virtual gateway directly with 
 S3 enabling an organizations to securely store data in the cloud using a `scalable, cost-effective approach`.
 
