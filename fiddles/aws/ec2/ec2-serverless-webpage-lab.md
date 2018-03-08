@@ -21,11 +21,9 @@ EC2 Serverless Webpage Lab
 
 ## Prerequisites
 
-*   Mac configured with [iTerm](https://iterm2.com/)
+*   Mac configured with [iTerm](https://iterm2.com/) and [BBEdit](http://www.barebones.com/products/bbedit/)
 *   AWS Console free-tier account
 
-    
-    TBW
     
 
 ## Steps
@@ -97,16 +95,110 @@ EC2 Serverless Webpage Lab
 33. Set the `Deployment description` to `Hello world deployment` 
 34. Click the `Deploy` button
 35. In the `Stages` tree, expand the `/myServerlessWebpage` and select `GET` method
-36. Click the `Invoke URL` link
+36. Copy the `Invoke URL` link address 
+  * _Note - You will need for this later. So you may want to paste to a temporary location_
+37. Open a new tab in your web browser and paste the address
+38. Verify that the page loads and displays the text `fiddle.sh`
 
 
 ![Imgur](https://i.imgur.com/0mWM67F.png)
 
 
-### S3: Create an S3 Bucket
+### Create a Web Page
 
-    TBW
+39. Open a new file in BBEdit and paste in the following html
+
+    ```<!DOCTYPE html>
+       <html lang="en">
+       <head>
+       	<meta charset="utf-8">
+       	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+       	<meta name="viewport" content="width=device-width, initial-scale=1">
+       	<title>AWS Serverless Webpage</title>
+       	<link href="https://bootswatch.com/4/darkly/bootstrap.min.css" rel="stylesheet">
+       	<script>
+       
+       function getRequest() {
+       	let urlField = document.getElementById('urlTextBox'),
+       		url = urlField.value,
+       		xhttp;
+       	
+       	if (url) {
+       		xhttp = new XMLHttpRequest();
+           	xhttp.onreadystatechange = function() {
+               	if (this.readyState == 4 && this.status == 200) {
+               	document.getElementById("responseText").innerHTML = this.responseText;
+               	}
+       	    };
+           	xhttp.open("GET", url, true);
+           	xhttp.send();
+       	} else {
+       		window.alert('Please enter an URL');
+       	}
+       }
+       
+       </script>
+       
+       </head>
+       <body>
+       <div class="jumbotron">
+         <h1 class="display-3">Hello Serverless!</h1>
+         <p class="lead">Enter your API's GET Method URL and click Test</p>
+         <hr class="my-4">
+         <input type="text" class="form-control" id="urlTextBox" placeholder="GET URL">
+         <hr class="my-4">
+         <p class="lead">
+       	<button type="button" onclick="getRequest()" class="btn btn-primary">Test</button>
+         </p>
+       </div>
+       
+       <hr/>
+       
+       <pre id="responseText"></pre>
+       
+       
+       </body>
+       </html>
+    ```
     
+38. Save the file as `index.html`
+39. Exit BBEdit
+
+
+### S3: Create a Bucket
+
+40. Go back to the AWS Console
+41. Under `Services > Storage` click `S3`
+42. Click the `Create bucket` button
+43. Set the `Bucket name` to `<username>-serverless-website` -- for example: `bradyhouse-serverless-website`
+44. Leave everything else default and click the `Create` button
+45. On the S3 page, click the `<username>-serverless-website` link for the new bucket
+46. Click the `Upload` button
+47. In the `Upload` pop-up, click the `Add files` button and select the newly created `index.html` file
+48. Click the `Next` button
+49. Set the `Manage public permissions` to `Grant public read access to this object(s)`
+50. Click the `Upload` button
+
+
+![Imgur](https://i.imgur.com/8anP3ZP.png)
+    
+
+### Test it Out
+
+51. On the `S3 > <username>-serverless-website` page, select the `index.html` file
+52. In the properties panel click the public `Link` 
+
+
+![Imgur](https://i.imgur.com/wFnuMmT.png)
+
+
+53. In the `GET URL` textbox, paste the `API Gateway GET Method` URL you saved earlier (step 36)
+54. Click the `Test` button
+55. Verify that the title of the page changes to `fiddle.sh`
+
+
+![Imgur](https://i.imgur.com/UIG5rLh.png)
+
 
 ## Exam Tips
 
