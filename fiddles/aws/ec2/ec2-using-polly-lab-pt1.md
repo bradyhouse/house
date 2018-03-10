@@ -17,7 +17,7 @@ Using Polly To Pass Your Exam Lab (Part 1)
 
 ## Big Picture
 
-    TBW
+![Imgur](https://i.imgur.com/iJJnnrb.png)
 
 
 ## Prerequisites
