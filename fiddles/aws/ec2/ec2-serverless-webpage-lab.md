@@ -291,4 +291,4 @@ What did we learn?
 
 ##
 
-**[Previous Lab/Lecture](ec2-lambda.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-serverless-webpage-lab.md)** 
+**[Previous Lab/Lecture](ec2-lambda.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-using-polly-lab-pt1.md)** 
