@@ -5,7 +5,7 @@ EC2 EBS Volumes Lab
 ======
 
 This lab explores the EC2 `Volumes` page.  I watched the lab and simply made notes of the exam related info discussed.  
-In other words, nothing mention happened. I am not going to `hyper-document` this one.
+In other words, nothing much happened. I am not going to `hyper-document` this one.
 
 
 ## Video Link
