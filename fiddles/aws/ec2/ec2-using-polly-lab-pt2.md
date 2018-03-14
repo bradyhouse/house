@@ -176,29 +176,30 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
 67. Paste the following HTML into the editor:
 
       ```<html>
-           <head><title>MP3 Writer</title>
-             <script language="javascript">var API_ENDPOINT = "API GATEWAY DEV URL";</script>
-         	 <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
-           </head>
-           <body>
-           	<div class="jumbotron">
-         		<h1 id="headline" class="display-3">MP3 Writer</h1>
-         		  <hr class="my-4">
+         <head><title>MP3 Writer</title>
+             <script language="javascript">var API_ENDPOINT = "https://htuua8zujj.execute-api.us-east-1.amazonaws.com/dev";</script>
+             <link rel="icon" type="image/x-icon" href="favicon.ico">
+             <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+         </head>
+         <body>
+         <div class="jumbotron">
+             <h1 id="headline" class="display-3">MP3 Writer</h1>
+             <hr class="my-4">
          
-           <div class="form-group">
-               <label for="postText">Input Text:</label>
-               <textarea id="postText" class="form-control" style="width: 100%; height: 10em;"></textarea>
-               <span id="postIDreturned"></span>
-           	  <span id="charCounter" style="float:right;">Characters: 0</span>
-         	</div>
-         	  Voice:
+             <div class="form-group">
+                 <label for="postText">Input Text:</label>
+                 <textarea id="postText" class="form-control" style="width: 100%; height: 10em;"></textarea>
+                 <span id="postIDreturned"></span>
+                 <span id="charCounter" style="float:right;">Characters: 0</span>
+             </div>
+             Voice:
          
-               <select id="voiceSelected" class="form-control"  >
+             <select id="voiceSelected" class="form-control">
                  <option value="Ivy">Ivy [English - American]</option>
                  <option value="Joanna">Joanna [English - American]</option>
                  <option value="Joey">Joey [English - American]</option>
                  <option value="Justin">Justin [English - American]</option>
-                 <option value="Kendra">Kendra [English - American]</option> 
+                 <option value="Kendra">Kendra [English - American]</option>
                  <option value="Kimberly">Kimberly [English - American]</option>
                  <option value="Salli">Salli [English - American]</option>
                  <option value="Nicole">Nicole [English - Australian]</option>
@@ -206,7 +207,7 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
                  <option value="Emma">Emma [English - British]</option>
                  <option value="Brian">Brian [English - British]</option>
                  <option value="Amy">Amy [English - British]</option>
-                 <option value="Raveena">Raveena [English - Indian]</option>        
+                 <option value="Raveena">Raveena [English - Indian]</option>
                  <option value="Geraint">Geraint [English - Welsh]</option>
                  <option value="Ricardo">Ricardo [Brazilian Portuguese]</option>
                  <option value="Vitoria">Vitoria [Brazilian Portuguese]</option>
@@ -216,16 +217,16 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
                  <option value="Celine">Celine [French]</option>
                  <option value="Chantal">Chantal [Canadian French]</option>
                  <option value="Marlene">Marlene [German]</option>
-             	<option value="Dora">Dora [Icelandic]</option>
-             	<option value="Karl">Karl [Icelandic]</option>
+                 <option value="Dora">Dora [Icelandic]</option>
+                 <option value="Karl">Karl [Icelandic]</option>
                  <option value="Carla">Carla [Italian]</option>
                  <option value="Giorgio">Giorgio [Italian]</option>
                  <option value="Mizuki">Mizuki [Japanese]</option>
                  <option value="Liv">Liv [Norwegian]</option>
                  <option value="Maja">Maja [Polish]</option>
                  <option value="Jan">Jan [Polish]</option>
-             	<option value="Ewa">Ewa [Polish]</option>
-             	<option value="Cristiano">Cristiano [Portuquese]</option>
+                 <option value="Ewa">Ewa [Polish]</option>
+                 <option value="Cristiano">Cristiano [Portuquese]</option>
                  <option value="Ines">Ines [Portuquese]</option>
                  <option value="Carmen">Carmen [Romanian]</option>
                  <option value="Maxim">Maxim [Russian]</option>
@@ -238,118 +239,46 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
                  <option value="Filiz">Filiz [Turkish]</option>
                  <option value="Gwyneth">Gwyneth [Welsh]</option>
          
-                 
-               </select>
-         	  <br />	
-               <input type="submit" value="Create MP3" id="sayButton" class="btn btn-secondary">
-         	 
-         	 		  <hr class="my-4">
          
-         	 <div class="form-group">
-               <label for="postId">Id:</label>
-               <input type="text" class="form-control" id="postId" placeholder="*" value="*" > 
-               <br />
-               <input type="submit" class="btn btn-secondary right" value="Search" id="searchButton">
+             </select>
+             <br/>
+             <input type="submit" value="Create MP3" id="sayButton" class="btn btn-secondary">
+         
+             <hr class="my-4">
+         
+             <div class="form-group">
+                 <label for="postId">Id:</label>
+                 <input type="text" class="form-control" id="postId" placeholder="*" value="*">
+                 <br/>
+                 <input type="submit" class="btn btn-secondary right" value="Search" id="searchButton">
              </div>
          
          
-               <table id="posts" class="table table-hover">
+             <table id="posts" class="table table-hover">
                  <colgroup>
-                   <col style="width:10%">
-                   <col style="width:7%">
-                   <col style="width:45%">
-                   <col style="width:8%">
-                   <col style="width:30%">
+                     <col style="width:10%">
+                     <col style="width:7%">
+                     <col style="width:45%">
+                     <col style="width:8%">
+                     <col style="width:30%">
                  </colgroup>
                  <tbody>
-                   <tr class="table-active">
+                 <tr class="table-active">
                      <th>Post ID</th>
                      <th>Voice</th>
                      <th>Post</th>
                      <th>Status</th>
                      <th>Player</th>
-                   </tr>
+                 </tr>
                  </tbody>
-               </table>
-         	</div>
-             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>    
-             <script language="javascript">
-             	$(document).ready(function () {
-         
-         			var onSearch = function() {
-         		let postId = $('#postId').val();
-         		$.ajax({
-         				url: API_ENDPOINT + '?postId='+postId,
-         				type: 'GET',
-         				success: function (response) {
-         
-         					$('#posts tr').slice(1).remove();
-         
-         	        jQuery.each(response, function(i,data) {
-         
-         						var player = "<audio controls><source src='" + data['url'] + "' type='audio/mpeg'></audio>"
-         
-         						if (typeof data['url'] === "undefined") {
-         	    				var player = ""
-         						}
-         
-         						$("#posts").append("<tr> \
-         								<td>" + data['id'] + "</td> \
-         								<td>" + data['voice'] + "</td> \
-         								<td>" + data['text'] + "</td> \
-         								<td>" + data['status'] + "</td> \
-         								<td>" + player + "</td> \
-         								</tr>");
-         	        });
-         				},
-         				error: function () {
-         						alert("error");
-         				}
-         		});
-         	};
-         
-         			document.getElementById("sayButton").onclick = function(){
-         
-         	var inputData = {
-         		"voice": $('#voiceSelected option:selected').val(),
-         		"text" : $('#postText').val()
-         	};
-         
-         	$.ajax({
-         	      url: API_ENDPOINT,
-         	      type: 'POST',
-         	      data:  JSON.stringify(inputData)  ,
-         	      contentType: 'application/json; charset=utf-8',
-         	      success: function (response) {
-         					document.getElementById("postIDreturned").textContent="Post ID: " + response;
-         					document.getElementById("postId").value=response;
-         					window.setTimeout(() => {
-         						onSearch();
-         					}, 1000);
-         	      },
-         	      error: function () {
-         	          alert("error");
-         	      }
-         	  });
-         };
-         
-         
-         			document.getElementById("searchButton").onclick = function(){
-         	onSearch()
-         };
-         
-         			document.getElementById("postText").onkeyup = function(){
-         	var length = $(postText).val().length;
-         	document.getElementById("charCounter").textContent="Characters: " + length;
-         };
-         			
-         			window.setTimeout(()=>{
-         				onSearch();
-         			}, 1000);
-         	    });    
-             </script>
-         	<script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-           </body>
+             </table>
+         </div>
+         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+         <script language="javascript">
+           $(document).ready(function(){var t=function(){var t=$("#postId").val();$.ajax({url:API_ENDPOINT+"?postId="+t,type:"GET",success:function(t){$("#posts tr").slice(1).remove();jQuery.each(t,function(t,e){var n="<audio controls><source src='"+e["url"]+"' type='audio/mpeg'></audio>";if("undefined"===typeof e["url"])var n="";$("#posts").append("<tr> \t\t\t\t\t\t\t\t<td>"+e["id"]+"</td> \t\t\t\t\t\t\t\t<td>"+e["voice"]+"</td> \t\t\t\t\t\t\t\t<td>"+e["text"]+"</td> \t\t\t\t\t\t\t\t<td>"+e["status"]+"</td> \t\t\t\t\t\t\t\t<td>"+n+"</td> \t\t\t\t\t\t\t\t</tr>")})},error:function(){alert("error")}})};document.getElementById("sayButton").onclick=function(){var e={voice:$("#voiceSelected option:selected").val(),text:$("#postText").val()};$.ajax({url:API_ENDPOINT,type:"POST",data:JSON.stringify(e),contentType:"application/json; charset=utf-8",success:function(e){document.getElementById("postIDreturned").textContent="Post ID: "+e;document.getElementById("postId").value=e;window.setTimeout(function(){t()},1e3)},error:function(){alert("error")}})};document.getElementById("searchButton").onclick=function(){t()};document.getElementById("postText").onkeyup=function(){var t=$(postText).val().length;document.getElementById("charCounter").textContent="Characters: "+t};window.setTimeout(function(){t()},1e3)});
+         </script>
+         <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+         </body>
          </html>
       ```
       
