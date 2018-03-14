@@ -50,7 +50,7 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
 
 1.  Under `Services > Storage` click `S3`
 2.  Click the `Create bucket` button
-3.  In the `Create bucket` pop-up, set the `Bucket name` to `aws.<username>.ninja` -- for example, `aws.bradyhouse.ninja`
+3.  In the `Create bucket` pop-up, set the `Bucket name` to `mp3-writer.<username>.ninja` -- for example, `mp3-writer.bradyhouse.ninja`
 4.  Click the `Create` button
 
 

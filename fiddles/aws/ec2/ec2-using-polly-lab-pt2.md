@@ -31,10 +31,10 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
 
 ## Prerequisites
 
-*   Mac configured with [iTerm](https://iterm2.com/) and [BBEdit](http://www.barebones.com/products/bbedit/)
-*   AWS Console free-tier account
-*   Complete [Using Polly To Pass Your Exam Lab (Part 1)](ec2-using-polly-lab-pt1.md)
-     
+* Mac configured with [iTerm](https://iterm2.com/) and [BBEdit](http://www.barebones.com/products/bbedit/)
+* AWS Console free-tier account
+* Complete [Using Polly To Pass Your Exam Lab (Part 1)](ec2-using-polly-lab-pt1.md)
+* Complete [Serverless Webpage Lab](ec2-serverless-webpage-lab.md)       
 
 ## Steps
 
@@ -139,7 +139,7 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
 ### S3: Make the Website Bucket Public
 
 58. Under `Services > Storage` click `S3`
-59. Select the `aws.<username>.ninja` bucket, which was created in [part 1](ec2-using-polly-lab-pt1.md2)
+59. Select the `mp3-writer.<username>.ninja` bucket, which was created in [part 1](ec2-using-polly-lab-pt1.md2)
 60. Click the `Permissions` tab
 61. On the `Permissions` page, click the `Bucket Policy` button
 62. Paste the following JSON into the Bucket policy editor:
@@ -161,23 +161,251 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
        	]
        }``` 
        
-  *Replace the BUCKET_NAME with the name of your bucket. For example `aws.bradyhouse.ninja`* 
+  *Replace the BUCKET_NAME with the name of your bucket. For example `mp3-writer.bradyhouse.ninja`* 
 
 63. Click the `Save` button
 64. Click the `Amazon S3` link
-65. Verify that the `aws.<username>.ninja` bucket is now listed as `public`
+65. Verify that the `mp3-writer.<username>.ninja` bucket is now listed as `public`
 
 ![Imgur](https://i.imgur.com/maKJEBl.png)
 
 
-### S3: Upload the Static Site Files
+### S3: Modify and Upload the index.html
+
+66. Open a new file using BBEdit
+67. Paste the following HTML into the editor:
+
+      ```<html>
+           <head><title>MP3 Writer</title>
+             <script language="javascript">var API_ENDPOINT = "API GATEWAY DEV URL";</script>
+         	 <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+           </head>
+           <body>
+           	<div class="jumbotron">
+         		<h1 id="headline" class="display-3">MP3 Writer</h1>
+         		  <hr class="my-4">
+         
+           <div class="form-group">
+               <label for="postText">Input Text:</label>
+               <textarea id="postText" class="form-control" style="width: 100%; height: 10em;"></textarea>
+               <span id="postIDreturned"></span>
+           	  <span id="charCounter" style="float:right;">Characters: 0</span>
+         	</div>
+         	  Voice:
+         
+               <select id="voiceSelected" class="form-control"  >
+                 <option value="Ivy">Ivy [English - American]</option>
+                 <option value="Joanna">Joanna [English - American]</option>
+                 <option value="Joey">Joey [English - American]</option>
+                 <option value="Justin">Justin [English - American]</option>
+                 <option value="Kendra">Kendra [English - American]</option> 
+                 <option value="Kimberly">Kimberly [English - American]</option>
+                 <option value="Salli">Salli [English - American]</option>
+                 <option value="Nicole">Nicole [English - Australian]</option>
+                 <option value="Russell">Russell [English - Australian]</option>
+                 <option value="Emma">Emma [English - British]</option>
+                 <option value="Brian">Brian [English - British]</option>
+                 <option value="Amy">Amy [English - British]</option>
+                 <option value="Raveena">Raveena [English - Indian]</option>        
+                 <option value="Geraint">Geraint [English - Welsh]</option>
+                 <option value="Ricardo">Ricardo [Brazilian Portuguese]</option>
+                 <option value="Vitoria">Vitoria [Brazilian Portuguese]</option>
+                 <option value="Lotte">Lotte [Dutch]</option>
+                 <option value="Ruben">Ruben [Dutch]</option>
+                 <option value="Mathieu">Mathieu [French]</option>
+                 <option value="Celine">Celine [French]</option>
+                 <option value="Chantal">Chantal [Canadian French]</option>
+                 <option value="Marlene">Marlene [German]</option>
+             	<option value="Dora">Dora [Icelandic]</option>
+             	<option value="Karl">Karl [Icelandic]</option>
+                 <option value="Carla">Carla [Italian]</option>
+                 <option value="Giorgio">Giorgio [Italian]</option>
+                 <option value="Mizuki">Mizuki [Japanese]</option>
+                 <option value="Liv">Liv [Norwegian]</option>
+                 <option value="Maja">Maja [Polish]</option>
+                 <option value="Jan">Jan [Polish]</option>
+             	<option value="Ewa">Ewa [Polish]</option>
+             	<option value="Cristiano">Cristiano [Portuquese]</option>
+                 <option value="Ines">Ines [Portuquese]</option>
+                 <option value="Carmen">Carmen [Romanian]</option>
+                 <option value="Maxim">Maxim [Russian]</option>
+                 <option value="Tatyana">Tatyana [Russian]</option>
+                 <option value="Enrique">Enrique [Spanish]</option>
+                 <option value="Penelope">Penelope [US Spanish]</option>
+                 <option value="Enrique">Miguel [US Spanish]</option>
+                 <option value="Conchita">Conchita [Castilian Spanish]</option>
+                 <option value="Astrid">Astrid [Swedish]</option>
+                 <option value="Filiz">Filiz [Turkish]</option>
+                 <option value="Gwyneth">Gwyneth [Welsh]</option>
+         
+                 
+               </select>
+         	  <br />	
+               <input type="submit" value="Create MP3" id="sayButton" class="btn btn-secondary">
+         	 
+         	 		  <hr class="my-4">
+         
+         	 <div class="form-group">
+               <label for="postId">Id:</label>
+               <input type="text" class="form-control" id="postId" placeholder="*" value="*" > 
+               <br />
+               <input type="submit" class="btn btn-secondary right" value="Search" id="searchButton">
+             </div>
+         
+         
+               <table id="posts" class="table table-hover">
+                 <colgroup>
+                   <col style="width:10%">
+                   <col style="width:7%">
+                   <col style="width:45%">
+                   <col style="width:8%">
+                   <col style="width:30%">
+                 </colgroup>
+                 <tbody>
+                   <tr class="table-active">
+                     <th>Post ID</th>
+                     <th>Voice</th>
+                     <th>Post</th>
+                     <th>Status</th>
+                     <th>Player</th>
+                   </tr>
+                 </tbody>
+               </table>
+         	</div>
+             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>    
+             <script language="javascript">
+             	$(document).ready(function () {
+         
+         			var onSearch = function() {
+         		let postId = $('#postId').val();
+         		$.ajax({
+         				url: API_ENDPOINT + '?postId='+postId,
+         				type: 'GET',
+         				success: function (response) {
+         
+         					$('#posts tr').slice(1).remove();
+         
+         	        jQuery.each(response, function(i,data) {
+         
+         						var player = "<audio controls><source src='" + data['url'] + "' type='audio/mpeg'></audio>"
+         
+         						if (typeof data['url'] === "undefined") {
+         	    				var player = ""
+         						}
+         
+         						$("#posts").append("<tr> \
+         								<td>" + data['id'] + "</td> \
+         								<td>" + data['voice'] + "</td> \
+         								<td>" + data['text'] + "</td> \
+         								<td>" + data['status'] + "</td> \
+         								<td>" + player + "</td> \
+         								</tr>");
+         	        });
+         				},
+         				error: function () {
+         						alert("error");
+         				}
+         		});
+         	};
+         
+         			document.getElementById("sayButton").onclick = function(){
+         
+         	var inputData = {
+         		"voice": $('#voiceSelected option:selected').val(),
+         		"text" : $('#postText').val()
+         	};
+         
+         	$.ajax({
+         	      url: API_ENDPOINT,
+         	      type: 'POST',
+         	      data:  JSON.stringify(inputData)  ,
+         	      contentType: 'application/json; charset=utf-8',
+         	      success: function (response) {
+         					document.getElementById("postIDreturned").textContent="Post ID: " + response;
+         					document.getElementById("postId").value=response;
+         					window.setTimeout(() => {
+         						onSearch();
+         					}, 1000);
+         	      },
+         	      error: function () {
+         	          alert("error");
+         	      }
+         	  });
+         };
+         
+         
+         			document.getElementById("searchButton").onclick = function(){
+         	onSearch()
+         };
+         
+         			document.getElementById("postText").onkeyup = function(){
+         	var length = $(postText).val().length;
+         	document.getElementById("charCounter").textContent="Characters: " + length;
+         };
+         			
+         			window.setTimeout(()=>{
+         				onSearch();
+         			}, 1000);
+         	    });    
+             </script>
+         	<script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+           </body>
+         </html>
+      ```
+      
+67. In line 3 of this, update the `API GATEWAY DEV URL` value with the API `Invoke URL` recorded earlier (step 53)
+68. Save the file as `index.html` and close BBEdit
+69. Return to the AWS Console
+70. Under `Services > Storage` click `S3`
+71. Select the `mp3-writer.<username>.ninja` bucket, which was created in [part 1](ec2-using-polly-lab-pt1.md2)
+72. Click the `Upload` button
+73. In the `Upload` pop-up, select the `index.html` file 
+74. Click the `upload` button
 
 
-    TBW
+![Imgur](https://i.imgur.com/UEQt4nt.png)
+
+
+### S3: Configure as a Static Website
+
+75. Under `Services > Storage` click `S3`
+76. Select the `mp3-writer.<username>.ninja` bucket, which was created in [part 1](ec2-using-polly-lab-pt1.md2)
+77. On the `Amazon S3 > mp3-writer.<user-name>.ninja` page, click the `Properties` tab
+78. On the `Properties` page, click the `Static website hosting` option
+79. In the `Static website hosting` pop-up, set the `Index document` to `index.html`
+80. Set the `Error document` to `index.html`
+81. Click the `Save` button
+
+
+![Imgur](https://i.imgur.com/7oPqIEv.png)
+
+
+### Route 53: Create a Record Set
+
+82. Under `Services > Network & Content Delivery` click `Route 53`
+83. On the `Route 53` dashboard page in the sidebar, click the `Hosted zones` link
+84. On the `Route 53` hosted zone page, select `<username>.ninja` domain, which was created in the [Severless Webpage Lab](ec2-serverless-webpage-lab.md)
+85. On the `Record Set` details page, click the `Create Record Set` button
+86. In the `Create Record Set` panel, set the Name to `mp3-writer.<user-name>.ninja`. 
+    For example: `mp3-writer.bradyhouse.ninja`    
+87. Set the `Alias` option to `Yes`
+88. In the `Alias Target` field, select `mp3-writer.<username>.ninja` bucket
+
+
+![Imgur](https://i.imgur.com/BQBbhuq.png)
+
+
+89. Click the `Create` button
+
+
+### Moment of Truth -- Test Drive
+
+90. Open a new browser tab, and navigate to `mp3-writer.<user-name>.ninja`. If everything worked
+    correctly, it should look like this:
     
-
-
-
+    
+![Imgur](https://i.imgur.com/woo54Pu.png)  
+    
 
 ##
 
