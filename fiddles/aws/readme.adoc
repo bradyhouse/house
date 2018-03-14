@@ -59,6 +59,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:ec2/ec2-serverless-webpage-lab.md[EC2 Serverless Webpage Lab]
 ||link:ec2/ec2-using-polly-lab-pt1.md[Using Polly To Pass Your Exam Lab (Part 1)]
 ||link:ec2/ec2-using-polly-lab-pt2.md[Using Polly to Pass Your Exam Lab (Part 2)]
+||link:ec2/ec2-alexa-skill-lab.md[Alexa Skill Lab]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 ||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
 |=========================================================
