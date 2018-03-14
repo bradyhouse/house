@@ -282,7 +282,7 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
          </html>
       ```
       
-67. In line 3 of this, update the `API GATEWAY DEV URL` value with the API `Invoke URL` recorded earlier (step 53)
+67. In line 3 of this file, update the `API GATEWAY DEV URL` value with the API `Invoke URL` recorded earlier (step 53)
 68. Save the file as `index.html` and close BBEdit
 69. Return to the AWS Console
 70. Under `Services > Storage` click `S3`
@@ -334,6 +334,9 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
     
     
 ![Imgur](https://i.imgur.com/EtGSJSF.png)
+
+
+*Note - In case you didn't get this far, you can test drive my version @ [mp3-writer.bradyhouse.ninja](mp3-writer.bradyhouse.ninja).*
     
 
 ##
