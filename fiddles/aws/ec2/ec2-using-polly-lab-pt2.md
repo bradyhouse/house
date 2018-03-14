@@ -404,7 +404,7 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
     correctly, it should look like this:
     
     
-![Imgur](https://i.imgur.com/woo54Pu.png)  
+![Imgur](https://i.imgur.com/EtGSJSF.png)
     
 
 ##
