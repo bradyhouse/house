@@ -178,4 +178,4 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
 
 ##
 
-**[Previous Lab/Lecture](ec2-using-polly-lab-pt2.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-exam-tips.md) ** 
+**[Previous Lab/Lecture](ec2-using-polly-lab-pt2.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-exam-tips.md)** 
