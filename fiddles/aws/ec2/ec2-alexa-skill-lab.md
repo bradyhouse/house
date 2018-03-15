@@ -37,20 +37,6 @@ words, there are no Exam Tips (or Exam related notes) resulting from the the com
     TBW
 
 
-## Exam Tips
-
-What did we learn? 
-
-    TBW
-
-### Review Questions
-
-    TBW
-
-### Answers
-
-    TBW
-
 ##
 
 **[Previous Lab/Lecture](ec2-using-polly-lab-pt2.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-alexa-skill-lab.md)** 
