@@ -4,7 +4,10 @@
 EC2 Alexa Skill Lab
 ======
 
-    TBW
+16 minute lab about how to build an Alexa skill app that will read your notes.
+
+*Note, although this is a great lab for gaining experience with AWS, it is beyond the scope of the Exam.  In other 
+words, there are no Exam Tips (or Exam related notes) resulting from the the completion of this lab.*
 
 
 ## Video Link
@@ -17,12 +20,19 @@ EC2 Alexa Skill Lab
 ## Prerequisites
 
 * Mac configured with [iTerm](https://iterm2.com/) and [BBEdit](http://www.barebones.com/products/bbedit/)
-* AWS Console free-tier account
+* [AWS Console account](https://aws.amazon.com)
+* [Alexa account](https://alexa.amazon.com)
+* [AWS Developers account](https://developer.amazon.com)
+* Complete the [Using Polly To Pass Your Exam Lab (Part 1)](ec2-using-polly-lab-pt1.md)
+* Complete the [Using Polly To Pass Your Exam Lab (Part 2)](ec2-using-polly-lab-pt2.md)
+    
 
-    
-    TBW
-    
 ## Steps
+
+1.  Log into [alexa.amazon.com](https://alexa.amazon.com)
+2.  Open another tab and log into [developer.amazon.com](https://developer.amazon.com)
+  * Note - this should be same account used to log into [alexa.amazon.com](https://alexa.amazon.com)
+
 
     TBW
 
