@@ -42,7 +42,7 @@ What did we learn?
 
 ### Review Questions
 
-1.  Can you have an EC2 instance in one availability zone and EBS volume in another AZ?
+1.  Can you have an EC2 instance in one availability zone and an EBS volume in another AZ?
 2.  How can you tell which EBS volume is the root device?
 3.  Which EBS volume type cannot you not modify on the fly?
 4.  How do we migrate EC2 instances between regions?
