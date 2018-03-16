@@ -63,5 +63,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:ec2/ec2-exam-tips.md[EC2 Exam Tips]
 ||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
 ||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
+2+>| **Route53**
+||link:route53/route53-dns-101.md[Route53 DNS 101]
 |=========================================================
 

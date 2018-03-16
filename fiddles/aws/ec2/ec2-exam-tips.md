@@ -204,7 +204,7 @@ What did we need to know?
     TBW
 
 ## 
-**[Previous Lab/Lecture](ec2-alexa-skill-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](ec2-exam-tips.md)**
+**[Previous Lab/Lecture](ec2-alexa-skill-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../route53/route53-dns-101.md)**
 
 
 
