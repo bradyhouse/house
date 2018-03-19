@@ -146,7 +146,7 @@ What did we learn?
   
 ## 
 
-**[Previous Lab/Lecture](../ec2/ec2-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-dns-101.md)**
+**[Previous Lab/Lecture](../ec2/ec2-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-register-domain-lab.md)**
 
 
 
