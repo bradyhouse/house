@@ -6,7 +6,7 @@ Route 53 Register Domain Name Lab
 
 Short lab outlining how to register a new domain on Route 53.  For this, one I simply watched the
 the video.  Note, see the [EC2 Serverless Webpage Lab](../ec2/ec2-serverless-webpage-lab.md) for a step-by-step
-recipe for registering a domain name.
+recipe on how to register a `*.ninja` domain name on Route 53.
 
 
 ## Video Link
