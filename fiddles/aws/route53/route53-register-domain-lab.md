@@ -11,7 +11,7 @@ recipe on how to register a `*.ninja` domain name on Route 53.
 
 ## Video Link
 
-[![Lecture]([Imgur](https://i.imgur.com/uzOixrs.png))](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/route53/lab/watch)
+[![Imgur](https://i.imgur.com/uzOixrs.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/route53/lab/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
