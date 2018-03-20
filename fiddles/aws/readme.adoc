@@ -66,5 +66,6 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 2+>| **Route53**
 ||link:route53/route53-dns-101.md[Route53 DNS 101]
 ||link:route53/route53-register-domain-lab.md[Route53 Register Domain Name Lab]
+||link:route53/route53-setup-ec2-instances-lab.md[Route 53 Setup EC2 Instances Lab]
 |=========================================================
 
