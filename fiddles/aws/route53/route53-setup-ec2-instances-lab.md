@@ -1,4 +1,4 @@
-![Route53](https://i.imgur.com/vG67Qx0.png) <img src="https://i.imgur.com/9awJmtb.png" height="100" title="AWS EC2" />
+![Route53](https://i.imgur.com/vG67Qx0.png) <img src="https://i.imgur.com/9awJmtb.png" height="100" title="AWS EC2" />  
 
 
 Route 53 Setup EC2 Instances Lab
@@ -18,7 +18,7 @@ the video.
   
 ## 
 
-**[Previous Lab/Lecture](route53-register-domain-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-setup-ec2-instances-lab.md)**
+**[Previous Lab/Lecture](route53-register-domain-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-simple-routing-policy-lab.md)**
 
 
 
