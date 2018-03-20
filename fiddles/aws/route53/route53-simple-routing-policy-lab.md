@@ -66,7 +66,7 @@ traffic routed too.
 
 ## 
 
-**[Previous Lab/Lecture](route53-register-domain-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-simple-routing-policy-lab.md)**
+**[Previous Lab/Lecture](route53-register-domain-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-latency-routing-policy-lab.md)**
 
 
 
