@@ -44,9 +44,9 @@ traffic routed too.
     [Route 53 Setup EC2 Instances Lab](route53-setup-ec2-instances-lab.md)
 9.  Set the `Evaluate Target Health` option to `No` (default)
 
-
-![Route 53 Simple Routing Setup](https://i.imgur.com/OTQQjNs.png)
-
+<table><tr><td>
+<img src="https://i.imgur.com/OTQQjNs.png" width="150" title="Route 53 Simple Routing Setup" /> 
+</td></tr></table>
 
 10. Click the `create` button
 11. Open a secondary web browser tab, navigate to your domain name.  For example, `bradyhouse.ninja`
