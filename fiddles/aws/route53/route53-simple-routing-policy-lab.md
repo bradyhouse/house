@@ -52,13 +52,13 @@ traffic routed too.
 11. Open a secondary web browser tab, navigate to your domain name.  For example, `bradyhouse.ninja`
 
 
-![Server 1](https://i.imgur.com/a3Y9OVn.png)
+<img src="https://i.imgur.com/a3Y9OVn.png" height="100" title="Server 1" /> 
 
 
 12. Refresh (Reload) the page, you see the second server load
 
 
-![Server 2](https://i.imgur.com/yDvfMLZ.png)
+<img src="https://i.imgur.com/yDvfMLZ.png" height="100" title="Server 2" /> 
 
 
 13. Clean Up, **be sure and stop all your EC2 instances if you are not going onto the next lab**
