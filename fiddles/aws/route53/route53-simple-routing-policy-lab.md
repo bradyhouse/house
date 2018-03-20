@@ -17,7 +17,7 @@ Route 53 Simple Routing Policy Lab
 ## Simple Routing Policy
 
 
-![Imgur](https://i.imgur.com/oKNCRtl.png)
+![Simple Routing Policy](https://i.imgur.com/oKNCRtl.png)
 
 
 This is the default routing policy when you create a new record set. This is most commonly used when you have a single
