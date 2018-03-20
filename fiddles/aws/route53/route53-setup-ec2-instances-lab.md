@@ -1,4 +1,4 @@
-![Route53](https://i.imgur.com/vG67Qx0.png)
+![Route53](https://i.imgur.com/vG67Qx0.png) <img src="https://i.imgur.com/9awJmtb.png" height="100" title="AWS EC2" />
 
 
 Route 53 Setup EC2 Instances Lab
