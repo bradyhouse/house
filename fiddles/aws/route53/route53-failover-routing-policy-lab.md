@@ -17,10 +17,16 @@ and took some exam related notes--i.e. no `step-by-step` details.
 
 ## Failover Routing Policy
 
-<img src="https://i.imgur.com/NLj9ncB.png" height="100" title="Failover Routing Policy (Before)" /> 
-
-<img src="https://i.imgur.com/tc6cQzZ.png" height="100" title="Failover Routing Policy (After)" /> 
-
+<table>
+  <tr>
+    <td>
+      <img src="https://i.imgur.com/NLj9ncB.png" height="100" title="Failover Routing Policy (Before)" /> 
+    </td>
+    <td>
+      <img src="https://i.imgur.com/tc6cQzZ.png" height="100" title="Failover Routing Policy (After)" /> 
+    </td>
+  </tr>
+</table>
 
 Failover routing policies are used when you want to create an active/passive setup. For example, you may want your
 primary site to be EU-WEST2 and your secondary DR Site in AP-SOUTHEAST-2.  Route 53 will monitor the health of your
