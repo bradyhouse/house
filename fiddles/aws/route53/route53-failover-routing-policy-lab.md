@@ -4,7 +4,7 @@
 Route 53 Failover Routing Policy Lab
 ======
 
-1 minute lecture / lab introducing Route 53's Failover routing policy. For this one, I simply watched the video 
+10 minute lecture / lab introducing Route 53's Failover routing policy. For this one, I simply watched the video 
 and took some exam related notes--i.e. no `step-by-step` details.
 
 
@@ -17,12 +17,14 @@ and took some exam related notes--i.e. no `step-by-step` details.
 
 ## Failover Routing Policy
 
-<img src="https://i.imgur.com/tc6cQzZ.png" height="150" title="Failover Routing Policy" /> 
+<img src="https://i.imgur.com/NLj9ncB.png" height="100" title="Failover Routing Policy (Before)" /> 
+
+<img src="https://i.imgur.com/tc6cQzZ.png" height="100" title="Failover Routing Policy (After)" /> 
 
 
 Failover routing policies are used when you want to create an active/passive setup. For example, you may want your
 primary site to be EU-WEST2 and your secondary DR Site in AP-SOUTHEAST-2.  Route 53 will monitor the health of your
-primary site using a health check. A health check monitors the health of your end points.
+primary site using a health check. 
 
 
 
