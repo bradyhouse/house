@@ -4,7 +4,7 @@
 Route 53 Simple Routing Policy Lab
 ======
 
-6 minute lecture / lab introducing Route 53 routing policies. 
+6 minute lecture / lab introducing Route 53's Simple routing policy. 
 
 
 ## Video Link
@@ -64,7 +64,7 @@ traffic routed too.
 
 ## 
 
-**[Previous Lab/Lecture](route53-register-domain-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-latency-routing-policy-lab.md)**
+**[Previous Lab/Lecture](route53-register-domain-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-weighted-routing-policy-lab.md)**
 
 
 

@@ -4,7 +4,8 @@
 Route 53 Latency Routing Policy Lab
 ======
 
-    TBW
+6 minute lecture / lab introducing Route 53's Latency routing policy. For this one, I simply watched the video 
+and took some exam related notes--i.e. no `step-by-step` details.
 
 
 ## Video Link
@@ -16,23 +17,23 @@ Route 53 Latency Routing Policy Lab
 
 ## Latency Routing Policy
 
-    TBW
+
+<img src="https://i.imgur.com/NLj9ncB.png" height="150" title="Latency Routing Policy" /> 
 
 
-## Prerequisites
+This type of routing is tied to latency.  Specifically, it allows you to route traffic based on the lowest network
+latency for your end user. Stated another way, the region that will return the fastest response time is targeted by
+Route 53. 
 
-* AWS Console free-tier account
-* Complete [Route 53 Setup EC2 Instances Lab](route53-setup-ec2-instances-lab.md)
-* Complete [Route 53 Simple Routing Lab](route53-simple-routing-policy-lab.md)
-
-## Steps
-
-    TBW
+To use this type of routing you create a  latency resource record set for the Amazon EC2 (or ELB) 
+resource in each region that hosts your website. When Route 53 receives a request for your site, it selects the
+latency resource record set for the region that gives the user the lowest latency. It then returns the associated
+EC2 (or ELB) resource.  
 
 
 ## 
 
-**[Previous Lab/Lecture](route53-simple-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-latency-routing-policy-lab.md)**
+**[Previous Lab/Lecture](route53-weighted-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-failover-routing-policy-lab.md)**
 
 
 
