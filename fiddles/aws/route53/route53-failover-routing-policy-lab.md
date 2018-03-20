@@ -20,10 +20,10 @@ and took some exam related notes--i.e. no `step-by-step` details.
 <table>
   <tr>
     <td>
-      <img src="https://i.imgur.com/NLj9ncB.png" height="100" title="Failover Routing Policy (Before)" /> 
+      <img src="https://i.imgur.com/NLj9ncB.png" height="150" title="Failover Routing Policy (Before)" /> 
     </td>
     <td>
-      <img src="https://i.imgur.com/tc6cQzZ.png" height="100" title="Failover Routing Policy (After)" /> 
+      <img src="https://i.imgur.com/tc6cQzZ.png" height="150" title="Failover Routing Policy (After)" /> 
     </td>
   </tr>
 </table>
