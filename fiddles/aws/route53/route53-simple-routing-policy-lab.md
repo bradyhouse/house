@@ -51,15 +51,15 @@ traffic routed too.
 10. Click the `create` button
 11. Open a secondary web browser tab, navigate to your domain name.  For example, `bradyhouse.ninja`
 
-
-<img src="https://i.imgur.com/a3Y9OVn.png" height="100" title="Server 1" /> 
-
+<table><tr><td>
+<img src="https://i.imgur.com/a3Y9OVn.png" height="150" title="Server 1" /> 
+</td></tr></table>
 
 12. Refresh (Reload) the page, you see the second server load
 
-
-<img src="https://i.imgur.com/yDvfMLZ.png" height="100" title="Server 2" /> 
-
+<table><tr><td>
+<img src="https://i.imgur.com/yDvfMLZ.png" height="150" title="Server 2" /> 
+</td></tr></table>
 
 13. Clean Up, **be sure and stop all your EC2 instances if you are not going onto the next lab**
 
