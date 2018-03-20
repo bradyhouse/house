@@ -16,9 +16,9 @@ Route 53 Simple Routing Policy Lab
 
 ## Simple Routing Policy
 
-
-![Simple Routing Policy](https://i.imgur.com/oKNCRtl.png)
-
+<table><tr><td>
+<img src="https://i.imgur.com/oKNCRtl.png" height="150" title="Simple Routing Policy" /> 
+</td></tr></table>
 
 This is the default routing policy when you create a new record set. This is most commonly used when you have a single
 resource that performs a given function for your domain.  For example, you have a single web server that you want
