@@ -42,7 +42,7 @@ What did we learn?
 
 ### Answers
 
-1.  Say you setup one Record set to route European customers to specific server.  You would then set up a second using
+1.  Say you setup one Record set to route European customers to a specific server.  You would then set up a second using
     the `Default` geolocation to route all other customers to a second server.
 
 
