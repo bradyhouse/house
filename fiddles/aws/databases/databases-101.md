@@ -39,7 +39,7 @@ spreadsheet:
   * Field (Columns)
   
  
-## What Relational Database Types are supported?
+### What Relational Database Types are supported?
  
  
 <img src="https://i.imgur.com/UtxmhtP.png" height="150" title="RDS types supported by AWS" />
@@ -61,7 +61,7 @@ spreadsheet:
 <img src="https://i.imgur.com/f1SgwLl.png" height="150" title="Structure of a non-relational DB" />
 
 
-## What is Data Warehousing -- aka Redshift?
+## What is Data Warehousing?
 
 Used for business intelligence. Tools like Cognos, Jaspersoft, SQL Server Reporting Services, Oracle Hyperion,
 SAP NetWeaver. It is used to pull in very large and complex data sets. Usually, used by management to do queries
