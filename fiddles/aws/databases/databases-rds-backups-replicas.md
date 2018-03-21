@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/ytVeZB4.png" height="100" title="AWS RDS Service" /> <img src="https://i.imgur.com/9awJmtb.png" height="50" title="AWS EC2" />  
 
 
-Databases Backups, Multi-AZ & Read Replicas Lab
+Databases Backups, Multi-AZ & Read Replicas
 ======
 
     TBW
@@ -12,15 +12,6 @@ Databases Backups, Multi-AZ & Read Replicas Lab
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
-
-## Prerequisites
-
-* Mac configured with [iTerm](https://iterm2.com/) and [BBEdit](http://www.barebones.com/products/bbedit/)
-* AWS Console free-tier account
-* **Complete the [Databases RDS Instance Lab](databases-rds-instance-lab.md)**
-
-
-## Steps
 
     TBW
 
@@ -37,7 +28,7 @@ Databases Backups, Multi-AZ & Read Replicas Lab
   
 ## 
 
-**[Previous Lab/Lecture](databases-rds-instance-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-rds-backups-replicas-lab.md)**
+**[Previous Lab/Lecture](databases-rds-instance-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-rds-backups-replicas.md)**
 
 
 
