@@ -184,7 +184,7 @@ In the above example, Route 53 sends the traffic to AP-SOUTHEAST-2 because it de
 
 ## 
 
-**[Previous Lab/Lecture](route53-latency-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-failover-routing-policy-lab.md)**
+**[Previous Lab/Lecture](route53-latency-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-geolocation-routing-policy-lab.md)**
 
 
 
