@@ -28,11 +28,7 @@ Introduction to AWS Database services.
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-## AWS RDS Services
-
-<img src="https://i.imgur.com/ytVeZB4.png" height="100" title="AWS RDS Service" />
-
-### What is a relational database?
+## What is a relational database?
 
 Relational databases are what most of us are all used to. They have been around since the 70's.  Think of a traditional
 spreadsheet:
@@ -43,7 +39,7 @@ spreadsheet:
   * Field (Columns)
   
  
-### What Relational Database Types are supported?
+## What Relational Database Types are supported?
  
  
 <img src="https://i.imgur.com/UtxmhtP.png" height="150" title="RDS types supported by AWS" />
@@ -59,26 +55,13 @@ spreadsheet:
  *  MariaDB
  
  
-## DynamoDB 
- 
-
-<img src="https://i.imgur.com/hBlcmbB.png" height="100" title="AWS Dynamo DB" />
-
-
-### What is a Non-Relational Database?
+## What is a Non-Relational Database?
 
 
 <img src="https://i.imgur.com/f1SgwLl.png" height="150" title="Structure of a non-relational DB" />
 
 
-
-## Red Shift
-
-<img src="https://i.imgur.com/N8u3ppG.png" height="100" title="AWS Redshift" />  
-
-
-### What is Data Warehousing -- aka Redshift?
-
+## What is Data Warehousing -- aka Redshift?
 
 Used for business intelligence. Tools like Cognos, Jaspersoft, SQL Server Reporting Services, Oracle Hyperion,
 SAP NetWeaver. It is used to pull in very large and complex data sets. Usually, used by management to do queries
@@ -113,14 +96,8 @@ queries, aka `Data Warehousing` databases, are very different from a database an
 when compared to databases that simply support OLTP queries.
  
 
-## Elastic Cache
+## What is Elastic Cache?
 
-
-<img src="https://i.imgur.com/5F1xBGa.png" height="100" title="AWS Elastic Cache" />  
-  
-  
-### What is Elastic Cache?
-      
 
      TBW
 
