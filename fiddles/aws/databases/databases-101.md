@@ -68,19 +68,19 @@ SAP NetWeaver. It is used to pull in very large and complex data sets. Usually, 
 on data (such as current perfomance vs targets etc).
 
  
-### OLTP vs OLAP
+## OLTP vs OLAP
 
 Online Transaction Processing (OLTP) differs from OLAP, Online Analytics Processing in the types of queries that are
 run.
 
 
-#### OLTP Example
+### OLTP Example
 
 To get `Order number 2120121`, an OLTP query pulls up a row of data such as Name, Date, Delivery Address, 
 Delivery Status ... etc. Think standard SQL query -- `SELECT * FROM Orders where id = 2120121`.
 
 
-#### OLAP Example
+### OLAP Example
 
 To get `Net Profit for EMEA and Pacific for the Digital Radio product`, an OLAP query pulls in a large number of 
 records. You then need to:
@@ -98,27 +98,51 @@ when compared to databases that simply support OLTP queries.
 
 ## What is Elastic Cache?
 
+Elastic Cache is a web service that makes it easy to deploy, operate and scale in-memory cache in the cloud. The service
+improves the performance of web applications by allowing you retrieve information from fast, managed, in-memory
+caches, instead of relying entirely on slower disk-based databases.
 
-     TBW
+The service supports two open-source in-memory caching engines:
 
- 
-  
+* [Memcached](https://www.memcached.org/) 
+* [Redis](https://redis.io/)
+
 
 ## Exam Tips
 
 What did we learn?
 
-    TBW
+* RDS - OLTP
+  *  SQL Server
+  *  Oracle
+  *  MySQL Server (open source)
+  *  PostgreSQL
+  *  Aurora
+  *  MariaDB
+* DynamoDB - No SQL
+* Redshift - OLAP
+* Elasticache - In Memory Caching
 
 
 ### Review Questions
 
-    TBW
+1.  What six databases are supported by AWS RDS service?
+2.  What does OLTP stand for? What is the associated AWS Service offering?
+3.  What does OLAP stand for? What is the associated AWS Service offering?  
+4.  What is Amazons No SQL database service? 
+5.  What is a use case for Elastic Cache?
+6.  What Amazon's prefered RDS Database type?
 
 
 ### Answers
 
-    TBW
+1.  S P A M M O
+2.  Online Transaction Processing; RDS
+3.  Online Analytic Processing; RedShift
+4.  DynamoDB
+5.  Shoe retail website that display their 10 top selling products on their home page. Although this data could be
+    retrieved via OLTP query, Elastic Cache could be used instead.
+6.  Aurora
       
   
 ## 
