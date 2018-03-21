@@ -56,7 +56,7 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](route53-geolocation-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-exam-tips.md)**
+**[Previous Lab/Lecture](route53-geolocation-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../databases/databases-101.md)**
 
 
 
