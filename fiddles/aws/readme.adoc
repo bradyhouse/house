@@ -78,6 +78,6 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:databases/databases-rds-instance-lab.md[Databases RDS Instance Lab]
 ||link:databases/databases-rds-backups-replicas.md[Databases Backups, Multi-AZ & Read Replicas]
 ||link:https://aws.amazon.com/products/databases/[Amazon's Database Products]
-||link:https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html[Modifying an Amazon RDS DB Instance and Using the Apply Immediately Parameter]
+||link:https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html[Using the Apply Immediately Parameter]
 |=========================================================
 
