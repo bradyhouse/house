@@ -38,17 +38,20 @@ What did we learn?
 ### Review Questions
 
 1. How is the `Default` geolocation used?
+2. Can you create a Geolocation routing policy that is specific to Chicago users?
 
 
 ### Answers
 
 1.  Say you setup one Record set to route European customers to a specific server.  You would then set up a second using
     the `Default` geolocation to route all other customers to a second server.
+2.  No, geolocation is not city specific. It can be specified by continent or country.
+    
 
 
 ## 
 
-**[Previous Lab/Lecture](route53-failover-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-geolocation-routing-policy-lab.md)**
+**[Previous Lab/Lecture](route53-failover-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-exam-tips.md)**
 
 
 

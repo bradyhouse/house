@@ -72,5 +72,6 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:route53/route53-latency-routing-policy-lab.md[Route 53 Latency Routing Policy Lab]
 ||link:route53/route53-failover-routing-policy-lab.md[Route 53 Failover Routing Policy Lab]
 ||link:route53/route53-geolocation-routing-policy-lab.md[Route 53 Geolocation Routing Policy Lab]
+||link:route53/route53-exam-tips[Route 53 Exam Tips]
 |=========================================================
 
