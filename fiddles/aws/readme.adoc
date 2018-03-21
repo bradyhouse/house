@@ -77,7 +77,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:databases/databases-101.md[Databases 101]
 ||link:databases/databases-rds-instance-lab.md[Databases RDS Instance Lab]
 ||link:databases/databases-rds-backups-replicas.md[Databases Backups, Multi-AZ & Read Replicas]
-||link:https://aws.amazon.com/products/databases/[Amazon's Database Products]
-||link:https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html[Using the Apply Immediately Parameter]
+||link:https://aws.amazon.com/products/databases/[White Paper - Amazon's Database Products]
+||link:https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html[White Paper - Using the Apply Immediately Parameter]
 |=========================================================
 
