@@ -27,7 +27,6 @@ Introduction to AWS Database services.
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
-    TBW
 
 ## What is a relational database?
 
@@ -43,8 +42,10 @@ spreadsheet:
 ## Relational Database Types
  
  
-![Relational Database Types](https://i.imgur.com/UtxmhtP.png)
+<img src="https://i.imgur.com/UtxmhtP.png" height="150" title="RDS types supported by AWS" />
+
  
+ Amazon's RDS service supports the following six database types:
  
  *  SQL Server
  *  Oracle
@@ -54,10 +55,10 @@ spreadsheet:
  *  MariaDB
  
  
-## Non Relational Databases
+## Non-Relational Databases
 
 
-![Non Relational Database Structure](https://i.imgur.com/f1SgwLl.png)
+<img src="https://i.imgur.com/f1SgwLl.png" height="150" title="Structure of a non-relational DB" />
 
 
 * Amazon's Non-Relational Database offering is DynamoDB
@@ -73,7 +74,9 @@ on data (such as current perfomance vs targets etc).
 
   
       
- 
+
+     TBW
+
  
   
 
