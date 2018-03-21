@@ -152,7 +152,34 @@ In the above example, Route 53 sends the traffic to AP-SOUTHEAST-2 because it de
   </tr>
 </table>
 
-45. Click the `Create` button
+57. Click the `Create` button
+
+
+### EC2: Simulate Failure
+
+58. Under `Services > Compute`, click `EC2`
+59. In the EC2 sidebar under `INSTANCES`, click `Instances`
+60. Select both instances running instances
+67. Click `Actions > Instance State > Stop`
+68. In the `Stop Instances` pop-up, click the `Yes, Stop` button
+69. Open a new browser tab and navigate to `<username>.ninja` -- for example, `bradyhouse.ninja`
+
+<table>
+  <tr>
+    <td>
+      <img src="https://i.imgur.com/1tvA7W5.png" width="150" title="Create Secondary Record Set" /> 
+    </td>
+  </tr>
+</table>
+ 
+70. It should still be up via your secondary record set (46-57) 
+
+
+### Clean Up
+
+71. If you are not going onto the next lab, stop all EC2 Instances
+72. Delete the two `A` record sets added in Route 53
+73. Delete the two `Healh checks` added in Route 53
 
 
 ## 
