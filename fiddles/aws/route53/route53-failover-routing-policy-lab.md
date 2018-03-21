@@ -102,7 +102,7 @@ In the above example, Route 53 sends the traffic to AP-SOUTHEAST-2 because it de
 </table>
 
 
-### Route 53: Create an A Record
+### Route 53: Create a Primary Record Set
 
 33. Under `Services > Network & Content Delivery`, click `Route 53`
 34. In the Route 53 sidebar, click the `Hosted zones` links
@@ -121,7 +121,33 @@ In the above example, Route 53 sends the traffic to AP-SOUTHEAST-2 because it de
 <table>
   <tr>
     <td>
-      <img src="https://i.imgur.com/Fyi7waC.png" width="150" title="Create Record Set" /> 
+      <img src="https://i.imgur.com/Fyi7waC.png" width="150" title="Create a Primary Record Set" /> 
+    </td>
+  </tr>
+</table>
+
+45. Click the `Create` button
+
+
+### Route 53: Create a Secondary Record Set
+
+46. Under `Services > Network & Content Delivery`, click `Route 53`
+47. In the Route 53 sidebar, click the `Hosted zones` links
+48. Click the `<username>.ninja` domain -- for example, `bradyhouse.ninja`
+49. Click the `Create Record Set` button
+50. Leave the `Name` field blank
+51. Check `Yes` for the Alias option
+52. Set the `Alias` target to the ELB Alias setup in the region farthest from you, which you configured as part of the
+    [Route 53 Setup EC2 Instances Lab](route53-setup-ec2-instances-lab.md)
+53. Set the `Routing Policy` to `Failover`
+54. Set `Failover Record Type` to `Secondary`
+55. Set `Evaluate Target Health` to `No` (default)
+56. Set `Associate with Health Check` to `No` (default)
+
+<table>
+  <tr>
+    <td>
+      <img src="https://i.imgur.com/1tvA7W5.png" width="150" title="Create Secondary Record Set" /> 
     </td>
   </tr>
 </table>
