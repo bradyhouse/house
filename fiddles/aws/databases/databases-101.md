@@ -147,7 +147,7 @@ What did we learn?
   
 ## 
 
-**[Previous Lab/Lecture](../route53/route53-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-101.md)**
+**[Previous Lab/Lecture](../route53/route53-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-rds-instance-lab.md)**
 
 
 
