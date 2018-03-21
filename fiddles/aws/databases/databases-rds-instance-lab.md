@@ -220,7 +220,7 @@ Database RDS Instance Lab
   
 ## 
 
-**[Previous Lab/Lecture](databases-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-rds-instance-lab.md)**
+**[Previous Lab/Lecture](databases-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-rds-backups-replicas-lab.md)**
 
 
 

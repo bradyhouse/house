@@ -75,7 +75,8 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:route53/route53-exam-tips[Route 53 Exam Tips]
 2+>| **Databases**
 ||link:databases/databases-101.md[Databases 101]
-||link:databases/databases-rds-instance-lab.md[Database RDS Instance Lab]
+||link:databases/databases-rds-instance-lab.md[Databases RDS Instance Lab]
+||link:databases/databases-rds-backups-replicas-lab.md[Databases Backups, Multi-AZ & Read Replicas Lab]
 ||link:https://aws.amazon.com/products/databases/[Amazon's Database Products]
 |=========================================================
 
