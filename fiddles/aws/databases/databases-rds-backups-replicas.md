@@ -86,14 +86,30 @@ the database design.
 <table>
   <tr>
     <td>
-    <img src="https://i.imgur.com/UvuKvLQ.png" height="150" title="Read Replica #1" />
+      <img src="https://i.imgur.com/UvuKvLQ.png" height="150" title="Read Replica #1" />
     </td>
     <td>
-    <img src="https://i.imgur.com/IvxRBJs.png" height="150" title="Read Replica #2" />
+      <img src="https://i.imgur.com/IvxRBJs.png" height="150" title="Read Replica #2" />
     </td>
-    
+    <td>
+        <img src="https://i.imgur.com/EhLJHsx.png" height="150" title="Read Replica #3" />
+    </td>
   </tr>
 </table>
+
+Read replicas allow you to have a read-only copy of your production database. This is achieved by using
+**asynchronous replication** from the primary RDS instance to the read replica. You use read replicas primarily
+for very read-heavy database workloads. Read replicas are available for MySQL Server, PostgreSQL, MariaDB and Aurora.
+
+* They are used for scaling, not DR  
+* Must have automatic backups turned on in order to deploy a read replica
+* You can have up to 5 read replica copies of any database
+* You can have read replicas of read replicas (but watch out for latency)
+* Each read replica will have its own DNS end point
+* You can have read replicas that have Multi-AZ
+* You can create read replicas of Multi-AZ source databases
+* Read replicas can be promoted to their own databases. This breaks the replication
+* You can have a read replica in a second region
 
 
 
