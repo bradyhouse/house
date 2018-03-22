@@ -112,17 +112,22 @@ for very read-heavy database workloads. Read replicas are available for MySQL Se
 * You can have a read replica in a second region
 
 
-
-
 ## Exam Tips
 
-### Review Questions
+What did we learn?
 
- 1. How do you encrypt an existing database instance?
+### Review Questions
+ 
+1.  What are the two types of backups offered by AWS? How do they differ?
+2.  What is the retention period range possible for Automated backups?
+3.  How do you encrypt an existing database instance?
 
 ### Answers
 
- 1. Create a snapshot, copy and encrypt the snapshot. Finally, from the encrypted copy deploy a new instance.
+1.  Automated and snapshots; Snapshots are manual.
+2.  1 to 35 days
+3.  Create a snapshot, copy and encrypt the snapshot. Finally, from the encrypted copy deploy a new instance.
+  
   
 ## 
 
