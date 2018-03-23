@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/ytVeZB4.png" height="100" title="AWS RDS Service" /> <img src="https://i.imgur.com/9awJmtb.png" height="50" title="AWS EC2" />  
 
 
-Database RDS Instance Lab
+RDS Instance Lab
 ======
 
 12 minute lab outlining how to create a MySQL database instance and then connect to it from EC2 instance.

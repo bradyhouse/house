@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/ytVeZB4.png" height="100" title="AWS RDS Service" /> 
 
-Databases Backups, Multi-AZ & Read Replicas
+Backups, Multi-AZ & Read Replicas
 ======
 
 16 minute lecture on differences between `Backups`, `Multi-AZ`, and `Read Replicas`. _Note, this topic is important 
