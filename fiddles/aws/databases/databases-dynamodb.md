@@ -62,20 +62,22 @@ To calculate Read Capacity Units = (0.0065/50) x 12 x 24 = $0.0374
 
 ## Exam Tips
 
-    TBW
+    N/A
     
 ### Review Questions
 
 1.  Why is DynamoDB so scalable?
 2.  Why would you use DynamoDB over RDS?
-3.  What is cheaper reads or writes to DynamoDB?
+3.  What is the basis of DynamoDB pricing?
+4.  What is cheaper reads or writes to DynamoDB?
 
 
 ### Answers
 
 1.  Because it offers `push button scaling`
 2.  Because of `push button scaling`
-3.  Reads
+3.  Provisioned Throughput Capacity
+4.  Reads
 
   
 ## 
