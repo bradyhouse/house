@@ -116,18 +116,30 @@ for very read-heavy database workloads. Read replicas are available for MySQL Se
 
 What did we learn?
 
+    N/A
+
+
 ### Review Questions
  
 1.  What are the two types of backups offered by AWS? How do they differ?
 2.  What is the retention period range possible for Automated backups?
 3.  How do you encrypt an existing database instance?
+4.  What is Multi-AZ?
+5.  What is Read Replicas?
+6.  What database types support Multi-AZ?
+7.  What database type support Read Replicas?
+
 
 ### Answers
 
 1.  Automated and snapshots; Snapshots are manual.
 2.  1 to 35 days
 3.  Create a snapshot, copy and encrypt the snapshot. Finally, from the encrypted copy deploy a new instance.
-  
+4.  Synchronously maintained DR copy of a database maintained in a different AZ
+5.  Asynchronously maintained copy of a database intended for performance scaling
+6.  SPAMMO
+7.  PAMM
+
   
 ## 
 
