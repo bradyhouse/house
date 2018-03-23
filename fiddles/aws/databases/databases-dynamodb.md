@@ -82,7 +82,7 @@ To calculate Read Capacity Units = (0.0065/50) x 12 x 24 = $0.0374
   
 ## 
 
-**[Previous Lab/Lecture](databases-rds-backups-replicas.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-dynamodb.md)**
+**[Previous Lab/Lecture](databases-rds-backups-replicas.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-redshift.md)**
 
 
 
