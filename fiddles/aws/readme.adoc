@@ -79,6 +79,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:databases/databases-rds-backups-replicas.md[Databases Backups, Multi-AZ & Read Replicas]
 ||link:databases/databases-dynamodb.md[Databases DynamoDB]
 ||link:databases/databases-redshift.md[Databases Redshift]
+||link:databases/databases-elastic-cache.md[Databases Elastic Cache]
 ||link:https://aws.amazon.com/products/databases/[White Paper - Amazon's Database Products]
 ||link:https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html[White Paper - Using the Apply Immediately Parameter]
 |=========================================================
