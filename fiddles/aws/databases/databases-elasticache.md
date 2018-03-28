@@ -45,7 +45,7 @@ such as sorted sets and lists. ElastiCache supports Master / Slave replication a
 used to achieve cross AZ redundancy.
 
 
-Exam Tips
+## Exam Tips
 
 What did we learn?
 
