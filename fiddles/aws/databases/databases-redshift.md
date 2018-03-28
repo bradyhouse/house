@@ -129,7 +129,7 @@ What have we learned?
   
 ## 
 
-**[Previous Lab/Lecture](databases-dynamodb.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-elastic-cache.md)**
+**[Previous Lab/Lecture](databases-dynamodb.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-elasticache.md)**
 
 
 
