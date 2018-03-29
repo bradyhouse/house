@@ -81,7 +81,7 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](databases-elasticache.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-aurora.md)**
+**[Previous Lab/Lecture](databases-elasticache.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](databases-exam-tips.md)**
 
 
 
