@@ -1,4 +1,4 @@
-  <img src="https://i.imgur.com/ytVeZB4.png" height="100" title="AWS Aurora" />
+<img src="https://i.imgur.com/ytVeZB4.png" height="100" title="AWS Aurora" />
 
 Aurora
 ======

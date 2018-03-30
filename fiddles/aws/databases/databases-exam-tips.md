@@ -150,7 +150,7 @@ open-source in-memory caching engines:
 
 
 ## 
-**[Previous Lab/Lecture](databases-aurora.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../readme.adoc)**
+**[Previous Lab/Lecture](databases-aurora.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../vpc/vpc-101.md)**
 
 
 
