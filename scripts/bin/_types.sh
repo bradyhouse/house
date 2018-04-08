@@ -31,6 +31,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"au\"\t\tinstall aurelia-cli\thttps://www.npmjs.com/package/aurelia-cli";
            echo -e "\t\"brew\"\t\tinstall homebrew\thttp://brew.sh/";
            echo -e "\t\"gh\"\t\tinstall github terminal\thttps://www.npmjs.com/package/gh";
+           echo -e "\t\"gradle\"\tinstall gradle\t\thttps://gradle.org/";
            echo -e "\t\"js-beautify\"\tinstall js-beautify\thttps://www.npmjs.com/package/js-beautify";
            echo -e "\t\"live-server\"\tinstall live-server\thttps://www.npmjs.com/package/live-server";
            echo -e "\t\"nativescript\"\tinstall nativeScript\thttps://www.npmjs.com/package/nativescript";

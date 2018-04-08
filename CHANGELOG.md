@@ -1719,3 +1719,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Angular2-CLI**
 
   1.  Added [fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine](fiddles/angular2-cli/fiddle-0018-SlickGridSparkLine) ~ [Issue 219](https://github.com/bradyhouse/house/issues/219)
+
+
+### 222_fiddle.sh_setup_mac_add_gradle
+
+* **Java**
+
+ 1.  Added gradle setup support ~ [Issue #222](https://github.com/bradyhouse/house/issues/222)
+    * Reflected changes:
+      1.  Added [scripts/bin/setup/mac/_gradle.sh](scripts/bin/setup/mac/_au.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+      4.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
