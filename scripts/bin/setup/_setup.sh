@@ -12,7 +12,8 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline   - See CHANGELOG @ 201702110420
 # 03/10/2017 - See CHANGELOG @ 201703100420
-# 01/24/2018 - See aurelia-dependencies-update
+# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 04/08/2018 - See CHANGELOG @ 222_fiddle.sh_setup_mac_add_gradle
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -37,6 +38,10 @@ function setup() {
                 ;;
               'gh')
                 source bin/setup/mac/_gh.sh;
+                install || exit $?;
+                ;;
+              'gradle')
+                source bin/setup/mac/_gradle.sh;
                 install || exit $?;
                 ;;
               'joe')
@@ -83,6 +88,7 @@ function setup() {
                 setup ${_os} "android" || exit $?;
                 setup ${_os} "au" || exit $?;
                 setup ${_os} "brew" || exit $?;
+                setup ${_os} "gradle" || exit $?;
                 setup ${_os} "gh" || exit $?;
                 setup ${_os} "node" || exit $?;
                 setup ${_os} "nvm" || exit $?;
