@@ -85,5 +85,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html[White Paper - Using the Apply Immediately Parameter]
 2+>| **VPC**
 ||link:vpc/vpc-101.md[VPC 101]
+||link:vpc/vpc-lab-part-1.md[VPC Lab Part 1]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html[VPCs and Subnets]
 |=========================================================
 

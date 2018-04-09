@@ -70,6 +70,10 @@ fiddles/angular2/fiddle-0*/app-example
 # c fiddles
 fiddles/c/fiddle-*/*/target/
 
+# java fiddles
+fiddles/java/fiddle-*/*/target/
+
+
 # nativeScript fiddles
 fiddles/nativeScript/fiddle-*/*/platforms/
 fiddles/nativeScript/fiddle-*/*/hooks/
