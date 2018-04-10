@@ -86,6 +86,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 2+>| **VPC**
 ||link:vpc/vpc-101.md[VPC 101]
 ||link:vpc/vpc-lab-part-1.md[VPC Lab Part 1]
+||link:vpc/vpc-lab-part-2.md[VPC Lab Part 2]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html[VPCs and Subnets]
 |=========================================================
 

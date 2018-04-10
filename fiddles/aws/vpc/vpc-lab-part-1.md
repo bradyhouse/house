@@ -4,7 +4,7 @@
 VPC Lab Part 1
 ======
 
-18 minute lab detailing how to create a VPC without using the VPC wizard.
+18 minute lab detailing how to create a VPC with a private and public subnet.
 
 
 ## Video Link
@@ -14,11 +14,22 @@ VPC Lab Part 1
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
+## Big Picture
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/L4xBzK2.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
+
+
 ## Prerequisites
 
 *   Mac configured with [iTerm](https://iterm2.com/)
 *   AWS Console free-tier account
-*   *Completed the last lab, [EC2 Instance Lab](../ec2/ec2-instance-lab.md)*
+*   **Completed [EC2 Instance Lab](../ec2/ec2-instance-lab.md)**
 
 
 
@@ -261,13 +272,22 @@ VPC Lab Part 1
 9.  When prompted with the message `The authenticity of host ... can't be established...` type
     `yes` and hit `Enter`
 
+10. At the ssh prompt, change user to `su`
+
+    ```sudo su```
+    
+11. Install all security updates 
+
+    ```yum update -y```
+
+12. The End, continue to the [next lab](vpc-lab-part-2.md)
 
 
 ## Exam Tips
 
 What did we learn?
 
-    TBW
+    N/A
     
     
 ## Review Questions
@@ -296,7 +316,7 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](vpc-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-lab-part-1.md)**
+**[Previous Lab/Lecture](vpc-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-lab-part-2.md)**
 
 
 
