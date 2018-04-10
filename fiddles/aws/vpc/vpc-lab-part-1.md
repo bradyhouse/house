@@ -259,26 +259,26 @@ VPC Lab Part 1
 5.  Launch iTerm
 6.  Navigate to your Downloads directory
 
-  ```cd ~/Downloads```
+    ```cd ~/Downloads```
 
 7.  Goto into the SSH directory (created in steps 33-37 of the [EC2 Instance Lab](ec2-instance-lab.md))
 
-  ```cd SSH```
+    ```cd SSH```
   
 8.  Go back to the terminal window and initiate the ssh session to the <IP Address>
 
-  ```ssh ec2-user@<IP Address> -i MyEC2KeyPair.pem```
+    ```ssh ec2-user@<IP Address> -i MyEC2KeyPair.pem```
   
 9.  When prompted with the message `The authenticity of host ... can't be established...` type
     `yes` and hit `Enter`
 
 10. At the ssh prompt, change user to `su`
 
-    ```sudo su```
+      ```sudo su```
     
 11. Install all security updates 
 
-    ```yum update -y```
+      ```yum update -y```
 
 12. The End, continue to the [next lab](vpc-lab-part-2.md)
 
