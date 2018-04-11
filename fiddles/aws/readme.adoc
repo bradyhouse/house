@@ -90,5 +90,6 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:vpc/vpc-nat-inst-and-gateways.md[VPC NAT Instances & NAT Gateways]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html[White Paper - VPCs and Subnets]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html[White Paper - NAT Instances]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html[White Paper - Comparison of NAT Instances and NAT Gateways]
 |=========================================================
 
