@@ -4,7 +4,8 @@
 VPC NAT Instances & NAT Gateways
 ======
 
-14 Minute lecture introducing NAT Instances and NAT Gateways.
+14 Minute lecture introducing NAT Instances and NAT Gateways.  More specifically, the lecture
+addresses how to grant internet access to an EC2 instance residing in a private subnet.
 
 
 ## Video Link
