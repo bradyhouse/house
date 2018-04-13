@@ -193,10 +193,31 @@ then a NAT Gateway.
 
 What did we learn?
 
-    TBW
+### NAT Instances
+
+* When creating a NAT instance, disable Source/Destination check on the instance
+* NAT instances must be in a public subnet
+* There must be a route out of the private subnet to the NAT instance, in order for it to work
+* The amount of traffic that NAT instances can support depends on the instance size. If you are bottlenecking, 
+  increase the instance size
+* You can create high availability using Autoscaling Groups, multiple subnets in different AZs, and a script to 
+  automate failover
+* NAT instances are behind a security group
+ 
+
+### NAT Gateway
+
+* Preferred by the enterprise
+* Scale automatically up to 10Gps
+* No need to patch
+* Not associated with security groups
+* Automatically assigned a public ip address
+* Remember to update your route tables
+* No need to disable Source/Destination Checks
+* More secure than a NAT instance
+
     
-    
-## Review Questions
+### Review Questions
 
 1.  What is a NAT Instance?
 2.  When must you disable source/destination checks on a NAT instance?
@@ -210,6 +231,9 @@ What did we learn?
 10. Can a NAT Gateway be used for IPv6 traffic?
 11. What is a `Blackhole` route?
 12. Can a NAT Gateway be used as a bastion server?
+13. Are NAT Gateways a single instance?
+14. Do NAT Gateways scale automatically? If so, by how much?
+15. Why should you establish multiple NAT Gateways in multiple AZs?
         
 
 ### Answers
@@ -230,8 +254,10 @@ What did we learn?
 10. No. You must use an `Egress Only Internet Gateway` (to be covered later)
 11. Routing table entry that points to a terminated EC2 instance -- ie it goes to nowhere.
 12. No
+13. No
+14. Yes; up to 10Gps
+15. For redundancy
  
-
 ## 
 
 **[Previous Lab/Lecture](vpc-lab-part-2.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nat-gateway-lab.md)**
