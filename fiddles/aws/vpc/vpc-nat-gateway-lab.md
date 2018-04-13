@@ -30,7 +30,7 @@ then a NAT Gateway.
 <table>
 <tr>
 <td>
- <img src="https://i.imgur.com/KHmrefk.png" height="250" title="Big Picture" />
+ <img src="https://i.imgur.com/FNyl0I9.png" height="250" title="Big Picture" />
 </td>
 </tr>
 </table>
@@ -38,56 +38,154 @@ then a NAT Gateway.
 
 ### Create an EC2 NAT Instance
 
- 1.  Under `Services > Compute` click `EC2`
- 2.  Click the `Launch Instance` button
- 3.  On the `Step 1: Choose an Amazon Machine Image (AMI)` page, click the `Community AMIs` tab
- 4.  On the `Community AMIs` page in the search field, enter `NAT` and press `Enter`
- 5.  Select the `VPC NAT HVM EBS` AMI (top of the list)
- 6.  Select the `General purpose` `t2.micro` (default)
- 7.  Click the `Next: Configure Instance Details` button
- 8.  On the `Step 3: Configure Instance Details` page, set `Network` to `... | MyVPC`
- 9.  Set the `Subnet` to `... | 10.0.1.0 us-east-1a`
- 10. Click the `Next: Add Storage` button
- 11. Click the `Next: Add Tags` button
- 12. On the `Step 5: Add Tags` page, click the `Add Tag` button
- 11. Set the `Key` to `Name` 
- 12. Set the `Value` to `NATServer01`
- 13. Click the `Next: Configure Security Groups`
- 14. On the `Step 6: Configure Security Group` page, set `Assign a security group` to `Select existing security group`
- 15. Select the `MyWebDMZ` security group (See [VPC Lab Part 1](vpc-lab-part-1.md))
- 20. Click the `Review and Launch` button
- 21. On the `Step 7: Review Instance Launch` page, click the `Launch` button
- 22. In the `Select an existing key pair or create a new key pair` pop-up, select `Choose an existing key pair`
- 23. Set the `Select a key pair` to `MyEC2KeyPair` (See the [EC2 Instance Lab](../ec2/ec2-instance-lab.md))
- 24. Click the `I acknowledge that I have access to the selected private key ...`  checkbox
- 25. Click the `Launch Instances` button
- 26. In the `Launch Status` page, click the `View Instances` button
+1.  Under `Services > Compute` click `EC2`
+2.  On the EC2 Dashboard page in the sidebar, under `INSTANCES` click `Instances`
+3.  Click the `Launch Instance` button
+4.  On the `Step 1: Choose an Amazon Machine Image (AMI)` page, click the `Community AMIs` tab
+5.  On the `Community AMIs` page in the search field, enter `NAT` and press `Enter`
+6.  Select the `VPC NAT HVM EBS` AMI (top of the list)
+7.  Select the `General purpose` `t2.micro` (default)
+8.  Click the `Next: Configure Instance Details` button
+9.  On the `Step 3: Configure Instance Details` page, set `Network` to `... | MyVPC`
+10. Set the `Subnet` to `... | 10.0.1.0 us-east-1a`
+11. Click the `Next: Add Storage` button
+12. Click the `Next: Add Tags` button
+13. On the `Step 5: Add Tags` page, click the `Add Tag` button
+14. Set the `Key` to `Name` 
+15. Set the `Value` to `NATServer01`
+16. Click the `Next: Configure Security Groups`
+17. On the `Step 6: Configure Security Group` page, set `Assign a security group` to `Select existing security group`
+18. Select the `MyWebDMZ` security group (See [VPC Lab Part 1](vpc-lab-part-1.md))
+19. Click the `Review and Launch` button
+20. On the `Step 7: Review Instance Launch` page, click the `Launch` button
+21. In the `Select an existing key pair or create a new key pair` pop-up, select `Choose an existing key pair`
+22. Set the `Select a key pair` to `MyEC2KeyPair` (See the [EC2 Instance Lab](../ec2/ec2-instance-lab.md))
+23. Click the `I acknowledge that I have access to the selected private key ...`  checkbox
+24. Click the `Launch Instances` button
+25. In the `Launch Status` page, click the `View Instances` button
 
 
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/nvIKiFD.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
 
-### Disable Source/Target Validation
 
-    TBW
+### Disable Source/Dest Check
+
+1.  Under `Services > Compute` click `EC2`
+2.  On the EC2 Dashboard page in the sidebar, under `INSTANCES` click `Instances`
+3.  Select the `NATServer01` instance
+4.  Click `Actions > Networking > Change Source/Dest. Check`
+5.  In the `Enable Source/Destination Check` pop-up, click the `Yes, Disable`
 
 
-### Add Route Table Entry
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/CJHpqlg.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
 
-    TBW
+
+### Add Route 
+
+1.  Click `Services > Networking & Content Delivery > VPC`
+2.  On the VPC Dashboard page in the sidebar, click `Route Tables`
+3.  Select the default (no name) route table for `... | myVPC`
+4.  In the details section, click the `Routes` tab
+5.  Click the `Edit` button
+6.  Click the `Add another route` button
+7.  Set the `Destination` to `0.0.0.0/0`
+8.  Set the `Target` to `... | NATServer01` 
+9.  Click the `Save` button
+
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/4tpRTXK.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
 
 
 ### Cleanup
 
-    TBW
-    
+1.  Under `Services > Compute` click `EC2`
+2.  On the EC2 Dashboard page in the sidebar, under `INSTANCES` click `Instances`
+3.  Select the `NATServer01` instance
+4.  Click `Actions > Instance State > Terminate`
+5.  In the `Terminate Instances` pop-up, click the `Yes, Terminate` button
 
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/BBLlJua.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
+
+    
 ## Configure a NAT Gateway
 
 ### Big Picture
 
-    TBW
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/DINgETN.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
 
 
 ### Create a NAT Gateway
+
+1.  Click `Services > Networking & Content Delivery > VPC`
+2.  On the VPC Dashboard page in the sidebar, click `NAT Gateways`
+3.  Click the `Create NAT Gateway` button
+4.  On the `Create NAT Gateway` page, set the `Subnet` to `10.0.1.0-us-east-1a` (See [VPC Lab Part 1](vpc-lab-part-1.md))
+5.  Click the `Create New EIP` button
+6.  Click the `Create a NAT Gateway` button
+7.  On the `Create NAT Gateway` confirmation page, click the `close` button
+
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/xpDAzWy.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
+
+
+8.  Wait for 10-15 minutes until the status of your new gateway changes to `available`
+
+
+### Add Route 
+
+1.  Click `Services > Networking & Content Delivery > VPC`
+2.  On the VPC Dashboard page in the sidebar, click `Route Tables`
+3.  Select the default (no name) route table for `... | myVPC`
+4.  In the details section, click the `Routes` tab
+5.  Click the `Edit` button
+8.  Set the `Target` of the `0.0.0.0/0` of the entry to `nat-...` 
+9.  Click the `Save` button
+
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/AsNmuE9.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
 
       
 
@@ -110,6 +208,8 @@ What did we learn?
 8.  Do all EC2 instance perform source/destination checks by default? (T/F)
 9.  How do you create a NAT Gateway?
 10. Can a NAT Gateway be used for IPv6 traffic?
+11. What is a `Blackhole` route?
+12. Can a NAT Gateway be used as a bastion server?
         
 
 ### Answers
@@ -128,6 +228,8 @@ What did we learn?
 8.  True
 9.  Network & Content Delivery > VPC > NAT Gateways > Create NAT Gateway
 10. No. You must use an `Egress Only Internet Gateway` (to be covered later)
+11. Routing table entry that points to a terminated EC2 instance -- ie it goes to nowhere.
+12. No
  
 
 ## 
