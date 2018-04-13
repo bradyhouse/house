@@ -87,7 +87,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:vpc/vpc-101.md[VPC 101]
 ||link:vpc/vpc-lab-part-1.md[VPC Lab Part 1]
 ||link:vpc/vpc-lab-part-2.md[VPC Lab Part 2]
-||link:vpc/vpc-nat-inst-and-gateways.md[VPC NAT Instances & NAT Gateways]
+||link:vpc/vpc-nat-gateway-lab.md[VPC NAT Instances & NAT Gateway Lab]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html[White Paper - VPCs and Subnets]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html[White Paper - NAT Instances]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html[White Paper - Comparison of NAT Instances and NAT Gateways]

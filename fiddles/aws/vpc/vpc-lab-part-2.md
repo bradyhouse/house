@@ -118,7 +118,7 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](vpc-lab-part-1.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nat-inst-and-gateways.md)**
+**[Previous Lab/Lecture](vpc-lab-part-1.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nat-gateway-lab.md)**
 
 
 
