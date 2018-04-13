@@ -258,9 +258,10 @@ What did we learn?
 14. Yes; up to 10Gps
 15. For redundancy
  
+
 ## 
 
-**[Previous Lab/Lecture](vpc-lab-part-2.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nat-gateway-lab.md)**
+**[Previous Lab/Lecture](vpc-lab-part-2.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nacls-vs-sec-groups.md)**
 
 
 
