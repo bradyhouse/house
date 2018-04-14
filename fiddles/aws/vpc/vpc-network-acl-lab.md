@@ -72,7 +72,7 @@ What did we learn?
  
 ## 
 
-**[Previous Lab/Lecture](vpc-nat-gateway-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-network-acl-lab.md)**
+**[Previous Lab/Lecture](vpc-nat-gateway-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-load-balancer-lab.md)**
 
 
 
