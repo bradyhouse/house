@@ -139,7 +139,7 @@ then a NAT Gateway.
 <table>
 <tr>
 <td>
- <img src="https://i.imgur.com/DINgETN.png" height="250" title="Big Picture" />
+ <img src="https://i.imgur.com/VpJOmuc.png" height="250" title="Big Picture" />
 </td>
 </tr>
 </table>
@@ -261,7 +261,7 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](vpc-lab-part-2.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nacls-vs-sec-groups.md)**
+**[Previous Lab/Lecture](vpc-lab-part-2.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-network-acl-lab.md)**
 
 
 
