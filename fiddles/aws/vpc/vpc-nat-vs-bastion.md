@@ -14,24 +14,40 @@ VPC NAT vs Bastion Servers
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-    TBW
+## Big Picture
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/wgMcc5z.png" height="250" title="NAT vs Bastion Server" />
+</td>
+</tr>
+</table>
   
 
 ## Exam Tips
 
 What did we learn?
 
-    TBW
+* A NAT is used to provide internet traffic to EC2 instances in private subnets
+* A Bastion is used to securely administer EC2 instances (using SSH or RDP) in private subnets. In Australia we call 
+  them Jump boxes
+
      
    
 ### Review Questions
 
-    TBW
+1.  What is a Bastion Server?
+2.  What is a NAT Instance?  What is it used for?
+3.  What Subnet do Bastion and NAT Instances reside in?
 
 
 ### Answers
 
-    TBW
+1.  Jump Box
+2.  Network address translation (NAT) instance. Its used to provide Internet Access to Private Subnets
+3.  Public
+
 
  
 ## 
