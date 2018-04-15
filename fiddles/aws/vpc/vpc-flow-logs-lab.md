@@ -9,7 +9,7 @@ VPC Flow Logs Lab
   
 ## Video Link
 
-[![acloud.guru lecture]https://i.imgur.com/OM6IIGp.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/vpc/49df150b-19b2-2fcd-a077-edb27dae6201/watch)
+[![acloud.guru lecture](https://i.imgur.com/OM6IIGp.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/vpc/49df150b-19b2-2fcd-a077-edb27dae6201/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
@@ -68,7 +68,7 @@ What did we learn?
  
 ## 
 
-**[Previous Lab/Lecture](vpc-load-balancer-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-flow-logs-lab.md)**
+**[Previous Lab/Lecture](vpc-load-balancer-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nat-vs-bastion.md)**
 
 
 
