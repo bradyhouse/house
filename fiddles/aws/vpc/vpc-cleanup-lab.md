@@ -37,7 +37,7 @@ What did we learn?
  
 ## 
 
-**[Previous Lab/Lecture](vpc-end-point-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-cleanup-lab.md)**
+**[Previous Lab/Lecture](vpc-end-point-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-exam-tips.md)**
 
 
 
