@@ -90,6 +90,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:vpc/vpc-nat-gateway-lab.md[VPC NAT Instances & NAT Gateway Lab]
 ||link:vpc/vpc-network-acl-lab.md[VPC Network ACL Lab]
 ||link:vpc/vpc-load-balancer-lab.md[VPC Load Balancer Lab]
+||link:vpc/vpc-flow-logs-lab.md[VPC Flow Logs Lab]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html[White Paper - VPCs and Subnets]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html[White Paper - NAT Instances]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html[White Paper - Comparison of NAT Instances and NAT Gateways]

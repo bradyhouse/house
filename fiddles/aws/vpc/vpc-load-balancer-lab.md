@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/4x1VSb6.png" height="100" title="AWS VPC" />
 
 
-VPC Load Balancer 
+VPC Load Balancer Lab
 ======
 
 2 minute lecture answering one question:  `How many public subnet are required to add a load balancer
@@ -34,7 +34,7 @@ What did we learn?
  
 ## 
 
-**[Previous Lab/Lecture](vpc-nat-gateway-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-load-balancer-lab.md)**
+**[Previous Lab/Lecture](vpc-nat-gateway-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-flow-logs-lab.md)**
 
 
 
