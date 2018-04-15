@@ -52,7 +52,7 @@ What did we learn?
  
 ## 
 
-**[Previous Lab/Lecture](vpc-flow-logs-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-nat-vs-bastion.md)**
+**[Previous Lab/Lecture](vpc-flow-logs-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-end-point-lab.md)**
 
 
 
