@@ -22,7 +22,7 @@ to quickly and reliably queue messages that one component in the application gen
 component. A queue is a temporary repository for messages that are awaiting processing.
 
 
-## Meme Website Example
+### MEME Website Example
 
 <table>
 <tr>
@@ -33,26 +33,54 @@ component. A queue is a temporary repository for messages that are awaiting proc
 </table>
 
 
+Using SQS, you can decouple the components of an application so they run independently, with SQS easing message
+management between components. Any component of a distributed application can store messages in a fail-safe
+queue. Messages can contain up to 256 KB of text in any format. Any component can later retrieve the
+messages programmatically using the SQS API.
+
+The queue acts as a buffer between the component producing and saving data, and the component receiving the data
+for processing. This means the queue resolves issues that arise if the producer is producing work faster than
+the consumer can process it, or if the producer or consumer are only intermittently connected to the network.
+
+There are two types of Queues: 
+
+* Standard Queues (default)
+* Fifo Queues
 
 
-  
+### Standard Queues
 
+    TBW
+
+ 
+### Fifo Queues
+
+    TBW
+    
+     
 ## Exam Tips
 
 What did we learn?
 
-    N/A
+    TBW
 
      
 ### Review Questions
 
-    TBW
-    
+1.  What type (think "direction") of messaging service is SQS? What is the alternative?
+2.  What is the `visibility timeout`? 
+3.  What is the size and format constraints of SQS messages? 
+4.  How does SQS introduce `elasticity` to applications?
+5.  What are the two types of Queues?
+
 
 ### Answers
 
-    TBW
-
+1.  Poll Service; Simple Notification Service (SNS)
+2.  Period of time before a processed message is returned to the queue (made visible) and can be reprocessed
+3.  256 KB; text
+4.  Autoscaling integration based on queue state
+5.  Standard (default) and Fifo
  
 ## 
 
