@@ -101,6 +101,9 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Security.html[White Paper - VPC Security]
 ||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html#VPC_ACLs_Ephemeral_Ports[White Paper - Ephemeral Ports]
 ||link:http://cidr.xyz/[App - CIDR Range Visualizer]
-||link:https://www.lucidchart.com[Apps - Lucid Charts (AWS Flow Charting)]
+||link:https://www.lucidchart.com[Apps - Lucid Charts (AWS VPC Network Diagramming Tools)]
+2+>| **Application Services**
+||link:apps:apps-sqs-101.md[Application Services: Simple Que Service 101]
+||link:https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html[White Paper - How Amazon SQS Works]
 |=========================================================
 

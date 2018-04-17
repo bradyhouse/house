@@ -79,7 +79,7 @@ VPC Lab Part 1
 
 
 <table>
-<tr>
+<tr> 
 <td>
  <img src="https://i.imgur.com/iQPagRF.png" height="200" title="VPC Create Internet Gateway" />
 </td>
@@ -131,7 +131,7 @@ VPC Lab Part 1
 
 
 <table>
-<tr>
+  <tr>
 <td>
  <img src="https://i.imgur.com/pnlyJrt.png" height="200" title="Create Route Table" />
 </td>

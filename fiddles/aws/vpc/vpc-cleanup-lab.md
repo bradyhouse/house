@@ -21,17 +21,20 @@ VPC Cleanup Lab
 
 What did we learn?
 
-    TBW
+    N/A
 
      
 ### Review Questions
 
-    TBW
+1.  When deleting a VPC, what do you remove first?
+2.  In order to delete an Internet Gateway, what must you do first? (2 Steps)
     
 
 ### Answers
 
-    TBW
+1.  EC2 Instances
+2.  Delete the associated NAT Gateway and any endpoints; then detach it from the associated VPC
+
 
 
  
