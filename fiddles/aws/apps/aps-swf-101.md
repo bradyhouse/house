@@ -4,7 +4,7 @@
 Application Services: Simple Workflow Service 101
 ======
 
-8 Minute Lecture introducing Simple Workflow Service (SWS). 
+8 Minute Lecture introducing Simple Workflow Service (SWF). 
  
   
 ## Video Link
