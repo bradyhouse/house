@@ -53,7 +53,7 @@ There are two types of Queues:
 <table>
 <tr>
 <td>
- <img src="https://i.imgur.com/GH21rQD.png" height="100" title="Standard Queue Pattern" />
+ <img src="https://i.imgur.com/GH21rQD.png" height="150" title="Standard Queue Pattern" />
 </td>
 </tr>
 </table>
@@ -71,7 +71,7 @@ in the same order as they are sent.
 <table>
 <tr>
 <td>
- <img src="https://i.imgur.com/YxEc70C.png" height="50" title="FIFO Queue Pattern" />
+ <img src="https://i.imgur.com/YxEc70C.png" height="100" title="FIFO Queue Pattern" />
 </td>
 </tr>
 </table>
@@ -158,11 +158,10 @@ What did we learn?
 22. A way to retrieve messages from your Amazon SQS queue that doesn't return a response until a message arrives in 
     the message queue, or the long polling times out
 
-
  
 ## 
 
-**[Previous Lab/Lecture](../vpc/vpc-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-sqs-101.md)**
+**[Previous Lab/Lecture](../vpc/vpc-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](aps-swf-101.md)**
 
 
 
