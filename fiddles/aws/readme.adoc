@@ -110,6 +110,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 2+>| **Application Services**
 ||link:apps/apps-sqs-101.md[Application Services: Simple Que Service 101]
 ||link:apps/apps-swf-101.md[Application Services: Simple Workflow Service 101]
+||link:apps/apps-sns-101.md[Application Services: Simple Notification Service 101]
 ||link:https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html[White Paper - How Amazon SQS Works]
 |=========================================================
 
