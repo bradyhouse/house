@@ -161,7 +161,7 @@ What did we learn?
  
 ## 
 
-**[Previous Lab/Lecture](../vpc/vpc-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](aps-swf-101.md)**
+**[Previous Lab/Lecture](../vpc/vpc-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-swf-101.md)**
 
 
 
