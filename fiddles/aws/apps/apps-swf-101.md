@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/p4Fd1bv.png" height="100" title="AWS SWF" />
 
 
-Application Services: Simple Workflow Service 101
+Simple Workflow Service 101
 ======
 
 8 Minute Lecture introducing Simple Workflow Service (SWF). 

@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/jDVKrPq.png" height="100" title="AWS SQS" />
 
 
-Application Services: Simple Que Services 101
+Simple Que Services 101
 ======
 
 13 Minute Lecture introducing Simple Queue Service (SQS). 

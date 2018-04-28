@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/XylaLYv.png" height="100" title="AWS SNS" />
 
 
-Application Services: Simple Notification Service 101
+Simple Notification Service 101
 ======
 
 5 Minute Lecture introducing Simple Notification Service (SNS). 

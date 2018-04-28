@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/CXndVd9.png" height="100" title="AWS Elastic Transcoder" />
 
 
-Application Services: Elastic Transcoder 101
+Elastic Transcoder 101
 ======
 
 2 Minute Lecture introducing the Elastic Transcoder Service. 
@@ -14,36 +14,47 @@ Application Services: Elastic Transcoder 101
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-## What is SNS?
+## What is Elastic Transcoder?
 
-    TBW
+Media transcoder in the cloud.  Convert media files from their original source format into different that will play
+on smartphones, tablets, PC's etc. Provides transcoding presets for popular output formats, which means that you
+don't need to guess about which settings work best on particular devices. Pay based on the minutes that you
+transcode and the resolution at which you transcode.
+
+
+## Example
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/7HLjTnx.png" height="250" title="Elastic Transcoder Example" />
+</td>
+</tr>
+</table>
+
+See the [Easy Video Transcoding in AWS](https://read.acloud.guru/easy-video-transcoding-in-aws-7a0abaaab7b8) blog post 
+on Medium.
 
 
 ## Exam Tips
 
 What did we learn?
 
-    TBW
+    N/A
     
          
 ### Review Questions
 
-    TBW
+1.  What is Elastic Transcoder?
+2.  What is the Elastic Transcoder pricing model based on?
 
 
 ### Answers
 
-    TBW
-
+1.  Media Transcoder in the cloud?
+2.  Minutes transcoded
  
+
 ## 
 
 **[Previous Lab/Lecture](apps-sns-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-elastic-transcoder-101.md)**
-
-
-
-
-
-
-
-
