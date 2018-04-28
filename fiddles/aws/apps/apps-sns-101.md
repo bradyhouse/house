@@ -99,7 +99,7 @@ What did we learn?
  
 ## 
 
-**[Previous Lab/Lecture](apps-swf-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-sns-101.md)**
+**[Previous Lab/Lecture](apps-swf-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-elastic-transcoder-101.md)**
 
 
 
