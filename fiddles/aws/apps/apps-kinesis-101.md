@@ -36,21 +36,23 @@ core Kinesis services.
 
 ### Kinesis Streams
 
-<table>
-<tr>
-<td>
- <img src="https://i.imgur.com/xtqZPom.png" height="250" title="Kenisis Streams Example" />
-</td>
-</tr>
-</table>
-
-
 * Kinesis streams consist of shards
   * 5 transactions per second for reads, up to a maximum total data read rate of 2 MBs per second and up to 1,000
     records per second for writes, up to a maximum total data write rate of 1 MB per second (including partition keys)
 * The data capacity of your stream is a function of the number of shards that you specify for the stream. The total
   capacity of the stream  is the sum of the capacities of its shards
-  
+ 
+ 
+ ### Basic Configuration
+ 
+ <table>
+ <tr>
+ <td>
+  <img src="https://i.imgur.com/xtqZPom.png" height="250" title="Kenisis Streams Example" />
+ </td>
+ </tr>
+ </table>
+ 
 
 ### Kinesis Firehose
 
@@ -82,6 +84,12 @@ data retention policies. There are two configuration options.
 
 ### Kinesis Analytics
 
+Analytics allows you to run SQL types queries against data processed via Streams or Firehose.  The results of these
+queries can then be processed (or stored) using other AWS services.
+
+
+### Basic Configuration
+
 <table>
 <tr>
 <td>
@@ -91,8 +99,6 @@ data retention policies. There are two configuration options.
 </table>
 
 
-Analytics allows you to run SQL types queries against data processed via Streams or Firehose.  The results of these
-queries can then be processed (or stored) using other AWS services.
 
     
 
@@ -113,6 +119,7 @@ What did we learn?
 4.  What are the three core services offered by the AWS Kinesis platform?
 5.  What do Kinesis streams consist of?
 6.  How do you calculate the capacity of a Kinesis stream?
+7.  What are component parts of a Kinesis Stream app?
     
 
 ### Answers
