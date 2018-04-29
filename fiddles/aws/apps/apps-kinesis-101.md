@@ -119,8 +119,16 @@ What did we learn?
 4.  What are the three core services offered by the AWS Kinesis platform?
 5.  What do Kinesis streams consist of?
 6.  How do you calculate the capacity of a Kinesis stream?
-7.  What are component parts of a Kinesis Stream app?
-    
+7.  How many swim lanes comprise a Kinesis stream application?
+8.  What are contents of the swim lanes of a Kinesis Stream app? (4)
+9.  What is the min/max data retention period offered by Kenisis Streams?
+10. Where is data stored in a Kinesis firehose application? (2)
+11. How many swim lanes comprise a Kinesis firehose application?
+12. What are contents of the swim lanes of a Kinesis firehose app? (3)
+13. What is the purpose of Kinesis Analytics?
+14. How many swim lanes comprise a Kinesis analytics application?
+15. What are contents of the swim lanes of a Kinesis Analytics app? (3)
+      
 
 ### Answers
 
@@ -131,9 +139,19 @@ What did we learn?
 4.  Streams, Firehose, Analytics
 5.  Shards
 6.  Sum the capacity of shards
+7.  4
+8.  (1) Producers: EC2, Mobile Devices, Website ... etc; (2) Kinesis Streams: Shards; Consumers: EC2 Instances;
+    (4) S3, Redshift, DynamoDB ... etc.
+9.  24 hours; 7 days
+10. S3; Elastic Search Cluster
+11. 3
+12. (1) Producers: EC2, Mobile Devices, Website ... etc; (2) Kinesis Firehose; (3) S3 or Elastic Search Cluster
+13. Allows you perform SQL style queries of Kinesis Firehose and Streams Application data
+14. 3
+15. (1) Producers: EC2, Mobile Devices, Website ... etc; (2) Kinesis Streams or Firehose; (3) S3 or Redshift or Elastic
+    Search Cluster
 
 
- 
 ## 
 
 **[Previous Lab/Lecture](apps-api-gateway-101.mdp) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-kinesis-101.md)**
