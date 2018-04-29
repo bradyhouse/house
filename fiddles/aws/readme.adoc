@@ -112,6 +112,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:apps/apps-swf-101.md[Apps: Simple Workflow Service 101]
 ||link:apps/apps-sns-101.md[Apps: Simple Notification Service 101]
 ||link:apps/apps-elastic-transcoder-101.md[Apps: Elastic Transcoder 101]
+||link:apps/apps-api-gateway-101.md[Apps: API Gateway 101]
 ||link:https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html[White Paper - How Amazon SQS Works]
 |=========================================================
 
