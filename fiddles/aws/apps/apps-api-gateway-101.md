@@ -1,10 +1,10 @@
 <img src="https://i.imgur.com/65Y0F0D.png" height="100" title="AWS API Gateway" />
 
 
-Elastic Transcoder 101
+API Gateway 101
 ======
 
-2 Minute Lecture introducing the Elastic Transcoder Service. 
+6 Minute Lecture introducing the API Gateway Service. 
  
   
 ## Video Link
