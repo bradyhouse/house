@@ -154,4 +154,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](apps-api-gateway-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-kinesis-lab.md)**
+**[Previous Lab/Lecture](apps-kinesis-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-kinesis-lab.md)**
