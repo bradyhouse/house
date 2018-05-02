@@ -10,7 +10,7 @@
 Apps Exam Tips
 ======
 
-10 minute lecture summarizing what you need to know about App service for the exam.
+10 minute lecture summarizing what you need to know about SNS, SQS, SWF, API Gateway, and Kinesis for the exam.
 
  
   
