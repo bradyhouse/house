@@ -23,22 +23,6 @@ and completed the steps--i.e. no elborate `play-by-play`.
 *   **Completed [EC2 Instance Lab](../ec2/ec2-instance-lab.md)**
 
 
-## Exam Tips
-
-What did we learn?
-
-    TBW
-    
-         
-### Review Questions
-
-    TBW
-         
-
-### Answers
-
-    TBW
-
 ## 
 
 **[Previous Lab/Lecture](apps-kinesis-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-kinesis-lab.md)**
