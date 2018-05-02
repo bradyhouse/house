@@ -97,10 +97,7 @@ queries can then be processed (or stored) using other AWS services.
 </td>
 </tr>
 </table>
-
-
-
-    
+   
 
 ## Exam Tips
 
