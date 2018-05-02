@@ -115,8 +115,8 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:apps/apps-elastic-transcoder-101.md[Apps: Elastic Transcoder 101]
 ||link:https://read.acloud.guru/easy-video-transcoding-in-aws-7a0abaaab7b8[White Paper - Easy Video Transcoding in AWS]
 ||link:apps/apps-api-gateway-101.md[Apps: API Gateway 101]
-||links:https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html[White Paper - What is API Gateway]
-||links:apps/apps-kinesis-101.md[Apps: Kinesis 101]
-||links:apps/apps-kinesis-lab.md[Apps: Kinesis Lab]
+||link:https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html[White Paper - What is API Gateway]
+||link:apps/apps-kinesis-101.md[Apps: Kinesis 101]
+||link:apps/apps-kinesis-lab.md[Apps: Kinesis Lab]
 |=========================================================
 

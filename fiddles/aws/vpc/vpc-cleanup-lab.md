@@ -14,9 +14,6 @@ VPC Cleanup Lab
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-    TBW
-      
-
 ## Exam Tips
 
 What did we learn?

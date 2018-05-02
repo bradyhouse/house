@@ -1,10 +1,12 @@
-<img src="https://i.imgur.com/uwXHG63.png" height="100" title="AWS Kinesis" />
+
+<img src="https://i.imgur.com/uwXHG63.png" height="100" title="AWS Kinesis" /><img src="https://i.imgur.com/D9ZTVRB.png" height="50" title="Cloud Formation" />
 
 
 Kinesis Lab
 ======
 
-6 Minute Lab demonstrating how to configure an a Kinesis based application. 
+6 Minute Lab demonstrating how to configure an a Kinesis based application.  Note, I just watched this one and actually
+I had difficulty completing the steps--i.e. it didn't work.
  
   
 ## Video Link
@@ -14,8 +16,12 @@ Kinesis Lab
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-    TBW
-    
+## Prerequisites
+
+*   Mac configured with [iTerm](https://iterm2.com/)
+*   AWS Console free-tier account
+*   **Completed [EC2 Instance Lab](../ec2/ec2-instance-lab.md)**
+
 
 ## Exam Tips
 

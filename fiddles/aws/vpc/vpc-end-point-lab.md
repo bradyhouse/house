@@ -15,25 +15,6 @@ going through the a NAT Instance or NAT Gateway.  For this one, I just took note
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-
-## Exam Tips
-
-What did we learn?
-
-    N/A
-
-     
-### Review Questions
-
-    TBW
-    
-
-### Answers
-
-    TBW
-
-
- 
 ## 
 
 **[Previous Lab/Lecture](vpc-nat-vs-bastion.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](vpc-cleanup-lab.md)**
