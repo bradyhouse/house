@@ -26,4 +26,4 @@ and completed the steps--i.e. no elaborate `play-by-play`.
 
 ## 
 
-**[Previous Lab/Lecture](apps-kinesis-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-kinesis-lab.md)**
+**[Previous Lab/Lecture](apps-kinesis-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-exam-tips.md)**
