@@ -1,12 +1,12 @@
 
-<img src="https://i.imgur.com/uwXHG63.png" height="100" title="AWS Kinesis" /><img src="https://i.imgur.com/D9ZTVRB.png" height="50" title="Cloud Formation" />
+<img src="https://i.imgur.com/uwXHG63.png" height="100" title="AWS Kinesis" />&nbsp;<img src="https://i.imgur.com/D9ZTVRB.png" height="50" title="Cloud Formation" />
 
 
 Kinesis Lab
 ======
 
-6 Minute Lab demonstrating how to configure an a Kinesis based application.  Note, I just watched this one and actually
-I had difficulty completing the steps--i.e. it didn't work.
+6 Minute Lab demonstrating how to configure an a Kinesis based application.  I just watched this one, and completed
+the steps--i.e. no play-by-play.
  
   
 ## Video Link
