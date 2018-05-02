@@ -143,4 +143,4 @@ for a computer to process them.
 
 ## 
 
-**[Previous Lab/Lecture](apps-kinesis-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](apps-exam-tips.md)**
+**[Previous Lab/Lecture](apps-kinesis-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../wp/wp-setup-lab.md)**

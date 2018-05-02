@@ -119,5 +119,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:apps/apps-kinesis-101.md[Apps: Kinesis 101]
 ||link:apps/apps-kinesis-lab.md[Apps: Kinesis Lab]
 ||link:apps/apps-exam-tips.md[Apps: Exam Tips]
+2+>| **The Real World - Creating a fault tolerant Word Press Site**
+||link:wp/wp-setup-lab.md[WordPress Setup Lab]
 |=========================================================
 
