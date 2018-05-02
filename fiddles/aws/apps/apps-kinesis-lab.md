@@ -5,8 +5,9 @@
 Kinesis Lab
 ======
 
-6 Minute Lab demonstrating how to create Kinesis based app using the Cloud Formation.  I just watched this one, 
-and completed the steps--i.e. no elborate `play-by-play`.
+6 Minute Lab demonstrating how to create a Kinesis based app using Cloud Formation.  I just watched this one, 
+and completed the steps--i.e. no elaborate `play-by-play`.
+
  
   
 ## Video Link
