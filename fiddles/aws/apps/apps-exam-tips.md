@@ -9,9 +9,8 @@
 Apps Exam Tips
 ======
 
-10 minute lecture summarizing what you need to know about SNS, SQS, SWF, Elastic Transcode, API Gateway, 
-and Kinesis for the exam.
-
+10 minute lecture summarizing what you need to know about Amazon's collection of application services for the exam. This
+includes `SNS`, `SQS`, `SWF`, `Elastic Transcode`, `API Gateway`, and `Kinesis` for the exam.
  
   
 ## Video Link
