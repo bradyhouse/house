@@ -17,6 +17,7 @@ WordPress Setup Lab
 ## Prerequisites
 
 *   AWS Console free-tier account
+*   Complete all [Route53 lectures / labs](../route53)
 *   Complete all [EC2 lectures / labs](../ec2)
 *   Complete all [S3 lectures / labs](../s3)
 *   Complete all [VPC lectures / labs](../vpc)
