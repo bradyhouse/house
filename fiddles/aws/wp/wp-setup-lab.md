@@ -6,7 +6,6 @@ WordPress Setup Lab
 12 minute lab detailing the `non-EC2 Instance` setup steps for configuring a Word Press blog / website on AWS. 
   
  
-  
 ## Video Link
 
 [![acloud.guru lecture](https://i.imgur.com/MJI0eMb.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/wordpress/c384c88d-f29d-5a6b-301f-a1dd09aadbfa/watch)
@@ -149,4 +148,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](../apps/apps-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-setup-lab.md)**
+**[Previous Lab/Lecture](../apps/apps-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-ec2-lab.md)**
