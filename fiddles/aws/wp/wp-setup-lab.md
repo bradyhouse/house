@@ -130,6 +130,23 @@ In this lab, we configure everything in AWS minus the 2 EC2 instances (depicted 
     * Database Name: icurmt
 
 
+## Exam Tips
+
+What did we learn?
+
+    N/A
+    
+
+### Review Questions
+
+    TBW
+    
+
+### Answers
+
+    TBW
+
+
 ## 
 
 **[Previous Lab/Lecture](../apps/apps-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-setup-lab.md)**
