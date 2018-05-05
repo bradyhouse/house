@@ -17,6 +17,12 @@ WordPress Setup Lab
 ## Prerequisites
 
 *   AWS Console free-tier account
+*   Complete all [EC2 lectures / labs](../ec2)
+*   Complete all [S3 lectures / labs](../s3)
+*   Complete all [VPC lectures / labs](../vpc)
+*   Complete all [IAM lectures / labs](../iam)
+*   Complete all [Database lectures / labs](../databases)
+*   Complete all [Cloudfront lectures / labs](../cloudfront)
 
  
 ## Big Picture
@@ -29,13 +35,16 @@ WordPress Setup Lab
 </tr>
 </table>
 
+
 In this lab everything in AWS minus the 2 EC2 instances depicted above is configured.  This includes:
 
   * Route53 domain name
-  * 1 IAM Role to allow EC2 instances to access S3
+  * 1 IAM Role 
   * 2 VPC Security Groups
   * Application Load Balancer
-  * MySQL RDS Instance
+  * 2 S3 buckets
+  * 1 CloudFront Web Distribution
+  * 1 RDS Database instance
 
 
 ## Login: US East 1 
