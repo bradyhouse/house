@@ -36,7 +36,7 @@ WordPress Setup Lab
 </table>
 
 
-In this lab everything in AWS minus the 2 EC2 instances depicted above is configured.  This includes:
+In this lab, we configure everything in AWS minus the 2 EC2 instances (depicted above).  This includes:
 
   * Route53 domain name
   * 1 IAM Role 
