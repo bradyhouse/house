@@ -8,7 +8,7 @@ WordPress EC2 Lab
    
 ## Video Link
 
-[![acloud.guru lecture](https://i.imgur.com/MJI0eMb.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/wordpress/c384c88d-f29d-5a6b-301f-a1dd09aadbfa/watch)
+[![acloud.guru lecture](https://i.imgur.com/jJl6MPM.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/wordpress/ff12ea0d-9039-253f-1ea3-8473ee72ac15/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
