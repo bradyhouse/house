@@ -18,7 +18,7 @@ WordPress Setup Lab
 <table>
 <tr>
 <td>
- <img src="https://i.imgur.com/ZB1rtJf.png" width="300" title="Big Picture" />
+ <img src="https://i.imgur.com/ytDNe6P.png" width="300" title="Big Picture" />
 </td>
 </tr>
 </table>
