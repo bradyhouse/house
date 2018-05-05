@@ -3,7 +3,7 @@
 WordPress Setup Lab
 ======
 
-    TBW
+12 minute lab detailing the setup steps for configuring a Word Press blog / website on AWS.
  
   
 ## Video Link
@@ -13,7 +13,15 @@ WordPress Setup Lab
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
  
-    TBW
+## Big Picture
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/ZB1rtJf.png" height="250" title="Big Picture" />
+</td>
+</tr>
+</table>
 
 
 ## 
