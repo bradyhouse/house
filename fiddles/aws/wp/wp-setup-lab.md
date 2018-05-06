@@ -22,7 +22,7 @@ WordPress Setup Lab
 *   Complete all [VPC lectures / labs](../vpc)
 *   Complete all [IAM lectures / labs](../iam)
 *   Complete all [Database lectures / labs](../databases)
-*   Complete all [Cloudfront lectures / labs](../cloudfront)
+*   Complete all [CloudFront lectures / labs](../cloudfront)
 
  
 ## Big Picture
@@ -71,7 +71,6 @@ In this lab, we configure everything in AWS minus the 2 EC2 instances (depicted 
 2.  Create a new security group in your default VPC called `MyWebDMZ`, it should include:
     
     * HTTP Port 80 / Source 0.0.0.0/0
-    * HTTPS Port 443 / Source 0.0.0.0/0
     * SSH Port 22 / Source 0.0.0.0/0
 
 3.  Create a new security group in your default VPC called `MyRdsSG`, it should include:
@@ -85,14 +84,14 @@ In this lab, we configure everything in AWS minus the 2 EC2 instances (depicted 
 2.  In the EC2 sidebar under `LOAD BALANCING` click `Load Balancers`
 3.  Create an `Application Load Balancer` with the following customized properties:
 
-    * Name: MyELB
-    * Scheme: internet-facing
-    * Protocol: HTTP
-    * AZ's: Select All 
-    * VPC: default
-    * Security Group: Default
-    * Health Check > Path: healthy.html
-    * Target Group > Name: MyWebServers
+    * Name:                 MyELB
+    * Scheme:               internet-facing
+    * Protocol:             HTTP
+    * AZ's:                 Select All 
+    * VPC:                  default
+    * Security Group:       MyWebDMZ
+    * Health Check > Path:  healthy.html
+    * Target Group > Name:  MyWebServers
     
 
 ## S3: Create WordPress Code Bucket
@@ -133,17 +132,19 @@ In this lab, we configure everything in AWS minus the 2 EC2 instances (depicted 
 
 What did we learn?
 
-    N/A
-    
+    N/A   
 
 ### Review Questions
 
-    TBW
-    
+1.  How do you reset (or recreate) a given region's default VPC?
+2.  If you delete and RDS Db, and then the default VPC it resided in, what remnant of the deleted RDS DB will you
+    also need to delete?  
+
 
 ### Answers
 
-    TBW
+1.  (a) Delete everything from the VPC; (b) Delete the VPC; (c) Execute the `VPC > Create Default VPC` command
+2.  The RDS Default Subnet
 
 
 ## 

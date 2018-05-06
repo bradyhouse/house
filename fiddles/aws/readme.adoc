@@ -20,6 +20,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 2+>| **IAM**
 ||link:iam/iam.md[IAM 101]
 ||link:iam/billing-alarm.md[Creating a Billing Alarm]
+||link:https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file#9717[White Paper - What is a PEM File ...]
 2+>| **S3**
 ||link:s3/s3.md[S3 101]
 ||link:s3/s3-versioning.md[S3 Versioning]
@@ -73,6 +74,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:route53/route53-failover-routing-policy-lab.md[Route 53 Failover Routing Policy Lab]
 ||link:route53/route53-geolocation-routing-policy-lab.md[Route 53 Geolocation Routing Policy Lab]
 ||link:route53/route53-exam-tips[Route 53 Exam Tips]
+||link:https://dnsmadeeasy.com/services/anamerecords/[White Paper - ANAME Records]
 2+>| **Databases**
 ||link:databases/databases-101.md[Databases 101]
 ||link:databases/databases-rds-instance-lab.md[Databases RDS Instance Lab]
