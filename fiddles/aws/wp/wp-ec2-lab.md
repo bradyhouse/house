@@ -30,6 +30,11 @@ WordPress EC2 Lab
 </table>
 
 
+In this lab, we complete the setup of the first EC2 instance and connect it to the domain registered as part of the 
+[WordPress Setup Lab](wp-setup-lab.md) via our Application Load Balancer.  Once up and running, we then complete
+the WordPress install process by point our web browser at the new domain.
+
+
 ## Login: US East 1 
 
 1.  Log into the AWS console
