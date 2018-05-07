@@ -3,7 +3,7 @@ fiddle-0028-SwaggerPricingRestApi
 
 ### Title
 
-fiddle-0028-SwaggerPricingRestApi
+Swagger Pricing Rest Api
 
 
 ### Creation Date
@@ -18,12 +18,18 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 227](https://github.com/bradyhouse/house/issues/227)
 
 
 ### Description
 
-Another Node fiddle.
+Using the [swagger editor](http://editor.swagger.io/#/), create and then generate the scaffolding for a node js rest service.  The service should provide 3 GET endpoints:
+
+* api/quote - current price
+* api/intraday - timeseries data
+* api/volume - market volume
+
+The endpoints, should return pricing data for an arbitrary stock -- i.e. no input parameters required.  
 
 
 ### Published Version Link
@@ -33,4 +39,4 @@ N/A
 
 ### Tags
 
-node.js, hamony, process, argv, fs
+node.js, connect, js-yaml, swagger-tools, request
