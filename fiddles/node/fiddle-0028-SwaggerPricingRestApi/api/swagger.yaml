@@ -1,0 +1,57 @@
+---
+swagger: "2.0"
+info:
+  description: "Pricing API"
+  version: "1.0.0"
+  title: "Stock Price API"
+  license:
+    name: "MIT"
+    url: "https://opensource.org/licenses/MIT"
+host: "localhost:8080"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /quote:
+    get:
+      summary: "Current price"
+      description: "Get the current stock price."
+      operationId: "quoteGET"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+        500:
+          description: "Internal Server error"
+      x-swagger-router-controller: "Default"
+  /intraday:
+    get:
+      summary: "Intraday time series"
+      description: "Get the intraday stock price time series data."
+      operationId: "intradayGET"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+        500:
+          description: "Internal Server error"
+      x-swagger-router-controller: "Default"
+  /volume:
+    get:
+      summary: "Market volume"
+      description: "Get the latest market volume."
+      operationId: "volumeGET"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+        500:
+          description: "Internal Server error"
+      x-swagger-router-controller: "Default"
+definitions: {}
