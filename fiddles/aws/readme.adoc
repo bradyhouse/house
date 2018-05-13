@@ -124,5 +124,6 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 2+>| **The Real World - Creating a fault tolerant Word Press Site**
 ||link:wp/wp-setup-lab.md[WordPress Setup Lab]
 ||link:wp/wp-ec2-lab.md[WordPress EC2 Lab]
+||link:wp/wp-cloudfront-lab.md[WordPress CloudFront Lab]
 |=========================================================
 
