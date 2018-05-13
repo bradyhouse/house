@@ -1,0 +1,24 @@
+{
+  "name": "fiddle-0028-SwaggerPricingRestApi",
+  "version": "0.0.0",
+  "description": "http://github.com/bradyhouse/house/node/fiddle-0028-SwaggerPricingRestApi",
+  "repository": {
+    "url": "https://github.com/bradyhouse/house"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "connect": "^3.6.6",
+    "js-yaml": "^3.11.0",
+    "request": "^2.85.0",
+    "swagger-tools": "^0.10.3"
+  }
+}

@@ -1731,3 +1731,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
       3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
       4.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+* Added [fiddles/node/fiddle-0028-SwaggerPricingRestApi](fiddles/node/fiddle-0028-SwaggerPricingRestApi)
