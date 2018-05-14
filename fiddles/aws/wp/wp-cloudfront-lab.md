@@ -157,4 +157,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](wp-ec2-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-cloudfront-lab.md)**
+**[Previous Lab/Lecture](wp-ec2-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-ami-lab.md)**

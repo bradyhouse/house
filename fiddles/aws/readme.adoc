@@ -125,5 +125,6 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:wp/wp-setup-lab.md[WordPress Setup Lab]
 ||link:wp/wp-ec2-lab.md[WordPress EC2 Lab]
 ||link:wp/wp-cloudfront-lab.md[WordPress CloudFront Lab]
+||link:wp/wp-ami-lab.md[WordPress AMI Lab]
 |=========================================================
 
