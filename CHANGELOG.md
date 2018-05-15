@@ -1731,4 +1731,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
       3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
       4.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
-* Added [fiddles/node/fiddle-0028-SwaggerPricingRestApi](fiddles/node/fiddle-0028-SwaggerPricingRestApi)
+
+
+### 228_Python-0010-HttpRequest
+
+* **Python**
+
+ 1. Added [fiddles/python/fiddle-0010-HttpRequest](fiddles/python/fiddle-0010-HttpRequest) ~ [Issue 228](https://github.com/bradyhouse/house/issues/228)
