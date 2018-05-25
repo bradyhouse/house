@@ -24,9 +24,7 @@ and frameworks:
 |=========================================================
 |link:fiddles/android[Android]
 |link:fiddles/angular[Angular]
-|link:fiddles/angular2[Angular2]
 |link:fiddles/angular2-cli[Angular2 Cli]
-|link:fiddles/angular2-seeder[Angular2 Seeder]
 |link:fiddles/ant[Ant]
 |link:fiddles/aurelia[Aurelia]
 |link:fiddles/aws[AWS]
