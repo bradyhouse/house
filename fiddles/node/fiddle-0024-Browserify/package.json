@@ -15,15 +15,15 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.8",
-    "browserify": "^14.3.0",
+    "browserify": "^16.2.2",
     "connect": "^3.6.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-concat": "^2.4.1",
-    "gulp-imagemin": "^1.0.1",
-    "gulp-jshint": "^1.8.5",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-jshint": "^2.1.0",
     "gulp-myth": "^1.0.1",
-    "gulp-uglify": "^1.0.1",
+    "gulp-uglify": "^3.0.0",
     "serve-static": "^1.12.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^2.0.0"
   }
 }
