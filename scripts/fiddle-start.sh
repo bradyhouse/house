@@ -78,11 +78,6 @@ function startServer() {
             ngInstall || exit 91;
             ngStart || exit 92;
             ;;
-        'angular2-seeder')
-            source bin/angular2-seeder/_start.sh;
-            cd ${_fiddleRoot};
-            seederStart || exit 104;
-            ;;
         'aurelia')
             source bin/aurelia/_start.sh;
             cd ${_fiddleRoot};

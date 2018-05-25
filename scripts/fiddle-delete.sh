@@ -81,13 +81,13 @@ function updateChangeLog() {
 	  if [ "$#" -ne 2 ]; then  exit 86; fi
     prompt || exit $?;
     case ${fiddleType} in
-        'android' | 'angular' | 'angular2' | 'angular2-cli' | 'angular2-seeder' | 'ant' | 'aurelia' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+        'android' | 'angular' | 'angular2-cli' | 'ant' | 'aurelia' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
                 rm -rf "${fiddlePath}" || exit 87
             fi
             case ${fiddleType} in
-                'angular' |'angular2' | 'aurelia'  | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
+                'angular' | 'aurelia'  | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
                     ./fiddle-index.sh ${fiddleType} || exit 88
                 ;;
             esac

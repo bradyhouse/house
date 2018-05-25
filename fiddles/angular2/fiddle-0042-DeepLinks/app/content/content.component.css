@@ -1,5 +1,0 @@
-.content-component {
-    z-index: -1;
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 0px 0px 1000px 0px lightslategrey;
-}

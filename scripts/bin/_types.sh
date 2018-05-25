@@ -23,7 +23,6 @@ voidEchoFiddleTypes() {
 
     case $1 in
         'build')
-          echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddle";
           echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle";
           ;;
         'setup')
@@ -46,7 +45,6 @@ voidEchoFiddleTypes() {
            echo -e "\t\"all\"\t\tinstall everything";
           ;;
         'combine')
-            echo -e "\t\"angular2\"\tAngular2 Fiddle"
             echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
             echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
             echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
@@ -64,7 +62,6 @@ voidEchoFiddleTypes() {
             ;;
         'index')
             echo -e "\t\"angular\"\t\tAngular Fiddle"
-            echo -e "\t\"angular2\"\t\tAngular2 Fiddle"
             echo -e "\t\"aurelia\"\t\tAurelia Fiddle"
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle"
             echo -e "\t\"dojo\"\t\t\tDojo Fiddle"
@@ -84,8 +81,6 @@ voidEchoFiddleTypes() {
             ;;
         'publish')
             echo -e "\t\"angular\"\t\tAngular Fiddles";
-            echo -e "\t\"angular2\"\t\tAngular2 Fiddles";
-            echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddles";
             echo -e "\t\"aurelia\"\t\tAurelia Fiddles";
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
             echo -e "\t\"dojo\"\t\t\tDojo Fiddles";
@@ -104,9 +99,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"android\"\t\tAndroid Fiddle"
             echo -e "\t\"ant\"\t\t\tAnt Fiddle"
             echo -e "\t\"angular\"\t\tAngular Fiddle"
-            echo -e "\t\"angular2\"\t\tAngular2 Fiddle"
             echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle"
-            echo -e "\t\"angular2-seeder\"\tAngular2 Seeder Fiddle"
             echo -e "\t\"aurelia\"\t\tAurelia Fiddle"
             echo -e "\t\"bash\"\t\t\tBash Fiddle"
             echo -e "\t\"c\"\t\t\tC Fiddle"

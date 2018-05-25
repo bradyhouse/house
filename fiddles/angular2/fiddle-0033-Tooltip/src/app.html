@@ -1,8 +1,0 @@
-<div class="container left">
-    <tooltip
-            [options]="tooltipOptions"
-    ></tooltip>
-    <span *ngFor="#node of nodes">
-        <p (mouseover)="onMouseOver($event)" (mouseout)="onMouseOut($event)">{{node}}</p>
-    </span>
-</div>

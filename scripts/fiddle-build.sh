@@ -29,10 +29,6 @@ source bin/_env.sh;
     _fiddle=$(getFiddle "${_type}" "${_fiddleCriteria}";);
 
     case ${_type} in
-        'angular2-seeder')
-            source bin/angular2-seeder/_build.sh;
-            build ${_fiddle} || exit 87;
-            ;;
         'angular2-cli')
             source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_build.sh;

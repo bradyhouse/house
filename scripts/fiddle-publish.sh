@@ -127,9 +127,7 @@ function publishDist() {
 
 function publishAll() {
 
-    rmrf angular2-seeder;
     rmrf angular2-cli;
-    rmrf angular2;
     rmrf three;
     rmrf extjs5;
     rmrf extjs6;
@@ -146,9 +144,7 @@ function publishAll() {
 
     cd ${_sourcePath};
 
-    cprfdist angular2-seeder;
     cprfdist angular2-cli;
-    cprf angular2;
     cprf three;
     cprf extjs5;
     cprf extjs6;

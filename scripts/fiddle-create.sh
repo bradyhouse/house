@@ -60,19 +60,10 @@ source bin/_types.sh;
             source bin/angular/_create.sh;
             create $2 || exit 87;
             ;;
-        'angular2')
-            source bin/angular2/_create.sh;
-            create $2 || exit 87;
-            ;;
         'angular2-cli')
             source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_create.sh;
-            create $2 || exit 87;
-            ;;
-        'angular2-seeder')
-            source bin/angular2-seeder/.seederrc;
-            source bin/angular2-seeder/_create.sh;
             create $2 || exit 87;
             ;;
         'ant')
