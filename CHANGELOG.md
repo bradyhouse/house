@@ -1117,7 +1117,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     11. Added [fiddles/node/fiddle-0013-CouchDB](fiddles/node/fiddle-0013-CouchDB) ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
     12. Added [fiddles/node/fiddle-0014-Express](fiddles/node/fiddle-0014-Express) ~ [Issue 36](https://github.com/bradyhouse/house/issues/36)
     13. Added [fiddles/node/fiddle-0015-RESTService](fiddles/node/fiddle-0015-RESTService) ~ [Issue 37](https://github.com/bradyhouse/house/issues/37)
-    14. Added [fiddles/node/fiddle-0016-Redis](fiddles/node/fiddle-0016-Redis) ~ [Issue 41](https://github.com/bradyhouse/house/issues/41)
 
 * **Ember**
     1.  Added [fiddles/ember/fiddle-0002-Inheritance](fiddles/ember/fiddle-0002-Inheritance) ~ [Issue 32](https://github.com/bradyhouse/house/issues/32)
@@ -1149,7 +1148,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Added [fiddles/svg/fiddle-0027-ImageCloud](fiddles/svg/fiddle-0027-ImageCloud) ~ [Issue 51](https://github.com/bradyhouse/house/issues/51)
 
 * **Node**
-    1.  Added [fiddles/node/fiddle-0017-WebApp](fiddles/node/fiddle-0017-WebApp) ~ [Issue 46](https://github.com/bradyhouse/house/issues/46)
     2.  Added [fiddles/node/fiddle-0018-XmlToJson](fiddles/node/fiddle-0018-XmlToJson) ~ [Issue 48](https://github.com/bradyhouse/house/issues/48)
     3.  Added dependency (submodule) to [jimbojw > right-way](https://github.com/jimbojw/right-way)
     4.  Added [fiddles/node/fiddle-0019-PassThruRest](fiddles/node/fiddle-0019-PassThruRest) ~ [Issue 58](https://github.com/bradyhouse/house/issues/58)
