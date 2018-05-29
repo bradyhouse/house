@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -28,6 +29,11 @@ function nvmInstall() {
 }
 
 
+function npmInstall() {
+  groupLog "npmInstall";
+  npm install;
+}
+
 function ngStart() {
     groupLog "ngStart";
     _port=1841
@@ -35,7 +41,9 @@ function ngStart() {
     then
         _port=$2;
     fi
-    nvmInstall;
+    nvmInstall || exit $?;
+    npmInstall || exit $?;
+
     ng serve --port ${_port};
     exit 0;
 }

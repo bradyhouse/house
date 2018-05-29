@@ -30,6 +30,7 @@
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -61,7 +62,6 @@ source bin/_types.sh;
             create $2 || exit 87;
             ;;
         'angular2-cli')
-            source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_create.sh;
             create $2 || exit 87;

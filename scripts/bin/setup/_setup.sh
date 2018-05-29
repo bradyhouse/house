@@ -14,6 +14,7 @@
 # 03/10/2017 - See CHANGELOG @ 201703100420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 04/08/2018 - See CHANGELOG @ 222_fiddle.sh_setup_mac_add_gradle
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -64,6 +65,10 @@ function setup() {
                  source bin/setup/mac/_ng.sh;
                  install || exit $?;
                  ;;
+              'ncu')
+                 source bin/setup/mac/_ncu.sh;
+                 install || exit $?;
+                 ;;
               'yarn')
                  source bin/setup/mac/_yarn.sh;
                  install || exit $?;
@@ -80,6 +85,10 @@ function setup() {
                 source bin/setup/mac/_nvm.sh;
                 install || exit $?;
                 ;;
+              'shrinkwrap')
+                source bin/setup/mac/_shrinkwrap.sh;
+                install || exit $?;
+                ;;
               'typescript')
                 source bin/setup/mac/_typescript.sh;
                 install || exit $?;
@@ -92,11 +101,13 @@ function setup() {
                 setup ${_os} "gh" || exit $?;
                 setup ${_os} "node" || exit $?;
                 setup ${_os} "nvm" || exit $?;
+                setup ${_os} "ncu" || exit $?;
                 setup ${_os} "joe" || exit $?;
                 setup ${_os} "js-beautify" || exit $?;
                 setup ${_os} "live-server" || exit $?;
                 setup ${_os} "nativescript" || exit $?;
                 setup ${_os} "ng" || exit $?;
+                setup ${_os} "shrinkwrap" || exit $?;
                 setup ${_os} "typescript" || exit $?;
                 setup ${_os} "yarn" || exit $?;
                 setup ${_os} "zsh" || exit $?;

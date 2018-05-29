@@ -29,6 +29,7 @@
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -69,7 +70,6 @@ function startServer() {
             androidStart || exit 111;
             ;;
         'angular2-cli')
-            source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_start.sh;
             cd ${_fiddleRoot};
