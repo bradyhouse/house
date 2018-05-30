@@ -48,6 +48,29 @@ function updateFiddle() {
 
 function updateFiddles() {
   groupLog "updateFiddles";
+  # navigate to the collection directory
+  # create an empty array
+  # loop through each fiddle sub directory and
+  #   parse the directory name, should include "fiddle"
+  #   add the name to an array
+  # go back to the scripts directory
+  # loop through the array
+  # call updateFiddle for each name in the array
+
+  _location=$(pwd;)
+  _type=$1
+  _fiddlesDir=$(cd ..; cd "fiddles/${_type}"; pwd;)
+  cd ${_fiddlesDir};
+
+  for _fiddleDir in */ .*/
+  do
+    _fiddleName=${_fiddleDir%*/};
+    case "${_fiddleName}" in
+      *fiddle*)
+  
+      ;;
+    esac
+  done
 
 }
 
