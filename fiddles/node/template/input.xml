@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:itms="http://phobos.apple.com/rss/1.0/modules/itms/">
+
+	<channel>
+		<title>iTunes 100 Featured &amp; Exclusive Albums</title>
+		<link>http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewGrouping?id=21</link>
+    <atom:link href="https://s.mzstatic.com/WebObjects/MZStore.woa/wpa/MRSS/featuredalbums/sf=143441/limit=100/genre=20/explicit=true/rss.xml" rel="self" type="application/rss+xml" />
+		<description>iTunes Store: 100 Featured &amp; Exclusive Albums in Alternative</description>
+		<language>en</language>
+		<copyright>Copyright 2008 Apple Inc.
+
+		</copyright>
+		<lastBuildDate>Thu, 29 Sep 2016 04:07:09 -0700</lastBuildDate>
+		<generator>iTunes Music Store RSS v1.0.0</generator>
+		<webMaster>musicstore@apple.com (iTunes Music Store)</webMaster>
+		<ttl>240</ttl>
+
+		<dc:creator>iTunes Music Store</dc:creator>
+		<dc:date>2016-09-29T04:07:09-07:00</dc:date>
+
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+		<sy:updateBase>2003-09-01T12:00+00:00</sy:updateBase>
+		<image>
+			<url>https://s.mzstatic.com/images/rss/badge.gif</url>
+			<link>http://www.apple.com/itunes/</link>
+			<title>iTunes Music Store</title>
+			<height>31</height>
+			<width>88</width>
+		</image>
+		<item>
+    <title>Sun - Cat Power</title>
+    <link>https://itunes.apple.com/album/sun/id540813053?uo=1&amp;v0=9992</link>
+    <description>Sun by Cat Power</description>
+    <pubDate>Thu, 29 Sep 2016 04:07:09 -0700</pubDate>
+    <content:encoded><![CDATA[<TABLE BORDER=0 WIDTH="100%"><TR><TD><table border="0" width="100%" cellspacing="0" cellpadding="0">
+				<tr valign="top" align="left">
+					<td ALIGN=CENTER WIDTH=166 VALIGN=TOP><a href="https://itunes.apple.com/album/sun/id540813053?uo=1&v0=9992"><img border="0" src="http://is4.mzstatic.com/image/thumb/Music/v4/49/64/87/496487a8-42cb-fb6f-3d3b-5ee355691168/ole-773_Cat_Power_Sun.jpg/100x100bb-85.jpg" /></a></td>
+					<td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td>
+					<td width="95%"><B><a href="https://itunes.apple.com/album/sun/id540813053?uo=1&v0=9992">Sun</a></B><br>
+						<a href="https://itunes.apple.com/artist/cat-power/id2959120?uo=1&v0=9992">Cat Power</a><br><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Release Date:</B>
+						September 4, 2012<br>
+						</font><font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Total Songs:</B>
+						12</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Genre:</B>
+						<a href="https://itunes.apple.com/genre/music-alternative/id20?uo=1&v0=9992">Alternative</a></font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Price:</B>
+						$9.99</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Copyright</B>
+						℗ 2012 Matador</font></td>
+				</tr>
+			</table></TD></TR>
+			</TABLE>
+]]></content:encoded>
+    <category domain="https://itunes.apple.com/genre/music-alternative/id20?uo=1&amp;v0=9992">Alternative</category>
+    <itms:artist>Cat Power</itms:artist>
+    <itms:artistLink>https://itunes.apple.com/artist/cat-power/id2959120?uo=1&amp;v0=9992</itms:artistLink>
+    <itms:album>Sun</itms:album>
+    <itms:albumLink>https://itunes.apple.com/album/sun/id540813053?uo=1&amp;v0=9992</itms:albumLink>
+    <itms:albumPrice>$9.99</itms:albumPrice>
+                
+                    <itms:featureArt>/images/pumpkinsplash.jpg</itms:featureArt>
+                
+                <itms:coverArt height="53" width="53">http://is5.mzstatic.com/image/thumb/Music/v4/49/64/87/496487a8-42cb-fb6f-3d3b-5ee355691168/ole-773_Cat_Power_Sun.jpg/53x53bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="60" width="60">http://is2.mzstatic.com/image/thumb/Music/v4/49/64/87/496487a8-42cb-fb6f-3d3b-5ee355691168/ole-773_Cat_Power_Sun.jpg/60x60bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="100" width="100">http://is4.mzstatic.com/image/thumb/Music/v4/49/64/87/496487a8-42cb-fb6f-3d3b-5ee355691168/ole-773_Cat_Power_Sun.jpg/100x100bb-85.jpg</itms:coverArt>
+    
+    
+    <itms:rights>&#8471; 2012 Matador</itms:rights>
+    
+        <itms:releasedate>September 4, 2012</itms:releasedate>
+    
+
+</item>
+<item>
+    <title>Centipede Hz - Animal Collective</title>
+    <link>https://itunes.apple.com/album/centipede-hz/id543644813?uo=1&amp;v0=9992</link>
+    <description>Centipede Hz by Animal Collective</description>
+    <pubDate>Thu, 29 Sep 2016 04:07:09 -0700</pubDate>
+    <content:encoded><![CDATA[<TABLE BORDER=0 WIDTH="100%"><TR><TD><table border="0" width="100%" cellspacing="0" cellpadding="0">
+				<tr valign="top" align="left">
+					<td ALIGN=CENTER WIDTH=166 VALIGN=TOP><a href="https://itunes.apple.com/album/centipede-hz/id543644813?uo=1&v0=9992"><img border="0" src="http://is2.mzstatic.com/image/thumb/Music/v4/38/03/1e/38031ec4-b28f-9ba1-c913-c1eb08ea656e/CentipedeHzCover.jpeg/100x100bb-85.jpg" /></a></td>
+					<td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td>
+					<td width="95%"><B><a href="https://itunes.apple.com/album/centipede-hz/id543644813?uo=1&v0=9992">Centipede Hz</a></B><br>
+						<a href="https://itunes.apple.com/artist/animal-collective/id5664621?uo=1&v0=9992">Animal Collective</a><br><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Release Date:</B>
+						September 4, 2012<br>
+						</font><font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Total Songs:</B>
+						11</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Genre:</B>
+						<a href="https://itunes.apple.com/genre/music-alternative/id20?uo=1&v0=9992">Alternative</a></font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Price:</B>
+						$9.99</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Copyright</B>
+						℗ 2012 Domino Recording Co Ltd</font></td>
+				</tr>
+			</table></TD></TR>
+			</TABLE>
+]]></content:encoded>
+    <category domain="https://itunes.apple.com/genre/music-alternative/id20?uo=1&amp;v0=9992">Alternative</category>
+    <itms:artist>Animal Collective</itms:artist>
+    <itms:artistLink>https://itunes.apple.com/artist/animal-collective/id5664621?uo=1&amp;v0=9992</itms:artistLink>
+    <itms:album>Centipede Hz</itms:album>
+    <itms:albumLink>https://itunes.apple.com/album/centipede-hz/id543644813?uo=1&amp;v0=9992</itms:albumLink>
+    <itms:albumPrice>$9.99</itms:albumPrice>
+                
+                    <itms:featureArt>/images/pumpkinsplash.jpg</itms:featureArt>
+                
+                <itms:coverArt height="53" width="53">http://is1.mzstatic.com/image/thumb/Music/v4/38/03/1e/38031ec4-b28f-9ba1-c913-c1eb08ea656e/CentipedeHzCover.jpeg/53x53bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="60" width="60">http://is3.mzstatic.com/image/thumb/Music/v4/38/03/1e/38031ec4-b28f-9ba1-c913-c1eb08ea656e/CentipedeHzCover.jpeg/60x60bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="100" width="100">http://is2.mzstatic.com/image/thumb/Music/v4/38/03/1e/38031ec4-b28f-9ba1-c913-c1eb08ea656e/CentipedeHzCover.jpeg/100x100bb-85.jpg</itms:coverArt>
+    
+    
+    <itms:rights>&#8471; 2012 Domino Recording Co Ltd</itms:rights>
+    
+        <itms:releasedate>September 4, 2012</itms:releasedate>
+    
+
+</item>
+<item>
+    <title>Night Visions - Imagine Dragons</title>
+    <link>https://itunes.apple.com/album/night-visions/id555694735?uo=1&amp;v0=9992</link>
+    <description>Night Visions by Imagine Dragons</description>
+    <pubDate>Thu, 29 Sep 2016 04:07:09 -0700</pubDate>
+    <content:encoded><![CDATA[<TABLE BORDER=0 WIDTH="100%"><TR><TD><table border="0" width="100%" cellspacing="0" cellpadding="0">
+				<tr valign="top" align="left">
+					<td ALIGN=CENTER WIDTH=166 VALIGN=TOP><a href="https://itunes.apple.com/album/night-visions/id555694735?uo=1&v0=9992"><img border="0" src="http://is2.mzstatic.com/image/thumb/Music/v4/04/15/78/04157815-169d-9f91-d596-342dee2f4c46/UMG_cvrart_00602537150120_01_RGB72_1200x1200_12UMGIM46901.jpg/100x100bb-85.jpg" /></a></td>
+					<td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td>
+					<td width="95%"><B><a href="https://itunes.apple.com/album/night-visions/id555694735?uo=1&v0=9992">Night Visions</a></B><br>
+						<a href="https://itunes.apple.com/artist/imagine-dragons/id358714030?uo=1&v0=9992">Imagine Dragons</a><br><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Release Date:</B>
+						January 1, 2012<br>
+						</font><font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Total Songs:</B>
+						13</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Genre:</B>
+						<a href="https://itunes.apple.com/genre/music-alternative/id20?uo=1&v0=9992">Alternative</a></font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Price:</B>
+						$6.99</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Copyright</B>
+						℗ 2012 KIDinaKORNER/Interscope Records</font></td>
+				</tr>
+			</table></TD></TR>
+			</TABLE>
+]]></content:encoded>
+    <category domain="https://itunes.apple.com/genre/music-alternative/id20?uo=1&amp;v0=9992">Alternative</category>
+    <itms:artist>Imagine Dragons</itms:artist>
+    <itms:artistLink>https://itunes.apple.com/artist/imagine-dragons/id358714030?uo=1&amp;v0=9992</itms:artistLink>
+    <itms:album>Night Visions</itms:album>
+    <itms:albumLink>https://itunes.apple.com/album/night-visions/id555694735?uo=1&amp;v0=9992</itms:albumLink>
+    <itms:albumPrice>$6.99</itms:albumPrice>
+                
+                    <itms:featureArt>/images/pumpkinsplash.jpg</itms:featureArt>
+                
+                <itms:coverArt height="53" width="53">http://is5.mzstatic.com/image/thumb/Music/v4/04/15/78/04157815-169d-9f91-d596-342dee2f4c46/UMG_cvrart_00602537150120_01_RGB72_1200x1200_12UMGIM46901.jpg/53x53bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="60" width="60">http://is5.mzstatic.com/image/thumb/Music/v4/04/15/78/04157815-169d-9f91-d596-342dee2f4c46/UMG_cvrart_00602537150120_01_RGB72_1200x1200_12UMGIM46901.jpg/60x60bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="100" width="100">http://is2.mzstatic.com/image/thumb/Music/v4/04/15/78/04157815-169d-9f91-d596-342dee2f4c46/UMG_cvrart_00602537150120_01_RGB72_1200x1200_12UMGIM46901.jpg/100x100bb-85.jpg</itms:coverArt>
+    
+    
+    <itms:rights>&#8471; 2012 KIDinaKORNER/Interscope Records</itms:rights>
+    
+        <itms:releasedate>January 1, 2012</itms:releasedate>
+    
+
+</item>
+<item>
+    <title>A Thing Called Divine Fits - Divine Fits</title>
+    <link>https://itunes.apple.com/album/a-thing-called-divine-fits/id540147194?uo=1&amp;v0=9992</link>
+    <description>A Thing Called Divine Fits by Divine Fits</description>
+    <pubDate>Thu, 29 Sep 2016 04:07:09 -0700</pubDate>
+    <content:encoded><![CDATA[<TABLE BORDER=0 WIDTH="100%"><TR><TD><table border="0" width="100%" cellspacing="0" cellpadding="0">
+				<tr valign="top" align="left">
+					<td ALIGN=CENTER WIDTH=166 VALIGN=TOP><a href="https://itunes.apple.com/album/a-thing-called-divine-fits/id540147194?uo=1&v0=9992"><img border="0" src="http://is3.mzstatic.com/image/thumb/Music/v4/a2/e9/9c/a2e99ce5-6d5a-fad2-9ebb-7463303dcfae/455_divinefits_1400px_72ppi.jpg/100x100bb-85.jpg" /></a></td>
+					<td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td>
+					<td width="95%"><B><a href="https://itunes.apple.com/album/a-thing-called-divine-fits/id540147194?uo=1&v0=9992">A Thing Called Divine Fits</a></B><br>
+						<a href="https://itunes.apple.com/artist/divine-fits/id540104503?uo=1&v0=9992">Divine Fits</a><br><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Release Date:</B>
+						August 28, 2012<br>
+						</font><font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Total Songs:</B>
+						11</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Genre:</B>
+						<a href="https://itunes.apple.com/genre/music-alternative/id20?uo=1&v0=9992">Alternative</a></font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Price:</B>
+						$9.99</font><br>
+						<font size="3" FACE="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"><B>Copyright</B>
+						℗ 2012 Merge Records</font></td>
+				</tr>
+			</table></TD></TR>
+			</TABLE>
+]]></content:encoded>
+    <category domain="https://itunes.apple.com/genre/music-alternative/id20?uo=1&amp;v0=9992">Alternative</category>
+    <itms:artist>Divine Fits</itms:artist>
+    <itms:artistLink>https://itunes.apple.com/artist/divine-fits/id540104503?uo=1&amp;v0=9992</itms:artistLink>
+    <itms:album>A Thing Called Divine Fits</itms:album>
+    <itms:albumLink>https://itunes.apple.com/album/a-thing-called-divine-fits/id540147194?uo=1&amp;v0=9992</itms:albumLink>
+    <itms:albumPrice>$9.99</itms:albumPrice>
+                
+                    <itms:featureArt>/images/pumpkinsplash.jpg</itms:featureArt>
+                
+                <itms:coverArt height="53" width="53">http://is4.mzstatic.com/image/thumb/Music/v4/a2/e9/9c/a2e99ce5-6d5a-fad2-9ebb-7463303dcfae/455_divinefits_1400px_72ppi.jpg/53x53bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="60" width="60">http://is1.mzstatic.com/image/thumb/Music/v4/a2/e9/9c/a2e99ce5-6d5a-fad2-9ebb-7463303dcfae/455_divinefits_1400px_72ppi.jpg/60x60bb-85.jpg</itms:coverArt>
+    <itms:coverArt height="100" width="100">http://is3.mzstatic.com/image/thumb/Music/v4/a2/e9/9c/a2e99ce5-6d5a-fad2-9ebb-7463303dcfae/455_divinefits_1400px_72ppi.jpg/100x100bb-85.jpg</itms:coverArt>
+    
+    
+    <itms:rights>&#8471; 2012 Merge Records</itms:rights>
+    
+        <itms:releasedate>August 28, 2012</itms:releasedate>
+    
+
+</item>
+
+	</channel>
+</rss>

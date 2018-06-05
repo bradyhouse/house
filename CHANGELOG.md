@@ -1765,19 +1765,24 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       1.  Added [scripts/fiddle-update.sh](scripts/fiddle-update.sh)
       2.  Updated [scripts/fiddle.sh](scripts/fiddle.sh)
       3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
-      4.  Updated [scripts/bin/angular2-cli/_start.sh](scripts/bin/angular2-cli/_start.sh)
-      5.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
-      6.  Updated [fiddles/angular2-cli/create.md](fiddles/angular2-cli/create.md)
-      6.  Added [fiddles/angular2-cli/update.md](fiddles/angular2-cli/update.md)
-      7.  Added [fiddles/angular2-cli/update-all.md](fiddles/angular2-cli/update-all.md)
-      8.  Updated [fiddles/angular2-cli/readme.adoc](fiddles/angular2-cli/readme.adoc)
-      9.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
-      10. Added [scripts/bin/electron/_update.sh](scripts/bin/electron/_update.sh)
-      11. Updated [fiddles/electron/readme.adoc](fiddles/electron/readme.adoc)
-      12. Added [fiddles/electron/update-all.md](fiddles/electron/update-all.md) 
-      13. Added [fiddles/electron/update.md](fiddles/electron/update.md)
-      
-      
+    * Reflected changes: (angular2-cli)
+      1.  Updated [scripts/bin/angular2-cli/_start.sh](scripts/bin/angular2-cli/_start.sh)
+      2.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
+      3.  Updated [fiddles/angular2-cli/create.md](fiddles/angular2-cli/create.md)
+      4.  Added [fiddles/angular2-cli/start.md](fiddles/angular2-cli/start.md)
+      5.  Added [fiddles/angular2-cli/update.md](fiddles/angular2-cli/update.md)
+      6.  Added [fiddles/angular2-cli/update-all.md](fiddles/angular2-cli/update-all.md)
+      7.  Updated [fiddles/angular2-cli/readme.adoc](fiddles/angular2-cli/readme.adoc)
+      8.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
+    * Reflected changes: (electron)
+      1.  Added [scripts/bin/electron/_update.sh](scripts/bin/electron/_update.sh)
+      2.  Updated [fiddles/electron/readme.adoc](fiddles/electron/readme.adoc)
+      3.  Added [fiddles/electron/update-all.md](fiddles/electron/update-all.md) 
+      4.  Added [fiddles/electron/update.md](fiddles/electron/update.md)
+      5.  Added [fiddles/electron/start.md](fiddles/electron/start.md)
+    * Reflected changes: (node)
+      1.  Added [scripts/bin/node/_start.sh](scripts/bin/node/_start.sh)
+    
   5.  Removed aurelia fiddles and support (cli just doesn't seem to work anymore)
     * Reflected changes:
       1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
@@ -1795,3 +1800,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
             
            
       
+* Added [fiddles/electron/fiddle-0001-TemplateFork](fiddles/electron/fiddle-0001-TemplateFork)

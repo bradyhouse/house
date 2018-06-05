@@ -1,20 +1,20 @@
 {
-  "name": "{{FiddleName}}",
+  "name": "{{fiddleName}}",
   "version": "0.0.0",
-  "description": "http://github.com/bradyhouse/house/node/{{FiddleName}}",
+  "description": "Node ~ {{fiddleName}}",
   "repository": {
-    "url": "https://github.com/bradyhouse/house"
+    "url": "{{githubRepo}}"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "bradyhouse@gmail.com",
+  "author": "{{author}}",
   "license": "MIT",
   "private": true,
   "scripts": {
     "start": "node --harmony app.js"
   },
   "dependencies": {
-
+    "xml-to-json": "^0.1.1"
   }
 }

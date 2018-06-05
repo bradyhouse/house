@@ -40,6 +40,9 @@ function updateFiddle() {
             source bin/electron/_update.sh;
             update ${_fiddleDir};
             ;;
+        'node')
+            source bin/node/_update.sh;
+            update ${_fiddleDir};
         *)  exit 86
             ;;
   esac

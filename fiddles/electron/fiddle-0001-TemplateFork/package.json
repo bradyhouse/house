@@ -1,0 +1,21 @@
+{
+  "name": "fiddle-0000-Template",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/fiddle-0000-Template",
+  "keywords": [
+    "Electron",
+    "start",
+    "node",
+    "demo"
+  ],
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^2.0.0"
+  }
+}

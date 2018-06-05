@@ -1,9 +1,9 @@
-{{FiddleName}}
+{{fiddleName}}
 ======
 
 ### Title
 
-{{FiddleName}}
+{{fiddleName}}
 
 
 ### Creation Date

@@ -125,9 +125,9 @@ function startServer() {
             meteorStart || exit 94;
             ;;
         'node')
+            source bin/node/_start.sh;
             cd ${_fiddleRoot};
-            npm install;
-            npm start;
+            nodeStart || exit 117;
             ;;
         'nativescript')
             source bin/nativescript/.nativescriptrc;
@@ -236,7 +236,7 @@ case ${rc} in
         ;;
     116) echo -e "Fubar\t\"javacStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
-    117) echo -e echo -e "Fubar\t\"auStart\" function call failed for \"${_fiddleRoot}\".";
+    117) echo -e echo -e "Fubar\t\"nodeStart\" function call failed for \"${_fiddleRoot}\".";
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

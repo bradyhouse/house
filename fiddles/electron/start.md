@@ -1,22 +1,38 @@
-D3 (start)
+Electron (start)
 ======
 
-Executing the command `./fiddle.sh "start" "d3"` produces the following output.
+Executing the command `./fiddle.sh "start" "electron" "0000"` produces the following output.
 
-    H o u s e
-    oooooooooooo  o8o        .o8        .o8  oooo
-     888       8  `"'        888        888   888
-     888         oooo   .oooo888   .oooo888   888   .ooooo.
-     888oooo8     888  d88   888  d88   888   888  d88   88b
-     888          888  888   888  888   888   888  888ooo888
-     888          888  888   888  888   888   888  888    .o
-    o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
-    
+    {{ ʕ・ɭ・ʔ }}
     FIDDLE.SH
     FIDDLE-START.SH
     ├────STARTSERVER
-    Serving "/Users/bradyhouse/github/house/fiddles/d3" at http://127.0.0.1:1841
+    ├────ELECTRONINSTALL
+    /Users/e13542/.nvm/versions/node/v8.1.0/bin/electron -> /Users/e13542/.nvm/versions/node/v8.1.0/lib/node_modules/electron/cli.js
+    
+    > electron@2.0.2 postinstall /Users/e13542/.nvm/versions/node/v8.1.0/lib/node_modules/electron
+    > node install.js
+    
+    Downloading SHASUMS256.txt
+    [============================================>] 100.0% of 5.33 kB (5.33 kB/s)
+    + electron@2.0.2
+    added 147 packages in 29.896s
+    ├────ELECTRONSTART
+    ├────NVMINSTALL
+    v8.9.4 is already installed.
+    Now using node v8.9.4 (npm v5.6.0)
+    ├────NPMINSTALL
+    
+    > electron@2.0.0 postinstall /Users/e13542/github/house_230/fiddles/electron/fiddle-0000-Template/node_modules/electron
+    > node install.js
+    
+    Downloading SHASUMS256.txt
+    [============================================>] 100.0% of 5.33 kB (5.33 kB/s)
+    added 153 packages in 22.635s
+    ├────NPMSTART
+    
+    > fiddle-0000-Template@1.0.0 start /Users/e13542/github/house_230/fiddles/electron/fiddle-0000-Template
+    > electron .
     
 
-Your default web browser should then open to the root [index.html](index.html) page using port 1841.  To stop the
-web server, simply press `Ctrl`-`C`.
+The app will then open using the electron browser.  To stop the app, simply press `Ctrl`-`C`.
