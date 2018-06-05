@@ -28,7 +28,6 @@ voidEchoFiddleTypes() {
           ;;
         'setup')
            echo -e "\t\"android\"\tinstall android-sdk\t\thttps://developer.android.com";
-           echo -e "\t\"au\"\t\tinstall aurelia-cli\t\thttps://www.npmjs.com/package/aurelia-cli";
            echo -e "\t\"brew\"\t\tinstall homebrew\t\thttp://brew.sh/";
            echo -e "\t\"gh\"\t\tinstall github terminal\t\thttps://www.npmjs.com/package/gh";
            echo -e "\t\"gradle\"\tinstall gradle\t\t\thttps://gradle.org/";
@@ -65,7 +64,6 @@ voidEchoFiddleTypes() {
             ;;
         'index')
             echo -e "\t\"angular\"\t\tAngular Fiddle"
-            echo -e "\t\"aurelia\"\t\tAurelia Fiddle"
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle"
             echo -e "\t\"dojo\"\t\t\tDojo Fiddle"
             echo -e "\t\"ember\"\t\t\tEmber Fiddle"
@@ -84,7 +82,6 @@ voidEchoFiddleTypes() {
             ;;
         'publish')
             echo -e "\t\"angular\"\t\tAngular Fiddles";
-            echo -e "\t\"aurelia\"\t\tAurelia Fiddles";
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
             echo -e "\t\"dojo\"\t\t\tDojo Fiddles";
             echo -e "\t\"ember\"\t\t\tEmber Fiddles";
@@ -100,7 +97,6 @@ voidEchoFiddleTypes() {
             ;;
          'update')
             echo -e "\t\"angular2-cli\"\tAngular CLI Fiddles";
-            echo -e "\t\"aurelia\"\tAurelia Fiddles";
             echo -e "\t\"electron\"\tElectron Fiddles";
             echo -e "\t\"ember\"\t\tEmber Fiddles";
             echo -e "\t\"meteor\"\tMeteor Fiddles";
@@ -113,7 +109,6 @@ voidEchoFiddleTypes() {
             echo -e "\t\"ant\"\t\t\tAnt Fiddle"
             echo -e "\t\"angular\"\t\tAngular Fiddle"
             echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle"
-            echo -e "\t\"aurelia\"\t\tAurelia Fiddle"
             echo -e "\t\"bash\"\t\t\tBash Fiddle"
             echo -e "\t\"c\"\t\t\tC Fiddle"
             echo -e "\t\"compass\"\t\tCompass Fiddle"

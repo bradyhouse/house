@@ -1761,12 +1761,37 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
   
   4.  Added update command support
-    * Reflected change:
+    * Reflected changes:
       1.  Added [scripts/fiddle-update.sh](scripts/fiddle-update.sh)
       2.  Updated [scripts/fiddle.sh](scripts/fiddle.sh)
       3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
       4.  Updated [scripts/bin/angular2-cli/_start.sh](scripts/bin/angular2-cli/_start.sh)
       5.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
+      6.  Updated [fiddles/angular2-cli/create.md](fiddles/angular2-cli/create.md)
       6.  Added [fiddles/angular2-cli/update.md](fiddles/angular2-cli/update.md)
-      7.  Updated [fiddles/angular2-cli/readme.adoc](fiddles/angular2-cli/readme.adoc)
-      8.  Added [scripts/bin/aurelia/_update.sh](scripts/bin/aurelia/_update.sh)
+      7.  Added [fiddles/angular2-cli/update-all.md](fiddles/angular2-cli/update-all.md)
+      8.  Updated [fiddles/angular2-cli/readme.adoc](fiddles/angular2-cli/readme.adoc)
+      9.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
+      10. Added [scripts/bin/electron/_update.sh](scripts/bin/electron/_update.sh)
+      11. Updated [fiddles/electron/readme.adoc](fiddles/electron/readme.adoc)
+      12. Added [fiddles/electron/update-all.md](fiddles/electron/update-all.md) 
+      13. Added [fiddles/electron/update.md](fiddles/electron/update.md)
+      
+      
+  5.  Removed aurelia fiddles and support (cli just doesn't seem to work anymore)
+    * Reflected changes:
+      1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+      4.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+      5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+      6.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+      7.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+      8.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+      9.  Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+      10. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+      11. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+      12. Updated [README.adoc](README.adoc)
+            
+           
+      

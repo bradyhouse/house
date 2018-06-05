@@ -70,12 +70,6 @@ source bin/_types.sh;
             source bin/ant/_create.sh;
             create $2 || exit 87;
             ;;
-        'aurelia')
-            source bin/aurelia/_install.sh;
-            source bin/aurelia/_create.sh;
-            create $2 || exit 104;
-            ./fiddle-index.sh "aurelia" || exit 104;
-            ;;
         'bash')
             source bin/bash/_create.sh;
             create $2 || exit 95;

@@ -31,6 +31,7 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -81,13 +82,13 @@ function updateChangeLog() {
 	  if [ "$#" -ne 2 ]; then  exit 86; fi
     prompt || exit $?;
     case ${fiddleType} in
-        'android' | 'angular' | 'angular2-cli' | 'ant' | 'aurelia' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
+        'android' | 'angular' | 'angular2-cli' | 'ant' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'typescript' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
                 rm -rf "${fiddlePath}" || exit 87
             fi
             case ${fiddleType} in
-                'angular' | 'aurelia'  | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
+                'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'rxjs' | 'd3' | 'dojo' | 'tween' | 'svg' )
                     ./fiddle-index.sh ${fiddleType} || exit 88
                 ;;
             esac

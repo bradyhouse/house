@@ -18,9 +18,12 @@
 export HOME_ROOT=$(mapHomePath;);
 export GITHUB_PUBLISH_REPO="bradyhouse.github.io";
 export GITHUB_ROOT="${HOME_ROOT}/github";
+export GITHUB_PUBLIC_REPO="https://github.com/bradyhouse/bradyhouse.github.io";
 export BUILD_NUM="201801240420";
 export BASH_PROFILE="${HOME_ROOT}/.bash_profile";
 export OS=$(getOS;);
+export AUTHOR="bradyhouse@gmail.com";
 export NVM_VERSION="v8.9.4";
 export NG_TYPESCRIPT_VER="2.7.2";
-export AUTHOR="bradyhouse@gmail.com";
+export NG_XBOOTSTRAP_VER="2.0.5";
+export ELECTRON_SEEDER_REPO="https://github.com/electron/electron-quick-start";

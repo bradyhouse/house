@@ -71,6 +71,35 @@ function revertTypeScript() {
   fi
 }
 
+function revertNgXbootstrap() {
+  groupLog "revertNgXbootstrap";
+  if [[ $(grep -q "ngx-bootstrap" "package.json";) ]]
+  then
+    npm uninstall ngx-bootstrap;
+    npm install "ngx-bootstrap@${NG_XBOOTSTRAP_VER}" --save
+    if [[ -d "node_modules" ]]
+    then
+      rm -rf node_modules
+    fi
+  fi;
+}
+
+function revertRxJs() {
+  groupLog "revertRxJs";
+  npm uninstall rxjs;
+  npm install "rxjs@${NG_RXJS_VER}" --save
+  if [[ -d "node_modules" ]]
+  then
+    rm -rf node_modules
+  fi
+}
+
+
+function updateAngularCli() {
+  groupLog "updateAngularCli";
+  ng update @angular/cli;
+}
+
 function npmCheckUpdates() {
   groupLog "npmCheckUpdates";
   ncu -u;
@@ -83,7 +112,7 @@ function catch() {
       *)  endLog "fubar! Something went wrong.";
           ;;
   esac
-  exit $1
+  return $1
 }
 
 function update() {
@@ -104,9 +133,6 @@ function update() {
     exit 59
   fi
 
-  clear;
-  echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
-  echo "Bash version ${BASH_VERSION}..."
 
   # try
   (
@@ -117,12 +143,15 @@ function update() {
     rmPackageLock || exit $?;
     npmCheckUpdates || exit $?;
     revertTypeScript || exit $?;
+    # revertNgXbootstrap || exit $?;
+    # revertRxJs || exit $?;
+    updateAngularCli || exit $?;
   )
 
   # catch
   rc=$?; catch ${rc};
 
   #finally
-  exit ${rc};
+  return ${rc};
 
 }

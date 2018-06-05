@@ -35,8 +35,11 @@ can be used to extend or test drive this collection. The following table outline
 |`./fiddle.sh "refactor" "angular2-cli" "0000" "fiddle-0100-Refactor"`
 |link:refactor.md[sample output & additional details]
 |Update
-|`./fiddle.sh "update" "angular2-cli" "0000" "fiddle-0100-Refactor"`
+|`./fiddle.sh "update" "angular2-cli" "0000"
 |link:update.md[sample output & additional details]
+|Update (all)
+|`./fiddle.sh "update" "angular2-cli"
+|link:update-all.md[sample output & additional details]
 |Start
 |`./fiddle.sh "start" "angular2-cli"`
 |link:start.md[sample output & additional details]

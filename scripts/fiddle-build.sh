@@ -34,10 +34,6 @@ source bin/_env.sh;
             source bin/angular2-cli/_build.sh;
             build ${_fiddle} || exit 87;
             ;;
-        'aurelia')
-            source bin/aurelia/_build.sh;
-            build ${_fiddle} || exit 87;
-            ;;
         *)  exit 86
             ;;
     esac

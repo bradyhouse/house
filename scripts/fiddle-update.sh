@@ -34,42 +34,46 @@ function updateFiddle() {
   case ${_type} in
         'angular2-cli')
             source bin/angular2-cli/_update.sh;
-            update ${_fiddleDir} || exit 87;
+            update ${_fiddleDir};
             ;;
-        'aurelia')
-            source bin/aurelia/_update.sh;
-            update ${_fiddleDir} || exit 87;
+        'electron')
+            source bin/electron/_update.sh;
+            update ${_fiddleDir};
             ;;
         *)  exit 86
             ;;
   esac
+  cd ${_location};
 
 }
 
 function updateFiddles() {
   groupLog "updateFiddles";
-  # navigate to the collection directory
-  # create an empty array
-  # loop through each fiddle sub directory and
-  #   parse the directory name, should include "fiddle"
-  #   add the name to an array
-  # go back to the scripts directory
-  # loop through the array
-  # call updateFiddle for each name in the array
-
   _location=$(pwd;)
   _type=$1
   _fiddlesDir=$(cd ..; cd "fiddles/${_type}"; pwd;)
   cd ${_fiddlesDir};
-
+  _fiddleNamesStr="";
   for _fiddleDir in */ .*/
   do
     _fiddleName=${_fiddleDir%*/};
     case "${_fiddleName}" in
       *fiddle*)
-  
+        if [[ "${_fiddleNamesStr}" == "" ]]
+        then
+          _fiddleNamesStr="${_fiddleName}";
+        else
+          _fiddleNamesStr="${_fiddleNamesStr}, ${_fiddleName}";
+        fi
       ;;
     esac
+  done
+  cd ${_location};
+  IFS=', ' read -r -a _fiddleNames <<< "${_fiddleNamesStr}";
+  for _fiddleNamesI in "${_fiddleNames[@]}"
+  do
+     groupLog "updating ${_fiddleNamesI} ...";
+     updateFiddle "${_type}" "${_fiddleNamesI}";
   done
 
 }

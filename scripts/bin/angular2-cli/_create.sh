@@ -133,10 +133,10 @@ function create() {
 
   # try
   (
+      nvmInstall || exit $?;
+      ngInstall || exit $?;
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
       cd ../fiddles/angular2-cli;
-      nvmInstall || exit $?;
-      ngInstall || exit 1;
       ngCreate $1 ${bornOnDate} || exit 2;
   )
 

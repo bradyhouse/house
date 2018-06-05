@@ -12,6 +12,7 @@ i#!/usr/bin/env bash
 # Baseline Veri
 # 04/10/2016 - See CHANGELOG @ 201703100420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_env.sh;
@@ -25,7 +26,7 @@ function isPublishPath() {
   if [[ ! -d ${_publishPath} ]]
   then
     cd ${GITHUB_ROOT};
-    git clone https://github.com/bradyhouse/bradyhouse.github.io;
+    git clone ${GITHUB_PUBLIC_REPO};
 
   fi
 }
@@ -134,7 +135,6 @@ function publishAll() {
     rmrf d3;
     rmrf dojo;
     rmrf jquery;
-    rmrf aurelia;
     rmrf tween;
     rmrf svg;
     rmrf resources;
@@ -151,7 +151,6 @@ function publishAll() {
     cprf d3;
     cprf dojo;
     cprf jquery;
-    cprf aurelia;
     cprf tween;
     cprf svg;
     cprf rxjs;
@@ -181,9 +180,6 @@ function publishAll() {
       publishDist $1;
       ;;
     'angular2-cli')
-      publishDist $1;
-      ;;
-    'aurelia')
       publishDist $1;
       ;;
     'all')

@@ -29,7 +29,7 @@ function electronCreate() {
         then
             rm -rf ${fiddle} || exit 1;
         fi
-        $(git clone --depth 1 https://github.com/electron/electron-quick-start ${fiddle};) || exit 2;
+        $(git clone --depth 1 ${ELECTRON_SEEDER_REPO} ${fiddle};) || exit 2;
         cd ${fiddle};
         rm -rf .github || exit 3;
         rm -rf .git || exit 3;
@@ -57,7 +57,7 @@ function electronCreate() {
             ;;
         1)  endLog "${this}: Failed while attempting to remove the existing \"${fiddle}\" directory.";
             ;;
-        2)  endLog "${this}: Failed while attempting to clone angular2-seeder repo";
+        2)  endLog "${this}: Failed while attempting to clone electron-quick-start repo";
             ;;
         3)  endLog "${this}: Failed while attempting to remove the \".github\" and \".git\" directories.";
             ;;
@@ -118,7 +118,6 @@ function create() {
       electronInstall || exit 1;
       electronCreate $1 ${bornOnDate} || exit 2;
   )
-
   # catch
   rc=$?; catch ${rc};
 

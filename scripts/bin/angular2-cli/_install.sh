@@ -31,6 +31,6 @@ function ngInstall() {
     if [[ "${installed}" == "false" ]]
     then
       os=$(getOS;);
-      ./fiddle.sh "setup" "${OS}" "ng";
+      ./fiddle.sh "setup" "${os}" "ng";
     fi
 }

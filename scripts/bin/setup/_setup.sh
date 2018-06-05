@@ -29,10 +29,6 @@ function setup() {
                 source bin/setup/mac/_android.sh;
                 install || exit $?;
                 ;;
-              'au')
-                source bin/setup/mac/_au.sh;
-                install || exit $?;
-                ;;
               'brew')
                 source bin/setup/mac/_brew.sh;
                 install || exit $?;
@@ -95,7 +91,6 @@ function setup() {
                 ;;
               'all')
                 setup ${_os} "android" || exit $?;
-                setup ${_os} "au" || exit $?;
                 setup ${_os} "brew" || exit $?;
                 setup ${_os} "gradle" || exit $?;
                 setup ${_os} "gh" || exit $?;

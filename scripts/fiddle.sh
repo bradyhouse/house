@@ -188,7 +188,6 @@ case ${_rc} in
         echo -e "\t\"publish\"\tUpdate/Synchronize the configured GITHUB_PUBLISH_REPO"
         echo -e "\t\"setup\"\t\tSetup the local machine"
         echo -e "\t\"start\"\t\tStart the fiddle web service process"
-        echo -e "\t\"stop\"\t\tStop the web service process"
         echo -e "\t\"delete\"\tDelete an existing fiddle"
         echo -e "\t\"refactor\"\tRename (\"refactor\") an existing fiddle"
         echo -e "\t\"test\"\t\tInvoke JsTestDriver for a given fiddle"

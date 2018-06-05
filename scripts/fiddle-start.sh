@@ -78,11 +78,6 @@ function startServer() {
             ngInstall || exit 91;
             ngStart || exit 92;
             ;;
-        'aurelia')
-            source bin/aurelia/_start.sh;
-            cd ${_fiddleRoot};
-            auStart || exit 117;
-            ;;
         'c')
             source bin/c/.gccrc;
             source bin/c/_install.sh;
