@@ -4,23 +4,30 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : METEOR FIDDLE STARTUP___________________________________________________|
-#  Entry Point             : meteorStart_____________________________________________________________|
-#  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-meteor.sh_____________________________________________________|
+#  Create date             : 05/26/2018______________________________________________________________|
+#  Description             : MASTER METEOR SETUP SCRIPT FOR DARWIN___________________________________|
+#  Command line Arguments  : N/A_____________________________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
-# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# Baseline Ver - CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 
-
-function meteorStart() {
-    groupLog "meteorStart";
-    meteorInstall || exit $?;
-    meteor;
-    exit 0;
+function install() {
+  groupLog "install";
+  #try
+  (
+    curl https://install.meteor.com/ | sh || exit $?;
+  )
+  #catch
+  _rc=$?
+  case ${_rc} in
+    0)  echo "Done. meteor installed successfully."
+        ;;
+    *)  echo "foo bar! Something went wrong."
+        ;;
+  esac
+  #finally
+  exit ${_rc}
 }

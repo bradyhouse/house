@@ -1786,7 +1786,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       3.  Added [fiddles/node/update-all.md](fiddles/node/update-all.md) 
       4.  Added [fiddles/node/update.md](fiddles/node/update.md)
       5.  Updated [fiddles/node/readme.adoc](fiddles/node/readme.adoc)
-             
+    * Reflected changes: (meteor)
+      1.  Updated [scripts/bin/meteor/_install.sh](scripts/bin/meteor/_install.sh)
+      2.  Added [scripts/bin/setup/mac/_meteor.sh](scripts/bin/setup/mac/_meteor.sh)
+      3.  Updated [scripts/fiddle-setup.sh](scripts/fiddle-setup.sh)
+      4.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      5.  Added [fiddles/meteor/start.md](fiddles/meteor/start.md)  
+      6.  Added [scripts/bin/meteor/_update.sh](scripts/bin/meteor/_update.sh)
+      7.  Added [fiddles/meteor/update.md](fiddles/meteor/update.md)
+      8.  Added [fiddles/meteor/update-all.md](fiddles/meteor/update-all.md)           
     
   5.  Removed aurelia fiddles and support (cli just doesn't seem to work anymore)
     * Reflected changes:

@@ -23,6 +23,16 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 |Refactor
 |`./fiddle.sh "refactor" "meteor" "0000" "fiddle-0100-Refactor"`
 |link:refactor.md[sample output & additional details]
+|Update
+|`./fiddle.sh "update" "meteor" "0000"
+|link:update.md[sample output & additional details]
+|Update (all)
+|`./fiddle.sh "update" "meteor"
+|link:update-all.md[sample output & additional details]
+|Start
+|`./fiddle.sh "start" "meteor" "0000"`
+|link:start.md[sample output & additional details]
+|===
 |===
 
 

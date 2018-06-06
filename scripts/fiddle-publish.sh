@@ -195,13 +195,14 @@ case ${rc} in
     0)  echo "Done. All \"$1\" fiddles have been re-indexed."
         ;;
     86) clear
-        voidShowTitle ${thisFile};
+        voidShowSlug;
+        echo "./fiddle.sh publish \"?\"";
         echo "";
         echo "Nope ~ Incorrect number of arguments";
         echo "";
         echo "Usage:";
         echo "";
-        echo "$0 \"[t]\"";
+        echo "./fiddle.sh publish \"[t]\"";
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""

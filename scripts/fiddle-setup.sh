@@ -11,6 +11,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # 02/11/2017 - Baseline Ver ~ See CHANGELOG @ 201702110420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -33,7 +34,7 @@ case ${rc} in
     0)  echo "";
         ;;
     86) clear
-        voidShowTitle ${thisFile};
+        voidShowSlug ${thisFile};
         echo "";
         echo "Nope ~ Incorrect number of arguments";
         echo "";

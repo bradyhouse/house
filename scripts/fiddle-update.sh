@@ -40,6 +40,10 @@ function updateFiddle() {
             source bin/electron/_update.sh;
             update ${_fiddleDir};
             ;;
+        'meteor')
+            source bin/meteor/_update.sh;
+            update ${_fiddleDir};
+            ;;
         'node')
             source bin/node/_update.sh;
             update ${_fiddleDir};
@@ -103,7 +107,7 @@ case ${rc} in
     0)  echo "";
         ;;
     86) clear
-        voidShowTitle ${thisFile};
+        voidShowSlug ${thisFile};
         echo "";
         echo "Nope ~ Incorrect number of arguments";
         echo "";

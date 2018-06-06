@@ -57,6 +57,10 @@ function setup() {
                 source bin/setup/mac/_nativescript.sh;
                 install || exit $?;
                 ;;
+              'meteor')
+                source bin/setup/mac/_meteor.sh;
+                install || exit $?;
+                ;;
               'ng')
                  source bin/setup/mac/_ng.sh;
                  install || exit $?;
@@ -100,6 +104,7 @@ function setup() {
                 setup ${_os} "joe" || exit $?;
                 setup ${_os} "js-beautify" || exit $?;
                 setup ${_os} "live-server" || exit $?;
+                setup ${_os} "meteor" || exit $?;
                 setup ${_os} "nativescript" || exit $?;
                 setup ${_os} "ng" || exit $?;
                 setup ${_os} "shrinkwrap" || exit $?;

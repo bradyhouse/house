@@ -33,6 +33,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"gradle\"\tinstall gradle\t\t\thttps://gradle.org/";
            echo -e "\t\"js-beautify\"\tinstall js-beautify\t\thttps://www.npmjs.com/package/js-beautify";
            echo -e "\t\"live-server\"\tinstall live-server\t\thttps://www.npmjs.com/package/live-server";
+           echo -e "\t\"meteor\"\tinstall meteor\t\t\thttps://www.meteor.com/";
            echo -e "\t\"nativescript\"\tinstall nativeScript\t\thttps://www.npmjs.com/package/nativescript";
            echo -e "\t\"ncu\"\t\tinstall npm-check-updates\thttps://www.npmjs.com/package/npm-check-updates";
            echo -e "\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
@@ -42,7 +43,6 @@ voidEchoFiddleTypes() {
            echo -e "\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
            echo -e "\t\"yarn\"\t\tinstall yarn\t\t\thttps://yarnpkg.com/lang/en/";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\t\thttp://ohmyz.sh/";
-
            echo -e "";
            echo -e "\t\"all\"\t\tinstall everything";
           ;;
@@ -100,6 +100,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"electron\"\tElectron Fiddles";
             echo -e "\t\"ember\"\t\tEmber Fiddles";
             echo -e "\t\"meteor\"\tMeteor Fiddles";
+            echo -e "\t\"nativescript\"\tNativeScript Fiddles";
             echo -e "\t\"node\"\t\tNode Fiddles";
             echo -e "\t\"all\"\t\tAll of the above";
             ;;

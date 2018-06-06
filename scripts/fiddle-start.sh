@@ -43,12 +43,20 @@ _fiddle="???";
 _fiddleRoot="???";
 _projectName="???";
 
-if [ "$#" -eq 2 ]
-then
-  _type=$(echo $1);
-  _fiddleCriteria=$(echo $2);
-  _fiddleSubDir="../fiddles/${_type}";
-fi
+case "$#" in
+  1)
+    _type=$(echo $1);
+    ;;
+  *)
+    if [[ "$#" -ge 2 ]]
+    then
+      _type=$(echo $1);
+      _fiddleCriteria=$(echo $2);
+      _fiddleSubDir="../fiddles/${_type}";
+    fi
+    ;;
+esac
+
 
 if [[ -d "${_fiddleSubDir}" ]]
 then
@@ -134,7 +142,6 @@ function startServer() {
             source bin/meteor/_install.sh;
             source bin/meteor/_start.sh;
             cd ${_fiddleRoot};
-            meteorInstall || exit 93;
             meteorStart || exit 94;
             ;;
         'node')
