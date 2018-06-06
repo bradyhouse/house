@@ -1781,7 +1781,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       4.  Added [fiddles/electron/update.md](fiddles/electron/update.md)
       5.  Added [fiddles/electron/start.md](fiddles/electron/start.md)
     * Reflected changes: (node)
-      1.  Added [scripts/bin/node/_start.sh](scripts/bin/node/_start.sh)
+      1.  Updated [scripts/bin/node/_start.sh](scripts/bin/node/_start.sh)
+      2.  Added [scripts/bin/node/_update.sh](scripts/bin/node/_update.sh)
+      3.  Added [fiddles/node/update-all.md](fiddles/node/update-all.md) 
+      4.  Added [fiddles/node/update.md](fiddles/node/update.md)
+      5.  Updated [fiddles/node/readme.adoc](fiddles/node/readme.adoc)
+             
     
   5.  Removed aurelia fiddles and support (cli just doesn't seem to work anymore)
     * Reflected changes:
@@ -1797,7 +1802,21 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       10. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
       11. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
       12. Updated [README.adoc](README.adoc)
-            
+  
+  6.  Removed typescript fiddles and support (typescript without a framework seems silly)
+    * Reflected changes:
+      1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+      4.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+      5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+      6.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+      7.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+      8.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+      9.  Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+      10. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+      11. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+      12. Updated [README.adoc](README.adoc)      
            
       
 * Added [fiddles/electron/fiddle-0001-TemplateFork](fiddles/electron/fiddle-0001-TemplateFork)

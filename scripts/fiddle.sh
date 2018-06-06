@@ -26,7 +26,7 @@ source bin/_utils.sh;
 source bin/_types.sh;
 
 port=1841;
-thisFile=$(echo "$0" | sed 's/\.\///g');
+#thisFile=$(echo "$0" | sed 's/\.\///g');
 
 function fiddleIndex() {
     ./fiddle-index.sh $1 || exit $?;

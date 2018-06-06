@@ -78,7 +78,7 @@ voidEchoFiddleTypes() {
             ;;
         'start')
             voidEchoFiddleTypes;
-            echo -e "\t\"all\"\t\tstartup all Web based JS Fiddles"
+            echo -e "\t\"all\"\t\t\tstartup all Web based JS Fiddles"
             ;;
         'publish')
             echo -e "\t\"angular\"\t\tAngular Fiddles";
@@ -101,7 +101,6 @@ voidEchoFiddleTypes() {
             echo -e "\t\"ember\"\t\tEmber Fiddles";
             echo -e "\t\"meteor\"\tMeteor Fiddles";
             echo -e "\t\"node\"\t\tNode Fiddles";
-            echo -e "\t\"typescript\"\tTypeScript Fiddles";
             echo -e "\t\"all\"\t\tAll of the above";
             ;;
         *)
@@ -131,7 +130,6 @@ voidEchoFiddleTypes() {
             echo -e "\t\"chrome\"\t\tChrome Extension Fiddle"
             echo -e "\t\"node\"\t\t\tNode Fiddle"
             echo -e "\t\"tween\"\t\t\ttween.js Fiddle"
-            echo -e "\t\"typescript\"\t\tTypeScript Fiddle"
             echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddle"
             ;;
     esac

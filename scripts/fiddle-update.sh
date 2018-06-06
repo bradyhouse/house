@@ -43,6 +43,7 @@ function updateFiddle() {
         'node')
             source bin/node/_update.sh;
             update ${_fiddleDir};
+            ;;
         *)  exit 86
             ;;
   esac

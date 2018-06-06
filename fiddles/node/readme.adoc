@@ -35,6 +35,12 @@ to extend or test drive this collection. The following table outlines how.
 |List
 |`./fiddle.sh "list" "node"`
 |link:list.md[sample output & additional details]
+|Update
+|`./fiddle.sh "update" "node" "0000"
+|link:update.md[sample output & additional details]
+|Update (all)
+|`./fiddle.sh "update" "node"
+|link:update-all.md[sample output & additional details]
 |Refactor
 |`./fiddle.sh "refactor" "node" "0000" "fiddle-0100-Refactor"`
 |link:refactor.md[sample output & additional details]

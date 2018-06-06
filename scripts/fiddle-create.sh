@@ -174,17 +174,6 @@ source bin/_types.sh;
             create $2 || exit 89;
             ./fiddle-combine.sh "three" "$2" "app.js" "0" || exit 89
             ;;
-        'typescript')
-            source bin/typescript/_install_global.sh;
-            source bin/typescript/_add_directories.sh;
-            source bin/typescript/_init.sh;
-            source bin/typescript/_add_typingsrc.sh;
-            source bin/typescript/_install_save.sh;
-            source bin/typescript/_add_gulpfile.sh;
-            source bin/typescript/_add_karma_conf.sh;
-            source bin/typescript/_create.sh;
-            create $2 || exit 101;
-            ;;
         'tween')
             source bin/tween/_create.sh;
             create $2 || exit 94;

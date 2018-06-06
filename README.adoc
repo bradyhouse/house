@@ -50,7 +50,6 @@ and frameworks:
 |link:fiddles/svg[SVG]
 |link:fiddles/three[Three.js]
 |link:fiddles/tween[Tween.js]
-|link:fiddles/typescript[TypeScript]
 |link:fiddles/aws[AWS]
 |=========================================================
 

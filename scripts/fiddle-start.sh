@@ -36,13 +36,26 @@ source bin/_types.sh;
 source bin/_env.sh;
 
 _path=$(pwd;)  # Capture Path
-_bin="${_path}/bin"
-_type=$(echo $1);
-_fiddleCriteria=$(echo $2);
-_fiddle=$(getFiddle "${_type}" "${_fiddleCriteria}";);
-_fiddleSubDir="../fiddles/${_type}";
-_fiddleRoot="${_fiddleSubDir}/${_fiddle}";
-_projectName=${_fiddle};
+_bin="${_path}/bin";
+_type="???";
+_fiddleCriteria="???";
+_fiddle="???";
+_fiddleRoot="???";
+_projectName="???";
+
+if [ "$#" -eq 2 ]
+then
+  _type=$(echo $1);
+  _fiddleCriteria=$(echo $2);
+  _fiddleSubDir="../fiddles/${_type}";
+fi
+
+if [[ -d "${_fiddleSubDir}" ]]
+then
+  _fiddle=$(getFiddle "${_type}" "${_fiddleCriteria}";);
+  _fiddleRoot="${_fiddleSubDir}/${_fiddle}";
+  _projectName=${_fiddle};
+fi
 _port=1841;
 
 if [ "$#" -gt 2 ]; then _port=$3; fi
@@ -144,8 +157,13 @@ function startServer() {
             cd "../fiddles" || exit 88;
             live-server --port=${_port} || exit 95;
             ;;
-        *)  cd "../fiddles/${_type}" || exit 88;
-            live-server --port=${_port} || exit 96;
+        *)  if [[ -d "../fiddles/${_type}" ]]
+            then
+              cd "../fiddles/${_type}" || exit 88;
+              live-server --port=${_port} || exit 96;
+            else
+              exit 118;
+            fi
             ;;
     esac
 }
@@ -160,7 +178,7 @@ case ${rc} in
     0)  echo ""
         ;;
     86) clear
-        voidShowTitle ${thisFile};
+       voidShowSlug ${thisFile};
         echo "Usage:"
         echo ""
         echo "$0 \"[t]\" \"[[n]]\" \"[[p]]\""
@@ -236,7 +254,10 @@ case ${rc} in
         ;;
     116) echo -e "Fubar\t\"javacStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
-    117) echo -e echo -e "Fubar\t\"nodeStart\" function call failed for \"${_fiddleRoot}\".";
+    117) echo -e "Fubar\t\"nodeStart\" function call failed for \"${_fiddleRoot}\".";
+        ;;
+    118) echo -e "Fubar\tInvalid fiddle type, \"${_type}\", specified.";
+        rc=0;
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;
