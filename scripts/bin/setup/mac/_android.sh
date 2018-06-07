@@ -11,45 +11,72 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 201702110420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
+function brewTapCaskRoom() {
+  groupLog "brewTapCaskRoom";
+  brew tap caskroom/cask;
+}
+
+
 function installAndroid() {
-    groupLog "installBrew";
-    cd  ${HOME_ROOT};
-    if [[ -d "homebrew" ]]; then exit 1; fi
-    mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew;
+  groupLog "installAndroid";
+  brew cask install android-sdk;
 }
 
 function updateBashProfile() {
   groupLog "updateBashProfile";
-  if [[ ! -e "${BASH_PROFILE}" ]]; then exit 2; fi
-  echo -e " " >> ${BASH_PROFILE}
-  echo -e "### homebrew" >> ${BASH_PROFILE};
-  echo -e "export PATH=\"${HOME_ROOT}/homebrew:\$PATH\"" >> ${BASH_PROFILE};
-  echo -e "export PATH=\"${HOME_ROOT}/homebrew/bin:\$PATH\"" >> ${BASH_PROFILE};
-  echo -e " " >> ${BASH_PROFILE};
+  if [[ ! -d "${ANDROID_HOME}" ]]
+  then
+    if [[ -e "${BASH_PROFILE}" ]]
+    then
+        cp -rf "${BASH_PROFILE}" "${BASH_PROFILE}.bck"
+        echo -e " " >> ${BASH_PROFILE}
+        echo -e "### ANDROID" >> ${BASH_PROFILE};
+        echo -e "export ANDROID_HOME=/usr/local/share/android-sdk" >> ${BASH_PROFILE};
+        echo -e " " >> ${BASH_PROFILE};
+    fi
+  fi
+}
+
+function updateZshrcProfile() {
+  groupLog "updateBashProfile";
+  if [[ ! -d "${ANDROID_HOME}" ]]
+  then
+    if [[ -e "${ZSH_PROFILE}" ]]
+    then
+        cp -rf "${ZSH_PROFILE}" "${ZSH_PROFILE}.bck"
+        echo -e " " >> ${ZSH_PROFILE}
+        echo -e "### ANDROID" >> ${ZSH_PROFILE};
+        echo -e "export ANDROID_HOME=/usr/local/share/android-sdk" >> ${ZSH_PROFILE};
+        echo -e " " >> ${ZSH_PROFILE};
+    fi
+  fi
 }
 
 function install() {
+  groupLog "install";
   #try
   (
+    brewTapCaskRoom || exit $?;
     installAndroid || exit $?;
     updateBashProfile || exit $?;
+    updateZshrcProfile || exit $?;
   )
   #catch
   _rc=$?
   case ${_rc} in
-      0)  echo "Done. homebrew installed successfully."
+      0)  endLog "Done ~ android installed successfully."
           ;;
-      1)  echo "${HOME_ROOT}/homebrew already exists.";
-          ;;
-      2)  echo "${BASH_PROFILE} does not exist and could not be updated.";
-          ;;
-      *)  echo "foo bar! Something went wrong."
+      *)  endLog "foo bar! Something went wrong."
           ;;
   esac
   #finally
   exit ${_rc}
 }
+
+
+
 
 

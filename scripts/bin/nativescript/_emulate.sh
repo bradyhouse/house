@@ -17,7 +17,7 @@
 
 function startAndroidEmulator() {
   groupLog "startEmulator";
-  ${__ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__ANDROID_EMULATOR_PROFILE__}"
+  ${__NS_ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__NS_ANDROID_EMULATOR_PROFILE__}"
 }
 
 function emulate() {

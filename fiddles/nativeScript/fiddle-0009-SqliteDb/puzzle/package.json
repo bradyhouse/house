@@ -14,15 +14,15 @@
   },
   "dependencies": {
     "moment": "^2.15.2",
-    "nativescript-sqlite": "^1.1.2",
-    "nativescript-theme-core": "0.1.2",
-    "nativescript-vibrate": "^1.1.2",
-    "tns-core-modules": "^2.5.0-2016-11-25-4869"
+    "nativescript-sqlite": "^2.2.1",
+    "nativescript-theme-core": "1.0.4",
+    "nativescript-vibrate": "^2.1.0",
+    "tns-core-modules": "^4.1.0"
   },
   "devDependencies": {
-    "babel-traverse": "6.16.0",
-    "babel-types": "6.16.0",
-    "babylon": "6.11.4",
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
     "lazy": "1.0.11"
   }
 }

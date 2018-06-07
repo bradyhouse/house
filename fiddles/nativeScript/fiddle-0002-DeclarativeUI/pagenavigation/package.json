@@ -10,12 +10,12 @@
     }
   },
   "dependencies": {
-    "tns-core-modules": "2.3.0"
+    "tns-core-modules": "4.1.0"
   },
   "devDependencies": {
-    "babel-traverse": "6.15.0",
-    "babel-types": "6.15.0",
-    "babylon": "6.9.2",
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
     "lazy": "1.0.11"
   }
 }

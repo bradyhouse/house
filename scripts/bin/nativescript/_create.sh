@@ -15,9 +15,22 @@
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 11/26/2016 - See CHANGELOG @ 201610010420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
+
+function nvmInstall() {
+  groupLog "nvmInstall";
+
+  if [[ -d ${NVM_DIR} ]]
+  then
+    source ${NVM_DIR}/nvm.sh;
+    nvm install ${NVM_VERSION};
+  else
+    exit 3;
+  fi
+}
 
 function createTypingsRcFile() {
     groupLog "createTypingsRcFile";
@@ -31,7 +44,7 @@ function initFiddleConfigFile() {
   groupLog "initFiddleConfigFile";
   $(echo "" > ".fiddlerc";) || exit 2
   $(echo "export __PROJECT_DIR__=$1;" >>".fiddlerc";) || exit 8
-  $(echo "export __PROJECT_TYPE__=$2;" >>".fiddlerc";) || exit 8
+  $(echo "export __PROJECT_TYPE__=${__NS_TEMPLATE_TYPE__};" >>".fiddlerc";) || exit 8
 }
 
 function initJsProject() {
@@ -48,7 +61,10 @@ function initJsProject() {
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
   nativescript create ${projectName} || exit 7;
   cd ${projectName};
-  nativescript platform add android || exit 9;
+  if [[ "${__NS_ADD_PLATFORM__}" == "true" ]]
+  then
+    nativescript platform add android || exit 9;
+  fi
 }
 
 function npmInstall() {
@@ -72,7 +88,8 @@ function initNg2Project() {
 
   nativescript create ${projectName} --ng || exit 7;
   cd ${projectName};
-  nativescript platform add android || exit 9;
+
+  #nativescript platform add android || exit 9;
 
   createTypingsRcFile || exit $?;
 
@@ -176,12 +193,11 @@ function create() {
       groupLog "App Name: ";
       echo "\"${projectName}\"";
       cd ../fiddles/nativescript;
+      nvmInstall || exit 3;
       typescriptInstall || exit 1;
       nativescriptInstall || exit 2;
-      nvmInstall || exit 3;
       adbInstall || exit 8;
-      nvmUseNodeVer || exit 4;
-      nativescriptCreate $1 ${bornOnDate} ${projectName} ${__TEMPLATE_TYPE__} || exit 5;
+      nativescriptCreate $1 ${bornOnDate} ${projectName} ${__NS_TEMPLATE_TYPE__} || exit 5;
   )
   rc=$?; catch ${rc};
   # finally

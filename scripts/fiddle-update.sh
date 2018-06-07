@@ -19,9 +19,6 @@ source bin/_env.sh;
 _os=$(echo $1);
 _app=$(echo $2);
 
-# if the name parameter is specified -- then simply update the target fiddle
-# otherwise, loop through all fiddles of the specified type and update each fiddle
-
 function updateFiddle() {
   groupLog "updateFiddle";
   _location=$(pwd;)
@@ -46,6 +43,11 @@ function updateFiddle() {
             ;;
         'meteor')
             source bin/meteor/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        'nativescript')
+            source bin/nativescript/_install.sh;
+            source bin/nativescript/_update.sh;
             update ${_fiddleDir};
             ;;
         'node')

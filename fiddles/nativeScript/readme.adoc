@@ -23,6 +23,12 @@ can be used to extend or test drive this collection. The following table outline
 |Refactor
 |`./fiddle.sh "refactor" "nativescript" "0000" "fiddle-0100-EmptyTemplate"`
 |link:refactor.md[sample output & additional details]
+|Update
+|`./fiddle.sh "update" "nativescript" "0000"
+|link:update.md[sample output & additional details]
+|Update (all)
+|`./fiddle.sh "update" "nativescript"
+|link:update-all.md[sample output & additional details]
 |Start
 |`./fiddle.sh "start" "nativescript" "0000"`
 |link:start.md[sample output & additional details]

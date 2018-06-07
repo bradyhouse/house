@@ -18,7 +18,18 @@
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 11/22/2017 - See CHANGELOG @ 201708290420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
+
+function isOnline() {
+  echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1;
+  if [ $? -eq 0 ]; then
+    echo "Online"
+  else
+    echo "Offline"
+  fi
+}
+
 
 function getOS() {
   os=$(uname;);

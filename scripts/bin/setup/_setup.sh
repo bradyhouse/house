@@ -25,6 +25,10 @@ function setup() {
     case ${_os} in
         'mac')
             case ${_app} in
+              'abd')
+                source bin/setup/mac/_abd.sh;
+                install || exit $?;
+                ;;
               'android')
                 source bin/setup/mac/_android.sh;
                 install || exit $?;
@@ -94,12 +98,13 @@ function setup() {
                 install || exit $?;
                 ;;
               'all')
-                setup ${_os} "android" || exit $?;
                 setup ${_os} "brew" || exit $?;
+                setup ${_os} "abd" || exit $?;
+                setup ${_os} "android" || exit $?;
                 setup ${_os} "gradle" || exit $?;
-                setup ${_os} "gh" || exit $?;
                 setup ${_os} "node" || exit $?;
                 setup ${_os} "nvm" || exit $?;
+                setup ${_os} "gh" || exit $?;
                 setup ${_os} "ncu" || exit $?;
                 setup ${_os} "joe" || exit $?;
                 setup ${_os} "js-beautify" || exit $?;

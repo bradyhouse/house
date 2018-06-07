@@ -10,19 +10,19 @@
     }
   },
   "dependencies": {
-    "@angular/animations": "~4.2.0",
-    "@angular/common": "~4.2.0",
-    "@angular/compiler": "~4.2.0",
-    "@angular/core": "~4.2.0",
-    "@angular/forms": "~4.2.0",
-    "@angular/http": "~4.2.0",
-    "@angular/platform-browser": "~4.2.0",
-    "@angular/router": "~4.2.0",
-    "nativescript-angular": "~4.2.0",
+    "@angular/animations": "~6.0.4",
+    "@angular/common": "~6.0.4",
+    "@angular/compiler": "~6.0.4",
+    "@angular/core": "~6.0.4",
+    "@angular/forms": "~6.0.4",
+    "@angular/http": "~6.0.4",
+    "@angular/platform-browser": "~6.0.4",
+    "@angular/router": "~6.0.4",
+    "nativescript-angular": "~6.0.0",
     "nativescript-theme-core": "~1.0.2",
     "reflect-metadata": "~0.1.8",
-    "rxjs": "~5.4.2",
-    "tns-core-modules": "~3.1.0",
+    "rxjs": "~6.2.0",
+    "tns-core-modules": "~4.1.0",
     "zone.js": "~0.8.2"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "babel-types": "6.26.0",
     "babylon": "6.18.0",
     "lazy": "1.0.11",
-    "nativescript-dev-typescript": "~0.5.0",
-    "typescript": "~2.4.2"
+    "nativescript-dev-typescript": "~0.7.1",
+    "typescript": "~2.9.1"
   }
 }

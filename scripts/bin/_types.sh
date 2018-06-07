@@ -27,6 +27,7 @@ voidEchoFiddleTypes() {
           echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle";
           ;;
         'setup')
+           echo -e "\t\"abd\"\t\tinstall android debug bridge\thttps://developer.android.com/studio/command-line/adb";
            echo -e "\t\"android\"\tinstall android-sdk\t\thttps://developer.android.com";
            echo -e "\t\"brew\"\t\tinstall homebrew\t\thttp://brew.sh/";
            echo -e "\t\"gh\"\t\tinstall github terminal\t\thttps://www.npmjs.com/package/gh";

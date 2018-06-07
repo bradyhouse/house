@@ -147,7 +147,6 @@ source bin/_types.sh;
             create $2 || exit 102;
             ;;
         'nativescript')
-            source bin/nativescript/.nativescriptrc
             source bin/nativescript/_create.sh;
             source bin/nativescript/_install.sh;
             source bin/nativescript/_start.sh;
