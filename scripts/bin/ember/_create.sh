@@ -32,8 +32,8 @@ function emberCreate() {
         ember new $1 -sb || exit 2;
         cd ${fiddle};
         cp -rf ../template/README.markdown README.md || exit 3;
-        cp -rf ../template/.bowerrc .bowerrc || exit 4;
-        bower install || exit 5;
+        #cp -rf ../template/.bowerrc .bowerrc || exit 4;
+        #bower install || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 3;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 3;
     )

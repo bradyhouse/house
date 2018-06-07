@@ -16,11 +16,36 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
+function nvmInstall() {
+  groupLog "nvmInstall";
 
+  if [[ -d ${NVM_DIR} ]]
+  then
+    source ${NVM_DIR}/nvm.sh;
+    nvm install ${NVM_VERSION};
+  else
+    exit 3;
+  fi
+}
+
+
+function npmInstall() {
+  groupLog "npmInstall";
+  npm install;
+}
 
 function meteorStart() {
     groupLog "meteorStart";
+    _port=1841
+    if [[ $? -eq 2 ]]
+    then
+        _port=$2;
+    fi
+    nvmInstall || exit $?;
+    npmInstall || exit $?;
     meteorInstall || exit $?;
-    meteor;
+    meteor run --port ${_port};
     exit 0;
 }
+
+
