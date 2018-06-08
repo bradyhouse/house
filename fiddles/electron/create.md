@@ -4,18 +4,15 @@ Electron (create)
 Executing the command `./fiddle.sh "create" "electron" "fiddle-0000-Template"` produces the following output.
 
     {{ ʕ・ɭ・ʔ }}
-    FIDDLE.SH
-    FIDDLE-DELETE.SH
     
-    fiddle type:	electron
-    fiddle name:	fiddle-0000-Template
+    ├────SETUP
+    ├────INSTALL
+    ├────IINSTALLSHRINKWRAP
+    + shrinkwrap@0.4.0
+    updated 1 package in 4.001s
+    Done. shrinkwrap installed successfully.
     
-    Are you sure you want to delete this fiddle? [Y/n] Y
-    The "fiddle-0000-Template" electron fiddle has been deleted successfully.
-    FIDDLE-CREATE.SH
-    FIDDLE-CREATE.SH
-    Bash version 3.2.57(1)-release...
-    06-05-18
+    
     ├────ELECTRONINSTALL
     ├────ELECTRONCREATE
     Cloning into 'fiddle-0000-Template'...
@@ -28,15 +25,17 @@ Executing the command `./fiddle.sh "create" "electron" "fiddle-0000-Template"` p
     > electron@2.0.0 postinstall /Users/bradyhouse/github/house_230/fiddles/electron/fiddle-0000-Template/node_modules/electron
     > node install.js
     
-    added 153 packages in 7.07s
+    added 153 packages in 6.046s
+    ├────NPMSHRINKWRAP
+    npm notice package-lock.json has been renamed to npm-shrinkwrap.json. npm-shrinkwrap.json will be used for future installations.
     
     0
     └──".FIDDLES/ELECTRON/FIDDLE-0000-TEMPLATE" CREATED.
     
     
     FIDDLE-INDEX.SH
-    06-05-18
- 
+    06-08-18
+    
  
 #### Additional Info
     

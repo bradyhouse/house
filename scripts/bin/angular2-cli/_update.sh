@@ -15,35 +15,7 @@
 # BASELINE VERSION - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
-function nvmInstall() {
-  groupLog "nvmInstall";
-  if [[ -d ${NVM_DIR} ]]
-  then
-    source ${NVM_DIR}/nvm.sh;
-    nvm install ${NVM_VERSION};
-  else
-    exit 3;
-  fi
-}
 
-function isNcuInstalled() {
-  if [[ ! $(which ncu;) ]]
-  then
-      echo "false";
-  else
-      echo "true";
-  fi
-}
-
-function ncuInstall() {
-  groupLog "ncuInstall";
-  installed=$(isNcuInstalled;);
-  if [[ "${installed}" == "false" ]]
-  then
-    os=$(getOS;);
-    ./fiddle.sh "setup" "${OS}" "ncu";
-  fi
-}
 
 function rmNodeModules() {
   groupLog "rmNodeModules";
@@ -71,30 +43,6 @@ function revertTypeScript() {
   fi
 }
 
-function revertNgXbootstrap() {
-  groupLog "revertNgXbootstrap";
-  if [[ $(grep -q "ngx-bootstrap" "package.json";) ]]
-  then
-    npm uninstall ngx-bootstrap;
-    npm install "ngx-bootstrap@${NG_XBOOTSTRAP_VER}" --save
-    if [[ -d "node_modules" ]]
-    then
-      rm -rf node_modules
-    fi
-  fi;
-}
-
-function revertRxJs() {
-  groupLog "revertRxJs";
-  npm uninstall rxjs;
-  npm install "rxjs@${NG_RXJS_VER}" --save
-  if [[ -d "node_modules" ]]
-  then
-    rm -rf node_modules
-  fi
-}
-
-
 function updateAngularCli() {
   groupLog "updateAngularCli";
   ng update @angular/cli;
@@ -103,6 +51,16 @@ function updateAngularCli() {
 function npmCheckUpdates() {
   groupLog "npmCheckUpdates";
   ncu -u;
+}
+
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+
+  if [[ -e "npm-shrinkwrap.json" ]]
+  then
+    rm -rf "npm-shrinkwrap.json";
+  fi
+  npm shrinkwrap;
 }
 
 function catch() {
@@ -138,14 +96,14 @@ function update() {
   (
     nvmInstall || exit $?;
     ncuInstall || exit $?;
+    shrinkWrapInstall || exit $?;
     cd ${_fiddleDir};
     rmNodeModules || exit $?;
     rmPackageLock || exit $?;
     npmCheckUpdates || exit $?;
     revertTypeScript || exit $?;
-    # revertNgXbootstrap || exit $?;
-    # revertRxJs || exit $?;
     updateAngularCli || exit $?;
+    npmShrinkWrap || exit $?;
   )
 
   # catch

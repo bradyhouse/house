@@ -45,6 +45,13 @@ function ncuInstall() {
   fi
 }
 
+function shrinkWrapInstall() {
+  groupLog "shrinkWrapInstall";
+  installed=$(isNcuInstalled;);
+  os=$(getOS;);
+  ./fiddle.sh "setup" "${OS}" "shrinkwrap";
+}
+
 function rmNodeModules() {
   groupLog "rmNodeModules";
   if [[ -d "node_modules" ]]
@@ -61,6 +68,16 @@ function rmPackageLock() {
   fi
 }
 
+
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+
+  if [[ -e "npm-shrinkwrap.json" ]]
+  then
+    rm -rf "npm-shrinkwrap.json";
+  fi
+  npm shrinkwrap;
+}
 
 function npmCheckUpdates() {
   groupLog "npmCheckUpdates";
@@ -100,9 +117,12 @@ function update() {
   (
     nvmInstall || exit $?;
     ncuInstall || exit $?;
+    shrinkWrapInstall || exit $?;
     cd ${_fiddleDir};
     rmNodeModules || exit $?;
+    rmPackageLock || exit $?;
     npmCheckUpdates || exit $?;
+    npmShrinkWrap || exit $?;
   )
 
   # catch

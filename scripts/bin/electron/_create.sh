@@ -18,6 +18,10 @@
 
 this=$0;
 
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+  npm shrinkwrap;
+}
 
 function electronCreate() {
     groupLog "electronCreate";
@@ -50,6 +54,7 @@ function electronCreate() {
         $(voidSubstr 'tutorial' 'node' "package.json";) || exit 7;
         stripLine "package.json" "quick" || exit 7;
         npm install || exit 9;
+        npmShrinkWrap || exit $?;
     )
     # catch
     rc=$?; case ${rc} in
@@ -114,9 +119,11 @@ function create() {
   # try
   (
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
-      cd ../fiddles/electron;
+      nvmInstall || exit $?;
+      shrinkWrapInstall || exit $?;
       electronInstall || exit 1;
-      electronCreate $1 ${bornOnDate} || exit 2;
+      cd ../fiddles/electron;
+      electronCreate $1 ${bornOnDate} || exit $?;
   )
   # catch
   rc=$?; catch ${rc};

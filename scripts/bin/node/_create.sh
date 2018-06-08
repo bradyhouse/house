@@ -26,6 +26,9 @@ function create() {
 
   echo ${bornOnDate}
 
+   nvmInstall || exit $?;
+   shrinkWrapInstall || exit $?;
+
   #try
   (
       if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
@@ -37,6 +40,7 @@ function create() {
       $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3;
       cd "../fiddles/${fiddleSubDir}/$1"
       npm install || exit 4;
+      npm shrinkwrap;
   )
   #catch
   _rc=$?

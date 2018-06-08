@@ -37,6 +37,10 @@ function createTypingsRcFile() {
     echo "}" >> .typingsrc
 }
 
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+  npm shrinkwrap;
+}
 
 function ngCreate() {
     groupLog "ngCreate";
@@ -72,6 +76,7 @@ function ngCreate() {
         cp -rf ../template/index.html src/index.html || exit 9;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "src/index.html";) || exit 9;
         # npm install || exit 7;
+        npmShrinkWrap || exit $?;
 
     )
     # catch
@@ -135,6 +140,7 @@ function create() {
   (
       nvmInstall || exit $?;
       ngInstall || exit $?;
+      shrinkWrapInstall || exit $?;
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
       cd ../fiddles/angular2-cli;
       ngCreate $1 ${bornOnDate} || exit 2;

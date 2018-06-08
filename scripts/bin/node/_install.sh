@@ -4,16 +4,15 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : ANGULAR2 CLI INSTALL SETUP______________________________________________|
-#  Entry Point             : ngInstall_______________________________________________________________|
+#  Create date             : 05/26/2018______________________________________________________________|
+#  Description             : NODE INSTALL FUNCTION LIB_______________________________________________|
+#  Entry Point             : N/A_____________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-angular2-cli.sh_______________________________________________|
+#  Initial Consumer        : _create.sh, _update.sh__________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
-# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# Baseline Ver - 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -40,7 +39,7 @@ function shrinkWrapInstall() {
   groupLog "shrinkWrapInstall";
   installed=$(isNcuInstalled;);
   os=$(getOS;);
-  ./fiddle.sh "setup" "${os}" "shrinkwrap";
+  ./fiddle.sh "setup" "${OS}" "shrinkwrap";
 }
 
 function ncuInstall() {
@@ -49,25 +48,8 @@ function ncuInstall() {
   if [[ "${installed}" == "false" ]]
   then
     os=$(getOS;);
-    ./fiddle.sh "setup" "${OS}" "ncu";
+    ./fiddle.sh "setup" "${os}" "ncu";
   fi
 }
 
-function isNgInstalled() {
-    if [[ ! $(which ng;) ]]
-    then
-        echo "false";
-    else
-        echo "true";
-    fi
-}
 
-function ngInstall() {
-    groupLog "ngInstall";
-    installed=$(isNgInstalled;);
-    if [[ "${installed}" == "false" ]]
-    then
-      os=$(getOS;);
-      ./fiddle.sh "setup" "${os}" "ng";
-    fi
-}

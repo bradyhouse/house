@@ -30,10 +30,12 @@ function updateFiddle() {
 
   case ${_type} in
         'angular2-cli')
+            source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_update.sh;
             update ${_fiddleDir};
             ;;
         'electron')
+            source bin/electron/_install.sh;
             source bin/electron/_update.sh;
             update ${_fiddleDir};
             ;;
@@ -51,6 +53,7 @@ function updateFiddle() {
             update ${_fiddleDir};
             ;;
         'node')
+            source bin/node/_install.sh;
             source bin/node/_update.sh;
             update ${_fiddleDir};
             ;;

@@ -153,6 +153,7 @@ source bin/_types.sh;
             create $2 || exit 105;
             ;;
         'node')
+            source bin/node/_install.sh;
             source bin/node/_create.sh;
             create $2 || exit 93;
             ;;

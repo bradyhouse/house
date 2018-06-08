@@ -26,12 +26,8 @@ export ZSH_PROFILE="${HOME_ROOT}/.zshrc";
 export OS=$(getOS;);
 export AUTHOR="bradyhouse@gmail.com";
 export NVM_VERSION="v8.9.4";
-
 export NG_TYPESCRIPT_VER="2.7.2";
-export NG_XBOOTSTRAP_VER="2.0.5";
-
 export ELECTRON_SEEDER_REPO="https://github.com/electron/electron-quick-start";
-
 export __NS_PLATFORM__="ANDROID";
 export __NS_ADD_PLATFORM__="true";
 export __NS_ANDROID_EMULATOR_PROFILE__=fiddler;

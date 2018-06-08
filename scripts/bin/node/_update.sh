@@ -15,36 +15,6 @@
 # BASELINE VERSION - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
-function nvmInstall() {
-  groupLog "nvmInstall";
-  if [[ -d ${NVM_DIR} ]]
-  then
-    source ${NVM_DIR}/nvm.sh;
-    nvm install ${NVM_VERSION};
-  else
-    exit 3;
-  fi
-}
-
-function isNcuInstalled() {
-  if [[ ! $(which ncu;) ]]
-  then
-      echo "false";
-  else
-      echo "true";
-  fi
-}
-
-function ncuInstall() {
-  groupLog "ncuInstall";
-  installed=$(isNcuInstalled;);
-  if [[ "${installed}" == "false" ]]
-  then
-    os=$(getOS;);
-    ./fiddle.sh "setup" "${os}" "ncu";
-  fi
-}
-
 function rmNodeModules() {
   groupLog "rmNodeModules";
   if [[ -d "node_modules" ]]
@@ -59,6 +29,16 @@ function rmPackageLock() {
   then
     rm -rf package-lock.json;
   fi
+}
+
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+
+  if [[ -e "npm-shrinkwrap.json" ]]
+  then
+    rm -rf "npm-shrinkwrap.json";
+  fi
+  npm shrinkwrap;
 }
 
 function npmCheckUpdates() {
@@ -99,9 +79,13 @@ function update() {
   (
     nvmInstall || exit $?;
     ncuInstall || exit $?;
+    shrinkWrapInstall || exit $?;
+
     cd ${_fiddleDir};
     rmNodeModules || exit $?;
+    rmPackageLock || exit $?;
     npmCheckUpdates || exit $?;
+    npmShrinkWrap || exit $?;
   )
 
   # catch
