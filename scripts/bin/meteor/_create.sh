@@ -8,12 +8,13 @@
 #  Description             : MASTER METEOR CREATE FUNCTION___________________________________________|
 #  Entry Point             : ngCreate________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-meteor.sh_____________________________________________________|
+#  Initial Consumer        : ../fiddle-create.sh_____________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
 # 12/11/2016 - See CHANGELOG @ 201611280420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 function meteorCreate() {
@@ -80,9 +81,11 @@ function create() {
 
   # try
   (
+      nvmInstall || exit $?;
+      shrinkWrapInstall || exit $?;
+      meteorInstall || exit 1;
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
       cd ../fiddles/meteor;
-      meteorInstall || exit 1;
       meteorCreate $1 ${bornOnDate} || exit 2;
   )
 
