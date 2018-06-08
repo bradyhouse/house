@@ -17,6 +17,7 @@
 # 03/10/2017 - See CHANGELOG @ 201703100420
 # 04/24/2017 - See CHANGELOG @ 201704170420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -26,21 +27,23 @@ voidEchoFiddleTypes() {
           echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle";
           ;;
         'setup')
-           echo -e "\t\"android\"\tinstall android-sdk\thttps://developer.android.com";
-           echo -e "\t\"au\"\t\tinstall aurelia-cli\thttps://www.npmjs.com/package/aurelia-cli";
-           echo -e "\t\"brew\"\t\tinstall homebrew\thttp://brew.sh/";
-           echo -e "\t\"gh\"\t\tinstall github terminal\thttps://www.npmjs.com/package/gh";
-           echo -e "\t\"gradle\"\tinstall gradle\t\thttps://gradle.org/";
-           echo -e "\t\"js-beautify\"\tinstall js-beautify\thttps://www.npmjs.com/package/js-beautify";
-           echo -e "\t\"live-server\"\tinstall live-server\thttps://www.npmjs.com/package/live-server";
-           echo -e "\t\"nativescript\"\tinstall nativeScript\thttps://www.npmjs.com/package/nativescript";
-           echo -e "\t\"ng\"\t\tinstall angular2-cli\thttps://cli.angular.io/";
-           echo -e "\t\"node\"\t\tinstall node.js\t\thttps://nodejs.org/en/";
-           echo -e "\t\"nvm\"\t\tinstall nvm\t\thttps://github.com/creationix/nvm";
-           echo -e "\t\"typescript\"\tinstall typeScript\thttps://www.npmjs.com/package/typescript";
-           echo -e "\t\"yarn\"\t\tinstall yarn\t\thttps://yarnpkg.com/lang/en/";
-           echo -e "\t\"zsh\"\t\tinstall zsh\t\thttp://ohmyz.sh/";
-
+           echo -e "\t\"abd\"\t\tinstall android debug bridge\thttps://developer.android.com/studio/command-line/adb";
+           echo -e "\t\"android\"\tinstall android-sdk\t\thttps://developer.android.com";
+           echo -e "\t\"brew\"\t\tinstall homebrew\t\thttp://brew.sh/";
+           echo -e "\t\"gh\"\t\tinstall github terminal\t\thttps://www.npmjs.com/package/gh";
+           echo -e "\t\"gradle\"\tinstall gradle\t\t\thttps://gradle.org/";
+           echo -e "\t\"js-beautify\"\tinstall js-beautify\t\thttps://www.npmjs.com/package/js-beautify";
+           echo -e "\t\"live-server\"\tinstall live-server\t\thttps://www.npmjs.com/package/live-server";
+           echo -e "\t\"meteor\"\tinstall meteor\t\t\thttps://www.meteor.com/";
+           echo -e "\t\"nativescript\"\tinstall nativeScript\t\thttps://www.npmjs.com/package/nativescript";
+           echo -e "\t\"ncu\"\t\tinstall npm-check-updates\thttps://www.npmjs.com/package/npm-check-updates";
+           echo -e "\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
+           echo -e "\t\"node\"\t\tinstall node.js\t\t\thttps://nodejs.org/en/";
+           echo -e "\t\"nvm\"\t\tinstall nvm\t\t\thttps://github.com/creationix/nvm";
+           echo -e "\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
+           echo -e "\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
+           echo -e "\t\"yarn\"\t\tinstall yarn\t\t\thttps://yarnpkg.com/lang/en/";
+           echo -e "\t\"zsh\"\t\tinstall zsh\t\t\thttp://ohmyz.sh/";
            echo -e "";
            echo -e "\t\"all\"\t\tinstall everything";
           ;;
@@ -62,7 +65,6 @@ voidEchoFiddleTypes() {
             ;;
         'index')
             echo -e "\t\"angular\"\t\tAngular Fiddle"
-            echo -e "\t\"aurelia\"\t\tAurelia Fiddle"
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle"
             echo -e "\t\"dojo\"\t\t\tDojo Fiddle"
             echo -e "\t\"ember\"\t\t\tEmber Fiddle"
@@ -77,11 +79,10 @@ voidEchoFiddleTypes() {
             ;;
         'start')
             voidEchoFiddleTypes;
-            echo -e "\t\"all\"\t\tstartup all Web based JS Fiddles"
+            echo -e "\t\"all\"\t\t\tstartup all Web based JS Fiddles"
             ;;
         'publish')
             echo -e "\t\"angular\"\t\tAngular Fiddles";
-            echo -e "\t\"aurelia\"\t\tAurelia Fiddles";
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
             echo -e "\t\"dojo\"\t\t\tDojo Fiddles";
             echo -e "\t\"ember\"\t\t\tEmber Fiddles";
@@ -95,12 +96,20 @@ voidEchoFiddleTypes() {
             echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddles";
             echo -e "\t\"all\"\t\t\tAll of the above";
             ;;
+         'update')
+            echo -e "\t\"angular2-cli\"\tAngular CLI Fiddles";
+            echo -e "\t\"electron\"\tElectron Fiddles";
+            echo -e "\t\"ember\"\t\tEmber Fiddles";
+            echo -e "\t\"meteor\"\tMeteor Fiddles";
+            echo -e "\t\"nativescript\"\tNativeScript Fiddles";
+            echo -e "\t\"node\"\t\tNode Fiddles";
+            echo -e "\t\"all\"\t\tAll of the above";
+            ;;
         *)
             echo -e "\t\"android\"\t\tAndroid Fiddle"
             echo -e "\t\"ant\"\t\t\tAnt Fiddle"
             echo -e "\t\"angular\"\t\tAngular Fiddle"
             echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle"
-            echo -e "\t\"aurelia\"\t\tAurelia Fiddle"
             echo -e "\t\"bash\"\t\t\tBash Fiddle"
             echo -e "\t\"c\"\t\t\tC Fiddle"
             echo -e "\t\"compass\"\t\tCompass Fiddle"
@@ -123,7 +132,6 @@ voidEchoFiddleTypes() {
             echo -e "\t\"chrome\"\t\tChrome Extension Fiddle"
             echo -e "\t\"node\"\t\t\tNode Fiddle"
             echo -e "\t\"tween\"\t\t\ttween.js Fiddle"
-            echo -e "\t\"typescript\"\t\tTypeScript Fiddle"
             echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddle"
             ;;
     esac

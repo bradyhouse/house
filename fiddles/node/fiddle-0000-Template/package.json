@@ -1,18 +1,20 @@
 {
   "name": "fiddle-0000-Template",
   "version": "0.0.0",
-  "description": "http://github.com/bradyhouse/house/node/fiddle-0000-Template",
-  "repository": "",
+  "description": "Node ~ fiddle-0000-Template",
+  "repository": {
+    "url": "${GITHUB_REPO}"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "bradyhouse@gmail.com",
+  "author": "${AUTHOR}",
   "license": "MIT",
   "private": true,
   "scripts": {
     "start": "node --harmony app.js"
   },
   "dependencies": {
-
+    "xml-to-json": "^0.1.1"
   }
 }

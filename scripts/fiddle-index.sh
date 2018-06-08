@@ -23,6 +23,7 @@
 # 03/10/2016 - See CHANGELOG @ 201603050420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -71,7 +72,7 @@ esac
     if [[ -d "${fiddleDir}" ]]
     then
       case ${type} in
-          'angular'|'angular2-cli'|'aurelia'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
+          'angular'|'angular2-cli'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
               case ${type} in
                   'php') fiddleName=$(echo "$fiddleNameStub.php";)
                       ;;

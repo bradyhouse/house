@@ -8,7 +8,7 @@ template
 
 ### Creation Date
 
-12-29-16
+06-01-18
 
 
 ### Location
@@ -24,7 +24,7 @@ Chicago, IL
 ### Description
 
 JavaC fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
-it supports create/delete/refactor/list functionality for "c" based POC's aka fiddles. This is only a test.
+it supports create/delete/refactor/list functionality for "javac" based POC's aka fiddles. This is only a test.
 
 
 ### Use Case

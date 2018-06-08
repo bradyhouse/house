@@ -1100,8 +1100,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     6.  Added [fiddles/angular2/fiddle-0043-ComponentRouting](fiddles/angular2/fiddle-0043-ComponentRouting) ~ [Issue 43](https://github.com/bradyhouse/house/issues/43)
 
 * **Angular2 CLI**
-    1.  Added [fiddles/angular2-cli/fiddle-0001-GenerateRoute](fiddles/angular2-cli/fiddle-0001-GenerateRoute) ~ [Issue 22](https://github.com/bradyhouse/house/issues/22)
-    2.  Added [fiddles/angular2-cli/fiddle-0002-GeneratePipe](fiddles/angular2-cli/fiddle-0002-GeneratePipe) ~ [Issue 27](https://github.com/bradyhouse/house/issues/27)
 
 * **Node**
     1.  Added [fiddles/node/fiddle-0003-ChildProcess](fiddles/node/fiddle-0003-ChildProcess) ~ [Issue 12](https://github.com/bradyhouse/house/issues/12)
@@ -1736,3 +1734,121 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Python**
 
  1. Added [fiddles/python/fiddle-0010-HttpRequest](fiddles/python/fiddle-0010-HttpRequest) ~ [Issue 228](https://github.com/bradyhouse/house/issues/228)
+
+
+### 230_update_and_shrinkwrap ~ [Issue #239](https://github.com/bradyhouse/house/issues/230)
+
+* **fiddle.sh (Enhancement)**
+  
+  1.  Updated the node version to v8.9.4
+    * Reflected changes:
+      1.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
+      2.  Deleted [scripts/bin/angular2-cli/.ngrc](scripts/bin/angular2-cli/.ngrc)
+          * Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+          * Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+          * Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+      
+  2.  Added npm-check-updates setup support
+    * Reflected changes:
+      1.  Added [scripts/bin/setup/mac/_ncu.sh](scripts/bin/setup/mac/_ncu.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+   
+  3.  Added shrinkwrap setup support
+    * Reflected changes:
+      1.  Added [scripts/bin/setup/mac/_shrinkwrap.sh](scripts/bin/setup/mac/_ncu.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+  
+  4.  Added update command support
+    * Reflected changes:
+      1.  Added [scripts/fiddle-update.sh](scripts/fiddle-update.sh)
+      2.  Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+      3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+    * Reflected changes: (angular2-cli)
+      1.  Updated [scripts/bin/angular2-cli/_start.sh](scripts/bin/angular2-cli/_start.sh)
+      2.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
+      3.  Updated [fiddles/angular2-cli/create.md](fiddles/angular2-cli/create.md)
+      4.  Added [fiddles/angular2-cli/start.md](fiddles/angular2-cli/start.md)
+      5.  Added [fiddles/angular2-cli/update.md](fiddles/angular2-cli/update.md)
+      6.  Added [fiddles/angular2-cli/update-all.md](fiddles/angular2-cli/update-all.md)
+      7.  Updated [fiddles/angular2-cli/readme.adoc](fiddles/angular2-cli/readme.adoc)
+      8.  Added [scripts/bin/angular2-cli/_update.sh](scripts/bin/angular2-cli/_update.sh)
+    * Reflected changes: (electron)
+      1.  Added [scripts/bin/electron/_update.sh](scripts/bin/electron/_update.sh)
+      2.  Updated [fiddles/electron/readme.adoc](fiddles/electron/readme.adoc)
+      3.  Added [fiddles/electron/update-all.md](fiddles/electron/update-all.md) 
+      4.  Added [fiddles/electron/update.md](fiddles/electron/update.md)
+      5.  Added [fiddles/electron/start.md](fiddles/electron/start.md)
+    * Reflected changes: (node)
+      1.  Updated [scripts/bin/node/_start.sh](scripts/bin/node/_start.sh)
+      2.  Added [scripts/bin/node/_update.sh](scripts/bin/node/_update.sh)
+      3.  Added [fiddles/node/update-all.md](fiddles/node/update-all.md) 
+      4.  Added [fiddles/node/update.md](fiddles/node/update.md)
+      5.  Updated [fiddles/node/readme.adoc](fiddles/node/readme.adoc)
+    * Reflected changes: (meteor)
+      1.  Updated [scripts/bin/meteor/_install.sh](scripts/bin/meteor/_install.sh)
+      2.  Added [scripts/bin/setup/mac/_meteor.sh](scripts/bin/setup/mac/_meteor.sh)
+      3.  Updated [scripts/fiddle-setup.sh](scripts/fiddle-setup.sh)
+      4.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      5.  Added [fiddles/meteor/start.md](fiddles/meteor/start.md)  
+      6.  Added [scripts/bin/meteor/_update.sh](scripts/bin/meteor/_update.sh)
+      7.  Added [fiddles/meteor/update.md](fiddles/meteor/update.md)
+      8.  Added [fiddles/meteor/update-all.md](fiddles/meteor/update-all.md)           
+    * Reflected changes: (ember)
+      1.  Updated [scripts/bin/ember/_create.sh](scripts/bin/ember/_create.sh)
+      2.  Updated [scripts/bin/ember/_install.sh](scripts/bin/ember/_install.sh)
+      3.  Updated [scripts/bin/ember/_start.sh](scripts/bin/ember/_start.sh)
+      2.  Added [scripts/bin/setup/mac/_ember.sh](scripts/bin/setup/mac/_ember.sh)
+      3.  Updated [scripts/fiddle-setup.sh](scripts/fiddle-setup.sh)
+      4.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      5.  Added [fiddles/ember/start.md](fiddles/ember/start.md)  
+      6.  Added [scripts/bin/ember/_update.sh](scripts/bin/ember/_update.sh)
+      7.  Added [fiddles/ember/update.md](fiddles/ember/update.md)
+      8.  Added [fiddles/ember/update-all.md](fiddles/ember/update-all.md) 
+    * Reflected changes: (nativescript)
+      1.  Removed [scripts/bin/android/.androidrc](scripts/bin/android/.androidrc)
+      2.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
+      3.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
+      4.  Updated [scripts/bin/nativescript/_emulate.sh](scripts/bin/nativescript/_emulate.sh)
+      5.  Updated [scripts/bin/nativescript/_fork.sh](scripts/bin/nativescript/_fork.sh)
+      6.  Updated [scripts/bin/nativescript/_install.sh](scripts/bin/nativescript/_install.sh)
+      7.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
+      8.  Added [scripts/bin/nativescript/_update.sh](scripts/bin/nativescript/_update.sh)
+      9.  Updated [scripts/fiddle-update.sh](scripts/fiddle-update.sh)
+      10. Added [fiddles/nativeScript/update.md](fiddles/nativeScript/update.md)
+      11. Added [fiddles/nativeScript/update-all.md](fiddles/nativeScript/update-all.md)
+      12. Updated [fiddles/nativeScript/readme.adoc](fiddles/nativeScript/readme.adoc)
+    
+  5.  Removed aurelia fiddles and support (cli just doesn't seem to work anymore)
+    * Reflected changes:
+      1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+      4.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+      5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+      6.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+      7.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+      8.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+      9.  Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+      10. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+      11. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+      12. Updated [README.adoc](README.adoc)
+  
+  6.  Removed typescript fiddles and support (typescript without a framework seems silly)
+    * Reflected changes:
+      1.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+      2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+      3.  Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+      4.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+      5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+      6.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+      7.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+      8.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+      9.  Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+      10. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+      11. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+      12. Updated [README.adoc](README.adoc)      
+           
+      
+* Added [fiddles/electron/fiddle-0001-TemplateFork](fiddles/electron/fiddle-0001-TemplateFork)

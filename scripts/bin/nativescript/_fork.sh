@@ -26,7 +26,7 @@ function initFiddleConfigFile() {
 }
 
 function nativeScriptFork() {
-  groupLog "nativeScriptFort";
+  groupLog "nativeScriptFork";
   source=$1;
   target=$2;
   type="js";

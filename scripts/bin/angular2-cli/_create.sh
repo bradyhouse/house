@@ -13,20 +13,8 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
-
-
-function nvmInstall() {
-  groupLog "nvmInstall";
-
-  if [[ -d ${NVM_DIR} ]]
-  then
-    source ${NVM_DIR}/nvm.sh;
-    nvm install ${NVM_VERSION};
-  else
-    exit 3;
-  fi
-}
 
 
 function createTypingsRcFile() {
@@ -37,6 +25,10 @@ function createTypingsRcFile() {
     echo "}" >> .typingsrc
 }
 
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+  npm shrinkwrap;
+}
 
 function ngCreate() {
     groupLog "ngCreate";
@@ -72,6 +64,7 @@ function ngCreate() {
         cp -rf ../template/index.html src/index.html || exit 9;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "src/index.html";) || exit 9;
         # npm install || exit 7;
+        npmShrinkWrap || exit $?;
 
     )
     # catch
@@ -133,10 +126,11 @@ function create() {
 
   # try
   (
+      nvmInstall || exit $?;
+      ngInstall || exit $?;
+      shrinkWrapInstall || exit $?;
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
       cd ../fiddles/angular2-cli;
-      nvmInstall || exit $?;
-      ngInstall || exit 1;
       ngCreate $1 ${bornOnDate} || exit 2;
   )
 

@@ -13,68 +13,33 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
-this=$0;
-
-
-function isNodeVer426Installed() {
-    if [[ ! -d "${NVM_DIR}/versions/node/v4.2.6" ]]
-    then
-        return 1;
-    else
-        return 0;
-    fi
-}
-
-function isNodeVer5Installed() {
-    if [[ ! -d "${NVM_DIR}/versions/node/v5.0.0" ]]
-    then
-        return 1;
-    else
-        return 0;
-    fi
-}
-
-function isNvmInstalled() {
-    if [[ ! -d "${NVM_DIR}" ]]
-    then
-        echo "false";
-    else
-        echo "true";
-    fi
-}
-
 function nvmInstall() {
-    groupLog "nvmInstall";
-    installed=$(isNvmInstalled;);
-    if [[ "${installed}" == "false" ]]
-    then
-        groupLog "${this}: nvm is not installed";
-        exit 1;
-    else
-        if [[ $(isNodeVer5Installed;) -eq 1 ]]
-        then
-            groupLog "${this}: node version 5.0 is not installed";
-            exit 1;
-        fi
-        if [[ $(isNodeVer426Installed;) -eq 1 ]]
-        then
-            groupLog "${this}: node version 4.2.6 is not installed.";
-            exit 1;
-        fi
-    fi
-    . ~/.nvm/nvm.sh;
+  groupLog "nvmInstall";
+  if [[ -d ${NVM_DIR} ]]
+  then
+    source ${NVM_DIR}/nvm.sh;
+    nvm install ${NVM_VERSION};
+  else
+    exit 3;
+  fi
 }
 
-function nvmUseNodeVer5() {
-    groupLog "nvmUseNodeVer5";
-    nvm use 5.0 || exit $?;
+function isNcuInstalled() {
+  if [[ ! $(which ncu;) ]]
+  then
+      echo "false";
+  else
+      echo "true";
+  fi
 }
 
-function nvmUseNodeVer426() {
-    groupLog "nvmUseNodeVer426";
-    nvm use 4.2.6 || exit $?;
+function shrinkWrapInstall() {
+  groupLog "shrinkWrapInstall";
+  os=$(getOS;);
+  ./fiddle.sh "setup" "${OS}" "shrinkwrap";
 }
 
 function electronInstall() {
@@ -82,7 +47,8 @@ function electronInstall() {
     installed=$(isInstalled "electron";);
     if [[ "${installed}" == "false" ]]
     then
-        npm install electron -g || exit $?;
+      os=$(getOS;);
+      ./fiddle.sh "setup" "${os}" "electron";
     fi
 }
 

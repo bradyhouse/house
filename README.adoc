@@ -26,7 +26,6 @@ and frameworks:
 |link:fiddles/angular[Angular]
 |link:fiddles/angular2-cli[Angular2 Cli]
 |link:fiddles/ant[Ant]
-|link:fiddles/aurelia[Aurelia]
 |link:fiddles/aws[AWS]
 |link:fiddles/bash[Bash]
 |link:fiddles/c[C]
@@ -51,7 +50,6 @@ and frameworks:
 |link:fiddles/svg[SVG]
 |link:fiddles/three[Three.js]
 |link:fiddles/tween[Tween.js]
-|link:fiddles/typescript[TypeScript]
 |link:fiddles/aws[AWS]
 |=========================================================
 

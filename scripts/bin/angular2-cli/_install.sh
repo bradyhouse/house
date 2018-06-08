@@ -16,6 +16,42 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # ---------------------------------------------------------------------------------------------------|
 
+function nvmInstall() {
+  groupLog "nvmInstall";
+  if [[ -d ${NVM_DIR} ]]
+  then
+    source ${NVM_DIR}/nvm.sh;
+    nvm install ${NVM_VERSION};
+  else
+    exit 3;
+  fi
+}
+
+function isNcuInstalled() {
+  if [[ ! $(which ncu;) ]]
+  then
+      echo "false";
+  else
+      echo "true";
+  fi
+}
+
+function shrinkWrapInstall() {
+  groupLog "shrinkWrapInstall";
+  os=$(getOS;);
+  ./fiddle.sh "setup" "${os}" "shrinkwrap";
+}
+
+function ncuInstall() {
+  groupLog "ncuInstall";
+  installed=$(isNcuInstalled;);
+  if [[ "${installed}" == "false" ]]
+  then
+    os=$(getOS;);
+    ./fiddle.sh "setup" "${OS}" "ncu";
+  fi
+}
+
 function isNgInstalled() {
     if [[ ! $(which ng;) ]]
     then
@@ -31,6 +67,6 @@ function ngInstall() {
     if [[ "${installed}" == "false" ]]
     then
       os=$(getOS;);
-      ./fiddle.sh "setup" "${OS}" "ng";
+      ./fiddle.sh "setup" "${os}" "ng";
     fi
 }

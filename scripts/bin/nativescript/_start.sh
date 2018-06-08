@@ -16,6 +16,7 @@
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 11/26/2016 - See CHANGELOG @ 201610010420
 # 01/21/2017 - See CHANGELOG @ 201701180420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -46,7 +47,7 @@ function startAndroidEmulator() {
 
   if [[ $(isEmulatorRunning;) == "false" ]]
   then
-    nohup ${__ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__ANDROID_EMULATOR_PROFILE__}" &
+    nohup ${__NS_ANDROID_EMULATOR_EXE__} -netdelay none -netspeed full -avd "${__NS_ANDROID_EMULATOR_PROFILE__}" &
     sleep 30;
   else
     groupLog "emulator is already running";

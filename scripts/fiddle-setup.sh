@@ -4,13 +4,14 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 03/19/2015______________________________________________________________|
-#  Description             : UTILITY USED TO LIST THE FIDDLES DEFINED FOR A SPECIFIC TYPE____________|
+#  Create date             : 02/11/2017______________________________________________________________|
+#  Description             : UTILITY USED TO SETUP SPECIFIC TOOLS AND FRAMEWORKS_____________________|
 #  Command line Arguments  : $1 = FIDDLE TYPE________________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # 02/11/2017 - Baseline Ver ~ See CHANGELOG @ 201702110420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -33,7 +34,7 @@ case ${rc} in
     0)  echo "";
         ;;
     86) clear
-        voidShowTitle ${thisFile};
+        voidShowSlug ${thisFile};
         echo "";
         echo "Nope ~ Incorrect number of arguments";
         echo "";

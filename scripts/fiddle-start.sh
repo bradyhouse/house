@@ -29,19 +29,41 @@
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
 source bin/_env.sh;
 
 _path=$(pwd;)  # Capture Path
-_bin="${_path}/bin"
-_type=$(echo $1);
-_fiddleCriteria=$(echo $2);
-_fiddle=$(getFiddle "${_type}" "${_fiddleCriteria}";);
-_fiddleSubDir="../fiddles/${_type}";
-_fiddleRoot="${_fiddleSubDir}/${_fiddle}";
-_projectName=${_fiddle};
+_bin="${_path}/bin";
+_type="???";
+_fiddleCriteria="???";
+_fiddle="???";
+_fiddleRoot="???";
+_projectName="???";
+
+case "$#" in
+  1)
+    _type=$(echo $1);
+    ;;
+  *)
+    if [[ "$#" -ge 2 ]]
+    then
+      _type=$(echo $1);
+      _fiddleCriteria=$(echo $2);
+      _fiddleSubDir="../fiddles/${_type}";
+    fi
+    ;;
+esac
+
+
+if [[ -d "${_fiddleSubDir}" ]]
+then
+  _fiddle=$(getFiddle "${_type}" "${_fiddleCriteria}";);
+  _fiddleRoot="${_fiddleSubDir}/${_fiddle}";
+  _projectName=${_fiddle};
+fi
 _port=1841;
 
 if [ "$#" -gt 2 ]; then _port=$3; fi
@@ -69,7 +91,6 @@ function startServer() {
             androidStart || exit 111;
             ;;
         'angular2-cli')
-            source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_start.sh;
             cd ${_fiddleRoot};
@@ -77,11 +98,6 @@ function startServer() {
             if [[ "${installed}" == "false" ]]; then exit 97; fi
             ngInstall || exit 91;
             ngStart || exit 92;
-            ;;
-        'aurelia')
-            source bin/aurelia/_start.sh;
-            cd ${_fiddleRoot};
-            auStart || exit 117;
             ;;
         'c')
             source bin/c/.gccrc;
@@ -126,13 +142,12 @@ function startServer() {
             source bin/meteor/_install.sh;
             source bin/meteor/_start.sh;
             cd ${_fiddleRoot};
-            meteorInstall || exit 93;
             meteorStart || exit 94;
             ;;
         'node')
+            source bin/node/_start.sh;
             cd ${_fiddleRoot};
-            npm install;
-            npm start;
+            nodeStart || exit 117;
             ;;
         'nativescript')
             source bin/nativescript/.nativescriptrc;
@@ -149,8 +164,13 @@ function startServer() {
             cd "../fiddles" || exit 88;
             live-server --port=${_port} || exit 95;
             ;;
-        *)  cd "../fiddles/${_type}" || exit 88;
-            live-server --port=${_port} || exit 96;
+        *)  if [[ -d "../fiddles/${_type}" ]]
+            then
+              cd "../fiddles/${_type}" || exit 88;
+              live-server --port=${_port} || exit 96;
+            else
+              exit 118;
+            fi
             ;;
     esac
 }
@@ -165,7 +185,7 @@ case ${rc} in
     0)  echo ""
         ;;
     86) clear
-        voidShowTitle ${thisFile};
+       voidShowSlug ${thisFile};
         echo "Usage:"
         echo ""
         echo "$0 \"[t]\" \"[[n]]\" \"[[p]]\""
@@ -241,7 +261,10 @@ case ${rc} in
         ;;
     116) echo -e "Fubar\t\"javacStart\" function call failed for \"${_fiddleSubDir}\".";
         ;;
-    117) echo -e echo -e "Fubar\t\"auStart\" function call failed for \"${_fiddleRoot}\".";
+    117) echo -e "Fubar\t\"nodeStart\" function call failed for \"${_fiddleRoot}\".";
+        ;;
+    118) echo -e "Fubar\tInvalid fiddle type, \"${_type}\", specified.";
+        rc=0;
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"
         ;;

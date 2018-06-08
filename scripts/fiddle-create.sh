@@ -30,6 +30,7 @@
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -61,7 +62,6 @@ source bin/_types.sh;
             create $2 || exit 87;
             ;;
         'angular2-cli')
-            source bin/angular2-cli/.ngrc;
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_create.sh;
             create $2 || exit 87;
@@ -69,12 +69,6 @@ source bin/_types.sh;
         'ant')
             source bin/ant/_create.sh;
             create $2 || exit 87;
-            ;;
-        'aurelia')
-            source bin/aurelia/_install.sh;
-            source bin/aurelia/_create.sh;
-            create $2 || exit 104;
-            ./fiddle-index.sh "aurelia" || exit 104;
             ;;
         'bash')
             source bin/bash/_create.sh;
@@ -153,13 +147,12 @@ source bin/_types.sh;
             create $2 || exit 102;
             ;;
         'nativescript')
-            source bin/nativescript/.nativescriptrc
-            source bin/nativescript/_create.sh;
             source bin/nativescript/_install.sh;
-            source bin/nativescript/_start.sh;
+            source bin/nativescript/_create.sh;
             create $2 || exit 105;
             ;;
         'node')
+            source bin/node/_install.sh;
             source bin/node/_create.sh;
             create $2 || exit 93;
             ;;
@@ -179,17 +172,6 @@ source bin/_types.sh;
             source bin/three/_create.sh;
             create $2 || exit 89;
             ./fiddle-combine.sh "three" "$2" "app.js" "0" || exit 89
-            ;;
-        'typescript')
-            source bin/typescript/_install_global.sh;
-            source bin/typescript/_add_directories.sh;
-            source bin/typescript/_init.sh;
-            source bin/typescript/_add_typingsrc.sh;
-            source bin/typescript/_install_save.sh;
-            source bin/typescript/_add_gulpfile.sh;
-            source bin/typescript/_add_karma_conf.sh;
-            source bin/typescript/_create.sh;
-            create $2 || exit 101;
             ;;
         'tween')
             source bin/tween/_create.sh;

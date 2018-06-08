@@ -18,13 +18,19 @@ collection. The following table outlines how.
 |Delete
 |`./fiddle.sh "delete" "electron" "0000"`
 |link:delete.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "electron"`
+|link:list.md[sample output & additional details]
+|Update
+|`./fiddle.sh "update" "angular2-cli" "0000"
+|link:update.md[sample output & additional details]
+|Update (all)
+|`./fiddle.sh "update" "angular2-cli"
+|link:update-all.md[sample output & additional details]
 |Refactor
 |`./fiddle.sh "refactor" "electron" "0000" "fiddle-0100-EmptyTemplate"`
 |link:refactor.md[sample output & additional details]
 |Start
 |`./fiddle.sh "start" "electron" "0000"`
 |link:start.md[sample output & additional details]
-|List
-|`./fiddle.sh "list" "electron"`
-|link:list.md[sample output & additional details]
 |===

@@ -5,19 +5,24 @@
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
 #  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : MASTER ELECTRON CREATE FUNCTION_________________________________________|
-#  Entry Point             : electronCreate__________________________________________________________|
+#  Description             : MASTER ELECTRON CREATE FUNCTIONS LIB____________________________________|
+#  Entry Point             : create__________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-electron.sh___________________________________________________|
+#  Initial Consumer        : ../fiddle-create.sh_____________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
 # 12/11/2016 - See CHANGELOG @ 201611280420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
 
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+  npm shrinkwrap;
+}
 
 function electronCreate() {
     groupLog "electronCreate";
@@ -29,7 +34,7 @@ function electronCreate() {
         then
             rm -rf ${fiddle} || exit 1;
         fi
-        $(git clone --depth 1 https://github.com/electron/electron-quick-start ${fiddle};) || exit 2;
+        $(git clone --depth 1 ${ELECTRON_SEEDER_REPO} ${fiddle};) || exit 2;
         cd ${fiddle};
         rm -rf .github || exit 3;
         rm -rf .git || exit 3;
@@ -50,6 +55,7 @@ function electronCreate() {
         $(voidSubstr 'tutorial' 'node' "package.json";) || exit 7;
         stripLine "package.json" "quick" || exit 7;
         npm install || exit 9;
+        npmShrinkWrap || exit $?;
     )
     # catch
     rc=$?; case ${rc} in
@@ -57,7 +63,7 @@ function electronCreate() {
             ;;
         1)  endLog "${this}: Failed while attempting to remove the existing \"${fiddle}\" directory.";
             ;;
-        2)  endLog "${this}: Failed while attempting to clone angular2-seeder repo";
+        2)  endLog "${this}: Failed while attempting to clone electron-quick-start repo";
             ;;
         3)  endLog "${this}: Failed while attempting to remove the \".github\" and \".git\" directories.";
             ;;
@@ -114,11 +120,12 @@ function create() {
   # try
   (
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
-      cd ../fiddles/electron;
+      nvmInstall || exit $?;
+      shrinkWrapInstall || exit $?;
       electronInstall || exit 1;
-      electronCreate $1 ${bornOnDate} || exit 2;
+      cd ../fiddles/electron;
+      electronCreate $1 ${bornOnDate} || exit $?;
   )
-
   # catch
   rc=$?; catch ${rc};
 

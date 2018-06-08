@@ -19,13 +19,14 @@
 # 03/12/2015 - See CHANGELOG @ 201603100420
 # 05/02/2015 - See CHANGELOG @ 201605020420
 # 02/11/2017 - See CHANGELOG @ 201702110420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 clear;
 source bin/_utils.sh;
 source bin/_types.sh;
 
 port=1841;
-thisFile=$(echo "$0" | sed 's/\.\///g');
+#thisFile=$(echo "$0" | sed 's/\.\///g');
 
 function fiddleIndex() {
     ./fiddle-index.sh $1 || exit $?;
@@ -140,6 +141,20 @@ function fiddleIndexAll() {
             esac
             exit 0;
             ;;
+         'update')
+            case "$#" in
+                2)
+                    ./fiddle-update.sh $2;
+                    ;;
+                3)
+                    ./fiddle-update.sh $2 $3;
+                    ;;
+                *)
+                    ./fiddle-update.sh;
+                    ;;
+            esac
+            exit 0;
+            ;;
          'setup')
             if [ "$#" -lt 3 ]; then  ./fiddle-setup.sh;  exit 0; fi
             ./fiddle-setup.sh $2 $3;
@@ -160,7 +175,7 @@ case ${_rc} in
         echo ""
         echo "Usage:"
         echo ""
-        echo "$0 \"[c]\" \"[a1]\" \"[a2]\" \"[a3]\""
+        echo "$0 \"[c]\" \"[a1]\" \"[a2]\" \"[aN]\""
         echo ""
         echo -e "[c]\tcommand. Valid types include: "
         echo ""
@@ -173,14 +188,14 @@ case ${_rc} in
         echo -e "\t\"publish\"\tUpdate/Synchronize the configured GITHUB_PUBLISH_REPO"
         echo -e "\t\"setup\"\t\tSetup the local machine"
         echo -e "\t\"start\"\t\tStart the fiddle web service process"
-        echo -e "\t\"stop\"\t\tStop the web service process"
         echo -e "\t\"delete\"\tDelete an existing fiddle"
         echo -e "\t\"refactor\"\tRename (\"refactor\") an existing fiddle"
         echo -e "\t\"test\"\t\tInvoke JsTestDriver for a given fiddle"
+        echo -e "\t\"update\"\tRun npm-check-updates for a given fiddle or type"
         echo -e "\t\"emulate\"\tStartup the configured android emulator"
         echo -e "\t\"edit\"\t\tModify a fiddle"
         echo ""
-        echo -e "[a1-3]\targuments. The arguments required by the "
+        echo -e "[a1-aN]\targuments. The arguments required by the "
         echo -e "\tspecified command. There can be up to 3 arguments."
         echo -e "\tTo understand the arguments required by a specific"
         echo -e "\tcommand execute the command with no additional"

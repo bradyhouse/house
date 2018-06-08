@@ -28,6 +28,7 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -66,13 +67,13 @@ changeLogFile="../CHANGELOG.md";
             $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
         fi
         ;;
-    'angular' | 'aurelia' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'typescript' | 'svg' )
+    'angular' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
         if [[ -f "${newIndexFile}" ]]
         then
             $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
         fi
         case ${fiddleType} in
-            'angular' | 'aurelia' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
+            'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 89;
             ;;
         esac

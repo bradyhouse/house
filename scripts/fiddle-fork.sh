@@ -34,6 +34,7 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -142,7 +143,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             source bin/nativescript/_fork.sh;
             nativeScriptFork "${fiddleName}" "${targetFiddle}" || exit 98;
             ;;
-        'angular2-cli' | 'aurelia' | 'electron' | 'ember' | 'extjs6' | 'jquery' | 'meteor')
+        'angular2-cli' | 'electron' | 'ember' | 'extjs6' | 'jquery' | 'meteor')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
@@ -160,7 +161,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             ;;
-        'angular'| 'aurelia' | 'compass' | 'extjs5' | 'php' | 'd3' | 'dojo' | 'tween' | 'chrome')
+        'angular'| 'compass' | 'extjs5' | 'php' | 'd3' | 'dojo' | 'tween' | 'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
@@ -211,7 +212,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${fiddleType} in
-        'angular'|'angular2'|'aurelia'|'compass'|'extjs5'|'extjs6'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'tween'|'svg')
+        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'tween'|'svg')
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')
