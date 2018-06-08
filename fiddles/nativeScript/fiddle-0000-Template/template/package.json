@@ -19,12 +19,12 @@
 		"nativescript-angular": "~6.0.0",
 		"nativescript-theme-core": "~1.0.4",
 		"reflect-metadata": "~0.1.8",
-		"rxjs": "~6.1.0",
+		"rxjs": "~6.2.0",
 		"tns-core-modules": "~4.1.0",
 		"zone.js": "^0.8.26"
 	},
 	"devDependencies": {
 		"nativescript-dev-typescript": "~0.7.0",
-		"typescript": "~2.7.2"
+		"typescript": "~2.9.1"
 	}
 }
