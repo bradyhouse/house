@@ -33,6 +33,15 @@ function rmPackageLock() {
   fi
 }
 
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+
+  if [[ -e "npm-shrinkwrap.json" ]]
+  then
+    rm -rf "npm-shrinkwrap.json";
+  fi
+  npm shrinkwrap;
+}
 
 function npmCheckUpdates() {
   groupLog "npmCheckUpdates";
@@ -72,9 +81,13 @@ function update() {
   (
     nvmInstall || exit $?;
     ncuInstall || exit $?;
+    shrinkWrapInstall || exit $?;
     cd ${_fiddleDir};
     rmNodeModules || exit $?;
+    rmPackageLock || exit $?;
     npmCheckUpdates || exit $?;
+    npmShrinkWrap || exit $?;
+
   )
 
   # catch

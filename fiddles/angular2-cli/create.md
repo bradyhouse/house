@@ -117,7 +117,7 @@ Executing the command `./fiddle.sh "create" "angular2-cli" "fiddle-0000-Template
 
 ### Additional Info
 
-[Angular2-cli](../angular2-cli) fiddles are created using the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_. The create logic baked 
-into the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #76](../bash/fiddle-0076-Angular2CLI).  This means the [fiddle.sh](../../scripts/fiddle.sh) 
+[Angular2-cli](../angular2-cli) fiddles are created using the [angular 2 CLI](https://cli.angular.io/) -- aka _ng create_. 
+The create logic baked into the [fiddle.sh](../../scripts/fiddle.sh) script is based on [bash fiddle #76](../bash/fiddle-0076-Angular2CLI).  This means the [fiddle.sh](../../scripts/fiddle.sh) 
 script provides some wrapper logic that integrates this CLI.
     

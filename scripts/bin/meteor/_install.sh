@@ -30,7 +30,6 @@ function nvmInstall() {
 
 function shrinkWrapInstall() {
   groupLog "shrinkWrapInstall";
-  installed=$(isNcuInstalled;);
   os=$(getOS;);
   ./fiddle.sh "setup" "${OS}" "shrinkwrap";
 }

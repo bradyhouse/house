@@ -14,7 +14,7 @@ fiddle, which in this case is [fiddle-0000-Template](fiddle-0000-Template).
     v8.9.4 is already installed.
     Now using node v8.9.4 (npm v5.6.0)
     ├────NPMINSTALL
-    added 76 packages in 3.273s
+    up to date in 0.633s
     ├────METEORINSTALL
     [[[[[ ~/github/house_230/fiddles/meteor/fiddle-0000-Template ]]]]]
     

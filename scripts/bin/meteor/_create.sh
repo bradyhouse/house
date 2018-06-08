@@ -27,7 +27,7 @@ function meteorCreate() {
         then
             rm -rf ${fiddle} || exit 1;
         fi
-        meteor create $1 || exit 2;
+        meteor create --full $1 || exit 2;
         cd ${fiddle};
         cp -rf ../template/README.markdown README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;

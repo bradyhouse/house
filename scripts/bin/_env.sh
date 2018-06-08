@@ -29,7 +29,7 @@ export NVM_VERSION="v8.9.4";
 export NG_TYPESCRIPT_VER="2.7.2";
 export ELECTRON_SEEDER_REPO="https://github.com/electron/electron-quick-start";
 export __NS_PLATFORM__="ANDROID";
-export __NS_ADD_PLATFORM__="true";
+export __NS_ADD_PLATFORM__="false";
 export __NS_ANDROID_EMULATOR_PROFILE__=fiddler;
 export __NS_ANDROID_EMULATOR_EXE__="${HOME_ROOT}/homebrew/share/android-sdk/emulator/emulator";
 # -------------------------------------------------

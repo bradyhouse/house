@@ -40,10 +40,12 @@ function updateFiddle() {
             update ${_fiddleDir};
             ;;
         'ember')
+            source bin/ember/_install.sh;
             source bin/ember/_update.sh;
             update ${_fiddleDir};
             ;;
         'meteor')
+            source bin/meteor/_install.sh;
             source bin/meteor/_update.sh;
             update ${_fiddleDir};
             ;;

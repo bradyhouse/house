@@ -5,19 +5,24 @@
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
 #  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : MASTER EMBER CREATE FUNCTION____________________________________________|
-#  Entry Point             : emberCreate_____________________________________________________________|
+#  Description             : MASTER EMBER CREATE FUNCTIONS LIB_______________________________________|
+#  Entry Point             : create__________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-ember.sh______________________________________________________|
+#  Initial Consumer        : ../fiddle-create.sh_____________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605180420
 # 12/11/2016 - See CHANGELOG @ 201611280420
+# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # ---------------------------------------------------------------------------------------------------|
 
-this=$(pwd;);
+this=$0;
 
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
+  npm shrinkwrap;
+}
 
 function emberCreate() {
     groupLog "emberCreate";
@@ -36,6 +41,7 @@ function emberCreate() {
         #bower install || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 3;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 3;
+        npmShrinkWrap || exit $?;
     )
     # catch
     rc=$?; case ${rc} in
@@ -90,6 +96,8 @@ function create() {
 
   # try
   (
+      nvmInstall || exit $?;
+      shrinkWrapInstall || exit $?;
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
       cd ../fiddles/ember;
       emberInstall || exit 1;

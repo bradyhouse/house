@@ -20,16 +20,14 @@
 
 this=$0;
 
-function nvmInstall() {
-  groupLog "nvmInstall";
+function npmShrinkWrap() {
+  groupLog "npmShrinkWrap";
 
-  if [[ -d ${NVM_DIR} ]]
+  if [[ -e "npm-shrinkwrap.json" ]]
   then
-    source ${NVM_DIR}/nvm.sh;
-    nvm install ${NVM_VERSION};
-  else
-    exit 3;
+    rm -rf "npm-shrinkwrap.json";
   fi
+  npm shrinkwrap;
 }
 
 function createTypingsRcFile() {
@@ -65,6 +63,7 @@ function initJsProject() {
   then
     nativescript platform add android || exit 9;
   fi
+  npmShrinkWrap || exit $?;
 }
 
 function npmInstall() {
@@ -89,10 +88,12 @@ function initNg2Project() {
   nativescript create ${projectName} --ng || exit 7;
   cd ${projectName};
 
-  #nativescript platform add android || exit 9;
-
+  if [[ "${__NS_ADD_PLATFORM__}" == "true" ]]
+  then
+    nativescript platform add android || exit 9;
+  fi
   createTypingsRcFile || exit $?;
-
+  npmShrinkWrap || exit $?;
 }
 
 function nativescriptCreate() {
@@ -189,14 +190,16 @@ function create() {
 
   # try
   (
+      nvmInstall || exit $?;
+      shrinkWrapInstall || exit $?;
+      typescriptInstall || exit 1;
+      nativescriptInstall || exit 2;
+      adbInstall || exit 8;
       projectName=$(toLowerCase $(parseName $1;);) || exit 9;
       groupLog "App Name: ";
       echo "\"${projectName}\"";
       cd ../fiddles/nativescript;
-      nvmInstall || exit 3;
-      typescriptInstall || exit 1;
-      nativescriptInstall || exit 2;
-      adbInstall || exit 8;
+
       nativescriptCreate $1 ${bornOnDate} ${projectName} ${__NS_TEMPLATE_TYPE__} || exit 5;
   )
   rc=$?; catch ${rc};

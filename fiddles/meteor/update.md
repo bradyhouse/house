@@ -8,18 +8,23 @@ is used to update the dependencies defined in the package.json of the target fid
 
     {{ ʕ・ɭ・ʔ }}
     
-    ├────UPDATEFIDDLE
-    ├────UPDATE
-    ├────NVMINSTALL
-    v8.9.4 is already installed.
-    Now using node v8.9.4 (npm v5.6.0)
-    ├────NCUINSTALL
+    ├────SETUP
+    ├────INSTALL
+    ├────IINSTALLSHRINKWRAP
+    + shrinkwrap@0.4.0
+    updated 1 package in 3.874s
+    Done. shrinkwrap installed successfully.
+    
+    
     ├────RMNODEMODULES
+    ├────RMPACKAGELOCK
     ├────NPMCHECKUPDATES
-    Using /Users/bradyhouse/github/house/fiddles/meteor/fiddle-0000-Template/package.json
-    ⸨░░░░░░░░░░░░░░░░░░⸩ ⠦ :
+    Using /Users/bradyhouse/github/house_230/fiddles/meteor/fiddle-0000-Template/package.json
+    ⸨░░░░░░░░░░░░░░░░░░⸩ ⠹ :
      @babel/runtime  ^7.0.0-beta.48  →  ^7.0.0-beta.49
     
+    ├────NPMSHRINKWRAP
+    npm notice created a lockfile as npm-shrinkwrap.json. You should commit this file.
     └──UPDATE COMPLETE.
     
     

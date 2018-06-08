@@ -37,6 +37,12 @@ function isNcuInstalled() {
   fi
 }
 
+function shrinkWrapInstall() {
+  groupLog "shrinkWrapInstall";
+  os=$(getOS;);
+  ./fiddle.sh "setup" "${OS}" "shrinkwrap";
+}
+
 function ncuInstall() {
   groupLog "ncuInstall";
   installed=$(isNcuInstalled;);
