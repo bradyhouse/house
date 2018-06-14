@@ -124,7 +124,32 @@ WordPress AMI  Lab
 5.  Click the `Save Changes` button
 
 
-    TBW
+## Load Balancer: Remove the Write EC2 Instance from the Target Group
+
+1.  Log into the AWS Console
+2.  Under `Compute` click the `EC2` link
+3.  In the EC2 sidebar under `LOAD BALANCING`, click the `Target Groups` link
+4.  Select the `MyELB` target group
+5.  In the `Targets` tab, click the `Edit` button
+6.  Select the `WRITE.<DOMAIN NAME>` EC2 instance
+7.  Click the `remove` button
+8.  Click the `Save` button
+
+
+## Web Browser: Verify Write Domain
+
+TBW
+
+
+## EC2: Create Primary Instance from AMI
+
+TBW
+
+
+## SSH: Configure Primary Instance Cron Jobs
+
+TBW
+
 
 
 ## Exam Tips
@@ -136,13 +161,21 @@ What did we learn?
 
 ### Review Questions
 
-    TBW
+1.  Why would you create a Load Balancer for a single EC2 instance? What is the alternative?
+2.  What does AMI stand for?
+3.  How do you delete an AMI?
+4.  Why is having a valid health check page important?
+5.  On an Amazon AMI, where is the crontab?
 
 
 ### Answers
 
-    TBW
-    
+1.  In order to establish a DNS alias that won't change; create an elastic IP.
+2.  Amazon Machine Image.
+3.  Deregister the image.
+4.  Based on this lab, if your health check points to an invalid page, then DNS (Route53) routing may 
+    not work correctly. Additionally, monitoring details will not be recorded.
+5.  `/etc/crontab`
 
 ## 
 
