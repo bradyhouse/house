@@ -1,4 +1,4 @@
-= Meteor
+ = Meteor
 
 link:http://www.meteor.com[Meteor] is a _complete, full-stack, open-source, all-JavaScript platform for building
 reactive, top-quality web apps._ ... _Yah-dah, Yah-dah, Yah-dah_.  This directory is dedicated to exploration of this framework.
@@ -33,13 +33,13 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 |`./fiddle.sh "start" "meteor" "0000"`
 |link:start.md[sample output & additional details]
 |===
-|===
 
 
 == Online Resources
 
 *   link:http://www.meteor.com[main site]
 *   link:http://atmospherejs.com[package repo]
+
 
 === News & Community
 
