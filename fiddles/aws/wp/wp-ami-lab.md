@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/O74efH0.png" height="100" title="WordPress" />
 
-WordPress AMI  Lab
+WordPress AutoScaling and Load Balancing Lab
 ======
 
   
@@ -16,7 +16,9 @@ WordPress AMI  Lab
 
 *   AWS Console free-tier account
 *   Mac configured with iTerm
+*   Complete the [WordPress EC2 Setup Lab](wp-setup-lab.md)
 *   Complete the [WordPress CloudFront Lab](wp-cloudfront-lab.md)
+*   Complete the [WordPress AMI Lab](wp-ami-lab.md)
 
  
 ## Big Picture
@@ -262,4 +264,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](wp-cloudfront-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-ami-lab.md)**
+**[Previous Lab/Lecture](wp-cloudfront-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-autoscaling-lab.md)**
