@@ -197,10 +197,12 @@ WordPress AMI  Lab
 <table>
 <tr>
 <td>
- <img src="https://imgur.com/NSRuPOV" title="cloud formation URLS" />
+ <img src="https://i.imgur.com/NSRuPOV.png" title="cloud formation URLS" />
 </td>
 </tr>
 </table>
+
+**Note - This point of this lab. If this works, then you did it correctly**
 
 
 ## AMI: Create a Snapshot of the Primary Instance
