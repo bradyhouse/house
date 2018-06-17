@@ -3,7 +3,6 @@
 WordPress AutoScaling and Load Balancing Lab
 ======
 
-  
    
 ## Video Link
 
@@ -18,7 +17,6 @@ WordPress AutoScaling and Load Balancing Lab
 *   Mac configured with iTerm
 *   Complete the [WordPress EC2 Setup Lab](wp-setup-lab.md)
 *   Complete the [WordPress CloudFront Lab](wp-cloudfront-lab.md)
-*   Complete the [WordPress AMI Lab](wp-ami-lab.md)
 
  
 ## Big Picture

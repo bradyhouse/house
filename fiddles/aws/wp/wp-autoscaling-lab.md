@@ -31,6 +31,8 @@ WordPress AutoScaling and Load Testing Lab
 </table>
 
 
+## AutoScaling Group: Create a Launch Configuration
+
     TBW
     
     
@@ -43,11 +45,12 @@ What did we learn?
     
 ### Review Questions
 
-    TBW
+1.  What's required first to create an AutoScaling group?
+
 
 ### Answers
 
-    TBW
+1.  Launch Configuration.
 
 
 ## 
