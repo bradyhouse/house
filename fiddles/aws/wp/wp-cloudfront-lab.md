@@ -33,7 +33,7 @@ Should the WordPress EC2 instance go down, external web pages having links to me
 </table>
 
 
-## S3: Backup /var/www/html
+## SSH: Backup /var/www/html
 
 1.  Using iterm, ssh into your EC2 instance
 2.  Copy the contents of the `/var/www/html` directory to the s3 `<domain name>-wp-2018` bucket, which
@@ -44,7 +44,7 @@ Should the WordPress EC2 instance go down, external web pages having links to me
     ````
 
     
-## S3: Sync /var/www/html/wp-content/uploads
+## SSH: Sync /var/www/html/wp-content/uploads
 
 1.  Login into `<domain name>/wp-admin`
 2.  Goto Posts
@@ -109,7 +109,7 @@ Should the WordPress EC2 instance go down, external web pages having links to me
     ````
 
 
-## Linux: Add S3 Sync Cron Jobs
+## SSH: Add S3 Sync Cron Jobs
 
 1.  Using iterm, ssh into the EC2 instance
 2.  Evaluate priveleges -- `sudo su`
