@@ -117,15 +117,15 @@ In this lab, we configure everything in AWS minus the 2 EC2 instances (depicted 
 1.  Under `Databases`, click `RDS`
 2.  Create a MySQL database with the following customized settings:
 
-    * Use Case: Production - MySQL (Use Multi-AZ Deployment)
-    * DB Instance Class: db.t2.micro
-    * Multi-AZ Deployment: Create replica in different zone
-    * DB Instance Identifier: <domain name> (for example, `icurmt`)
-    * Master Username: <domain name> (for example, `icurmt`)
-    * Master Password: <domain name>.com (for example, `icurmt.com`)
-    * Publicly Accessible: No
-    * VPC Security Group: MyRdsSG
-    * Database Name: icurmt
+    * Use Case:               `Development - MySQL`
+    * DB Instance Class:      `db.t2.micro`
+    * Multi-AZ Deployment:    `Create replica in different zone`
+    * DB Instance Identifier: `<domain name>` (for example, `icurmt`)
+    * Master Username:        `<domain name>` (for example, `icurmt`)
+    * Master Password:        `<domain name>.com` (for example, `icurmt.com`)
+    * Publicly Accessible:    `No`
+    * VPC Security Group:     `MyRdsSG`
+    * Database Name:          `<domain name>` (for example `icurmt`)
 
 
 ## Exam Tips
