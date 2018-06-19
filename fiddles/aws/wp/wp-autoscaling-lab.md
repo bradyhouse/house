@@ -121,8 +121,52 @@ WordPress Auto Scaling and Load Testing Lab
         * Key:                    `Name`
         * Value:                  `WRITE-<DOMAIN NAME>.COM`   
         
-10. After creating, goto the EC2 Instance dashboard, and verify that 2 instances have started and third is now 
-    starting up
+10. After creating, goto the EC2 Instance dashboard, and verify that 3 instances are up and running
+
+
+## SSH: Init Stress Test on one of the Primary Instances
+
+1.  SSH into one of the Primary EC2 Instances
+2.  Evaluate privileges -- `sudo su`
+3.  Intitate a CPU stress test
+
+    `stress --cpu 100`
+
+4.  Start a second terminal, and ssh into the second primary instance
+5.  Repeat step 2 and 3
+6.  Go back to the AWS Console, and monitor the EC2 Instances for 5 minutes
+7.  Verify that 2 more primary Instances start up
+
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/cHLy8sQ.png" width="300" title="load test" />
+</td>
+</tr>
+</table>
+
+
+8.  Kill both of your terminal sessions
+9.  Go back to the AWS Console, and monitor the EC2 Instances for 10 minutes
+7.  Verify that the 2 additional EC2 instances are now shut-down
+
+
+<table>
+<tr>
+<td>
+ <img src="https://i.imgur.com/PgWgMkU.png" width="300" title="load test 2" />
+</td>
+</tr>
+</table>
+
+
+## Clean Up
+
+1.  Delete the Auto Scaling Groups
+2.  Delete the Launch Configurations
+3.  Delete the RDS Instance
+4.  Delete the 2 AMIs
 
         
 ## Exam Tips
@@ -134,11 +178,18 @@ What did we learn?
 ### Review Questions
 
 1.  What's required first to create an AutoScaling group?
-
+2.  Does Elastic Load Balancing incur cost? Which one, Application or Classic is more expensive?
+3.  Is Multi-AZ required on an RDS database in order to use an AutoScaling group?
+4.  Once you establish an Auto Scaling group, can it's state be suspended (or disabled)?
+5.  What is a new feature that can be used with launch configurations?
 
 ### Answers
 
-1.  Launch Configuration.
+1.  AMI + ALB or ELB + Launch Configuration.
+2.  Yes; Classic -- .025 vs .0225 / hr for Application
+3.  No
+4.  Nope
+5.  Launch Configurations can now be used to create a `Launch Template`
 
 
 ## 
