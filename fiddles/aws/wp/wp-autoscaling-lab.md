@@ -85,13 +85,45 @@ WordPress Auto Scaling and Load Testing Lab
         * Key:                    `Name`
         * Value:                  `<DOMAIN NAME>.COM`   
         
-10. After creating, goto the EC2 Instance dashboard, and verify that 2 instances startup
+10. After creating, goto the EC2 Instance dashboard, and verify that 2 instances have started 
 
 
 ## Auto Scaling Group: Create a Write Domain Launch Configuration
 
-    TBW
-         
+1.  Log into the AWS Console
+2.  Under `Compute` click the `EC2` link
+3.  In the EC2 sidebar under `AUTO SCALING`, click the `Launch Configurations` link
+4.  Click the `Create launch configuration` button
+5.  In the `Create Launch Configuration` page, click the `My AMIs` link
+6.  Select the `WRITE-<DOMAIN NAME>-Image` Image and click the `Select` button
+7.  Customize the rest of the configuration as follows:
+
+    * Name:           `WRITE-<DOMAIN NAME>-LC`
+    * IAM Role:       `MyS3AdminAccess`
+    * Security Group: `WEB-DMZ`
+
+8.  On the `Launch configuration creation status` page, click the `Create an Auto Scaling group using this launch
+    configuration` button
+9.  Customize the rest of the configuration as follows:
+    
+    * Group name:                 `WRITE-<DOMAIN NAME>-ASG`
+    * Group size:                 `Start with 1 instances`
+    * Subnets:                    Add all 6 us-east subnets
+    * Load Balancing:             `Receive traffic from one or more load balancers` (Advanced Details)
+    * Classic Load Balancers:     `<DOMAIN NAME>-WRITE-ELB`
+    * Health Check Type:          `ELB`
+    * Health Check Grace Period:  `10` 
+    * Create Auto Scaling Group:  `Keep this group at its initial size`
+    * Scale between...:           `2; 4`
+    * Configure Notifications:    (Click `Add notification`)
+    * Send a notifcation to:      `<DOMAIN NAME>-ScaleUpEvent(<EMAIL ADDRESS)`
+    * Configure Tags:             (Click `Add Tag`)
+        * Key:                    `Name`
+        * Value:                  `WRITE-<DOMAIN NAME>.COM`   
+        
+10. After creating, goto the EC2 Instance dashboard, and verify that 2 instances have started and third is now 
+    starting up
+
         
 ## Exam Tips
 
