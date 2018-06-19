@@ -173,7 +173,8 @@ WordPress Auto Scaling and Load Testing Lab
 
 What did we learn?
 
-    TBW
+*   It (relatively easy) to manually configure a fault tolerant website using AWS
+
     
 ### Review Questions
 
