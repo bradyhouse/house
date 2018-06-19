@@ -182,6 +182,8 @@ What did we learn?
 3.  Is Multi-AZ required on an RDS database in order to use an AutoScaling group?
 4.  Once you establish an Auto Scaling group, can it's state be suspended (or disabled)?
 5.  What is a new feature that can be used with launch configurations?
+6.  How do you test Multi-AZ fail over configuration?
+
 
 ### Answers
 
@@ -190,6 +192,7 @@ What did we learn?
 3.  No
 4.  Nope
 5.  Launch Configurations can now be used to create a `Launch Template`
+6.  Reboot the RDS Instance -- It should initiate a new instance in a different AZ.
 
 
 ## 
