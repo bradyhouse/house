@@ -198,4 +198,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](wp-ami-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-autoscaling-lab.md)**
+**[Previous Lab/Lecture](wp-ami-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](wp-cloudformation-lab.md)**
