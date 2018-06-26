@@ -134,7 +134,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 |=========================================================
 
 
-== Getting Through BIO 101 ...
+== Surviving BIO 101 ...
 
 AWS certification in many ways, is like a _god-awful_ pre-med biology class. You gotta memorize some things cold so you
 will then be ready to use it to navigate confusing word problems and multiple choice questions. __What to do?__ In my
