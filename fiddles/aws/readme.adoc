@@ -128,5 +128,8 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 ||link:wp/wp-ami-lab.md[WordPress AMI Lab]
 ||link:wp/wp-autoscaling-lab.md[WordPress AutoScaling Lab]
 ||link:wp/wp-cloudformation-lab.md[WordPress CloudFormation Lab]
+||link:https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html[White Paper - AWS CloudFormation Template Formats]
+2+>| **Whitepapers & The Well Architected Framework**
+||link:whitepapers/whitepapers-what-else.md[What Else Do I need to Know?]
 |=========================================================
 
