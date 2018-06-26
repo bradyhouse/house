@@ -10,47 +10,6 @@ while watching lectures/labs on link:http://acloud.guru[acloud.guru]. Note, asid
 done using an link:https://aws.amazon.com/free/[AWS free tier account].
 
 
-== How to Really Study -- aka Memorize
-
-AWS certification is like a pre-med biology class. You gotta memorize the basic anatomy of things and then
-be ready to use that knowledge to navigate confusing word problems and multiple choice questions. __So what to do?__
-In my experience, there is only one way to get through Bio 101: __flash cards__.  Fortunately, today there
-is an App for that-- __iFlash__ Desktop App and it's companion mobile app __iFlash Touch__.
-
-
-=== iFlash Desktop App
-
-
-image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/iflash/id409123835?mt=12"]
-
-
-Purchase and install this app on your Mac.
-
-
-
-=== iFlash Mobile App
-
-
-image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/iflash-touch/id313198123?mt=8"]
-
-
-Download and install this app on your target iphone or ipad.
-
-
-=== The Study WorkFlow
-
-At the end of each lecture, I have published a text formatted version of associated Review Questions and Answers. These
-files use the iFlash Card import format. Each file can be imported into the iFlash Mac desktop app as a
-_Card Deck__. The deck can then pushed to your Ipad or Iphone using the __iFlash Touch__ app. Usin the approach, the
-__Study Workflow__ then becomes:
-
-1.  Watch/Complete an acloud.guru lectures/lab
-2.  Using your Mac, import the review questions and answers text file from the associated Notes Page into the __iFlash
-    App__ as a __Flash Card Deck__
-3.  Publish the Deck to your iphone (or ipad) using the __iFlash Touch__ app
-4.  Go through the cards at least once a week -- to keep what you have learned fresh in your head
-
-
 == Lecture / Lab Notes
 
 [cols=">s,m", width="100%"]
@@ -175,3 +134,48 @@ __Study Workflow__ then becomes:
 |=========================================================
 
 
+== How to Really Study -- aka Memorize
+
+AWS certification is like a pre-med biology class. You gotta memorize the basic anatomy of things and then
+be ready to use that knowledge to navigate confusing word problems and multiple choice questions. __So what to do?__
+In my experience, there is only one way to get through Bio 101: __flash cards__.  Fortunately, today there
+is an App for that-- __iFlash__ Desktop App and it's companion mobile app __iFlash Touch__.
+
+
+==== iFlash Desktop App
+
+
+image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/iflash/id409123835?mt=12"]
+
+
+Purchase (15$) and install this app on your Mac Desktop.
+
+
+
+==== iFlash Mobile App
+
+
+image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/iflash-touch/id313198123?mt=8"]
+
+
+Download and install this free app on your target iphone or ipad.
+
+
+=== The Study WorkFlow
+
+At the end of each lecture/lab note page (above), I have published a text formatted version of my __Review Questions and
+Answers__ from the associated acloud.guru lecture or lab. These files use the iFlash Card import format. Each file can
+be imported into the iFlash Mac desktop app as a _Card Deck__. The deck can then pushed to your Ipad or Iphone
+using the __iFlash Touch__ app. Usin the approach, the __Study Workflow__ then becomes:
+
+1.  Watch/Complete an acloud.guru lectures/lab
+2.  Using your Mac, import the review questions and answers text file from the associated Notes Page into the __iFlash
+    App__ as a __Flash Card Deck__
+3.  Publish the Deck to your iphone (or ipad) using the __iFlash Touch__ app
+4.  Go through the cards at least once a week -- to keep what you have learned fresh in your head
+
+
+=== FlashCard Deck Links
+
+
+TBW
