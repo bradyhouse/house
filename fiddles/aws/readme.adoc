@@ -166,7 +166,7 @@ Download and install this free app on your target iphone or ipad.
 At the end of each lecture/lab note page (above), I have published a text formatted version of my __Review Questions and
 Answers__ from the associated acloud.guru lecture or lab. These files use the iFlash Card import format. Each file can
 be imported into the iFlash Mac desktop app as a __Card Deck__. The deck can then pushed to your Ipad or Iphone
-using the __iFlash Touch__ app. Using the approach, the __Study Workflow__ then becomes:
+using the __iFlash Touch__ app. Using this approach, the __Study Workflow__ then becomes:
 
 1.  Watch/Complete an acloud.guru lectures/lab
 2.  Using your Mac, import the review questions and answers text file from the associated Notes Page into the __iFlash
