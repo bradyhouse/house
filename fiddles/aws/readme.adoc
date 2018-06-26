@@ -175,7 +175,3 @@ using the __iFlash Touch__ app. Using the approach, the __Study Workflow__ then 
 4.  Go through the cards at least once a week -- to keep what you have learned fresh in your head
 
 
-=== FlashCard Deck Links
-
-
-TBW
