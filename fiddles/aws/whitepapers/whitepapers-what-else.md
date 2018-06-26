@@ -12,8 +12,10 @@ What Else Do I need to Know?
 ## Read Some Stuff
 
 *   [Certified Solutions Architect Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
-  *   AF8462
-
+  
+    
+    TBW
+    
     
 ## Exam Tips
 
