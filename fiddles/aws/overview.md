@@ -640,6 +640,7 @@ Game Development
 Flash Cards
 ==
 <script>
+
   function downloadURL(url) {
       var hiddenIFrameID = 'hiddenDownloader',
           iframe = document.getElementById(hiddenIFrameID);
@@ -651,7 +652,9 @@ Flash Cards
       }
       iframe.src = url;
   };
+  
 </script>
+
 <a href="https://github.com/bradyhouse/house/blob/master/fiddles/aws/overview.md#flash-cards" click="downloadURL('https://github.com/bradyhouse/house/blob/master/fiddles/aws/overview.txt')>Download Overview Flash Card Deck</a>
 
 _NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy)._
