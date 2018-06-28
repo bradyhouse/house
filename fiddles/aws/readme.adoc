@@ -16,8 +16,7 @@ In the list below, some lectures (and labs) fall into the category of __just mem
 distinction the markdown link is designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16] emoji.
 This indicates that my notes include an additional `Review Question and Answer` section as well as an `iFlash Card` formatted
 text file. These files can be imported the into the `iFlash Card` desktop App and then published to an iphone or ipad
-for `on-the-go` review.  For more information regarding these files and the `iFlash` app see the
-xref:Memorization-Strategy[Flash Card Strategy Section] below.
+for `on-the-go` review.  For more information see the xref:Memorization-Strategy[Flash Card Strategy Section] below.
 
 
 == Lecture / Lab Notes
