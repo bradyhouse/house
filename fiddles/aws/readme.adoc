@@ -176,8 +176,8 @@ anchor:the-study-workflow[]
 
 === The Study WorkFlow
 
-At the end of each lecture/lab note markdown page marked with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16] emoji (above),
-I have published a text formatted version of my __Review Questions and Answers__ from the associated acloud.guru lecture or lab. These files use the iFlash Card import format. Each file can
+At the end of each lecture/lab note markdown page designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16] emoji (above),
+I have published a text formatted version of my __Review Questions and Answers__ for the material covered. These files use the iFlash Card import format. Each file can
 be imported into the iFlash Mac desktop app as a __Card Deck__. The deck can then pushed to your Ipad or Iphone
 using the __iFlash Touch__ app. Using this approach, the __Study Workflow__ then becomes:
 
