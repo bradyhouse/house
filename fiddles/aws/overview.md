@@ -640,9 +640,17 @@ Game Development
 Flash Cards
 ==
 
-<a href="overview.exe" download="overview.txt">Download Overview Flash Card Deck</a>
+To download the download the review flash card for this lecture, right click the following link and select
+`Save Link As ...`. _NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy)._
 
-_NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy)._
+<table>
+<tr>
+<td>
+<a href="overview.txt" download="overview.txt">Overview Flash Card Deck</a>
+</td>
+</tr>
+</table>
+
 
 ## 
 
