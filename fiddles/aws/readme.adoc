@@ -14,9 +14,9 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 
 In the list below, some lectures (and labs) fall into the category of __just memorize it__.  To highlight this
 distinction the markdown file link is designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16] emoji.
-This means that include an additional `Review Question and Answer` section and an `iFlash Card` formatted
-file. These files can be imported the into the `iFlash Card` desktop App and then published to an iphone or ipad
-for `on-the-go` review.  For more information see the xref:Memorization-Strategy[Flash Card Strategy Section] below.
+This means that my notes include an additional an `iFlash Card` formatted file based on the material covered. These files
+can be imported the into the `iFlash Card` desktop App and then published to an iphone or ipadfor `on-the-go` review.
+For more information see the xref:Memorization-Strategy[Flash Card Strategy Section] below.
 
 
 == Lecture / Lab Notes
