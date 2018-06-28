@@ -654,7 +654,8 @@ To download the review flash card deck for this lecture, right click the followi
 **NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**
 
 
-== 
+
+## 
 
 **[AWS (Root)](readme.adoc) | [Next Lab/Lecture](dont-freakout.md)**
 
