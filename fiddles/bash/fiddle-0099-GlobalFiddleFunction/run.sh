@@ -17,10 +17,9 @@ function catch() {
 }
 # try
 (
-     _type="javac";
-     _path="fiddle-0000-Template";
-    cd scripts;
-    ./fiddle-create.sh ${_type} ${_path};
+
+  cd scripts;
+  ./fiddle.sh "setup" "mac" "bash";
 
 )
 catch $?;
