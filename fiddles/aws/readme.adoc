@@ -30,7 +30,7 @@ app see the <<Memorization Strategy, Memorization Strategy>> below.
 [cols=">s,m", width="100%"]
 |=========================================================
 2+>| **Intro**
-||link:overview.md[10,000 Foot Overview] image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16]
+||link:overview.md[10,000 Foot Overview] image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=32]
 ||link:dont-freakout.md[Don't Freakout]
 2+>| **IAM**
 ||link:iam/iam.md[IAM 101]
