@@ -38,7 +38,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 ||link:s3/s3-static-website.md[Static Website Hosting]
 ||link:s3/s3-exam-tips.md[Exam Tips]
 2+>| **CloudFront**
-||link:cloudfront/cloudfront.md[CloudFront 101]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/cloudfront/cloudfront.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:cloudfront/cloudfront.md[CloudFront 101]
 ||link:cloudfront/cloudfront-create-a-cdn.md[Create a Distribution]
 ||link:cloudfront/cloudfront-exam-tips.md[Exam Tips]
 2+>| **Storage Gateway**
