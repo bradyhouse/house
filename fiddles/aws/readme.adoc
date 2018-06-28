@@ -24,7 +24,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 [cols=">s,m", width="100%"]
 |=========================================================
 2+>| **Intro**
-|image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=20]|link:overview.md[10,000 Foot Overview]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/overview.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=20]]|link:overview.md[10,000 Foot Overview]
 ||link:dont-freakout.md[Don't Freakout]
 2+>| **IAM**
 ||link:iam/iam.md[IAM 101]
