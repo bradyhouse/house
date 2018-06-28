@@ -1,0 +1,56 @@
+What is a CDN?
+A Content Delivery Network (CDN) is a system of distributed servers (network) that delivers webpages and other web
+    content to a user based on the geographical location of the user, the origin of the web page and a content delivery 
+    system.
+
+What is an Edge Location?
+This is the location where content will be cached. This is separate to an AWS Region/AZ.
+
+What is an Origin? 
+This is the origin of all files that the CDN will distribute.
+
+What 4 services can function as an origin?
+S3 bucket, EC2 instance, Elastic Load Balancer, Route53
+
+ What is/are the most common origin case(s)?
+S3 bucket or EC2 instance
+
+What is a distribution?
+This is the name given the CDN which consists of a collection of Edge Locations. When we create 
+    a new CDN with AWS, this called a distribution.
+
+What does "TTL" stand for?
+Time To Live (TTL)
+
+Are Edge Locations any faster for the very first user?
+No
+
+What is CloudFront optimized for?
+To work with other Amazon Services
+
+Can CloudFront be used like any other non-AWS CDN?
+Yes
+
+What are the two types of distributions?
+Web, RTMP
+
+What is a "Web Distribution" used for?
+Websites
+
+What does RTMP stand for?
+Real-Time Messaging Protocol
+
+What is a "RTMP Distribution" used for?
+Media Streaming. In particular, is used for Adobe Flash
+
+Currently how many edge locations are there in the world?
+Over 50
+
+Are Edge Locations read only?
+ No you can write too--aka put objects on them
+
+On an Edge Location, how long are files cached?
+For the life of the TTL
+
+Can you clear cached objects and is there a "but"?
+Yes, objects can be cleared, but you will be charged

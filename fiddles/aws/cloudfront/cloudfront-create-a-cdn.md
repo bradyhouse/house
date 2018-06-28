@@ -113,4 +113,4 @@ Lab outlining how to use AWS to create a CloudFront "distribution" (aka CDN) fro
 
 ##
 
-**[Previous Lab/Lecture](cloudfront-intro.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](cloudfront-exam-tips.md)** 
+**[Previous Lab/Lecture](cloudfront.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](cloudfront-exam-tips.md)** 

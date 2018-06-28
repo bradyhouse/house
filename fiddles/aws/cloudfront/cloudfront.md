@@ -61,6 +61,22 @@ Introductory overview of the CloudFront service and the concept of a CDN.
 18. Yes, objects can be cleared, but you will be charged
 
 
+### Flash Cards
+  
+  To download the review flash card deck for this lecture, right click the following link and select
+  `Save Link As`. 
+  
+  <table>
+  <tr>
+  <td>
+  <b><a href="cloudfront.txt" download="cloudfront.txt">CloudFront 101 Flash Card Deck</a></b>
+  </td>
+  </tr>
+  </table>
+  
+**NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**  
+
+
 ##
 
 **[Previous Lab/Lecture](../s3/s3-lifecycle.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](cloudfront-create-a-cdn.md)** 
