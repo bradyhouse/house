@@ -640,7 +640,7 @@ Game Development
 Flash Cards
 ==
 
-<a href="overview.txt" download="overview-deck.txt">Overview Flash Card Deck</a>
+<a href="overview.txt" download="overview-deck">Overview Flash Card Deck</a>
 
 _NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy)._
 
