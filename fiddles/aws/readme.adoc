@@ -13,23 +13,24 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 === Nomenclature Note:  Memorize Indicator
 
 In the list below, some lectures (and labs) fall into the category of __just memorize it__.  To highlight this
-distinction entries in the list are followed by the  `nervous` emoji --
+distinction entries in the list are followed by the `nervous` emoji --
 
 
-image:https://i.imgur.com/Bo8Rhhu.png[]
+image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=128]
 
 
 These markdown files include an additional `Review Question and Answer` section as well as an `iFlash Card` formatted
-text file, which can be imported into the `iFlash Card` App.  For more information regarding these files and the
-`iFlash Card` app see the <<Memorization Strategy, Memorization Strategy>> below.
+text file, which can be used to import the questions as a flash card deck into the `iFlash Card` App and then published
+to an iphone or ipad for `on-the-go` review.  For more information regarding these files and the `iFlash Card`
+app see the <<Memorization Strategy, Memorization Strategy>> below.
 
 
 == Lecture / Lab Notes
 
 [cols=">s,m", width="100%"]
 |=========================================================
-2+>| **Intro**
-||link:overview.md[10,000 Foot Overview]
+2+>| **Intro**|
+||link:overview.md[10,000 Foot Overview] image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16]
 ||link:dont-freakout.md[Don't Freakout]
 2+>| **IAM**
 ||link:iam/iam.md[IAM 101]
