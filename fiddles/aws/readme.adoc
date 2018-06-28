@@ -181,6 +181,6 @@ using the __iFlash Touch__ app. Using this approach, the __Study Workflow__ then
 2.  Using your Mac, import the review questions and answers into the __iFlash Desktop App__
 3.  Launch the __iFlash Touch App__ on your iphone (or ipad)
 4.  Push questions from the Desktop to the mobile Device
-4.  Go through the cards as you review of the material covered
+4.  Use the cards to memorize the material covered
 
 
