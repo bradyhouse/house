@@ -13,7 +13,7 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 === Nomenclature Note:  Flash Card Indicator
 
 In the list below, some lectures (and labs) fall into the category of __just memorize it__.  To highlight this
-distinction the markdown link is designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16].
+distinction the markdown link is designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16] emoji.
 This indicates that my notes include an additional `Review Question and Answer` section as well as an `iFlash Card` formatted
 text file. These files can be imported the into the `iFlash Card` desktop App and then published to an iphone or ipad
 for `on-the-go` review.  For more information regarding these files and the `iFlash` app see the
