@@ -647,7 +647,7 @@ To download the review flash card deck for this lecture, right click the followi
 <table>
 <tr>
 <td>
-<a href="overview.txt" download="overview.txt">Overview Flash Card Deck</a>
+<b><a href="overview.txt" download="overview.txt">Overview Flash Card Deck</a></b>
 </td>
 </tr>
 </table>
