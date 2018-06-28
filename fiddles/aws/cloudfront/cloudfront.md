@@ -61,7 +61,7 @@ Introductory overview of the CloudFront service and the concept of a CDN.
 18. Yes, objects can be cleared, but you will be charged
 
 
-### Flash Cards
+### Cloudfront Flash Cards
   
   To download the review flash card deck for this lecture, right click the following link and select
   `Save Link As`. 

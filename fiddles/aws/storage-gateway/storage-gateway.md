@@ -142,7 +142,7 @@ Here is what you should know for the exam.
     cartridges that are then asynchronously written to S3. Supported by NetBackup, Backup Exec Veeam etc.
 
 
-### Flash Cards
+### Storage Gateway Flash Cards
   
   To download the review flash card deck for this lecture, right click the following link and select
   `Save Link As`. 
