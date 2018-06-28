@@ -13,16 +13,11 @@ done using an link:https://aws.amazon.com/free/[AWS free tier account].
 === Nomenclature Note:  Memorize Indicator
 
 In the list below, some lectures (and labs) fall into the category of __just memorize it__.  To highlight this
-distinction the markdown link is designated with the `nervous` emoji indicator --
-
-
-image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=32]
-
-
-These markdown files include an additional `Review Question and Answer` section as well as an `iFlash Card` formatted
+distinction the markdown link is designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16].
+This indicates that my notes include an additional `Review Question and Answer` section as well as an `iFlash Card` formatted
 text file. The `*.txt` file can be used to import the questions into the `iFlash Card` desktop App and then published
 to an iphone or ipad for `on-the-go` review.  For more information regarding these files and the `iFlash`
-app see the xref:Memorization-Strategy[Memorization Strategy Section] below.
+app see the xref:Memorization-Strategy[Flash Card Strategy Section] below.
 
 
 == Lecture / Lab Notes
@@ -150,7 +145,7 @@ app see the xref:Memorization-Strategy[Memorization Strategy Section] below.
 
 anchor:Memorization-Strategy[]
 
-== Memorization Strategy
+== Flash Card Strategy
 
 AWS certification in many ways, is like a _god-awful_ college biology class. You gotta memorize some things cold. __What to do?__ In my
 experience, (a) some nicotine to improve your memory and (b) __flash cards__.  Fortunately, today there is an App for
