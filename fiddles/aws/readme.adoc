@@ -148,7 +148,7 @@ app see the <<Memorization Strategy, Memorization Strategy>> below.
 ||link:whitepapers/whitepapers-what-else.md[What Else Do I need to Know?]
 |=========================================================
 
-<<Memorization Strategy>>,
+[[Memorization Strategy]]
 == Memorization Strategy
 
 AWS certification in many ways, is like a _god-awful_ college biology class. You gotta memorize some things cold. Your
