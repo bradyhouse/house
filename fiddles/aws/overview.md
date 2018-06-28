@@ -640,8 +640,9 @@ Game Development
 Flash Cards
 ==
 
-To download the download the review flash card for this lecture, right click the following link and select
-`Save Link As ...`. _NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy)._
+To download the review flash card deck for this lecture, right click the following link and select
+`Save Link As ...`. *NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).*
+
 
 <table>
 <tr>
