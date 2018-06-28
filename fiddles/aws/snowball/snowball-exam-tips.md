@@ -23,5 +23,5 @@ What did we learn?
       
 ## 
 
-**[Previous Lab/Lecture](snowball-101.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../s3/s3-static-website.md)**
+**[Previous Lab/Lecture](snowball.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](../s3/s3-static-website.md)**
   
