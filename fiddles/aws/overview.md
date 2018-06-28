@@ -639,7 +639,7 @@ Game Development
 
 Flash Cards
 ==
-<script>
+<script\>
 
   function downloadURL(url) {
       var hiddenIFrameID = 'hiddenDownloader',
@@ -653,7 +653,7 @@ Flash Cards
       iframe.src = url;
   };
   
-</script>
+</script\>
 
 <a href="https://github.com/bradyhouse/house/blob/master/fiddles/aws/overview.md#flash-cards" click="downloadURL('https://github.com/bradyhouse/house/blob/master/fiddles/aws/overview.txt')>Download Overview Flash Card Deck</a>
 
