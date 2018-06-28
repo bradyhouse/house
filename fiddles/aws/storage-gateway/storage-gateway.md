@@ -140,7 +140,23 @@ Here is what you should know for the exam.
 14. Virtual Tape Library (VTL)
 15. Lets you leverage your existing tape-based backup application infrastructure to store data on virtual tape 
     cartridges that are then asynchronously written to S3. Supported by NetBackup, Backup Exec Veeam etc.
-    
+
+
+### Flash Cards
+  
+  To download the review flash card deck for this lecture, right click the following link and select
+  `Save Link As`. 
+  
+  <table>
+  <tr>
+  <td>
+  <b><a href="storage-gateway.txt" download="storage-gateway.txt">Storage Gateway 101 Flash Card Deck</a></b>
+  </td>
+  </tr>
+  </table>
+  
+**NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**  
+  
 
 ## 
 

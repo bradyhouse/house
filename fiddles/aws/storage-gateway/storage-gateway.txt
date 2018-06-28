@@ -1,0 +1,51 @@
+What is Storage Gateway?
+An "S3 product" enterprise solution for using S3 to store or archive data.
+
+How does it work?
+Storage gateway is a "virtual appliance" you install into a hyper-visor running in your data center.  And then
+    that virtual appliance will then propagate (or asynchronous replicate) your information up to AWS and in
+    particular S3 and potentially Glacier.
+
+How is it installed? What formats are offered?
+You download a virtual machine image that you install on a host in your data center. It supports either
+    VMWare ESXi or Microsoft Hyper-V.
+
+What interface is used to manage storage gateway options?
+AWS Management Console
+
+What are the four types of gateways?
+File Gateway (NFS), Volume Gateway (iSCSI), Tape Gateway (VTL)
+
+What is File Gateway?
+Files are stored as objects in your S3 buckets, accessed through a Network File System (NFS) mount point. 
+
+What is Volumes Gateway? What is a snapshot?
+Presents your application with disk volumes using iSCSI block protocol. Data is then asynchronously backed up as 
+    point-in-time snapshots of volumes, and stored in S3 as Amazon Elastic Block Store (EBS) snapshots. 
+    Snapshots are incremental backups that capture only changed blocks. All snapshot storage is also compressed 
+    to minimize storage changes.
+
+What would use Volume Gateway to store?
+An operating system or database server.
+
+How many types of Volume Gateways are there?
+2
+
+What are Gateway Stored Volumes -- aka "Stored Volumes"?
+Stored volumes let you store your primary data locally, while asynchronously backing up your data to AWS.
+
+What is the minimum size of a Stored Volume snapshot? Maximum size?
+1 GB. 16 TB.
+
+What are Gateway Cached Volumes -- aka "Cached Volumes"? 
+Cached volumes let you use S3 as the primary data storage while retaining frequently accessed data locally.
+
+What is the minimum size of Cached Volumes? Maximum size?
+1 GB / 32 TB.
+
+What does VTL stand for?
+Virtual Tape Library (VTL)
+
+What is Gateway VTL-- aka "Tape Storage"?
+Lets you leverage your existing tape-based backup application infrastructure to store data on virtual tape 
+    cartridges that are then asynchronously written to S3. Supported by NetBackup, Backup Exec Veeam etc.
