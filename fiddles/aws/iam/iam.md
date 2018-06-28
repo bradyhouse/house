@@ -80,7 +80,7 @@ Identity Access Management (IAM) 101
   31. No access to any AWS services
 
 
-### Flash Cards
+### IAM Flash Cards
 
 To download the review flash card deck for this lecture, right click the following link and select
 `Save Link As`. 
