@@ -149,6 +149,7 @@ app see the xref:anchor-2[Second anchor] below.
 |=========================================================
 
 anchor:anchor-2[]
+
 == Memorization Strategy
 
 AWS certification in many ways, is like a _god-awful_ college biology class. You gotta memorize some things cold. Your
