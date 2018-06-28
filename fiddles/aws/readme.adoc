@@ -10,7 +10,7 @@ while watching lectures/labs on link:http://acloud.guru[acloud.guru]. Note, asid
 done using an link:https://aws.amazon.com/free/[AWS free tier account].
 
 
-=== Nomenclature Note:  Flash Card Indicator
+=== Flash Card Indicator
 
 In the list below, some lectures (and labs) fall into the category of __just memorize it__.  To highlight this
 distinction the markdown file link is designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=20] emoji.
@@ -142,7 +142,7 @@ For more information see the xref:Memorization-Strategy[Flash Card Strategy Sect
 ||link:whitepapers/whitepapers-what-else.md[What Else Do I need to Know?]
 |=========================================================
 
-anchor:Memorization-Strategy[]
+anchor:flash-card-strategy[]
 
 == Flash Card Strategy
 
@@ -150,6 +150,7 @@ AWS certification in many ways, is like a _god-awful_ college biology class. You
 experience, (a) some nicotine to improve your memory and (b) __flash cards__.  Fortunately, today there is an App for
 that-- __iFlash__ Desktop App and it's companion mobile app __iFlash Touch__.
 
+anchor:iFlash-Desktop-App[]
 
 ==== iFlash Desktop App
 
@@ -160,6 +161,7 @@ image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/ifla
 Purchase (15$) and install this app on your Mac Desktop.
 
 
+anchor:iflash-mobile-app[]
 
 ==== iFlash Mobile App
 
@@ -169,6 +171,8 @@ image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/ifla
 
 Download and install this free app on your target iphone or ipad.
 
+
+anchor:the-study-workflow[]
 
 === The Study WorkFlow
 
