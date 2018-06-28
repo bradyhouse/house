@@ -78,7 +78,22 @@ Identity Access Management (IAM) 101
   29. No
   30. [AWS Security Best Practices](https://github.com/bradyhouse/house/blob/aws-baseline/fiddles/aws/iam.md#aws-security-best-practices)
   31. No access to any AWS services
-  
+
+
+### Flash Cards
+
+To download the review flash card deck for this lecture, right click the following link and select
+`Save Link As`. 
+
+<table>
+<tr>
+<td>
+<b><a href="iam.txt" download="iam.txt">IAM 101 Flash Card Deck</a></b>
+</td>
+</tr>
+</table>
+
+**NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**  
 
 ## 
 
