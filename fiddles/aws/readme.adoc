@@ -31,7 +31,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 ||link:iam/billing-alarm.md[Creating a Billing Alarm]
 ||link:https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file#9717[White Paper - What is a PEM File ...]
 2+>| **S3**
-||link:s3/s3.md[S3 101]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/s3/s3.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=20]]|link:s3/s3.md[S3 101]
 ||link:s3/s3-versioning.md[S3 Versioning]
 ||link:s3/s3-lifecycle.md[Life Cycle Management]
 ||link:s3/s3-encryption.md[Encryption]
