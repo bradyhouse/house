@@ -64,21 +64,45 @@ effective.
 
 ## Review Questions
 
-Here is what you should know for the exam.
-
-1.  What is a Snowball?
-2.  What is th Import/Export service?
-3.  What can Snowball do?
-
+1.  What is Snowball?
+2.  What are the three types?
+3.  What is the Import/Export service?
+4.  What is a standard Snowball?
+5.  What is a Snowball Edge?
+6.  What is a Use Case for Snowball Edge?
+7.  What is a Snowmobile? What is a fun facts about it?
+8.  Why is Snowball considered both a Storage and Migration Service?
 
 ## Answers
 
 1.  Service that can be used to upload large amounts of data to AWS via physical device.
-2.  This service preceded Snowball and is still available although inaccessible via the console. The service 
+2.  Snowball, Snowball Edge, Snowmobile
+3.  This service preceded Snowball and is still available although inaccessible via the console. The service 
     was intended to accelerate moving large amounts of data into the cloud using portable storage media. 
     Lots of people with all different types of external hard drives (media) started using
     the service. This became a nightmare for Amazon to manage, which led to Snowball.
-3.  Import data to S3, Export from S3
+4.  Pure storage device. Comes in different sizes starting at 50 TB in the US; 80 TB outside the US
+5.  storage + compute functionality-- mini AWS data center. lambda functions can be run locally.
+6.  Airline that needs to collect data while their planes are in flight
+7.  45 foot container arriving by truck. (1) Offers a 100 Petabytes of storage; (2) Can come with security guards; 
+    (3) Currently only available in the continental United States; (4) Price available upon application
+8.  Because it can be used for a one time migration of data to AWS or as a temporary air gaped gateway.
+
+
+### Snowball Flash Cards
+  
+  To download the review flash card deck for this lecture, right click the following link and select
+  `Save Link As`. 
+  
+  <table>
+  <tr>
+  <td>
+  <b><a href="snowball.txt" download="snowball.txt">Snowball 101 Flash Card Deck</a></b>
+  </td>
+  </tr>
+  </table>
+  
+**NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**  
 
 
 ## 

@@ -1,0 +1,27 @@
+What is Snowball?
+Service that can be used to upload large amounts of data to AWS via physical device.
+
+What are the three types?
+Snowball, Snowball Edge, Snowmobile
+
+What is the Import/Export service?
+This service preceded Snowball and is still available although inaccessible via the console. The service
+    was intended to accelerate moving large amounts of data into the cloud using portable storage media.
+    Lots of people with all different types of external hard drives (media) started using
+    the service. This became a nightmare for Amazon to manage, which led to Snowball.
+
+What is a standard Snowball?
+Pure storage device. Comes in different sizes starting at 50 TB in the US; 80 TB outside the US
+
+What is a Snowball Edge?
+storage + compute functionality-- mini AWS data center. lambda functions can be run locally.
+
+What is a Use Case for Snowball Edge?
+Airline that needs to collect data while their planes are in flight
+
+What is a Snowmobile? What is a fun facts about it?
+45 foot container arriving by truck. (1) Offers a 100 Petabytes of storage; (2) Can come with security guards;
+    (3) Currently only available in the continental United States; (4) Price available upon application
+
+Why is Snowball considered both a Storage and Migration Service?
+Because it can be used for a one time migration of data to AWS or as a temporary air gaped gateway.

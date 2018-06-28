@@ -45,7 +45,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/storage-gateway/storage-gateway.md#storage-gateway-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:storage-gateway/storage-gateway.md[Storage Gateway 101]
 ||link:storage-gateway/storage-gateway-exam-tips.md[Exam Tips]
 2+>| **Snowball**
-||link:snowball/snowball.md[Snowball 101]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/snowball/snowball.md#snowball-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:snowball/snowball.md[Snowball 101]
 ||link:snowball/snowball-exam-tips.md[Exam Tips]
 2+>| **EC2**
 ||link:ec2/ec2-101-pt1.md[EC2 101 - Part 1]
