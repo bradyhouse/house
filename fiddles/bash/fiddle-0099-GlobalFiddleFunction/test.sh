@@ -64,7 +64,7 @@ function catch() {
   testUtilFileContains || exit $?:
   testIsZshrc || exit $?:
   testUpdateZshrc || exit $?:
-  # tearDown || exit $?:
+  tearDown || exit $?:
 )
 rc=$?; catch ${rc};
 # finally
