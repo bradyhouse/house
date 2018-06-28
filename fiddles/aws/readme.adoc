@@ -16,7 +16,7 @@ In the list below, some lectures (and labs) fall into the category of __just mem
 distinction entries in the list are followed by the `nervous` emoji --
 
 
-image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=128]
+image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=32]
 
 
 These markdown files include an additional `Review Question and Answer` section as well as an `iFlash Card` formatted
@@ -29,7 +29,7 @@ app see the <<Memorization Strategy, Memorization Strategy>> below.
 
 [cols=">s,m", width="100%"]
 |=========================================================
-2+>| **Intro**|
+2+>| **Intro**
 ||link:overview.md[10,000 Foot Overview] image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16]
 ||link:dont-freakout.md[Don't Freakout]
 2+>| **IAM**
