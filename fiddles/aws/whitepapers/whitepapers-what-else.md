@@ -1,6 +1,8 @@
 What Else Do I need to Know?
 ======
 
+2 minute lecture introducing the topic of `whitepapers` -- i.e. stuff you need to read prior to the exam.
+
   
 ## Video Link
 
@@ -9,30 +11,12 @@ What Else Do I need to Know?
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-## Read Some Stuff
+Based on [Certified Solutions Architect Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/) website. You 
+need to read two things:
 
-*   [Certified Solutions Architect Associate](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
-  
-    
-    TBW
-    
-    
-## Exam Tips
-
-What did we learn?
-
-    TBW
-
-    
-### Review Questions
-
-    TBW
-
-
-### Answers
-
-    TBW
-
+  *  [AWS Cloud Best Practices (42 Pages)](https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf)
+  *  [AWS Well-Architected Website](https://aws.amazon.com/architecture/well-architected/)
+   
 
 ## 
 
