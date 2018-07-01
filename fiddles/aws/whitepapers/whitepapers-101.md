@@ -1,4 +1,4 @@
-What Else Do I need to Know?
+White Papers 101
 ======
 
 2 minute lecture introducing the topic of `whitepapers` -- i.e. stuff you need to read prior to the exam.
@@ -6,7 +6,7 @@ What Else Do I need to Know?
   
 ## Video Link
 
-[![acloud.guru lecture](https://i.imgur.com/f9pTqd0.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/wordpress/444ffee2-9bff-aeab-ba9e-cd3385693884/watch)
+[![acloud.guru lecture](https://i.imgur.com/f9pTqd0.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/223c8538-772d-867a-a3c9-52f71df9e637/b41cdc78-e553-2309-8d4f-da574dea9619/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
@@ -20,4 +20,4 @@ need to read two things:
 
 ## 
 
-**[Previous Lab/Lecture](../wp/wp-cloudformation-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-what-else.md)**
+**[Previous Lab/Lecture](../wp/wp-cloudformation-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-best-practices.md)**
