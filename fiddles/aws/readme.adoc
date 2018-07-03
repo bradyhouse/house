@@ -139,8 +139,11 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 ||link:wp/wp-cloudformation-lab.md[WordPress CloudFormation Lab]
 ||link:https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html[White Paper - AWS CloudFormation Template Formats]
 2+>| **Whitepapers & The Well Architected Framework**
-||link:whitepapers/whitepapers-101.md[White Papers 101]
-||link:whitepapers/whitepapers-best-practices[White Papers Best Practices Doc]
+||link:whitepapers/whitepapers-101.md[White Papers - 101]
+||link:whitepapers/whitepapers-best-practices.md[White Papers - Best Practices]
+||link:whitepapers/whitepapers-waf-intro.md[White Papers - Well Architected Framework (Intro)]
+||link:https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf[AWS Cloud Best Practices Doc]
+||link:https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf[AWS Well Architected Framework Doc]
 |=========================================================
 
 anchor:flash-card-strategy[]

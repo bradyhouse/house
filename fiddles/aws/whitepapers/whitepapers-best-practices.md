@@ -1,7 +1,7 @@
 Best Practices
 ======
 
-12 minute lecture on the [AWS Cloud Best Practices (42 Pages)](https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf).
+12 minute lecture on the 2016 [AWS Cloud Best Practices (42 Pages)](https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf) White Paper.
 
   
 ## Video Link
@@ -10,9 +10,18 @@ Best Practices
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
-    TBW
 
+    TBW
+    
+ 
+## Review Questions
+
+    TBW
+    
+## Answers
+
+    TBW
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-what-else.md)**
+**[Previous Lab/Lecture](whitepapers-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-intro.md)**
