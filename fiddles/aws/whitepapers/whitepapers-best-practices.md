@@ -125,7 +125,13 @@ application:
 * `DB Servers` - No external access; Only permit App layer access to the DB Layer
   
  
-## Review Questions
+## Exam Tips
+
+Ummm, read the freaking doc => [AWS Cloud Best Practices (42 Pages)](https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf).  
+This lecture seems to give a `Cliff Note` perspective. It does not touch everything discussed in the 42 page white paper.
+ 
+ 
+### Review Questions
 
 1.  What is `utility billing`?
 2.  Why do many start-ups get started on AWS?
@@ -145,7 +151,7 @@ application:
 16. How do you secure Db Servers?
 
     
-## Answers
+### Answers
 
 1.  Usage based costing
 2.  Business Benefits
