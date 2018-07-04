@@ -1,0 +1,60 @@
+What is `utility billing`?
+Usage based costing
+
+Why do many start-ups get started on AWS?
+Business Benefits
+
+What are the 5 business benefits of the cloud?
+(1) almost zero infrastructure investment; (2) just-in-time infrastructure; (3) more efficient resource utilization;
+    (4) usage based costing; (5) reduced time to market
+
+What are the 7 technical benefits of the cloud?
+(1) scriptable infrastructure; (2) auto-scaling; (3) proactive-scaling; (4) more efficient development lifecycle;
+    (5) improved testability; (6) disaster recovery and business continuity; (7) overflow traffic to the cloud
+
+Why are many companies moving to the cloud?
+Infrastructure cost reduction through elasticity and autoscaling
+
+Why should you design for failure?
+By being a pessimist you end up thinking about recovery strategies during design time, which helps in designing an 
+    overall system better
+
+What is the Netflix Siam Army?
+A set of automated tools developed by Netflix and implemented into production to simulate certain disaster recovery
+    events in order to insure that their cloud infrastructure can automatically adapt.
+
+ What is the key to decoupling components?
+The key is to build components that do not have tight dependencies on each other, so that if one component were to 
+    die (fail), sleep (not respond), or remain busy (slow to respond) for some reason, the other components in the 
+    system are built so to continue to work as if no failure is happening
+
+How does de-coupling achieve a "black box" effect?
+In essence, loose coupling isolates the various layers and components of your application so that each component 
+    interacts asynchronously with the others and treats them as a "black box".
+
+ When you see the word "decouple" on the exam, think ___.
+SQS
+
+How do you apply decoupling in a web-based architecture?
+In the case of online architecture, use SQS isolate the the app server from the web server and from the database. 
+    The app server does not know about your web server and vice versa, this gives decoupling between these layers and 
+    there are no dependencies code-wise or from any functional perspective.
+
+How do you apply decoupling in a batch-based architecture?
+Create asynchronous components that are independent of each other and communicate via SQS.
+
+What are the three ways to implement `Elasticity`?
+(1) `Proactive Cyclic Scaling` - Period scaling that occurs at fixed intervals (daily, weekly, monthly, quarterly); 
+    (2) `Proactive Event-based Scaling` - Scaling just when you are expecting a big surge of traffic requests due to
+    scheduled business events (new product launch, marketing campaigns); (3) `Autoscaling based on demand` - By using 
+    monitoring services, your system can send triggers to take the appropriate actions so that it scales up or down 
+    based on metrics (utilization of servers or networks i/o ... etc.)
+
+How do you secure Web Servers?
+Place them in a security group that limit access to HTTP (port 80) and HTTPS (port 443)
+
+How do you secure App Servers?
+Limit external access to SSH (port 22); Only permit Web layer access to the API layer
+
+How do you secure Db Servers?
+No external access; Only permit App layer access to the DB Layer
