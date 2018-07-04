@@ -85,14 +85,15 @@ The following diagram illustrates why companies are moving to the cloud:
 
 #### Web Architecture
 
-In the case of online architecture, use SQS isolate the the app server from the web server and from the database. 
-The app server does not know about your web server and vice versa, this gives decoupling between these layers and 
-there are no dependencies code-wise or from any functional perspective.
+In the case of online (or web) architectures, use SQS isolate the the app server from the web server and from the 
+database. The app server does not know about your web server and vice versa, this gives decoupling between these 
+layers and there are no dependencies code-wise or from any functional perspective.
 
 
 #### Batch Architecture
 
-Create asynchronous components that are independent of each other and communicate via SQS.
+In the case of batch architectures, create asynchronous components that are independent of each other. These
+then communicate asynchronously via SQS.
 
 
 ### Implement Elasticity
