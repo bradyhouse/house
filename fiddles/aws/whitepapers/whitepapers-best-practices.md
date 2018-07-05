@@ -192,7 +192,7 @@ This lecture seems to give a `Cliff Note` perspective. It does not touch everyth
   <table>
   <tr>
   <td>
-  <b><a href="best-practices.txt" download="best-practices.txt">Best Practices Flash Card Deck</a></b>
+  <b><a href="whitepapers-best-practices-flashcards.txt" download="whitepapers-best-practices-flashcards.txt">Best Practices Flash Card Deck</a></b>
   </td>
   </tr>
   </table>
