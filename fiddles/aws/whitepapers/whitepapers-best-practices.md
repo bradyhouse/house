@@ -127,8 +127,8 @@ application:
  
 ## Exam Tips
 
-Ummm, read the freaking doc => [AWS Cloud Best Practices (42 Pages)](https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf).  
-This lecture seems to give a `Cliff Note` perspective. It does not touch everything discussed in the 42 page white paper.
+Ummm, read the freaking doc => [AWS Cloud Best Practices (42 Pages)](https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf). This lecture seems to give a `Cliff Note` 
+perspective. It does not touch everything discussed in the 42 page white paper.
  
  
 ### Review Questions

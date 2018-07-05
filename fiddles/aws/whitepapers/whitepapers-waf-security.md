@@ -12,7 +12,14 @@ Well Architected Framework (Security)
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
 
-    TBW
+### Design Principles
+
+* Apply Security at all layers
+* Enable Traceability
+* Automate responses to Security Events
+* Focus on Securing your system
+* Automate security best practices
+
 
 
 
