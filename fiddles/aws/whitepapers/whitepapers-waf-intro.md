@@ -104,7 +104,7 @@ Ummm, read the freaking doc => [AWS Well Architected Framework (68 Pages)](https
     You load test the crap out of it in order to verify that it doesn't fall over, and then you decomission it.
 
 
-### >Well Architected Framework Intro Flash Card Deck
+### Well Architected Framework Intro Flash Card Deck
   
   To download the review flash card deck for this lecture, right click the following link and select
   `Save Link As`. 
