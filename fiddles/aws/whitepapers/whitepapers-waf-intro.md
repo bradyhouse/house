@@ -1,4 +1,4 @@
-Best Practices
+Well Architected Framework (Intro)
 ======
 
 6 minute lecture introducing the [AWS Well Architected Framework (68 Pages)](https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf) White Paper.
