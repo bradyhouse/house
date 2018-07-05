@@ -2,7 +2,6 @@ Well Architected Framework (Intro)
 ======
 
 6 minute lecture introducing the [AWS Well Architected Framework (68 Pages)](https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf) White Paper.
-For this one, I simply focused on the review questions.
 
   
 ## Video Link
@@ -122,4 +121,4 @@ Ummm, read the freaking doc => [AWS Well Architected Framework (68 Pages)](https
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-best-practices.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-intro.md)**
+**[Previous Lab/Lecture](whitepapers-best-practices.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-security.md)**
