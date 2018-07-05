@@ -141,7 +141,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 2+>| **Whitepapers & The Well Architected Framework**
 ||link:whitepapers/whitepapers-101.md[White Papers - 101]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-best-practices.md#best-practices-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-best-practices.md[White Papers - Best Practices]
-||link:whitepapers/whitepapers-waf-intro.md[White Papers - Well Architected Framework (Intro)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-intro.md#well-architected-framework-intro-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-intro.md[White Papers - Well Architected Framework (Intro)]
 ||link:https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf[AWS Cloud Best Practices Doc]
 ||link:https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf[AWS Well Architected Framework Doc]
 |=========================================================
