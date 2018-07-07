@@ -184,4 +184,4 @@ By area, architecting `reliability` into a new systems involves the following se
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-waf-security.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-reliability.md)**
+**[Previous Lab/Lecture](whitepapers-waf-security.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-perf-efficiency.md)**
