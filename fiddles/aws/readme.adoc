@@ -143,7 +143,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-best-practices.md#best-practices-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-best-practices.md[White Papers - Best Practices]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-intro.md#well-architected-framework-intro-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-intro.md[White Papers - Well Architected Framework (Intro)]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-security.md#well-architected-framework-security-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-security.md[White Papers - Well Architected Framework (Security)]
-||link:whitepapers/whitepapers-waf-reliability.md[White Papers - Well Architected Framework (Reliability)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-reliability.md#well-architected-framework-reliability-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-reliability.md[White Papers - Well Architected Framework (Reliability)]
 ||link:https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf[AWS Cloud Best Practices Doc]
 ||link:https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf[AWS Well Architected Framework Doc]
 |=========================================================

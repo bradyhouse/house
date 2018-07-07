@@ -37,7 +37,7 @@ responsible for.  Note, this model comes up alot on the exam.
 
 ### Definition
 
-* Security in the cloud consists of 4 areas.
+* Security in the cloud consists of 4 areas:
 
   1.  Data Protection
   2.  Privilege Management

@@ -1,0 +1,69 @@
+What is the reliability pillar?
+The reliability pillar covers the ability of a system to recover from service or infrastructure outages/disruptions as 
+    well as the ability to dynamically acquire computing resources to meet demand.
+
+What is a real world example of testing recovery procedures? 
+Netflix Simian Army => https://github.com/Netflix/SimianArmy
+
+What is a common failure of on-premise systems? 
+You have to guess capacity
+
+What is the downside of under provisioning?
+Outage
+
+What is the downside of over provisioning? 
+Unused resources; costly over-capacity
+
+What are the 4 design principles of `reliability`?
+(1) Test recovery procedures; (2) Automatically recover from failure; (3) Scale horizontally to increase aggregate 
+    system availability; (4) Stop guessing capacity
+
+What are the 3 areas that define `reliability` in the cloud?
+(1) Foundation; (2) Change Management; (3) Failure Management
+
+In traditional IT what is foundation of system `reliability`?
+bandwidth-- aka the size of the com link (`pipe`) between your data center and HQ
+
+In the cloud, how does the foundation of system `reliability` change?
+Although there are limits, the cloud is designed to be essentially limitless meaning that AWS handle the networking 
+    and compute requirements themselves.
+
+Why are there limits in the cloud?
+To prevent customers from over-provisioning resources.
+
+As an architect, what 3 questions should ask when evaluating the `foundation` of system `reliability`?
+(1) How are you managing AWS service limits for your account? (2) How are you planning your network topology on AWS?
+    (3) Do you have an escalation path to deal with technical issues?
+
+In traditional IT, how is `change management` handled?
+In traditional systems, change control is done manually and are carefully coordinated with auditing.
+
+How is `change management` simplified in the cloud?
+CloudWatch; AutoScaling
+
+What is a real world example of how `change management` is simplified in the cloud?
+Adding more memory to a database server. In the cloud you could change the machine type of your system to one that
+    is memory optimized.
+
+As an architect, what 3 questions should you ask in order to establish `reliable change management`?
+(1) How does your system adapt to change in demand? (2) How are you monitoring AWS resources? (3) How are you 
+    executing change management?
+
+How does Netflix implement `Failure Management` in their systems?
+They deliberately introduce failure into their production environment
+
+What assumption must be made in order to insure that `Failure Managment` is factored into the `reliability` of
+    a new system?
+Failure have and will occur
+
+As an architect, what 3 questions should you ask in order to establish `reliable failure management`?
+(1) How are you backing up your data? (2) How are you monitoring AWS resources? (3) How are you planning for recovery?
+
+What 2 services are used to build a `reliable foundation` for a new cloud based system?
+Security > IAM; Networking > VPC
+
+ What service is used to insure `reliable change management`?
+Management > Cloud Trail
+
+What service is used to insure `reliable failure management`?
+Management > Cloud Formation
