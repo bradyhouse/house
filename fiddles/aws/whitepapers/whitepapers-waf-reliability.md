@@ -174,7 +174,7 @@ By area, architecting `reliability` into a new systems involves the following se
   <table>
   <tr>
   <td>
-  <b><a href="whitepapers-waf-reliability-flashcards.txt" download="whitepapers-waf-relability-flashcards.txt">Well Architected Framework Security - Flash Card Deck</a></b>
+  <b><a href="whitepapers-waf-reliability-flashcards.txt" download="whitepapers-waf-relability-flashcards.txt">Well Architected Framework Reliability - Flash Card Deck</a></b>
   </td>
   </tr>
   </table>
