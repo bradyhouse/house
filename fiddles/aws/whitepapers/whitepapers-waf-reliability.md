@@ -106,7 +106,7 @@ By area, architecting `reliability` into a new systems involves the following se
 
 ## Exam Tips
 
-* Know the 3 areas of reliability and the questions associated with each
+Know the 3 areas of reliability and the questions associated with each.
 
  
 ### Review Questions
