@@ -1,7 +1,7 @@
 Well Architected Framework (Cost Optimization)
 ======
 
-14 minute lecture  on the Cost Optimization section of the [AWS Well Architected Framework (68 Pages)](https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf) White Paper.
+14 minute lecture on the Cost Optimization section of the [AWS Well Architected Framework (68 Pages)](https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf) White Paper.
 
   
 ## Video Link
@@ -197,4 +197,4 @@ Know the 4 areas of cost optimization and the questions associated with each.
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-waf-perf-efficiency.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-cost-optimization.md)**
+**[Previous Lab/Lecture](whitepapers-waf-perf-efficiency.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-ops-excellence.md)**
