@@ -211,7 +211,6 @@ Know the 4 areas of reliability and the questions associated with each.
 21. (1) Compute > EBS; (2) Storage > Glacier; (3) Storage > S3
 22. (1) Network > CloudFront; (2) Database > ElastiCache; (3) Network > Direct Connect; (4) Database > RDS Read Replicas
 
- 
 
 ### Well Architected Framework Performance Efficiency Flash Card Deck
   
@@ -232,4 +231,4 @@ Know the 4 areas of reliability and the questions associated with each.
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-waf-reliability.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-reliability.md)**
+**[Previous Lab/Lecture](whitepapers-waf-reliability.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-cost-optimization.md)**
