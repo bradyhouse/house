@@ -32,7 +32,7 @@ Well Architected Framework (Cost Optimization)
 
  
 
-### Well Architected Framework Performance Efficiency Flash Card Deck
+### Well Architected Framework Cost Optimization Flash Card Deck
   
  To download the review flash card deck for this lecture, right click the following link and select
   `Save Link As`. 
