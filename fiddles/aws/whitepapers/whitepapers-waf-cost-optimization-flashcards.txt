@@ -50,3 +50,15 @@ Subscribe to the AWS blog; Using Trusted Advisor
 
 As an architect, what 1 question should you ask when evaluating `optimization overtime`?
 How do you manage and/or consider the adoption of new services?
+
+What service feature is used to optimize supply and demands?
+Autoscaling
+
+What service is used for resource cost optimization?
+EC2 (reserved instance), AWS Trusted Advisor
+
+What service is used for expenditure awareness optimization?
+CloudWatch Alarms, SNS
+
+What tools are used for optimization overtime?
+AWS Blog, AWS Trusted Advisor

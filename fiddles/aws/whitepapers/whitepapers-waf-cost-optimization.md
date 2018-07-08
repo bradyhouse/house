@@ -135,6 +135,10 @@ Know the 4 areas of cost optimization and the questions associated with each.
 10. As an architect, what 4 questions should you ask when evaluating `expenditure awareness optimization`?
 11. What are two ways to keep up with changes to AWS?
 12. As an architect, what 1 question should you ask when evaluating `optimization overtime`?
+13. What service feature is used to optimize supply and demands?
+14. What service is used for resource cost optimization?
+15. What service is used for expenditure awareness optimization? 
+16. What tools are used for optimization overtime?
 
  
 ### Answers
@@ -168,6 +172,10 @@ Know the 4 areas of cost optimization and the questions associated with each.
     not needed? (4) How do you consider data-transfer charges when designing your architecture?
 11. Subscribe to the AWS blog; Using Trusted Advisor
 12. How do you manage and/or consider the adoption of new services?
+13. Autoscaling
+14. EC2 (reserved instance), AWS Trusted Advisor
+15. CloudWatch Alarms, SNS
+16. AWS Blog, AWS Trusted Advisor
  
 
 ### Well Architected Framework Cost Optimization Flash Card Deck
