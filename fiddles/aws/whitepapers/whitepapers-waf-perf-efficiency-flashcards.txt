@@ -1,0 +1,84 @@
+What is the `Performance Efficiency` pillar?
+The Performance Efficiency pillar focuses on how to use computing resources efficiently to meet your 
+    requirements and how to maintain that efficiency as demand changes and technology evolves.
+
+Why should you democratize advanced technology?
+To avoid learning new stuff; Flatten the learning curve.
+
+What are the four design principles of `Performance Efficiency`?
+(1) Democratize Advanced Technology; (2) Go global in minutes; (3) Use server-less architecture;
+    (4) Experiment more often
+
+What four areas does `Performance Efficiency` in the cloud consist of?
+(1) Compute; (2) Storage; (3) Database; (4) Space-Time Trade-off
+
+Why is it important to choose the right kind of server?
+Some applications require heavy CPU utilization; some require heavy memory utilization
+
+In cloud how do you change the type of a server?
+Press a button
+
+How do you switch to running with no servers at all?
+AWS Lambda
+
+What is the cost model for server-less?
+Content Consumption; You pay for execution time
+
+What comes after `DevOps`--ie what is the next big thing? Why?
+Server-less; You don't have to pay for System Admins or keeping resources online all the time. You only
+    pay for execution.
+
+As an architect, what 4 questions should ask when evaluating the `compute performance efficiency`?
+(1) How do you select the appropriate instance type for your system? (2) How do you ensure that you 
+    continue to have the most appropriate instance type as new instance types and features are introduced?
+    (3) How do you monitor your instances post launch to ensure they are performing as expected? (4) How do you ensure 
+    that the quantity of your instances match the demand?
+
+What are 7 factors of `storage performance efficiency`?
+(1) Access Method; (2) Patterns of Access; (3) Throughput Required; (4) Frequency of Access; (5) Frequency of Update;
+    (6) Availability Constraints; (7) Durability Constraints
+
+As an architect, what 4 questions should ask when evaluating the `storage performance efficiency`?
+(1) How do you select the appropriate storage solution for your system? (2) How do you ensure that you continue to 
+    have the most appropriate storage solution as new storage solutions and features are launched? (3) How do you 
+    monitor your storage solution to ensure it is performing as expected? (4) How do you ensure that the capacity and 
+    throughput of your storage solutions matches demand?
+
+What are 3 factors of `database performance efficiency`?
+The optimal database solution depends on a number of factors. Do you need database consistency, do you need high
+    availability, do you need No-SQL, do you need DR etc? With AWS, you get a LOT of options. RDS, DynamoDB, 
+    RedShift etc.
+
+As an architect, what 4 questions should ask when evaluating the `database performance efficiency`?
+(1) How do you select the appropriate database solution for your system? (2) How do you ensure that you continue to 
+    have the most appropriate database solution and features as new database solution and features are launched?
+    (3) How do you monitor your databases to ensure performance is as expected? (4) How do you ensure the capacity and 
+    throughput of your databases matches demand?
+
+What is the number 1 factor of `Space-Time trade-off performance efficiency`?
+Latency - how long does it take your system or a component in your system to respond to a request from a specific
+    location.
+
+ How do you lower latency of an RDS Instance?
+Add read replicas
+
+How do you lower latency between HQ and AWS?
+Use Direct Connect
+
+How do you lower network latency?
+Use ElastiCache or CloudFront
+
+As an architect, what 4 questions should ask when evaluating `latency performance efficiency`?
+(1) How do you select the appropriate proximity and caching solution for your system? (2) How do you ensure that you
+    continue to have the most appropriate proximity and caching solutions as new solutions are launched? (3) How do you 
+    monitor your proximity and caching solutions to ensure performance is as expected? (4) How do you ensure that the 
+    proximity and caching solutions you have matches demand?
+
+What service feature is used to insure `compute performance efficiency`?
+Compute > EC2 > Autoscaling
+
+What 3 services are used to insure `storage performance efficiency`?
+(1) Compute > EBS; (2) Storage > Glacier; (3) Storage > S3
+
+What 4 services are used to insure `Space-Time Trade-Off performance efficiency`?
+(1) Network > CloudFront; (2) Database > ElastiCache; (3) Network > Direct Connect; (4) Database > RDS Read Replicas

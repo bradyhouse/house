@@ -136,4 +136,4 @@ What did we learn?
 
 ## 
 
-**[Previous Lab/Lecture](wp-autoscaling-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../whitepapers/whitepapers-what-else.md)**
+**[Previous Lab/Lecture](wp-autoscaling-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../whitepapers/whitepapers-101.md)**

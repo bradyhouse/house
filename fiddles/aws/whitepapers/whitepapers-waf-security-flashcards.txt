@@ -1,0 +1,85 @@
+What are the 5 Security Design Principles?
+(1) Apply security at all layers; (2) Enable Traceability; (3) Automate responses to Security Events; 
+    (4) Focus on Securing your system; (5) Automate Security Best Practices
+
+What is the shared responsibility model?
+Diagram illustrating what security the customer is responsible for vs. what amazon is responsible for.
+
+In general what security are Amazon customers responsible for in the cloud?
+Customers are responsible for security "IN" the cloud.
+
+In general what security is Amazon responsible for in the cloud?
+Amazon is responsible for security "OF" the cloud.
+
+Specifically, what 6 things must customers secure in the cloud?
+(1) Customer Data; (2) Platform, Applications, Identity & Access management; (3) Operating Systems, Network, and
+    Firewall Configuration; (4) Client-side Data Encryption & Data Integrity Authentication; (5) Server-Side Encryption
+    (File Systems and/or Data); (6) Network Traffic Protection (Encryption / Integrity / Identity)
+
+Specifically, what 7 things must Amazon secure in the cloud?
+(1) Compute Services; (2) Storage Services; (3) Database Services; (4) Networking Services; (5) Regions;
+    (6) Availability Zones; (7) Edge Locations
+
+What four areas does Security in the cloud consist of?
+(1) Data Protection; (2) Privilege Management; (3) Infrastructure Protection; (4) Detective Controls
+
+Define `Data Protection`.
+Before you begin to architect security practices across your environment, basic data classification should be in
+    place. You should organise and classify your data into segments such as publicly available, available to only 
+    members of your organisation, available to only certain members of your organisation, available only to the 
+    board etc. You should also implement a least privilege access system so that people are only able to access what
+    they need. However, most importantly, you should encrypt everything where possible, whether it be at rest or in
+    transit.
+
+What is a least privelege access system?
+People are only able to access what they need.
+
+How is encryption (usually) implemented for data in transit?
+HTTPS
+
+What are the 6 `Data Protection` best practices?
+(1) Customers maintain full control over their data; (2) Easy encryption and key management; (3) Detailed logging;
+    (4) Storage system resilency -- S3 11 nines guarantee; (5) Versioning; (6) Only customers can move data between
+    regions.
+
+In the case of S3, what does the 11 nines guarantee mean?
+if you store 10,000 objects on S3, you can on average expect to incur a loss of a single object once every 
+    10,000,000 years.
+
+As an architect, what two questions should you ask about `Data Protection`?
+(1) How are you encrypting and protecting your data at rest? (2) How are you encrypting and protecting your data in 
+    transit? (SSL)
+
+Define `Privilege Management`.
+Privilege Management ensures that only authorized and authenticated users are able to access your resources, 
+    and only in a manner that is intended.
+
+What are the 3 `Privilege Management` best practices.
+(1) Access Control Lists (ACLs); (2) Role Based Access Controls; (3) Password management (such as password) 
+    rotation policies
+
+As an architect, what 4 questions should you ask about `Privilege Management` when building a new system?
+(1) How are you protecting access to and use of the AWS root account credentials? (2) How are you defining roles 
+    and responsibilities of system users to control human access to the AWS Management Console and APIs? (3) How are 
+    you limiting automated access (such as from applications, scripts, or third-party tools or services) to AWS 
+    resources? (4) How are you managing keys and credentials?
+
+Define `Infrastructure Protection`.
+Outside of the cloud, this how you protect your data center.
+
+What are the 4 `Infrastructure Protection` best practices.
+(1) RFID controls; (2) Security; (3) Lockable cabinets; (4) CCTV
+
+As an architect, what 3 questions should you ask about `Infrastructure Protection`?
+(1) How are you enforcing network and host-level boundary protection? (2) How are you enforcing AWS service level 
+    protection? (3) How are you protecting the integrity of the operating systems on your EC2 instances?
+
+Define `Detective Controls`.
+You can use detective controls to detect or identify a security breach.
+
+What are the 4 services that can be used to implement `Detective Controls`?
+(1) AWS CloudTrail; (2) Amazon CloudWatch; (3) AWS Config; (4) Amazon Simple Storage Service (S3); (5) Amazon 
+    Glacier
+
+As an architect, what 1 question should you ask about `Detective Controls`?
+How are you capturing and analyzing AWS logs?

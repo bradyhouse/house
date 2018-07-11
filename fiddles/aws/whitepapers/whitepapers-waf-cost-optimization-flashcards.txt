@@ -1,0 +1,64 @@
+What is the `Cost Optimization` pillar?
+Use the Cost Optimization pillar to reduce your costs to a minimum and use those savings for other parts of your
+    business. A cost-optimized system allows you to pay the lowest price possible while still achieving your 
+    business objectives.
+
+What are the five design principles of `Cost Optimization`?
+(1) Transparently attribute expenditure; (2) Use managed services to reduce cost of ownership; (3) Trade capital 
+    expense for operating expense; (4) Benefit from economies of scale; (5) Stop spending money on data center 
+    operations
+
+What 4 areas define `Cost Optimization` in the cloud?
+(1) Matched supply and demand; (2) Cost-effecive resources; (3) Expenditure awareness; (4) Optimizing over time
+
+How do you match supply to demand to optimize cost?
+Try to optimally align supply with demand. Don't over provision or under provision, instead as demand grows, so should
+    your supply of compute resources. Think of things like Autoscaling which scale with demand. Similarly in a server-less
+    context, use services such as Lambda that only execute (or respond) when a request (demand) comes in. Services such 
+    as CloudWatch can also help you keep track as to what your demand is.
+
+As an architect, what 2 questions should you ask when evaluating the `cost optimization of supply and demand`?
+(1) How do you make sure your capacity matches but does not substantially exceed what you need? (2) How are you 
+    optimizing your usage of AWS services?
+
+Why is selecting the correct instance type key to cost savings?
+You might have a reporting process that is running on a t2-Micro and it takes 7 hours to complete. That same process
+    could be run on an m4.2xlarge in a manner of minutes. The result remains the same but the t2.micro is more expensive
+    because it ran for longer. A well architected system will use the most cost efficient resources to reach the end 
+    business goal.
+
+As an architect, what 3 questions should you ask when evaluating `resource cost optimization`?
+(1) Have you selected the appropriate resource types to meet your cost targets? (2) Have you selected the 
+    appropriate pricing model to meet your cost targets? (3) Are there managed services (higher-level services than 
+    Amazon EC2, Amazon EBS, and Amazon S3) that you can use to improve your ROI?
+
+Why is expenditure awareness crucial to `cost optimization`? 
+Many organisations have different teams, each with their own AWS accounts. Being aware of what each team is
+    spending and where is crucial to any well architected system. You can use cost allocation tags to track this billing
+    alerts as well as consolidated billing.
+
+What 3 features can you use to track expenditures?
+Cost allocation tags; Billing alarms; Consolidated billing
+
+As an architect, what 4 questions should you ask when evaluating `expenditure awareness optimization`?
+(1) What access controls and procedures do you have in place to govern AWS costs? (2) How are you monitoring usage 
+    and spending? (3) How do you decommission resources that you no longer need, or stop resources that are temporarily 
+    not needed? (4) How do you consider data-transfer charges when designing your architecture?
+
+What are two ways to keep up with changes to AWS?
+Subscribe to the AWS blog; Using Trusted Advisor
+
+As an architect, what 1 question should you ask when evaluating `optimization overtime`?
+How do you manage and/or consider the adoption of new services?
+
+What service feature is used to optimize supply and demands?
+Autoscaling
+
+What service is used for resource cost optimization?
+EC2 (reserved instance), AWS Trusted Advisor
+
+What service is used for expenditure awareness optimization?
+CloudWatch Alarms, SNS
+
+What tools are used for optimization overtime?
+AWS Blog, AWS Trusted Advisor
