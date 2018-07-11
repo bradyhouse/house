@@ -17,8 +17,7 @@ function catch() {
 }
 # try
 (
-
-  cd scripts;
+  cd scripts
   ./fiddle.sh "setup" "mac" "bash";
 
 )

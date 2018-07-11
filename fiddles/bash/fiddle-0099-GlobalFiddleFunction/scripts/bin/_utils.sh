@@ -25,7 +25,8 @@
 function fileContains() {
   _file=$1;
   _criteria=$2;
-  if grep -aq ${_criteria} ${_file};
+  _test=$(cat ${_file} | grep -o ${_criteria} | wc -l;);
+  if (( ${_test} >= 1 ))
   then
     echo 0;
   else

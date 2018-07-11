@@ -5,18 +5,22 @@ source scripts/bin/setup/mac/_bash.sh;
 
 
 function tearDown() {
-  if [[ -e "home/.zshrc" ]]
+  if [[ -d "../home" ]]
   then
-    rm -rf "home";
-    mkdir "home";
-    touch "home/.zshrc";
+    rm -rf "../home";
+    mkdir "../home";
+    touch "../home/.zshrc";
+    touch "../home/.bash_profile";
   fi
+
+
 }
 
 function testUtilFileContains() {
-  homeDir=$(cd home;  pwd;);
+  homeDir=$(cd ../home;  pwd;);
   actual=$(fileContains "${homeDir}/.zshrc" "FIDDLE.SH";);
-  expected=1;
+  expected="1";
+  groupLog "testUtilFileContains | Actual: ${actual} | Expected: ${expected}";
   if [[ "${actual}" != "${expected}" ]]
   then
     exit 1;
@@ -24,22 +28,42 @@ function testUtilFileContains() {
 }
 
 function testIsZshrc() {
-  actual=$(isZshrc;);
-  expected=1;
-  if [[ "${actual}" != "${expected}" ]]
+  _actual=$(isZshrc;);
+  _expected="1";
+  groupLog "testIsZshrc | Actual: ${_actual} | Expected: ${_expected}";
+  if [[ "${_actual}" != "${_expected}" ]]
   then
-    groupLog "testIsZshrc | Actual: ${actual} | Expected: ${expected}";
     exit 2;
   fi
 }
 
 function testUpdateZshrc() {
-  actual=$(updateZshrc);
-  expected="";
-  if [[ "${actual}" != "${expected}" ]]
+  _actual=$(updateZshrc);
+  _expected="";
+  groupLog "testUpdateZshrc | Actual: ${_actual} | Expected: ${_expected}";
+  if [[ "${_actual}" != "${_expected}" ]]
   then
-    groupLog "testUpdateZshrc | Actual: ${actual} | Expected: ${expected}";
     exit 3;
+  fi
+}
+
+function testIsBashProfile() {
+  _actual=$(isBashProfile;);
+  _expected="1";
+  groupLog "testIsBashProfile | Actual: ${_actual} | Expected: ${_expected}";
+  if [[ "${_actual}" != "${_expected}" ]]
+  then
+    exit 4;
+  fi
+}
+
+function testUpdateBashProfile() {
+  _actual=$(updateBashProfile);
+  _expected="";
+  groupLog "testUpdateBashProfile | Actual: ${_actual} | Expected: ${_expected}";
+  if [[ "${_actual}" != "${_expected}" ]]
+  then
+    exit 5;
   fi
 }
 
@@ -53,6 +77,10 @@ function catch() {
             ;;
         3)  endLog "test 3 failed - testUpdateZshrc";
             ;;
+        4)  endLog "test 4 failed - testIsBashProfile";
+            ;;
+        5)  endLog "test 5 failed - testUpdateBashProfile";
+            ;;
         *)  echo "fubar! Something went wrong."
             ;;
     esac
@@ -60,10 +88,14 @@ function catch() {
 }
 # try
 (
+  startLog $(echo "$0" | sed 's/\.\///g');
+  cd scripts;
   tearDown || exit $?:
   testUtilFileContains || exit $?:
   testIsZshrc || exit $?:
   testUpdateZshrc || exit $?:
+  testIsBashProfile || exit $?;
+  testUpdateBashProfile || exit $?;
   tearDown || exit $?:
 )
 rc=$?; catch ${rc};

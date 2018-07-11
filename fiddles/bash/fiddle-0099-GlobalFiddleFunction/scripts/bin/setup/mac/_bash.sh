@@ -15,32 +15,35 @@
 
 
 function isZshrc() {
-  _homeDir=$(cd home; pwd;);
+  _homeDir=$(cd ../home;  pwd;);
   _actual=$(fileContains "${_homeDir}/.zshrc" "FIDDLE.SH";);
-  _expected=0;
+  _expected="1";
   if [[ "${_actual}" != "${_expected}" ]]
   then
+    echo 0;
+  else
     echo 1;
   fi
 }
 
 function isBashProfile() {
-  _homeDir=$(cd home; pwd;);
-  actual=$(fileContains "${_homeDir}/.bash_profile" "FIDDLE.SH";);
-  expected=0;
-  if [[ "${actual}" != "${expected}" ]]
+  _homeDir=$(cd ../home;  pwd;);
+  _actual=$(fileContains "${_homeDir}/.bash_profile" "FIDDLE.SH";);
+  _expected="1";
+  if [[ "${_actual}" != "${_expected}" ]]
   then
+    echo 0;
+  else
     echo 1;
   fi
 }
 
 function updateZshrc() {
   _gitRepoPath=$(pwd;);
-  _homeDir=$(cd home ~; pwd;);
+  _homeDir=$(cd ..; cd home; pwd;);
   _bckSuffix=$(date +%s);
   _isUpdated=$(isZshrc;);
-
-  if [[ "${_isUpdated}" != "0" ]]
+  if (( ${_isUpdated} == 1 ))
   then
     cd ${_homeDir};
     if [[ -e ".zshrc" ]]
@@ -56,21 +59,51 @@ function updateZshrc() {
       echo -e "\t cd \${_location};" >> .zshrc;
       echo -e "}" >> .zshrc;
       echo -e "\n" >> .zshrc;
+      cd ${_gitRepoPath};
 
     fi
   fi
 }
 
+function updateBashProfile() {
+  _gitRepoPath=$(cd ..; pwd;);
+  _homeDir=$(cd ..; cd home; pwd;);
+  _bckSuffix=$(date +%s);
+  _isUpdated=$(isBashProfile;);
+
+  if (( ${_isUpdated} == 1 ))
+  then
+    cd ${_homeDir};
+    if [[ -e ".bash_profile" ]]
+    then
+      cp -rf .bash_profile ".bash_profile-${_bckSuffix}";
+      echo -e "\n" >> .bash_profile;
+      echo -e "### FIDDLE.SH ####" >> .bash_profile;
+      echo -e "\n" >> .bash_profile;
+      echo -e "function fiddle() {" >> .bash_profile;
+      echo -e "\t _location=\$(pwd;);" >> .bash_profile;
+      echo -e "\t cd ${_gitRepoPath}/scripts;" >>.bash_profile;
+      echo -e "\t ./fiddle.sh \"\$@\";" >> .bash_profile;
+      echo -e "\t cd \${_location};" >> .bash_profile;
+      echo -e "}" >> .bash_profile;
+      echo -e "\n" >> .bash_profile;
+      cd ${_gitRepoPath};
+    fi
+  fi
+}
+
+
 function install() {
   groupLog "install";
   #try
   (
-   installAbd || exit $?;
+    updateZshrc || exit $?;
+    updateBashProfile || exit $?;
   )
   #catch
   _rc=$?
   case ${_rc} in
-      0)  endLog "Done ~ abd installed successfully."
+      0)  endLog "Done ~ bash installed successfully."
           ;;
       *)  endLog "foo bar! Something went wrong."
           ;;
