@@ -313,4 +313,4 @@ Know the 3 areas of `operational excellence` and the questions associated with e
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-waf-cost-optimization.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-exam-tips.md)**
+**[Previous Lab/Lecture](whitepapers-waf-cost-optimization.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-exam-tips.md)**
