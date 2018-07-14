@@ -55,11 +55,11 @@ can even switch to running with no servers at all and use AWS Lambda.
 
 As an architect, you should ask the following questions when evaluating `compute performance efficiency`:
 
-* How do you select the appropriate instance type for your system?
-* How do you ensure that you continue to have the most appropriate instance type as new instance types and 
-  features are introduced?
-* How do you monitor your instances post launch to ensure they are performing as expected?
-* How do you ensure that the quantity of your instances match the demand?
+1.  How do you select the appropriate instance type for your system?
+2.  How do you ensure that you continue to have the most appropriate instance type as new instance types and 
+    features are introduced?
+3.  How do you monitor your instances post launch to ensure they are performing as expected?
+4.  How do you ensure that the quantity of your instances match the demand?
 
 
 #### Storage
@@ -83,11 +83,11 @@ between the different type of storage mediums.
 
 As an architect, you should ask the following questions when evaluating `storage performance efficiency`:
 
-* How do you select the appropriate storage solution for your system?
-* How do you ensure that you continue to have the most appropriate storage solution as new storage solutions and
-  features are launched?
-* How do you monitor your storage solution to ensure it is performing as expected?
-* How do you ensure that the capacity and throughput of your storage solutions matches demand?
+1.  How do you select the appropriate storage solution for your system?
+2.  How do you ensure that you continue to have the most appropriate storage solution as new storage solutions and
+    features are launched?
+3.  How do you monitor your storage solution to ensure it is performing as expected?
+4.  How do you ensure that the capacity and throughput of your storage solutions matches demand?
 
 
 #### Database
@@ -100,11 +100,11 @@ availability, do you need No-SQL, do you need DR etc? With AWS, you get a LOT of
 
 As an architect, you should ask the following questions when evaluating `database performance efficiency`:
 
-* How do you select the appropriate database solution for your system?
-* How do you ensure that you continue to have the most appropriate database solution and features as new database
-  solution and features are launched?
-* How do you monitor your databases to ensure performance is as expected?
-* How do you ensure the capacity and throughput of your databases matches demand?
+1.  How do you select the appropriate database solution for your system?
+2.  How do you ensure that you continue to have the most appropriate database solution and features as new database
+    solution and features are launched?
+3.  How do you monitor your databases to ensure performance is as expected?
+4.  How do you ensure the capacity and throughput of your databases matches demand?
 
 
 #### Space-Time trade-off
@@ -121,11 +121,11 @@ to reduce latency.
 As an architect, you should ask the following questions when evaluating `Space-Time trade-off performance efficiency` aka
 `latency performance efficiency`:
 
-* How do you select the appropriate proximity and caching solution for your system?
-* How do you ensure that you continue to have the most appropriate proximity and caching solutions as new solutions are
-  launched?
-* How do you monitor your proximity and caching solutions to ensure performance is as expected?
-* How do you ensure that the proximity and caching solutions you have matches demand?
+1.  How do you select the appropriate proximity and caching solution for your system?
+2.  How do you ensure that you continue to have the most appropriate proximity and caching solutions as new solutions are
+    launched?
+3.  How do you monitor your proximity and caching solutions to ensure performance is as expected?
+4.  How do you ensure that the proximity and caching solutions you have matches demand?
 
 
 ### Key AWS Services

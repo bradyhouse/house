@@ -51,8 +51,8 @@ as CloudWatch can also help you keep track as to what your demand is.
 
 As an architect, you should ask the following questions when evaluating `matched supply and demand cost optimization`:
 
-* How do you make sure your capacity matches but does not substantially exceed what you need?
-* How are you optimizing your usage of AWS services?
+1.  How do you make sure your capacity matches but does not substantially exceed what you need?
+2.  How are you optimizing your usage of AWS services?
 
 
 #### Cost-Effective Resources
@@ -67,10 +67,10 @@ architected system will use the most cost efficient resources to reach the end b
 
 As an architect, you should ask the following questions when evaluating `resource cost optimization`:
 
-* Have you selected the appropriate resource types to meet your cost targets?
-* Have you selected the appropriate pricing model to meet your cost targets?
-* Are there managed services (higher-level services than Amazon EC2, Amazon EBS, and Amazon S3) that you can use to
-  improve your ROI?
+1.  Have you selected the appropriate resource types to meet your cost targets?
+2.  Have you selected the appropriate pricing model to meet your cost targets?
+3.  Are there managed services (higher-level services than Amazon EC2, Amazon EBS, and Amazon S3) that you can use to
+    improve your ROI?
 
 
 #### Expenditure Awareness
@@ -86,10 +86,10 @@ alerts as well as consolidated billing.
 
 As an architect, you should ask the following questions when evaluating `expenditure awareness optimization`:
 
-* What access controls and procedures do you have in place to govern AWS costs?
-* How are you monitoring usage and spending?
-* How do you decommission resources that you no longer need, or stop resources that are temporarily not needed?
-* How do you consider data-transfer charges when designing your architecture?
+1.  What access controls and procedures do you have in place to govern AWS costs?
+2.  How are you monitoring usage and spending?
+3.  How do you decommission resources that you no longer need, or stop resources that are temporarily not needed?
+4.  How do you consider data-transfer charges when designing your architecture?
 
 
 #### Optimizing Over Time

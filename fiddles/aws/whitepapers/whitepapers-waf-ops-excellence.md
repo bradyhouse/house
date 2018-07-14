@@ -33,7 +33,7 @@ Six principles comprise `operational excellence` design:
 
 ### Definition
 
-There are three best practice areas for `operational excellence` in the cloud:
+`Operational excellence` in the cloud consists of 3 areas:
 
 * Preparation
 * Operation
@@ -84,8 +84,8 @@ determining how to respond will be more difficult while the correct resources ar
 
 As an architect, you should ask the following questions to insure effective `preparation`:
 
-* What best practices for cloud operations are you using?
-* How are you doing configuration management for your workload?
+1.  What best practices for cloud operations are you using?
+2.  How are you doing configuration management for your workload?
 
 
 #### Operations
@@ -153,8 +153,8 @@ unexpected events.
 
 The following questions focus on operations considerations for operational excellence:
 
-* How are evolving your workload while minimizing the impact of change?
-* How do you monitor your workload to ensure it is operating as expected?
+1.  How are evolving your workload while minimizing the impact of change?
+2.  How do you monitor your workload to ensure it is operating as expected?
 
 
 #### Responses
@@ -175,8 +175,8 @@ operational events, as well as automated responses
 
 The following questions should be asked/answered to insure effective operational `responses`:
 
-* How do you respond to unplanned operational events?
-* How is escalation managed when responding to unplanned operational events?
+1.  How do you respond to unplanned operational events?
+2.  How is escalation managed when responding to unplanned operational events?
 
 
 ### Key AWS Services
