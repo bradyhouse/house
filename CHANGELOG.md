@@ -1849,6 +1849,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
       10. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
       11. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
       12. Updated [README.adoc](README.adoc)      
-           
+        
+   
+* **Electron**
       
 * Added [fiddles/electron/fiddle-0001-TemplateFork](fiddles/electron/fiddle-0001-TemplateFork)
+
+
+### 232_bash_fiddle_99 ~ [Issue 232](https://github.com/bradyhouse/house/issues/232)
+
+* **Bash**
+
+  1.  Added [fiddles/bash/fiddle-0099-GlobalFiddleFunction](fiddles/bash/fiddle-0099-GlobalFiddleFunction)
