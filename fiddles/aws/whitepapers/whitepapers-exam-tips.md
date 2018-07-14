@@ -42,4 +42,4 @@ in prep for the Exam.
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-waf-ops-excellence.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-waf-exam-tips.md)**
+**[Previous Lab/Lecture](whitepapers-waf-ops-excellence.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-exam-tips.md)**
