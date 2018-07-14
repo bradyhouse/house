@@ -10,9 +10,6 @@ in prep for the Exam.
 [![acloud.guru lecture](https://i.imgur.com/PPpkRie.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/223c8538-772d-867a-a3c9-52f71df9e637/4a191506-ab5d-029f-57b3-a7ba15fdfc1b/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
-
-
-    TBW
  
 
 ## Exam Tips
