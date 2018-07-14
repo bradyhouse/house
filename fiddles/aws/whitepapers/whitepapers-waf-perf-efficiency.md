@@ -130,6 +130,8 @@ As an architect, you should ask the following questions when evaluating `Space-T
 
 ### Key AWS Services
 
+By area, `performance efficiency` architecture targets the following services:
+
 * `Compute` - Autoscaling
 * `Storage` - EBS, S3, Glacier
 * `Database` - RDS, DynamoDB, Redshift
