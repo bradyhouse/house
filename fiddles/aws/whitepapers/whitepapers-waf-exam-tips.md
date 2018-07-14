@@ -29,17 +29,6 @@ in prep for the Exam.
     TBW
  
 
-### Well Architected Framework Operational Excellence Flash Card Deck
-  
- To download the review flash card deck for this lecture, right click the following link and select
-  `Save Link As`. 
-  
-    TBW
-     
-  
-**NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**  
-
-
 ## 
 
 **[Previous Lab/Lecture](whitepapers-waf-ops-excellence.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-exam-tips.md)**
