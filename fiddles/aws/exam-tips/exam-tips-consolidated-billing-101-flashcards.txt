@@ -1,0 +1,60 @@
+What is the AWS Organization Services?
+AWS Organizations is an account management service that enables you to consolidate multiple AWS accounts into an 
+    organization that create and centrally manage.
+
+What are the two AWS Organization feature sets?
+(1) Consolidated Billing; (2) All Features
+
+Why would you (or rather an organization) have multiple AWS accounts?
+Within an organization, each team may have its own AWS user account.
+
+What is an `OU`?
+Organizational Unit associated with a specific set of AWS user accounts.
+
+Using AWS Organizations, what can policies be applied to? (2)
+OU's; AWS Accounts
+
+What are the `Consolidated Billing` actors? (2)
+Paying Account; Linked Accounts
+
+What is the common characteristic of both Paying and Linked Accounts? Technically speaking
+    what does this mean?
+Independent; Account cannot access the resources of other accounts
+
+How many accounts are you currently allowed to link?
+20
+
+What are the advantages ouf using `Consolidated Billing`? (3)
+(1) One bill per AWS Paying account; (2) Very easy to track charges and allocate costs;
+    (3) Volume pricing discount
+
+What are the `Consolidated Billing` 3 best practices?
+(1) Always enable multi-factor authentication on the root account; (2) Always use a strong and complex 
+    password on root account; (3) Paying account should be used for billing purposes only. Do not deploy 
+    resources in the paying account
+
+When monitoring is enabled on the paying account is the billing data for all linked accounts 
+    included?
+Yes
+
+Can billing alerts be setup on linked accounts?
+Yes
+
+How is CloudTrail enabled? (2) Why is this important to remember?
+Per account; per region; If you want to use CloudTrail for auditing purposes, you must it 
+    enable per account and region
+
+You can consolidate logs using a ___ ___.
+S3 Bucket
+
+How do you consolidate linked account logs using the paying account? (3)
+(1) Turn on CloudTrail in the paying account; (2) Create a bucket policy that allows cross account 
+    access; (3) Turn on CloudTrail in the other accounts and use the bucket in the paying account
+
+Why does `Consolidated Billing` make sense for organization using EC2? S3?
+Unused reserved instances for EC2 are applied across all linked accounts; S3 pricing get cheaper as the
+    amount of TB's consumed increases. Total storage (or TB's consumed) is calculated based on
+    all linked account usage.
+
+
+
