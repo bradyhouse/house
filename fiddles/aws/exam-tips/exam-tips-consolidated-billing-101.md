@@ -1,3 +1,6 @@
+<img src="https://i.imgur.com/m0yIGS0.png" height="100" title="AWS Organizations" />
+
+
 Exam Tips - Consolidated Billing 101
 ======
 
