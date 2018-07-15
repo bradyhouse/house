@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/m0yIGS0.png" height="100" title="AWS Organizations" />
 
 
-Exam Tips - Consolidated Billing Lab
+Additional Exam Tips - Consolidated Billing Lab
 ======
 
 6 Minute lab introducing how to setup an organization using the Amazon Organizations Service. For this one, I 

@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/m0yIGS0.png" height="100" title="AWS Organizations" />
 
 
-Exam Tips - Consolidated Billing 101
+Additional Exam Tips - Consolidated Billing 101
 ======
 
 8 Minute lecture introducing Consolidated billing as well as the new AWS Organizations service.

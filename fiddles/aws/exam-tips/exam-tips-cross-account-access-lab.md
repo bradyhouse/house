@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/m0yIGS0.png" height="100" title="AWS Organizations" />
 
 
-Exam Tips - Cross Account Access Lab
+Additional Exam Tips - Cross Account Access Lab
 ======
 
 14 Minute Lab exploring Cross Account Access.
@@ -39,7 +39,7 @@ Exam Tips - Cross Account Access Lab
 
     TBW
 
-### Exam Tips - Cross Account Access Flash Card Deck
+### Exam Tips - Cross Account Access Flash Cards
   
 To download the review flash card deck for this lecture, right click the following link and select
 `Save Link As`. 
