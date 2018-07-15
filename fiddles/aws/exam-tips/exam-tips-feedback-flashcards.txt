@@ -1,0 +1,65 @@
+What is Amazon Kinesis?
+Big data consumer.
+
+What is an example where Kinesis might make sense?
+Loading application logs to the cloud.
+
+How do you consume big data?
+Kinesis
+
+How do you apply business intelligence to big data?
+RedShift
+
+How do you process big data?
+EMR
+
+What does ephemeral mean?
+Lasting for a brief time.
+
+In what sense are EBS backed volumes persistent?
+EBS backed volumes continue independently throughout the life of the EC2 instance.
+
+In what sense are Instance store backed volumes not persistent (ephemeral)?
+You cannot detach an instance store volume and attach it to another EC2 instance.
+
+Technically, what are the 2 difference between EBS backed and Instance Store backed volumes?
+(1) EBS backed volumes can be swapped between EC2 instances. Instance Store backed volumes cannot. For a Unix user, 
+    an Instance Store backed volume is the /tmp directory; an EBS backed volume is everything else. (2) EBS
+    backed volumes can be stopped and the data will be persisted. Instance Store backed volumes cannot be stopped
+    without the loss of data. If the unix user reboots their system the /tmp directory is wiped.
+
+How do you store data long term?
+EBS backed volume
+
+How do you store data short term?
+Instance Store backed volume
+
+What is OpsWorks?
+Orchestration Service that uses chef
+
+What is Chef?
+Chef can be used to turn infrastructure into code `recipes` inorder to maintain a consistent state.
+
+If a question uses terms like "chef", "recipes" or "cookbooks" think ___.
+OpsWorks 
+
+What is Elastic Transcoder?
+Media Transcoder in the cloud. Convert media files from their original source format into a different formats that 
+    will play on smartphones, tablets, PC's etc.
+
+What is the benefit of Elastic Transcoder's presets?
+You don't need to guess about which settings work best on particular devices
+
+What is the price model for Elastic Transcoder? (2)
+Minutes; Resolution
+
+What are the three SWF actors and their function?
+(1) Workflow Starters - An application that can initiate (start) a workflow; (2) Deciders - Control the flow of 
+    activity tasks in a workflow execution. if something has finished in a workflow (or fails) a Decider decides 
+    what to do next; (3) Activity Workers - Carry out the activity task
+
+How do you get an EC2 instance's public IP address?
+`curl http://169.254.169.254/latest/meta-data/`
+
+What type of data is an EC2 instances public IP address? Does it have anything to do with the user?
+Metadata; No
