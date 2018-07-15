@@ -1,7 +1,7 @@
 Exam Tips - Student Feedback
 ======
 
-10 Minute lecture with additional topics not covered in previous lectures but can come up on the Solution Architect 
+10 Minute lecture with additional topics not covered in previous lectures but that can come up on the Solution Architect 
 exam. Note, this lecture touches on Kinesis, OpsWorks, Elastic Transcoder and SWF.
 
   
@@ -121,25 +121,23 @@ data will be available for your Amazon Kinesis Applications to read and process 
 20. Metadata; No
 
 
-
-### Well Architected Framework Exam Tips - Student Feedback Flash Card Deck
+## Exam Tips - Student Feedback Flash Card Deck
   
 To download the review flash card deck for this lecture, right click the following link and select
 `Save Link As`. 
 
 <table>
-   <tr>
-   <td>
-   <b><a href="exam-tips-feedback-flashcards.txt" download="exam-tips-feedback-flashcards.txt">Exam Tips Student Feedback - Flash Card Deck</a></b>
-   </td>
-   </tr>
-   </table>  
+ <tr>
+ <td>
+ <b><a href="exam-tips-feedback-flashcards.txt" download="exam-tips-feedback-flashcards.txt">Exam Tips Student Feedback - Flash Card Deck</a></b>
+ </td>
+ </tr>
+ </table>  
 
-     
-  
+       
 **NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**  
 
 
 ## 
 
-**[Previous Lab/Lecture](../whitepapers/whitepapers-waf-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-feedback.md)**
+**[Previous Lab/Lecture](../whitepapers/whitepapers-waf-exam-tips.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-consolidated-billing-101.md)**
