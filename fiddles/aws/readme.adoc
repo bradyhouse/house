@@ -153,7 +153,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 2+>| **Additional Exam Topics**
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-feedback.md#exam-tips---student-feedback-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-feedback.md[Additional Exam Tips - Student Feedback]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-consolidated-billing-101.md#exam-tips---consolidated-billing-101-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-consolidated-billing-101.md[Additional Exam Tips - Consolidated Billing 101]
-||link:exam-tips/exam-tips-consolidated-billing-lab.md[Exam Tips - Consolidated Billing Lab]
+||link:exam-tips/exam-tips-consolidated-billing-lab.md[Additional Exam Tips - Consolidated Billing Lab]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-cross-account-access-lab.md#exam-tips---cross-account-access-flashcards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-cross-account-access-lab.md[Additional Exam Tips - Cross Account Access Lab]
 |=========================================================
 
