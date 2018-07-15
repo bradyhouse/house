@@ -270,4 +270,4 @@ The Well-Architected Framework consists of 5 pillars:
 
 ## 
 
-**[Previous Lab/Lecture](whitepapers-waf-ops-excellence.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](whitepapers-exam-tips.md)**
+**[Previous Lab/Lecture](whitepapers-waf-ops-excellence.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](../exam-tips/exam-tips-feedback.md)**
