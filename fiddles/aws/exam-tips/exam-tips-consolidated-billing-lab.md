@@ -17,4 +17,4 @@ simply watched the video and followed the steps.
 
 ## 
 
-**[Previous Lab/Lecture](exam-tips-consolidated-billing-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-consolidated-billing-lab.md)**
+**[Previous Lab/Lecture](exam-tips-consolidated-billing-101.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-cross-account-access-lab.md)**
