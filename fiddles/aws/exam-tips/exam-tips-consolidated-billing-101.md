@@ -179,4 +179,4 @@ To download the review flash card deck for this lecture, right click the followi
 
 ## 
 
-**[Previous Lab/Lecture](exam-tips-feedback.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-consolidated-billing-101.md)**
+**[Previous Lab/Lecture](exam-tips-feedback.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-consolidated-billing-lab.md)**
