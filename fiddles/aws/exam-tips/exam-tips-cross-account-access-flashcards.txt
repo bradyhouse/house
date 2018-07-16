@@ -1,0 +1,12 @@
+Why would a developer setup multiple AWS accounts?
+They establish a dedicated account for `production` resources and a separate dedicated account for `non-production` 
+    resources.
+
+What does `Cross Account Access` simplify?
+Cross account access makes it easier for you to work productively within a multi-account (or multi-role) AWS
+    environment by making it easy for you to switch roles within the AWS Management Console. You can now sign into the
+    console using your IAM user name and then switch the console to manage another account without having to 
+    enter (or remember) another user name and password.
+
+What type of policy is required to enable cross account access?
+Inline Policy
