@@ -1,0 +1,32 @@
+What are tags?
+Key Value Pairs attached to AWS resources.
+
+What is Metadata?
+Data about data.
+
+When are tags inherited? 
+When tag resources create other resources.
+
+What are examples where tags can be inherited? (3)
+(1) AutoScaling; (2) CloudFormation; (3) EBS
+
+What are resource groups?
+Containers for tags. You can group resources that share one or more tags.
+
+What information do Resource groups contain? (3) What does `contain` mean?
+(1) Region (2) Name (3) Health Check; The data can be dumped to CSV via the console.
+
+Can tags be nested?
+Yes; For example `Develper = d1, Project = fiddle.sh`
+
+Are tags applied to a resource group inherited by its resources?
+No, the tags are not applied to group resources, but only the resource group itself.
+
+What is the benefit of resource groups?
+Its a great way of seeing who is consuming what.
+
+What is tag editor used for?
+It allows you to see all your resources and what they are tagged with. You can then add, update, or delete those tags.
+
+What is the easiest way to find unused resources that you may need to delete? Why?
+Tag Editor; Tag Editor goes across services. You do not need to access individual service dashboards to see resources.
