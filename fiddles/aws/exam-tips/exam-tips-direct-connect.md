@@ -60,4 +60,4 @@ To download the review flash card deck for this lecture, right click the followi
 
 ## 
 
-**[Previous Lab/Lecture](exam-tips-vpc-peering.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-direct-connect.md)**
+**[Previous Lab/Lecture](exam-tips-vpc-peering.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-security-token-service.md)**

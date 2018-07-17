@@ -1,0 +1,82 @@
+What is STS?
+Security Token Service - grants users limited and temporary access to AWS resources.
+Exam Tips
+
+What are the 3 sources of STS identities?
+(1) Federation (typically Active Directory); (2) Federation with Mobile Apps; (3) Cross Account Access
+Exam Tips
+
+What is the source for STS federated users typically?
+Active Directory
+Exam Tips
+
+What are the characteristics of STS federated sourced users? (3)
+(1) Uses SAML; (2) Grants temporary access based off users Active Directory credentials. You do not need to be an
+    IAM user; (3) Single sign on allows users to log into the AWS Console without assigning IAM credentials
+Exam Tips
+
+What is the source for STS Mobile App federated users typically? What are some examples?
+OpenID provider; Facebook, Google, Amazon
+Exam Tips
+
+What is STS cross account access?
+Allows users from one AWS account access resources in another
+Exam Tips
+
+In the context of STS, what is the technical definition of Federation?
+Combining or joining a list of users in one domain (such as IAM) with a list of users in another domain (such
+    as Active Directory, Facebook, etc)
+Exam Tips
+
+In the context of STS, what is the technical definition of an Identity Broker?
+A service that allows you take an identity from point A and join it (federate it) to point B
+Exam Tips
+
+In the context of STS, what is the technical definition of an Identity Store?
+Services like Active Directory, Facebook, Google etc
+Exam Tips
+
+In the context of STS, what is the technical definition of Identities?
+A user of a service like Facebook etc
+Exam Tips
+
+Is Identity Broker software something you can typically by from a vendor or is it developed in-house?
+In-house
+Exam Tips
+
+Ugly Scenario Question: "You are hosting a company website on some EC2 web servers in your VPC. Users of the 
+    website must log into the site which then authenticates against the companies active directory servers which
+    are based on site at the companies head quarters. Your VPC is connected to your company's HQ via secure
+    IPSEC VPN. Once logged in the user can only have access to their own S3 bucket. How do you set this up?" What
+    is the gory detail solution? (9)
+(1) Employee enters their username / password; (2) The application calls an Identity Broker, which captures the
+    username and password; (3) The identity broker uses the organization's LDAP directory to validate the employee's
+    identity; (4) The Identity Broker calls the new `GetFederationToken` function using IAM credentials. The call
+    must include an IAM policy and duration (1 to 36 hours), along with a policy that specifies the permissions
+    to be granted to the temporary security credentials; (5) The STS confirms the policy of the IAM user making the
+    call to `GetFederationToken` gives permission to create new tokens and then returns four values to the 
+    application: (a) Access Key, (b) Secret Key, (c) Token, and (d) Duration (Token's lifetime); (6) The identity
+    Broker returns the temporary security credentials to the reporting application; (7) The data storage application
+    uses the temporary security credentials (including the token) to make requests to Amazon S3; (8) Amazon
+    S3 uses IAM to verify that the credentials allow the requested operation on the given S3 bucket and key; 
+    (9) IAM provides S3 with the go-ahead to perform the requested operation.
+Exam Tips
+
+Ugly Scenario Question: "You are hosting a company website on some EC2 web servers in your VPC. Users of the 
+    website must log into the site which then authenticates against the companies active directory servers which
+    are based on site at the companies head quarters. Your VPC is connected to your company's HQ via secure
+    IPSEC VPN. Once logged in the user can only have access to their own S3 bucket." What is the `broad strokes` 
+    solution? (3)
+(1) Develop an Identity Broker to communicate with LDAP and AWS; (2) Identity Broker always authenticates with
+    LDAP first THEN with AWS STS; (3) Application then gets temporary access to AWS resources
+Exam Tips
+
+Ugly Scenario Question: "You are hosting a company website on some EC2 web servers in your VPC. Users of the 
+    website must log into the site which then authenticates against the companies active directory servers which
+    are based on site at the companies head quarters. Your VPC is connected to your company's HQ via secure
+    IPSEC VPN. Once logged in the user has access to S3 based on their LDAP defined IAM role." What is the `broad strokes` 
+    solution? (3)
+(1) Develop an Identity Broker to communicate with LDAP and AWS STS; (2) Identity Broker always authenticates
+    with LDAP first, gets an IAM role associated with a user; (3) Application then authenticates with STS and assumes
+    that IAM role; (4) The application uses that IAM role to interact with S3
+Exam Tips
