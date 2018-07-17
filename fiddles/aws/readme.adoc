@@ -156,7 +156,9 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 ||link:exam-tips/exam-tips-consolidated-billing-lab.md[Additional Exam Tips - Consolidated Billing Lab]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-cross-account-access-lab.md#exam-tips---cross-account-access-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-cross-account-access-lab.md[Additional Exam Tips - Cross Account Access Lab]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-vpc-peering.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-vpc-peering.md[Additional Exam Tips - VPC Peering]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-direct-connect.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-direct-connect.md[Additional Exam Tips - Direct Connect]
 |=========================================================
+
 
 anchor:flash-card-strategy[]
 
