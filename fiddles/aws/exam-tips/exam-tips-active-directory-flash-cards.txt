@@ -1,0 +1,6 @@
+Can you authenticate with Active Directory? How?
+Yes; Using SAML assertion
+Exam Tips
+What (always, always) comes first Active Directory authentication or temporary security credential?
+ACTIVE DIRECTORY Authentication
+Exam Tips
