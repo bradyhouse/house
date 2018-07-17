@@ -1,0 +1,35 @@
+ What is Amazon Workspaces service?
+It is a VDI. A WorkSpace is cloud-based replacement for a traditional desktop allowing you to run Windows in the 
+    Cloud rather than on a local hardware device -- aka desktop.
+Exam Tips
+What service category does Workspaces belong to?
+Desktop and App streaming
+Exam Tips
+What does a Workspace bundle include? (3)
+(1) Compute Resources; (2) Storage Space; (3) Software Applications
+Exam Tips
+How does a user connect to a Workspace? (2)
+(1) They connect from any support device (PC, Mac, Chromebook, iPad, Kindle Fire, or Android Tablet) using a 
+    free Amazon Workspaces client application and credentials setup by an Administrator or their existing 
+    Active Directory credentials if Amazon Workspaces is integrated with an existing Active Directory domain.
+Exam Tips
+Do you need an Amazon account to access Workspaces?
+No
+Exam Tips
+What version of Windows does it use?
+Windows 7 experience, provided by Windows Server 2008 R2
+Exam Tips
+Can users personalize their workspace?
+By default, yes. However, it can be locked down by the Administrator
+Exam Tips
+Can you install apps locally? Administrator rights?
+By default, yes and yes.  However, these rights can be locked down by the Administrator
+Exam Tips
+Are workspaces ephemeral?
+No, they are persistent
+Exam Tips
+Where can user backup their data? What is the snapshot (or backup) frequency?
+The "D:\" drive; every 12 hours
+Exam Tips
+
+
