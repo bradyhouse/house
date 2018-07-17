@@ -10,7 +10,7 @@ captured the pertinent review questions.
   
 ## Video Link
 
-[![acloud.guru lecture](https://i.imgur.com/rbI9Kqi.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/additional-exam-tips/vpc-peering/watch)
+[![acloud.guru lecture](https://i.imgur.com/P7WoDWi.png)](https://acloud.guru/course/aws-certified-solutions-architect-associate/learn/additional-exam-tips/direct-connect/watch)
 
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
