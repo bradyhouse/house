@@ -13,7 +13,7 @@ captured the pertinent review questions.
 *Note - You will need an [acloud.guru](acloud.guru) account.*
 
    
-#### Review Questions
+### Review Questions
 
 1.  What is VPC peering?
 2.  What are the types of VPC Peering Connections? (2)
@@ -27,7 +27,7 @@ captured the pertinent review questions.
 10. What are the 3 VPC Peering Limitations?
 
 
-#### Answers
+### Answers
 
 1.  Connection between two VPC's that enables you to route traffic between them using private IP addresses. Instances
     in either VPC can communicate with each other as if they are in the same network.
@@ -46,7 +46,7 @@ captured the pertinent review questions.
     (3) VPC peering does not support transitive peering relationships
 
 
-#### Flash Cards
+### Flash Cards
   
 To download the review flash card deck for this lecture, right click the following link and select
 `Save Link As`. 

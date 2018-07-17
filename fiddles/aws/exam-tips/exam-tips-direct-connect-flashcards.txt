@@ -1,0 +1,25 @@
+What is AWS Direct Connect?
+Dedicated network connection from your premises to AWS
+Exam Tips
+Is Direct Connect an internet based connection?
+No
+Exam Tips
+What are benefits of direct connect? (3)
+(1) Reduces cost for large volumes of traffic; (2) Increased reliability; (3) Increased bandwidth
+Exam Tips
+How is Direct Connect Different from VPN? (2)
+(1) VPN connections and can be configured in minutes using the internet; (2) Direct Connect
+    uses dedicated private network connections between your intranet and Amazon VPC.
+Exam Tips
+What bandwidths are available for Direct Connect lines? (2)
+10 Gbps; 1 Gbps
+Exam Tips
+How can you get Sub 1 Gbps bandwidth? How is this achieved?
+Through Direct Connect partners; Uses Ethernet VLAN trunking (802.1Q)
+Exam Tips
+Can you connect to the Cloud without the internet and if so how?
+Yes; AWS Direct Connect
+Exam Tips
+What is the time frame for getting a dedicated line setup?
+Months
+Exam Tips
