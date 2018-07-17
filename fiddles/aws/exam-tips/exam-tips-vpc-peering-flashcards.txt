@@ -1,0 +1,48 @@
+What is VPC peering?
+Connection between two VPC's that enables you to route traffic between them using private IP addresses. Instances
+    in either VPC can communicate with each other as if they are in the same network.
+Exam Tips
+
+What are the types of VPC Peering Connections? (2)
+Between your own VPCs, or with a VPC in another AWS account within a single region.
+Exam Tips
+
+Can VPC peering connections cross regions?
+(Currently) no.
+Exam Tips
+
+What infrastructure is used by AWS to create a VPC peering connection? What is the benefit?
+AWS uses the existing infrastructure of a VPC to create a VPC peering connection. It is neither a gateway nor 
+    a VPN connection, and does not rely on a separate piece of physical hardware. There is no single point of failure
+    for communication or a bandwidth bottleneck.
+Exam Tips
+
+Is a VPC Peering connection a `Gateway`?
+No
+Exam Tips
+
+Is a VPC Peering connection a `VPN Connection`?
+No
+Exam Tips
+
+Are VPC Peering connections `CIDR` block dependent? 
+Yes, they cannot overlap
+Exam Tips
+
+If the CIDR block IP address range of peer connected VPCs overlap, will the connection work?
+No
+Exam Tips
+
+What is `Transitive Peering`? Is it supported?
+If A is peered to B and B is peered to C, then A is peered C; No
+Exam Tips
+
+What are the 3 VPC Peering Limitations?
+(1) You cannot create a VPC peering connection between VPCs that have matching or overlapping CIDR blocks;
+    (2) You cannot create a VPC peering connection between VPCs in different regions; 
+    (3) VPC peering does not support transitive peering relationships
+Exam Tips
+
+
+
+

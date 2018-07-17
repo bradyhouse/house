@@ -155,7 +155,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-consolidated-billing-101.md#exam-tips---consolidated-billing-101-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-consolidated-billing-101.md[Additional Exam Tips - Consolidated Billing 101]
 ||link:exam-tips/exam-tips-consolidated-billing-lab.md[Additional Exam Tips - Consolidated Billing Lab]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-cross-account-access-lab.md#exam-tips---cross-account-access-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-cross-account-access-lab.md[Additional Exam Tips - Cross Account Access Lab]
-|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-resource-groups.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-resource-groups.md[Additional Exam Tips - Resource Groups and Tags]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-vpc-peering.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-vpc-peering.md[Additional Exam Tips - VPC Peering]
 |=========================================================
 
 anchor:flash-card-strategy[]

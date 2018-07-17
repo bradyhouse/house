@@ -1,9 +1,9 @@
 
-Resource Groups and Tags
+Exam Tips - Resource Groups and Tags
 ======
 
-8 Minute Lecture exploring Resource Groups and Tags. For this one, I just watched and captured the pertinent review
-questions.
+8 Minute Lecture exploring what you need to know about Resource Groups and Tags for the exam. For this one, I just 
+watched and captured the pertinent review questions.
 
   
 ## Video Link
@@ -65,4 +65,4 @@ To download the review flash card deck for this lecture, right click the followi
 
 ## 
 
-**[Previous Lab/Lecture](exam-tips-cross-account-access-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-resource-groups.md)**
+**[Previous Lab/Lecture](exam-tips-cross-account-access-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-vpc-peering.md)**
