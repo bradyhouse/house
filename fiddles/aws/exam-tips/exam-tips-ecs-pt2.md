@@ -100,4 +100,4 @@ To download the review flash card deck for this lecture, right click the followi
 
 ## 
 
-**[Previous Lab/Lecture](exam-tips-ecs-pt1.md) | [AWS (root)](../readme.adoc) 
+**[Previous Lab/Lecture](exam-tips-ecs-pt1.md) | [AWS (root)](../readme.adoc)**
