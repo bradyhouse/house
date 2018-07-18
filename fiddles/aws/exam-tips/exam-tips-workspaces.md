@@ -65,4 +65,4 @@ To download the review flash card deck for this lecture, right click the followi
 
 ## 
 
-**[Previous Lab/Lecture](exam-tips-active-directory.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-workspaces.md)**
+**[Previous Lab/Lecture](exam-tips-active-directory.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](exam-tips-ecs-pt1.md)**
