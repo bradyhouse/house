@@ -160,6 +160,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-security-token-service.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-security-token-service.md[Additional Exam Tips - Security Token Service]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-active-directory.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-active-directory.md[Additional Exam Tips - Active Directory Integration]
 |link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-workspaces.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-workspaces.md[Additional Exam Tips - Workspaces]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-ecs-pt1.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-ecs-pt1.md[Additional Exam Tips - ECS (Part 1)]
 |=========================================================
 
 

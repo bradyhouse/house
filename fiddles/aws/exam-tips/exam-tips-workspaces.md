@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/VHKCcse.png" height="100" title="AWS Workspaces Service" />
 
 
-Exam Tips - Active Directory Integration
+Exam Tips - Workspaces
 ======
 
 3 Minute Lecture detailing what you need to know about the Amazon Workspaces service for the exam. For this one, I just 

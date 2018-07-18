@@ -1,0 +1,51 @@
+What is Docker?
+Open source platform for quickly building, testing and deploying applications.
+Exam Tips
+How does Docker work?
+Packages software into standardized units called containers.
+Exam Tips
+What is a Linux container?
+Containers allow you to easily package an application's code, configurations, and dependency into easy to
+    use building blocks that deliver environmental consistency, developer productivity, and version control.
+Exam Tips
+How does containerisation differ from virtualisation?
+No Guest operating system
+Exam Tips
+What are benefits of containerisation? (6)
+(1) Escape from dependency hell; (2) Consistent progression from DEV / TEST / QA / PROD; (3) Isolation - performance
+    or stability issues with App A in Container A, wont impact App B in Container B; (4) Better resource management
+    (5) Extreme code portability; (6) micro-services
+Exam Tips
+What is a docker image?
+Similar to an AMI or ISO but only contains the files necessary to boot the application
+Exam Tips
+What is a docker container?
+Contains everything necessary for an application to run. It created from a docker image. It can be run, moved, stop
+    and deleted. It is an isolated and secure application platform.
+Exam Tips
+What is a union file system?
+Allow files and directories of separate file systems known as branches to be transparently overlaid forming a 
+    single coherent file system.
+Exam Tips
+What is a docker layer?
+Union file system. Each docker image consists of a set of layers. Docker makes use of the Union System to make these
+    layers into a single image.
+Exam Tips
+What is a `DockerFile`?
+Script file describing how assemble docker layers into an image.
+Exam Tips
+What is the Docker Daemon (or engine)?
+It runs on Linux in order to create the operating environment for your distributed application and the in host 
+    daemon communicates with docker client to execute commands to build, ship and run containers
+Exam Tips
+What is the Docker Client?
+This is basically the interface between you and the Docker Engine. It allows the creation, manipulation and 
+    deletion of docker containers as well as control of the Docker Engine.
+Exam Tips
+What is the Docker Registries / Docker Hub?
+Registry for storing Docker Images.  Public or Private stores from which you upload or download your images.
+Exam Tips
+So what is ECS?
+Amazon's managed version of Docker. It is a container management service that makes it easy run, stop and 
+    manage Docker containers on a cluster of EC2 instances.
+Exam Tips
