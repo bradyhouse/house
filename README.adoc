@@ -26,7 +26,7 @@ and frameworks:
 |link:fiddles/angular[Angular]
 |link:fiddles/angular2-cli[Angular2 Cli]
 |link:fiddles/ant[Ant]
-|link:fiddles/aws[AWS]
+|link:fiddles/aws/readme.adoc[AWS]
 |link:fiddles/bash[Bash]
 |link:fiddles/c[C]
 |link:fiddles/chrome[Chrome]
