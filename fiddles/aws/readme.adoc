@@ -214,8 +214,8 @@ anchor:-one-deck-to-rule-them-all[]
 
 === One Deck to Rule Them All
 
-In case you find downloading, importing and exporting each of the flashcard deck a bit tedious, here is the complete
-collection combined into one massive, categorized deck of 400+ flash cards.  This is the deck I used going into
+In case you find downloading, importing and exporting each of the flashcard decks (above) a bit tedious, here is the
+complete collection combined into one massive, categorized deck of 400+ flash cards.  This is the deck I used going into
 the Exam.  Additionally, it includes some of the more extraneous questions included in the Acloud Guru `final mini exam`.
 
 [cols="m", width="100%"]
