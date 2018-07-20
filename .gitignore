@@ -34,7 +34,6 @@ typings
 .vscode
 *.iml
 *.log
-*.zip
 *.dmg
 
 /tools/**/*.js
