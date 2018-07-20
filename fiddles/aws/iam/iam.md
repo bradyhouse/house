@@ -82,13 +82,10 @@ Identity Access Management (IAM) 101
 
 ### IAM Flash Cards
 
-To download the review flash card deck for this lecture, right click the following link and select
-`Save Link As`. 
-
 <table>
 <tr>
 <td>
-<b><a href="iam.txt?raw=true" download="iam.txt">IAM 101 Flash Card Deck</a></b>
+<b><a href="iam-flashcards.zip?raw=true" download="iam-flashcards.zip">IAM 101 Flash Card Deck</a></b>
 </td>
 </tr>
 </table>
