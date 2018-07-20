@@ -85,7 +85,7 @@ Identity Access Management (IAM) 101
 <table>
 <tr>
 <td>
-<b><a href="iam-flashcards.zip?raw=true" download="iam-flashcards.zip">IAM 101 Flash Card Deck</a></b>
+<b><a href="iam-flashcards.zip" download="iam-flashcards.zip">IAM 101 Flash Card Deck</a></b>
 </td>
 </tr>
 </table>
