@@ -116,7 +116,7 @@ Ummm, read the freaking doc => [AWS Well Architected Framework (68 Pages)](https
   </tr>
   </table>
   
-**NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/tree/master/fiddles/aws#flash-card-strategy).**  
+**NOTE - For details on how to use this file with the `iFlash Card App`, see the [Flash Card Strategy](https://github.com/bradyhouse/house/blob/master/fiddles/aws/readme.adoc#flash-card-strategy).**  
 
 
 ## 
