@@ -1,3 +1,8 @@
+
+*** These modified files were found in JOE when it aborted on Wed Jul 18 16:48:14 2018
+*** JOE was aborted by UNIX signal 1
+
+*** File 'content-types.js'
 module.exports = {
   'csv'     : 'text/csv',
   'js'      : 'text/javascript',
@@ -38,6 +43,27 @@ module.exports = {
   'rtf'     : 'application/rtf',
   'm4v'     : 'video/x-m4v',
   'tiff'    : 'image/tiff',
-  'exr'     : 'application/octet-stream',
-  'cards'   : 'application/octet-stream'	
-}
+  'exr'     : 'application/octet-stream'
+  'cards'   
+}	
+*** File '(Unnamed)'
+x
+
+*** File '(Unnamed)'
+god-i-miss-u
+god-i-miss-u
+just-wish
+weird-recurring-dream
+content
+content
+friday-04-20
+friday-04-20
+.zshrc
+run.sh
+content-types.js
+
+*** File '* Startup Log *'
+Processing '/usr/local/Cellar/joe/4.5/etc/joe/joerc'...
+Processing '/usr/local/Cellar/joe/4.5/etc/joe/ftyperc'...
+Finished processing /usr/local/Cellar/joe/4.5/etc/joe/ftyperc
+Finished processing /usr/local/Cellar/joe/4.5/etc/joe/joerc
