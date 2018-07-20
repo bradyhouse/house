@@ -80,7 +80,7 @@ Identity Access Management (IAM) 101
   31. No access to any AWS services
 
 
-### IAM Flash Cards
+### Flash Cards
 
 <table>
 <tr>
