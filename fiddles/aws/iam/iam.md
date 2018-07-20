@@ -88,7 +88,7 @@ To download the review flash card deck for this lecture, right click the followi
 <table>
 <tr>
 <td>
-<b><a href="iam.txt" download="iam.txt">IAM 101 Flash Card Deck</a></b>
+<b><a href="iam.txt?raw=true" download="iam.txt">IAM 101 Flash Card Deck</a></b>
 </td>
 </tr>
 </table>
