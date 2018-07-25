@@ -144,7 +144,7 @@ What do you need to know for the Exam?
 <table>
 <tr>
 <td>
-<b><a href="https://github.com/bradyhouse/house/blob/master/fiddles/aws/iam/ec2-elastic-load-balancer-theory-flashcards.zip?raw=true" download="ec2-elastic-load-balancer-theory-flashcards.zip">EC2 Elastic-load-balancer-theory</a></b>
+<b><a href="https://github.com/bradyhouse/house/blob/master/fiddles/aws/ec2/ec2-elastic-load-balancer-theory-flashcards.zip?raw=true" download="ec2-elastic-load-balancer-theory-flashcards.zip">EC2 Elastic-load-balancer-theory</a></b>
 </td>
 </tr>
 </table>
