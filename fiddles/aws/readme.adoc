@@ -223,6 +223,6 @@ well as the `Exam Simulator`.
 
 [cols="m", width="100%"]
 |=========================================================
-|**link:++https://github.com/bradyhouse/house/blob/master/fiddles/aws/flashcards/AWS%20Solutions%20Architect%20Exam%20(July%202018).zip?raw=true++[Complete Flashcard Deck]**
+|**link:++flashcards/AWS%20Solutions%20Architect%20Exam%20(July%202018).zip?raw=true++[Complete Flashcard Deck]**
 |=========================================================
 
