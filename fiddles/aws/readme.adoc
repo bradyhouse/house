@@ -218,7 +218,8 @@ anchor:one-deck-to-rule-them-all[]
 
 In case you find downloading, importing and exporting each of the flashcard decks (above) a bit tedious, here is the
 complete collection combined into one massive, categorized deck of 650+ flash cards.  This is the deck I used going into
-the Exam.  Additionally, it includes some of the more extraneous questions included in the Acloud Guru `Mini Exam`.
+the Exam.  Additionally, it includes some of the more extraneous questions included in the Acloud Guru `Mini Exam` as
+well as the `Exam Simulator`.
 
 [cols="m", width="100%"]
 |=========================================================
