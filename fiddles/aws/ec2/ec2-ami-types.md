@@ -46,5 +46,5 @@ Amazon S3. For this reason, provisioning can often take longer than it would wit
 
 ## 
 
-**[Previous Lab/Lecture](ec2-ami-types.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-elastic-load-balancer-lab.md)** 
+**[Previous Lab/Lecture](ec2-encrypted-root-lab.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-elastic-load-balancer-theory.md)** 
  

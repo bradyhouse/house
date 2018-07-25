@@ -179,4 +179,4 @@ What did we learn?
 
 ##
 
-**[Previous Lab/Lecture](ec2-ami-types.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-cloudwatch-lab.md)** 
+**[Previous Lab/Lecture](ec2-elastic-load-balancer-theory.md) | [AWS (Root)](../readme.adoc) | [Next Lab/Lecture](ec2-cloudwatch-lab.md)** 

@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/so3NXVC.png)
+ ![Imgur](https://i.imgur.com/so3NXVC.png)
 
 Snowball
 ======

@@ -238,10 +238,10 @@ What did we learn?
 
 ### Answers
 
-1.  Network address translation (NAT) instance. _You can use a network address translation (NAT) instance in a 
+1.  Network address translation (NAT) instance. `You can use a network address translation (NAT) instance in a 
     public subnet in your VPC to enable instances in the private subnet to initiate outbound IPv4 traffic to the 
     Internet or other AWS services, but prevent the instances from receiving inbound traffic initiated by someone 
-    on the Internet._
+    on the Internet.`
 2.  When the source or destination is not itself.
 3.  Single point of failure -- can get really complicated.
 4.  Launch EC2 Instance; Goto Community AMIs; Filter for "nat" 

@@ -47,12 +47,16 @@ What did we learn?
 
 1.  What is Elastic Transcoder?
 2.  What is the Elastic Transcoder pricing model based on?
+3.  What is benefit of using Elastic Transcoder?
 
 
 ### Answers
 
-1.  Media Transcoder in the cloud?
-2.  Minutes transcoded
+1.  Media Transcoder in the cloud. Convert media files from their original source format in to different formats that 
+    will play on smartphones, tablets, PC's etc
+2.  Minutes and resolution transcoded
+3.  Provides transcoding presets for popular output formats, which means that you don't need to guess about which 
+    settings work best on particular devices
  
 
 ## 

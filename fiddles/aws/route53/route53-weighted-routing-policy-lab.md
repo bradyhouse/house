@@ -25,12 +25,15 @@ set 10% of your traffic to go to US-EAST-1 and 90% to go to US-WEST-1.
 
 ### Review Questions
 
-1.  What is an example scenario where you might employ a Weighted Routing Policy?
+1.  What is Weighted Routing Policy? How does it work?
+2.  What is an example scenario where you might employ a Weighted Routing Policy?
 
 
 ### Answers
 
-1.  A/B Testing
+1.  Weighted Routing Policies let you split your traffic based on different weight assignments.  For example, you can
+    set 10% of your traffic to go to US-EAST-1 and 90% to go to US-WEST-1.
+2.  A/B Testing
 
 
 ## 

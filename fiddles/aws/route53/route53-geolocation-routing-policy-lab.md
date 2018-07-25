@@ -34,6 +34,7 @@ in US-EAST-1.
 
 What did we learn?
 
+    N/A
 
 ### Review Questions
 

@@ -131,7 +131,7 @@ What did we learn?
 
 1.  `Movement or activity of an organism in response to a stimulus such as light 
     (The American Heritage® Dictionary of the English Language, 4th Edition)`
-2.  Continous data generated simultaneously by thousands of data sources
+2.  Continuous data generated simultaneously by thousands of data sources
 3.  A platform on AWS to send streaming data too
 4.  Streams, Firehose, Analytics
 5.  Shards

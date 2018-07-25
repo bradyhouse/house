@@ -52,6 +52,7 @@ What did we learn?
 14. Can you block a specific IP using a security group rule?
 15. Can you have a subnet not associated with any network ACL? Why?
 
+
 ### Answers
 
 1.  Instance level
@@ -67,7 +68,8 @@ What did we learn?
 11. An ephemeral port is a short-lived transport protocol port for Internet Protocol (IP) communications
 12. 1024-65535 
 13. Add an inbound rule, #99, blocking HTTP requests from 136.30.8.132/32.
-14. No. Subnets are automatically associated with the default network ACL
+14. No. Use a NACL.
+15. No. Subnets are automatically associated with the default network ACL
 
  
 ## 

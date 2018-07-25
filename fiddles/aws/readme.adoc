@@ -55,6 +55,7 @@ For more information see the xref:flash-card-strategy[Flash Card Strategy Sectio
 ||link:ec2/ec2-ebs-volumes-lab.md[EC2 EBS Volumes Lab]
 ||link:ec2/ec2-encrypted-root-lab.md[EC2 Encrypted Root Volume Lab]
 ||link:ec2/ec2-ami-types.md[EC2 AMI Types: EBS vs Instance Store]
+||link:ec2/ec2-elastic-load-balancer-theory.md[EC2 Elastic Load Balancer Theory]
 ||link:ec2/ec2-elastic-load-balancer-lab.md[EC2 Elastic Load Balancer Lab]
 ||link:ec2/ec2-cloudwatch-lab.md[EC2 Cloudwatch Lab]
 ||link:ec2/ec2-commandline-lab.md[AWS Commandline Lab]

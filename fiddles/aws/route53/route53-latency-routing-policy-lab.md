@@ -25,10 +25,31 @@ This type of routing is tied to latency.  Specifically, it allows you to route t
 latency for your end user. Stated another way, the region that will return the fastest response time is targeted by
 Route 53. 
 
-To use this type of routing you create a  latency resource record set for the Amazon EC2 (or ELB) 
+To use this type of routing you create a latency resource record set for the Amazon EC2 (or ELB) 
 resource in each region that hosts your website. When Route 53 receives a request for your site, it selects the
 latency resource record set for the region that gives the user the lowest latency. It then returns the associated
 EC2 (or ELB) resource.  
+
+
+## Exam Tips
+
+What did we learn?
+
+    N/A
+
+### Review Questions
+
+1. What is a `Latency Routing Policy`? How does it work?
+2. How do you setup a `Latency Routing Policy` between 2 EC2 (or ELB) resources residing in different regions?
+
+
+### Answers
+
+1.  This type of routing is tied to latency.  Specifically, it allows you to route traffic based on the lowest network
+    latency for your end user. Stated another way, the region that will return the fastest response time is targeted by
+    Route 53. 
+2.  No, geolocation is not city specific. It can be specified by continent or country.
+
 
 
 ## 

@@ -182,6 +182,24 @@ In the above example, Route 53 sends the traffic to AP-SOUTHEAST-2 because it de
 73. Delete the two `Healh checks` added in Route 53
 
 
+## Exam Tips
+
+What did we learn?
+
+    N/A
+
+### Review Questions
+
+1. What is a `Failover Routing Policy`? How does it work?
+
+
+### Answers
+
+1.  Failover routing policies are used when you want to create an active/passive setup. For example, you may want your
+    primary site to be EU-WEST2 and your secondary DR Site in AP-SOUTHEAST-2.  Route 53 will monitor the health of your
+    primary site using a health check.
+
+
 ## 
 
 **[Previous Lab/Lecture](route53-latency-routing-policy-lab.md) | [AWS (root)](../readme.adoc) | [Next Lab/Lecture](route53-geolocation-routing-policy-lab.md)**
