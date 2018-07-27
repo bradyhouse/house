@@ -1861,3 +1861,14 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
 
   1.  Added [fiddles/bash/fiddle-0099-GlobalFiddleFunction](fiddles/bash/fiddle-0099-GlobalFiddleFunction)
+
+
+### 234_add_bash_setup ~ [Issue 234](https://github.com/bradyhouse/house/issues/234)
+
+* **fiddle.sh (Enhancement)**
+
+  1.  Added [scripts/bin/setup/mac/_bash.sh](scripts/bin/setup/mac/_bash.sh)
+  2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh) 
+  3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+  4.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh) 
+

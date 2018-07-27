@@ -18,6 +18,7 @@
 # 04/24/2017 - See CHANGELOG @ 201704170420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -29,6 +30,7 @@ voidEchoFiddleTypes() {
         'setup')
            echo -e "\t\"abd\"\t\tinstall android debug bridge\thttps://developer.android.com/studio/command-line/adb";
            echo -e "\t\"android\"\tinstall android-sdk\t\thttps://developer.android.com";
+           echo -e "\t\"bash\"\\t\tinstall fiddle command line";
            echo -e "\t\"brew\"\t\tinstall homebrew\t\thttp://brew.sh/";
            echo -e "\t\"gh\"\t\tinstall github terminal\t\thttps://www.npmjs.com/package/gh";
            echo -e "\t\"gradle\"\tinstall gradle\t\t\thttps://gradle.org/";
