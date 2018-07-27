@@ -15,6 +15,7 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 04/08/2018 - See CHANGELOG @ 222_fiddle.sh_setup_mac_add_gradle
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -25,6 +26,10 @@ function setup() {
     case ${_os} in
         'mac')
             case ${_app} in
+              'bash')
+                source bin/setup/mac/_bash.sh;
+                install || exit $?;
+                ;;
               'abd')
                 source bin/setup/mac/_abd.sh;
                 install || exit $?;
@@ -98,6 +103,7 @@ function setup() {
                 install || exit $?;
                 ;;
               'all')
+                setup ${_os} "bash" || exit $?;
                 setup ${_os} "brew" || exit $?;
                 setup ${_os} "abd" || exit $?;
                 setup ${_os} "android" || exit $?;

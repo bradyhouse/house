@@ -19,7 +19,21 @@
 # 11/22/2017 - See CHANGELOG @ 201708290420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
 # ---------------------------------------------------------------------------------------------------|
+
+
+function fileContains() {
+  _file=$1;
+  _criteria=$2;
+  _test=$(cat ${_file} | grep -o ${_criteria} | wc -l;);
+  if (( ${_test} >= 1 ))
+  then
+    echo 0;
+  else
+    echo 1;
+  fi
+}
 
 function isOnline() {
   echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1;
