@@ -4,16 +4,15 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : MASTER ANGULAR2 CREATE FUNCTION_________________________________________|
-#  Entry Point             : ngCreate________________________________________________________________|
+#  Create date             : 08/01/2018______________________________________________________________|
+#  Description             : MASTER REACT CREATE FUNCTION____________________________________________|
+#  Entry Point             : reactCreate_____________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-angular2-cli.sh_______________________________________________|
+#  Initial Consumer        : ../fiddle-create.sh_____________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
-# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# Baseline Ver - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -30,8 +29,8 @@ function npmShrinkWrap() {
   npm shrinkwrap;
 }
 
-function ngCreate() {
-    groupLog "ngCreate";
+function reactCreate() {
+    groupLog "reactCreate";
     fiddle=$1;
     appName=$(subDelimStr ${fiddle} "-" "2";);
     bornOnDate=$2;
@@ -47,45 +46,43 @@ function ngCreate() {
             appName="fiddle";
         fi
 
-        ng new ${appName} --directory ${fiddle} || exit 2;
+        npx create-react-app ${appName} || exit 2;
+        mv ${appName} ${fiddle};
         cd ${fiddle};
 
         if [[ -e .gitignore ]]
         then
             rm -rf .gitignore;
         fi
-        cp -rf ../template/README.markdown README.md || exit 5;
+        rm -rf public/index.html || exit $?;
+        cp -rf ../template/index.html public/index.html || exit $?;
+        cp -rf ../template/README.md README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
-        createTypingsRcFile || exit 6;
-        rm -rf src/favicon.ico || exit 8;
-        cp -rf ../template/favicon.ico src/favicon.ico || exit 8;
-        rm -rf src/index.html || exit 9;
-        cp -rf ../template/index.html src/index.html || exit 9;
-        $(voidSubstr '{{FiddleName}}' ${fiddle} "src/index.html";) || exit 9;
-        # npm install || exit 7;
-        npmShrinkWrap || exit $?;
+        #createTypingsRcFile || exit 6;
+        #npm install || exit 7;
+        #npmShrinkWrap || exit $?;
 
     )
     # catch
     rc=$?; case ${rc} in
         0)  endLog "";
             ;;
-        1)  endLog "ngCreate: Failed while attempting to remove the existing \"${fiddle}\" directory.";
+        1)  endLog "reactCreate: Failed while attempting to remove the existing \"${fiddle}\" directory.";
             ;;
-        2)  endLog "ngCreate: Failed while attempting to \"ng new ${fiddle}\".";
+        2)  endLog "reactCreate: Failed while attempting to \"ng new ${fiddle}\".";
             ;;
-        5)  endLog "ngCreate: Failed while attempting to update the README.md file.";
+        5)  endLog "reactCreate: Failed while attempting to update the README.md file.";
             ;;
-        6)  endLog "ngCreate: Call to createTypingsRcFile failed.";
+        6)  endLog "reactCreate: Call to createTypingsRcFile failed.";
             ;;
-        7)  endLog "ngCreate: call to npm install failed.";
+        7)  endLog "reactCreate: call to npm install failed.";
             ;;
-        8)  endLog "ngCreate: Failed while attempting to update favicon.ico file.";
+        8)  endLog "reactCreate: Failed while attempting to update favicon.ico file.";
             ;;
-        9)  endLog "ngCreate: Failed while attempting to update index.html file.";
+        9)  endLog "reactCreate: Failed while attempting to update index.html file.";
             ;;
-        *)  endLog "ngCreate: F U B A R ~ Something went wrong."
+        *)  endLog "reactCreate: F U B A R ~ Something went wrong."
             ;;
     esac
     exit ${rc};
@@ -97,7 +94,7 @@ function catch() {
             ;;
         1)  endLog "_install.sh: ngInstall() failed";
             ;;
-        2)  endLog "_create.sh: ngCreate() failed";
+        2)  endLog "_create.sh: reactCreate() failed";
             ;;
         3)  endLog "nvmInstall: call to nvm install ${NVM_VERSION} failed.";
             ;;
@@ -127,11 +124,10 @@ function create() {
   # try
   (
       nvmInstall || exit $?;
-      ngInstall || exit $?;
-      shrinkWrapInstall || exit $?;
+      #shrinkWrapInstall || exit $?;
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
-      cd ../fiddles/angular2-cli;
-      ngCreate $1 ${bornOnDate} || exit 2;
+      cd ../fiddles/react;
+      reactCreate $1 ${bornOnDate} || exit 2;
   )
 
   # catch
