@@ -1872,3 +1872,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
   4.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh) 
 
+
+### 238_bash_fiddle_100 ~ [Issue 238](https://github.com/bradyhouse/house/issues/234)
+
+* **Bash**
+
+  1.  Added [fiddles/bash/fiddle-0100-ReactCreateApp](fiddles/bash/fiddle-0100-ReactCreateApp)
