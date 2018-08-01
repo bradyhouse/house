@@ -5,60 +5,55 @@ source scripts/bin/_env.sh;
 source scripts/bin/react/_create.sh;
 source scripts/bin/react/_install.sh;
 source scripts/bin/react/_start.sh;
-source scripts/bin/react/_fork.sh;
 
-function testUtilCapitalize() {
-  actual=$(capitalize "template";);
-  expected="Template";
-  echo ${actual};
-  if [[ ${actual} -ne ${expected} ]]
-  then
-    exit 5;
-  fi
-}
 
-function testIsGccInstalled() {
-  actual=$(isGccInstalled;);
-  expected=0;
-  if [[ ${actual} -ne ${expected} ]]
-  then
-    exit 1;
-  fi
-}
-
-function testGccCreate() {
+function testReactCreate() {
   bornOnDate=$(date +"%m-%d-%y";)
   name="fiddle-0000-Template";
-  suffix=$(parseName ${name};);
-  projectName=$(toLowerCase ${suffix};);
-  cd "fiddles/c";
-  gccCreate ${name} ${bornOnDate} ${projectName} || exit 2;
+  cd "scripts";
+  ./fiddle.sh create react ${name} || exit 1;
+  cd ..;
 }
 
-function testGccStart() {
-  name="fiddle-0000-Template";
-  cd "fiddles/c/${name}";
-  gccStart || exit 3;
+function testReactStart() {
+  name="0000";
+    cd "scripts";
+  ./fiddle.sh start react ${name} || exit 2;
+  cd ..;
 }
 
-function testGccFork() {
-  origFiddle="fiddle-0000-Template";
-  newFiddle="fiddle-0001-Fork";
-  cd scripts;
-  if [[ -d "../fiddles/c/${newFiddle}" ]]; then rm -rf "../fiddles/c/${newFiddle}" || exit 4; fi
-  cp -rf "../fiddles/c/${origFiddle}" "../fiddles/c/${newFiddle}" || exit 4;
-  cd "../fiddles/c";
-  gccFork ${origFiddle} ${newFiddle} || exit 4;
+function testReactDelete() {
+  name="0000";
+    cd "scripts";
+  ./fiddle.sh start react ${name} || exit 3;
+  cd ..;
 }
+
+function testReactFork() {
+  name="0000";
+  newName="fiddle-0001-Fork";
+  cd "scripts";
+  ./fiddle.sh fork react ${name} ${newName}  || exit 4;
+  cd ..;
+}
+
+function testReactUpdate() {
+  name="0000";
+    cd "scripts";
+  ./fiddle.sh update react ${name} || exit 5;
+  cd ..;
+}
+
+
 
 function tearDown() {
-  if [[ -d "./fiddles/c/fiddle-0000-Template" ]]
+  if [[ -d "./fiddles/react/fiddle-0000-Template" ]]
   then
-    rm -rf "./fiddles/c/fiddle-0000-Template";
+    rm -rf "./fiddles/react/fiddle-0000-Template";
   fi
-  if [[ -d "./fiddles/c/fiddle-0001-Fork" ]]
+  if [[ -d "./fiddles/react/fiddle-0001-Fork" ]]
   then
-    rm -rf "./fiddles/c/fiddle-0001-Fork";
+    rm -rf "./fiddles/react/fiddle-0001-Fork";
   fi
 }
 
@@ -66,15 +61,15 @@ function catch() {
     case $1 in
         0)  endLog $(echo "$0" | sed 's/\.\///g');
             ;;
-        1)  endLog "test 1 failed - testIsGccInstalled";
+        1)  endLog "test 1 failed - testReactCreate";
             ;;
-        2)  endLog "test 2 failed - testGccCreate";
+        2)  endLog "test 2 failed - testReactStart";
             ;;
-        3)  endLog "test 3 failed - testGccStart";
+        3)  endLog "test 3 failed - testReactDelete";
             ;;
-        4)  endLog "test 4 failed - testGccFork";
+        4)  endLog "test 4 failed - testReactFork";
             ;;
-        5)  endLog "test 5 failed - testUtilCapitalize";
+        5)  endLog "test 5 failed - testReactUpdate";
             ;;
         *)  echo "fubar! Something went wrong."
             ;;
@@ -85,19 +80,16 @@ function catch() {
 (
     startingPoint=$(pwd);
     startLog $(echo "$0" | sed 's/\.\///g');
-    groupLog "testUtilCapitalize";
-    testUtilCapitalize || exit $?;
-    groupLog "testIsGccInstalled";
-    testIsGccInstalled || exit $?;
-    groupLog "testGccCreate";
-    testGccCreate || exit $?;
-    cd "${startingPoint}";
-    groupLog "testGccStart";
-    testGccStart || exit $?;
-    cd "${startingPoint}";
-    groupLog "testGccFork";
-    testGccFork || exit $?;
-    cd "${startingPoint}";
+    groupLog "testReactCreate";
+    testReactCreate || exit $?;
+    #groupLog "testReactStart";
+    #testReactStart || exit $?;
+    #groupLog "testReactDelete";
+    #testReactDelete || exit $?;
+    #groupLog "testReactFork";
+    #testReactFork || exit $?;
+    #groupLog "testReactUpdate";
+    #testReactUpdate || exit $?;
     groupLog "tearDown";
     tearDown;
 )

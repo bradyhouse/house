@@ -56,6 +56,8 @@ function reactCreate() {
         fi
         rm -rf public/index.html || exit $?;
         cp -rf ../template/index.html public/index.html || exit $?;
+        $(voidSubstr '{{FiddleName}}' ${fiddle} "public/index.html";) || exit 5;
+        $(voidSubstr '{{Author}}' ${AUTHOR} "public/index.html";) || exit 5;
         cp -rf ../template/README.md README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
