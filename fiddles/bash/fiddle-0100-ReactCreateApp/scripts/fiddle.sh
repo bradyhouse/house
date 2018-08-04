@@ -42,6 +42,7 @@ function fiddleIndexAll() {
     fiddleIndex 'extjs6' || exit $?;
     fiddleIndex 'jquery' || exit $?;
     fiddleIndex 'rxjs' || exit $?;
+    fiddleIndex 'react' || exit $?;
     fiddleIndex 'svg' || exit $?;
     fiddleIndex 'three' || exit $?;
     fiddleIndex 'tween' || exit $?;

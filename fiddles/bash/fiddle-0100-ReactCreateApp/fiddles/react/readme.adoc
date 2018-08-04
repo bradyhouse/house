@@ -43,6 +43,7 @@ _Why React?_ I have no idea, and here we are.  Two years ago, this graph looked 
 === Reference
 
 * link:https://github.com/facebook/create-react-app[Create React App]
+* link:https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation[React Dev Tools]
 
 === Special Topics
 

@@ -35,6 +35,7 @@
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -143,8 +144,31 @@ forkedOnDate=$(date +"%m-%d-%y";)
             source bin/nativescript/_fork.sh;
             nativeScriptFork "${fiddleName}" "${targetFiddle}" || exit 98;
             ;;
-        'angular2-cli' | 'electron' | 'ember' | 'extjs6' | 'jquery' | 'meteor')
-            updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
+        'react')
+            updateFile "../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
+            if [[ -d  "../fiddles/${fiddleType}/${targetFiddle}/node_modules" ]]
+            then
+                rm -rf "../fiddles/${fiddleType}/${targetFiddle}/node_modules" || exit $?;
+            fi
+
+            if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/npm-shrinkwrap.json" ]]
+            then
+                rm -rf "../fiddles/${fiddleType}/${targetFiddle}/npm-shrinkwrap.json";
+            fi
+
+            if [[ -e "../fiddles/${fiddleType}/${targetFiddle}/yarn.lock" ]]
+            then
+                rm -rf "../fiddles/${fiddleType}/${targetFiddle}/yarn.lock";
+            fi
+
+            ;;
+         'angular2-cli' | 'electron' | 'ember' | 'extjs6' | 'jquery' | 'meteor')
+            updateFile "../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo "### Forked From" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93

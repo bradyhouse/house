@@ -62,8 +62,7 @@ function reactCreate() {
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
         #createTypingsRcFile || exit 6;
-        #npm install || exit 7;
-        #npmShrinkWrap || exit $?;
+        npmShrinkWrap || exit $?;
 
     )
     # catch

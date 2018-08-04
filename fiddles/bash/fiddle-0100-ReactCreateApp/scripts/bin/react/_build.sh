@@ -4,15 +4,15 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : MASTER ANGULAR2-CLI BUILD FUNCTION______________________________________|
+#  Create date             : 08/01/2018______________________________________________________________|
+#  Description             : MASTER REACT BUILD FUNCTION_____________________________________________|
 #  Entry Point             : build___________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
 #  Initial Consumer        : ../fiddle-build.sh______________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
+# Baseline Ver - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -27,13 +27,6 @@ function nvmInstall() {
   fi
 }
 
-function npmBuildProd() {
-  groupLog "npmBuildProd";
-  pwd;
-  ng build;
-
-}
-
 function catch() {
     case $1 in
         0)  endLog "Build complete.";
@@ -44,13 +37,13 @@ function catch() {
     exit $1
 }
 
-function seederBuild() {
-    groupLog "seederBuild";
+function reactBuild() {
+    groupLog "reactBuild";
     fiddle=$1;
     # try
     (
         cd ${fiddle};
-        npmBuildProd || exit 1;
+        npm run build || exit 1;
         cd "../dist";
         if [[ -d "${fiddle}" ]]
         then
@@ -58,7 +51,7 @@ function seederBuild() {
         fi
         mkdir "${fiddle}";
         cd "../${fiddle}";
-        cp -rf dist/* "../dist/${fiddle}";
+        cp -rf build/* "../dist/${fiddle}";
     )
     # catch
     rc=$?; case ${rc} in
@@ -91,7 +84,7 @@ function build() {
 
   # try
   (
-      cd ../fiddles/angular2-cli;
+      cd ../fiddles/react;
 
       if [[ ! -d "dist" ]]
       then
@@ -100,7 +93,7 @@ function build() {
          if [[ -d "dist/$1" ]]; then rm -R "dist/$1"; fi
       fi
       # nvmInstall || exit 1;
-      seederBuild $1 || exit 2;
+      reactBuild $1 || exit 2;
   )
 
   # catch

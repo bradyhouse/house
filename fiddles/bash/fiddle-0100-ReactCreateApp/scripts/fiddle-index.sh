@@ -24,6 +24,7 @@
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -57,7 +58,7 @@ bornOnDate=$(date +"%m-%d-%y";)
 fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
 
 case ${type} in
-  'angular2-seeder'|'angular2-cli'|'aurelia')
+  'react'|'angular2-cli'|'aurelia')
     fiddleDir="${fiddleDir}/dist";
     indexFile=$(echo "${fiddleDir}/index.html";)
     ;;
@@ -72,13 +73,13 @@ esac
     if [[ -d "${fiddleDir}" ]]
     then
       case ${type} in
-          'angular'|'angular2-cli'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
+          'react'|'angular'|'angular2-cli'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
               case ${type} in
                   'php') fiddleName=$(echo "$fiddleNameStub.php";)
                       ;;
                   'python') fiddleName=$(echo "fiddle.py";)
                       ;;
-                  'angular2-cli'|'angular2-seeder'|'angular2')
+                  'angular2-cli')
                       fiddleName="#";
                       ;;
                   *) fiddleName=$(echo "${fiddleNameStub}.html";)

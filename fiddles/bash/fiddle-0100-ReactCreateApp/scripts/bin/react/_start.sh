@@ -4,16 +4,15 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 05/02/2016______________________________________________________________|
-#  Description             : MASTER ANGULAR2 STARTUP FUNCTION________________________________________|
-#  Entry Point             : ngStart_________________________________________________________________|
+#  Create date             : 08/02/2018______________________________________________________________|
+#  Description             : MASTER REACT STARTUP FUNCTION___________________________________________|
+#  Entry Point             : reactStart______________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-angular2-cli.sh_______________________________________________|
+#  Initial Consumer        : ../fiddle-start.sh______________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
-# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# Baseline Ver - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -29,13 +28,18 @@ function nvmInstall() {
 }
 
 
+
+
 function npmInstall() {
   groupLog "npmInstall";
-  npm install;
+  if [[ ! -d node_modules ]]
+  then
+    npm install;
+  fi
 }
 
-function ngStart() {
-    groupLog "ngStart";
+function reactStart() {
+    groupLog "reactStart";
     _port=1841
     if [[ $? -eq 2 ]]
     then
@@ -43,7 +47,6 @@ function ngStart() {
     fi
     nvmInstall || exit $?;
     npmInstall || exit $?;
-
-    ng serve --port ${_port};
+    npm start || exit $?;
     exit 0;
 }
