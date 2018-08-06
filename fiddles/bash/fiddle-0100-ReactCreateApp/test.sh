@@ -259,10 +259,10 @@ function catch() {
     clear;
     menu || exit $?;
     runTest || exit $?;
-    #if [[ ${__TEST_NUM__} -ne "13" ]]
-    #then
-    #    ./test.sh;
-    #fi
+    if [[ ${__TEST_NUM__} -ne "15" ]]
+    then
+       ./test.sh;
+    fi
 )
 rc=$?; catch ${rc};
 # finally
