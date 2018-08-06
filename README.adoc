@@ -46,6 +46,7 @@ and frameworks:
 |link:fiddles/node[Node]
 |link:fiddles/php[PHP]
 |link:fiddles/python[Python]
+|link:fiddles/react[React]
 |link:fiddles/rxjs[RxJS]
 |link:fiddles/svg[SVG]
 |link:fiddles/three[Three.js]

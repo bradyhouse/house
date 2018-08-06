@@ -13,6 +13,7 @@ i#!/usr/bin/env bash
 # 04/10/2016 - See CHANGELOG @ 201703100420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_env.sh;
@@ -138,6 +139,7 @@ function publishAll() {
     rmrf tween;
     rmrf svg;
     rmrf resources;
+    rmrf react;
     rmrf rxjs;
     rmrf index.html;
     rmrf .gitignore;
@@ -153,6 +155,7 @@ function publishAll() {
     cprf jquery;
     cprf tween;
     cprf svg;
+    cprfdist react;
     cprf rxjs;
     cprf resources;
     cprf index.html;
@@ -176,10 +179,7 @@ function publishAll() {
   cd ${_publishPath};
 
   case $1 in
-    'angular2-seeder')
-      publishDist $1;
-      ;;
-    'angular2-cli')
+    'angular2-cli' | 'react')
       publishDist $1;
       ;;
     'all')

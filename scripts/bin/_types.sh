@@ -19,6 +19,7 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
+# 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -66,18 +67,19 @@ voidEchoFiddleTypes() {
             echo -e "\t\"c\"\t\tC Fiddle"
             ;;
         'index')
-            echo -e "\t\"angular\"\t\tAngular Fiddle"
-            echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle"
+            echo -e "\t\"angular\"\t\tAngular Fiddles"
+            echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles"
             echo -e "\t\"dojo\"\t\t\tDojo Fiddle"
             echo -e "\t\"ember\"\t\t\tEmber Fiddle"
             echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
             echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
             echo -e "\t\"meteor\"\t\tMeteor Fiddle"
-            echo -e "\t\"rxjs\"\t\t\tRxJS Fiddle"
-            echo -e "\t\"jquery\"\t\tjQuery / Bootstrap Fiddle"
-            echo -e "\t\"three\"\t\t\three.js / WebGl Fiddle"
-            echo -e "\t\"tween\"\t\t\ttween.js Fiddle"
-            echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddle"
+            echo -e "\t\"react\"\t\tReact Fiddles";
+            echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles"
+            echo -e "\t\"jquery\"\t\tjQuery / ES6 Fiddles"
+            echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles"
+            echo -e "\t\"tween\"\t\t\ttween.js Fiddles"
+            echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddles"
             ;;
         'start')
             voidEchoFiddleTypes;
@@ -91,6 +93,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddles";
             echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddles";
             echo -e "\t\"meteor\"\t\tMeteor Fiddles";
+            echo -e "\t\"react\"\t\tReact Fiddles";
             echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles";
             echo -e "\t\"jquery\"\t\tjQuery / Bootstrap Fiddles";
             echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles";
@@ -105,6 +108,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"meteor\"\tMeteor Fiddles";
             echo -e "\t\"nativescript\"\tNativeScript Fiddles";
             echo -e "\t\"node\"\t\tNode Fiddles";
+            echo -e "\t\"react\"\t\tReact Fiddles";
             echo -e "\t\"all\"\t\tAll of the above";
             ;;
         *)
@@ -126,6 +130,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"nativescript\"\t\tNativeScript Fiddle"
             echo -e "\t\"php\"\t\t\tPHP Fiddle"
             echo -e "\t\"python\"\t\tPython Fiddle"
+            echo -e "\t\"react\"\t\tReact Fiddle";
             echo -e "\t\"rxjs\"\t\t\tRxJS Fiddle"
             echo -e "\t\"java\"\t\t\tJava Fiddle"
             echo -e "\t\"javac\"\t\t\tCommandline Java Fiddle"

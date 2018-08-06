@@ -1878,3 +1878,31 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
 
   1.  Added [fiddles/bash/fiddle-0100-ReactCreateApp](fiddles/bash/fiddle-0100-ReactCreateApp)
+
+
+### 6_fiddle.sh_create_react ~ [Issue 6](https://github.com/bradyhouse/house/issues/6)
+
+* **fiddle.sh (Enhancement)**
+
+  * Reflected changes:
+
+  1.  Added [fiddles/react](fiddles/react)
+  2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh) 
+  3.  Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+  4.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+  5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+  6.  Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+  7.  Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+  8.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+  9.  Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+  10. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+  11. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+  12. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+  13. Updated [README.adoc](README.adoc)  
+  14. Added [scripts/bin/react](scripts/bin/react)
+  15. Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+  16. Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)    
+  17. Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+  
+  
+  

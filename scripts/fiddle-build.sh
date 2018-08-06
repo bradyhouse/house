@@ -13,6 +13,7 @@
 # 03/10/2017 - Baseline Ver.
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -32,6 +33,10 @@ source bin/_env.sh;
     case ${_type} in
         'angular2-cli')
             source bin/angular2-cli/_build.sh;
+            build ${_fiddle} || exit 87;
+            ;;
+        'react')
+            source bin/react/_build.sh;
             build ${_fiddle} || exit 87;
             ;;
         *)  exit 86

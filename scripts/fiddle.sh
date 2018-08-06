@@ -20,6 +20,7 @@
 # 05/02/2015 - See CHANGELOG @ 201605020420
 # 02/11/2017 - See CHANGELOG @ 201702110420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 clear;
 source bin/_utils.sh;
@@ -42,6 +43,7 @@ function fiddleIndexAll() {
     fiddleIndex 'extjs6' || exit $?;
     fiddleIndex 'jquery' || exit $?;
     fiddleIndex 'rxjs' || exit $?;
+    fiddleIndex 'react' || exit $?;
     fiddleIndex 'svg' || exit $?;
     fiddleIndex 'three' || exit $?;
     fiddleIndex 'tween' || exit $?;
