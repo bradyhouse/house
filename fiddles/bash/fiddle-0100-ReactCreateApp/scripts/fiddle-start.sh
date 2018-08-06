@@ -65,7 +65,7 @@ then
   _fiddleRoot="${_fiddleSubDir}/${_fiddle}";
   _projectName=${_fiddle};
 fi
-_port=1841;
+_port=${WEB_SERVER_PORT};
 
 if [ "$#" -gt 2 ]; then _port=$3; fi
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'

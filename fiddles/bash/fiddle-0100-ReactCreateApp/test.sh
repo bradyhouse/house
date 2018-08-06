@@ -6,7 +6,7 @@ source scripts/bin/react/_create.sh;
 source scripts/bin/react/_install.sh;
 source scripts/bin/react/_start.sh;
 
-__TEST_NUM__=12;
+__TEST_NUM__=15;
 
 function contains() {
   local e
@@ -15,7 +15,7 @@ function contains() {
 }
 
 function menu() {
-    testArr=("1" "2" "3" "4", "5" "6" "7" "8", "9" "10" "11" "12")
+    testArr=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
     echo -e ""
     echo -e "--------------------------------------------------------"
     echo -e "TEST MENU"
@@ -25,17 +25,20 @@ function menu() {
     echo -e "2\t\"test fork\""
     echo -e "3\t\"test index\""
     echo -e "4\t\"test start\""
-    echo -e "5\t\"test delete\""
-    echo -e "6\t\"test refactor\""
-    echo -e "7\t\"test test\""
-    echo -e "8\t\"test update\""
-    echo -e "9\t\"test list\""
-    echo -e "10\t\"test build\""
-    echo -e "11\t\"test all\"\tEverything but start"
-    echo -e "12\tQuit"
+    echo -e "5\t\"test start all\""
+    echo -e "6\t\"test delete\""
+    echo -e "7\t\"test refactor\""
+    echo -e "8\t\"test test\""
+    echo -e "9\t\"test update\""
+    echo -e "10\t\"test update all\""
+    echo -e "11\t\"test list\""
+    echo -e "12\t\"test build\""
+    echo -e "13\t\"test all\""
+    echo -e "14\t\"teardown\""
+    echo -e "15\t Quit"
     echo -e ""
     echo -e "--------------------------------------------------------"
-    read -p "(1-11)? " _test
+    read -p "(1-15)? " _test
     if [[ $(contains "${_test}" "${testArr[@]}"; echo "$?";) == "0" ]]
     then
         __TEST_NUM__=${_test};
@@ -56,16 +59,22 @@ function testReactCreate() {
 
 function testReactStart() {
   name="0000";
-    cd "scripts";
-  ./fiddle.sh start react ${name} || exit 2;
+  cd "scripts";
+  nohup ./fiddle.sh start react ${name} &
+  sleep 20;
+  echo -e "GET http://localhost:3000 HTTP/1.0\n\n" | nc localhost 3000 > /dev/null 2>&1;
+  if [ $? -ne 0 ]; then killPort 3000 || exit $?; exit 2; fi
+  killPort 3000 || exit $?;
   cd ..;
 }
 
 function testReactStartAll() {
-    cd "scripts";
-  $(nohup ./fiddle.sh start react &) || exit 11;
-  sleep 2m;
-
+  cd "scripts";
+  nohup ./fiddle.sh start react &
+  sleep 20;
+  echo -e "GET http://localhost:1841 HTTP/1.0\n\n" | nc localhost ${WEB_SERVER_PORT} > /dev/null 2>&1;
+  if [ $? -ne 0 ]; then killPort 1841 || exit $?; exit 11; fi
+  killPort 1841 || exit $?;
   cd ..;
 }
 
@@ -90,6 +99,13 @@ function testReactUpdate() {
   ./fiddle.sh update react ${name} || exit 5;
   cd ..;
 }
+
+function testReactUpdateAll() {
+    cd "scripts";
+  ./fiddle.sh update react || exit 12;
+  cd ..;
+}
+
 
 function testReactRefactor() {
   name="0001";
@@ -131,14 +147,18 @@ function testAll() {
     tearDown || exit $?;
     groupLog "testReactCreate";
     testReactCreate || exit $?;
-    #groupLog "testReactStart";
-    #testReactStart || exit $?;
+    groupLog "testReactStart";
+    testReactStart || exit $?;
     groupLog "testReactBuild";
     testReactBuild || exit $?;
+    groupLog "testReactStartAll";
+    testReactStartAll || exit $?;
     groupLog "testReactFork";
     testReactFork || exit $?;
     groupLog "testReactUpdate";
     testReactUpdate || exit $?;
+    groupLog "testReactUpdateAll";
+    testReactUpdateAll || exit $?;
     groupLog "testReactRefactor";
     testReactRefactor || exit $?;
     groupLog "testReactList";
@@ -148,9 +168,9 @@ function testAll() {
 }
 
 function tearDown() {
-  if [[ -d "./fiddles/react/dist" ]]
+  if [[ -d "./fiddles/react/dist/fiddle-0000-Template" ]]
   then
-    rm -rf "./fiddles/react/dist" || exit $?;
+    rm -rf "./fiddles/react/dist/fiddle-0000-Template" || exit $?;
   fi
   if [[ -d "./fiddles/react/fiddle-0000-Template" ]]
   then
@@ -159,6 +179,10 @@ function tearDown() {
   if [[ -d "./fiddles/react/fiddle-0001-Fork" ]]
   then
     rm -rf "./fiddles/react/fiddle-0001-Fork" || exit $?;
+  fi
+  if [[ -d "./fiddles/react/fiddle-0100-Fork" ]]
+  then
+    rm -rf "./fiddles/react/fiddle-0100-Fork" || exit $?;
   fi
 }
 
@@ -172,19 +196,25 @@ function runTest() {
             ;;
         4)  testReactStart || exit $?;
             ;;
-        5)  testReactDelete || exit $?;
+        5)  testReactStartAll || exit $?;
             ;;
-        6)  testReactRefactor || exit $?;
+        6)  testReactDelete || exit $?;
             ;;
-        7)  testReactTest || exit $?;
+        7)  testReactRefactor || exit $?;
             ;;
-        8)  testReactUpdate || exit $?;
+        8)  testReactTest || exit $?;
             ;;
-        9)  testReactList || exit $?;
+        9)  testReactUpdate || exit $?;
             ;;
-        10) testReactBuild || exit $?
+        10) testReactUpdateAll || exit $?;
             ;;
-        11) testAll || exit $?
+        11) testReactList || exit $?;
+            ;;
+        12) testReactBuild || exit $?;
+            ;;
+        13) testAll || exit $?;
+            ;;
+        14) tearDown || exit $?;
             ;;
         *)  echo "Goodbye!"
             ;;
@@ -213,7 +243,11 @@ function catch() {
             ;;
         9)  endLog "test 9 failed - testReactIndex";
             ;;
-        10)  endLog "test 10 failed - testReactDelete";
+        10) endLog "test 10 failed - testReactDelete";
+            ;;
+        11) endLog "test 11 failed - testReactStartAll";
+            ;;
+        12) endLog "test 12 failed - testReactUpdateAll";
             ;;
         *)  echo "fubar! Something went wrong."
             ;;
@@ -225,6 +259,10 @@ function catch() {
     clear;
     menu || exit $?;
     runTest || exit $?;
+    #if [[ ${__TEST_NUM__} -ne "13" ]]
+    #then
+    #    ./test.sh;
+    #fi
 )
 rc=$?; catch ${rc};
 # finally

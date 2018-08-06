@@ -18,7 +18,7 @@ added to the root [dist](dist) directory.  The sub-directory uses the name of th
     Bash version 3.2.57(1)-release...
     ├────REACTBUILD
     
-    > fiddle@0.1.0 build /Users/bradyhouse/github/house_238/fiddles/bash/fiddle-0100-ReactCreateApp/fiddles/react/fiddle-0000-Template
+    > fiddle@0.1.0 build /Users/bradyhouse/github/house/fiddles/bash/fiddle-0100-ReactCreateApp/fiddles/react/fiddle-0000-Template
     > react-scripts build
     
     Creating an optimized production build...

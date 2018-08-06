@@ -20,8 +20,15 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
+# 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
+
+function killPort() {
+  PORT_NUMBER=$1;
+  lsof -i tcp:${PORT_NUMBER} | awk 'NR!=1 {print $2}' | xargs kill;
+  echo "Port be dead!";
+}
 
 function fileContains() {
   _file=$1;

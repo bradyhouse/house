@@ -92,7 +92,7 @@ function build() {
       else
          if [[ -d "dist/$1" ]]; then rm -R "dist/$1"; fi
       fi
-      # nvmInstall || exit 1;
+      nvmInstall || exit 1;
       reactBuild $1 || exit 2;
   )
 

@@ -1,7 +1,11 @@
 React (refactor)
 ======
 
-Executing the command `fiddle "refactor" "react" "0000" "fiddle-0100-Refactor"` produces the following output.
+Executing the command `fiddle "refactor" "react" "0001" "fiddle-0100-Fork"` produces the following output.
 
   
-
+    {{ ʕ・ɭ・ʔ }}
+    
+    FIDDLE-REFACTOR.SH
+    Refactor process completed successfully.
+    "fiddle-0001-Fork" is now "fiddle-0100-Fork".

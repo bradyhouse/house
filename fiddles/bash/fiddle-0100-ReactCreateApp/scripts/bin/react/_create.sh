@@ -55,7 +55,9 @@ function reactCreate() {
             rm -rf .gitignore;
         fi
         rm -rf public/index.html || exit $?;
+        rm -rf public/favicon.ico || exit $?;
         cp -rf ../template/index.html public/index.html || exit $?;
+        cp -rf ../template/favicon.ico public/favicon.ico || exit $?;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "public/index.html";) || exit 5;
         $(voidSubstr '{{Author}}' ${AUTHOR} "public/index.html";) || exit 5;
         cp -rf ../template/README.md README.md || exit 5;

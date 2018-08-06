@@ -102,8 +102,6 @@ function update() {
     rmNodeModules || exit $?;
     rmPackageLock || exit $?;
     npmCheckUpdates || exit $?;
-    revertTypeScript || exit $?;
-    updateAngularCli || exit $?;
     npmShrinkWrap || exit $?;
   )
 
