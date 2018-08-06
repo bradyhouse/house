@@ -31,6 +31,7 @@
 # 10/01/2016 - See CHANGELOG @ 201610010420
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -164,6 +165,11 @@ source bin/_types.sh;
             source bin/python/_create.sh;
             create $2 || exit 98;
             ;;
+        'react')
+            source bin/react/_install.sh;
+            source bin/react/_create.sh;
+            create $2 || exit 110;
+            ;;
         'rxjs')
             source bin/rxjs/_create.sh;
             create $2 || exit 100;
@@ -253,6 +259,8 @@ case ${_rc} in
     108) echo "fubar! c fiddle creation failed."
         ;;
     109) echo "fubar! javac fiddle creation failed."
+        ;;
+    110) echo "fubar! react fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;

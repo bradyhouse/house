@@ -14,6 +14,7 @@
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/02/2015 - See CHANGELOG @ 201605020420
 # 04/24/2017 - See CHANGELOG @ 201704170420
+# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh;
@@ -50,8 +51,13 @@ fiddlePath="../fiddles/${fiddleType}/${fiddle}"
                 exit $?;
                 ;;
             'node')
-                source bin/node/_test.sh
+                source bin/node/_test.sh;
                 test ${fiddle};
+                ;;
+            'react')
+                source bin/react/_test.sh;
+                cd ${fiddlePath};
+                reactTest || exit $?;
                 ;;
             *)
                 exit 86

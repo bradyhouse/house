@@ -13,6 +13,7 @@
 # Baseline Ver - See CHANGELOG @ 201703100420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 
 export HOME_ROOT=$(mapHomePath;);
@@ -24,6 +25,7 @@ export BUILD_NUM="201801240420";
 export BASH_PROFILE="${HOME_ROOT}/.bash_profile";
 export ZSH_PROFILE="${HOME_ROOT}/.zshrc";
 export OS=$(getOS;);
+export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
 export NVM_VERSION="v8.9.4";
 export NG_TYPESCRIPT_VER="2.7.2";

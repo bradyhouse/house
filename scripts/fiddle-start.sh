@@ -30,6 +30,7 @@
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -64,7 +65,7 @@ then
   _fiddleRoot="${_fiddleSubDir}/${_fiddle}";
   _projectName=${_fiddle};
 fi
-_port=1841;
+_port=${WEB_SERVER_PORT};
 
 if [ "$#" -gt 2 ]; then _port=$3; fi
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
@@ -160,6 +161,23 @@ function startServer() {
             nvmUseNodeVer || exit 102;
             nativescriptAndroidStart ${_projectName} ${__TEMPLATE_TYPE__} || exit 103;
             ;;
+        'react')
+            if [[ -d ${_fiddleRoot} ]]
+            then
+                source bin/react/_install.sh;
+                source bin/react/_start.sh;
+                cd ${_fiddleRoot};
+                reactStart || exit 119;
+            else
+                if [[ -d "../fiddles/${_type}/dist" ]]
+                then
+                  cd "../fiddles/${_type}/dist" || exit 88;
+                  live-server --port=${_port} || exit 96;
+                else
+                  exit 118;
+                fi
+            fi
+            ;;
         'all')
             cd "../fiddles" || exit 88;
             live-server --port=${_port} || exit 95;
@@ -196,14 +214,14 @@ case ${rc} in
         echo "";
         echo "[[n]] - OPTIONAL fiddle name. When specified the fiddle's path will be used as the root directory."
         echo ""
-        echo "[[p]] - OPTIONAL port number. If not specified then port 8889 will be used."
+        echo "[[p]] - OPTIONAL port number. If not specified then port 1841 will be used."
         echo "        Note - If you specify a different port, then to stop the resulting process"
         echo "        using the fiddle-stop.sh script, you will need to supply the same port."
         echo ""
         ;;
     87) echo -e "Fubar\tCannot find the \"${_path}/bin\" directory."
         ;;
-    88) echo -e "Fubar\tCall to the \"${_path}/bin/house-node-fs-start.sh\" failed."
+    88) echo -e "Fubar\tCall to the \"live-server\" failed."
         ;;
     89) echo -e "Fubar\tAttempt to stop live-server failed."
         ;;
@@ -264,6 +282,9 @@ case ${rc} in
     117) echo -e "Fubar\t\"nodeStart\" function call failed for \"${_fiddleRoot}\".";
         ;;
     118) echo -e "Fubar\tInvalid fiddle type, \"${_type}\", specified.";
+        rc=0;
+        ;;
+    119) echo -e "Fubar\t\"reactStart\" function call failed for \"${_fiddleRoot}\".";
         rc=0;
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"

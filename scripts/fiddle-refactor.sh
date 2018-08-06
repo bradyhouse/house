@@ -29,6 +29,7 @@
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -61,7 +62,7 @@ changeLogFile="../CHANGELOG.md";
   fi
 
   case ${fiddleType} in
-    'android' | 'angular2-cli' | 'c' | 'ember' | 'electron' | 'java' | 'javac' | 'meteor' | 'nativescript' )
+    'android' | 'angular2-cli' | 'c' | 'ember' | 'electron' | 'java' | 'javac' | 'meteor' | 'nativescript' | 'react' )
         if [[ -f "${altNewReadmeFile}" ]]
         then
             $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
