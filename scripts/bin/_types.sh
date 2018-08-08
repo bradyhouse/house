@@ -74,7 +74,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
             echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
             echo -e "\t\"meteor\"\t\tMeteor Fiddle"
-            echo -e "\t\"react\"\t\tReact Fiddles";
+            echo -e "\t\"react\"\t\t\tReact Fiddles";
             echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles"
             echo -e "\t\"jquery\"\t\tjQuery / ES6 Fiddles"
             echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles"
@@ -93,7 +93,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddles";
             echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddles";
             echo -e "\t\"meteor\"\t\tMeteor Fiddles";
-            echo -e "\t\"react\"\t\tReact Fiddles";
+            echo -e "\t\"react\"\t\t\tReact Fiddles";
             echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles";
             echo -e "\t\"jquery\"\t\tjQuery / Bootstrap Fiddles";
             echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles";
@@ -130,7 +130,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"nativescript\"\t\tNativeScript Fiddle"
             echo -e "\t\"php\"\t\t\tPHP Fiddle"
             echo -e "\t\"python\"\t\tPython Fiddle"
-            echo -e "\t\"react\"\t\tReact Fiddle";
+            echo -e "\t\"react\"\t\t\tReact Fiddle";
             echo -e "\t\"rxjs\"\t\t\tRxJS Fiddle"
             echo -e "\t\"java\"\t\t\tJava Fiddle"
             echo -e "\t\"javac\"\t\t\tCommandline Java Fiddle"
