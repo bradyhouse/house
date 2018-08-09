@@ -29,7 +29,7 @@ Need a basic fund raising thermometer control rendered in fabric.js.
 
 ### Published Version Link
 
-* [jsfiddle.net](https://jsfiddle.net/bradyhouse/9zmjhu32/)
+[jsfiddle.net](https://jsfiddle.net/bradyhouse/9zmjhu32/)
 
 
 ### Tags
