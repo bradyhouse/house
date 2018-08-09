@@ -1906,3 +1906,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   
   
   
+* Added [fiddles/jquery/fiddle-0063-FabricThermometer](fiddles/jquery/fiddle-0063-FabricThermometer)
