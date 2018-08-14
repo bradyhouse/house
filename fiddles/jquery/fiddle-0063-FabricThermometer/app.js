@@ -4,8 +4,37 @@
   app.view = app.view || {
     render: function () {
       var
-        baseColor = 'skyblue',
+        baseColor = '#0195e7',
         canvas = new window.fabric.Canvas('fiddle'),
+        header = new fabric.Text('2017 Movember', {
+          fontFamily: 'Quicksand',
+          left: 10,
+          fill: baseColor,
+          top: 0,
+          width: 150,
+          fontSize: 50
+        }),
+
+        goalHeader = new fabric.Text('Goal: $50,000', {
+          fontFamily: 'Quicksand',
+          left: 10,
+          top: 75,
+          fill: baseColor,
+          width: 150,
+          fontSize: 40
+        }),
+
+        manicusLabel = new fabric.Text('$0', {
+          fontFamily: 'Quicksand',
+          left: 101.25,
+          top: 436.75,
+          fill: baseColor,
+          width: 150,
+          fontSize: 40,
+          id: 'manicusLabel'
+        }),
+
+
         manicus = new fabric.Rect({
           top: 436.75,
           left: 29.500002,
@@ -14,9 +43,9 @@
           strokeWidth: 4,
           strokeLinejoin: 'round',
           strokeLinecap: 'round',
-          fill: baseColor
+          fill: baseColor,
+          id: 'manicus'
         }),
-        scale = this.buildScale(baseColor),
         mercury = new fabric.Path('m81,474a35.5,35.5 0 1 1 -71,0a35.5,35.5 0 1 1 71,0z',
           {
             fill: baseColor,
@@ -35,183 +64,46 @@
           fillRule: 'nonzero',
           strokeDashoffset: 0,
           strokeMiterlimit: 4,
-          strokeWidth: 4,
+          strokeWidth: 10,
           strokeLinecap: 'round',
           strokeLinejoin: 'round',
           stroke: baseColor
         }),
-        thermometer = new fabric.Group([glass, mercury, manicus,
-                                        scale[18], scale[17],
-                                        scale[16], scale[15], scale[14],
-                                        scale[13], scale[12], scale[11],
-                                        scale[10], scale[9], scale[8],
-                                        scale[7], scale[6], scale[5],
-                                        scale[4], scale[3], scale[2],
-                                        scale[1], scale[0]], {
-                                        left: 150,
-                                        top: 100,
+        thermometer = new fabric.Group([glass, mercury, manicus, manicusLabel], {
+                                        left: 10,
+                                        top: 150,
                                         angle: 0
+        }),
+        control = new fabric.Group([header, goalHeader, thermometer], {
+          left: 0,
+          top: 0,
+          angle: 0
         });
 
-      canvas.setWidth(window.innerWidth);
-      canvas.setHeight(window.innerHeight);
 
-      canvas.add(thermometer);
+      canvas.setWidth(Math.floor(window.innerWidth * .5));
+      canvas.setHeight(Math.floor(window.innerHeight * .5));
+      canvas.add(control);
       canvas.setZoom(.5);
 
     },
-    buildScale: function(baseColor) {
-      return [
-        new fabric.Line([67.200002,425.5,91.200001, 425.5], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick19'
-        }),
-        new fabric.Line([114.950011,406.949995,67.249038, 406.949995], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick18'
-        }),
-        new fabric.Line([67.350392,388.800781,91.350391, 388.800781], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick17'
-        }),
-        new fabric.Line([115.100402,370.250776,67.399429, 370.250776], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick16'
-        }),
-        new fabric.Line([67.350392,351.550781,91.350391, 351.550781], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick15'
-        }),
-        new fabric.Line([115.100402,333.000776,67.399429, 333.000776], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick14'
-        }),
-        new fabric.Line([67.27422,314.525391,91.274219, 314.525391], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick13'
-        }),
-        new fabric.Line([115.02423,295.975385,67.323257, 295.975385], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick12'
-        }),
-        new fabric.Line([67.424611,277.826172,91.42461, 277.826172], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick11'
-        }),
-        new fabric.Line([67.424611,277.826172,91.42461, 277.826172], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick11'
-        }),
-        new fabric.Line([115.174621,259.276166,67.473647, 259.276166], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick10'
-        }),
-        new fabric.Line([67.424611,240.576172,91.42461, 240.576172], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick9'
-        }),
-        new fabric.Line([115.174621,222.026166,67.473647, 222.026166], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick8'
-        }),
-        new fabric.Line([67.27422,203.525391,91.274219, 203.525391], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick7'
-        }),
-        new fabric.Line([115.02423,184.975385,67.323257, 184.975385], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick6'
-        }),
-        new fabric.Line([67.424611,166.826172,91.42461, 166.826172], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick5'
-        }),
-        new fabric.Line([115.174621,148.276166,67.473647, 148.276166], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick4'
-        }),
-        new fabric.Line([67.424611,129.576172,91.42461, 129.576172], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick3'
-        }),
-        new fabric.Line([115.174621,111.026166,67.473647, 111.026166], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick2'
-        }),
-        new fabric.Line([67.350392,92.548828,91.350391, 92.548828], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick1'
-        }),
-        new fabric.Line([115.100402, 73.998823, 67.399429, 73.998823], {
-          fill: 'none',
-          stroke: baseColor,
-          strokeWidth: 4,
-          fillOpacity: '0.75',
-          id: 'tick0'
-        })
-      ];
+    add: function() {
+      console.log('add');
+      var manicus = document.getElementById('manicus');
+      
     },
+
+    subtract: function() {
+      console.log('subtract');
+
+    },
+
     init: function () {
+      var addBtn = document.getElementById('addBtn'),
+        subtractBtn = document.getElementById('subtractBtn');
+      addBtn.onclick = this.add;
+      subtractBtn.onclick = this.subtract;
+
       this.render();
     }
   };
