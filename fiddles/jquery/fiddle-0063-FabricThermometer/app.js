@@ -87,7 +87,8 @@
         control = new fabric.Group([header, goalHeader, thermometer], {
           left: 100,
           top: 0,
-          angle: 0
+          angle: 0,
+          selectable: false
         });
       canvas.setWidth(Math.floor(window.innerWidth * .3));
       canvas.setHeight(Math.floor(window.innerHeight * .5));
