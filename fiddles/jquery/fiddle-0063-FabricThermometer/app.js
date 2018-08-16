@@ -15,9 +15,12 @@
     donations: 0,
     baseColor: 'black',
     fontFamily: 'Quicksand',
+    canvas: null,
     renderThermometer: function () {
-      var
-        canvas = new window.fabric.Canvas('fiddle'),
+
+      this.canvas = this.canvas || new window.fabric.Canvas('fiddle');
+
+      var canvas = this.canvas,
         header = new fabric.Text(this.header, {
           fontFamily: this.fontFamily,
           left: 10,
@@ -26,7 +29,6 @@
           width: 150,
           fontSize: 50
         }),
-
         goalHeader = new fabric.Text('Goal: ' + this.formatDollarAmt(this.goal), {
           fontFamily: this.fontFamily,
           left: 10,
@@ -46,15 +48,15 @@
           id: 'manicusLabel'
         }),
         manicus = new fabric.Rect({
-        top: manicusLevel.top,
-        left: 29.500002,
-        width: 31.75,
-        height: manicusLevel.height,
-        strokeWidth: 4,
-        strokeLinejoin: 'round',
-        strokeLinecap: 'round',
-        fill: this.baseColor,
-        id: 'manicus'
+          top: manicusLevel.top,
+          left: 29.500002,
+          width: 31.75,
+          height: manicusLevel.height,
+          strokeWidth: 4,
+          strokeLinejoin: 'round',
+          strokeLinecap: 'round',
+          fill: this.baseColor,
+          id: 'manicus'
         }),
         mercury = new fabric.Path('m81,474a35.5,35.5 0 1 1 -71,0a35.5,35.5 0 1 1 71,0z',
           {
@@ -82,18 +84,20 @@
         thermometer = new fabric.Group([glass, mercury, manicus, manicusLabel], {
                                         left: 10,
                                         top: 150,
-                                        angle: 0
-        }),
-        control = new fabric.Group([header, goalHeader, thermometer], {
-          left: 100,
-          top: 0,
-          angle: 0,
-          selectable: false
-        });
+                                        angle: 0,
+                                        selectable: false
+          }),
+          control = new fabric.Group([header, goalHeader, thermometer], {
+            left: 100,
+            top: 0,
+            angle: 0,
+            selectable: false
+          });
       canvas.setWidth(Math.floor(window.innerWidth * .3));
       canvas.setHeight(Math.floor(window.innerHeight * .5));
       canvas.add(control);
       canvas.setZoom(.4);
+      canvas.deactivateAll();
     },
     calcLevel: function() {
       let _donations = +this.donations,
@@ -112,22 +116,58 @@
       return new level(deltaTop, deltaHeight);
     },
     donationsChange: function () {
-      this.donations = document.getElementById('donationTxt').value;
+      var value = document.getElementById('donationTxt').value,
+        amt = value && !isNaN((+value)) ? (+value) : null;
+      if (amt) {
+        this.donations = amt;
+        return true;
+      } else {
+        alert('Enter a valid Donation Amount');
+        document.getElementById('donationTxt').focus();
+        return false;
+      }
+    },
+    goalChange: function() {
+      var value = document.getElementById('goalTxt').value,
+        amt = value && !isNaN((+value)) ? (+value) : null;
+      if (amt) {
+        this.goal = amt;
+        return true;
+      } else {
+        alert('Enter a valid Goal Amount');
+        document.getElementById('goalTxt').focus();
+        return false;
+      }
     },
     formatDollarAmt: function (amt) {
       return '$' + (+amt).toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     },
-    init: function () {
-      var donationTxt = document.getElementById('donationTxt');
 
+    configureObservers: function() {
+      var donationTxt = document.getElementById('donationTxt'),
+        goalTxt = document.getElementById('goalTxt');
       if (donationTxt) {
         donationTxt.addEventListener('change', () => {
-          this.donationsChange();
-          this.renderThermometer();
-        }, false);
+          if(this.donationsChange()) {
+            this.canvas.clear();
+            this.renderThermometer();
+          }
+      }, false);
       }
-
-      this.renderThermometer();
+      if (goalTxt) {
+        goalTxt.addEventListener('change', () => {
+          if (this.goalChange()) {
+            this.canvas.clear();
+            this.renderThermometer();
+          }
+        });
+      }
+    },
+    init: function () {
+      this.configureObservers();
+      window.setTimeout(() => {
+        this.renderThermometer();
+      }, 500);
     }
   };
   $(document).ready(function () {
