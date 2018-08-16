@@ -93,10 +93,8 @@
             angle: 0,
             selectable: false
           });
-      canvas.setWidth(Math.floor(window.innerWidth * .3));
-      canvas.setHeight(Math.floor(window.innerHeight * .5));
       canvas.add(control);
-      canvas.setZoom(window.innerWidth / window.innerHeight);
+      canvas.setZoom(.2);
       canvas.deactivateAll();
     },
     calcLevel: function() {
