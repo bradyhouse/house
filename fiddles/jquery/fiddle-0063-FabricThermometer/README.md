@@ -24,7 +24,9 @@ Chicago, IL
 
 ### Description
 
-Need a basic fund raising thermometer control rendered in fabric.js.
+I need a canvas based fund raising thermometer control, that can become the basis of a Custom Jive Tile.  
+The thermometer should include a configurable Goal and Donation inputs.  It should include 
+validations tied to the input amounts.  The amounts must be numeric and greater than zero.  
 
 
 ### Published Version Link

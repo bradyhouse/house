@@ -96,7 +96,7 @@
       canvas.setWidth(Math.floor(window.innerWidth * .3));
       canvas.setHeight(Math.floor(window.innerHeight * .5));
       canvas.add(control);
-      canvas.setZoom(.4);
+      canvas.setZoom(window.innerWidth / window.innerHeight);
       canvas.deactivateAll();
     },
     calcLevel: function() {
