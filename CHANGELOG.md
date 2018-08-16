@@ -1904,6 +1904,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   16. Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)    
   17. Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
   
-  
-  
-* Added [fiddles/jquery/fiddle-0063-FabricThermometer](fiddles/jquery/fiddle-0063-FabricThermometer)
+
+### 241_jquery_63_fabric_thermometer ~ [Issue 241](https://github.com/bradyhouse/house/issues/241)
+
+* **JQuery**
+
+  1.  Added [fiddles/jquery/fiddle-0063-FabricThermometer](fiddles/jquery/fiddle-0063-FabricThermometer)
