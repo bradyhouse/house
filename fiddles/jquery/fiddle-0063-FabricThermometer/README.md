@@ -32,7 +32,7 @@ validations tied to the input amounts.  The amounts must be numeric and greater 
 ### Published Version Link
 
 * [jsfiddle.net](https://jsfiddle.net/bradyhouse/9zmjhu32/)
-* [codepen.io](https://codepen.io/bradyhouse/full/ejwWZx/)
+* [codepen.io](https://codepen.io/bradyhouse/details/ejwWZx)
 
 
 ### Tags
