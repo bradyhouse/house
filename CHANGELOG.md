@@ -1910,3 +1910,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0063-FabricThermometer](fiddles/jquery/fiddle-0063-FabricThermometer)
+
+
+### 243_react_fiddles_1_to_20 ~ [Issue 243](https://github.com/bradyhouse/house/issues/243)
+
+* **React**
+
+* Added [fiddles/react/fiddle-0001-Element](fiddles/react/fiddle-0001-Element)
