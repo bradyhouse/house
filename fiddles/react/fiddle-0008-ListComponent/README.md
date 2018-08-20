@@ -4,7 +4,7 @@ fiddle-0008-ListComponent
 
 ### Title
 
-fiddle-0008-ListComponent
+List Component
 
 
 ### Creation Date
@@ -19,12 +19,12 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 243](https://github.com/bradyhouse/house/issues/243)
 
 
 ### Description
 
-Another simple React fiddle.
+Simple react fiddle exploring how to create a list component. It is based on the [Lists and Keys](https://reactjs.org/docs/lists-and-keys.html) tutorial.
 
 
 ### Published Version Link
