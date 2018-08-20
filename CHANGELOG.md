@@ -1916,4 +1916,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **React**
 
-* Added [fiddles/react/fiddle-0001-Element](fiddles/react/fiddle-0001-Element)
+  1.  Added [fiddles/react/fiddle-0001-Element](fiddles/react/fiddle-0001-Element)
+  2.  Added [fiddles/react/fiddle-0002-FunctionalComponent](fiddles/react/fiddle-0002-FunctionalComponent)
+  3.  Added [fiddles/react/fiddle-0003-StateLifeCycle](fiddles/react/fiddle-0003-StateLifeCycle)
+  4.  Added [fiddles/react/fiddle-0004-AppComponent](fiddles/react/fiddle-0004-AppComponent)
+  5.  Added [fiddles/react/fiddle-0005-EventHandler](fiddles/react/fiddle-0005-EventHandler)
+  6.  Added [fiddles/react/fiddle-0006-ConditionalRendering](fiddles/react/fiddle-0006-ConditionalRendering)
+  7.  Added [fiddles/react/fiddle-0007-HiddenRendering](fiddles/react/fiddle-0007-HiddenRendering)
+  8.  Added [fiddles/react/fiddle-0008-ListComponent](fiddles/react/fiddle-0008-ListComponent)
