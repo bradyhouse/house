@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
+import Blog from './blog/Blog';
 
 class App extends Component {
+
   render() {
+    const posts = [
+      {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+      {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+    ];
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Blog posts={posts} />
       </div>
     );
   }
