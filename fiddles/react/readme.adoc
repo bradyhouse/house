@@ -1,5 +1,7 @@
 = React
 
+[React vs Angular](https://i.imgur.com/CgD4N0P.png)
+
 _Why React?_ I have no idea, and here we are.  Two years ago, this graph looked a lot different.
 
 === fiddle.sh React Commands
