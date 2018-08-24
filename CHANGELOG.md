@@ -1910,3 +1910,23 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0063-FabricThermometer](fiddles/jquery/fiddle-0063-FabricThermometer)
+
+
+### 243_react_fiddles_1_to_20 ~ [Issue 243](https://github.com/bradyhouse/house/issues/243)
+
+* **React**
+
+  1.  Added [fiddles/react/fiddle-0001-Element](fiddles/react/fiddle-0001-Element)
+  2.  Added [fiddles/react/fiddle-0002-FunctionalComponent](fiddles/react/fiddle-0002-FunctionalComponent)
+  3.  Added [fiddles/react/fiddle-0003-StateLifeCycle](fiddles/react/fiddle-0003-StateLifeCycle)
+  4.  Added [fiddles/react/fiddle-0004-AppComponent](fiddles/react/fiddle-0004-AppComponent)
+  5.  Added [fiddles/react/fiddle-0005-EventHandler](fiddles/react/fiddle-0005-EventHandler)
+  6.  Added [fiddles/react/fiddle-0006-ConditionalRendering](fiddles/react/fiddle-0006-ConditionalRendering)
+  7.  Added [fiddles/react/fiddle-0007-HiddenRendering](fiddles/react/fiddle-0007-HiddenRendering)
+  8.  Added [fiddles/react/fiddle-0008-ListComponent](fiddles/react/fiddle-0008-ListComponent)
+  9.  Added [fiddles/react/fiddle-0009-Form](fiddles/react/fiddle-0009-Form)
+  10. Added [fiddles/react/fiddle-0010-TextAreaControl](fiddles/react/fiddle-0010-TextAreaControl)
+  11. Added [fiddles/react/fiddle-0011-SelectControl](fiddles/react/fiddle-0011-SelectControl)
+  12. Added [fiddles/react/fiddle-0012-MultipleInputs](fiddles/react/fiddle-0012-MultipleInputs)
+  13. Added [fiddles/react/fiddle-0013-StateLifting](fiddles/react/fiddle-0013-StateLifting)
+  14. Added [fiddles/react/fiddle-0014-ChildrenProp](fiddles/react/fiddle-0014-ChildrenProp)

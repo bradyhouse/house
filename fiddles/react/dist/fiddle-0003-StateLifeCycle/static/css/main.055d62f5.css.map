@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,SACA,UACA,wBACA,eACA,iBAAmB","file":"static/css/main.055d62f5.css","sourcesContent":["body {\n  margin: 0;\n  padding: 0;\n  font-family: \"Courier New\";\n  font-size: 50px;\n  text-align: center;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/index.css"],"sourceRoot":""}

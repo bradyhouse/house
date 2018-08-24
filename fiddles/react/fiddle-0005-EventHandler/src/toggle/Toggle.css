@@ -1,0 +1,16 @@
+.toggle {
+    font-family: "Courier New", SansSerif;
+    height:50px;
+    width:50px;
+    font-weight: bold;
+}
+
+.green {
+    background-color: lime;
+    color: black;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}

@@ -1,0 +1,17 @@
+table {
+    border: black 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.red {
+     color: red;
+}
+
+.pink {
+    color: hotpink;
+}
+
+.blue {
+    color: blue;
+}

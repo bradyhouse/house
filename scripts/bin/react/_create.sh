@@ -32,7 +32,8 @@ function npmShrinkWrap() {
 function reactCreate() {
     groupLog "reactCreate";
     fiddle=$1;
-    appName=$(subDelimStr ${fiddle} "-" "2";);
+    rawAppName=$(subDelimStr ${fiddle} "-" "2";);
+    appName=$(toLowerCase ${rawAppName};);
     bornOnDate=$2;
     # try
     (
@@ -41,7 +42,7 @@ function reactCreate() {
             rm -rf ${fiddle} || exit 1;
         fi
 
-        if [[ "${appName}" == "Template" ]]
+        if [[ "${appName}" == "template" ]]
         then
             appName="fiddle";
         fi
@@ -119,8 +120,8 @@ function create() {
   echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
   echo "Bash version ${BASH_VERSION}..."
 
-  fiddleSubDir="../fiddles/angular2-cli/$1";
-  fiddleTemplateDir="../fiddles/angular2-cli/template";
+  fiddleSubDir="../fiddles/react/$1";
+  fiddleTemplateDir="../fiddles/react/template";
   bornOnDate=$(date +"%m-%d-%y";)
   echo ${bornOnDate};
 
@@ -140,3 +141,4 @@ function create() {
   exit ${rc};
 
 }
+

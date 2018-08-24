@@ -9,7 +9,7 @@ fiddle-0000-Template
 
 ### Creation Date
 
-08-06-18
+08-19-18
 
 
 ### Location
@@ -29,7 +29,7 @@ Another simple React fiddle.
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > template](http://bradyhouse.github.io/react/fiddle-0000-template/#)
 
 
 ### Tags
