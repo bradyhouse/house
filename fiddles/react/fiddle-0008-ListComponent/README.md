@@ -29,7 +29,7 @@ Simple react fiddle exploring how to create a list component. It is based on the
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #8](http://bradyhouse.github.io/react/fiddle-0008-ListComponent/#)
 
 
 ### Tags

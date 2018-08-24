@@ -29,7 +29,7 @@ Simple react fiddle based on https://reactjs.org/docs/rendering-elements.html.
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #1](http://bradyhouse.github.io/react/fiddle-0001-Element/#)
 
 
 ### Tags

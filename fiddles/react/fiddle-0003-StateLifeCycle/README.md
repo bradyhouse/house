@@ -30,7 +30,7 @@ Simple react fiddle based on [State and Lifecycle](https://reactjs.org/docs/stat
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #3](http://bradyhouse.github.io/react/fiddle-0003-StateLifeCycle/#)
 
 
 ### Tags

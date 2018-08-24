@@ -29,7 +29,7 @@ Another simple React fiddle.
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #](http://bradyhouse.github.io/react/{{FiddleName}}/#)
 
 
 ### Tags

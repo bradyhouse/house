@@ -30,7 +30,7 @@ Simple react fiddle exploring conditional rendering based on the [Conditional Re
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #6](http://bradyhouse.github.io/react/fiddle-0006-CondtionalRendering/#)
 
 
 ### Tags

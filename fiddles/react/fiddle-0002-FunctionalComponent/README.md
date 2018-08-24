@@ -29,7 +29,7 @@ Simple react fiddle based on the [Components and Props](https://reactjs.org/docs
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #2](http://bradyhouse.github.io/react/fiddle-0002-FunctionalComponent/#)
 
 
 ### Tags

@@ -29,7 +29,7 @@ Fiddle exploring how to create an App component based on the example presented i
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #4](http://bradyhouse.github.io/react/fiddle-0004-AppComponent/#)
 
 
 ### Tags

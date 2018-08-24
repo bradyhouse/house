@@ -29,7 +29,7 @@ Simple react fiddle exploring how to prevent rendering based on [Conditional Ren
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #7](http://bradyhouse.github.io/react/fiddle-0007-HiddenRendering/#)
 
 
 ### Tags

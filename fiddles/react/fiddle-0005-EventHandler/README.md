@@ -30,7 +30,7 @@ tutorial.
 
 ### Published Version Link
 
-N/A
+  * [bradyhouse.github.io > react > #5](http://bradyhouse.github.io/react/fiddle-0005-EventHandler/#)
 
 
 ### Tags
