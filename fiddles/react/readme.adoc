@@ -2,7 +2,10 @@
 
 image::https://i.imgur.com/CgD4N0P.png[Angular vs React downloads]
 
-_Why React?_ I have no idea, and here we are.  Two years ago, this graph looked a lot different.
+_Why React?_ I have no idea, and here we are.  Two years ago, this graph looked a lot different. This collection is aimed at 
+my exploration and study of react.  The `fiddle.sh` script can be used to extend or test drive this collection. The following 
+table outlines how.
+
 
 === fiddle.sh React Commands
 
