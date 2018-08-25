@@ -20,7 +20,7 @@ source bin/_env.sh;
 source bin/_types.sh;
 
 _publishPath="${GITHUB_ROOT}/${GITHUB_PUBLISH_REPO}";
-_sourcePath="${GITHUB_ROOT}/house/fiddles";
+_sourcePath="${GITHUB_ROOT}/${GITHUB_ROOT_DIR}/fiddles";
 _commitMessage="${BUILD_NUM}";
 
 function isPublishPath() {
@@ -33,6 +33,7 @@ function isPublishPath() {
 }
 
 function push() {
+  git checkout master -- index.html;
   git add -A;
   git commit -am ${_commitMessage};
   git push;
