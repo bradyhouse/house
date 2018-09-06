@@ -1,0 +1,21 @@
+
+.search-bar .jumbotron {
+  background-image: url('../../../images/a.png');
+  background-size: cover !important;
+
+}
+
+.search-bar .jumbotron .mr-lg-5, .mx-lg-5 {
+  margin-right: 0px !important;
+}
+
+.search-bar .jumbotron .btn-secondary {
+  background-color: #00a4ed !important;
+  border: none !important;
+  padding: 0px !important;
+  margin-top: 0px !important;
+  height: 20px !important;
+  margin-bottom: 10px !important;
+  width: 40px !important;
+  vertical-align: middle !important;
+}
