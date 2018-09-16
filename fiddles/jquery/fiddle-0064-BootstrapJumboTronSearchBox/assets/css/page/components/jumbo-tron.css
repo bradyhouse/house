@@ -1,0 +1,124 @@
+
+.search-bar {
+
+}
+
+.search-bar .dropdown-item {
+  color: #2d91c2;
+  font-size: 1.5rem;
+}
+.search-bar .search-event .event-dropdown {
+  position: absolute;
+  will-change: transform;
+  top: 0px;
+  left: -24px !important;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.search-bar .search-location .location-dropdown {
+  position: absolute;
+  will-change: transform;
+  top: 0px;
+  left: -21px !important;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.search-bar .search-location .search-location-icon {
+   background-color: #2d91c2;
+   margin-right: 10px;
+ }
+
+.search-bar .search-location .search-location-icon:hover {
+  -webkit-filter: none;
+  filter: none;
+  margin-right: 10px;
+}
+
+.search-bar .dropdown-menu li.dropdown-item a {
+ color: black !important;
+}
+
+
+
+
+.search-bar input[type="text"]:focus,
+.uneditable-input:focus {
+  border-color: auto;
+  box-shadow: none;
+  outline: 0 none;
+}
+.search-bar *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.search-bar .jumbotron {
+  background-color: slategray;
+  min-width: 250px !important;
+}
+
+.search-bar .jumbotron .mr-lg-5, .mx-lg-5 {
+  margin-right: 0px !important;
+}
+
+.search-bar .jumbotron .input-group-text {
+  background-color: #fff;
+  color: #2d91c2;
+  border-right: none;
+  font-size: 1.3em;
+}
+
+.search-bar .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-left: none;
+}
+
+
+.search-bar .search-event .search-event-button {
+  display: none;
+}
+
+.search-bar .input-group-append .btn, .input-group-prepend .btn {
+  position: sticky;
+}
+
+.search-bar .btn {
+  z-index: 0;
+}
+
+.search-bar .btn-primary {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.search-bar .search-location .input-group-text {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+@media (max-width: 490px) {
+  .search-bar .search-location {
+    display: none;
+  }
+  .search-bar .search-event .search-event-button {
+    display: inline-block;
+  }
+}
+
+
+@media (max-width: 1000px) {
+
+  .search-bar .search-location {
+    display: none;
+  }
+  .search-bar .search-event .search-event-button {
+    display: inline-block;
+  }
+
+  .search-bar .dropdown-menu {
+    display: none !important;
+  }
+
+}
