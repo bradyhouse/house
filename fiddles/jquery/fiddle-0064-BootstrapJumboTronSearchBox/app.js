@@ -2,15 +2,15 @@
     "use strict";
 
     app.view = app.view || {
-        render: function (hook) {
-            hook.append('hi there!');
+        paintBackground: function() {
+          window.setTimeout(() => {
+            var idx = Math.floor((new Date().getHours())),
+                body = document.getElementsByTagName("body")[0];
+            body.className = "heaven-" + idx;
+          }, 500);
         },
-        init: function () {
-            var hook = $('#fiddleHook');
-            this.render(hook);
-        }
     };
     $(document).ready(function () {
-        app.view.init();
+      app.view.paintBackground();
     });
 })(window.app = window.app || {}, jQuery)

@@ -3,7 +3,7 @@ fiddle-0064-BootstrapJumboTronSearchBox
 
 ### Title
 
-fiddle-0064-BootstrapJumboTronSearchBox
+JumboTron Responsive Dual SearchBox
 
 
 ### Creation Date
@@ -18,18 +18,19 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 247](https://github.com/bradyhouse/house/issues/247)
+
 
 ### Description
 
-Another jQuery Fiddle.
+Need a boostrap jumbotron div with dual search box dead center that behave responsively...
 
 
 ### Published Version Link
 
-N/A
+[bradyhouse.io > jquery > #64](http://bradyhouse.github.io/jquery/fiddle-0064-BootstrapJumboTronSearchBox/index.html)
 
 
 ### Tags
 
-jQuery
+jQuery, bootstrap, bootswatch, sketchy
