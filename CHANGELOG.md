@@ -1937,3 +1937,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0064-BootstrapJumboTronSearchBox](fiddles/jquery/fiddle-0064-BootstrapJumboTronSearchBox)
+  
+
+### 248_jquery_fiddle_65 ~ [Issue 248](https://github.com/bradyhouse/house/issues/248)  
+
+* **JQuery**
+
+  1.  Added [fiddles/jquery/fiddle-0065-BootStrapColumnPaging](fiddles/jquery/fiddle-0065-BootStrapColumnPaging)
