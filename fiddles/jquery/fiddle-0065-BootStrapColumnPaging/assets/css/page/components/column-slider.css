@@ -1,0 +1,144 @@
+
+.column-slider  {
+  margin: calc(2rem + 2px) 0 calc(2rem + 2px) 0;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.column-slider iframe {
+  border: none;
+  height: 350px;
+  width: 100%;
+}
+
+.column-slider .post {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+
+
+.column-slider .item {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.column-slider .box-shadow {
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+
+
+
+.column-slider .item-content {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.column-slider .entry-thumbnail {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.column-slider .item {
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center;
+}
+
+.column-slider .controls {
+  font-size: 30px !important;
+  height: 20px;
+}
+
+.column-slider .controls a {
+  color: #000;
+}
+
+.column-slider .controls a:hover {
+  color: #000;
+}
+
+
+.column-slider .post {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.column-slider .post .entry-meta ul {
+  list-style: none;
+  color: #2d91c2;
+}
+
+.column-slider .text-post {
+  padding: 40px 20px;
+}
+
+.column-slider .post.bg-color-1 {
+  background-color: #f05a1f;
+}
+
+.column-slider .post.bg-color-2 {
+  background-color: #009f92;
+}
+
+.column-slider .post.bg-color-3 {
+  background-color: #0067b3;
+}
+
+.column-slider .post.bg-color-4 {
+  background-color: #fb1d15;
+}
+
+.column-slider .post.bg-color-5 {
+  background-color: #5b2886;
+}
+
+.column-slider .text-post .catagory {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.column-slider .text-post .post-content,
+.column-slider .text-post .catagory a,
+.column-slider .text-post  a {
+  color: #fff;
+}
+
+.column-slider .text-post  a:hover,
+.column-slider .text-post .catagory a:hover {
+  color: #d4d0d0;
+}
+
+.column-slider .text-post .catagory {
+  margin-top: 10px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  display: block;
+}
+
+.column-slider .text-post .tr-after:after {
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+}
+
+.column-slider .text-post .entry-title {
+  margin: 25px 0 20px;
+}
+
+.column-slider .post-padding {
+  padding: 30px 20px 25px;
+}
+
+.column-slider .entry-meta>ul>li+li:before {
+  display: none;
+}
