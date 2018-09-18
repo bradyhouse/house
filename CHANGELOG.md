@@ -1944,3 +1944,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0065-BootStrapColumnPaging](fiddles/jquery/fiddle-0065-BootStrapColumnPaging)
+
+
+### 251_jquery_fiddle_66 ~ [Issue 251](https://github.com/bradyhouse/house/issues/251)  
+
+* **JQuery**
+
+  1.  Added [fiddles/jquery/fiddle-0066-Bootstrap4ColumnPaging](fiddles/jquery/fiddle-0066-Bootstrap4ColumnPaging)
