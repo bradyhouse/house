@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="http://github/bradyhouse/house/fiddles/jquery/fiddle-0066-Bootstrap4ColumnPaging">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <title>Bootstrap 4 ColumnPaging</title>
+    <link rel="stylesheet" href="assets/css/libs/bootstrap.sketchy.v4.1.3.css">
+  <link rel="stylesheet" href="assets/css/libs/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/page/page.css">
+</head>
+<body>
+  <script>
+    document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0066-Bootstrap4ColumnPaging"' +
+      '><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" ' +
+      'src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" ' +
+      'alt="Fork me on GitHub"><\/a>');
+  </script>
+  <nav class="nav navbar-expand-sm navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <h2>Bootstrap v4.1.3 - Column Slider | <a href="README.md" title="View Additional details" target="_blank">readme</a></h2>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid">
+    <div class="column-slider">
+      <div id="column-slider" class="carousel slide" data-ride="carousel" data-interval="false">
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">
+                      <a class="slide-left pull-left" href="#column-slider" role="button" data-slide="prev"><i
+                          class="fa fa-angle-left"></i></a>
+                      Section 1</h1>
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/16.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">12 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-1">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/50.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">05 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-2">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">Section 2</h1>
+                    <div class="post text-post bg-color-3">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/51.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">22 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="video-post">
+                      <div class="entry-header">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SA6ZBvoeYHs" allowfullscreen=""></iframe>
+                      </div>
+                      <div class="entry-meta"></div>
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-4">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4 ">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">Section 3
+                      <a class="slide-right pull-right" href="#column-slider" role="button" data-slide="next"><i
+                          class="fa fa-angle-right"></i></a>
+                    </h1>
+                    <div class="video-post">
+                      <div class="entry-header">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yBrdLdRICC0" allowfullscreen=""></iframe>
+                      </div>
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-5">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/18.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 Likes</a></li>
+                            <li><a href="#">32 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/52.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Duis autem vel eum iriure dolor in hendrerit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">15 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+              </div><!-- ./row -->
+            </div><!-- ./container -->
+          </div><!-- ./carousel-item active -->
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">
+                      <a class="slide-left pull-left" href="#column-slider" role="button" data-slide="prev"><i
+                          class="fa fa-angle-left"></i></a>
+                      Section 4</h1>
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/16.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">12 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-4">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/50.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">05 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-5">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">Section 5</h1>
+                    <div class="post text-post bg-color-3">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/51.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">22 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="video-post">
+                      <div class="entry-header">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SA6ZBvoeYHs" allowfullscreen=""></iframe>
+                      </div>
+                      <div class="entry-meta"></div>
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-4">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4 ">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">Section 6
+                      <a class="slide-right pull-right" href="#column-slider" role="button" data-slide="next"><i
+                          class="fa fa-angle-right"></i></a>
+                    </h1>
+                    <div class="video-post">
+                      <div class="entry-header">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yBrdLdRICC0" allowfullscreen=""></iframe>
+                      </div>
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-5">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/18.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 Likes</a></li>
+                            <li><a href="#">32 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/52.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Duis autem vel eum iriure dolor in hendrerit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">15 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+              </div><!-- ./row -->
+            </div><!-- ./container -->
+          </div><!-- ./carousel-item -->
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">
+                      <a class="slide-left pull-left" href="#column-slider" role="button" data-slide="prev"><i
+                          class="fa fa-angle-left"></i></a>
+                      Section 7</h1>
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/16.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">12 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-3">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/50.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">05 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-1">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">Section 8</h1>
+                    <div class="post text-post bg-color-3">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/51.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">22 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="video-post">
+                      <div class="entry-header">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SA6ZBvoeYHs" allowfullscreen=""></iframe>
+                      </div>
+                      <div class="entry-meta"></div>
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-4">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">sed do eiusmod tempor</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+
+                <div class="col-sm-4 ">
+                  <div class="theiaStickySidebar">
+                    <h1 class="card-header">Section 9
+                      <a class="slide-right pull-right" href="#column-slider" role="button" data-slide="next"><i
+                          class="fa fa-angle-right"></i></a>
+                    </h1>
+                    <div class="video-post">
+                      <div class="entry-header">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yBrdLdRICC0" allowfullscreen=""></iframe>
+                      </div>
+                    </div><!-- /.post -->
+
+                    <div class="post text-post bg-color-5">
+                      <div class="post-content">
+                        <span class="catagory after"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">consectetur adipisicing elit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/18.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Lorem ipsum dolor sit amet</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 Likes</a></li>
+                            <li><a href="#">32 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+
+                    <div class="post box-shadow">
+                      <div class="entry-header">
+                        <div class="entry-thumbnail">
+                          <a href="#"><img class="img-responsive" src="assets/images/52.jpg" alt="Image"></a>
+                        </div>
+                      </div>
+                      <div class="post-content post-padding">
+                        <span class="catagory"><a href="#">Monday, Sept 17th</a></span>
+                        <h2 class="entry-title">
+                          <a href="#">Duis autem vel eum iriure dolor in hendrerit</a>
+                        </h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                        <div class="entry-meta">
+                          <ul>
+                            <li><a href="#">10 likes</a></li>
+                            <li><a href="#">15 Comments<span><i class="fa fa-angle-down"></i></span></a></li>
+                          </ul>
+                        </div><!-- /.entry-meta -->
+                      </div><!-- /.post-content -->
+                    </div><!-- /.post -->
+                  </div>
+                </div><!-- /.col-sm-4 -->
+              </div><!-- ./row -->
+            </div><!-- ./container -->
+          </div><!-- ./carousel-item -->
+        </div><!-- ./carousel-inner -->
+      </div><!-- ./carousel -->
+
+      <nav class="nav navbar">
+        <a class="carousel-control-prev" href="#column-slider" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#column-slider" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </nav>
+    </div><!-- ./column-slider-->
+
+  </div><!-- ./container-fluid -->
+  <script src="assets/js/jquery.v3.2.1.js"></script>
+  <script src="assets/js/bootstrap.v4.1.3.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
