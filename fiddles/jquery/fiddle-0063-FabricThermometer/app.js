@@ -12,19 +12,22 @@
 
     header: '2018 November',
     goal: 50000,
-    donations: 0,
-    baseColor: 'black',
-    fontFamily: 'Quicksand',
+    donations: 30000,
+    deltaDonations: 0,
+    lineColor: '#fff',
+    textColor: '#fff',
+    innerColor: 'hotpink',
+    fontFamily: 'Cabin Sketch',
     canvas: null,
     renderThermometer: function () {
 
       this.canvas = this.canvas || new window.fabric.Canvas('fiddle');
-
+      this.canvas.clear();
       var canvas = this.canvas,
         header = new fabric.Text(this.header, {
           fontFamily: this.fontFamily,
           left: 10,
-          fill: this.baseColor,
+          fill: this.textColor,
           top: 0,
           width: 150,
           fontSize: 50
@@ -33,16 +36,16 @@
           fontFamily: this.fontFamily,
           left: 10,
           top: 75,
-          fill: this.baseColor,
+          fill: this.textColor,
           width: 150,
           fontSize: 40
         }),
         manicusLevel = this.calcLevel(),
-        manicusLabel = new fabric.Text(this.formatDollarAmt(this.donations), {
+        manicusLabel = new fabric.Text(this.formatDollarAmt(this.deltaDonations), {
           fontFamily: this.fontFamily,
           left: 101.25,
           top: manicusLevel.top,
-          fill: this.baseColor,
+          fill: this.textColor,
           width: 150,
           fontSize: 40,
           id: 'manicusLabel'
@@ -52,19 +55,21 @@
           left: 29.500002,
           width: 31.75,
           height: manicusLevel.height,
-          strokeWidth: 4,
+          strokeDashoffset: 10,
+          strokeMiterlimit: 10,
+          strokeWidth: 10,
           strokeLinejoin: 'round',
           strokeLinecap: 'round',
-          fill: this.baseColor,
+          fill: this.innerColor,
           id: 'manicus'
         }),
         mercury = new fabric.Path('m81,474a35.5,35.5 0 1 1 -71,0a35.5,35.5 0 1 1 71,0z',
           {
-            fill: this.baseColor,
+            fill: this.innerColor,
             fillRule: 'nonzero',
-            strokeDashoffset: 0,
-            strokeMiterlimit: 4,
-            strokeWidth: 4,
+            strokeDashoffset: 10,
+            strokeMiterlimit: 10,
+            strokeWidth: 10,
             strokeLinecap: 'round',
             strokeLinejoin: 'round'
           }),
@@ -74,31 +79,51 @@
           '-7.9165,-17.75 -17.75,-17.75z', {
           fill: 'white',
           fillRule: 'nonzero',
-          strokeDashoffset: 0,
-          strokeMiterlimit: 4,
+          strokeDashoffset: 10,
+          strokeMiterlimit: 10,
           strokeWidth: 10,
           strokeLinecap: 'round',
           strokeLinejoin: 'round',
-          stroke: this.baseColor
+          stroke: this.lineColor
         }),
         thermometer = new fabric.Group([glass, mercury, manicus, manicusLabel], {
-                                        left: 10,
-                                        top: 150,
-                                        angle: 0,
-                                        selectable: false
-          }),
-          control = new fabric.Group([header, goalHeader, thermometer], {
-            left: 100,
-            top: 0,
-            angle: 0,
-            selectable: false
-          });
+          left: 10,
+          top: 150,
+          angle: 0,
+          selectable: false
+        }),
+        control = new fabric.Group([header, goalHeader, thermometer], {
+          selectable: false
+        });
+
+      control.set({
+        top: 0,
+        left: 0,
+        scaleY: this.canvas.height / control.height,
+        scaleX: this.canvas.width / control.width
+      });
       canvas.add(control);
-      canvas.setZoom(.2);
       canvas.deactivateAll();
     },
+    renderLoop: function() {
+      if (this.donations === 0) {
+        this.renderThermometer();
+      } else {
+        if((this.deltaDonations + 1000) < this.donations) {
+          this.renderThermometer();
+          window.setTimeout(() => {
+            this.deltaDonations = this.deltaDonations + 1000;
+            this.canvas.clear();
+            this.renderLoop();
+          },100);
+        } else {
+          this.deltaDonations = this.donations;
+          this.renderThermometer();
+        }
+      }
+    },
     calcLevel: function() {
-      let _donations = +this.donations,
+      let _donations = +this.deltaDonations,
         _goal = +this.goal,
         scale = _donations / _goal,
         delta = scale * 400,
@@ -137,20 +162,30 @@
         return false;
       }
     },
+    titleChange: function() {
+      var title = document.getElementById('titleTxt').value;
+      if (title) {
+        this.header = title;
+        return true;
+      } else {
+        return false;
+      }
+    },
     formatDollarAmt: function (amt) {
       return '$' + (+amt).toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     },
-
     configureObservers: function() {
       var donationTxt = document.getElementById('donationTxt'),
-        goalTxt = document.getElementById('goalTxt');
+        goalTxt = document.getElementById('goalTxt'),
+        titleTxt = document.getElementById('titleTxt');
+
       if (donationTxt) {
         donationTxt.addEventListener('change', () => {
           if(this.donationsChange()) {
             this.canvas.clear();
-            this.renderThermometer();
+            this.renderLoop();
           }
-      }, false);
+      });
       }
       if (goalTxt) {
         goalTxt.addEventListener('change', () => {
@@ -160,11 +195,20 @@
           }
         });
       }
+      if (titleTxt) {
+        titleTxt.addEventListener('change', () => {
+          if (this.titleChange()) {
+            this.canvas.clear();
+            this.renderThermometer();
+          }
+        });
+      }
+
     },
     init: function () {
       this.configureObservers();
       window.setTimeout(() => {
-        this.renderThermometer();
+        this.renderLoop();
       }, 500);
     }
   };
