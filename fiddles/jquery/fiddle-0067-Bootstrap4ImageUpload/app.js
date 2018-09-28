@@ -11,6 +11,8 @@
         }
     };
     $(document).ready(function () {
-        app.view.init();
+      $('#imageUpload').change(function(x) {
+        alert(x);
+      });
     });
 })(window.app = window.app || {}, jQuery)

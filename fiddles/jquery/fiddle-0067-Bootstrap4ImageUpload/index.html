@@ -10,36 +10,40 @@
   <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
   <title>fiddle-0067-Bootstrap4ImageUpload</title>
 </head>
-<body>
+<body style="height: 100%;">
 <script>
   document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0067-Bootstrap4ImageUpload"' +
     '><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" ' +
     'src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" ' +
     'alt="Fork me on GitHub"><\/a>');
 </script>
-<div class="jumbotron">
-  <h2>Image Stringify</h2>
-  <table>
-    <tr>
-      <td style="padding-left: 30px;">
-        <label for="imageUpload">Upload an Image:</label>
-        <input type="file" class="form-control-file" id="imageUpload" aria-describedby="fileHelp">              </td>
-    </tr>
-    <tr>
-      <td colspan="2" style="text-align: right;">
-        <button type="button" class="btn btn-info btn-sm" id="btn_submit">Stringify</button>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <br/>
-        <pre id="imgString">N/A</pre>
 
-      </td>
+<div class="d-flex w-100 h-100 justify-content-center align-items-center">
+  <div class="jumbotron w-50 h-100" >
+    <h2>Image Stringify</h2>
+    <table width="100%">
+      <tr>
+        <td style="padding-left: 30px;">
+          <label for="imageUpload">Upload an Image:</label>
+          <input type="file" class="form-control-file border" id="imageUpload" aria-describedby="fileHelp">              </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: right;">
+          <button type="button" class="btn btn-info btn-sm" id="btn_submit">Stringify</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <br/>
+          <pre id="imgString">N/A</pre>
 
-    </tr>
-  </table>
+        </td>
+
+      </tr>
+    </table>
+  </div>
 </div>
+
 
 <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.3/fabric.js"></script>
