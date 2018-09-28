@@ -1951,3 +1951,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0066-Bootstrap4ColumnPaging](fiddles/jquery/fiddle-0066-Bootstrap4ColumnPaging)
+
+
+### 253_jquery_fiddle_67 ~ [Issue 251](https://github.com/bradyhouse/house/issues/253)  
+
+* **JQuery**
+
+  1.  Added [fiddles/jquery/fiddle-0067-Bootstrap4ImageUpload](fiddles/jquery/fiddle-0067-Bootstrap4ImageUpload)
