@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
   <title>fiddle-0067-Bootstrap4ImageUpload</title>
 </head>
-<body style="height: 100%;">
+<body>
 <script>
   document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0067-Bootstrap4ImageUpload"' +
     '><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" ' +
@@ -23,28 +23,22 @@
     <h2>Image Stringify</h2>
     <table width="100%">
       <tr>
-        <td style="padding-left: 30px;">
+        <td>
           <label for="imageUpload">Upload an Image:</label>
-          <input type="file" class="form-control-file border" id="imageUpload" aria-describedby="fileHelp">              </td>
-      </tr>
-      <tr>
-        <td colspan="2" style="text-align: right;">
-          <button type="button" class="btn btn-info btn-sm" id="btn_submit">Stringify</button>
-        </td>
+          <input type="file" class="form-control-file border" id="imageUpload" accept=".png,.jpg" aria-describedby="fileHelp">              </td>
       </tr>
       <tr>
         <td>
-          <br/>
-          <div id="fiddleHook"></div>
-
+          <img id="uploadedImg" width="150px">
         </td>
 
       </tr>
       <tr>
         <td>
-          <br/>
-          <pre id="imgString">N/A</pre>
-
+          <div class="form-group">
+            <label for="imgString">Base64 String:</label>
+            <textarea class="form-control" rows="5" id="imgString"></textarea>
+          </div>
         </td>
 
       </tr>
