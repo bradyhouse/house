@@ -22,10 +22,10 @@
             <h2>Configuration</h2>
             <table>
                 <tr>
-                    <td rowspan="3">
-                        <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+                    <td rowspan="4">
+                        <div class="card text-white bg-info mb-3" >
                             <div class="card-body">
-                                <canvas id="fiddle" width="200px" height="350px">
+                                <canvas id="fiddle" width="190px" height="350px">
                                 </canvas>
                             </div>
                         </div>
@@ -53,10 +53,41 @@
                 </tr>
                 <tr>
                     <td style="padding-left: 30px;">
-                        <label for="imageUpload">Upload an Image:</label>
-                        <input type="file" class="form-control-file border" id="imageUpload" accept=".png,.jpg,.gif,.ico" aria-describedby="fileHelp">
+                        <h4>Manicus Image</h4>
+                        <table cellpadding="10" style="border: 1px solid black;">
+                            <tr>
+                                <td colspan="2">
+                                    <label for="imageUpload">Upload an Image:</label>
+                                    <input type="file" class="form-control-file border" id="imageUpload" accept=".png,.jpg,.gif,.ico" aria-describedby="fileHelp">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="titleTxt">Manicus ScaleX:</label>
+                                    <input type="text" class="form-control" id="imgScaleX" placeholder="0">
+                                </td>
+                                <td>
+                                    <label for="titleTxt">Manicus ScaleY:</label>
+                                    <input type="text" class="form-control" id="imgScaleY" placeholder="0">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label for="titleTxt">Manicus left:</label>
+                                    <input type="text" class="form-control" id="imgLeft" placeholder="0">
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
+
+                <tr>
+                    <td style="padding-left: 30px;">
+                        <input type="button" class="btn btn-info" value="refresh">
+                    </td>
+                </tr>
+
             </table>
         </div>
     </div>
