@@ -1958,4 +1958,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0067-Bootstrap4ImageUpload](fiddles/jquery/fiddle-0067-Bootstrap4ImageUpload)
-* Added [fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus](fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus)
+
+
+### 255_jquery_fiddle_68 ~ [Issue 255](https://github.com/bradyhouse/house/issues/255)
+
+* **JQuery**
+
+  1.  Added [fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus](fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus)
