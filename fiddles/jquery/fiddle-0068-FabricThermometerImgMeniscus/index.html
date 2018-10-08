@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="http://github/bradyhouse/house/fiddles/jquery/fiddle-0040-FabricJs">
+    <meta name="author" content="bradyhouse@gmail.com">
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon"/>
+    <link rel="stylesheet" href="https://bootswatch.com/_vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand" />
+
+    <title>fiddle-0068-FabricThermometerImgMeniscus</title>
+</head>
+<body>
+<script>
+  document.write('<a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus"' +
+    ' target="_blank"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" ' + 'src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" ' +
+    'alt="Fork me on GitHub"><\/a>');
+
+</script>
+<div class="js-loader">
+    <div class="jumbotron">
+        <table>
+            <tr>
+                <td rowspan="4" style="vertical-align: top;">
+                    <h4>Charity Thermometer</h4>
+                    <div class="card text-white mb-3">
+                        <div class="card-body">
+                            <canvas id="fiddle" width="190px" height="350px">
+                            </canvas>
+                        </div>
+                        <div id="editModeMessage" class="card-footer text-info" style="display: none;">
+                            Scale the image to the required <br/>
+                            size and drag to the zero position.
+                        </div>
+                    </div>
+                </td>
+                <td style="padding-left: 30px;">
+                    <label for="titleTxt">Title:</label>
+                    <input type="text" class="form-control" id="titleTxt" placeholder="2018 November">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 30px;">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="goalTxt">Goal:</label>
+                                <input type="text" class="form-control" id="goalTxt" placeholder="50000">
+                            </td>
+                            <td>
+                                <label for="donationTxt">Donations:</label>
+                                <input type="text" class="form-control" id="donationTxt" placeholder="30000">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 10px; padding-left: 30px;">
+                    <h5>Meniscus Image</h5>
+                    <table cellpadding="10" style="border: 1px solid black;">
+                        <tr>
+                            <td colspan="2">
+                                <label for="imageUpload">Upload an Image:</label>
+                                <input type="file" class="form-control-file border" disabled="true" id="imageUpload"
+                                       accept=".png,.jpg,.gif,.ico" aria-describedby="fileHelp">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="titleTxt">Meniscus ScaleX:</label>
+                                <input type="text" class="form-control" disabled="true" id="imgScaleX" placeholder="0">
+                            </td>
+                            <td>
+                                <label for="titleTxt">Meniscus ScaleY:</label>
+                                <input type="text" class="form-control" disabled="true" id="imgScaleY" placeholder="0">
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="titleTxt">Meniscus left:</label>
+                                <input type="text" class="form-control" id="imgLeft" disabled="true" placeholder="0">
+                            </td>
+                            <td>
+                                <label for="titleTxt">Meniscus top:</label>
+                                <input type="text" class="form-control" disabled="true" id="imgTop" placeholder="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:right;">
+                                <span id="manicusEditModeBtns" style="display: none;">
+                                    <input type="button" id="cancelImgEditBtn" class="btn btn-info btn-sm" value="cancel">
+                                    <input type="button" id="saveImgEditBtn" class="btn btn-info btn-sm" value="save">
+                                </span>
+                                <span id="manicusNormalModeBtns">
+                                    <input type="button" id="editImgBtn" class="btn btn-info btn-sm" value="edit">
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 10px; padding-left: 30px;">
+                    <input type="button" id="refreshBtn" class="btn btn-info" value="refresh">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.3/fabric.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
