@@ -1,0 +1,339 @@
+@media (max-width: 479px) {
+
+
+  .bumper-ad {
+    display: none;
+  }
+
+  .column-slider .entry-thumbnail {
+    border-radius: 0;
+  }
+
+  .column-slider .tr-post {
+    border-radius: 0;
+  }
+
+  .column-slider .tr-text-post {
+    height: auto !important;
+    font-size: calc(.8rem);
+  }
+
+
+  .column-slider .slide-right {
+    display: none;
+  }
+
+  .column-slider .slide-right-mobile {
+    display: block;
+  }
+
+
+
+  .tr-box-shadow {
+    padding: 0;
+    -webkit-box-shadow:  unset;
+    -moz-box-shadow:  unset;
+    -ms-box-shadow:  unset;
+    -o-box-shadow:  unset;
+    box-shadow:  unset;
+  }
+
+  .topbar-two .navbar-td-left {
+    padding-left: 0;
+  }
+
+  .topbar-two .navbar-area {
+    display: none;
+  }
+
+  .topbar-two .navbar-area-right {
+    display: block;
+    vertical-align: baseline;
+  }
+
+  .topbar-two .navbar-area-right img {
+    max-height: 36px;
+  }
+
+  .search-bar .search-event .dropdown-icon-box {
+    display: none !important;
+  }
+
+  .search-bar .dropdown-item {
+    font-size: .8rem;
+    border-bottom: 1px solid gainsboro;
+    padding: 5px;
+    line-height: normal;
+  }
+
+  .dropdown-menu {
+    box-sizing: border-box;
+  }
+
+  .search-bar .search-location {
+       display: none;
+  }
+
+  .search-bar .search-event .form-control {
+    line-height: unset;
+    border-radius: unset !important;
+    border: none;
+    font-size: unset;
+  }
+
+  .search-bar .btn-primary {
+    height: calc(100%);
+    border-radius: 0 .25rem .25rem 0;
+  }
+
+  .search-bar .event-dropdown {
+    display: none !important;
+  }
+
+  .search-bar .search-event .search-event-button {
+    display: inline-block;
+  }
+  .weather-icon {
+    margin-right: 5px;
+  }
+  .story-slider .entry-meta li ul li:first-child {
+    margin-right: 0;
+  }
+  .story-slider .entry-meta li ul li a {
+    padding: 4px;
+  }
+  .entry-meta > ul > li {
+    margin-right: 25px;
+  }
+  .search {
+    right: 103px;
+  }
+  .expanded .search {
+    width: 180px;
+  }
+  .expanded .search-icon::before,
+  .expanded .search-icon::after {
+    display: none;
+  }
+
+  .photo-gallery-two .gallery-turner {
+    bottom: 48px;
+  }
+  .item .entry-meta > ul > li {
+    margin-right: 0;
+  }
+  .searchNlogin > ul > li {
+    padding:14px 5px;
+    font-size: 13px;
+    border-left: 0;
+  }
+  .searchNlogin li a {
+    font-size: 13px;
+  }
+  .language-dropdown .sub-menu li a {
+    padding: 10px 5px;
+  }
+  .topbar-right .user {
+    padding: 6px 5px;
+  }
+  .user .user-dropdown i {
+    margin-left: 5px;
+  }
+  .topbar-right .user-image {
+    margin-right: 0;
+  }
+  .searchNlogin .dropdown-menu {
+    left: -17px;
+  }
+  .slider-style-two .carousel-indicators {
+    width: 40%;
+  }
+  .slider-style-two .item-content {
+    width: 60%;
+  }
+  .slider-style-two .feed.pull-right {
+    float: left !important;
+  }
+  .menu-responsive .navbar-toggle {
+    top: -145px;
+  }
+  .tr-menu .feed {
+    top: -130px;
+  }
+  .slider-style-two .item-image {
+    height: 100px;
+  }
+  .slider-style-two .item .post-content {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .search-form {
+    height: 47px;
+  }
+  .slider-style-two .read-more {
+    line-height: 24px;
+  }
+  .sidebar-menu-two.menu-responsive .navbar-toggle {
+    top: -149px;
+  }
+  .post-inner-image ul li {
+    width: 100%;
+    margin-right: 0;
+  }
+  .tr-about .about h1 {
+    font-size: 30px;
+  }
+  .team-members > li {
+    width: 100%;
+  }
+  .contact-form-two,
+  .sign-in,
+  .not-found {
+    padding: 0 15px;
+  }
+  .contact-form-two .pull-right,
+  .contact-form-two .pull-left {
+    float: none !important;
+    text-align: left;
+  }
+  .tr-live-score .live-match,
+  .stock-quotes,
+  .quotes-content,
+  .live-score-content	{
+    width: 100%;
+    border: 0;
+  }
+  .stock-quotes,
+  .tr-live-score .live-match {
+    border-bottom: 1px solid #f0f3f5;
+  }
+  .tr-live-score,
+  .tr-stock-quotes {
+    padding-right: 0;
+  }
+  .result-slider,
+  .quotes-slider {
+    padding-right: 30px;
+  }
+  .result-slider .slick-next,
+  .quotes-slider .slick-next {
+    right: -10px;
+  }
+  .topbar-two .searchNlogin li {
+    border: none;
+  }
+  .slider-style-four .gallery-turner {
+    bottom: 46%;
+  }
+  .result-slider,
+  .quotes-slider	{
+    border: 0;
+    margin: 0 15px;
+  }
+  .tr-post-tab .nav-tabs li a {
+    padding: 5px 15px;
+  }
+  .topbar-two .searchNlogin {
+    right: 10px;
+  }
+  .slider-style-four .gallery-turner {
+    bottom: 48%;
+  }
+  .homepage-5 .ytp-large-play-button {
+    top: 40% !important;
+  }
+  .account-content,
+  .error-page-content {
+    padding: 0 15px;
+  }
+  ul.sub-menu .sub-menu-2 {
+    left: 50%;
+    top: 100%;
+  }
+  .result-slider .slick-prev,
+  .quotes-slider .slick-prev {
+    left: -15px;
+  }
+  .result-slider .slick-next,
+  .quotes-slider .slick-next {
+    right: -20px;
+  }
+  .story-slider.home-slider-1 .post-content {
+    width: 100%;
+  }
+  .story-slider.home-slider-1 .item {
+    min-height: 350px;
+  }
+  .story-slider.home-slider-1 .carousel-indicators {
+    display: none;
+  }
+
+  .navbar-login {
+    display: none;
+  }
+  .navbar-join-today {
+    display: none;
+  }
+
+  .navbar-add-business {
+    display: none;
+  }
+
+  .oswaldo-before:after {
+    left: calc(100% - 42px);
+    width: 25px;
+  }
+
+  .courtney-before:after {
+    left: calc(100% - 42px);
+    width: 25px;
+  }
+
+  .ad-before:after {
+    left: calc(100% - 38px);
+    width: 20px;
+  }
+
+  .popular-areas {
+    display: none;
+  }
+
+  .search-bar .jumbotron {
+    background: url(../../../images/search-bar/sarasota_4.jpg) no-repeat;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: unset;
+    -moz-box-shadow: unset;
+    -ms-box-shadow: unset;
+    -o-box-shadow: unset;
+    box-shadow: unset;
+  }
+
+  .search-bar .search-event {
+    width: calc(90%);
+  }
+
+  .aside-menu .sidebar-bottom {
+    display: none;
+  }
+
+  .aside-menu-addbusiness {
+    display: block;
+  }
+
+  .aside-menu-login {
+    display: block;
+  }
+
+  .aside-menu-register {
+    display: block;
+  }
+
+
+
+  .more-posts-button .btn {
+    font-size: calc(1rem);
+  }
+
+}

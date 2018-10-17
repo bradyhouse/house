@@ -1,0 +1,180 @@
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .bumper-ad {
+    display: none;
+  }
+
+  .tr-menu.sidebar-menu .navbar-default {
+    padding:15px 10px;
+  }
+  .latest-result-content {
+    padding: 40px 15px;
+  }
+  .latest-result-content .col-md-4 {
+    padding: 0 10px;
+  }
+  .tr-home-slider .carousel-indicators li {
+    padding: 25px 15px;
+  }
+  .tr-meta-tab .nav-tabs li > a {
+    padding: 12px 13px 10px;
+  }
+  .weather-top .col-xs-6 {
+    padding: 0 5px;
+  }
+  .weather-type {
+    font-size: 15px;
+  }
+  .medium-post .entry-meta ul>li:last-child {
+    margin-left: 0;
+  }
+  .football-result .col-md-6 {
+    width: 100%;
+  }
+
+  .photo-gallery-two .gallery-indicators li,
+  .photo-gallery-two .gallery-indicators li.active {
+    width: 30px;
+    height: 30px;
+  }
+  .photo-gallery-two .left-photo,
+  .photo-gallery-two .right-photo {
+    bottom: -5px;
+  }
+  .sidebar-menu .navbar-default li a i {
+    margin-right: 15px;
+  }
+  .slider-style-two .entry-title {
+    font-size: 30px;
+  }
+  .slider-style-two .read-more {
+    margin-top: 40px;
+  }
+  .tr-topbar .topbar-right {
+    padding-left: 0;
+  }
+  .searchNlogin>ul>li {
+    padding: 13px 8px 14px;
+  }
+  .post-vertical .col-md-6 {
+    width: 100%;
+  }
+  .post-vertical .author {
+    left: 15px;
+    top: -20px;
+  }
+  .post-vertical .post-content {
+    margin-top: 25px;
+  }
+  .breaking-news {
+    width: 500px;
+  }
+  .tr-topbar .topbar-left,
+  .tr-topbar .topbar-right {
+    width: 50%;
+  }
+  .tr-topbar.topbar-width-container .topbar-left {
+    width: 47%;
+  }
+  .tr-topbar.topbar-width-container .topbar-right {
+    width: 53%;
+  }
+  .search {
+    right: 145px;
+  }
+  .tr-meta-tab .entry-meta > ul > li {
+    margin-right: 0;
+  }
+  .tr-audio-player {
+    min-height: 455px;
+  }
+  .post-list-style-three .entry-title {
+    font-size: 15px;
+  }
+  .post-list-style-three .small-post-list > li {
+    padding: 15px;
+  }
+  .post-list-style-two .post-content {
+    padding: 10px;
+  }
+  .post-style-3 {
+    min-height: 235px;
+  }
+  .post-list-style-two .entry-header {
+    height: 77px;
+    width: 90px;
+  }
+  .team-members > li {
+    width: 25%;
+  }
+  .tr-live-score .live-match,
+  .stock-quotes{
+    width: 18%;
+  }
+  .quotes-content,
+  .live-score-content {
+    width: 82%;
+  }
+  .slider-style-four .gallery-turner {
+    bottom: 32%;
+  }
+  .tr-live-match .result-left .pull-left,
+  .tr-live-match .result-right .pull-right {
+    float: none !important;
+  }
+  .tr-live-match .result-right .pull-right img {
+    display: inline-block;
+  }
+  .local-events .nav-tabs > li > a {
+    margin-right: 2px;
+    padding: 5px 9px;
+  }
+  .medium-post-responsive .feed.pull-right{
+    float: left !important;
+  }
+  .league-result > ul > li {
+    padding: 20px 13px;
+  }
+  .jp-volume-bar {
+    width: 50%;
+  }
+  .tr-post-tab .tab-content {
+    border-left: 1px solid #cecece;
+  }
+  .tr-breaking-news .tr-post {
+    margin-bottom: 14px;
+  }
+  .medium-post-content .feed.pull-right {
+    float: left !important;
+  }
+  .trending-news .col-md-6 {
+    width: 100%;
+  }
+  .trending-news .col-md-push-6 {
+    left: 0;
+  }
+  .trending-news .col-md-pull-6 {
+    right: 0;
+  }
+  .searchNlogin {
+    margin-right: 8px;
+  }
+  .topbar-width-container .searchNlogin {
+    margin-right: 0;
+  }
+  .homepage-5 .tr-video-post .entry-header {
+    height: 275px;
+  }
+  .meta-widget .nav-tabs li > a {
+    padding: 10px 15px 10px;
+  }
+  .homepage-1 .meta-widget .nav-tabs li > a {
+    padding: 10px;
+  }
+  .tr-breaking-news .title {
+    margin-bottom: 20px;
+  }
+  .tr-menu .navbar-nav > li {
+    margin-right: 12px;
+  }
+}

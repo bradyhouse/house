@@ -1965,3 +1965,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus](fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus)
+* Added [fiddles/jquery/fiddle-0069-BootstrapStickyNavBars](fiddles/jquery/fiddle-0069-BootstrapStickyNavBars)

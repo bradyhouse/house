@@ -1,0 +1,29 @@
+@media(max-width: 768px) {
+
+  .tr-live-match>ul {
+    text-align: left !important;
+  }
+  .tr-live-match>ul>li {
+    display: block;
+    float: none !important;
+  }
+  .tr-live-match .pull-right {
+    float: left !important;
+  }
+  .result-right.text-right {
+    text-align: left !important;
+  }
+  .tr-live-match .live,
+  .tr-live-match .time {
+    margin: 10px;
+    text-align: center;
+  }
+  .tr-menu .navbar-default .feed.feed-color li a {
+    color: #fff;
+  }
+
+  .bumper-ad {
+    display: none;
+  }
+
+}

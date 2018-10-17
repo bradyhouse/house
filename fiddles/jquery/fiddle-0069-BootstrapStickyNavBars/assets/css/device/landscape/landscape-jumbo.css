@@ -1,0 +1,9 @@
+@media (min-width: 1400px) {
+
+  .gallery-indicators li,
+  .gallery-indicators li.active {
+    width: 5.7%;
+    height: 40px;
+  }
+
+}

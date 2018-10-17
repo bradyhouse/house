@@ -1,0 +1,62 @@
+.tr-details {
+  font-size: 14px;
+  line-height: 22px;
+  color: #888;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #f0f3f5;
+}
+
+.tr-details .social {
+  margin: 30px 0 20px;
+}
+
+.tr-details p {
+  margin-bottom: 20px;
+}
+
+.post-inner-image {
+  overflow: hidden;
+  margin: 30px 0 15px;
+}
+
+.post-inner-image ul {
+  max-width: 720px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.post-inner-image ul li {
+  float: left;
+  padding: 0 8px;
+  overflow: hidden;
+  width: 33.3%;
+  margin-bottom: 15px;
+}
+
+.post-inner-image ul li img {
+  border-radius: 5px;
+}
+
+.post-inner-image ul li:last-child {
+  margin-right: 0;
+}
+
+.details-fulid .post-content,
+.details-fulid .tr-details {
+  max-width: 1030px;
+  display: inline-block;
+}
+
+.details-fulid .entry-header {
+  max-height: 580px;
+}
+
+.details-fulid .post-content .entry-meta ul li {
+  float: none;
+  display: inline-block;
+}
+
+.details-fulid .post-content .author {
+  margin-left: 47%;
+}

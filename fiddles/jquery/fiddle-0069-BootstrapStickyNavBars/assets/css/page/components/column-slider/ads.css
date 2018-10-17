@@ -1,0 +1,49 @@
+.tr-ad {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.tr-ad img,
+.entry-thumbnail img {
+  width: 100%;
+}
+
+.tr-ad.ad-bottom {
+  margin: 50px 0 0;
+}
+
+.tr-ad.ad-image img {
+  width: inherit;
+  display: inline-block;
+}
+
+
+.tr-padding-0 .tr-ad {
+  padding: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+.ad-before {
+  position: relative;
+}
+
+.ad-before:after {
+  position: absolute;
+  content: "AD";
+  right: 0;
+  top: 2px;
+  width: auto;
+  margin-right: 2px;
+  max-width: 100%;
+  height: auto;
+  padding: 5px;
+  text-align: left;
+  font-size: calc(.8rem + 2px);
+  color: #fff;
+  background-color: darkblue;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  border-radius: .25rem;
+
+}

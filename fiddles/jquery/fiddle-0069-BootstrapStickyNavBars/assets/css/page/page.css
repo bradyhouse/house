@@ -1,0 +1,63 @@
+@import '../libs/bootstrap.min.css';
+@import '../libs/font-awesome.min.css';
+@import '../libs/magnific-popup.css';
+@import '../libs/animate.css';
+@import '../libs/slick.css';
+
+
+@import 'components/components.css';
+
+
+html,
+body {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f0f3f5;
+
+}
+
+.clear:after, .clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#content-unit {
+  max-width: calc(100%);
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.content-wrap {
+  max-width: 1440px;
+}
+
+.bumper-ad {
+  padding: 0 15px 0 15px;
+  margin: 0;
+}
+
+.bumper-ad:hover {
+  background-image: url(https://tpc.googlesyndication.com/simgad/13962395047918566291);
+
+  filter: unset;
+}
+
+.pencil-effect {
+  background-image: url(https://tpc.googlesyndication.com/simgad/13962395047918566291);
+  background-size: initial;
+  background-position: top;
+  background-repeat: repeat;
+}
+
+@supports (filter: invert(1)) and (background-blend-mode: difference) {
+  .pencil-effect {
+    background-image: url(https://tpc.googlesyndication.com/simgad/13962395047918566291), url(https://tpc.googlesyndication.com/simgad/13962395047918566291);
+    background-blend-mode: difference;
+    background-position: calc(50% - 1px) calc(50% - 1px), calc(50% + 1px) calc(50% + 1px);
+    filter: brightness(1) invert(1) grayscale(1) opacity(40%);
+
+  }
+}

@@ -1,0 +1,264 @@
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+  .bumper-ad {
+    display: none;
+  }
+
+  .aside-menu {
+    min-width: unset;
+  }
+
+
+  .entry-title {
+    font-size: 18px;
+  }
+  .item .entry-title {
+    font-size: 24px;
+  }
+  .tr-menu.sidebar-menu .navbar-default{
+    padding: 10px 15px;
+  }
+  .tr-menu.sidebar-menu .navbar-collapse {
+    padding: 0;
+  }
+  .sidebar-menu .navbar-brand {
+    padding: 10px 0;
+  }
+  .tr-topbar .topbar-right {
+    border-left: 0;
+    border-top: 1px solid #f0f3f5;
+  }
+  .sidebar-menu .navbar-default li a i {
+    margin-right: 10px;
+  }
+  .tr-home-slider .carousel-indicators {
+    width: 40%;
+  }
+  .tr-home-slider .carousel-indicators li {
+    padding: 25px 15px;
+  }
+  .tr-home-slider .post-content {
+    width: 60%;
+  }
+  .slider-style-three .post-content,
+  .slider-style-four .post-content {
+    width: 100%;
+  }
+  .slider-style-three .item,
+  .slider-style-three .container {
+    min-height: 650px;
+  }
+  .tr-home-slider .entry-meta>ul>li:last-child {
+    margin-left: 15px;
+  }
+  .weather-top .col-xs-6 {
+    width: 100%;
+  }
+  .weather-image {
+    margin-bottom: 20px;
+  }
+  .weather-top ul li + li {
+    margin-left: 0;
+  }
+  .weather-bottom li {
+    width: 100%;
+    padding: 20px;
+  }
+  .weather-bottom li + li{
+    border-left: 0;
+  }
+  .weather-bottom li:first-child {
+    padding-bottom: 0;
+  }
+  .match-category {
+    margin: 30px 0;
+  }
+  .latest-result .score {
+    margin-top: 15px;
+  }
+  .author-image {
+    float: none;
+  }
+  .footer-menu .navbar-nav li + li {
+    margin-left: 15px;
+  }
+  .tr-menu .dropdown-menu {
+    top: 35px;
+  }
+
+  .tr-topbar.topbar .breaking-news {
+    width: 530px;
+  }
+  .tr-topbar.topbar .topbar-left {
+    width: 100%;
+  }
+  .topbar-width-container .topbar-right {
+    border-top-color: #62447f;
+  }
+  .photo-gallery-two .gallery-turner {
+    bottom: 24px;
+  }
+  .author-info h2 {
+    margin: 0;
+  }
+  .slider-style-two .carousel-indicators {
+    width: 31%;
+  }
+  .slider-style-two .item-content {
+    width: 69%;
+  }
+  .item-image-content,
+  .slider-style-two .item .post-content {
+    width: 100%;
+  }
+  .slider-style-two .item-image {
+    height: 250px;
+  }
+  .slider-style-two .item .post-content {
+    padding: 0 15px 30px;
+  }
+  .slider-style-two .read-more {
+    margin-top: 20px;
+  }
+  .slider-style-two .carousel-indicators li {
+    padding: 45px 15px;
+  }
+  .post-vertical .author {
+    left: 15px;
+    top: -45px;
+  }
+  .post-vertical .post-content {
+    margin-top: 25px;
+  }
+  .small-post-list .entry-header {
+    width: 65px;
+    height: 65px;
+  }
+  .post-list-style-two  .entry-header {
+    width: 75px;
+    height: 67px;
+  }
+  .tr-twitter {
+    padding: 45px 5px 100px;
+  }
+  .local-events .nav-tabs > li > a {
+    margin-right: 2px;
+    padding: 5px 9px;
+  }
+  .result-style-two .col-xs-4 {
+    padding: 0 5px;
+  }
+  .breaking-news {
+    padding-right: 5px;
+  }
+  .tr-topbar .topbar-left,
+  .tr-topbar .topbar-right,
+  .tr-topbar.topbar-width-container .topbar-left,
+  .tr-topbar.topbar-width-container .topbar-right {
+    width: 100%;
+  }
+  .sidebar-menu .navbar-nav li a {
+    font-size: 13px;
+  }
+  .homepage span.discover {
+    margin-top: 0;
+  }
+  .tr-menu .feed {
+    position: absolute;
+    left: 190px;
+    top: -35px;
+    padding: 0;
+  }
+  .tr-meta-tab .entry-meta > ul > li {
+    margin-right: 0;
+    display: block;
+  }
+  .post-style-five .entry-title {
+    font-size: 30px;
+  }
+  .tr-post-tab .nav-tabs li a {
+    padding: 5px 20px;
+  }
+  .tr-post-tab .nav-tabs li a::after {
+    left: 20px;
+  }
+  .widget-left-content img {
+    width: 90%;
+  }
+  .video-post-list > li {
+    padding: 15px;
+  }
+  .tr-menu.menu-style-two .feed li a {
+    color: #d4d6d7;
+  }
+  .team-members > li {
+    width: 33%;
+  }
+  .catagory-list ul li i {
+    margin-right: 15px;
+  }
+  .catagory-list .player {
+    margin-right: 5px;
+  }
+  .catagory-list ul li a {
+    font-size: 12px;
+  }
+  .tr-live-score .live-match,
+  .stock-quotes{
+    width: 25%;
+  }
+  .quotes-content,
+  .live-score-content {
+    width: 75%;
+  }
+  .tr-breaking-news {
+    padding: 20px 0;
+  }
+  .tr-breaking-news .title {
+    margin-bottom: 20px;
+  }
+  .tr-breaking-news .gallery-turner {
+    right: 15px;
+  }
+  .slider-style-four .gallery-turner {
+    bottom: 32%;
+  }
+  .medium-post-responsive .feed.pull-right{
+    float: left !important;
+  }
+  .league-result > ul > li {
+    padding: 20px 13px;
+  }
+  .widget-left {
+    border: 0;
+  }
+  .audio-post .soundcloud,
+  .post-style-six .video-post .entry-thumbnail {
+    height: 310px;
+  }
+  .medium-post-content .left-post {
+    border-right: 0;
+  }
+  .tr-breaking-news .tr-post {
+    margin-bottom: 14px;
+  }
+  .tr-menu .navbar-nav > li {
+    margin-right: 15px;
+  }
+  .tr-weather.style-two .weather-top ul {
+    text-align: left;
+  }
+  .homepage-5 .tr-video-post .entry-header {
+    height: 220px;
+  }
+  .tr-menu .feed {
+    margin: 0;
+    padding: 0;
+  }
+  .widget.widget-menu-3 ul li {
+    width: 50%;
+  }
+
+
+}
