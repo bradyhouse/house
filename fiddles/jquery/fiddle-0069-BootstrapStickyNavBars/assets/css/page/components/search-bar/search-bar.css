@@ -6,19 +6,6 @@
 
 }
 
-.search-bar .jumbotron {
-  background: url(../../../../images/search-bar/sarsota_6.png) no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  text-align: center;
-  min-height: 250px;
-  vertical-align: middle;
-  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.100);
-  -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.100);
-  -ms-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.100);
-  -o-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.100);
-  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.100);
-}
 
 .search-bar .jumbotron .mr-lg-5, .mx-lg-5 {
   margin-right: 0 !important;
