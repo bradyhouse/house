@@ -3,7 +3,7 @@ fiddle-0069-BootstrapStickyNavBars
 
 ### Title
 
-fiddle-0069-BootstrapStickyNavBars
+Bootstrap Sticky NavBars
 
 
 ### Creation Date
@@ -18,18 +18,23 @@ Chicago, IL
 
 ### Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 257](https://github.com/bradyhouse/house/issues/257)
+
 
 ### Description
 
-Another jQuery Fiddle.
-
+This fiddle demonstrates how to add a sticky header (and footer) bar to a page using bootstrap 4. It
+also explores how to use CSS media blocks to control which navbars are visible depending on the browsers screen 
+width. Finally, it answers another bootstrap question: _How do you center multiple form controls within a navbar 
+while also having elements right and left justified without using a table?_ Ok, it's a boring one, but critical 
+to understand when designing across devices. 
+ 
 
 ### Published Version Link
 
-N/A
+*   [bradyhouse.io > jquery > #69](http://bradyhouse.github.io/jquery/fiddle-0069-BootstrapStickyNavBars/index.html)
 
 
 ### Tags
 
-jQuery
+jQuery, bootstrap 4, @media

@@ -1,4 +1,4 @@
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1399px) {
 
   .bumper-ad {
     display: none;
@@ -176,5 +176,9 @@
   }
   .tr-menu .navbar-nav > li {
     margin-right: 12px;
+  }
+
+  #githubLink {
+    display: none;
   }
 }

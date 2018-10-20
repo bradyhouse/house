@@ -1,4 +1,4 @@
-@media(max-width: 768px) {
+@media (min-width: 800px) and (max-width: 991px) {
 
   .tr-live-match>ul {
     text-align: left !important;
@@ -23,6 +23,71 @@
   }
 
   .bumper-ad {
+    display: none;
+  }
+
+  .search-bar {
+  }
+
+  .search-bar .search-event .input-group-append {
+    margin-left: 0;
+  }
+
+  .search-bar .search-location {
+    display: none;
+  }
+
+  .search-bar .search-event .dropdown-icon-box {
+    display: none !important;
+  }
+
+  .search-bar .dropdown-item {
+    font-size: .8rem;
+    border-bottom: 1px solid gainsboro;
+    padding: 5px;
+    line-height: normal;
+  }
+
+  .search-bar .dropdown-menu {
+    display: none;
+  }
+
+  .search-bar .search-event .form-control {
+    line-height: unset;
+    border-radius: unset !important;
+    font-size: unset;
+  }
+
+  .search-bar .btn-primary {
+    height: calc(100%);
+    border-radius: 0 .25rem .25rem 0;
+    margin-left: -5px;
+  }
+
+  .search-bar .search-event {
+    width: calc(90%);
+  }
+
+  .search-bar .search-event .search-event-button {
+    display: inline-block;
+  }
+  .search-bar .search-event .input-group-append {
+    margin-left: unset;
+  }
+
+  .search-bar .event-dropdown {
+    display: none !important;
+  }
+
+  .navbar-landscape-large {
+    display: none;
+  }
+
+  .navbar-landscape-medium {
+    display: unset;
+  }
+
+  #githubLink {
     display: none;
   }
 

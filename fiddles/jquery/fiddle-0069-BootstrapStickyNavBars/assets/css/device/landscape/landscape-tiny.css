@@ -44,19 +44,6 @@
     display: none;
   }
 
-  .search-bar .jumbotron {
-    background: url(../../../images/search-bar/sarasota_4.jpg) no-repeat;
-    min-height: 250px;
-    background-size: cover;
-    background-position: center;
-    -webkit-box-shadow: unset;
-    -moz-box-shadow: unset;
-    -ms-box-shadow: unset;
-    -o-box-shadow: unset;
-    box-shadow: unset;
-  }
-
-
   .search-bar .dropdown-item {
     font-size: .8rem;
     border-bottom: 1px solid gainsboro;
@@ -66,20 +53,6 @@
 
   .dropdown-menu {
     box-sizing: border-box;
-  }
-
-  .search-bar .search-location {
-    display: none;
-  }
-
-  .search-bar .search-event .form-control {
-    border-top-right-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-    border-color: #fff !important;
-  }
-
-  .search-bar .search-event .search-event-button {
-    display: block;
   }
 
   .ad-bottom {
@@ -227,27 +200,7 @@
   .entry-meta {
     margin-bottom: 5px;
   }
-  .tr-home-slider.slider-style-two,
-  .tr-section.bg-transparent .tr-post,
-  .margin-bottom-30,
-  .tr-section,
-  .tr-video-post,
-  .tr-text-post,
-  .latest-result,
-  .tr-ad,
-  .navbar,
-  .homepage .tr-menu,
-  .sidebar-menu-two,
-  .tr-comment,
-  .catagory-list,
-  .tr-live-score,
-  .tr-stock-quotes,
-  .tr-news-content,
-  .tr-weather,
-  .tr-meta-tab,
-  .homepage-5 .tr-post {
-    margin-bottom: 15px;
-  }
+
   .section-title {
     margin: 15px 0 30px;
   }
@@ -554,5 +507,61 @@
   .navbar-add-business {
     display: none;
   }
+
+  .search-bar .search-location {
+    display: none;
+  }
+
+  .search-bar .search-event .dropdown-icon-box {
+    display: none !important;
+  }
+
+  .search-bar .dropdown-item {
+    font-size: .8rem;
+    border-bottom: 1px solid gainsboro;
+    padding: 5px;
+    line-height: normal;
+  }
+
+  .search-bar .dropdown-menu {
+    display: none;
+  }
+
+  .search-bar .search-event .form-control {
+    line-height: unset;
+    border-radius: unset !important;
+    border: none;
+    font-size: unset;
+  }
+
+  .search-bar .btn-primary {
+    height: calc(100%);
+    border-radius: 0 .25rem .25rem 0;
+    margin-left: -5px;
+  }
+
+  .search-bar .search-event {
+    width: calc(90%);
+  }
+
+  .search-bar .search-event .search-event-button {
+    display: inline-block;
+  }
+  .search-bar .search-event .input-group-append {
+    margin-left: unset;
+  }
+
+  .search-bar .event-dropdown {
+    display: none !important;
+  }
+
+  .navbar-landscape-large {
+    display: none;
+  }
+
+  .navbar-landscape-medium {
+    display: unset;
+  }
+
 
 }

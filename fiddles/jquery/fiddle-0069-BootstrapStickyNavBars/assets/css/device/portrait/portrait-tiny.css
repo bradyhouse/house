@@ -298,18 +298,6 @@
     display: none;
   }
 
-  .search-bar .jumbotron {
-    background: url(../../../images/search-bar/sarasota_4.jpg) no-repeat;
-    min-height: 250px;
-    background-size: cover;
-    background-position: center;
-    -webkit-box-shadow: unset;
-    -moz-box-shadow: unset;
-    -ms-box-shadow: unset;
-    -o-box-shadow: unset;
-    box-shadow: unset;
-  }
-
   .search-bar .search-event {
     width: calc(90%);
   }
@@ -330,10 +318,17 @@
     display: block;
   }
 
-
-
   .more-posts-button .btn {
     font-size: calc(1rem);
   }
+
+  .navbar-landscape-large {
+    display: none;
+  }
+
+  .navbar-landscape-medium {
+    display: unset;
+  }
+
 
 }
