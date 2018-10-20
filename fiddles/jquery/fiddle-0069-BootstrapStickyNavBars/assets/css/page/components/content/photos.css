@@ -1,0 +1,140 @@
+.gallery-indicators {
+  position: static;
+  width: 100%;
+  margin-left: 0;
+  left: 15px;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+#photo-gallery img {
+  width: 100%;
+}
+
+#photo-gallery h2 {
+  margin: 20px 0;
+  line-height: 24px;
+}
+
+.gallery-turner {
+  position: absolute;
+  right: 15px;
+  bottom: 25px;
+  font-size: 25px;
+  z-index: 50;
+}
+
+.gallery-turner a {
+  color: #cecece;
+}
+
+.gallery-indicators li,
+.gallery-indicators li.active {
+  width: 34px;
+  height: 34px;
+  border: none;
+  margin: 2px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#photo-gallery h2 a {
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+}
+
+#photo-gallery a:hover {
+  color: #ff0000;
+}
+
+.gallery-indicators li img {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+}
+
+.gallery-indicators li:hover img,
+.gallery-indicators li.active img {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+}
+
+
+/* Photo Gallery Two */
+
+.photo-gallery-two .gallery-indicators li,
+.photo-gallery-two .gallery-indicators li.active {
+  width: 40px;
+  height: 40px;
+}
+
+.photo-gallery-two .gallery-indicators {
+  text-align: center;
+}
+
+.photo-gallery-two .gallery-turner {
+  width: 100%;
+  left: 0;
+}
+
+.photo-gallery-two .left-photo,
+.photo-gallery-two .right-photo {
+  position: absolute;
+  bottom: 0;
+}
+
+.photo-gallery-two .left-photo {
+  left: 15px;
+}
+
+.photo-gallery-two .right-photo {
+  right: 15px;
+}
+
+.photo-gallery-two #photo-gallery a:hover {
+  color: #7a559f;
+}
+
+/* Post List */
+
+.medium-post-list li {
+  margin-bottom: 25px;
+}
+
+.medium-post-list .entry-thumbnail {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.medium-post-list .entry-thumbnail img {
+  width: 100%;
+}
+
+.medium-post-list .tr-post .catagory a,
+.medium-post-list .catagory span {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #babcc2;
+  display: block;
+  margin-top: 10px;
+}
+
+.medium-post-list .tr-post .catagory a:hover {
+  color: #ff0000;
+}
+
+.medium-post-list .entry-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.medium-post-list .tr-post .post-content {
+  margin-top: 0;
+}
+

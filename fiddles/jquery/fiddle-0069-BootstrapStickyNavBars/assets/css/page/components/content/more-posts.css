@@ -1,0 +1,13 @@
+.more-posts-button .btn {
+  border: none;
+  font-size: calc(2.5rem + 2px);
+  font-weight: 700;
+  padding: calc(2rem);
+  margin: calc(2rem + 2px) 0 calc(2rem + 2px) 0;
+  background-color: transparent;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.more-posts-button .btn:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,246 @@
+
+.story-slider {
+  border-radius: 0;
+  margin: 0 15px 15px 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.story-slider .carousel-indicators {
+  position: absolute;
+  left: auto;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  color: #fff;
+  top: 0;
+  margin-left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.story-slider .carousel-indicators li {
+  width: 100%;
+  height: 25%;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #4d4d4d;
+  text-indent: 0;
+  text-align: left;
+  margin: 0;
+  padding:25px;
+  display: block;
+}
+
+.story-slider .carousel-indicators li:last-child {
+  border-bottom: 0;
+}
+
+
+
+.story-slider .carousel-indicators li span {
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.story-slider .item {
+  min-height:500px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position: center;
+}
+
+.story-slider .catagory,
+.post-content .catagory {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.story-slider .catagory a:hover,
+.slider-style-three .catagory a:hover {
+  color: #d4d0d0;
+}
+
+.story-slider .carousel-indicators li .catagory {
+  font-size: 10px;
+}
+
+.story-slider .carousel-indicators li:hover,
+.story-slider .carousel-indicators li.active {
+  background-color: #0067B3;
+}
+
+.story-slider .post-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  color: #fff;
+  padding: 25px;
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.07) 11%, rgba(0,0,0,0.19) 24%, rgba(0,0,0,0.69) 64%, rgba(0,0,0,0.85) 79%, rgba(0,0,0,0.97) 93%, rgba(0,0,0,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.07) 11%,rgba(0,0,0,0.19) 24%,rgba(0,0,0,0.69) 64%,rgba(0,0,0,0.85) 79%,rgba(0,0,0,0.97) 93%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.07) 11%,rgba(0,0,0,0.19) 24%,rgba(0,0,0,0.69) 64%,rgba(0,0,0,0.85) 79%,rgba(0,0,0,0.97) 93%,rgba(0,0,0,1) 100%);
+}
+
+.story-slider .carousel .post-content .catagory {
+  animation-delay: 1s;
+  -webkit-animation-delay:1s;
+}
+
+.story-slider .carousel .post-content h2 {
+  animation-delay: 0.75s;
+  -webkit-animation-delay: 0.75s;
+}
+
+.story-slider .carousel .post-content .entry-meta,
+.carousel .item .post-content p {
+  animation-delay: 1s;
+  -webkit-animation-delay:1s;
+}
+
+.story-slider .carousel .item .read-more {
+  animation-delay: 1.5s;
+  -webkit-animation-delay:1.5s;
+}
+
+.story-slider .item .post-content a {
+  color: #fff;
+}
+
+.story-slider .post-content a:hover,
+.story-slider .item .entry-meta a:hover {
+  color: #0067B3;
+}
+
+.story-slider .entry-meta {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.story-slider .entry-meta,
+.story-slider .entry-meta a,
+.story-slider .item .entry-meta li,
+.story-slider .item .entry-meta a {
+  font-size: 12px;
+  color: #afb1b2;
+  font-weight: 500;
+}
+
+.story-slider .entry-meta li ul li a {
+  padding: 5px;
+}
+
+.story-slider .item .entry-meta {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.story-slider .item .entry-title {
+  margin: 10px 0;
+  font-size: 30px;
+}
+
+.story-slider .entry-title {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #000;
+}
+
+.story-slider .entry-title a {
+  color: #000;
+}
+
+.story-slider .entry-meta ul li {
+  float: left;
+}
+
+.story-slider .entry-meta>ul>li {
+  margin-right: 30px;
+  position: relative;
+}
+
+.story-slider .entry-meta>ul>li:last-child {
+  margin-right: 0;
+}
+
+.story-slider .entry-meta>ul>li+li:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: -15px;
+  width: 5px;
+  height: 5px;
+  margin-top: -3px;
+  border-radius: 100%;
+  background-color: #c8cacc;
+}
+
+.story-slider .entry-meta li ul li:first-child {
+  margin-right: 10px;
+}
+
+.story-slider .entry-meta li ul li a:hover {
+  color: inherit;
+}
+
+.story-slider a:hover i.fa-facebook,
+.story-slider .navbar-default .feed li a:hover i.fa-facebook {
+  color: #3b5998;
+}
+
+.story-slider a:hover i.fa-twitter,
+.story-slider .navbar-default .feed li a:hover i.fa-twitter {
+  color: #00aced;
+}
+
+.story-slider a:hover i.fa-google-plus,
+.story-slider .navbar-default .feed li a:hover i.fa-google-plus {
+  color: #CA3E27;
+}
+
+.story-slider a:hover i.fa-rss,
+.story-slider .navbar-default .feed li a:hover i.fa-rss {
+  color: #ee802f;
+}
+
+.story-slider .medium-post .gallery-turner {
+  width: 100%;
+  right: 0;
+  bottom: 57%;
+}
+
+.story-slider .medium-post .gallery-turner a {
+  color: #fff;
+}
+
+.story-slider .medium-post .gallery-turner a:hover {
+  color: #0067B3;
+}
+
+.story-slider .medium-post .right-photo,
+.story-slider .medium-post .left-photo {
+  position: absolute;
+}
+
+.story-slider .medium-post .left-photo {
+  left: -100%;
+}
+
+.story-slider .medium-post .right-photo {
+  right: -100%;
+}
+
+.story-slider .medium-post:hover .left-photo {
+  left: 5px;
+}
+
+.story-slider .medium-post:hover .right-photo {
+  right: 5px;
+}
+
+.story-slider .tr-section .tr-post .post-content {
+  font-size: 14px;
+  color: #88898a;
+  line-height: 24px;
+}

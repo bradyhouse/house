@@ -1,0 +1,20 @@
+/* jumbo desktop screen */
+@import 'landscape/landscape-jumbo.css';
+
+/* large desktop screen */
+@import 'landscape/landscape-large.css';
+
+/* medium desktop screen */
+@import 'landscape/landscape-medium.css';
+
+/* small desktop screen */
+@import 'landscape/landscape-small.css';
+
+/* tiny desktop screen */
+@import 'landscape/landscape-tiny.css';
+
+/* tiny desktop portrait */
+@import 'portrait/portrait-tiny.css';
+
+/* iphone X */
+@import 'portrait/iphone-x.css';

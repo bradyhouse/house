@@ -1,0 +1,14 @@
+
+.tr-video-post .entry-header iframe
+ {
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+  width: calc(100%);
+  min-height: 300px;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: .25rem;
+}

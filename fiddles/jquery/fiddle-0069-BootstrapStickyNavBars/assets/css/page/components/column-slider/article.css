@@ -1,0 +1,101 @@
+
+.tr-article {
+  height: 225px;
+  overflow-y: hidden;
+}
+
+.oswaldo-before {
+  position: relative;
+}
+
+.oswaldo-before:after {
+  position: absolute;
+  content: "Oswaldo";
+  right: 0;
+  top: 2px;
+  width: auto;
+  margin-right: 2px;
+  max-width: 100%;
+  height: auto;
+  padding: 5px;
+  text-align: left;
+  font-size: calc(.2rem + 2px);
+  color: #fff;
+  background-color: darkgoldenrod;
+  filter: alpha(opacity=90);
+  opacity: 0.8;
+  border-radius: .25rem;
+}
+
+.courtney-before {
+  position: relative;
+}
+
+.courtney-before:after {
+  position: absolute;
+  content: "Courtney";
+  right: 0;
+  top: 2px;
+  width: auto;
+  margin-right: 2px;
+  max-width: 100%;
+  height: auto;
+  padding: 5px;
+  text-align: left;
+  font-size: calc(.2rem + 2px);
+  color: #fff;
+  background-color: orangered;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+  border-radius: .25rem;
+}
+
+.article-image-frame {
+  width: calc(100%);
+  height: auto;
+}
+
+.article-image-frame .img-responsive {
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: auto;
+}
+
+.article-tag-2 {
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100%);
+  max-width: 100%;
+  height: auto;
+  padding: calc(1rem);
+  text-align: left;
+  font-size: calc(1.5rem + 2px);
+  background-color: #0067b3;
+  color: #fff;
+  font-weight: 900;
+  border-bottom-right-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
+
+.article-tag-3 {
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100%);
+  max-width: 100%;
+  height: auto;
+  padding: calc(1rem);
+  text-align: left;
+  font-size: calc(.8rem + 2px);
+  background-color: #0067b3;
+  color: #fff;
+  font-weight: 900;
+  border-bottom-right-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
+

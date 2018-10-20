@@ -1,0 +1,44 @@
+
+.search-bar .search-event {
+  width: calc(50%);
+}
+
+.search-bar .search-event .event-dropdown {
+  position: absolute;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  will-change: transform;
+  top: 0px;
+  left: -25px !important;
+  padding: 0;
+  margin: 0;
+  transform: translate3d(0px, 0px, 0px);
+  width: calc(50rem - 30px);
+}
+
+.search-bar .search-event .form-control {
+  border-top-right-radius: .25rem !important;
+  border-bottom-right-radius: .25rem !important;
+}
+
+
+.search-bar .search-event .search-event-button {
+  display: none;
+}
+
+.search-bar .search-event .dropdown-item .fa {
+  color: #fff;
+  width: calc(1.5rem + 2px);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.search-bar .search-event .dropdown-icon-box {
+  background-color: darkblue;
+  text-align: left;
+  vertical-align: middle;
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: .25rem;
+  width: calc(1.5rem + 2px);
+}

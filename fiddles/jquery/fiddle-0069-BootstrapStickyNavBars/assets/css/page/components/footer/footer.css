@@ -1,0 +1,143 @@
+/* Footer */
+
+#footer {
+  background-color: #055D96;
+  margin-top: 0px;
+
+}
+
+.footer-menu {
+  text-align:center;
+  border-bottom:1px solid #fff;
+}
+
+.footer-menu .navbar-nav {
+  display:inline-block;
+  float:none !important;
+  padding:25px 0 15px 0;
+}
+
+.footer-menu .navbar-nav li {
+  display: inline-block;
+}
+
+.footer-menu .navbar-nav li+li {
+  margin-left: 25px;
+}
+
+.footer-menu .navbar-nav li a {
+  font-size:11px;
+  text-transform:uppercase;
+  color:#fff;
+  letter-spacing:2px;
+  padding:10px;
+  font-weight: 700;
+}
+
+#footer .footer-menu .nav>li>a:focus,
+#footer .footer-menu .nav>li>a:hover,
+#footer .footer-menu .nav>li.active a {
+  background-color: transparent;
+  color: #000;
+}
+
+.footer-widgets {
+  padding:50px 0;
+  color: #fff;
+}
+
+.footer-widgets .widget {
+  overflow: hidden;
+}
+
+.footer-widgets .widget h2 {
+  margin-bottom:25px;
+  font-size:14px;
+  color: #fff;
+  margin-top: 10px;
+  text-transform:uppercase;
+}
+
+.widget.widget-menu-2 ul li,
+.widget.widget-menu-3 ul li {
+  float:left;
+}
+
+.widget.widget-menu-2 ul li {
+  width: 50%;
+}
+
+.widget.widget-menu-3 ul li {
+  width: 33%;
+}
+
+.footer-widgets .widget li a {
+  padding:5px;
+  display:block;
+  font-size:14px;
+  color: #fff;
+}
+
+#footer a:hover,
+.copyright a:hover {
+  color:#ff0000;
+}
+
+.footer-bottom {
+  padding: 60px 0 50px;
+  border-top: 1px solid #fff;
+}
+
+.footer-bottom,
+.footer-bottom a,
+.copyright,
+.copyright a {
+  font-size: 14px;
+  color: #fff;
+  line-height: 23px;
+}
+
+.footer-bottom-content {
+  max-width: 990PX;
+  display: inline-block;
+  color: #fff;
+}
+
+.footer-logo {
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  display: inline-block;
+}
+
+
+/* Footer Style Two */
+
+.footer-widgets-two {
+  padding: 0;
+}
+
+.widget-left-content {
+  padding: 70px 0;
+}
+
+.footer-widgets-two .widget {
+  padding: 50px 0;
+}
+
+.footer-style-two {
+  border-top: 1px solid #e3e6e8;
+}
+
+.footer-style-two .navbar-nav {
+  padding: 10px 0 5px 0;
+}
+
+.copyright {
+  margin-top: 10px;
+}
+
+.widget-left {
+  border-right: 1px solid #e3e6e8;
+}

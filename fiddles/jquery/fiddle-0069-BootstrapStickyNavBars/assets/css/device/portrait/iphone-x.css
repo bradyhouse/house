@@ -1,0 +1,160 @@
+@media (min-width: 480px) and (max-width: 614px) {
+
+  .bumper-ad {
+    display: none;
+  }
+
+
+  .column-slider .entry-thumbnail {
+    border-radius: 0;
+  }
+
+  .column-slider .tr-post {
+    border-radius: 0;
+  }
+
+  .column-slider .tr-text-post {
+    height: auto !important;
+    font-size: calc(.8rem);
+  }
+
+
+  .column-slider .slide-right {
+    display: none;
+  }
+
+  .column-slider .slide-right-mobile {
+    display: block;
+  }
+
+  .popular-areas {
+    display: none;
+  }
+
+
+  .oswaldo-before:after {
+    left: calc(100% - 42px);
+    width: 25px;
+    font-size: calc(1rem);
+  }
+
+  .courtney-before:after {
+    left: calc(100% - 42px);
+    width: 25px;
+    font-size: calc(1rem);
+  }
+
+  .ad-before:after {
+    left: calc(100% - 40px);
+    width: 20px;
+    font-size: calc(1rem);
+  }
+
+  .tr-box-shadow {
+    padding: 0;
+    -webkit-box-shadow:  unset;
+    -moz-box-shadow:  unset;
+    -ms-box-shadow:  unset;
+    -o-box-shadow:  unset;
+    box-shadow:  unset;
+  }
+
+
+  .topbar-two .navbar-td-left {
+    padding-left: 0;
+  }
+
+  .topbar-two .navbar-area {
+    display: none;
+  }
+
+  .topbar-two .navbar-area-right {
+    display: block;
+  }
+
+  .tr-topbar .navbar-td-center {
+    display: none;
+  }
+
+  .tr-topbar .navbar-td-right {
+    display: none;
+  }
+
+  .search-bar .search-location {
+    display: none;
+  }
+
+  .search-bar .search-event .dropdown-icon-box {
+    display: none !important;
+  }
+
+  .search-bar .dropdown-item {
+    font-size: .8rem;
+    border-bottom: 1px solid gainsboro;
+    padding: 5px;
+    line-height: normal;
+  }
+
+  .search-bar .dropdown-menu {
+    display: none;
+  }
+
+  .search-bar .search-event .form-control {
+    line-height: unset;
+    border-radius: unset !important;
+    border: none;
+    font-size: unset;
+  }
+
+  .search-bar .btn-primary {
+    height: calc(100%);
+    border-radius: 0 .25rem .25rem 0;
+    margin-left: -5px;
+  }
+
+  .search-bar .search-event {
+    width: calc(90%);
+  }
+
+
+  .search-bar .search-event .search-event-button {
+    display: inline-block;
+  }
+  .search-bar .search-event .input-group-append {
+    margin-left: unset;
+  }
+
+  .search-bar .event-dropdown {
+    display: none !important;
+  }
+
+  .more-posts-button .btn {
+    font-size: calc(1rem);
+  }
+
+  .aside-menu .sidebar-bottom {
+    display: none;
+  }
+
+  .aside-menu-addbusiness {
+    display: block !important;
+  }
+
+  .aside-menu-login {
+    display: block !important;
+  }
+
+  .aside-menu-register {
+    display: block !important;
+  }
+
+  .navbar-landscape-large {
+    display: none;
+  }
+
+  .navbar-landscape-medium {
+    display: unset;
+  }
+
+
+}
