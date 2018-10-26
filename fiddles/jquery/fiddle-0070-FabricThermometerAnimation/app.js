@@ -182,14 +182,13 @@
       this.manicusCoords = this.scene.frames[0].coordinates;
       this.manicusLevel = this.scene.frames[0].level;
       let canvas = this.canvas,
-        donations = this.scene.frames[0].amount,
         header = Thermometer.header(this.header, this.fontFamily, this.textColor),
         goalHeader = Thermometer.goalHeader(this.formatDollarAmt(this.goal), this.fontFamily, this.textColor),
         mercury = Thermometer.mercury(this.innerColor),
         glass = Thermometer.glass(this.lineColor);
 
       this.meniscusLabelObject = Thermometer.manicusLabel(this.isEditMode, this.fontFamily, this.manicusLevel.top, this.textColor,
-        this.formatDollarAmt(donations));
+       '');
 
       this.meniscusObject = Thermometer.manicus(this.manicusLevel.top, this.manicusLevel.height, this.innerColor);
 
@@ -325,16 +324,16 @@
                   }
 
                   this.meniscusLabelObject.setTop(frame.level.top - deltaT);
-                  this.meniscusLabelObject.setText(this.formatDollarAmt(frame.amount));
+                  if (frame.amount === 0) {
+                    this.meniscusLabelObject.setText('');
+                  } else {
+                    this.meniscusLabelObject.setText(this.formatDollarAmt(frame.amount));
+                  }
                   this.meniscusImageObject.setTop(frame.coordinates.top - deltaT);
                   this.canvas.renderAll();
-
                 }
-
                 i++;
               }
-
-
             }
             x++;
           },
@@ -343,7 +342,11 @@
               deltaT = frame.level.height === 6.25 ? 0 : frame.level.height * this.controlScaleY;
 
             this.meniscusLabelObject.setTop(frame.level.top - deltaT);
-            this.meniscusLabelObject.setText(this.formatDollarAmt(frame.amount));
+            if (frame.amount === 0) {
+              this.meniscusLabelObject.setText('');
+            } else {
+              this.meniscusLabelObject.setText(this.formatDollarAmt(frame.amount));
+            }
             this.meniscusImageObject.setTop(frame.coordinates.top - deltaT);
             this.canvas.renderAll();
 
@@ -438,7 +441,8 @@
 
     donationsChange: function () {
       var value = document.getElementById('donationTxt').value,
-        amt = value && !isNaN((+value)) ? (+value) : 0;
+        cleanValue = value ? value.replace(/,/g, '').replace(/\$/g,'') : null,
+        amt = cleanValue && !isNaN((+cleanValue)) ? (+cleanValue) : 0;
       if (amt) {
         this.donations = amt;
       } else {
@@ -450,7 +454,8 @@
     },
     goalChange: function () {
       var value = document.getElementById('goalTxt').value,
-        amt = value && !isNaN((+value)) ? (+value) : null;
+        cleanValue = value ? value.replace(/,/g, '').replace(/\$/g,'') : null,
+        amt = cleanValue && !isNaN((+cleanValue)) ? (+cleanValue) : null;
       if (amt) {
         this.goal = amt;
         this.buildScene();
