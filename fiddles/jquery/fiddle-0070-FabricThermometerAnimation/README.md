@@ -19,14 +19,12 @@ Chicago, IL
 
 ### Issue
 
-[Issue 255](https://github.com/bradyhouse/house/issues/255)
+[Issue 258](https://github.com/bradyhouse/house/issues/258)
 
 
 ### Description
 
-I need a canvas based fund raising thermometer control, that can become the basis of a Custom Jive Tile.  
-The thermometer should include a configurable Goal and Donation inputs as well as image based meniscus that
-can be replaced with a different image. Essentially, this fiddle should build on [fiddle-0063-FabricThermometer](../fiddle-0063-FabricThermometer).
+[Jquery Fiddle #68](https://github.com/bradyhouse/house/tree/master/fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus) uses a crude approach to animation.  Essentially, it just redraws the canvas in loop.  In each pass it increments the height (position) of the meniscus. This is fine except that it seems to introduce a flicker effect. I need to figure out how to fix this--i.e. __what's the right way to do animation in fabric.js__?
 
 
 ### Published Version Link
