@@ -1965,5 +1965,20 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus](fiddles/jquery/fiddle-0068-FabricThermometerImgMeniscus)
-* Added [fiddles/jquery/fiddle-0069-BootstrapStickyNavBars](fiddles/jquery/fiddle-0069-BootstrapStickyNavBars)
-* Added [fiddles/jquery/fiddle-0070-FabricThermometerAnimation](fiddles/jquery/fiddle-0070-FabricThermometerAnimation)
+  2.  Added [fiddles/jquery/fiddle-0069-BootstrapStickyNavBars](fiddles/jquery/fiddle-0069-BootstrapStickyNavBars)
+  3.  Added [fiddles/jquery/fiddle-0070-FabricThermometerAnimation](fiddles/jquery/fiddle-0070-FabricThermometerAnimation)
+
+
+### 263_node_fiddle_29 ~ [Issue 263](https://github.com/bradyhouse/house/issues/263)
+
+* **fiddle.sh (Enhancement)**
+
+  1.  Added [scripts/bin/setup/mac/_php.sh](scripts/bin/setup/mac/_php.sh)
+  2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh) 
+  3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+
+* **Node**
+
+  1.  Added [fiddles/node/fiddle-0029-NodePhp](fiddles/node/fiddle-0029-NodePhp)
+
+

@@ -16,6 +16,7 @@
 # 04/08/2018 - See CHANGELOG @ 222_fiddle.sh_setup_mac_add_gradle
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
+# 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -78,6 +79,10 @@ function setup() {
                  source bin/setup/mac/_ncu.sh;
                  install || exit $?;
                  ;;
+              'php')
+                 source bin/setup/mac/_php.sh;
+                 install || exit $?;
+                 ;;
               'yarn')
                  source bin/setup/mac/_yarn.sh;
                  install || exit $?;
@@ -122,6 +127,7 @@ function setup() {
                 setup ${_os} "typescript" || exit $?;
                 setup ${_os} "yarn" || exit $?;
                 setup ${_os} "zsh" || exit $?;
+                setup ${_os} "php" || exit $?;
                 ;;
                *) exit 86;
                 ;;

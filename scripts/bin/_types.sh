@@ -20,6 +20,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -43,6 +44,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
            echo -e "\t\"node\"\t\tinstall node.js\t\t\thttps://nodejs.org/en/";
            echo -e "\t\"nvm\"\t\tinstall nvm\t\t\thttps://github.com/creationix/nvm";
+           echo -e "\t\"php\"\t\tinstall PHP\t\t\thttps://secure.php.net/";
            echo -e "\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
            echo -e "\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
            echo -e "\t\"yarn\"\t\tinstall yarn\t\t\thttps://yarnpkg.com/lang/en/";
