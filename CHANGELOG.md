@@ -1969,6 +1969,37 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   3.  Added [fiddles/jquery/fiddle-0070-FabricThermometerAnimation](fiddles/jquery/fiddle-0070-FabricThermometerAnimation)
 
 
+### 262_add_chef_setup ~ [Issue 262](https://github.com/bradyhouse/house/issues/262)
+
+* **fiddle.sh (Enhancement)**
+
+  * Reflected changes:
+
+  1.  Added [fiddles/chef](fiddles/chef)
+  2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh) 
+  3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+  4.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+  5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+  6.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+  7.  Updated [README.adoc](README.adoc)  
+  8.  Added [scripts/bin/chef](scripts/bin/react)
+  9.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+  10. Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)    
+  11. Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+  12. Added [scripts/bin/setup/mac/_chef.sh](scripts/bin/setup/mac/_chef.sh)
+  13. Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+  14. Added [scripts/bin/setup/mac/_virtualbox.sh](scripts/bin/setup/mac/_virtualbox.sh)
+  15. Added [scripts/bin/setup/mac/_vagrant.sh](scripts/bin/setup/mac/_vagrant.sh)
+  16. Added [scripts/bin/setup/mac/_tree.sh](scripts/bin/setup/mac/_tree.sh)
+  17. Added [fiddles/chef/template](fiddles/chef/template)
+  18. Added [fiddles/chef/template/.kitchen.yml](fiddles/chef/template/.kitchen.yml)
+  19. Added [fiddles/chef/template/kitchen.yml](fiddles/chef/template/kitchen.yml)
+  20. Added [fiddles/chef/template/LICENSE](fiddles/chef/template/LICENSE)
+  21. Added [fiddles/chef/template/motd](fiddles/chef/template/motd)
+  22. Added [fiddles/chef/template/README.md](fiddles/chef/template/README.md)
+  23. Updated [fiddles/index.html](fiddles/index.html)
+
+
 ### 263_node_fiddle_29 ~ [Issue 263](https://github.com/bradyhouse/house/issues/263)
 
 * **fiddle.sh (Enhancement)**

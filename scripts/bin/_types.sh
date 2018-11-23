@@ -21,6 +21,7 @@
 # 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
+# 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -34,6 +35,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"android\"\tinstall android-sdk\t\thttps://developer.android.com";
            echo -e "\t\"bash\"\\t\tinstall fiddle command line";
            echo -e "\t\"brew\"\t\tinstall homebrew\t\thttp://brew.sh/";
+           echo -e "\t\"chef\"\t\tinstall chef\t\t\thttp://chef.io";
            echo -e "\t\"gh\"\t\tinstall github terminal\t\thttps://www.npmjs.com/package/gh";
            echo -e "\t\"gradle\"\tinstall gradle\t\t\thttps://gradle.org/";
            echo -e "\t\"js-beautify\"\tinstall js-beautify\t\thttps://www.npmjs.com/package/js-beautify";
@@ -46,7 +48,10 @@ voidEchoFiddleTypes() {
            echo -e "\t\"nvm\"\t\tinstall nvm\t\t\thttps://github.com/creationix/nvm";
            echo -e "\t\"php\"\t\tinstall PHP\t\t\thttps://secure.php.net/";
            echo -e "\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
+           echo -e "\t\"tree\"\t\tinstall tree\t\t\thttp://mama.indstate.edu/users/ice/tree/";
            echo -e "\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
+           echo -e "\t\"vagrant\"\tinstall vagrant\t\t\thttps://www.vagrantup.com/";
+           echo -e "\t\"virtualbox\"\tinstall virtual box\t\thttps://www.virtualbox.org/";
            echo -e "\t\"yarn\"\t\tinstall yarn\t\t\thttps://yarnpkg.com/lang/en/";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\t\thttp://ohmyz.sh/";
            echo -e "";
