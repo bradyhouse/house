@@ -47,8 +47,8 @@ Executing the command `fiddle "start" "nativescript" "0000"` produces the follow
 
 
 
-As indicated (above) you then need to install the `NativeScript Playground` app on the android
-or iphone you intend to use for testing.  Once installed, scan the QR code to launch the app.
+As indicated (above) install the `NativeScript Playground` app on the android or iphone you intend to use for testing.  
+Once installed, scan the QR code to launch the app.
 
 
 
