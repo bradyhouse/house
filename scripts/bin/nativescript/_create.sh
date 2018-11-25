@@ -16,6 +16,7 @@
 # 09/16/2016 - See CHANGELOG @ 201609160420
 # 11/26/2016 - See CHANGELOG @ 201610010420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -57,7 +58,7 @@ function initJsProject() {
   $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
   $(voidSubstr '{{Title}}' ${projectName} "README.md";) || exit 5;
   $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
-  nativescript create ${projectName} || exit 7;
+  nativescript create ${projectName} --js || exit 7;
   cd ${projectName};
   if [[ "${__NS_ADD_PLATFORM__}" == "true" ]]
   then

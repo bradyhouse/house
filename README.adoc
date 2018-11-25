@@ -58,3 +58,4 @@ To get started with any of the frameworks listed, use the above links to explore
 about my latest changes check out the detailed link:CHANGELOG.md[change log].  To test drive the in-browser version
 of this collection checkout link:http://bradyhouse.io[bradyhouse.io].  For my coursework notes at the Illinois Institute of Technology visit
 link:http://iit.bradyhouse.ai[iit.bradyhouse.ai]. Finally, for my current focus, AWS Certification, visit link:http://aws.bradyhouse.ai[aws.bradyhouse.ai].
+

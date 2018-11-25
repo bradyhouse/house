@@ -1982,3 +1982,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/node/fiddle-0029-NodePhp](fiddles/node/fiddle-0029-NodePhp)
 
 
+### 265_nativescript_14 ~ [Issue 265](https://github.com/bradyhouse/house/issues/265)
+
+* **fiddle.sh (Enhancement)**
+
+  1.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
+  2.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh) 
+  3.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
+  4.  Updated [scripts/bin/nativescript/_start.sh](scripts/bin/nativescript/_start.sh)
+  5.  Updated [fiddles/nativeScript/start.md](fiddles/nativeScript/start.md)
+  6.  Updated [fiddles/nativeScript/readme.adoc](fiddles/nativeScript/readme.adoc)
+  7.  Updated [fiddles/nativeScript/create.md](fiddles/nativeScript/create.md)
+
+
+* **NativeScript**
+
+  1.  Added [fiddles/nativescript/fiddle-0014-SiteWrapper](fiddles/nativescript/fiddle-0014-SiteWrapper)

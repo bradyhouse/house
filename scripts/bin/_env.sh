@@ -14,6 +14,7 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # ---------------------------------------------------------------------------------------------------|
 
 export HOME_ROOT=$(mapHomePath;);
@@ -28,7 +29,7 @@ export ZSH_PROFILE="${HOME_ROOT}/.zshrc";
 export OS=$(getOS;);
 export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
-export NVM_VERSION="v8.9.4";
+export NVM_VERSION="v10.8.0";
 export NG_TYPESCRIPT_VER="2.7.2";
 export ELECTRON_SEEDER_REPO="https://github.com/electron/electron-quick-start";
 export __NS_PLATFORM__="ANDROID";
@@ -43,7 +44,7 @@ export __NS_ANDROID_EMULATOR_EXE__="${HOME_ROOT}/homebrew/share/android-sdk/emul
 #   "js"  JavaScript
 #   "ng2" Angular2
 # --------------------------------------------------
-export __NS_TEMPLATE_TYPE__="ng2";
+export __NS_TEMPLATE_TYPE__="js";
 
 
 
