@@ -47,12 +47,8 @@ Executing the command `fiddle "start" "nativescript" "0000"` produces the follow
 
 
 
-As indicated to test-drive the App you then need to install the `NativeScript Playground` app on the android
-or iphone you intend to test the app on.  Once installed, use the displayed the QR code to install the app
-on the device.
-
-
-![Screenshot](resources/emulator-js.png)
+As indicated (above) you then need to install the `NativeScript Playground` app on the android
+or iphone you intend to use for testing.  Once installed, scan the QR code to launch the app.
 
 
 
