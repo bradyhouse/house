@@ -4,9 +4,9 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 11/22/2018______________________________________________________________|
+#  Create date             : 11/21/2018______________________________________________________________|
 #  Description             : MASTER CHEF CREATE FUNCTION_____________________________________________|
-#  Entry Point             : reactCreate_____________________________________________________________|
+#  Entry Point             : create__________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
 #  Initial Consumer        : ../fiddle-create.sh_____________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
@@ -15,78 +15,57 @@
 # Baseline Ver - See CHANGELOG @ 262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 
+source _install.sh;
 
-function createTypingsRcFile() {
-    groupLog "createTypingsRcFile";
-    touch .typingsrc
-    echo "{" >> .typingsrc
-    echo -e "   \"rejectUnauthorized\": false" >> .typingsrc
-    echo "}" >> .typingsrc
-}
 
-function npmShrinkWrap() {
-  groupLog "npmShrinkWrap";
-  npm shrinkwrap;
-}
-
-function reactCreate() {
-    groupLog "reactCreate";
-    fiddle=$1;
-    rawAppName=$(subDelimStr ${fiddle} "-" "2";);
-    appName=$(toLowerCase ${rawAppName};);
-    bornOnDate=$2;
+function chefCreate() {
+    groupLog "chefCreate";
+    _fiddleDir=$1;
+    _rawAppName=$(subDelimStr ${_fiddleDir} "-" "2";);
+    _appName=$(toLowerCase ${_rawAppName};);
+    _bornOnDate=$2;
     # try
     (
-        if [[ -d "${fiddle}" ]]
-        then
-            rm -rf ${fiddle} || exit 1;
-        fi
+        chef generate cookbook "${_fiddleDir}" || exit $?;
 
-        if [[ "${appName}" == "template" ]]
+        if [[ -d "${_fiddleDir}" ]]
         then
-            appName="fiddle";
-        fi
+          cd "${_fiddleDir}";
+          cp -rf ../template/.kitchen.yml .kitchen.yml || exit $?;
+          $(voidSubstr '{{FiddleName}}' ${_fiddleDir} ".kitchen.yml";) || exit $?;
+          $(voidSubstr '{{DriverName}}' ${__CHEF_KITCHEN_DRIVER_NAME} ".kitchen.yml";) || exit $?;
+          $(voidSubstr '{{PlatformName}}' ${__CHEF_KITCHEN_PLATFORM_NAME} ".kitchen.yml";) || exit $?;
+          $(voidSubstr '{{PlatformDriverBox}}' ${__CHEF_KITCHEN_PLATFORM_DRIVER_BOX} ".kitchen.yml";) || exit $?;
+          $(voidSubstr '{{PlatformDriverBoxUrl}}' ${__CHEF_KITCHEN_PLATFORM_DRIVER_BOX_URL} ".kitchen.yml";) || exit $?;
 
-        npx create-react-app ${appName} || exit 2;
-        mv ${appName} ${fiddle};
-        cd ${fiddle};
+          if [[ "${__CHEF_COOKBOOK_IS_LOGIN_SPLASH}" == "true" ]]
+          then
+            chef generate file motd || exit $?;
+            cp -rf ../template/motd files/default || exit $?;
+            $(voidSubstr '{{FiddleName}}' ${_fiddleDir} "files/default/motd";) || exit $?;
+            cp -rf ../template/default.rb "recipes/default.rb" || exit $?;
+            $(voidSubstr '{{AuthorName}}' "${AUTHOR_NAME}" "recipes/default.rb";) || exit $?;
+            _YEAR=$(date +%Y);
+            $(voidSubstr '{{Year}}' "${_YEAR}" "recipes/default.rb";) || exit $?;
+          fi
 
-        if [[ -e .gitignore ]]
-        then
-            rm -rf .gitignore;
+          cp -rf ../template/README.md . || exit $?;
+          $(voidSubstr '{{FiddleName}}' $1 "README.md";) || exit $?
+          $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit $?
+          $(voidSubstr '{{DriverName}}' ${__CHEF_KITCHEN_DRIVER_NAME} "README.md";) || exit $?;
+          $(voidSubstr '{{PlatformName}}' ${__CHEF_KITCHEN_PLATFORM_NAME} "README.md";) || exit $?;
+
+          cp -rf ../template/LICENSE . || exit $?;
+          $(voidSubstr '{{AuthorName}}' "${AUTHOR_NAME}" "LICENSE";) || exit $?;
+
         fi
-        rm -rf public/index.html || exit $?;
-        rm -rf public/favicon.ico || exit $?;
-        cp -rf ../template/index.html public/index.html || exit $?;
-        cp -rf ../template/favicon.ico public/favicon.ico || exit $?;
-        $(voidSubstr '{{FiddleName}}' ${fiddle} "public/index.html";) || exit 5;
-        $(voidSubstr '{{Author}}' ${AUTHOR} "public/index.html";) || exit 5;
-        cp -rf ../template/README.md README.md || exit 5;
-        $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
-        $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
-        #createTypingsRcFile || exit 6;
-        npmShrinkWrap || exit $?;
 
     )
     # catch
     rc=$?; case ${rc} in
         0)  endLog "";
             ;;
-        1)  endLog "reactCreate: Failed while attempting to remove the existing \"${fiddle}\" directory.";
-            ;;
-        2)  endLog "reactCreate: Failed while attempting to \"ng new ${fiddle}\".";
-            ;;
-        5)  endLog "reactCreate: Failed while attempting to update the README.md file.";
-            ;;
-        6)  endLog "reactCreate: Call to createTypingsRcFile failed.";
-            ;;
-        7)  endLog "reactCreate: call to npm install failed.";
-            ;;
-        8)  endLog "reactCreate: Failed while attempting to update favicon.ico file.";
-            ;;
-        9)  endLog "reactCreate: Failed while attempting to update index.html file.";
-            ;;
-        *)  endLog "reactCreate: F U B A R ~ Something went wrong."
+        *)  endLog "chefCreate: F U B A R ~ Something went wrong."
             ;;
     esac
     exit ${rc};
@@ -96,12 +75,6 @@ function catch() {
     case $1 in
         0)  endLog "\"${fiddleSubDir}\" created.";
             ;;
-        1)  endLog "_install.sh: ngInstall() failed";
-            ;;
-        2)  endLog "_create.sh: reactCreate() failed";
-            ;;
-        3)  endLog "nvmInstall: call to nvm install ${NVM_VERSION} failed.";
-            ;;
         *)  endLog "fubar! Something went wrong.";
             ;;
     esac
@@ -109,7 +82,7 @@ function catch() {
 }
 
 function create() {
-  if [ "$#" -ne 1 ]
+  if [[ "$#" -ne 1 ]]
   then
         echo "Incorrect number of arguments"
         echo "Please specify the name of the new fiddle"
@@ -120,20 +93,21 @@ function create() {
   echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
   echo "Bash version ${BASH_VERSION}..."
 
-  fiddleSubDir="../fiddles/react/$1";
-  fiddleTemplateDir="../fiddles/react/template";
+  fiddleSubDir="../fiddles/chef/$1";
+  fiddleTemplateDir="../fiddles/chef/template";
   bornOnDate=$(date +"%m-%d-%y";)
   echo ${bornOnDate};
 
   # try
   (
-      nvmInstall || exit $?;
-      #shrinkWrapInstall || exit $?;
       if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
-      cd ../fiddles/react;
-      reactCreate $1 ${bornOnDate} || exit 2;
+      cd ../fiddles/chef;
+       _rootDir=$(pwd;);
+       _templateDir="${_rootDir}/template";
+      kitchenInit ${_rootDir} || exit $?;
+      updateKitchenYml ${_templateDir} ${_rootDir} || exit $?;
+      chefCreate $1 ${bornOnDate} || exit $?;
   )
-
   # catch
   rc=$?; catch ${rc};
 

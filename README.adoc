@@ -30,7 +30,7 @@ and frameworks:
 |link:fiddles/aws/readme.adoc[AWS]
 |link:fiddles/bash[Bash]
 |link:fiddles/c[C]
-|link:fiddles/chef[chef]
+|link:fiddles/chef[Chef]
 |link:fiddles/chrome[Chrome]
 |link:fiddles/compass[Compass]
 |link:fiddles/d3[D3]

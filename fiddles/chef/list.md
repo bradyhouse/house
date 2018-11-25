@@ -1,4 +1,4 @@
-Bash (list)
+Chef (list)
 ======
 
 Executing the command `fiddle "list" "chef"` produces the following output.

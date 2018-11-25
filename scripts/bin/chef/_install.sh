@@ -6,53 +6,18 @@
 #  Author                  : brady house_____________________________________________________________|
 #  Create date             : 11/22/2018______________________________________________________________|
 #  Description             : CHEF INSTALL SETUP______________________________________________________|
-#  Entry Point             : ngInstall_______________________________________________________________|
+#  Entry Point             : install_________________________________________________________________|
 #  Input Parameters        : N/A_____________________________________________________________________|
-#  Initial Consumer        : ../fiddle-angular2-cli.sh_______________________________________________|
+#  Initial Consumer        : ../fiddle-create.sh_____________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 
-function nvmInstall() {
-  groupLog "nvmInstall";
-  if [[ -d ${NVM_DIR} ]]
-  then
-    source ${NVM_DIR}/nvm.sh;
-    nvm install ${NVM_VERSION};
-  else
-    exit 3;
-  fi
-}
 
-function isNcuInstalled() {
-  if [[ ! $(which ncu;) ]]
-  then
-      echo "false";
-  else
-      echo "true";
-  fi
-}
-
-function shrinkWrapInstall() {
-  groupLog "shrinkWrapInstall";
-  os=$(getOS;);
-  ./fiddle.sh "setup" "${os}" "shrinkwrap";
-}
-
-function ncuInstall() {
-  groupLog "ncuInstall";
-  installed=$(isNcuInstalled;);
-  if [[ "${installed}" == "false" ]]
-  then
-    os=$(getOS;);
-    ./fiddle.sh "setup" "${OS}" "ncu";
-  fi
-}
-
-function isNgInstalled() {
-    if [[ ! $(which ng;) ]]
+function isChefInstalled() {
+    if [[ ! $(which chef;) ]]
     then
         echo "false";
     else
@@ -60,12 +25,43 @@ function isNgInstalled() {
     fi
 }
 
-function ngInstall() {
-    groupLog "ngInstall";
-    installed=$(isNgInstalled;);
-    if [[ "${installed}" == "false" ]]
+function chefInstall() {
+  groupLog "chefInstall";
+  os=$(getOS;);
+  ./fiddle.sh "setup" "${os}" "chef";
+}
+
+function isKitchenInstalled() {
+  if [[ ! $(which kitchen;) ]]
     then
-      os=$(getOS;);
-      ./fiddle.sh "setup" "${os}" "ng";
-    fi
+        echo "false";
+    else
+        echo "true";
+  fi
+}
+
+function kitchenInit() {
+  groupLog "kitchenInit";
+  cd $1;
+  installed=$(isKitchenInstalled;);
+  if [[ "${installed}" == "false" ]]
+  then
+    chefInstall || exit $?;
+    kitchen init --create-gemfile || exit $?;
+    bundle install || exit $?l
+  fi
+
+}
+
+function updateKitchenYml() {
+  groupLog "updateKitchenYml";
+  _templateDir=$1;
+  _rootDir=$2;
+  _templateYml="${_templateDir}/kitchen.yml";
+  _rootYml="${_rootDir}/kitchen.yml";
+  _isUpdated=$(isIdentical ${_templateYml} ${_rootYml};);
+  if [[ "${_isUpdated}" == "false" ]]
+  then
+    cp -rf ${_templateYml} ${_rootYml};
+  fi
 }

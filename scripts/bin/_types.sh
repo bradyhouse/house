@@ -125,6 +125,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle"
             echo -e "\t\"bash\"\t\t\tBash Fiddle"
             echo -e "\t\"c\"\t\t\tC Fiddle"
+            echo -e "\t\"chef\"\t\t\tChef Recipe Fiddle"
             echo -e "\t\"compass\"\t\tCompass Fiddle"
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle"
             echo -e "\t\"docker\"\t\tDocker Fiddle"

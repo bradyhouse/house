@@ -1,28 +1,33 @@
-Bash (delete)
+Chef (delete)
 ======
 
-Executing the command `./fiddle.sh "delete" "bash" "0000"` from the `scripts` directory produces the following output.
+Executing the command `fiddle.sh "delete" "chef" "0000"` produces the following output.
 
-      H o u s e
-      oooooooooooo  o8o        .o8        .o8  oooo
-       888       8  `"'        888        888   888
-       888         oooo   .oooo888   .oooo888   888   .ooooo.
-       888oooo8     888  d88   888  d88   888   888  d88   88b
-       888          888  888   888  888   888   888  888ooo888
-       888          888  888   888  888   888   888  888    .o
-      o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
-      
-      FIDDLE.SH
-      FIDDLE-DELETE.SH
-      
-      fiddle type:	bash
-      fiddle name:	fiddle-0000-Template
-      
-      Are you sure you want to delete this fiddle? [Y/n]
+    {{ ʕ・ɭ・ʔ }}
+    
+    FIDDLE-DELETE.SH
+    
+    fiddle type:	chef
+    fiddle name:	fiddle-0000-Template
+    
+    Are you sure you want to delete this fiddle? [Y/n] y
+
 
 Enter `Y` and press [Enter].  This will produce the following output:
 
-      The "fiddle-0000-Template" bash fiddle has been deleted successfully.
+    ├────DELETEFIDDLE
+    -----> Starting Kitchen (v1.23.2)
+    -----> Destroying <default-centos65>...
+           ==> default: Forcing shutdown of VM...
+           ==> default: Destroying VM and associated drives...
+           Vagrant instance <default-centos65> destroyed.
+           Finished destroying <default-centos65> (0m6.53s).
+    -----> Kitchen is finished. (0m11.59s)
+    └──"" DELETE.
+    
+    The "fiddle-0000-Template" chef fiddle has been deleted successfully.
+    FIDDLE-INDEX.SH
+    11-25-18
       
       
       

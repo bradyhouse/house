@@ -1982,7 +1982,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
   6.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
   7.  Updated [README.adoc](README.adoc)  
-  8.  Added [scripts/bin/chef](scripts/bin/react)
+  8.  Added [scripts/bin/chef](scripts/bin/chef)
   9.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
   10. Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)    
   11. Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
@@ -1998,6 +1998,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   21. Added [fiddles/chef/template/motd](fiddles/chef/template/motd)
   22. Added [fiddles/chef/template/README.md](fiddles/chef/template/README.md)
   23. Updated [fiddles/index.html](fiddles/index.html)
+  24. Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+  25. Added [scripts/bin/chef/_delete.sh](scripts/bin/chef/_delete.sh)
 
 
 ### 263_node_fiddle_29 ~ [Issue 263](https://github.com/bradyhouse/house/issues/263)

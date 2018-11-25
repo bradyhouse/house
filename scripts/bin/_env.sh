@@ -30,7 +30,7 @@ export OS=$(getOS;);
 export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
 export AUTHOR_NAME="brady house";
-export NVM_VERSION="v8.9.4";
+export NVM_VERSION="  v10.8.0";
 
 # =================================================
 # ANGULAR CLI |||||||||||||||||||||||||||||||||||||
