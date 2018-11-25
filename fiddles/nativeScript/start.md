@@ -37,7 +37,7 @@ Executing the command `fiddle "start" "nativescript" "0000"` produces the follow
     Executing before-watchPatterns hook from /Users/bradyhouse/github/house_265/fiddles/nativeScript/fiddle-0000-Template/template/hooks/before-watchPatterns/nativescript-dev-webpack.js
     Executing before-watch hook from /Users/bradyhouse/github/house_265/fiddles/nativeScript/fiddle-0000-Template/template/hooks/before-watch/nativescript-dev-webpack.js
 
-  ![Imgur](https://i.imgur.com/cq3RdRn.png)
+   <img src="https://i.imgur.com/cq3RdRn.png" width="200" title="NativeScript Playground QR Code" /> 
 
     # Use NativeScript Playground app and scan the QR code above to preview the application on your device.
     
@@ -52,6 +52,7 @@ or iphone you intend to test the app on.  Once installed, use the displayed the 
 on the device.
 
 
+![Screenshot](resources/emulator-js.png)
 
 
 
