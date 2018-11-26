@@ -1,7 +1,7 @@
 fiddle-0012-LocalStorage
 ======
 
-![Screenshot](screenshot.png)
+![Screenshot](https://imgur.com/cY8uQ49)
 
 ### Title
 
