@@ -6,7 +6,7 @@ fiddle-0014-SiteWrapper
 
 ### Title
 
-sitewrapper
+Website Wrapper
 
 
 ### Creation Date
@@ -21,19 +21,22 @@ Chicago, IL
 
 ### Issue
 
-[Issue ??](https://github.com/bradyhouse/house/issues/??)
+[Issue 265](https://github.com/bradyhouse/house/issues/265)
 
 
 ### Description
 
-NativeScript fiddle template test.  This is a smoke test of the [fiddle.sh](../../scripts/fiddle.sh) script to verify that
-it supports create/delete/refactor/list functionality for "nativescript" based POC's aka fiddles. This is only a test.
+Given a website designed to look good on mobile devices, can nativeScript be used to create a simple App wrapper?  
+In other words, can I create an App that simply opens the website?  It's been a while since I have added to the 
+NativeScript fiddle collection.  So this should be interesting...
 
 
 ### Use Case
 
-1.  Using your terminal app of choice navigate to the `scripts` directory
-2.  Startup the POC `fiddle.sh start fiddle-0014-SiteWrapper`
+1.  Using your terminal app of choice
+2.  Startup the POC by entering the command `fiddle start 0014`
+3.  On your test device (iphone / android), launch the `NativeScript Playground` App
+4.  Scan the QR Code displayed in the terminal window output (2)
 
 
 ### Tags

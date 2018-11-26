@@ -16,7 +16,7 @@ var utilsModule = require("tns-core-modules/utils/utils");
 function pageLoaded(args) {
   var page = args.object;
   page.bindingContext = { };
-  utilsModule.openUrl("http://fiddle.sh/");
+  utilsModule.openUrl("http://fiddle.sh");
 }
 
 /*
