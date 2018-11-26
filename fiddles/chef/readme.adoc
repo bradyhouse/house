@@ -1,10 +1,10 @@
 = Chef
 
-This, I passed the `AWS Certified Solutions Architect - Associate Exam` -- see the http://aws.bradyhouse.ai[AWS Collection].
-Afterwards, I found myself left with one question: _Now what?_ I mean how do I `fiddle` with the cloud?  Well,
-you need a way to `fiddle` with infrastructure. link:https://www.chef.io/[Chef] is a framework for doing that.
+In September of 2018, I passed the `AWS Certified Solutions Architect - Associate Exam` -- see the http://aws.bradyhouse.ai[AWS Collection].
+Afterwards, I found myself left with one question: _Now what?_ I mean how do I explore, experiment (aka `fiddle`) with the cloud?  Well,
+you need a way to experiment with infrastructure. link:https://www.chef.io/[Chef] is a framework for doing that.
 This collection is aimed at gaining some experience with using this framework.  The ultimate goal of this
-collection is to bridge the gap back to AWS.
+collection is to bridge the gap back to AWS. 
 
 
 == Kindle Injection
