@@ -15,7 +15,8 @@ link:http://www.learningchef.com[Learning Chef A Guide To Configuration Manageme
 
 == Installation
 
-Open a terminal window and run the command `fiddle setup mac chef`. The setup command installs:
+Complete the link:https://github.com/bradyhouse/house/wiki/Setup-(Mac-OS)[Setup (Mac OS) procedure. Open a terminal
+window and run the command `fiddle setup mac chef`. The setup command installs:
 
      virtualbox
      vagrant
