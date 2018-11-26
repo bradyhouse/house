@@ -1,7 +1,7 @@
 NativeScript (delete)
 ======
 
-Executing the command `./fiddle.sh "delete" "nativescript" "0000"` produces the following output.
+Executing the command `fiddle "delete" "nativescript" "0000"` produces the following output.
 
         {{ ʕ・ɭ・ʔ }}
         FIDDLE.SH

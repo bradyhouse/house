@@ -1,8 +1,6 @@
 fiddle-0000-Template
 ======
 
-![Screenshot](screenshot.png)
-
 
 ### Title
 
@@ -11,7 +9,7 @@ template
 
 ### Creation Date
 
-11-24-18
+11-26-18
 
 
 ### Location

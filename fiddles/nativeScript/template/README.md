@@ -1,9 +1,6 @@
 {{FiddleName}}
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 {{Title}}
