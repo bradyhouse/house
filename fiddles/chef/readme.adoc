@@ -53,8 +53,8 @@ a chef repo based on the CHEF_* environment variables specified in the link:../.
 
 == Online Resources
 
-*   link:https://github.com/chef/chef-dk[Chef Development Kit Github Repo]
-*   link:http://www.learningchef.com[Learning Chef]
-*   link:http://docs.chef.io[Chef Documentation]
-    ** link:https://docs.chef.io/ohai.html [About Ohai]
+link:https://github.com/chef/chef-dk[Chef Development Kit Github Repo]
+link:http://www.learningchef.com[Learning Chef]
+link:http://docs.chef.io[Chef Documentation]
+link:https://docs.chef.io/ohai.html [About Ohai]
 
