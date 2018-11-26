@@ -1,9 +1,6 @@
 fiddle-0014-SiteWrapper
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 Website Wrapper
