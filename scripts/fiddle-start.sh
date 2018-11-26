@@ -32,6 +32,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/21/2018 - See CHANGELOG @  262_add_chef_setup
+# 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -167,15 +168,12 @@ function startServer() {
             nodeStart || exit 117;
             ;;
         'nativescript')
-            source bin/nativescript/.nativescriptrc;
             source bin/nativescript/_install.sh;
             source bin/nativescript/_start.sh;
             cd ${_fiddleRoot};
             _projectName=$(toLowerCase $(parseName ${_fiddle};);) || exit 107;
             nvmInstall || exit 100;
-            adbInstall || exit 101;
-            nvmUseNodeVer || exit 102;
-            nativescriptAndroidStart ${_projectName} ${__TEMPLATE_TYPE__} || exit 103;
+            nativescriptPreview ${_projectName} ${__NS_TEMPLATE_TYPE__} || exit 103;
             ;;
         'react')
             if [[ -d ${_fiddleRoot} ]]

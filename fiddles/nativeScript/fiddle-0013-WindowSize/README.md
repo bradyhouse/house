@@ -1,9 +1,6 @@
 fiddle-0013-WindowSize
 ======
 
-![Screenshot](screenshot.png)
-
-
 ### Title
 
 Window Size

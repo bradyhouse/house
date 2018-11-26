@@ -100,6 +100,8 @@ more nativescript and its CLI, enter the command `tns` => tns.md[tns.md].
 * link:https://github.com/NativeScript/nativescript[Main NativeScript GitHub repo]
 * link:https://realfavicongenerator.net/[Favicon Generator]
 * link:https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=android&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(68%2C%20138%2C%20255)&crop=0&backgroundShape=square&effects=none&name=ic_launcher[Android Asset Studio]
+* link:https://itunes.apple.com/us/app/nativescript-playground/id1263543946?mt=8&ls=1[NativeScript Playground - App Store (iOS)]
+* link:https://play.google.com/store/apps/details?id=org.nativescript.play[NativeScript Playground - Google Play (Android)]
 
 
 === Plugins
@@ -120,10 +122,12 @@ more nativescript and its CLI, enter the command `tns` => tns.md[tns.md].
 * link:https://docs.nativescript.org/angular/core-concepts/angular-navigation.html[NativeScript / Angular 2 Routing]
 * link:http://www.nativescriptsnacks.com/videos/2016/06/13/zoned-callbacks.html[Handle View Updates with zonedCallback]
 
+
 === Material Design
 
 * link:https://github.com/google/material-design-icons[Google Material Design Icons Font]
 * link:https://design.google.com/icons[Google Material Designs Icon Images]
+
 
 === Apple iOS
 

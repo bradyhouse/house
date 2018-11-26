@@ -1,0 +1,22 @@
+{
+  "nativescript": {
+    "id": "org.nativescript.sitewrapper",
+    "tns-android": {
+      "version": "5.0.0"
+    },
+    "tns-ios": {
+      "version": "5.0.0"
+    }
+  },
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": "<fill-your-repository-here>",
+  "dependencies": {
+    "nativescript-theme-core": "~1.0.4",
+    "tns-core-modules": "~5.0.2"
+  },
+  "devDependencies": {
+    "nativescript-dev-webpack": "~0.18.0"
+  },
+  "readme": "NativeScript Application"
+}

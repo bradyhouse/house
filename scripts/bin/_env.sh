@@ -15,6 +15,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
+# 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # ---------------------------------------------------------------------------------------------------|
 
 export HOME_ROOT=$(mapHomePath;);
@@ -58,8 +59,8 @@ export __NS_ANDROID_EMULATOR_EXE__="${HOME_ROOT}/homebrew/share/android-sdk/emul
 #
 #   "js"  JavaScript
 #   "ng2" Angular2
-#
-export __NS_TEMPLATE_TYPE__="ng2";
+# --------------------------------------------------
+export __NS_TEMPLATE_TYPE__="js";
 
 # =================================================
 # CHEF ||||||||||||||||||||||||||||||||||||||||||||

@@ -17,6 +17,7 @@
 # 11/26/2016 - See CHANGELOG @ 201610010420
 # 01/21/2017 - See CHANGELOG @ 201701180420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # ---------------------------------------------------------------------------------------------------|
 
 
@@ -55,10 +56,10 @@ function startAndroidEmulator() {
 }
 
 
-function nativescriptAndroidStart() {
-    groupLog "nativescriptAndroidStart";
+function nativescriptPreview() {
+    groupLog "nativescriptPreview";
     type=$2;
-    if [[ ! -d $1 ]]
+    if [[ -d $1 ]]
     then
       if [[ -e ".fiddlerc" ]]
       then
@@ -80,23 +81,13 @@ function nativescriptAndroidStart() {
         then
             rm -rf platforms;
         fi
-        tns platform add android
+
+        tns preview;
       else
         exit -1;
       fi
     else
       cd $1;
     fi
-
-    case ${type} in
-        'js') # javascript
-          startAndroidEmulator;
-          nativeScriptRunAndroid;
-          ;;
-        'ng2') # angular 2
-          startAndroidEmulator;
-          nativeScriptRunAndroid;
-          ;;
-    esac
     exit 0;
 }
