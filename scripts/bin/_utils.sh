@@ -21,8 +21,22 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/21/2018 - See CHANGELOG @  262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 
+function isIdentical() {
+  _file1=$1;
+  _file2=$2;
+  _rc="false";
+  if [ -e ${_file1} ] && [[ -e ${_file2} ]]
+  then
+      if diff $1 $2  > /dev/null
+      then
+        _rc="true";
+      fi
+  fi
+  echo ${_rc};
+}
 
 function killPort() {
   PORT_NUMBER=$1;

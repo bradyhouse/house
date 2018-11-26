@@ -17,6 +17,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 07/27/2018 - See CHANGELOG @ 234_add_bash_setup
 # 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
+# 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -103,8 +104,26 @@ function setup() {
                 source bin/setup/mac/_shrinkwrap.sh;
                 install || exit $?;
                 ;;
+              'tree')
+                source bin/setup/mac/_tree.sh;
+                install || exit $?;
+                ;;
               'typescript')
                 source bin/setup/mac/_typescript.sh;
+                install || exit $?;
+                ;;
+              'chef')
+                source bin/setup/mac/_chef.sh;
+                install || exit $?;
+                setup ${_os} "vagrant" || exit $?;
+                setup ${_os} "virtualbox" || exit $?;
+                ;;
+              'vagrant')
+                source bin/setup/mac/_vagrant.sh;
+                install || exit $?;
+                ;;
+              'virtualbox')
+                source bin/setup/mac/_virtualbox.sh;
                 install || exit $?;
                 ;;
               'all')
@@ -112,6 +131,7 @@ function setup() {
                 setup ${_os} "brew" || exit $?;
                 setup ${_os} "abd" || exit $?;
                 setup ${_os} "android" || exit $?;
+                setup ${_os} "chef" || exit $?;
                 setup ${_os} "gradle" || exit $?;
                 setup ${_os} "node" || exit $?;
                 setup ${_os} "nvm" || exit $?;
@@ -124,7 +144,10 @@ function setup() {
                 setup ${_os} "nativescript" || exit $?;
                 setup ${_os} "ng" || exit $?;
                 setup ${_os} "shrinkwrap" || exit $?;
+                setup ${_os} "tree" || exit $?;
                 setup ${_os} "typescript" || exit $?;
+                setup ${_os} "vagrant" || exit $?;
+                setup ${_os} "virtualbox" || exit $?;
                 setup ${_os} "yarn" || exit $?;
                 setup ${_os} "zsh" || exit $?;
                 setup ${_os} "php" || exit $?;

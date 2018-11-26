@@ -14,6 +14,7 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 
 export HOME_ROOT=$(mapHomePath;);
@@ -28,22 +29,77 @@ export ZSH_PROFILE="${HOME_ROOT}/.zshrc";
 export OS=$(getOS;);
 export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
-export NVM_VERSION="v8.9.4";
+export AUTHOR_NAME="brady house";
+export NVM_VERSION="  v10.8.0";
+
+# =================================================
+# ANGULAR CLI |||||||||||||||||||||||||||||||||||||
+#
 export NG_TYPESCRIPT_VER="2.7.2";
+
+# =================================================
+# ELECTRON ||||||||||||||||||||||||||||||||||||||||
+#
 export ELECTRON_SEEDER_REPO="https://github.com/electron/electron-quick-start";
+
+# =================================================
+# NATIVE SCRIPT |||||||||||||||||||||||||||||||||||
+#
 export __NS_PLATFORM__="ANDROID";
 export __NS_ADD_PLATFORM__="false";
 export __NS_ANDROID_EMULATOR_PROFILE__=fiddler;
 export __NS_ANDROID_EMULATOR_EXE__="${HOME_ROOT}/homebrew/share/android-sdk/emulator/emulator";
-# -------------------------------------------------
-# NATIVE SCRIPT TEMPLATE TYPE SWITCH
+
+# NS TEMPLATE TYPE SWITCH
+#
 # This variable controls the template used by
-# the fiddle.sh when initializing a new nativescript
+# fiddle.sh when initializing a new nativescript
 # fiddle. 2 options are supported:
+#
 #   "js"  JavaScript
 #   "ng2" Angular2
-# --------------------------------------------------
+#
 export __NS_TEMPLATE_TYPE__="ng2";
+
+# =================================================
+# CHEF ||||||||||||||||||||||||||||||||||||||||||||
+#
+
+# KITCHEN YML SWITCHES
+#
+# Parameters defining the default
+# driver and platforms used when generating
+# a new chef cookbook fiddle. The values
+# are used to update the .kitchen.yml
+# included in the root directory of each
+# chef fiddle.
+
+# NOTE - If you change these parameters, then
+# you should re-run the `fiddle.sh "setup" "mac" "chef"`
+# command inorder to update the chef collection's
+# root "kitchen.yml" file.
+# -------------------------------------------------
+
+export __CHEF_KITCHEN_DRIVER_NAME="vagrant";
+export __CHEF_KITCHEN_PLATFORM_NAME="centos65";
+export __CHEF_KITCHEN_PLATFORM_DRIVER_BOX="learningchef/centos65";
+export __CHEF_KITCHEN_PLATFORM_DRIVER_BOX_URL="learningchef/centos65";
+
+# -------------------------------------------------
+# NODE LOGIN SPLASH SWITCH
+#
+# Parameter used to enable/disable the /etc/motd
+# customization. When enabled, new cookbook
+# fiddles include a cookbook_file stanza that
+# overwrites the default /etc/motd file on new
+# fiddle nodes. This file defines what is displayed
+# when a user logs into the running node instance.
+# The updated version of the file displays the
+# fiddle.sh ASCII logo followed by the name
+# of the fiddle.
+# -------------------------------------------------
+
+export __CHEF_COOKBOOK_IS_LOGIN_SPLASH="true";
 
 
 

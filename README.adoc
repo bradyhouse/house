@@ -20,15 +20,17 @@ Essentially, it is Command Line Interface (CLI) for quickly getting started with
 libraries.  At present, it can be used to create a localized sandbox (aka _fiddle_) for any of the following languages
 and frameworks:
 
+
 [width="90%",cols="m,m,m,m"]
 |=========================================================
 |link:fiddles/android[Android]
-|link:fiddles/angular[Angular]
-|link:fiddles/angular2-cli[Angular2 Cli]
+|link:fiddles/angular[Angular 1.5]
+|link:fiddles/angular2-cli[Angular Cli]
 |link:fiddles/ant[Ant]
 |link:fiddles/aws/readme.adoc[AWS]
 |link:fiddles/bash[Bash]
 |link:fiddles/c[C]
+|link:fiddles/chef[Chef]
 |link:fiddles/chrome[Chrome]
 |link:fiddles/compass[Compass]
 |link:fiddles/d3[D3]
@@ -51,10 +53,12 @@ and frameworks:
 |link:fiddles/svg[SVG]
 |link:fiddles/three[Three.js]
 |link:fiddles/tween[Tween.js]
-|link:fiddles/aws[AWS]
 |=========================================================
 
-To get started with any of the frameworks listed, use the above links to explore the associated collection.  To learn
+To get started, with any of the frameworks listed, use the above links to explore the associated collection.  To learn
 about my latest changes check out the detailed link:CHANGELOG.md[change log].  To test drive the in-browser version
 of this collection checkout link:http://bradyhouse.io[bradyhouse.io].  For my coursework notes at the Illinois Institute of Technology visit
-link:http://iit.bradyhouse.ai[iit.bradyhouse.ai]. Finally, for my current focus, AWS Certification, visit link:http://aws.bradyhouse.ai[aws.bradyhouse.ai].
+link:http://iit.bradyhouse.ai[iit.bradyhouse.ai]. Finally, for my current focus, Chef certification, visit link:http://chef.bradyhouse.ai[chef.bradyhouse.ai].
+
+
+

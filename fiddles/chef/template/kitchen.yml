@@ -1,0 +1,17 @@
+---
+driver:
+  name: {{DriverName}}
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: {{PlatformName}}
+    driver:
+      box: {{PlatformDriverBox}}
+      box_url: {{PlatformDriverBoxUrl}}
+
+suites:
+  - name: default
+    run_list:
+    attributes:

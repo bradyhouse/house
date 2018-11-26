@@ -27,6 +27,7 @@
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/21/2018 - See CHANGELOG @  262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh
 source bin/_types.sh
@@ -37,7 +38,7 @@ thisFile=$(echo "$0" | sed 's/\.\///g');
 (
 	if [ "$#" -gt 1 ]; then  exit 86; fi
     case $1 in
-        'react'| 'android' | 'python' | 'angular' | 'angular2-cli' | 'ant' | 'aurelia' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
+        'react'| 'android' | 'python' | 'angular' | 'angular2-cli' | 'ant' | 'aurelia' | 'c' | 'chef' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php'| 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg')
             count=$(ls -1 ../fiddles/$1 | grep 'fiddle' | wc -l | sed -e 's/^[[:space:]]*//');
             voidShowSlug ${thisFile} > log;
             echo -e "" >> log;
