@@ -50,7 +50,6 @@ function kitchenInit() {
     kitchen init --create-gemfile || exit $?;
     bundle install || exit $?l
   fi
-
 }
 
 function updateKitchenYml() {
