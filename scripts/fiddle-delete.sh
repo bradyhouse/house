@@ -33,6 +33,7 @@
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -83,6 +84,12 @@ function updateChangeLog() {
 	  if [ "$#" -ne 2 ]; then  exit 86; fi
     prompt || exit $?;
     case ${fiddleType} in
+        'chef')
+          source bin/chef/_install.sh;
+          source bin/chef/_delete.sh;
+          destroy "${fiddlePath}" || exit $?;
+        ;;
+
         'react' | 'android' | 'angular' | 'angular2-cli' | 'ant' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
@@ -94,6 +101,7 @@ function updateChangeLog() {
                 ;;
             esac
         ;;
+
         *)
           exit 86
           ;;

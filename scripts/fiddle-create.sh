@@ -32,6 +32,7 @@
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/21/2018 - See CHANGELOG @  262_add_chef_setup
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -80,6 +81,11 @@ source bin/_types.sh;
             source bin/c/_install.sh;
             source bin/c/_create.sh;
             create $2 || exit 108;
+            ;;
+        'chef')
+            source bin/chef/_install.sh;
+            source bin/chef/_create.sh;
+            create $2 || exit 111;
             ;;
         'chrome')
             source bin/chrome/_create.sh;

@@ -31,6 +31,7 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/21/2018 - See CHANGELOG @  262_add_chef_setup
 # 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
@@ -108,6 +109,21 @@ function startServer() {
             cd ${_fiddleRoot};
             isGccInstalled || exit 112;
             gccStart || exit 113;
+            ;;
+        'chef')
+            source bin/chef/_start.sh;
+            source bin/chef/_install.sh;
+            _scriptDir=$(pwd;);
+            cd ${_fiddleSubDir};
+            _chefRootDir=$(pwd;);
+            _templateDir="${_chefRootDir}/template";
+            cd ${_scriptDir} || exit $?;
+            kitchenInit ${_chefRootDir} || exit 120;
+            updateKitchenYml ${_templateDir} ${_chefRootDir} || exit 121;
+            cd ${_scriptDir} || exit $?;
+            cd ${_fiddleRoot} || exit $?;
+            chefStart || exit 122;
+
             ;;
         'ember')
             source bin/ember/_install.sh;
@@ -282,7 +298,16 @@ case ${rc} in
     118) echo -e "Fubar\tInvalid fiddle type, \"${_type}\", specified.";
         rc=0;
         ;;
-    119) echo -e "Fubar\t\"reactStart\" function call failed for \"${_fiddleRoot}\".";
+    119) echo -e "Fubar\tthe \"reactStart\" function call failed for \"${_fiddleRoot}\".";
+        rc=0;
+        ;;
+    120) echo -e "Fubar\tthe \"kitchenInit\" function call failed for \"${_fiddleRoot}\".";
+        rc=0;
+        ;;
+    121) echo -e "Fubar\tthe \"updateKitchenYml\" function call failed for \"${_fiddleRoot}\".";
+        rc=0;
+        ;;
+    122) echo -e "Fubar\tthe \"chefStart\" function call failed for \"${_fiddleRoot}\".";
         rc=0;
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"

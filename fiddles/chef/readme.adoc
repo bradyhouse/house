@@ -1,0 +1,63 @@
+= Chef
+
+In September of 2018, I passed the `AWS Certified Solutions Architect - Associate Exam` -- see the http://aws.bradyhouse.ai[AWS Collection].
+Afterwards, I found myself left with one question: _Now what?_ I mean how do I explore, experiment (aka `fiddle`) with the cloud?  Well,
+you need a way to experiment with infrastructure. link:https://www.chef.io/[Chef] is a framework for doing that.
+This collection is aimed at gaining some experience with using this framework.  The ultimate goal of this
+collection is to bridge the gap back to AWS. 
+
+
+== Kindle Injection
+
+At the outset, the collection builds off the examples presented by Mischa Taylor and Seth Vargo in their book,
+link:http://www.learningchef.com[Learning Chef A Guide To Configuration Management and Automation].
+
+
+== Installation
+
+Complete the link:https://github.com/bradyhouse/house/wiki/Setup-(Mac-OS)[Setup (Mac OS)] procedure. Open a terminal
+window and run the command `fiddle setup mac chef`. The setup command installs:
+
+     virtualbox
+     vagrant
+     vagrant-manager
+     chefdk
+        chef
+        chef client suite
+        berkshire
+        kitchen
+
+After installing these packages, `kitchen init` / `bundle install` is used to configure the root collection directory as
+a chef repo based on the CHEF_* environment variables specified in the link:../../scripts/bin/_env.sh[_env.sh] file.
+
+
+
+== fiddle.sh Chef Commands
+
+[cols="2,2,5a"]
+|===
+|Create
+|`fiddle "create" "chef" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Delete
+|`fiddle "delete" "chef" "0000"`
+|link:delete.md[sample output & additional details]
+|List
+|`fiddle "list" "chef"`
+|link:list.md[sample output & additional details]
+|Start
+|`fiddle "start" "chef" "0000"`
+|link:start.md[sample output & additional details]
+|===
+
+
+== Online Resources
+
+link:https://github.com/chef/chef-dk[Chef Development Kit Github Repo]
+
+link:http://www.learningchef.com[Learning Chef]
+
+link:http://docs.chef.io[Chef Documentation]
+
+link:https://docs.chef.io/ohai.html[About Ohai]
+
