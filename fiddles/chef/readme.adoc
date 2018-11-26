@@ -1,30 +1,34 @@
 = Chef
 
-In 2018, I passed the AWS Certified Solutions Architect - Associate Exam.  Afterwards, I found myself left with
-one big question: _Now what?_ I mean how do you "fiddle" with the cloud?  Well, you need a way to configure and
-test infrastructure (aka AWS stuff) using code. link:https://www.chef.io/[Chef] is a framework for
-doing that.  This collection (aka directory, aka _barrel_) is aimed at gaining some experience
-with using this framework.
+This, I passed the `AWS Certified Solutions Architect - Associate Exam` -- see the http://aws.bradyhouse.ai[AWS Collection].
+Afterwards, I found myself left with one question: _Now what?_ I mean how do I `fiddle` with the cloud?  Well,
+you need a way to `fiddle` with infrastructure. link:https://www.chef.io/[Chef] is a framework for doing that.
+This collection is aimed at gaining some experience with using this framework.  The ultimate goal of this
+collection is to bridge the gap back to AWS.
+
+
+== Kindle Injection
+
+At the outset, the collection builds off the examples presented by Mischa Taylor and Seth Vargo in their book,
+link:http://www.learningchef.com[Learning Chef A Guide To Configuration Management and Automation].
 
 
 == Installation
 
-On Mac OS X, open a terminal window and run the command `fiddle setup mac chef`. The setup command installs:
+Open a terminal window and run the command `fiddle setup mac chef`. The setup command installs:
 
-* virtualbox
-* vagrant
-* vagrant-manager
-* chefdk
-  ** chef
-  ** chef client suite
-  ** berkshire
-  ** kitchen
+     virtualbox
+     vagrant
+     vagrant-manager
+     chefdk
+        chef
+        chef client suite
+        berkshire
+        kitchen
 
-After installing these packages, it then uses `kitchen init` to configure the link:kitchen[kitchen directory] based
-on the CHEF_* environment variables specified in the link:../../scripts/bin/_env.sh[_env.sh] script.
+After installing these packages, `kitchen init` / `bundle install` is used to configure the root collection directory as
+a chef repo based on the CHEF_* environment variables specified in the link:../../scripts/bin/_env.sh[_env.sh] file.
 
-NOTE - Your machine should be configured with homebrew.  In addition, should complete the fiddle.sh Bash setup
-procedure.
 
 
 == fiddle.sh Chef Commands
