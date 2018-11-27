@@ -2031,3 +2031,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**
 
   1.  Added [fiddles/nativescript/fiddle-0014-SiteWrapper](fiddles/nativescript/fiddle-0014-SiteWrapper)
+
+
+### 268_nativescript_15 ~ [Issue 268](https://github.com/bradyhouse/house/issues/268)
+
+* **NativeScript**
+
+  1.  Added [fiddles/nativescript/fiddle-0015-GeoLocation](fiddles/nativescript/fiddle-0015-GeoLocation)

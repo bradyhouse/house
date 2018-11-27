@@ -1,0 +1,17 @@
+
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+
+    <Page.actionBar>
+        <ActionBar title="Fiddle #15" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+
+    <StackLayout class="p-20">
+        <Button text="TAP" tap="{{ onTap }}" class="btn btn-primary btn-active"/>
+        <Label text="Get Location" class="h1 text-center"/>
+        <Label text="{{ longitude }}" class="h2 text-center" textWrap="true"/>
+        <Label text="{{ latitude }}" class="h2 text-center" textWrap="true"/>
+        <Label text="{{ areaCode }}" class="h2 text-center" textWrap="true"/>
+        <Label text="{{ error }}" class="h2 text-center" textWrap="true"/>
+    </StackLayout>
+</Page>
