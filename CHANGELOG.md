@@ -2038,3 +2038,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**
 
   1.  Added [fiddles/nativescript/fiddle-0015-GeoLocation](fiddles/nativescript/fiddle-0015-GeoLocation)
+
+
+### 270_chef_2 ~ [Issue 270](https://github.com/bradyhouse/house/issues/270)
+
+* **Chef**
+
+  1.  Added [fiddles/chef/fiddle-0001-ChefServer](fiddles/chef/fiddle-0001-ChefServer)
