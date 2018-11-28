@@ -45,6 +45,7 @@ function chefCreate() {
             $(voidSubstr '{{FiddleName}}' ${_fiddleDir} "files/default/motd";) || exit $?;
             cp -rf ../template/default.rb "recipes/default.rb" || exit $?;
             $(voidSubstr '{{AuthorName}}' "${AUTHOR_NAME}" "recipes/default.rb";) || exit $?;
+            $(voidSubstr '{{FiddleName}}' ${_fiddleDir} "recipes/default.rb";) || exit $?;
             _YEAR=$(date +%Y);
             $(voidSubstr '{{Year}}' "${_YEAR}" "recipes/default.rb";) || exit $?;
           fi
@@ -57,6 +58,7 @@ function chefCreate() {
 
           cp -rf ../template/LICENSE . || exit $?;
           $(voidSubstr '{{AuthorName}}' "${AUTHOR_NAME}" "LICENSE";) || exit $?;
+
 
         fi
 
