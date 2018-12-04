@@ -11,6 +11,15 @@ node. The command produces the following output.
     ├────STARTSERVER
     ├────KITCHENINIT
     ├────UPDATEKITCHENYML
+    ├────CHEFSTOP
+    ├────KITCHENDESTROY
+    -----> Starting Kitchen (v1.23.2)
+    -----> Destroying <default-centos65>...
+           Finished destroying <default-centos65> (0m0.00s).
+    -----> Kitchen is finished. (0m3.46s)
+    ├────VAGRANTDELETE
+    ├────VBOXMANAGEDELETE
+    0
     ├────CHEFSTART
     ├────KITCHENCONVERGE
     -----> Starting Kitchen (v1.23.2)
@@ -20,14 +29,15 @@ node. The command produces the following output.
     ==> default: Matching MAC address for NAT networking...
            ==> default: Checking if box 'learningchef/centos65' is up to date...
            ==> default: Setting the name of the VM: kitchen-fiddle-0000-Template-default-centos65
+           ==> default: Fixed port collision for 22 => 2222. Now on port 2200.
            ==> default: Clearing any previously set network interfaces...
            ==> default: Preparing network interfaces based on configuration...
                default: Adapter 1: nat
            ==> default: Forwarding ports...
-               default: 22 (guest) => 2222 (host) (adapter 1)
+               default: 22 (guest) => 2200 (host) (adapter 1)
            ==> default: Booting VM...
            ==> default: Waiting for machine to boot. This may take a few minutes...
-               default: SSH address: 127.0.0.1:2222
+               default: SSH address: 127.0.0.1:2200
                default: SSH username: vagrant
                default: SSH auth method: private key
                default:
@@ -52,7 +62,7 @@ node. The command produces the following output.
            ==> default: Machine not provisioned because `--no-provision` is specified.
            [SSH] Established
            Vagrant instance <default-centos65> created.
-           Finished creating <default-centos65> (0m49.39s).
+           Finished creating <default-centos65> (0m38.53s).
     -----> Converging <default-centos65>...
            Preparing files for transfer
            Preparing dna.json
@@ -68,7 +78,7 @@ node. The command produces the following output.
            el 6 x86_64
            Getting information for chef stable  for el...
            downloading https://omnitruck.chef.io/stable/chef/metadata?v=&p=el&pv=6&m=x86_64
-             to file /tmp/install.sh.2513/metadata.txt
+             to file /tmp/install.sh.2503/metadata.txt
            trying wget...
            trying curl...
            sha1	50a2cd31f7b8c90923082414ccbf8d2315f03ce5
@@ -77,7 +87,7 @@ node. The command produces the following output.
            version	14.7.17
            downloaded metadata file looks valid...
            downloading https://packages.chef.io/files/stable/chef/14.7.17/el/6/chef-14.7.17-1.el6.x86_64.rpm
-             to file /tmp/install.sh.2513/chef-14.7.17-1.el6.x86_64.rpm
+             to file /tmp/install.sh.2503/chef-14.7.17-1.el6.x86_64.rpm
            trying wget...
            trying curl...
            Comparing checksum with sha256sum...
@@ -94,7 +104,7 @@ node. The command produces the following output.
     
            Installing chef
            installing with rpm...
-           warning: /tmp/install.sh.2513/chef-14.7.17-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+           warning: /tmp/install.sh.2503/chef-14.7.17-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
            Preparing...                ########################################### [100%]
               1:chef                   ########################################### [100%]
            Thank you for installing Chef!
@@ -111,7 +121,7 @@ node. The command produces the following output.
              * cookbook_file[/etc/motd] action create
                - update content in file /etc/motd from a7620c to 8d076b
                --- /etc/motd	2014-12-04 21:51:54.363631846 +0000
-               +++ /etc/.chef-motd20181126-2617-1ndhirf	2018-11-26 06:26:11.077079589 +0000
+               +++ /etc/.chef-motd20181204-2609-upin5j	2018-12-04 02:38:33.377125393 +0000
                @@ -1,2 +1,11 @@
                -Welcome to your Packer-built virtual machine.
                +oooooooooooo  o8o        .o8        .o8  oooo
@@ -129,10 +139,10 @@ node. The command produces the following output.
            Running handlers complete
            Chef Client finished, 1/1 resources updated in 01 seconds
            Downloading files from <default-centos65>
-           Finished converging <default-centos65> (0m16.61s).
-    -----> Kitchen is finished. (1m11.42s)
+           Finished converging <default-centos65> (0m16.36s).
+    -----> Kitchen is finished. (0m58.33s)
     ├────KITCHENLOGIN
-    Last login: Mon Nov 26 06:26:08 2018 from 10.0.2.2
+    Last login: Tue Dec  4 02:38:30 2018 from 10.0.2.2
     oooooooooooo  o8o        .o8        .o8  oooo
      888       8  `"'        888        888   888
      888         oooo   .oooo888   .oooo888   888   .ooooo.
@@ -144,5 +154,13 @@ node. The command produces the following output.
     fiddle-0000-Template
     
     [vagrant@default-centos65 ~]$
+    
+    
+The process completes by initiating a SSH connection using `kitchen login`.  To terminate
+the connection and return to the shell, simple enter `exit`. 
+
+  
+ 
+    
     
 

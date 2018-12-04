@@ -4,36 +4,13 @@
 #  Specification           : N/A_____________________________________________________________________|
 #  Specification Path      : N/A_____________________________________________________________________|
 #  Author                  : brady house_____________________________________________________________|
-#  Create date             : 03/19/2015______________________________________________________________|
-#  Description             : UTILITY USED TO START A NODE FILE SERVER FOR A SPECIFIC FIDDLE SUB-_____|
-#                            DIRECTORY_______________________________________________________________|
+#  Create date             : 11/30/2018______________________________________________________________|
+#  Description             : MASTER FIDDLE STOP FUNCTION SCRIPT______________________________________|
 #  Command line Arguments  : $1 = FIDDLE TYPE________________________________________________________|
 # ---------------------------------------------------------------------------------------------------|
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
-# Baseline Ver.
-# 04/09/2015 - See CHANGELOG @ 201504091810
-# 05/08/2015 - See CHANGELOG @ 201505061810
-# 07/05/2015 - See CHANGELOG @ 201506290420
-# 07/11/2015 - See CHANGELOG @ 201507110420
-# 07/26/2015 - See CHANGELOG @ 201507260420
-# 12/06/2015 - See CHANGELOG @ 201511100420
-# 02/13/2016 - See CHANGELOG @ 201602130420
-# 03/02/2016 - See CHANGELOG @ 201603020420
-# 03/10/2016 - See CHANGELOG @ 201603050420
-# 04/16/2016 - See CHANGELOG @ 201604160420
-# 05/17/2016 - See CHANGELOG @ 201605020420
-# 05/18/2015 - See CHANGELOG @ 201605180420
-# 09/16/2016 - See CHANGELOG @ 201609160420
-# 10/01/2016 - See CHANGELOG @ 201610010420
-# 11/30/2016 - See CHANGELOG @ 201611280420
-# 12/15/2016 - See CHANGELOG @ 201612120420
-# 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
-# 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
-# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
-# 11/21/2018 - See CHANGELOG @  262_add_chef_setup
-# 11/24/2018 - See CHANGELOG @ 265_nativescript_14
-# 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
+# Baseline Ver ~ 272_add_fiddle_stop
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -73,46 +50,10 @@ _port=${WEB_SERVER_PORT};
 if [ "$#" -gt 2 ]; then _port=$3; fi
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}'
 
-function isLiveServerInstalled() {
-    if [[ ! $(which live-server;) ]]
-    then
-        echo "false";
-    else
-        echo "true";
-    fi
-}
-
-function startServer() {
-    groupLog "startServer";
+function stopFiddle() {
+    groupLog "stopFiddle";
     case ${_type} in
-        'android')
-            source bin/android/.androidrc;
-            source bin/android/_install.sh;
-            source bin/android/_start.sh;
-            cd ${_fiddleRoot};
-            isGradleInstalled || exit 108;
-            isAndroidInstalled || exit 110;
-            androidStart || exit 111;
-            ;;
-        'angular2-cli')
-            source bin/angular2-cli/_install.sh;
-            source bin/angular2-cli/_start.sh;
-            cd ${_fiddleRoot};
-            installed=$(isNgInstalled;);
-            if [[ "${installed}" == "false" ]]; then exit 97; fi
-            ngInstall || exit 91;
-            ngStart || exit 92;
-            ;;
-        'c')
-            source bin/c/.gccrc;
-            source bin/c/_install.sh;
-            source bin/c/_start.sh;
-            cd ${_fiddleRoot};
-            isGccInstalled || exit 112;
-            gccStart || exit 113;
-            ;;
         'chef')
-            source bin/chef/_start.sh;
             source bin/chef/_stop.sh;
             source bin/chef/_install.sh;
             _scriptDir=$(pwd;);
@@ -125,94 +66,16 @@ function startServer() {
             cd ${_scriptDir} || exit $?;
             cd ${_fiddleRoot} || exit $?;
             chefStop ${_fiddle} || exit 122;
-            chefStart || exit 122;
 
             ;;
-        'ember')
-            source bin/ember/_install.sh;
-            source bin/ember/_start.sh;
-            cd ${_fiddleRoot};
-            emberInstall || exit 97;
-            emberStart || exit 98;
-            ;;
-        'electron')
-            source bin/electron/_install.sh;
-            source bin/electron/_start.sh;
-            cd ${_fiddleRoot};
-            electronInstall || exit 105;
-            electronStart || exit 106;
-            ;;
-        'java')
-            source bin/java/.javarc;
-            source bin/java/_install.sh;
-            source bin/java/_start.sh;
-            cd ${_fiddleRoot};
-            isGradleInstalled || exit 108;
-            javaStart || exit 109;
-            ;;
-        'javac')
-            source bin/javac/.javacrc;
-            source bin/javac/_install.sh;
-            source bin/javac/_start.sh;
-            cd ${_fiddleRoot};
-            isJavacInstalled || exit 114;
-            isJavaInstalled || exit 115;
-            javacStart || exit 116;
-            ;;
-        'meteor')
-            source bin/meteor/_install.sh;
-            source bin/meteor/_start.sh;
-            cd ${_fiddleRoot};
-            meteorStart || exit 94;
-            ;;
-        'node')
-            source bin/node/_start.sh;
-            cd ${_fiddleRoot};
-            nodeStart || exit 117;
-            ;;
-        'nativescript')
-            source bin/nativescript/_install.sh;
-            source bin/nativescript/_start.sh;
-            cd ${_fiddleRoot};
-            _projectName=$(toLowerCase $(parseName ${_fiddle};);) || exit 107;
-            nvmInstall || exit 100;
-            nativescriptPreview ${_projectName} ${__NS_TEMPLATE_TYPE__} || exit 103;
-            ;;
-        'react')
-            if [[ -d ${_fiddleRoot} ]]
-            then
-                source bin/react/_install.sh;
-                source bin/react/_start.sh;
-                cd ${_fiddleRoot};
-                reactStart || exit 119;
-            else
-                if [[ -d "../fiddles/${_type}/dist" ]]
-                then
-                  cd "../fiddles/${_type}/dist" || exit 88;
-                  live-server --port=${_port} || exit 96;
-                else
-                  exit 118;
-                fi
-            fi
-            ;;
-        'all')
-            cd "../fiddles" || exit 88;
-            live-server --port=${_port} || exit 95;
-            ;;
-        *)  if [[ -d "../fiddles/${_type}" ]]
-            then
-              cd "../fiddles/${_type}" || exit 88;
-              live-server --port=${_port} || exit 96;
-            else
-              exit 118;
-            fi
+        *)
             ;;
     esac
 }
 #try
 (
     if [ "$#" -lt 1 ]; then  exit 86; fi
-    startServer || exit $?;
+    stopFiddle || exit $?;
 )
 #catch
 rc=$?
@@ -223,18 +86,13 @@ case ${rc} in
        voidShowSlug ${thisFile};
         echo "Usage:"
         echo ""
-        echo "$0 \"[t]\" \"[[n]]\" \"[[p]]\""
+        echo "$0 \"[t]\" \"[n]\""
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
-        voidEchoFiddleTypes "start";
+        voidEchoFiddleTypes "stop";
         echo "";
-        echo "[[n]] - OPTIONAL fiddle name. When specified the fiddle's path will be used as the root directory."
-        echo ""
-        echo "[[p]] - OPTIONAL port number. If not specified then port 1841 will be used."
-        echo "        Note - If you specify a different port, then to stop the resulting process"
-        echo "        using the fiddle-stop.sh script, you will need to supply the same port."
-        echo ""
+        echo "[n] -   Fiddle name."
         ;;
     87) echo -e "Fubar\tCannot find the \"${_path}/bin\" directory."
         ;;

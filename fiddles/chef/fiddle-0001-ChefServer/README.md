@@ -197,6 +197,30 @@ this fiddle provides examples of the following chef recipe `ingredients`.
         [vagrant@default-centos65 ~]$
 
 3.  Open a web browser, and navigate to `192.168.33.34` to access the Chef Server Admin Console
+4.  Once you are done, return to the terminal exit the ssh session 
+    
+      `exit`
+      
+5.  Destroy the virtual machine --
+
+      `fiddle stop chef 0001`
+
+    The output should looks like this:
+    
+      {{ ʕ・ɭ・ʔ }}
+      
+      FIDDLE-STOP.SH
+      ├────STOPFIDDLE
+      ├────KITCHENINIT
+      ├────UPDATEKITCHENYML
+      ├────CHEFSTOP
+      ├────KITCHENDESTROY
+      -----> Starting Kitchen (v1.23.2)
+      -----> Destroying <default-centos65>...
+             Finished destroying <default-centos65> (0m0.00s).
+      -----> Kitchen is finished. (0m3.24s)
+      ├────VAGRANTDELETE
+
 
 
 ### Tags

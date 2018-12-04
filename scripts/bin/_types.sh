@@ -92,6 +92,9 @@ voidEchoFiddleTypes() {
             voidEchoFiddleTypes;
             echo -e "\t\"all\"\t\t\tstartup all Web based JS Fiddles"
             ;;
+        'stop')
+            echo -e "\t\"chef\"\t\tChef Fiddles";
+            ;;
         'publish')
             echo -e "\t\"angular\"\t\tAngular Fiddles";
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";

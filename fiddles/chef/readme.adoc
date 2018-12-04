@@ -48,6 +48,9 @@ a chef repo based on the CHEF_* environment variables specified in the link:../.
 |Start
 |`fiddle "start" "chef" "0000"`
 |link:start.md[sample output & additional details]
+|Stop
+|`fiddle "stop" "chef" "0000"`
+|link:stop.md[sample output & additional details]
 |===
 
 

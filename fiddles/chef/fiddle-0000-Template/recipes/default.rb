@@ -1,5 +1,5 @@
 #
-# Cookbook:: {{FiddleName}}
+# Cookbook:: fiddle-0000-Template
 # Recipe:: default
 #
 # Copyright:: 2018, The brady house, All Rights Reserved.

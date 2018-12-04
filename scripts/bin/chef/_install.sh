@@ -25,6 +25,16 @@ function isChefInstalled() {
     fi
 }
 
+function isVagrant() {
+    if [[ ! $(which vagrant;) ]]
+    then
+        echo "false";
+    else
+        echo "true";
+    fi
+}
+
+
 function chefInstall() {
   groupLog "chefInstall";
   os=$(getOS;);
@@ -39,6 +49,17 @@ function isKitchenInstalled() {
         echo "true";
   fi
 }
+
+function isVboxManageInstalled() {
+  if [[ ! $(which vboxmanage;) ]]
+    then
+        echo "false";
+    else
+        echo "true";
+  fi
+}
+
+
 
 function kitchenInit() {
   groupLog "kitchenInit";
