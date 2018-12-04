@@ -34,6 +34,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
+# 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -85,7 +86,6 @@ function updateChangeLog() {
     prompt || exit $?;
     case ${fiddleType} in
         'chef')
-          source bin/chef/_install.sh;
           source bin/chef/_delete.sh;
           destroy "${fiddlePath}" || exit $?;
         ;;

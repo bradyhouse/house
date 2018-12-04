@@ -2045,3 +2045,17 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Chef**
 
   1.  Added [fiddles/chef/fiddle-0001-ChefServer](fiddles/chef/fiddle-0001-ChefServer)
+
+
+### 272_add_fiddle_stop ~ [Issue 272](https://github.com/bradyhouse/house/issues/272)
+
+* **fiddle.sh (Enhancement)**
+
+  1.  Added [scripts/fiddle-stop.sh](scripts/fiddle-stop.sh) 
+  2.  Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+  3.  Added [scripts/bin/chef/_stop.sh](scripts/bin/chef/_stop.sh)
+  4.  Added [scripts/bin/chef/_delete.sh](scripts/bin/chef/_delete.sh)
+  5.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+  4.  Updated [fiddles/chef/stop.md](fiddles/chef/stop.md)
+  5.  Updated [fiddles/chef/readme.adoc](fiddles/chef/readme.adoc)
+  6.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)

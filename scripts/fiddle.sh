@@ -21,6 +21,7 @@
 # 02/11/2017 - See CHANGELOG @ 201702110420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
+# 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
 # ---------------------------------------------------------------------------------------------------|
 clear;
 source bin/_utils.sh;
@@ -108,12 +109,17 @@ function fiddleIndexAll() {
             if [ "$#" -eq 4 ]; then port=$4; fi
             ./fiddle-start.sh  $2 $3 ${port}
             ;;
+        'stop')
+            if [ "$#" -lt 2 ]; then  ./fiddle-stop.sh;  exit 0; fi
+            ./fiddle-stop.sh  $2 $3;
+            ;;
         'emulate')
             if [ "$#" -lt 2 ]; then  ./fiddle-emulate.sh;  exit 0; fi
             ./fiddle-emulate.sh $2;
             ;;
         'delete')
             if [ "$#" -lt 3 ]; then  ./fiddle-delete.sh;  exit 0; fi
+            ./fiddle-stop.sh $2 $3;
             ./fiddle-delete.sh $2 $3;
             ./fiddle-index.sh $2;
             ;;
