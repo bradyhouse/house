@@ -2059,3 +2059,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   4.  Updated [fiddles/chef/stop.md](fiddles/chef/stop.md)
   5.  Updated [fiddles/chef/readme.adoc](fiddles/chef/readme.adoc)
   6.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+* Added [fiddles/jquery/fiddle-0071-SpinningLoader](fiddles/jquery/fiddle-0071-SpinningLoader)
