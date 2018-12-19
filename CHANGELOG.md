@@ -359,9 +359,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * Started [fiddles/jquery/fiddle-0024-AjaxJsonPYahooChartApi](fiddles/jquery/fiddle-0024-AjaxJsonPYahooChartApi)
 * Added [fiddles/svg/fiddle-0016-getBBoxMethod](fiddles/svg/fiddle-0016-getBBoxMethod)
-* Added [fiddles/extjs6/fiddle-0008-CandleStickChart](fiddles/extjs6/fiddle-0008-CandleStickChart)
 * Added [fiddles/svg/fiddle-0017-SmilToScript](fiddles/svg/fiddle-0017-SmilToScript)
-* Added [fiddles/extjs6/fiddle-0009-DjiComboChart](fiddles/extjs6/fiddle-0009-DjiComboChart)
 * Added [fiddles/compass/fiddle-0002-Partials](fiddles/compass/fiddle-0002-Partials)
 * Added [fiddles/compass/fiddle-0003-Mixins](fiddles/compass/fiddle-0003-Mixins)
 * Added [fiddles/extjs5/fiddle-20150810-DjiComboChart](fiddles/extjs5/fiddle-20150810-DjiComboChart)
@@ -387,7 +385,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/bash/fiddle-0029-JarExtraction](fiddles/bash/fiddle-0029-JarExtraction)
 * Added [fiddles/bash/fiddle-0030-PhantomJsScreenShot](fiddles/bash/fiddle-0030-PhantomJsScreenShot)
 * Added [fiddles/extjs6/fiddle-0013-MiniGauges](fiddles/extjs6/fiddle-0013-MiniGauges)
-* Added [fiddles/extjs6/fiddle-0014-WidgetGridKS](fiddles/extjs6/fiddle-0014-WidgetGridKS)
 * Added [scripts/fiddle-combine.sh](scripts/fiddle-combine.sh)
   * Reflected changes:
         1. updated [scripts/fiddle.sh](scripts/fiddle.sh)
@@ -425,7 +422,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ### 201509220420
 
 * Added [fiddles/extjs6/fiddle-0022-BufferedStoreExcelExport](fiddles/extjs6/fiddle-0022-BufferedStoreExcelExport)
-* Added [fiddles/extjs6/fiddle-0023-ReporterSpecRunner](fiddles/extjs6/fiddle-0023-ReporterSpecRunner)
 * Refactored [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
     * Based on [fiddles/bash/fiddle-0032-ListAndCount](fiddles/bash/fiddle-0032-ListAndCount)
 * Added [fiddles/jquery/fiddle-0028-RecursiveDOMInjection](fiddles/jquery/fiddle-0028-RecursiveDOMInjection)
@@ -576,7 +572,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * Added [fiddles/chrome/fiddle-0003-NoteApp](fiddles/chrome/fiddle-0003-NoteApp)
 * Added [fiddles/chrome/fiddle-0004-NoteAppSync](fiddles/chrome/fiddle-0004-NoteAppSync)
 * Added [fiddles/chrome/fiddle-0005-TextEditor](fiddles/chrome/fiddle-0005-TextEditor)
-* Added [fiddles/extjs6/fiddle-0032-CSVStore](fiddles/extjs6/fiddle-0032-CSVStore)
 * Added [fiddles/chrome/fiddle-0006-BookmarkSearch](fiddles/chrome/fiddle-0006-BookmarkSearch)
 * Added [fiddles/bash/fiddle-0050-InstallIstanbul](fiddles/bash/fiddle-0050-InstallIstanbul)
 * Added [fiddles/bash/fiddle-0051-InstallCucumber](fiddles/bash/fiddle-0051-InstallCucumber)
@@ -2059,3 +2054,19 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   4.  Updated [fiddles/chef/stop.md](fiddles/chef/stop.md)
   5.  Updated [fiddles/chef/readme.adoc](fiddles/chef/readme.adoc)
   6.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+
+
+###  275_extjs6_26_fix ~ [Issue 275](https://github.com/bradyhouse/house/issues/275)
+
+* **ExtJS 6**
+
+  1.  Updated [fiddles/extjs6/create.md](fiddles/extjs6/create.md)
+  2.  Updated [fiddles/extjs6/template/index.html](fiddles/extjs6/template/index.html)
+  3.  Added [fiddles/extjs6/combine.md](fiddles/extjs6/combine.md)
+  4.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+  5.  Updated [fiddles/extjs6/refactor.md](fiddles/extjs6/refactor.md)
+  6.  Updated [fiddles/extjs6/delete.md](fiddles/extjs6/delete.md)
+  7.  Updated [fiddles/extjs6/list.md](fiddles/extjs6/list.md)
+  8.  Updated [fiddles/extjs6/start.md](fiddles/extjs6/start.md)
+  9.  Updated [fiddles/extjs6/readme.adoc](fiddles/extjs6/readme.adoc)
+  

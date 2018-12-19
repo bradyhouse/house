@@ -1,4 +1,0 @@
-Test.SandBox.setup({
-    requires: [
-    ]
-});

@@ -25,7 +25,7 @@ Executing the command `./fiddle.sh "create" "extjs5" "fiddle-0000-Template"` fro
     
 
 Note, when an `extjs5` fiddle is created, the `fiddle.sh index extjs5` command is automatically initiated.  This 
-command will add a reference to the fiddle to the root angular [index.html](index.html) page.
+command will add a reference to the fiddle to the root extjs5 [index.html](index.html) page.
 
 ### Additional Info
 

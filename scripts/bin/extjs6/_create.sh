@@ -43,8 +43,8 @@ function create() {
       1)  echo "foo bar! failed to create the ../fiddles/${fiddleSubDir}/$1 directory."
           ;;
       2)  echo "foo bar! failed trying to update the ../fiddles/${fiddleSubDir}/$1/app.js file."
-    if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
-        ;;
+          if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
+          ;;
       3)  echo "foo bar! failed trying to update the ../fiddles/${fiddleSubDir}/$1/index.html file."
           if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
           ;;
@@ -56,5 +56,5 @@ function create() {
           ;;
   esac
   #finally
-  exit $?
+  echo $?
 }

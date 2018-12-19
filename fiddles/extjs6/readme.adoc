@@ -6,30 +6,40 @@ error, the best approach I have found is link:https://fiddle.sencha.com/#home[Se
 until it makes sense.  This directory is dedicated to exploration of this framework.  The `fiddle.sh` script can be used
 to extend or test drive this collection. The following table outlines how.
 
+== Installation
+
+Complete the link:https://github.com/bradyhouse/house/wiki/Setup-(Mac-OS)[Setup (Mac OS)] procedure. Open a terminal
+window and run the command `fiddle setup mac js-beautify`. The setup command simply installs js-beautify, which
+is required by the combine command (see below).
+
+
 === fiddle.sh ExtJS 6 Commands
 
 [cols="2,2,5a"]
 |===
 |Create
-|`./fiddle.sh "create" "extjs6" "fiddle-0000-Template"`
+|`fiddle "create" "extjs6" "fiddle-0000-Template"`
 |link:create.md[sample output & additional details]
+|Combine
+|`fiddle "combine" "extjs6" "0000"`
+|link:combine.md[sample output & additional details]
 |Delete
-|`./fiddle.sh "delete" "extjs6" "0000"`
+|`fiddle "delete" "extjs6" "0000"`
 |link:delete.md[sample output & additional details]
 |Fork
-|`./fiddle.sh "fork" "extjs6" "0000" "fiddle-0001-Fork"`
+|`fiddle "fork" "extjs6" "0000" "fiddle-0001-Fork"`
 |link:fork.md[sample output & additional details]
 |Index
-|`./fiddle.sh "index" "extjs6"`
+|`fiddle "index" "extjs6"`
 |link:index.md[sample output & additional details]
 |List
-|`./fiddle.sh "list" "extjs6"`
+|`fiddle "list" "extjs6"`
 |link:list.md[sample output & additional details]
 |Refactor
-|`./fiddle.sh "refactor" "extjs6" "0000" "fiddle-0100-Refactor"`
+|`fiddle "refactor" "extjs6" "0000" "fiddle-0100-Refactor"`
 |link:refactor.md[sample output & additional details]
 |Start
-|`./fiddle.sh "start" "extjs6"`
+|`fiddle "start" "extjs6"`
 |link:start.md[sample output & additional details]
 |===
 
