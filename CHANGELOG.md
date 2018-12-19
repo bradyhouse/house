@@ -2069,4 +2069,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   7.  Updated [fiddles/extjs6/list.md](fiddles/extjs6/list.md)
   8.  Updated [fiddles/extjs6/start.md](fiddles/extjs6/start.md)
   9.  Updated [fiddles/extjs6/readme.adoc](fiddles/extjs6/readme.adoc)
-  
+
+* **JQuery**
+
+  1.  Added [fiddles/jquery/fiddle-0071-SpinningLoader](fiddles/jquery/fiddle-0071-SpinningLoader)
