@@ -32,7 +32,8 @@
 # 11/30/2016 - See CHANGELOG @ 201611280420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
-# 11/21/2018 - See CHANGELOG @  262_add_chef_setup
+# 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
+# 12/18/2018 - See CHANGELOG @ 275_extjs6_26_fix
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;

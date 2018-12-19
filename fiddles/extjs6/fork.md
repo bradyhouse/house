@@ -1,29 +1,23 @@
 ExtJS 6 (fork)
 ======
 
-Executing the command `./fiddle.sh "fork" "extjs6" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces
-the following output.
+Executing the command `fiddle "fork" "extjs6" "0000" "fiddle-0100-Fork"` produces the following output.
 
-
-    H o u s e
-    oooooooooooo  o8o        .o8        .o8  oooo
-     888       8  `"'        888        888   888
-     888         oooo   .oooo888   .oooo888   888   .ooooo.
-     888oooo8     888  d88   888  d88   888   888  d88   88b
-     888          888  888   888  888   888   888  888ooo888
-     888          888  888   888  888   888   888  888    .o
-    o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
+    {{ ʕ・ɭ・ʔ }}
     
-    FIDDLE.SH
     FIDDLE-FORK.SH
     FIDDLE-INDEX.SH
-    09-29-16
+    12-19-18
     Done. All "extjs6" fiddles have been re-indexed.
     Done. The "../../fiddles/extjs6/fiddle-0100-Fork" directory has been initialized.
+    FIDDLE-INDEX.SH
+    12-19-18
+    Done. All "extjs6" fiddles have been re-indexed.
+    
 
-
-Note, when a `extjs6` fiddle is `forked`, the `fiddle.sh index extjs6` command is automatically initiated.  This 
-command will add a reference to the fiddle to the root extjs6 [index.html](index.html) page.
+Note, when a `extjs6` fiddle is `forked`, the `fiddle.sh index extjs6` command is automatically initiated. This command
+rebuilds the collection's root [index.html](index.html) file so that includes a reference to the newly 
+added fiddle. In addition, it handles appending a new line for the fiddle to the master [CHANGELOG.MD](../../CHANGELOG.md) file.
 
 
 

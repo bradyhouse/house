@@ -31,7 +31,6 @@ After installing these packages, `kitchen init` / `bundle install` is used to co
 a chef repo based on the CHEF_* environment variables specified in the link:../../scripts/bin/_env.sh[_env.sh] file.
 
 
-
 == fiddle.sh Chef Commands
 
 [cols="2,2,5a"]
