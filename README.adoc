@@ -4,8 +4,6 @@ image:http://img.shields.io/badge/license-MIT-brightgreen.svg["MIT license", lin
 
         {{ ʕ・ɭ・ʔ }} 
         
-        Hmmmm, fiddle me this...
-
 As a Web developer, much of my time is spent researching and attempting to master different frameworks.
 I have developed this repo in an attempt to capture this research. My thinking (hope) is driven by
 the adage _if everything begins in the house, then (perhaps) the "house always wins"._ At the same time, to
