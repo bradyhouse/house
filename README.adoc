@@ -3,7 +3,8 @@ image:https://badge.waffle.io/bradyhouse/house.png?label=in%20progress&title=Sto
 image:http://img.shields.io/badge/license-MIT-brightgreen.svg["MIT license", link="http://opensource.org/licenses/MIT"]
 
        {{ ʕ・ɭ・ʔ }}
-       H o u s e  f i d d l e
+       H o u s e  
+       f i d d l e
         
 As a Web developer, much of my time is spent researching and attempting to master different frameworks.
 I have developed this repo in an attempt to capture this research. My thinking (hope) is driven by
