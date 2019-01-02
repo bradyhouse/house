@@ -6,9 +6,6 @@ fiddle-0016-AdvancedWebView
 Advanced Web View Plugin
 
 
-![iOS](https://i.imgur.com/YqQuk6r.gifv)
-
-
 ### Creation Date
 
 12-27-18
@@ -26,9 +23,9 @@ Chicago, IL
 
 ### Description
 
-Okay, so why doesn't google authentication work when initiated from a web page loaded in a standard web view control?  
-Google returns a `disallowed_useragent...` error.  Fortunately, there is a plug-in for that => 
-[nativescript-advanced-webview](https://github.com/bradmartin/nativescript-advanced-webview). Riddle me a fiddle.
+Okay, so why doesn't google authentication work when initiated from a web page loaded in a standard web view control? 
+Google returns a `disallowed_useragent...` error.  Fortunately, there is a plug-in for that [nativescript-advanced-webview](https://github.com/bradmartin/nativescript-advanced-webview). 
+Riddle me a fiddle.
 
 __Note, there is an additional twist here.  The app should start by loading a static web page displaying a loader 
 animation.  After several seconds to simulate background processing, it should then open an external website having a 
