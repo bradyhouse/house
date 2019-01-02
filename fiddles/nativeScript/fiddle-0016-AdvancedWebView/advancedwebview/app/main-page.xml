@@ -1,0 +1,15 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      backgroundColor="Black"
+      loaded="onPageLoaded">
+    <ActionBar title="Fiddle #16">
+    </ActionBar>
+    <GridLayout rows="*"
+                columns="*"
+        id="gridLayout">
+        <WebView id="webView"
+                 row="0" col="0"
+                 src="https://www.312area.com/login/"
+                 loadStarted="onLoadStarted"
+        />
+    </GridLayout>
+</Page>
