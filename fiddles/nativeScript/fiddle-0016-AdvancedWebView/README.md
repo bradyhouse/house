@@ -6,8 +6,7 @@ fiddle-0016-AdvancedWebView
 Advanced Web View Plugin
 
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="YqQuk6r"><a href="//imgur.com/YqQuk6r">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-
+![ios](https://i.imgur.com/YqQuk6r.gifv)
 
 
 ### Creation Date
