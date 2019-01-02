@@ -6,7 +6,7 @@ fiddle-0016-AdvancedWebView
 Advanced Web View Plugin
 
 
-![iOS](https://i.imgur.com/YqQuk6r.gif)
+![iOS](https://i.imgur.com/YqQuk6r.gifv)
 
 
 ### Creation Date
