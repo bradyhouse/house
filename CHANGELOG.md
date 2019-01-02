@@ -2073,3 +2073,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **JQuery**
 
   1.  Added [fiddles/jquery/fiddle-0071-SpinningLoader](fiddles/jquery/fiddle-0071-SpinningLoader)
+  
+
+###  277_nativescript_16 ~ [Issue 277](https://github.com/bradyhouse/house/issues/277)  
+
+* **NativeScript**  
+  
+  1.  Added [fiddles/nativescript/fiddle-0016-AdvancedWebView](fiddles/nativescript/fiddle-0016-AdvancedWebView)
