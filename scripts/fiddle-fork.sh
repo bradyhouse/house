@@ -36,6 +36,7 @@
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 01/05/2018 - See CHANGELOG @ 279_nativescript_17
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -140,7 +141,6 @@ forkedOnDate=$(date +"%m-%d-%y";)
             cd "../../scripts";
             ;;
         'nativescript')
-            source bin/nativescript/.nativescriptrc;
             source bin/nativescript/_fork.sh;
             nativeScriptFork "${fiddleName}" "${targetFiddle}" || exit 98;
             ;;
