@@ -30,6 +30,9 @@ Okay, google authentication down, next problem:  navigation.  If you launch Chro
 nav bar as well as swipe support. Swipe left to go back.  Swipe right to go forward.  Gesture events are easy enough, 
 but the bottom bar is a question mark.  I need that...  `Riddle me a fiddle`.
 
+As starting point try => [https://github.com/henrychavez/nativescript-bottom-navigation](https://github.com/henrychavez/nativescript-bottom-navigation).  
+It includes js usage details.  Additionally, this nav needs to play well with a web view control. 
+
 
 ### Pre-Requisite
 
