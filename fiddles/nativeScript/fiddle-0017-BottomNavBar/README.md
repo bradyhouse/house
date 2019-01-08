@@ -6,7 +6,7 @@ fiddle-0017-BottomNavBar
 Bottom Navigation Bar
 
 
-<img alt="iOS" src="screenshots/screenshot-ios.png" width="250">
+<img alt="iOS" src="bottomnavbar/screenshots/screenshot-ios.png" width="250">
 
 
 ### Creation Date
