@@ -2080,3 +2080,14 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**  
   
   1.  Added [fiddles/nativescript/fiddle-0016-AdvancedWebView](fiddles/nativescript/fiddle-0016-AdvancedWebView)
+
+
+###  279_nativescript_17 ~ [Issue 277](https://github.com/bradyhouse/house/issues/277)
+
+* **fiddle.sh**
+
+  1. Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+
+* **NativeScript**
+
+  1.  Added [fiddles/nativescript/fiddle-0017-BottomNavBar](fiddles/nativescript/fiddle-0017-BottomNavBar)
