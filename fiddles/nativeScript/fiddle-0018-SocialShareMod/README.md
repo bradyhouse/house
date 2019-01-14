@@ -48,7 +48,7 @@ currently displayed page?  Of course there is a plug-in for that: [https://githu
 
 ### Forked From
 
-[fiddle-0018-SocialShareMod](../fiddle-0017-BottomNavBar)
+[fiddle-0017-BottomNavBar](../fiddle-0017-BottomNavBar)
 
 
 ### Tags
