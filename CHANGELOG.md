@@ -2091,3 +2091,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**
 
   1.  Added [fiddles/nativescript/fiddle-0017-BottomNavBar](fiddles/nativescript/fiddle-0017-BottomNavBar)
+
+
+###  281_nativescript_18 ~ [Issue 281](https://github.com/bradyhouse/house/issues/281)
+
+* **NativeScript**
+
+  1.  Added [fiddles/nativescript/fiddle-0018-SocialShareMod](fiddles/nativescript/fiddle-0018-SocialShareMod)
