@@ -39,9 +39,7 @@ can be used to extend or test drive this collection. The following table outline
 
 == Envrionment Setup (Mac OS X)
 
-=== Android
-
-==== Mac OS
+=== Mac OS
 
 1. Install homebrew. Navigate to the root scripts directory and run the following command:
 
@@ -77,11 +75,12 @@ can be used to extend or test drive this collection. The following table outline
 3. To check if your system is configured properly, in the terminal run the following command
     `tns doctor`
 
+
 == Machine Specific Configuration
 
 Use the link:../../scripts/bin/nativescript/.nativescriptrc[scripts/bin/nativescript/.nativescriptrc] file to configure machine specific variables.
 
-== Enabling Angular2 Templating
+=== Enabling Angular2 Templating
 
 `fiddle.sh` includes logic to initialize new nativeScript fiddles using _just JavaScript_ or Angular2 (aka _transpiled typeScript_)
 By default, JavaScript is enabled. This means, fiddles are initialized using the `nativescript create ...` command.

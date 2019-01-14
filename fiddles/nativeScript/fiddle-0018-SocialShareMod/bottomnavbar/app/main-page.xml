@@ -1,0 +1,38 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:bottomBar="nativescript-bottom-navigation"
+      backgroundColor="Black"
+      loaded="onPageLoaded">
+    <ActionBar title="Fiddle #18">
+    </ActionBar>
+    <GridLayout rows="*, auto"
+                columns="*"
+                id="body">
+        <WebView id="browser"
+                 row="0"
+                 class="p-20"
+                 src="https://bradyhouse.github.io/"
+                 loadStarted="onLoadStarted">
+        </WebView>
+
+        <bottomBar:BottomNavigation
+                class="bottom-nav"
+                id="bottomNavBar"
+                row="1">
+            <bottomBar:BottomNavigationTab
+                    icon="ic_back"
+                    class="navButton"
+                    selectable="false">
+            </bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab
+                    class="navButton"
+                    icon="ic_share"
+                    selectable="false">
+            </bottomBar:BottomNavigationTab>
+            <bottomBar:BottomNavigationTab
+                    class="navButton"
+                    icon="ic_next"
+                    selectable="false">
+            </bottomBar:BottomNavigationTab>
+        </bottomBar:BottomNavigation>
+    </GridLayout>
+</Page>
