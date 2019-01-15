@@ -2098,3 +2098,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **NativeScript**
 
   1.  Added [fiddles/nativescript/fiddle-0018-SocialShareMod](fiddles/nativescript/fiddle-0018-SocialShareMod)
+* Added [fiddles/three/fiddle-0023-Jupiter](fiddles/three/fiddle-0023-Jupiter)
