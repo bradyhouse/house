@@ -2105,3 +2105,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **three.js**  
   
   1.  Added [fiddles/three/fiddle-0023-Jupiter](fiddles/three/fiddle-0023-Jupiter)
+* Added [fiddles/angular2-cli/fiddle-0019-Tmp](fiddles/angular2-cli/fiddle-0019-Tmp)
+* Added [fiddles/three/fiddle-0024-Eclipse](fiddles/three/fiddle-0024-Eclipse)
