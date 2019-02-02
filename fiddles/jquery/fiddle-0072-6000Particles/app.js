@@ -14,7 +14,7 @@
     maxy = canvas.height,
     msg, startTime, prevTime, ms, frames;
 
-  fabric.Image.fromURL('blob.png', blobLoaded);
+  fabric.Image.fromURL('https://s3.amazonaws.com/brady.house/blob.png', blobLoaded);
 
   canvas.on('mouse:move', function(options) {
     mouse_pos = canvas.getPointer(options.e);

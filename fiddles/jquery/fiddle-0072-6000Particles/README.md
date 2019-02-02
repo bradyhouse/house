@@ -28,9 +28,9 @@ Time for a jquery fiddle.
 
 ### Published Version Link
 
-N/A
+[jsfiddle.net](https://jsfiddle.net/bradyhouse/0pqx81y4/)
 
 
 ### Tags
 
-jQuery, fabric.js
+jQuery, fabric.js, fabric.util.requestAnimFrame
