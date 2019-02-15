@@ -24,10 +24,10 @@ N/A
 ### Description
 
 Fiddle exploring how to subscribe to the [Foxbit Exchange API Level1](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) 
-endpoint via web socket. Each time a message is received, a file on the local file system is updated. 
+endpoint via web socket. Each time a message is received, a file on the local file system should be updated. 
 
 
-### Procedure
+### Use Case<a name="use-case"></a>
 
 1.  Install all dependencies `npm install`
 2.  Startup the service `npm start`
@@ -36,27 +36,56 @@ endpoint via web socket. Each time a message is received, a file on the local fi
 
     17:37:47	Connected
     17:37:47	Sending request ...
+    { m: 0, i: 0, n: 'SubscribeLevel1', o: '{"OMSId":1,"InstrumentId":1}' }
     17:37:49	message received.
-    '{ "OMSId":1, "InstrumentId":1, "BestBid":13364.01, "BestOffer":13471.95, "LastTradedPx":13471.22, "LastTradedQty":0.03859542, "LastTradeTime":1550186862760, "SessionOpen":13390.97, "SessionHigh":13598, "SessionLow":13360.02, "SessionClose":13467.42, "Volume":0.03859542, "CurrentDayVolume":84.91343282, "CurrentDayNumTrades":642, "CurrentDayPxChange":3.80, "Rolling24HrVolume":86.33570947, "Rolling24NumTrades":656, "Rolling24HrPxChange":0.0372042319256865888769000300, "TimeStamp":"1550186862767" }'
-    17:37:49	data.json updated.
-    17:38:05	message received.
-    '{ "OMSId":1, "InstrumentId":1, "BestBid":13364, "BestOffer":13471.95, "LastTradedPx":13471.22, "LastTradedQty":0.03859542, "LastTradeTime":1550186862760, "SessionOpen":13390.97, "SessionHigh":13598, "SessionLow":13360.02, "SessionClose":13467.42, "Volume":0.03859542, "CurrentDayVolume":84.91343282, "CurrentDayNumTrades":642, "CurrentDayPxChange":3.80, "Rolling24HrVolume":86.33570947, "Rolling24NumTrades":656, "Rolling24HrPxChange":0.0372042319256865888769000300, "TimeStamp":"1550186862767" }'
-    17:38:05	data.json updated.
-    17:38:06	message received.
-    '{ "OMSId":1, "InstrumentId":1, "BestBid":13364.01, "BestOffer":13471.95, "LastTradedPx":13471.22, "LastTradedQty":0.03859542, "LastTradeTime":1550186862760, "SessionOpen":13390.97, "SessionHigh":13598, "SessionLow":13360.02, "SessionClose":13467.42, "Volume":0.03859542, "CurrentDayVolume":84.91343282, "CurrentDayNumTrades":642, "CurrentDayPxChange":3.80, "Rolling24HrVolume":86.33570947, "Rolling24NumTrades":656, "Rolling24HrPxChange":0.0372042319256865888769000300, "TimeStamp":"1550186862767" }'
-    17:38:06	data.json updated.
-    17:38:24	message received.
-    '{ "OMSId":1, "InstrumentId":1, "BestBid":13364, "BestOffer":13471.95, "LastTradedPx":13471.22, "LastTradedQty":0.03859542, "LastTradeTime":1550186862760, "SessionOpen":13390.97, "SessionHigh":13598, "SessionLow":13360.02, "SessionClose":13467.42, "Volume":0.03859542, "CurrentDayVolume":84.91343282, "CurrentDayNumTrades":642, "CurrentDayPxChange":3.80, "Rolling24HrVolume":86.33570947, "Rolling24NumTrades":656, "Rolling24HrPxChange":0.0372042319256865888769000300, "TimeStamp":"1550186862767" }'
-    17:38:24	data.json updated.
+    '{ "OMSId":1, "InstrumentId":1, "BestBid":13364.01, "BestOffer":13471.95, "LastTradedPx":13471.22, "LastTradedQty":0
+    17:38:24	level1-response.json updated.
+
    
-    ...
+   The [level1-response.json](level1-response.json) file is updated with the message returned.
 
-   Additionally, the [data.json](data.json) file should then be overwritten (aka updated) at the indicated interval
-  
 
-### Published Version Link
+### Level1 Response File <a name="response"></a>
 
-N/A
+When a message is received via the web socket (see [Use Case](#use-case)), the contents of the [level1-response.json](level1-response.json) file 
+is updated (see sample below). For further details, see [Foxbit Exchange API Level1](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) 
+documentation.
+
+      {
+          "OMSId": 1,
+          "InstrumentId": 1,
+          "BestBid": 13368.05,
+          "BestOffer": 13469,
+          "LastTradedPx": 13369.29,
+          "LastTradedQty": 0.05985,
+          "LastTradeTime": 1550188096345,
+          "SessionOpen": 13390.97,
+          "SessionHigh": 13598,
+          "SessionLow": 13360.02,
+          "SessionClose": 13467.42,
+          "Volume": 0.05985,
+          "CurrentDayVolume": 86.49189406,
+          "CurrentDayNumTrades": 649,
+          "CurrentDayPxChange": -98.13,
+          "Rolling24HrVolume": 86.52728059,
+          "Rolling24NumTrades": 652,
+          "Rolling24HrPxChange": -0.7286473578458234762114792600,
+          "TimeStamp": "1550188096344"
+      }
+
+
+### Level1 Request File<a name="request"></a>
+
+The [level1-request](level1-request.json) file (see below) is used to tell the API which instrument you want to monitor.
+OMSId 1 maps to symbol `BTCUSD`. For further details, see [Foxbit Exchange API Level1](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) documentation.
+
+     {
+       "m":0,                                  // MessageType ( 0_Request / 1_Reply / 2_Subscribe / 3_Event / 4_Unsubscribe / Error )
+       "i":0,                                  // Sequence Number
+       "n":"SubscribeLevel1",                  // Endpoint
+       "o": "{\"OMSId\":1,\"InstrumentId\":1}" // Payload
+     }
+
 
 
 ### Tags
