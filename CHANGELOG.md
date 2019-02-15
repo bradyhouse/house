@@ -2113,4 +2113,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **jquery**
 
   1.  Added [fiddles/jquery/fiddle-0072-6000Particles](fiddles/jquery/fiddle-0072-6000Particles)
-* Added [fiddles/node/fiddle-0030-foxbitApiSocket](fiddles/node/fiddle-0030-foxbitApiSocket)
+
+* **node**
+  
+  1.  Added [fiddles/node/fiddle-0030-foxbitApiSocket](fiddles/node/fiddle-0030-foxbitApiSocket)
