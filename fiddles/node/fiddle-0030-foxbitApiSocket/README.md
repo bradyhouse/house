@@ -42,7 +42,7 @@ endpoint via web socket. Each time a message is received, a file on the local fi
     17:38:24	level1-response.json updated.
 
    
-   The [level1-response.json](level1-response.json) file is updated with the message returned.
+   The [level1-response.json](#response) file is updated with the package returned.
 
 
 ### Level1 Response File <a name="response"></a>
