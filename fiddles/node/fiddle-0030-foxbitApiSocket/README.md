@@ -51,7 +51,7 @@ endpoint via web socket. Each time a message is received, a file on the local fi
    
     ...
 
-   And the [data.json](data.json) file should then be overwritten (aka updated) at the indicated interval
+   Additionally, the [data.json](data.json) file should then be overwritten (aka updated) at the indicated interval
   
 
 ### Published Version Link
@@ -61,4 +61,4 @@ N/A
 
 ### Tags
 
-node.js, fs, moment, ws
+node.js, fs, moment, prettify-js, ws

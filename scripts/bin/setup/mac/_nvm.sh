@@ -29,10 +29,11 @@ function install() {
   _rc=$?
   case ${_rc} in
       0)  echo "Done ~ nvm installed successfully."
+          _rc=0;
           ;;
       *)  echo "foo bar! Something went wrong."
           ;;
   esac
   #finally
-  exit ${_rc}
+  echo ${_rc}
 }

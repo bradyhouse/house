@@ -15,10 +15,11 @@
 
 function installNode() {
   groupLog "installNode";
-  installed=$(isInstalled "brew";);
-  if [[ "${installed}" == "true" ]]
+  nvm current;
+  installed=$(nvm current);
+  if [[ "${installed}" ]]
   then
-    brew install node;
+    nvm install stable;
   else
     return 1;
   fi

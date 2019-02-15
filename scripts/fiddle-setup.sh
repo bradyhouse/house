@@ -55,5 +55,5 @@ case ${rc} in
         ;;
 esac
 #finally
-exit ${rc}
+echo ${rc}
 

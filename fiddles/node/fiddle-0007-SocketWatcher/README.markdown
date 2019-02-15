@@ -27,7 +27,7 @@ subscribed to the server's unix socket are notified.  Note, this POC is based on
 Chapter 3 of Jim R. Wilson's book [Node.js the Right Way](https://pragprog.com/book/jwnode/node-js-the-right-way).
 
 
-### Published Version Link
+### Published Version Links
 
 N/A
 

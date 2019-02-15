@@ -37,5 +37,5 @@ function install() {
           ;;
   esac
   #finally
-  return ${_rc}
+  return ${_rc};
 }

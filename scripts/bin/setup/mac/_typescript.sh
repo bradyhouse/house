@@ -40,6 +40,6 @@ function install() {
         ;;
   esac
   #finally
-  exit ${_rc}
+  return ${_rc};
 }
 

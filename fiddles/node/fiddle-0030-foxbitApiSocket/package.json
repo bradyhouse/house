@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "moment": "^2.24.0",
+    "prettify-js": "^1.0.1",
     "ws": "^6.1.3"
   }
 }

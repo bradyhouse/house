@@ -1,6 +1,7 @@
 const fileSystem = require('fs'),
   WebSocket = require('ws'),
-  wsAddress = 'wss://api.foxbitapi.com.br/WSGateway/',
+  jsonFormatter = require('prettify-js'),
+wsAddress = 'wss://api.foxbitapi.com.br/WSGateway/',
   dateFormatter = require('moment'),
   socket = new WebSocket(wsAddress),
   message = {
@@ -32,7 +33,7 @@ socket.on('message', (data) => {
 socket.on('open', () => {
   console.log(dateFormatter(new Date()).format('HH:mm:ss') + '\tConnected');
   console.log(dateFormatter(new Date()).format('HH:mm:ss') + '\tSending request ...');
-  socket.send(JSON.stringify(message), (err) => {
+  socket.send(jsonFormatter(JSON.stringify(message)), (err) => {
     if (err) {
       console.dir(err);
     }

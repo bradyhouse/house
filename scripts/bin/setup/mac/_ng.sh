@@ -59,6 +59,6 @@ function install() {
         ;;
   esac
   #finally
-  exit ${_rc}
+  echo ${_rc};
 }
 

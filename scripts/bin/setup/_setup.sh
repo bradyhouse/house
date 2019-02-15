@@ -126,31 +126,16 @@ function setup() {
                 source bin/setup/mac/_virtualbox.sh;
                 install || exit $?;
                 ;;
-              'all')
-                setup ${_os} "bash" || exit $?;
-                setup ${_os} "brew" || exit $?;
-                setup ${_os} "abd" || exit $?;
-                setup ${_os} "android" || exit $?;
-                setup ${_os} "chef" || exit $?;
-                setup ${_os} "gradle" || exit $?;
-                setup ${_os} "node" || exit $?;
-                setup ${_os} "nvm" || exit $?;
+              'frontend')
                 setup ${_os} "gh" || exit $?;
                 setup ${_os} "ncu" || exit $?;
-                setup ${_os} "joe" || exit $?;
                 setup ${_os} "js-beautify" || exit $?;
                 setup ${_os} "live-server" || exit $?;
                 setup ${_os} "meteor" || exit $?;
                 setup ${_os} "nativescript" || exit $?;
                 setup ${_os} "ng" || exit $?;
                 setup ${_os} "shrinkwrap" || exit $?;
-                setup ${_os} "tree" || exit $?;
                 setup ${_os} "typescript" || exit $?;
-                setup ${_os} "vagrant" || exit $?;
-                setup ${_os} "virtualbox" || exit $?;
-                setup ${_os} "yarn" || exit $?;
-                setup ${_os} "zsh" || exit $?;
-                setup ${_os} "php" || exit $?;
                 ;;
                *) exit 86;
                 ;;

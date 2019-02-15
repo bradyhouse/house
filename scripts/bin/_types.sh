@@ -55,7 +55,18 @@ voidEchoFiddleTypes() {
            echo -e "\t\"yarn\"\t\tinstall yarn\t\t\thttps://yarnpkg.com/lang/en/";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\t\thttp://ohmyz.sh/";
            echo -e "";
-           echo -e "\t\"all\"\t\tinstall everything";
+           echo -e "\t\"frontend\"\tinstall frontend packages:";
+           echo -e "";
+           echo -e "\t\t\"gh\"\t\tinstall github terminal\t\thttps://www.npmjs.com/package/gh";
+           echo -e "\t\t\"ncu\"\t\tinstall npm-check-updates\thttps://www.npmjs.com/package/npm-check-updates";
+           echo -e "\t\t\"js-beautify\"\tinstall js-beautify\t\thttps://www.npmjs.com/package/js-beautify";
+           echo -e "\t\t\"live-server\"\tinstall live-server\t\thttps://www.npmjs.com/package/live-server";
+           echo -e "\t\t\"meteor\"\tinstall meteor\t\t\thttps://www.meteor.com/";
+           echo -e "\t\t\"nativescript\"\tinstall nativeScript\t\thttps://www.npmjs.com/package/nativescript";
+           echo -e "\t\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
+           echo -e "\t\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
+           echo -e "\t\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
+
           ;;
         'combine')
             echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
