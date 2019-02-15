@@ -47,9 +47,8 @@ endpoint via web socket. Each time a message is received, a file on the local fi
 
 ### Level1 Response File <a name="response"></a>
 
-When a message is received via the web socket (see [Use Case](#use-case)), the contents of the [level1-response.json](level1-response.json) file 
-is updated (see sample below). For further details, see [Foxbit Exchange API Level1](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) 
-documentation.
+When a message is received via the web socket (see [Use Case](#use-case)), the contents of the [level1-response.json](level1-response.json) 
+file (see below) is updated. For further details, see [Foxbit Exchange API Level1](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) documentation.
 
       {
           "OMSId": 1,
