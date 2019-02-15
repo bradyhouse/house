@@ -18,13 +18,15 @@ Chicago, IL
 
 ### Issue
 
-N/A
+[Issue 290](https://github.com/bradyhouse/house/issues/290)
 
 
 ### Description
 
-Fiddle exploring how to subscribe to the [Foxbit Exchange API Level1](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) 
-endpoint via web socket. Each time a message is received, a file on the local file system should be updated. 
+Recently someone asked me to provide them with an example of how to subscribe to a web socket. This person was looking for a way to leverage the [Foxbit API](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) in order to monitor the BTC/BRL exchange rate.  Although the API is documented, the published [NodeJS examples](https://github.com/foxbitcoin/foxbit-api-samples/) have not been maintained and are less than intuitive.  For some reason, this seemed like fun. So I said sure -- `i will riddle you a fiddle but next time please provide me with a feature request and the 50$ analysis deposit ;).`
+
+As far as the fiddle, the idea here is to subscribe to the [Foxbit Exchange API Level1](https://docs.foxbit.com.br/EN/websocket_intro.html#subscribelevel1) 
+endpoint via web socket.  Each time a message is received, update the contents of a file. With this background process in place, you could then build an App that consumes the file.
 
 
 ### Use Case<a name="use-case"></a>
