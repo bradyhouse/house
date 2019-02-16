@@ -50,45 +50,6 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 11. In the `Android Virtual Device (AVD) Manager`, create an Android Virtual Device, called `fiddler`
 12. To test your configuration, use the link:start.md[fiddle.sh start ...] command
 
-== Android Console Cheat Sheet
-
-Usage: `android [global options] action [action options]`
-
-where valid actions are composed of a verb and an optional direct object
-
-==== Global Options
-|=======================
-|-s --silent            |Silent mode, shows errors only
-|-v --verbose           |Verbose mode, shows errors, warnings and all messages
-|--clear-cache          |Clear the SDK Manager repository manifest cache
-|-h --help              |Help on a specific command
-|=======================
-
-==== Direct Objects
-|=======================
-|sdk                    |Displays the SDK Manager window
-|avd                    |Displays the AVD Manager window
-|list                   |Lists existing targets or virtual devices
-|list avd               |Lists existing Android Virtual Devices
-|list target            |Lists existing targets
-|list device            |Lists existing devices
-|list sdk               |Lists remote SDK repository
-|create avd             |Creates a new Android Virtual Device
-|move avd               |Moves or renames an Android Virtual Device
-|delete avd             |Deletes an Android Virtual Device
-|update avd             |Updates an Android Virtual Device to match the folders of a new SDK
-|create project         |Creates a new Android project
-|update project         |Updates an Android project (must already have an AndroidManifestxml)
-|create test-project    |Creates a new Android project for a test package
-|update test-project    |Updates the Android project for a test package (must already have an AndroidManifestxml)
-|create lib-project     |Creates a new Android library project
-|update lib-project     |Updates an Android library project (must already have an AndroidManifestxml)
-|create uitest-project  |Creates a new UI test project
-|update adb             |Updates adb to support the USB devices declared in the SDK add-ons
-|update sdk             |Updates the SDK by suggesting new platforms to install if available
-|=======================
-
-
 == Online Resources
 *   link:https://developer.android.com/index.html[Android API libraries and developer tools]
 *   link:http://www.androidcentral.com/android-201-10-basic-terminal-commands-you-should-know[Ten basic Android terminal commands you should know]
