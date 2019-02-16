@@ -52,24 +52,18 @@ to extend or test drive this collection. The following table outlines how.
 
 == Kindle Injections
 
-As a starting point, I will be working through Jim R. Wilson book link:https://pragprog.com/book/jwnode/node-js-the-right-way[Node.js the Right Way].
+image:https://images-na.ssl-images-amazon.com/images/I/41VrUOwEEuL.jpg["Building Bots with Node.js"]
 
-
-https://images-na.ssl-images-amazon.com/images/I/41VrUOwEEuL.jpg
-
-link:https://github.com/packtPublishing/Building-Bots-with-Nodejs[Building Bots with Node.js]
-
-
-
+link:https://github.com/packtPublishing/Building-Bots-with-Nodejs[Building Bots with Node.js Source Code]
 
 == Online Resources
 
 *   link:http://nodejs.org[nodejs.org]
 *   link:http://nodejs.org/api[node api]
-**  link:http://nodejs.org/api/fs.html[fs]
-**  link:http://nodejs.org/api/child_process.html[child_process]
-**  link:http://nodejs.org/api/events.html[events]
-**  link:http://nodejs.org/api/buffer.html[buffer]
+*   link:http://nodejs.org/api/fs.html[fs]
+*   link:http://nodejs.org/api/child_process.html[child_process]
+*   link:http://nodejs.org/api/events.html[events]
+*   link:http://nodejs.org/api/buffer.html[buffer]
 *   link:http://json.org[json.org]
 *   link:https://github.com/jimbojw/right-way[jimbojw > right-way]
 
