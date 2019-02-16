@@ -45,12 +45,10 @@ The `fiddle.sh` script can be used to extend or test drive this collection. The 
 8. In the terminal, run the following command
     `brew info android`
 9. Add the `export ANDROID_HOME=...` statement to your .bashrc file
-10. In the terminal, run the following command
-    `android avd`
-11. In the `Android Virtual Device (AVD) Manager`, create an Android Virtual Device, called `fiddler`
-12. To test your configuration, use the link:start.md[fiddle.sh start ...] command
+
 
 == Online Resources
+
 *   link:https://developer.android.com/index.html[Android API libraries and developer tools]
 *   link:http://www.androidcentral.com/android-201-10-basic-terminal-commands-you-should-know[Ten basic Android terminal commands you should know]
 *   link:http://stackoverflow.com/questions/20801042/how-to-create-android-project-with-gradle-from-command-line[How to create android project with gradle from command line?]
