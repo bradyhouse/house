@@ -29,12 +29,12 @@ My idea:  Pass the parameters via cookie instead of querystring.  Its a little c
 ![image](https://user-images.githubusercontent.com/2453457/53063756-e4c8b200-348a-11e9-9524-f88e0d4bb41c.png)
 
 
-As crudely depicted (above), there are pages --
+As crudely depicted (above), there are 2 pages --
 
 * index.html
 * frame.html
 
-The workflow is recursive. Its begins when `index.html` page is loaded outside a frame.  On ready, the page test whether it has
+The workflow is recursive--ie the story is told from the perspective of the `index.html` page. Its begins when `index.html` page is loaded outside a frame.  On ready, the page test whether it has
 query string parameters. If it does not, it does nothing.  If it does, it writes a cookie for the `/frame.html` page, and
 redirects the browser to the `frame.html` page, which reloads the index.html page within a iframe.  This time when the
 `index.html` ready event fires, because there is no query string, it reads (or `digests`) the query string parameters 
