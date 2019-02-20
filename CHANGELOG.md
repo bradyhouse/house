@@ -2117,3 +2117,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **node**
   
   1.  Added [fiddles/node/fiddle-0030-FoxbitApiSocket](fiddles/node/fiddle-0030-FoxbitApiSocket)
+  
+  
+###  291_jquery_73 ~ [Issue 291](https://github.com/bradyhouse/house/issues/291)
+  
+  1.  Added [fiddles/jquery/fiddle-0073-FrameCookies](fiddles/jquery/fiddle-0073-FrameCookies)
