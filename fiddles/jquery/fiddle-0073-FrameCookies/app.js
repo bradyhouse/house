@@ -6,7 +6,7 @@
 
     content: null,
     name: 'fiddle-0073',
-    path: '/frame.html',
+    path: '/',
 
     init: function () {
       if (this.exists()) {
@@ -130,7 +130,7 @@
     onCreateClick: function () {
       let valueInput = document.getElementById('cookieValue'),
         cookieValue = valueInput ? valueInput.value : null,
-        baseUrl = window.location.origin,
+        baseUrl = window.top.location.origin + window.app.cookies.path,
         baseQuery = '?val=',
         url = null,
         query = null;
