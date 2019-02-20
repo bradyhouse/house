@@ -22,9 +22,9 @@ Chicago, IL
 
 ### Description
 
-Okay, so imagine you have web page that loaded into an iframe. And imagine, that the web page offers a deeplink feature that manages state via query string.  However, the parent page, containing the child iframe, always resets the iframe to the original URL effectively breaking the deeplink functionality.  Fiddle me that....
+Okay, so imagine you have web page that is loaded into an iframe. And imagine, that the web page offers a deeplink feature that manages state via query string parameters. User makes changes, and then can create a deeplink to the page that restores their changes using the values passed via the querystring -- standard stuff. However, the parent page, containing the child iframe, always resets the iframe to the original URL effectively breaking the deeplink functionality. In other words, there are no query string parameters. `Riddle me a fiddle!`
 
-My idea:  frame generated cookies.  Its a little complicated, but essentially here is the workflow: 
+My idea:  Pass the parameters via cookie instead of querystring.  Its a little complicated, but essentially here is the workflow: 
 
 ![image](https://user-images.githubusercontent.com/2453457/53063756-e4c8b200-348a-11e9-9524-f88e0d4bb41c.png)
 
