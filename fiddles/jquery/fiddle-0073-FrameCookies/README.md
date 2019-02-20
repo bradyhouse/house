@@ -36,10 +36,10 @@ As crudely depicted (above), there are 2 pages --
 
 The workflow is recursive--ie the story is told from the perspective of the `index.html` page. Its begins when `index.html` page is loaded outside a frame.  On ready, the page test whether it has
 query string parameters. If `no`, it does nothing.  If `yes`, it writes a cookie for the `/frame.html` page, and
-redirects the browser to the `frame.html` page, triggering its a ready event a second time.  This time because there is no query string, it reads (or `digests`) the query string parameters 
+redirects the browser to the `frame.html` page, triggering its load event a second time.  This time because there is no query string, it reads (or `digests`) the query string parameters 
 from the parent frame cookie. After processing the data, it deletes the cookie from memory.  Using this approach
-query string parameters (aka deep links) can be generated and processed by the index.html even though it is loaded in
-a child frame with an empty query string.
+query string parameters (aka deep links) can be generated and processed by the `index.html` page even though it is loaded in
+a child frame without any `window.location.search` criteria.
 
 
 ### Published Version Link
