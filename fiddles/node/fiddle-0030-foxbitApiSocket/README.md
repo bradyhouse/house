@@ -34,19 +34,20 @@ endpoint via web socket.  Each time a message is received, update the contents o
 1.  Install all dependencies `npm install`
 2.  Startup the service `npm start`
 3.  This should produce following on output on the command line --
-
-
-    17:37:47	Connected
-    17:37:47	Sending request ...
-    { m: 0, i: 0, n: 'SubscribeLevel1', o: '{"OMSId":1,"InstrumentId":1}' }
-    17:37:49	message received.
-    '{ "OMSId":1, "InstrumentId":1, "BestBid":13364.01, "BestOffer":13471.95, "LastTradedPx":13471.22, "LastTradedQty":0
-    17:38:24	level1-response.json updated.
-
+      
+        info 07:26:51 {{ ʕ・ɭ・ʔ }} - node fiddle #30
+        info 07:26:52 connected to:	wss://api.foxbitapi.com.br/WSGateway/
+        info 07:26:52 sending request:	{ "m":0, "i":0, "n":"SubscribeLevel1", "o": "{\"OMSId\":1,\"InstrumentId\":1}" }
+        info 07:26:52 message received:	{ "OMSId":1, "InstrumentId":1, "BestBid":14470.05, "BestOffer":14599, "LastTradedPx":14471.93, "Last ...
+        info 07:28:01 message received:	{ "OMSId":1, "InstrumentId":1, "BestBid":14470.05, "BestOffer":14599, "LastTradedPx":14471.93, "Last ...
+        info 07:28:01 message received:	{ "OMSId":1, "InstrumentId":1, "BestBid":14470.05, "BestOffer":14599, "LastTradedPx":14471.93, "Last ...
+        ... 
    
-   The [level1-response.json](#response) file is updated with the package returned.
 
-
+   Each time a message is received, the console is updated and the [level1-response.json](#response) file is updated 
+   with the data returned. This process will continue indefinitely.  To stop (or close the socket), press `Ctrl-C`.
+   
+   
 ### Level1 Response File <a name="response"></a>
 
 When a message is received via the web socket (see [Use Case](#use-case)), the contents of the [level1-response.json](level1-response.json) 
@@ -91,4 +92,4 @@ OMSId 1 maps to symbol `BTCUSD`. For further details, see [Foxbit Exchange API L
 
 ### Tags
 
-node.js, fs, moment, prettify-js, ws
+node.js, fs, moment, npmlog, ws

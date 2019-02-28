@@ -1,6 +1,1 @@
-{
-  "m":0,
-  "i":0,
-  "n":"SubscribeLevel1",
-  "o": "{\"OMSId\":1,\"InstrumentId\":1}"
-}
+{ "m":0, "i":0, "n":"SubscribeLevel1", "o": "{\"OMSId\":1,\"InstrumentId\":1}" }

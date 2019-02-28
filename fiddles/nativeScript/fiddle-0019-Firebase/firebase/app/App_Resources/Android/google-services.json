@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "568532483577",
+    "firebase_url": "https://fiddle-0016-authentication.firebaseio.com",
+    "project_id": "fiddle-0016-authentication",
+    "storage_bucket": "fiddle-0016-authentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568532483577:android:dd71d1d8f47fa43b",
+        "android_client_info": {
+          "package_name": "org.nativescript.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568532483577-lq8i7ogdm4bnsrsi84jhht1sbphja0dd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsXrqOs8BzW6EEdEOCH2TMLAX_ihZmdcQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
