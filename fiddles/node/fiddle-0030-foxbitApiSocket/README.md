@@ -43,9 +43,8 @@ endpoint via web socket.  Each time a message is received, update the contents o
         info 07:28:01 message received:	{ "OMSId":1, "InstrumentId":1, "BestBid":14470.05, "BestOffer":14599, "LastTradedPx":14471.93, "Last ...
         ... 
    
-
-   Each time a message is received, the console is updated and the [level1-response.json](#response) file is updated 
-   with the data returned. This process will continue indefinitely.  To stop (or close the socket), press `Ctrl-C`.
+4.  Each time a message is received, the console is updated (above) and the [level1-response.json](#response) file is updated 
+    with the data returned. This process will continue indefinitely.  To stop (or close the socket), press `Ctrl-C`.
    
    
 ### Level1 Response File <a name="response"></a>
