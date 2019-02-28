@@ -15,7 +15,7 @@ function onOpen() {
   log.info(dateFormatter(new Date()).format('HH:mm:ss'),'sending request:\t' + request.trim());
   socket.send(request, (err) => {
     if (err) {
-      throw err;
+      throw err.toString();
     }
   });
 }
@@ -27,7 +27,7 @@ function onMessage(data) {
     log.info(dateFormatter(new Date()).format('HH:mm:ss'),'message received:\t' + json.slice(0, 100).trim() + ' ...');
     fileSystem.writeFile(response, json, (err) => {
       if(err) {
-        throw err;
+        throw err.toString();
       }
     });
   }
@@ -43,8 +43,7 @@ try {
   socket.on('open', () => onOpen());
   socket.on('message', (data) => onMessage(data));
 
-}
-catch(err) {
+} catch(err) {
   log.error(dateFormatter(new Date()).format('HH:mm:ss'), err.toString());
 }
 
