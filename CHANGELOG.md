@@ -2122,3 +2122,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 ###  291_jquery_73 ~ [Issue 291](https://github.com/bradyhouse/house/issues/291)
   
   1.  Added [fiddles/jquery/fiddle-0073-FrameCookies](fiddles/jquery/fiddle-0073-FrameCookies)
+* Added [fiddles/jquery/fidde-0074-AgGridEnterprise](fiddles/jquery/fidde-0074-AgGridEnterprise)
