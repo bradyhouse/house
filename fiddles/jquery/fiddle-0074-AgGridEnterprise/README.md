@@ -45,9 +45,10 @@ Note - the fiddle will still work without a license.  However, you will see an e
       
 ### Published Version Link
 
-N/A
+* [Plunker](http://plnkr.co/SYaLvo)
+* [bradyhouse.io](http://bradyhouse.github.io/jquery/fiddle-0074-AgGridEnterprise/index.html)
 
 
 ### Tags
 
-jQuery, ag-grid-enterprise, ag-grid-community, fetch
+jquery, ag-grid-enterprise, ag-grid-community, fetch
