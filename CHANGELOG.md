@@ -2130,3 +2130,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   
   1.  Added [fiddles/jquery/fiddle-0074-AgGridEnterprise](fiddles/jquery/fiddle-0074-AgGridEnterprise)
 
+* Added [fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid](fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid)
