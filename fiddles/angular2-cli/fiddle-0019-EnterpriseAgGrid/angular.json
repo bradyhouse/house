@@ -20,20 +20,16 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/images"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
-              "node_modules/ag-grid-community/dist/styles/ag-theme-balham-dark.css",
-              "node_modules/bootswatch/dist/darkly/bootstrap.css",
-              "node_modules/font-awesome/css/font-awesome.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootswatch/dist/sketchy/bootstrap.css",
+              "node_modules/ag-grid/dist/styles/ag-grid.css"
             ],
             "scripts": [
-              "node_modules/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/jquery/dist/jquery.js"
-
+              "node_modules/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js"
             ],
             "es5BrowserSupport": true
           },

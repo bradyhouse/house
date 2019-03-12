@@ -1,24 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { HttpModule } from '@angular/http';
-
-import { AgGridModule } from 'ag-grid-angular';
-
-import { XyzGridModule } from './xyz-grid/xyz-grid.module';
+import {NgModule} from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {FormsModule} from "@angular/forms";
+// ag-grid
+import {AgGridModule} from "ag-grid-angular/main";
+// application
+import {AppComponent} from "./app.component";
+// rich grid
+import {RichGridComponent} from "./rich-grid-example/rich-grid.component";
+import {DateComponent} from "./date-component/date.component";
+import {HeaderComponent} from "./header-component/header.component";
+import {HeaderGroupComponent} from "./header-group-component/header-group.component";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    XyzGridModule,
-    HttpModule,
-    AgGridModule.withComponents([])
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AgGridModule.withComponents(
+            [
+                DateComponent,
+                HeaderComponent,
+                HeaderGroupComponent
+            ]
+        )
+    ],
+    declarations: [
+        AppComponent,
+        RichGridComponent,
+        DateComponent,
+        HeaderComponent,
+        HeaderGroupComponent
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
