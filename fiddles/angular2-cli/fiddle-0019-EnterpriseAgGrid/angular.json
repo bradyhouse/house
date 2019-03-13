@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/EnterpriseAgGrid",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,8 +25,9 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootswatch/dist/sketchy/bootstrap.css",
-              "node_modules/ag-grid/dist/styles/ag-grid.css"
+              "node_modules/bootswatch/dist/flatly/bootstrap.css",
+              "node_modules/ag-grid/dist/styles/ag-grid.css",
+              "node_modules/ag-grid/dist/styles/ag-theme-balham.css"
             ],
             "scripts": [
               "node_modules/ag-grid-enterprise/dist/ag-grid-enterprise.min.noStyle.js"
