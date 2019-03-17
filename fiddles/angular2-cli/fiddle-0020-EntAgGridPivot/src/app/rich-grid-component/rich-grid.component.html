@@ -1,0 +1,10 @@
+<div [ngStyle]="style" (window:resize)="onResize($event)">
+  <ag-grid-angular style="width: 100%; height: 100%;" class="ag-theme-balham"
+                   #agGrid
+                   [columnDefs]="columnDefs"
+                   [rowData]="rowData"
+                   (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+</div>
+
+
