@@ -1,0 +1,8 @@
+.content-component {
+    z-index: -1;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: whitesmoke;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: -3px -3px 2px 1px black;
+}
