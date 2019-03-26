@@ -24,6 +24,8 @@ class Footer extends Component {
                 Phone
               </a>
             </li>
+          </ul>
+          <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link"  alt="Fork me on GitHub"
                  target="_blank"
