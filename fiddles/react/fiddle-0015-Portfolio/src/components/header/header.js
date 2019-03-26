@@ -9,7 +9,7 @@ class Header extends Component {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav my-2 my-lg-0">
             <li className="nav-item">
-              <h1>Alexis Grisham</h1>
+              <h1>Molly Bedlington</h1>
             </li>
           </ul>
         </div>
