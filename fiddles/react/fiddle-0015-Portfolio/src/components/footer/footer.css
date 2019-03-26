@@ -1,3 +1,4 @@
-.nav-link {
-  font-weight: 700;
+.navbar-bottom {
+  background-color: var(--secondary) !important;
+  color: var(--white);
 }

@@ -1,3 +1,4 @@
-* {
-  color: white;
+.navbar-top {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
 }

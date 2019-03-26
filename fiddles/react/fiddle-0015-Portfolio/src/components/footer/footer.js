@@ -5,7 +5,7 @@ import './footer.css';
 class Footer extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand navbar-dark bg-warning fixed-bottom navbar-bottom">
+      <nav className="navbar navbar-expand navbar-dark fixed-bottom navbar-bottom">
         <div className="collapse navbar-collapse" id="navbarsExample02">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
