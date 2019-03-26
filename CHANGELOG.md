@@ -2138,3 +2138,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid](fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid)
   2.  Added [fiddles/angular2-cli/fiddle-0020-EntAgGridPivot](fiddles/angular2-cli/fiddle-0020-EntAgGridPivot)
 
+* Added [fiddles/react/fiddle-0015-Portfolio](fiddles/react/fiddle-0015-Portfolio)

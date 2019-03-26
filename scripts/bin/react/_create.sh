@@ -16,13 +16,7 @@
 # ---------------------------------------------------------------------------------------------------|
 
 
-function createTypingsRcFile() {
-    groupLog "createTypingsRcFile";
-    touch .typingsrc
-    echo "{" >> .typingsrc
-    echo -e "   \"rejectUnauthorized\": false" >> .typingsrc
-    echo "}" >> .typingsrc
-}
+
 
 function npmShrinkWrap() {
   groupLog "npmShrinkWrap";
@@ -64,7 +58,6 @@ function reactCreate() {
         cp -rf ../template/README.md README.md || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
-        #createTypingsRcFile || exit 6;
         npmShrinkWrap || exit $?;
 
     )
