@@ -24,15 +24,13 @@ Chicago, IL
 ### Description
 
 What's possible in node by itself?  What is its core? Lets start with the `child_process` spawn function. Specifically,
-can spawn be used to see contents of the running script (reflection)?  `riddle me a fiddle`.
+can spawn be used to see contents of the running script (reflection)? Yup, `riddle me a fiddle`.
 
 
 ### Use Case<a name="use-case"></a>
 
-
-1.  Install all dependencies `npm install`
-2.  Startup the service `npm start`
-3.  This should produce following on output on the command line --
+1.  Startup the service `npm start`
+2.  This should produce following on output on the command line --
       
           const spawn = require('child_process').spawn,
             clear = spawn('clear'),
