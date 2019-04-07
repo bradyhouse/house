@@ -2138,3 +2138,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid](fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid)
   2.  Added [fiddles/angular2-cli/fiddle-0020-EntAgGridPivot](fiddles/angular2-cli/fiddle-0020-EntAgGridPivot)
 
+
+### 313_node_31to40 ~ [Issue 313]([Issue 313](https://github.com/bradyhouse/house/issues/313))
+
+* **node**
+
+  1.  Added [fiddles/node/fiddle-0031-SpawnProcess](fiddles/node/fiddle-0031-SpawnProcess)
+  
+
