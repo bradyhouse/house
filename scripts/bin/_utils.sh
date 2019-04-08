@@ -65,7 +65,6 @@ function isOnline() {
   fi
 }
 
-
 function getOS() {
   os=$(uname;);
   if [[ "${os}" -eq "Darwin" ]]
@@ -371,9 +370,9 @@ function subDelimStr() {
 function isOnline() {
   echo -e "GET http://duckduckgo.com HTTP/1.0\n\n" | nc duckduckgo.com 80 > /dev/null 2>&1;
   if [ $? -eq 0 ]; then
-    echo "Online"
+    echo "Online";
   else
-    echo "Offline"
+    echo "Offline";
   fi
 }
 

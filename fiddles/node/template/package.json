@@ -1,5 +1,5 @@
 {
-  "name": "{{fiddleName}}",
+  "name": "{{fiddleTitle}}",
   "version": "0.0.0",
   "description": "Node ~ {{fiddleName}}",
   "repository": {
@@ -15,6 +15,5 @@
     "start": "node --harmony app.js"
   },
   "dependencies": {
-    "xml-to-json": "^0.1.1"
   }
 }

@@ -31,13 +31,18 @@ function create() {
 
   #try
   (
+      fiddleTitle=$(parseName $1;);
+      groupLog "fiddle = ${fiddleTitle}";
       if [[ -d "../fiddles/${fiddleSubDir}/$1" ]]; then rm -R "../fiddles/${fiddleSubDir}/$1"; fi
       $(cp -rf "../fiddles/${fiddleSubDir}/template" "../fiddles/${fiddleSubDir}/$1") || exit 1;
       $(voidSubstr '{{fiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/package.json";) || exit 2;
       $(voidSubstr '{{author}}' '${AUTHOR}' "../fiddles/${fiddleSubDir}/$1/package.json";) || exit 2;
       $(voidSubstr '{{githubRepo}}' '${GITHUB_REPO}' "../fiddles/${fiddleSubDir}/$1/package.json";) || exit 2;
-      $(voidSubstr '{{FiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3;
+      $(voidSubstr '{{fiddleName}}' $1 "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3;
+      $(voidSubstr '{{fiddleTitle}}' ${fiddleTitle} "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3;
       $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "../fiddles/${fiddleSubDir}/$1/README.md";) || exit 3;
+      $(voidSubstr '{{author}}' '${AUTHOR}' "../fiddles/${fiddleSubDir}/$1/package.json";) || exit 2;
+
       cd "../fiddles/${fiddleSubDir}/$1"
       npm install || exit 4;
       npm shrinkwrap;

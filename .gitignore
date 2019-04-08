@@ -59,6 +59,7 @@ jspm_packages
 # misc
 .sass-cache
 connect.lock
+file.txt
 
 coverage/*
 libpeerconnection.log
