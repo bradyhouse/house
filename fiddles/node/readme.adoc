@@ -66,5 +66,6 @@ link:https://github.com/packtPublishing/Building-Bots-with-Nodejs[Building Bots 
 *   link:http://nodejs.org/api/buffer.html[buffer]
 *   link:http://json.org[json.org]
 *   link:https://github.com/jimbojw/right-way[jimbojw > right-way]
+*   link:https://jshint.com/docs/options/[JSHint Options]
 
 
