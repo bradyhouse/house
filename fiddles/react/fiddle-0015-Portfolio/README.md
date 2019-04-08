@@ -36,4 +36,4 @@ that the developer needs to show some knowledge of coding while at the same time
 
 ### Tags
 
-node, JSX, ES6, react, react-bootstrap, bootstrap
+node, JSX, ES6, react, react-scripts, react-bootstrap, bootstrap, @babel/preset-react
