@@ -6,6 +6,7 @@ import Content from './components/content/content';
 
 class App extends Component {
   render() {
+
     return (
       <div className="App">
         <Header/>

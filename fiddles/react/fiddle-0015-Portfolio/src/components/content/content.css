@@ -1,4 +1,41 @@
 
 .content {
   padding: 1em;
+  outline: none;
+}
+
+.canvas {
+  width: 150px;
+}
+.figure {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: initial;
+  -webkit-box-align: initial;
+  -ms-flex-align: initial;
+  align-items: initial;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.figure svg {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -ms-flex-order: 2;
+  order: 2;
+  outline: none;
 }
