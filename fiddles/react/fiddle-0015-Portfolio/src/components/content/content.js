@@ -28,6 +28,8 @@ class Content extends Component {
 
     this.num = 48;
     this.canvas = '';
+    this.canvasHeight = .3 * window.innerHeight;
+
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -54,7 +56,8 @@ class Content extends Component {
           contentLabel="Example Modal"
         >
 
-          <div class="container">    <img className="canvas" src={this.canvas}></img>
+          <div className="container">
+            <img height={this.canvasHeight} src={this.canvas} alt="Canvas #{48}"></img>
           </div>
         </Modal>
         <div className="content" tabIndex="-1" role="group">
@@ -67,7 +70,7 @@ class Content extends Component {
                      >
                 <animate attributeName="opacity" dur="229s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
                          repeatCount="indefinite"></animate>
-                <animate attributeName="x" dur="135s" values="0;728;0"
+                <animate attributeName="x" dur="60s" values="0;728"
                          repeatCount="indefinite"></animate>
               </image>
               <image id="49"
@@ -77,7 +80,7 @@ class Content extends Component {
               >
                 <animate attributeName="opacity" dur="146s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
                          repeatCount="indefinite"></animate>
-                <animate attributeName="x" dur="135s" values="-88;640;-88"
+                <animate attributeName="x" dur="60s" values="-88;640"
                          repeatCount="indefinite"></animate>
               </image>
               <image id="50"
@@ -87,7 +90,7 @@ class Content extends Component {
               >
                 <animate attributeName="opacity" dur="192s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
                          repeatCount="indefinite"></animate>
-                <animate attributeName="x" dur="135s" values="-176;552;-176"
+                <animate attributeName="x" dur="60s" values="-176;552"
                          repeatCount="indefinite"></animate>
               </image>
               <image id="51"
@@ -97,7 +100,7 @@ class Content extends Component {
               >
                 <animate attributeName="opacity" dur="237s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
                          repeatCount="indefinite"></animate>
-                <animate attributeName="x" dur="135s" values="-264;464;-264"
+                <animate attributeName="x" dur="60s" values="-264;464"
                          repeatCount="indefinite"></animate>
               </image>
               <image id="52"
@@ -105,9 +108,9 @@ class Content extends Component {
                      width="105" height="140" x="-352" y="0" opacity="1"
                      onClick={() => this.openModal("52","images/0052-design.jpg")}
               >
-                <animate attributeName="opacity" dur="135s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
+                <animate attributeName="opacity" dur="60s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
                          repeatCount="indefinite"></animate>
-                <animate attributeName="x" dur="135s" values="-352;376;-352"
+                <animate attributeName="x" dur="60s" values="-352;376"
                          repeatCount="indefinite"></animate>
               </image>
               <image id="53"
@@ -117,17 +120,17 @@ class Content extends Component {
               >
                 <animate attributeName="opacity" dur="148s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
                          repeatCount="indefinite"></animate>
-                <animate attributeName="x" dur="135s" values="-440;288;-440"
+                <animate attributeName="x" dur="60s" values="-440;288"
                          repeatCount="indefinite"></animate>
               </image>
               <image id="0054-release.jpg"
                      xlinkHref="images/0054-release.jpg"
                      width="105" height="140" x="-528" y="0" opacity="1"
-                     onClick={() => this.openModal("54","images/0054-release.jpg")}
+                     onClick={() => this.openModal("54","images/0048-release.jpg")}
               >
                 <animate attributeName="opacity" dur="169s" values="1;.9;.8;.7;.6;.5;.6;.7;.8;.9"
                          repeatCount="indefinite"></animate>
-                <animate attributeName="x" dur="135s" values="-528;200;-528"
+                <animate attributeName="x" dur="60s" values="-528;200"
                          repeatCount="indefinite"></animate>
               </image>
             </svg>
