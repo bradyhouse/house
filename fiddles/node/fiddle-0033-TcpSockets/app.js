@@ -2,12 +2,11 @@
 
 "use strict";
 
-const
-  fs = require('fs'),
-  net = require('net'),
-  spawn = require('child_process').spawn,
-  fileName = process.argv[2] || 'file.txt',
-  touch = spawn('touch',[fileName]);
+const fs = require('fs');
+const net = require('net');
+const spawn = require('child_process').spawn;
+const fileName = process.argv[2] || 'file.txt';
+const touch = spawn('touch', [fileName]);
 
 // region Create Watch File
 
