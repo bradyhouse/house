@@ -1,0 +1,14 @@
+<div class="content-detail-component" *ngIf="isLoaded"
+     (window:resize)="onWindowResize()"
+     [ngStyle]="{'width': 'width' + px, 'height': height + 'px' }">
+    <grid-component
+            [width]="gridWidth"
+            [height]="gridHeight"
+            [columnDefs]="columnDefs"
+            [rowData]="rowData"
+            (ready)="onReady($event)"
+            (rowselected)="onRowSelected($event)"
+            (afterfilter)="onAfterFilter($event)"
+    >
+    </grid-component>
+</div>

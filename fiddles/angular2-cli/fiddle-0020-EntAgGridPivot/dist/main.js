@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand navbar-dark bg-danger navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\"\n           href=\"https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav><!--./navbar-top -->\n<rich-grid></rich-grid>\n"
+module.exports = "<nav class=\"navbar navbar-expand navbar-dark bg-danger navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\"\n           href=\"https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0020-EntAgGridPivot\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav><!--./navbar-top -->\n<rich-grid></rich-grid>\n"
 
 /***/ }),
 
@@ -330,7 +330,7 @@ fetch('assets/license.json').then(function (response) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/bradyhouse/github/house_297/fiddles/angular2-cli/fiddle-0020-EntAgGridPivot/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/bradyhouse/github/house_299/fiddles/angular2-cli/fiddle-0020-EntAgGridPivot/src/main.ts */"./src/main.ts");
 
 
 /***/ })
