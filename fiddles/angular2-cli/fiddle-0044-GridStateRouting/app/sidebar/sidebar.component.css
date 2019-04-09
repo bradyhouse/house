@@ -1,0 +1,9 @@
+.sidebar-component {
+    padding-left: 1.25rem;
+
+}
+.sidebar-component .btn .btn-primary {
+    margin-right: 1.25rem;
+    float: right;
+}
+

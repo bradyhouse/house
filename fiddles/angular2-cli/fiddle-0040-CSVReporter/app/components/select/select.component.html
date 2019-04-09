@@ -1,0 +1,12 @@
+     <label for="field" class="col-lg-2 control-label">{{title}}</label>
+     <select
+          id="field"
+          class="form-control"
+          (change)="onSelectChange($event)">
+          <option
+               *ngFor="let value of values | fieldValues:field"
+               [value]="value">
+               {{value}}
+          </option>
+     </select>
+

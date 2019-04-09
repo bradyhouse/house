@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand navbar-dark bg-danger navbar-top">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" style="font-weight: 700; color: whitesmoke;" alt="Fork me on GitHub" target="_blank"
+           href="https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0020-EntAgGridPivot">
+          Fork Me On Github
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav><!--./navbar-top -->
+<div [ngStyle]="style" (window:resize)="onResize($event)">
+  <div class="test-container">
+    <div class="test-header">
+      <div class="example-section">
+        Column Visible: <button (click)="showAthconste(true)">Show Athconste</button>
+        <button (click)="showAthconste(false)">Hide Athconste</button>
+        <button (click)="showMedals(true)">Show All Medals</button>
+        <button (click)="showMedals(false)">Hide All Medals</button>
+      </div>
+      <div class="example-section">
+        Column Pinned: <button (click)="pinAthconste(true)">Pin Athconste</button>
+        <button (click)="pinAthconste(false)">Unpin Athconste</button> <button (click)="pinAge(true)">Pin Age</button>
+        <button (click)="pinAge(false)">Unpin Age</button>
+      </div>
+      <div class="example-section">
+        Column State: <button (click)="printState()">Print State</button>
+        <button (click)="saveState()">Save State</button> <button (click)="restoreState()">Restore State</button>
+        <button (click)="resetState()">Reset State</button>
+      </div>
+    </div>
+    <ag-grid-angular
+      #agGrid
+      style="width: 100%; height: 500px;"
+      id="myGrid"
+      class="ag-theme-balham"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [debug]="true"
+      [rowData]="rowData"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div>
+</div>
