@@ -3,6 +3,8 @@
   padding: 1em;
   outline: none;
   overflow: hidden;
+  zoom: 250%;
+
 }
 
 .canvas {
