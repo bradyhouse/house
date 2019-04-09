@@ -197,6 +197,7 @@ function dateComparator(date1, date2) {
   }
   return date1Number - date2Number;
 }
+
 function monthToComparableNumber(date) {
   if (date === undefined || date === null || date.length !== 10) {
     return null;
