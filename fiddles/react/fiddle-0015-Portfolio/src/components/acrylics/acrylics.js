@@ -40,17 +40,32 @@ const captions = [
   'was applied using a feather brush to smear, swirl and blend the colors. / Status ~ Sold / Price ~ $0'
 ];
 
+function buildLayout() {
+  const imgWidth = 105;
+  const xMax = images.length * imgWidth;
+  const center = xMax < window.innerWidth ? 0 : xMax / 2;
+
+  return images.map((img, i) => {
+    return ((center + (i * imgWidth)) + ';' + ((i * imgWidth) - center) + ';' + (center + (i * imgWidth)));
+  });
+};
+
+
 export default class Acrylics extends Component {
 
   constructor(props) {
     super(props);
 
+    this.layout = buildLayout();
+    console.log(this.layout.toString());
     this.openModal = this.openModal.bind(this);
+
     this.state = {
       photoIndex: 0,
-      isOpen: false,
+      isOpen: false
     };
   }
+
 
   openModal = (num, canvas) => {
     this.num = num;
@@ -64,15 +79,15 @@ export default class Acrylics extends Component {
 
     return (
       <div>
-        <div className="acrylics autoZoom" tabIndex="-1" role="group">
-          <figure className="figure">
+        <div className="acrylics" tabIndex="-1" role="group">
+          <figure className="figure autoZoom">
             <svg id="figure1">
               <image id="48"
                      xlinkHref="images/0048.jpg"
                      width="105" height="140" x="728" y="0" opacity="1"
                      onClick={() => this.openModal(0,"Canvas #48")}
               >
-                <animate attributeName="x" dur="60s" values="728;0"
+                <animate attributeName="x" dur="60s" values={this.layout[0]}
                          repeatCount="indefinite"></animate>
               </image>
               <image id="49"
@@ -80,7 +95,7 @@ export default class Acrylics extends Component {
                      width="105" height="140" x="640" y="0" opacity="1"
                      onClick={() => this.openModal(1,"Canvas #49")}
               >
-                <animate attributeName="x" dur="60s" values="640;-88"
+                <animate attributeName="x" dur="60s" values={this.layout[1]}
                          repeatCount="indefinite"></animate>
               </image>
               <image id="50"
@@ -88,7 +103,7 @@ export default class Acrylics extends Component {
                      width="105" height="140" x="552" y="0" opacity="1"
                      onClick={() => this.openModal(2,"Canvas #50")}
               >
-                <animate attributeName="x" dur="60s" values="552;-176"
+                <animate attributeName="x" dur="60s" values={this.layout[2]}
                          repeatCount="indefinite"></animate>
               </image>
               <image id="51"
@@ -96,7 +111,7 @@ export default class Acrylics extends Component {
                      width="105" height="140" x="464" y="0" opacity="1"
                      onClick={() => this.openModal(3,"Canvas #51")}
               >
-                <animate attributeName="x" dur="60s" values="464;-264"
+                <animate attributeName="x" dur="60s" values={this.layout[3]}
                          repeatCount="indefinite"></animate>
               </image>
               <image id="52"
@@ -104,7 +119,7 @@ export default class Acrylics extends Component {
                      width="105" height="140" x="376" y="0" opacity="1"
                      onClick={() => this.openModal(4,"Canvas #52")}
               >
-                <animate attributeName="x" dur="60s" values="376;-352"
+                <animate attributeName="x" dur="60s" values={this.layout[4]}
                          repeatCount="indefinite"></animate>
               </image>
               <image id="53"
@@ -112,7 +127,7 @@ export default class Acrylics extends Component {
                      width="105" height="140" x="288" y="0" opacity="1"
                      onClick={() => this.openModal(5,"Canvas #53")}
               >
-                <animate attributeName="x" dur="60s" values="288;-440"
+                <animate attributeName="x" dur="60s" values={this.layout[5]}
                          repeatCount="indefinite"></animate>
               </image>
               <image id="0054-release.jpg"
@@ -120,7 +135,7 @@ export default class Acrylics extends Component {
                      width="105" height="140" x="200" y="0" opacity="1"
                      onClick={() => this.openModal(6,"Canvas #54")}
               >
-                <animate attributeName="x" dur="60s" values="200;-528"
+                <animate attributeName="x" dur="60s" values={this.layout[6]}
                          repeatCount="indefinite"></animate>
               </image>
             </svg>
