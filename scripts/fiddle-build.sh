@@ -14,6 +14,7 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 04/11/2019 - See CHANGELOG @ 300_react_15
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -22,27 +23,74 @@ source bin/_utils.sh;
 source bin/_types.sh;
 source bin/_env.sh;
 
-#try
-(
 
-    if [ "$#" -ne 2 ]; then  exit 86; fi
-    _type=$(echo $1);
-    _fiddleCriteria=$(echo $2);
-    _fiddle=$(getFiddle "${_type}" "${_fiddleCriteria}";);
-
-    case ${_type} in
+function buildFiddle() {
+  groupLog "buildFiddle";
+  _location=$(pwd;)
+  _type=$1
+  _fiddleCriteria=$2
+  _fiddlesDir=$(cd ..; cd "fiddles/${_type}"; pwd;)
+  _fiddleName=$(getFiddle "${_type}" "${_fiddleCriteria}";);
+  case ${_type} in
         'angular2-cli')
             source bin/angular2-cli/_build.sh;
-            build ${_fiddle} || exit 87;
+            build ${_fiddleName};
             ;;
         'react')
             source bin/react/_build.sh;
-            build ${_fiddle} || exit 87;
+            build ${_fiddleName};
             ;;
         *)  exit 86
             ;;
-    esac
+  esac
+  cd ${_location};
 
+}
+
+function buildFiddles() {
+  groupLog "buildFiddles";
+  _location=$(pwd;)
+  _type=$1
+  _fiddlesDir=$(cd ..; cd "fiddles/${_type}"; pwd;)
+  cd ${_fiddlesDir};
+  _fiddleNamesStr="";
+  for _fiddleDir in */ .*/
+  do
+    _fiddleName=${_fiddleDir%*/};
+    case "${_fiddleName}" in
+      *fiddle*)
+        if [[ "${_fiddleNamesStr}" == "" ]]
+        then
+          _fiddleNamesStr="${_fiddleName}";
+        else
+          _fiddleNamesStr="${_fiddleNamesStr}, ${_fiddleName}";
+        fi
+      ;;
+    esac
+  done
+  cd ${_location};
+  IFS=', ' read -r -a _fiddleNames <<< "${_fiddleNamesStr}";
+  for _fiddleNamesI in "${_fiddleNames[@]}"
+  do
+     groupLog "building ${_fiddleNamesI} ...";
+     buildFiddle "${_type}" "${_fiddleNamesI}";
+  done
+
+}
+
+#try
+(
+    case "$#" in
+      1)
+          buildFiddles $1 || exit $?;
+          ;;
+      2)
+          buildFiddle $1 $2 || exit $?;
+          ;;
+      *)
+           exit 86;
+          ;;
+    esac
 )
 #catch
 _rc=$?

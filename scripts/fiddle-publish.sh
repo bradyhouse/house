@@ -1,4 +1,4 @@
-i#!/usr/bin/env bash
+#!/bin/bash
 # ---------------------------------------------------------------------------------------------------|
 #  Repo                    : https://github.com/bradyhouse/house_____________________________________|
 #  Specification           : N/A_____________________________________________________________________|
@@ -14,6 +14,7 @@ i#!/usr/bin/env bash
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
+# 04/11/2019 - See CHANGELOG @ 300_react_15
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_env.sh;

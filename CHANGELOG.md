@@ -2155,5 +2155,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **fiddle.sh**
 
   1. Updated [scripts/bin/react/_build.sh](scripts/bin/react/_build.sh)
+  2. Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+  3. Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+  4. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh) 
 
 
