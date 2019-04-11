@@ -2152,4 +2152,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/react/fiddle-0015-Portfolio](fiddles/react/fiddle-0015-Portfolio)
 
+* **fiddle.sh**
+
+  1. Updated [scripts/bin/react/_build.sh](scripts/bin/react/_build.sh)
+
 

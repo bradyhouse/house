@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import Content from './components/content/content';
+import Acrylics from './components/acrylics/acrylics';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <Content/>
+        <Acrylics/>
         <Footer/>
       </div>
     );

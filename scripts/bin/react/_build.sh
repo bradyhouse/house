@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 006_fiddle_react
+# 04/11/2019 - See CHANGELOG @ 300_react_15
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -43,6 +44,11 @@ function reactBuild() {
     # try
     (
         cd ${fiddle};
+        if [[ ! -d "node_modules" ]]
+        then
+          npm install || exit 1;
+        fi
+
         npm run build || exit 1;
         cd "../dist";
         if [[ -d "${fiddle}" ]]
@@ -51,6 +57,9 @@ function reactBuild() {
         fi
         mkdir "${fiddle}";
         cd "../${fiddle}";
+        $(voidSubstr 'href="/manifest.json"' 'href="manifest.json"' "build/index.html";) || exit 1;
+        $(voidSubstr 'href="/favicon.ico"' 'href="favicon.ico"' "build/index.html";) || exit 1;
+        $(voidSubstr 'href="/static' 'href="static' "build/index.html";) || exit 1;
         cp -rf build/* "../dist/${fiddle}";
     )
     # catch
