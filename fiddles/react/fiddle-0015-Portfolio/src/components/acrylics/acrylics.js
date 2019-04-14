@@ -57,6 +57,7 @@ export default class Acrylics extends Component {
     super(props);
 
     this.layout = buildLayout();
+    this.images = images;
     console.log(this.layout.toString());
     this.openModal = this.openModal.bind(this);
 
@@ -144,18 +145,18 @@ export default class Acrylics extends Component {
 
         {isOpen && (
           <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) < images.length ? (photoIndex + 1) : 0]}
-            prevSrc={images[(photoIndex - 1) > 0 ? (photoIndex - 1) : images.length - 1]}
+            mainSrc={this.images[photoIndex]}
+            nextSrc={this.images[(photoIndex + 1) < this.images.length ? (photoIndex + 1) : 0]}
+            prevSrc={this.images[(photoIndex - 1) > 0 ? (photoIndex - 1) : this.images.length - 1]}
             onCloseRequest={() => this.setState({ isOpen: false })}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex: (photoIndex - 1) > 0 ? (photoIndex - 1) : images.length - 1
+                photoIndex: (photoIndex - 1) > 0 ? (photoIndex - 1) : this.images.length - 1
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + 1) < images.length ? (photoIndex + 1) : 0
+                photoIndex: (photoIndex + 1) < this.images.length ? (photoIndex + 1) : 0
               })
             }
           />

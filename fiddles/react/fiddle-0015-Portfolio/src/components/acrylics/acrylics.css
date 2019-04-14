@@ -12,6 +12,22 @@
   zoom: 110%;
 }
 
+button.ril-prev-button {
+  outline: none !important;
+}
+
+button.ril-close {
+  outline: none !important;
+}
+
+button.ril-next-button {
+  outline: none !important;
+}
+
+button.ril-zoom-in {
+  outline: none !important;
+}
+
 .figure {
   display: -webkit-box;
   display: -webkit-flex;
