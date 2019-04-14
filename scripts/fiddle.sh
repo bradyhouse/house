@@ -22,6 +22,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
+# 04/11/2019 - See CHANGELOG @ 300_react_15
 # ---------------------------------------------------------------------------------------------------|
 clear;
 source bin/_utils.sh;
@@ -59,9 +60,20 @@ function fiddleIndexAll() {
     if [ "$#" -lt 1 ]; then  exit 86; fi
     case $1 in
         'build')
-          if [ "$#" -lt 3 ]; then  ./fiddle-build.sh;  exit 0; fi
-          ./fiddle-build.sh $2 $3;
-          ./fiddle-index.sh $2;
+            case "$#" in
+                2)
+                    ./fiddle-build.sh $2;
+                    ./fiddle-index.sh $2;
+                    ;;
+                3)
+                    ./fiddle-build.sh $2 $3;
+                    ./fiddle-index.sh $2;
+                    ;;
+                *)
+                    ./fiddle-build.sh;
+                    ;;
+            esac
+            exit 0;
           ;;
         'combine')
             case "$#" in

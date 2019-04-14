@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 006_fiddle_react
+# 04/11/2019 - See CHANGELOG @ 300_react_15
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -23,7 +24,7 @@ function nvmInstall() {
     source ${NVM_DIR}/nvm.sh;
     nvm install ${NVM_VERSION};
   else
-    exit 3;
+    return 3;
   fi
 }
 
@@ -34,7 +35,7 @@ function catch() {
         *)  endLog "fubar! Something went wrong.";
             ;;
     esac
-    exit $1
+    return $1
 }
 
 function reactBuild() {
@@ -43,6 +44,11 @@ function reactBuild() {
     # try
     (
         cd ${fiddle};
+        if [[ ! -d "node_modules" ]]
+        then
+          npm install || exit 1;
+        fi
+
         npm run build || exit 1;
         cd "../dist";
         if [[ -d "${fiddle}" ]]
@@ -51,6 +57,11 @@ function reactBuild() {
         fi
         mkdir "${fiddle}";
         cd "../${fiddle}";
+        $(voidSubstr 'href="/manifest.json"' 'href="manifest.json"' "build/index.html";) || exit 1;
+        $(voidSubstr 'href="/favicon.ico"' 'href="favicon.ico"' "build/index.html";) || exit 1;
+        $(voidSubstr 'href="/static' 'href="static' "build/index.html";) || exit 1;
+        $(voidSubstr 'src="/static' 'src="static' "build/index.html";) || exit 1;
+
         cp -rf build/* "../dist/${fiddle}";
     )
     # catch
@@ -64,14 +75,14 @@ function reactBuild() {
         *)  endLog "build: F U B A R ~ Something went wrong."
             ;;
     esac
-    exit ${rc};
+    return ${rc};
 }
 
 
 function build() {
   groupLog "build";
 
-  if [ "$#" -ne 1 ]
+  if [[ "$#" -ne 1 ]]
   then
         echo "Incorrect number of arguments"
         echo "Please specify the name of the fiddle"
@@ -92,14 +103,14 @@ function build() {
       else
          if [[ -d "dist/$1" ]]; then rm -R "dist/$1"; fi
       fi
-      nvmInstall || exit 1;
-      reactBuild $1 || exit 2;
+      nvmInstall || exit $?;
+      reactBuild $1 || exit $?;
   )
 
   # catch
   rc=$?; catch ${rc};
 
   #finally
-  exit ${rc};
+  return ${rc};
 
 }

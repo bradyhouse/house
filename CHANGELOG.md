@@ -2138,4 +2138,25 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid](fiddles/angular2-cli/fiddle-0019-EnterpriseAgGrid)
   2.  Added [fiddles/angular2-cli/fiddle-0020-EntAgGridPivot](fiddles/angular2-cli/fiddle-0020-EntAgGridPivot)
 
-* Added [fiddles/angular2-cli/fiddle-0021-EntAgGridState](fiddles/angular2-cli/fiddle-0021-EntAgGridState)
+
+### 299_angularCli_21 ~ [Issue 299](https://github.com/bradyhouse/house/issues/299)
+
+* **angular2-cli**
+  
+  1.  Added [fiddles/angular2-cli/fiddle-0021-EntAgGridState](fiddles/angular2-cli/fiddle-0021-EntAgGridState)
+
+
+### 300_react_15 ~ [Issue 300](https://github.com/bradyhouse/house/issues/300)
+
+* **react**
+
+  1.  Added [fiddles/react/fiddle-0015-Portfolio](fiddles/react/fiddle-0015-Portfolio)
+
+* **fiddle.sh**
+
+  1. Updated [scripts/bin/react/_build.sh](scripts/bin/react/_build.sh)
+  2. Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+  3. Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+  4. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh) 
+
+
