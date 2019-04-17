@@ -2160,3 +2160,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   4. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh) 
 
 
+* Added [fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData](fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData)
