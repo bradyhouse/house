@@ -45,7 +45,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
       ****************************************************************************************************************
       ****************************************************************************************************************
 
-4.  Startup the fiddle -- `fiddle start angular2-cli 0020` 
+4.  Startup the fiddle -- `fiddle start angular2-cli 0021` 
 
         {{ ʕ・ɭ・ʔ }}
         
@@ -82,7 +82,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
             
 ### Published Version Link<a name="published-version-link"></a>
 
-* [bradyhouse.io](http://bradyhouse.github.io/jquery/fiddle-0021-EntAgGridState/index.html)
+* [bradyhouse.io](http://bradyhouse.github.io/angular2-cli/fiddle-0021-EntAgGridState/index.html)
 
 
 ### Tags<a name="tags"></a>
