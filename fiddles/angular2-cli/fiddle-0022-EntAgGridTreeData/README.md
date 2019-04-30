@@ -24,9 +24,7 @@ Chicago, IL
 
 ### Description<a name="description"></a>
 
-See [AgGrid - Tree Data](https://www.ag-grid.com/javascript-grid-tree-data/).  Based on this, I need a single column grid displaying a filterable tree.  
-The tree should have 2 pre-loaded layers (tiers), which are collapsed.  When the 2nd tier is expanded, the event should bubble to the hosting component 
-so that additional nodes (or rows) can be added.  `Riddle me a fracking Fiddle`
+See [AgGrid - Tree Data](https://www.ag-grid.com/javascript-grid-tree-data/).  Based on this, I need a single column grid displaying a filterable tree. Additionally, implement a simple search text field.
 
 
 ### Use Case<a name="use-case"></a>
@@ -48,7 +46,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
 4.  Startup the fiddle -- `fiddle start angular2-cli 0022` 
 
         {{ ʕ・ɭ・ʔ }}
-        
+
         FIDDLE-START.SH
         ├────STARTSERVER
         ├────NGINSTALL
@@ -58,17 +56,17 @@ Note - the fiddle will still work without a license.  However, you will see an e
         Now using node v10.8.0 (npm v6.2.0)
         ├────NPMINSTALL
         npm WARN bootstrap@4.3.1 requires a peer of popper.js@^1.14.7 but none is installed. You must install peer dependencies yourself.
-        
-        audited 42442 packages in 8.161s
-        found 4 vulnerabilities (1 low, 3 moderate)
+
+        audited 42442 packages in 6.212s
+        found 10 vulnerabilities (1 low, 4 moderate, 5 high)
           run `npm audit fix` to fix them, or `npm audit` for details
         ** Angular Live Development Server is listening on localhost:1841, open your browser on http://localhost:1841/ **
-        
-        Date: 2019-04-09T11:37:12.400Z
-        Hash: 05106dff6126191a8dd9
-        Time: 16364ms
+
+        Date: 2019-04-17T11:00:10.934Z
+        Hash: a4b6b819d29ece5ce1a9
+        Time: 8972ms
         chunk {es2015-polyfills} es2015-polyfills.js, es2015-polyfills.js.map (es2015-polyfills) 284 kB [initial] [rendered]
-        chunk {main} main.js, main.js.map (main) 19.3 kB [initial] [rendered]
+        chunk {main} main.js, main.js.map (main) 16.6 kB [initial] [rendered]
         chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 259 kB [initial] [rendered]
         chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
         chunk {scripts} scripts.js, scripts.js.map (scripts) 980 kB [entry] [rendered]
@@ -88,11 +86,6 @@ Note - the fiddle will still work without a license.  However, you will see an e
 ### Tags<a name="tags"></a>
 
 angular (7.2), ag-grid-enterprise, ag-grid, fetch, bootstrap, bootswatch
-
-
-### Forked From<a name="forked-frome"></a>
-
-[fiddle-0020-EntAgGridPivot](../fiddle-0020-EntAgGridPivot)
 
 
 ### Forked From

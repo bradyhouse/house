@@ -1,7 +1,9 @@
-<nav class="navbar navbar-expand navbar-dark bg-danger navbar-top">
+<nav class="navbar navbar-expand navbar-dark bg-primary navbar-top">
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-
+      <li>
+        <input class="ag-tree-grid-filter" (keyup)="onQuickFilterChanged($event)" type="text" id="quickFilterInput" placeholder="Type text to filter..."/>
+      </li>
     </ul>
     <ul class="navbar-nav my-2 my-lg-0">
       <li class="nav-item">
@@ -13,16 +15,27 @@
     </ul>
   </div>
 </nav><!--./navbar-top -->
-<div [ngStyle]="style" (window:resize)="onResize($event)">
+<div class="ag-tree-grid" [ngStyle]="style" (window:resize)="onResize($event)">
   <ag-grid-angular
     #agGrid
     style="width: 100%; height: 100%;"
     id="myGrid"
+    [pivotMode]="false"
+    [toolPanelSuppressSideButtons]="true"
+    [rowSelection]="rowSelection"
+    [suppressRowClickSelection]="false"
     class="ag-theme-balham"
     [columnDefs]="columnDefs"
-    [defaultColDef]="defaultColDef"
-    [debug]="true"
     [rowData]="rowData"
+    [defaultColDef]="defaultColDef"
+    [suppressMenuFilterPanel]="false"
+    [enableFilter]="true"
+    [treeData]="true"
+    [animateRows]="true"
+    [groupDefaultExpanded]="groupDefaultExpanded"
+    [getDataPath]="getDataPath"
+    [getRowNodeId]="getRowNodeId"
+    [autoGroupColumnDef]="autoGroupColumnDef"
     (gridReady)="onGridReady($event)"
   ></ag-grid-angular>
 </div>

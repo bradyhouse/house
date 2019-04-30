@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary navbar-top">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="onAddRow()">Add Row</button>         
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="onInsertRowAt2()">Insert Row @ 2</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="updateItems()">Update First 5</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="onRemoveSelected()">Remove Selected</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="getRowData()">Get Row Data</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="clearData()">Clear Data</button> 
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="addItems()">Add Items</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" (click)="addItemsAtIndex()">Add Items @ 2</button>
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" style="font-weight: 700; color: whitesmoke;" alt="Fork me on GitHub" target="_blank"
+           href="https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions">
+          Fork Me On Github
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav><!--./navbar-top -->
+<div class="fiddle" [ngStyle]="style" (window:resize)="onResize($event)">
+<ag-grid-angular
+#agGrid
+style="width: 100%; height: 100%;"
+id="myGrid"
+class="ag-theme-dark"
+[columnDefs]="columnDefs"
+[rowData]="rowData"
+[animateRows]="true"
+[enableFilter]="true"
+[pivotMode]="false"
+[rowSelection]="rowSelection"
+[toolPanelSuppressValues]="true"
+[enableGroupEdit]="true"
+(gridReady)="onGridReady($event)"
+></ag-grid-angular>
+</div>
