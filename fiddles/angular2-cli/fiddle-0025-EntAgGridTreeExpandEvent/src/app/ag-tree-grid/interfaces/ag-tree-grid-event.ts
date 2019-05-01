@@ -5,4 +5,5 @@ import {
 export interface AgTreeGridEvent {
   type: AgTreeGridEvents;
   data: any;
+  gridState?: any;
 }

@@ -45,6 +45,7 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
   private _differ: KeyValueDiffer<any, any>;
   private _isUpdate: boolean;
   private _gridApi: any;
+  private _columnApi: any;
   private _columnDefs: any;
   private _rowSelection: any;
   private _autoGroupColumnDef: any;
@@ -121,6 +122,7 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
   onGridReady(params: any) {
     console.debug(this.constructor.name + '.onGridReady');
     this._gridApi = params.api;
+    this._columnApi = params.columnApi;
     this._stretchGrid(window.innerWidth, window.innerHeight);
     this._gridApi.sizeColumnsToFit();    
   }
@@ -130,7 +132,8 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
     console.debug(event);
     this.events.emit({
       type: AgTreeGridEvents.selectBubble,
-      data: event
+      data: event,
+      gridState: this._columnApi.getColumnState()
     });
   }
 
@@ -140,7 +143,6 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
   }
 
   onRowClicked(params: any) {
-    console.clear();
     console.debug(this.constructor.name + '.onRowClicked');
     const _isExpanded: boolean = params.node.expanded;
     console.debug(this.constructor.name + ' params.node.expanded = ' + _isExpanded);

@@ -135,13 +135,14 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
       case AgTreeGridEvents.selectBubble:
         console.debug('select bubble'); 
         console.debug(event.data.api.getSelectedRows());
+        console.debug('grid state:');
+        console.debug(event.gridState);
         break;
       case AgTreeGridEvents.nodeRequest:
         console.debug('node request');
         this.options.nodesRequest = this._requestPromiseFactory(event.data);
         break;
     }
-
   }
 
   // #endregion
