@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand navbar-dark bg-danger navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\"\n           href=\"https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0020-EntAgGridPivot\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav><!--./navbar-top -->\n<div [ngStyle]=\"style\" (window:resize)=\"onResize($event)\">\n  <div class=\"test-container\">\n    <div class=\"test-header\">\n      <div class=\"example-section\">\n        Column Visible: <button (click)=\"showAthconste(true)\">Show Athconste</button>\n        <button (click)=\"showAthconste(false)\">Hide Athconste</button>\n        <button (click)=\"showMedals(true)\">Show All Medals</button>\n        <button (click)=\"showMedals(false)\">Hide All Medals</button>\n      </div>\n      <div class=\"example-section\">\n        Column Pinned: <button (click)=\"pinAthconste(true)\">Pin Athconste</button>\n        <button (click)=\"pinAthconste(false)\">Unpin Athconste</button> <button (click)=\"pinAge(true)\">Pin Age</button>\n        <button (click)=\"pinAge(false)\">Unpin Age</button>\n      </div>\n      <div class=\"example-section\">\n        Column State: <button (click)=\"printState()\">Print State</button>\n        <button (click)=\"saveState()\">Save State</button> <button (click)=\"restoreState()\">Restore State</button>\n        <button (click)=\"resetState()\">Reset State</button>\n      </div>\n    </div>\n    <ag-grid-angular\n      #agGrid\n      style=\"width: 100%; height: 500px;\"\n      id=\"myGrid\"\n      class=\"ag-theme-balham\"\n      [columnDefs]=\"columnDefs\"\n      [defaultColDef]=\"defaultColDef\"\n      [debug]=\"true\"\n      [rowData]=\"rowData\"\n      (gridReady)=\"onGridReady($event)\"\n    ></ag-grid-angular>\n  </div>\n</div>\n"
+module.exports = "<nav class=\"navbar navbar-expand navbar-dark bg-primary navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li>\n        <input class=\"ag-tree-grid-filter\" (keyup)=\"onQuickFilterChanged($event)\" type=\"text\" id=\"quickFilterInput\" placeholder=\"Type text to filter...\"/>\n      </li>\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\"\n           href=\"https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0020-EntAgGridPivot\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav><!--./navbar-top -->\n<div class=\"ag-tree-grid\" [ngStyle]=\"style\" (window:resize)=\"onResize($event)\">\n  <ag-grid-angular\n    #agGrid\n    style=\"width: 100%; height: 100%;\"\n    id=\"myGrid\"\n    [pivotMode]=\"false\"\n    [toolPanelSuppressSideButtons]=\"true\"\n    [rowSelection]=\"rowSelection\"\n    [suppressRowClickSelection]=\"false\"\n    class=\"ag-theme-balham\"\n    [columnDefs]=\"columnDefs\"\n    [rowData]=\"rowData\"\n    [defaultColDef]=\"defaultColDef\"\n    [suppressMenuFilterPanel]=\"false\"\n    [enableFilter]=\"true\"\n    [treeData]=\"true\"\n    [animateRows]=\"true\"\n    [groupDefaultExpanded]=\"groupDefaultExpanded\"\n    [getDataPath]=\"getDataPath\"\n    [getRowNodeId]=\"getRowNodeId\"\n    [autoGroupColumnDef]=\"autoGroupColumnDef\"\n    (gridReady)=\"onGridReady($event)\"\n  ></ag-grid-angular>\n</div>\n"
 
 /***/ }),
 
@@ -63,130 +63,36 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AppComponent = /** @class */ (function () {
     function AppComponent(http) {
         this.http = http;
-        this.columnDefs = [
-            {
-                headerName: 'Athconste',
-                field: 'athconste',
-                width: 150
-            },
-            {
-                headerName: 'Age',
-                field: 'age',
-                width: 90
-            },
-            {
-                headerName: 'Country',
-                field: 'country',
-                width: 120,
-                enableRowGroup: true
-            },
-            {
-                headerName: 'Year',
-                field: 'year',
-                width: 90
-            },
-            {
-                headerName: 'Date',
-                field: 'date',
-                width: 110,
-                comparator: dateComparator
-            },
-            {
-                headerName: 'Medals',
-                children: [
-                    {
-                        headerName: 'Total',
-                        field: 'total',
-                        columnGroupShow: 'closed',
-                        width: 125
-                    },
-                    {
-                        headerName: 'Gold',
-                        field: 'gold',
-                        columnGroupShow: 'open',
-                        width: 125
-                    },
-                    {
-                        headerName: 'Silver',
-                        field: 'silver',
-                        columnGroupShow: 'open',
-                        width: 125
-                    },
-                    {
-                        headerName: 'Bronze',
-                        field: 'bronze',
-                        columnGroupShow: 'open',
-                        width: 125
-                    }
-                ]
-            }
-        ];
+        this.columnDefs = [];
+        this.getDataPath = function (data) {
+            return data.path;
+        };
+        this.groupDefaultExpanded = true;
+        this.getRowNodeId = function (data) {
+            return data.id;
+        };
         this.defaultColDef = {
             sortable: true,
-            resizable: true
+            resizable: true,
+            suppressMenu: true,
+            filter: 'agTextColumnFilter'
         };
+        this.autoGroupColumnDef = {
+            headerName: 'Brews',
+            cellRenderer: 'agGroupCellRenderer',
+            cellRendererParams: { checkbox: true,
+                suppressCount: false
+            }
+        };
+        this.rowSelection = 'multiple';
     }
-    AppComponent.prototype.printState = function () {
-        var colState = this.gridColumnApi.getColumnState();
-        var groupState = this.gridColumnApi.getColumnGroupState();
-        var sortState = this.gridApi.getSortModel();
-        var filterState = this.gridApi.getFilterModel();
-        console.log('***********************');
-        console.log('colState: ', colState);
-        console.log('groupState: ', groupState);
-        console.log('sortState: ', sortState);
-        console.log('filterState: ', filterState);
-        console.log('***********************');
-    };
-    AppComponent.prototype.saveState = function () {
-        window.localStorage['fiddle-0021-columnState'] = JSON.stringify(this.gridColumnApi.getColumnState());
-        window.localStorage['fiddle-0021-groupState'] = JSON.stringify(this.gridColumnApi.getColumnGroupState());
-        window.localStorage['fiddle-0021-sortModel'] = JSON.stringify(this.gridApi.getSortModel());
-        window.localStorage['fiddle-0021-filterState'] = JSON.stringify(this.gridApi.getFilterModel());
-        console.log('column state saved');
-    };
-    AppComponent.prototype.restoreState = function () {
-        var columnState = window.localStorage['fiddle-0021-columnState'], groupState = window.localStorage['fiddle-0021-groupState'], sortModel = window.localStorage['fiddle-0021-sortModel'], filterState = window.localStorage['fiddle-0021-filterState'];
-        if (columnState) {
-            this.gridColumnApi.setColumnState(JSON.parse(columnState));
-        }
-        if (groupState) {
-            this.gridColumnApi.setColumnGroupState(JSON.parse(groupState));
-        }
-        if (sortModel) {
-            this.gridApi.setSortModel(JSON.parse(sortModel));
-        }
-        if (filterState) {
-            this.gridApi.setFilterModel(JSON.parse(filterState));
-        }
-        console.log('column state restored');
-    };
-    AppComponent.prototype.resetState = function () {
-        this.gridColumnApi.resetColumnState();
-        this.gridColumnApi.resetColumnGroupState();
-        this.gridApi.setSortModel(null);
-        this.gridApi.setFilterModel(null);
-        console.log('column state reset');
-    };
-    AppComponent.prototype.showAthconste = function (show) {
-        this.gridColumnApi.setColumnVisible('athconste', show);
-    };
-    AppComponent.prototype.showMedals = function (show) {
-        this.gridColumnApi.setColumnsVisible(['total', 'gold', 'silver', 'bronze'], show);
-    };
-    AppComponent.prototype.pinAthconste = function (pin) {
-        this.gridColumnApi.setColumnPinned('athconste', pin);
-    };
-    AppComponent.prototype.pinAge = function (pin) {
-        this.gridColumnApi.setColumnPinned('age', pin);
-    };
     AppComponent.prototype.onResize = function (event) {
         this.stretchGrid(event.target.innerWidth, event.target.innerHeight);
     };
     AppComponent.prototype.stretchGrid = function (width, height) {
         this.style = {
             width: width + 'px',
-            height: (height - (height * .1)) + 'px'
+            height: (height - 40) + 'px'
         };
     };
     AppComponent.prototype.onGridReady = function (params) {
@@ -194,20 +100,19 @@ var AppComponent = /** @class */ (function () {
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
         this.http
-            .get('https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json')
+            .get('assets/data.json')
             .subscribe(function (data) {
             _this.rowData = data;
         });
-        params.api.addGlobalListener(function (type, event) {
-            if (type.indexOf('column') >= 0) {
-                console.log('Got column event: ', event);
-            }
-        });
         this.stretchGrid(window.innerWidth, window.innerHeight);
+        this.gridApi.sizeColumnsToFit();
+    };
+    AppComponent.prototype.onQuickFilterChanged = function (event) {
+        this.gridApi.setQuickFilter(event.target.value);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('agGrid'),
-        __metadata("design:type", Object)
+        __metadata("design:type", HTMLElement)
     ], AppComponent.prototype, "agGrid", void 0);
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -219,30 +124,6 @@ var AppComponent = /** @class */ (function () {
     return AppComponent;
 }());
 
-function dateComparator(date1, date2) {
-    var date1Number = monthToComparableNumber(date1);
-    var date2Number = monthToComparableNumber(date2);
-    if (date1Number === null && date2Number === null) {
-        return 0;
-    }
-    if (date1Number === null) {
-        return -1;
-    }
-    if (date2Number === null) {
-        return 1;
-    }
-    return date1Number - date2Number;
-}
-function monthToComparableNumber(date) {
-    if (date === undefined || date === null || date.length !== 10) {
-        return null;
-    }
-    var yearNumber = date.substring(6, 10);
-    var monthNumber = date.substring(3, 5);
-    var dayNumber = date.substring(0, 2);
-    var result = yearNumber * 10000 + monthNumber * 100 + dayNumber;
-    return result;
-}
 
 
 /***/ }),
@@ -362,7 +243,7 @@ fetch('assets/license.json').then(function (response) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/bradyhouse/github/house_299/fiddles/angular2-cli/fiddle-0021-EntAgGridState/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/e13542/github/house_master/fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData/src/main.ts */"./src/main.ts");
 
 
 /***/ })

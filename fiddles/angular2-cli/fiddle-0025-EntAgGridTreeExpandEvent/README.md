@@ -89,7 +89,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
             
 ### Published Version Link<a name="published-version-link"></a>
 
-* [bradyhouse.io](http://bradyhouse.github.io/jquery/fiddle-0025-EntAgGridTreeExpandEvent/index.html)
+* [bradyhouse.io](http://bradyhouse.github.io/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent/index.html)
 
 
 ### Tags<a name="tags"></a>
@@ -97,11 +97,6 @@ Note - the fiddle will still work without a license.  However, you will see an e
 angular (7.2), ag-grid-enterprise, ag-grid, fetch, bootstrap, bootswatch
 
 
-### Forked From
-
-[fiddle-0022-EntAgGridTreeData](../fiddle-0022-EntAgGridTreeData)
-
-
-### Forked From
+### Forked From<a name="forked-from"></a>
 
 [fiddle-0023-EntAgGridRowSelection](../fiddle-0023-EntAgGridRowSelection)

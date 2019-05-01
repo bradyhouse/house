@@ -154,7 +154,6 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
        const _id: string = row.country + '-' + row.sport;
        const _branch: Branch = { country: row.country, sport: row.sport, athlete: 'loading...' };
        if(!_branchMap[_id]) {
-         console.debug('adding ' + _id);
          _branchMap[_id] = _branch;
        }      
     });
@@ -166,10 +165,22 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
   }
 
   private _leafFactory(data: any[], country: string, sport: string) {
-    return data.filter((node: any) => {
-      return node.country.toLowerCase().trim() === country.toLowerCase().trim() && 
-             node.sport.toLowerCase().trim() === sport.toLowerCase().trim();
+    console.debug(this.constructor.name + '._trunkFactory');
+    let _branchMap: any = {};
+    
+    data.forEach((node: any) => {
+      if(node.country.toLowerCase().trim() === country.toLowerCase().trim() && 
+         node.sport.toLowerCase().trim() === sport.toLowerCase().trim()) {
+          const _id: string = node.country + '-' + node.sport + '-' + node.athlete;
+          const _branch: Branch = { country: node.country, sport: node.sport, athlete: node.athlete };
+          if(!_branchMap[_id]) {
+            _branchMap[_id] = _branch;
+          }   
+      }
     });
+    const _branchKeys = Object.keys(_branchMap);
+    const _leaves = _branchKeys.map((_branchKey: any) => { return _branchMap[_branchKey]; });
+    return _leaves;
   }
 
   _requestPromiseFactory(data: any): Promise<any> {
@@ -178,13 +189,16 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
       const _node: any = data.node;
       const _sport: string = _node.key;
       const _country: string = _node.parent.key;
+      const _firstChild: any = _node.allLeafChildren.length > 0 ? _node.allLeafChildren[0] : null;
       console.debug('sport = ' + _sport);
       console.debug('country = ' + _country);
       return this._http.get('./assets/data.json')
       .toPromise()
       .then((res: any) => {
         console.debug('fetch > then > res:');
-        console.dir(res);
+        window.setTimeout(() => {
+          _node.setExpanded(true);
+        }, 500);
         return this._leafFactory(res, _country, _sport);
       })
       .catch(this._onFetchError);

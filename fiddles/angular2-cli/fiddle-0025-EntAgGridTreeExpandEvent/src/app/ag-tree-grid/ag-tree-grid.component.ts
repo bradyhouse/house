@@ -118,24 +118,6 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
     this._stretchGrid(event.target.innerWidth, event.target.innerHeight);
   }
 
-  /*onSelectionChanged() {
-    const selectedRows = this._gridApi.getSelectedRows();
-    let selectedRowsString = '';
-    selectedRows.forEach((selectedRow, index) => {
-      if (index > 5) {
-        return;
-      }
-      if (index !== 0) {
-        selectedRowsString += ', ';
-      }
-      selectedRowsString += selectedRow.athlete;
-    });
-    if (selectedRows.length >= 5) {
-      selectedRowsString += ' - and ' + (selectedRows.length - 5) + ' others';
-    }
-    document.querySelector('#selectedRows').innerHTML = selectedRowsString;
-  }*/
-
   onGridReady(params: any) {
     console.debug(this.constructor.name + '.onGridReady');
     this._gridApi = params.api;
@@ -158,18 +140,20 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
   }
 
   onRowClicked(params: any) {
+    console.clear();
     console.debug(this.constructor.name + '.onRowClicked');
     const _isExpanded: boolean = params.node.expanded;
     console.debug(this.constructor.name + ' params.node.expanded = ' + _isExpanded);
     const _actionType = params.event.target.getAttribute('grid-action');
     console.debug('params');
-    console.dir(params); 
+    console.debug(params); 
     console.debug('actionType = ' + _actionType);
     if (_actionType) {
       switch(_actionType) {
         case 'none':
           return false;
         case 'request':
+          params.event.target.setAttribute('style', 'display: none !important');
           this.events.emit({
             type: AgTreeGridEvents.nodeRequest,
             data: params
@@ -177,8 +161,6 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
           return false;
         default:
           params.node.setExpanded(!_isExpanded);
-          // if the node is not expanded, 
-          // then trigger a request nodes event
           if (!_isExpanded) {
             this.events.emit({
               type: AgTreeGridEvents.expandBubble,
@@ -193,17 +175,20 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
     console.debug(this.constructor.name + '.onRowGroupOpened');
     const _isExpanded: boolean = params.node.expanded;
     console.debug(this.constructor.name + ' params.node.expanded = ' + _isExpanded);
-    console.dir(params);
+    console.debug(params);
     const _node: any = params.node;
     const _level: number = _node.level;
     const _children: any[] = _level === 1 ? _node.allLeafChildren : [];
-    const _firstChild: any = _children.length === 1 ? _children[0] : null;
-    const _model: any = _firstChild && _firstChild.data ? _firstChild.data : null;
+    const _pseudoChild: any = _children.length === 1 ? _children[0] : null;
+    const _firstChild: any = _node.allLeafChildren.length > 0 ? _node.allLeafChildren[0] : null;
+    const _model: any = _pseudoChild && _pseudoChild.data ? _pseudoChild.data : null;
     console.debug('this._isLoading(_model, loading...) = ' + this._isLoading(_model, 'loading...'));
     if (this._isLoading(_model, 'loading...')) {
       params.node.setExpanded(false);
       return false;
-    }
+    } else if ( _level === 1 && _firstChild && _firstChild.data && this._isLoading(_firstChild.data, 'loading...')) {
+      this._gridApi.updateRowData({ remove: [_firstChild.data] });
+    }      
   }
 
   // #endregion
@@ -215,7 +200,7 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
       for (const key in obj) {
         const value = obj[key];
         if (typeof value !== 'object' && String(value).toLowerCase().trim() === query.toLowerCase().trim()) {
-          console.dir(obj);
+          console.debug(obj);
           return true;
         }
       }
@@ -236,6 +221,8 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
       height: (height - 40) + 'px'
     };
   }
+
+
 
   private _applyChange(item: any): void {
     console.debug(this.constructor.name + '._applyChange');

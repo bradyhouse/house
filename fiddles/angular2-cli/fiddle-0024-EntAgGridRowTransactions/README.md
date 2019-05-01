@@ -81,7 +81,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
             
 ### Published Version Link<a name="published-version-link"></a>
 
-* [bradyhouse.io](http://bradyhouse.github.io/jquery/fiddle-0024-EntAgGridRowTransactions/index.html)
+* [bradyhouse.io](http://bradyhouse.github.io/angular2-cli/fiddle-0024-EntAgGridRowTransactions/index.html)
 
 
 ### Tags<a name="tags"></a>
