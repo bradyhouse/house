@@ -28,7 +28,7 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
     field: 'athlete',
     cellRenderer: 'agGroupCellRenderer',
     cellRendererParams: { checkbox: true,
-      suppressCount: true,
+      suppressCount: false,
       innerRenderer: (params: ICellRendererParams) => this._onCellRender(params)
     }
   };
@@ -118,7 +118,7 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
     console.debug(this.constructor.name + '.ngAfterViewInit');
     this._http
       .get(
-        './assets/data.json'
+        'assets/data.json'
       )
       .subscribe((data: any) => {
         this.options.rowData = this._trunkFactory(data);
@@ -193,7 +193,7 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
       const _firstChild: any = _node.allLeafChildren.length > 0 ? _node.allLeafChildren[0] : null;
       console.debug('sport = ' + _sport);
       console.debug('country = ' + _country);
-      return this._http.get('./assets/data.json')
+      return this._http.get('assets/data.json')
       .toPromise()
       .then((res: any) => {
         console.debug('fetch > then > res:');
@@ -221,7 +221,7 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
     }
     switch(params.node.field) {
       case 'sport':
-        return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box pull-right" grid-action="request" aria-hidden="true"></mat-icon>';
+        return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box float-right" grid-action="request" aria-hidden="true"></mat-icon>';
       default: 
         return params.value;
     }

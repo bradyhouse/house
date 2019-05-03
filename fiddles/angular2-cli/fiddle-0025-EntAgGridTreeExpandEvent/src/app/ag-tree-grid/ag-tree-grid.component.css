@@ -1,5 +1,5 @@
 .ag-tree-grid {
-  zoom: 150%;
+
 }
 
 .ag-tree-grid-filter {
@@ -9,7 +9,6 @@
   border: none;
   outline: none;
   --webkit-input-placeholder: white;
-  zoom: 150%;
 }
 
 

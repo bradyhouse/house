@@ -85,6 +85,10 @@ Note - the fiddle will still work without a license.  However, you will see an e
         ℹ ｢wdm｣: Compiled successfully.
 
 5.  Using Chrome, navigate to [localhost:1841](http://localhost:1841)
+6.  To trigger a grid update transaction, expand any country node and click the "+" icon displayed on one of its children
+
+
+
       
             
 ### Published Version Link<a name="published-version-link"></a>

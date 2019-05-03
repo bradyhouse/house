@@ -30,6 +30,7 @@ import { truncate } from 'fs';
 
 @Component({
   selector: 'app-ag-tree-grid',
+  moduleId: module.id,
   templateUrl: 'ag-tree-grid.component.html',
   styleUrls: ['ag-tree-grid.component.css'],
   encapsulation: ViewEncapsulation.None
@@ -115,8 +116,10 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
 
   onResize(event: any): void {
     console.debug(this.constructor.name + '.onResize');
-
-    this._stretchGrid(event.target.innerWidth, event.target.innerHeight);
+    window.setTimeout(() => {
+      this._stretchGrid(event.target.innerWidth, event.target.innerHeight);
+      this._gridApi.sizeColumnsToFit(); 
+    }, 200);
   }
 
   onGridReady(params: any) {
@@ -124,7 +127,8 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
     this._gridApi = params.api;
     this._columnApi = params.columnApi;
     this._stretchGrid(window.innerWidth, window.innerHeight);
-    this._gridApi.sizeColumnsToFit();    
+    this._gridApi.sizeColumnsToFit();  
+    window.addEventListener('resize', (event:any) => this.onResize(event)); 
   }
 
   onSelectionChanged(event: any) {
@@ -210,11 +214,6 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
     return false;
   }
 
-  private _bubble(params: any) {
-    const _isExpanded: boolean = params.node.expanded;
-    
-  }
-
   private _stretchGrid(width: number, height: number): void {
     console.debug(this.constructor.name + '._stretchGrid');
 
@@ -223,8 +222,6 @@ export class AgTreeGridComponent implements OnChanges, DoCheck {
       height: (height - 40) + 'px'
     };
   }
-
-
 
   private _applyChange(item: any): void {
     console.debug(this.constructor.name + '._applyChange');

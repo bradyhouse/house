@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".ag-tree-grid {\n  zoom: 150%;\n}\n\n.ag-tree-grid-filter {\n  width: 100%;\n  background-color: #000;\n  color: white;\n  border: none;\n  outline: none;\n  --webkit-input-placeholder: white;\n  zoom: 150%;\n}\n\ninput[type=\"text\"], textarea {\n  padding: 7px 10px;\n  font-size: 14px;\n  background: #000;\n  color: lime;\n}\n\n.ag-header,\n.ag-header-viewport {\n  display: none !important;\n}\n\n.mdi {\n  font-size: 1.1rem;\n  vertical-align: middle;\n}\n\n.pull-left {\n  margin-left: 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWctdHJlZS1ncmlkL2FnLXRyZWUtZ3JpZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsVUFBVTtBQUNaOztBQUVBO0VBQ0UsV0FBVztFQUNYLHNCQUFzQjtFQUN0QixZQUFZO0VBQ1osWUFBWTtFQUNaLGFBQWE7RUFDYixpQ0FBaUM7RUFDakMsVUFBVTtBQUNaOztBQUdBO0VBQ0UsaUJBQWlCO0VBQ2pCLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIsV0FBVztBQUNiOztBQUVBOztFQUVFLHdCQUF3QjtBQUMxQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEIiLCJmaWxlIjoic3JjL2FwcC9hZy10cmVlLWdyaWQvYWctdHJlZS1ncmlkLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWctdHJlZS1ncmlkIHtcbiAgem9vbTogMTUwJTtcbn1cblxuLmFnLXRyZWUtZ3JpZC1maWx0ZXIge1xuICB3aWR0aDogMTAwJTtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDtcbiAgY29sb3I6IHdoaXRlO1xuICBib3JkZXI6IG5vbmU7XG4gIG91dGxpbmU6IG5vbmU7XG4gIC0td2Via2l0LWlucHV0LXBsYWNlaG9sZGVyOiB3aGl0ZTtcbiAgem9vbTogMTUwJTtcbn1cblxuXG5pbnB1dFt0eXBlPVwidGV4dFwiXSwgdGV4dGFyZWEge1xuICBwYWRkaW5nOiA3cHggMTBweDtcbiAgZm9udC1zaXplOiAxNHB4O1xuICBiYWNrZ3JvdW5kOiAjMDAwO1xuICBjb2xvcjogbGltZTtcbn1cblxuLmFnLWhlYWRlcixcbi5hZy1oZWFkZXItdmlld3BvcnQge1xuICBkaXNwbGF5OiBub25lICFpbXBvcnRhbnQ7XG59XG5cbi5tZGkge1xuICBmb250LXNpemU6IDEuMXJlbTtcbiAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcbn1cblxuLnB1bGwtbGVmdCB7XG4gIG1hcmdpbi1sZWZ0OiAwcHg7XG59Il19 */"
+module.exports = ".ag-tree-grid {\n\n}\n\n.ag-tree-grid-filter {\n  width: 100%;\n  background-color: #000;\n  color: white;\n  border: none;\n  outline: none;\n  --webkit-input-placeholder: white;\n}\n\ninput[type=\"text\"], textarea {\n  padding: 7px 10px;\n  font-size: 14px;\n  background: #000;\n  color: lime;\n}\n\n.ag-header,\n.ag-header-viewport {\n  display: none !important;\n}\n\n.mdi {\n  font-size: 1.1rem;\n  vertical-align: middle;\n}\n\n.pull-left {\n  margin-left: 0px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWctdHJlZS1ncmlkL2FnLXRyZWUtZ3JpZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBOztBQUVBO0VBQ0UsV0FBVztFQUNYLHNCQUFzQjtFQUN0QixZQUFZO0VBQ1osWUFBWTtFQUNaLGFBQWE7RUFDYixpQ0FBaUM7QUFDbkM7O0FBR0E7RUFDRSxpQkFBaUI7RUFDakIsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQixXQUFXO0FBQ2I7O0FBRUE7O0VBRUUsd0JBQXdCO0FBQzFCOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2FnLXRyZWUtZ3JpZC9hZy10cmVlLWdyaWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hZy10cmVlLWdyaWQge1xuXG59XG5cbi5hZy10cmVlLWdyaWQtZmlsdGVyIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGJhY2tncm91bmQtY29sb3I6ICMwMDA7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgYm9yZGVyOiBub25lO1xuICBvdXRsaW5lOiBub25lO1xuICAtLXdlYmtpdC1pbnB1dC1wbGFjZWhvbGRlcjogd2hpdGU7XG59XG5cblxuaW5wdXRbdHlwZT1cInRleHRcIl0sIHRleHRhcmVhIHtcbiAgcGFkZGluZzogN3B4IDEwcHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbiAgYmFja2dyb3VuZDogIzAwMDtcbiAgY29sb3I6IGxpbWU7XG59XG5cbi5hZy1oZWFkZXIsXG4uYWctaGVhZGVyLXZpZXdwb3J0IHtcbiAgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50O1xufVxuXG4ubWRpIHtcbiAgZm9udC1zaXplOiAxLjFyZW07XG4gIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG59XG5cbi5wdWxsLWxlZnQge1xuICBtYXJnaW4tbGVmdDogMHB4O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = ".ag-tree-grid {\n  zoom: 150%;\n}\n\n.ag-tree-grid-filter {\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<input class=\"ag-tree-grid-filter\" (keyup)=\"onQuickFilterChanged($event)\" type=\"text\" id=\"quickFilterInput\" placeholder=\"Type text to filter...\"/>\n<div class=\"ag-tree-grid\" [ngStyle]=\"_style\" (window:resize)=\"onResize($event)\">\n  <ag-grid-angular\n    #agGrid\n    style=\"width: 100%; height: 100%;\"\n    id=\"myGrid\"\n    class=\"ag-theme-balham\"\n    [columnDefs]=\"this._columnDefs\"\n    [rowData]=\"this._rowData\"\n    [rowSelection]=\"this._rowSelection\"\n    [groupSelectsChildren]=\"true\"\n    [suppressRowClickSelection]=\"false\"\n    [toolPanelSuppressSideButtons]=\"true\"\n    [animateRows]=\"true\"\n    [defaultColDef]=\"this._defaultColDef\"\n    [autoGroupColumnDef]=\"this._autoGroupColumnDef\"\n    (gridReady)=\"onGridReady($event)\"\n    (selectionChanged)=\"onSelectionChanged($event)\"\n    (rowClicked)=\"onRowClicked($event)\"\n    (rowGroupOpened)=\"onRowGroupOpened($event)\"\n  ></ag-grid-angular>\n</div>\n\n\n"
+module.exports = "\n<input class=\"ag-tree-grid-filter\" (keyup)=\"onQuickFilterChanged($event)\" type=\"text\" id=\"quickFilterInput\" placeholder=\"Type text to filter...\"/>\n<div class=\"ag-tree-grid\" [ngStyle]=\"_style\" (window:resize)=\"onResize($event)\">\n<ag-grid-angular\n    #agGrid\n    style=\"width: 100%; height: 100%;\"\n    id=\"myGrid\"\n    class=\"ag-theme-balham\"\n    [columnDefs]=\"this._columnDefs\"\n    [rowData]=\"this._rowData\"\n    [rowSelection]=\"this._rowSelection\"\n    [groupSelectsChildren]=\"true\"\n    [suppressRowClickSelection]=\"false\"\n    [toolPanelSuppressSideButtons]=\"true\"\n    [animateRows]=\"true\"\n    [defaultColDef]=\"this._defaultColDef\"\n    [autoGroupColumnDef]=\"this._autoGroupColumnDef\"\n    (gridReady)=\"onGridReady($event)\"\n    (selectionChanged)=\"onSelectionChanged($event)\"\n    (rowClicked)=\"onRowClicked($event)\"\n    (rowGroupOpened)=\"onRowGroupOpened($event)\"\n  ></ag-grid-angular>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -118,15 +118,21 @@ var AgTreeGridComponent = /** @class */ (function () {
     // #endregion
     // #region Event Handlers
     AgTreeGridComponent.prototype.onResize = function (event) {
+        var _this = this;
         console.debug(this.constructor.name + '.onResize');
-        this._stretchGrid(event.target.innerWidth, event.target.innerHeight);
+        window.setTimeout(function () {
+            _this._stretchGrid(event.target.innerWidth, event.target.innerHeight);
+            _this._gridApi.sizeColumnsToFit();
+        }, 200);
     };
     AgTreeGridComponent.prototype.onGridReady = function (params) {
+        var _this = this;
         console.debug(this.constructor.name + '.onGridReady');
         this._gridApi = params.api;
         this._columnApi = params.columnApi;
         this._stretchGrid(window.innerWidth, window.innerHeight);
         this._gridApi.sizeColumnsToFit();
+        window.addEventListener('resize', function (event) { return _this.onResize(event); });
     };
     AgTreeGridComponent.prototype.onSelectionChanged = function (event) {
         console.debug(this.constructor.name + '.onSelectionChanged');
@@ -204,9 +210,6 @@ var AgTreeGridComponent = /** @class */ (function () {
             }
         }
         return false;
-    };
-    AgTreeGridComponent.prototype._bubble = function (params) {
-        var _isExpanded = params.node.expanded;
     };
     AgTreeGridComponent.prototype._stretchGrid = function (width, height) {
         console.debug(this.constructor.name + '._stretchGrid');
@@ -443,7 +446,7 @@ var AppComponent = /** @class */ (function () {
             field: 'athlete',
             cellRenderer: 'agGroupCellRenderer',
             cellRendererParams: { checkbox: true,
-                suppressCount: true,
+                suppressCount: false,
                 innerRenderer: function (params) { return _this._onCellRender(params); }
             }
         };
@@ -522,7 +525,7 @@ var AppComponent = /** @class */ (function () {
         var _this = this;
         console.debug(this.constructor.name + '.ngAfterViewInit');
         this._http
-            .get('./assets/data.json')
+            .get('assets/data.json')
             .subscribe(function (data) {
             _this.options.rowData = _this._trunkFactory(data);
             console.clear();
@@ -590,7 +593,7 @@ var AppComponent = /** @class */ (function () {
             var _firstChild = _node_1.allLeafChildren.length > 0 ? _node_1.allLeafChildren[0] : null;
             console.debug('sport = ' + _sport_1);
             console.debug('country = ' + _country_1);
-            return this._http.get('./assets/data.json')
+            return this._http.get('assets/data.json')
                 .toPromise()
                 .then(function (res) {
                 console.debug('fetch > then > res:');
@@ -616,7 +619,7 @@ var AppComponent = /** @class */ (function () {
         }
         switch (params.node.field) {
             case 'sport':
-                return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box pull-right" grid-action="request" aria-hidden="true"></mat-icon>';
+                return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box float-right" grid-action="request" aria-hidden="true"></mat-icon>';
             default:
                 return params.value;
         }

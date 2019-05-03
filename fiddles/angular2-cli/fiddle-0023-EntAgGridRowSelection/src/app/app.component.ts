@@ -30,10 +30,6 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
       suppressCount: false,
       innerRenderer: (params: ICellRendererParams) => this._onCellRender(params)
     }
-    //cellRenderer: (params: ICellRendererParams) => this._onCellRender(params),
-    //cellRendererParams: { checkbox: true,
-    //  suppressCount: true
-    //}
   };
 
   columnDef: any[] = [
@@ -164,14 +160,14 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
       console.debug(this.constructor.name + '.onCellRender');
       console.debug(params);
     }
-    /*switch(params.node.field) {
+    switch(params.node.field) {
       case 'country':
         return params.value;
       case 'sport':
         return '&#9;<mat-icon class="mdi mdi-chevron-up" aria-hidden="true"></mat-icon>&nbsp;<i>'+ params.node.field + '</i>:&nbsp;' +  params.value;
       default: 
         return '<span style="color: blue; padding: 5px;">' +  params.value + '</span>';
-    }*/
+    }
     return params.value;
   }
 
