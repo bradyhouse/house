@@ -2169,3 +2169,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   3. Added [fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions](fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions)
   4. Added [fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent](fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent)
   5. Added [fiddles/angular2-cli/fiddle-0027-EntAgGridChart](fiddles/angular2-cli/fiddle-0027-EntAgGridChart)
+* Added [fiddles/java/fiddle-0005-j2v8Hello](fiddles/java/fiddle-0005-j2v8Hello)
