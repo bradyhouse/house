@@ -619,7 +619,12 @@ var AppComponent = /** @class */ (function () {
         }
         switch (params.node.field) {
             case 'sport':
-                return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box float-right" grid-action="request" aria-hidden="true"></mat-icon>';
+                if (params.node.allLeafChildren.length === 1) {
+                    return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box float-right" grid-action="request" aria-hidden="true"></mat-icon>';
+                }
+                else {
+                    return params.value;
+                }
             default:
                 return params.value;
         }
