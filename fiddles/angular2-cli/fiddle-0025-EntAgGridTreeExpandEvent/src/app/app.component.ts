@@ -221,11 +221,7 @@ export class AppComponent implements AfterViewInit, AgTreeGridImpl {
     }
     switch(params.node.field) {
       case 'sport':
-        if (params.node.allLeafChildren.length === 1) {
-          return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box float-right" grid-action="request" aria-hidden="true"></mat-icon>';
-        } else {
-          return params.value;
-        }
+        return '<span grid-action="none">' + params.value + '</span>' + '<mat-icon class="mdi mdi-plus-box float-right" grid-action="request" aria-hidden="true"></mat-icon>';
       default: 
         return params.value;
     }
