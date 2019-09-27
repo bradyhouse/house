@@ -1,20 +1,50 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand navbar-dark bg-primary navbar-top">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="navbar-brand" style="font-weight: 700; color: whitesmoke;">
+        Enterprise AgGrid Chart
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-item" style="font-weight: 700; color: whitesmoke;" alt="Fork me on GitHub" target="_blank" title="View Source"
+           href="http://github/bradyhouse/house/fiddles/angular2-cli/fiddle-0027-EntAgGridChart">
+          Fork Me On Github
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
+<div class="outer-div" (window:resize)="onResize($event)">
+  <nav id="btnBar" class="btn-group btn-group-toggle"  data-toggle="buttons">
+    <button id="btnChartGroupedBar" class="btn-sm btn-outline-success" (click)="chartGroupedBar()">Grouped Bar</button>
+    <button id="btnChartStackedBar" class="btn-sm btn-outline-danger" (click)="chartStackedBar()">Stacked Bar</button>
+    <button id="btnChartNormalizedBar" class="btn-sm btn-outline-info" (click)="chartNormalizedBar()">Normalized Bar</button>
+    <button id="btnChartGroupedColumn" class="btn-sm btn-outline-warning" (click)="chartGroupedColumn()">Grouped Column</button>
+    <button id="btnChartStackedColumn" class="btn-sm btn-outline-primary" (click)="chartStackedColumn()">Stacked Column</button>
+    <button id="btnChartNormalizedColumn" class="btn-sm btn-outline-success" (click)="chartNormalizedColumn()">Normalized Column</button>
+    <button id="btnChartArea" class="btn-sm btn-outline-danger" (click)="chartArea()">Area</button>
+    <button id="btnChartStackedArea" class="btn-sm btn-outline-info" (click)="chartStackedArea()">Stacked Area</button>
+    <button id="btnChartNormalizedArea" class="btn-sm btn-outline-warning" (click)="chartNormalizedArea()">Normalized Area</button>
+    <button id="btnChartLine" class="btn-sm btn-outline-success" (click)="chartLine()">Line</button>
+    <button id="btnChartScatter" class="btn-sm btn-outline-danger" (click)="chartScatter()">Scatter</button>
+    <button id="btnChartPie" class="btn-sm btn-outline-info" (click)="chartPie()">Pie</button>
+    <button id="btnChartDoughnut" class="btn-sm btn-outline-warning" (click)="chartDoughnut()">Doughnut</button>
+  </nav>
+  <ag-grid-angular
+    #agGrid
+    style="width: calc(100%); height: calc(100%);"
+    id="myGrid"
+    class="ag-theme-fresh"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [popupParent]="popupParent"
+    [rowData]="rowData"
+    [enableRangeSelection]="true"
+    [enableCharts]="true"
+    (rangeSelectionChanged)="onRangeSelectionChanged($event)"
+    [processChartOptions]="processChartOptions"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>
+</div>

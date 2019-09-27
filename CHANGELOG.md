@@ -2160,8 +2160,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   4. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh) 
 
 
-* Added [fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData](fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData)
-* Added [fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection](fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection)
-* Added [fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions](fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions)
-* Added [fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent](fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent)
-* Added [fiddles/angular2-cli/fiddle-0027-EntAgGridChart](fiddles/angular2-cli/fiddle-0027-EntAgGridChart)
+### AgGrid Studies ~ [Issue 304](https://github.com/bradyhouse/house/issues/304), [Issue 306](https://github.com/bradyhouse/house/issues/306), [Issue 307](https://github.com/bradyhouse/house/issues/307), [Issue 313](https://github.com/bradyhouse/house/issues/313)
+
+* **angular2-cli**
+
+  1. Added [fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData](fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData)
+  2. Added [fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection](fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection)
+  3. Added [fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions](fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions)
+  4. Added [fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent](fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent)
+  5. Added [fiddles/angular2-cli/fiddle-0027-EntAgGridChart](fiddles/angular2-cli/fiddle-0027-EntAgGridChart)

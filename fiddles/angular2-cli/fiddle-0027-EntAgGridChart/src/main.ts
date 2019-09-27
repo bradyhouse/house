@@ -4,9 +4,17 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-if (environment.production) {
-  enableProdMode();
-}
+import { LicenseManager } from 'ag-grid-enterprise';
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+
+fetch('assets/license.json').then((response: any) => {
+  return response.json();
+}).then((data: any) => {
+  LicenseManager.setLicenseKey(data.license);
+  if (environment.production) {
+    enableProdMode();
+  }
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+});
+
