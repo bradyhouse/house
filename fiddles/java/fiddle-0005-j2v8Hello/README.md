@@ -98,8 +98,7 @@ commands:
 
 5.  Open a web browser and navigate to "localhost:8000"
 
-        ![Screenshot](screenshot.png)
-
+    ![Screenshot](screenshot.png)
 
 
 ### Tags<a name="tags"></a>
