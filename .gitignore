@@ -71,7 +71,9 @@ fiddles/c/fiddle-*/*/target/
 
 # java fiddles
 fiddles/java/fiddle-*/*/target/
-
+fiddles/java/fiddle-*/*/.classpath/
+fiddles/java/fiddle-*/*/.project/
+fiddles/java/fiddle-*/*/.settings/
 
 # nativeScript fiddles
 fiddles/nativeScript/fiddle-*/*/platforms/
