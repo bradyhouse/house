@@ -1,0 +1,25 @@
+
+<input class="ag-tree-grid-filter" (keyup)="onQuickFilterChanged($event)" type="text" id="quickFilterInput" placeholder="Type text to filter..."/>
+<div class="ag-tree-grid" [ngStyle]="_style" (window:resize)="onResize($event)">
+  <ag-grid-angular 
+    #agGrid
+    style="width: 100%; height: 100%;"
+    id="myGrid"
+    class="ag-theme-balham"
+    [columnDefs]="this._columnDefs"
+    [rowData]="this._rowData"
+    [rowSelection]="this._rowSelection"
+    [groupSelectsChildren]="true"
+    [suppressRowClickSelection]="false"
+    [toolPanelSuppressSideButtons]="true"
+    [animateRows]="true"
+    [defaultColDef]="this._defaultColDef"
+    [autoGroupColumnDef]="this._autoGroupColumnDef"
+    (gridReady)="onGridReady($event)"
+    (modelUpdated)="onModelUpdated($event)"
+    (selectionChanged)="onSelectionChanged($event)"
+    (rowClicked)="onRowClicked($event)"
+  ></ag-grid-angular>
+</div>
+
+

@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand navbar-dark bg-primary navbar-top">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="navbar-brand" style="font-weight: 700; color: whitesmoke;">
+        Enterprise AgGrid Chart
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-item" style="font-weight: 700; color: whitesmoke;" alt="Fork me on GitHub" target="_blank" title="View Source"
+           href="http://github/bradyhouse/house/fiddles/angular2-cli/fiddle-0027-EntAgGridChart">
+          Fork Me On Github
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="outer-div" (window:resize)="onResize($event)">
+  <nav id="btnBar" class="btn-group btn-group-toggle"  data-toggle="buttons">
+    <button id="btnChartGroupedBar" class="btn-sm btn-outline-success" (click)="chartGroupedBar()">Grouped Bar</button>
+    <button id="btnChartStackedBar" class="btn-sm btn-outline-danger" (click)="chartStackedBar()">Stacked Bar</button>
+    <button id="btnChartNormalizedBar" class="btn-sm btn-outline-info" (click)="chartNormalizedBar()">Normalized Bar</button>
+    <button id="btnChartGroupedColumn" class="btn-sm btn-outline-warning" (click)="chartGroupedColumn()">Grouped Column</button>
+    <button id="btnChartStackedColumn" class="btn-sm btn-outline-primary" (click)="chartStackedColumn()">Stacked Column</button>
+    <button id="btnChartNormalizedColumn" class="btn-sm btn-outline-success" (click)="chartNormalizedColumn()">Normalized Column</button>
+    <button id="btnChartArea" class="btn-sm btn-outline-danger" (click)="chartArea()">Area</button>
+    <button id="btnChartStackedArea" class="btn-sm btn-outline-info" (click)="chartStackedArea()">Stacked Area</button>
+    <button id="btnChartNormalizedArea" class="btn-sm btn-outline-warning" (click)="chartNormalizedArea()">Normalized Area</button>
+    <button id="btnChartLine" class="btn-sm btn-outline-success" (click)="chartLine()">Line</button>
+    <button id="btnChartScatter" class="btn-sm btn-outline-danger" (click)="chartScatter()">Scatter</button>
+    <button id="btnChartPie" class="btn-sm btn-outline-info" (click)="chartPie()">Pie</button>
+    <button id="btnChartDoughnut" class="btn-sm btn-outline-warning" (click)="chartDoughnut()">Doughnut</button>
+  </nav>
+  <ag-grid-angular
+    #agGrid
+    style="width: calc(100%); height: calc(100%);"
+    id="myGrid"
+    class="ag-theme-fresh"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [popupParent]="popupParent"
+    [rowData]="rowData"
+    [enableRangeSelection]="true"
+    [enableCharts]="true"
+    (rangeSelectionChanged)="onRangeSelectionChanged($event)"
+    [processChartOptions]="processChartOptions"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>
+</div>
