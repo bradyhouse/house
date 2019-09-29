@@ -8,43 +8,51 @@ const spawn = require('child_process').spawn;
 const fileName = process.argv[2] || 'file.txt';
 const touch = spawn('touch', [fileName]);
 
-// #region Create Watch File
+//#region Create Watch File
 
 touch.stdout.pipe(process.stdout);
 
-// #endregion
+//#endregion
 
-// #region Create TCP Socket Server
+//#region Create TCP Socket Server
 
 net.createServer(connection => {
 
-  // #region Reporting
+  //#region Reporting
 
   console.log('subscriber connected');
-  connection.write('Now watching "'+ fileName +'" for changes...\n');
 
-  // #endregion
+  connection.write(JSON.stringify({
+    type: 'watching',
+    file: fileName
+  }) + '\n');
 
-  // #region Watcher setup
+  //#endregion
+
+  //#region Watcher setup
 
   const watcher =
     fs.watch(fileName, () => connection.write(
-      'file changed: ' + new Date() + '\n'));
+      JSON.stringify({
+        type: 'changed',
+        timestamp: Date.now()
+      }) + '\n'
+      ));
 
-  // #endregion
+  //#endregion
 
-  // #region Cleanup
+  //#region Cleanup
 
   connection.on('close', () => {
     console.log('subscriber disconnected.');
     watcher.close();
   });
 
-  // #endregion
+  //#endregion
 
 }).listen(1841, () => {
   console.log('TCP server started');
 });
 
-// #endregion
+//#endregion
 
