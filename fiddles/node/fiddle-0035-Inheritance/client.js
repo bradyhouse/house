@@ -1,10 +1,8 @@
 'use strict';
-const Event
-const net = require('net');
-const client = net.connect({port: 1841});
+const net = require('net').connect({port: 1841});
+const dataAdapter = require('data-adapter').connect(net);
 
-client.on('data', data => {
-    const message = JSON.parse(data);
+dataAdapter.on('message', message => {
     if (message.type === 'watching') {
         console.log(`Now watching: ${message.file}`);
     } else if (message.type === 'changed') {

@@ -1,7 +1,7 @@
 {
-  "name": "tcpSocketClient",
+  "name": "inheritance",
   "version": "0.0.0",
-  "description": "Node ~ fiddle-0034-TcpSocketClient",
+  "description": "Node ~ fiddle-0035-Inheritance",
   "repository": {
     "url": "https://github.com/bradyhouse/house.git"
   },

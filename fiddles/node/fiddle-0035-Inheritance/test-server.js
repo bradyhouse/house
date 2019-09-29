@@ -14,8 +14,8 @@ const server = require('net').createServer(connection => {
         clearTimeout(timer);
         console.log('Subscriber disconnected');
     });
+});
 
-    server.listen(1841, () => {
-        console.log('Test server listening for subscribers ...');
-    });
+server.listen(1841, () => {
+    console.log('Test server listening for subscribers ...');
 });
