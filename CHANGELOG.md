@@ -2139,11 +2139,34 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   2.  Added [fiddles/angular2-cli/fiddle-0020-EntAgGridPivot](fiddles/angular2-cli/fiddle-0020-EntAgGridPivot)
 
 
-### 313_node_31to40 ~ [Issue 301]([Issue 313](https://github.com/bradyhouse/house/issues/301))
+### 299_angularCli_21 ~ [Issue 299](https://github.com/bradyhouse/house/issues/299)
 
-* **node**
+* **angular2-cli**
+  
+  1.  Added [fiddles/angular2-cli/fiddle-0021-EntAgGridState](fiddles/angular2-cli/fiddle-0021-EntAgGridState)
 
-  1.  Added [fiddles/node/fiddle-0031-SpawnProcess](fiddles/node/fiddle-0031-SpawnProcess)
-  2.  Added [fiddles/node/fiddle-0032-FileSystemWatch](fiddles/node/fiddle-0032-FileSystemWatch)
-  3.  Added [fiddles/node/fiddle-0033-TcpSockets](fiddles/node/fiddle-0033-TcpSockets)
-  4.  
+
+### 300_react_15 ~ [Issue 300](https://github.com/bradyhouse/house/issues/300)
+
+* **react**
+
+  1.  Added [fiddles/react/fiddle-0015-Portfolio](fiddles/react/fiddle-0015-Portfolio)
+
+* **fiddle.sh**
+
+  1. Updated [scripts/bin/react/_build.sh](scripts/bin/react/_build.sh)
+  2. Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+  3. Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+  4. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh) 
+
+
+### AgGrid Studies ~ [Issue 304](https://github.com/bradyhouse/house/issues/304), [Issue 306](https://github.com/bradyhouse/house/issues/306), [Issue 307](https://github.com/bradyhouse/house/issues/307), [Issue 313](https://github.com/bradyhouse/house/issues/313)
+
+* **angular2-cli**
+
+  1. Added [fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData](fiddles/angular2-cli/fiddle-0022-EntAgGridTreeData)
+  2. Added [fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection](fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection)
+  3. Added [fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions](fiddles/angular2-cli/fiddle-0024-EntAgGridRowTransactions)
+  4. Added [fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent](fiddles/angular2-cli/fiddle-0025-EntAgGridTreeExpandEvent)
+  5. Added [fiddles/angular2-cli/fiddle-0027-EntAgGridChart](fiddles/angular2-cli/fiddle-0027-EntAgGridChart)
+* Added [fiddles/java/fiddle-0005-j2v8Hello](fiddles/java/fiddle-0005-j2v8Hello)
