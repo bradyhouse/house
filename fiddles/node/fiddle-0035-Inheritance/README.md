@@ -1,9 +1,9 @@
-fiddle-0033-TcpSocket
+fiddle-0035-Inheritance
 ======
 
 ### Title<a name="title"></a>
 
-TCP JSON Protocol
+Inheritance
 
 
 ### Author <a name="author"></a>
@@ -28,8 +28,9 @@ Chicago, IL
 
 ### Description<a name="description"></a>
 
-Given you have created TCP Socket Server how do you programmatically create a connection? In
-other words, how to create a socket client connection app? 
+How do you extend an existing node.js module? For instance, say I wanted to change how the [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) class works. This fiddle extends the 
+[socket client fiddle](https://github.com/bradyhouse/house/tree/master/fiddles/node/fiddle-0034-TcpSocketClient).  Specifically, it introduces an extended version of the EventEmitter class
+to prevent broken messages from the [server.js](server.js) script. 
 
 
 ### Use Case<a name="use-case"></a>
@@ -47,12 +48,7 @@ other words, how to create a socket client connection app?
 
 ### Tags<a name="tags"></a>
 
-node.js, hamony, process, argv, fs, child_process, spawn, net, createServer, listen
-
-
-### Forked From
-
-[fiddle-0033-TcpSockets](../fiddle-0033-TcpSockets)
+node.js, hamony, process, argv, fs, child_process, spawn, net, createServer, connect, EventEmitter
 
 
 ### Forked From
