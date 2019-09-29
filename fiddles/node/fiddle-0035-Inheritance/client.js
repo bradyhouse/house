@@ -1,5 +1,5 @@
 'use strict';
-
+const Event
 const net = require('net');
 const client = net.connect({port: 1841});
 

@@ -14,6 +14,7 @@
   "scripts": {
     "start": "node --harmony server.js",
     "start.server": "node --harmony server.js",
+    "start.test-server": "node --harmony test-server.js",
     "start.client": "node --harmony client.js"
   },
   "dependencies": {}

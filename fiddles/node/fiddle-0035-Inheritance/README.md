@@ -48,7 +48,8 @@ to prevent broken messages from the [server.js](server.js) script.
 
 ### Tags<a name="tags"></a>
 
-node.js, hamony, process, argv, fs, child_process, spawn, net, createServer, connect, EventEmitter
+node.js, hamony, process, argv, fs, child_process, spawn, net, createServer, connect, events,
+super
 
 
 ### Forked From
