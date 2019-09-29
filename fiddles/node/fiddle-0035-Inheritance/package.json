@@ -1,0 +1,20 @@
+{
+  "name": "tcpSocketClient",
+  "version": "0.0.0",
+  "description": "Node ~ fiddle-0034-TcpSocketClient",
+  "repository": {
+    "url": "https://github.com/bradyhouse/house.git"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony server.js",
+    "start.server": "node --harmony server.js",
+    "start.client": "node --harmony client.js"
+  },
+  "dependencies": {}
+}
