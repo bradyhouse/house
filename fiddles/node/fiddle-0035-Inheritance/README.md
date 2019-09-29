@@ -28,9 +28,8 @@ Chicago, IL
 
 ### Description<a name="description"></a>
 
-How do you extend an existing node.js module? For instance, say I wanted to change how the [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) class works. This fiddle extends the 
-[socket client fiddle](https://github.com/bradyhouse/house/tree/master/fiddles/node/fiddle-0034-TcpSocketClient).  Specifically, it introduces an extended version of the EventEmitter class
-to prevent broken messages from the [server.js](server.js) script. 
+How do you extend an existing node.js module? For instance, say I wanted to change how the [EventEmitter](https://nodejs.org/api/events.html#events_class_eventemitter) class works. This fiddle extends the [socket client fiddle](https://github.com/bradyhouse/house/tree/master/fiddles/node/fiddle-0034-TcpSocketClient).  Specifically, it introduces an extended version of the EventEmitter class to prevent broken messages from the [server.js](server.js) script. To test the new client logic, the [test-server.js](test-server.js) script is added. This script sends
+a broken json message to subscribers upon connection.
 
 
 ### Use Case<a name="use-case"></a>
