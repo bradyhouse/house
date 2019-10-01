@@ -71,20 +71,16 @@ fiddles/c/fiddle-*/*/target/
 
 # java fiddles
 fiddles/java/fiddle-*/*/target/
-fiddles/java/fiddle-*/*/.classpath/
-fiddles/java/fiddle-*/*/.project/
+fiddles/java/fiddle-*/*/.classpath
+fiddles/java/fiddle-*/*/.project
 fiddles/java/fiddle-*/*/.settings/
 
 # nativeScript fiddles
 fiddles/nativeScript/fiddle-*/*/platforms/
 fiddles/nativeScript/fiddle-*/*/hooks/
 
-
-
 # under construction
 fiddles/aurelia/fiddle-0037-ModalPopUp/*
-
-
 
 # node fiddle 13 ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
 fiddles/node/fiddle-0013-*/cache/
@@ -101,7 +97,6 @@ classes/
 gradle-app.setting
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-
 !gradle-wrapper.jar
 .java-version
 
