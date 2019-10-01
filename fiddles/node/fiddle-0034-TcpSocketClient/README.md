@@ -40,7 +40,7 @@ other words, how to create a socket client connection app?
 4.  Enter the command `npm start.client`
 5.  Open a third console and navigate to the fiddle's root directory
 6.  Enter the command `echo "ping" >> file.txt`
-3.  This should produce the following output in the second console (upper right)
+7.  This should produce the following output in the second console (upper right)
 
 ![Screenshot](screenshot.png)
     

@@ -1,7 +1,7 @@
 const server = require('net').createServer(connection => {
     console.log('subscriber connected');
     const firstChunk = '{"type": "changed", "timesta';
-    const secondChunk = 'mp: 1569784254661}\n';
+    const secondChunk = 'mp": 1569784254661}\n';
 
     connection.write(firstChunk);
     
