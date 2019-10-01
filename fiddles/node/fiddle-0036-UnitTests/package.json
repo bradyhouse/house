@@ -1,0 +1,24 @@
+{
+  "name": "inheritance",
+  "version": "0.0.0",
+  "description": "Node ~ fiddle-0035-Inheritance",
+  "repository": {
+    "url": "https://github.com/bradyhouse/house.git"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony server.js",
+    "start.server": "node --harmony server.js",
+    "start.test-server": "node --harmony test-server.js",
+    "start.client": "node --harmony client.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "3.4.2"
+  }
+}
