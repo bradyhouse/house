@@ -42,7 +42,7 @@ fiddle 36 by adding some basic unit tests using mocha.
 ### Tags<a name="tags"></a>
 
 node.js, hamony, process, argv, fs, child_process, spawn, net, createServer, connect, events,
-super, mocha
+super, mocha, assert
 
 
 ### Forked From
