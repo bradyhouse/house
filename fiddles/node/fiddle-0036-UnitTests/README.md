@@ -38,18 +38,14 @@ class that insures broken messages are re-assembled into complete JSON objects.
 1.  Open a console and navigate to the fiddle's root directory
 2.  Enter the command `npm install`
 3.  Enter the command `npm test`
-
-        ➜  fiddle-0036-UnitTests git:(313_node_31to40) ✗ npm test
-
+        
         > inheritance@0.0.0 test /Users/bradyhouse/github/house_301/fiddles/node/fiddle-0036-UnitTests
         > mocha
 
         data-adapter
             ✓ should emit a message event from a single data event
             ✓ should emit a message event from split data events
-
-
-        2 passing (13ms)
+            ✓ should finish within 5 seconds (4507ms)
 
 
 ### Tags<a name="tags"></a>
