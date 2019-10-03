@@ -32,6 +32,13 @@ What's possible in node by itself?  What is its core? Lets start with the `child
 can spawn be used to see contents of the running script (reflection)? Yup, `riddle me a fiddle`.
 
 
+### Use Case<a name="use-case"></a>
+
+1.  Open a console and navigate to the fiddle's root directory
+2.  Enter the command `npm install`
+3.  TBD
+
+
 ### Tags <a name="tags"></a>
 
 node.js, hamony, process, argv, fs
