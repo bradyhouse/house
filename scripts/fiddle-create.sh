@@ -34,6 +34,7 @@
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 12/18/2018 - See CHANGELOG @ 275_extjs6_26_fix
+# 10/03/2019 - See CHANGELOG @ 313_node_31to40
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -50,7 +51,7 @@ source bin/_types.sh;
 
     if [[ $2 != "fiddle-0000-Template" ]]
     then
-      $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../CHANGELOG.md") || exit 96
+      $(echo "* Added [fiddles/$1/$2](fiddles/$1/$2)" >> "../${CHANGE_LOG}") || exit 96
     fi
 
     case $1 in

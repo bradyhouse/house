@@ -35,16 +35,18 @@
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
+# 10/03/2019 - See CHANGELOG @ 313_node_31to40
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
-source bin/_utils.sh
-source bin/_types.sh
+source bin/_utils.sh;
+source bin/_types.sh;
+source bin/_env.sh;
 
 fiddleType=$1
 fiddleCriteria=$2
 fiddleName=$(getFiddle "${fiddleType}" "${fiddleCriteria}";);
 fiddlePath="../fiddles/${fiddleType}/${fiddleName}"
-changeLogFile="../CHANGELOG.md"
+changeLogFile="../${CHANGE_LOG}"
 
 function prompt() {
   echo -e ""
