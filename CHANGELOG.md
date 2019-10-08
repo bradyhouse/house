@@ -2177,3 +2177,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1. Added [fiddles/java/fiddle-0005-j2v8Hello](fiddles/java/fiddle-0005-j2v8Hello)
 
+* Added [fiddles/java/fiddle-0006-j2v8RestApi](fiddles/java/fiddle-0006-j2v8RestApi)
