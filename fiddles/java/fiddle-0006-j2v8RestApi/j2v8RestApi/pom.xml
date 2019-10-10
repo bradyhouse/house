@@ -1,65 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>fiddle</groupId>
+
 	<artifactId>fiddle</artifactId>
+
 	<version>0.1.0</version>
-	<profiles>
-		<profile>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<id>default-build</id>
-			<build>
-				<resources>
-					<resource>
-						<directory>${project.basedir}</directory>
-						<includes>
-							<include>server.js</include>
-						</includes>
-					</resource>
-				</resources>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jar-plugin</artifactId>
-						<configuration>
-							<archive>
-								<manifest>
-									<mainClass>hello.World</mainClass>
-								</manifest>
-							</archive>
-						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-shade-plugin</artifactId>
-						<configuration>
-							<createDependencyReducedPom>false</createDependencyReducedPom>
-						</configuration>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>shade</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-	<dependencies>
-		<dependency>
-			<groupId>com.eclipsesource.j2v8</groupId>
-			<artifactId>j2v8_macosx_x86_64</artifactId>
-			<version>4.6.0</version>
-		</dependency>
-	</dependencies>
+
+	<!-- GLOBAL VARIABLES -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<jta>1.1</jta>
+		<node.url>https://nodejs.org/dist</node.url>
+		<yarn.url>https://github.com/yarnpkg/yarn/releases</yarn.url>
+		<spring.boot.version>1.5.19.RELEASE</spring.boot.version>
+		<slf4j.version>1.7.25</slf4j.version>
 	</properties>
+
+	<profiles>
+		<!-- LINUX -->
+		<profile>
+			<id>linux</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<j2v8.platform>linux</j2v8.platform>
+				<j2v8.version>4.6.0</j2v8.version>
+			</properties>
+		</profile>
+		<!-- MAC -->
+		<profile>
+			<id>mac</id>
+			<properties>
+				<j2v8.platform>macosx</j2v8.platform>
+				<j2v8.version>4.6.0</j2v8.version>
+			</properties>
+		</profile>
+		<!-- DEVELOPMENT -->
+		<profile>
+			<id>development</id>
+			<properties>
+				<sonar.java.source>1.8</sonar.java.source>
+				<skip.nodejs.cleanup>true</skip.nodejs.cleanup>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- J2V8 -->
+		<dependency>
+			<groupId>com.eclipsesource.j2v8</groupId>
+			<artifactId>j2v8_${j2v8.platform}_x86_64</artifactId>
+			<version>${j2v8.version}</version>
+		</dependency>
+		<!-- COMMONS-IO -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<!-- LOMBOK -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.18</version>
+		</dependency>
+		<!-- SPRING LOG4J2 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
+		<!-- SPRING SECURITY -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>${spring.boot.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- SPRING ACTUATOR -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>${spring.boot.version}</version>
+		</dependency>
+		<!-- SPRING TEST -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${spring.boot.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<!-- INCLUDE CONF DIRECTORY -->
+			<resource>
+				<directory>${project.basedir}/conf</directory>
+			</resource>
+			<!-- INCLUDE NODJS DIRECTORY -->
+			<resource>
+				<directory>${project.basedir}/src/main/nodejs</directory>
+				<targetPath>nodejs</targetPath>
+			</resource>
+		</resources>
+		<plugins>
+			<!-- YARN INSTALL -->
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<nodeVersion>v10.8.0</nodeVersion>
+					<yarnVersion>v1.3.2</yarnVersion>
+					<!-- USE DEFAULTS -->
+					<!--<nodeDownloadRoot>${node.url}</nodeDownloadRoot>
+					<yarnDownloadRoot>${yarn.url}</yarnDownloadRoot>-->
+					<workingDirectory>${project.basedir}/src/main/nodejs</workingDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>install-node-and-yarn</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+					<execution>
+						<id>yarn install</id>
+						<goals>
+							<goal>yarn</goal>
+						</goals>
+						<configuration>
+							<arguments>install</arguments>
+							<workingDirectory>${project.basedir}/src/main/nodejs</workingDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- SPRING REPACKAGE FOR JAR -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.1.7.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- MAVEN BUILD JAR -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>fiddle.App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- MAVEN CLEANUP IF NOT SKIP NODEJS CLEANUP-->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<skip>${skip.nodejs.cleanup}</skip>
+					<filesets>
+						<fileset>
+							<directory>src/main/node/node_modules</directory>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+						<fileset>
+							<directory>src/main/node/node</directory>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<!-- POST INSTALL CLEANUP IF NOT SKIP NODEJS CLEANUP -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<configuration>
+					<skip>${skipjs}</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<id>post-install-cleanup</id>
+						<phase>
+							install
+						</phase>
+						<goals>
+							<goal>
+								run
+							</goal>
+						</goals>
+						<configuration>
+							<target>
+								<delete dir="src/main/nodejs/node_modules"/>
+								<delete dir="src/main/nodejs/node"/>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
 
