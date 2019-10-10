@@ -71,13 +71,10 @@ fiddles/c/fiddle-*/*/target/
 
 # java fiddles
 fiddles/java/fiddle-*/*/target/
-fiddles/java/fiddle-*/*/.classpath
-fiddles/java/fiddle-*/*/.project
-fiddles/java/fiddle-*/*/.factorypath
-fiddles/java/fiddle-*/*/.classpath
+fiddles/java/fiddle-*/*/.classpath/
+fiddles/java/fiddle-*/*/.project/
 fiddles/java/fiddle-*/*/.settings/
 fiddles/java/fiddle-*/*/node/
-fiddles/java/fiddle-*/*/*.iml
 
 # nativeScript fiddles
 fiddles/nativeScript/fiddle-*/*/platforms/
