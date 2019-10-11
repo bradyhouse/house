@@ -39,7 +39,6 @@ commands:
 1.  Open a command prompt and navigate to the project root directory
 2.  Using maven install all dependencies -- `mvn install -Pdevelopment,mac`
 
-        ```
         [INFO] Scanning for projects...
         [INFO]
         [INFO] ------------------------------------------------------------------------
@@ -96,12 +95,10 @@ commands:
         [INFO] Finished at: 2019-10-11T07:03:28-05:00
         [INFO] Final Memory: 52M/436M
         [INFO] ------------------------------------------------------------------------
-        ```
 
 3.  Navigate to the target directory
 4.  Execute the resulting jar -- `java -jar fiddle-0.1.0.jar`
     
-        ```
        {{ ʕ・ɭ・ʔ }}
 
         H o u s e
@@ -139,7 +136,6 @@ commands:
         [INFO ] 2019-10-11 06:55:12.675 [main] App - Started App in 5.31 seconds (JVM running for 6.741)
         Your server is listening on port 8080 (http://localhost:8080)
         Swagger-ui is available on http://localhost:8080/docs
-        ```
 
 5.  Open a web browser and navigate to "localhost:8080/docs"
 
