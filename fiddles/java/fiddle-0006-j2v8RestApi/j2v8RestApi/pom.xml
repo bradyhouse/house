@@ -77,12 +77,6 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
-		<!-- LOMBOK -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.18</version>
-		</dependency>
 		<!-- SPRING LOG4J2 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -178,6 +172,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -210,7 +205,7 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.7</version>
 				<configuration>
-					<skip>${skipjs}</skip>
+					<skip>${skip.nodejs.cleanup}</skip>
 				</configuration>
 				<executions>
 					<execution>
