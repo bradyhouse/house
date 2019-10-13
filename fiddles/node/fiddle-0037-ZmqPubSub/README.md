@@ -1,9 +1,9 @@
-fiddle-0037-MicroService
+fiddle-0037-ZmqPubSub
 ======
 
 ### Title <a name="title"></a>
 
-MicroService
+ZeroMq ~ Pub/Sub Pattern
 
 
 ### Author <a name="author"></a>
@@ -28,7 +28,7 @@ Chicago, IL
 
 ### Description <a name="description"></a>
 
-What are the building blocks of a node networking `MicroService` module? First ingredient, messaging. Time to revisit [0MQ](https://www.npmjs.com/package/zeromq).
+What are the building blocks of a node networking `MicroService` module? First ingredient, messaging. Time to revisit [0MQ](https://www.npmjs.com/package/zeromq). Specifically, a refresher in the pub/sub pattern is a good starting point. [Fiddle #34](../fiddle-0034-TcpSocketClient) can be rewritten (or simplified) using 0MQ to implement a pub/sub design pattern.
 
 
 ### Use Case<a name="use-case"></a>
@@ -46,4 +46,4 @@ What are the building blocks of a node networking `MicroService` module? First i
 
 ### Tags <a name="tags"></a>
 
-node.js, hamony, process, argv, fs, zeromq
+node.js, hamony, process, argv, fs, zeromq, pub/sub
