@@ -25,6 +25,8 @@ Chicago, IL
 
 How do you create a simple file watcher using node?
 
+__Note, this fiddle adapted from the example given in Chapter 2 of Jim Wilson's book, [Node.js 8 the Right Way](http://www.pragmaticprogrammer.com/titles/jwnode2).__
+
 
 ### Use Case<a name="use-case"></a>
 

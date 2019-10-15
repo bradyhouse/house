@@ -22,3 +22,4 @@
   5.  Added [fiddles/node/fiddle-0035-Inheritance](fiddles/node/fiddle-0035-Inheritance)
   6.  Added [fiddles/node/fiddle-0036-UnitTests](fiddles/node/fiddle-0036-UnitTests)
 * Added [fiddles/node/fiddle-0037-MicroService](fiddles/node/fiddle-0037-MicroService)
+* Added [fiddles/node/fiddle-0039-ZmqRouterDealer](fiddles/node/fiddle-0039-ZmqRouterDealer)

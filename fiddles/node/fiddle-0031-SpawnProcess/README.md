@@ -23,8 +23,9 @@ Chicago, IL
 
 ### Description<a name="description"></a>
 
-What's possible in node by itself?  What is its core? Lets start with the `child_process` spawn function. Specifically,
-can spawn be used to see contents of the running script (reflection)? Yup, `riddle me a fiddle`.
+What's possible in node by itself?  What is its core? Lets start with the `child_process` spawn function. Specifically, can spawn be used to see contents of the running script (reflection)? Yup, `riddle me a fiddle`.
+
+__Note, this fiddle adapted from the example given in Chapter 2 of Jim Wilson's book, [Node.js 8 the Right Way](http://www.pragmaticprogrammer.com/titles/jwnode2).__
 
 
 ### Use Case<a name="use-case"></a>

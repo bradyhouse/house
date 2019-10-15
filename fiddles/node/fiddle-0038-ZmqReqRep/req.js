@@ -1,20 +1,11 @@
-#!/usr/bin/env node --harmony
 'use strict';
-
 const zmq = require('zeromq');
-
-// Create the subscriber endpoint
-const subscriber = zmq.socket('sub');
-
-// Subscriber to all messages
-subscriber.subscribe('');
-
-// Handle messages from the publisher
-subscriber.on('message', data => {
-    const message = JSON.parse(data);
-    const date = new Date(message.timestamp);
-    console.log(`File "${message.file}" changed at ${date}`);    
+const filename = process.argv[2];
+const requester = zmq.socket('req');
+requester.on('message', data => {
+    const response = JSON.parse(data);
+    console.log('Received response: ', response);
 });
-
-//Connect to the publisher
-subscriber.connect('tcp://localhost:60400');
+requester.connect('tcp://127.0.0.1:60401');
+console.log(`Sending a request for ${filename}`);
+requester.send(JSON.stringify({path: filename}));

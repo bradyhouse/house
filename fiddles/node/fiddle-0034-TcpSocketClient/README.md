@@ -31,6 +31,8 @@ Chicago, IL
 Given you have created TCP Socket Server how do you programmatically create a connection? In
 other words, how to create a socket client connection app? 
 
+__Note, this fiddle adapted from the example given in Chapter 3 of Jim Wilson's book, [Node.js 8 the Right Way](http://www.pragmaticprogrammer.com/titles/jwnode2).__
+
 
 ### Use Case<a name="use-case"></a>
 

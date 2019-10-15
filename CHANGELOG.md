@@ -2176,4 +2176,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **java**
 
   1. Added [fiddles/java/fiddle-0005-j2v8Hello](fiddles/java/fiddle-0005-j2v8Hello)
-* Added [fiddles/node/fiddle-0038-ZmqReqRep](fiddles/node/fiddle-0038-ZmqReqRep)
+
+
+### 318_java_6 ~ [Issue 318](https://github.com/bradyhouse/house/issues/318)
+
+* **java**
+
+  1.  Added [fiddles/java/fiddle-0006-j2v8RestApi](fiddles/java/fiddle-0006-j2v8RestApi)
+

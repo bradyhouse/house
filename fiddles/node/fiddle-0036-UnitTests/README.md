@@ -32,6 +32,8 @@ Okay how do you add Behaivor Driven Development (BDD) Unit Tests-- aka Got mocha
 fiddle 36 by adding some basic unit tests using mocha. Include a unit test for the DataAdapter
 class that insures broken messages are re-assembled into complete JSON objects.
 
+__Note, this fiddle adapted from the example given in Chapter 3 of Jim Wilson's book, [Node.js 8 the Right Way](http://www.pragmaticprogrammer.com/titles/jwnode2).__
+
 
 ### Use Case<a name="use-case"></a>
 
@@ -39,7 +41,7 @@ class that insures broken messages are re-assembled into complete JSON objects.
 2.  Enter the command `npm install`
 3.  Enter the command `npm test`
         
-        > inheritance@0.0.0 test /Users/bradyhouse/github/house_301/fiddles/node/fiddle-0036-UnitTests
+        > inheritance@0.0.0 test /Users/bradyhouse/github/house/fiddles/node/fiddle-0036-UnitTests
         > mocha
 
         data-adapter

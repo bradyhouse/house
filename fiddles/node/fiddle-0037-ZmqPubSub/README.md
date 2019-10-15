@@ -30,6 +30,8 @@ Chicago, IL
 
 What are the building blocks of a node networking `MicroService` module? First ingredient, messaging. Time to revisit [0MQ](https://www.npmjs.com/package/zeromq). Specifically, a refresher in the pub/sub pattern is a good starting point. [Fiddle #34](../fiddle-0034-TcpSocketClient) can be rewritten (or simplified) using 0MQ to implement a pub/sub design pattern.
 
+__Note, this fiddle adapted from the example given in Chapter 4 of Jim Wilson's book, [Node.js 8 the Right Way](http://www.pragmaticprogrammer.com/titles/jwnode2).__
+
 
 ### Use Case<a name="use-case"></a>
 
