@@ -2177,3 +2177,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1. Added [fiddles/java/fiddle-0005-j2v8Hello](fiddles/java/fiddle-0005-j2v8Hello)
 
+* Added [fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart](fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart)
