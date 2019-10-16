@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
-import { AgGridModule } from 'ag-grid-angular';
 import { AppComponent } from './app.component';
+import { BarChartModule } from './bar-chart/bar-chart.module';
 
 @NgModule({
   declarations: [
@@ -11,9 +11,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
+    FormsModule,
     HttpClientModule,
-    AgGridModule.withComponents([])
+    BarChartModule
   ],
   bootstrap: [AppComponent]
 })

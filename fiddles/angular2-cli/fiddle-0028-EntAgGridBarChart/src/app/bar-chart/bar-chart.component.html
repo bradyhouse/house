@@ -1,0 +1,16 @@
+
+<div class="chart-container outer-div">
+  <ag-grid-angular
+    #agGrid
+    style="width: 100%; height: 100%; display: none;"
+    id="myGrid"
+    class="ag-theme-balham"
+    [columnDefs]="_columnDefs"
+    [rowData]="_rowData"
+    [enableCharts]="true"
+    [processChartOptions]="onProcessChartOptions"
+    [createChartContainer]="this._onCreateChartContainer"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>
+</div>
+
