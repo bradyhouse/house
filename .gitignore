@@ -70,10 +70,14 @@ fiddles/angular2/fiddle-0*/app-example
 fiddles/c/fiddle-*/*/target/
 
 # java fiddles
-fiddles/java/fiddle-*/*/target/
-fiddles/java/fiddle-*/*/.classpath/
-fiddles/java/fiddle-*/*/.project/
-fiddles/java/fiddle-*/*/.settings/
+target/
+.classpath
+.project
+.factorypath
+.classpath
+.settings/
+node/
+*.iml
 
 # nativeScript fiddles
 fiddles/nativeScript/fiddle-*/*/platforms/
