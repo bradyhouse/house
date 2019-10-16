@@ -2177,4 +2177,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1. Added [fiddles/java/fiddle-0005-j2v8Hello](fiddles/java/fiddle-0005-j2v8Hello)
 
-* Added [fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart](fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart)
+
+### 320_AngularCli_28 ~ [Issue 320](https://github.com/bradyhouse/house/issues/320)
+
+* **Angular-Cli**
+
+  1. Added [fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart](fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart)
+  

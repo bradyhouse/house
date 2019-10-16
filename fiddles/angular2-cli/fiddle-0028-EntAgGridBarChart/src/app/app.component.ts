@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BarChartOptions } from './bar-chart/interfaces/index';
+import { BarChartOptions } from './bar-chart/bar-chart-options';
 
 @Component({
   selector: 'app-root',

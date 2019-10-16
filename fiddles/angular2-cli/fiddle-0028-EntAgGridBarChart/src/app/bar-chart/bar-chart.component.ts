@@ -275,13 +275,11 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
         this._id = this.options.id;
         break;
       case BarChartOptionKeysEnum.columns:
-        console.log('columns', this.options.columns);
         this._columnDefs = this.options.columns;
         break;
       case BarChartOptionKeysEnum.rows:
         this._rowData = this.options.rows;
         break;
-
     }
   }
 
