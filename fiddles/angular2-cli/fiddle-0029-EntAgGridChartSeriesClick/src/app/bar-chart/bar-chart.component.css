@@ -1,0 +1,6 @@
+.outer-div {
+  height:calc(90%);
+  width: calc(100%);
+  display: flex;
+  flex-direction: column;
+}
