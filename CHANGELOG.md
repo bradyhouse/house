@@ -2178,6 +2178,13 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1. Added [fiddles/java/fiddle-0005-j2v8Hello](fiddles/java/fiddle-0005-j2v8Hello)
 
 
+### 318_java_6 ~ [Issue 318](https://github.com/bradyhouse/house/issues/318)
+
+* **java**
+
+  1.  Added [fiddles/java/fiddle-0006-j2v8RestApi](fiddles/java/fiddle-0006-j2v8RestApi)
+
+
 ### 320_AngularCli_28 ~ [Issue 320](https://github.com/bradyhouse/house/issues/320)
 
 * **Angular-Cli**
