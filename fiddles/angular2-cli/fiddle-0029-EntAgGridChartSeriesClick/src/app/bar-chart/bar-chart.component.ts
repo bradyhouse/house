@@ -43,7 +43,8 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
   private _differ: KeyValueDiffer<any, any>;
   private _columnDefs: ColDef[] = [];
   private _rowData: RowNode[] = [];
-  private _id;
+  private _id: string;
+  private _chartComponent: any;
 
   private _onCreateChartContainer: Function;
 
@@ -146,9 +147,6 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
   onProcessChartOptions(params:any): any {
     var options = params.options;
 
-    console.log(options);
-
-
     options.height = 500;
     options.width = 1000;
     options.title = {
@@ -176,9 +174,8 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
     options.tooltipClass = "my-tool-tip-class";
     options.legendPosition = "bottom";
     options.legendPadding = 20;
-    options.legend = {
-      enabled: false
-    };
+    options.legend.enabled = false;
+
     var xAxis = options.xAxis;
     xAxis.lineWidth = 2;
     xAxis.lineColor = "gray";
@@ -248,6 +245,8 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
       blur: 8
     };
     seriesDefaults.tooltipRenderer = function(params) {
+      console.log('tooltipRenderer', params);
+
       var xField = params.xField;
       var yField = params.yField;
       var x = params.datum[xField];
@@ -260,7 +259,18 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
 
   onCreateChartContainer(chartRef) {
     if (this._containerEl) {
+      this._chartComponent = chartRef.chartElement.__agComponent;
+      chartRef.chartElement.addEventListener('click', ($event: any) => this.onChartElementClick($event));
       this._containerEl.appendChild(chartRef.chartElement);
+    }
+  }
+
+  onChartElementClick(event: any) {
+    if (this._chartComponent) {
+      const seriesNode = this._chartComponent.chartProxy.chart.pickSeriesNode(event.offsetX, event.offsetY);
+      if (seriesNode) {
+        alert(JSON.stringify(seriesNode.node.datum));
+      }
     }
   }
 

@@ -146,9 +146,6 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
   onProcessChartOptions(params:any): any {
     var options = params.options;
 
-    console.log(options);
-
-
     options.height = 500;
     options.width = 1000;
     options.title = {
@@ -259,6 +256,7 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
 
 
   onCreateChartContainer(chartRef) {
+    console.log(chartRef);
     if (this._containerEl) {
       this._containerEl.appendChild(chartRef.chartElement);
     }

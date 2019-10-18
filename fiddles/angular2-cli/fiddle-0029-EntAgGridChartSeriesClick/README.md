@@ -4,12 +4,12 @@ fiddle-0029-EntAgGridChartSeriesClick
 
 ### Title<a name="title"></a>
 
-Enterprise AgGrid - Bar Chart Control
+Enterprise AgGrid ~ Chart Control + Custom Click Event
 
 
 ### Creation Date<a name="creation-date"></a>
 
-09-26-2019
+10-17-2019
 
 
 ### Location<a name="location"></a>
@@ -19,7 +19,7 @@ Chicago, IL
 
 ### Issue<a name="issue"></a>
 
-[Issue 320](https://github.com/bradyhouse/house/issues/320)
+[Issue 320](https://github.com/bradyhouse/house/issues/322)
 
 
 ### Description<a name="description"></a>
@@ -42,7 +42,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
         ****************************************************************************************************************
         ****************************************************************************************************************
 
-4.  Startup the fiddle -- `fiddle start angular2-cli 0028` 
+4.  Startup the fiddle -- `fiddle start angular2-cli 0029` 
 
         {{ ʕ・ɭ・ʔ }}
 
@@ -89,9 +89,5 @@ node v10.9.0, angular (8.2.0), ag-grid, ag-grid-community ag-grid-angular, ag-gr
 
 ### Forked From <a name="forked"></a>
 
-[fiddle-0027-EntAgGridChart](../fiddle-0027-EntAgGridChart)
-
-
-### Forked From
 
 [fiddle-0028-EntAgGridBarChart](../fiddle-0028-EntAgGridBarChart)
