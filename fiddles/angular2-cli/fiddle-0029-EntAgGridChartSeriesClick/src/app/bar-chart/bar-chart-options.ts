@@ -1,13 +1,27 @@
 
 import {RowNode, ColDef} from 'ag-grid-community';
 
+
+
+
 export interface BarChartOptions {
-  /*
-   Required string used to locate the chart instance in the dom.
+
+  /**
+   * Required string used to locate the chart instance in the DOM. Can
+   * be used for automated testing access.
    */
   id: string;
+
+  /**
+   * agGrid Column schema.
+   */
   columns?: ColDef[];
+
+  /**
+   * agGrid RowNode collection.
+   */
   rows?: RowNode[];
+
 }
 
 //#region Grid Option Keys
