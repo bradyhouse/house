@@ -2191,3 +2191,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1. Added [fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart](fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart)
 
+* Added [fiddles/angular2-cli/fiddle-0029-EntAgGridChartSeriesClick](fiddles/angular2-cli/fiddle-0029-EntAgGridChartSeriesClick)
