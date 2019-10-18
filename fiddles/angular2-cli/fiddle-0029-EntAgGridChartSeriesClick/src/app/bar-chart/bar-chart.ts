@@ -1,8 +1,25 @@
 
 import {RowNode, ColDef} from 'ag-grid-community';
 
+//#region Interfaces
 
+//#region Event Interface
 
+export interface BarChartEvent {
+  /**
+   * The type of event.
+   */
+  type?: string | number;
+
+  /**
+   * Data that is emitted.
+   */
+  data?: any;
+}
+
+//#endregion
+
+//#region Options Interface
 
 export interface BarChartOptions {
 
@@ -24,7 +41,23 @@ export interface BarChartOptions {
 
 }
 
-//#region Grid Option Keys
+//#endregion
+
+//#endregion
+
+//#region Enums
+
+//#region Event Type Enum
+
+export class BarChartEventTypeEnum {
+  static seriesNodeClick: string = 'seriesNodeClick';
+  static ready: string = 'ready';
+}
+
+
+//#endregion
+
+//#region Grid Option Key Enum
 
 /**
  * Enumeration of all options exposed and supported by the grid.
@@ -34,5 +67,7 @@ export class BarChartOptionKeysEnum {
   static columns:string = 'columns';
   static rows:string = 'rows';
 }
+
+//#endregion
 
 //#endregion

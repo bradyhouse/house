@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BarChartOptions } from './bar-chart/bar-chart-options';
+import { BarChartOptions, BarChartEvent, BarChartEventTypeEnum } from './bar-chart/bar-chart';
 
 @Component({
   selector: 'app-root',
@@ -54,6 +54,14 @@ export class AppComponent {
       ],
       rows: createRowData()
     };
+  }
+
+  onEvents(events: BarChartEvent) {
+    switch(events.type) {
+      case BarChartEventTypeEnum.seriesNodeClick:
+        alert(JSON.stringify(events.data));
+        break;
+    }
   }
 
 

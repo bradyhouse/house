@@ -16,6 +16,7 @@
   </div>
 </nav>
 
-<app-bar-chart [options]="barChartOptions">
+<app-bar-chart [options]="barChartOptions"
+               (events)="onEvents($event)">
 </app-bar-chart>
 

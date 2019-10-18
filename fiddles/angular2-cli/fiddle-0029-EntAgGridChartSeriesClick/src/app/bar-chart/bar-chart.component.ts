@@ -6,7 +6,9 @@ import {
   KeyValueDiffers,
   DoCheck,
   ElementRef,
-  OnInit
+  OnInit,
+  Output,
+  EventEmitter
 } from '@angular/core';
 
 import {
@@ -19,9 +21,11 @@ import {
 
 
 import {
+  BarChartEvent,
+  BarChartEventTypeEnum,
   BarChartOptionKeysEnum,
   BarChartOptions
-} from './bar-chart-options';
+} from './bar-chart';
 
 
 import "ag-grid-enterprise/chartsModule";
@@ -35,6 +39,7 @@ import "ag-grid-enterprise/chartsModule";
 export class BarChartComponent implements OnChanges, DoCheck, OnInit {
 
   @Input() options: BarChartOptions;
+  @Output() events: EventEmitter<BarChartEvent>;
 
   //#region Internal Properties
 
@@ -91,6 +96,7 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
 
   constructor(private _differs: KeyValueDiffers, private _elementRef : ElementRef) {
     this._onCreateChartContainer = (chartRef: any) => this.onCreateChartContainer(chartRef);
+    this.events = new EventEmitter();
   }
 
   //#endregion
@@ -140,6 +146,10 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
     if (this._id && this._isPopulated && this._containerEl) {
       setTimeout(() => {
         params.api.chartRange(this._chartRangeParams);
+        this.events.emit({
+          type: BarChartEventTypeEnum.ready,
+          data: null
+        });
       }, 500);
     }
   }
@@ -269,7 +279,10 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
     if (this._chartComponent) {
       const seriesNode = this._chartComponent.chartProxy.chart.pickSeriesNode(event.offsetX, event.offsetY);
       if (seriesNode) {
-        alert(JSON.stringify(seriesNode.node.datum));
+        this.events.emit({
+          type: BarChartEventTypeEnum.seriesNodeClick,
+          data: seriesNode.node.datum
+        });
       }
     }
   }
