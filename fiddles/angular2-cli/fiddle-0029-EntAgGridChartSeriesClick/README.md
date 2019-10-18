@@ -84,7 +84,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
 
 ### Tags<a name="tags"></a>
 
-node v10.9.0, angular (8.2.0), ag-grid, ag-grid-community ag-grid-angular, ag-grid-enterprise,fetch, bootstrap, bootswatch
+node v10.9.0, angular (8.2.0), ag-grid, ag-grid-community ag-grid-angular, ag-grid-enterprise,fetch, bootstrap, bootswatch, lodash
 
 
 ### Forked From <a name="forked"></a>

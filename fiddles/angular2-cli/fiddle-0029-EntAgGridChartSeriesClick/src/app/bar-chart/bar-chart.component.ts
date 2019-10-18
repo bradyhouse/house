@@ -11,12 +11,15 @@ import {
   EventEmitter
 } from '@angular/core';
 
+import * as _ from 'lodash';
+
 import {
   ChartRangeParams,
   ColDef,
   RowNode,
   ChartType,
-  CellRangeParams
+  CellRangeParams,
+  BarChartOptions as AgBarChartOptions
 } from 'ag-grid-community';
 
 
@@ -50,9 +53,10 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
   private _rowData: RowNode[] = [];
   private _id: string;
   private _chartComponent: any;
-
+  private _chartOptions: AgBarChartOptions;
   private _onCreateChartContainer: Function;
-
+  private _onProcessChartOptions: Function;
+  private _chartHeight: number;
 
   private get _fields(): string[] {
     let values: string[] = [];
@@ -96,6 +100,7 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
 
   constructor(private _differs: KeyValueDiffers, private _elementRef : ElementRef) {
     this._onCreateChartContainer = (chartRef: any) => this.onCreateChartContainer(chartRef);
+    this._onProcessChartOptions = (params: any) => this.onProcessChartOptions(params);
     this.events = new EventEmitter();
   }
 
@@ -135,7 +140,8 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
   //#region OnInit Implementation
 
   ngOnInit(): void {
-    this._containerEl = this._elementRef.nativeElement.querySelector('.chart-container');
+    this._containerEl = this._elementRef.nativeElement.querySelector('.chart-wrapper-body');
+    this._chartHeight = Math.floor(.90 * window.innerHeight);
   }
 
   //#endregion
@@ -155,8 +161,40 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
   }
 
   onProcessChartOptions(params:any): any {
-    var options = params.options;
+    if (this._chartOptions) {
+      return _.merge({}, params.options, this._chartOptions);
+    } else {
+      return this._defaultChartOptions(params.options);
+    }
+  }
 
+
+  onCreateChartContainer(chartRef) {
+    if (this._containerEl) {
+      this._chartComponent = chartRef.chartElement.__agComponent;
+      chartRef.chartElement.addEventListener('click', ($event: any) => this.onChartElementClick($event));
+      this._containerEl.appendChild(chartRef.chartElement);
+    }
+  }
+
+  onChartElementClick(event: any) {
+    if (this._chartComponent) {
+      const seriesNode = this._chartComponent.chartProxy.chart.pickSeriesNode(event.offsetX, event.offsetY);
+      if (seriesNode) {
+        this.events.emit({
+          type: BarChartEventTypeEnum.seriesNodeClick,
+          data: seriesNode.node.datum
+        });
+      }
+    }
+  }
+
+
+  //#endregion
+
+  //#region Internal Methods
+
+  private _defaultChartOptions(options: any): any {
     options.height = 500;
     options.width = 1000;
     options.title = {
@@ -263,34 +301,10 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
       var y = params.datum[yField];
       return "<b>" + xField.toUpperCase() + ":</b> " + x + "<br/><b>" + yField.toUpperCase() + ":</b> " + y;
     };
+
     return options;
   }
 
-
-  onCreateChartContainer(chartRef) {
-    if (this._containerEl) {
-      this._chartComponent = chartRef.chartElement.__agComponent;
-      chartRef.chartElement.addEventListener('click', ($event: any) => this.onChartElementClick($event));
-      this._containerEl.appendChild(chartRef.chartElement);
-    }
-  }
-
-  onChartElementClick(event: any) {
-    if (this._chartComponent) {
-      const seriesNode = this._chartComponent.chartProxy.chart.pickSeriesNode(event.offsetX, event.offsetY);
-      if (seriesNode) {
-        this.events.emit({
-          type: BarChartEventTypeEnum.seriesNodeClick,
-          data: seriesNode.node.datum
-        });
-      }
-    }
-  }
-
-
-  //#endregion
-
-  //#region Internal Methods
 
   private _applyChange(item: any): void {
     switch (item.key) {
@@ -302,6 +316,9 @@ export class BarChartComponent implements OnChanges, DoCheck, OnInit {
         break;
       case BarChartOptionKeysEnum.rows:
         this._rowData = this.options.rows;
+        break;
+      case BarChartOptionKeysEnum.chartOptions:
+        this._chartOptions = this.options.chartOptions;
         break;
     }
   }

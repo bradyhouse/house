@@ -25,6 +25,7 @@
     "ag-grid-enterprise": "^21.2.1",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

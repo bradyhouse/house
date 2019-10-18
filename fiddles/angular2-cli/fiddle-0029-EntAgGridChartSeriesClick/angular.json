@@ -29,7 +29,8 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/ag-grid-enterprise/dist/ag-grid-enterprise.js"
+              "node_modules/ag-grid-enterprise/dist/ag-grid-enterprise.js",
+              "node_modules/lodash/lodash.min.js"
             ]
           },
           "configurations": {

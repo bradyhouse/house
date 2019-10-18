@@ -1,5 +1,5 @@
 
-<div class="chart-container outer-div" [id]="_id">
+<div class="chart-container outer-div">
   <ag-grid-angular
     #agGrid
     style="width: 100%; height: 100%; display: none;"
@@ -8,9 +8,15 @@
     [columnDefs]="_columnDefs"
     [rowData]="_rowData"
     [enableCharts]="true"
-    [processChartOptions]="onProcessChartOptions"
+    [processChartOptions]="this._onProcessChartOptions"
     [createChartContainer]="this._onCreateChartContainer"
     (gridReady)="onGridReady($event)"
   ></ag-grid-angular>
+  <div class="chart-wrapper ag-theme-balham">'
+    <div class="chart-wrapper-top">
+      <span class="chart-wrapper-title"></span>
+    </div>
+    <div class="chart-wrapper-body" [id]="_id"  [ngStyle]="{'height': this._chartHeight + 'px'}"></div>
+  </div>
 </div>
 

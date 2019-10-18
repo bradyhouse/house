@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {
+  BarChartOptions as AgBarChartOptions
+} from 'ag-grid-community';
+
 import { BarChartOptions, BarChartEvent, BarChartEventTypeEnum } from './bar-chart/bar-chart';
 
 @Component({
@@ -23,14 +27,14 @@ export class AppComponent {
           field: "gold",
           chartDataType: "series"
         },
-        /*{
+        {
           field: "silver",
           chartDataType: "series"
         },
         {
           field: "bronze",
           chartDataType: "series"
-        },*/
+        },
         {
           headerName: "A",
           valueGetter: "Math.floor(Math.random()*1000)",
@@ -52,7 +56,8 @@ export class AppComponent {
           chartDataType: "series"
         }
       ],
-      rows: createRowData()
+      rows: createRowData(),
+      chartOptions: this.chartOptions
     };
   }
 
@@ -61,6 +66,26 @@ export class AppComponent {
       case BarChartEventTypeEnum.seriesNodeClick:
         alert(JSON.stringify(events.data));
         break;
+    }
+  }
+
+  get chartOptions(): AgBarChartOptions {
+    return {
+      xAxis: {
+        type: 'category',
+        labelFormatter: function(params) {
+          return params.value === "United Kingdom" ? "UK" : "(" + String(params.value) + ")";
+        }
+      },
+      yAxis: {
+        type: 'number',
+        labelFormatter: function(params) {
+          return params.value.toString().toUpperCase();
+        }
+      },
+      legend: {
+        enabled: false
+      }
     }
   }
 
