@@ -21,5 +21,6 @@
   4.  Added [fiddles/node/fiddle-0034-TcpSocketClient](fiddles/node/fiddle-0034-TcpSocketClient)
   5.  Added [fiddles/node/fiddle-0035-Inheritance](fiddles/node/fiddle-0035-Inheritance)
   6.  Added [fiddles/node/fiddle-0036-UnitTests](fiddles/node/fiddle-0036-UnitTests)
-* Added [fiddles/node/fiddle-0037-MicroService](fiddles/node/fiddle-0037-MicroService)
-* Added [fiddles/node/fiddle-0039-ZmqRouterDealer](fiddles/node/fiddle-0039-ZmqRouterDealer)
+  7.  Added [fiddles/node/fiddle-0037-MicroService](fiddles/node/fiddle-0037-MicroService)
+  8.  Added [fiddles/node/fiddle-0038-ZmqReqRep](fiddles/node/fiddle-0038-ZmqReqRep)
+  9.  Added [fiddles/node/fiddle-0039-ZmqRouterDealer](fiddles/node/fiddle-0039-ZmqRouterDealer)
