@@ -2,4 +2,4 @@
 
 * **Angular-Cli**
 
-  1. Added [fiddles/angular2-cli/fiddle-0030-EntAgGridChartRangeSelect](fiddles/angular2-cli/fiddle-0030-EntAgGridChartRangeSelect)
+    1. Added [fiddles/angular2-cli/fiddle-0030-EntAgGridChartRangeSelect](fiddles/angular2-cli/fiddle-0030-EntAgGridChartRangeSelect)

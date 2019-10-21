@@ -20,6 +20,7 @@ build/Release
 node_modules
 fiddle
 typings
+package-lock.json
 
 
 
