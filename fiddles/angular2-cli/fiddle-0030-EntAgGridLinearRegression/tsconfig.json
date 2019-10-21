@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    /* Experimental Options */
+    "experimentalDecorators": true,           /* Enables experimental support for ES7 decorators. */
+    "emitDecoratorMetadata": true            /* Enables experimental support for emitting type metadata for decorators. */
+  },
+ "files": [
+        "./node_modules/ag-grid-enterprise/**/*"
+    ],
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
