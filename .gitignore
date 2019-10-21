@@ -21,7 +21,7 @@ node_modules
 fiddle
 typings
 package-lock.json
-
+yarn.lock
 
 
 # Users Environment Variables
