@@ -42,11 +42,11 @@ __Note, this fiddle adapted from the example given in Chapter 5 of Jim Wilson's 
 1.  Open a console and navigate to the fiddle's root directory
 2.  Enter the command `npm install`
 3.  Navigate to the data directory and run the `inflate.sh` script
-
-    ./inflate.sh
-    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                    Dload  Upload   Total   Spent    Left  Speed
-    100 44.9M  100 44.9M    0     0  7048k      0  0:00:06  0:00:06 --:--:-- 7335k
+        
+        ./inflate.sh
+        % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                        Dload  Upload   Total   Spent    Left  Speed
+        100 44.9M  100 44.9M    0     0  7048k      0  0:00:06  0:00:06 --:--:-- 7335k
 
 4.  TBW
 
