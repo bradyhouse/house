@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand navbar-dark bg-primary navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"navbar-brand\" style=\"font-weight: 700; color: whitesmoke;\">\n        Enterprise AgGrid ~ Bar Chart Control\n      </li>\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-item\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\" title=\"View Source\"\n           href=\"http://github/bradyhouse/house/fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<app-bar-chart [options]=\"barChartOptions\">\n</app-bar-chart>\n\n"
+module.exports = "<nav class=\"navbar navbar-expand navbar-dark bg-primary navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"navbar-brand\" style=\"font-weight: 700; color: whitesmoke;\">\n        Enterprise AgGrid ~ Bar Chart Control\n      </li>\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-item\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\" title=\"View Source\"\n           href=\"https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0028-EntAgGridBarChart\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<app-bar-chart [options]=\"barChartOptions\">\n</app-bar-chart>\n\n"
 
 /***/ }),
 
@@ -375,7 +375,6 @@ var BarChartComponent = /** @class */ (function () {
     };
     BarChartComponent.prototype.onProcessChartOptions = function (params) {
         var options = params.options;
-        console.log(options);
         options.height = 500;
         options.width = 1000;
         options.title = {
@@ -484,6 +483,7 @@ var BarChartComponent = /** @class */ (function () {
         return options;
     };
     BarChartComponent.prototype.onCreateChartContainer = function (chartRef) {
+        console.log(chartRef);
         if (this._containerEl) {
             this._containerEl.appendChild(chartRef.chartElement);
         }
