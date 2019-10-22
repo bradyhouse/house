@@ -7,6 +7,7 @@
     1.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
     2.  Updated [scripts/bin/fiddle-create.sh](scripts/bin/fiddle-create.sh) 
     3.  Updated [scripts/bin/fiddle-delete.sh](scripts/bin/fiddle-delete.sh)
+    4.  Updated [scripts/bin/fiddle-refactor.sh](scripts/bin/fiddle-refactor.sh)
 
   * Fixed node fiddle create package.json variable assignment bug. Reflected changes:
 
@@ -24,3 +25,4 @@
   7.  Added [fiddles/node/fiddle-0037-MicroService](fiddles/node/fiddle-0037-MicroService)
   8.  Added [fiddles/node/fiddle-0038-ZmqReqRep](fiddles/node/fiddle-0038-ZmqReqRep)
   9.  Added [fiddles/node/fiddle-0039-ZmqRouterDealer](fiddles/node/fiddle-0039-ZmqRouterDealer)
+  10. Added [fiddles/node/fiddle-0040-DataTransform](fiddles/node/fiddle-0040-DataTransform)
