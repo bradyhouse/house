@@ -1,0 +1,111 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand navbar-dark bg-primary navbar-top">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="navbar-brand" style="font-weight: 700; color: whitesmoke;">
+        NGX-Bootstrap Basics
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-item" style="font-weight: 700; color: whitesmoke;" alt="Fork me on GitHub" target="_blank" title="View Source"
+           href="https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0031-NgxBootstrapKitchenSink">
+          Fork Me On Github
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+    <div class="col-sm">
+        <div class="panel">
+            <div class="panel-heading">
+              <h3 [innerHTML]="titles[0]"></h3>
+              <app-panel-menu [options]="panelMenuOptions" (events)="onEvents($event)"></app-panel-menu>
+            </div>
+            <div class="panel-body no-padding">
+              <div class="jumbotron">
+                <p class="lead" [innerHTML]="content[0]"></p>
+                <hr class="my-4">
+                <p class="lead">
+                <a class="btn btn-primary" href="https://valor-software.com/ngx-bootstrap/#/dropdowns#anchor-trigger" target="_blank">
+                 More Info</a>
+                </p>
+              </div>
+            </div>
+        </div><!--end panel -->
+    </div><!-- end col-sm -->
+    <div class="col-sm">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 [innerHTML]="titles[1]"></h3>
+          <app-modal></app-modal>
+        </div>
+        <div class="panel-body no-padding">
+          <div class="jumbotron">
+            <p class="lead" [innerHTML]="content[1]"></p>
+            <hr class="my-4">
+            <p class="lead">
+              <a class="btn btn-primary" href="https://valor-software.com/ngx-bootstrap/#/modals#directive-auto-shown" target="_blank">More Info</a>
+            </p>
+          </div><!-- end jumbotron-->
+        </div><!-- end panel-body-->
+    </div><!--end panel -->
+    </div><!-- end col-sm -->
+    <div class="col-sm">
+        <div class="panel">
+            <div class="panel-heading">
+              <h3 [innerHTML]="titles[2]"></h3>
+              <app-tooltip></app-tooltip>
+            </div>
+            <div class="panel-body no-padding">
+              <div class="jumbotron">
+                <p class="lead" [innerHTML]="content[2]"></p>
+                <hr class="my-4">
+                <p class="lead">
+                  <a class="btn btn-primary" href="https://valor-software.com/ngx-bootstrap/#/tooltip#triggers-custom" target="_blank">More Info</a>
+                </p>
+              </div><!-- end jumbotron-->
+            </div><!-- end panel-body-->
+        </div><!--end panel -->
+    </div><!--end col-sm -->
+</div><!--end row -->
+<div class="row">
+    <div class="col-sm">
+        <div class="panel">
+            <div class="panel-heading">
+              <h3 [innerHTML]="titles[3]"></h3>
+              <app-popover></app-popover>
+            </div>
+            <div class="panel-body no-padding">
+              <div class="jumbotron">
+                <p class="lead" [innerHTML]="content[3]"></p>
+                <hr class="my-4">
+                <p class="lead">
+                  <a class="btn btn-primary" href="https://valor-software.com/ngx-bootstrap/#/popover" target="_blank">More Info</a>
+                </p>
+              </div><!-- end jumbotron-->
+            </div><!-- end panel-body-->
+        </div><!--end panel -->
+    </div><!-- end col-sm -->
+    <div class="col-sm">
+        <div class="panel">
+            <div class="panel-heading">
+              <h3 [innerHTML]="titles[4]"></h3>
+              <app-daterange></app-daterange>
+            </div>
+            <div class="panel-body no-padding">
+              <div class="jumbotron">
+                <p class="lead" [innerHTML]="content[4]"></p>
+                <hr class="my-4">
+                <p class="lead">
+                  <a class="btn btn-primary" href="https://valor-software.com/ngx-bootstrap/#/datepicker#triggers-manual" target="_blank">More Info</a>
+                </p>
+              </div><!-- end jumbotron-->
+            </div><!-- end panel-body-->
+        </div><!--end panel -->
+    </div><!-- end col-sm -->
+    <div class="col-sm">
+        t y p e  a h e a d
+    </div><!--end col-sm -->
+</div><!--end row -->
