@@ -4,6 +4,7 @@ import { ModalModule } from './modal/modal.module';
 import { TooltipModule } from './tooltip/tooltip.module';
 import { PopoverModule } from './popover/popover.module';
 import { DaterangeModule } from './daterange/daterange.module';
+import { TypeAheadModule } from './type-ahead/type-ahead.module';
 
 @NgModule({
   declarations: [],
@@ -12,8 +13,9 @@ import { DaterangeModule } from './daterange/daterange.module';
     ModalModule,
     TooltipModule,
     PopoverModule,
-    DaterangeModule
+    DaterangeModule,
+    TypeAheadModule
   ],
-  imports: [ModalModule, ModalModule, TooltipModule, PopoverModule,DaterangeModule]
+  imports: [ModalModule, ModalModule, TooltipModule, PopoverModule,DaterangeModule, TypeAheadModule]
 })
 export class ComponentsModule { }

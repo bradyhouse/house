@@ -19,15 +19,16 @@ export class AppComponent {
       'Modal',
       'Tooltip',
       'Popover',
-      'Daterange'
+      'Daterange',
+      'Typeahead'
     ];
     this.content = [
       'Click the menu link <i class="mdi mdi-arrow-top-right"></i>',
       'Click the icon<i class="mdi mdi-arrow-top-right"></i>',
       'Mouse over the icon<i class="mdi mdi-arrow-top-right"></i>',
       'Mouse over the icon<i class="mdi mdi-arrow-top-right"></i>',
-      'Click the textbox<i class="mdi mdi-arrow-top-right"></i>'
-      
+      'Click the textbox<i class="mdi mdi-arrow-top-right"></i>',
+      'Type in the textbox<i class="mdi mdi-arrow-top-right"></i>'
     ];
     this.panelHeight = Math.floor(.90 * window.innerHeight);
     this.panelMenuOptions = {
