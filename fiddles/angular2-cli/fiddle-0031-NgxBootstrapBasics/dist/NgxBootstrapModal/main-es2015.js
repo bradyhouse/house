@@ -30,29 +30,95 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav class=\"navbar navbar-expand navbar-dark bg-primary navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"navbar-brand\" style=\"font-weight: 700; color: whitesmoke;\">\n        ngx-bootstrap ~ kitchen sink\n      </li>\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-item\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\" title=\"View Source\"\n           href=\"https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0029-EntAgGridChartSeriesClick\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav>\n<div class=\"panel\" [ngStyle]=\"{'height': panelHeight + 'px'}\">\n  <div class=\"panel-heading\">\n    <h3 [innerHTML]=\"title\"></h3>\n    <app-panel-menu [options]=\"panelMenuOptions\"></app-panel-menu>\n  </div>\n  <div class=\"panel-body no-padding\">\n    <div class=\"jumbotron\">C o n t e n t</div>\n  </div>\n</div>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<nav class=\"navbar navbar-expand navbar-dark bg-primary navbar-top\">\n  <div class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"navbar-brand\" style=\"font-weight: 700; color: whitesmoke;\">\n        NGX-Bootstrap Basics\n      </li>\n    </ul>\n    <ul class=\"navbar-nav my-2 my-lg-0\">\n      <li class=\"nav-item\">\n        <a class=\"nav-item\" style=\"font-weight: 700; color: whitesmoke;\" alt=\"Fork me on GitHub\" target=\"_blank\" title=\"View Source\"\n           href=\"https://github.com/bradyhouse/house/tree/master/fiddles/angular2-cli/fiddle-0031-NgxBootstrapBasics\">\n          Fork Me On Github\n        </a>\n      </li>\n    </ul>\n  </div>\n</nav>\n<div class=\"row\">\n    <div class=\"col-sm\">\n        <div class=\"panel\">\n            <div class=\"panel-heading\">\n              <h3 [innerHTML]=\"titles[0]\"></h3>\n              <app-panel-menu [options]=\"panelMenuOptions\" (events)=\"onEvents($event)\"></app-panel-menu>\n            </div>\n            <div class=\"panel-body no-padding\">\n              <div class=\"jumbotron\">\n                <p class=\"lead\" [innerHTML]=\"content[0]\"></p>\n                <hr class=\"my-4\">\n                <p class=\"lead\">\n                <a class=\"btn btn-primary\" href=\"https://valor-software.com/ngx-bootstrap/#/dropdowns#anchor-trigger\" target=\"_blank\">\n                 More Info</a>\n                </p>\n              </div>\n            </div>\n        </div><!--end panel -->\n    </div><!-- end col-sm -->\n    <div class=\"col-sm\">\n      <div class=\"panel\">\n        <div class=\"panel-heading\">\n          <h3 [innerHTML]=\"titles[1]\"></h3>\n          <app-modal></app-modal>\n        </div>\n        <div class=\"panel-body no-padding\">\n          <div class=\"jumbotron\">\n            <p class=\"lead\" [innerHTML]=\"content[1]\"></p>\n            <hr class=\"my-4\">\n            <p class=\"lead\">\n              <a class=\"btn btn-primary\" href=\"https://valor-software.com/ngx-bootstrap/#/modals#directive-auto-shown\" target=\"_blank\">More Info</a>\n            </p>\n          </div><!-- end jumbotron-->\n        </div><!-- end panel-body-->\n    </div><!--end panel -->\n    </div><!-- end col-sm -->\n    <div class=\"col-sm\">\n        <div class=\"panel\">\n            <div class=\"panel-heading\">\n              <h3 [innerHTML]=\"titles[2]\"></h3>\n              <app-tooltip></app-tooltip>\n            </div>\n            <div class=\"panel-body no-padding\">\n              <div class=\"jumbotron\">\n                <p class=\"lead\" [innerHTML]=\"content[2]\"></p>\n                <hr class=\"my-4\">\n                <p class=\"lead\">\n                  <a class=\"btn btn-primary\" href=\"https://valor-software.com/ngx-bootstrap/#/tooltip#triggers-custom\" target=\"_blank\">More Info</a>\n                </p>\n              </div><!-- end jumbotron-->\n            </div><!-- end panel-body-->\n        </div><!--end panel -->\n    </div><!--end col-sm -->\n</div><!--end row -->\n<div class=\"row\">\n    <div class=\"col-sm\">\n        <div class=\"panel\">\n            <div class=\"panel-heading\">\n              <h3 [innerHTML]=\"titles[3]\"></h3>\n              <app-popover></app-popover>\n            </div>\n            <div class=\"panel-body no-padding\">\n              <div class=\"jumbotron\">\n                <p class=\"lead\" [innerHTML]=\"content[3]\"></p>\n                <hr class=\"my-4\">\n                <p class=\"lead\">\n                  <a class=\"btn btn-primary\" href=\"https://valor-software.com/ngx-bootstrap/#/popover\" target=\"_blank\">More Info</a>\n                </p>\n              </div><!-- end jumbotron-->\n            </div><!-- end panel-body-->\n        </div><!--end panel -->\n    </div><!-- end col-sm -->\n    <div class=\"col-sm\">\n        <div class=\"panel\">\n            <div class=\"panel-heading\">\n              <h3 [innerHTML]=\"titles[4]\"></h3>\n              <app-daterange></app-daterange>\n            </div>\n            <div class=\"panel-body no-padding\">\n              <div class=\"jumbotron\">\n                <p class=\"lead\" [innerHTML]=\"content[4]\"></p>\n                <hr class=\"my-4\">\n                <p class=\"lead\">\n                  <a class=\"btn btn-primary\" href=\"https://valor-software.com/ngx-bootstrap/#/datepicker#triggers-manual\" target=\"_blank\">More Info</a>\n                </p>\n              </div><!-- end jumbotron-->\n            </div><!-- end panel-body-->\n        </div><!--end panel -->\n    </div><!-- end col-sm -->\n    <div class=\"col-sm\">\n      <div class=\"panel\">\n        <div class=\"panel-heading\">\n          <h3 [innerHTML]=\"titles[5]\"></h3>\n          <app-type-ahead></app-type-ahead>\n        </div>\n        <div class=\"panel-body no-padding\">\n          <div class=\"jumbotron\">\n            <p class=\"lead\" [innerHTML]=\"content[5]\"></p>\n            <hr class=\"my-4\">\n            <p class=\"lead\">\n              <a class=\"btn btn-primary\" href=\"https://valor-software.com/ngx-bootstrap/#/typeahead\" target=\"_blank\">More Info</a>\n            </p>\n          </div><!-- end jumbotron-->\n        </div><!-- end panel-body-->\n    </div><!--end panel -->\n    </div><!--end col-sm -->\n</div><!--end row -->"
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/panel-menu/dropdown/dropdown.component.html":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/panel-menu/dropdown/dropdown.component.html ***!
-  \***************************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/daterange/daterange.component.html":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/daterange/daterange.component.html ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<!--<div dropdown #dropdown=\"bs-dropdown\" [autoClose]=\"false\">\n  <button dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\">\n    Button dropdown <span class=\"caret\"></span>\n  </button>\n  <ul *dropdownMenu class=\"dropdown-menu pull-right\">\n    <li role=\"menuitem\" *ngFor=\"let option of options\"\n        (click)=\"onOptionClick(option)\">\n      <a id=\"{{option.cssClass}}\">{{option.text}}</a>\n    </li>\n  </ul>\n</div>-->\n\n<!--<span dropdown (onShown)=\"onShown()\" (onHidden)=\"onHidden()\" (isOpenChange)=\"isOpenChange()\">\n    <a href id=\"\" dropdownToggle (click)=\"false\"\n       aria-controls=\"basic-link-dropdown\">Click me for a dropdown, yo!</a>\n    <ul id=\"basic-link-dropdown\" *dropdownMenu class=\"dropdown-menu\"\n        role=\"menu\" aria-labelledby=\"basic-link\">\n      <li *ngFor=\"let choice of items\">\n        <a class=\"dropdown-item\" href=\"#\">{{choice}}</a>\n      </li>\n    </ul>\n  </span>-->\n\n\n<span dropdown>\n    <a href (click)=\"false\" class=\"round\"\n    aria-controls=\"basic-link-dropdown\"\n       dropdownToggle>\n      <i class=\"mdi mdi-dots-vertical\"></i>\n    </a>\n    <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"basic-link\">\n      <li *ngFor=\"let option of options\"\n          (click)=\"onOptionClick(option)\">\n        <a class=\"dropdown-item\" href=\"#\" id=\"{{option.cssClass}}\">{{option.text}}</a>\n      </li>\n    </ul>\n  </span>"
+module.exports = "\n <div class=\"nav navbar-nav round pull-right\">\n        <form class=\"form-inline\">\n                <input type=\"text\" class=\"round\" placeholder=\"Daterangepicker\" bsDaterangepicker \n                container=\"body\"\n                [(ngModel)]=\"daterangepickerModel\" />        \n        </form>\n </div>"
 
 /***/ }),
 
-/***/ "./node_modules/raw-loader/index.js!./src/app/panel-menu/panel-menu.component.html":
-/*!********************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/panel-menu/panel-menu.component.html ***!
-  \********************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/modal/modal.component.html":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/modal/modal.component.html ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav navbar-nav pull-right\">\n    <li *ngIf=\"options?.loader\">\n      <div class=\"circle-loader\"></div>\n    </li>\n    <li *ngIf=\"options?.export\">\n      <a class=\"round\">\n        <i class=\"mdi mdi-file-excel\"\n           [title]=\"options?.export\">\n        </i>\n      </a>\n    </li>\n    <li *ngIf=\"options?.info\">\n      <a class=\"round\">\n        <i class=\"mdi mdi-information-outline\"\n           [title]=\"options?.info\">\n        </i>\n      </a>\n    </li>\n    <li *ngIf=\"!options?.collapse\">\n      <a class=\"round\"\n         (click)=\"onToggle('fullScreen')\">\n        <i class=\"mdi\"\n           [title]=\"options?.fullScreen ? 'Close full screen' : 'Open full screen'\"\n           [ngClass]=\"{\n          'mdi-arrow-expand': !options?.fullScreen,\n          'mdi-arrow-compress': options?.fullScreen}\">\n        </i>\n      </a>\n    </li>\n    <li *ngIf=\"!options?.fullScreen\">\n      <a class=\"round\"\n         (click)=\"onToggle('collapse')\">\n        <i class=\"mdi\"\n           [title]=\"options?.collapse ? 'Hide panel' : 'Show panel'\"\n           [ngClass]=\"{\n         'mdi-chevron-down': options?.collapse,\n         'mdi-chevron-up': !options?.collapse}\">\n        </i>\n      </a>\n    </li>\n    <li class=\"dropdown\"\n        *ngIf=\"options?.dropdown?.length > 0\">\n      <app-panel-menu-dropdown [options]=\"options?.dropdown\"\n                               (events)=\"onEvents($event)\">\n      </app-panel-menu-dropdown>\n    </li>\n    <li *ngIf=\"options?.close\">\n      <a class=\"round\">\n        <i class=\"mdi mdi-close\"\n           (click)=\"onEvents({type:'close'})\">\n        </i>\n      </a>\n    </li>\n  </ul>\n  "
+module.exports = "<app-modal-pop-up [isModal]=\"isModal\" (events)=\"onPopUpEvents($event)\"></app-modal-pop-up>\n<ul class=\"nav navbar-nav pull-right\">\n<li (click)=\"onShowModal()\">\n    <a class=\"round\" href (click)=\"false\"><i class=\"mdi mdi-alpha-p-box\"></i></a>\n</li>\n</ul>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/modal/pop-up/pop-up.component.html":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/modal/pop-up/pop-up.component.html ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"pop-up modal fade\" \n    *ngIf=\"isModal\" \n    [config]=\"{show: true}\" \n    (onHidden)=\"onHidden()\" \n    bsModal #popUpEl=\"bs-modal\"\n      tabIndex=\"-1\" \n     role=\"dialog\" aria-labelledby=\"dialog-auto-name\">\n     <div class=\"modal-dialog\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <h4 id=\"dialog-auto-name\" class=\"modal-title pull-left\">Modal Header</h4>\n            <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"hideModal()\">\n              <span aria-hidden=\"true\">&times;</span>\n            </button>\n          </div><!-- end modal-header -->\n          <div class=\"modal-body\">\n            <div class=\"jumbotron\">\n                <p class=\"lead\">Pop Up Content</p>\n            </div><!-- end jumbotron-->\n          </div><!--end moal-body-->\n          <div class=\"modal-footer\">\n            <button type=\"button\"\n                    class=\"btn btn-success pull-right\"\n                    (click)=\"hideModal()\">\n              Close\n            </button>\n          </div><!--end modal-footer -->\n        </div><!-- end modal-content -->\n     </div><!-- end modal-dialog -->\n</div> <!--end pop-up -->\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/panel-menu/dropdown/dropdown.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/panel-menu/dropdown/dropdown.component.html ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n\n<span dropdown container=\"body\" placement=\"bottom\">\n    <a href (click)=\"false\" class=\"round\"\n    aria-controls=\"basic-link-dropdown\"\n       dropdownToggle>\n      <i class=\"mdi mdi-dots-vertical\"></i>\n    </a>\n    <ul *dropdownMenu class=\"dropdown-menu dropdown-menu-right pull-right\" role=\"menu\"i>\n      <li role=\"menuitem\" *ngFor=\"let option of options\"\n          (click)=\"onOptionClick(option)\">\n        <a href class=\"basic-link-dropdown\" (click)=\"false\" id=\"{{option.cssClass}}\">{{option.text}}</a>\n      </li>\n    </ul>\n  </span>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/panel-menu/panel-menu.component.html":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/panel-menu/panel-menu.component.html ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"nav navbar-nav pull-right\">\n    <li class=\"dropdown\"\n      *ngIf=\"options?.dropdown?.length > 0\">\n    <app-panel-menu-dropdown [options]=\"options?.dropdown\"\n                              (events)=\"onEvents($event)\">\n    </app-panel-menu-dropdown>\n  </li>\n</ul>\n  "
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/popover/popover.component.html":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/popover/popover.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"nav navbar-nav pull-right\">\n    <li popover=\"Vivamus sagittis lacus vel augue laoreet rutrum faucibus.\"\n        popoverTitle=\"Popover on top\"\n        placement=\"top\"\n        container=\"body\">\n        <a class=\"round\" href (click)=\"false\"><i class=\"mdi mdi-message-reply-text\"></i></a>\n    </li>\n</ul>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/tooltip/tooltip.component.html":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/tooltip/tooltip.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"nav navbar-nav pull-right\">\n    <li \n        tooltip=\"Vivamus sagittis lacus vel augue laoreet rutrum faucibus.\"\n        placement=\"left\"\n        container=\"body\">\n        <a class=\"round\" href (click)=\"false\"><i class=\"mdi mdi-comment-outline\"></i></a>\n    </li>\n</ul>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/components/type-ahead/type-ahead.component.html":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/components/type-ahead/type-ahead.component.html ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"nav navbar-nav round pull-right\">\n    <form class=\"form-inline\">\n        <input [(ngModel)]=\"selected\"\n        [typeahead]=\"states\"\n        [isAnimated]=\"true\"\n        class=\"round\">      \n    </form>\n</div>"
 
 /***/ }),
 
@@ -79,24 +145,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./panel-menu/panel-menu.options */ "./src/app/panel-menu/panel-menu.options.ts");
+/* harmony import */ var _components_panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/panel-menu/panel-menu.options */ "./src/app/components/panel-menu/panel-menu.options.ts");
 
 
 
 let AppComponent = class AppComponent {
     constructor() {
-        this.title = 'Title';
+        this.titles = [
+            'Dropdown',
+            'Modal',
+            'Tooltip',
+            'Popover',
+            'Daterange',
+            'Typeahead'
+        ];
+        this.content = [
+            'Click the menu link <i class="mdi mdi-arrow-top-right"></i>',
+            'Click the icon<i class="mdi mdi-arrow-top-right"></i>',
+            'Mouse over the icon<i class="mdi mdi-arrow-top-right"></i>',
+            'Mouse over the icon<i class="mdi mdi-arrow-top-right"></i>',
+            'Click the textbox<i class="mdi mdi-arrow-top-right"></i>',
+            'Type in the textbox<i class="mdi mdi-arrow-top-right"></i>'
+        ];
         this.panelHeight = Math.floor(.90 * window.innerHeight);
         this.panelMenuOptions = {
             collapse: true,
             fullScreen: true,
             dropdown: [
-                _panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__["DropdownItemEnum"].Columns,
-                _panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__["DropdownItemEnum"].Csv,
-                _panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__["DropdownItemEnum"].Filter,
-                _panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__["DropdownItemEnum"].Reset
+                _components_panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__["DropdownItemEnum"].Export,
+                _components_panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__["DropdownItemEnum"].Filter,
+                _components_panel_menu_panel_menu_options__WEBPACK_IMPORTED_MODULE_2__["DropdownItemEnum"].Reset
             ]
         };
+    }
+    onEvents(event) {
+        this.content[0] = JSON.stringify(event);
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -124,8 +207,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _panel_menu_panel_menu_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./panel-menu/panel-menu.module */ "./src/app/panel-menu/panel-menu.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _components_components_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/components.module */ "./src/app/components/components.module.ts");
+
+
 
 
 
@@ -136,14 +223,17 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _panel_menu_panel_menu_module__WEBPACK_IMPORTED_MODULE_4__["PanelMenuModule"]
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+            _components_components_module__WEBPACK_IMPORTED_MODULE_6__["ComponentsModule"]
         ],
         providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]],
+        schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["CUSTOM_ELEMENTS_SCHEMA"]]
     })
 ], AppModule);
 
@@ -151,21 +241,299 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/panel-menu/dropdown/dropdown.component.css":
-/*!************************************************************!*\
-  !*** ./src/app/panel-menu/dropdown/dropdown.component.css ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/app/components/components.module.ts":
+/*!*************************************************!*\
+  !*** ./src/app/components/components.module.ts ***!
+  \*************************************************/
+/*! exports provided: ComponentsModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhbmVsLW1lbnUvZHJvcGRvd24vZHJvcGRvd24uY29tcG9uZW50LmNzcyJ9 */"
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComponentsModule", function() { return ComponentsModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _panel_menu_panel_menu_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./panel-menu/panel-menu.module */ "./src/app/components/panel-menu/panel-menu.module.ts");
+/* harmony import */ var _modal_modal_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal/modal.module */ "./src/app/components/modal/modal.module.ts");
+/* harmony import */ var _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tooltip/tooltip.module */ "./src/app/components/tooltip/tooltip.module.ts");
+/* harmony import */ var _popover_popover_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./popover/popover.module */ "./src/app/components/popover/popover.module.ts");
+/* harmony import */ var _daterange_daterange_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./daterange/daterange.module */ "./src/app/components/daterange/daterange.module.ts");
+/* harmony import */ var _type_ahead_type_ahead_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./type-ahead/type-ahead.module */ "./src/app/components/type-ahead/type-ahead.module.ts");
+
+
+
+
+
+
+
+
+let ComponentsModule = class ComponentsModule {
+};
+ComponentsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [],
+        exports: [
+            _panel_menu_panel_menu_module__WEBPACK_IMPORTED_MODULE_2__["PanelMenuModule"],
+            _modal_modal_module__WEBPACK_IMPORTED_MODULE_3__["ModalModule"],
+            _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_4__["TooltipModule"],
+            _popover_popover_module__WEBPACK_IMPORTED_MODULE_5__["PopoverModule"],
+            _daterange_daterange_module__WEBPACK_IMPORTED_MODULE_6__["DaterangeModule"],
+            _type_ahead_type_ahead_module__WEBPACK_IMPORTED_MODULE_7__["TypeAheadModule"]
+        ],
+        imports: [_modal_modal_module__WEBPACK_IMPORTED_MODULE_3__["ModalModule"], _modal_modal_module__WEBPACK_IMPORTED_MODULE_3__["ModalModule"], _tooltip_tooltip_module__WEBPACK_IMPORTED_MODULE_4__["TooltipModule"], _popover_popover_module__WEBPACK_IMPORTED_MODULE_5__["PopoverModule"], _daterange_daterange_module__WEBPACK_IMPORTED_MODULE_6__["DaterangeModule"], _type_ahead_type_ahead_module__WEBPACK_IMPORTED_MODULE_7__["TypeAheadModule"]]
+    })
+], ComponentsModule);
+
+
 
 /***/ }),
 
-/***/ "./src/app/panel-menu/dropdown/dropdown.component.ts":
-/*!***********************************************************!*\
-  !*** ./src/app/panel-menu/dropdown/dropdown.component.ts ***!
-  \***********************************************************/
+/***/ "./src/app/components/daterange/daterange.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/daterange/daterange.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZGF0ZXJhbmdlL2RhdGVyYW5nZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/daterange/daterange.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/daterange/daterange.component.ts ***!
+  \*************************************************************/
+/*! exports provided: DaterangeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DaterangeComponent", function() { return DaterangeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let DaterangeComponent = class DaterangeComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+DaterangeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-daterange',
+        template: __webpack_require__(/*! raw-loader!./daterange.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/daterange/daterange.component.html"),
+        styles: [__webpack_require__(/*! ./daterange.component.css */ "./src/app/components/daterange/daterange.component.css")]
+    })
+], DaterangeComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/daterange/daterange.module.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/components/daterange/daterange.module.ts ***!
+  \**********************************************************/
+/*! exports provided: DaterangeModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DaterangeModule", function() { return DaterangeModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _daterange_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./daterange.component */ "./src/app/components/daterange/daterange.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-bootstrap/datepicker */ "./node_modules/ngx-bootstrap/datepicker/fesm2015/ngx-bootstrap-datepicker.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+
+
+
+let DaterangeModule = class DaterangeModule {
+};
+DaterangeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_daterange_component__WEBPACK_IMPORTED_MODULE_3__["DaterangeComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"],
+            ngx_bootstrap_datepicker__WEBPACK_IMPORTED_MODULE_5__["BsDatepickerModule"].forRoot()
+        ],
+        exports: [_daterange_component__WEBPACK_IMPORTED_MODULE_3__["DaterangeComponent"]],
+        entryComponents: [_daterange_component__WEBPACK_IMPORTED_MODULE_3__["DaterangeComponent"]]
+    })
+], DaterangeModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/modal/modal.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/components/modal/modal.component.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbW9kYWwvbW9kYWwuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/modal/modal.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/modal/modal.component.ts ***!
+  \*****************************************************/
+/*! exports provided: ModalComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalComponent", function() { return ModalComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ModalComponent = class ModalComponent {
+    onShowModal() {
+        this.isModal = true;
+    }
+    onPopUpEvents(event) {
+        this.isModal = event;
+    }
+};
+ModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-modal',
+        template: __webpack_require__(/*! raw-loader!./modal.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/modal/modal.component.html"),
+        styles: [__webpack_require__(/*! ./modal.component.css */ "./src/app/components/modal/modal.component.css")]
+    })
+], ModalComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/modal/modal.module.ts":
+/*!**************************************************!*\
+  !*** ./src/app/components/modal/modal.module.ts ***!
+  \**************************************************/
+/*! exports provided: ModalModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalModule", function() { return ModalModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _modal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal.component */ "./src/app/components/modal/modal.component.ts");
+/* harmony import */ var _pop_up_pop_up_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pop-up/pop-up.component */ "./src/app/components/modal/pop-up/pop-up.component.ts");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-bootstrap/modal */ "./node_modules/ngx-bootstrap/modal/fesm2015/ngx-bootstrap-modal.js");
+
+
+
+
+
+
+let ModalModule = class ModalModule {
+};
+ModalModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_modal_component__WEBPACK_IMPORTED_MODULE_3__["ModalComponent"], _pop_up_pop_up_component__WEBPACK_IMPORTED_MODULE_4__["PopUpComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_5__["ModalModule"].forRoot()
+        ],
+        exports: [_modal_component__WEBPACK_IMPORTED_MODULE_3__["ModalComponent"]],
+        entryComponents: [_modal_component__WEBPACK_IMPORTED_MODULE_3__["ModalComponent"]]
+    })
+], ModalModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/modal/pop-up/pop-up.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/modal/pop-up/pop-up.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbW9kYWwvcG9wLXVwL3BvcC11cC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/modal/pop-up/pop-up.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/modal/pop-up/pop-up.component.ts ***!
+  \*************************************************************/
+/*! exports provided: PopUpComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopUpComponent", function() { return PopUpComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let PopUpComponent = class PopUpComponent {
+    constructor() {
+        this.events = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    hideModal() {
+        console.log(this.constructor.name + '.hideModal');
+        this.popUpEl.hide();
+        this.events.emit(false);
+    }
+    onHidden() {
+        console.log(this.constructor.name + '.onHidden');
+        this.events.emit(false);
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('popUpEl', { static: false })
+], PopUpComponent.prototype, "popUpEl", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], PopUpComponent.prototype, "isModal", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], PopUpComponent.prototype, "events", void 0);
+PopUpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-modal-pop-up',
+        template: __webpack_require__(/*! raw-loader!./pop-up.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/modal/pop-up/pop-up.component.html"),
+        styles: [__webpack_require__(/*! ./pop-up.component.css */ "./src/app/components/modal/pop-up/pop-up.component.css")]
+    })
+], PopUpComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/panel-menu/dropdown/dropdown.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/panel-menu/dropdown/dropdown.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n.dropdown-menu-right {\n    margin-right: -18px;\n}\n\n.show {\n    padding: 10px;\n    width: 100px !important;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wYW5lbC1tZW51L2Ryb3Bkb3duL2Ryb3Bkb3duLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0lBQ0ksbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHVCQUF1QjtBQUMzQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFuZWwtbWVudS9kcm9wZG93bi9kcm9wZG93bi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4uZHJvcGRvd24tbWVudS1yaWdodCB7XG4gICAgbWFyZ2luLXJpZ2h0OiAtMThweDtcbn1cblxuLnNob3cge1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgd2lkdGg6IDEwMHB4ICFpbXBvcnRhbnQ7XG59XG4iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/panel-menu/dropdown/dropdown.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/panel-menu/dropdown/dropdown.component.ts ***!
+  \**********************************************************************/
 /*! exports provided: DropdownComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -196,8 +564,8 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 DropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-panel-menu-dropdown',
-        template: __webpack_require__(/*! raw-loader!./dropdown.component.html */ "./node_modules/raw-loader/index.js!./src/app/panel-menu/dropdown/dropdown.component.html"),
-        styles: [__webpack_require__(/*! ./dropdown.component.css */ "./src/app/panel-menu/dropdown/dropdown.component.css")]
+        template: __webpack_require__(/*! raw-loader!./dropdown.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/panel-menu/dropdown/dropdown.component.html"),
+        styles: [__webpack_require__(/*! ./dropdown.component.css */ "./src/app/components/panel-menu/dropdown/dropdown.component.css")]
     })
 ], DropdownComponent);
 
@@ -205,21 +573,21 @@ DropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/panel-menu/panel-menu.component.css":
-/*!*****************************************************!*\
-  !*** ./src/app/panel-menu/panel-menu.component.css ***!
-  \*****************************************************/
+/***/ "./src/app/components/panel-menu/panel-menu.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/components/panel-menu/panel-menu.component.css ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhbmVsLW1lbnUvcGFuZWwtbWVudS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcGFuZWwtbWVudS9wYW5lbC1tZW51LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
-/***/ "./src/app/panel-menu/panel-menu.component.ts":
-/*!****************************************************!*\
-  !*** ./src/app/panel-menu/panel-menu.component.ts ***!
-  \****************************************************/
+/***/ "./src/app/components/panel-menu/panel-menu.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/panel-menu/panel-menu.component.ts ***!
+  \***************************************************************/
 /*! exports provided: PanelMenuComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -251,8 +619,8 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 PanelMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-panel-menu',
-        template: __webpack_require__(/*! raw-loader!./panel-menu.component.html */ "./node_modules/raw-loader/index.js!./src/app/panel-menu/panel-menu.component.html"),
-        styles: [__webpack_require__(/*! ./panel-menu.component.css */ "./src/app/panel-menu/panel-menu.component.css")]
+        template: __webpack_require__(/*! raw-loader!./panel-menu.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/panel-menu/panel-menu.component.html"),
+        styles: [__webpack_require__(/*! ./panel-menu.component.css */ "./src/app/components/panel-menu/panel-menu.component.css")]
     })
 ], PanelMenuComponent);
 
@@ -260,10 +628,10 @@ PanelMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/panel-menu/panel-menu.module.ts":
-/*!*************************************************!*\
-  !*** ./src/app/panel-menu/panel-menu.module.ts ***!
-  \*************************************************/
+/***/ "./src/app/components/panel-menu/panel-menu.module.ts":
+/*!************************************************************!*\
+  !*** ./src/app/components/panel-menu/panel-menu.module.ts ***!
+  \************************************************************/
 /*! exports provided: PanelMenuModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -273,8 +641,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _panel_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./panel-menu.component */ "./src/app/panel-menu/panel-menu.component.ts");
-/* harmony import */ var _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dropdown/dropdown.component */ "./src/app/panel-menu/dropdown/dropdown.component.ts");
+/* harmony import */ var _panel_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./panel-menu.component */ "./src/app/components/panel-menu/panel-menu.component.ts");
+/* harmony import */ var _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dropdown/dropdown.component */ "./src/app/components/panel-menu/dropdown/dropdown.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
 /* harmony import */ var ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-bootstrap/dropdown */ "./node_modules/ngx-bootstrap/dropdown/fesm2015/ngx-bootstrap-dropdown.js");
 
@@ -303,10 +671,10 @@ PanelMenuModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/panel-menu/panel-menu.options.ts":
-/*!**************************************************!*\
-  !*** ./src/app/panel-menu/panel-menu.options.ts ***!
-  \**************************************************/
+/***/ "./src/app/components/panel-menu/panel-menu.options.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/panel-menu/panel-menu.options.ts ***!
+  \*************************************************************/
 /*! exports provided: DropDownItemTypeEnum, DropdownItemEnum */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -363,37 +731,17 @@ DropdownItemEnum.Reload = {
  */
 DropdownItemEnum.Reset = {
     id: DropDownItemTypeEnum.Reset,
-    text: 'Reset Grid',
+    text: 'Reset',
     cssClass: 'reset'
-};
-/**
- * Show available columns.
- * @type {{id: string, text: string}}
- */
-DropdownItemEnum.Columns = {
-    id: DropDownItemTypeEnum.Columns,
-    text: 'Columns',
-    cssClass: 'columns'
 };
 /**
  * Exports the data as CSV
  * @type {{id: string, text: string, param: string}}
  */
-DropdownItemEnum.Csv = {
+DropdownItemEnum.Export = {
     id: DropDownItemTypeEnum.Export,
-    text: 'Export to CSV',
-    data: 'csv',
-    cssClass: 'csv'
-};
-/**
- * Exports the data as XLSX
- * @type {{id: string, text: string, param: string}}
- */
-DropdownItemEnum.Xls = {
-    id: DropDownItemTypeEnum.Export,
-    text: 'Export to XLS',
-    data: 'xls',
-    cssClass: 'xls'
+    text: 'Export',
+    cssClass: 'export'
 };
 /**
  * Enable grid quick filter header
@@ -413,6 +761,303 @@ DropdownItemEnum.Unfilter = {
     text: 'Unfilter',
     cssClass: 'unfilter'
 };
+
+
+/***/ }),
+
+/***/ "./src/app/components/popover/popover.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/components/popover/popover.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcG9wb3Zlci9wb3BvdmVyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/popover/popover.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/popover/popover.component.ts ***!
+  \*********************************************************/
+/*! exports provided: PopoverComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopoverComponent", function() { return PopoverComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let PopoverComponent = class PopoverComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+PopoverComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-popover',
+        template: __webpack_require__(/*! raw-loader!./popover.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/popover/popover.component.html"),
+        styles: [__webpack_require__(/*! ./popover.component.css */ "./src/app/components/popover/popover.component.css")]
+    })
+], PopoverComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/popover/popover.module.ts":
+/*!******************************************************!*\
+  !*** ./src/app/components/popover/popover.module.ts ***!
+  \******************************************************/
+/*! exports provided: PopoverModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopoverModule", function() { return PopoverModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _popover_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popover.component */ "./src/app/components/popover/popover.component.ts");
+/* harmony import */ var ngx_bootstrap_popover__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-bootstrap/popover */ "./node_modules/ngx-bootstrap/popover/fesm2015/ngx-bootstrap-popover.js");
+
+
+
+
+
+let PopoverModule = class PopoverModule {
+};
+PopoverModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_popover_component__WEBPACK_IMPORTED_MODULE_3__["PopoverComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            ngx_bootstrap_popover__WEBPACK_IMPORTED_MODULE_4__["PopoverModule"].forRoot()
+        ],
+        exports: [_popover_component__WEBPACK_IMPORTED_MODULE_3__["PopoverComponent"]],
+        entryComponents: [_popover_component__WEBPACK_IMPORTED_MODULE_3__["PopoverComponent"]]
+    })
+], PopoverModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/tooltip/tooltip.component.css":
+/*!**********************************************************!*\
+  !*** ./src/app/components/tooltip/tooltip.component.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdG9vbHRpcC90b29sdGlwLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/tooltip/tooltip.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/tooltip/tooltip.component.ts ***!
+  \*********************************************************/
+/*! exports provided: TooltipComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TooltipComponent", function() { return TooltipComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let TooltipComponent = class TooltipComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+TooltipComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-tooltip',
+        template: __webpack_require__(/*! raw-loader!./tooltip.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/tooltip/tooltip.component.html"),
+        styles: [__webpack_require__(/*! ./tooltip.component.css */ "./src/app/components/tooltip/tooltip.component.css")]
+    })
+], TooltipComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/tooltip/tooltip.module.ts":
+/*!******************************************************!*\
+  !*** ./src/app/components/tooltip/tooltip.module.ts ***!
+  \******************************************************/
+/*! exports provided: TooltipModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TooltipModule", function() { return TooltipModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _tooltip_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tooltip.component */ "./src/app/components/tooltip/tooltip.component.ts");
+/* harmony import */ var ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-bootstrap/tooltip */ "./node_modules/ngx-bootstrap/tooltip/fesm2015/ngx-bootstrap-tooltip.js");
+
+
+
+
+
+let TooltipModule = class TooltipModule {
+};
+TooltipModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_tooltip_component__WEBPACK_IMPORTED_MODULE_3__["TooltipComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            ngx_bootstrap_tooltip__WEBPACK_IMPORTED_MODULE_4__["TooltipModule"].forRoot()
+        ],
+        exports: [_tooltip_component__WEBPACK_IMPORTED_MODULE_3__["TooltipComponent"]],
+        entryComponents: [_tooltip_component__WEBPACK_IMPORTED_MODULE_3__["TooltipComponent"]]
+    })
+], TooltipModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/type-ahead/type-ahead.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/components/type-ahead/type-ahead.component.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvdHlwZS1haGVhZC90eXBlLWFoZWFkLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/components/type-ahead/type-ahead.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/type-ahead/type-ahead.component.ts ***!
+  \***************************************************************/
+/*! exports provided: TypeAheadComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypeAheadComponent", function() { return TypeAheadComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let TypeAheadComponent = class TypeAheadComponent {
+    constructor() {
+        this.states = [
+            'Alabama',
+            'Alaska',
+            'Arizona',
+            'Arkansas',
+            'California',
+            'Colorado',
+            'Connecticut',
+            'Delaware',
+            'Florida',
+            'Georgia',
+            'Hawaii',
+            'Idaho',
+            'Illinois',
+            'Indiana',
+            'Iowa',
+            'Kansas',
+            'Kentucky',
+            'Louisiana',
+            'Maine',
+            'Maryland',
+            'Massachusetts',
+            'Michigan',
+            'Minnesota',
+            'Mississippi',
+            'Missouri',
+            'Montana',
+            'Nebraska',
+            'Nevada',
+            'New Hampshire',
+            'New Jersey',
+            'New Mexico',
+            'New York',
+            'North Dakota',
+            'North Carolina',
+            'Ohio',
+            'Oklahoma',
+            'Oregon',
+            'Pennsylvania',
+            'Rhode Island',
+            'South Carolina',
+            'South Dakota',
+            'Tennessee',
+            'Texas',
+            'Utah',
+            'Vermont',
+            'Virginia',
+            'Washington',
+            'West Virginia',
+            'Wisconsin',
+            'Wyoming'
+        ];
+    }
+};
+TypeAheadComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-type-ahead',
+        template: __webpack_require__(/*! raw-loader!./type-ahead.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/type-ahead/type-ahead.component.html"),
+        styles: [__webpack_require__(/*! ./type-ahead.component.css */ "./src/app/components/type-ahead/type-ahead.component.css")]
+    })
+], TypeAheadComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/type-ahead/type-ahead.module.ts":
+/*!************************************************************!*\
+  !*** ./src/app/components/type-ahead/type-ahead.module.ts ***!
+  \************************************************************/
+/*! exports provided: TypeAheadModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TypeAheadModule", function() { return TypeAheadModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _type_ahead_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./type-ahead.component */ "./src/app/components/type-ahead/type-ahead.component.ts");
+/* harmony import */ var ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-bootstrap/typeahead */ "./node_modules/ngx-bootstrap/typeahead/fesm2015/ngx-bootstrap-typeahead.js");
+
+
+
+
+
+
+
+let TypeAheadModule = class TypeAheadModule {
+};
+TypeAheadModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_type_ahead_component__WEBPACK_IMPORTED_MODULE_5__["TypeAheadComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
+            ngx_bootstrap_typeahead__WEBPACK_IMPORTED_MODULE_6__["TypeaheadModule"].forRoot(),
+        ],
+        exports: [_type_ahead_component__WEBPACK_IMPORTED_MODULE_5__["TypeAheadComponent"]],
+        entryComponents: [_type_ahead_component__WEBPACK_IMPORTED_MODULE_5__["TypeAheadComponent"]]
+    })
+], TypeAheadModule);
+
 
 
 /***/ }),
@@ -478,7 +1123,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/e13542/github/house_master/fiddles/angular2-cli/fiddle-0031-NgxBootstrapModal/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/bradyhouse/github/house_326/fiddles/angular2-cli/fiddle-0031-NgxBootstrapBasics/src/main.ts */"./src/main.ts");
 
 
 /***/ })

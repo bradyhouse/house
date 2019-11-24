@@ -20,9 +20,11 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
-    "bootstrap": "4.1.1",
     "@mdi/font": "^4.5.95",
+    "bootstrap": "4.1.1",
+    "jquery": "^3.4.1",
     "ngx-bootstrap": "^5.2.0",
+    "popper.js": "^1.16.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
