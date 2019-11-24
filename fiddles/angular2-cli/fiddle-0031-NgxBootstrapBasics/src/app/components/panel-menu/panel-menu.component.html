@@ -1,0 +1,9 @@
+<ul class="nav navbar-nav pull-right">
+    <li class="dropdown"
+      *ngIf="options?.dropdown?.length > 0">
+    <app-panel-menu-dropdown [options]="options?.dropdown"
+                              (events)="onEvents($event)">
+    </app-panel-menu-dropdown>
+  </li>
+</ul>
+  

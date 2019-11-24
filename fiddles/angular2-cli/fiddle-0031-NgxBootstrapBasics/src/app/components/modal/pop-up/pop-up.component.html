@@ -1,0 +1,30 @@
+<div class="pop-up modal fade" 
+    *ngIf="isModal" 
+    [config]="{show: true}" 
+    (onHidden)="onHidden()" 
+    bsModal #popUpEl="bs-modal"
+      tabIndex="-1" 
+     role="dialog" aria-labelledby="dialog-auto-name">
+     <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="dialog-auto-name" class="modal-title pull-left">Modal Header</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div><!-- end modal-header -->
+          <div class="modal-body">
+            <div class="jumbotron">
+                <p class="lead">Pop Up Content</p>
+            </div><!-- end jumbotron-->
+          </div><!--end moal-body-->
+          <div class="modal-footer">
+            <button type="button"
+                    class="btn btn-success pull-right"
+                    (click)="hideModal()">
+              Close
+            </button>
+          </div><!--end modal-footer -->
+        </div><!-- end modal-content -->
+     </div><!-- end modal-dialog -->
+</div> <!--end pop-up -->
