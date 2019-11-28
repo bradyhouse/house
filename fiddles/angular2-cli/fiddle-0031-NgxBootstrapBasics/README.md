@@ -72,7 +72,7 @@ All the hosting controls should be embedded in (or opened from) a bootstrap navb
         ℹ ｢wdm｣: Compiled successfully.
         
         
-5.  Using Chrome, navigate to [localhost:1841](http://localhost:1841)
+3.  Using Chrome, navigate to [localhost:1841](http://localhost:1841)
       
             
 ### Published Version Link<a name="published-version-link"></a>

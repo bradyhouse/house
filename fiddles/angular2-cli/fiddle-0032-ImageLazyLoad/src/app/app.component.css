@@ -1,0 +1,7 @@
+app-photo-viewer {
+  min-height: 300px;
+}
+.num-images { 
+  position: fixed; padding: 5px;
+  bottom: 0; right: 0; background: #333;color: #fff;
+}
