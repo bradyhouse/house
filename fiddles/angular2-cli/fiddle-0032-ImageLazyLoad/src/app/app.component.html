@@ -23,7 +23,7 @@
     <div id="content" style="text-align: center;">
         <div *ngFor="let i of numArr">
             <app-photo-viewer>
-              <img *ngIf src="/assets/images/00{{i}}.jpg" [ngStyle]="imgStyle" >
+              <img *ngIf src="./assets/images/00{{i}}.jpg" [ngStyle]="imgStyle" >
             </app-photo-viewer>
           </div><!-- div -->
     </div><!--content-->
