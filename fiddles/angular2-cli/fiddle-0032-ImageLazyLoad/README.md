@@ -4,7 +4,7 @@ fiddle-0032-ImageLazyLoad
 
 ### Title
 
-fiddle-0032-ImageLazyLoad
+Image Lazy Load
 
 
 ### Creation Date
