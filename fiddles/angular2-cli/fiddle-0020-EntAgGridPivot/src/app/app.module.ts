@@ -12,6 +12,7 @@ import {RichGridComponent} from './rich-grid-component/rich-grid.component';
     imports: [
         BrowserModule,
         FormsModule,
+      HttpClientModule,
       AgGridModule.withComponents([])
     ],
     declarations: [

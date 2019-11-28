@@ -60,7 +60,6 @@ jspm_packages
 # misc
 .sass-cache
 connect.lock
-
 coverage/*
 libpeerconnection.log
 npm-debug.log
@@ -79,37 +78,26 @@ target/
 .settings/
 node/
 *.iml
+.gradle
+build/
+classes/
+gradle-app.setting
+!gradle-wrapper.jar
+.java-version
 
 # nativeScript fiddles
 fiddles/nativeScript/fiddle-*/*/platforms/
 fiddles/nativeScript/fiddle-*/*/hooks/
 
-
-
-# under construction
-fiddles/aurelia/fiddle-0037-ModalPopUp/*
-
-
-
-# node fiddle 13 ~ [Issue 34](https://github.com/bradyhouse/house/issues/34)
-fiddles/node/fiddle-0013-*/cache/
-fiddles/node/fiddle-0013-*/*.bz2
+# node data fiddles
+fiddles/node/fiddle-*/cache/
+fiddles/node/fiddle-*/*.bz2
+fiddles/node/fiddle-*/data/*.bz2
+fiddles/node/fiddle-*/data/cache/
+fiddles/node/fiddle-*/data/*.log
 
 # tmp directory
 fiddles/svg/resources/json/
-
-# java gradle
-.gradle
-build/
-classes/
-# Ignore Gradle GUI config
-gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-
-!gradle-wrapper.jar
-.java-version
-
 
 # key files
 *.keystore

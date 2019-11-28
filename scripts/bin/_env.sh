@@ -17,6 +17,7 @@
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # 09/26/2019 - See CHANGELOG @ 313_angularCli_27
+# 10/03/2019 - See CHANGELOG @ 313_node_31to40
 # ---------------------------------------------------------------------------------------------------|
 
 export HOME_ROOT=$(mapHomePath;);
@@ -33,6 +34,7 @@ export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
 export AUTHOR_NAME="brady house";
 export NVM_VERSION="v10.9.0";
+export CHANGE_LOG="CHANGELOG-301.md"
 
 # =================================================
 # ANGULAR CLI |||||||||||||||||||||||||||||||||||||

@@ -30,6 +30,7 @@
 # 12/15/2016 - See CHANGELOG @ 201612120420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
+# 10/03/2019 - See CHANGELOG @ 313_node_31to40
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -44,7 +45,8 @@ newFiddlePath="../fiddles/${fiddleType}/${newName}";
 newIndexFile="../fiddles/${fiddleType}/${newName}/index.html";
 newReadmeFile="../fiddles/${fiddleType}/${newName}/README.markdown";
 altNewReadmeFile="../fiddles/${fiddleType}/${newName}/README.md";
-changeLogFile="../CHANGELOG.md";
+changeLogFile="../${CHANGE_LOG}"
+
 #try
 (
 	if [ "$#" -ne 3 ]; then  exit 86; fi

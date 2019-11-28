@@ -1,0 +1,20 @@
+{
+  "name": "ZmqRouterDealer",
+  "version": "0.0.0",
+  "description": "Node ~ fiddle-0039-ZmqRouterDealer",
+  "repository": {
+    "url": "https://github.com/bradyhouse/house"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony app.js"
+  },
+  "dependencies": {
+    "zeromq": "^5.1.0"
+  }
+}

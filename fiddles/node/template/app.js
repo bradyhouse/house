@@ -2,15 +2,9 @@
 
 "use strict";
 
-var xml2json = require('xml-to-json')
+const spawn = require('child_process').spawn,
+  clear = spawn('clear'),
+  reflect = spawn('cat',['app.js']);
 
-xml2json({
-  input: './input.xml',
-  output: './output.json'
-}, function (err, result) {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('output.json generated.');
-  }
-});
+clear.stdout.pipe(process.stdout);
+reflect.stdout.pipe(process.stdout);

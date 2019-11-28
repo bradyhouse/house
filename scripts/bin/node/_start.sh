@@ -18,6 +18,7 @@
 function nvmInstall() {
   groupLog "nvmInstall";
 
+
   if [[ -d ${NVM_DIR} ]]
   then
     source ${NVM_DIR}/nvm.sh;
@@ -40,8 +41,13 @@ function npmStart() {
 
 function nodeStart() {
     groupLog "nodeStart";
-    nvmInstall || exit $?;
-    npmInstall || exit $?;
+    online=$(isOnline;);
+    if [[ "${online}" == "Online" ]]
+    then
+      nvmInstall || exit $?;
+      npmInstall || exit $?;
+    fi
+
     npmStart || exit $?;
     exit 0;
 }
