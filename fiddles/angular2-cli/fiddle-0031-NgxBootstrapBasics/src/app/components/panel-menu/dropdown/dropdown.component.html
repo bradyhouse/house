@@ -1,0 +1,15 @@
+
+
+<span dropdown container="body" placement="bottom">
+    <a href (click)="false" class="round"
+    aria-controls="basic-link-dropdown"
+       dropdownToggle>
+      <i class="mdi mdi-dots-vertical"></i>
+    </a>
+    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right pull-right" role="menu"i>
+      <li role="menuitem" *ngFor="let option of options"
+          (click)="onOptionClick(option)">
+        <a href class="basic-link-dropdown" (click)="false" id="{{option.cssClass}}">{{option.text}}</a>
+      </li>
+    </ul>
+  </span>
