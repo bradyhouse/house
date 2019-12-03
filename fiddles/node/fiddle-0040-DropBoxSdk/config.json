@@ -1,0 +1,7 @@
+{
+  "dropBoxAccessKey": "<DropBox Access Token>",
+  "dropBoxPath": "<DropBox Image Directory>",
+  "workDir": "./images",
+  "jsonFileName": "./data.json",
+  "imageSize": {".tag":"w2048h1536"}
+}
