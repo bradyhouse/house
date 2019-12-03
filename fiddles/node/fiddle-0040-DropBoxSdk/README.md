@@ -50,6 +50,10 @@ I love vacation-- finally, time to code what I feel like coding.  Per [Issue 328
         cleanup		 deleting ./data.json
         build		 initializing ./data.json
         cleanup		 deleting ./images directory
+        Serving "./" at http://localhost:5555 (http://127.0.0.1:5555)
+        Ready for changes
+
+5.  Web Browser should open to localhost:5555 displaying the contents of the data.json file.
 
 
 ### Running Unit Tests<a name="running-unit-tests"></a>
@@ -87,4 +91,4 @@ I love vacation-- finally, time to code what I feel like coding.  Per [Issue 328
 
 ### Tags <a name="tags"></a>
 
-node.js, hamony, dropbox, isomorphic-fetch, rimraf, mkdirp, mocha, chai
+node.js, hamony, dropbox, isomorphic-fetch, rimraf, mkdirp, mocha, chai, live-server

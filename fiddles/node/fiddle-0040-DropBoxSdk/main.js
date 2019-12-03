@@ -2,6 +2,7 @@
 
 const CONFIG_FILE = './config.json';
 const fs = require('fs');
+const liveServer = require('live-server');
 const DropBoxClient = require('./lib/dropbox-client');
 const FileBuilder = require('./lib/file-builder');
 
@@ -10,6 +11,7 @@ let DROP_BOX_PATH = '';
 let WORK_DIR = '';
 let JSON_FILE_NAME = '';
 let IMAGE_SIZE = '';
+let HOST_NAME = '';
 
 function parseConfig(callbackFn) {
   try {
@@ -44,6 +46,13 @@ function parseConfig(callbackFn) {
     } else {
       throw new Error('Missing image size configuration. Please update the config.json file.');
     }
+
+    if (config.host !== '') {
+      HOST_NAME = config.host;
+    } else {
+      throw new Error('Missing host name configuration. Please update the config.json file.');
+    }
+
     callbackFn();
   } catch (err) {
     console.error(err);
@@ -95,11 +104,23 @@ function buildJsonFile(callbackFn) {
   fileBuilder.build();
 }
 
+function startServer() {
+  const params = {
+    port: 5555,
+    host: HOST_NAME,
+    root: './',
+    file: 'index.html',
+    wait: 1000,
+    logLevel: 2
+  };
+  liveServer.start(params);
+}
+
 parseConfig(() => {
   downloadImages(() => {
     buildJsonFile(() => {
       cleanUpWorkDir(() => {
-        console.log('');
+        startServer();
       });
     });
   })
