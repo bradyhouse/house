@@ -2247,3 +2247,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   8.  Added [fiddles/node/fiddle-0038-ZmqReqRep](fiddles/node/fiddle-0038-ZmqReqRep)
   9.  Added [fiddles/node/fiddle-0039-ZmqRouterDealer](fiddles/node/fiddle-0039-ZmqRouterDealer)
   10. Added [fiddles/node/fiddle-0040-DataTransform](fiddles/node/fiddle-0040-DataTransform)
+
+
+### 331_node_40 ~ [Issue 331](https://github.com/bradyhouse/house/issues/331)
+
+* **node**
+
+  1.  Added [fiddles/node/fiddle-0040-DropBoxSdk](fiddles/node/fiddle-0040-DropBoxSdk)
