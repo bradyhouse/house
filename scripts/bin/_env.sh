@@ -34,7 +34,7 @@ export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
 export AUTHOR_NAME="brady house";
 export NVM_VERSION="v10.9.0";
-export CHANGE_LOG="CHANGELOG-301.md"
+export CHANGE_LOG="CHANGELOG.md"
 
 # =================================================
 # ANGULAR CLI |||||||||||||||||||||||||||||||||||||
