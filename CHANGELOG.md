@@ -2254,3 +2254,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **node**
 
   1.  Added [fiddles/node/fiddle-0040-DropBoxSdk](fiddles/node/fiddle-0040-DropBoxSdk)
+* Added [fiddles/node/fiddle-0041-SvgWriter](fiddles/node/fiddle-0041-SvgWriter)
