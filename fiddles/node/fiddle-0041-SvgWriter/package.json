@@ -1,0 +1,25 @@
+{
+  "name": "SvgWriter",
+  "version": "0.0.0",
+  "description": "Node ~ fiddle-0041-SvgWriter",
+  "repository": {
+    "url": "https://github.com/bradyhouse/house"
+  },
+  "author": "bradyhouse@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony ./main.js",
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "dropbox": "^4.0.30",
+    "isomorphic-fetch": "^2.2.1",
+    "live-server": "^1.2.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^6.2.2",
+    "prettify-js": "^1.0.1",
+    "rimraf": "^3.0.0"
+  }
+}
