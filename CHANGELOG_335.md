@@ -8,4 +8,4 @@
     4.  Added [fiddles/node/fiddle-0046-WebPackCaching](fiddles/node/fiddle-0046-WebPackCaching)
     5.  Added [fiddles/node/fiddle-0047-WebPackLibrary](fiddles/node/fiddle-0047-WebPackLibrary)
     6.  Added [fiddles/node/fiddle-0048-WebPackTypeScript](fiddles/node/fiddle-0048-WebPackTypeScript)
-s
+    7.  Added [fiddles/node/fiddle-0049-WebPackAngularAgGrid](fiddles/node/fiddle-0049-WebPackAngularAgGrid)

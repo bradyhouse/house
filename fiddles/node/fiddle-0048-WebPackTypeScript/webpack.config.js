@@ -35,13 +35,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Type Script'
+      template: './src/index.html'
     }),
   ],
   output: {
     filename: 'fiddle.js',
     library: 'fiddle',
-    libraryTarget: 'umd',
+    libraryTarget: 'window',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },

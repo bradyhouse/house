@@ -23,7 +23,7 @@ Chicago, IL
 
 ### Issue <a name="issue"></a>
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
+[Issue 335](https://github.com/bradyhouse/house/issues/335)
 
 
 ### Description <a name="description"></a>

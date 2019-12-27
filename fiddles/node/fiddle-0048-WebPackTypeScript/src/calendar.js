@@ -1,4 +1,5 @@
-function injectControl() {
+
+export function injectControl() {
     return import('moment').then(({ default: moment }) => {
         return import('jquery').then(({ default: $}) => {
             const element = document.createElement('input');
@@ -18,6 +19,4 @@ function injectControl() {
             return 'calendar created';
         }).catch(error => 'An error occurred importing jquery');
     }).catch(error => 'An error occurred while loading the component');
-}
-
-console.log(injectControl());
+};
