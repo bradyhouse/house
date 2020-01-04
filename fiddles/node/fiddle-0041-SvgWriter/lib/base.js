@@ -6,6 +6,15 @@ class Base extends EventEmitter {
 
     constructor() {
       super();
+      this._innerHTML = null;
+    }
+
+    get innerHTML() {
+      return this._innerHTML;
+    }
+
+    set innerHTML(html) {
+      this._innerHTML = html;
     }
 
     apply(object, config, defaults) {

@@ -21,9 +21,8 @@ class JsonFactory extends Base {
   constructor(config) {
     super();
     this._configErrors = [];
-    if (config) {
-      this.apply(this, config, this.config);
-    }
+    this.json = null;
+    this.apply(this, config || this.config, this.config);
   }
 
   get configErrors() {
@@ -69,6 +68,7 @@ class JsonFactory extends Base {
       const fileParser = JpegParser.init(parserConfig);
       const writeStream = fs.createWriteStream(this.jsonFileName);
       fileParser.on('data', (data) => {
+        this.json = data.data;
         writeStream.write(JSON.stringify(data));
         writeStream.end();
       });

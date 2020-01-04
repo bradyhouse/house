@@ -1,4 +1,8 @@
 'use strict';
+
+const Util = require('./../statics');
+const Base = require('./../base');
+
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG) circle,
@@ -8,22 +12,44 @@
  */
 class Image extends Base {
 
-  config() {
+   /**
+   * Static config method. Object returned defines the default properties of the class.
+   *
+   * @returns {{ id: string,
+    *            width: string,
+    *            height: string,
+    *            xlinkHref: string,
+    *            x: number,
+    *            y: number,
+    *            opacity: number,
+    *            children: array,
+    *            onClick: function,
+    *
+    *          }}
+    */
+  static get config() {
     return {
       id: 'img1',
       width: '100%',
       height: '100%',
       xlinkHref: '',
-      xmlns: Util.xmlNamespaces().xmlns,
-      hook: null,
-      docElementNS: null,
-      autoBind: false,
       x: '0',
       y: '0',
       opacity: 1,
       children: [],
-      onclick: null
+      onClick: null,
+      class: 'imageTag',
+      style: 'clip-path: inset(12%, 0, 12%, 0);'
     }
+  }
+
+  /**
+   * Static method that can be used to construct a new instance of the
+   * class using a custom config or the default attributes (config).
+   * @param {*} config
+   */
+  static factory(config) {
+    return new Image(config || this.config);
   }
 
   /**
@@ -33,20 +59,8 @@ class Image extends Base {
    */
   constructor(config) {
     super();
-    if (config) {
-      this.apply(this, config, this.config());
-    }
+    this.apply(this, config || this.config, this.config);
     this.init();
-  }
-
-  /**
-   * Method used to append the docElement to
-   * configured hook element.
-   */
-  bind() {
-    if (this.hook && this.docElementNS) {
-      this.hook.appendChild(this.docElementNS);
-    }
   }
 
   /**
@@ -58,29 +72,40 @@ class Image extends Base {
    * then it ends by invoking bind method.
    */
   init() {
-    this.docElementNS = document.createElementNS(this.xmlns, 'image');
-    this.docElementNS.setAttribute('id', this.id);
-    this.docElementNS.setAttribute('xlink:href', this.xlinkHref);
-    this.docElementNS.setAttribute('width', this.width);
-    this.docElementNS.setAttribute('height', this.height);
-    this.docElementNS.setAttribute('x', this.x);
-    this.docElementNS.setAttribute('y', this.y);
-    this.docElementNS.setAttribute('opacity', this.opacity)
-    if (this.onclick) {
-      this.docElementNS.setAttribute('onclick', this.onclick);
+    let svg = '<image' +
+              ' id="' + this.id + '"' +
+              ' xlink:href="' + this.xlinkHref + '"' +
+              ' width="' + this.width + '"' +
+              ' height="' + this.height + '"' +
+              ' x="' + this.x + '"' +
+              ' y="' + this.y + '"' +
+              ' opacity="' + this.opacity + '"';
+
+    if (this.style) {
+      svg += ' style="' + this.style + '"';
     }
+
+    if (this.class) {
+      svg += ' class="' + this.class + '"';
+    }
+
+    if (this.onClick) {
+      svg += ' onclick="' + this.onClick + '"';
+    }
+    svg += ' >';
+
     if (this.children && this.children.length) {
       this.children.map((child) => {
         child.parent = this;
-        if (child.docElementNS) {
-          this.docElementNS.appendChild(child.docElementNS);
+        if (child.innerHTML) {
+          svg += child.innerHTML;
         }
       });
     }
 
-    if (this.autoBind) {
-      this.bind();
-    }
+    svg += '</image>';
+    this.innerHTML = svg;
+
   }
 
 }

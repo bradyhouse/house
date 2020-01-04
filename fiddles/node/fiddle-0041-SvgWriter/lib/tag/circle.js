@@ -1,5 +1,7 @@
 'use strict';
 
+const Util = require('./../statics');
+
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG) circle,
@@ -15,7 +17,7 @@ class Circle {
      *
      * @returns {{id: string, stroke: string, strokeWidth: number, centerX: string, centerY: string, radius: string, fill: null, xmlns: string, hook: null, children: Array, autoBind: boolean}}
      */
-    config() {
+    static config() {
         return {
             id: 'circle1',
             stroke: null,
@@ -34,6 +36,7 @@ class Circle {
             autoBind: false
         }
     }
+
 
     /**
      * Class constructor.

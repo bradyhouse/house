@@ -1,4 +1,7 @@
 'use strict';
+
+const Base = require('./../base');
+
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG),=
@@ -12,7 +15,19 @@
  */
 class Animate extends Base {
 
-  config() {
+  /**
+   * Static config method. Object returned defines the default properties of the class.
+   *
+   * @returns {{ attributeName: string,
+    *            attributeType: string,
+    *            from: string,
+    *            to: string,
+    *            dur: string,
+    *            value: string,
+    *            repeatCount: string
+    *          }}
+    */
+  static get config() {
     return {
       attributeName: 'cy',
       attributeType: null,
@@ -20,10 +35,19 @@ class Animate extends Base {
       to: null,
       dur: '10s',
       values: '0%;100%',
-      repeatCount: 'indefinite',
-      autoBind: false
-    }
+      repeatCount: 'indefinite'
+    };
   }
+
+  /**
+   * Static method that can be used to construct a new instance of the
+   * class using a custom config or the default attributes (config).
+   * @param {*} config
+   */
+  static factory(config) {
+    return new Animate(config || this.config);
+  }
+
 
   /**
    * Class constructor.
@@ -32,20 +56,8 @@ class Animate extends Base {
    */
   constructor(config) {
     super();
-    if (config) {
-      this.apply(this, config, this.config());
-    }
+    this.apply(this, config || this.config, this.config);
     this.init();
-  }
-
-  /**
-   * Method used to append the docElement to
-   * configured hook element.
-   */
-  bind() {
-    if (this.hook && this.docElementNS) {
-      this.hook.appendChild(this.docElementNS);
-    }
   }
 
   /**
@@ -57,39 +69,39 @@ class Animate extends Base {
    * then it ends by invoking bind method.
    */
   init() {
-    this.docElementNS = document.createElementNS(this.xmlns, 'animate');
+    let svg = '<animate';
 
     if (this.attributeName) {
-      this.docElementNS.setAttribute('attributeName', this.attributeName);
+      svg += ' attributeName="' + this.attributeName +'"';
     }
 
     if (this.attributeType) {
-      this.docElementNS.setAttribute('attributeType', this.attributeType);
+      svg += ' attributeType="' + this.attributeType + '"';
     }
 
     if(this.from) {
-      this.docElementNS.setAttribute('from', this.from);
+      svg += ' from="' + this.from + '"';
     }
 
     if(this.to) {
-      this.docElementNS.setAttribute('to', this.to);
+      svg += ' to="' + this.to + '"';
     }
 
     if(this.dur) {
-      this.docElementNS.setAttribute('dur', this.dur);
+      svg += ' dur="' + this.dur +'"';
     }
 
     if(this.values) {
-      this.docElementNS.setAttribute('values', this.values);
+      svg += ' values="' + this.values + '"';
     }
 
     if(this.repeatCount) {
-      this.docElementNS.setAttribute('repeatCount', this.repeatCount);
+      svg += ' repeatCount="' + this.repeatCount + '"';
     }
 
-    if (this.autoBind) {
-      this.bind();
-    }
+    svg += '></animate>';
+
+    this.innerHTML = svg;
   }
 
 }

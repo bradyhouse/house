@@ -5,13 +5,17 @@ const fs = require('fs');
 const liveServer = require('live-server');
 const DropBoxClient = require('./lib/client/dropbox-client');
 const FileBuilder = require('./lib/factory/json-factory');
+const SvgBuilder = require('./lib/factory/svg-factory');
 
+let SVG_FILE_NAME = '';
 let DROP_BOX_ACCESS_TOKEN = '';
 let DROP_BOX_PATH = '';
 let WORK_DIR = '';
 let JSON_FILE_NAME = '';
 let IMAGE_SIZE = '';
 let HOST_NAME = '';
+let svgFactory = null;
+let jsonFactory = null;
 
 function parseConfig(callbackFn) {
   try {
@@ -53,7 +57,35 @@ function parseConfig(callbackFn) {
       throw new Error('Missing host name configuration. Please update the config.json file.');
     }
 
+    if (config.svgFileName && config.svgFileName !== '') {
+      SVG_FILE_NAME = config.svgFileName;
+    } else {
+      throw new Error('Missing svg file name configuration. Please update the config.json file');
+    }
+
     callbackFn();
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+function buildSvgFile(callbackFn) {
+  try {
+    svgFactory = SvgBuilder.factory({
+      width: 1024,
+      height: 768,
+      imageWidth: 536,
+      imageHeight: 714,
+      images: jsonFactory.json,
+      svgFileName: SVG_FILE_NAME
+    });
+
+    svgFactory.on('complete', () => {
+      callbackFn();
+    });
+
+    svgFactory.build();
+
   } catch (err) {
     console.error(err);
   }
@@ -91,17 +123,17 @@ function buildJsonFile(callbackFn) {
   fileBuilderConfig.jsonFileName = JSON_FILE_NAME;
   fileBuilderConfig.workDir = WORK_DIR;
 
-  let fileBuilder = FileBuilder.init(fileBuilderConfig);
+  jsonFactory= FileBuilder.init(fileBuilderConfig);
 
-  fileBuilder.on('error', (err) => {
+  jsonFactory.on('error', (err) => {
     console.error(err);
   });
 
-  fileBuilder.on('complete', () => {
+  jsonFactory.on('complete', () => {
     callbackFn();
   });
 
-  fileBuilder.build();
+  jsonFactory.build();
 }
 
 function startServer() {
@@ -109,7 +141,7 @@ function startServer() {
     port: 5555,
     host: HOST_NAME,
     root: './',
-    file: 'index.html',
+    file: SVG_FILE_NAME,
     wait: 1000,
     logLevel: 2
   };
@@ -120,7 +152,9 @@ parseConfig(() => {
   downloadImages(() => {
     buildJsonFile(() => {
       cleanUpWorkDir(() => {
-        startServer();
+        buildSvgFile(() =>{
+          startServer();
+        });
       });
     });
   })

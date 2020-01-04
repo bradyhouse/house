@@ -1,5 +1,7 @@
 'use strict';
 
+const Util = require('./../statics');
+
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG) setter,
@@ -118,5 +120,4 @@ class Setter {
     }
 
 }
-
 module.exports = Setter;

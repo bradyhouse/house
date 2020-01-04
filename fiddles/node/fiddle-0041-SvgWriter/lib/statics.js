@@ -1,3 +1,5 @@
+'use strict';
+
 class Statics {
   /**
    * Static Method that can used to generate a
@@ -36,7 +38,8 @@ class Statics {
     return {
       xmlns: 'http://www.w3.org/2000/svg',
       xmlnsXLink: 'http://www.w3.org/1999/xlink',
-      xmlnsEv: 'http://www.w3.org/2001/xml-events'
+      xmlnsEv: 'http://www.w3.org/2001/xml-events',
+      version: '1.1'
     }
   }
 
@@ -133,8 +136,8 @@ class Statics {
       coorY = 0;
 
     try {
-      coorX = Math.round(centerX + (radius * Math.cos(Util.convertToRadians(angle))));
-      coorY = Math.round(centerY + (radius * Math.sin(Util.convertToRadians(angle))));
+      coorX = Math.round(centerX + (radius * Math.cos(Statics.convertToRadians(angle))));
+      coorY = Math.round(centerY + (radius * Math.sin(Statics.convertToRadians(angle))));
 
     } catch (err) {
       console.log(err.stackTrace);
@@ -158,18 +161,18 @@ class Statics {
    * @returns {string}
    */
   static mapCircularPath(centerX, centerY, radius, axis) {
-      let _coor3pm = Util.mapCircularPoint(centerX, centerY, radius,0),
-      _coor4pm = Util.mapCircularPoint(centerX, centerY, radius, 30),
-      _coor5pm = Util.mapCircularPoint(centerX, centerY, radius, 60),
-      _coor6pm = Util.mapCircularPoint(centerX, centerY, radius, 90),
-      _coor7pm = Util.mapCircularPoint(centerX, centerY, radius, 120),
-      _coor8pm = Util.mapCircularPoint(centerX, centerY, radius, 150),
-      _coor9pm = Util.mapCircularPoint(centerX, centerY, radius, 180),
-      _coor10pm =Util.mapCircularPoint(centerX, centerY, radius, 210),
-      _coor11pm =Util.mapCircularPoint(centerX, centerY, radius, 240),
-      _coor12am = Util.mapCircularPoint(centerX, centerY, radius, 270),
-      _coor1am = Util.mapCircularPoint(centerX, centerY, radius, 300),
-      _coor2am = Util.mapCircularPoint(centerX, centerY, radius, 330);
+      let _coor3pm = Statics.mapCircularPoint(centerX, centerY, radius,0),
+      _coor4pm = Statics.mapCircularPoint(centerX, centerY, radius, 30),
+      _coor5pm = Statics.mapCircularPoint(centerX, centerY, radius, 60),
+      _coor6pm = Statics.mapCircularPoint(centerX, centerY, radius, 90),
+      _coor7pm = Statics.mapCircularPoint(centerX, centerY, radius, 120),
+      _coor8pm = Statics.mapCircularPoint(centerX, centerY, radius, 150),
+      _coor9pm = Statics.mapCircularPoint(centerX, centerY, radius, 180),
+      _coor10pm =Statics.mapCircularPoint(centerX, centerY, radius, 210),
+      _coor11pm =Statics.mapCircularPoint(centerX, centerY, radius, 240),
+      _coor12am = Statics.mapCircularPoint(centerX, centerY, radius, 270),
+      _coor1am = Statics.mapCircularPoint(centerX, centerY, radius, 300),
+      _coor2am = Statics.mapCircularPoint(centerX, centerY, radius, 330);
 
       return axis === 'x' || axis === 'y' ? _coor3pm[axis] + ';' +
             _coor4pm[axis] + ';' +
@@ -207,7 +210,7 @@ class Statics {
         delta = degrees ? degrees : 30;
 
     while(angle <= 360) {
-      coors.push(Util.mapCircularPoint(centerX, centerY, radius,angle));
+      coors.push(Statics.mapCircularPoint(centerX, centerY, radius,angle));
       angle+=delta;
     }
 
@@ -290,7 +293,7 @@ class Statics {
         index = 0;
 
       if (circularPointArr.constructor === Array) {
-        index = Util.rand(0, circularPointArr.length - 1);
+        index = Statics.rand(0, circularPointArr.length - 1);
         coor = circularPointArr[index];
       }
 
@@ -308,4 +311,6 @@ class Statics {
   }
 
 }
+
+module.exports = Statics;
 

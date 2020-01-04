@@ -1,26 +1,18 @@
 'use strict';
 
-Animate = require('./tag/animate');
-AnimateTransform = require('./tag/animate-transform');
-Circle = require('./tag/circle');
-Definition = require('./tag/definition');
-Group = require('./tag/group');
-Image = require('./tag/image');
-LinearGradient = require('./tag/linear-gradient');
-Path = require('./tag/path');
-Pattern = require('./tag/pattern');
+const Surface = require('./tag/surface');
+const Rectangle = require('./tag/rectangle');
+const Image = require('./tag/image');
+const Animate = require('./tag/animate');
+const Pattern = require('./tag/pattern');
+const Path = require('./tag/path');
 
 module.exports = {
   animate: Animate,
-  animateTransform: AnimateTransform,
-  circle: Circle,
-  definition: Definition,
-  group: Group,
+  surface: Surface,
+  rectangle: Rectangle,
   image: Image,
-  linearGradient: LinearGradient,
-  path: Path,
   pattern: Pattern,
-
-
+  path: Path
 };
 

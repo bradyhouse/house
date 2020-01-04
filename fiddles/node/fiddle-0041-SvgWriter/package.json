@@ -12,7 +12,8 @@
     "start": "node --harmony ./main.js",
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "chai": "^4.2.0",
     "dropbox": "^4.0.30",
     "isomorphic-fetch": "^2.2.1",

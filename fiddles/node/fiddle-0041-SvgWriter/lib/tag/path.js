@@ -1,34 +1,51 @@
 'use strict';
+
+const Base = require('./../base');
+
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG) path,
  * "<path>", tag.
  */
 
-class Path {
+class Path extends Base {
 
-    /**
-     * Static config method. Object returned defines the default properties of the class. This
-     * also defines the properties that may be passed to the class constructor.
-     *
-     * @returns {{id: string, stroke: string, strokeWidth: string, opacity: string, xmlns: string}}
-     */
-    config() {
-        return {
-            id: 'path1',
-            stroke: null,
-            strokeWidth: null,
-            opacity: null,
-            xmlns: Util.xmlNamespaces().xmlns,
-            data: null,
-            hook: null,
-            autoBind: false,
-            onMouseDown: null,
-            onMouseOver: null,
-            onMouseOut: null
+  /**
+   * Static config method. Object returned defines the default properties of the class. This
+   * also defines the properties that may be passed to the class constructor.
+   *
+   * @returns {{id: string,
+   *            stroke: string,
+   *            strokeWidth: string,
+   *            opacity: string,
+   *            data: string,
+   *            onMouseDown: function,
+   *            onMouseOver: function,
+   *            onMouseOut: function
+   *          }}
+   */
+  static get config() {
+    return {
+      id: 'path1',
+      stroke: null,
+      strokeWidth: null,
+      opacity: null,
+      data: null,
+      onMouseDown: null,
+      onMouseOver: null,
+      onMouseOut: null
+    };
+  }
 
-        }
-    }
+  /**
+   * Static method that can be used to construct a new instance of the
+   * class using a custom config or the default attributes (config).
+   * @param {*} config
+   */
+  static factory(config) {
+    return new Path(config || this.config);
+  }
+
 
     /**
      * Class constructor
@@ -36,74 +53,11 @@ class Path {
      * @param config
      */
     constructor(config) {
-        this._id = config && config.hasOwnProperty('id') ? config.id : this.config().id;
-        this._stroke = config && config.hasOwnProperty('stroke') ? config.stroke : this.config().stroke;
-        this._strokeWidth = config && config.hasOwnProperty('strokeWidth') ? config.strokeWidth : this.config().strokeWidth;
-        this._opacity = config && config.hasOwnProperty('opacity') ? config.opacity : this.config().opacity;
-        this._data = config && config.hasOwnProperty('data') ? config.data : this.config().data;
-        this._xmlns = config && config.hasOwnProperty('xmlns') ? config.xmlns : this.config().xmlns;
-        this._hook = config && config.hasOwnProperty('hook') ? config.hook : this.config().hook;
-        this._autoBind = config && config.hasOwnProperty('autoBind') ? config.autoBind : this.config().autoBind;
-
-        this.init();
+      super();
+      this.apply(this, config || this.config, this.config);
+      this.init();
     }
 
-
-    get xmlns() {
-        return this._xmlns;
-    }
-
-    /**
-     * Document element object.  This property is populated
-     * during constructor using the document.createElementNS()
-     * method.
-     */
-    get docElementNS() {
-        return this._docElementNS;
-    }
-
-    /**
-     * Document element id getter.
-     * @returns {string|*|string|string|string|string}
-     */
-    get id() {
-        return this._id;
-    }
-
-    get stroke() {
-        return this._stroke;
-    }
-
-    get strokeWidth() {
-        return this._strokeWidth;
-    }
-
-    get opacity() {
-        return this._opacity;
-    }
-
-    get data() {
-        return this._data;
-    }
-
-    get xmlns() {
-        return this._xmlns;
-    }
-
-    get hook() {
-        return this._hook;
-    }
-
-    get autoBind() {
-        return this._autoBind;
-    }
-
-    /**
-     * Method used to append the docElement to configured hook element.
-     */
-    bind() {
-        this.hook.appendChild(this.docElement);
-    }
     /**
      * Method called by the constructor to create and assign docElement based
      * on the properties exposed by the class.
@@ -111,25 +65,23 @@ class Path {
      * Note - if the autoBind flag is true, then it ends by invoking bind method.
      */
     init() {
-        var docElement = document.createElementNS(this.xmlns, 'path');
-        docElement.setAttribute('id', this.id);
+        let svg = '<path' +
+                  ' id="' + this.id +'"';
 
         if (this.stroke) {
-            docElement.setAttribute('stroke', this.stroke);
+            svg += ' stroke="' + this.stroke + '"';
         }
         if (this.strokeWidth) {
-            docElement.setAttribute('stroke-width', this.strokeWidth);
+            svg += ' stroke-width="' + this.strokeWidth + '"';
         }
         if (this.opacity) {
-            docElement.setAttribute('opacity', this.opacity);
+            svg += ' opacity="' + this.opacity + '"';
         }
         if (this.data) {
-            docElement.setAttribute('d', this.data);
+            svg += ' d="' + this.data + '"';
         }
-        this._docElementNS = docElement;
-        if (this.autoBind) {
-            this.bind();
-        }
+        svg+= '></path>'
+        this.innerHTML = svg;
     }
 }
 

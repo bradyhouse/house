@@ -1,5 +1,8 @@
 'use strict';
 
+const Util = require('./../statics').default;
+
+
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG) text,

@@ -1,4 +1,8 @@
 'use strict';
+
+const Util = require('./../statics');
+
+
 /**
  * Class used to wrap (or model)
  * an Scalar Vector Graphic (SVG) animate transform,
@@ -200,7 +204,9 @@ class AnimateTransform {
      * Method used to append the docElement to configured hook element.
      */
     bind() {
+      if (this.hook) {
         this.hook.appendChild(this.docElementNS);
+      }
     }
 
     /**

@@ -42,7 +42,9 @@ class DropBoxClient extends Base {
   cleanup(callbackFn) {
     if (fs.existsSync(this.workDir)) {
       console.log('cleanup\t\t', 'deleting ' + this.workDir + ' directory');
-      rimraf(this.workDir + '/*', callbackFn);
+      rimraf(this.workDir + '/*', () => {
+        rimraf(this.workDir, callbackFn);
+      });
     } else {
       callbackFn();
     }
