@@ -26,7 +26,7 @@ export GITHUB_ROOT="${HOME_ROOT}/github";
 export GITHUB_ROOT_DIR="house_master";
 export GITHUB_REPO="https://github.com/bradyhouse/house";
 export GITHUB_PUBLIC_REPO="https://github.com/bradyhouse/bradyhouse.github.io";
-export BUILD_NUM="201801240420";
+export BUILD_NUM="202001010000";
 export BASH_PROFILE="${HOME_ROOT}/.bash_profile";
 export ZSH_PROFILE="${HOME_ROOT}/.zshrc";
 export OS=$(getOS;);
@@ -34,7 +34,11 @@ export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
 export AUTHOR_NAME="brady house";
 export NVM_VERSION="v10.9.0";
+<<<<<<< HEAD
 export CHANGE_LOG="CHANGELOG-334.md"
+=======
+export CHANGE_LOG="CHANGELOG.md"
+>>>>>>> master
 
 # =================================================
 # ANGULAR CLI |||||||||||||||||||||||||||||||||||||
