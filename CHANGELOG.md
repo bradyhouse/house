@@ -2260,4 +2260,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **node**
 
-    1.  Added [fiddles/node/fiddle-0041-SvgWriter](fiddles/node/fiddle-0041-SvgWriter)
+  1.  Added [fiddles/node/fiddle-0041-SvgWriter](fiddles/node/fiddle-0041-SvgWriter)
+
+
+### 334_node_42 ~ [Issue 333](https://github.com/bradyhouse/house/issues/334)
+
+* **node**
+
+  1.  Added [fiddles/node/fiddle-0042-YeomanNgxRocket](fiddles/node/fiddle-0042-YeomanNgxRocket)
+
