@@ -88,4 +88,4 @@ be injected into the DOM using only the library bundle.
 
 ### Tags <a name="tags"></a>
 
-node.js, hamony, process, argv, fs, 
+node.js, webpack, webpack-cli, lodash, typescript, bootstrap-daterangepicker, moment, jquery
