@@ -23,7 +23,7 @@
 export HOME_ROOT=$(mapHomePath;);
 export GITHUB_PUBLISH_REPO="bradyhouse.github.io";
 export GITHUB_ROOT="${HOME_ROOT}/github";
-export GITHUB_ROOT_DIR="house_master";
+export GITHUB_ROOT_DIR="house_339";
 export GITHUB_REPO="https://github.com/bradyhouse/house";
 export GITHUB_PUBLIC_REPO="https://github.com/bradyhouse/bradyhouse.github.io";
 export BUILD_NUM="202001010000";
