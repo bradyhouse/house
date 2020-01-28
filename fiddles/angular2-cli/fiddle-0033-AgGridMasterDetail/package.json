@@ -25,7 +25,7 @@
     "@ag-grid-community/all-modules": "^22.1.1",
     "@ag-grid-community/angular": "^22.1.2",
     "@ag-grid-enterprise/all-modules": "^22.1.2",
-    "bootstrap": "^4.3.1",  
+    "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",

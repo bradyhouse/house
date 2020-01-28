@@ -2,27 +2,29 @@ fiddle-0033-AgGridMasterDetail
 ======
 
 
-### Title
+### Title<a name="title></a>
 
 AgGrid Master Detail
 
 
-### Creation Date
+### Creation Date<a name="createDate"></a>
 
 01-27-20
 
 
-### Location
+### Location<a name="location"></a>
 
 Chicago, IL
 
 
-### Issue
+### Issue<a name="issue"></a>
 
 [Issue 333](https://github.com/bradyhouse/house/issues/333)
 
 
-### Description
+### Description<a name="description></a>
+
+I need an AgGrid fiddle that explores master / detail feature.  See => [https://www.ag-grid.com/javascript-grid-server-side-model-master-detail/](https://www.ag-grid.com/javascript-grid-server-side-model-master-detail/). 
 
 
 ### Use Case<a name="use-case"></a>
@@ -75,11 +77,11 @@ Note - the fiddle will still work without a license.  However, you will see an e
         
 5.  Using Chrome, navigate to [localhost:1841](http://localhost:1841)
 
-### Published Version Link
+### Published Version Link<a name="link"></a>
 
 N/A
 
 
-### Tags
+### Tags<a name="tags"></a>
 
 node, angular 5.2.1, @ag-grid-community/core, @ag-grid-community/allModules, @ag-grid-enterprise/allModules, bootstrap
