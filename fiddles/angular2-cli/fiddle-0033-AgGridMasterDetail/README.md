@@ -45,33 +45,33 @@ Note - the fiddle will still work without a license.  However, you will see an e
 
 4.  Startup the fiddle -- `fiddle start angular2-cli 0033` 
 
-      {{ ʕ・ɭ・ʔ }}
+        {{ ʕ・ɭ・ʔ }}
 
-      FIDDLE-START.SH
-      ├────STARTSERVER
-      ├────NGINSTALL
-      ├────NGSTART
-      ├────NVMINSTALL
-      v10.9.0 is already installed.
-      Now using node v10.9.0 (npm v6.2.0)
-      ├────NPMINSTALL
-      npm WARN bootstrap@4.4.1 requires a peer of popper.js@^1.16.0 but none is installed. You must install peer dependencies yourself.
+        FIDDLE-START.SH
+        ├────STARTSERVER
+        ├────NGINSTALL
+        ├────NGSTART
+        ├────NVMINSTALL
+        v10.9.0 is already installed.
+        Now using node v10.9.0 (npm v6.2.0)
+        ├────NPMINSTALL
+        npm WARN bootstrap@4.4.1 requires a peer of popper.js@^1.16.0 but none is installed. You must install peer dependencies yourself.
 
-      audited 14287 packages in 9.918s
-      found 29 vulnerabilities (5 low, 20 moderate, 4 high)
+        audited 14287 packages in 9.918s
+        found 29 vulnerabilities (5 low, 20 moderate, 4 high)
         run `npm audit fix` to fix them, or `npm audit` for details
-      ** NG Live Development Server is listening on localhost:1841, open your browser on http://localhost:1841/ **
-      Date: 2020-01-28T10:35:32.537Z
-      Hash: 23d5659d5f4b1b90387a
-      Time: 12027ms
-      chunk {inline} inline.bundle.js (inline) 3.85 kB [entry] [rendered]
-      chunk {main} main.bundle.js (main) 26.3 kB [initial] [rendered]
-      chunk {polyfills} polyfills.bundle.js (polyfills) 597 kB [initial] [rendered]
-      chunk {scripts} scripts.bundle.js (scripts) 4.01 MB [initial] [rendered]
-      chunk {styles} styles.bundle.js (styles) 980 kB [initial] [rendered]
-      chunk {vendor} vendor.bundle.js (vendor) 18 MB [initial] [rendered]
+        ** NG Live Development Server is listening on localhost:1841, open your browser on http://localhost:1841/ **
+        Date: 2020-01-28T10:35:32.537Z
+        Hash: 23d5659d5f4b1b90387a
+        Time: 12027ms
+        chunk {inline} inline.bundle.js (inline) 3.85 kB [entry] [rendered]
+        chunk {main} main.bundle.js (main) 26.3 kB [initial] [rendered]
+        chunk {polyfills} polyfills.bundle.js (polyfills) 597 kB [initial] [rendered]
+        chunk {scripts} scripts.bundle.js (scripts) 4.01 MB [initial] [rendered]
+        chunk {styles} styles.bundle.js (styles) 980 kB [initial] [rendered]
+        chunk {vendor} vendor.bundle.js (vendor) 18 MB [initial] [rendered]
 
-      webpack: Compiled successfully.
+        webpack: Compiled successfully.
                 
 5.  Using Chrome, navigate to [localhost:1841](http://localhost:1841)
 
@@ -97,7 +97,6 @@ This fiddle was created using a mac configured as follows.
         OS: darwin x64
         Angular:
         ...
-
 
 ### Tags<a name="tags"></a>
 
