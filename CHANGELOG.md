@@ -2279,4 +2279,20 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     3.  Added [fiddles/node/fiddle-0045-WebPackCodeSplitting](fiddles/node/fiddle-0045-WebPackCodeSplitting)
     4.  Added [fiddles/node/fiddle-0046-WebPackCaching](fiddles/node/fiddle-0046-WebPackCaching)
     5.  Added [fiddles/node/fiddle-0047-WebPackLibrary](fiddles/node/fiddle-0047-WebPackLibrary)
-    6.  Added [fiddles/node/fiddle-0048-WebPackTypeScript](fiddles/node/fiddle-0048-WebPackTypeScript)* Added [fiddles/angular2-cli/fiddle-0033-AgGridMasterDetail](fiddles/angular2-cli/fiddle-0033-AgGridMasterDetail)
+    6.  Added [fiddles/node/fiddle-0048-WebPackTypeScript](fiddles/node/fiddle-0048-WebPackTypeScript)
+  
+
+### 333_angular_33 ~ [Issue 333](https://github.com/bradyhouse/house/issues/333)
+
+* **angular Cli**
+
+    1.  Added [fiddles/angular2-cli/fiddle-0033-AgGridMasterDetail](fiddles/angular2-cli/fiddle-0033-AgGridMasterDetail)
+
+
+### 341_angular_34 ~ [[Issue 341](https://github.com/bradyhouse/house/issues/341)
+
+* **angular Cli**
+
+    1.  Added [fiddles/angular2-cli/fiddle-0034-AgGridLazyMasterDetail](fiddles/angular2-cli/fiddle-0034-AgGridLazyMasterDetail)
+
+
