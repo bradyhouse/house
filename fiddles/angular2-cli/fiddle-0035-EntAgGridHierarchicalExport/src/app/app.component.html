@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand navbar-dark bg-primary navbar-top">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="navbar-brand" style="font-weight: 700; color: whitesmoke;">
+        Enterprise AgGrid ~ Hierarchical Excel Export
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-item" style="font-weight: 700; color: whitesmoke;" alt="Fork me on GitHub" target="_blank" title="View Source"
+           href="https://github.com/bradyhouse/house/blob/master/fiddles/angular2-cli/fiddle-0035-EntAgGridHierarchicalExport">
+          Fork Me On Github
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<ag-grid-angular
+      #agGrid style="width: 100%; height: 100%;" id="myGrid" class="ag-theme-balham" [columnDefs]="columnDefs"
+       [masterDetail]="true"
+       [modules]="modules"
+       [keepDetailRows]="true"
+       [defaultColDef]="defaultColDef"
+       [keepDetailRowsCount]="keepDetailRowsCount"
+       [detailCellRendererParams]="detailCellRendererParams"
+       [defaultExportParams]="defaultExportParams"
+       [excelStyles]="excelStyles"
+       [rowData]="rowData"
+       (firstDataRendered)="onFirstDataRendered($event)"
+       (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+    <nav *ngIf="ifInstructions" class="navbar navbar-expand navbar-dark bg-success fixed-bottom navbar-bottom">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li class="nav-item">
+            <span style="font-weight: 700; color: whitesmoke;" >
+              Double Click a cell and select Export
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>
