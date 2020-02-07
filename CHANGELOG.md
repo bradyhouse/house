@@ -2296,3 +2296,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/angular2-cli/fiddle-0034-AgGridLazyMasterDetail](fiddles/angular2-cli/fiddle-0034-AgGridLazyMasterDetail)
 
 
+### 343_angular_35 ~ [[Issue 341](https://github.com/bradyhouse/house/issues/343)
+
+* **angular Cli**
+
+    1.  Added [fiddles/angular2-cli/fiddle-0035-EntAgGridHierarchicalExport](fiddles/angular2-cli/fiddle-0035-EntAgGridHierarchicalExport)
