@@ -2301,3 +2301,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **angular Cli**
 
     1.  Added [fiddles/angular2-cli/fiddle-0035-EntAgGridHierarchicalExport](fiddles/angular2-cli/fiddle-0035-EntAgGridHierarchicalExport)
+* Added [fiddles/angular2-cli/fiddle-0036-EntAgGridToolTips](fiddles/angular2-cli/fiddle-0036-EntAgGridToolTips)
