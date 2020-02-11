@@ -1,0 +1,23 @@
+:host {
+  position: absolute;
+  width: 200px;
+  height: 4vh;
+  border: 1px solid var(--blue6);
+  background-color: var(--blue7);
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 1s;
+}
+
+:host.ag-tooltip-hiding {
+  opacity: 0;
+}
+
+.custom-tooltip p {
+  margin: 5px;
+  white-space: nowrap;
+}
+
+.custom-tooltip {
+  font-weight: bold;
+}
