@@ -1,8 +1,9 @@
 :host {
   position: absolute;
-  width: 150px;
-  height: 70px;
-  border: 1px solid cornflowerblue;
+  width: 200px;
+  height: 4vh;
+  border: 1px solid var(--blue6);
+  background-color: var(--blue7);
   overflow: hidden;
   pointer-events: none;
   transition: opacity 1s;
@@ -17,6 +18,6 @@
   white-space: nowrap;
 }
 
-.custom-tooltip p:first-of-type {
+.custom-tooltip {
   font-weight: bold;
 }

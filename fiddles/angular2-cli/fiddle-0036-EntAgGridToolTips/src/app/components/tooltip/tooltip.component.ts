@@ -9,13 +9,14 @@ import { ITooltipAngularComp } from '@ag-grid-community/angular';
 })
 export class TooltipComponent implements ITooltipAngularComp {
 
-  private params: any;
-  private data: any;
-
+  params: any;
+  data: any;
+  tooltipText: string;
+  
   agInit(params): void {
-      this.params = params;
-      this.data = params.api.getDisplayedRowAtIndex(params.rowIndex).data;
-      this.data.color = this.params.color || 'white';
+    this.params = params;
+    this.data = params.api.getDisplayedRowAtIndex(params.rowIndex).data;
+    this.tooltipText = this.params.tooltip || 'n/a';
   }
 
 }

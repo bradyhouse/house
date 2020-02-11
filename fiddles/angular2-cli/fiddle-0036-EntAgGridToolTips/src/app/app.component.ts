@@ -23,41 +23,51 @@ export class AppComponent {
   gridApi;
   gridColumnApi;
   modules: any[] = AllModules;
-  columnDefs;
-  detailCellRendererParams;
-  rowData;
-  keepDetailRowsCount;
+  columnDefs: any;
+  detailCellRendererParams: any;
+  rowData: any;
+  keepDetailRowsCount = 2;
   defaultExportParams: any;
   defaultColDef: any;
   excelStyles: any;
-  ifInstructions: boolean = true;
+  ifInstructions = true;
   frameworkComponents: any;
 
   constructor(private http: Http) {
-
-    this.keepDetailRowsCount = 2;
 
     this.columnDefs = [{
         field: 'name',
         cellRenderer: 'agGroupCellRenderer',
         cellClass: 'body',
-        tooltipField: "name",
+        tooltipField: 'name',
         tooltipComponentParams: {
-          color: "#ececec"
+          tooltip: 'Customer\'s Name'
         }
       },
       {
         field: 'account',
-        cellClass: 'body'
+        cellClass: 'body',
+        tooltipField: 'account',
+        tooltipComponentParams: {
+          tooltip: 'Customer\'s Account Number'
+        }
       },
       {
         field: 'calls',
-        cellClass: 'body'
+        cellClass: 'body',
+        tooltipField: 'calls',
+        tooltipComponentParams: {
+          tooltip: 'Total Calls involving this Customer'
+        }
       },
       {
         field: 'minutes',
         valueFormatter: 'x.toLocaleString() + "m"',
-        cellClass: 'bodyFloat'
+        cellClass: 'bodyFloat',
+        tooltipField: 'minutes',
+        tooltipComponentParams: {
+          tooltip: 'Duration of all Calls for this customer'
+        }
       },
       {
         field: 'Comment',
@@ -65,31 +75,73 @@ export class AppComponent {
       },
       {
         field: 'rating',
-        cellClass: 'body'
+        cellClass: 'body',
+        tooltipField: 'rating',
+        tooltipComponentParams: {
+          tooltip: 'customer\'s rating'
+        }
       }
     ];
+
+    this.defaultColDef = {
+      filter: true,
+      resizable: true,
+      sortable: true,
+      tooltipComponent: 'fiddleTooltipComponent'
+    };
+
+    this.frameworkComponents = {
+      fiddleTooltipComponent: TooltipComponent
+    };
+
     this.detailCellRendererParams = {
       detailGridOptions: {
-        defaultColDef: {
-          sortable: true
-        },
         columnDefs: [{
-            field: 'callId'
+            field: 'callId',
+            tooltipField: 'callId',
+            tooltipComponentParams: {
+              tooltip: 'Id used to Identify the Call'
+            }
           },
           {
-            field: 'direction'
+            field: 'direction',
+            tooltipField: 'direction',
+            tooltipComponentParams: {
+              tooltip: 'Inbound or Outbound Call'
+            }
           },
           {
-            field: 'number'
+            field: 'number',
+            tooltipField: 'number',
+            tooltipComponentParams: {
+              tooltip: 'The Caller\'s Phone Number'
+            }
           },
           {
             field: 'duration',
-            valueFormatter: 'x.toLocaleString() + "s"'
+            tooltipField: 'duration',
+            valueFormatter: 'x.toLocaleString() + "s"',
+            tooltipComponentParams: {
+              tooltip: 'Length of all Call'
+            }
           },
           {
-            field: 'switchCode'
+            field: 'switchCode',
+            tooltipField: 'switchCode',
+            tooltipComponentParams: {
+              tooltip: 'Switch Board Indicator'
+            }
           }
         ],
+        defaultColDef: {
+          filter: true,
+          resizable: true,
+          sortable: true,
+          tooltipComponent: 'fiddleTooltipComponent'
+        },
+        frameworkComponents: {
+          fiddleTooltipComponent: TooltipComponent
+        },
         onFirstDataRendered: (params) => {
           this.autoSizeAllColumns(params);
         }
@@ -106,16 +158,7 @@ export class AppComponent {
       fileName: 'fiddle-0035',
       columnWidth: '20'
     };
-    this.defaultColDef = {
-      filter: true,
-      resizable: true,
-      sortable: true,
-      tooltipComponent: "fiddleTooltipComponent"
-    };
-
-    this.frameworkComponents = {
-      fiddleTooltipComponent: TooltipComponent
-    };
+   
     this.defaultExportParams = {
       getCustomContentBelowRow: (params: any) => {
         if (params.node.data.callRecords && params.node.data.callRecords.length) {
