@@ -4,12 +4,12 @@ fiddle-0036-EntAgGridToolTips
 
 ### Title<a name="title"></a>
 
-Enterprise AgGrid Hierarchical Export
+Enterprise AgGrid Custom ToolTips
 
 
 ### Creation Date<a name="createDate"></a>
 
-02-07-20
+02-11-20
 
 
 ### Location<a name="location"></a>
@@ -19,13 +19,12 @@ Chicago, IL
 
 ### Issue<a name="issue"></a>
 
-[Issue 343](https://github.com/bradyhouse/house/issues/343)
+[Issue 345](https://github.com/bradyhouse/house/issues/345)
 
 
 ### Description<a name="description"></a>
 
-I need a fiddle that demonstrates how to export Hierarchical data from an Ag-Grid. As a starting point, fork from 
-[fiddle-0034-AgGridLazyMasterDetail](../fiddle-0034-AgGridLazyMasterDetail), [Issue 341](https://github.com/bradyhouse/house/issues/341).
+I need a fiddle exploring how to add custom tooltip to a grid.  When the user mouses overs a given a cell, the formula used to calculate the value needs to be displayed. Use Fiddle 35 as the starting point -- ie the grid should be configured to display Master & Detail data.  As reference, see https://www.ag-grid.com/javascript-grid-tooltip-component/#registering-custom-tooltip-components. 
 
 
 ### Use Case<a name="use-case"></a>
@@ -44,7 +43,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
         ****************************************************************************************************************
         ****************************************************************************************************************
 
-4.  Startup the fiddle -- `fiddle start angular2-cli 0035` 
+4.  Startup the fiddle -- `fiddle start angular2-cli 0036` 
 
         {{ ʕ・ɭ・ʔ }}
 
@@ -158,11 +157,6 @@ This fiddle was created using a mac configured as follows.
 ### Tags<a name="tags"></a>
 
 node, angular 5.2.1, @ag-grid-community/core, @ag-grid-community/allModules, @ag-grid-enterprise/allModules, bootstrap
-
-
-### Forked From
-
-[fiddle-0034-AgGridLazyMasterDetail](../fiddle-0034-AgGridLazyMasterDetail)
 
 
 ### Forked From
