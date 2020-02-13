@@ -41,7 +41,7 @@ export class AppComponent {
         cellClass: 'body',
         tooltipField: 'name',
         tooltipComponentParams: {
-          tooltip: 'Customer\'s Name'
+          tooltip: 'Customer\'s Name or nickname or alias or whatever'
         }
       },
       {
@@ -49,7 +49,7 @@ export class AppComponent {
         cellClass: 'body',
         tooltipField: 'account',
         tooltipComponentParams: {
-          tooltip: 'Customer\'s Account Number'
+          tooltip: 'Six digit System Generated Customer\'s Account Number'
         }
       },
       {
@@ -57,7 +57,7 @@ export class AppComponent {
         cellClass: 'body',
         tooltipField: 'calls',
         tooltipComponentParams: {
-          tooltip: 'Total Calls involving this Customer'
+          tooltip: 'Total Calls Involving this Customer'
         }
       },
       {
@@ -66,7 +66,7 @@ export class AppComponent {
         cellClass: 'bodyFloat',
         tooltipField: 'minutes',
         tooltipComponentParams: {
-          tooltip: 'Duration of all Calls for this customer'
+          tooltip: 'Duration of all Calls Involving this Specific Customer'
         }
       },
       {
@@ -158,7 +158,7 @@ export class AppComponent {
       fileName: 'fiddle-0035',
       columnWidth: '20'
     };
-   
+
     this.defaultExportParams = {
       getCustomContentBelowRow: (params: any) => {
         if (params.node.data.callRecords && params.node.data.callRecords.length) {

@@ -78,7 +78,7 @@ var AppComponent = /** @class */ (function () {
                 cellClass: 'body',
                 tooltipField: 'name',
                 tooltipComponentParams: {
-                    tooltip: 'Customer\'s Name'
+                    tooltip: 'Customer\'s Name or nickname or alias or whatever'
                 }
             },
             {
@@ -86,7 +86,7 @@ var AppComponent = /** @class */ (function () {
                 cellClass: 'body',
                 tooltipField: 'account',
                 tooltipComponentParams: {
-                    tooltip: 'Customer\'s Account Number'
+                    tooltip: 'Six digit System Generated Customer\'s Account Number'
                 }
             },
             {
@@ -94,7 +94,7 @@ var AppComponent = /** @class */ (function () {
                 cellClass: 'body',
                 tooltipField: 'calls',
                 tooltipComponentParams: {
-                    tooltip: 'Total Calls involving this Customer'
+                    tooltip: 'Total Calls Involving this Customer'
                 }
             },
             {
@@ -103,7 +103,7 @@ var AppComponent = /** @class */ (function () {
                 cellClass: 'bodyFloat',
                 tooltipField: 'minutes',
                 tooltipComponentParams: {
-                    tooltip: 'Duration of all Calls for this customer'
+                    tooltip: 'Duration of all Calls Involving this Specific Customer'
                 }
             },
             {
@@ -414,7 +414,7 @@ var ComponentsModule = /** @class */ (function () {
 /***/ "./src/app/components/tooltip/tooltip.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  position: absolute;\n  width: 200px;\n  height: 4vh;\n  border: 1px solid var(--blue6);\n  background-color: var(--blue7);\n  overflow: hidden;\n  pointer-events: none;\n  -webkit-transition: opacity 1s;\n  transition: opacity 1s;\n}\n\n:host.ag-tooltip-hiding {\n  opacity: 0;\n}\n\n.custom-tooltip p {\n  margin: 5px;\n  white-space: nowrap;\n}\n\n.custom-tooltip {\n  font-weight: bold;\n}\n"
+module.exports = ":host {\n  position: absolute;\n  width: auto;\n  min-width: 200px;\n  max-width: 250px;\n  height: auto;\n  border: 1px solid var(--blue6);\n  background-color: var(--blue7);\n  overflow: hidden;\n  pointer-events: none;\n  -webkit-transition: opacity 1s;\n  transition: opacity 1s;\n  padding: 5px;\n  -webkit-filter: drop-shadow(4px 4px 4px gray);\n          filter: drop-shadow(4px 4px 4px gray);\n}\n\n:host.ag-tooltip-hiding {\n  opacity: 0;\n}\n\n.custom-tooltip p {\n  margin: 5px;\n  white-space: nowrap;\n}\n\n.custom-tooltip {\n  font-weight: bold;\n}\n"
 
 /***/ }),
 

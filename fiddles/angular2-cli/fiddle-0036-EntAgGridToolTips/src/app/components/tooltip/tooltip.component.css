@@ -1,12 +1,16 @@
 :host {
   position: absolute;
-  width: 200px;
-  height: 4vh;
+  width: auto;
+  min-width: 200px;
+  max-width: 250px;
+  height: auto;
   border: 1px solid var(--blue6);
   background-color: var(--blue7);
   overflow: hidden;
   pointer-events: none;
   transition: opacity 1s;
+  padding: 5px;
+  filter: drop-shadow(4px 4px 4px gray);
 }
 
 :host.ag-tooltip-hiding {
