@@ -2308,3 +2308,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **angular Cli**
 
     1.  Added [fiddles/angular2-cli/fiddle-0036-EntAgGridToolTips](fiddles/angular2-cli/fiddle-0036-EntAgGridToolTips)
+* Added [fiddles/angular2-cli/fiddle-0037-EntAgGridStateManagement](fiddles/angular2-cli/fiddle-0037-EntAgGridStateManagement)
