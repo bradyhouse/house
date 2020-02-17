@@ -5,6 +5,8 @@ import { AgGridModule } from '@ag-grid-community/angular';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
+import { StateService } from './state.service';
+import { LocalStorageService } from './local-storage.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { TooltipComponent } from './components/tooltip/tooltip.component';
     AgGridModule.withComponents([TooltipComponent]),
     ComponentsModule
   ],
-  providers: [],
+  providers: [StateService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
