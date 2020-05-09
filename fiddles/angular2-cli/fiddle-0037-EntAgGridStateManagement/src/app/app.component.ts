@@ -1,8 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
+
 import 'rxjs/add/operator/map';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { AllModules } from '@ag-grid-enterprise/all-modules';
+import { environment } from '../environments/environment';
 
 function cell(text: any, styleId: any = null) {
   return {
@@ -46,6 +48,7 @@ export class AppComponent {
       },
       {
         field: 'account',
+        colId: 'account',
         cellClass: 'body',
         tooltipField: 'account',
         tooltipComponentParams: {
@@ -269,7 +272,7 @@ export class AppComponent {
       .get(
         'https://raw.githubusercontent.com/ag-grid/ag-grid-docs/latest/src/javascript-grid-master-detail/simple/data/data.json'
       )
-      .map((res: Response) => res.json())
+      .map((res: any) => res.json())
       .subscribe(data => {
         console.log(typeof data);
         this.rowData = data;
@@ -279,6 +282,7 @@ export class AppComponent {
       this.ifInstructions = false;
     }, 3000);
   }
+
 
   private autoSizeAllColumns(params: any): void {
     const allColumnIds: any[] = [];

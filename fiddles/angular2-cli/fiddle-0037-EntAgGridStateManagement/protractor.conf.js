@@ -19,6 +19,15 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function() {}
   },
+  capabilities: {
+    browserName: 'chrome',
+    pageLoadStrategy :'normal',
+    chromeOptions: {
+       args: [ "--disable-gpu",
+               "--window-size=800,600"
+             ]
+     }
+  },
   onPrepare() {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'
