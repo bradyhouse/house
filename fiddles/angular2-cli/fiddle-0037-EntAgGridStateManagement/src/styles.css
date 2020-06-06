@@ -4,9 +4,21 @@
     --blue3: #1f3374;
     --blue4: #006eb6;
     --blue5: #25a9e0;
-    --blue6: #007BFF;
+    --blue6: #3cc8ff;
     --blue7: #ebf9ff;
-  }
+    --grey1: #16202a;
+    --grey2: #25323c;
+    --grey3: #5a6874;
+    --grey4: #8c9aa2;
+    --grey5: #c2cace;
+    --grey6: #ebedee;
+    --grey7: #f1f5f7;
+    --green3: #21b002;
+    --red3: #df0035;
+    --agDark1: #1d1f20;
+    --agdark2: #2c3436;
+    --agDark3: #a6a8a8;
+}
 
 html, body {
     height: 100%;

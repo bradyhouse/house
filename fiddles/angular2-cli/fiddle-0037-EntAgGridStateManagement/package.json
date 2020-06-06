@@ -16,7 +16,8 @@
     "pm2.stop-all": "node ./node_modules/pm2/bin/pm2 kill",
     "pm2.monitor": "npm run pm2 monit",
     "webdriver-start": "./node_modules/protractor/bin/webdriver-manager start --ignore_ssl=true",
-    "wedriver-update": "./node_modules/protractor/bin/webdriver-manager update --ignore_ssl=true"
+    "wedriver-update": "./node_modules/protractor/bin/webdriver-manager update --ignore_ssl=true",
+    "storybook": "start-storybook"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +35,8 @@
     "@ag-grid-community/angular": "^22.1.2",
     "@ag-grid-enterprise/all-modules": "^22.1.2",
     "bootstrap": "4.3.1",
+    "immutable": "^3.8.1",
+    "lodash": "^4.17.15",
     "jquery": "3.4.1",
     "core-js": "2.4.1",
     "rxjs": "5.5.6",

@@ -25,6 +25,7 @@
         "styles.css"
       ],
       "scripts": [
+        "../node_modules/lodash/lodash.min.js",
         "../node_modules/@ag-grid-enterprise/all-modules/dist/ag-grid-enterprise.noStyle.js"
       ],
       "environmentSource": "environments/environment.ts",
