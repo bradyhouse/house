@@ -154,6 +154,15 @@ This fiddle was created using a mac configured as follows.
         Angular:
         ...
 
+
+### Reference <a name="reference"></a>
+
+Page referenced while building this fiddle:
+
+* https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/drop-shadow
+* https://www.ag-grid.com/javascript-grid-tooltip-component/#example-custom-tooltip
+
+
 ### Tags<a name="tags"></a>
 
 node, angular 5.2.1, @ag-grid-community/core, @ag-grid-community/allModules, @ag-grid-enterprise/allModules, bootstrap
