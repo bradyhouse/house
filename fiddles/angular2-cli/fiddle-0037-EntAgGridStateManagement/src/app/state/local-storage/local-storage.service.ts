@@ -14,7 +14,7 @@ import { List } from 'immutable';
 @Injectable()
 export class LocalStorageService implements LocalStorageServiceInterface {
 
-  params: any;
+  params: Map<string, any>;
   options: LocalStorageOptionsInterface;
   isLocalStorageSupported: boolean;
 
@@ -26,19 +26,19 @@ export class LocalStorageService implements LocalStorageServiceInterface {
     };
     if (window.localStorage) {
       this.isLocalStorageSupported = true;
+    } else {
+      console.warn('Local Storage is not supported');
     }
   }
 
   read() {
     if (this.isLocalStorageSupported) {
-      // tslint:disable-next-line: forin
       Object.keys(window.localStorage).forEach((key: string) => {
         const value: any = this.getItem(key);
         if (value !== null && value !== undefined) {
           this.params[key] = value;
         }
       });
-      console.log('params', this.params);
     }
   }
 
@@ -47,34 +47,26 @@ export class LocalStorageService implements LocalStorageServiceInterface {
     if (key !== this.options.appKey) {
       stateService.isReady = false;
     }
-    console.log('key', key);
-    console.log ('this.params.get(key)', this.params.get(key));
-    // tslint:disable-next-line: forin
-    for (const state in this.params.get(key)) {
-      console.log('updateStateService', state);
-      const privateKey: string = '_' + state;
-      if (privateKey in stateService && state !== 'type') {
-        console.log('updateStateService > privateKey', privateKey);
-        const isValid: boolean = this.options.blackList.indexOf(state) === -1;
-
+    const state = this.params.get(key);
+    Object.keys(state).forEach((property: string) => {
+      const privateProperty: string = '_' + property;
+      if (privateProperty in stateService && property !== 'type') {
+        const isValid: boolean = this.options.blackList.indexOf(property) === -1;
         if (isValid) {
-          let value: any = this.params.get(key)[state];
-          console.log('updateStateService', value);
-          if (stateService.hasOwnProperty(privateKey)) {
-            if (stateService[privateKey] && stateService[privateKey].constructor === List) {
+          let value: any = state[property];
+          if (stateService.hasOwnProperty(privateProperty)) {
+            if (stateService[privateProperty] && stateService[privateProperty].constructor === List) {
               if (!value || value.constructor !== Array) {
                 value = [];
               }
-              stateService[privateKey] = List(value);
+              stateService[privateProperty] = List(value);
             } else {
-              stateService[privateKey] = value;
+              stateService[privateProperty] = value;
             }
           }
-        } else {
-          delete this.params[key][state];
         }
       }
-    }
+    });
     if (key !== this.options.appKey) {
       stateService.isReady = true;
     }

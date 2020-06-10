@@ -72,7 +72,6 @@ export class StateService implements StateServiceInterface {
   }
 
   set gridState(newValue: GridState) {
-    console.log('gridState=', newValue);
     if (!_.isEqual(newValue, this._gridState)) {
       this._gridState = newValue;
       if (this.isReady) {
