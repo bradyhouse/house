@@ -113,7 +113,6 @@ var AppComponent = /** @class */ (function (_super) {
             .get('https://raw.githubusercontent.com/ag-grid/ag-grid-docs/latest/src/javascript-grid-master-detail/simple/data/data.json')
             .map(function (res) { return res.json(); })
             .subscribe(function (data) {
-            console.log(typeof data);
             _this.restoreGridState(data);
         });
         setTimeout(function () {
@@ -745,26 +744,28 @@ var LocalStorageService = /** @class */ (function () {
             stateService.isReady = false;
         }
         var state = this.params.get(key);
-        Object.keys(state).forEach(function (property) {
-            var privateProperty = '_' + property;
-            if (privateProperty in stateService && property !== 'type') {
-                var isValid = _this.options.blackList.indexOf(property) === -1;
-                if (isValid) {
-                    var value = state[property];
-                    if (stateService.hasOwnProperty(privateProperty)) {
-                        if (stateService[privateProperty] && stateService[privateProperty].constructor === __WEBPACK_IMPORTED_MODULE_1_immutable__["List"]) {
-                            if (!value || value.constructor !== Array) {
-                                value = [];
+        if (state && state !== undefined && Object.entries(state).length) {
+            Object.keys(state).forEach(function (property) {
+                var privateProperty = '_' + property;
+                if (privateProperty in stateService && property !== 'type') {
+                    var isValid = _this.options.blackList.indexOf(property) === -1;
+                    if (isValid) {
+                        var value = state[property];
+                        if (stateService.hasOwnProperty(privateProperty)) {
+                            if (stateService[privateProperty] && stateService[privateProperty].constructor === __WEBPACK_IMPORTED_MODULE_1_immutable__["List"]) {
+                                if (!value || value.constructor !== Array) {
+                                    value = [];
+                                }
+                                stateService[privateProperty] = Object(__WEBPACK_IMPORTED_MODULE_1_immutable__["List"])(value);
                             }
-                            stateService[privateProperty] = Object(__WEBPACK_IMPORTED_MODULE_1_immutable__["List"])(value);
-                        }
-                        else {
-                            stateService[privateProperty] = value;
+                            else {
+                                stateService[privateProperty] = value;
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+        }
         if (key !== this.options.appKey) {
             stateService.isReady = true;
         }

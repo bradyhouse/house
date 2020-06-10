@@ -48,25 +48,27 @@ export class LocalStorageService implements LocalStorageServiceInterface {
       stateService.isReady = false;
     }
     const state = this.params.get(key);
-    Object.keys(state).forEach((property: string) => {
-      const privateProperty: string = '_' + property;
-      if (privateProperty in stateService && property !== 'type') {
-        const isValid: boolean = this.options.blackList.indexOf(property) === -1;
-        if (isValid) {
-          let value: any = state[property];
-          if (stateService.hasOwnProperty(privateProperty)) {
-            if (stateService[privateProperty] && stateService[privateProperty].constructor === List) {
-              if (!value || value.constructor !== Array) {
-                value = [];
+    if (state && state !== undefined && Object.entries(state).length) {
+      Object.keys(state).forEach((property: string) => {
+        const privateProperty: string = '_' + property;
+        if (privateProperty in stateService && property !== 'type') {
+          const isValid: boolean = this.options.blackList.indexOf(property) === -1;
+          if (isValid) {
+            let value: any = state[property];
+            if (stateService.hasOwnProperty(privateProperty)) {
+              if (stateService[privateProperty] && stateService[privateProperty].constructor === List) {
+                if (!value || value.constructor !== Array) {
+                  value = [];
+                }
+                stateService[privateProperty] = List(value);
+              } else {
+                stateService[privateProperty] = value;
               }
-              stateService[privateProperty] = List(value);
-            } else {
-              stateService[privateProperty] = value;
             }
           }
         }
-      }
-    });
+      });
+    }
     if (key !== this.options.appKey) {
       stateService.isReady = true;
     }

@@ -89,7 +89,6 @@ export class AppComponent extends BaseComponent implements OnInit {
       )
       .map((res: any) => res.json())
       .subscribe(data => {
-        console.log(typeof data);
         this.restoreGridState(data);
       });
 
