@@ -2316,3 +2316,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
     1.  Added [fiddles/angular2-cli/fiddle-0037-EntAgGridStateManagement](fiddles/angular2-cli/fiddle-0037-EntAgGridStateManagement)
 
+* Added [fiddles/angular2-cli/fiddle-0039-NotificationsHW](fiddles/angular2-cli/fiddle-0039-NotificationsHW)
+* Added [fiddles/angular2-cli/fiddle-0039-WebNotificationsHW](fiddles/angular2-cli/fiddle-0039-WebNotificationsHW)
