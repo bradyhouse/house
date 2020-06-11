@@ -30,6 +30,11 @@ import {
   EventType as HeaderEventType
 } from '../components/header/header.component';
 
+import * as NotifyDomain from '../notify/notify';
+import { NotifyService } from '../notify/notify.service';
+import { Router } from '@angular/router';
+
+
 function cell(text: any, styleId: any = null) {
   return {
     styleId: styleId,
@@ -64,13 +69,13 @@ export class DashboardComponent extends BaseComponent implements OnInit {
   // tslint:disable-next-line: deprecation
   constructor(private http: Http,
     private stateService: StateService,
-    private localStorageService: LocalStorageService) {
+    private localStorageService: LocalStorageService,
+    private notifyService: NotifyService,
+    private router: Router) {
     super();
   }
 
   ngOnInit(): void {
-    this.localStorageService.read();
-    this.localStorageService.updateStateService(this.stateService.type, this.stateService);
     this.configGrid();
   }
 

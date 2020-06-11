@@ -16,6 +16,9 @@ import {
   PersistedTypesEnum,
   StateServiceInterface
 } from './state';
+
+import * as NotifyDomain from '../notify/notify';
+
 declare let _: any;
 import {
   List
@@ -28,6 +31,7 @@ export class StateService implements StateServiceInterface {
   isPreloaderChange$: Observable<boolean>;
   isReadyChange$: Observable<boolean>;
   gridStateChange$: Observable<GridState>;
+  notificationsChange$: Observable<NotifyDomain.Notification[]>;
   typeChange$: Observable<string>;
 
   [key: string]: any;
@@ -38,6 +42,8 @@ export class StateService implements StateServiceInterface {
   private _isPreloaderObserver: Observer<boolean>;
   private _isReady: boolean;
   private _isReadyObserver: Observer<boolean>;
+  private _notifications: NotifyDomain.Notification[];
+  private _notificationsObserver: Observer<NotifyDomain.Notification[]>;
   private _type: string;
   private _typeObserver: Observer<string>;
 
@@ -83,6 +89,20 @@ export class StateService implements StateServiceInterface {
     }
   }
 
+  get notifications(): NotifyDomain.Notification[] {
+    return this._notifications;
+  }
+
+  set notifications(newValue: NotifyDomain.Notification[]) {
+    this._notifications = newValue;
+      if (this.isReady) {
+        this.updateState(PersistedTypesEnum.notifications, {notifications: newValue});
+      }
+      if (this._notificationsObserver) {
+        this._notificationsObserver.next(newValue);
+      }
+  }
+
   set type(newValue: string) {
     if (this._type !== newValue) {
       this._type = newValue;
@@ -101,13 +121,17 @@ export class StateService implements StateServiceInterface {
     this._type = PersistedTypesEnum.localStorageKey;
     this._isPreloader = true;
     this._gridState = {};
+    this._notifications = [];
+    this.gridStateChange$ = new Observable<GridState>(
+      (observer: any) => this._gridStateObserver = observer
+    ).share();
 
     this.isReadyChange$ = new Observable < boolean > (
       (observer: any) => this._isReadyObserver = observer
     ).share();
 
-    this.gridStateChange$ = new Observable<GridState>(
-      (observer: any) => this._gridStateObserver = observer
+    this.notificationsChange$ = new Observable<NotifyDomain.Notification[]>(
+      (observer: any) => this._notificationsObserver = observer
     ).share();
 
     this.typeChange$ = new Observable<string>(

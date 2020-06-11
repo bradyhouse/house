@@ -11,6 +11,7 @@ import {
   ElementRef,
   ViewChild
 } from '@angular/core';
+import { NotifyService } from '../../notify/notify.service';
 
 export enum EventType {
   Export = 'Export',
@@ -27,7 +28,7 @@ export class HeaderComponent {
   @Output() event: EventEmitter <EventType>;
 
 
-  constructor() {
+  constructor(private _notifyService: NotifyService) {
       this.event = new EventEmitter();
   }
 
@@ -35,6 +36,9 @@ export class HeaderComponent {
       this.event.emit(EventType.Reset);
   }
 
+  onNotifyPermissionBtnClick(): void {
+    this._notifyService.requestPermission();
+  }
 
   onExportClick() {
     this.event.emit(EventType.Export);

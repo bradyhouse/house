@@ -62,6 +62,7 @@ export class LocalStorageService implements LocalStorageServiceInterface {
                 }
                 stateService[privateProperty] = List(value);
               } else {
+                console.log('stateService[privateProperty] = ', value);
                 stateService[privateProperty] = value;
               }
             }
