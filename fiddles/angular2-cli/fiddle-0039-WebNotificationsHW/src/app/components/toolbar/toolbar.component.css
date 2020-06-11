@@ -1,0 +1,10 @@
+* {
+    background-color: var(--grey2) !important;
+    color: white;
+}
+
+.panel--raised {
+    margin: 0;
+    padding: .5em 1em;
+    font-size: .75em;
+}

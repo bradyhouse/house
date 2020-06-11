@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active"><a routerLink="/dashboard" class="nav-link" routerLinkActive="active">Dashboard</a></li>
+    <li class="nav-item"><a routerLink="/notification" class="nav-link" routerLinkActive="active">Notifications</a></li>
+  </ul>
+</nav>
+<app-header (event)="onHeaderClick($event)"></app-header>
+<ag-grid-angular
+      #agGrid style="width: 100%; height: 100%;" id="myGrid" class="ag-theme-balham" [columnDefs]="columnDefs"
+       [masterDetail]="true"
+       [modules]="modules"
+       [keepDetailRows]="true"
+       [defaultColDef]="defaultColDef"
+       [keepDetailRowsCount]="keepDetailRowsCount"
+       [detailCellRendererParams]="detailCellRendererParams"
+       [defaultExportParams]="defaultExportParams"
+       [frameworkComponents]="frameworkComponents"
+       [excelStyles]="excelStyles"
+       [rowData]="rowData"
+       (firstDataRendered)="onFirstDataRendered($event)"
+       (gridReady)="onGridReady($event)"
+       (sortChanged)="onGridStateChanged()"
+      (filterChanged)="onGridStateChanged()"
+      (columnMoved)="onGridStateChanged()"
+      (columnPinned)="onGridStateChanged()"
+      (columnResized)="onGridStateChanged()"
+      (columnVisible)="onGridStateChanged()"
+    ></ag-grid-angular>
+    <!--<nav *ngIf="ifInstructions" class="navbar navbar-expand navbar-dark bg-success fixed-bottom navbar-bottom">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li class="nav-item">
+            <span id="instructions" style="font-weight: 700; color: whitesmoke;" >
+              
+            </span>
+          </li>
+        </ul>
+      </div>
+    </nav>-->

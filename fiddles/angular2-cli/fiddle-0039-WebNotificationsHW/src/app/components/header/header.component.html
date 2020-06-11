@@ -1,0 +1,14 @@
+<app-toolbar [componentId]="'appHeader'">
+  <div content>
+      <table>
+          <tr>
+              <td>
+                  <div style="text-align: right !important;">
+                      <button *ngIf="!this._notifyService.isPermission" [id]="'fiddleHeaderNotifyPermissionBtn'" type="button" class="btn btn--small" (click)="onNotifyPermissionBtnClick()"><i class="fas fa-undo"></i> Enable Notifications</button>
+                      <button [id]="'fiddleHeaderResetBtn'" type="button" class="btn btn--small" (click)="onResetClick()"><i class="fas fa-undo"></i> Reset Grid</button>
+                  </div>
+              </td>
+          </tr>
+      </table>
+  </div>
+</app-toolbar>
