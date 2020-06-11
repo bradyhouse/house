@@ -4,7 +4,7 @@ fiddle-0039-WebNotificationsHW
 
 ### Title<a name="title"></a>
 
-Enterprise AgGrid State Management
+Web Notifications Hello World
 
 
 ### Creation Date<a name="createDate"></a>
@@ -19,12 +19,12 @@ Chicago, IL
 
 ### Issue<a name="issue"></a>
 
-[Issue 347](https://github.com/bradyhouse/house/issues/347)
+[Issue 352](https://github.com/bradyhouse/house/issues/352)
 
 
 ### Description<a name="description"></a>
 
-Given a tricked out AgGrid configured to load Master / Detail data, I need to configure the grid so that the state of the grid persists across sessions.  Additionally, the user needs the ability to clear the persisted settings. 
+I need a fiddle exploring what's possible with the [Web Notification](https://developer.mozilla.org/en-US/docs/Web/API/notification). 
 
 
 ### Use Case<a name="use-case"></a>
@@ -43,7 +43,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
         ****************************************************************************************************************
         ****************************************************************************************************************
 
-4.  Startup the fiddle -- `fiddle start angular2-cli 0037` 
+4.  Startup the fiddle -- `fiddle start angular2-cli 0039` 
 
         {{ ʕ・ɭ・ʔ }}
 
@@ -84,18 +84,12 @@ This fiddle was created using a mac configured as follows.
 
 Page referenced while building this fiddle:
 
-* https://www.ag-grid.com/javascript-grid-tooltip-component/#example-custom-tooltip
-* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach
+* https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API
 
 
 ### Tags<a name="tags"></a>
 
 node, angular 5.2.1, @ag-grid-community/core, @ag-grid-community/allModules, @ag-grid-enterprise/allModules, bootstrap
-
-
-### Forked From
-
-[fiddle-0036-EntAgGridToolTips](../fiddle-0036-EntAgGridToolTips)
 
 
 ### Forked From
