@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 25px;">
   <ul class="navbar-nav mr-auto">
     <li class="nav-item"><a routerLink="/dashboard" class="nav-link">Dashboard</a></li>
     <li class="nav-item active"><a routerLink="/notification" class="nav-link" routerLinkActive="active">Notifications</a></li>
   </ul>
 </nav>
+<app-header (event)="onHeaderClick($event)"></app-header>
 <ag-grid-angular
        #agGrid style="width: 100%; height: 100%;" [id]="'queueGrid'" class="ag-theme-balham" 
        [columnDefs]="columnDefs"
@@ -11,6 +12,12 @@
        [rowData]="rowData"
        [defaultColDef]="defaultColDef"
        (gridReady)="onGridReady($event)"
+       (sortChanged)="onGridStateChanged()"
+       (filterChanged)="onGridStateChanged()"
+       (columnMoved)="onGridStateChanged()"
+       (columnPinned)="onGridStateChanged()"
+       (columnResized)="onGridStateChanged()"
+       (columnVisible)="onGridStateChanged()"
     ></ag-grid-angular>
     
 

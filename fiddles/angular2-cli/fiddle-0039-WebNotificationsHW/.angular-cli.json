@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "sw.js"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -21,7 +22,7 @@
       "styles": [ 
         "../node_modules/@ag-grid-community/all-modules/dist/styles/ag-grid.css",
         "../node_modules/@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/bootswatch/dist/flatly/bootstrap.min.css",
         "styles.css"
       ],
       "scripts": [

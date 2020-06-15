@@ -46,7 +46,7 @@ export class RefreshService implements Domain.RefreshServiceInterface {
  
    constructor() {
      this._state = Domain.RefreshStateEnum.stopped;
-     this.interval = 15 * 1000;
+     this.interval = 30 * 1000;
      this.timerSubscription = Subscription.EMPTY;
      this.stateChange$ = new Observable<Domain.RefreshStateEnum>(
        (observer: any) => this.stateChangeObserver = observer

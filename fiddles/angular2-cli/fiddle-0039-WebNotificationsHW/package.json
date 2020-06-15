@@ -10,14 +10,8 @@
     "lint": "node ./node_modules/@angular/cli/bin/ng lint",
     "e2e": "node ./node_modules/@angular/cli/bin/ng e2e",
     "e2e.explorer": "node ./node_modules/protractor/bin/protractor --elementExplorer",
-    "pm2.help": "node ./node_modules/pm2/bin/pm2 -h",
-    "pm2.list": "node ./node_modules/pm2/bin/pm2 list",
-    "pm2.start-server": "node ./node_modules/pm2/bin/pm2 start npm -- start --name server",
-    "pm2.stop-all": "node ./node_modules/pm2/bin/pm2 kill",
-    "pm2.monitor": "npm run pm2 monit",
     "webdriver-start": "./node_modules/protractor/bin/webdriver-manager start --ignore_ssl=true",
-    "wedriver-update": "./node_modules/protractor/bin/webdriver-manager update --ignore_ssl=true",
-    "storybook": "start-storybook"
+    "wedriver-update": "./node_modules/protractor/bin/webdriver-manager update --ignore_ssl=true"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +29,7 @@
     "@angular/platform-browser-dynamic": "5.2.0",
     "@angular/router": "5.2.0",
     "bootstrap": "4.3.1",
+    "bootswatch": "^4.5.0",
     "core-js": "2.4.1",
     "immutable": "^3.8.1",
     "jquery": "3.4.1",
@@ -58,11 +53,9 @@
     "karma-coverage-istanbul-reporter": "1.2.1",
     "karma-jasmine": "1.1.0",
     "karma-jasmine-html-reporter": "0.2.2",
-    "pm2": "^4.2.3",
     "protractor": "5.4.2",
     "ts-node": "4.1.0",
     "tslint": "5.9.1",
-    "typescript": "2.5.3",
-    "webdriver-manager": "^12.1.7"
+    "typescript": "2.5.3"
   }
 }
