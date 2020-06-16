@@ -227,7 +227,10 @@ var AppComponent = /** @class */ (function (_super) {
                                     break;
                             }
                         });
-                        swRegistration.showNotification('fiddle.sh', options);
+                        window.setTimeout(function () {
+                            _this._notifyService.playAlert();
+                        }, 1000);
+                        swRegistration.showNotification('Alert!!!', options);
                         _a.label = 2;
                     case 2: return [2 /*return*/];
                 }
@@ -403,7 +406,7 @@ module.exports = "table {\n    width: calc(100%) !important;\n    padding: 0;\n 
 /***/ "./src/app/components/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-toolbar [componentId]=\"'appHeader'\">\n  <div content>\n    <nav class=\"navbar navbar-expand navbar-dark\" style=\"height: 25px;\">\n      <div class=\"collapse navbar-collapse\">\n        <ul class=\"navbar-nav mr-auto\">\n          <li *ngIf=\"!isPermission\" class=\"nav-item\">\n            <a class=\"nav-link\" [id]=\"'fiddleHeaderNotifyPermissionBtn'\" (click)=\"onNotifyPermissionBtnClick()\">\n              <i class=\"far fa-bell\"></i> Enable Notifications\n            </a>\n          </li>\n          <li *ngIf=\"isPermission\" class=\"nav-item\">\n            <a class=\"nav-link\" [id]=\"'fiddleHeaderDisableBtn'\" (click)=\"onDisableBtnClick()\">\n              <i class=\"fas fa-bell-slash\"></i> Disable Notifications\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" [id]=\"'fiddleHeaderResetBtn'\" (click)=\"onResetClick()\">\n              <i class=\"fas fa-undo\"></i> Reset Grid\n            </a>\n          </li>\n        </ul>\n      </div>\n\n    </nav>\n  </div>\n</app-toolbar>\n"
+module.exports = "<app-toolbar [componentId]=\"'appHeader'\">\n  <div content>\n    <nav class=\"navbar navbar-expand navbar-dark\" style=\"height: 25px;\">\n      <div class=\"collapse navbar-collapse\">\n        <ul class=\"navbar-nav mr-auto\">\n          <li *ngIf=\"!isPermission\" class=\"nav-item\">\n            <a class=\"nav-link\" [id]=\"'fiddleHeaderNotifyPermissionBtn'\" (click)=\"onNotifyPermissionBtnClick()\">\n              <i class=\"far fa-bell\"></i> Enable Notifications\n            </a>\n          </li>\n          <li *ngIf=\"isPermission\" class=\"nav-item\">\n            <a class=\"nav-link\" [id]=\"'fiddleHeaderDisableBtn'\" (click)=\"onDisableBtnClick()\">\n              <i class=\"fas fa-bell-slash\"></i> Disable Notifications\n            </a>\n          </li>\n          <li *ngIf=\"!isSound\" class=\"nav-item\">\n              <a class=\"nav-link\" [id]=\"'fiddleHeaderEnableSoundBtn'\" (click)=\"onEnableSoundBtnClick()\">\n                  <i class=\"fas fa-volume-up\"></i> Enable Sound\n              </a>\n          </li>\n          <li *ngIf=\"isSound\" class=\"nav-item\">\n              <a class=\"nav-link\" [id]=\"'fiddleHeaderDisableSoundBtn'\" (click)=\"onDisableSoundBtnClick()\">\n                  <i class=\"fas fa-volume-mute\"></i> Disable Sound\n              </a>\n          </li>\n            \n          <li class=\"nav-item\">\n            <a class=\"nav-link\" [id]=\"'fiddleHeaderResetBtn'\" (click)=\"onResetClick()\">\n              <i class=\"fas fa-undo\"></i> Reset Grid\n            </a>\n          </li>\n        </ul>\n      </div>\n\n    </nav>\n  </div>\n</app-toolbar>\n"
 
 /***/ }),
 
@@ -448,6 +451,10 @@ var HeaderComponent = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         _this._notifyService = _notifyService;
         _this.event = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        _this.isSound = _notifyService.isSound;
+        _this.isPermission = _notifyService.isPermission;
+        _this.subscriptions.push(_notifyService.isSoundChange$
+            .subscribe(function (sound) { return _this.onNotifyIsSoundChange(sound); }));
         _this.subscriptions.push(_notifyService.isPermissionChange$
             .subscribe(function (permission) { return _this.onNotifyIsPermissionChange(permission); }));
         _this.subscriptions.push(_notifyService.isEnabledChange$
@@ -460,9 +467,23 @@ var HeaderComponent = /** @class */ (function (_super) {
     HeaderComponent.prototype.onDisableBtnClick = function () {
         this._notifyService.isEnabled = false;
     };
+    HeaderComponent.prototype.onEnableSoundBtnClick = function () {
+        this._notifyService.isSound = this.isSound = true;
+    };
+    HeaderComponent.prototype.onDisableSoundBtnClick = function () {
+        this._notifyService.isSound = this.isSound = false;
+    };
     HeaderComponent.prototype.onNotifyPermissionBtnClick = function () {
+        var _this = this;
         this._notifyService.requestPermission();
-        this._notifyService.isEnabled = true;
+        window.setTimeout(function () {
+            if (_this._notifyService.isPermission) {
+                _this.isPermission = true;
+            }
+        }, 1000);
+    };
+    HeaderComponent.prototype.onNotifyIsSoundChange = function (sound) {
+        this.isSound = sound;
     };
     HeaderComponent.prototype.onNotifyIsPermissionChange = function (isPermission) {
         this.isPermission = isPermission;
@@ -1236,8 +1257,10 @@ var NotifyService = /** @class */ (function (_super) {
         _this._stateService = _stateService;
         _this._refreshService = _refreshService;
         _this.notifications = [];
+        _this._isSound = false;
         _this.isPermissionChange$ = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Observable__["a" /* Observable */](function (observer) { return _this._isPermissionObserver = observer; }).share();
         _this.isEnabledChange$ = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Observable__["a" /* Observable */](function (observer) { return _this._isEnableObserver = observer; }).share();
+        _this.isSoundChange$ = new __WEBPACK_IMPORTED_MODULE_5_rxjs_Observable__["a" /* Observable */](function (observer) { return _this._isSoundObserver = observer; }).share();
         _this.subscriptions.push(_stateService.isReadyChange$
             .subscribe(function (isReady) { return _this.onStateServiceIsReadyChange(isReady); }));
         _this.subscriptions.push(_stateService.notificationsChange$
@@ -1257,6 +1280,19 @@ var NotifyService = /** @class */ (function (_super) {
                 if (this._isPermissionObserver) {
                     this._isPermissionObserver.next(permission);
                 }
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NotifyService.prototype, "isSound", {
+        get: function () {
+            return this._isSound;
+        },
+        set: function (sound) {
+            this._isSound = sound;
+            if (this._isSoundObserver) {
+                this._isPermissionObserver.next(sound);
             }
         },
         enumerable: true,
@@ -1312,6 +1348,20 @@ var NotifyService = /** @class */ (function (_super) {
             return notification.id !== id;
         });
         this._stateService.notifications = this.notifications;
+    };
+    NotifyService.prototype.playAlert = function () {
+        if (this.isSound) {
+            try {
+                var audio = new Audio();
+                audio.src = './assets/alert.mp3';
+                audio.load();
+                audio.play();
+            }
+            catch (_a) {
+                // tslint:disable-next-line: no-console
+                console.info('Attempt to play alert sound failed.');
+            }
+        }
     };
     NotifyService.prototype.requestPermission = function () {
         var _this = this;
@@ -1771,12 +1821,14 @@ var StateService = /** @class */ (function () {
             return this._notifications;
         },
         set: function (newValue) {
-            this._notifications = newValue;
-            if (this.isReady) {
-                this.updateState(__WEBPACK_IMPORTED_MODULE_4__state__["a" /* PersistedTypesEnum */].notifications, { notifications: newValue });
-            }
-            if (this._notificationsObserver) {
-                this._notificationsObserver.next(newValue);
+            if (!_.isEqual(newValue, this._notifications)) {
+                this._notifications = newValue;
+                if (this.isReady) {
+                    this.updateState(__WEBPACK_IMPORTED_MODULE_4__state__["a" /* PersistedTypesEnum */].notifications, { notifications: newValue });
+                }
+                if (this._notificationsObserver) {
+                    this._notificationsObserver.next(newValue);
+                }
             }
         },
         enumerable: true,
