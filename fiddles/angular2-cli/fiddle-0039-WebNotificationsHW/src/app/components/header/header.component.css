@@ -4,44 +4,8 @@ table {
     margin: 0;
 }
 
-input:focus {
-    outline: none;
-}
-
-.btn:focus {
-    outline: none;
-    background-color: var(--blue5);
-    border: 1px solid var(--blue6);
-    color: white;
-}
-
-button {
-    background-color: var(--blue5);
-    border: 1px solid var(--blue6);
-    color: white;
-}
-
-button:hover {
-    background-color: var(--blue6);
-    border: 1px solid var(--blue7);
-    color: white;
-}
-
-button:active {
-    background-color: var(--blue7);
-    transform: translateX(1px);
-}
-
-.badge--grey-2 {
-    background-color: var(--grey2);
-}
-
-.badge {
-    font-size: 1em;
-}
-
-stong {
-    color: white;
+a {
+    cursor: pointer;
 }
 
 /*label {*/

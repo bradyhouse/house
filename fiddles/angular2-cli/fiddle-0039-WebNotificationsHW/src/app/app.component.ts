@@ -32,6 +32,7 @@ export class AppComponent extends BaseComponent implements OnInit {
     this._localStorageService.updateStateService(this._stateService.type, this._stateService);
     this._stateService.isReady = true;
     this._notifyService.requestPermission();
+    this._notifyService.isEnabled = true;
     window.setTimeout(() => {
       this.showNotification(this._stateService.notifications);
     }, 1000);
@@ -40,18 +41,57 @@ export class AppComponent extends BaseComponent implements OnInit {
   onNotificationsStateChange(notifications: NotifyDomain.Notification[]) {
     this.showNotification(notifications);
   }
+  onNotificationClick(event: any) {
+    console.log('onNotificationClick', event);
+  }
 
-  private showNotification(notifications: NotifyDomain.Notification[]): void {
-    if (notifications.length && this._notifyService.isPermission)  {
+  private async showNotification(notifications: NotifyDomain.Notification[]): Promise<void> {
+    if (notifications.length && this._notifyService.isPermission && this._notifyService.isEnabled)  {
       const lastNotification = notifications[notifications.length - 1];
       const options: any = {
-        body: lastNotification.message
+        body: lastNotification.message,
+        icon: './assets/7.png',
+        actions: [{
+          action: 0,
+          title: 'Open',
+          icon: './assets/question.png'
+        }, {
+          action: 1,
+          title: 'Acknowledge',
+          icon: './assets/check.png'
+        }],
+        data: {
+          id: lastNotification.id
+        },
+        silent: false,
+        requireInteraction: false,
+        persistent: false,
+        sticky: false,
+        notificationCloseEvent: false
       };
-      const notification = new Notification('Fiddle 39', options);
-        notification.onclick = () => {
-          notification.close();
-          this._router.navigate(['/notification']);
-        };
+      const registerServiceWorker = async () => {
+        // tslint:disable-next-line: no-shadowed-variable
+        const swRegistration = await navigator.serviceWorker.register('./sw.js');
+        return swRegistration;
+      };
+      const swRegistration = await registerServiceWorker();
+
+      navigator.serviceWorker.addEventListener('message', (event: any) => {
+        const actionId = event && event.data.message.action ? Number(event.data.message.action) : null;
+        const notificationId = actionId ? Number(event.data.message.id) : null;
+        switch (actionId) {
+          case 0:
+            this._router.navigate(['/notification']);
+            break;
+          case 1:
+            this._notifyService.acknowledge(notificationId);
+            break;
+        }
+      });
+      window.setTimeout(() => {
+        this._notifyService.playAlert();
+      }, 1000);
+      swRegistration.showNotification('Alert!!!', options);
     }
   }
 

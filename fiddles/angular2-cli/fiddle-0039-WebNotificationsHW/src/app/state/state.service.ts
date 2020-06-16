@@ -31,6 +31,7 @@ export class StateService implements StateServiceInterface {
   isPreloaderChange$: Observable<boolean>;
   isReadyChange$: Observable<boolean>;
   gridStateChange$: Observable<GridState>;
+  notificationsGridStateChange$: Observable<GridState>;
   notificationsChange$: Observable<NotifyDomain.Notification[]>;
   typeChange$: Observable<string>;
 
@@ -38,12 +39,15 @@ export class StateService implements StateServiceInterface {
 
   private _gridState: GridState;
   private _gridStateObserver: Observer<GridState>;
+  private _notificationsGridState: GridState;
+  private _notificationsGridStateObserver: Observer<GridState>;
   private _isPreloader: boolean;
   private _isPreloaderObserver: Observer<boolean>;
   private _isReady: boolean;
   private _isReadyObserver: Observer<boolean>;
   private _notifications: NotifyDomain.Notification[];
   private _notificationsObserver: Observer<NotifyDomain.Notification[]>;
+
   private _type: string;
   private _typeObserver: Observer<string>;
 
@@ -89,18 +93,36 @@ export class StateService implements StateServiceInterface {
     }
   }
 
+  get notificationsGridState(): GridState {
+    return this._notificationsGridState;
+  }
+
+  set notificationsGridState(newValue: GridState) {
+    if (!_.isEqual(newValue, this._notificationsGridState)) {
+      this._notificationsGridState = newValue;
+      if (this.isReady) {
+        this.updateState(PersistedTypesEnum.notificationsGridState, {notificationGridState: newValue});
+      }
+      if (this._notificationsGridStateObserver) {
+        this._notificationsGridStateObserver.next(newValue);
+      }
+    }
+  }
+
   get notifications(): NotifyDomain.Notification[] {
     return this._notifications;
   }
 
   set notifications(newValue: NotifyDomain.Notification[]) {
-    this._notifications = newValue;
+    if (!_.isEqual(newValue, this._notifications)) {
+      this._notifications = newValue;
       if (this.isReady) {
         this.updateState(PersistedTypesEnum.notifications, {notifications: newValue});
       }
       if (this._notificationsObserver) {
         this._notificationsObserver.next(newValue);
       }
+    }
   }
 
   set type(newValue: string) {
@@ -121,9 +143,14 @@ export class StateService implements StateServiceInterface {
     this._type = PersistedTypesEnum.localStorageKey;
     this._isPreloader = true;
     this._gridState = {};
+    this._notificationsGridState = {};
     this._notifications = [];
     this.gridStateChange$ = new Observable<GridState>(
       (observer: any) => this._gridStateObserver = observer
+    ).share();
+
+    this.notificationsGridStateChange$ = new Observable<GridState>(
+      (observer: any) => this._notificationsGridObserver = observer
     ).share();
 
     this.isReadyChange$ = new Observable < boolean > (
