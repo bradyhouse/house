@@ -51,6 +51,7 @@ export class AppComponent extends BaseComponent implements OnInit {
       const options: any = {
         body: lastNotification.message,
         icon: './assets/7.png',
+        badge: 'badge',
         actions: [{
           action: 0,
           title: 'Open',
@@ -88,8 +89,10 @@ export class AppComponent extends BaseComponent implements OnInit {
             break;
         }
       });
-
-      swRegistration.showNotification('fiddle.sh', options);
+      window.setTimeout(() => {
+        this._notifyService.playAlert();
+      }, 1000);
+      swRegistration.showNotification('Alert!!!', options);
     }
   }
 

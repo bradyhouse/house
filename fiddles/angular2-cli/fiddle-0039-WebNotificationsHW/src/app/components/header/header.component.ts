@@ -27,10 +27,17 @@ export class HeaderComponent extends BaseComponent {
   @Output() event: EventEmitter <EventType>;
   isPermission: boolean;
   isEnabled: boolean;
+  isSound: boolean;
 
   constructor(private _notifyService: NotifyService) {
     super();
     this.event = new EventEmitter();
+    this.isSound = _notifyService.isSound;
+    this.isPermission = _notifyService.isPermission;
+    this.subscriptions.push(_notifyService.isSoundChange$
+      .subscribe(
+        (sound: boolean) => this.onNotifyIsSoundChange(sound)
+      ));
     this.subscriptions.push(_notifyService.isPermissionChange$
       .subscribe(
         (permission: boolean) => this.onNotifyIsPermissionChange(permission)
@@ -49,9 +56,25 @@ export class HeaderComponent extends BaseComponent {
    this._notifyService.isEnabled = false;
   }
 
+  onEnableSoundBtnClick() {
+    this._notifyService.isSound = this.isSound = true;
+  }
+
+  onDisableSoundBtnClick() {
+    this._notifyService.isSound = this.isSound = false;
+  }
+
   onNotifyPermissionBtnClick(): void {
     this._notifyService.requestPermission();
-    this._notifyService.isEnabled = true;
+    window.setTimeout(() => {
+      if(this._notifyService.isPermission) {
+        this.isPermission = true;
+      }
+    }, 1000);
+  }
+
+  onNotifyIsSoundChange(sound: boolean) {
+    this.isSound = sound;
   }
 
   onNotifyIsPermissionChange(isPermission: boolean) {

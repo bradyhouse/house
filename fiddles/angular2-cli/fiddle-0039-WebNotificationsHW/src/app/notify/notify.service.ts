@@ -23,11 +23,14 @@ declare let _: any;
 @Injectable()
 export class NotifyService extends BaseComponent implements Domain.NotifyServiceInterface {
   isPermissionChange$: Observable<boolean>;
+  isSoundChange$: Observable<boolean>;
   isEnabledChange$: Observable<boolean>;
   notifications: Domain.Notification[];
-  
+
   private _isPermission: boolean;
   private _isPermissionObserver: Observer<boolean>;
+  private _isSound: boolean;
+  private _isSoundObserver: Observer<boolean>;
   private _isEnabled: boolean;
   private _isEnableObserver: Observer<boolean>;
 
@@ -40,6 +43,19 @@ export class NotifyService extends BaseComponent implements Domain.NotifyService
       this._isPermission = permission;
       if (this._isPermissionObserver) {
         this._isPermissionObserver.next(permission);
+      }
+    }
+  }
+
+  get isSound(): boolean {
+    return this._isSound;
+  }
+
+  set isSound(sound: boolean) {
+    if (!_.isEqual(sound, this._isSound)) {
+      this._isSound = sound;
+      if (this._isSoundObserver) {
+        this._isPermissionObserver.next(sound);
       }
     }
   }
@@ -90,6 +106,20 @@ export class NotifyService extends BaseComponent implements Domain.NotifyService
     this._stateService.notifications = this.notifications;
   }
 
+  playAlert(): void {
+    if (this.isSound) {
+      try {
+        const audio = new Audio();
+        audio.src = './assets/alert.mp3';
+        audio.load();
+        audio.play();
+      } catch {
+        // tslint:disable-next-line: no-console
+        console.info('Attempt to play alert sound failed.');
+      }
+    }
+  }
+
   requestPermission(): void {
     if (!('Notification' in window)) {
       console.warn('This browser does not support notifications.');
@@ -132,6 +162,7 @@ export class NotifyService extends BaseComponent implements Domain.NotifyService
     super();
 
     this.notifications = [];
+    this._isSound = false;
 
     this.isPermissionChange$ = new Observable <boolean> (
       (observer: any) => this._isPermissionObserver = observer
@@ -139,6 +170,10 @@ export class NotifyService extends BaseComponent implements Domain.NotifyService
 
     this.isEnabledChange$ = new Observable <boolean> (
       (observer: any) => this._isEnableObserver = observer
+    ).share();
+
+    this.isSoundChange$ = new Observable <boolean> (
+      (observer: any) => this._isSoundObserver = observer
     ).share();
 
     this.subscriptions.push(_stateService.isReadyChange$
