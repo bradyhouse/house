@@ -52,11 +52,9 @@ export class NotifyService extends BaseComponent implements Domain.NotifyService
   }
 
   set isSound(sound: boolean) {
-    if (!_.isEqual(sound, this._isSound)) {
-      this._isSound = sound;
-      if (this._isSoundObserver) {
-        this._isPermissionObserver.next(sound);
-      }
+    this._isSound = sound;
+    if (this._isSoundObserver) {
+      this._isPermissionObserver.next(sound);
     }
   }
 

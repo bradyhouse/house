@@ -51,7 +51,6 @@ export class AppComponent extends BaseComponent implements OnInit {
       const options: any = {
         body: lastNotification.message,
         icon: './assets/7.png',
-        badge: 'badge',
         actions: [{
           action: 0,
           title: 'Open',
