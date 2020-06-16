@@ -114,13 +114,15 @@ export class StateService implements StateServiceInterface {
   }
 
   set notifications(newValue: NotifyDomain.Notification[]) {
-    this._notifications = newValue;
+    if (!_.isEqual(newValue, this._notifications)) {
+      this._notifications = newValue;
       if (this.isReady) {
         this.updateState(PersistedTypesEnum.notifications, {notifications: newValue});
       }
       if (this._notificationsObserver) {
         this._notificationsObserver.next(newValue);
       }
+    }
   }
 
   set type(newValue: string) {
