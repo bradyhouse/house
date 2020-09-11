@@ -20,4 +20,4 @@ export __CREATE_GOOGLE_API_VERSION__="19";
 export __CREATE_GRADLE_VERSION__="2.10";
 
 export __START_ANDROID_EMULATOR_PROFILE__=320480QVGA;
-export __START_ANDROID_EMULATOR_EXE__="/Users/e13542/bin/android-sdk-macosx/tools/emulator";
+export __START_ANDROID_EMULATOR_EXE__="/Users/bradyhouse/bin/android-sdk-macosx/tools/emulator";

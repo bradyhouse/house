@@ -8,9 +8,9 @@ Executing the command `./fiddle.sh "start" "electron" "0000"` produces the follo
     FIDDLE-START.SH
     ├────STARTSERVER
     ├────ELECTRONINSTALL
-    /Users/e13542/.nvm/versions/node/v8.1.0/bin/electron -> /Users/e13542/.nvm/versions/node/v8.1.0/lib/node_modules/electron/cli.js
+    /Users/bradyhouse/.nvm/versions/node/v8.1.0/bin/electron -> /Users/bradyhouse/.nvm/versions/node/v8.1.0/lib/node_modules/electron/cli.js
     
-    > electron@2.0.2 postinstall /Users/e13542/.nvm/versions/node/v8.1.0/lib/node_modules/electron
+    > electron@2.0.2 postinstall /Users/bradyhouse/.nvm/versions/node/v8.1.0/lib/node_modules/electron
     > node install.js
     
     Downloading SHASUMS256.txt
@@ -23,7 +23,7 @@ Executing the command `./fiddle.sh "start" "electron" "0000"` produces the follo
     Now using node v8.9.4 (npm v5.6.0)
     ├────NPMINSTALL
     
-    > electron@2.0.0 postinstall /Users/e13542/github/house_230/fiddles/electron/fiddle-0000-Template/node_modules/electron
+    > electron@2.0.0 postinstall /Users/bradyhouse/github/house_230/fiddles/electron/fiddle-0000-Template/node_modules/electron
     > node install.js
     
     Downloading SHASUMS256.txt
@@ -31,7 +31,7 @@ Executing the command `./fiddle.sh "start" "electron" "0000"` produces the follo
     added 153 packages in 22.635s
     ├────NPMSTART
     
-    > fiddle-0000-Template@1.0.0 start /Users/e13542/github/house_230/fiddles/electron/fiddle-0000-Template
+    > fiddle-0000-Template@1.0.0 start /Users/bradyhouse/github/house_230/fiddles/electron/fiddle-0000-Template
     > electron .
     
 

@@ -410,7 +410,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var AppComponent = /** @class */ (function () {
     // #endregion
-    // #region constructor 
+    // #region constructor
     function AppComponent(_http) {
         var _this = this;
         this._http = _http;
@@ -687,7 +687,7 @@ fetch('assets/license.json').then(function (response) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/e13542/github/house_master/fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/bradyhouse/github/house_master/fiddles/angular2-cli/fiddle-0023-EntAgGridRowSelection/src/main.ts */"./src/main.ts");
 
 
 /***/ })

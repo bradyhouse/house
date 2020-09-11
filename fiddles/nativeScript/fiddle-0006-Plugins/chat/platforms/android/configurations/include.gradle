@@ -1,4 +1,0 @@
-
-android {
-    flavorDimensions "nativescripttelerikui", "nativescriptvibrate", "nativescriptwebsockets", "tnscoremoduleswidgets"
-}

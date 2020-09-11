@@ -44,36 +44,36 @@ To install and run the fiddle, from the root [scripts](../../scripts), directory
     npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
     npm WARN deprecated graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
     |
-    > pngquant-bin@3.1.1 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-pngquant/node_modules/pngquant-bin
+    > pngquant-bin@3.1.1 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-pngquant/node_modules/pngquant-bin
     > node lib/install.js
     
       ✔ pngquant pre-build test passed successfully
     
-    > jpegtran-bin@3.2.0 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-jpegtran/node_modules/jpegtran-bin
+    > jpegtran-bin@3.2.0 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-jpegtran/node_modules/jpegtran-bin
     > node lib/install.js
     
       ✔ jpegtran pre-build test passed successfully
     
-    > optipng-bin@3.1.4 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-optipng/node_modules/optipng-bin
+    > optipng-bin@3.1.4 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-optipng/node_modules/optipng-bin
     > node lib/install.js
     
       ✔ optipng pre-build test passed successfully
     
-    > gifsicle@3.0.4 postinstall /Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle
+    > gifsicle@3.0.4 postinstall /Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle
     > node lib/install.js
     
       ✔ gifsicle pre-build test passed successfully
     
-    > fsevents@1.1.1 install /Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents
+    > fsevents@1.1.1 install /Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents
     > node install
     
-    [fsevents] Success: "/Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents/lib/binding/Release/node-v46-darwin-x64/fse.node" already installed
+    [fsevents] Success: "/Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/gulp/node_modules/glob-watcher/node_modules/chokidar/node_modules/fsevents/lib/binding/Release/node-v46-darwin-x64/fse.node" already installed
     Pass --update-binary to reinstall or --build-from-source to recompile
     
-    > fsevents@1.1.1 install /Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/browser-sync/node_modules/chokidar/node_modules/fsevents
+    > fsevents@1.1.1 install /Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/browser-sync/node_modules/chokidar/node_modules/fsevents
     > node install
     
-    [fsevents] Success: "/Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/browser-sync/node_modules/chokidar/node_modules/fsevents/lib/binding/Release/node-v46-darwin-x64/fse.node" already installed
+    [fsevents] Success: "/Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify/node_modules/browser-sync/node_modules/chokidar/node_modules/fsevents/lib/binding/Release/node-v46-darwin-x64/fse.node" already installed
     Pass --update-binary to reinstall or --build-from-source to recompile
     connect@3.6.1 node_modules/connect
     ├── utils-merge@1.0.0
@@ -211,7 +211,7 @@ To install and run the fiddle, from the root [scripts](../../scripts), directory
     ├── browser-sync-ui@0.6.3 (async-each-series@0.1.1, connect-history-api-fallback@1.3.0, stream-throttle@0.1.3, weinre@2.0.0-pre-I0Z7U9OV)
     └── chokidar@1.6.1 (path-is-absolute@1.0.1, inherits@2.0.3, async-each@1.0.1, glob-parent@2.0.0, is-glob@2.0.1, anymatch@1.3.0, is-binary-path@1.0.1, readdirp@2.1.0, fsevents@1.1.1)
     
-    > fiddle-0023-GulpStaticServer@0.0.0 start /Users/e13542/github/house/fiddles/node/fiddle-0024-Browserify
+    > fiddle-0023-GulpStaticServer@0.0.0 start /Users/bradyhouse/github/house/fiddles/node/fiddle-0024-Browserify
     > gulp
     
     [18:04:30] Using gulpfile ~/github/house/fiddles/node/fiddle-0024-Browserify/gulpfile.js

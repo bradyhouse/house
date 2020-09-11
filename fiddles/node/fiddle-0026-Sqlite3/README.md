@@ -36,7 +36,7 @@ FIDDLE.SH
 FIDDLE-START.SH
 ├────STARTSERVER
 
-> fiddle-0026-Sqlite3@0.0.0 start /Users/e13542/github/house/fiddles/node/fiddle-0026-Sqlite3
+> fiddle-0026-Sqlite3@0.0.0 start /Users/bradyhouse/github/house/fiddles/node/fiddle-0026-Sqlite3
 > node --harmony app.js
 
 1: Ipsum 0

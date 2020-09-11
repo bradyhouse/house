@@ -20,8 +20,8 @@ Executing the command `./fiddle.sh "update" "electron"` produces the following o
     ├────SETUP
     ├────INSTALL
     ├────IINSTALLNPMCHECKUPDATES
-    /Users/e13542/.nvm/versions/node/v8.9.4/bin/npm-check-updates -> /Users/e13542/.nvm/versions/node/v8.9.4/lib/node_modules/npm-check-updates/bin/npm-check-updates
-    /Users/e13542/.nvm/versions/node/v8.9.4/bin/ncu -> /Users/e13542/.nvm/versions/node/v8.9.4/lib/node_modules/npm-check-updates/bin/ncu
+    /Users/bradyhouse/.nvm/versions/node/v8.9.4/bin/npm-check-updates -> /Users/bradyhouse/.nvm/versions/node/v8.9.4/lib/node_modules/npm-check-updates/bin/npm-check-updates
+    /Users/bradyhouse/.nvm/versions/node/v8.9.4/bin/ncu -> /Users/bradyhouse/.nvm/versions/node/v8.9.4/lib/node_modules/npm-check-updates/bin/ncu
     + npm-check-updates@2.14.2
     added 382 packages in 20.303s
     Done. npm-check-updates installed successfully.
@@ -29,7 +29,7 @@ Executing the command `./fiddle.sh "update" "electron"` produces the following o
     
     ├────RMNODEMODULES
     ├────NPMCHECKUPDATES
-    Using /Users/e13542/github/house_230/fiddles/electron/fiddle-0000-Template/package.json
+    Using /Users/bradyhouse/github/house_230/fiddles/electron/fiddle-0000-Template/package.json
     ⸨░░░░░░░░░░░░░░░░░░⸩ ⠋ :
      electron  ^2.0.0  →  ^2.0.2
     
@@ -44,7 +44,7 @@ Executing the command `./fiddle.sh "update" "electron"` produces the following o
     ├────NCUINSTALL
     ├────RMNODEMODULES
     ├────NPMCHECKUPDATES
-    Using /Users/e13542/github/house_230/fiddles/electron/fiddle-0001-TemplateFork/package.json
+    Using /Users/bradyhouse/github/house_230/fiddles/electron/fiddle-0001-TemplateFork/package.json
     ⸨░░░░░░░░░░░░░░░░░░⸩ ⠦ :
      electron  ^2.0.0  →  ^2.0.2
     

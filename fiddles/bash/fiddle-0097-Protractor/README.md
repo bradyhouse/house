@@ -53,21 +53,21 @@ If everything is working properly, it should generate the following output:
      ┌──IS NPM INSTALLED...
      true
      ┌──INSTALLING PROTRACTOR...
-     /Users/e13542/.nvm/versions/node/v6.9.0/bin/protractor -> /Users/e13542/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/bin/protractor
-     /Users/e13542/.nvm/versions/node/v6.9.0/bin/webdriver-manager -> /Users/e13542/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/bin/webdriver-manager
-     /Users/e13542/.nvm/versions/node/v6.9.0/lib
+     /Users/bradyhouse/.nvm/versions/node/v6.9.0/bin/protractor -> /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/bin/protractor
+     /Users/bradyhouse/.nvm/versions/node/v6.9.0/bin/webdriver-manager -> /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/bin/webdriver-manager
+     /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib
      └── protractor@5.1.2
      
      ┌──UPDATING WEBDRIVER-MANAGER...
-     [15:56:15] I/update - chromedriver: file exists /Users/e13542/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.32.zip
+     [15:56:15] I/update - chromedriver: file exists /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.32.zip
      [15:56:15] I/update - chromedriver: unzipping chromedriver_2.32.zip
-     [15:56:15] I/update - chromedriver: setting permissions to 0755 for /Users/e13542/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.32
+     [15:56:15] I/update - chromedriver: setting permissions to 0755 for /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.32
      [15:56:15] I/update - chromedriver: chromedriver_2.32 up to date
-     [15:56:15] I/update - selenium standalone: file exists /Users/e13542/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.5.3.jar
+     [15:56:15] I/update - selenium standalone: file exists /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.5.3.jar
      [15:56:15] I/update - selenium standalone: selenium-server-standalone-3.5.3.jar up to date
-     [15:56:15] I/update - geckodriver: file exists /Users/e13542/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.18.0.tar.gz
+     [15:56:15] I/update - geckodriver: file exists /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.18.0.tar.gz
      [15:56:15] I/update - geckodriver: unzipping geckodriver-v0.18.0.tar.gz
-     [15:56:15] I/update - geckodriver: setting permissions to 0755 for /Users/e13542/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.18.0
+     [15:56:15] I/update - geckodriver: setting permissions to 0755 for /Users/bradyhouse/.nvm/versions/node/v6.9.0/lib/node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.18.0
      [15:56:15] I/update - geckodriver: geckodriver-v0.18.0 up to date
      └──PROTRACTOR INSTALLED
      
