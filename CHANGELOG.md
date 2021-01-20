@@ -2318,3 +2318,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * Added [fiddles/angular2-cli/fiddle-0039-NotificationsHW](fiddles/angular2-cli/fiddle-0039-NotificationsHW)
 * Added [fiddles/angular2-cli/fiddle-0039-WebNotificationsHW](fiddles/angular2-cli/fiddle-0039-WebNotificationsHW)
+* Added [fiddles/java/fiddle-0007-j2v8Protractor](fiddles/java/fiddle-0007-j2v8Protractor)
+* Added [fiddles/react/fiddle-0016-AgGridHelloWorld](fiddles/react/fiddle-0016-AgGridHelloWorld)
