@@ -2,6 +2,8 @@ import os
 import logging
 import time
 import speech_recognition as speech_toolbox
+import sys
+
 
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
@@ -10,11 +12,20 @@ tmp_dir = 'chunks'
 formats_to_delete = ['.wav']
 transcript_file = 'transcript.txt'
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+if len(sys.argv) >= 2 and sys.argv[1] == 'debug':
+    logging.basicConfig(
+        format='%(asctime)s %(levelname)-8s %(message)s',
+        level=logging.DEBUG,
+        datefmt='%Y-%m-%d %H:%M:%S'
+      )
+else:
+    logging.basicConfig(level=logging.INFO)
+
+logger = logging.getLogger(sys.argv[0])
 
 
 def cleanup():
+    logger.debug('cleanup ::::')
     if os.path.isdir(tmp_dir):
         os.system('rm -rf ' + tmp_dir)
     for (dirpath, dirnames, filenames) in os.walk('.'):
@@ -25,34 +36,17 @@ def cleanup():
 
 
 def setup():
+    logger.debug('setup ::::')
     if os.path.isfile(transcript_file):
         os.system('rm -rf ' + transcript_file)
     if os.path.isdir(tmp_dir):
         cleanup()
     os.mkdir(tmp_dir)
-    logger.debug( ' Created ' + tmp_dir +' directory ')
-
-
-def toWav():
-    formats_to_convert = ['.m4a']
-    for (dirpath, dirnames, filenames) in os.walk('.'):
-        for filename in filenames:
-            if filename.endswith(tuple(formats_to_convert)):
-                filepath = dirpath + '/' + filename
-                (path, file_extension) = os.path.splitext(filepath)
-                file_extension_final = file_extension.replace('.', '')
-                try:
-                    track = AudioSegment.from_file(filepath,
-                            file_extension_final)
-                    wav_filename = filename.replace(file_extension_final, 'wav')
-                    wav_path = dirpath + '/' + wav_filename
-                    file_handle = track.export(wav_path, format='wav')
-                    logger.debug(' Created ' + str(wav_filename))
-                except Exception as error:
-                    logger.exception(error)
+    logger.debug( 'Created ' + tmp_dir +' directory ')
 
 
 def explodeWav():
+    logger.debug('explodeWav ::::')
     formats_to_convert = ['.wav']
     for (dirpath, dirnames, filenames) in os.walk('.'):
         for filename in filenames:
@@ -72,7 +66,28 @@ def explodeWav():
                     logger.exception(error)
 
 
+def toWav():
+    logger.debug('toWav ::::')
+    formats_to_convert = ['.m4a']
+    for (dirpath, dirnames, filenames) in os.walk('.'):
+        for filename in filenames:
+            if filename.endswith(tuple(formats_to_convert)):
+                filepath = dirpath + '/' + filename
+                (path, file_extension) = os.path.splitext(filepath)
+                file_extension_final = file_extension.replace('.', '')
+                try:
+                    track = AudioSegment.from_file(filepath,
+                            file_extension_final)
+                    wav_filename = filename.replace(file_extension_final, 'wav')
+                    wav_path = dirpath + '/' + wav_filename
+                    file_handle = track.export(wav_path, format='wav')
+                    logger.debug('Created ' + str(wav_filename))
+                except Exception as error:
+                    logger.exception(error)
+
+
 def toTxt():
+    logger.debug('toTxt ::::')
     recognizer = speech_toolbox.Recognizer()
     formats_to_convert = ['.wav']
     for (dirpath, dirnames, filenames) in os.walk('./' + tmp_dir):
@@ -90,7 +105,7 @@ def toTxt():
                         txt_file_path = dirpath + '/' + txt_filename
                         with open(txt_file_path, 'w') as txt_file:
                             print(text, file=txt_file)
-                        logger.debug(' Created ' + txt_file_path)
+                        logger.debug('Created ' + txt_file_path)
                         os.system('cat ' + txt_file_path + ' >> ' + transcript_file)
                 except speech_toolbox.UnknownValueError:
                     logger.info(' Google Speech Recognition could not understand audio')
@@ -98,16 +113,17 @@ def toTxt():
                     logger.info(' Could not request results from Google Speech Recognition service; {0}'.format(request_error))
                 except Exception as unknown_error:
                     logger.exception(unknown_error)
-    if os.path.isfile(transcript_file):
-        os.system('cat ' + transcript_file)
 
 
 def main():
+    logger.debug('main ::::')
     setup()
     toWav()
     explodeWav()
     toTxt()
     cleanup()
+    if os.path.isfile(transcript_file):
+        os.system('cat ' + transcript_file)
 
 
 main()
