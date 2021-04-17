@@ -40,7 +40,7 @@ example, the script should display
     line 2
     line 3
     line 4
-    the Rain in Spain falls mainly on the plain
+    the rain in spain falls mainly on the plain
 
 The script should:
 
