@@ -2318,3 +2318,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * Added [fiddles/angular2-cli/fiddle-0039-NotificationsHW](fiddles/angular2-cli/fiddle-0039-NotificationsHW)
 * Added [fiddles/angular2-cli/fiddle-0039-WebNotificationsHW](fiddles/angular2-cli/fiddle-0039-WebNotificationsHW)
+* Added [fiddles/java/fiddle-0007-ChromeDriverHW](fiddles/java/fiddle-0007-ChromeDriverHW)
