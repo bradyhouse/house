@@ -2325,3 +2325,20 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
     1.  Added [fiddles/react/fiddle-0016-AgGridHelloWorld](fiddles/react/fiddle-0016-AgGridHelloWorld)
 
+* **python**
+    
+    1.  Added [fiddles/python/fiddle-0011-TelloHelloWorld](fiddles/python/fiddle-0011-TelloHelloWorld)
+
+* **node**
+
+    1.  Added [fiddles/node/fiddle-0049-TelloHelloWorld](fiddles/node/fiddle-0049-TelloHelloWorld)
+
+* **fiddle.sh (Enhancement)**
+
+    *   Updated node to NVM_VERSION to v16.11.1
+
+      1.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
+
+    *   Refactored Edit functionality ~ simply open a new terminal in the root of the selected fiddle
+
+      1.  Updated [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)

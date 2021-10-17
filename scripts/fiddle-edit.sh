@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # 12/12/2016 - Baseline Ver ~ See CHANGELOG @ 201612120420
 # 12/15/2016 - See CHANGELOG @ 201612120420
+# 10/17/2021 - See CHANGELOG @ 358_react_16-25
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh
 source bin/_types.sh
@@ -37,6 +38,7 @@ function isJoeInstalled() {
 }
 
 function installJoeEditor() {
+    path=$1;
     installed=$(isJoeInstalled;);
     if [[ "${installed}" == "false" ]]
     then
@@ -49,28 +51,35 @@ function installJoeEditor() {
             if [[ ${CMD} == "n" ]]; then exit 0; fi
             brew install joe || exit $?;
         else
-            echo -e "Please visit \"http://joe-editor.sourceforge.net/\" for instructions on how to install the editor."
+            echo -e "Please visit \"http://joe-editor.sourceforge.net/\" for instructions on how to install the editor.";
+            startTerminal ${path};
             exit 0;
         fi
     fi
 }
 
+function startTerminal() {
+  echo -e "Starting secondary terminal @ $1";
+  open -a Terminal $1;
+}
+
 function editFiddle() {
-    installJoeEditor || exit $?;
     case $1 in
         'c')
+            installJoeEditor ${_fiddleRoot} || exit $?;
             source bin/c/.gccrc;
             source bin/c/_edit.sh;
             cd ${_fiddleRoot};
             gccEdit
             ;;
         'javac')
+            installJoeEditor ${_fiddleRoot} || exit $?;
             source bin/javac/.javacrc;
             source bin/javac/_edit.sh;
             cd ${_fiddleRoot};
             javacEdit
             ;;
-        *)  exit 86;
+        *)  startTerminal ${_fiddleRoot};
             ;;
     esac
 }

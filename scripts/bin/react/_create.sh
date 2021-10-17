@@ -40,7 +40,7 @@ function reactCreate() {
         then
             appName="fiddle";
         fi
-
+        #npm uninstall -g create-react-app && npm i -g npm@latest && npm cache clean -f && npx create-react-app my-app
         npx create-react-app ${appName} || exit 2;
         mv ${appName} ${fiddle};
         cd ${fiddle};
