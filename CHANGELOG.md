@@ -2339,6 +2339,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
       1.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
 
-    *   Refactored Edit functionality ~ simply open a new terminal in the root of the selected fiddle
+    *   Refactored Edit functionality to use Visual Studio Code instead of Joe's Own Editor
 
       1.  Updated [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)

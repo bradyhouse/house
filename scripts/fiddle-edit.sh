@@ -37,13 +37,39 @@ function isJoeInstalled() {
     fi
 }
 
+function isCodeInstalled() {
+    if [[ ! $(which code;) ]]
+    then
+        echo "false";
+    else
+        echo "true";
+    fi
+}
+
+function openInCode() {
+    path=$1;
+    installed=$(isCodeInstalled;);
+     if [[ "${installed}" == "false" ]]
+     then
+        echo -e ""
+        echo -e "In order to use edit Visual Studio Code must be added to your path.";
+        echo -e "Open the Command Palette (Ctrl + Shift + P) and type 'shell command'";
+        echo -e "to find the Shell Command: Install 'code' command in PATH command."
+        echo -e "";
+        startTerminal $path;
+     else
+        cd $path;
+        code .;
+     fi
+}
+
 function installJoeEditor() {
     path=$1;
     installed=$(isJoeInstalled;);
     if [[ "${installed}" == "false" ]]
     then
         echo -e ""
-        echo -e "In order to use the edit you must install \"Joe's Own Editor\"";
+        echo -e "In order to use edit you must install \"Joe's Own Editor\"";
         echo -e "";
         if [[ "${OSTYPE}" -ne "cygwin" ]]
         then
@@ -64,24 +90,7 @@ function startTerminal() {
 }
 
 function editFiddle() {
-    case $1 in
-        'c')
-            installJoeEditor ${_fiddleRoot} || exit $?;
-            source bin/c/.gccrc;
-            source bin/c/_edit.sh;
-            cd ${_fiddleRoot};
-            gccEdit
-            ;;
-        'javac')
-            installJoeEditor ${_fiddleRoot} || exit $?;
-            source bin/javac/.javacrc;
-            source bin/javac/_edit.sh;
-            cd ${_fiddleRoot};
-            javacEdit
-            ;;
-        *)  startTerminal ${_fiddleRoot};
-            ;;
-    esac
+    openInCode ${_fiddleRoot};
 }
 
 function catch() {
