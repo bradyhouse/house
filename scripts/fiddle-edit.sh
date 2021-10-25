@@ -58,6 +58,7 @@ function openInCode() {
         echo -e "";
         startTerminal $path;
      else
+        startTerminal $path;
         cd $path;
         code .;
      fi

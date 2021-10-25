@@ -2324,6 +2324,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **react**
 
     1.  Added [fiddles/react/fiddle-0016-AgGridHelloWorld](fiddles/react/fiddle-0016-AgGridHelloWorld)
+    2.  Added [fiddles/react/fiddle-0017-EnterpriseAgGrid](fiddles/react/fiddle-0017-EnterpriseAgGrid)
 
 * **python**
     
@@ -2342,3 +2343,8 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     *   Refactored Edit functionality to use Visual Studio Code instead of Joe's Own Editor
 
       1.  Updated [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)
+
+    *   Refactored react template to include bootstrap style nav bar
+
+      1.  Updated [scripts/bin/react/_create.sh](scripts/bin/react/_create.sh)
+

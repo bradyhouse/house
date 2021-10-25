@@ -13,10 +13,14 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 006_fiddle_react
+# 10/17/2021 - See CHANGELOG @ 358_react_16-25
 # ---------------------------------------------------------------------------------------------------|
 
 
-
+function npmInstallDep() {
+  groupLog "npmInstallDep";
+  npm install --save bootstrap jquery popper.js;
+}
 
 function npmShrinkWrap() {
   groupLog "npmShrinkWrap";
@@ -59,6 +63,8 @@ function reactCreate() {
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
         npmShrinkWrap || exit $?;
+        npmInstallDep || exit $?;
+        cp -rf ../template/index.js src/index.js || exit 5;
 
     )
     # catch

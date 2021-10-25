@@ -1,16 +1,19 @@
 {
-  "name": "fiddle",
+  "name": "enterpriseaggrid",
   "version": "0.1.0",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
     "": {
-      "name": "fiddle",
+      "name": "enterpriseaggrid",
       "version": "0.1.0",
       "dependencies": {
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^12.8.3",
+        "ag-grid-community": "^26.1.0",
+        "ag-grid-enterprise": "^26.1.0",
+        "ag-grid-react": "^26.1.0",
         "bootstrap": "^5.1.3",
         "jquery": "^3.6.0",
         "popper.js": "^1.16.1",
@@ -4173,6 +4176,29 @@
       },
       "engines": {
         "node": ">=8.9"
+      }
+    },
+    "node_modules/ag-grid-community": {
+      "version": "26.1.0",
+      "resolved": "https://registry.npmjs.org/ag-grid-community/-/ag-grid-community-26.1.0.tgz",
+      "integrity": "sha512-vGnbiaxN6TxsDGcC2uIOrgjx+zwXlBK99aYiWcuiyzSPvNpz1fG29nSNx/fMeVRzc3FOru8h8vvk41vszh5AMg=="
+    },
+    "node_modules/ag-grid-enterprise": {
+      "version": "26.1.0",
+      "resolved": "https://registry.npmjs.org/ag-grid-enterprise/-/ag-grid-enterprise-26.1.0.tgz",
+      "integrity": "sha512-f1GhWpg5wL/MBYFgldQue520JU8Y59FyNn+66vfPTmwl4IS7PLtYuxbxZmR+ED6XVvqg45qc2zz1W2Nt9ZWGcQ=="
+    },
+    "node_modules/ag-grid-react": {
+      "version": "26.1.0",
+      "resolved": "https://registry.npmjs.org/ag-grid-react/-/ag-grid-react-26.1.0.tgz",
+      "integrity": "sha512-W+NTwpbCbMUCYadqn7GFPi+zWzU5UBklVPoKxjx3BkFIa/63Mb0dLm/ynr/hLIRVQCZriUBlHPFU7QrZJXptLg==",
+      "dependencies": {
+        "prop-types": "^15.6.2"
+      },
+      "peerDependencies": {
+        "ag-grid-community": "~26.1.0",
+        "react": "^16.3.0 || ^17.0.0",
+        "react-dom": "^16.3.0 || ^17.0.0"
       }
     },
     "node_modules/agent-base": {
@@ -24455,6 +24481,24 @@
       "requires": {
         "loader-utils": "^2.0.0",
         "regex-parser": "^2.2.11"
+      }
+    },
+    "ag-grid-community": {
+      "version": "26.1.0",
+      "resolved": "https://registry.npmjs.org/ag-grid-community/-/ag-grid-community-26.1.0.tgz",
+      "integrity": "sha512-vGnbiaxN6TxsDGcC2uIOrgjx+zwXlBK99aYiWcuiyzSPvNpz1fG29nSNx/fMeVRzc3FOru8h8vvk41vszh5AMg=="
+    },
+    "ag-grid-enterprise": {
+      "version": "26.1.0",
+      "resolved": "https://registry.npmjs.org/ag-grid-enterprise/-/ag-grid-enterprise-26.1.0.tgz",
+      "integrity": "sha512-f1GhWpg5wL/MBYFgldQue520JU8Y59FyNn+66vfPTmwl4IS7PLtYuxbxZmR+ED6XVvqg45qc2zz1W2Nt9ZWGcQ=="
+    },
+    "ag-grid-react": {
+      "version": "26.1.0",
+      "resolved": "https://registry.npmjs.org/ag-grid-react/-/ag-grid-react-26.1.0.tgz",
+      "integrity": "sha512-W+NTwpbCbMUCYadqn7GFPi+zWzU5UBklVPoKxjx3BkFIa/63Mb0dLm/ynr/hLIRVQCZriUBlHPFU7QrZJXptLg==",
+      "requires": {
+        "prop-types": "^15.6.2"
       }
     },
     "agent-base": {
