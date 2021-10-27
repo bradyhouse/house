@@ -1,5 +1,5 @@
 import './App.css';
-import RichGrid from './components';
+import {RichGrid} from './components';
 
 function App() {
   return (

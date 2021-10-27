@@ -1,0 +1,31 @@
+.customHeaderMenuButton {
+  float: right;
+  margin: 0 0 0 3px;
+}
+
+.customHeaderLabel {
+  float: left;
+  margin: 0 0 0 3px;
+}
+
+.customSortDownLabel {
+  float: right;
+  margin: 0 0 0 3px;
+}
+
+.customSortUpLabel {
+  float: right;
+  margin: 0;
+}
+
+.customSortRemoveLabel {
+  float: right;
+  margin: 0 0 0 3px;
+  font-size: .8em;
+  color: transparent;
+}
+
+.active {
+  color: cornflowerblue;
+}
+

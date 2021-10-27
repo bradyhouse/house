@@ -4,7 +4,53 @@ import RefData from '../../data/ref-data';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import { CustomHeader } from '../index';
 
+//#region Cell Renderers
+
+function skillsCellRenderer(params) {
+  var data = params.data;
+  var skills = [];
+  RefData.IT_SKILLS.forEach(function (skill) {
+      if (data && data.skills && data.skills[skill]) {
+          skills.push('<img src="images/skills/' + skill + '.png" width="16px" title="' + skill + '" />');
+      }
+  });
+  return skills.join(' ');
+}
+
+function percentCellRenderer(params) {
+  var value = params.value;
+
+  var eDivPercentBar = document.createElement('div');
+  eDivPercentBar.className = 'div-percent-bar';
+  eDivPercentBar.style.width = value + '%';
+  if (value < 20) {
+      eDivPercentBar.style.backgroundColor = 'red';
+  } else if (value < 60) {
+      eDivPercentBar.style.backgroundColor = '#ff9900';
+  } else {
+      eDivPercentBar.style.backgroundColor = '#00A000';
+  }
+
+  var eValue = document.createElement('div');
+  eValue.className = 'div-percent-value';
+  eValue.innerHTML = value + '%';
+
+  var eOuterDiv = document.createElement('div');
+  eOuterDiv.className = 'div-outer-div';
+  eOuterDiv.appendChild(eValue);
+  eOuterDiv.appendChild(eDivPercentBar);
+
+  return eOuterDiv;
+}
+
+function countryCellRenderer(params) {
+  var flag = "<img border='0' width='15' height='10' style='margin-bottom: 2px' src='images/flags/" + RefData.COUNTRY_CODES[params.value] + ".png'>";
+  return flag + " " + params.value;
+}
+
+//#endregion
 
 const RichGrid = () => {
 
@@ -26,11 +72,11 @@ const RichGrid = () => {
         rowData.push({
             name: RefData.firstNames[i % RefData.firstNames.length] + ' ' + RefData.lastNames[i % RefData.lastNames.length],
             skills: {
-                android: Math.random() < 0.4,
-                html5: Math.random() < 0.4,
-                mac: Math.random() < 0.4,
-                windows: Math.random() < 0.4,
-                css: Math.random() < 0.4
+              android: Math.random() < 0.4,
+              html5: Math.random() < 0.4,
+              mac: Math.random() < 0.4,
+              windows: Math.random() < 0.4,
+              css: Math.random() < 0.4
             },
             dob: RefData.DOBs[i % RefData.DOBs.length],
             address: RefData.addresses[i % RefData.addresses.length],
@@ -53,29 +99,28 @@ const RichGrid = () => {
     return asString;
   };
 
+  const [rowData] = useState(createRowData());
 
-
-  const [rowData, setRowData] = useState(createRowData());
-
-  const RichGridDOM = (params) => {
+  const RichGridDOM = () => {
 
     //#region Column Definitions
 
     const columnDefs = useMemo(() => [
       {
         headerName: '#', width: 30, checkboxSelection: true,
-        suppressMenu: true, pinned: true
+        suppressMenu: true, pinned: true, sortable: false
       },
       {
         headerName: 'Employee',
         children: [
           {
             headerName: "Name", field: "name",
-            width: 150, pinned: true
+            width: 150, pinned: true, sortable: true
           },
           {
             headerName: "Country", field: "country", width: 150,
             pinned: true,
+            cellRenderer: countryCellRenderer,
             filterParams: { cellHeight: 20 }, columnGroupShow: 'open'
           },
           {
@@ -92,11 +137,15 @@ const RichGrid = () => {
         children: [
           {
             headerName: "Skills",
+            field: 'skills',
+            cellRenderer: skillsCellRenderer,
+            sortable: false,
             width: 125
           },
           {
             headerName: "Proficiency",
             field: "proficiency",
+            cellRenderer: percentCellRenderer,
             width: 120
           },
         ]
@@ -113,34 +162,38 @@ const RichGrid = () => {
 
     //#endregion
 
-    //#region Default Column Definition
-
-    const defaultColDef = useMemo(() => ({
-      resizable: true,
-      sortable: true
-    }),[]);
-
-    //#endregion
-
     return (
-      <div class="ag-theme-alpine" style={{ height: window.innerHeight - 50 }}>
-      <AgGridReact
-          reactUi="true"
-          className="ag-theme-alpine"
-          animateRows="true"
-          columnDefs={columnDefs}
-          defaultColDef={defaultColDef}
-          enableRangeSelection="true"
-          rowData={rowData}
-          rowSelection="multiple"
-          suppressRowClickSelection="true"
-          style={{ height: 400, width: 600 }}
-      />
-      </div>
+    <div style={{ width: '100%', height: window.innerHeight - 50 }}>
+      <div
+        testId="richGrid"
+        style={{
+          height: '100%',
+          width: '100%',
+        }}
+        className="ag-theme-alpine"
+      >
+        <AgGridReact
+            reactUi="true"
+            columnDefs={columnDefs}
+            defaultColDef={{
+              editable: true,
+              sortable: true,
+              flex: 1,
+              minWidth: 100,
+              filter: true,
+              resizable: true,
+              headerComponentParams: { menuIcon: 'fa-bars' },
+            }}
+            enableRangeSelection="true"
+            rowData={rowData}
+            frameworkComponents={{ agColumnHeader: CustomHeader }}
+            rowSelection="multiple"
 
+        />
+      </div>
+    </div>
   );
   }
-
 
   return (
     <RichGridDOM></RichGridDOM>
