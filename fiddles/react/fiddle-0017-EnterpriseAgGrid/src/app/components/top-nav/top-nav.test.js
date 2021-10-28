@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import TopNav from './top-nav.jsx';
 
-test('renders learn react link', () => {
-  render(<App />);
+test('renders Github Link', () => {
+  render(<TopNav />);
   const linkElement = screen.getByText(/Github/i);
   expect(linkElement).toBeInTheDocument();
 });

@@ -46,41 +46,38 @@ const CustomHeader = (props) => {
   let sort = null;
   if (props.enableSorting) {
     sort = (
-      <div style={{ display: 'inline-block' }}>
+      <div style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
         <div
           onClick={(event) => onSortRequested('asc', event)}
           onTouchEnd={(event) => onSortRequested('asc', event)}
           className={`customSortDownLabel ${ascSort}`}
         >
-          <i class="fa fa-long-arrow-alt-down"></i>
+          <i className="fa fa-long-arrow-alt-down"></i>
         </div>
         <div
           onClick={(event) => onSortRequested('desc', event)}
           onTouchEnd={(event) => onSortRequested('desc', event)}
           className={`customSortUpLabel ${descSort}`}
         >
-          <i class="fa fa-long-arrow-alt-up"></i>
+          <i className="fa fa-long-arrow-alt-up"></i>
         </div>
         <div
           onClick={(event) => onSortRequested('', event)}
           onTouchEnd={(event) => onSortRequested('', event)}
           className={`customSortRemoveLabel ${noSort}`}
         >
-          <i class="fa fa-times"></i>
+          <i className="fa fa-times"></i>
         </div>
-        &nbsp;
-
+        {menu}
       </div>
     );
   }
 
   return (
-
-      <div className="customHeaderLabel">{props.displayName}
-        {menu}
-        {sort}
-
-    </div>
+    <div className="customHeaderLabel">
+        {props.displayName}
+          {sort}
+       </div>
   );
 };
 

@@ -4,7 +4,7 @@ import RefData from '../../data/ref-data';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import { CustomHeader } from '../index';
+import { CustomHeader, CustomGroupHeader, SkillFilter } from '../index';
 
 //#region Cell Renderers
 
@@ -112,6 +112,7 @@ const RichGrid = () => {
       },
       {
         headerName: 'Employee',
+        headerGroupComponentFramework: CustomGroupHeader,
         children: [
           {
             headerName: "Name", field: "name",
@@ -121,7 +122,8 @@ const RichGrid = () => {
             headerName: "Country", field: "country", width: 150,
             pinned: true,
             cellRenderer: countryCellRenderer,
-            filterParams: { cellHeight: 20 }, columnGroupShow: 'open'
+            filterParams: {cellRenderer: countryCellRenderer, cellHeight: 20},
+            columnGroupShow: 'open'
           },
           {
             headerName: "DOB", field: "dob", width: 120, pinned: true, cellRenderer: function (params) {
@@ -139,7 +141,8 @@ const RichGrid = () => {
             headerName: "Skills",
             field: 'skills',
             cellRenderer: skillsCellRenderer,
-            sortable: false,
+            enableMenu: true,
+            filter: SkillFilter,
             width: 125
           },
           {
@@ -165,7 +168,6 @@ const RichGrid = () => {
     return (
     <div style={{ width: '100%', height: window.innerHeight - 50 }}>
       <div
-        testId="richGrid"
         style={{
           height: '100%',
           width: '100%',
@@ -186,7 +188,7 @@ const RichGrid = () => {
             }}
             enableRangeSelection="true"
             rowData={rowData}
-            frameworkComponents={{ agColumnHeader: CustomHeader }}
+            frameworkComponents={{ agColumnHeader: CustomHeader, skillFilter: SkillFilter }}
             rowSelection="multiple"
 
         />
