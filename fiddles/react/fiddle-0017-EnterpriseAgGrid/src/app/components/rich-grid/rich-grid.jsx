@@ -4,7 +4,8 @@ import RefData from '../../data/ref-data';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import { CustomHeader, CustomGroupHeader, SkillFilter } from '../index';
+import 'ag-grid-enterprise';
+import { CustomHeader, CustomGroupHeader, SkillFilter, ProficiencyFilter } from '../index';
 
 //#region Cell Renderers
 
@@ -120,10 +121,8 @@ const RichGrid = () => {
           },
           {
             headerName: "Country", field: "country", width: 150,
-            pinned: true,
-            cellRenderer: countryCellRenderer,
-            filterParams: {cellRenderer: countryCellRenderer, cellHeight: 20},
-            columnGroupShow: 'open'
+            cellRenderer: countryCellRenderer, pinned: true,
+            filterParams: {cellRenderer: countryCellRenderer, cellHeight: 20}, columnGroupShow: 'open'
           },
           {
             headerName: "DOB", field: "dob", width: 120, pinned: true, cellRenderer: function (params) {
@@ -149,6 +148,7 @@ const RichGrid = () => {
             headerName: "Proficiency",
             field: "proficiency",
             cellRenderer: percentCellRenderer,
+            filter: ProficiencyFilter,
             width: 120
           },
         ]
@@ -164,6 +164,25 @@ const RichGrid = () => {
     ], []);
 
     //#endregion
+
+    //#region Sidebar
+    const sideBar = {
+      toolPanels: [
+          {
+              id: 'columns',
+              labelDefault: 'Columns',
+              labelKey: 'columns',
+              iconKey: 'columns',
+              toolPanel: 'agColumnsToolPanel',
+              toolPanelParams: {
+                  suppressRowGroups: true,
+                  suppressValues: true
+              }
+          }
+      ]
+  }
+    //#endregion
+
 
     return (
     <div style={{ width: '100%', height: window.innerHeight - 50 }}>
@@ -186,9 +205,13 @@ const RichGrid = () => {
               resizable: true,
               headerComponentParams: { menuIcon: 'fa-bars' },
             }}
+            sideBar={sideBar}
             enableRangeSelection="true"
             rowData={rowData}
-            frameworkComponents={{ agColumnHeader: CustomHeader, skillFilter: SkillFilter }}
+            frameworkComponents={{ agColumnHeader: CustomHeader,
+              skillFilter: SkillFilter,
+              proficiencyFilter: ProficiencyFilter
+            }}
             rowSelection="multiple"
 
         />

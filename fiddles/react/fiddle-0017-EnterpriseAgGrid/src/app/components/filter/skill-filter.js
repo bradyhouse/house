@@ -32,6 +32,7 @@ export default class SkillFilter {
     getGui() {
         var eGui = document.createElement('div');
         eGui.style.width = '380px';
+        eGui.style.margin= '10px';
         var eInstructions = document.createElement('div');
         eInstructions.innerHTML = FILTER_TITLE.replace('TITLE_NAME', 'Custom Skills Filter');
         eGui.appendChild(eInstructions);
