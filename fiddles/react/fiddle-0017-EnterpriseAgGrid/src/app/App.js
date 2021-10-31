@@ -1,5 +1,5 @@
 import './App.css';
-import {TopNav, RichGrid, Content} from './components';
+import {TopNav, Content} from './components';
 
 function App() {
   return (

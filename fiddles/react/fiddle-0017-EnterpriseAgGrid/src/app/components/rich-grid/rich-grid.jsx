@@ -107,12 +107,13 @@ const RichGrid = (props) => {
 
     //#region State
 
-    const [rowData] = useState(createRowData());
+    const [rowData, setRowData] = useState(createRowData());
     const [showGrid, setShowGrid] = useState(true);
     const [gridApi, setGridApi] = useState(null);
     const [gridColumnApi, setGridColumnApi] = useState(null);
     const [rowCount, setRowCount] = useState('');
     const [gridModel, setGridModel] = useState(null);
+    const [isToolPanel, setIsToolPanel] = useState(false);
 
     //#endregion
     //#region SubNav event handlers
@@ -134,6 +135,29 @@ const RichGrid = (props) => {
       gridApi.deselectAll();
     }
 
+    const onSubNavShowCountryColumn = (state) => {
+      gridColumnApi.setColumnVisible('country', state);
+    };
+
+    const onSubNavShowToolPanel = (event) => {
+     if (gridApi) {
+      if (event.target.checked) {
+        gridApi.openToolPanel('columns');
+      } else {
+        gridApi.closeToolPanel();
+      }
+     }
+    };
+
+    const onSubNavRefreshData = () => {
+
+      setRowData(null);
+      window.setTimeout(() => {
+        setRowData(createRowData());
+      }, 500);
+
+    }
+
     const calculateRowCount = model => {
       if (model && rowData) {
         const totalRows = rowData.length;
@@ -143,7 +167,6 @@ const RichGrid = (props) => {
       } else {
         setRowCount('????');
       }
-      console.log('onGridModelUpdated > rowCount = ', rowCount);
     };
 
 
@@ -263,19 +286,23 @@ const RichGrid = (props) => {
 
     if (showGrid) {
     return (
-      <div style={{ width: '100%', height: window.innerHeight - 50, paddingTop: '15px' }}>
+      <div style={{ width: '100%', height: window.innerHeight - 200, paddingTop: '15px' }}>
            <SubNav
               rowCount={rowCount}
               showGrid={showGrid}
               onQuickFilterChanged={onSubNavQuickFilterChanged}
               onShowGrid={onSubNavShowGrid}
               onSelectAll={onSubNavSelectAll}
-              onClearSelection={onSubNavClearSelection}>
+              onClearSelection={onSubNavClearSelection}
+              onShowCountryColumn={onSubNavShowCountryColumn}
+              onShowToolPanel={onSubNavShowToolPanel}
+              onRefreshData={onSubNavRefreshData}>
           </SubNav>
           <div style={{height: '100%', width: '100%'}} className="ag-theme-alpine">
             <AgGridReact
                 reactUi="true"
                 columnDefs={columnDefs}
+                showToolPanel={isToolPanel}
                 defaultColDef={defaultColDef}
                 sideBar={sideBar}
                 cacheQuickFilter="true"
@@ -298,9 +325,10 @@ const RichGrid = (props) => {
                 onQuickFilterChanged={onSubNavQuickFilterChanged}
                 onShowGrid={onSubNavShowGrid}
                 onSelectAll={onSubNavSelectAll}
-                onClearSelection={onSubNavClearSelection}>
+                onClearSelection={onSubNavClearSelection}
+                onShowCountryColumn={onSubNavShowCountryColumn}>
             </SubNav>
-            <div style={{height: '100%', width: '100%', backgroundColor: 'gainsboro'}} className="ag-theme-alpine">
+            <div style={{height: '100%', width: '100%', backgroundImage: "linear-gradient(lightgray, white)"}} className="ag-theme-alpine">
             </div>
         </div>
       );

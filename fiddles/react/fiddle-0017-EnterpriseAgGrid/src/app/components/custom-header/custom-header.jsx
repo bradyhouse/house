@@ -88,11 +88,19 @@ const CustomHeader = (props) => {
   }
 
   return (
-    <div className="customHeaderLabel">
+    <table>
+      <tr>
+        <td>
         {props.displayName}
+        </td>
+        <td style={{minWidth: '50px'}}>
           {sort}
+        </td>
+        <td style={{minWidth: '25px'}}>
           {menu}
-       </div>
+        </td>
+      </tr>
+    </table>
   );
 };
 
