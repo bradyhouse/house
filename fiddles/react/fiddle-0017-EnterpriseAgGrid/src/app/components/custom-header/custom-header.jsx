@@ -2,10 +2,14 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import './custom-header.css';
 
 const CustomHeader = (props) => {
+
   const [ascSort, setAscSort] = useState('inactive');
   const [descSort, setDescSort] = useState('inactive');
   const [noSort, setNoSort] = useState('inactive');
+  const [isFilter, setIsFilter] = useState('inactiveFilter');
   const refButton = useRef(null);
+
+  //#region EVENT HANDLERS
 
   const onMenuClicked = () => {
     props.showColumnMenu(refButton.current);
@@ -21,24 +25,35 @@ const CustomHeader = (props) => {
     );
   },[props.column]);
 
+  const onFilterActiveChanged = useCallback(() => {
+    setIsFilter(props.column.isFilterActive() ? 'activeFilter' : 'inactiveFilter');
+  }, [props.column]);
+
   const onSortRequested = (order, event) => {
     props.setSort(order, event.shiftKey);
   };
 
+  //#endregion
+
   useEffect(() => {
     props.column.addEventListener('sortChanged', onSortChanged);
+    props.column.addEventListener('filterActiveChanged', onFilterActiveChanged);
     onSortChanged();
+    onFilterActiveChanged();
+
   }, [onSortChanged, props.column]);
 
   let menu = null;
+
   if (props.enableMenu) {
     menu = (
-      <div
+      <div style={{ float: 'right' }}
         ref={refButton}
         className="customHeaderMenuButton"
         onClick={() => onMenuClicked()}
       >
-        <i className={`fa ${props.menuIcon}`}></i>
+      <i className={`fa ${props.menuIcon}`}></i>
+      <i className={`fa fa-filter ${isFilter}`}></i>
       </div>
     );
   }
@@ -68,7 +83,6 @@ const CustomHeader = (props) => {
         >
           <i className="fa fa-times"></i>
         </div>
-        {menu}
       </div>
     );
   }
@@ -77,6 +91,7 @@ const CustomHeader = (props) => {
     <div className="customHeaderLabel">
         {props.displayName}
           {sort}
+          {menu}
        </div>
   );
 };

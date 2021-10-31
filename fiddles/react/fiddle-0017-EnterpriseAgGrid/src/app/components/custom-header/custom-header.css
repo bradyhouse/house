@@ -29,3 +29,17 @@
   color: cornflowerblue;
 }
 
+.activeFilter {
+  color: cornflowerblue;
+  margin: 0 5px 0 3px;
+}
+
+
+.inactiveFilter {
+  color: transparent;
+  margin: 0 5px 0 3px;
+}
+
+
+
+

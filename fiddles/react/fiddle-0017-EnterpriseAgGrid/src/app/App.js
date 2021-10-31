@@ -1,11 +1,11 @@
 import './App.css';
-import {TopNav, RichGrid} from './components';
+import {TopNav, RichGrid, Content} from './components';
 
 function App() {
   return (
     <div>
       <TopNav />
-      <RichGrid></RichGrid>
+      <Content></Content>
     </div>
   );
 }

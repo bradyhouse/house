@@ -1,11 +1,12 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import './rich-grid.css';
 import RefData from '../../data/ref-data';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-enterprise';
-import { CustomHeader, CustomGroupHeader, SkillFilter, ProficiencyFilter } from '../index';
+import { CustomHeader, CustomGroupHeader,
+  SkillFilter, ProficiencyFilter, SubNav } from '../index';
 
 //#region Cell Renderers
 
@@ -53,7 +54,8 @@ function countryCellRenderer(params) {
 
 //#endregion
 
-const RichGrid = () => {
+const RichGrid = (props) => {
+
 
   const createRowData = () => {
     const rowData = [];
@@ -94,16 +96,71 @@ const RichGrid = () => {
     return rowData;
   }
 
+
   const pad = (num, totalStringSize) => {
     let asString = num + "";
     while (asString.length < totalStringSize) asString = "0" + asString;
     return asString;
   };
 
-  const [rowData] = useState(createRowData());
+  const RichGridDOM = (props) => {
 
-  const RichGridDOM = () => {
+    //#region State
 
+    const [rowData] = useState(createRowData());
+    const [showGrid, setShowGrid] = useState(true);
+    const [gridApi, setGridApi] = useState(null);
+    const [gridColumnApi, setGridColumnApi] = useState(null);
+    const [rowCount, setRowCount] = useState('');
+    const [gridModel, setGridModel] = useState(null);
+
+    //#endregion
+    //#region SubNav event handlers
+
+    const onSubNavQuickFilterChanged = (event) => {
+      gridApi.setQuickFilter(event.target.value);
+    };
+
+    const onSubNavShowGrid = (state) => {
+      setShowGrid(state);
+    };
+
+
+    const onSubNavSelectAll = () => {
+      gridApi.selectAll();
+    };
+
+    const onSubNavClearSelection = () => {
+      gridApi.deselectAll();
+    }
+
+    const calculateRowCount = model => {
+      if (model && rowData) {
+        const totalRows = rowData.length;
+        const processedRows = model.getRowCount();
+        const rowRowCountStr = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString();
+        setRowCount(rowRowCountStr);
+      } else {
+        setRowCount('????');
+      }
+      console.log('onGridModelUpdated > rowCount = ', rowCount);
+    };
+
+
+    //#endregion
+    //#region onGridReady Handler
+
+    const onGridReady = (params) => {
+      setGridApi(params.api);
+      setGridColumnApi(params.columnApi);
+
+    };
+
+    const onGridModelUpdated =(event) => {
+      calculateRowCount(event.api.getModel());
+    };
+
+    //#endregion
     //#region Column Definitions
 
     const columnDefs = useMemo(() => [
@@ -141,6 +198,7 @@ const RichGrid = () => {
             field: 'skills',
             cellRenderer: skillsCellRenderer,
             enableMenu: true,
+            sortable: false,
             filter: SkillFilter,
             width: 125
           },
@@ -164,7 +222,6 @@ const RichGrid = () => {
     ], []);
 
     //#endregion
-
     //#region Sidebar
     const sideBar = {
       toolPanels: [
@@ -182,46 +239,76 @@ const RichGrid = () => {
       ]
   }
     //#endregion
+    //#region Default Column config
 
+    const defaultColDef={
+      editable: true,
+      sortable: true,
+      flex: 1,
+      minWidth: 100,
+      filter: true,
+      resizable: true,
+      headerComponentParams: { menuIcon: 'fa-bars' }
+    };
 
+    //#endregion
+    //#region Framework Component Config
+
+    const frameworkComponents = { agColumnHeader: CustomHeader,
+      skillFilter: SkillFilter,
+      proficiencyFilter: ProficiencyFilter
+    };
+
+    //#endregion
+
+    if (showGrid) {
     return (
-    <div style={{ width: '100%', height: window.innerHeight - 50 }}>
-      <div
-        style={{
-          height: '100%',
-          width: '100%',
-        }}
-        className="ag-theme-alpine"
-      >
-        <AgGridReact
-            reactUi="true"
-            columnDefs={columnDefs}
-            defaultColDef={{
-              editable: true,
-              sortable: true,
-              flex: 1,
-              minWidth: 100,
-              filter: true,
-              resizable: true,
-              headerComponentParams: { menuIcon: 'fa-bars' },
-            }}
-            sideBar={sideBar}
-            enableRangeSelection="true"
-            rowData={rowData}
-            frameworkComponents={{ agColumnHeader: CustomHeader,
-              skillFilter: SkillFilter,
-              proficiencyFilter: ProficiencyFilter
-            }}
-            rowSelection="multiple"
-
-        />
+      <div style={{ width: '100%', height: window.innerHeight - 50, paddingTop: '15px' }}>
+           <SubNav
+              rowCount={rowCount}
+              showGrid={showGrid}
+              onQuickFilterChanged={onSubNavQuickFilterChanged}
+              onShowGrid={onSubNavShowGrid}
+              onSelectAll={onSubNavSelectAll}
+              onClearSelection={onSubNavClearSelection}>
+          </SubNav>
+          <div style={{height: '100%', width: '100%'}} className="ag-theme-alpine">
+            <AgGridReact
+                reactUi="true"
+                columnDefs={columnDefs}
+                defaultColDef={defaultColDef}
+                sideBar={sideBar}
+                cacheQuickFilter="true"
+                enableRangeSelection="true"
+                rowData={rowData}
+                onGridReady={onGridReady}
+                onModelUpdated={onGridModelUpdated}
+                frameworkComponents={frameworkComponents}
+                rowSelection="multiple"
+            />
+          </div>
       </div>
-    </div>
-  );
+    );
+    } else {
+      return (
+        <div style={{ width: '100%', height: window.innerHeight - 50, paddingTop: '15px' }}>
+             <SubNav
+                showGrid={showGrid}
+                rowCount={rowCount}
+                onQuickFilterChanged={onSubNavQuickFilterChanged}
+                onShowGrid={onSubNavShowGrid}
+                onSelectAll={onSubNavSelectAll}
+                onClearSelection={onSubNavClearSelection}>
+            </SubNav>
+            <div style={{height: '100%', width: '100%', backgroundColor: 'gainsboro'}} className="ag-theme-alpine">
+            </div>
+        </div>
+      );
+    }
   }
 
   return (
-    <RichGridDOM></RichGridDOM>
+      <RichGridDOM></RichGridDOM>
   )
 
 }
