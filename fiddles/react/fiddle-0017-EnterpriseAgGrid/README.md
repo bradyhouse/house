@@ -115,7 +115,7 @@ Note - the fiddle will still work without a license.  However, you will see an e
 
 ### Published Version Link
 
-  * [bradyhouse.github.io > react > #](http://bradyhouse.github.io/react/fiddle-0017-EnterpriseAgGrid/#)
+  * [bradyhouse.github.io > react > #17](http://bradyhouse.github.io/react/fiddle-0017-EnterpriseAgGrid/#)
 
 
 ### Tags
