@@ -36,12 +36,14 @@ What is the difference between using AgGrid with React vs. Angular?  [Angular fi
 Note - the fiddle will still work without a license.  However, you will see an error in the console (see below).
       
       ```
+      
       ****************************************************************************************************************
       *************************************** ag-Grid Enterprise License *********************************************
       ********************************************* Invalid License **************************************************
       * Your license for ag-Grid Enterprise is not valid - please contact accounts@ag-grid.com to obtain a valid license. *
       ****************************************************************************************************************
       ****************************************************************************************************************
+
       ```
 
 4.  Startup the fiddle -- `fiddle start react 0017`
