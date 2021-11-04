@@ -4,7 +4,7 @@ import { RichGrid } from "..";
 const Content = (props) => {
 
   return (
-    <div style={{width: '100%', padding: '2px'}} >
+    <div data-testid="contentContainer" style={{width: '100%', padding: '2px'}} >
       <RichGrid></RichGrid>
     </div>
   );

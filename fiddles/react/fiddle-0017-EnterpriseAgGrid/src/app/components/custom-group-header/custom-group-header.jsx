@@ -9,15 +9,16 @@ const CustomGroupHeader = (props) => {
     props.setExpanded(!currentState);
   };
 
-  const syncExpandButtons = () => {
-    setExpandState(
-      props.columnGroup.getOriginalColumnGroup().isExpanded()
-        ? 'expanded'
-        : 'collapsed'
-    );
-  };
-
   useEffect(() => {
+
+    const syncExpandButtons = () => {
+      setExpandState(
+        props.columnGroup.getOriginalColumnGroup().isExpanded()
+          ? 'expanded'
+          : 'collapsed'
+      );
+    };
+
     props.columnGroup
       .getOriginalColumnGroup()
       .addEventListener('expandedChanged', syncExpandButtons);
@@ -28,7 +29,7 @@ const CustomGroupHeader = (props) => {
         .getOriginalColumnGroup()
         .removeEventListener('expandedChanged', syncExpandButtons);
     };
-  }, []);
+  }, [props.columnGroup]);
 
   return (
     <div className="ag-header-group-cell-label">

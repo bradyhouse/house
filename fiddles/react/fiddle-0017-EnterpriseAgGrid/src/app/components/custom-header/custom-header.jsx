@@ -41,7 +41,7 @@ const CustomHeader = (props) => {
     onSortChanged();
     onFilterActiveChanged();
 
-  }, [onSortChanged, props.column]);
+  }, [onSortChanged, onFilterActiveChanged, props.column]);
 
   let menu = null;
 
@@ -89,6 +89,7 @@ const CustomHeader = (props) => {
 
   return (
     <table>
+      <tbody>
       <tr>
         <td>
         {props.displayName}
@@ -100,6 +101,7 @@ const CustomHeader = (props) => {
           {menu}
         </td>
       </tr>
+      </tbody>
     </table>
   );
 };

@@ -4,7 +4,7 @@ const SubNav = (props) => {
 
   if (props.showGrid) {
     return (
-      <div style={{width: '100%', padding: '5px'}} >
+      <div data-testid="show-grid-dom" style={{width: '100%', padding: '5px'}} >
         <div style={{width: '100%', height: '25px'}}>
           <div style={{float: 'right'}}>
           <input onChange={(event) => props.onQuickFilterChanged(event)}
@@ -33,8 +33,8 @@ const SubNav = (props) => {
           </span>
           <span style={{marginLeft: '20px'}}>
           <b>Column API:</b>
-            <button onClick={() => props.onShowCountryColumn(false)}>&nbsp;Hide Country Column&nbsp;</button>
-            <button onClick={() => props.onShowCountryColumn(true)}>&nbsp;Show Country Column&nbsp;</button>
+            <button onClick={() => props.onShowSkillsColumn(false)}>&nbsp;Hide Skills Column&nbsp;</button>
+            <button onClick={() => props.onShowSkillsColumn(true)}>&nbsp;Show Skills Column&nbsp;</button>
           </span>
         </div>
         <div style={{clear: 'both'}}></div>
@@ -50,7 +50,7 @@ const SubNav = (props) => {
     )
   } else {
     return (
-      <div style={{width: '100%', padding: '5px'}} >
+      <div data-testid="hide-grid-dom" style={{width: '100%', padding: '5px'}} >
         <div style={{width: '100%', height: '60px'}}>
           <div style={{float: 'right'}}>
             <button disabled={!props.showGrid} onClick={(event) => props.onShowGrid(false)}>Destroy Grid</button>
