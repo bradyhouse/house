@@ -171,4 +171,4 @@ In order to build out this fiddle, I referenced the following sites, pages and s
 <a name="tags"></a>
 ### Tags
 
-node, React, react-scripts, JSX, ES6, ag-grid-enterprise, ag-grid-react, enyzme, jasmine-reporters, jest, jest-cli, jest-dom, --dev jest-junit
+node, React, react-scripts, JSX, ES6, ag-grid-enterprise, ag-grid-react, enyzme, jasmine-reporters, jest, jest-cli, jest-dom,jest-junit
