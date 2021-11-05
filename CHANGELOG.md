@@ -2328,7 +2328,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **python**
     
-    1.  Added [fiddles/python/fiddle-0011-TelloHelloWorld](fiddles/python/fiddle-0011-TelloHelloWorld)
 
 * **node**
 
