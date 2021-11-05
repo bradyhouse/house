@@ -17,7 +17,7 @@ const ensureGridApiHasBeenSet = async (componentRef) => {
                     }
 
                 }
-                setTimeout(waitForGridReady, 10);
+                setTimeout(waitForGridReady, 500);
             })();
         })
 
