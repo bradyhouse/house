@@ -4,7 +4,7 @@ fiddle-0017-EnterpriseAgGrid
 
 ### Title
 
-fiddle-0017-EnterpriseAgGrid
+React Enterprise AgGrid
 
 
 ### Creation Date
