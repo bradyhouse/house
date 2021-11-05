@@ -160,7 +160,7 @@ In order to build out this fiddle, I referenced the following sites, pages and s
 
 3.  This will generate (or update) the [junit.xml](junit.xml) file in the fiddle's root directory. Code coverage details are
     published to the [coverage](coverage) directory. These results can be accessed in the web browser by starting live-server
-    from the [coverage\lcov-report](coverage/lcov-report) 
+    from the [coverage\lcov-report](coverage/lcov-report) sub-directory.
 
 
 <a name="published-links"></a>
