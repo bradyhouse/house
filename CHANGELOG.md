@@ -2326,27 +2326,3 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/python/fiddle-0011-Mp4TxtConverter](fiddles/python/fiddle-0011-Mp4TxtConverter)
 
 
-### 358_react_16-25 ~ [Issue 358](https://github.com/bradyhouse/house/issues/358)
-
-* **react**
-
-    1.  Added [fiddles/react/fiddle-0016-AgGridHelloWorld](fiddles/react/fiddle-0016-AgGridHelloWorld)
-    2.  Added [fiddles/react/fiddle-0017-EnterpriseAgGrid](fiddles/react/fiddle-0017-EnterpriseAgGrid)
-
-* **node**
-
-    1.  Added [fiddles/node/fiddle-0049-TelloHelloWorld](fiddles/node/fiddle-0049-TelloHelloWorld)
-
-* **fiddle.sh (Enhancement)**
-
-    *   Updated node to NVM_VERSION to v16.11.1
-
-      1.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
-
-    *   Refactored Edit functionality to use Visual Studio Code instead of Joe's Own Editor
-
-      1.  Updated [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)
-
-    *   Refactored react template to include bootstrap style nav bar
-
-      1.  Updated [scripts/bin/react/_create.sh](scripts/bin/react/_create.sh)
