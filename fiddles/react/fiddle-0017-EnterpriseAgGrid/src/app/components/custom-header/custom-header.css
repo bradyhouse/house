@@ -1,0 +1,45 @@
+.customHeaderMenuButton {
+  float: right;
+  margin: 0 0 0 3px;
+}
+
+.customHeaderLabel {
+  float: left;
+  margin: 0 0 0 3px;
+}
+
+.customSortDownLabel {
+  float: right;
+  margin: 0 0 0 3px;
+}
+
+.customSortUpLabel {
+  float: right;
+  margin: 0;
+}
+
+.customSortRemoveLabel {
+  float: right;
+  margin: 0 0 0 3px;
+  font-size: 11px;
+  color: transparent;
+}
+
+.active {
+  color: cornflowerblue;
+}
+
+.activeFilter {
+  color: cornflowerblue;
+  margin: 0 5px 0 3px;
+}
+
+
+.inactiveFilter {
+  color: transparent;
+  margin: 0 5px 0 3px;
+}
+
+
+
+

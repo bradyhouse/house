@@ -1,8 +1,11 @@
 image:https://travis-ci.org/bradyhouse/house.svg?branch=master["Build Status", link="https://travis-ci.org/bradyhouse/house"]
 image:http://img.shields.io/badge/license-MIT-brightgreen.svg["MIT license", link="http://opensource.org/licenses/MIT"]
+image:https://img.shields.io/github/issues/bradyhouse/house["GitHub issues",link="https://github.com/bradyhouse/house/issues"]
+image:https://img.shields.io/github/forks/bradyhouse/house["GitHub forks",link="https://github.com/bradyhouse/house/network"]
+image:https://img.shields.io/github/stars/bradyhouse/house["GitHub stars",link="https://github.com/bradyhouse/house/stargazers"]
 ```
 {{ ʕ・ɭ・ʔ }}
-H o u s e  
+H o u s e
 oooooooooooo  o8o        .o8        .o8  oooo
  888       8  `"'        888        888   888
  888         oooo   .oooo888   .oooo888   888   .ooooo.

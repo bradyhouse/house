@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="5" failures="0" errors="0" time="14.544">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-11-05T11:41:49" time="9.394" tests="1">
+    <testcase classname=" renders learn react link" name=" renders learn react link" time="2.488">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-11-05T11:41:49" time="9.394" tests="1">
+    <testcase classname=" renders Content" name=" renders Content" time="2.404">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-11-05T11:41:49" time="9.74" tests="1">
+    <testcase classname=" is rendered" name=" is rendered" time="2.979">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-11-05T11:41:58" time="1.246" tests="1">
+    <testcase classname=" renders Github Link" name=" renders Github Link" time="0.042">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-11-05T11:41:58" time="1.235" tests="1">
+    <testcase classname=" renders Sub Nav" name=" renders Sub Nav" time="0.042">
+    </testcase>
+  </testsuite>
+</testsuites>
