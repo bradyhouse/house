@@ -100,10 +100,8 @@ In order to build out this fiddle, I referenced the following sites, pages and s
 1.  Complete the [fiddle bash/alias setup procedure](https://github.com/bradyhouse/house/wiki/Setup-(Mac-OS))
 2.  Test the fiddle -- `fiddle test react 0017` 
     
-    <figure class="video_container">
-      <iframe src="https://imgur.com/a/HN9RetV" frameborder="0" allowfullscreen="true"> </iframe>
-    </figure>
-
+    [![Watch the video](https://imgur.com/a/HN9RetV)](https://imgur.com/a/HN9RetV)
+    
     Note - This will generate (or update) the [junit.xml](junit.xml) file in the fiddle's root directory. Code coverage details are
     published to the [coverage](coverage) directory. These results can be accessed in the web browser by starting live-server
     from the [coverage\lcov-report](coverage/lcov-report) sub-directory.
