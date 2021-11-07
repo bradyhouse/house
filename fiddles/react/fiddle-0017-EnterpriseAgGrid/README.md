@@ -100,63 +100,9 @@ In order to build out this fiddle, I referenced the following sites, pages and s
 1.  Complete the [fiddle bash/alias setup procedure](https://github.com/bradyhouse/house/wiki/Setup-(Mac-OS))
 2.  Test the fiddle -- `fiddle test react 0017` 
     
-    ```
-    ➜  house_master git:(358_react_16-25) ✗ fiddle test react 0017
-
-    {{ ʕ・ɭ・ʔ }}
-
-    FIDDLE-TEST.SH
-    ├────REACTTEST
-    ├────NVMINSTALL
-    v16.11.1 is already installed.
-    Now using node v16.11.1 (npm v8.0.0)
-    ├────NPMINSTALL
-
-    > enterpriseaggrid@0.1.0 test
-    > react-scripts test --coverage --ci --testResultsProcessor="jest-junit" --watchAll=false
-
-    PASS  src/app/App.test.js (9.394 s)
-    PASS  src/app/components/content/content.test.js (9.394 s)
-    PASS  src/app/components/rich-grid/rich-grid.test.js (9.74 s)
-    PASS  src/app/components/top-nav/top-nav.test.js
-    PASS  src/app/components/sub-nav/sub-nav.test.js
-    ----------------------------------------|---------|----------|---------|---------|---------------------------------------------------------------
-    File                                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
-    ----------------------------------------|---------|----------|---------|---------|---------------------------------------------------------------
-    All files                               |   52.47 |     49.2 |   30.76 |   52.12 |
-    src                                    |       0 |        0 |       0 |       0 |
-      index.js                              |       0 |      100 |       0 |       0 | 11-25
-      reportWebVitals.js                    |       0 |        0 |       0 |       0 | 1-8
-    src/app                                |     100 |      100 |     100 |     100 |
-      App.js                                |     100 |      100 |     100 |     100 |
-    src/app/components                     |       0 |        0 |       0 |       0 |
-      index.js                              |       0 |        0 |       0 |       0 |
-    src/app/components/content             |     100 |      100 |     100 |     100 |
-      content.jsx                           |     100 |      100 |     100 |     100 |
-    src/app/components/custom-group-header |   78.57 |       50 |   66.66 |   78.57 |
-      custom-group-header.jsx               |   78.57 |       50 |   66.66 |   78.57 | 8-9,39
-    src/app/components/custom-header       |   74.28 |    71.42 |   30.76 |   74.28 |
-      custom-header.jsx                     |   74.28 |    71.42 |   30.76 |   74.28 | 15,33,53,66-81
-    src/app/components/filter              |   12.82 |        0 |       0 |   12.82 |
-      proficiency-filter.js                 |      20 |        0 |       0 |      20 | 25-98
-      skill-filter.js                       |    5.26 |        0 |       0 |    5.26 | 22-93
-    src/app/components/rich-grid           |   77.89 |       75 |   52.17 |   78.02 |
-      rich-grid.jsx                         |   77.89 |       75 |   52.17 |   78.02 | 51-52,101-103,118,122,127,131,135,139-143,150-152,164,205,324
-    src/app/components/sub-nav             |   26.66 |      100 |    8.33 |   26.66 |
-      sub-nav.jsx                           |   26.66 |      100 |    8.33 |   26.66 | 10-47,56-57
-    src/app/components/top-nav             |     100 |      100 |     100 |     100 |
-      top-nav.jsx                           |     100 |      100 |     100 |     100 |
-    src/app/data                           |     100 |      100 |     100 |     100 |
-      ref-data.js                           |     100 |      100 |     100 |     100 |
-    ----------------------------------------|---------|----------|---------|---------|---------------------------------------------------------------
-
-    Test Suites: 5 passed, 5 total
-    Tests:       5 passed, 5 total
-    Snapshots:   0 total
-    Time:        14.505 s
-    Ran all test suites.
-    The "0017" react fiddle has been tested successfully.
-    ```
+    <figure class="video_container">
+      <iframe src="https://imgur.com/a/HN9RetV" frameborder="0" allowfullscreen="true"> </iframe>
+    </figure>
 
     Note - This will generate (or update) the [junit.xml](junit.xml) file in the fiddle's root directory. Code coverage details are
     published to the [coverage](coverage) directory. These results can be accessed in the web browser by starting live-server
