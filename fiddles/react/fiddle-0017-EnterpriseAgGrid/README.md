@@ -62,35 +62,7 @@ In order to build out this fiddle, I referenced the following sites, pages and s
 
 4.  Startup the fiddle -- `fiddle start react 0017`
 
-      ```
-      {{ ʕ・ɭ・ʔ }}
-
-      FIDDLE-START.SH
-      ├────STARTSERVER
-      ├────REACTSTART
-      ├────NVMINSTALL
-      v16.11.1 is already installed.
-      Now using node v16.11.1 (npm v8.0.0)
-      ├────NPMINSTALL
-      
-      ...
-
-      > enterpriseaggrid@0.1.0 start
-      > react-scripts start
-
-      Starting the development server...
-
-      Compiled successfully!
-
-      You can now view enterpriseaggrid in the browser.
-
-        Local:            http://localhost:3000
-        On Your Network:  http://10.0.0.14:3000
-
-      Note that the development build is not optimized.
-      To create a production build, use npm run build.
-
-      ```
+    [![asciicast](https://asciinema.org/a/447614.svg)](https://asciinema.org/a/447614)
 
 5.  Using Chrome, navigate to [localhost:3000](http://localhost:3000)
 
