@@ -1,96 +1,27 @@
-fiddle-0020-EntAgGridPivot
-======
+# EntAgGridPivot
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
-### Title
+## Development server
 
-AgGrid - Enterprise Pivot Feathre
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Code scaffolding
 
-### Creation Date
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-03-17-19
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Location
+## Running unit tests
 
-Chicago, IL
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running end-to-end tests
 
-### Issue
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-[Issue 297](https://github.com/bradyhouse/house/issues/297)
+## Further help
 
-
-### Description
-
-The enterprise version of ag-grid includes a [pivot feature](https://www.ag-grid.com/javascript-grid-pivoting/).  I need to understand how this 
-feature is configured and what it can do...  `riddle me a fiddle`-- stat!
-
-
-### Use Case
-
-1.  Complete the [fiddle bash/alias setup procedure](https://github.com/bradyhouse/house/wiki/Setup-(Mac-OS))
-2.  Obtain an Ag-grid enterprise (or evaluation) license
-3.  Update the [license.json](license.json)
-
-
-Note - the fiddle will still work without a license.  However, you will see an error in the console (see below).
-
-      ****************************************************************************************************************
-      *************************************** ag-Grid Enterprise License *********************************************
-      ********************************************* Invalid License **************************************************
-      * Your license for ag-Grid Enterprise is not valid - please contact accounts@ag-grid.com to obtain a valid license. *
-      ****************************************************************************************************************
-      ****************************************************************************************************************
-
-4.  Startup the fiddle -- `fiddle start angular2-cli 0020` 
-
-        {{ ʕ・ɭ・ʔ }}
-        
-        FIDDLE-START.SH
-        ├────STARTSERVER
-        ├────NGINSTALL
-        ├────NGSTART
-        ├────NVMINSTALL
-        v10.8.0 is already installed.
-        Now using node v10.8.0 (npm v6.2.0)
-        ├────NPMINSTALL
-        npm WARN bootstrap@4.3.1 requires a peer of popper.js@^1.14.7 but none is installed. You must install peer dependencies yourself.
-        
-        audited 42442 packages in 8.91s
-        found 1 low severity vulnerability
-          run `npm audit fix` to fix them, or `npm audit` for details
-        ** Angular Live Development Server is listening on localhost:1841, open your browser on http://localhost:1841/ **
-        
-        Date: 2019-03-17T19:12:07.501Z
-        Hash: 0a91116a1a760001822d
-        Time: 16366ms
-        chunk {es2015-polyfills} es2015-polyfills.js, es2015-polyfills.js.map (es2015-polyfills) 284 kB [initial] [rendered]
-        chunk {main} main.js, main.js.map (main) 17.7 kB [initial] [rendered]
-        chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 259 kB [initial] [rendered]
-        chunk {runtime} runtime.js, runtime.js.map (runtime) 6.08 kB [entry] [rendered]
-        chunk {scripts} scripts.js, scripts.js.map (scripts) 980 kB [entry] [rendered]
-        chunk {styles} styles.js, styles.js.map (styles) 2.16 MB [initial] [rendered]
-        chunk {vendor} vendor.js, vendor.js.map (vendor) 6.07 MB [initial] [rendered]
-        ℹ ｢wdm｣: Compiled successfully.
-      
-
-5.  Using Chrome, navigate to [localhost:1841](http://localhost:1841)
-      
-            
-### Published Version Link
-
-* [bradyhouse.io](http://bradyhouse.github.io/jquery/fiddle-0020-EntAgGridPivot/index.html)
-
-
-
-### Tags
-
-angular (7.2), ag-grid-enterprise, ag-grid, fetch, bootstrap, bootswatch
-
-
-
-### Forked From
-
-[fiddle-0019-EnterpriseAgGrid](../fiddle-0019-EnterpriseAgGrid)
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

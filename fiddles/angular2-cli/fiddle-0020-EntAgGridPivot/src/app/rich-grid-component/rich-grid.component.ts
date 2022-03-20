@@ -9,16 +9,16 @@ import 'ag-grid-enterprise';
 })
 export class RichGridComponent {
 
-  @ViewChild('agGrid') agGrid;
-  style: { width: string; height: string };
-  private gridApi;
-  private gridColumnApi;
-
-  private columnDefs;
-  private defaultColDef;
-  private rowData: any[];
+  @ViewChild('agGrid') agGrid: any;
+  style: { width: string; height: string; };
+  gridApi: any;
+  gridColumnApi: any;
+  columnDefs: any;
+  defaultColDef: any;
+  rowData: any[];
 
   constructor() {
+    this.rowData = [];
     this.columnDefs = [
       {
         headerName: 'Country',
@@ -68,11 +68,12 @@ export class RichGridComponent {
       sortable: true,
       resizable: true
     };
+    this.style = { width: window.innerWidth + 'px', height: window.innerHeight + 'px' };
     this.createRowData();
   }
 
 
-  onGridReady(params) {
+  onGridReady(params: any) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
     this.gridColumnApi.setPivotMode(true);
