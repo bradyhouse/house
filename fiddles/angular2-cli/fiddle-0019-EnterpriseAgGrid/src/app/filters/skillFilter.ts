@@ -18,8 +18,9 @@ var FILTER_TITLE =
     '</div>';
 
 export default class SkillFilter implements IFilter {
-    private filterChangedCallback:Function;
-    private model:any;
+
+    private filterChangedCallback:Function = () => {};
+    private model:any = {};
 
     public init(params: IFilterParams) : void {
         this.filterChangedCallback = params.filterChangedCallback;
@@ -33,21 +34,21 @@ export default class SkillFilter implements IFilter {
     };
 
     public getGui() {
-        var eGui = document.createElement('div');
+        let eGui: any = document.createElement('div');
         eGui.style.width = '380px';
         var eInstructions = document.createElement('div');
         eInstructions.innerHTML = FILTER_TITLE.replace('TITLE_NAME', 'Custom Skills Filter');
         eGui.appendChild(eInstructions);
 
-        var that = this;
+        let that: any = this;
 
-        RefData.IT_SKILLS.forEach(function (skill, index) {
-            var skillName = RefData.IT_SKILLS_NAMES[index];
-            var eSpan = document.createElement('span');
-            var html = SKILL_TEMPLATE.replace("SKILL_NAME", skillName).replace("SKILL", skill);
+        RefData.IT_SKILLS.forEach(function (skill: any, index: any) {
+            let skillName: any = RefData.IT_SKILLS_NAMES[index];
+            let eSpan: any = document.createElement('span');
+            let html: any = SKILL_TEMPLATE.replace("SKILL_NAME", skillName).replace("SKILL", skill);
             eSpan.innerHTML = html;
 
-            var eCheckbox = <HTMLInputElement> eSpan.querySelector('input');
+            let eCheckbox: any = <HTMLInputElement> eSpan.querySelector('input');
             eCheckbox.addEventListener('click', function () {
                 that.model[skill] = eCheckbox.checked;
                 that.filterChangedCallback();
@@ -59,13 +60,13 @@ export default class SkillFilter implements IFilter {
         return eGui;
     };
 
-    public doesFilterPass(params) {
+    public doesFilterPass(params: any) {
 
-        var rowSkills = params.data.skills;
-        var model = this.model;
-        var passed = true;
+        let rowSkills: any = params.data.skills;
+        let model: any = this.model;
+        let passed: boolean = true;
 
-        RefData.IT_SKILLS.forEach(function (skill) {
+        RefData.IT_SKILLS.forEach(function (skill: any) {
             if (model[skill]) {
                 if (!rowSkills[skill]) {
                     passed = false;
@@ -77,8 +78,8 @@ export default class SkillFilter implements IFilter {
     };
 
     public isFilterActive() {
-        var model = this.model;
-        var somethingSelected = model.android || model.css || model.html5 || model.mac || model.windows;
+        let model: any = this.model;
+        let somethingSelected: any = model.android || model.css || model.html5 || model.mac || model.windows;
         return somethingSelected;
     };
 
