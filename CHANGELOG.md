@@ -785,7 +785,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **Bash**
     1.  Added [fiddles/bash/fiddle-0069-NodeProjectSetup](fiddles/bash/fiddle-0069-NodeProjectSetup)
     2.  Added [fiddles/bash/fiddle-0070-GitSubModuleInitUpdate](fiddles/bash/fiddle-0070-GitSubModuleInitUpdate)
-    3.  Added [fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup](fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup)
 * **D3**
     1.  Added [fiddles/d3/fiddle-0015-BasicAxes](fiddles/d3/fiddle-0015-BasicAxes)
     2.  Added [fiddles/d3/fiddle-0017-ClickEventListener](fiddles/d3/fiddle-0017-ClickEventListener)
@@ -826,7 +825,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     2.  Removed [scripts/mysql-*.sh](scripts)
     3.  Removed [scripts/setup](scripts)
     4.  Added [scripts/bin/_*](scripts/bin)
-        *   See - [fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup](fiddles/bash/fiddle-0071-TypescriptD3ProjectSetup)
         *   Reflected changes
             1. Updated [scripts/fiddle-typescript.sh](scripts/fiddle-typescript.sh)
     5.  Removed [scripts/_fiddle_func.sh](scripts)
