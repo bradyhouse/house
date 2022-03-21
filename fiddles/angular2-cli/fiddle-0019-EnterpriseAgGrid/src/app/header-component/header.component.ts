@@ -1,8 +1,10 @@
 import {Component, ElementRef} from "@angular/core";
 import {IHeaderParams} from "ag-grid/main";
-import {IHeaderAngularComp} from "ag-grid-angular/main";
+import {IHeaderAngularComp} from "ag-grid-angular";
+import { OnDestroy } from "@angular/core";
 
-interface MyParams extends IHeaderParams {
+
+interface MyParams extends IHeaderParams, OnDestroy {
     menuIcon: string;
 }
 
@@ -10,9 +12,10 @@ interface MyParams extends IHeaderParams {
     templateUrl: 'header.component.html',
     styleUrls: ['header.component.css']
 })
-export class HeaderComponent implements IHeaderAngularComp {
-    public params: MyParams;
-    public sorted: string;
+export class HeaderComponent implements OnDestroy {
+    public params: any = {};
+    public sorted: string = "";
+
     private elementRef: ElementRef;
 
     constructor(elementRef: ElementRef) {
@@ -33,9 +36,9 @@ export class HeaderComponent implements IHeaderAngularComp {
         this.params.showColumnMenu(this.querySelector('.customHeaderMenuButton'));
     }
 
-    onSortRequested(order, event) {
+    onSortRequested(order: any, event: any) {
         this.params.setSort(order, event.shiftKey);
-    };
+    }
 
     onSortChanged() {
         if (this.params.column.isSortAscending()) {
@@ -45,10 +48,10 @@ export class HeaderComponent implements IHeaderAngularComp {
         } else {
             this.sorted = ''
         }
-    };
+    }
 
 
-    private querySelector(selector: string) {
+    querySelector(selector: string) {
         return <HTMLElement>this.elementRef.nativeElement.querySelector(
             '.customHeaderMenuButton', selector);
     }

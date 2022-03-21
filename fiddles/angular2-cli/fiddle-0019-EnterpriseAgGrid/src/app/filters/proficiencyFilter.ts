@@ -1,28 +1,33 @@
 import {IFilter,IFilterParams} from "ag-grid/main";
 
-var FILTER_TITLE =
+let FILTER_TITLE: string =
     '<div style="text-align: center; background: lightgray; width: 100%; display: block; border-bottom: 1px solid grey;">' +
     '<b>TITLE_NAME</b>' +
     '</div>';
-
-var PROFICIENCY_TEMPLATE =
+let PROFICIENCY_TEMPLATE: string =
     '<label style="padding-left: 4px;">' +
     '<input type="radio" name="RANDOM"/>' +
     'PROFICIENCY_NAME' +
     '</label>';
 
-var PROFICIENCY_NONE = 'none';
-var PROFICIENCY_ABOVE40 = 'above40';
-var PROFICIENCY_ABOVE60 = 'above60';
-var PROFICIENCY_ABOVE80 = 'above80';
+let PROFICIENCY_NONE: string = 'none';
+let PROFICIENCY_ABOVE40: string = 'above40';
+let PROFICIENCY_ABOVE60: string = 'above60';
+let PROFICIENCY_ABOVE80: string = 'above80';
 
-var PROFICIENCY_NAMES = ['No Filter', 'Above 40%', 'Above 60%', 'Above 80%'];
-var PROFICIENCY_VALUES = [PROFICIENCY_NONE, PROFICIENCY_ABOVE40, PROFICIENCY_ABOVE60, PROFICIENCY_ABOVE80];
+let PROFICIENCY_NAMES: string[] = ['No Filter', 'Above 40%', 'Above 60%', 'Above 80%'];
+let PROFICIENCY_VALUES: string[] = [PROFICIENCY_NONE, PROFICIENCY_ABOVE40, PROFICIENCY_ABOVE60, PROFICIENCY_ABOVE80];
 
 export default class ProficiencyFilter implements IFilter {
-    private filterChangedCallback:Function;
-    private selected:string;
-    private valueGetter:Function;
+
+  // eslint-disable-next-line no-use-before-define
+    private filterChangedCallback:Function = ()=> {};
+
+    // eslint-disable-next-line no-use-before-define
+    private selected:string = "";
+
+    // eslint-disable-next-line no-use-before-define
+    private valueGetter:Function = () => {};
 
     public init(params: IFilterParams) : void {
         this.filterChangedCallback = params.filterChangedCallback;
@@ -31,19 +36,19 @@ export default class ProficiencyFilter implements IFilter {
     }
 
     public getGui() {
-        var eGui = document.createElement('div');
-        var eInstructions = document.createElement('div');
+        let eGui: any = document.createElement('div');
+        let eInstructions: any = document.createElement('div');
         eInstructions.innerHTML = FILTER_TITLE.replace('TITLE_NAME', 'Custom Proficiency Filter');
         eGui.appendChild(eInstructions);
 
-        var random = '' + Math.random();
+        let random: any = '' + Math.random();
 
-        var that = this;
-        PROFICIENCY_NAMES.forEach(function (name, index) {
-            var eFilter = document.createElement('div');
-            var html = PROFICIENCY_TEMPLATE.replace('PROFICIENCY_NAME', name).replace('RANDOM', random);
+        let that: any = this;
+        PROFICIENCY_NAMES.forEach(function (name: any, index: any) {
+            let eFilter: any = document.createElement('div');
+            let html: any = PROFICIENCY_TEMPLATE.replace('PROFICIENCY_NAME', name).replace('RANDOM', random);
             eFilter.innerHTML = html;
-            var eRadio = <HTMLInputElement> eFilter.querySelector('input');
+            let eRadio: any = <HTMLInputElement> eFilter.querySelector('input');
             if (index === 0) {
                 eRadio.checked = true;
             }
@@ -58,10 +63,10 @@ export default class ProficiencyFilter implements IFilter {
         return eGui;
     }
 
-    public doesFilterPass(params) {
+    public doesFilterPass(params: any) {
 
-        var value = this.valueGetter(params);
-        var valueAsNumber = parseFloat(value);
+        let value: any = this.valueGetter(params);
+        let valueAsNumber: any = parseFloat(value);
 
         switch (this.selected) {
             case PROFICIENCY_ABOVE40 :

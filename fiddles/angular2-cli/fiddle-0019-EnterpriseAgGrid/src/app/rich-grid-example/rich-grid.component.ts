@@ -1,283 +1,357 @@
-import {Component, ViewEncapsulation} from "@angular/core";
-import {GridOptions} from "ag-grid/main";
-
+import {
+  Component,
+  ViewEncapsulation
+} from "@angular/core";
 import ProficiencyFilter from '../filters/proficiencyFilter';
 import SkillFilter from '../filters/skillFilter';
 import RefData from '../data/refData';
+import 'ag-grid-enterprise';
 
-// only import this if you are using the ag-Grid-Enterprise
-import 'ag-grid-enterprise/main';
-
-import {HeaderGroupComponent} from "../header-group-component/header-group.component";
-import {DateComponent} from "../date-component/date.component";
-import {HeaderComponent} from "../header-component/header.component";
+import {
+  HeaderGroupComponent
+} from "../header-group-component/header-group.component";
+import {
+  DateComponent
+} from "../date-component/date.component";
+import {
+  HeaderComponent
+} from "../header-component/header.component";
 
 @Component({
-    selector: 'rich-grid',
-    templateUrl: 'rich-grid.component.html',
-    styleUrls: ['rich-grid.css', 'proficiency-renderer.css'],
-    encapsulation: ViewEncapsulation.None
+  selector: 'app-rich-grid',
+  templateUrl: 'rich-grid.component.html',
+  styleUrls: ['rich-grid.css', 'proficiency-renderer.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class RichGridComponent {
 
-    private gridOptions:GridOptions;
-    public showGrid:boolean;
-    public rowData:any[];
-    private columnDefs:any[];
-    public rowCount:string;
-    public dateComponentFramework:DateComponent;
-    public HeaderGroupComponent = HeaderGroupComponent;
+  gridOptions: any;
+  showGrid: boolean;
+  showToolPanel: boolean;
+  rowData: any[];
+  columnDefs: any[];
+  rowCount: string;
+  dateComponentFramework: DateComponent;
+  public HeaderGroupComponent = HeaderGroupComponent;
 
 
-    constructor() {
-        // we pass an empty gridOptions in, so we can grab the api out
-        this.gridOptions = <GridOptions>{};
-        this.createRowData();
-        this.createColumnDefs();
-        this.showGrid = true;
-        this.gridOptions.dateComponentFramework = DateComponent;
-        this.gridOptions.defaultColDef = {
-            headerComponentFramework : <{new():HeaderComponent}>HeaderComponent,
-            headerComponentParams : {
-                menuIcon: 'fa-bars'
-            }
-        }
+  constructor() {
+    this.gridOptions = {};
+    this.createRowData();
+    this.createColumnDefs();
+    this.showGrid = true;
+    this.showToolPanel = true;
+    this.rowData = [];
+    this.columnDefs = [];
+    this.rowCount = "";
+    this.dateComponentFramework = new DateComponent();
+    this.gridOptions.dateComponentFramework = DateComponent;
+    this.gridOptions.defaultColDef = {
+      headerComponentFramework: < {
+        new(): HeaderComponent
+      } > HeaderComponent,
+      headerComponentParams: {
+        menuIcon: 'fa-bars'
+      }
+    }
+    this.gridOptions.colGroupDef = null;
+  }
+
+  createRowData() {
+    let rowData: any[] = [];
+
+    for (var i = 0; i < 200; i++) {
+      var countryData = RefData.countries[i % RefData.countries.length];
+      rowData.push({
+        name: RefData.firstNames[i % RefData.firstNames.length] + ' ' + RefData.lastNames[i % RefData.lastNames.length],
+        skills: {
+          android: Math.random() < 0.4,
+          html5: Math.random() < 0.4,
+          mac: Math.random() < 0.4,
+          windows: Math.random() < 0.4,
+          css: Math.random() < 0.4
+        },
+        dob: RefData.DOBs[i % RefData.DOBs.length],
+        address: RefData.addresses[i % RefData.addresses.length],
+        years: Math.round(Math.random() * 100),
+        proficiency: Math.round(Math.random() * 100),
+        country: countryData.country,
+        continent: countryData.continent,
+        language: countryData.language,
+        mobile: createRandomPhoneNumber(),
+        landline: createRandomPhoneNumber()
+      });
     }
 
-    private createRowData() {
-        var rowData:any[] = [];
+    this.rowData = rowData;
+  }
 
-        for (var i = 0; i < 200; i++) {
-            var countryData = RefData.countries[i % RefData.countries.length];
-            rowData.push({
-                name: RefData.firstNames[i % RefData.firstNames.length] + ' ' + RefData.lastNames[i % RefData.lastNames.length],
-                skills: {
-                    android: Math.random() < 0.4,
-                    html5: Math.random() < 0.4,
-                    mac: Math.random() < 0.4,
-                    windows: Math.random() < 0.4,
-                    css: Math.random() < 0.4
-                },
-                dob: RefData.DOBs[i % RefData.DOBs.length],
-                address: RefData.addresses[i % RefData.addresses.length],
-                years: Math.round(Math.random() * 100),
-                proficiency: Math.round(Math.random() * 100),
-                country: countryData.country,
-                continent: countryData.continent,
-                language: countryData.language,
-                mobile: createRandomPhoneNumber(),
-                landline: createRandomPhoneNumber()
-            });
-        }
-
-        this.rowData = rowData;
-    }
-
-    private createColumnDefs() {
-        this.columnDefs = [
-            {
-                headerName: '#', width: 30, checkboxSelection: true, suppressSorting: true,
-                suppressMenu: true, pinned: true
+  createColumnDefs() {
+    this.columnDefs = [{
+        headerName: '#',
+        width: 30,
+        checkboxSelection: true,
+        suppressSorting: true,
+        suppressMenu: true,
+        pinned: true
+      },
+      {
+        headerName: 'Employee',
+        headerGroupComponentFramework: HeaderGroupComponent,
+        children: [{
+            headerName: "Name",
+            field: "name",
+            width: 150,
+            pinned: true
+          },
+          {
+            headerName: "Country",
+            field: "country",
+            width: 150,
+            cellRenderer: countryCellRenderer,
+            pinned: true,
+            filterParams: {
+              cellRenderer: countryCellRenderer,
+              cellHeight: 20
             },
-            {
-                headerName: 'Employee',
-                headerGroupComponentFramework: HeaderGroupComponent,
-                children: [
-                    {
-                        headerName: "Name", field: "name",
-                        width: 150, pinned: true
-                    },
-                    {
-                        headerName: "Country", field: "country", width: 150,
-                        cellRenderer: countryCellRenderer, pinned: true,
-                        filterParams: {cellRenderer: countryCellRenderer, cellHeight: 20}, columnGroupShow: 'open'
-                    },
-                    {
-                        headerName: "DOB", field: "dob", width: 120, pinned: true, cellRenderer: function(params) {
-                        return  pad(params.value.getDate(), 2) + '/' +
-                            pad(params.value.getMonth() + 1, 2)+ '/' +
-                            params.value.getFullYear();
-                        }, filter: 'date', columnGroupShow: 'open'
-                    }
-                ]
+            columnGroupShow: 'open'
+          },
+          {
+            headerName: "DOB",
+            field: "dob",
+            width: 120,
+            pinned: true,
+            cellRenderer: function (params: any) {
+              return pad(params.value.getDate(), 2) + '/' +
+                pad(params.value.getMonth() + 1, 2) + '/' +
+                params.value.getFullYear();
             },
-            {
-                headerName: 'IT Skills',
-                children: [
-                    {
-                        headerName: "Skills",
-                        width: 125,
-                        suppressSorting: true,
-                        cellRenderer: skillsCellRenderer,
-                        filter: SkillFilter
-                    },
-                    {
-                        headerName: "Proficiency",
-                        field: "proficiency",
-                        width: 120,
-                        cellRenderer: percentCellRenderer,
-                        filter: ProficiencyFilter
-                    },
-                ]
-            },
-            {
-                headerName: 'Contact',
-                children: [
-                    {headerName: "Mobile", field: "mobile", width: 150, filter: 'text'},
-                    {headerName: "Land-line", field: "landline", width: 150, filter: 'text'},
-                    {headerName: "Address", field: "address", width: 500, filter: 'text'}
-                ]
-            }
-        ];
-    }
+            filter: 'date',
+            columnGroupShow: 'open'
+          }
+        ]
+      },
+      {
+        headerName: 'IT Skills',
+        children: [{
+            headerName: "Skills",
+            width: 125,
+            suppressSorting: true,
+            cellRenderer: skillsCellRenderer,
+            filter: SkillFilter
+          },
+          {
+            headerName: "Proficiency",
+            field: "proficiency",
+            width: 120,
+            cellRenderer: percentCellRenderer,
+            filter: ProficiencyFilter
+          },
+        ]
+      },
+      {
+        headerName: 'Contact',
+        children: [{
+            headerName: "Mobile",
+            field: "mobile",
+            width: 150,
+            filter: 'text'
+          },
+          {
+            headerName: "Land-line",
+            field: "landline",
+            width: 150,
+            filter: 'text'
+          },
+          {
+            headerName: "Address",
+            field: "address",
+            width: 500,
+            filter: 'text'
+          }
+        ]
+      }
+    ];
+  }
 
-    private calculateRowCount() {
-        if (this.gridOptions.api && this.rowData) {
-            var model = this.gridOptions.api.getModel();
-            var totalRows = this.rowData.length;
-            var processedRows = model.getRowCount();
-            this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString();
-        }
+  calculateRowCount() {
+    if (this.gridOptions.api && this.rowData) {
+      let model: any = this.gridOptions.api.getModel();
+      let totalRows: number = this.rowData.length;
+      let processedRows: number = model.getRowCount();
+      this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString();
     }
+  }
 
-    private onModelUpdated() {
-        console.log('onModelUpdated');
-        this.calculateRowCount();
+  onSelectAllClick() {
+    if (this.gridOptions.api) {
+      this.gridOptions.api.selectAll();
     }
+  }
 
-    public onReady() {
-        console.log('onReady');
-        this.calculateRowCount();
+  onDeselectAllClick() {
+    if (this.gridOptions.api) {
+      this.gridOptions.api.deselectAll();
     }
+  }
 
-    private onCellClicked($event) {
-        console.log('onCellClicked: ' + $event.rowIndex + ' ' + $event.colDef.field);
+  onHideCountryColumnClick() {
+    if (this.gridOptions.columnApi) {
+      this.gridOptions.columnApi.setColumnVisible('country', false);
     }
+  }
 
-    private onCellValueChanged($event) {
-        console.log('onCellValueChanged: ' + $event.oldValue + ' to ' + $event.newValue);
+  onShowCountryColumnClick() {
+    if (this.gridOptions.columnApi) {
+      this.gridOptions.columnApi.setColumnVisible('country', true);
     }
+  }
 
-    private onCellDoubleClicked($event) {
-        console.log('onCellDoubleClicked: ' + $event.rowIndex + ' ' + $event.colDef.field);
+  onShowToolPanelChange(event: any) {
+    if (event && event.target) {
+      this.showToolPanel=event.target.checked
     }
+  }
 
-    private onCellContextMenu($event) {
-        console.log('onCellContextMenu: ' + $event.rowIndex + ' ' + $event.colDef.field);
-    }
+  onModelUpdated() {
+    console.log('onModelUpdated');
+    this.calculateRowCount();
+  }
 
-    private onCellFocused($event) {
-        console.log('onCellFocused: (' + $event.rowIndex + ',' + $event.colIndex + ')');
-    }
+  onReady(event: any) {
+    console.log('onReady');
+    this.calculateRowCount();
+  }
 
-    private onRowSelected($event) {
-        // taking out, as when we 'select all', it prints to much to the console!!
-        // console.log('onRowSelected: ' + $event.node.data.name);
-    }
+  onCellClicked($event: any) {
+    console.log('onCellClicked: ' + $event.rowIndex + ' ' + $event.colDef.field);
+  }
 
-    private onSelectionChanged() {
-        console.log('selectionChanged');
-    }
+  onCellValueChanged($event: any) {
+    console.log('onCellValueChanged: ' + $event.oldValue + ' to ' + $event.newValue);
+  }
 
-    private onBeforeFilterChanged() {
-        console.log('beforeFilterChanged');
-    }
+  onCellDoubleClicked($event: any) {
+    console.log('onCellDoubleClicked: ' + $event.rowIndex + ' ' + $event.colDef.field);
+  }
 
-    private onAfterFilterChanged() {
-        console.log('afterFilterChanged');
-    }
+  onCellContextMenu($event: any) {
+    console.log('onCellContextMenu: ' + $event.rowIndex + ' ' + $event.colDef.field);
+  }
 
-    private onFilterModified() {
-        console.log('onFilterModified');
-    }
+  onCellFocused($event: any) {
+    console.log('onCellFocused: (' + $event.rowIndex + ',' + $event.colIndex + ')');
+  }
 
-    private onBeforeSortChanged() {
-        console.log('onBeforeSortChanged');
-    }
+  onRowSelected($event: any) {
+    // taking out, as when we 'select all', it prints to much to the console!!
+    // console.log('onRowSelected: ' + $event.node.data.name);
+  }
 
-    private onAfterSortChanged() {
-        console.log('onAfterSortChanged');
-    }
+  onSelectionChanged() {
+    console.log('selectionChanged');
+  }
 
-    private onVirtualRowRemoved($event) {
-        // because this event gets fired LOTS of times, we don't print it to the
-        // console. if you want to see it, just uncomment out this line
-        // console.log('onVirtualRowRemoved: ' + $event.rowIndex);
-    }
+  onBeforeFilterChanged() {
+    console.log('beforeFilterChanged');
+  }
 
-    private onRowClicked($event) {
-        console.log('onRowClicked: ' + $event.node.data.name);
-    }
+  onAfterFilterChanged() {
+    console.log('afterFilterChanged');
+  }
 
-    public onQuickFilterChanged($event) {
-        this.gridOptions.api.setQuickFilter($event.target.value);
-    }
+  onFilterModified() {
+    console.log('onFilterModified');
+  }
 
-    // here we use one generic event to handle all the column type events.
-    // the method just prints the event name
-    private onColumnEvent($event) {
-        console.log('onColumnEvent: ' + $event);
-    }
+  onBeforeSortChanged() {
+    console.log('onBeforeSortChanged');
+  }
+
+  onAfterSortChanged() {
+    console.log('onAfterSortChanged');
+  }
+
+  onVirtualRowRemoved($event: any) {
+    // because this event gets fired LOTS of times, we don't print it to the
+    // console. if you want to see it, just uncomment out this line
+    // console.log('onVirtualRowRemoved: ' + $event.rowIndex);
+  }
+
+  onRowClicked($event: any) {
+    console.log('onRowClicked: ' + $event.node.data.name);
+  }
+
+  onQuickFilterChanged($event: any) {
+    // eslint-disable-next-line no-use-before-define
+    this.gridOptions.api.setQuickFilter($event.target.value);
+  }
+
+  // here we use one generic event to handle all the column type events.
+  // the method just prints the event name
+  onColumnEvent($event: any) {
+    console.log('onColumnEvent: ' + $event);
+  }
 
 }
 
-function skillsCellRenderer(params) {
-    var data = params.data;
-    var skills = [];
-    RefData.IT_SKILLS.forEach(function (skill) {
-        if (data && data.skills && data.skills[skill]) {
-            skills.push('<img src="images/skills/' + skill + '.png" width="16px" title="' + skill + '" />');
-        }
-    });
-    return skills.join(' ');
+function skillsCellRenderer(params: any) {
+  const data: any = params.data;
+  const skills: any[] = [];
+  RefData.IT_SKILLS.forEach(function (skill: any) {
+    if (data && data.skills && data.skills[skill]) {
+      skills.push('<img src="images/skills/' + skill + '.png" width="16px" title="' + skill + '" />');
+    }
+  });
+  return skills.join(' ');
 }
 
-function countryCellRenderer(params) {
-    var flag = "<img border='0' width='15' height='10' style='margin-bottom: 2px' src='images/flags/" + RefData.COUNTRY_CODES[params.value] + ".png'>";
-    return flag + " " + params.value;
+function countryCellRenderer(params: any) {
+  const flag: string = `<img border='0' width='15' height='10' style='margin-bottom: 2px' src='images/flags/
+    ${RefData.COUNTRY_CODES[params.value]}.png'>`;
+  return flag + " " + params.value;
 }
 
 function createRandomPhoneNumber() {
-    var result = '+';
-    for (var i = 0; i < 12; i++) {
-        result += Math.round(Math.random() * 10);
-        if (i === 2 || i === 5 || i === 8) {
-            result += ' ';
-        }
+  let result: any = '+';
+  for (var i = 0; i < 12; i++) {
+    result += Math.round(Math.random() * 10);
+    if (i === 2 || i === 5 || i === 8) {
+      result += ' ';
     }
-    return result;
+  }
+  return result;
 }
 
-function percentCellRenderer(params) {
-    var value = params.value;
+function percentCellRenderer(params: any) {
+  let value: any = params.value;
 
-    var eDivPercentBar = document.createElement('div');
-    eDivPercentBar.className = 'div-percent-bar';
-    eDivPercentBar.style.width = value + '%';
-    if (value < 20) {
-        eDivPercentBar.style.backgroundColor = 'red';
-    } else if (value < 60) {
-        eDivPercentBar.style.backgroundColor = '#ff9900';
-    } else {
-        eDivPercentBar.style.backgroundColor = '#00A000';
-    }
+  var eDivPercentBar = document.createElement('div');
+  eDivPercentBar.className = 'div-percent-bar';
+  eDivPercentBar.style.width = value + '%';
+  if (value < 20) {
+    eDivPercentBar.style.backgroundColor = 'red';
+  } else if (value < 60) {
+    eDivPercentBar.style.backgroundColor = '#ff9900';
+  } else {
+    eDivPercentBar.style.backgroundColor = '#00A000';
+  }
 
-    var eValue = document.createElement('div');
-    eValue.className = 'div-percent-value';
-    eValue.innerHTML = value + '%';
+  let eValue: any = document.createElement('div');
+  eValue.className = 'div-percent-value';
+  eValue.innerHTML = value + '%';
 
-    var eOuterDiv = document.createElement('div');
-    eOuterDiv.className = 'div-outer-div';
-    eOuterDiv.appendChild(eValue);
-    eOuterDiv.appendChild(eDivPercentBar);
+  let eOuterDiv: any = document.createElement('div');
+  eOuterDiv.className = 'div-outer-div';
+  eOuterDiv.appendChild(eValue);
+  eOuterDiv.appendChild(eDivPercentBar);
 
-    return eOuterDiv;
+  return eOuterDiv;
 }
 
 //Utility function used to pad the date formatting.
-function pad(num, totalStringSize) {
-    let asString = num + "";
-    while (asString.length < totalStringSize) asString = "0" + asString;
-    return asString;
+function pad(num: number, totalStringSize: number) {
+  let asString: string = num + "";
+  while (asString.length < totalStringSize) asString = "0" + asString;
+  return asString;
 }
-

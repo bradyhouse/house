@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 
 @Component({
-    selector: 'my-app',
+    selector: 'app-fiddle',
     templateUrl: 'app.component.html'
 })
 export class AppComponent {

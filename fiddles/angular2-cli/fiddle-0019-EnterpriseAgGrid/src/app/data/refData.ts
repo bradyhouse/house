@@ -1,19 +1,19 @@
 export default class RefData {
 
-    static IT_SKILLS = ['android', 'css', 'html5', 'mac', 'windows'];
-    static IT_SKILLS_NAMES = ['Android', 'CSS', 'HTML 5', 'Mac', 'Windows'];
+    static IT_SKILLS: string[] = ['android', 'css', 'html5', 'mac', 'windows'];
+    static IT_SKILLS_NAMES: string[] = ['Android', 'CSS', 'HTML 5', 'Mac', 'Windows'];
 
 
-    static firstNames = ["Sophie", "Isabelle", "Emily", "Olivia", "Lily", "Chloe", "Isabella",
+    static firstNames: string[] = ["Sophie", "Isabelle", "Emily", "Olivia", "Lily", "Chloe", "Isabella",
         "Amelia", "Jessica", "Sophia", "Ava", "Charlotte", "Mia", "Lucy", "Grace", "Ruby",
         "Ella", "Evie", "Freya", "Isla", "Poppy", "Daisy", "Layla"];
-    static lastNames = ["Beckham", "Black", "Braxton", "Brennan", "Brock", "Bryson", "Cadwell",
+    static lastNames: string[] = ["Beckham", "Black", "Braxton", "Brennan", "Brock", "Bryson", "Cadwell",
         "Cage", "Carson", "Chandler", "Cohen", "Cole", "Corbin", "Dallas", "Dalton", "Dane",
         "Donovan", "Easton", "Fisher", "Fletcher", "Grady", "Greyson", "Griffin", "Gunner",
         "Hayden", "Hudson", "Hunter", "Jacoby", "Jagger", "Jaxon", "Jett", "Kade", "Kane",
         "Keating", "Keegan", "Kingston", "Kobe"];
 
-    static DOBs = [
+    static DOBs: Date[] = [
         new Date(2000, 0, 1 ),
         new Date(2001, 1, 2 ),
         new Date(2002, 2, 3 ),
@@ -28,7 +28,9 @@ export default class RefData {
         new Date(2011, 11, 12 )
     ];
 
-    static COUNTRY_CODES = {
+
+
+    static COUNTRY_CODES: any = {
         Ireland: "ie",
         Spain: "es",
         "United Kingdom": "gb",
@@ -49,7 +51,7 @@ export default class RefData {
         Uruguay: "uy"
     };
 
-    static countries = [
+    static countries: any[] = [
         {country: "Ireland", continent: "Europe", language: "English"},
         {country: "Spain", continent: "Europe", language: "Spanish"},
         {country: "United Kingdom", continent: "Europe", language: "English"},
@@ -70,7 +72,7 @@ export default class RefData {
         {country: "Uruguay", continent: "South America", language: "Spanish"}
     ];
 
-    static addresses = [
+    static addresses: string[] = [
         '1197 Thunder Wagon Common, Cataract, RI, 02987-1016, US, (401) 747-0763',
         '3685 Rocky Glade, Showtucket, NU, X1E-9I0, CA, (867) 371-4215',
         '3235 High Forest, Glen Campbell, MS, 39035-6845, US, (601) 638-8186',
