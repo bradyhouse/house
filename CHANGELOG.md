@@ -2348,3 +2348,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     *   Refactored react template to include bootstrap style nav bar
 
       1.  Updated [scripts/bin/react/_create.sh](scripts/bin/react/_create.sh)
+
+
+### 362_node_49 ~ [Issue 362](https://github.com/bradyhouse/house/issues/362)
+
+* **node**
+
+    1.  Added [fiddles/node/fiddle-0049-SvelteHw](fiddles/node/fiddle-0049-SvelteHw)
+    2.  Added [fiddles/node/fiddle-0050-TechIntReverseNum](fiddles/node/fiddle-0050-TechIntReverseNum)
