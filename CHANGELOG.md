@@ -2326,3 +2326,24 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/python/fiddle-0011-Mp4TxtConverter](fiddles/python/fiddle-0011-Mp4TxtConverter)
 
 
+### 362_node_49 ~ [Issue 362](https://github.com/bradyhouse/house/issues/360)
+
+* **node**
+
+    1.  Added [fiddles/node/fiddle-0049-SvelteHw](fiddles/node/fiddle-0049-SvelteHw)
+    2.  Added [fiddles/node/fiddle-0050-TechIntReverseNum](fiddles/node/fiddle-0050-TechIntReverseNum)
+
+* **fiddle.sh (Enhancement)**
+
+  *   Updated node to NVM_VERSION to v16.11.1
+
+    1.  Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
+
+  *   Refactored Edit functionality to use Visual Studio Code instead of Joe's Own Editor
+
+    1.  Updated [scripts/fiddle-edit.sh](scripts/fiddle-edit.sh)
+
+  *   Refactored react template to include bootstrap style nav bar
+
+    1.  Updated [scripts/bin/react/_create.sh](scripts/bin/react/_create.sh)
+

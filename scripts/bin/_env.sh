@@ -18,6 +18,7 @@
 # 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # 09/26/2019 - See CHANGELOG @ 313_angularCli_27
 # 10/03/2019 - See CHANGELOG @ 313_node_31to40
+# 10/17/2021 - See CHANGELOG @ 358_react_16-25
 # ---------------------------------------------------------------------------------------------------|
 
 export HOME_ROOT=$(mapHomePath;);
@@ -33,7 +34,7 @@ export OS=$(getOS;);
 export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
 export AUTHOR_NAME="brady house";
-export NVM_VERSION="v10.9.0";
+export NVM_VERSION="v16.11.1";
 export CHANGE_LOG="CHANGELOG.md";
 
 # =================================================
