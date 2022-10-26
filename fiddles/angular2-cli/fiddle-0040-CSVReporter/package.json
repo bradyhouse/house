@@ -12,7 +12,7 @@
     "ag-grid": "^4.2.6",
     "ag-grid-ng2": "^4.2.0",
     "angular-cli": "^1.0.0-beta.5",
-    "angular2-in-memory-web-api": "0.0.7",
+    "angular2-in-memory-web-api": "0.0.21",
     "mdi": "^1.6.50"
   },
   "dependencies": {
