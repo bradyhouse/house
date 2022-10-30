@@ -16,13 +16,13 @@
     "mdi": "^1.6.50"
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.1",
-    "@angular/compiler": "2.0.0-rc.1",
-    "@angular/core": "11.0.5",
-    "@angular/http": "2.0.0-rc.1",
-    "@angular/platform-browser": "2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
-    "@angular/router": "2.0.0-rc.1",
+    "@angular/common": "2.4.10",
+    "@angular/compiler": "2.4.10",
+    "@angular/core": "11.2.14",
+    "@angular/http": "2.0.0-rc.7",
+    "@angular/platform-browser": "2.4.10",
+    "@angular/platform-browser-dynamic": "2.4.10",
+    "@angular/router": "2.0.0-rc.2",
     "jquery": "^3.0.0",
     "jquery-csv": "^0.8.1",
     "systemjs": "0.19.26"

@@ -870,9 +870,19 @@
       "dev": true
     },
     "angular-in-memory-web-api": {
-      "version": "0.6.0",
-      "resolved": "https://registry.npmjs.org/angular-in-memory-web-api/-/angular-in-memory-web-api-0.6.0.tgz",
-      "integrity": "sha512-+i2bH9T/S4gTQdJLt264H4JMKXNpik33pMatSOvPSqFQ0vImnTBVbvijfmy75OgwKPJ8OZw0R76CrLjp2EYX2A=="
+      "version": "0.14.0",
+      "resolved": "https://registry.npmjs.org/angular-in-memory-web-api/-/angular-in-memory-web-api-0.14.0.tgz",
+      "integrity": "sha512-8RLFBpXZONDQxYGKiheaYQQl3iydesCrhWLuzDD6AsQDcOF+HEvIuOfBdJaTWKfqyNZNWjHvXzIyT0bUIunb/A==",
+      "requires": {
+        "tslib": "^2.3.0"
+      },
+      "dependencies": {
+        "tslib": {
+          "version": "2.4.0",
+          "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz",
+          "integrity": "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
+        }
+      }
     },
     "ansi-html": {
       "version": "0.0.7",
@@ -11059,9 +11069,19 @@
       "dev": true
     },
     "zone.js": {
-      "version": "0.8.26",
-      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.8.26.tgz",
-      "integrity": "sha512-W9Nj+UmBJG251wkCacIkETgra4QgBo/vgoEkb4a2uoLzpQG7qF9nzwoLXWU5xj3Fg2mxGvEDh47mg24vXccYjA=="
+      "version": "0.11.8",
+      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.11.8.tgz",
+      "integrity": "sha512-82bctBg2hKcEJ21humWIkXRlLBBmrc3nN7DFh5LGGhcyycO2S7FN8NmdvlcKaGFDNVL4/9kFLmwmInTavdJERA==",
+      "requires": {
+        "tslib": "^2.3.0"
+      },
+      "dependencies": {
+        "tslib": {
+          "version": "2.4.0",
+          "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz",
+          "integrity": "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
+        }
+      }
     }
   }
 }
