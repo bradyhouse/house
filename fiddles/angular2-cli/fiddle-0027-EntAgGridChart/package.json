@@ -14,7 +14,7 @@
     "@angular/animations": "~8.2.0",
     "@angular/common": "~8.2.0",
     "@angular/compiler": "~8.2.0",
-    "@angular/core": "11.0.5",
+    "@angular/core": "11.2.14",
     "@angular/forms": "~8.2.0",
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
@@ -27,7 +27,7 @@
     "jquery": "^3.4.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.11.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.1",
