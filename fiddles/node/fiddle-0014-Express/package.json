@@ -14,6 +14,6 @@
     "express": "node --harmony server-express.js"
   },
   "dependencies": {
-    "express": "~4.16.3"
+    "express": "~4.17.3"
   }
 }
