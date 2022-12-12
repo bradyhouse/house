@@ -35,7 +35,7 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@angular/router": "5.2.11",
     "bootstrap": "4.6.2",
-    "core-js": "2.4.1",
+    "core-js": "2.6.12",
     "immutable": "^3.8.1",
     "jquery": "3.5.0",
     "lodash": "^4.17.15",
