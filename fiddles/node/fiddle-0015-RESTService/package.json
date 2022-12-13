@@ -13,7 +13,7 @@
     "start": "node --harmony server.js"
   },
   "dependencies": {
-    "express": "~4.17.3",
+    "express": "~4.18.0",
     "q": "^1.4.1",
     "request": "^2.72.0"
   }
