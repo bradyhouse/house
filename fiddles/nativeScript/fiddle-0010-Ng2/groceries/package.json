@@ -21,7 +21,7 @@
     "email-validator": "^2.0.4",
     "nativescript-angular": "6.2.0",
     "nativescript-iqkeyboardmanager": "1.3.0",
-    "nativescript-social-share": "1.5.0",
+    "nativescript-social-share": "1.6.0",
     "nativescript-unit-test-runner": "^0.3.3",
     "reflect-metadata": "^0.1.8",
     "rxjs": "6.2.0",
