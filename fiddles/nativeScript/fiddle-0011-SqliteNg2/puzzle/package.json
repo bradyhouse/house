@@ -41,7 +41,7 @@
     "karma-jasmine": "^1.0.2",
     "karma-nativescript-launcher": "^0.4.0",
     "lazy": "1.0.11",
-    "nativescript-dev-typescript": "^0.7.1",
+    "nativescript-dev-typescript": "^0.10.0",
     "tslint": "^5.10.0",
     "typescript": "^2.0.3"
   }
