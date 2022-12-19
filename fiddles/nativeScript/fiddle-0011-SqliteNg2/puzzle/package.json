@@ -20,7 +20,7 @@
     "@angular/router": "~6.1.0",
     "email-validator": "^2.0.4",
     "immutable": "^3.8.1",
-    "nativescript-angular": "6.0.0",
+    "nativescript-angular": "6.2.0",
     "nativescript-iqkeyboardmanager": "1.3.0",
     "nativescript-social-share": "1.5.0",
     "nativescript-sqlite": "^2.2.1",
