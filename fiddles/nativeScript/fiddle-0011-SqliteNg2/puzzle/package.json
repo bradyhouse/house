@@ -24,7 +24,7 @@
     "nativescript-iqkeyboardmanager": "1.3.0",
     "nativescript-social-share": "1.5.0",
     "nativescript-sqlite": "^2.2.1",
-    "nativescript-unit-test-runner": "^0.3.3",
+    "nativescript-unit-test-runner": "^0.7.0",
     "reflect-metadata": "^0.1.8",
     "rxjs": "6.2.0",
     "tns-core-modules": "^4.1.0"
