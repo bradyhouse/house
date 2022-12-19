@@ -18,7 +18,7 @@
     "@angular/http": "~6.1.0",
     "@angular/platform-browser": "~6.1.0",
     "@angular/router": "~6.1.0",
-    "nativescript-angular": "~6.0.0",
+    "nativescript-angular": "~6.2.0",
     "nativescript-theme-core": "~1.0.2",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~6.2.0",
