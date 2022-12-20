@@ -25,6 +25,6 @@
     "@angular/router": "2.0.0-rc.2",
     "jquery": "^3.0.0",
     "jquery-csv": "^0.9.0",
-    "systemjs": "0.19.26"
+    "systemjs": "0.21.6"
   }
 }
