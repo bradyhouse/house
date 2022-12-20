@@ -15,7 +15,7 @@
         "nativescript-bottom-navigation": "^1.4.4",
         "nativescript-social-share": "^1.5.1",
         "nativescript-theme-core": "~1.0.4",
-        "tns-core-modules": "~5.0.2"
+        "tns-core-modules": "~5.4.0"
     },
     "devDependencies": {
         "nativescript-dev-webpack": "~0.24.0"
