@@ -24,7 +24,7 @@
     "nativescript-social-share": "1.6.0",
     "nativescript-unit-test-runner": "^0.7.0",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "6.2.0",
+    "rxjs": "6.6.7",
     "tns-core-modules": "^4.1.0"
   },
   "devDependencies": {
