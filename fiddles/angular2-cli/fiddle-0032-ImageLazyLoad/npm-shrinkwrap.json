@@ -8872,9 +8872,9 @@
       }
     },
     "jasmine-core": {
-      "version": "3.4.0",
-      "resolved": "https://registry.npmjs.org/jasmine-core/-/jasmine-core-3.4.0.tgz",
-      "integrity": "sha512-HU/YxV4i6GcmiH4duATwAbJQMlE0MsDIR5XmSVxURxKHn3aGAdbY1/ZJFmVRbKtnLwIxxMJD7gYaPsypcbYimg==",
+      "version": "3.99.1",
+      "resolved": "https://registry.npmjs.org/jasmine-core/-/jasmine-core-3.99.1.tgz",
+      "integrity": "sha512-Hu1dmuoGcZ7AfyynN3LsfruwMbxMALMka+YtZeGoLuDEySVmVAPaonkNoBRIw/ectu8b9tVQCJNgp4a4knp+tg==",
       "dev": true
     },
     "jasmine-spec-reporter": {
@@ -14347,9 +14347,9 @@
       "dev": true
     },
     "typescript": {
-      "version": "3.5.3",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.5.3.tgz",
-      "integrity": "sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==",
+      "version": "3.9.10",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.9.10.tgz",
+      "integrity": "sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==",
       "dev": true
     },
     "ua-parser-js": {
