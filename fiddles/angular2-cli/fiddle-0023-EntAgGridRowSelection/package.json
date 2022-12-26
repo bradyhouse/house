@@ -22,7 +22,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "@mdi/font": "^3.6.95",
+    "@mdi/font": "^7.0.0",
     "ag-grid": "^18.0.0",
     "ag-grid-angular": "^18.0.0",
     "ag-grid-enterprise": "^18.0.0",
