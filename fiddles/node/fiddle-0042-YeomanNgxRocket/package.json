@@ -30,7 +30,7 @@
     "@angular/router": "^8.1.0",
     "@ngx-translate/core": "^11.0.1",
     "@angular/service-worker": "^8.1.0",
-    "@ng-bootstrap/ng-bootstrap": "^5.0.0-rc.1",
+    "@ng-bootstrap/ng-bootstrap": "^14.0.0",
     "bootstrap": "^4.1.1",
     "@fortawesome/fontawesome-free": "5.15.4",
     "lodash": "^4.17.11",
