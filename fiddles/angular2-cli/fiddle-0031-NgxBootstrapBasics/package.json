@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.0.0",
-    "@angular/cdk": "~8.2.3",
+    "@angular/cdk": "~15.0.0",
     "@angular/common": "~15.0.0",
     "@angular/compiler": "~15.0.0",
     "@angular/core": "15.0.4",
@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~15.0.0",
     "@angular/platform-browser-dynamic": "~15.0.0",
     "@angular/router": "~15.0.0",
-    "@mdi/font": "^4.5.95",
+    "@mdi/font": "^7.0.0",
     "bootstrap": "4.6.2",
     "jquery": "^3.4.1",
     "ngx-bootstrap": "^5.2.0",
