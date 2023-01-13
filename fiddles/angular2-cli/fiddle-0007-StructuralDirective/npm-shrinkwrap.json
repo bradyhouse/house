@@ -3183,9 +3183,9 @@
       "dev": true
     },
     "@types/node": {
-      "version": "10.17.60",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-10.17.60.tgz",
-      "integrity": "sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==",
+      "version": "18.11.18",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.18.tgz",
+      "integrity": "sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==",
       "dev": true
     },
     "@types/parse-json": {

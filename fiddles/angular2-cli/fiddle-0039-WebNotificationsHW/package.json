@@ -43,7 +43,7 @@
     "@angular/language-service": "15.0.4",
     "@types/jasmine": "2.8.19",
     "@types/jasminewd2": "2.0.10",
-    "@types/node": "~6.14.0",
+    "@types/node": "~18.11.0",
     "ag-grid-testing": "0.0.3",
     "codelyzer": "4.5.0",
     "jasmine-core": "2.99.1",
