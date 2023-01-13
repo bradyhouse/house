@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.20.12",
-    "@svgr/webpack": "4.3.3",
+    "@svgr/webpack": "6.5.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
