@@ -2672,9 +2672,9 @@
       }
     },
     "@types/jasmine": {
-      "version": "2.8.8",
-      "resolved": "https://registry.npmjs.org/@types/jasmine/-/jasmine-2.8.8.tgz",
-      "integrity": "sha512-OJSUxLaxXsjjhob2DBzqzgrkLmukM3+JMpRp0r0E4HTdT1nwDCWhaswjYxazPij6uOdzHCJfNbDjmQ1/rnNbCg==",
+      "version": "4.3.1",
+      "resolved": "https://registry.npmjs.org/@types/jasmine/-/jasmine-4.3.1.tgz",
+      "integrity": "sha512-Vu8l+UGcshYmV1VWwULgnV/2RDbBaO6i2Ptx7nd//oJPIZGhoI1YLST4VKagD2Pq/Bc2/7zvtvhM7F3p4SN7kQ==",
       "dev": true
     },
     "@types/jasminewd2": {
@@ -2684,6 +2684,14 @@
       "dev": true,
       "requires": {
         "@types/jasmine": "2.8.8"
+      },
+      "dependencies": {
+        "@types/jasmine": {
+          "version": "2.8.8",
+          "resolved": "https://registry.npmjs.org/@types/jasmine/-/jasmine-2.8.8.tgz",
+          "integrity": "sha512-OJSUxLaxXsjjhob2DBzqzgrkLmukM3+JMpRp0r0E4HTdT1nwDCWhaswjYxazPij6uOdzHCJfNbDjmQ1/rnNbCg==",
+          "dev": true
+        }
       }
     },
     "@types/json-schema": {
@@ -2704,9 +2712,9 @@
       "dev": true
     },
     "@types/node": {
-      "version": "10.17.60",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-10.17.60.tgz",
-      "integrity": "sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==",
+      "version": "18.11.18",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-18.11.18.tgz",
+      "integrity": "sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==",
       "dev": true
     },
     "@types/parse-json": {
