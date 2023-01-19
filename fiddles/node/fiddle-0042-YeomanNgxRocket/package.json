@@ -45,7 +45,7 @@
     "@angular-devkit/build-angular": "^0.1102.0",
     "@angularclass/hmr": "^3.0.0",
     "@biesbjerg/ngx-translate-extract": "^7.0.0",
-    "@ngx-rocket/scripts": "^4.0.0",
+    "@ngx-rocket/scripts": "^5.0.0",
     "@types/jasmine": "^4.0.0",
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "^18.0.0",
