@@ -9,7 +9,7 @@
   "author": "bradyhouse@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "ag-grid": "^4.2.6",
+    "ag-grid": "^18.0.0",
     "ag-grid-ng2": "^8.0.0",
     "angular-cli": "^1.0.0-beta.5",
     "angular2-in-memory-web-api": "0.0.21",
