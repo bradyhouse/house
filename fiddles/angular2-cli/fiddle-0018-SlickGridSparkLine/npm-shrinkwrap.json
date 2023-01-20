@@ -4258,12 +4258,9 @@
       "integrity": "sha512-SpiDSOcbg4J/PjVSt4ny5eY6j74VbVSjROY4Fb/WIUXBV9cnb5luyR4KnPvNoXuGnBK1T+nJIWqRsvU3yP8Mcg=="
     },
     "bootswatch": {
-      "version": "4.1.1",
-      "resolved": "https://registry.npmjs.org/bootswatch/-/bootswatch-4.1.1.tgz",
-      "integrity": "sha1-604FPEadTcjNr/Ef9N2+9j6GpW0=",
-      "requires": {
-        "bootstrap": "^4.1.1"
-      }
+      "version": "5.2.3",
+      "resolved": "https://registry.npmjs.org/bootswatch/-/bootswatch-5.2.3.tgz",
+      "integrity": "sha512-tvnW15WoOY2sEp1uT1ITDQiJy2TekQa+K+Q28WDXibleIxsY0nAoC9IylbnUPD7Q5vkCIclOuBHLVBblJYYPSA=="
     },
     "brace-expansion": {
       "version": "1.1.11",
