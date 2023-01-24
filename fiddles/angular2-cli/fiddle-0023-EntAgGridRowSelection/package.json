@@ -26,7 +26,7 @@
     "ag-grid": "^18.0.0",
     "ag-grid-angular": "^29.0.0",
     "ag-grid-enterprise": "^29.0.0",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^5.0.0",
     "bootswatch": "^5.0.0",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
