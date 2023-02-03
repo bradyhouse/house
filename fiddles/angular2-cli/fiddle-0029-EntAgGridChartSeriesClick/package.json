@@ -23,7 +23,7 @@
     "ag-grid-angular": "^29.0.0",
     "ag-grid-community": "^29.0.0",
     "ag-grid-enterprise": "^29.0.0",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^5.0.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "rxjs": "~6.6.0",
