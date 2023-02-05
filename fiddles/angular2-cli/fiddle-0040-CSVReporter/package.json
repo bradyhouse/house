@@ -9,20 +9,20 @@
   "author": "bradyhouse@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "ag-grid": "^4.2.6",
-    "ag-grid-ng2": "^4.2.0",
+    "ag-grid": "^18.0.0",
+    "ag-grid-ng2": "^8.0.0",
     "angular-cli": "^1.0.0-beta.5",
     "angular2-in-memory-web-api": "0.0.21",
     "mdi": "^1.6.50"
   },
   "dependencies": {
-    "@angular/common": "2.4.10",
-    "@angular/compiler": "2.4.10",
-    "@angular/core": "11.2.14",
+    "@angular/common": "15.1.1",
+    "@angular/compiler": "15.1.1",
+    "@angular/core": "15.1.1",
     "@angular/http": "2.0.0-rc.7",
-    "@angular/platform-browser": "2.4.10",
-    "@angular/platform-browser-dynamic": "2.4.10",
-    "@angular/router": "2.0.0-rc.2",
+    "@angular/platform-browser": "15.1.1",
+    "@angular/platform-browser-dynamic": "15.1.1",
+    "@angular/router": "15.1.1",
     "jquery": "^3.0.0",
     "jquery-csv": "^0.9.0",
     "systemjs": "0.21.6"
