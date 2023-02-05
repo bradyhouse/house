@@ -14,7 +14,7 @@
     "bfj": "7.0.2",
     "bootstrap": "^5.0.0",
     "case-sensitive-paths-webpack-plugin": "2.4.0",
-    "css-loader": "1.0.1",
+    "css-loader": "6.7.3",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
     "eslint": "5.16.0",
