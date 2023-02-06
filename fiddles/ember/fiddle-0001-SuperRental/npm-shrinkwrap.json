@@ -11163,9 +11163,9 @@
       "dev": true
     },
     "ember-cli-dependency-checker": {
-      "version": "2.2.1",
-      "resolved": "https://registry.npmjs.org/ember-cli-dependency-checker/-/ember-cli-dependency-checker-2.2.1.tgz",
-      "integrity": "sha512-DmxayycdIPx6wZLpfwXq+MOtKtxhFbCw05kdGaQEyKKNSMeSdywsUjZyxneEpGb8Ztrm+kBwFW3eseydnYLWyw==",
+      "version": "3.3.1",
+      "resolved": "https://registry.npmjs.org/ember-cli-dependency-checker/-/ember-cli-dependency-checker-3.3.1.tgz",
+      "integrity": "sha512-Tg6OeijjXNKWkDm6057Tr0N9j9Vlz/ITewXWpn1A/+Wbt3EowBx5ZKfvoupqz05EznKgL1B/ecG0t+JN7Qm6MA==",
       "dev": true,
       "requires": {
         "chalk": "^2.3.0",
