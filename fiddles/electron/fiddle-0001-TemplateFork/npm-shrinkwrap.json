@@ -163,9 +163,9 @@
       "dev": true
     },
     "define-properties": {
-      "version": "1.1.4",
-      "resolved": "https://registry.npmjs.org/define-properties/-/define-properties-1.1.4.tgz",
-      "integrity": "sha512-uckOqKcfaVvtBdsVkdPv3XjveQJsNQqmhXgRi8uhvWWuPYZCNlzT8qAyblUgNoXdHdjMTzAqeGjAoli8f+bzPA==",
+      "version": "1.2.0",
+      "resolved": "https://registry.npmjs.org/define-properties/-/define-properties-1.2.0.tgz",
+      "integrity": "sha512-xvqAVKGfT1+UAvPwKTVw/njhdQ8ZhXK4lI0bCIuCMrp2up9nPnaDftrLtmpTazqd1o+UY4zgzU+avtMbDP+ldA==",
       "dev": true,
       "optional": true,
       "requires": {
@@ -181,9 +181,9 @@
       "optional": true
     },
     "electron": {
-      "version": "22.2.0",
-      "resolved": "https://registry.npmjs.org/electron/-/electron-22.2.0.tgz",
-      "integrity": "sha512-puRZSF2vWJ4pz3oetL5Td8LcuivTWz3MoAk/gjImHSN1B/2VJNEQlw1jGdkte+ppid2craOswE2lmCOZ7SwF1g==",
+      "version": "22.3.0",
+      "resolved": "https://registry.npmjs.org/electron/-/electron-22.3.0.tgz",
+      "integrity": "sha512-RYraLSk4KitmdIuA1jZzOrzGC9g3u6vxDR5VR6K6jFLw295LOkWiuUorbuFrJ/yftRQBr8+F7S1bqak/Po5xlw==",
       "dev": true,
       "requires": {
         "@electron/get": "^2.0.0",
