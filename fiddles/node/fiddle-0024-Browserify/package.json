@@ -15,7 +15,7 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.8",
-    "browserify": "^16.2.2",
+    "browserify": "^17.0.0",
     "connect": "^3.6.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-concat": "^2.4.1",
