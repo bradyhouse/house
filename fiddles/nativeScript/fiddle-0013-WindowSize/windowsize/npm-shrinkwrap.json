@@ -48,9 +48,9 @@
       }
     },
     "@angular/core": {
-      "version": "15.1.3",
-      "resolved": "https://registry.npmjs.org/@angular/core/-/core-15.1.3.tgz",
-      "integrity": "sha512-rad9OYnaoRnXBztOBXsiD59VvOZTpsvO3sWx6KndytQFceFfkL722bF2l2LARN+R3IWDOwRap46HOtc0O0N+sw==",
+      "version": "15.1.5",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-15.1.5.tgz",
+      "integrity": "sha512-JCbhGVaskqrstLB8CJoPtMQKH4gryhuLFUVL5cwbVy3UJGGNmc3Gzvk+9I7zDf/D08vKyXGGmBNBVx2J65SJgw==",
       "requires": {
         "tslib": "^2.3.0"
       },
