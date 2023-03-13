@@ -37,7 +37,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.28.0",
-    "ember-welcome-page": "^3.0.0",
+    "ember-welcome-page": "^7.0.0",
     "eslint-plugin-ember": "^11.0.0",
     "loader.js": "^4.2.3"
   },
