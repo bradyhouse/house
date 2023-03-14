@@ -51,7 +51,7 @@
     "@types/node": "~18.15.0",
     "ag-grid-testing": "0.0.3",
     "codelyzer": "6.0.2",
-    "jasmine-core": "2.99.1",
+    "jasmine-core": "4.5.0",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "6.4.1",
     "karma-chrome-launcher": "2.2.0",
