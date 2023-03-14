@@ -16,7 +16,7 @@
   "devDependencies": {
     "gulp": "gulpjs/gulp#4.0",
     "gulp-concat": "^2.4.1",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-imagemin": "^8.0.0",
     "gulp-jshint": "^2.1.0",
     "gulp-myth": "^1.0.1",
     "gulp-uglify": "^3.0.0"
