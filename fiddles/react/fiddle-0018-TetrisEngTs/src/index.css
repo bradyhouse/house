@@ -1,0 +1,40 @@
+body {
+  background-image: linear-gradient(90deg,#33b7e2,#5e62b0,#dc307c);
+}
+
+.warp-border {
+    border-radius: 255px 25px 225px 25px/25px 225px 25px 255px !important;
+    background-color: transparent;
+    border: 1px solid black;
+    width: 300px;
+}
+
+
+canvas {
+  display: block;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px !important;
+  margin: 0;
+  padding: 35px;
+  border: 1px solid black !important;
+  margin-top: 10px;
+  background-color: white !important;
+
+}
+
+.navbar-collapse.collapse {
+  display: block!important;
+  flex-wrap: nowrap !important;
+}
+
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+  margin-right: -15px !important;
+  flex-wrap: nowrap;
+}
+
+.navbar-right {
+  float: right!important;
+}

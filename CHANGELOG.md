@@ -2356,3 +2356,21 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
     1.  Added [fiddles/node/fiddle-0049-SvelteHw](fiddles/node/fiddle-0049-SvelteHw)
     2.  Added [fiddles/node/fiddle-0050-TechIntReverseNum](fiddles/node/fiddle-0050-TechIntReverseNum)
+
+
+### 420-react-typescript-fiddle-support ~ [Issue 420](https://github.com/bradyhouse/house/issues/420)
+
+* **node**
+
+    1.  Added [fiddles/node/fiddle-0049-SplitInteger](fiddles/node/fiddle-0049-SplitInteger)   
+    2.  Added [fiddles/node/fiddle-0050-PlaywrightHw](fiddles/node/fiddle-0050-PlaywrightHw)
+ 
+* **bash**
+  
+    1.  Added [fiddles/bash/fiddle-0101-ReactCreateAppTs](fiddles/bash/fiddle-0101-ReactCreateAppTs)
+
+* **react**
+
+    1.  Added [fiddles/react/fiddle-0018-TetrisEngTs](fiddles/react/fiddle-0018-TetrisEngTs)
+    2.  Added [fiddles/react/fiddle-0021-ReactShepherdTs](fiddles/react/fiddle-0021-ReactShepherdTs)
+
