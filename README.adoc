@@ -2,6 +2,7 @@ image:http://img.shields.io/badge/license-MIT-brightgreen.svg["MIT license", lin
 image:https://img.shields.io/github/issues/bradyhouse/house["GitHub issues",link="https://github.com/bradyhouse/house/issues"]
 image:https://img.shields.io/github/forks/bradyhouse/house["GitHub forks",link="https://github.com/bradyhouse/house/network"]
 image:https://img.shields.io/github/stars/bradyhouse/house["GitHub stars",link="https://github.com/bradyhouse/house/stargazers"]
+image:https://github.com/bradyhouse/house/actions/workflows/webpack.yml/badge.svg["Webpack",link="https://github.com/bradyhouse/house/actions/workflows/webpack.yml"]
 ```
 {{ ʕ・ɭ・ʔ }}
 H o u s e
