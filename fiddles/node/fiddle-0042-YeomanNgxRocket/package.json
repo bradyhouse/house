@@ -53,7 +53,7 @@
     "codelyzer": "^6.0.0",
     "hads": "^3.0.0",
     "htmlhint": "^1.0.0",
-    "https-proxy-agent": "^2.0.0",
+    "https-proxy-agent": "^5.0.0",
     "jasmine-core": "~4.5.0",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "~6.4.0",
