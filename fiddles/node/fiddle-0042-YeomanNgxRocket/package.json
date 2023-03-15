@@ -67,7 +67,7 @@
     "tslint-config-prettier": "^1.14.0",
     "stylelint-config-prettier": "^5.1.0",
     "pretty-quick": "^1.10.0",
-    "husky": "^3.0.0",
+    "husky": "^8.0.0",
     "protractor": "~5.4.0",
     "puppeteer": "^1.17.0",
     "stylelint": "~10.1.0",
