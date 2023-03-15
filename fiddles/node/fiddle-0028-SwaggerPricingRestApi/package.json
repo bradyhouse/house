@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "connect": "^3.6.6",
-    "js-yaml": "^3.11.0",
+    "js-yaml": "^4.0.0",
     "request": "^2.85.0",
     "swagger-tools": "^0.10.3"
   }
