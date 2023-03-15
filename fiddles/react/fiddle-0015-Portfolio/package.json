@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "7.21.0",
+    "@babel/core": "7.21.3",
     "@svgr/webpack": "6.5.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
