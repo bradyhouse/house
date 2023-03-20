@@ -11,7 +11,7 @@ def main():
         print('Their values are:')
         print(random.randint(MIN, MAX))
         print(random.randint(MIN, MAX))
-        again = str(raw_input('Roll them again? (y - yes): '))
+        again = str(input('Roll them again? (y - yes): '))
 
 
 main()
