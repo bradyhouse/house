@@ -2374,3 +2374,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/react/fiddle-0018-TetrisEngTs](fiddles/react/fiddle-0018-TetrisEngTs)
     2.  Added [fiddles/react/fiddle-0021-ReactShepherdTs](fiddles/react/fiddle-0021-ReactShepherdTs)
 
+* Added [fiddles/bash/fiddle-0102-InitVueProject](fiddles/bash/fiddle-0102-InitVueProject)
+* Added [fiddles/node/fiddle-0049-VueHelloWorld](fiddles/node/fiddle-0049-VueHelloWorld)
