@@ -3260,9 +3260,9 @@
       }
     },
     "nativescript-geolocation": {
-      "version": "4.3.1",
-      "resolved": "https://registry.npmjs.org/nativescript-geolocation/-/nativescript-geolocation-4.3.1.tgz",
-      "integrity": "sha512-bzbQoqJk4svAxsETmjWyAxwmG5CJYmgtdNbFrXegvxiSFcepu7LmrqEnN9QokEcutG8ckU3/xBBsJeZll/1drw==",
+      "version": "4.5.0",
+      "resolved": "https://registry.npmjs.org/nativescript-geolocation/-/nativescript-geolocation-4.5.0.tgz",
+      "integrity": "sha512-yWFVjR5vYELAlJMaEuDAsRTViFOGnRKkQAflyMnHL/LObrhBRGcVnu6xm0moqOAzCAI80yC7Dj0zjXWAdNxnxQ==",
       "requires": {
         "nativescript-permissions": "~1.2.3"
       }
@@ -3295,7 +3295,7 @@
     "nativescript-permissions": {
       "version": "1.2.3",
       "resolved": "https://registry.npmjs.org/nativescript-permissions/-/nativescript-permissions-1.2.3.tgz",
-      "integrity": "sha1-4+ZVRfmP5IjdVXj3/5DrrjCI5wA="
+      "integrity": "sha512-0wK5RGW14/89xzNwXs3mI/dmFd0EwrGm8jvRLsxOSXRWZ03u9fR+ELJ+cX0hCguCfISecuLefCGCYs5zfbdlfg=="
     },
     "nativescript-theme-core": {
       "version": "1.0.6",
