@@ -3290,9 +3290,9 @@
             }
         },
         "nativescript-social-share": {
-            "version": "1.5.1",
-            "resolved": "https://registry.npmjs.org/nativescript-social-share/-/nativescript-social-share-1.5.1.tgz",
-            "integrity": "sha512-G/aoahMwKt+eOKivUuZFfb271Z7zYonQpc60XzXD+G1TE35SE/GQ/eYzuVBnkvSJHYz8XaA/UarzX0HstWoYgA=="
+            "version": "1.6.0",
+            "resolved": "https://registry.npmjs.org/nativescript-social-share/-/nativescript-social-share-1.6.0.tgz",
+            "integrity": "sha512-PjSMseCWPGJbW0KPMgQBiTQke6I8cYxf0CGXtuJ0BnRhXrEjF3d+3kAnI8E3O8PeW/BFwNIqLYG4fkoQF4obyA=="
         },
         "nativescript-theme-core": {
             "version": "1.0.6",
