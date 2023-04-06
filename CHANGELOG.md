@@ -2376,3 +2376,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * Added [fiddles/bash/fiddle-0102-InitVueProject](fiddles/bash/fiddle-0102-InitVueProject)
 * Added [fiddles/node/fiddle-0049-VueHelloWorld](fiddles/node/fiddle-0049-VueHelloWorld)
+* Added [fiddles/node/fiddle-0050-VueCustomEvents](fiddles/node/fiddle-0050-VueCustomEvents)
+* Added [fiddles/node/fiddle-0051-VueAxiosIntercept](fiddles/node/fiddle-0051-VueAxiosIntercept)
+* Added [fiddles/vue/fiddle-0000-template](fiddles/vue/fiddle-0000-template)

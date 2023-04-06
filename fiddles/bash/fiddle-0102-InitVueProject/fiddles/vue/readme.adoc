@@ -1,0 +1,47 @@
+= vue
+
+_Why vue?_ TBW 
+
+=== fiddle.sh vue Commands
+
+[cols="2,2,5a"]
+|===
+|Build
+|`./fiddle.sh "build" "vue" "fiddle-0000-Template"`
+|link:build.md[sample output & additional details]
+|Create
+|`./fiddle.sh "create" "vue" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Delete
+|`./fiddle.sh "delete" "vue" "0000"`
+|link:delete.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "vue" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output & additional details]
+|Index
+|`./fiddle.sh "index" "vue"`
+|link:index.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "vue"`
+|link:list.md[sample output & additional details]
+|Refactor
+|`./fiddle.sh "refactor" "vue" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output & additional details]
+|Update
+|`./fiddle.sh "update" "vue" "0000"
+|link:update.md[sample output & additional details]
+|Update (all)
+|`./fiddle.sh "update" "vue"
+|link:update-all.md[sample output & additional details]
+|Start
+|`./fiddle.sh "start" "vue" "0000"`
+|link:start.md[sample output & additional details]
+|===
+
+== Online Resources
+
+=== Reference
+
+* link:https://www.newline.co/books/fullstack-vue[Fullstack Vue: The Complete Guide to Vue.js]
+* link:https://vitejs.dev/guide/why.html[Why Vite]
+

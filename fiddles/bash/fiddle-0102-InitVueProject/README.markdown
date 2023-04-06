@@ -13,19 +13,19 @@ fiddle-0102-InitVueProject
 
 ### Location
 
-Chicago, IL
+Asheville, NC
 
 
 ### Issue
 
-[Issue #{{Issue}}](https://github.com/bradyhouse/house/issues/{{Issue}})
+[Issue #723](https://github.com/bradyhouse/house/issues/723)
 
 
 ### Description
 
-Another shell script POC.
+Based on my current professional focus (in March 2023), I need a way to quickly spin-up a new vue (ts or js) fiddle.  To accomodate this support, fiddle.sh needs to be enhanced to support vue fiddles.  This bash based fiddle is a POC, which models the enhancement.
 
 
 ### Tags
 
-bash
+bash, vue, create-vue, typescript, vite, fiddle.sh
