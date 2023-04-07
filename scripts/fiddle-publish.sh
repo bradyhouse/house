@@ -15,6 +15,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 04/11/2019 - See CHANGELOG @ 300_react_15
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_env.sh;
@@ -142,6 +143,7 @@ function publishAll() {
     rmrf svg;
     rmrf resources;
     rmrf react;
+    rmrf vue;
     rmrf rxjs;
     rmrf index.html;
     rmrf .gitignore;
@@ -158,6 +160,7 @@ function publishAll() {
     cprf tween;
     cprf svg;
     cprfdist react;
+    cprfdist vue;
     cprf rxjs;
     cprf resources;
     cprf index.html;
@@ -181,7 +184,7 @@ function publishAll() {
   cd ${_publishPath};
 
   case $1 in
-    'angular2-cli' | 'react')
+    'angular2-cli' | 'react' | 'vue')
       publishDist $1;
       ;;
     'all')

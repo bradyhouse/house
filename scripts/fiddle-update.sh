@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # 05/26/2018 - Baseline ~ See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -63,6 +64,11 @@ function updateFiddle() {
         'react')
             source bin/react/_install.sh;
             source bin/react/_update.sh;
+            update ${_fiddleDir};
+            ;;
+         'vue')
+            source bin/vue/_install.sh;
+            source bin/vue/_update.sh;
             update ${_fiddleDir};
             ;;
         *)  exit 86

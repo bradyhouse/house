@@ -25,6 +25,7 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -58,7 +59,7 @@ bornOnDate=$(date +"%m-%d-%y";)
 fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
 
 case ${type} in
-  'react'|'angular2-cli'|'aurelia')
+   'vue'|'react'|'angular2-cli'|'aurelia')
     fiddleDir="${fiddleDir}/dist";
     indexFile=$(echo "${fiddleDir}/index.html";)
     ;;
@@ -73,7 +74,7 @@ esac
     if [[ -d "${fiddleDir}" ]]
     then
       case ${type} in
-          'react'|'angular'|'angular2-cli'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
+          'vue'|'react'|'angular'|'angular2-cli'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
               case ${type} in
                   'php') fiddleName=$(echo "$fiddleNameStub.php";)
                       ;;

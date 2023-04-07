@@ -31,6 +31,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 10/03/2019 - See CHANGELOG @ 313_node_31to40
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -64,7 +65,7 @@ changeLogFile="../${CHANGE_LOG}"
   fi
 
   case ${fiddleType} in
-    'android' | 'angular2-cli' | 'c' | 'ember' | 'electron' | 'java' | 'javac' | 'meteor' | 'nativescript' | 'react' )
+    'android' | 'angular2-cli' | 'c' | 'ember' | 'electron' | 'java' | 'javac' | 'meteor' | 'nativescript' | 'react' | 'vue' )
         if [[ -f "${altNewReadmeFile}" ]]
         then
             $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;

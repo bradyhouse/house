@@ -36,6 +36,7 @@
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
 # 10/03/2019 - See CHANGELOG @ 313_node_31to40
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -91,8 +92,7 @@ function updateChangeLog() {
           source bin/chef/_delete.sh;
           destroy "${fiddlePath}" || exit $?;
         ;;
-
-        'react' | 'android' | 'angular' | 'angular2-cli' | 'ant' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
+        'vue' | 'react' | 'android' | 'angular' | 'angular2-cli' | 'ant' | 'c' | 'compass' | 'docker' | 'electron' | 'ember' | 'extjs5' | 'extjs6' | 'java' | 'javac' | 'jquery' | 'meteor' | 'nativescript' | 'three' | 'php' | 'python' | 'rxjs' | 'd3' | 'dojo' | 'chrome' | 'node' | 'tween' | 'bash' | 'svg' )
             if [[ -d "${fiddlePath}" ]]
             then
                 rm -rf "${fiddlePath}" || exit 87

@@ -15,6 +15,7 @@
 # 05/02/2015 - See CHANGELOG @ 201605020420
 # 04/24/2017 - See CHANGELOG @ 201704170420
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh;
@@ -59,6 +60,11 @@ fiddlePath="../fiddles/${fiddleType}/${fiddle}"
                 cd ${fiddlePath};
                 reactTest || exit $?;
                 ;;
+             'vue')
+                source bin/vue/_test.sh;
+                cd ${fiddlePath};
+                vueTest || exit $?;
+                ;;
             *)
                 exit 86
         esac
@@ -83,7 +89,10 @@ case ${_rc} in
         echo ""
         echo "[t] - type. Valid types include: "
         echo ""
-        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
+        echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddles"
+        echo -e "\t\"node\"\tNode Fiddles"
+        echo -e "\t\"react\"\tReact Fiddles"
+        echo -e "\t\"vue\"\tVue Fiddles"
         echo ""
         echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
         echo ""

@@ -31,9 +31,10 @@
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
-# 11/21/2018 - See CHANGELOG @  262_add_chef_setup
+# 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 11/24/2018 - See CHANGELOG @ 265_nativescript_14
 # 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -126,7 +127,6 @@ function startServer() {
             cd ${_fiddleRoot} || exit $?;
             chefStop ${_fiddle} || exit 122;
             chefStart || exit 122;
-
             ;;
         'ember')
             source bin/ember/_install.sh;
@@ -185,6 +185,23 @@ function startServer() {
                 source bin/react/_start.sh;
                 cd ${_fiddleRoot};
                 reactStart || exit 119;
+            else
+                if [[ -d "../fiddles/${_type}/dist" ]]
+                then
+                  cd "../fiddles/${_type}/dist" || exit 88;
+                  live-server --port=${_port} || exit 96;
+                else
+                  exit 118;
+                fi
+            fi
+            ;;
+        'vue')
+            if [[ -d ${_fiddleRoot} ]]
+            then
+                source bin/vue/_install.sh;
+                source bin/vue/_start.sh;
+                cd ${_fiddleRoot};
+                vueStart || exit 123;
             else
                 if [[ -d "../fiddles/${_type}/dist" ]]
                 then
@@ -311,6 +328,9 @@ case ${rc} in
         rc=0;
         ;;
     122) echo -e "Fubar\tthe \"chefStart\" function call failed for \"${_fiddleRoot}\".";
+        rc=0;
+        ;;
+    123) echo -e "Fubar\tthe \"vueStart\" function call failed for \"${_fiddleRoot}\".";
         rc=0;
         ;;
     *)  echo -e "Fubar\tAn unknown error has occurred. You win -- Ha! Ha!"

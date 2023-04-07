@@ -23,6 +23,7 @@
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
 # 04/11/2019 - See CHANGELOG @ 300_react_15
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 clear;
 source bin/_utils.sh;

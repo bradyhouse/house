@@ -126,6 +126,10 @@ function setup() {
                 source bin/setup/mac/_virtualbox.sh;
                 install || exit $?;
                 ;;
+              'vue')
+                source bin/setup/mac/_vue.sh;
+                install || exit $?;
+                ;;
               'frontend')
                 setup ${_os} "gh" || exit $?;
                 setup ${_os} "ncu" || exit $?;

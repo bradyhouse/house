@@ -22,13 +22,16 @@
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
 
     case $1 in
         'build')
-          echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle";
+          echo -e "\t\"angular\"\tAngular Fiddle";
+          echo -e "\t\"react\"\t\tReact Fiddle";
+          echo -e "\t\"vue\"\t\tVue Fiddle";
           ;;
         'setup')
            echo -e "\t\"abd\"\t\tinstall android debug bridge\thttps://developer.android.com/studio/command-line/adb";
@@ -54,6 +57,8 @@ voidEchoFiddleTypes() {
            echo -e "\t\"virtualbox\"\tinstall virtual box\t\thttps://www.virtualbox.org/";
            echo -e "\t\"yarn\"\t\tinstall yarn\t\t\thttps://yarnpkg.com/lang/en/";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\t\thttp://ohmyz.sh/";
+           echo -e "\t\"vue\"\t\tinstall create-vue\t\t\thttps://github.com/vuejs/create-vue#readme";
+           
            echo -e "";
            echo -e "\t\"frontend\"\tinstall frontend packages:";
            echo -e "";
@@ -66,6 +71,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
            echo -e "\t\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
            echo -e "\t\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
+           echo -e "\t\t\"vue\"\tinstall create-vue\t\thttps://github.com/vuejs/create-vue#readme";
 
           ;;
         'combine')
@@ -85,23 +91,24 @@ voidEchoFiddleTypes() {
             echo -e "\t\"c\"\t\tC Fiddle"
             ;;
         'index')
-            echo -e "\t\"angular\"\t\tAngular Fiddles"
-            echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles"
-            echo -e "\t\"dojo\"\t\t\tDojo Fiddle"
-            echo -e "\t\"ember\"\t\t\tEmber Fiddle"
-            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
-            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
-            echo -e "\t\"meteor\"\t\tMeteor Fiddle"
+            echo -e "\t\"angular\"\t\tAngular Fiddles";
+            echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
+            echo -e "\t\"dojo\"\t\t\tDojo Fiddle";
+            echo -e "\t\"ember\"\t\t\tEmber Fiddle";
+            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle";
+            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle";
+            echo -e "\t\"meteor\"\t\tMeteor Fiddle";
             echo -e "\t\"react\"\t\t\tReact Fiddles";
-            echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles"
-            echo -e "\t\"jquery\"\t\tjQuery / ES6 Fiddles"
-            echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles"
-            echo -e "\t\"tween\"\t\t\ttween.js Fiddles"
-            echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddles"
+            echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles";
+            echo -e "\t\"jquery\"\t\tjQuery / ES6 Fiddles";
+            echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles";
+            echo -e "\t\"tween\"\t\t\ttween.js Fiddles";
+            echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddles";
+            echo -e "\t\"vue\"\t\t\tVue Fiddles";
             ;;
         'start')
             voidEchoFiddleTypes;
-            echo -e "\t\"all\"\t\t\tstartup all Web based JS Fiddles"
+            echo -e "\t\"all\"\t\t\tstartup all Web based Fiddles"
             ;;
         'stop')
             echo -e "\t\"chef\"\t\tChef Fiddles";
@@ -120,48 +127,51 @@ voidEchoFiddleTypes() {
             echo -e "\t\"three\"\t\t\three.js / WebGl Fiddles";
             echo -e "\t\"tween\"\t\t\ttween.js Fiddles";
             echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddles";
+            echo -e "\t\"vue\"\t\t\tVue Fiddles";
             echo -e "\t\"all\"\t\t\tAll of the above";
             ;;
          'update')
-            echo -e "\t\"angular2-cli\"\tAngular CLI Fiddles";
+            echo -e "\t\"angular\"\tAngular Fiddles";
             echo -e "\t\"electron\"\tElectron Fiddles";
             echo -e "\t\"ember\"\t\tEmber Fiddles";
             echo -e "\t\"meteor\"\tMeteor Fiddles";
             echo -e "\t\"nativescript\"\tNativeScript Fiddles";
             echo -e "\t\"node\"\t\tNode Fiddles";
             echo -e "\t\"react\"\t\tReact Fiddles";
+            echo -e "\t\"vue\"\t\tVue Fiddles";
             echo -e "\t\"all\"\t\tAll of the above";
             ;;
-        *)
-            echo -e "\t\"android\"\t\tAndroid Fiddle"
-            echo -e "\t\"ant\"\t\t\tAnt Fiddle"
-            echo -e "\t\"angular\"\t\tAngular Fiddle"
-            echo -e "\t\"angular2-cli\"\t\tAngular2 CLI Fiddle"
-            echo -e "\t\"bash\"\t\t\tBash Fiddle"
-            echo -e "\t\"c\"\t\t\tC Fiddle"
-            echo -e "\t\"chef\"\t\t\tChef Recipe Fiddle"
-            echo -e "\t\"compass\"\t\tCompass Fiddle"
-            echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle"
-            echo -e "\t\"docker\"\t\tDocker Fiddle"
-            echo -e "\t\"dojo\"\t\t\tDojo Fiddle"
-            echo -e "\t\"electron\"\t\tElectron Fiddle"
-            echo -e "\t\"ember\"\t\t\tEmber Fiddle"
-            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle"
-            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle"
-            echo -e "\t\"meteor\"\t\tMeteor Fiddle"
-            echo -e "\t\"nativescript\"\t\tNativeScript Fiddle"
-            echo -e "\t\"php\"\t\t\tPHP Fiddle"
-            echo -e "\t\"python\"\t\tPython Fiddle"
+            *)
+            echo -e "\t\"android\"\t\tAndroid Fiddle";
+            echo -e "\t\"ant\"\t\t\tAnt Fiddle";
+            echo -e "\t\"angular\"\t\tAngular Fiddle";
+            echo -e "\t\"bash\"\t\t\tBash Fiddle";
+            echo -e "\t\"c\"\t\t\tC Fiddle";
+            echo -e "\t\"chef\"\t\t\tChef Recipe Fiddle";
+            echo -e "\t\"compass\"\t\tCompass Fiddle";
+            echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle";
+            echo -e "\t\"docker\"\t\tDocker Fiddle";
+            echo -e "\t\"dojo\"\t\t\tDojo Fiddle";
+            echo -e "\t\"electron\"\t\tElectron Fiddle";
+            echo -e "\t\"ember\"\t\t\tEmber Fiddle";
+            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle";
+            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle";
+            echo -e "\t\"meteor\"\t\tMeteor Fiddle";
+            echo -e "\t\"nativescript\"\t\tNativeScript Fiddle";
+            echo -e "\t\"php\"\t\t\tPHP Fiddle";
+            echo -e "\t\"python\"\t\tPython Fiddle";
             echo -e "\t\"react\"\t\t\tReact Fiddle";
-            echo -e "\t\"rxjs\"\t\t\tRxJS Fiddle"
-            echo -e "\t\"java\"\t\t\tJava Fiddle"
-            echo -e "\t\"javac\"\t\t\tCommandline Java Fiddle"
-            echo -e "\t\"jquery\"\t\tjQuery / Bootstrap Fiddle"
-            echo -e "\t\"three\"\t\t\three.js / WebGl Fiddle"
-            echo -e "\t\"chrome\"\t\tChrome Extension Fiddle"
-            echo -e "\t\"node\"\t\t\tNode Fiddle"
-            echo -e "\t\"tween\"\t\t\ttween.js Fiddle"
-            echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddle"
+            echo -e "\t\"rxjs\"\t\t\tRxJS Fiddle";
+            echo -e "\t\"java\"\t\t\tJava Fiddle";
+            echo -e "\t\"javac\"\t\t\tCommandline Java Fiddle";
+            echo -e "\t\"jquery\"\t\tjQuery / Bootstrap Fiddle";
+            echo -e "\t\"three\"\t\t\three.js / WebGl Fiddle";
+            echo -e "\t\"chrome\"\t\tChrome Extension Fiddle";
+            echo -e "\t\"node\"\t\t\tNode Fiddle";
+            echo -e "\t\"tween\"\t\t\ttween.js Fiddle";
+            echo -e "\t\"svg\"\t\t\tScalar Vector Graphic Fiddle";
+            echo -e "\t\"vue\"\t\t\tVue Fiddle";
+
             ;;
     esac
 }

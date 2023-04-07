@@ -15,6 +15,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 04/11/2019 - See CHANGELOG @ 300_react_15
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -34,17 +35,20 @@ function buildFiddle() {
   case ${_type} in
         'angular2-cli')
             source bin/angular2-cli/_build.sh;
-            build ${_fiddleName};
+            build ${_fiddleName} || exit $?;
             ;;
         'react')
             source bin/react/_build.sh;
-            build ${_fiddleName};
+            build ${_fiddleName} || exit $?;
+            ;;
+        'vue')
+            source bin/vue/_build.sh;
+            build ${_fiddleName} || exit $?;
             ;;
         *)  exit 86
             ;;
   esac
   cd ${_location};
-
 }
 
 function buildFiddles() {

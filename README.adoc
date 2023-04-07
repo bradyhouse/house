@@ -55,7 +55,7 @@ and frameworks:
 |link:fiddles/rxjs[RxJS]
 |link:fiddles/svg[SVG]
 |link:fiddles/three[Three.js]
-|link:fiddles/tween[Tween.js]
+|link:fiddles/vue[Vue]
 |=========================================================
 
 To get started, with any of the frameworks listed, use the above links to explore the associated collection.  To learn

@@ -37,6 +37,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 01/05/2018 - See CHANGELOG @ 279_nativescript_17
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -144,7 +145,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             source bin/nativescript/_fork.sh;
             nativeScriptFork "${fiddleName}" "${targetFiddle}" || exit 98;
             ;;
-        'react')
+        'vue' | 'react')
             updateFile "../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93

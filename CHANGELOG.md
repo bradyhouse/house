@@ -2374,8 +2374,42 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/react/fiddle-0018-TetrisEngTs](fiddles/react/fiddle-0018-TetrisEngTs)
     2.  Added [fiddles/react/fiddle-0021-ReactShepherdTs](fiddles/react/fiddle-0021-ReactShepherdTs)
 
-* Added [fiddles/bash/fiddle-0102-InitVueProject](fiddles/bash/fiddle-0102-InitVueProject)
-* Added [fiddles/node/fiddle-0049-VueHelloWorld](fiddles/node/fiddle-0049-VueHelloWorld)
-* Added [fiddles/node/fiddle-0050-VueCustomEvents](fiddles/node/fiddle-0050-VueCustomEvents)
-* Added [fiddles/node/fiddle-0051-VueAxiosIntercept](fiddles/node/fiddle-0051-VueAxiosIntercept)
-* Added [fiddles/vue/fiddle-0000-template](fiddles/vue/fiddle-0000-template)
+
+### 723-add-vuejs-support ~ [Issue 723](https://github.com/bradyhouse/house/issues/723)
+
+* **fiddle.sh (Enhancement)**
+
+  * Reflected changes:
+
+  1.  Added [fiddles/vue](fiddles/vue)
+  2.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh) 
+  3.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+  4.  Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+  5.  Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+  6.  Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+  7.  Updated [README.adoc](README.adoc)  
+  8.  Added [scripts/bin/vue](scripts/bin/vue)
+  9.  Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+  10. Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)    
+  11. Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+  12. Added [scripts/bin/setup/mac/_vue.sh](scripts/bin/setup/mac/_vue.sh)
+  13. Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+  14. Added [scripts/bin/setup/mac/_virtualbox.sh](scripts/bin/setup/mac/_virtualbox.sh)
+  15. Added [scripts/bin/setup/mac/_vagrant.sh](scripts/bin/setup/mac/_vagrant.sh)
+  16. Added [scripts/bin/setup/mac/_tree.sh](scripts/bin/setup/mac/_tree.sh)
+  17. Added [fiddles/vue/template/js](fiddles/vue/template/js)
+  18. Added [fiddles/vue/template/ts](fiddles/vue/template/ts)
+  19. Updated [fiddles/index.html](fiddles/index.html)
+  20. Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+  21. Added [scripts/bin/vue/_delete.sh](scripts/bin/vue/_delete.sh)
+
+
+* **bash**
+
+    1.  Added [fiddles/bash/fiddle-0102-InitVueProject](fiddles/bash/fiddle-0102-InitVueProject)
+
+
+* **node**
+
+    1.  Added [fiddles/node/fiddle-0049-VueHelloWorld](fiddles/node/fiddle-0049-VueHelloWorld)
+

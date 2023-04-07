@@ -36,6 +36,7 @@
 # 12/18/2018 - See CHANGELOG @ 275_extjs6_26_fix
 # 10/03/2019 - See CHANGELOG @ 313_node_31to40
 # 08/13/2022 - See CHANGELOG @ 420_fiddle-sh_react_typescript
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -185,6 +186,16 @@ source bin/_types.sh;
                 create $2 $3 || exit 110;
             fi
             ;;
+        'vue')
+            source bin/vue/_install.sh;
+            source bin/vue/_create.sh;
+            if [ "$#" -lt 3 ]
+            then
+                create $2 "js" || exit 111;
+            else
+                create $2 $3 || exit 111;
+            fi
+            ;;
         'rxjs')
             source bin/rxjs/_create.sh;
             create $2 || exit 100;
@@ -275,6 +286,8 @@ case ${_rc} in
     109) echo "fubar! javac fiddle creation failed."
         ;;
     110) echo "fubar! react fiddle creation failed."
+        ;;
+    111) echo "fubar! vue fiddle creation failed."
         ;;
     *)  echo "fubar! Something went wrong."
         ;;
