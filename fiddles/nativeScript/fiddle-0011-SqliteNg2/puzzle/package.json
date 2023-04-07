@@ -12,7 +12,7 @@
   "dependencies": {
     "@angular/common": "~15.2.0",
     "@angular/compiler": "~15.2.0",
-    "@angular/core": "15.2.5",
+    "@angular/core": "15.2.6",
     "@angular/forms": "~15.2.0",
     "@angular/http": "~7.2.0",
     "@angular/platform-browser": "~15.2.0",
