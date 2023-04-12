@@ -12,7 +12,7 @@
     "license": "See https://github.com/bradyhouse/house/blob/master/LICENSE",
     "repository": "https://github.com/bradyhouse/house",
     "dependencies": {
-        "nativescript-advanced-webview": "^3.0.2",
+        "nativescript-advanced-webview": "^7.0.0",
         "nativescript-theme-core": "~2.0.0",
         "tns-core-modules": "~5.4.0"
     },
