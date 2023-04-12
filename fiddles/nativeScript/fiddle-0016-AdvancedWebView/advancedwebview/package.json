@@ -13,7 +13,7 @@
     "repository": "https://github.com/bradyhouse/house",
     "dependencies": {
         "nativescript-advanced-webview": "^3.0.2",
-        "nativescript-theme-core": "~1.0.4",
+        "nativescript-theme-core": "~2.0.0",
         "tns-core-modules": "~5.4.0"
     },
     "devDependencies": {
