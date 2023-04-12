@@ -365,12 +365,18 @@
       "dev": true
     },
     "nativescript-angular": {
-      "version": "6.2.0",
-      "resolved": "https://registry.npmjs.org/nativescript-angular/-/nativescript-angular-6.2.0.tgz",
-      "integrity": "sha512-N3aJCqUngPa2ZkImd+fKJXz9R1pakwyTazc7ybck8UE0J1OhLSLbHY25SvkTsEd2qoljLUw7IB89UdIvzAsRsg==",
+      "version": "10.0.0",
+      "resolved": "https://registry.npmjs.org/nativescript-angular/-/nativescript-angular-10.0.0.tgz",
+      "integrity": "sha512-LVSi2xOmZTgxasJPllaKZffjicQgmW+S6941a+Z+8Ka86quk0/j5kLvfzt6znCEkG7QSDu9QSLswl99wOZaCuQ==",
       "requires": {
-        "nativescript-intl": "^3.0.0",
-        "reflect-metadata": "^0.1.8"
+        "tslib": "^2.0.0"
+      },
+      "dependencies": {
+        "tslib": {
+          "version": "2.5.0",
+          "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.5.0.tgz",
+          "integrity": "sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg=="
+        }
       }
     },
     "nativescript-dev-typescript": {
@@ -401,11 +407,6 @@
         "glob": "^6.0.1",
         "mkdirp": "^0.5.1"
       }
-    },
-    "nativescript-intl": {
-      "version": "3.0.0",
-      "resolved": "https://registry.npmjs.org/nativescript-intl/-/nativescript-intl-3.0.0.tgz",
-      "integrity": "sha512-WPgjJaPE21Jv0ibtAKXmnBcHG21hvNs3qGLtOGqRt+j3KMjTKtws8N6oiPxO4CskGQiw3RL2ibEsuEE8pxp+Hw=="
     },
     "nativescript-theme-core": {
       "version": "2.0.24",
