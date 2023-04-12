@@ -10,7 +10,7 @@
     }
   },
   "dependencies": {
-    "nativescript-localstorage": "^1.1.5",
+    "nativescript-localstorage": "^2.0.0",
     "nativescript-theme-core": "^2.0.0",
     "tns-core-modules": "^4.1.0"
   },
