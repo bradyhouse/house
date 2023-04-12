@@ -15,6 +15,11 @@
         "source-map": "0.7.3"
       }
     },
+    "@master.technology/permissions": {
+      "version": "2.0.1",
+      "resolved": "https://registry.npmjs.org/@master.technology/permissions/-/permissions-2.0.1.tgz",
+      "integrity": "sha512-QOHxOlsbRabluKJ3HQn2VrOXDUr4PmatXyXIkJvGbVyqIMucYvpNF/aGEFVfhyXSUkzWx+ztWY9iLrCyp4RfVw=="
+    },
     "@webassemblyjs/ast": {
       "version": "1.7.11",
       "resolved": "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.7.11.tgz",
@@ -3260,11 +3265,11 @@
       }
     },
     "nativescript-geolocation": {
-      "version": "4.5.0",
-      "resolved": "https://registry.npmjs.org/nativescript-geolocation/-/nativescript-geolocation-4.5.0.tgz",
-      "integrity": "sha512-yWFVjR5vYELAlJMaEuDAsRTViFOGnRKkQAflyMnHL/LObrhBRGcVnu6xm0moqOAzCAI80yC7Dj0zjXWAdNxnxQ==",
+      "version": "5.1.0",
+      "resolved": "https://registry.npmjs.org/nativescript-geolocation/-/nativescript-geolocation-5.1.0.tgz",
+      "integrity": "sha512-1TOmcNRXydfO3hCgO/xQdbzbG3oczcw71beRxheFcQISA4KQtCSc0lf3tuVZjxY3jX8rJHnr46AZVPTi+wvz+Q==",
       "requires": {
-        "nativescript-permissions": "~1.2.3"
+        "nativescript-permissions": "~1.3.0"
       }
     },
     "nativescript-hook": {
@@ -3293,9 +3298,12 @@
       }
     },
     "nativescript-permissions": {
-      "version": "1.2.3",
-      "resolved": "https://registry.npmjs.org/nativescript-permissions/-/nativescript-permissions-1.2.3.tgz",
-      "integrity": "sha512-0wK5RGW14/89xzNwXs3mI/dmFd0EwrGm8jvRLsxOSXRWZ03u9fR+ELJ+cX0hCguCfISecuLefCGCYs5zfbdlfg=="
+      "version": "1.3.12",
+      "resolved": "https://registry.npmjs.org/nativescript-permissions/-/nativescript-permissions-1.3.12.tgz",
+      "integrity": "sha512-XNxITo08vRHwPNT8fe7MpoZ9C+GQs2G4KBbQ1yan9WDTgecnhWsxtmBEWtFd9zWoa4UTwpFQ+w4O4eDSpG8Efw==",
+      "requires": {
+        "@master.technology/permissions": "^2.0.1"
+      }
     },
     "nativescript-theme-core": {
       "version": "2.0.24",
