@@ -192,9 +192,9 @@
       "integrity": "sha512-fOP49fJ3v0FJgD0iM6gc8UhikHTNrSYh+uV8wzDequQNwMBOOjfCcVrHBFsFU1zWkWc6GwCASGOPGl11rohivA=="
     },
     "nativescript-vibrate": {
-      "version": "2.1.3",
-      "resolved": "https://registry.npmjs.org/nativescript-vibrate/-/nativescript-vibrate-2.1.3.tgz",
-      "integrity": "sha512-m+FPB4+j24kI+vtujJQ6bV+9yMFgEmaCdrPm8DghY/yw7WUNYHgX0BCLk1TW1VE/AWRUUN6fmBXnkz9o9hz7hw=="
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/nativescript-vibrate/-/nativescript-vibrate-4.0.1.tgz",
+      "integrity": "sha512-T9VspAu+pgYM/AWLradA4HPv/tdfx8jrhIOD02PZs09KhJyjQE3BoubnHcmg0neeQAhgxHiuXGdit8QOAyKaBA=="
     },
     "regenerator-runtime": {
       "version": "0.11.1",
