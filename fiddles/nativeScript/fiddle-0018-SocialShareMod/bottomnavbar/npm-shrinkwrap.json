@@ -3227,9 +3227,9 @@
             }
         },
         "nativescript-bottom-navigation": {
-            "version": "1.5.1",
-            "resolved": "https://registry.npmjs.org/nativescript-bottom-navigation/-/nativescript-bottom-navigation-1.5.1.tgz",
-            "integrity": "sha512-deYI8Q4apjmvSRJtw3wUQOSOfOogJqElvNhIhLriYwu7/kFBvJluip+4MUl/TmVfIXjvVfDwuO94AXVblTCEMA=="
+            "version": "2.0.5",
+            "resolved": "https://registry.npmjs.org/nativescript-bottom-navigation/-/nativescript-bottom-navigation-2.0.5.tgz",
+            "integrity": "sha512-mRRaMQ1+EUChEEtJSuUbfFWzowi8KYtVzG/XXdxkwBLUBJmA4efFb6HIQH2Q7Xpdqxa5Wm8iaQ1mdWzUIoBgUA=="
         },
         "nativescript-dev-webpack": {
             "version": "0.24.1",
