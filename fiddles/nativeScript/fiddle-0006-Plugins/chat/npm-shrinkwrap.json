@@ -2,6 +2,11 @@
   "requires": true,
   "lockfileVersion": 1,
   "dependencies": {
+    "@master.technology/websockets": {
+      "version": "2.0.5",
+      "resolved": "https://registry.npmjs.org/@master.technology/websockets/-/websockets-2.0.5.tgz",
+      "integrity": "sha512-4hDfi8F2Pm3xW8VaXy8lhHtdSKictDnS0xG7sZw+kFQJFW/EGbFXnf0tJSQAPAAmsCKqGpIm34SSsA31pTYrhA=="
+    },
     "ansi-regex": {
       "version": "2.1.1",
       "resolved": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-2.1.1.tgz",
@@ -187,9 +192,12 @@
       "integrity": "sha512-T9VspAu+pgYM/AWLradA4HPv/tdfx8jrhIOD02PZs09KhJyjQE3BoubnHcmg0neeQAhgxHiuXGdit8QOAyKaBA=="
     },
     "nativescript-websockets": {
-      "version": "1.5.6",
-      "resolved": "https://registry.npmjs.org/nativescript-websockets/-/nativescript-websockets-1.5.6.tgz",
-      "integrity": "sha512-gOB2lEOm32C/CVBsy6EfUzeIFIPcXRl7Yybv/TmhzKA9WUTAfxzRBe2OmlHD+vzsL4FmLX23qC2P3NZBmzIVAA=="
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/nativescript-websockets/-/nativescript-websockets-2.0.0.tgz",
+      "integrity": "sha512-0RPArtUXgZshpz1bqI4P48ehpIp7yeGyoody8yJo8YyV7AVoXnAq55GDrhrw4phkCVlEudxcO3EjRjqsM+r9ZA==",
+      "requires": {
+        "@master.technology/websockets": "^2.0.5"
+      }
     },
     "regenerator-runtime": {
       "version": "0.11.1",
