@@ -280,9 +280,9 @@
       }
     },
     "nativescript-localstorage": {
-      "version": "1.1.5",
-      "resolved": "https://registry.npmjs.org/nativescript-localstorage/-/nativescript-localstorage-1.1.5.tgz",
-      "integrity": "sha512-nk5AM+SyxTLlXHfFEct/LRi28PuksLEcrwE622qsnVy1do6OKrBPXfLsqtY7kkDeui3UYJ6DMfZFefAHmkU8pg=="
+      "version": "2.0.2",
+      "resolved": "https://registry.npmjs.org/nativescript-localstorage/-/nativescript-localstorage-2.0.2.tgz",
+      "integrity": "sha512-iJ63GpbuQFYJKT4qgCilHo7qz4M5bHLbY4XTlITnFj0GMu+R/C1Mn4qATaSJAt96Vgw9oGgysRcd0ag7llPFBg=="
     },
     "nativescript-theme-core": {
       "version": "2.0.24",
