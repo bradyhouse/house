@@ -3242,9 +3242,9 @@
             }
         },
         "nativescript-advanced-webview": {
-            "version": "3.0.2",
-            "resolved": "https://registry.npmjs.org/nativescript-advanced-webview/-/nativescript-advanced-webview-3.0.2.tgz",
-            "integrity": "sha512-37D3CF4DDccVMRd2V8/Jmifi/txpTpcdBnMzwQtgNqUlg1RZrg1gmW3RTKBTNyRfxojwudcvo0HNgKqoOfIspw=="
+            "version": "7.0.2",
+            "resolved": "https://registry.npmjs.org/nativescript-advanced-webview/-/nativescript-advanced-webview-7.0.2.tgz",
+            "integrity": "sha512-F7ItirQBCimsrmXR7Jf2C7i522RtswX4wEjAugJEmoFNLlCWZLYi4o5R2LVcr7XNqxNRpm/wiq6ffgGaZlXy/A=="
         },
         "nativescript-dev-webpack": {
             "version": "1.5.1",
