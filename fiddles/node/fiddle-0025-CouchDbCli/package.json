@@ -16,7 +16,7 @@
   "author": "bradyhouse <bradyhouse@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^5.2.0",
+    "mocha": "^10.0.0",
     "nock": "^9.0.13"
   }
 }
