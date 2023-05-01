@@ -12,7 +12,7 @@
     "license": "SEE LICENSE IN <your-license-filename>",
     "repository": "<fill-your-repository-here>",
     "dependencies": {
-        "nativescript-bottom-navigation": "^1.4.4",
+        "nativescript-bottom-navigation": "^2.0.0",
         "nativescript-social-share": "^1.5.1",
         "nativescript-theme-core": "~2.0.0",
         "tns-core-modules": "~5.4.0"
