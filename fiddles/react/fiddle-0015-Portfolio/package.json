@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "7.21.5",
+    "@babel/core": "7.21.8",
     "@svgr/webpack": "7.0.0",
     "babel-core": "7.0.0-bridge.0",
-    "@babel/eslint-parser": "7.21.3",
+    "@babel/eslint-parser": "7.21.8",
     "babel-jest": "23.6.0",
     "babel-loader": "9.1.2",
     "babel-plugin-named-asset-import": "^0.3.1",
