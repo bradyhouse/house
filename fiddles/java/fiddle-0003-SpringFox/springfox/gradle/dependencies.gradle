@@ -38,7 +38,7 @@ ext {
                   "org.spockframework:spock-core:${spock}",
                   "org.springframework:spring-test:${springVersion}",
                   "cglib:cglib-nodep:3.3.0",
-                  "org.objenesis:objenesis:2.6",
+                  "org.objenesis:objenesis:3.3",
                   "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
           ],
           springfoxStaticDocs: [
