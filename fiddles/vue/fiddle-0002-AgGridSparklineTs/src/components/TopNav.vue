@@ -1,0 +1,80 @@
+<template>
+<nav className="navbar navbar-expand navbar-dark bg-success navbar-top">
+    <div class="container-fluid">
+        <BreadCrumbs :crumbs="crumbs" @selected="selected"></BreadCrumbs>
+        <div className="collapse navbar-collapse">
+            <ul className="navbar-nav me-auto">
+            </ul>
+            <ul className="navbar-nav my-2 my-lg-0">
+                <li className="nav-item">
+                    <RouterLink to="/">Fiddle</RouterLink>
+                </li>
+                <li className="nav-item">
+                    <RouterLink to="/about">About</RouterLink>
+                </li>
+                <li className="nav-item">
+                    <RouterLink to="/docs">Docs</RouterLink>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link custom-nav-link" rel="noreferrer" alt="Fork me on GitHub" target="_blank" href="{{href}}">
+                        Fork Me On Github
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</template>
+
+<script lang="ts">
+import {
+    RouterLink
+} from 'vue-router'
+import BreadCrumbs from './BreadCrumbs.vue'
+
+export default {
+    name: 'TopNav',
+    props: {
+        title: {
+            type: String,
+            required: true
+        },
+        href: {
+            type: String,
+            required: true
+        },
+    },
+    components: {
+        BreadCrumbs
+    },
+    data() {
+        return {
+            crumbs: [
+                'fiddle.sh', 'Vue', 'Fiddle #1 ~ Vega Events'
+            ],
+        };
+    },
+}
+</script>
+
+<style scoped>
+nav a.router-link-exact-active {
+    color: white;
+    font-weight: 800;
+}
+
+nav a.router-link-exact-active:hover {
+    background-color: transparent;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0 1rem;
+    border-left: 1px solid var(--color-border);
+    color: gainsboro;
+}
+
+nav a:first-of-type {
+    border: 0;
+}
+</style>

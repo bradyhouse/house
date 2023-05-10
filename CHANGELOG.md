@@ -2413,3 +2413,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
     1.  Added [fiddles/node/fiddle-0049-VueHelloWorld](fiddles/node/fiddle-0049-VueHelloWorld)
 
+* Added [fiddles/vue/fiddle-0002-AgGridSparkline](fiddles/vue/fiddle-0002-AgGridSparkline)
+* Added [fiddles/vue/fiddle-0002-AgGridSparklineTs](fiddles/vue/fiddle-0002-AgGridSparklineTs)
