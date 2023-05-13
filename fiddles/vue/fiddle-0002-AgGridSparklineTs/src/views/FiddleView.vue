@@ -1,6 +1,8 @@
 <template>
 <div style="height: 100%; width: 100%;">
-    <ag-grid-vue style="width: 100%; height: 100%;" class="ag-theme-alpine" :columnDefs="columnDefs" @grid-ready="onGridReady" :defaultColDef="defaultColDef" :rowData="rowData" :rowHeight="rowHeight" :animateRows="true" :rowDataChanged="onRowDataChanged"></ag-grid-vue>
+    <ag-grid-vue style="width: 100%; height: 100%;" 
+    class="ag-theme-alpine" :columnDefs="columnDefs" @grid-ready="onGridReady" 
+    :defaultColDef="defaultColDef" :rowData="rowData" :rowHeight="rowHeight" :animateRows="true" :rowDataChanged="onRowDataChanged"></ag-grid-vue>
 </div>
 </template>
 
@@ -28,48 +30,9 @@ export default {
                     maxWidth: 120
                 },
                 {
-                    field: 'name',
-                    minWidth: 250
-                },
-                {
                     field: 'change',
-                    headerName: 'floor(Max-Min)',
-                    maxWidth: 150,
+                    headerName: 'Default',
                     cellRenderer: 'agSparklineCellRenderer',
-                    valueGetter: (params) => {
-                        const delta = parseDelta(params)
-                        const per = Math.floor(delta)
-                        return [per]
-                    },
-                    cellRendererParams: {
-                        sparklineOptions: {
-                            type: 'bar',
-                            valueAxisDomain: [0, 10],
-                            label: {
-                                enabled: true,
-                                placement: 'outsideEnd',
-                                formatter: (params) => {
-                                    return `${params.value}`;
-                                },
-                                fontWeight: 'bold',
-                                fontFamily: 'Arial, Helvetica, sans-serif',
-                            },
-                            highlightStyle: {
-                                strokeWidth: 0
-                            },
-                            padding: {
-                                top: 5,
-                                bottom: 5
-                            },
-                            formatter: barFormatter,
-                        },
-                    },
-                }, {
-                    field: 'change',
-                    headerName: 'Sparkline',
-                    cellRenderer: 'agSparklineCellRenderer',
-                    cellStyle: cellStyle,
-                    valueGetter: scaledValues,
                     cellRendererParams: {
                         sparklineOptions: {
                             type: 'line',
@@ -78,16 +41,58 @@ export default {
                             axis: {
                                 type: 'number'
                             },
-                            marker: { formatter: lineMarkerFormatter },
+                            marker: {
+                                formatter: lineMarkerFormatter
+                            },
+                            padding: {
+                                top: 10,
+                                right: 0,
+                                bottom: 10,
+                                left: 0
+                            },
+                        },
+                    },
+                },
+                {
+                    field: 'scale',
+                    headerName: 'Scale',
+                    type: 'numericColumn',
+                    maxWidth: 100,
+                    editable: true,
+                    valueSetter: onScaleChange
+
+                },
+                {
+                    field: 'change',
+                    headerName: 'Scaled',
+                    cellRenderer: 'agSparklineCellRenderer',
+                    cellStyle: cellStyle,
+                    valueGetter: scaledValues,
+                    enableCellChangeFlash: true,
+                    cellRendererParams: {
+                        sparklineOptions: {
+                            type: 'line',
+                            xKey: 'xVal',
+                            yKey: 'yVal',
+                            axis: {
+                                type: 'number'
+                            },
+                            tooltip: {
+                                renderer: tooltipRenderer
+                            },
+                            marker: {
+                                formatter: lineMarkerFormatter
+                            },
+                            padding: {
+                                top: 10,
+                                right: 0,
+                                bottom: 10,
+                                left: 0
+                            },
                         },
                     },
                 },
 
-                {
-                    field: 'volume',
-                    type: 'numericColumn',
-                    maxWidth: 140
-                },
             ],
             gridApi: null,
             columnApi: null,
@@ -102,41 +107,50 @@ export default {
         }
     },
     created() {
-        this.rowData = api.getData()
-        this.rowHeight = 50;
+        const rawData = api.getData()
+        this.rowData = rawData.map(item => {
+            return Object.assign({}, item, {
+                scale: 10
+            })
+        })
+        this.rowHeight = 50
     },
     methods: {
+
         onGridReady(params) {
-            this.gridApi = params.api;
-            this.gridColumnApi = params.columnApi;
+            window.gridApi = params.api
+            window.gridColumnApi = params.columnApi
         },
         onRowDataChanged() {
             Vue.nextTick(() => {
-                this.gridApi.sizeColumnsToFit();
-            });
+                this.gridApi.sizeColumnsToFit()
+            })
         }
 
     },
 
 }
 
+window.onScaleChange = function onScaleChange(params) {
+    if (isNaN(params.newValue)) return false
+    const index = params.node.rowIndex
+    const row = gridApi.getDisplayedRowAtIndex(index)
+    row.data.scale = params.newValue
+    window.setTimeout(()=> {
+        gridApi.refreshCells({ force: true, rowNodes: [row]  })
+    }, 500)
 
-window.barFormatter = function barFormatter(params) {
-  const { yValue, highlighted } = params;
-  if (highlighted) {
-    return;
-  }
-  return { fill: yValue <= 50 ? palette.lightBlue : palette.blue };
-};
-
+    return true;
+}
 window.scaledValues = function scaledValues(params) {
     const delta = parseDelta(params)
-    let i = 0
-    if (Math.floor(delta) <= 1) {
-        return params.data.change.map((val, i) => [i, 1])
-    } else {
-        return params.data.change.map((val, i) => [i, val])
-    }
+    let index = params.data.change.length
+    const scaledChange = params.data.change.map((val, i) => [i, val])
+    //add a gap
+    scaledChange.push([index, null])
+    //add fixed scaling point
+    scaledChange.push([index++, params.data.scale])
+    return scaledChange
 }
 
 window.parseDelta = function parseDelta(params) {
@@ -146,20 +160,38 @@ window.parseDelta = function parseDelta(params) {
 
 }
 
+window.tooltipRenderer = (params) => {
+    const delta = parseDelta(params.context);
+    const {
+        xValue,
+        yValue
+    } = params;
+    if (xValue === 12)
+        return {
+            title: 'Scale:',
+            content: yValue
+        }
+
+    return {
+        title: null,
+        content: yValue
+    }
+}
+
 window.numberToColor = function numberToColor(val) {
     if (val <= 1)
-        return '#fff';
+        return '#fff'
     else
-        return '#aaffaa';
-};
+        return '#aaffaa'
+}
 
 window.cellStyle = function cellStyle(params) {
     const delta = parseDelta(params)
     const color = numberToColor(Math.floor(delta))
     return {
         backgroundColor: color,
-    };
-};
+    }
+}
 
 window.lineMarkerFormatter = function lineMarkerFormatter(params) {
     const {
@@ -168,32 +200,32 @@ window.lineMarkerFormatter = function lineMarkerFormatter(params) {
         min,
         max,
         highlighted
-    } = params;
+    } = params
     const color = highlighted ?
         palette.blue :
         last ?
         palette.lightBlue :
-        palette.green;
-    if (first === last && min === max) 
+        palette.green
+
+
+    if (Math.floor(params.datum.point.x) >= 11)
         return {
-            size: 0,
-            fill: color,
-            stroke: color
+
         }
 
     return {
-        size: highlighted || first || last || max || min ? 5 : 0,
+        size: highlighted || first || max || min ? 5 : 3,
         fill: color,
         stroke: color,
-    };
-};
+    }
+}
 
 const palette = {
     blue: 'rgb(20,94,140)',
     lightBlue: 'rgb(182,219,242)',
     green: 'rgb(63,141,119)',
     lightGreen: 'rgba(75,168,142, 0.2)',
-};
+}
 </script>
 
 <style>

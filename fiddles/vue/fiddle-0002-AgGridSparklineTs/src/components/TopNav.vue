@@ -50,7 +50,7 @@ export default {
     data() {
         return {
             crumbs: [
-                'fiddle.sh', 'Vue', 'Fiddle #1 ~ Vega Events'
+                'fiddle.sh', 'Vue', 'Fiddle #2 ~ Sparkline Scaling'
             ],
         };
     },

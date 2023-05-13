@@ -2415,3 +2415,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * Added [fiddles/vue/fiddle-0002-AgGridSparkline](fiddles/vue/fiddle-0002-AgGridSparkline)
 * Added [fiddles/vue/fiddle-0002-AgGridSparklineTs](fiddles/vue/fiddle-0002-AgGridSparklineTs)
+* Added [fiddles/node/fiddle-0049-StackBlitzSdk](fiddles/node/fiddle-0049-StackBlitzSdk)

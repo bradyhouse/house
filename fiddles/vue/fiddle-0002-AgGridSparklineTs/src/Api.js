@@ -7,7 +7,7 @@ export default class Api {
           symbol: 'A',
           name: 'Agilent Technologies Inc. Common Stock',
           change: [
-          2,
+          10,
             0.62,
             -0.93,
             0.47,
@@ -21,7 +21,26 @@ export default class Api {
             -0.5,
           ],
           volume: '$971,760',
-        }
+        },
+        {
+          symbol: 'AAL',
+          name: 'American Airlines Group Inc. Common Stock',
+          change: [
+            0.92,
+           2,
+            -0.11,
+            -0.38,
+            0.54,
+            0.3,
+            0.2,
+            -0.47,
+            0.95,
+            -0.03,
+            -0.46,
+            0.78,
+          ],
+          volume: '$20,309,670',
+        },
       ]
     }
 

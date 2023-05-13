@@ -5,7 +5,6 @@ import TopNav from './components/TopNav.vue'
 
 
 <template>
- 
  <TopNav title="Vue Fiddle #2 ~ AgGrid Sparkline (TS)" href="https://github.com/bradyhouse/house/tree/master/fiddles/vue/fiddle-0002-AgGridSparklineTs"></TopNav>
   <RouterView :key="$route.fullPath" />
 </template>
