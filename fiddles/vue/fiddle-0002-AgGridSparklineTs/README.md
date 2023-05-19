@@ -1,65 +1,52 @@
-fiddle-0002-AgGridSparklineTs
-======
+## AgGrid Scaled Sparkline (Ts)
 
+AgGrid's Enterprise edition includes a Sparkline Cell Render => https://www.ag-grid.com/vue-data-grid/sparklines-overview/. When displaying data points with a small range of change, Abs (Max - Min), the depiction can be misleading because the render will automatically scale the y-axis to fit the cell. I need a fiddle that explores this feature to see if there is a way to offset this distortion. 
 
-## Title
-
-fiddle-0002-AgGridSparklineTs
-
-
-## Creation Date
+#### Creation Date
 
 05-08-23
 
-
-## Location
+#### Location
 
 Asheville, NC
 
+#### Issue
 
-## Issue
+[Issue 865](https://github.com/bradyhouse/house/issues/865)
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
-
-
-## Description
-
-Another simple Vue fiddle.
-
-
-## Recommended IDE Setup
+#### Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+#### Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+#### Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+#### Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+#### Compile and Minify for Production
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+#### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
 npm run test:unit
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+#### Run End-to-End Tests with [Playwright](https://playwright.dev)
 
 ```sh
 # Install browsers for the first run
@@ -78,17 +65,16 @@ npm run test:e2e -- tests/example.spec.ts
 npm run test:e2e -- --debug
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+#### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
 
-## Published Version Link
+##### Published Version Link
 
 N/A
 
-
-## Tags
+##### Tags
 
 typescript, vue, vue-router, pinia, playwright, rushstack, eslint, prettier, vite, vitest

@@ -20,19 +20,17 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: top;
-    padding: 0;
-    margin: 0;
-  }
-
-  #app {
-    display: grid;
-    grid-template-rows:  50px 1fr;
-    grid-template-columns: 1fr;
-    padding: 0;
-  }
-
+body {
+  display: flex;
+  place-items: top;
+  padding: 0;
+  margin: 0;
 }
+
+#app {
+  display: grid;
+  grid-template-rows:  50px 1fr;
+  grid-template-columns: 1fr;
+  padding: 0;
+}
+

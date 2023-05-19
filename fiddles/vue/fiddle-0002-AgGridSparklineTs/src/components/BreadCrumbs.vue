@@ -1,13 +1,13 @@
 <template>
-<nav>
+<nav class="hide-0-to-750">
     <ul className="navbar-nav me-auto">
         <li v-for="(crumb, ci) in crumbs" :key="ci" class="nav-item">
-            <button type="button" class="btn btn-success" :class="{ disabled: isLast(ci) }" @click="selected(crumb)">
-                {{ crumb }}
+            <button type="button" class="btn btn-primary" :class="{ disabled: isLast(ci) }" @click="selected(crumb)">
+                {{ crumb.title }}
             </button>
-            <span v-if="!isLast(ci)">
-                \
-            </span>
+            <button v-if="!isLast(ci)" class="btn btn-primary disabled">
+                &bsol;
+            </button>
         </li>
     </ul>
 </nav>
@@ -24,15 +24,24 @@ export default {
     },
     methods: {
         isLast(index) {
-            return index === this.crumbs.length - 1;
+            return index === this.crumbs.length - 1
         },
         selected(crumb) {
-            this.$emit('selected', crumb);
+            if (!crumb.url) return
+            window.open(crumb.url, '_blank')
         },
     },
 };
 </script>
 
 <style scoped>
-    
+@media(max-width:750px) {
+    .hide-0-to-750 {
+        display: none;
+    }
+    .back-slash {
+        color: white !important;
+        background-color: aqua;
+    }
+}
 </style>

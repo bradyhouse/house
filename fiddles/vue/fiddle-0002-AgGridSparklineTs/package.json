@@ -14,11 +14,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ag-grid-community/client-side-row-model": "^29.3.4",
+    "@ag-grid-enterprise/clipboard": "^29.3.5",
+    "@ag-grid-enterprise/excel-export": "^29.3.5",
+    "@ag-grid-enterprise/menu": "^29.3.5",
     "@vueform/slider": "^2.1.7",
     "ag-grid-community": "^29.3.4",
     "ag-grid-enterprise": "^29.3.4",
     "ag-grid-vue3": "^29.3.4",
     "bootstrap": "^5.2.3",
+    "bootswatch": "^5.2.3",
     "jquery": "^3.6.4",
     "markdown-it-vue": "^1.1.7",
     "marked": "^5.0.1",
