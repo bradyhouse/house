@@ -41,6 +41,6 @@
     "lazy": "1.0.11",
     "nativescript-dev-typescript": "^0.10.0",
     "tslint": "^5.10.0",
-    "typescript": "^2.0.3"
+    "typescript": "^5.0.0"
   }
 }
