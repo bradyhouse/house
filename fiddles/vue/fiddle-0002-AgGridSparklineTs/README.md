@@ -73,7 +73,7 @@ npm run lint
 
 ##### Published Version Link
 
-[StackBlitz](https://stackblitz.com/edit/vitejs-vite-asgfax?file=README.md)'
+[StackBlitz](https://stackblitz.com/edit/vitejs-vite-asgfax?file=README.md)
 
 
 ##### Tags
