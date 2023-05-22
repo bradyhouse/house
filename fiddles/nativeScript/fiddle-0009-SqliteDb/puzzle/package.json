@@ -17,7 +17,7 @@
     "nativescript-sqlite": "^2.2.1",
     "nativescript-theme-core": "2.0.24",
     "nativescript-vibrate": "^4.0.0",
-    "tns-core-modules": "^4.1.0"
+    "tns-core-modules": "^6.0.0"
   },
   "devDependencies": {
     "babel-traverse": "6.26.0",
