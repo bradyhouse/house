@@ -26,7 +26,7 @@
     "nativescript-sqlite": "^2.2.1",
     "nativescript-unit-test-runner": "^0.7.0",
     "reflect-metadata": "^0.1.8",
-    "rxjs": "6.6.7",
+    "rxjs": "7.8.1",
     "tns-core-modules": "^6.0.0"
   },
   "devDependencies": {
