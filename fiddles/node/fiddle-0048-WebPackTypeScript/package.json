@@ -27,7 +27,7 @@
     "html-webpack-plugin": "^5.0.0",
     "style-loader": "^3.0.0",
     "ts-loader": "^9.0.0",
-    "typescript": "^3.7.4",
+    "typescript": "^5.0.0",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
