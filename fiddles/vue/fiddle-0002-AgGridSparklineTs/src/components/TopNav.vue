@@ -47,10 +47,10 @@ export default {
         return {
             crumbs: [{
                 title: 'fiddle.sh',
-                url: 'https://github.com/bradyhouse/house'
+                url: 'https://bradyhouse.github.io/'
             }, {
                 title: 'Vue',
-                url: 'https://github.com/bradyhouse/house/tree/master/fiddles/vue'
+                url: 'https://bradyhouse.github.io/vue/index.html'
             }, {
                 title: 'Fiddle #2 ~ Sparkline Scaling',
                 url: null

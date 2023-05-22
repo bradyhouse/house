@@ -16,8 +16,10 @@ export default {
     },
     mounted() {
 
-        //debugger;
-        fetch("http://localhost:5173/readme.md")
+        const origin = window.location.origin
+        const pathName = window.location.pathname.replace('/about','')
+        const url = 'README.md'
+        fetch(url)
             .then(response => response.text())
             .then(text => this.bindText(text))
 
