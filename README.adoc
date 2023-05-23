@@ -24,7 +24,7 @@ libraries.  At present, it can be used to create a localized sandbox (aka _fiddl
 and frameworks:
 
 
-[width="90%",cols="m,m,m,m"]
+[width="90%",cols="m,m,m,m,m"]
 |=========================================================
 |link:fiddles/android[Android]
 |link:fiddles/angular[Angular 1.5]

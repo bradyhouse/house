@@ -14,7 +14,7 @@
     "@angular/animations": "~16.0.0",
     "@angular/common": "~16.0.0",
     "@angular/compiler": "~16.0.0",
-    "@angular/core": "16.0.0",
+    "@angular/core": "16.0.2",
     "@angular/forms": "~16.0.0",
     "@angular/http": "^7.2.8",
     "@angular/platform-browser": "~16.0.0",
@@ -28,9 +28,9 @@
     "core-js": "^3.0.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
-    "rxjs": "~6.6.0",
+    "rxjs": "~7.8.0",
     "rxjs-compat": "^6.4.0",
-    "tslib": "^1.9.0",
+    "tslib": "^2.0.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~18.16.0",
     "codelyzer": "~6.0.0",
-    "jasmine-core": "~4.6.0",
+    "jasmine-core": "~5.0.0",
     "jasmine-spec-reporter": "~7.0.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -50,8 +50,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
     "protractor": "~7.0.0",
-    "ts-node": "~7.0.0",
+    "ts-node": "~10.9.0",
     "tslint": "~5.20.0",
-    "typescript": "~3.9.0"
+    "typescript": "~5.0.0"
   }
 }
