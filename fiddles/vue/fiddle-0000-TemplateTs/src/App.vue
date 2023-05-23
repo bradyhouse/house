@@ -1,5 +1,5 @@
 <template>
-<TopNav href="https://github.com/bradyhouse/house/tree/master/fiddles/vue/{{FiddleName}}"></TopNav>
+<TopNav href="https://github.com/bradyhouse/house/tree/master/fiddles/vue/fiddle-0000-TemplateTs"></TopNav>
 <RouterView :key="$route.fullPath" />
 </template>
 

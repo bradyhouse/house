@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 
-const publicPath = process.env.NODE_ENV === 'production' ? '/vue/{{FiddleName}}/' : '/'
+const publicPath = process.env.NODE_ENV === 'production' ? '/vue/fiddle-0000-TemplateTs/' : '/'
 
 const router = createRouter({
   history: createWebHistory(publicPath),

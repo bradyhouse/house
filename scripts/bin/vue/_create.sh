@@ -56,11 +56,14 @@ function vueCreateJs() {
         then
             rm -r .gitignore;
         fi
+        
         $(voidSubstr '{{FiddleName}}' ${fiddle} "package.json";) || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "index.html";) || exit 5;
         $(voidSubstr '{{Author}}' ${AUTHOR} "index.html";) || exit 5;
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
+       
+
         npmInstallDep || exit $?;
     )
     # catch
@@ -115,13 +118,21 @@ function vueCreateTs() {
         then
             rm -r .gitignore;
         fi
-        
-        $(voidSubstr '{{FiddleName}}' ${fiddle} "package.json";) || exit 5;
+
         $(voidSubstr '{{FiddleName}}' ${fiddle} "index.html";) || exit 5;
         $(voidSubstr '{{Author}}' ${AUTHOR} "index.html";) || exit 5;
+
+        $(voidSubstr '{{FiddleName}}' ${fiddle} "vite.config.ts";) || exit 5;
+        $(voidSubstr '{{FiddleName}}' ${fiddle} "src/App.vue";) || exit 5;
+        $(voidSubstr '{{FiddleName}}' ${fiddle} "src/components/TopNav.vue";) || exit 5;
+        $(voidSubstr '{{FiddleName}}' ${fiddle} "src/router/index.ts";) || exit 5;
+        
         $(voidSubstr '{{FiddleName}}' ${fiddle} "README.md";) || exit 5;
         $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "README.md";) || exit 5;
-        
+
+        $(voidSubstr '{{FiddleName}}' ${fiddle} "src/assets/README.md";) || exit 5;
+        $(voidSubstr '{{BornOnDate}}' ${bornOnDate} "src/assets/README.md";) || exit 5;
+ 
         npmInstallDep || exit $?;
 
     )
