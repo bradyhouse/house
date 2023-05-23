@@ -13,6 +13,6 @@
     "start": "node --harmony app.js"
   },
   "dependencies": {
-    "ws": "^5.2.0"
+    "ws": "^8.0.0"
   }
 }
