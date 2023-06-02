@@ -3,9 +3,9 @@
   "lockfileVersion": 1,
   "dependencies": {
     "@angular/animations": {
-      "version": "16.0.2",
-      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-16.0.2.tgz",
-      "integrity": "sha512-fmqMD/8IoI5YosT7xabt0Hq6Zotxwv7ajKHX4f8KG/L/PAgnH5S6g2+sEJcZwm6/7dUNfXNcUL2978LxVT8GDQ==",
+      "version": "16.0.4",
+      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-16.0.4.tgz",
+      "integrity": "sha512-M0C21mav4gtzWrWf6zTAYImL+Vix0bEDM/FF9ktmm04yt3Y8VtcMeDNRQRLj6JTIbth/fyvKZ20HSYFD91ez2g==",
       "requires": {
         "tslib": "^2.3.0"
       },
@@ -18,9 +18,9 @@
       }
     },
     "@angular/common": {
-      "version": "16.0.2",
-      "resolved": "https://registry.npmjs.org/@angular/common/-/common-16.0.2.tgz",
-      "integrity": "sha512-nCuDnsHNmC5ouQWTKtUaI8HG4gEzBJW94uf0kBfYP6SEENDMybATBTvWWTnuqSTDolyYSDkgvV0tKRb87SBykg==",
+      "version": "16.0.4",
+      "resolved": "https://registry.npmjs.org/@angular/common/-/common-16.0.4.tgz",
+      "integrity": "sha512-EX1u46Lwc0uGcc0jjaxFHcnkuXusytYcjcd9pc+7eNNIi9nvLJDRmd8VyZ12ozc6ynBO6vt0mFSpIpjUVsTheQ==",
       "requires": {
         "tslib": "^2.3.0"
       },
@@ -33,9 +33,9 @@
       }
     },
     "@angular/compiler": {
-      "version": "16.0.2",
-      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-16.0.2.tgz",
-      "integrity": "sha512-TQqrMvMgsuRmAycL893i4sRFm8a8IHp+L1vdDYmETyADAYHSKO45+7kTISrqtNDhCGOzvE6vsz1hPj43y3gGog==",
+      "version": "16.0.4",
+      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-16.0.4.tgz",
+      "integrity": "sha512-TTCuvkODBsbm6H1xleUQy60ITaUIdD/b2smm2OHlMw0QPJOfC75DG0uwIjsHA5KjZNlLyRBQKAxrc8cYhMpyoQ==",
       "requires": {
         "tslib": "^2.3.0"
       },
@@ -48,9 +48,9 @@
       }
     },
     "@angular/core": {
-      "version": "16.0.2",
-      "resolved": "https://registry.npmjs.org/@angular/core/-/core-16.0.2.tgz",
-      "integrity": "sha512-uPa2A+nVqwljDepahMn2ndgWg/a14VnTqgunXJP9q/Us98I/YGdryake4aTfXHUAdLON/R9IzomiXeFDYp5cJQ==",
+      "version": "16.0.4",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-16.0.4.tgz",
+      "integrity": "sha512-Lp/qGJt0NFFTKQHofaMjCdGYfVwGCyhBtcbioaTqi1wA5OwXfMZX5MgHZXl1KlnZs1YVqM8vO/Z/4kOxgYXvNQ==",
       "requires": {
         "tslib": "^2.3.0"
       },
@@ -63,9 +63,9 @@
       }
     },
     "@angular/forms": {
-      "version": "16.0.2",
-      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-16.0.2.tgz",
-      "integrity": "sha512-sx46q0RgEH2yyb3jT5IZ0OuVzzrfKKmOui6XzuthwLdswgn+lylTduNxobqpnrnlCe8aNqM29dUtmpkpOK8p2g==",
+      "version": "16.0.4",
+      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-16.0.4.tgz",
+      "integrity": "sha512-QkOM7xEYd4N0kXr1h2ma/R+TnkNGxNIyHNZNFMcTiWiJpzBkUiDJxurlm0Tdn/h5g/smY3zY0PFflQE5wpohNQ==",
       "requires": {
         "tslib": "^2.3.0"
       },
@@ -86,9 +86,9 @@
       }
     },
     "@angular/platform-browser": {
-      "version": "16.0.2",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-16.0.2.tgz",
-      "integrity": "sha512-sGGUBnKGY6T9MLfD25wr83agYObNnF6GhuSDwKqf9m0QUuV3yeer3ZVnBAI4fjnDv/bi8w5qdisnK2+X0N+Tfg==",
+      "version": "16.0.4",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-16.0.4.tgz",
+      "integrity": "sha512-sU9ZthOtTM8tJCX93MumRGDbkly4wZt0iucmqc7NYhWQfmwPBP+qVBEyXJneVOag6FU7OozyMoQ4e3274ka52w==",
       "requires": {
         "tslib": "^2.3.0"
       },
@@ -101,9 +101,9 @@
       }
     },
     "@angular/router": {
-      "version": "16.0.2",
-      "resolved": "https://registry.npmjs.org/@angular/router/-/router-16.0.2.tgz",
-      "integrity": "sha512-CpC0R4q7iDioATJcbfAmelrzf+v8X5BDE7V3T4gSYnMt9XfWG6c6TBnkubac1dBdriJisZQEK5vIrQmUFdeI7w==",
+      "version": "16.0.4",
+      "resolved": "https://registry.npmjs.org/@angular/router/-/router-16.0.4.tgz",
+      "integrity": "sha512-RgmY/dH5IB3aEnulqWHWSJ9TlcdOe7ZXOu1Fztmm3hk9brXyX5OB7R9sLG77yrE0eGDhdBJjgkLjmWPfjXurOA==",
       "requires": {
         "tslib": "^2.3.0"
       },
