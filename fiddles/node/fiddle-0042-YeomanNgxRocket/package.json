@@ -63,7 +63,7 @@
     "karma-jasmine": "^5.0.0",
     "karma-jasmine-html-reporter": "^2.0.0",
     "karma-junit-reporter": "^2.0.0",
-    "prettier": "^2.0.0",
+    "prettier": "^3.0.0",
     "tslint-config-prettier": "^1.14.0",
     "stylelint-config-prettier": "^9.0.0",
     "pretty-quick": "^3.0.0",
