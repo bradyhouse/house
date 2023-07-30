@@ -30,7 +30,7 @@
     "@angular/router": "16.1.6",
     "bootstrap": "5.3.1",
     "bootswatch": "^5.0.0",
-    "core-js": "3.31.1",
+    "core-js": "3.32.0",
     "immutable": "^4.0.0",
     "jquery": "3.7.0",
     "lodash": "^4.17.15",
@@ -38,7 +38,7 @@
     "zone.js": "0.13.1"
   },
   "devDependencies": {
-    "@angular/cli": "16.1.5",
+    "@angular/cli": "16.1.6",
     "@angular/compiler-cli": "16.1.6",
     "@angular/language-service": "16.1.6",
     "@types/jasmine": "4.3.5",
