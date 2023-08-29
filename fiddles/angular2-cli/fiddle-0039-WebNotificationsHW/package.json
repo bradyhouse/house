@@ -33,7 +33,7 @@
     "bootswatch": "^5.0.0",
     "core-js": "3.32.1",
     "immutable": "^4.0.0",
-    "jquery": "3.7.0",
+    "jquery": "3.7.1",
     "lodash": "^4.17.15",
     "rxjs": "7.8.1",
     "zone.js": "0.13.1"
