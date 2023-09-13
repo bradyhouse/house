@@ -2413,6 +2413,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
     1.  Added [fiddles/node/fiddle-0049-VueHelloWorld](fiddles/node/fiddle-0049-VueHelloWorld)
 
-* Added [fiddles/vue/fiddle-0002-AgGridSparkline](fiddles/vue/fiddle-0002-AgGridSparkline)
-* Added [fiddles/vue/fiddle-0002-AgGridSparklineTs](fiddles/vue/fiddle-0002-AgGridSparklineTs)
-* Added [fiddles/node/fiddle-0049-StackBlitzSdk](fiddles/node/fiddle-0049-StackBlitzSdk)
+
+### 786-vuejs-vega-custom-events ~ [Issue 786](https://github.com/bradyhouse/house/issues/786)
+
+* **vue**
+
+    1.  Added [fiddles/vue/fiddle-0001-VegaMarkerCustomEventTs](fiddles/vue/fiddle-0001-VegaMarkerCustomEventTs)
+
+
