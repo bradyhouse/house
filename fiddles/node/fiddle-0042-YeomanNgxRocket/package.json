@@ -73,7 +73,7 @@
     "stylelint": "~15.10.0",
     "stylelint-config-recommended-scss": "~13.0.0",
     "stylelint-config-standard": "~34.0.0",
-    "stylelint-scss": "~5.1.0",
+    "stylelint-scss": "~5.2.0",
     "ts-node": "^10.0.0",
     "tslint": "~5.20.0",
     "typescript": "~5.2.0"
