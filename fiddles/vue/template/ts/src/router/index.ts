@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 
-const publicPath = process.env.NODE_ENV === 'production' ? '/vue/{{FiddleName}}/' : '/'
 
 const router = createRouter({
-  history: createWebHistory(publicPath),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -34,9 +33,6 @@ const router = createRouter({
 })
 
 function onBeforeError(to: any, from: any, next: any) {
-  console.log('to', to)
-  console.log('from', from)
-  debugger
   if (from.fullPath === '/' || from.fullPath.includes('index.html')) {
     next('/')
   } else {

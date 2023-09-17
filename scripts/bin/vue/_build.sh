@@ -13,6 +13,7 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 723-add-vuejs-support
+# 09/17/2023 - See CHANGELOG @ 1139-debug-fiddle-buildpublish-vue
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -59,7 +60,7 @@ function vueBuild() {
         $(voidSubstr 'href="/favicon.ico"' 'href="favicon.ico"' "dist/index.html";) || exit 1;
         $(voidSubstr 'href="/assets' 'href="assets' "dist/index.html";) || exit 1;
         $(voidSubstr 'src="/assets' 'src="assets' "dist/index.html";) || exit 1;
-
+        cp -rf README.md dist;
         cp -rf dist/* "../dist/${fiddle}";
     )
     # catch

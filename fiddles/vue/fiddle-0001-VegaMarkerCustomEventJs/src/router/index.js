@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 
-const publicPath = process.env.NODE_ENV === 'production' ? '/vue/fiddle-0001-VegaMarkerCustomEventJs/' : '/'
+
 
 const router = createRouter({
-  history: createWebHistory(publicPath),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',

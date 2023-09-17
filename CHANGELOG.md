@@ -2421,3 +2421,14 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Added [fiddles/vue/fiddle-0001-VegaMarkerCustomEventTs](fiddles/vue/fiddle-0001-VegaMarkerCustomEventTs)
 
 
+### 1139-debug-fiddle-buildpublish-vue ~ [Issue 1139](https://github.com/bradyhouse/house/issues/1139)
+
+* **fiddle.sh (Bug Fix)**
+
+  * Reflected changes:
+
+  1.  Updated [scripts/bin/vue/_build.sh](scripts/bin/vue/_build.sh)
+  2.  Updated [scripts/bin/fiddle-index.sh](scripts/fiddle-index.sh)
+  3.  Updated [fiddles/vue/template/js/src/router/index.js](fiddles/vue/template/js/src/router/index.js)
+  4.  Updated [fiddles/vue/template/ts/src/router/index.ts](fiddles/vue/template/ts/src/router/index.ts)
+

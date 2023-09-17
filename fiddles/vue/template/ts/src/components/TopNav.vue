@@ -87,6 +87,10 @@ nav a:first-of-type {
     border: 0;
 }
 
+.navbar {
+    border-radius: 0 !important;
+}
+
 @media(max-width:350px) {
     .hide-0-to-350 {
         display: none;

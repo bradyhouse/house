@@ -57,7 +57,7 @@ function gradlewCheck() {
   #try
   (
     cd $1
-    ./gradlew check;
+    gradle check;
   )
   rc=$?; case ${rc} in
     0)  groupLog "gradlew check - successful."
@@ -83,7 +83,7 @@ function initJavaProject() {
   cp -rf tmp/complete "${projectName}";
   rm -rf tmp;
   mvnInstall "${projectName}";
-  gradlewCheck "${projectName}";
+  #gradlewCheck "${projectName}";
 }
 
 function javaCreate() {

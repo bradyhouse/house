@@ -26,6 +26,7 @@
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/17/2023 - See CHANGELOG @ 1139-debug-fiddle-buildpublish-vue
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -81,6 +82,9 @@ esac
                   'python') fiddleName=$(echo "fiddle.py";)
                       ;;
                   'angular2-cli')
+                      fiddleName="#";
+                      ;;
+                  'vue')
                       fiddleName="#";
                       ;;
                   *) fiddleName=$(echo "${fiddleNameStub}.html";)
