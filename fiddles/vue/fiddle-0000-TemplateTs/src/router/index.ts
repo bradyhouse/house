@@ -34,9 +34,6 @@ const router = createRouter({
 })
 
 function onBeforeError(to: any, from: any, next: any) {
-  console.log('to', to)
-  console.log('from', from)
-  debugger
   if (from.fullPath === '/' || from.fullPath.includes('index.html')) {
     next('/')
   } else {
