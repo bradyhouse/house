@@ -1,10 +1,8 @@
-fiddle-0001-VegaMarkerCustomEventJs
+Vega Marker CustomEvent (Js)
 ======
 
-
-## Title
-
-Vega Marker Custom Event
+Fiddle exploring how to create custom events in Vue.js. Specifically, the fiddle should include a component that embeds a chart created 
+using Vega -- see https://vega.github.io/. The custom event should be triggered by clicking a point on the chart.
 
 
 ## Creation Date
@@ -86,7 +84,7 @@ npm run lint
 
 ## Published Version Link
 
-* [StackBlitz](https://stackblitz.com/edit/vitejs-vite-lfwwsn?file=package.json)
+* [StackBlitz](https://stackblitz.com/edit/fiddle-0001-vegamarkercustomeventjs?file=README.md)
 
 
 ## Tags

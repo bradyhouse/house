@@ -2432,3 +2432,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   3.  Updated [fiddles/vue/template/js/src/router/index.js](fiddles/vue/template/js/src/router/index.js)
   4.  Updated [fiddles/vue/template/ts/src/router/index.ts](fiddles/vue/template/ts/src/router/index.ts)
 
+
+### 1144-vuejs-fiddle-0003 ~ [Issue 1144](https://github.com/bradyhouse/house/issues/1144)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0003-ScaledSparklineDtTs](fiddles/vue/fiddle-0003-ScaledSparklineDtTs)
+
