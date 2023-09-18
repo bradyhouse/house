@@ -29,3 +29,8 @@ jobs:
     - name: Install Latest Angular Cli Fiddle
       working-directory: fiddles/angular2-cli/fiddle-0040-CSVReporter
       run: npm install
+
+    - name: Test the Vue Typescript Template Fiddle
+      working-directory: fiddles/vue/fiddle-0000-TemplateTs
+      run: npm install
+      
