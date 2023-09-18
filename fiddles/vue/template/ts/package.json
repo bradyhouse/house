@@ -21,7 +21,7 @@
     "bootswatch": "^5.2.3",
     "jquery": "^3.6.4",
     "markdown-it-vue": "^1.1.7",
-    "marked": "^5.0.1"
+    "marked": "^9.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.31.1",
