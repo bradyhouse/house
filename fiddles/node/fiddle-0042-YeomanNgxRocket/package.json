@@ -36,7 +36,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "rxjs": "^7.0.0",
-    "zone.js": "^0.13.0"
+    "zone.js": "^0.14.0"
   },
   "devDependencies": {
     "@angular/cli": "~16.2.0",
