@@ -2439,3 +2439,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/vue/fiddle-0003-ScaledSparklineDtTs](fiddles/vue/fiddle-0003-ScaledSparklineDtTs)
 
+
+### 1155-vue-sheperd-js-hw ~ [Issue 1155](https://github.com/bradyhouse/house/issues/1155)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0004-SheperdHwTs](fiddles/vue/fiddle-0004-SheperdHwTs)
+
+
