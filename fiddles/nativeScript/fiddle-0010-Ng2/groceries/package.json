@@ -28,7 +28,7 @@
     "tns-core-modules": "^6.0.0"
   },
   "devDependencies": {
-    "zone.js": "~0.13.0",
+    "zone.js": "~0.14.0",
     "babel-traverse": "6.26.0",
     "babel-types": "6.26.0",
     "babylon": "6.18.0",

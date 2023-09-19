@@ -23,7 +23,7 @@
     "reflect-metadata": "~0.1.8",
     "rxjs": "~7.8.0",
     "tns-core-modules": "~6.5.0",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.14.0"
   },
   "devDependencies": {
     "babel-traverse": "6.26.0",
