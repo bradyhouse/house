@@ -1,5 +1,5 @@
 <template>
-    <div class="hello" v-tour-step:2="step2WelcomeText(startupTour)">
+    <div class="hello" v-tour-step:2="step2FiddleViewWelcomeText(startupTour)">
       <h1>
         {{ msg }}
       </h1>
@@ -89,13 +89,13 @@
   </template>
   
   <script>
-  import step2WelcomeText from "@/shepherd-tour/step2-welcome-text.js";
+  import step2FiddleViewWelcomeText from '@/shepherd-tour/step2-fiddle-view_welcome-text.js'
   
   export default {
     name: "HelloWorld",
     setup() {
       return {
-        step2WelcomeText,
+        step2FiddleViewWelcomeText,
       };
     },
     props: {
@@ -121,4 +121,4 @@
     color: #42b983;
   }
   </style>
-  
+  @/shepherd-tour/step5-welcome-text.js@/shepherd-tour/step2-fiddle-view_welcome-text.js

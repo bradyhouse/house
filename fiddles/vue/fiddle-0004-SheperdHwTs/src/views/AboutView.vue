@@ -1,11 +1,12 @@
 <template>
-  <div v-html="markdownToHtml" v-tour-step:3="step3AboutPage(startupTour)"></div>
+  <div v-html="markdownToHtml" v-tour-step:9="step9AboutPage(startupTour)"></div>
 </template>
 
 <script lang="ts">
 
 import { marked } from 'marked'
-import step3AboutPage from "@/shepherd-tour/step3-about-page.js"
+import { inject } from 'vue'
+import step9AboutPage from "@/shepherd-tour/step9-about-page.js"
 
 export default {
     name: 'AboutView',
@@ -15,8 +16,10 @@ export default {
         }
     },
     setup() {
+      const startupTour = inject('startupTour')
     return {
-      step3AboutPage
+      startupTour,
+      step9AboutPage
     };
   },
     mounted() {
@@ -57,3 +60,4 @@ div {
     }
 }
 </style>
+@/shepherd-tour/step6-about-page.js@/shepherd-tour/step7-about-page.js

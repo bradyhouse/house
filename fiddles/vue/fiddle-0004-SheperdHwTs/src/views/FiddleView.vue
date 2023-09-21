@@ -3,7 +3,7 @@
         
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div>
-                <img style="width: 30%;" v-tour-step:1="step1VueIcon(startupTour)"
+                <img style="width: 30%;" v-tour-step:1="step1FiddleViewVueIcon(startupTour)"
                 alt="Vue logo"
                 src="../assets/logo.svg"
                 />
@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import HelloWorld from "@/components/HelloWorld.vue"
-import step1VueIcon from '@/shepherd-tour/step1-vue-icon.js'
+import step1FiddleViewVueIcon from '@/shepherd-tour/step1-fiddle-view_vue-icon.js'
 import {
     inject,
     onMounted
@@ -38,7 +38,7 @@ export default {
     },
     setup() {
         const route = useRoute()
-        const tour = inject("startupTour")
+        const startupTour = inject("startupTour")
         const isFirstVisit = isLocalStorage() ?
             localStorage.getItem('isFirstVisit') :
             'true'
@@ -48,12 +48,13 @@ export default {
                     localStorage.setItem('isFirstVisit', 'false')
                 }
                 
-                tour.start()
+                startupTour.start()
             }
         })
 
         return {
-            step1VueIcon
+            step1FiddleViewVueIcon,
+            startupTour
         }
     }
 }
