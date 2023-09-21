@@ -9,23 +9,16 @@ local storage, the tour should not startup.
 
 ## Creation Date
 
-06-05-23
+09-20-23
 
 
 ## Location
 
 Asheville, NC
 
-
 ## Issue
 
-[Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
-
-
-## Description
-
-Another simple Vue fiddle.
-
+[Issue 1155](https://github.com/bradyhouse/house/issues/1155)
 
 ## Recommended IDE Setup
 
