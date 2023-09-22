@@ -2444,6 +2444,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **vue**
 
-  1.  Added [fiddles/vue/fiddle-0004-SheperdHwTs](fiddles/vue/fiddle-0004-SheperdHwTs)
-
+  1.  Added [fiddles/vue/fiddle-0004-ShepherdHwTs](fiddles/vue/fiddle-0004-ShepherdHwTs)
 
