@@ -2446,3 +2446,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/vue/fiddle-0004-ShepherdHwTs](fiddles/vue/fiddle-0004-ShepherdHwTs)
 
+* Added [fiddles/vue/fiddle-0005-GoldenLayoutHw](fiddles/vue/fiddle-0005-GoldenLayoutHw)
+* Added [fiddles/vue/fiddle-0005-GoldenLayoutHwTs](fiddles/vue/fiddle-0005-GoldenLayoutHwTs)
+* Added [fiddles/vue/fiddle-0005-GoldenLayoutHw](fiddles/vue/fiddle-0005-GoldenLayoutHw)
+* Added [fiddles/vue/fiddle-0005-GoldenLayoutHwTs](fiddles/vue/fiddle-0005-GoldenLayoutHwTs)
