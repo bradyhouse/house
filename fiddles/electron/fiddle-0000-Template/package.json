@@ -16,6 +16,6 @@
   "author": "bradyhouse@gmail.com",
   "license": "MIT",
   "devDependencies": {
-    "electron": "26.3.0"
+    "electron": "27.0.0"
   }
 }
