@@ -10,7 +10,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
     "@types/jest": "^29.0.0",
-    "@types/node": "^18.0.0",
+    "@types/node": "^20.0.0",
     "bootstrap": "^5.2.0",
     "bootswatch": "^5.2.0",
     "font-awesome": "^4.7.0",
