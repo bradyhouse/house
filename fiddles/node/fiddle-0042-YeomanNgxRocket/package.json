@@ -48,7 +48,7 @@
     "@ngx-rocket/scripts": "^5.0.0",
     "@types/jasmine": "^5.0.0",
     "@types/jasminewd2": "^2.0.3",
-    "@types/node": "^18.0.0",
+    "@types/node": "^20.0.0",
     "@types/lodash": "^4.14.112",
     "codelyzer": "^6.0.0",
     "hads": "^3.0.0",
