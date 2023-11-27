@@ -2452,3 +2452,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **vue**
 
   1.  Added [fiddles/vue/fiddle-0006-GlComponentsTs](fiddles/vue/fiddle-0006-GlComponentsTs)
+
+
+### 1265-vue-print-preview-component ~ [Issue 1265  ](https://github.com/bradyhouse/house/issues/1265)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0007-PrintPreviewJs](fiddles/vue/fiddle-0007-PrintPreviewJs)
+
+
