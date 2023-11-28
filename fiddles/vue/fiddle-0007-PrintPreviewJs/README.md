@@ -3,8 +3,8 @@ fiddle-0007-PrintPreviewJs
 
 Checkout https://github.com/delight-im/HTML-Sheets-of-Paper/tree/gh-pages. This repo attempts to demonstrate how to create a simplistic word processsor interface using `div`'s with the `contenteditable` attribute set to `true`.  I want 
 to create a Vue based component that utilizes the same style sheets to simulate a standard Print Preview display given a block of HTML.  In other words, the `PrintPreview` component should --
-*   Accepts a default slot broken up into pages using `<div class="page"> ... </div>` blocks 
-*   Each Page block should then be rendered using a secondary `Page` component having the following template:
+  * Accepts a default slot broken up into pages using `<div class="page"> ... </div>` blocks 
+  * Each Page block should then be rendered using a secondary `Page` component having the following template:
 
         <div class="page">
             <header>
@@ -99,7 +99,9 @@ npm run lint
 
 ## Published Version Link
 
-N/A
+- [bradyhouse.github.io](https://bradyhouse.github.io/vue/fiddle-0007-PrintPreviewJs/)
+- [stackblitz.com](https://stackblitz.com/edit/vitejs-vite-u56mtg?file=README.md)
+
 
 
 ## Tags
