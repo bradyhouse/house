@@ -42,7 +42,7 @@
     "@angular/cli": "17.0.1",
     "@angular/compiler-cli": "17.0.8",
     "@angular/language-service": "17.0.8",
-    "@types/jasmine": "5.1.0",
+    "@types/jasmine": "5.1.4",
     "@types/jasminewd2": "2.0.13",
     "@types/node": "~20.10.0",
     "ag-grid-testing": "0.0.3",
