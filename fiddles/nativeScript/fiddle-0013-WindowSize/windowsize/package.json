@@ -20,7 +20,7 @@
     "@angular/router": "~16.2.0",
     "nativescript-angular": "~10.0.0",
     "nativescript-theme-core": "~2.0.0",
-    "reflect-metadata": "~0.1.8",
+    "reflect-metadata": "~0.2.0",
     "rxjs": "~7.8.0",
     "tns-core-modules": "~6.5.0",
     "zone.js": "~0.14.0"
