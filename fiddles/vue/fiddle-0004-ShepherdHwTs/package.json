@@ -23,7 +23,7 @@
     "core.js": "^0.4.2",
     "jquery": "^3.7.0",
     "markdown-it-vue": "^1.1.7",
-    "marked": "^9.0.0",
+    "marked": "^11.0.0",
     "pinia": "^2.0.32",
     "popper.js": "^1.16.1",
     "vue": "^3.2.47",
