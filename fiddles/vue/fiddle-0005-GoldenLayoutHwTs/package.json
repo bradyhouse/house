@@ -19,7 +19,7 @@
     "golden-layout": "^2.6.0",
     "jquery": "^3.6.4",
     "markdown-it-vue": "^1.1.7",
-    "marked": "^9.0.0",
+    "marked": "^11.0.0",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
