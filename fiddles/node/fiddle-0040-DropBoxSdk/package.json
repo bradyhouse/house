@@ -16,7 +16,7 @@
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "dependencies": {
-    "chai": "^4.2.0",
+    "chai": "^5.0.0",
     "dropbox": "^10.0.0",
     "isomorphic-fetch": "^3.0.0",
     "live-server": "^1.2.1",
