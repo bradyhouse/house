@@ -2468,3 +2468,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/vue/fiddle-0008-PlotlyHwJs](fiddles/vue/fiddle-0008-PlotlyHwJs)
 
 
+* Added [fiddles/vue/fiddle-0009-SkeletonLoader](fiddles/vue/fiddle-0009-SkeletonLoader)
+* Added [fiddles/vue/fiddle-0009-SkeletonLoaderJs](fiddles/vue/fiddle-0009-SkeletonLoaderJs)
