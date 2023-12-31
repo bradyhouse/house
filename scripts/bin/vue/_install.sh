@@ -20,7 +20,7 @@ function nvmInstall() {
   if [[ -d ${NVM_DIR} ]]
   then
     source ${NVM_DIR}/nvm.sh;
-    nvm install ${NVM_VERSION};
+    nvm use ${NVM_VERSION} || nvm install ${NVM_VERSION}
   else
     exit 3;
   fi
