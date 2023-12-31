@@ -34,7 +34,7 @@ export OS=$(getOS;);
 export WEB_SERVER_PORT=1841;
 export AUTHOR="bradyhouse@gmail.com";
 export AUTHOR_NAME="brady house";
-export NVM_VERSION="v16.11.1";
+export NVM_VERSION="v20.10.0";
 export CHANGE_LOG="CHANGELOG.md";
 
 # =================================================
