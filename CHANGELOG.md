@@ -2461,8 +2461,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/vue/fiddle-0007-PrintPreviewJs](fiddles/vue/fiddle-0007-PrintPreviewJs)
 
 
-* Added [fiddles/vue/fiddle-0008-PlotlyHw](fiddles/vue/fiddle-0008-PlotlyHw)
-* Added [fiddles/vue/fiddle-0008-PlotlyHw](fiddles/vue/fiddle-0008-PlotlyHw)
-* Added [fiddles/vue/fiddle-0008-PlotlyHw](fiddles/vue/fiddle-0008-PlotlyHw)
-* Added [fiddles/vue/fiddle-0008-PlotlyHw](fiddles/vue/fiddle-0008-PlotlyHw)
-* Added [fiddles/vue/fiddle-0008-PlotlyHwJs](fiddles/vue/fiddle-0008-PlotlyHwJs)
+### 1233_vue_plotly_integration ~ [Issue 1233](https://github.com/bradyhouse/house/issues/1233)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0008-PlotlyHwJs](fiddles/vue/fiddle-0008-PlotlyHwJs)
+
+
