@@ -12,7 +12,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/vue/fiddle-0008-PlotlyHwJs/',
+  base: '/vue/fiddle-0009-SkeletonLoaderJs/',
   build: {
     chunkSizeWarningLimit: 5000,
     rollupOptions: {
