@@ -2474,6 +2474,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
   1.  Added [fiddles/vue/fiddle-0009-SkeletonLoaderJs](fiddles/vue/fiddle-0009-SkeletonLoaderJs)
 
-  
-* Added [fiddles/vue/fiddle-0010-AceEditorHw](fiddles/vue/fiddle-0010-AceEditorHw)
-* Added [fiddles/vue/fiddle-0010-AceEditorHwJs](fiddles/vue/fiddle-0010-AceEditorHwJs)
+
+### 1229_vue_ace_editor_hw ~ [Issue 1229](https://github.com/bradyhouse/house/issues/1229)
+
+  1.  Added [fiddles/vue/fiddle-0010-AceEditorHwJs](fiddles/vue/fiddle-0010-AceEditorHwJs)
+
+
