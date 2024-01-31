@@ -2477,6 +2477,15 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 1229_vue_ace_editor_hw ~ [Issue 1229](https://github.com/bradyhouse/house/issues/1229)
 
+* **vue**
+
   1.  Added [fiddles/vue/fiddle-0010-AceEditorHwJs](fiddles/vue/fiddle-0010-AceEditorHwJs)
+
+
+### 1233_vue_tinymce_hw_v2 ~ [Issue 1233](https://github.com/bradyhouse/house/issues/1233)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0011-TinyMceHwJs](fiddles/vue/fiddle-0011-TinyMceHwJs)
 
 
