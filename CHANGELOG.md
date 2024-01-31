@@ -2489,3 +2489,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/vue/fiddle-0011-TinyMceHwJs](fiddles/vue/fiddle-0011-TinyMceHwJs)
 
 
+### 1407-vue-vertical-spacer ~ [Issue 1407](https://github.com/bradyhouse/house/issues/1407)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0012-VerticalSpacerJs](fiddles/vue/fiddle-0012-VerticalSpacerJs)
+
