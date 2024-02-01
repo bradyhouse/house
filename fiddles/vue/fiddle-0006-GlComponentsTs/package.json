@@ -34,7 +34,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "uuid": "^9.0.1",
     "vue": "^3.2.47",
-    "vue-draggable-resizable": "^2.3.0",
+    "vue-draggable-resizable": "^3.0.0",
     "vue-router": "^4.1.6",
     "vue3-plotly": "^0.0.7"
   },
