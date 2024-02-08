@@ -1,0 +1,17 @@
+{
+  "name": "fiddle-0012-niceguihw",
+  "version": "1.0.0",
+  "description": "fiddle-0012-NiceGuiHW ======",
+  "main": "altair_chart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "vega": "^5.27.0",
+    "vega-embed": "^6.24.0",
+    "vega-lite": "^5.16.3"
+  }
+}
