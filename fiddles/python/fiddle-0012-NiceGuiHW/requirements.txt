@@ -60,7 +60,7 @@ jupyterlab==4.0.12
 jupyterlab-widgets==3.0.10
 jupyterlab_pygments==0.3.0
 jupyterlab_server==2.25.2
-langchain==0.1.5
+langchain==0.1.6
 langchain-community==0.0.17
 langchain-core==0.1.18
 langchain-openai==0.0.5
