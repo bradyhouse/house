@@ -9,7 +9,7 @@
       "version": "1.0.0",
       "license": "MIT",
       "devDependencies": {
-        "electron": "28.2.3"
+        "electron": "28.2.5"
       }
     },
     "node_modules/@electron/get": {
@@ -242,9 +242,9 @@
       "optional": true
     },
     "node_modules/electron": {
-      "version": "28.2.3",
-      "resolved": "https://registry.npmjs.org/electron/-/electron-28.2.3.tgz",
-      "integrity": "sha512-he9nGphZo03ejDjYBXpmFVw0KBKogXvR2tYxE4dyYvnfw42uaFIBFrwGeenvqoEOfheJfcI0u4rFG6h3QxDwnA==",
+      "version": "28.2.5",
+      "resolved": "https://registry.npmjs.org/electron/-/electron-28.2.5.tgz",
+      "integrity": "sha512-qlvQkDNVAzN647NpiJJw7GYJqE0NwK4+1evkhrQ0Xv6Qgab1EtN50G4oDr4/x/+O5pGUG2P5d3isXu+37O3RDw==",
       "dev": true,
       "hasInstallScript": true,
       "dependencies": {
@@ -985,9 +985,9 @@
       "optional": true
     },
     "electron": {
-      "version": "28.2.3",
-      "resolved": "https://registry.npmjs.org/electron/-/electron-28.2.3.tgz",
-      "integrity": "sha512-he9nGphZo03ejDjYBXpmFVw0KBKogXvR2tYxE4dyYvnfw42uaFIBFrwGeenvqoEOfheJfcI0u4rFG6h3QxDwnA==",
+      "version": "28.2.5",
+      "resolved": "https://registry.npmjs.org/electron/-/electron-28.2.5.tgz",
+      "integrity": "sha512-qlvQkDNVAzN647NpiJJw7GYJqE0NwK4+1evkhrQ0Xv6Qgab1EtN50G4oDr4/x/+O5pGUG2P5d3isXu+37O3RDw==",
       "dev": true,
       "requires": {
         "@electron/get": "^2.0.0",
