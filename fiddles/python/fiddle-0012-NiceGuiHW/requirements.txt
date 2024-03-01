@@ -62,7 +62,7 @@ jupyterlab_pygments==0.3.0
 jupyterlab_server==2.25.3
 langchain==0.1.9
 langchain-community==0.0.24
-langchain-core==0.1.23
+langchain-core==0.1.28
 langchain-openai==0.0.6
 langsmith==0.0.90
 markdown2==2.4.12
