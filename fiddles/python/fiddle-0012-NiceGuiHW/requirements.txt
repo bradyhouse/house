@@ -76,7 +76,7 @@ nbclient==0.9.0
 nbconvert==7.14.2
 nbformat==5.9.2
 nest-asyncio==1.6.0
-nicegui==1.4.18
+nicegui==1.4.20
 notebook==7.1.2
 notebook_shim==0.2.4
 numpy==1.26.4
