@@ -85,7 +85,7 @@ orjson==3.9.15
 overrides==7.7.0
 packaging==23.2
 pandocfilters==1.5.1
-parso==0.8.3
+parso==0.8.4
 pexpect==4.9.0
 platformdirs==4.2.0
 prometheus-client==0.19.0
