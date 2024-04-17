@@ -68,7 +68,7 @@ langsmith==0.1.48
 markdown2==2.4.13
 MarkupSafe==2.1.5
 marshmallow==3.21.1
-matplotlib-inline==0.1.6
+matplotlib-inline==0.1.7
 mistune==3.0.2
 multidict==6.0.5
 mypy-extensions==1.0.0
