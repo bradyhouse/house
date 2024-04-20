@@ -2498,5 +2498,16 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 ### 1421-python-nice-gui-vega-embed ~ [Issue 1412](https://github.com/bradyhouse/house/issues/1412)
 
-* Added [fiddles/python/fiddle-0012-NiceGuiHW](fiddles/python/fiddle-0012-NiceGuiHW)
+* **python**
+
+  1. Added [fiddles/python/fiddle-0012-NiceGuiHW](fiddles/python/fiddle-0012-NiceGuiHW)
+
+
+### 1538-vue-gojs-hello-world ~ [Issue 1538](https://github.com/bradyhouse/house/issues/1538)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0013-GoJsDragZoomHwJs](fiddles/vue/fiddle-0013-GoJsDragZoomHwJs)
+
+
 
