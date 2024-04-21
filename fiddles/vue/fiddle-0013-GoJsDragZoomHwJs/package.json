@@ -17,7 +17,7 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootswatch": "^5.2.3",
-    "gojs": "^2.3.16",
+    "gojs": "^3.0.0",
     "jquery": "^3.7.1",
     "markdown-it-vue": "^1.1.7",
     "marked": "^11.0.0",
