@@ -23,7 +23,7 @@
     "gulp-insert": "^0.5.0",
     "gulp-jsbeautifier": "^3.0.0",
     "gulp-jshint": "^2.1.0",
-    "gulp-myth": "^1.0.1",
+    "gulp-myth": "^2.0.0",
     "gulp-uglify": "^3.0.0",
     "serve-static": "^1.12.1"
   }
