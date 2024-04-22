@@ -19,7 +19,7 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "css-loader": "^6.0.0",
+    "css-loader": "^7.0.0",
     "csv-loader": "^3.0.2",
     "file-loader": "^6.0.0",
     "style-loader": "^3.0.0",
