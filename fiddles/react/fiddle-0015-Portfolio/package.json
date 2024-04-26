@@ -51,7 +51,7 @@
     "terser-webpack-plugin": "5.3.10",
     "url-loader": "4.1.1",
     "webpack": "5.91.0",
-    "webpack-dev-server": "4.15.2",
+    "webpack-dev-server": "5.0.4",
     "workbox-webpack-plugin": "7.1.0"
   },
   "scripts": {
