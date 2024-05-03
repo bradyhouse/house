@@ -106,7 +106,7 @@ python-json-logger==2.0.7
 python-multipart==0.0.9
 python-socketio==5.11.2
 PyYAML==6.0.1
-pyzmq==26.0.2
+pyzmq==26.0.3
 qtconsole==5.5.1
 QtPy==2.4.1
 referencing==0.35.1
