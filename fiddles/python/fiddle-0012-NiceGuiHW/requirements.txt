@@ -107,7 +107,7 @@ python-multipart==0.0.9
 python-socketio==5.11.2
 PyYAML==6.0.1
 pyzmq==26.0.3
-qtconsole==5.5.1
+qtconsole==5.5.2
 QtPy==2.4.1
 referencing==0.35.1
 regex==2024.4.28
