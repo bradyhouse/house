@@ -2511,3 +2511,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 
 
+* Added [fiddles/vue/fiddle-0014-Html2CanvasHw](fiddles/vue/fiddle-0014-Html2CanvasHw)
+* Added [fiddles/vue/fiddle-0014-Html2CanvasHwJs](fiddles/vue/fiddle-0014-Html2CanvasHwJs)
