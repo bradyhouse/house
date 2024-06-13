@@ -67,7 +67,7 @@ langchain-openai==0.1.6
 langsmith==0.1.74
 markdown2==2.4.13
 MarkupSafe==2.1.5
-marshmallow==3.21.2
+marshmallow==3.21.3
 matplotlib-inline==0.1.7
 mistune==3.0.2
 multidict==6.0.5
