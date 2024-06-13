@@ -89,7 +89,7 @@ parso==0.8.4
 pexpect==4.9.0
 platformdirs==4.2.2
 prometheus-client==0.20.0
-prompt-toolkit==3.0.43
+prompt-toolkit==3.0.47
 pscript==0.7.7
 psutil==5.9.8
 ptyprocess==0.7.0
