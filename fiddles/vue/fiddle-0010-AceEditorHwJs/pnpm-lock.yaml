@@ -21,8 +21,8 @@ dependencies:
     specifier: ^1.1.7
     version: 1.1.7
   marked:
-    specifier: ^12.0.0
-    version: 12.0.2
+    specifier: ^13.0.0
+    version: 13.0.0
   pinia:
     specifier: ^2.0.32
     version: 2.1.7(vue@3.2.47)
@@ -3377,8 +3377,8 @@ packages:
       uc.micro: 1.0.6
     dev: false
 
-  /marked@12.0.2:
-    resolution: {integrity: sha512-qXUm7e/YKFoqFPYPa3Ukg9xlI5cyAtGmyEIzMfW//m6kXwCy2Ps9DYf5ioijFKQ8qyuscrHoY04iJGctu2Kg0Q==}
+  /marked@13.0.0:
+    resolution: {integrity: sha512-VTeDCd9txf4KLLljUZ0nljE/Incb9SrWuueE44QVuU0pkOdh4sfCeW1Z6lPcxyDRSVY6rm8db/0OPaN75RNUmw==}
     engines: {node: '>= 18'}
     hasBin: true
     dev: false
