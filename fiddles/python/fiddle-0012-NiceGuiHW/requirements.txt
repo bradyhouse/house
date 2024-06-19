@@ -64,7 +64,7 @@ langchain==0.2.5
 langchain-community==0.2.5
 langchain-core==0.2.7
 langchain-openai==0.1.8
-langsmith==0.1.77
+langsmith==0.1.81
 markdown2==2.4.13
 MarkupSafe==2.1.5
 marshmallow==3.21.3
