@@ -184,7 +184,7 @@
 			<!-- MAVEN CLEANUP IF NOT SKIP NODEJS CLEANUP-->
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.3.2</version>
+				<version>3.4.0</version>
 				<configuration>
 					<skip>${skip.nodejs.cleanup}</skip>
 					<filesets>
