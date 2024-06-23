@@ -91,7 +91,7 @@ platformdirs==4.2.2
 prometheus-client==0.20.0
 prompt-toolkit==3.0.47
 pscript==0.7.7
-psutil==5.9.8
+psutil==6.0.0
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pycairo==1.26.1
