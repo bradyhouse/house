@@ -76,7 +76,7 @@
     "stylelint-scss": "~6.3.0",
     "ts-node": "^10.0.0",
     "tslint": "~6.1.0",
-    "typescript": "~5.4.0"
+    "typescript": "~5.5.0"
   },
   "prettier": {
     "singleQuote": true,
