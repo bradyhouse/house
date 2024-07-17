@@ -1,0 +1,32 @@
+= Python
+
+A topic that has always interested me is "web scraping" (aka "screen scraping").  Ryan Mitchell in his book,
+**Web Scraping with Python**, writes:
+
+_In theory, web scraping is the practice of gathering data through any means other than a program interacting
+with an API (or, obviously, through a human using a web browser)._
+
+**_Yes, please!_**  This directory includes a collection of fiddles (aka "pens") focusing on python.  The examples
+from Mitchell's book will serve as a starting point.  The `fiddle.sh` script can be used to extend or test drive this 
+collection. The following table outlines how.
+
+=== fiddle.sh Python Commands
+
+[cols="2,2,5a"]
+|===
+|Create
+|`./fiddle.sh "create" "python" "fiddle-0000-Template"`
+|link:create.md[sample output & additional details]
+|Delete
+|`./fiddle.sh "delete" "python" "0000"`
+|link:delete.md[sample output & additional details]
+|Fork
+|`./fiddle.sh "fork" "python" "0000" "fiddle-0001-Fork"`
+|link:fork.md[sample output & additional details]
+|List
+|`./fiddle.sh "list" "python"`
+|link:list.md[sample output & additional details]
+|Refactor
+|`./fiddle.sh "refactor" "python" "0000" "fiddle-0100-Refactor"`
+|link:refactor.md[sample output & additional details]
+|===
