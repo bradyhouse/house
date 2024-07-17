@@ -1,0 +1,156 @@
+#!/bin/bash
+# ---------------------------------------------------------------------------------------------------|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
+#  Specification           : N/A_____________________________________________________________________|
+#  Specification Path      : N/A_____________________________________________________________________|
+#  Author                  : brady house_____________________________________________________________|
+#  Create date             : 05/26/2018______________________________________________________________|
+#  Description             : UTILITY USED TO NPM-CHECK-UPDATES AGAINST A FIDDLE OR COLLECTION________|
+#  Command line Arguments  : $1 = FIDDLE TYPE $2 = FIDDLE NAME (OPTIONAL)____________________________|
+# ---------------------------------------------------------------------------------------------------|
+#  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+# ---------------------------------------------------------------------------------------------------|
+# 05/26/2018 - Baseline ~ See CHANGELOG @ 230_update_and_shrinkwrap
+# 08/01/2018 - See CHANGELOG @ 006_fiddle_react
+# 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# ---------------------------------------------------------------------------------------------------|
+source bin/_utils.sh;
+source bin/_types.sh;
+source bin/_env.sh;
+
+_os=$(echo $1);
+_app=$(echo $2);
+
+function updateFiddle() {
+  groupLog "updateFiddle";
+  _location=$(pwd;)
+  _type=$1
+  _fiddleCriteria=$2
+  _fiddlesDir=$(cd ..; cd "fiddles/${_type}"; pwd;)
+  _fiddleName=$(getFiddle "${_type}" "${_fiddleCriteria}";);
+  _fiddleDir="${_fiddlesDir}/${_fiddleName}";
+
+  case ${_type} in
+        'angular2-cli')
+            source bin/angular2-cli/_install.sh;
+            source bin/angular2-cli/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        'electron')
+            source bin/electron/_install.sh;
+            source bin/electron/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        'ember')
+            source bin/ember/_install.sh;
+            source bin/ember/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        'meteor')
+            source bin/meteor/_install.sh;
+            source bin/meteor/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        'nativescript')
+            source bin/nativescript/_install.sh;
+            source bin/nativescript/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        'node')
+            source bin/node/_install.sh;
+            source bin/node/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        'react')
+            source bin/react/_install.sh;
+            source bin/react/_update.sh;
+            update ${_fiddleDir};
+            ;;
+         'vue')
+            source bin/vue/_install.sh;
+            source bin/vue/_update.sh;
+            update ${_fiddleDir};
+            ;;
+        *)  exit 86
+            ;;
+  esac
+  cd ${_location};
+
+}
+
+function updateFiddles() {
+  groupLog "updateFiddles";
+  _location=$(pwd;)
+  _type=$1
+  _fiddlesDir=$(cd ..; cd "fiddles/${_type}"; pwd;)
+  cd ${_fiddlesDir};
+  _fiddleNamesStr="";
+  for _fiddleDir in */ .*/
+  do
+    _fiddleName=${_fiddleDir%*/};
+    case "${_fiddleName}" in
+      *fiddle*)
+        if [[ "${_fiddleNamesStr}" == "" ]]
+        then
+          _fiddleNamesStr="${_fiddleName}";
+        else
+          _fiddleNamesStr="${_fiddleNamesStr}, ${_fiddleName}";
+        fi
+      ;;
+    esac
+  done
+  cd ${_location};
+  IFS=', ' read -r -a _fiddleNames <<< "${_fiddleNamesStr}";
+  for _fiddleNamesI in "${_fiddleNames[@]}"
+  do
+     groupLog "updating ${_fiddleNamesI} ...";
+     updateFiddle "${_type}" "${_fiddleNamesI}";
+  done
+
+}
+
+#try
+(
+
+    case "$#" in
+      1)
+          updateFiddles $1 || exit $?;
+          ;;
+      2)
+          updateFiddle $1 $2 || exit $?;
+          ;;
+      *)
+           exit 86;
+          ;;
+    esac
+)
+#catch
+rc=$?
+case ${rc} in
+    0)  echo "";
+        ;;
+    86) clear
+        voidShowSlug ${thisFile};
+        echo "";
+        echo "Nope ~ Incorrect number of arguments";
+        echo "";
+        echo "Usage:";
+        echo "";
+        echo "$0 \"[t]\" \"[n]\"";
+        echo "";
+        echo "[t] - fiddle type";
+        echo "";
+        voidEchoFiddleTypes "update";
+        echo "";
+        echo "[n] - name (optional)";
+        echo "";
+        echo "";
+        ;;
+    87) groupLog "Fubar\t\"update\" failed.";
+        ;;
+    *)  groupLog "fubar! Something went wrong.";
+        ;;
+esac
+#finally
+exit ${rc}
+

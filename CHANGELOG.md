@@ -2508,8 +2508,27 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 * **vue**
 
   1.  Added [fiddles/vue/fiddle-0013-GoJsDragZoomHwJs](fiddles/vue/fiddle-0013-GoJsDragZoomHwJs)
+  2.  Added [fiddles/vue/fiddle-0014-Html2CanvasHwJs](fiddles/vue/fiddle-0014-Html2CanvasHwJs)
 
 
+### 1901-bash-init-python-project ~ [Issue 1901](https://github.com/bradyhouse/house/issues/1538)
 
-* Added [fiddles/vue/fiddle-0014-Html2CanvasHw](fiddles/vue/fiddle-0014-Html2CanvasHw)
-* Added [fiddles/vue/fiddle-0014-Html2CanvasHwJs](fiddles/vue/fiddle-0014-Html2CanvasHwJs)
+* **bash**
+
+  1.  Added [fiddles/bash/fiddle-0103-InitPythonProject](fiddles/bash/fiddle-0103-InitPythonProject)
+
+* **fiddle.sh (Enhancement)**
+
+  * Reflected changes:
+
+  1. Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+  2. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+  3. Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+  4. Updated [scripts/bin/_env.sh](scripts/bin/_env.sh)
+  5. Updated [scripts/bin/_utils.sh](scripts/bin/_utils.sh)
+  6. Added [scripts/bin/setup/mac/_pipenv.sh](scripts/bin/setup/mac/_pipenv.sh)
+  7. Added [scripts/bin/python/_install.sh](scripts/bin/python/_install.sh)
+  8. Added [scripts/bin/python/_create.sh](scripts/bin/python/_create.sh)
+  9. Added [scripts/bin/python/_start.sh](scripts/bin/python/_start.sh)
+
+

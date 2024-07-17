@@ -1,14 +1,14 @@
-fiddle-0000-Template
+{{FiddleName}}
 ======
 
 ### Title
 
-fiddle-0000-Template
+{{FiddleName}}
 
 
 ### Creation Date
 
-03-20-23
+{{BornOnDate}}
 
 
 ### Location
