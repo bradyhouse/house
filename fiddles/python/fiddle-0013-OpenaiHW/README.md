@@ -4,8 +4,8 @@ fiddle-0013-OpenaiHw
 I have an idea about how to leverage Generative AI in an application I am working on.  It is time for an    
 openai hello world fiddle. As a starting point, checkout https://platform.openai.com/docs/quickstart.       
 
-
-Note, since I am interested in using generative AI to read and summarize the contents of files, this initial fiddle should upload an image of a painting and request that a description be returned.
+Note, since I am interested in using generative AI to read and summarize the contents of files, this 
+initial fiddle should upload an image of a painting and request that a description be returned.
 
 
 ## Creation Date
