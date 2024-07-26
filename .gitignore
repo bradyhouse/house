@@ -142,3 +142,7 @@ fiddles/chef/chefignore
 fiddles/chef/kitchen.yml
 fiddles/chef/Gemfile
 fiddles/chef/test
+
+# Python
+.ipynb_checkpoints/
+.venv/
