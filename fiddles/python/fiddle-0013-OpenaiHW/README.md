@@ -20,6 +20,14 @@ Asheville, NC
 [Issue 1964](https://github.com/bradyhouse/house/issues/1964)
 
 
+## OpenAI API Key
+
+Inorder to test drive this fiddle, you will need to add a working Open AI API key 
+to the [.env](.env) file.  For direction on how to obtain a key, checkout --
+
+[https://platform.openai.com/docs/quickstart](https://platform.openai.com/docs/quickstart)
+
+
 ## Project Setup
 
 ```sh
@@ -29,15 +37,7 @@ pipenv --python 3.11
 pipenv install
 ```
 
-## OpenAI API Key
-
-Inorder to test drive this fiddle, you will need to add a working Open AI API key 
-to the [.env](.env) file.  For direction on how to obtain a key, checkout --
-
-[https://platform.openai.com/docs/quickstart](https://platform.openai.com/docs/quickstart)
-
-
-### Startup Fiddle Notebook
+## Startup Fiddle Notebook
 
 ```sh
 pipenv shell
