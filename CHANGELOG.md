@@ -2532,3 +2532,4 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   9. Added [scripts/bin/python/_start.sh](scripts/bin/python/_start.sh)
 
 
+* Added [fiddles/python/fiddle-0013-OpenaiHW](fiddles/python/fiddle-0013-OpenaiHW)
