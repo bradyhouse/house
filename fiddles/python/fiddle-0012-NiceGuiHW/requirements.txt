@@ -81,7 +81,7 @@ notebook==7.2.1
 notebook_shim==0.2.4
 numpy==2.0.1
 openai==1.37.1
-orjson==3.10.6
+orjson==3.10.7
 overrides==7.7.0
 packaging==24.1
 pandocfilters==1.5.1
