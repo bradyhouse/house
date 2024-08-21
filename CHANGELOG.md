@@ -2533,3 +2533,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 
 * Added [fiddles/python/fiddle-0013-OpenaiHW](fiddles/python/fiddle-0013-OpenaiHW)
+* Added [fiddles/vue/fiddle-0015-Vue3Context](fiddles/vue/fiddle-0015-Vue3Context)
+* Added [fiddles/vue/fiddle-0015-Vue3ContextJs](fiddles/vue/fiddle-0015-Vue3ContextJs)
