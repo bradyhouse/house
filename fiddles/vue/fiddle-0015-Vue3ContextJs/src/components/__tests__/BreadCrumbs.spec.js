@@ -5,16 +5,24 @@ import BreadCrumbs from '../BreadCrumbs.vue'
 
 describe('BreadCrumbs', () => {
   it('renders properly', () => {
-    const wrapper = mount(BreadCrumbs, { props: { crumbs: [{
-        title: 'fiddle.sh',
-        url: 'https://github.com/bradyhouse/house'
-    }, {
-        title: 'Vue',
-        url: 'https://github.com/bradyhouse/house/tree/master/fiddles/vue'
-    }, {
-        title: 'Fiddle #2 ~ Sparkline Scaling',
-        url: null
-    }] } })
+    const wrapper = mount(BreadCrumbs, {
+      props: {
+        crumbs: [
+          {
+            title: 'fiddle.sh',
+            url: 'https://github.com/bradyhouse/house'
+          },
+          {
+            title: 'Vue',
+            url: 'https://github.com/bradyhouse/house/tree/master/fiddles/vue'
+          },
+          {
+            title: 'Fiddle #2 ~ Sparkline Scaling',
+            url: null
+          }
+        ]
+      }
+    })
 
     expect(wrapper.text()).toContain('fiddle.sh')
     expect(wrapper.text()).toContain('Vue')

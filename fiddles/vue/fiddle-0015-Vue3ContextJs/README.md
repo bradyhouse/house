@@ -1,7 +1,7 @@
 fiddle-0015-Vue3ContextJs
 ======
 
-I need a Vue 3 version of VueContext, https://www.npmjs.com/package/vue-context. Given the simplicity of the package, would it be possible to just migrate it  myself.
+I need a Vue 3 version of VueContext, https://www.npmjs.com/package/vue-context. Given the simplicity of the package, would it be possible to just migrate it myself or create something that does the same thing? 
 
 
 ## Creation Date
@@ -133,9 +133,9 @@ npm run lint
 
 ## Published Version Link
 
-N/A
+[StackBlitz](https://stackblitz.com/edit/vitejs-vite-c3qmj1?file=README.md)
 
 
 ## Tags
 
-vue, vue-router, pinia, playwright, rushstack, eslint, prettier, vite, vitest
+vue, vue-router, pinia, playwright, rushstack, eslint, prettier, vite, vitest, plotly

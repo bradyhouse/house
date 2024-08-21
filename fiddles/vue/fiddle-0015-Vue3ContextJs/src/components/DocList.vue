@@ -6,19 +6,16 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 import IconPlotly from './icons/IconPlotly.vue'
-
 </script>
 
 <template>
-
   <DocListItem>
     <template #icon>
       <IconPlotly />
     </template>
-    <template #heading>
-      3rd Party Libraries
-    </template>
-    <a href="https://plotly.com/javascript/">Plotly.js</a> is an open source graphing library built on top of d3.js and stack.gl.  It is a high-level, declarative charting library.
+    <template #heading> 3rd Party Libraries </template>
+    <a href="https://plotly.com/javascript/">Plotly.js</a> is an open source graphing library built
+    on top of d3.js and stack.gl. It is a high-level, declarative charting library.
   </DocListItem>
   <DocListItem>
     <template #icon>
@@ -44,9 +41,9 @@ import IconPlotly from './icons/IconPlotly.vue'
     <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
     you need to test your components and web pages, check out
     <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank">Cypress Component Testing</a>.
-
-    More instructions are available in  <RouterLink to="/about"><code>README.md</code></RouterLink>.
+    <a href="https://on.cypress.io/component" target="_blank">Cypress Component Testing</a>. More
+    instructions are available in <RouterLink to="/about"><code>README.md</code></RouterLink
+    >.
   </DocListItem>
 
   <DocListItem>

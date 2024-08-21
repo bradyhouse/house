@@ -29,8 +29,7 @@ body {
 
 #app {
   display: grid;
-  grid-template-rows:  50px 1fr;
+  grid-template-rows: 50px 1fr;
   grid-template-columns: 1fr;
   padding: 0;
 }
-

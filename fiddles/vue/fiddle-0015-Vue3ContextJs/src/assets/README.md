@@ -1,31 +1,24 @@
-fiddle-0015-Vue3ContextJs
-======
-
+# fiddle-0015-Vue3ContextJs
 
 ## Title
 
 fiddle-0015-Vue3ContextJs
 
-
 ## Creation Date
 
 07-26-24
-
 
 ## Location
 
 Asheville, NC
 
-
 ## Issue
 
 [Issue {{issueNumber}}](https://github.com/bradyhouse/house/issues/{{issueNumber}})
 
-
 ## Description
 
 Another simple Vue fiddle.
-
 
 ## Recommended IDE Setup
 
@@ -87,7 +80,6 @@ npm run lint
 ## Published Version Link
 
 N/A
-
 
 ## Tags
 

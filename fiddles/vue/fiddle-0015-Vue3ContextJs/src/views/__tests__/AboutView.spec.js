@@ -8,11 +8,11 @@ describe('AboutView', () => {
   // Mock the global fetch function before each test
   beforeEach(() => {
     global.fetch = () => {
-        return new Promise((resolve) => {
-            resolve({
-                text: () => '# Test Markdown Content'
-            })
+      return new Promise((resolve) => {
+        resolve({
+          text: () => '# Test Markdown Content'
         })
+      })
     }
     wrapper = mount(AboutView)
   })

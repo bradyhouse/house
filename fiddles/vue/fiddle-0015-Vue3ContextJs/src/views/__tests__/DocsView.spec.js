@@ -4,18 +4,17 @@ import { mount } from '@vue/test-utils'
 import DocsView from '../DocsView.vue'
 
 describe('DocsView', () => {
-    let wrapper
+  let wrapper
 
-    beforeEach(() => {
-      wrapper = mount(DocsView)
-    })
-  
-    afterEach(() => {
-      wrapper.unmount()
-    })
-    
+  beforeEach(() => {
+    wrapper = mount(DocsView)
+  })
+
+  afterEach(() => {
+    wrapper.unmount()
+  })
+
   test('renders without errors', async ({ mount }) => {
     expect(wrapper.exists()).toBe(true)
   })
 })
-

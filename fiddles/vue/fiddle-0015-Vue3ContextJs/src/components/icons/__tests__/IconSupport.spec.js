@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import IconCommunity from '@/components/icons/IconCommunity.vue'
+import IconSupport from '@/components/icons/IconSupport.vue'
 
-describe('IconCommunity', () => {
+describe('Icon Support', () => {
   it('renders correctly', () => {
-    const wrapper = mount(IconCommunity)
+    const wrapper = mount(IconSupport)
     expect(wrapper.html()).toContain('svg')
   })
 })

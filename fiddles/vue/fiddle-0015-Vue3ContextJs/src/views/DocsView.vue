@@ -9,8 +9,7 @@ import DocList from '../components/DocList.vue'
 </template>
 
 <style scoped>
-  .welcome-main {
-    padding: 100px;
-  }
-
+.welcome-main {
+  padding: 100px;
+}
 </style>
