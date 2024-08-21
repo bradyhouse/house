@@ -2546,3 +2546,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   * Added [fiddles/python/fiddle-0014-DashCallbackHW](fiddles/python/fiddle-0014-DashCallbackHW)
 
 
+### 1977-vue-vue3-context ~ [Issue 1977](https://github.com/bradyhouse/house/issues/1977)
+
+* **vue**
+
+  1.  Added [fiddles/vue/fiddle-0015-Vue3ContextJs](fiddles/vue/fiddle-0015-Vue3ContextJs)
+
+
