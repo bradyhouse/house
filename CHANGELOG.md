@@ -2532,6 +2532,17 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   9. Added [scripts/bin/python/_start.sh](scripts/bin/python/_start.sh)
 
 
-* Added [fiddles/python/fiddle-0013-OpenaiHW](fiddles/python/fiddle-0013-OpenaiHW)
-* Added [fiddles/vue/fiddle-0015-Vue3Context](fiddles/vue/fiddle-0015-Vue3Context)
-* Added [fiddles/vue/fiddle-0015-Vue3ContextJs](fiddles/vue/fiddle-0015-Vue3ContextJs)
+### 1964_python_openai_hw_fiddle ~ [Issue 1964](https://github.com/bradyhouse/house/issues/1964)
+
+* **python**
+  
+  * Added [fiddles/python/fiddle-0013-OpenaiHW](fiddles/python/fiddle-0013-OpenaiHW)
+
+
+### 1989-python-dash-hw ~ [Issue 1989](https://github.com/bradyhouse/house/issues/1989)
+
+* **python**
+
+  * Added [fiddles/python/fiddle-0014-DashCallbackHW](fiddles/python/fiddle-0014-DashCallbackHW)
+
+

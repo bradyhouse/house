@@ -61,9 +61,9 @@
 		"grunt-contrib-csslint": "2.0.0",
 		"grunt-contrib-cssmin": "5.0.0",
 		"grunt-compare-size": "0.4.2",
-		"grunt-html": "17.0.0",
+		"grunt-html": "17.0.1",
 		"grunt-git-authors": "3.2.0",
-		"rimraf": "5.0.9",
+		"rimraf": "5.0.10",
 		"testswarm": "1.1.2"
 	},
 	"keywords": []
