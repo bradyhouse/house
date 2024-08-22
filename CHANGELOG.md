@@ -2553,3 +2553,9 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1.  Added [fiddles/vue/fiddle-0015-Vue3ContextJs](fiddles/vue/fiddle-0015-Vue3ContextJs)
 
 
+### 2050-python-qt-to-jpeg-file-converter ~ [Issue 2050](https://github.com/bradyhouse/house/issues/2050)
+
+* **Python**
+
+  1. Added [fiddles/python/fiddle-0015-QuicktimeSplitter](fiddles/python/fiddle-0015-QuicktimeSplitter)
+
