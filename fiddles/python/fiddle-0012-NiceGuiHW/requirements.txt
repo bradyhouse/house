@@ -138,7 +138,7 @@ urllib3==2.2.2
 uvicorn==0.30.6
 uvloop==0.19.0
 vbuild==0.8.2
-watchfiles==0.22.0
+watchfiles==0.23.0
 wcwidth==0.2.13
 webcolors==24.6.0
 webencodings==0.5.1
