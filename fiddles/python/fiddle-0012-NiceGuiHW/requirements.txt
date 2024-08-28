@@ -143,7 +143,7 @@ wcwidth==0.2.13
 webcolors==24.8.0
 webencodings==0.5.1
 websocket-client==1.8.0
-websockets==12.0
+websockets==13.0.1
 widgetsnbextension==4.0.13
 wsproto==1.2.0
 yarl==1.9.4
