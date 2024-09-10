@@ -1,0 +1,53 @@
+/**
+ *  composeable style Mixin that can be used for
+ *  re-calculating the height and width of a dom
+ *  element, "ref=el", so that the
+ *  values can be bound to the width, "elWidth",
+ *  and height, "elHeight", of a child component
+ *  requiring calculated dimensions.
+ */
+import { ref, watch } from 'vue'
+import { useElementSize, useWindowSize } from '@vueuse/core'
+import { debounce } from 'lodash'
+
+export default function useElementSizeMixin() {
+  const el = ref(null)
+  const elHeight = ref('100%')
+  const elWidth = ref('100%')
+
+  const { width: winWidth = ref(0), height: winHeight = ref(0) } = useWindowSize() || {}
+
+  const measureEl = debounce(() => {
+    if (el.value) { // Ensure el is defined before calling useElementSize
+      const { width, height } = useElementSize(el) || {}
+      elHeight.value = height?.value ? `${height.value - 15}px` : '100%'
+      elWidth.value = width?.value ? `${width.value}px` : '100%'
+    }
+  }, 500)
+
+  // Watch for window size changes
+  watch([winWidth, winHeight], (newValue, oldValue) => {
+    if (newValue !== oldValue) {
+      measureEl()
+    }
+  })
+
+  // Watch for changes in the element reference
+  watch(
+    el,
+    (newValue, oldValue) => {
+      if (newValue !== oldValue) {
+        measureEl()
+      }
+    },
+    { deep: true }
+  )
+
+  return {
+    el,
+    elWidth,
+    elHeight,
+    measureEl,
+  }
+}
+
