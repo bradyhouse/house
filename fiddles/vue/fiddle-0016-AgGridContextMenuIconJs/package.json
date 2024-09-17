@@ -21,7 +21,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "@vueuse/core": "^11.0.3",
     "ag-grid-community": "31.3.4",
-    "ag-grid-enterprise": "29.0.0",
+    "ag-grid-enterprise": "31.3.4",
     "ag-grid-vue3": "29.3.5",
     "bootstrap": "^5.3.3",
     "bootswatch": "^5.2.3",
