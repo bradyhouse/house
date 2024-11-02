@@ -655,7 +655,6 @@
                 "sha256:73b6e0775d41a9fee7ee756c80f58a6bed4040869ccc21411dc559818874d321",
                 "sha256:ae7f3a1b8cb88b4f55009ce79fa7c06f99d70cd63601ee4aa91815d054f46f75"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==4.2.5"
         },
@@ -800,11 +799,12 @@
         },
         "notebook": {
             "hashes": [
-                "sha256:4287b6da59740b32173d01d641f763d292f49c30e7a51b89c46ba8473126341e",
-                "sha256:f45489a3995746f2195a137e0773e2130960b51c9ac3ce257dbc2705aab3a6ca"
+                "sha256:2ef07d4220421623ad3fe88118d687bc0450055570cdd160814a59cf3a1c516e",
+                "sha256:c89264081f671bc02eec0ed470a627ed791b9156cad9285226b31611d3e9fe1c"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==7.2.1"
+            "version": "==7.2.2"
         },
         "notebook-shim": {
             "hashes": [
