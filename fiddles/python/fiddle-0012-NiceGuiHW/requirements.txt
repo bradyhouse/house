@@ -65,7 +65,7 @@ langchain-community==0.3.0
 langchain-core==0.2.39
 langchain-openai==0.2.0
 langsmith==0.1.139
-markdown2==2.5.0
+markdown2==2.5.1
 MarkupSafe==2.1.5
 marshmallow==3.22.0
 matplotlib-inline==0.1.7
