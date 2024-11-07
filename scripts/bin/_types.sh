@@ -23,6 +23,7 @@
 # 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 voidEchoFiddleTypes() {
@@ -50,6 +51,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"node\"\t\tinstall node.js\t\t\thttps://nodejs.org/en/";
            echo -e "\t\"nvm\"\t\tinstall nvm\t\t\thttps://github.com/creationix/nvm";
            echo -e "\t\"php\"\t\tinstall PHP\t\t\thttps://secure.php.net/";
+           echo -e "\t\"sencha\"\tinstall sencha\t\t\thttps://www.sencha.com/";
            echo -e "\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
            echo -e "\t\"tree\"\t\tinstall tree\t\t\thttp://mama.indstate.edu/users/ice/tree/";
            echo -e "\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
@@ -57,7 +59,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"virtualbox\"\tinstall virtual box\t\thttps://www.virtualbox.org/";
            echo -e "\t\"yarn\"\t\tinstall yarn\t\t\thttps://yarnpkg.com/lang/en/";
            echo -e "\t\"zsh\"\t\tinstall zsh\t\t\thttp://ohmyz.sh/";
-           echo -e "\t\"vue\"\t\tinstall create-vue\t\t\thttps://github.com/vuejs/create-vue#readme";
+           echo -e "\t\"vue\"\t\tinstall vue\t\t\thttps://github.com/vuejs/create-vue#readme";
            
            echo -e "";
            echo -e "\t\"frontend\"\tinstall frontend packages:";
@@ -71,7 +73,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
            echo -e "\t\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
            echo -e "\t\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
-           echo -e "\t\t\"vue\"\tinstall create-vue\t\thttps://github.com/vuejs/create-vue#readme";
+           echo -e "\t\t\"vue\"\t\tinstall vue\t\t\thttps://github.com/vuejs/create-vue#readme";
 
           ;;
         'combine')
@@ -95,8 +97,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
             echo -e "\t\"dojo\"\t\t\tDojo Fiddle";
             echo -e "\t\"ember\"\t\t\tEmber Fiddle";
-            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle";
-            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle";
+            echo -e "\t\"extjs \"\t\tExt JS Fiddle";
             echo -e "\t\"meteor\"\t\tMeteor Fiddle";
             echo -e "\t\"react\"\t\t\tReact Fiddles";
             echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles";
@@ -154,8 +155,7 @@ voidEchoFiddleTypes() {
             echo -e "\t\"dojo\"\t\t\tDojo Fiddle";
             echo -e "\t\"electron\"\t\tElectron Fiddle";
             echo -e "\t\"ember\"\t\t\tEmber Fiddle";
-            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddle";
-            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddle";
+            echo -e "\t\"extjs\"\t\t\tExt JS Fiddle";
             echo -e "\t\"meteor\"\t\tMeteor Fiddle";
             echo -e "\t\"nativescript\"\t\tNativeScript Fiddle";
             echo -e "\t\"php\"\t\t\tPHP Fiddle";

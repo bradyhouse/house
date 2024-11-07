@@ -57,7 +57,7 @@ function install() {
     0) endLog "Done.";
        echo -e "Pipenv installed successfully.";
         ;;
-    *) endLog "foo-bar! Something went wroVue."
+    *) endLog "foo-bar! Something went wrong."
         ;;
   esac
   #finally

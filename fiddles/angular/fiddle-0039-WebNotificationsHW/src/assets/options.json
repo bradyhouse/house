@@ -1,0 +1,37 @@
+{
+  "dir": "ltr",
+  "body": "Notification content",
+  "tag": "tag-1",
+  "image": "/resources/large-cat.jpg",
+  "icon": "/resources/icons/4.png",
+  "badge": "/resources/icons/11.png",
+  "vibrate": [10000],
+  "timestamp": 1592220320063,
+  "renotify": false,
+  "actions": [{
+    "action": 0,
+    "title": "Maybe",
+    "icon": "/resources/icons/question.png"
+  }, {
+    "action": 1,
+    "title": "Yes",
+    "icon": "/resources/icons/check.png"
+  }, {
+    "action": 2,
+    "title": "No",
+    "icon": "/resources/icons/cross.png"
+  }],
+  "silent": false,
+  "persistent": true,
+  "requireInteraction": true,
+  "sticky": false,
+  "notificationCloseEvent": false,
+  "data": {
+    "options": {
+      "action": "default",
+      "close": true,
+      "notificationCloseEvent": false,
+      "url": "https://tests.peter.sh/notification-generator/"
+    }
+  }
+}

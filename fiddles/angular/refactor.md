@@ -1,7 +1,7 @@
-Angular (refactor)
+Angular2 CLI (refactor)
 ======
 
-Executing the command `./fiddle.sh "refactor" "angular" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces
+Executing the command `./fiddle.sh "refactor" "angular2-cli" "0000" "fiddle-0100-Refactor"` from the `scripts` directory produces
 the following output.
 
     H o u s e
@@ -15,14 +15,11 @@ the following output.
     
     FIDDLE.SH
     FIDDLE-REFACTOR.SH
-    FIDDLE-INDEX.SH
-    09-28-16
-    Done. All "angular" fiddles have been re-indexed.
+    Password:
     Refactor process completed successfully.
     "fiddle-0000-Template" is now "fiddle-0100-Refactor".
 
 
-Note, when an `angular` fiddle is `refactored`, the `fiddle.sh index angular` command is automatically initiated.  This 
-command will add a reference to the fiddle to the root angular [index.html](index.html) page.
+
 
 

@@ -14,9 +14,12 @@ bin/*
 
 # test kitchen
 .kitchen/
-.kitchen.local.yml
+kitchen.local.yml
 
-# Chef
+# Chef Infra
 Berksfile.lock
 .zero-knife.rb
 Policyfile.lock.json
+
+.idea/
+

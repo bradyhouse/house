@@ -19,6 +19,7 @@
 # 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 07/09/2024 - See CHANGELOG @ 1901_python_init
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -83,6 +84,10 @@ function setup() {
                  ;;
               'php')
                  source bin/setup/mac/_php.sh;
+                 install || exit $?;
+                 ;;
+              'sencha')
+                 source bin/setup/mac/_sencha.sh;
                  install || exit $?;
                  ;;
               'yarn')

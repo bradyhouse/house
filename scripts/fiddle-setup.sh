@@ -12,6 +12,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # 02/11/2017 - Baseline Ver ~ See CHANGELOG @ 201702110420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -21,6 +22,22 @@ source bin/setup/_setup.sh;
 _os=$(echo $1);
 _app=$(echo $2);
 
+voidDisplayUsage() {
+    voidShowSlug ${thisFile};
+    echo "";
+    echo "Nope ~ Incorrect number of arguments";
+    echo "";
+    echo "Usage:";
+    echo "";
+    echo "$0 \"[o]\" \"[a]\"";
+    echo "";
+    echo "[o] - operating system. Valid operating systems include: mac";
+    echo "";
+    echo "[a] - application. Valid applications include:";
+    echo "";
+    voidEchoFiddleTypes "setup";
+    echo "";
+}
 
 
 #try
@@ -32,22 +49,10 @@ _app=$(echo $2);
 rc=$?
 case ${rc} in
     0)  echo "";
+        rc="";
         ;;
-    86) clear
-        voidShowSlug ${thisFile};
-        echo "";
-        echo "Nope ~ Incorrect number of arguments";
-        echo "";
-        echo "Usage:";
-        echo "";
-        echo "$0 \"[o]\" \"[a]\"";
-        echo "";
-        echo "[o] - operating system. Valid operating systems include: mac";
-        echo "";
-        echo "[a] - application. Valid applications include:";
-        echo "";
-        voidEchoFiddleTypes "setup";
-        echo "";
+    86) voidDisplayUsage | more;
+        rc="";
         ;;
     87) groupLog "Fubar\t\"setup\" of \"${_app}\" for \"${_os}\" failed.";
         ;;

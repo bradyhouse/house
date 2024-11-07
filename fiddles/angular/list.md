@@ -1,8 +1,7 @@
-Angular (list)
+Angular2 CLI (list)
 ======
 
-Executing the command `./fiddle.sh "list" "angular"` from the `scripts` directory produces the following output.
-
+Executing the command `./fiddle.sh "list" "angular2-cli"` from the `scripts` directory produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -16,33 +15,17 @@ Executing the command `./fiddle.sh "list" "angular"` from the `scripts` director
     FIDDLE-LIST.SH
     
     --------------------------------------------------------
-    ANGULAR FIDDLES
+    ANGULAR2-CLI FIDDLES
     --------------------------------------------------------
     
     fiddle-0000-Template
-    fiddle-0001-SimpleUIGrid
-    fiddle-0002-ResizeableAgGrid
-    fiddle-0003-PhoneCatIntro
-    fiddle-0004-PhoneCatStep0
-    fiddle-0005-PhoneCatStep1
-    fiddle-0006-PhoneCatStep2
-    fiddle-0007-FullTextSearch
-    fiddle-0008-2WayDatabinding
-    :
-    
-Use the `up` and `down` arrow keys to scroll up or down the list. Once you reach the bottom, the total count will
-be displayed.
-
-
-    fiddle-0009-PhoneCatStep5
-    fiddle-0010-PhoneCatStep6
-    fiddle-0011-PhoneCatStep7
-    fiddle-0012-PhoneCatStep8
-    fiddle-0013-PhoneCatStep9
-    fiddle-0014-PhoneCatStep10
-    fiddle-0015-PhoneCatStep11
-    fiddle-0016-PhoneCatStep12
-    fiddle-0018-CustomTransclusion
+    fiddle-0001-GenerateRoute
+    fiddle-0002-GeneratePipe
+    fiddle-0038-ComponentResolver
     
     --------------------------------------------------------
-    Total:  18
+    Total:  4
+    
+    
+Note, if (or when) the list grows longer exceeding the height of the terminal screen, then the `up` and `down` arrow 
+keys to scroll up or down the list. 

@@ -1,9 +1,8 @@
-Angular (fork)
+Angular2 CLI (fork)
 ======
 
-Executing the command `./fiddle.sh "fork" "angular" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces
+Executing the command `./fiddle.sh "fork" "angular2-cli" "0000" "fiddle-0100-Fork"` from the `scripts` directory produces
 the following output.
-
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -16,10 +15,10 @@ the following output.
     
     FIDDLE.SH
     FIDDLE-FORK.SH
-    FIDDLE-INDEX.SH
-    09-27-16
-    Done. All "angular" fiddles have been re-indexed.
-    Done. The "../../fiddles/angular/fiddle-0100-Fork" directory has been initialized.
+    Done. The "../../fiddles/angular2-cli/fiddle-0100-Fork" directory has been initialized.
+    
+
+
 
 
 

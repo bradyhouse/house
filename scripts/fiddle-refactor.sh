@@ -33,6 +33,7 @@
 # 10/03/2019 - See CHANGELOG @ 313_node_31to40
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # 07/09/2024 - See CHANGELOG @ 1901_python_init
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 echo "$0" | sed 's/\.\///g' | awk '{print toupper($0)}';
 source bin/_utils.sh
@@ -66,19 +67,19 @@ changeLogFile="../${CHANGE_LOG}"
   fi
 
   case ${fiddleType} in
-    'android' | 'angular2-cli' | 'c' | 'ember' | 'electron' | 'java' | 'javac' | 'meteor' | 'nativescript' | 'react' | 'vue' | 'python' )
+    'android' | 'angular' | 'c' | 'ember' | 'electron' | 'java' | 'javac' | 'meteor' | 'nativescript' | 'react' | 'vue' | 'python' )
         if [[ -f "${altNewReadmeFile}" ]]
         then
             $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
         fi
         ;;
-    'angular' | 'compass' | 'docker' | 'extjs5' | 'extjs6' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
+    'compass' | 'docker' | 'extjs' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
         if [[ -f "${newIndexFile}" ]]
         then
             $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
         fi
         case ${fiddleType} in
-            'angular' | 'compass' | 'extjs5' | 'extjs6' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
+            'compass' | 'extjs' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 89;
             ;;
         esac

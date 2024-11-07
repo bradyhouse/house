@@ -42,8 +42,7 @@ function fiddleIndexAll() {
     fiddleIndex 'compass' || exit $?;
     fiddleIndex 'd3' || exit $?;
     fiddleIndex 'dojo' || exit $?;
-    fiddleIndex 'extjs5' || exit $?;
-    fiddleIndex 'extjs6' || exit $?;
+    fiddleIndex 'extjs' || exit $?;
     fiddleIndex 'jquery' || exit $?;
     fiddleIndex 'rxjs' || exit $?;
     fiddleIndex 'react' || exit $?;

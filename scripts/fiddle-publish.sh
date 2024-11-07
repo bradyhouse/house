@@ -16,6 +16,7 @@
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 04/11/2019 - See CHANGELOG @ 300_react_15
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_env.sh;
@@ -132,7 +133,7 @@ function publishDist() {
 
 function publishAll() {
 
-    rmrf angular2-cli;
+    rmrf angular;
     rmrf three;
     rmrf extjs5;
     rmrf extjs6;
@@ -150,7 +151,7 @@ function publishAll() {
 
     cd ${_sourcePath};
 
-    cprfdist angular2-cli;
+    cprfdist angular;
     cprf three;
     cprf extjs5;
     cprf extjs6;
