@@ -27,6 +27,7 @@
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # 09/17/2023 - See CHANGELOG @ 1139-debug-fiddle-buildpublish-vue
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -75,7 +76,7 @@ esac
     if [[ -d "${fiddleDir}" ]]
     then
       case ${type} in
-          'vue'|'react'|'angular'|'angular2-cli'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
+          'vue'|'react'|'angular'|'compass''extjs'|'php'|'rxjs'|'jquery'|'three'|'d3'|'tween'|'svg')
               case ${type} in
                   'php') fiddleName=$(echo "$fiddleNameStub.php";)
                       ;;

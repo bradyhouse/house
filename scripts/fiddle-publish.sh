@@ -135,10 +135,8 @@ function publishAll() {
 
     rmrf angular;
     rmrf three;
-    rmrf extjs5;
-    rmrf extjs6;
+    rmrf extjs;
     rmrf d3;
-    rmrf dojo;
     rmrf jquery;
     rmrf tween;
     rmrf svg;
@@ -153,10 +151,8 @@ function publishAll() {
 
     cprfdist angular;
     cprf three;
-    cprf extjs5;
-    cprf extjs6;
+    cprf extjs;
     cprf d3;
-    cprf dojo;
     cprf jquery;
     cprf tween;
     cprf svg;
@@ -185,7 +181,7 @@ function publishAll() {
   cd ${_publishPath};
 
   case $1 in
-    'angular2-cli' | 'react' | 'vue')
+    'angular' | 'react' | 'vue')
       publishDist $1;
       ;;
     'all')

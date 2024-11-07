@@ -37,7 +37,6 @@ and frameworks:
 |link:fiddles/compass[Compass]
 |link:fiddles/d3[D3]
 |link:fiddles/docker[Docker]
-|link:fiddles/dojo[Dojo]
 |link:fiddles/electron[Electron]
 |link:fiddles/ember[Ember]
 |link:fiddles/extjs[ExtJS]

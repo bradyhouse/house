@@ -73,13 +73,13 @@ changeLogFile="../${CHANGE_LOG}"
             $(voidSubstr "${fiddleName}" "${newName}" "${altNewReadmeFile}";) || exit 91;
         fi
         ;;
-    'compass' | 'docker' | 'extjs' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'dojo' | 'chrome' | 'node' | 'tween' | 'svg' )
+    'compass' | 'docker' | 'extjs' | 'jquery' | 'meteor' | 'three' | 'php' | 'rxjs' | 'chrome' | 'node' | 'tween' | 'svg' )
         if [[ -f "${newIndexFile}" ]]
         then
             $(voidSubstr "${fiddleName}" "${newName}" "${newIndexFile}";) || exit 91;
         fi
         case ${fiddleType} in
-            'compass' | 'extjs' | 'jquery' | 'three' | 'php' | 'rxjs' | 'dojo' | 'd3' | 'tween' | 'svg' )
+            'compass' | 'extjs' | 'jquery' | 'three' | 'php' | 'rxjs' | 'd3' | 'tween' | 'svg' )
                 ./fiddle-index.sh ${fiddleType} || exit 89;
             ;;
         esac

@@ -127,11 +127,6 @@ voidEchoUsage() {
             source bin/docker/_create.sh;
             create $2 || exit 105;
             ;;
-        'dojo')
-            source bin/dojo/_create.sh;
-            create $2 || exit 91;
-            ./fiddle-index.sh "dojo" || exit 91
-            ;;
         'electron')
             source bin/electron/_install.sh;
             source bin/electron/_create.sh;

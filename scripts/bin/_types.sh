@@ -78,8 +78,7 @@ voidEchoFiddleTypes() {
           ;;
         'combine')
             echo -e "\t\"d3\"\t\tData Driven Document Fiddle"
-            echo -e "\t\"extjs5\"\tExt JS 5 Fiddle"
-            echo -e "\t\"extjs6\"\tExt JS 6 Fiddle"
+            echo -e "\t\"extjs\"\t\tExt JS Fiddle"
             echo -e "\t\"jquery\"\tjQuery / Bootstrap Fiddle"
             echo -e "\t\"three\"\t\three.js / WebGl Fiddle"
             echo -e "\t\"svg\"\t\tScalar Vector Graphic Fiddle"
@@ -95,7 +94,6 @@ voidEchoFiddleTypes() {
         'index')
             echo -e "\t\"angular\"\t\tAngular Fiddles";
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
-            echo -e "\t\"dojo\"\t\t\tDojo Fiddle";
             echo -e "\t\"ember\"\t\t\tEmber Fiddle";
             echo -e "\t\"extjs \"\t\tExt JS Fiddle";
             echo -e "\t\"meteor\"\t\tMeteor Fiddle";
@@ -117,10 +115,8 @@ voidEchoFiddleTypes() {
         'publish')
             echo -e "\t\"angular\"\t\tAngular Fiddles";
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddles";
-            echo -e "\t\"dojo\"\t\t\tDojo Fiddles";
             echo -e "\t\"ember\"\t\t\tEmber Fiddles";
-            echo -e "\t\"extjs 5\"\t\tExt JS 5 Fiddles";
-            echo -e "\t\"extjs 6\"\t\tExt JS 6 Fiddles";
+            echo -e "\t\"extjs\"\t\tExt JS Fiddles";
             echo -e "\t\"meteor\"\t\tMeteor Fiddles";
             echo -e "\t\"react\"\t\t\tReact Fiddles";
             echo -e "\t\"rxjs\"\t\t\tRxJS Fiddles";
@@ -152,7 +148,6 @@ voidEchoFiddleTypes() {
             echo -e "\t\"compass\"\t\tCompass Fiddle";
             echo -e "\t\"d3\"\t\t\tData Driven Document Fiddle";
             echo -e "\t\"docker\"\t\tDocker Fiddle";
-            echo -e "\t\"dojo\"\t\t\tDojo Fiddle";
             echo -e "\t\"electron\"\t\tElectron Fiddle";
             echo -e "\t\"ember\"\t\t\tEmber Fiddle";
             echo -e "\t\"extjs\"\t\t\tExt JS Fiddle";

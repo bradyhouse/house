@@ -2571,13 +2571,6 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **fiddle.sh (Maintenance)**
   
-  * Chef ~ Reflected changes:
-  
-    1.  Updated [scripts/bin/setup/mac/_chef.sh](scripts/bin/setup/mac/_chef.sh)
-    2.  Updated [scripts/bin/chef/_create.sh](scripts/bin/chef/_create.sh)
-    3.  Updated [scripts/bin/setup/mac/_vagrant.sh](scripts/bin/setup/mac/_vagrant.sh)
-    4.  Updated [scripts/bin/setup/mac/_virtualbox.sh](scripts/bin/setup/mac/_virtualbox.sh)
-
   * Angular ~ Reflected changes:
 
     1.  Removed [fiddles/angular]
@@ -2592,6 +2585,22 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     10. Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
     11. Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
     12. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+    13. Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+    14. Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+    15. Updated [scripts/fiddle-update.sh](scripts/fiddle-update.sh)
+    16. Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+
+  * Chef ~ Reflected changes:
+  
+    1.  Updated [scripts/bin/setup/mac/_chef.sh](scripts/bin/setup/mac/_chef.sh)
+    2.  Updated [scripts/bin/chef/_create.sh](scripts/bin/chef/_create.sh)
+    3.  Updated [scripts/bin/setup/mac/_vagrant.sh](scripts/bin/setup/mac/_vagrant.sh)
+    4.  Updated [scripts/bin/setup/mac/_virtualbox.sh](scripts/bin/setup/mac/_virtualbox.sh)
+
+  * Dojo ~ Reflected changes:
+    
+    1.  Removed [fiddles/dojo](fiddles/dojo)
+    2.  Removed [scripts/bin/dojo](scripts/bin/dojo)
 
   * Ext ~ Reflected changes:
 
