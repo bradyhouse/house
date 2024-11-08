@@ -17,12 +17,10 @@
 function installVirtualBox() {
   groupLog "installVirtualBox";
   installed=$(isInstalled "virtualbox";);
-  isArm64=$(is64Bit);
 
   if [[ "${installed}" == "false" ]]
   then
-      if [[ ${isArm64} ]]
-      then 
+      if is64Bit; then 
         arch -arm64 brew install virtualbox --cask;
       else 
         brew install virtualbox --cask;

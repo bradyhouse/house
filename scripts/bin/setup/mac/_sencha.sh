@@ -16,18 +16,20 @@
 function installSencha() {
   groupLog "installSencha";
   installed=$(isInstalled "sencha";);
-  isArm64=$(is64Bit);
 
   if [[ "${installed}" == "false" ]]
   then
-      if [[ ${isArm64} ]]
-      then 
+      if is64Bit; then
         arch -arm64 brew install sencha --cask;
       else 
         brew install sencha --cask;
       fi
   fi
-  echo 1;
+}
+
+function testSencha() {
+  groupLog "testSencha";
+  sencha which;
 }
 
 function install() {
@@ -35,6 +37,7 @@ function install() {
   #try
   (
    installSencha || exit $?;
+   testSencha || exit $?;
   )
   #catch
   _rc=$?

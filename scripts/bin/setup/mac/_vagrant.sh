@@ -17,12 +17,10 @@
 function installVagrant() {
   groupLog "installVagrant";
   installed=$(isInstalled "vagrant";);
-  isArm64=$(is64Bit);
-
+  
   if [[ "${installed}" == "false" ]]
   then
-      if [[ ${isArm64} ]]
-      then 
+      if is64Bit; then
         arch -arm64 brew install vagrant --cask;
       else 
         brew install vagrant --cask;

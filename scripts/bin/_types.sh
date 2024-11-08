@@ -39,6 +39,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"android\"\tinstall android-sdk\t\thttps://developer.android.com";
            echo -e "\t\"bash\"\\t\tinstall fiddle command line";
            echo -e "\t\"brew\"\t\tinstall homebrew\t\thttp://brew.sh/";
+           echo -e "\t\"compass\"\tinstall compass\t\t\thttp://beta.compass-style.org";
            echo -e "\t\"chef\"\t\tinstall chef\t\t\thttp://chef.io";
            echo -e "\t\"gh\"\t\tinstall github terminal\t\thttps://www.npmjs.com/package/gh";
            echo -e "\t\"gradle\"\tinstall gradle\t\t\thttps://gradle.org/";
@@ -47,7 +48,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\"meteor\"\tinstall meteor\t\t\thttps://www.meteor.com/";
            echo -e "\t\"nativescript\"\tinstall nativeScript\t\thttps://www.npmjs.com/package/nativescript";
            echo -e "\t\"ncu\"\t\tinstall npm-check-updates\thttps://www.npmjs.com/package/npm-check-updates";
-           echo -e "\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
+           echo -e "\t\"angular\"\tinstall angular2-cli\t\thttps://cli.angular.io/";
            echo -e "\t\"node\"\t\tinstall node.js\t\t\thttps://nodejs.org/en/";
            echo -e "\t\"nvm\"\t\tinstall nvm\t\t\thttps://github.com/creationix/nvm";
            echo -e "\t\"php\"\t\tinstall PHP\t\t\thttps://secure.php.net/";
@@ -70,7 +71,7 @@ voidEchoFiddleTypes() {
            echo -e "\t\t\"live-server\"\tinstall live-server\t\thttps://www.npmjs.com/package/live-server";
            echo -e "\t\t\"meteor\"\tinstall meteor\t\t\thttps://www.meteor.com/";
            echo -e "\t\t\"nativescript\"\tinstall nativeScript\t\thttps://www.npmjs.com/package/nativescript";
-           echo -e "\t\t\"ng\"\t\tinstall angular2-cli\t\thttps://cli.angular.io/";
+           echo -e "\t\t\"angular\"\tinstall angular2-cli\t\thttps://cli.angular.io/";
            echo -e "\t\t\"shrinkwrap\"\tinstall shrinkwrap\t\thttps://www.npmjs.com/package/shrinkwrap";
            echo -e "\t\t\"typescript\"\tinstall typeScript\t\thttps://www.npmjs.com/package/typescript";
            echo -e "\t\t\"vue\"\t\tinstall vue\t\t\thttps://github.com/vuejs/create-vue#readme";

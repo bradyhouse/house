@@ -14,6 +14,7 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG.MARKDOWN ~ 201605020420
 # 01/24/2018 - See CHANGELOG @ aurelia-dependencies-update
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 function nvmInstall() {
@@ -67,6 +68,6 @@ function ngInstall() {
     if [[ "${installed}" == "false" ]]
     then
       os=$(getOS;);
-      ./fiddle.sh "setup" "${os}" "ng";
+      ./fiddle.sh "setup" "${os}" "angular";
     fi
 }

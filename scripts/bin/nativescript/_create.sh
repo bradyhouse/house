@@ -17,6 +17,7 @@
 # 11/26/2016 - See CHANGELOG @ 201610010420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
 # 11/24/2018 - See CHANGELOG @ 265_nativescript_14
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -64,7 +65,6 @@ function initJsProject() {
   then
     nativescript platform add android || exit 9;
   fi
-  npmShrinkWrap || exit $?;
 }
 
 function npmInstall() {
@@ -94,7 +94,6 @@ function initNg2Project() {
     nativescript platform add android || exit 9;
   fi
   createTypingsRcFile || exit $?;
-  npmShrinkWrap || exit $?;
 }
 
 function nativescriptCreate() {
@@ -188,14 +187,14 @@ function create() {
   fi
   fiddleSubDir="../fiddles/nativescript/$1";
   bornOnDate=$(date +"%m-%d-%y";)
-
+  
   # try
   (
       nvmInstall || exit $?;
-      shrinkWrapInstall || exit $?;
       typescriptInstall || exit 1;
       nativescriptInstall || exit 2;
       adbInstall || exit 8;
+      if [[ -d "${fiddleSubDir}" ]]; then rm -R "${fiddleSubDir}"; fi
       projectName=$(toLowerCase $(parseName $1;);) || exit 9;
       groupLog "App Name: ";
       echo "\"${projectName}\"";
