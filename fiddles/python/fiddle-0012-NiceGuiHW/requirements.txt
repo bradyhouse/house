@@ -70,7 +70,7 @@ MarkupSafe==2.1.5
 marshmallow==3.22.0
 matplotlib-inline==0.1.7
 mistune==3.0.2
-multidict==6.0.5
+multidict==6.1.0
 mypy-extensions==1.0.0
 nbclient==0.10.0
 nbconvert==7.16.4
