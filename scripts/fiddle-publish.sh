@@ -25,6 +25,15 @@ source bin/_types.sh;
 _publishPath="${GITHUB_ROOT}/${GITHUB_PUBLISH_REPO}";
 _sourcePath="${GITHUB_ROOT}/${GITHUB_ROOT_DIR}/fiddles";
 _commitMessage="${BUILD_NUM}";
+_publishRootIndex="${_publishPath}/index.html";
+_sourceRootIndex="${_sourcePath}/index.html";
+
+function publishRootIndex() {
+  if [ -e ${_publishRootIndex} ] && [ -e ${_sourceRootIndex} ]; then
+    rm ${_publishRootIndex};
+    cp ${_sourceRootIndex} ${_publishRootIndex};
+  fi
+}
 
 function isPublishPath() {
   if [[ ! -d ${_publishPath} ]]
@@ -190,6 +199,8 @@ function publishAll() {
     *) publish $1;
       ;;
   esac
+
+
 )
 #catch
 rc=$?

@@ -2571,6 +2571,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
 * **fiddle.sh (Maintenance)**
   
+  * Android ~ Reflected changes:
+
+    1.  Updated [scripts/bin/setup/mac/_android.sh](scripts/bin/setup/mac/_android.sh)
+    2.  
+
   * Angular ~ Reflected changes:
 
     1.  Removed [fiddles/angular]

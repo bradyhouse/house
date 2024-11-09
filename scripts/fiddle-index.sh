@@ -59,9 +59,11 @@ fiddleNameStub=$(echo "index";)
 binDir=$(echo "$location/bin";)
 bornOnDate=$(date +"%m-%d-%y";)
 fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
+fiddleRootDir=$(cd ..; cd "fiddles"; pwd;)
+indexRootFile=$(echo "${fiddleRootDir}/index.html";)
 
 case ${type} in
-   'vue'|'react'|'angular2-cli'|'aurelia')
+   'vue'|'react'|'angular')
     fiddleDir="${fiddleDir}/dist";
     indexFile=$(echo "${fiddleDir}/index.html";)
     ;;
@@ -76,13 +78,13 @@ esac
     if [[ -d "${fiddleDir}" ]]
     then
       case ${type} in
-          'vue'|'react'|'angular'|'compass''extjs'|'php'|'rxjs'|'jquery'|'three'|'d3'|'tween'|'svg')
+          'vue'|'react'|'angular'|'compass'|'extjs'|'php'|'rxjs'|'jquery'|'three'|'d3'|'tween'|'svg')
               case ${type} in
                   'php') fiddleName=$(echo "$fiddleNameStub.php";)
                       ;;
                   'python') fiddleName=$(echo "fiddle.py";)
                       ;;
-                  'angular2-cli')
+                  'angular')
                       fiddleName="#";
                       ;;
                   'vue')
@@ -109,6 +111,9 @@ esac
               cat tpl/indexfooter >> $indexFile
               $(voidSubstr "{{FiddleType}}" "${type}" "${indexFile}";) || exit 86
               $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexFile}";) || exit 86
+
+              cat tpl/index-root-tpl > $indexRootFile
+              $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexRootFile}";) || exit 86
               ;;
           *)  exit 87
               ;;
