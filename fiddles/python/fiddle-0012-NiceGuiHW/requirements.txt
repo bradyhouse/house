@@ -110,7 +110,7 @@ pyzmq==26.2.0
 qtconsole==5.5.2
 QtPy==2.4.2
 referencing==0.35.1
-regex==2024.7.24
+regex==2024.11.6
 requests==2.32.3
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
