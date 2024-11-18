@@ -170,7 +170,7 @@ soupsieve==2.6
 SQLAlchemy==2.0.36
 stack-data==0.6.3
 <<<<<<< HEAD
-starlette==0.38.5
+starlette==0.40.0
 =======
 starlette==0.41.2
 >>>>>>> master
