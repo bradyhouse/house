@@ -1,6 +1,6 @@
 aiofiles==24.1.0
 <<<<<<< HEAD
-aiohttp==3.10.5
+aiohttp==3.10.11
 =======
 aiohttp==3.11.2
 >>>>>>> master
