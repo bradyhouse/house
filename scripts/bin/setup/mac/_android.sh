@@ -12,18 +12,28 @@
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 201702110420
 # 05/26/2018 - See CHANGELOG @ 230_update_and_shrinkwrap
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
-
-function brewTapCaskRoom() {
-  groupLog "brewTapCaskRoom";
-  brew tap caskroom/cask;
-}
-
 
 function installAndroid() {
   groupLog "installAndroid";
   brew cask install android-sdk;
 }
+
+function installAndroid() {
+  groupLog "installAndroid";
+  installed=$(isInstalled "sencha";);
+
+  if [[ "${installed}" == "false" ]]
+  then
+      if is64Bit; then
+        arch -arm64 brew install sencha --cask;
+      else 
+        brew install sencha --cask;
+      fi
+  fi
+}
+
 
 function updateBashProfile() {
   groupLog "updateBashProfile";
@@ -59,7 +69,6 @@ function install() {
   groupLog "install";
   #try
   (
-    brewTapCaskRoom || exit $?;
     installAndroid || exit $?;
     updateBashProfile || exit $?;
     updateZshrcProfile || exit $?;

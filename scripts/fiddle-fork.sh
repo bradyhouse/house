@@ -39,6 +39,7 @@
 # 01/05/2018 - See CHANGELOG @ 279_nativescript_17
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # 07/09/2024 - See CHANGELOG @ 1901_python_init
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
@@ -183,7 +184,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             fi
 
             ;;
-         'angular2-cli' | 'electron' | 'ember' | 'extjs6' | 'jquery' | 'meteor')
+         'angular' | 'electron' | 'ember' | 'extjs' | 'jquery' | 'meteor')
             updateFile "../fiddles/${fiddleType}/${targetFiddle}/README.md" ${fiddleName} ${targetFiddle} || exit $?;
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
@@ -201,7 +202,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
             $(echo  "" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             $(echo "[${fiddleName}](../${fiddleName})" >> "../fiddles/${fiddleType}/${targetFiddle}/README.md";) || exit 93
             ;;
-        'angular'| 'compass' | 'extjs5' | 'php' | 'd3' | 'dojo' | 'tween' | 'chrome')
+        'compass' | 'php' | 'd3' | 'dojo' | 'tween' | 'chrome')
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/index.html"  ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/app.js" ${fiddleName} ${targetFiddle} || exit $?;
             updateFile "../../fiddles/${fiddleType}/${targetFiddle}/README.markdown" ${fiddleName} ${targetFiddle} || exit $?;
@@ -252,7 +253,7 @@ forkedOnDate=$(date +"%m-%d-%y";)
     fi
 
     case ${fiddleType} in
-        'angular'|'angular2'|'compass'|'extjs5'|'extjs6'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'tween'|'svg')
+        'angular'|'compass'|'extjs'|'jquery'|'three'|'dojo'|'d3'|'rxjs'|'tween'|'svg')
             ./fiddle-index.sh ${fiddleType} || exit 95;
             ;;
         'chrome')

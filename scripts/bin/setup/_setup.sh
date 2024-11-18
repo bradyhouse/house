@@ -19,6 +19,7 @@
 # 11/10/2018 - See CHANGELOG @ 263_node_fiddle_29
 # 11/21/2018 - See CHANGELOG @ 262_add_chef_setup
 # 07/09/2024 - See CHANGELOG @ 1901_python_init
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 function setup() {
@@ -73,8 +74,8 @@ function setup() {
                 source bin/setup/mac/_meteor.sh;
                 install || exit $?;
                 ;;
-              'ng')
-                 source bin/setup/mac/_ng.sh;
+              'angular')
+                 source bin/setup/mac/_angular.sh;
                  install || exit $?;
                  ;;
               'ncu')
@@ -83,6 +84,10 @@ function setup() {
                  ;;
               'php')
                  source bin/setup/mac/_php.sh;
+                 install || exit $?;
+                 ;;
+              'sencha')
+                 source bin/setup/mac/_sencha.sh;
                  install || exit $?;
                  ;;
               'yarn')
@@ -113,6 +118,10 @@ function setup() {
                 source bin/setup/mac/_typescript.sh;
                 install || exit $?;
                 ;;
+              'compass')
+                source bin/setup/mac/_compass.sh;
+                install || exit $?;
+                ;;
               'chef')
                 source bin/setup/mac/_chef.sh;
                 install || exit $?;
@@ -136,6 +145,7 @@ function setup() {
                 install || exit $?;
                 ;;
               'frontend')
+                setup ${_os} "angular" || exit $?;
                 setup ${_os} "gh" || exit $?;
                 setup ${_os} "ncu" || exit $?;
                 setup ${_os} "js-beautify" || exit $?;
@@ -145,6 +155,8 @@ function setup() {
                 setup ${_os} "ng" || exit $?;
                 setup ${_os} "shrinkwrap" || exit $?;
                 setup ${_os} "typescript" || exit $?;
+                setup ${_os} "vue" || exit $?;
+                setup ${_os} "sencha" || exit $?;
                 ;;
                *) exit 86;
                 ;;

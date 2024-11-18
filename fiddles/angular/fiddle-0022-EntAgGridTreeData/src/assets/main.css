@@ -1,0 +1,31 @@
+.ag-header,
+.ag-header-viewport {
+  display: none !important;
+}
+
+input[type="text"], textarea {
+  padding: 7px 10px;
+  font-size: 14px;
+  background: #000;
+  color: lime;
+  border: none;
+}
+
+textarea:focus, 
+input:focus {
+  outline: none;
+}
+
+.ag-tree-grid {
+  zoom: 150%;
+}
+
+.ag-tree-grid-filter {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border: none;
+  outline: none;
+  --webkit-input-placeholder: white;
+  zoom: 150%;
+}

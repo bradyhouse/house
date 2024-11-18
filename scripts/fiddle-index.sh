@@ -27,6 +27,7 @@
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # 09/17/2023 - See CHANGELOG @ 1139-debug-fiddle-buildpublish-vue
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 echo $(echo "$0" | sed 's/\.\///g') | awk '{print toupper($0)}';
 source bin/_utils.sh;
@@ -58,9 +59,11 @@ fiddleNameStub=$(echo "index";)
 binDir=$(echo "$location/bin";)
 bornOnDate=$(date +"%m-%d-%y";)
 fiddleDir=$(cd ..; cd "fiddles/${type}"; pwd;)
+fiddleRootDir=$(cd ..; cd "fiddles"; pwd;)
+indexRootFile=$(echo "${fiddleRootDir}/index.html";)
 
 case ${type} in
-   'vue'|'react'|'angular2-cli'|'aurelia')
+   'vue'|'react'|'angular')
     fiddleDir="${fiddleDir}/dist";
     indexFile=$(echo "${fiddleDir}/index.html";)
     ;;
@@ -75,13 +78,13 @@ esac
     if [[ -d "${fiddleDir}" ]]
     then
       case ${type} in
-          'vue'|'react'|'angular'|'angular2-cli'|'compass'|'extjs5'|'extjs6'|'php'|'rxjs'|'jquery'|'three'|'d3'|'dojo'|'tween'|'svg')
+          'vue'|'react'|'angular'|'compass'|'extjs'|'php'|'rxjs'|'jquery'|'three'|'d3'|'tween'|'svg')
               case ${type} in
                   'php') fiddleName=$(echo "$fiddleNameStub.php";)
                       ;;
                   'python') fiddleName=$(echo "fiddle.py";)
                       ;;
-                  'angular2-cli')
+                  'angular')
                       fiddleName="#";
                       ;;
                   'vue')
@@ -108,6 +111,9 @@ esac
               cat tpl/indexfooter >> $indexFile
               $(voidSubstr "{{FiddleType}}" "${type}" "${indexFile}";) || exit 86
               $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexFile}";) || exit 86
+
+              cat tpl/index-root-tpl > $indexRootFile
+              $(voidSubstr "{{BornOnDate}}" "${bornOnDate}" "${indexRootFile}";) || exit 86
               ;;
           *)  exit 87
               ;;

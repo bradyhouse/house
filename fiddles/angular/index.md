@@ -1,7 +1,7 @@
-Angular (index)
+Angular2 CLI (index)
 ======
 
-Executing the command `./fiddle.sh "index" "angular"` from the `scripts` directory produces the following output.
+Executing the command `./fiddle.sh "index" "angular2-cli"` from the `scripts` directory produces the following output.
 
     H o u s e
     oooooooooooo  o8o        .o8        .o8  oooo
@@ -15,9 +15,12 @@ Executing the command `./fiddle.sh "index" "angular"` from the `scripts` directo
     FIDDLE.SH
     FIDDLE-INDEX.SH
     09-27-16
-    Done. All "angular" fiddles have been re-indexed.
+    Done. All "angular-cli" fiddles have been re-indexed.
 
 
-This command rebuilds the [index.html](index.html) page based on the angular fiddle collection. Provided the fiddle
-is not listed in the [.gitignore](../../.gitignore) file, a link to the fiddle's index.html page is added.
+This command rebuilds the [dist/index.html](dist/index.html) page based on the angular2 cli fiddles that
+have been built and added to the root [dist](dist) directory.  Provided the fiddle is not listed in the [.gitignore](../../.gitignore) 
+file and includes a root `index.html` file, then a link to dist version of the fiddle is added to the page. For additional 
+information regarding the build process, see the [build info and details page](build.md).  
+
 

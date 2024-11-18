@@ -13,6 +13,7 @@
 # 05/26/2018 - Baseline ~ See CHANGELOG @ 230_update_and_shrinkwrap
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -31,7 +32,7 @@ function updateFiddle() {
   _fiddleDir="${_fiddlesDir}/${_fiddleName}";
 
   case ${_type} in
-        'angular2-cli')
+        'angular')
             source bin/angular2-cli/_install.sh;
             source bin/angular2-cli/_update.sh;
             update ${_fiddleDir};
