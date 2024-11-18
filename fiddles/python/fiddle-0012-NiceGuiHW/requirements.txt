@@ -83,7 +83,7 @@ langchain-community==0.2.19
 langchain-core==0.2.39
 langchain-openai==0.1.22
 langsmith==0.1.117
-markdown2==2.5.0
+markdown2==2.5.1
 =======
 langchain==0.3.7
 langchain-community==0.3.7
