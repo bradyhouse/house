@@ -17,6 +17,7 @@
 # 03/02/2016 - See CHANGELOG @ 201603020420
 # 04/16/2016 - See CHANGELOG @ 201604160420
 # 05/18/2016 - See CHANGELOG @ 201605180420
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 source bin/_utils.sh
@@ -63,7 +64,7 @@ function listSourceFiles() {
         cat "src/sequence.conf" | sed -e 's/^[[:space:]]*//';
     else
         case $1 in
-            'extjs6' | 'extjs5' )
+            'extjs' )
                 if [[ -e "src/sequence.conf" ]]
                 then
                     cat "src/sequence.conf" | sed -e 's/^[[:space:]]*//';
@@ -92,7 +93,7 @@ function initAppFile() {
     fi
 
     case ${type} in
-	    'extjs6' | 'extjs5' )
+	    'extjs' )
             if [[ -e "src/meta.js" ]]
             then
                 cat "src/meta.js" > "${appFile}";
@@ -143,7 +144,7 @@ function completeAppFile() {
     groupLog "completeAppFile";
 
     case ${type} in
-	    'extjs6' | 'extjs5' )
+	    'extjs' )
             if [[ -e "src/init.js" ]]
             then
                 cat "src/init.js" >> "${appFile}"
@@ -254,7 +255,7 @@ srcDir="${fiddlePath}/src"
             appFileName=app.js;
             exit 0;
 	        ;;
-	    'aurelia' | 'd3' | 'extjs5' | 'extjs6' | 'svg' | 'jquery' | 'three' )
+	    'aurelia' | 'd3' | 'extjs' | 'svg' | 'jquery' | 'three' )
 	        if [[ ! -d "${srcDir}" ]]; then exit 87; fi
             cd ${fiddlePath};
             createAppFile "${fiddleType}" "${appFileName}" "${useClosure}" || exit $?;

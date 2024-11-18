@@ -36,6 +36,7 @@
 # 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
 # 07/09/2024 - See CHANGELOG @ 1901_python_init
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_types.sh;
@@ -96,9 +97,9 @@ function startServer() {
             isAndroidInstalled || exit 110;
             androidStart || exit 111;
             ;;
-        'angular2-cli')
-            source bin/angular2-cli/_install.sh;
-            source bin/angular2-cli/_start.sh;
+        'angular')
+            source bin/angular/_install.sh;
+            source bin/angular/_start.sh;
             cd ${_fiddleRoot};
             installed=$(isNgInstalled;);
             if [[ "${installed}" == "false" ]]; then exit 97; fi

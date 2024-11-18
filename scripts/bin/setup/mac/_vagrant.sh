@@ -11,24 +11,39 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 262_add_chef_setup
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 function installVagrant() {
   groupLog "installVagrant";
   installed=$(isInstalled "vagrant";);
+  
   if [[ "${installed}" == "false" ]]
   then
-    brew cask install vagrant;
+      if is64Bit; then
+        arch -arm64 brew install vagrant --cask;
+      else 
+        brew install vagrant --cask;
+      fi
   fi
+  return $?;
 }
 
 function installVagrantManager() {
   groupLog "installVagrantManager";
-  installed=$(isInstalled "VBoxManage";);
-  if [[ "${installed}" == "false" ]]
+  installed=$(brew list | grep vagrant-manager;);
+  isArm64=$(is64Bit);
+
+  if [[ "${installed}" != *"vagrant-manager"* ]]
   then
-    brew cask install vagrant-manager;
+      if [[ ${isArm64} ]]
+      then 
+        arch -arm64 brew install vagrant-manager --cask;
+      else 
+        brew install vagrant-manager --cask;
+      fi
   fi
+  return $?;
 }
 
 function install() {

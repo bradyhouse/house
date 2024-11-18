@@ -16,6 +16,10 @@
   "author": "bradyhouse@gmail.com",
   "license": "MIT",
   "devDependencies": {
+<<<<<<< HEAD
+    "electron": "^33.0.2"
+=======
     "electron": "32.2.3"
+>>>>>>> master
   }
 }

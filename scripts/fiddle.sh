@@ -24,6 +24,7 @@
 # 11/30/2018 - See CHANGELOG @ 272_add_fiddle_stop
 # 04/11/2019 - See CHANGELOG @ 300_react_15
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 clear;
 source bin/_utils.sh;
@@ -41,9 +42,7 @@ function fiddleIndexAll() {
     fiddleIndex 'aurelia' || exit $?;
     fiddleIndex 'compass' || exit $?;
     fiddleIndex 'd3' || exit $?;
-    fiddleIndex 'dojo' || exit $?;
-    fiddleIndex 'extjs5' || exit $?;
-    fiddleIndex 'extjs6' || exit $?;
+    fiddleIndex 'extjs' || exit $?;
     fiddleIndex 'jquery' || exit $?;
     fiddleIndex 'rxjs' || exit $?;
     fiddleIndex 'react' || exit $?;

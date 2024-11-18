@@ -11,15 +11,22 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 262_add_chef_setup
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 function installVirtualBox() {
   groupLog "installVirtualBox";
   installed=$(isInstalled "virtualbox";);
+
   if [[ "${installed}" == "false" ]]
   then
-    brew cask install virtualbox;
+      if is64Bit; then 
+        arch -arm64 brew install virtualbox --cask;
+      else 
+        brew install virtualbox --cask;
+      fi
   fi
+  return $?;
 }
 
 

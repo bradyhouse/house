@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "fiddle-0000-Template",
-  "description": "fiddle-0000-Template - 12-11-16",
+  "description": "fiddle-0000-Template - 11-06-24",
   "version": "1.0",
   "browser_action": {
     "default_icon": "resources/images/icon.png",

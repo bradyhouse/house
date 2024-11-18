@@ -2567,4 +2567,65 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   1. Added [fiddles/vue/fiddle-0016-AgGridContextMenuIconJs](fiddles/vue/fiddle-0016-AgGridContextMenuIconJs)
 
 
+### 2147-fiddlesh-cleanup-maintenance ~ [Issue 2147](https://github.com/bradyhouse/house/issues/2147)
+
+* **fiddle.sh (Maintenance)**
+  
+  * Android ~ Reflected changes:
+
+    1.  Updated [scripts/bin/setup/mac/_android.sh](scripts/bin/setup/mac/_android.sh)
+    2.  
+
+  * Angular ~ Reflected changes:
+
+    1.  Removed [fiddles/angular]
+    2.  Renamed [fiddles/angular2-cli] to [fiddles/angular](fiddles/angular)
+    3.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+    4.  Renamed [scripts/bin/setup/mac/_ng.sh] to [scripts/bin/setup/mac/_angular.sh](scripts/bin/setup/mac/_angular.sh)
+    5.  Updated [scripts/bin/setup/mac/_angular.sh](scripts/bin/setup/mac/_angular.sh)
+    6.  Updated [scripts/bin/angular/_install.sh](scripts/bin/angular/_install.sh)
+    7.  Updated [scripts/bin/angular/_create.sh](scripts/bin/angular/_create.sh)
+    8.  Updated [scripts/bin/angular/_build.sh](scripts/bin/angular/_build.sh)
+    9.  Updated [scripts/fiddle-create.sh](scripts/fiddle-create.sh)
+    10. Updated [scripts/fiddle-start.sh](scripts/fiddle-start.sh)
+    11. Updated [scripts/fiddle-delete.sh](scripts/fiddle-delete.sh)
+    12. Updated [scripts/fiddle-refactor.sh](scripts/fiddle-refactor.sh)
+    13. Updated [scripts/fiddle-fork.sh](scripts/fiddle-fork.sh)
+    14. Updated [scripts/fiddle-build.sh](scripts/fiddle-build.sh)
+    15. Updated [scripts/fiddle-publish.sh](scripts/fiddle-publish.sh)
+    16. Updated [scripts/fiddle-index.sh](scripts/fiddle-index.sh)
+    17. Updated [scripts/fiddle-list.sh](scripts/fiddle-list.sh)
+    18. Updated [scripts/fiddle-update.sh](scripts/fiddle-update.sh)
+    19. Updated [scripts/fiddle.sh](scripts/fiddle.sh)
+  
+  * Compass ~ Reflected changes:
+
+    1.  Added [scripts/bin/setup/mac/_compass.sh](scripts/bin/setup/mac/_compass.sh)
+
+  * Chef ~ Reflected changes:
+
+    2.  Updated [scripts/bin/setup/mac/_chef.sh](scripts/bin/setup/mac/_chef.sh)
+    3.  Updated [scripts/bin/chef/_create.sh](scripts/bin/chef/_create.sh)
+    4.  Updated [scripts/bin/setup/mac/_vagrant.sh](scripts/bin/setup/mac/_vagrant.sh)
+    5.  Updated [scripts/bin/setup/mac/_virtualbox.sh](scripts/bin/setup/mac/_virtualbox.sh)
+
+  * Dojo ~ Reflected changes:
+    
+    1.  Removed [fiddles/dojo](fiddles/dojo)
+    2.  Removed [scripts/bin/dojo](scripts/bin/dojo)
+
+  * Ext ~ Reflected changes:
+
+    1.  Removed [fiddles/extjs5]
+    2.  Renamed [fiddles/extjs6] to [fiddles/extjs](fiddles/extjs)
+    3.  Added [scripts/bin/setup/mac/_sencha.sh](scripts/bin/setup/mac/_sencha.sh)
+    4.  Updated [scripts/bin/_types.sh](scripts/bin/_types.sh)
+    5.  Updated [scripts/bin/setup/_setup.sh](scripts/bin/setup/_setup.sh)
+    6.  Updated [scripts/fiddle-setup.sh](scripts/fiddle-setup.sh)
+    7.  Updated [scripts/fiddle-combine.sh](scripts/fiddle-combine.sh)
+
+  * NativeScript ~ Reflected changes:
+
+    1.  Updated [scripts/bin/setup/mac/_abd.sh](scripts/bin/setup/mac/_abd.sh)
+    2.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
 

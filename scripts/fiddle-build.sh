@@ -16,6 +16,7 @@
 # 08/01/2018 - See CHANGELOG @ 006_fiddle_react
 # 04/11/2019 - See CHANGELOG @ 300_react_15
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -33,8 +34,8 @@ function buildFiddle() {
   _fiddlesDir=$(cd ..; cd "fiddles/${_type}"; pwd;)
   _fiddleName=$(getFiddle "${_type}" "${_fiddleCriteria}";);
   case ${_type} in
-        'angular2-cli')
-            source bin/angular2-cli/_build.sh;
+        'angular')
+            source bin/angular/_build.sh;
             build ${_fiddleName} || exit $?;
             ;;
         'react')

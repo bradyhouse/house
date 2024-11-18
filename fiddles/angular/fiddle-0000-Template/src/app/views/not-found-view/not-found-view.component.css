@@ -1,0 +1,19 @@
+.img-block {
+    max-width: 85%;
+    display: inline-block;
+}
+
+@media(max-width:355px) {
+
+    img {
+        transform: rotate(90deg);
+        width: 100%;
+    }
+
+    .img-block {
+        padding-top: 300px;
+        max-width: 355px;
+        display: inline-block;
+
+    }
+}

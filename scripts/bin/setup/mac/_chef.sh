@@ -11,15 +11,24 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - CHANGELOG @ 262_add_chef_setup
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 function installChef() {
   groupLog "installChef";
   installed=$(isInstalled "chef";);
+  isArm64=$(is64Bit);
+
   if [[ "${installed}" == "false" ]]
   then
-      brew cask install chef/chef/chefdk;
+      if [[ ${isArm64} ]]
+      then 
+        arch -arm64 brew install chef/chef/chefdk --cask;
+      else 
+        brew install chef/chef/chefdk --cask;
+      fi
   fi
+  return $?;
 }
 
 function isZshrc() {

@@ -37,6 +37,7 @@
 # 10/03/2019 - See CHANGELOG @ 313_node_31to40
 # 08/13/2022 - See CHANGELOG @ 420_fiddle-sh_react_typescript
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 
 this=$0;
@@ -45,6 +46,23 @@ source bin/_utils.sh;
 source bin/_env.sh;
 source bin/_types.sh;
 
+voidEchoUsage() {
+    voidShowTitle ${thisFile};
+    echo ""
+    echo "Nope ~ Incorrect number of arguments"
+    echo ""
+    echo "Usage:"
+    echo ""
+    echo "$0 \"[t]\" \"[n]\""
+    echo ""
+    echo "[t] - type. Valid types include: "
+    echo ""
+    voidEchoFiddleTypes;
+    echo ""
+    echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
+    echo ""
+    echo ""
+}
 
 #try
 (
@@ -65,12 +83,8 @@ source bin/_types.sh;
             create $2 || exit 107;
             ;;
         'angular')
+            source bin/angular/_install.sh;
             source bin/angular/_create.sh;
-            create $2 || exit 87;
-            ;;
-        'angular2-cli')
-            source bin/angular2-cli/_install.sh;
-            source bin/angular2-cli/_create.sh;
             create $2 || exit 87;
             ;;
         'ant')
@@ -113,11 +127,6 @@ source bin/_types.sh;
             source bin/docker/_create.sh;
             create $2 || exit 105;
             ;;
-        'dojo')
-            source bin/dojo/_create.sh;
-            create $2 || exit 91;
-            ./fiddle-index.sh "dojo" || exit 91
-            ;;
         'electron')
             source bin/electron/_install.sh;
             source bin/electron/_create.sh;
@@ -128,12 +137,8 @@ source bin/_types.sh;
             source bin/ember/_create.sh;
             create $2 || exit 103;
             ;;
-        'extjs5')
-            source bin/extjs5/_create.sh;
-            create $2 || exit 87;
-            ;;
-        'extjs6')
-            source bin/extjs6/_create.sh;
+        'extjs')
+            source bin/extjs/_create.sh;
             create $2 || exit 87;
             ./fiddle-combine.sh $1 $2 || exit 87;
             ;;
@@ -223,21 +228,8 @@ _rc=$?
 case ${_rc} in
     0)  echo ""
         ;;
-    86) voidShowTitle ${thisFile};
-        echo ""
-        echo "Nope ~ Incorrect number of arguments"
-        echo ""
-        echo "Usage:"
-        echo ""
-        echo "$0 \"[t]\" \"[n]\""
-        echo ""
-        echo "[t] - type. Valid types include: "
-        echo ""
-        voidEchoFiddleTypes;
-        echo ""
-        echo "[n] - fiddle Name.  For example: \"fiddleParabolaSurface\""
-        echo ""
-        echo ""
+    86) voidEchoUsage | more;
+        rc="";
         ;;
     87) echo "fubar! fiddle creation failed."
         ;;

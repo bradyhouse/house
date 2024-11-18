@@ -1,7 +1,7 @@
-Angular (delete)
+Angular2 CLI (delete)
 ======
 
-Executing the command `./fiddle.sh "delete" "angular" "0100"` from the `scripts` produces the following output.
+Executing the command `./fiddle.sh "delete" "angular2-cli" "0000"` from the `scripts` directory produces the following output.
 
         H o u s e
         oooooooooooo  o8o        .o8        .o8  oooo
@@ -15,8 +15,8 @@ Executing the command `./fiddle.sh "delete" "angular" "0100"` from the `scripts`
         FIDDLE.SH
         FIDDLE-DELETE.SH
         
-        fiddle type:	angular
-        fiddle name:	fiddle-0100-Fork
+        fiddle type:	angular2-cli
+        fiddle name:	fiddle-0000-Template
         
         Are you sure you want to delete this fiddle? [Y/n]
 
@@ -24,11 +24,5 @@ Executing the command `./fiddle.sh "delete" "angular" "0100"` from the `scripts`
 Enter `Y` and press [Enter].  This will produce the following output:
 
 
-        FIDDLE-INDEX.SH
-        09-27-16
-        Done. All "angular" fiddles have been re-indexed.
-        The "fiddle-0100-Fork" angular fiddle has been deleted successfully.
+        The "fiddle-0000-Template" angular2-cli fiddle has been deleted successfully.
 
-
-Note, when an `angular` fiddle is deleted, the `fiddle.sh index angular` command is automatically initiated.  This 
-command will remove the reference to the fiddle from the root angular [index.html](index.html) page.

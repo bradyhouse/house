@@ -11,12 +11,20 @@
 #  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
 # ---------------------------------------------------------------------------------------------------|
 # Baseline Ver - See CHANGELOG @ 230_update_and_shrinkwrap
+# Baseline Ver - CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
-
 
 function installAbd() {
   groupLog "installAbd";
-  brew cask install android-platform-tools || exit 1;
+  _home=$(cd ~; pwd);
+  if [[ ! -d "${_home}/Library/Android/sdk/platform-tools" ]]
+  then
+      if is64Bit; then
+        arch -arm64 brew install android-platform-tools --cask;
+      else 
+        brew install android-platform-tools --cask;
+      fi
+  fi
 }
 
 function install() {

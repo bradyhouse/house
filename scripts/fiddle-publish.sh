@@ -16,6 +16,7 @@
 # 08/04/2018 - See CHANGELOG @ 006_fiddle_react
 # 04/11/2019 - See CHANGELOG @ 300_react_15
 # 03/30/2023 - See CHANGELOG @ 723-add-vuejs-support
+# 09/12/2024 - See CHANGELOG @ 2147-fiddlesh-cleanup-maintenance
 # ---------------------------------------------------------------------------------------------------|
 source bin/_utils.sh;
 source bin/_env.sh;
@@ -24,6 +25,15 @@ source bin/_types.sh;
 _publishPath="${GITHUB_ROOT}/${GITHUB_PUBLISH_REPO}";
 _sourcePath="${GITHUB_ROOT}/${GITHUB_ROOT_DIR}/fiddles";
 _commitMessage="${BUILD_NUM}";
+_publishRootIndex="${_publishPath}/index.html";
+_sourceRootIndex="${_sourcePath}/index.html";
+
+function publishRootIndex() {
+  if [ -e ${_publishRootIndex} ] && [ -e ${_sourceRootIndex} ]; then
+    rm ${_publishRootIndex};
+    cp ${_sourceRootIndex} ${_publishRootIndex};
+  fi
+}
 
 function isPublishPath() {
   if [[ ! -d ${_publishPath} ]]
@@ -132,12 +142,10 @@ function publishDist() {
 
 function publishAll() {
 
-    rmrf angular2-cli;
+    rmrf angular;
     rmrf three;
-    rmrf extjs5;
-    rmrf extjs6;
+    rmrf extjs;
     rmrf d3;
-    rmrf dojo;
     rmrf jquery;
     rmrf tween;
     rmrf svg;
@@ -150,12 +158,10 @@ function publishAll() {
 
     cd ${_sourcePath};
 
-    cprfdist angular2-cli;
+    cprfdist angular;
     cprf three;
-    cprf extjs5;
-    cprf extjs6;
+    cprf extjs;
     cprf d3;
-    cprf dojo;
     cprf jquery;
     cprf tween;
     cprf svg;
@@ -184,7 +190,7 @@ function publishAll() {
   cd ${_publishPath};
 
   case $1 in
-    'angular2-cli' | 'react' | 'vue')
+    'angular' | 'react' | 'vue')
       publishDist $1;
       ;;
     'all')
@@ -193,6 +199,8 @@ function publishAll() {
     *) publish $1;
       ;;
   esac
+
+
 )
 #catch
 rc=$?
