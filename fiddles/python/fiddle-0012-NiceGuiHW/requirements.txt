@@ -122,7 +122,7 @@ pexpect==4.9.0
 <<<<<<< HEAD
 platformdirs==4.2.2
 prometheus-client==0.20.0
-prompt-toolkit==3.0.47
+prompt-toolkit==3.0.48
 =======
 platformdirs==4.3.6
 prometheus-client==0.21.0
