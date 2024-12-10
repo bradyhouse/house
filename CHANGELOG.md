@@ -2629,3 +2629,5 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1.  Updated [scripts/bin/setup/mac/_abd.sh](scripts/bin/setup/mac/_abd.sh)
     2.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
 
+* Added [fiddles/vue/fiddle-0017-AgGridWrapper](fiddles/vue/fiddle-0017-AgGridWrapper)
+* Added [fiddles/vue/fiddle-0017-AgGridWrapperTs](fiddles/vue/fiddle-0017-AgGridWrapperTs)

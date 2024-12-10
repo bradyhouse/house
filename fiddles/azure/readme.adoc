@@ -1,0 +1,15 @@
+= Microsoft Azure
+
+The name "Azure" was chosen for Microsoft's cloud platform to convey a new attitude and the open-ended, flexible nature of the service. "Azure" refers to a shade of sky blue, which creates a strong visual association with the concept of a cloud-based platform, aligning with the idea of cloud computing. This name was developed to appeal to both professional and consumer audiences, helping to reshape perceptions of Microsoft's capabilities in web technologies.
+
+The average salary of a certified __Azure Solution Architect__ in the USA is approximately $160,000 annually, but can with experience reach as high as $200,000 annually. In general, these positions are remote. Having failed in my attempt to maintain my salary being a web / frontend developer working remotely for startups, redefining myself professionally as an Azure expert seems like a worth while goal.
+
+In order to become an Azure Solution Architect, one must pass the link:https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/?practice-assessment-type=certification[AZ-104] and link: https://learn.microsoft.com/en-us/credentials/certifications/azure-solutions-architect/[AZ-305] exams.
+ 
+This directory is dedicated to my notes and `fiddles` involving Microsoft Azure with the goal of passing both of these exams. As a result, these studies are broken down into two parts, aka sub-directories: 
+
+    * link:az-104/readme.adoc[__AZ-104 Microsoft Azure Administrator__ Exam Prep]
+    * link:az-305/readme.adoc[__AZ-305 Designing Microsoft Azure Infrastructure Solutions__ Exam Prep]
+
+At the outset, this just means markdown files written while watching lectures/labs on link:https://github.com/ACloudGuru[acloud.guru]. 
+

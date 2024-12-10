@@ -1,0 +1,228 @@
+= AZ-104 
+
+I finally finished my bachelor's degree in 2015.  At 40 I graduated Cum Laude from the Illinois Institute of
+Technology's Information and Technology Management program.  The achievement took nearly eight years of
+my life and cost over 80K.  In hindsight, I wish I would have just spent that time (and money) studying and
+mastering AWS.  Anyway, life goes on and here we are--making-up for lost time. This directory is
+dedicated to my notes and `fiddles` involving AWS.  At the outset, this just means markdown files written
+while watching lectures/labs on link:https://github.com/ACloudGuru[acloud.guru]. Note, aside from purchasing the
+`AWS Certified Solutions Architect - Associate` course on cloud guru, all of my studies have been
+done using an link:https://aws.amazon.com/free/[AWS free tier account].
+
+
+=== Flash Card Indicator
+
+In the list below, some lectures (and labs) fall into the category of __just memorize it__.  To highlight this
+distinction the markdown file link is designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=20] emoji.
+This means that my notes include an additional `iFlash Card` formatted file based on the material covered. These files
+can be imported the into the `iFlash Card` desktop App and then published to an iphone or ipad for `on-the-go` review.
+For more information see the xref:flash-card-strategy[Flash Card Strategy Section] below.
+
+
+== Lecture / Lab Notes
+
+[cols=">s,m", width="100%"]
+|=========================================================
+2+>| **Intro**
+||link:overview.md[10,000 Foot Overview]
+||link:dont-freakout.md[Don't Freakout]
+2+>| **IAM**
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/iam/iam.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:iam/iam.md[IAM 101]
+||link:iam/billing-alarm.md[Creating a Billing Alarm]
+||link:https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file#9717[White Paper - What is a PEM File ...]
+2+>| **S3**
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/s3/s3.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:s3/s3.md[S3 101]
+||link:s3/s3-versioning.md[S3 Versioning]
+||link:s3/s3-lifecycle.md[Life Cycle Management]
+||link:s3/s3-encryption.md[Encryption]
+||link:s3/s3-static-website.md[Static Website Hosting]
+||link:s3/s3-exam-tips.md[Exam Tips]
+2+>| **CloudFront**
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/cloudfront/cloudfront.md#cloudfront-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:cloudfront/cloudfront.md[CloudFront 101]
+||link:cloudfront/cloudfront-create-a-cdn.md[Create a Distribution]
+||link:cloudfront/cloudfront-exam-tips.md[Exam Tips]
+2+>| **Storage Gateway**
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/storage-gateway/storage-gateway.md#storage-gateway-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:storage-gateway/storage-gateway.md[Storage Gateway 101]
+||link:storage-gateway/storage-gateway-exam-tips.md[Exam Tips]
+2+>| **Snowball**
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/snowball/snowball.md#snowball-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:snowball/snowball.md[Snowball 101]
+||link:snowball/snowball-exam-tips.md[Exam Tips]
+2+>| **EC2**
+||link:ec2/ec2-101-pt1.md[EC2 101 - Part 1]
+||link:ec2/ec2-101-pt2.md[EC2 101 - Part 2]
+||link:ec2/ec2-instance-lab.md[EC2 Instance Lab]
+||link:ec2/ec2-security-groups-lab.md[EC2 Security Groups Lab]
+||link:ec2/ec2-ebs-volumes-lab.md[EC2 EBS Volumes Lab]
+||link:ec2/ec2-encrypted-root-lab.md[EC2 Encrypted Root Volume Lab]
+||link:ec2/ec2-ami-types.md[EC2 AMI Types: EBS vs Instance Store]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/ec2/ec2-elastic-load-balancer-theory.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:ec2/ec2-elastic-load-balancer-theory.md[EC2 Elastic Load Balancer Theory]
+||link:ec2/ec2-elastic-load-balancer-lab.md[EC2 Elastic Load Balancer Lab]
+||link:ec2/ec2-cloudwatch-lab.md[EC2 Cloudwatch Lab]
+||link:ec2/ec2-commandline-lab.md[AWS Commandline Lab]
+||link:ec2/ec2-iam-roles-lab.md[EC2 IAM Roles Lab]
+||link:ec2/ec2-s3-regions-lab.md[EC2 S3 CLI and Regions Lab]
+||link:ec2/ec2-bash-scripting-lab.md[EC2 Bash Scripting Lab]
+||link:ec2/ec2-instance-metadata.md[EC2 Instance Metadata]
+||link:ec2/ec2-auto-scaling-groups-lab.md[EC2 Auto Scaling Groups Lab]
+||link:ec2/ec2-placement-groups.md[EC2 Placement Groups]
+||link:ec2/ec2-efs-lab.md[EC2 EFS Lab]
+||link:ec2/ec2-lambda.md[EC2 Lambda]
+||link:ec2/ec2-serverless-webpage-lab.md[EC2 Serverless Webpage Lab]
+||link:ec2/ec2-using-polly-lab-pt1.md[Using Polly To Pass Your Exam Lab (Part 1)]
+||link:ec2/ec2-using-polly-lab-pt2.md[Using Polly to Pass Your Exam Lab (Part 2)]
+||link:ec2/ec2-alexa-skill-lab.md[Alexa Skill Lab]
+||link:ec2/ec2-exam-tips.md[EC2 Exam Tips]
+||link:https://aws.amazon.com/ec2/faqs/[EC2 FAQ]
+||link:https://aws.amazon.com/elasticloadbalancing/faqs/[ELB FAQ for Classic Load Balancer]
+2+>| **Route53**
+||link:route53/route53-dns-101.md[Route53 DNS 101]
+||link:route53/route53-register-domain-lab.md[Route53 Register Domain Name Lab]
+||link:route53/route53-setup-ec2-instances-lab.md[Route 53 Setup EC2 Instances Lab]
+||link:route53/route53-simple-routing-policy-lab.md[Route 53 Simple Routing Policy Lab]
+||link:route53/route53-weighted-routing-policy-lab.md[Route 53 Weighted Routing Policy Lab]
+||link:route53/route53-latency-routing-policy-lab.md[Route 53 Latency Routing Policy Lab]
+||link:route53/route53-failover-routing-policy-lab.md[Route 53 Failover Routing Policy Lab]
+||link:route53/route53-geolocation-routing-policy-lab.md[Route 53 Geolocation Routing Policy Lab]
+||link:route53/route53-exam-tips[Route 53 Exam Tips]
+||link:https://dnsmadeeasy.com/services/anamerecords/[White Paper - ANAME Records]
+2+>| **Databases**
+||link:databases/databases-101.md[Databases 101]
+||link:databases/databases-rds-instance-lab.md[Databases RDS Instance Lab]
+||link:databases/databases-rds-backups-replicas.md[Databases Backups, Multi-AZ & Read Replicas]
+||link:databases/databases-dynamodb.md[Databases DynamoDB]
+||link:databases/databases-redshift.md[Databases Redshift]
+||link:databases/databases-elasticache.md[Databases ElastiCache]
+||link:databases/databases-aurora.md[Databases Aurora]
+||link:https://aws.amazon.com/products/databases/[White Paper - Amazon's Database Products]
+||link:https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html[White Paper - Using the Apply Immediately Parameter]
+2+>| **VPC**
+||link:vpc/vpc-101.md[VPC 101]
+||link:vpc/vpc-lab-part-1.md[VPC Lab Part 1]
+||link:vpc/vpc-lab-part-2.md[VPC Lab Part 2]
+||link:vpc/vpc-nat-gateway-lab.md[VPC NAT Instances & NAT Gateway Lab]
+||link:vpc/vpc-network-acl-lab.md[VPC Network ACL Lab]
+||link:vpc/vpc-load-balancer-lab.md[VPC Load Balancer Lab]
+||link:vpc/vpc-flow-logs-lab.md[VPC Flow Logs Lab]
+||link:vpc/vpc-nat-vs-bastion.md[VPC NAT vs Bastion Servers]
+||link:vpc/vpc-end-point-lab.md[VPC End Points Lab]
+||link:vpc/vpc-cleanup-lab.md[VPC Cleanup Lab]
+||link:vpc/vpc-exam-tips.md[VPC Exam Tips]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/ExerciseOverview.html[White Paper - Getting Started]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html[White Paper - VPCs and Subnets]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenarios.html[White Paper - Scenarios and Examples]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html[White Paper - Default VPC and Default Subnets]
+||link:https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_vpc[White Paper - Amazon Virtual Private Cloud (Amazon VPC) Limits]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html[White Paper - Security Groups for Your VPC]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html[White Paper - NAT Instances]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-comparison.html[White Paper - Comparison of NAT Instances and NAT Gateways]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Security.html[White Paper - VPC Security]
+||link:https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html#VPC_ACLs_Ephemeral_Ports[White Paper - Ephemeral Ports]
+||link:http://cidr.xyz/[App - CIDR Range Visualizer]
+||link:https://www.lucidchart.com[App - Lucid Charts (AWS VPC Diagramming Tools)]
+2+>| **Application Services**
+||link:apps/apps-sqs-101.md[Apps: Simple Que Service 101]
+||link:https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html[White Paper - How Amazon SQS Works]
+||link:apps/apps-swf-101.md[Apps: Simple Workflow Service 101]
+||link:apps/apps-sns-101.md[Apps: Simple Notification Service 101]
+||link:apps/apps-elastic-transcoder-101.md[Apps: Elastic Transcoder 101]
+||link:https://read.acloud.guru/easy-video-transcoding-in-aws-7a0abaaab7b8[White Paper - Easy Video Transcoding in AWS]
+||link:apps/apps-api-gateway-101.md[Apps: API Gateway 101]
+||link:https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html[White Paper - What is API Gateway]
+||link:apps/apps-kinesis-101.md[Apps: Kinesis 101]
+||link:apps/apps-kinesis-lab.md[Apps: Kinesis Lab]
+||link:apps/apps-exam-tips.md[Apps: Exam Tips]
+2+>| **The Real World - Creating a fault tolerant Word Press Site**
+||link:wp/wp-setup-lab.md[WordPress Setup Lab]
+||link:wp/wp-ec2-lab.md[WordPress EC2 Lab]
+||link:wp/wp-cloudfront-lab.md[WordPress CloudFront Lab]
+||link:wp/wp-ami-lab.md[WordPress AMI Lab]
+||link:wp/wp-autoscaling-lab.md[WordPress AutoScaling Lab]
+||link:wp/wp-cloudformation-lab.md[WordPress CloudFormation Lab]
+||link:https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html[White Paper - AWS CloudFormation Template Formats]
+2+>| **Whitepapers & The Well Architected Framework**
+||link:whitepapers/whitepapers-101.md[White Papers - 101]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-best-practices.md#best-practices-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-best-practices.md[White Papers - Best Practices]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-intro.md#well-architected-framework-intro-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-intro.md[White Papers - Well Architected Framework (Intro)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-security.md#well-architected-framework-security-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-security.md[White Papers - Well Architected Framework (Security)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-reliability.md#well-architected-framework-reliability-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-reliability.md[White Papers - Well Architected Framework (Reliability)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-perf-efficiency.md#well-architected-framework-performance-efficiency-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-perf-efficiency.md[White Papers - Well Architected Framework (Performance Efficiency)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-cost-optimization.md#well-architected-framework-cost-optimization-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-cost-optimization.md[White Papers - Well Architected Framework (Cost Optimization)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-ops-excellence.md#well-architected-framework-operational-excellence-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-ops-excellence.md[White Papers - Well Architected Framework (Operational Excellence)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/whitepapers/whitepapers-waf-exam-tips.md#well-architected-framework-exam-tips-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:whitepapers/whitepapers-waf-exam-tips.md[White Papers - Well Architected Framework (Exam Tips)]
+||link:https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf[AWS Cloud Best Practices Doc]
+||link:https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf[AWS Well Architected Framework Doc]
+2+>| **Additional Exam Topics**
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-feedback.md#exam-tips---student-feedback-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-feedback.md[Additional Exam Tips - Student Feedback]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-consolidated-billing-101.md#exam-tips---consolidated-billing-101-flash-card-deck[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-consolidated-billing-101.md[Additional Exam Tips - Consolidated Billing 101]
+||link:exam-tips/exam-tips-consolidated-billing-lab.md[Additional Exam Tips - Consolidated Billing Lab]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-cross-account-access-lab.md#exam-tips---cross-account-access-flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-cross-account-access-lab.md[Additional Exam Tips - Cross Account Access Lab]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-vpc-peering.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-vpc-peering.md[Additional Exam Tips - VPC Peering]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-direct-connect.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-direct-connect.md[Additional Exam Tips - Direct Connect]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-security-token-service.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-security-token-service.md[Additional Exam Tips - Security Token Service]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-active-directory.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-active-directory.md[Additional Exam Tips - Active Directory Integration]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-workspaces.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-workspaces.md[Additional Exam Tips - Workspaces]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-ecs-pt1.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-ecs-pt1.md[Additional Exam Tips - ECS (Part 1)]
+|link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/exam-tips/exam-tips-ecs-pt2.md#flash-cards[image:https://i.imgur.com/torRcHV.png["Flash Cards",width=16]]|link:exam-tips/exam-tips-ecs-pt2.md[Additional Exam Tips - ECS (Part 2)]
+|=========================================================
+
+
+anchor:flash-card-strategy[]
+
+== Flash Card Strategy
+
+AWS certification in many ways, is like a _god-awful_ college biology class. You gotta memorize some things cold. __What to do?__ In my
+experience, (a) some nicotine to improve your memory and (b) __flash cards__.  Fortunately, today there is an App for
+that-- __iFlash__ Desktop App and it's companion mobile app __iFlash Touch__.
+
+anchor:iFlash-Desktop-App[]
+
+==== iFlash Desktop App
+
+
+image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/iflash/id409123835?mt=12"]
+
+
+Purchase (15$) and install this app on your Mac Desktop.
+
+
+anchor:iflash-mobile-app[]
+
+==== iFlash Mobile App
+
+
+image::http://i.imgur.com/QRsMRfp.png[link="https://itunes.apple.com/us/app/iflash-touch/id313198123?mt=8"]
+
+
+Download and install this free app on your target iphone or ipad.
+
+
+anchor:the-study-workflow[]
+
+=== The Study WorkFlow
+
+At the end of each lecture/lab note markdown page designated with the image:https://i.imgur.com/torRcHV.png["Just Memorize Indicator",width=16] emoji (above),
+I have published a text formatted version of my __Review Questions and Answers__ for the material covered. These files use the iFlash Card import format. Each file can
+be imported into the iFlash Mac desktop app as a __Card Deck__. The deck can then pushed to your Ipad or Iphone
+using the __iFlash Touch__ app. Using this approach, the __Study Workflow__ then becomes:
+
+1.  Watch/Complete an acloud.guru lectures/lab
+2.  Using your Mac, import the review questions and answers into the __iFlash Desktop App__
+3.  Launch the __iFlash Touch App__ on your iphone (or ipad)
+4.  Push questions from the Desktop to the mobile Device
+4.  Use the cards to memorize the material covered
+
+
+anchor:one-deck-to-rule-them-all[]
+
+=== One Deck to Rule Them All
+
+In case you find downloading, importing and exporting each of the flashcard decks (above) a bit tedious, here is the
+complete collection combined into one massive, categorized deck of 650+ flash cards.  This is the deck I used going into
+the Exam.  Additionally, it includes some of the more extraneous questions included in the Acloud Guru `Mini Exam` as
+well as the `Exam Simulator`.
+
+[cols="m", width="100%"]
+|=========================================================
+|**link:https://github.com/bradyhouse/house/blob/master/fiddles/aws/flashcards/AWS%20Solutions%20Architect%20Exam%20(July%202018).zip?raw=true[Complete Flashcard Deck]**
+|=========================================================
+
