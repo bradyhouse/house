@@ -93,7 +93,7 @@ langsmith==0.1.147
 markdown2==2.5.2
 >>>>>>> master
 MarkupSafe==2.1.5
-marshmallow==3.23.1
+marshmallow==3.23.2
 matplotlib-inline==0.1.7
 mistune==3.0.2
 multidict==6.1.0
