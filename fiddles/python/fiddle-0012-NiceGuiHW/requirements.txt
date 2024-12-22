@@ -136,10 +136,10 @@ pycairo==1.27.0
 pycparser==2.22
 <<<<<<< HEAD
 pydantic==2.8.2
-pydantic_core==2.27.1
+pydantic_core==2.27.2
 =======
 pydantic==2.9.2
-pydantic_core==2.27.1
+pydantic_core==2.27.2
 >>>>>>> master
 Pygments==2.18.0
 python-dateutil==2.9.0.post0
