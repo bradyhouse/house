@@ -106,11 +106,11 @@ nicegui==1.4.37
 notebook==7.3.2
 notebook_shim==0.2.4
 <<<<<<< HEAD
-numpy==2.1.3
+numpy==2.2.1
 openai==1.58.1
 orjson==3.10.13
 =======
-numpy==2.1.3
+numpy==2.2.1
 openai==1.58.1
 orjson==3.10.13
 >>>>>>> master
