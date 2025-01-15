@@ -1,6 +1,6 @@
 ext {
   springVersion = "6.1.12"
-  springBootVersion = "3.3.3"
+  springBootVersion = "3.4.1"
   springfoxVersion = '3.0.0'
   jacksonVersion = '2.18.2'
   groovy = "3.0.23"
