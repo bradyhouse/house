@@ -15,6 +15,6 @@
     "start": "node --harmony app.js"
   },
   "dependencies": {
-    "zeromq": "6.0.4"
+    "zeromq": "6.3.0"
   }
 }
