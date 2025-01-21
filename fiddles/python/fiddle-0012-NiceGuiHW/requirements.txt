@@ -122,11 +122,11 @@ pexpect==4.9.0
 <<<<<<< HEAD
 platformdirs==4.3.6
 prometheus-client==0.21.1
-prompt-toolkit==3.0.48
+prompt-toolkit==3.0.50
 =======
 platformdirs==4.3.6
 prometheus-client==0.21.1
-prompt-toolkit==3.0.48
+prompt-toolkit==3.0.50
 >>>>>>> master
 pscript==0.7.7
 psutil==6.1.1
