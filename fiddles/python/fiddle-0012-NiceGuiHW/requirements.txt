@@ -83,14 +83,14 @@ langchain-community==0.3.14
 langchain-core==0.3.31
 langchain-openai==0.3.1
 langsmith==0.3.1
-markdown2==2.5.2
+markdown2==2.5.3
 =======
 langchain==0.3.15
 langchain-community==0.3.14
 langchain-core==0.3.31
 langchain-openai==0.3.1
 langsmith==0.3.1
-markdown2==2.5.2
+markdown2==2.5.3
 >>>>>>> master
 MarkupSafe==2.1.5
 marshmallow==3.25.1
