@@ -151,7 +151,7 @@ python-socketio==5.12.1
 PyYAML==6.0.2
 pyzmq==26.2.0
 qtconsole==5.6.1
-QtPy==2.4.2
+QtPy==2.4.3
 referencing==0.35.1
 regex==2024.11.6
 requests==2.32.3
