@@ -135,10 +135,10 @@ pure-eval==0.2.3
 pycairo==1.27.0
 pycparser==2.22
 <<<<<<< HEAD
-pydantic==2.10.5
+pydantic==2.10.6
 pydantic_core==2.27.2
 =======
-pydantic==2.10.5
+pydantic==2.10.6
 pydantic_core==2.27.2
 >>>>>>> master
 Pygments==2.19.1
