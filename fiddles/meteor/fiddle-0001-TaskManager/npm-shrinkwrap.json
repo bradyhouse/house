@@ -10,9 +10,9 @@
       }
     },
     "node_modules/meteor-node-stubs": {
-      "version": "1.2.12",
-      "resolved": "https://registry.npmjs.org/meteor-node-stubs/-/meteor-node-stubs-1.2.12.tgz",
-      "integrity": "sha512-mzp3KI2aGNDhFlCVXPd0pfMr2z9A5vl1AqEgV13/z7AgKwcbd2X+ymE6tpSAMkrrQb40PU9PC2B59bCb6XkAaw==",
+      "version": "1.2.13",
+      "resolved": "https://registry.npmjs.org/meteor-node-stubs/-/meteor-node-stubs-1.2.13.tgz",
+      "integrity": "sha512-K7uaHEyg+TQEMtYOnyt+/ECtg48xYowo0ErnvOg59ffe6WXwD7gdfp0EK1DhOG6lpb0P4S+OoFf1eUaTaNOleg==",
       "bundleDependencies": [
         "@meteorjs/crypto-browserify",
         "assert",
@@ -47,7 +47,7 @@
         "console-browserify": "^1.2.0",
         "constants-browserify": "^1.0.0",
         "domain-browser": "^4.23.0",
-        "elliptic": "^6.6.0",
+        "elliptic": "^6.6.1",
         "events": "^3.3.0",
         "https-browserify": "^1.0.0",
         "os-browserify": "^0.3.0",
@@ -471,7 +471,7 @@
       }
     },
     "node_modules/meteor-node-stubs/node_modules/elliptic": {
-      "version": "6.6.0",
+      "version": "6.6.1",
       "inBundle": true,
       "license": "MIT",
       "dependencies": {
