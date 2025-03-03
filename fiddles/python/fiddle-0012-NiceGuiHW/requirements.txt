@@ -81,14 +81,14 @@ jupyterlab_server==2.27.3
 langchain==0.3.19
 langchain-community==0.3.17
 langchain-core==0.3.40
-langchain-openai==0.3.5
+langchain-openai==0.3.7
 langsmith==0.3.11
 markdown2==2.5.3
 =======
 langchain==0.3.19
 langchain-community==0.3.17
 langchain-core==0.3.40
-langchain-openai==0.3.5
+langchain-openai==0.3.7
 langsmith==0.3.11
 markdown2==2.5.3
 >>>>>>> master
