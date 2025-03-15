@@ -128,7 +128,7 @@ platformdirs==4.3.6
 prometheus-client==0.21.1
 prompt-toolkit==3.0.50
 >>>>>>> master
-pscript==0.7.7
+pscript==0.8.0
 psutil==6.1.1
 ptyprocess==0.7.0
 pure-eval==0.2.3
