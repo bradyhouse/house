@@ -30,7 +30,7 @@ decorator==5.2.1
 defusedxml==0.7.1
 distro==1.9.0
 executing==2.2.0
-fastapi==0.115.11
+fastapi==0.115.12
 fastjsonschema==2.21.1
 fqdn==1.5.1
 frozenlist==1.5.0
@@ -41,7 +41,7 @@ decorator==5.2.1
 defusedxml==0.7.1
 distro==1.9.0
 executing==2.2.0
-fastapi==0.115.11
+fastapi==0.115.12
 fastjsonschema==2.21.1
 fqdn==1.5.1
 frozenlist==1.5.0
