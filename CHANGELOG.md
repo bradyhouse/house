@@ -2573,8 +2573,7 @@ Alternately, the _Daily Diary of my Programming Dreams_.
   
   * Android ~ Reflected changes:
 
-    1.  Updated [scripts/bin/setup/mac/_android.sh](scripts/bin/setup/mac/_android.sh)
-    2.  
+    1.  Updated [scripts/bin/setup/mac/_android.sh](scripts/bin/setup/mac/_android.sh)  
 
   * Angular ~ Reflected changes:
 
@@ -2628,4 +2627,12 @@ Alternately, the _Daily Diary of my Programming Dreams_.
 
     1.  Updated [scripts/bin/setup/mac/_abd.sh](scripts/bin/setup/mac/_abd.sh)
     2.  Updated [scripts/bin/nativescript/_create.sh](scripts/bin/nativescript/_create.sh)
+
+
+### 2478-vue-vee-validate-vue-select-integration ~ [Issue 2478](https://github.com/bradyhouse/house/issues/2478)
+
+  * **Vue**
+  
+    1. Added [fiddles/vue/fiddle-0017-VeeValidateVueSelect](fiddles/vue/fiddle-0017-VeeValidateVueSelect)
+
 
