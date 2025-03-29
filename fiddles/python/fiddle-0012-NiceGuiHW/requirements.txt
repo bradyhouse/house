@@ -108,11 +108,11 @@ notebook_shim==0.2.4
 <<<<<<< HEAD
 numpy==2.2.4
 openai==1.66.3
-orjson==3.10.15
+orjson==3.10.16
 =======
 numpy==2.2.4
 openai==1.66.3
-orjson==3.10.15
+orjson==3.10.16
 >>>>>>> master
 overrides==7.7.0
 packaging==24.2
