@@ -20,8 +20,7 @@
               rel="noreferrer"
               alt="Fork me on GitHub"
               target="_blank"
-              @click="onLinkClick"
-              href="return false"
+              :href="href"
             >
               Fork Me On Github
             </a>
@@ -63,11 +62,6 @@ export default {
           url: null
         }
       ]
-    }
-  },
-  methods: {
-    onLinkClick() {
-      window.open(this.href, '_blank')
     }
   }
 }
