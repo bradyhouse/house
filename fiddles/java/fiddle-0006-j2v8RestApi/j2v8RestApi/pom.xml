@@ -18,7 +18,7 @@
 		<jta>1.1</jta>
 		<node.url>https://nodejs.org/dist</node.url>
 		<yarn.url>https://github.com/yarnpkg/yarn/releases</yarn.url>
-		<spring.boot.version>3.4.2</spring.boot.version>
+		<spring.boot.version>3.4.3</spring.boot.version>
 		<slf4j.version>1.7.25</slf4j.version>
 	</properties>
 
@@ -159,7 +159,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>3.4.2</version>
+				<version>3.4.3</version>
 				<executions>
 					<execution>
 						<goals>
@@ -184,7 +184,7 @@
 			<!-- MAVEN CLEANUP IF NOT SKIP NODEJS CLEANUP-->
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.4.0</version>
+				<version>3.4.1</version>
 				<configuration>
 					<skip>${skip.nodejs.cleanup}</skip>
 					<filesets>

@@ -1,8 +1,8 @@
 aiofiles==24.1.0
 <<<<<<< HEAD
-aiohttp==3.11.11
+aiohttp==3.11.14
 =======
-aiohttp==3.11.11
+aiohttp==3.11.14
 >>>>>>> master
 aiosignal==1.3.2
 annotated-types==0.7.0
@@ -12,10 +12,10 @@ argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
 arrow==1.3.0
 asttokens==2.4.1
-async-lru==2.0.4
+async-lru==2.0.5
 attrs==24.3.0
-Babel==2.16.0
-beautifulsoup4==4.12.3
+Babel==2.17.0
+beautifulsoup4==4.13.3
 bidict==0.23.1
 bleach==6.2.0
 certifi==2024.12.14
@@ -25,23 +25,23 @@ click==8.1.8
 comm==0.2.2
 dataclasses-json==0.6.7
 <<<<<<< HEAD
-debugpy==1.8.12
-decorator==5.1.1
+debugpy==1.8.13
+decorator==5.2.1
 defusedxml==0.7.1
 distro==1.9.0
-executing==2.1.0
-fastapi==0.115.6
+executing==2.2.0
+fastapi==0.115.12
 fastjsonschema==2.21.1
 fqdn==1.5.1
 frozenlist==1.5.0
 greenlet==3.1.1
 =======
-debugpy==1.8.12
-decorator==5.1.1
+debugpy==1.8.13
+decorator==5.2.1
 defusedxml==0.7.1
 distro==1.9.0
-executing==2.1.0
-fastapi==0.115.6
+executing==2.2.0
+fastapi==0.115.12
 fastjsonschema==2.21.1
 fqdn==1.5.1
 frozenlist==1.5.0
@@ -54,12 +54,12 @@ httpx==0.28.1
 idna==3.10
 ifaddr==0.2.0
 ipykernel==6.29.5
-ipython==8.31.0
+ipython==8.34.0
 ipywidgets==8.1.5
 isoduration==20.11.0
 itsdangerous==2.2.0
 jedi==0.19.2
-Jinja2==3.1.5
+Jinja2==3.1.6
 json5==0.10.0
 jsonpatch==1.33
 jsonpointer==3.0.0
@@ -67,51 +67,51 @@ jsonschema==4.23.0
 jsonschema-specifications==2023.12.1
 jupyter==1.1.1
 jupyter-console==6.6.3
-jupyter-events==0.11.0
+jupyter-events==0.12.0
 jupyter-lsp==2.2.5
 jupyter_client==8.6.3
 jupyter_core==5.7.2
 jupyter_server==2.15.0
 jupyter_server_terminals==0.5.3
-jupyterlab==4.3.4
+jupyterlab==4.3.6
 jupyterlab-widgets==3.0.13
 jupyterlab_pygments==0.3.0
 jupyterlab_server==2.27.3
 <<<<<<< HEAD
-langchain==0.3.15
-langchain-community==0.3.14
-langchain-core==0.3.31
-langchain-openai==0.3.1
-langsmith==0.3.1
-markdown2==2.5.2
+langchain==0.3.21
+langchain-community==0.3.19
+langchain-core==0.3.45
+langchain-openai==0.3.11
+langsmith==0.3.15
+markdown2==2.5.3
 =======
-langchain==0.3.15
-langchain-community==0.3.14
-langchain-core==0.3.31
-langchain-openai==0.3.1
-langsmith==0.3.1
-markdown2==2.5.2
+langchain==0.3.21
+langchain-community==0.3.19
+langchain-core==0.3.45
+langchain-openai==0.3.11
+langsmith==0.3.15
+markdown2==2.5.3
 >>>>>>> master
 MarkupSafe==2.1.5
-marshmallow==3.25.1
+marshmallow==3.26.1
 matplotlib-inline==0.1.7
-mistune==3.1.0
+mistune==3.1.2
 multidict==6.1.0
 mypy-extensions==1.0.0
 nbclient==0.10.2
-nbconvert==7.16.5
+nbconvert==7.16.6
 nbformat==5.10.4
 nest-asyncio==1.6.0
-nicegui==2.9.1
-notebook==7.3.2
+nicegui==2.12.1
+notebook==7.3.3
 notebook_shim==0.2.4
 <<<<<<< HEAD
-numpy==2.2.2
-openai==1.59.7
+numpy==2.2.4
+openai==1.66.3
 orjson==3.10.15
 =======
-numpy==2.2.2
-openai==1.59.7
+numpy==2.2.4
+openai==1.66.3
 orjson==3.10.15
 >>>>>>> master
 overrides==7.7.0
@@ -128,18 +128,18 @@ platformdirs==4.3.6
 prometheus-client==0.21.1
 prompt-toolkit==3.0.50
 >>>>>>> master
-pscript==0.7.7
+pscript==0.8.0
 psutil==6.1.1
 ptyprocess==0.7.0
 pure-eval==0.2.3
 pycairo==1.27.0
 pycparser==2.22
 <<<<<<< HEAD
-pydantic==2.10.5
-pydantic_core==2.27.2
+pydantic==2.10.6
+pydantic_core==2.33.0
 =======
-pydantic==2.10.5
-pydantic_core==2.27.2
+pydantic==2.10.6
+pydantic_core==2.33.0
 >>>>>>> master
 Pygments==2.19.1
 python-dateutil==2.9.0.post0
@@ -149,34 +149,34 @@ python-json-logger==2.0.7
 python-multipart==0.0.20
 python-socketio==5.12.1
 PyYAML==6.0.2
-pyzmq==26.2.0
+pyzmq==26.3.0
 qtconsole==5.6.1
-QtPy==2.4.2
-referencing==0.35.1
+QtPy==2.4.3
+referencing==0.36.2
 regex==2024.11.6
 requests==2.32.3
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 <<<<<<< HEAD
-rpds-py==0.22.3
+rpds-py==0.24.0
 =======
-rpds-py==0.22.3
+rpds-py==0.24.0
 >>>>>>> master
 Send2Trash==1.8.3
 simple-websocket==1.1.0
 six==1.17.0
 sniffio==1.3.1
 soupsieve==2.6
-SQLAlchemy==2.0.37
+SQLAlchemy==2.0.39
 stack-data==0.6.3
 <<<<<<< HEAD
-starlette==0.45.2
+starlette==0.46.1
 =======
-starlette==0.45.2
+starlette==0.46.1
 >>>>>>> master
 tenacity==9.0.0
 terminado==0.18.1
-tiktoken==0.8.0
+tiktoken==0.9.0
 tinycss2==1.4.0
 tornado==6.4.2
 tqdm==4.67.1
