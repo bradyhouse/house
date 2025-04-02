@@ -2636,3 +2636,11 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1. Added [fiddles/vue/fiddle-0017-VeeValidateVueSelect](fiddles/vue/fiddle-0017-VeeValidateVueSelect)
 
 
+### 2556-vue-vue-select-infinite-scroll ~ [Issue 2556](https://github.com/bradyhouse/house/issues/2556)
+
+  * **Vue**
+  
+    1. Added [fiddles/vue/fiddle-0018-InfiniteSelect](fiddles/vue/fiddle-0018-InfiniteSelect)
+
+
+
