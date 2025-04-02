@@ -80,22 +80,22 @@ jupyterlab_server==2.27.3
 <<<<<<< HEAD
 langchain==0.3.21
 langchain-community==0.3.19
-langchain-core==0.3.45
+langchain-core==0.3.49
 langchain-openai==0.3.11
-langsmith==0.3.15
+langsmith==0.3.22
 markdown2==2.5.3
 =======
 langchain==0.3.21
 langchain-community==0.3.19
-langchain-core==0.3.45
+langchain-core==0.3.49
 langchain-openai==0.3.11
-langsmith==0.3.15
+langsmith==0.3.22
 markdown2==2.5.3
 >>>>>>> master
 MarkupSafe==2.1.5
 marshmallow==3.26.1
 matplotlib-inline==0.1.7
-mistune==3.1.2
+mistune==3.1.3
 multidict==6.1.0
 mypy-extensions==1.0.0
 nbclient==0.10.2
@@ -108,11 +108,11 @@ notebook_shim==0.2.4
 <<<<<<< HEAD
 numpy==2.2.4
 openai==1.66.3
-orjson==3.10.15
+orjson==3.10.16
 =======
 numpy==2.2.4
 openai==1.66.3
-orjson==3.10.15
+orjson==3.10.16
 >>>>>>> master
 overrides==7.7.0
 packaging==24.2
@@ -120,11 +120,11 @@ pandocfilters==1.5.1
 parso==0.8.4
 pexpect==4.9.0
 <<<<<<< HEAD
-platformdirs==4.3.6
+platformdirs==4.3.7
 prometheus-client==0.21.1
 prompt-toolkit==3.0.50
 =======
-platformdirs==4.3.6
+platformdirs==4.3.7
 prometheus-client==0.21.1
 prompt-toolkit==3.0.50
 >>>>>>> master
@@ -167,7 +167,7 @@ simple-websocket==1.1.0
 six==1.17.0
 sniffio==1.3.1
 soupsieve==2.6
-SQLAlchemy==2.0.39
+SQLAlchemy==2.0.40
 stack-data==0.6.3
 <<<<<<< HEAD
 starlette==0.46.1
