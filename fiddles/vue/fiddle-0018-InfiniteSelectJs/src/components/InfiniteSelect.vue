@@ -116,8 +116,10 @@ const nextObserver = ref(null);
 const filteredOptions = computed(() => {
     return allOptions
         .value
-        .filter((option) => option && option[props.labelProp] && option[props.labelProp]
-            .toLowerCase().includes(search.value.toLowerCase()));
+        .filter((option) => (option && option[props.labelProp] && option[props.labelProp]
+            .toLowerCase().includes(search.value.toLowerCase()))
+            || (option && option.subText && option.subText
+            .toLowerCase().includes(search.value.toLowerCase())));
 });
 
 const hasPreviousPage = computed(() => {

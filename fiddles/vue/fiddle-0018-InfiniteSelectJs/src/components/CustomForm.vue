@@ -72,7 +72,8 @@ async function onLocationsScrollCallBack(page, searchString) {
   isLocationsLoading.value = true;
   const criteriaObj = searchString && searchString.trim() !== '' ?
     {
-      LocationName: searchString
+      LocationName: searchString,
+      FormattedAddress: searchString
     } : {};
 
   const resp = await api.getPage({
