@@ -1,9 +1,7 @@
 'use strict'
 
 const log4js = require('log4js')
-const timestamp = new Date().toISOString().split('T')[0]
 const now = new Date()
-const filename = `../logs/mock-api-${timestamp}.log`
 const config = require('../log4js.config')
 
 log4js.configure(config)

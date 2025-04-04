@@ -1,7 +1,6 @@
 <template>
   <div class="scrollable">
     <div class="h-100 d-flex align-items-top justify-content-center">
-      
       <CustomForm></CustomForm>
     </div>
   </div>

@@ -2,7 +2,6 @@
 
 const utils =  require('../utils/index');
 const pagesService = require('../services/PagesService');
-const logger = utils.log;
 
 module.exports.pagesPOST = function (req, res) {
     pagesService.pagesPOST(req.body)
