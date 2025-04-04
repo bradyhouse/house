@@ -64,6 +64,7 @@ const locationsSearch = ref('')
 const isLocationsLoading = ref(false)
 const elLocation = ref(null)
 const isLastPage = ref(false)
+
 //#endregion
 //#region Functions
 
