@@ -78,8 +78,8 @@ npm run lint
 
 ## Published Version Link
 
-* [bradyhouse.github.io](https://bradyhouse.github.io/vue/fiddle-0018-InfiniteSelect/)
-* [stackblitz.com](https://stackblitz.com/edit/vitejs-vite-6gvyr5zq?file=README.md)
+* [bradyhouse.github.io](https://bradyhouse.github.io/vue/fiddle-0018-InfiniteSelectJs/)
+* [stackblitz.com](https://stackblitz.com/edit/vitejs-vite-i1shaqu7?file=README.md)
 
 
 ## Tags

@@ -1,9 +1,8 @@
 import _ from 'lodash'
 
-import Data from './data'
+import Locations from '../stores/locations'
 
-
-export default class Api {
+export default class NoRestApi {
   /**
    * Filters an array of location objects based on criteria and returns paginated results
    *
@@ -67,7 +66,7 @@ export default class Api {
   async getPage(req) {
     return new Promise((resolveFn) => {
       const response = Api.paginateFilteredItems(
-        Data.json(),
+        Locations.json(),
         req.searchCriteria,
         req.pageNumber,
         50

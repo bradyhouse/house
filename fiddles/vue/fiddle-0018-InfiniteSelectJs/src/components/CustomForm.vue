@@ -31,7 +31,8 @@
         :fetchPageCallBack="onLocationsScrollCallBack"
         rules="required"
         placeholder="Select Location"
-        style="width: 100%">
+        style="width: 100%"
+      >
       </InfiniteSelect>
       <br />
       <button>Submit</button>
@@ -54,44 +55,46 @@ const schema = yup.object({
   location: yup.string().required('location is required')
 })
 
-const api = inject('api');
+const api = inject('api')
 
-const selectedLocation = ref('');
+const selectedLocation = ref('')
 const initLocations = ref([{ text: 'Select Location', value: 0 }])
-const locations = ref([{ text: 'Select Location', value: 0 }]);
-const locationsSearch = ref('');
-const isLocationsLoading = ref(false);
-const elLocation = ref(null);
-const isLastPage = ref(false);
+const locations = ref([{ text: 'Select Location', value: 0 }])
+const locationsSearch = ref('')
+const isLocationsLoading = ref(false)
+const elLocation = ref(null)
+const isLastPage = ref(false)
 //#endregion
 //#region Functions
 
 async function onLocationsScrollCallBack(page, searchString) {
-  locationsSearch.value = searchString;
-  locations.value = initLocations.value;
-  isLocationsLoading.value = true;
-  const criteriaObj = searchString && searchString.trim() !== '' ?
-    {
-      LocationName: searchString,
-      FormattedAddress: searchString
-    } : {};
+  locationsSearch.value = searchString
+  locations.value = initLocations.value
+  isLocationsLoading.value = true
+  const criteriaObj =
+    searchString && searchString.trim() !== ''
+      ? {
+          LocationName: searchString,
+          FormattedAddress: searchString
+        }
+      : {}
 
   const resp = await api.getPage({
     searchCriteria: criteriaObj,
     pageNumber: page
-  });
+  })
 
-  isLastPage.value = resp.HasNextPage ? false : true;
+  isLastPage.value = resp.HasNextPage ? false : true
 
-  const data = resp.Items.map(item => {
+  const data = resp.Items.map((item) => {
     return {
       text: item.LocationName,
       value: item.LocationID,
       subText: item.FormattedAddress
-    };
-  });
-  locations.value = [... data];
-  isLocationsLoading.value = false;
+    }
+  })
+  locations.value = [...data]
+  isLocationsLoading.value = false
 }
 
 function onSubmit(values) {
@@ -119,27 +122,26 @@ function handleFormReset(resetErrorsFn, resetFormFn) {
 //#endregion
 //#region Life Cycle Hooks
 
-onMounted( async () => {
-  isLocationsLoading.value = true;
+onMounted(async () => {
+  isLocationsLoading.value = true
   const resp = await api.getPage({
     searchCriteria: {},
     pageNumber: 1
-  });
-  
-  isLastPage.value = resp.HasNextPage ? false : true;
+  })
 
-  const data = resp.Items.map(item => {
+  isLastPage.value = resp.HasNextPage ? false : true
+
+  const data = resp.Items.map((item) => {
     return {
       text: item.LocationName,
       subText: item.FormattedAddress,
       value: item.LocationID
-    };
-  });
+    }
+  })
 
-  locations.value = [... data];
-  isLocationsLoading.value = false;
-});
-
+  locations.value = [...data]
+  isLocationsLoading.value = false
+})
 
 //#endregion
 </script>

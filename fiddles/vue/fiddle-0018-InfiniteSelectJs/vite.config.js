@@ -3,6 +3,8 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import packageJson from './package.json'
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +15,23 @@ export default defineConfig({
     }
   },
   base: '/vue/fiddle-0018-InfiniteSelectJs/',
-
+  define: {
+    'import.meta.env.PACKAGE_VERSION': JSON.stringify(packageJson.version),
+    'import.meta.env.PACKAGE_NAME': JSON.stringify(packageJson.name)
+  },
+  server: {
+    proxy: {
+      '/api/api': {
+        target: 'http://localhost:2023/api/',
+        changeOrigin: true,
+        secure: false,
+        rewrite: path => path.replace(/^\/api\/api/, ''),
+      },
+    },
+    watch: {
+      usePolling: true
+    }
+  },
   build: {
     rollupOptions: {
         output:{
@@ -24,5 +42,5 @@ export default defineConfig({
             }
         }
     }
-  }
+  },
 })

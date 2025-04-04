@@ -7,4 +7,4 @@ describe('Icon Vue Select', () => {
     const wrapper = mount(IconVueSelect)
     expect(wrapper.html()).toContain('img')
   })
-});
+})
