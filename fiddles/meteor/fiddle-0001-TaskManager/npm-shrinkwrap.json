@@ -10,9 +10,9 @@
       }
     },
     "node_modules/meteor-node-stubs": {
-      "version": "1.2.13",
-      "resolved": "https://registry.npmjs.org/meteor-node-stubs/-/meteor-node-stubs-1.2.13.tgz",
-      "integrity": "sha512-K7uaHEyg+TQEMtYOnyt+/ECtg48xYowo0ErnvOg59ffe6WXwD7gdfp0EK1DhOG6lpb0P4S+OoFf1eUaTaNOleg==",
+      "version": "1.2.14",
+      "resolved": "https://registry.npmjs.org/meteor-node-stubs/-/meteor-node-stubs-1.2.14.tgz",
+      "integrity": "sha512-znh/Kp9KuvWKfrHqEVb/9uq41K/BDRb5wdGZ9QjmV6W2DiHB2sRJ+0dTLjd+8Lc0+Noo9H58J/TDbNSEv5bg9g==",
       "bundleDependencies": [
         "@meteorjs/crypto-browserify",
         "assert",
@@ -40,7 +40,7 @@
       ],
       "license": "MIT",
       "dependencies": {
-        "@meteorjs/crypto-browserify": "^3.12.1",
+        "@meteorjs/crypto-browserify": "^3.12.2",
         "assert": "^2.1.0",
         "browserify-zlib": "^0.2.0",
         "buffer": "^5.7.1",
@@ -67,13 +67,13 @@
       }
     },
     "node_modules/meteor-node-stubs/node_modules/@meteorjs/crypto-browserify": {
-      "version": "3.12.1",
+      "version": "3.12.2",
       "inBundle": true,
       "license": "MIT",
       "dependencies": {
         "browserify-cipher": "^1.0.1",
-        "browserify-sign": "^4.2.3",
-        "create-ecdh": "^4.0.4",
+        "browserify-sign": "github:meteor-compat/browserify-sign",
+        "create-ecdh": "github:meteor-compat/createECDH",
         "create-hash": "^1.2.0",
         "create-hmac": "^1.1.7",
         "diffie-hellman": "^5.0.3",
@@ -222,7 +222,7 @@
         "browserify-rsa": "^4.1.0",
         "create-hash": "^1.2.0",
         "create-hmac": "^1.1.7",
-        "elliptic": "^6.5.5",
+        "elliptic": "^6.6.1",
         "hash-base": "~3.0",
         "inherits": "^2.0.4",
         "parse-asn1": "^5.1.7",
@@ -239,15 +239,15 @@
       "license": "MIT"
     },
     "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/hash-base": {
-      "version": "3.0.4",
+      "version": "3.0.5",
       "inBundle": true,
       "license": "MIT",
       "dependencies": {
-        "inherits": "^2.0.1",
-        "safe-buffer": "^5.0.1"
+        "inherits": "^2.0.4",
+        "safe-buffer": "^5.2.1"
       },
       "engines": {
-        "node": ">=4"
+        "node": ">= 0.10"
       }
     },
     "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/readable-stream": {
@@ -370,11 +370,11 @@
       "license": "MIT",
       "dependencies": {
         "bn.js": "^4.1.0",
-        "elliptic": "^6.5.3"
+        "elliptic": "^6.6.1"
       }
     },
     "node_modules/meteor-node-stubs/node_modules/create-ecdh/node_modules/bn.js": {
-      "version": "4.12.0",
+      "version": "4.12.1",
       "inBundle": true,
       "license": "MIT"
     },
