@@ -10,9 +10,9 @@
       }
     },
     "node_modules/meteor-node-stubs": {
-      "version": "1.2.13",
-      "resolved": "https://registry.npmjs.org/meteor-node-stubs/-/meteor-node-stubs-1.2.13.tgz",
-      "integrity": "sha512-K7uaHEyg+TQEMtYOnyt+/ECtg48xYowo0ErnvOg59ffe6WXwD7gdfp0EK1DhOG6lpb0P4S+OoFf1eUaTaNOleg==",
+      "version": "1.2.17",
+      "resolved": "https://registry.npmjs.org/meteor-node-stubs/-/meteor-node-stubs-1.2.17.tgz",
+      "integrity": "sha512-YKcv/cwxIKwA5Jl2chCd0eusmkhgALWTNB212eyYxerD+IZEelwlCQ+BID8chIyhofE48/fnRJ7voHeCo/9FoQ==",
       "bundleDependencies": [
         "@meteorjs/crypto-browserify",
         "assert",
@@ -40,7 +40,7 @@
       ],
       "license": "MIT",
       "dependencies": {
-        "@meteorjs/crypto-browserify": "^3.12.1",
+        "@meteorjs/crypto-browserify": "^3.12.4",
         "assert": "^2.1.0",
         "browserify-zlib": "^0.2.0",
         "buffer": "^5.7.1",
@@ -66,14 +66,97 @@
         "vm-browserify": "^1.1.2"
       }
     },
-    "node_modules/meteor-node-stubs/node_modules/@meteorjs/crypto-browserify": {
-      "version": "3.12.1",
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/browserify-sign": {
+      "version": "4.2.3",
+      "inBundle": true,
+      "license": "ISC",
+      "dependencies": {
+        "bn.js": "^5.2.1",
+        "browserify-rsa": "^4.1.0",
+        "create-hash": "^1.2.0",
+        "create-hmac": "^1.1.7",
+        "elliptic": "^6.6.1",
+        "hash-base": "~3.0",
+        "inherits": "^2.0.4",
+        "parse-asn1": "^5.1.7",
+        "readable-stream": "^2.3.8",
+        "safe-buffer": "^5.2.1"
+      },
+      "engines": {
+        "node": ">= 0.12"
+      }
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/browserify-sign/node_modules/bn.js": {
+      "version": "5.2.1",
+      "inBundle": true,
+      "license": "MIT"
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/browserify-sign/node_modules/hash-base": {
+      "version": "3.0.5",
       "inBundle": true,
       "license": "MIT",
       "dependencies": {
+        "inherits": "^2.0.4",
+        "safe-buffer": "^5.2.1"
+      },
+      "engines": {
+        "node": ">= 0.10"
+      }
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/browserify-sign/node_modules/readable-stream": {
+      "version": "2.3.8",
+      "inBundle": true,
+      "license": "MIT",
+      "dependencies": {
+        "core-util-is": "~1.0.0",
+        "inherits": "~2.0.3",
+        "isarray": "~1.0.0",
+        "process-nextick-args": "~2.0.0",
+        "safe-buffer": "~5.1.1",
+        "string_decoder": "~1.1.1",
+        "util-deprecate": "~1.0.1"
+      }
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/browserify-sign/node_modules/readable-stream/node_modules/safe-buffer": {
+      "version": "5.1.2",
+      "inBundle": true,
+      "license": "MIT"
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/browserify-sign/node_modules/string_decoder": {
+      "version": "1.1.1",
+      "inBundle": true,
+      "license": "MIT",
+      "dependencies": {
+        "safe-buffer": "~5.1.0"
+      }
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/browserify-sign/node_modules/string_decoder/node_modules/safe-buffer": {
+      "version": "5.1.2",
+      "inBundle": true,
+      "license": "MIT"
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/create-ecdh": {
+      "version": "4.0.4",
+      "inBundle": true,
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "elliptic": "^6.6.1"
+      }
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/create-ecdh/node_modules/bn.js": {
+      "version": "4.12.1",
+      "inBundle": true,
+      "license": "MIT"
+    },
+    "node_modules/meteor-node-stubs/node_modules/@meteorjs/crypto-browserify": {
+      "version": "3.12.4",
+      "inBundle": true,
+      "license": "MIT",
+      "dependencies": {
+        "@meteorjs/browserify-sign": "^4.2.3",
+        "@meteorjs/create-ecdh": "^4.0.4",
         "browserify-cipher": "^1.0.1",
-        "browserify-sign": "^4.2.3",
-        "create-ecdh": "^4.0.4",
         "create-hash": "^1.2.0",
         "create-hmac": "^1.1.7",
         "diffie-hellman": "^5.0.3",
@@ -213,75 +296,6 @@
         "randombytes": "^2.0.1"
       }
     },
-    "node_modules/meteor-node-stubs/node_modules/browserify-sign": {
-      "version": "4.2.3",
-      "inBundle": true,
-      "license": "ISC",
-      "dependencies": {
-        "bn.js": "^5.2.1",
-        "browserify-rsa": "^4.1.0",
-        "create-hash": "^1.2.0",
-        "create-hmac": "^1.1.7",
-        "elliptic": "^6.5.5",
-        "hash-base": "~3.0",
-        "inherits": "^2.0.4",
-        "parse-asn1": "^5.1.7",
-        "readable-stream": "^2.3.8",
-        "safe-buffer": "^5.2.1"
-      },
-      "engines": {
-        "node": ">= 0.12"
-      }
-    },
-    "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/bn.js": {
-      "version": "5.2.1",
-      "inBundle": true,
-      "license": "MIT"
-    },
-    "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/hash-base": {
-      "version": "3.0.4",
-      "inBundle": true,
-      "license": "MIT",
-      "dependencies": {
-        "inherits": "^2.0.1",
-        "safe-buffer": "^5.0.1"
-      },
-      "engines": {
-        "node": ">=4"
-      }
-    },
-    "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/readable-stream": {
-      "version": "2.3.8",
-      "inBundle": true,
-      "license": "MIT",
-      "dependencies": {
-        "core-util-is": "~1.0.0",
-        "inherits": "~2.0.3",
-        "isarray": "~1.0.0",
-        "process-nextick-args": "~2.0.0",
-        "safe-buffer": "~5.1.1",
-        "string_decoder": "~1.1.1",
-        "util-deprecate": "~1.0.1"
-      }
-    },
-    "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/readable-stream/node_modules/safe-buffer": {
-      "version": "5.1.2",
-      "inBundle": true,
-      "license": "MIT"
-    },
-    "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/string_decoder": {
-      "version": "1.1.1",
-      "inBundle": true,
-      "license": "MIT",
-      "dependencies": {
-        "safe-buffer": "~5.1.0"
-      }
-    },
-    "node_modules/meteor-node-stubs/node_modules/browserify-sign/node_modules/string_decoder/node_modules/safe-buffer": {
-      "version": "5.1.2",
-      "inBundle": true,
-      "license": "MIT"
-    },
     "node_modules/meteor-node-stubs/node_modules/browserify-zlib": {
       "version": "0.2.0",
       "inBundle": true,
@@ -361,20 +375,6 @@
     },
     "node_modules/meteor-node-stubs/node_modules/core-util-is": {
       "version": "1.0.3",
-      "inBundle": true,
-      "license": "MIT"
-    },
-    "node_modules/meteor-node-stubs/node_modules/create-ecdh": {
-      "version": "4.0.4",
-      "inBundle": true,
-      "license": "MIT",
-      "dependencies": {
-        "bn.js": "^4.1.0",
-        "elliptic": "^6.5.3"
-      }
-    },
-    "node_modules/meteor-node-stubs/node_modules/create-ecdh/node_modules/bn.js": {
-      "version": "4.12.0",
       "inBundle": true,
       "license": "MIT"
     },
