@@ -170,9 +170,9 @@ soupsieve==2.6
 SQLAlchemy==2.0.40
 stack-data==0.6.3
 <<<<<<< HEAD
-starlette==0.46.1
+starlette==0.46.2
 =======
-starlette==0.46.1
+starlette==0.46.2
 >>>>>>> master
 tenacity==9.0.0
 terminado==0.18.1
