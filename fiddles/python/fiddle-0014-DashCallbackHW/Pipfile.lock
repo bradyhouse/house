@@ -1379,11 +1379,12 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:5a03e1860cf56bb6ef48ce186b0e557fdba433237481a9a625176c2831be15d1",
-                "sha256:8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
+                "sha256:c3a9c4211ff4c309edb8b8c4f1cbfa7ae324c4ba9f91ff254e3d305b9fd54561",
+                "sha256:fcc17fd9cd898242f6b4adfaca46137a9edef687f43e6f78469692a5e70d851d"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==72.1.0"
+            "index": "pypi",
+            "markers": "python_version >= '3.9'",
+            "version": "==78.1.1"
         },
         "six": {
             "hashes": [
