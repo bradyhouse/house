@@ -2643,4 +2643,10 @@ Alternately, the _Daily Diary of my Programming Dreams_.
     1. Added [fiddles/vue/fiddle-0018-InfiniteSelect](fiddles/vue/fiddle-0018-InfiniteSelect)
 
 
+### 2608-vue-component-expander ~ [Issue 2608](https://github.com/bradyhouse/house/issues/2608)
+
+  * **Vue**
+  
+    1. Added [fiddles/vue/fiddle-0019-FullScreenExpanderJs](fiddles/vue/fiddle-0019-FullScreenExpanderJs)
+
 
