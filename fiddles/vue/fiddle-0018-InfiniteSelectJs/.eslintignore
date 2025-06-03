@@ -1,0 +1,6 @@
+vite.config.js
+eslint.config.js
+playwright.config.js
+
+dist
+node_modules
