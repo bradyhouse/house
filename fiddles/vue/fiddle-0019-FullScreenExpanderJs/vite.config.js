@@ -12,7 +12,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/vue/fiddle-0016-AgGridContextMenuIconJs/',
+  base: '/vue/fiddle-0019-FullScreenExpanderJs/',
   build: {
     rollupOptions: {
         output:{
