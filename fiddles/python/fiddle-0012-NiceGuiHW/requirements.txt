@@ -33,7 +33,7 @@ executing==2.2.0
 fastapi==0.115.12
 fastjsonschema==2.21.1
 fqdn==1.5.1
-frozenlist==1.6.0
+frozenlist==1.7.0
 greenlet==3.2.2
 =======
 debugpy==1.8.14
@@ -44,7 +44,7 @@ executing==2.2.0
 fastapi==0.115.12
 fastjsonschema==2.21.1
 fqdn==1.5.1
-frozenlist==1.6.0
+frozenlist==1.7.0
 greenlet==3.2.2
 >>>>>>> master
 h11==0.16.0
