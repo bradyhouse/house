@@ -78,14 +78,14 @@ jupyterlab-widgets==3.0.15
 jupyterlab_pygments==0.3.0
 jupyterlab_server==2.27.3
 <<<<<<< HEAD
-langchain==0.3.25
+langchain==0.3.26
 langchain-community==0.3.27
 langchain-core==0.3.68
 langchain-openai==0.3.27
 langsmith==0.4.4
 markdown2==2.5.3
 =======
-langchain==0.3.25
+langchain==0.3.26
 langchain-community==0.3.27
 langchain-core==0.3.68
 langchain-openai==0.3.27
