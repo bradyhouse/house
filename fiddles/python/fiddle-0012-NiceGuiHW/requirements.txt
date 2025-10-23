@@ -22,7 +22,7 @@ certifi==2024.12.14
 cffi==1.17.1
 charset-normalizer==3.4.2
 click==8.2.1
-comm==0.2.2
+comm==0.2.3
 dataclasses-json==0.6.7
 <<<<<<< HEAD
 debugpy==1.8.17
