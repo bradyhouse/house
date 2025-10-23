@@ -25,7 +25,7 @@ click==8.2.1
 comm==0.2.2
 dataclasses-json==0.6.7
 <<<<<<< HEAD
-debugpy==1.8.14
+debugpy==1.8.17
 decorator==5.2.1
 defusedxml==0.7.1
 distro==1.9.0
@@ -36,7 +36,7 @@ fqdn==1.5.1
 frozenlist==1.7.0
 greenlet==3.2.4
 =======
-debugpy==1.8.14
+debugpy==1.8.17
 decorator==5.2.1
 defusedxml==0.7.1
 distro==1.9.0
