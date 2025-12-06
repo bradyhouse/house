@@ -80,14 +80,14 @@ jupyterlab_server==2.27.3
 <<<<<<< HEAD
 langchain==0.3.27
 langchain-community==0.3.27
-langchain-core==0.3.68
+langchain-core==0.3.80
 langchain-openai==0.3.35
 langsmith==0.4.13
 markdown2==2.5.3
 =======
 langchain==0.3.27
 langchain-community==0.3.27
-langchain-core==0.3.68
+langchain-core==0.3.80
 langchain-openai==0.3.35
 langsmith==0.4.13
 markdown2==2.5.3
