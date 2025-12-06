@@ -6,20 +6,20 @@
     "": {
       "license": "SEE LICENSE IN <your-license-filename>",
       "dependencies": {
-        "@angular/animations": "^16.1.7",
-        "@angular/common": "^16.1.7",
-        "@angular/compiler": "^16.1.7",
-        "@angular/core": "^16.1.7",
-        "@angular/forms": "^16.1.7",
+        "@angular/animations": "~16.2.0",
+        "@angular/common": "~19.2.16",
+        "@angular/compiler": "~16.2.0",
+        "@angular/core": "16.2.12",
+        "@angular/forms": "~16.2.0",
         "@angular/http": "~7.2.0",
-        "@angular/platform-browser": "^16.1.7",
-        "@angular/router": "^16.1.7",
+        "@angular/platform-browser": "~16.2.0",
+        "@angular/router": "~16.2.0",
         "nativescript-angular": "~10.0.0",
         "nativescript-theme-core": "~2.0.0",
-        "reflect-metadata": "~0.1.8",
+        "reflect-metadata": "~0.2.0",
         "rxjs": "~7.8.0",
         "tns-core-modules": "~6.5.0",
-        "zone.js": "~0.13.0"
+        "zone.js": "~0.15.0"
       },
       "devDependencies": {
         "babel-traverse": "6.26.0",
@@ -27,13 +27,14 @@
         "babylon": "6.18.0",
         "lazy": "1.0.11",
         "nativescript-dev-typescript": "~0.10.0",
-        "typescript": "~5.1.0"
+        "typescript": "~5.5.0"
       }
     },
     "node_modules/@angular/animations": {
-      "version": "16.1.7",
-      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-16.1.7.tgz",
-      "integrity": "sha512-+fMLwUlHLNsHWzX2cnsr4sMyix0R5v/a5srQTQjl6BYhdyqFgT82h5F4P49yFu+nZr0jdsxF012wPJbDRR+1qQ==",
+      "version": "16.2.12",
+      "resolved": "https://registry.npmjs.org/@angular/animations/-/animations-16.2.12.tgz",
+      "integrity": "sha512-MD0ElviEfAJY8qMOd6/jjSSvtqER2RDAi0lxe6EtUacC1DHCYkaPrKW4vLqY+tmZBg1yf+6n+uS77pXcHHcA3w==",
+      "license": "MIT",
       "dependencies": {
         "tslib": "^2.3.0"
       },
@@ -41,7 +42,7 @@
         "node": "^16.14.0 || >=18.10.0"
       },
       "peerDependencies": {
-        "@angular/core": "16.1.7"
+        "@angular/core": "16.2.12"
       }
     },
     "node_modules/@angular/animations/node_modules/tslib": {
@@ -50,17 +51,19 @@
       "integrity": "sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA=="
     },
     "node_modules/@angular/common": {
-      "version": "16.1.7",
-      "resolved": "https://registry.npmjs.org/@angular/common/-/common-16.1.7.tgz",
-      "integrity": "sha512-7WwYwtJjuJtUkutB+aMCvtV5zxa43T4x+kqT+kS4KnUmLv5KdrGPxcS+/7YUuKEELWp1SG032UTwGPX0DXxH4g==",
+      "version": "19.2.16",
+      "resolved": "https://registry.npmjs.org/@angular/common/-/common-19.2.16.tgz",
+      "integrity": "sha512-sugztO7XIiLRoVjn0WJK9ooBm9zejsqlE5k4ZGvy1zFafM8LMjFHwD4KymN8JB3AOb7Ad4lJHVq1IvwWnpqeWw==",
+      "license": "MIT",
+      "peer": true,
       "dependencies": {
         "tslib": "^2.3.0"
       },
       "engines": {
-        "node": "^16.14.0 || >=18.10.0"
+        "node": "^18.19.1 || ^20.11.1 || >=22.0.0"
       },
       "peerDependencies": {
-        "@angular/core": "16.1.7",
+        "@angular/core": "19.2.16",
         "rxjs": "^6.5.3 || ^7.4.0"
       }
     },
@@ -70,9 +73,10 @@
       "integrity": "sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA=="
     },
     "node_modules/@angular/compiler": {
-      "version": "16.1.7",
-      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-16.1.7.tgz",
-      "integrity": "sha512-93nbMFPSpKNfUyuRvEQxPdYLU6g25oZ4Gp7ewzNLyDHIbTQv6FwsthHfgPigPJJUUyKak6Gr3koFsgk7Dl3LAA==",
+      "version": "16.2.12",
+      "resolved": "https://registry.npmjs.org/@angular/compiler/-/compiler-16.2.12.tgz",
+      "integrity": "sha512-6SMXUgSVekGM7R6l1Z9rCtUGtlg58GFmgbpMCsGf+VXxP468Njw8rjT2YZkf5aEPxEuRpSHhDYjqz7n14cwCXQ==",
+      "license": "MIT",
       "dependencies": {
         "tslib": "^2.3.0"
       },
@@ -80,7 +84,7 @@
         "node": "^16.14.0 || >=18.10.0"
       },
       "peerDependencies": {
-        "@angular/core": "16.1.7"
+        "@angular/core": "16.2.12"
       },
       "peerDependenciesMeta": {
         "@angular/core": {
@@ -94,9 +98,11 @@
       "integrity": "sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA=="
     },
     "node_modules/@angular/core": {
-      "version": "16.1.7",
-      "resolved": "https://registry.npmjs.org/@angular/core/-/core-16.1.7.tgz",
-      "integrity": "sha512-Wl5BR9X1xnV7Z9v/MNVANhymuTKAuRv4etr4rRgaC5NbbJSuFM4y+mg4yVI4wmrYJo0gKRcV9+2mHaePr41fTg==",
+      "version": "16.2.12",
+      "resolved": "https://registry.npmjs.org/@angular/core/-/core-16.2.12.tgz",
+      "integrity": "sha512-GLLlDeke/NjroaLYOks0uyzFVo6HyLl7VOm0K1QpLXnYvW63W9Ql/T3yguRZa7tRkOAeFZ3jw+1wnBD4O8MoUA==",
+      "license": "MIT",
+      "peer": true,
       "dependencies": {
         "tslib": "^2.3.0"
       },
@@ -114,9 +120,10 @@
       "integrity": "sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA=="
     },
     "node_modules/@angular/forms": {
-      "version": "16.1.7",
-      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-16.1.7.tgz",
-      "integrity": "sha512-AZ6oCIAS2JwH7rJiTOj2uKl1eykiDP98y0trgQ/42+zzpOQZyZAjXrtdqHkVUXMc1PFf5NmYioz19Muj1p+Ttg==",
+      "version": "16.2.12",
+      "resolved": "https://registry.npmjs.org/@angular/forms/-/forms-16.2.12.tgz",
+      "integrity": "sha512-1Eao89hlBgLR3v8tU91vccn21BBKL06WWxl7zLpQmG6Hun+2jrThgOE4Pf3os4fkkbH4Apj0tWL2fNIWe/blbw==",
+      "license": "MIT",
       "dependencies": {
         "tslib": "^2.3.0"
       },
@@ -124,9 +131,9 @@
         "node": "^16.14.0 || >=18.10.0"
       },
       "peerDependencies": {
-        "@angular/common": "16.1.7",
-        "@angular/core": "16.1.7",
-        "@angular/platform-browser": "16.1.7",
+        "@angular/common": "16.2.12",
+        "@angular/core": "16.2.12",
+        "@angular/platform-browser": "16.2.12",
         "rxjs": "^6.5.3 || ^7.4.0"
       }
     },
@@ -150,9 +157,11 @@
       }
     },
     "node_modules/@angular/platform-browser": {
-      "version": "16.1.7",
-      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-16.1.7.tgz",
-      "integrity": "sha512-AjdUUv5+v50cclHPsKVVdNRdCQZJMGNKmvxyLgeGj2hs61lGoJxBYcYqPre2PpM0SvezNJBreUvjwqM3ttOjng==",
+      "version": "16.2.12",
+      "resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-16.2.12.tgz",
+      "integrity": "sha512-NnH7ju1iirmVEsUq432DTm0nZBGQsBrU40M3ZeVHMQ2subnGiyUs3QyzDz8+VWLL/T5xTxWLt9BkDn65vgzlIQ==",
+      "license": "MIT",
+      "peer": true,
       "dependencies": {
         "tslib": "^2.3.0"
       },
@@ -160,9 +169,9 @@
         "node": "^16.14.0 || >=18.10.0"
       },
       "peerDependencies": {
-        "@angular/animations": "16.1.7",
-        "@angular/common": "16.1.7",
-        "@angular/core": "16.1.7"
+        "@angular/animations": "16.2.12",
+        "@angular/common": "16.2.12",
+        "@angular/core": "16.2.12"
       },
       "peerDependenciesMeta": {
         "@angular/animations": {
@@ -176,9 +185,10 @@
       "integrity": "sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA=="
     },
     "node_modules/@angular/router": {
-      "version": "16.1.7",
-      "resolved": "https://registry.npmjs.org/@angular/router/-/router-16.1.7.tgz",
-      "integrity": "sha512-nzjuAEAXLktA3puvSae54noAHEiuizNTvaOpuvQYHfvZF27QMW28XlC33+vDhckWjSD02K7Fb2+AELkOJhUM5Q==",
+      "version": "16.2.12",
+      "resolved": "https://registry.npmjs.org/@angular/router/-/router-16.2.12.tgz",
+      "integrity": "sha512-aU6QnYSza005V9P3W6PpkieL56O0IHps96DjqI1RS8yOJUl3THmokqYN4Fm5+HXy4f390FN9i6ftadYQDKeWmA==",
+      "license": "MIT",
       "dependencies": {
         "tslib": "^2.3.0"
       },
@@ -186,9 +196,9 @@
         "node": "^16.14.0 || >=18.10.0"
       },
       "peerDependencies": {
-        "@angular/common": "16.1.7",
-        "@angular/core": "16.1.7",
-        "@angular/platform-browser": "16.1.7",
+        "@angular/common": "16.2.12",
+        "@angular/core": "16.2.12",
+        "@angular/platform-browser": "16.2.12",
         "rxjs": "^6.5.3 || ^7.4.0"
       }
     },
@@ -616,9 +626,10 @@
       }
     },
     "node_modules/reflect-metadata": {
-      "version": "0.1.13",
-      "resolved": "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.13.tgz",
-      "integrity": "sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg=="
+      "version": "0.2.2",
+      "resolved": "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.2.2.tgz",
+      "integrity": "sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==",
+      "license": "Apache-2.0"
     },
     "node_modules/regenerator-runtime": {
       "version": "0.11.1",
@@ -630,6 +641,7 @@
       "version": "7.8.1",
       "resolved": "https://registry.npmjs.org/rxjs/-/rxjs-7.8.1.tgz",
       "integrity": "sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==",
+      "peer": true,
       "dependencies": {
         "tslib": "^2.1.0"
       }
@@ -705,10 +717,11 @@
       "integrity": "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
     },
     "node_modules/typescript": {
-      "version": "5.1.6",
-      "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.1.6.tgz",
-      "integrity": "sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==",
+      "version": "5.5.4",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.5.4.tgz",
+      "integrity": "sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==",
       "dev": true,
+      "license": "Apache-2.0",
       "bin": {
         "tsc": "bin/tsc",
         "tsserver": "bin/tsserver"
@@ -723,17 +736,11 @@
       "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
     },
     "node_modules/zone.js": {
-      "version": "0.13.1",
-      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.13.1.tgz",
-      "integrity": "sha512-+bIeDAFEBYuXRuU3qGQvzdPap+N1zjM4KkBAiiQuVVCrHrhjDuY6VkUhNa5+U27+9w0q3fbKiMCbpJ0XzMmSWA==",
-      "dependencies": {
-        "tslib": "^2.3.0"
-      }
-    },
-    "node_modules/zone.js/node_modules/tslib": {
-      "version": "2.6.0",
-      "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.6.0.tgz",
-      "integrity": "sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA=="
+      "version": "0.15.1",
+      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.15.1.tgz",
+      "integrity": "sha512-XE96n56IQpJM7NAoXswY3XRLcWFW83xe0BiAOeMD7K5k5xecOeul3Qcpx6GqEeeHNkW5DWL5zOyTbEfB4eti8w==",
+      "license": "MIT",
+      "peer": true
     }
   }
 }
