@@ -117,7 +117,7 @@ orjson==3.10.18
 overrides==7.7.0
 packaging==24.2
 pandocfilters==1.5.1
-parso==0.8.4
+parso==0.8.5
 pexpect==4.9.0
 <<<<<<< HEAD
 platformdirs==4.3.8
