@@ -1,145 +1,78 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT license">
+  <img src="https://img.shields.io/github/last-commit/bradyhouse/house" alt="Last commit">
+  <img src="https://img.shields.io/github/languages/top/bradyhouse/house" alt="Top language">
+  <img src="https://img.shields.io/badge/since-2014-blue" alt="Since 2014">
+</p>
 
-# Getting Started
-
-### System Requirements
-
-| Component | Minimum Requirement | Recommended |
-| --- | --- | --- |
-| Operating System | Windows 10 (64-bit) | Windows 10 Enterprise (64-bit) |
-| RAM | 4 GB | 8 GB + 1 GB for Emulator |
-| Disk Space | 2 GB | 4 GB |
-| Screen Resolution | 1280 x 800 | 1920 x 1080 |
-
-### Setup Process Overview
-
-```mermaid
-flowchart TD
-
-    classDef prereq fill:#FFE6CC,stroke:#D79B00,color:#000
-
-    classDef main fill:#DAE8FC,stroke:#6C8EBF,color:#000
-
-    classDef config fill:#D5E8D4,stroke:#82B366,color:#000
-
-    Start["Begin Setup"] --> Prereq["Prerequisites"]
-
-    subgraph Prerequisites["Prerequisites Phase"]
-
-        direction TB
-        Admin["Obtain Admin Rights"]:::config        
-
-        Java["Install JDK"]:::prereq
-
-        Env["Set Environment Variables<br/>#8226; JAVA_HOME<br/>#8226; PATH"]:::config
-
-        Verify["Verify Installation<br/>java -version"]:::config
-
-        Admin --> Java
-
-        Java --> Env
-
-        Env --> Verify
-
-    end
-
-    Prerequisites --> Main["Main Installation"]
-
-    subgraph AndroidStudio["Android Studio Setup"]
-
-        direction TB
-
-        Download["Download Android Studio"]:::main
-
-        Install["Run Installer"]:::main
-
-        Config["Initial Configuration<br/>#8226; Theme Selection<br/>#8226; SDK Setup"]:::config
-
-        Download --> Install
-
-        Install --> Config
-
-    end
-
-    Main --> AndroidStudio
-
-    Verify --> Download
+```
+{{ ʕ・ɭ・ʔ }}
+H o u s e
+oooooooooooo  o8o        .o8        .o8  oooo
+ 888       8  `"'        888        888   888
+ 888         oooo   .oooo888   .oooo888   888   .ooooo.
+ 888oooo8     888  d88   888  d88   888   888  d88   88b
+ 888          888  888   888  888   888   888  888ooo888
+ 888          888  888   888  888   888   888  888    .o
+o888o        o888o  Y8bod88P   Y8bod88P  o888o  Y8bod8P
 ```
 
-### Step-by-Step Setup Instructions
+> _If everything begins in the house, then — perhaps — the house always wins._
 
-#### Obtain Admin Rights
+**`house`** is my personal R&D sandbox — a decade of *learning by building*. I don't really
+know a framework until I've shipped something with it, so back in 2015 I wrote a CLI to make
+starting that "something" instant, and have leaned on it ever since across 25+ languages and
+libraries.
 
-To obtain Administrative Privileges to your PC, please refer to [Request Admin Rights on Laptop](https://dev.azure.com/SecuritasTechnologyCorp/SecureStat%20HQ/_wiki/wikis/SecureStat-HQ.wiki/88/Request-Admin-Rights-on-Laptop)
+## `fiddle.sh` — a CLI for framework sandboxes
 
-
-#### Install Java Development Kit (JDK)
-
-- Visit Oracle's official JDK archive download page, [jdk17 archive downloads](https://www.oracle.com/java/technologies/javase/jdk17-0-13-later-archive-downloads.html)
-- Select the latest version of the JDK17 Windows x64 installer
-- Run the downloaded executable
-- Accept license agreement
-- Choose installation location (default recommended)
-- Wait for installation completion
-
-##### Configure Environment Variables
-
-- Search for "Environment Variables" in Start menu
-- Click "Edit the system environment variables"
-- Under System Variables, add:
-  - JAVA_HOME: Path to JDK installation directory
-  - PATH: Add path to JDK bin folder
-
-##### Verify Java Installation
+[`scripts/fiddle.sh`](scripts/fiddle.sh) is a git-style command-line tool that scaffolds, runs,
+and manages self-contained sandboxes — _"fiddles"_ — for any stack. It takes you from "I want to
+try X" to a running, hot-reloading project in one command.
 
 ```bash
-    java -version
+fiddle create react hello        # scaffold a new React fiddle
+fiddle start  react hello        # serve it locally
+fiddle fork   react hello world  # branch an existing fiddle
+fiddle build  react hello        # bundle + minify
+fiddle list   react              # catalog fiddles by type
 ```
 
-This command should display the installed Java version.
+<details>
+<summary><b>Full command set</b> — 17 subcommands</summary>
 
-Install Android Studio
+| command | what it does |
+|---|---|
+| `create` | scaffold a new fiddle |
+| `start` / `stop` | run / halt the dev server |
+| `fork` | branch an existing fiddle into a new one |
+| `build` / `combine` | bundle + minify sources |
+| `test` | run the fiddle's test suite |
+| `index` / `list` | catalog fiddles by type |
+| `refactor` | rename a fiddle |
+| `update` | run `npm-check-updates` on a fiddle |
+| `publish` | sync the public showcase repo |
+| `delete` · `edit` · `setup` · `emulate` | remove · open · bootstrap the machine · android emulator |
 
-- Visit developer.android.com/studio, [Download Android Studio & App Tools - Android Developers](https://developer.android.com/studio)
-- Click "Download Android Studio"
-- Run the downloaded executable
-- Follow installation wizard prompts
-- Choose installation location (default recommended)
+</details>
 
-Initial Configuration- Launch Android Studio
-- Choose "Standard" setup option
-- Select preferred theme (Light/Dark)
-- Allow SDK component downloads
-- Wait for initial setup completion
+## The sandboxes
 
-### Additional Configuration Steps
+25+ stacks, each isolated under [`fiddles/`](fiddles/):
 
-#### Set Up Virtual Device
+`Angular` · `Vue` · `React` · `RxJS` · `D3` · `three.js` · `tween.js` · `SVG` · `Electron` ·
+`NativeScript` · `Node` · `Python` · `Java` · `C` · `PHP` · `Bash` · `Chrome extensions` ·
+`AWS` · `Docker` · `Ember` · `Meteor` · `ExtJS` · `jQuery` · `Compass` · `Ant` · `Chef` · `Android`
 
-- Open AVD Manager
-- Create New Virtual Device
-- Select device definition (e.g., Pixel series)
-- Choose system image
-- Configure RAM settings (minimum 4GB recommended)
+## Why it's still here
 
-#### Enable Hardware Acceleration
+First commit **April 2014**, and still maintained. ~4,500 commits live in this repo — it's where
+the *build-to-learn* habit lives. The breadth is the point: a single, consistent workflow for
+spinning up and tearing down experiments across the entire front-end and back-end landscape.
 
-- Intel HAXM for Intel processors
-- Windows Hypervisor Platform for AMD/other processors
+> 🚧 **In progress:** packaging `fiddle.sh` as a standalone, cross-platform npm CLI so anyone can
+> `npm i -g` it and scaffold sandboxes outside this repo.
 
-Your PC is now properly configured for Android development. For additional info, aka next steps, checkout the Mobile Release guide wiki --
+## License
 
-[Mobile App Release Guides Wiki](https://dev.azure.com/SecuritasTechnologyCorp/SecureStat%20HQ/_wiki/wikis/SecureStat-HQ.wiki/309/Mobile-App-Release-Guides)
-
-
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+[MIT](LICENSE) © Brady House
