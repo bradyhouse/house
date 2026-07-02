@@ -1,0 +1,6 @@
+{
+  "framework": "meteor",
+  "name": "fiddle-0001-TaskManager",
+  "start": "npm start",
+  "createdAt": "2026-01-29T14:22:01.536Z"
+}

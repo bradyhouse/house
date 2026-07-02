@@ -1,0 +1,6 @@
+{
+  "framework": "python",
+  "name": "fiddle-0012-NiceGuiHW",
+  "start": "node altair_chart.js",
+  "createdAt": "2026-06-08T16:32:29.415Z"
+}

@@ -1,0 +1,6 @@
+{
+  "framework": "node",
+  "name": "fiddle-0006-NetWatcher",
+  "start": "npm start",
+  "createdAt": "2025-08-27T17:00:52.233Z"
+}

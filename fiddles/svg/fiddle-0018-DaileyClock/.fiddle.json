@@ -1,0 +1,6 @@
+{
+  "framework": "svg",
+  "name": "fiddle-0018-DaileyClock",
+  "start": "npx --yes serve -l 5173",
+  "createdAt": "2025-08-27T17:00:52.786Z"
+}

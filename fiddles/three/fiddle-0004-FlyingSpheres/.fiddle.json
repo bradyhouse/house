@@ -1,0 +1,6 @@
+{
+  "framework": "three",
+  "name": "fiddle-0004-FlyingSpheres",
+  "start": "npx --yes serve -l 5173",
+  "createdAt": "2025-08-27T17:00:52.825Z"
+}
