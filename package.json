@@ -10,6 +10,6 @@
     "publish-gallery": "fiddle publish"
   },
   "devDependencies": {
-    "@hetalhouse/fiddle": "^0.2.0"
+    "@hetalhouse/fiddle": "^0.2.1"
   }
 }
