@@ -1,0 +1,15 @@
+{
+  "name": "@bradyhouse/house",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Framework experiment collection — scaffolded, built, and published with @hetalhouse/fiddle.",
+  "scripts": {
+    "list": "fiddle list",
+    "build": "fiddle build",
+    "preview": "fiddle preview",
+    "publish-gallery": "fiddle publish"
+  },
+  "devDependencies": {
+    "@hetalhouse/fiddle": "^0.1.0"
+  }
+}
