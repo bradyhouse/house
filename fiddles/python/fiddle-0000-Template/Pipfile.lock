@@ -703,11 +703,12 @@
         },
         "mistune": {
             "hashes": [
-                "sha256:71481854c30fdbc938963d3605b72501f5c10a9320ecd412c121c163a1c7d205",
-                "sha256:fc7f93ded930c92394ef2cb6f04a8aabab4117a91449e72dcc8dfa646a508be8"
+                "sha256:3074ec4c61b384abe725128e4dcbb483f5a09cc4632012505cdee655d3a113b9",
+                "sha256:a758e578acda49d8195f9a860b132dae2cf7bf409381393b1c4e6e489a65397b"
             ],
-            "markers": "python_version >= '3.7'",
-            "version": "==3.0.2"
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==3.3.0"
         },
         "nbclient": {
             "hashes": [
