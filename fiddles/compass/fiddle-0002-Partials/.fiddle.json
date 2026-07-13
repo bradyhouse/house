@@ -1,0 +1,6 @@
+{
+  "framework": "compass",
+  "name": "fiddle-0002-Partials",
+  "start": "npx --yes serve -l 5173",
+  "createdAt": "2025-08-27T17:00:51.619Z"
+}

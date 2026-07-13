@@ -148,7 +148,7 @@ class Surface {
    */
   bind() {
     if (this.hook) {
-      this.hook.createShadowRoot();
+      if (!this.hook.shadowRoot) { if (this.hook.attachShadow) this.hook.attachShadow({ mode: 'open' }); else this.hook.createShadowRoot(); }
       this.hook.shadowRoot.innerHTML = this.docElementNS.outerHTML;
     }
   }

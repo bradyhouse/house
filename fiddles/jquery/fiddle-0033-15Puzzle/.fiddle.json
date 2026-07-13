@@ -1,0 +1,6 @@
+{
+  "framework": "jquery",
+  "name": "fiddle-0033-15Puzzle",
+  "start": "npx --yes serve -l 5173",
+  "createdAt": "2025-08-27T17:00:51.862Z"
+}

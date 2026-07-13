@@ -1,0 +1,6 @@
+{
+  "framework": "electron",
+  "name": "fiddle-0001-TemplateFork",
+  "start": "npm start",
+  "createdAt": "2025-08-27T17:00:51.660Z"
+}

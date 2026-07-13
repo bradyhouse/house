@@ -1,0 +1,6 @@
+{
+  "framework": "node",
+  "name": "fiddle-0025-CouchDbCli",
+  "start": "node lib/lounger.js",
+  "createdAt": "2025-08-27T17:00:52.252Z"
+}

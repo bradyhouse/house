@@ -1,0 +1,13 @@
+/*
+Config file read by the /scripts/fiddle-extjs.sh script.
+*/
+{
+    "6": "/fiddles/extjs/6.0.0",
+    "6.0": "/fiddles/extjs/6.0.0",
+    "6.0.0": "/fiddles/extjs/6.0.0",
+    "5": "/fiddles/extjs/5.1.0",
+    "5.1": "/fiddles/extjs/5.1.0",
+    "5.1.0": "/fiddles/extjs/5.1.0",
+    "5.0.1": "/fiddles/extjs/5.1.0",
+    "4": "/fiddles/extjs/5.1.0"
+}

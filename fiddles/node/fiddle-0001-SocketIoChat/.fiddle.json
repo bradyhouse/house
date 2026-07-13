@@ -1,0 +1,6 @@
+{
+  "framework": "node",
+  "name": "fiddle-0001-SocketIoChat",
+  "start": "npm start",
+  "createdAt": "2026-06-08T16:32:29.414Z"
+}

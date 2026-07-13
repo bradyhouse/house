@@ -1,0 +1,6 @@
+{
+  "framework": "vue",
+  "name": "fiddle-0020-TetrisJs",
+  "start": "npm run dev",
+  "createdAt": "2025-08-02T17:00:53.802Z"
+}

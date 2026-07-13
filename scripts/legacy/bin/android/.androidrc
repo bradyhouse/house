@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# ---------------------------------------------------------------------------------------------------|
+#  Repo                    : https://github.com/bradyhouse/house_____________________________________|
+#  Specification           : N/A_____________________________________________________________________|
+#  Specification Path      : N/A_____________________________________________________________________|
+#  Author                  : brady house_____________________________________________________________|
+#  Create date             : 05/02/2016______________________________________________________________|
+#  Description             : GLOBAL VARIABLE CONFIG USED BY ANDROID CREATE/START SCRIPTS.____________|
+# ---------------------------------------------------------------------------------------------------|
+#  Revision History::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::|
+# ---------------------------------------------------------------------------------------------------|
+# Baseline Ver - CHANGELOG @ 201610010420
+# ---------------------------------------------------------------------------------------------------|
+
+export __CREATE_PROJECT_TARGET__="2";
+export __CREATE_PROJECT_PACKAGE__="fiddle.android";
+export __CREATE_ANDROID_GRADLE_VERSION__="2.1.2";
+export __CREATE_ANDROID_VERSION__="24.0.2";
+export __CREATE_GOOGLE_API_VERSION__="19";
+export __CREATE_GRADLE_VERSION__="2.10";
+export __START_ANDROID_EMULATOR_PROFILE__=fiddler;
+export __START_ANDROID_EMULATOR_EXE__="${HOME_ROOT}/homebrew/share/android-sdk/emulator/emulator";

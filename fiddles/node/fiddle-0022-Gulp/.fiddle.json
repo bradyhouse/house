@@ -1,0 +1,6 @@
+{
+  "framework": "node",
+  "name": "fiddle-0022-Gulp",
+  "start": "node gulpfile.js",
+  "createdAt": "2025-08-27T17:00:52.249Z"
+}

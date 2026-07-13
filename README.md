@@ -24,37 +24,35 @@ know a framework until I've shipped something with it, so back in 2015 I wrote a
 starting that "something" instant, and have leaned on it ever since across 25+ languages and
 libraries.
 
-## `fiddle.sh` — a CLI for framework sandboxes
+## The collection, live
 
-[`scripts/fiddle.sh`](scripts/fiddle.sh) is a git-style command-line tool that scaffolds, runs,
-and manages self-contained sandboxes — _"fiddles"_ — for any stack. It takes you from "I want to
-try X" to a running, hot-reloading project in one command.
+**[bradyhouse.github.io/fiddles](https://bradyhouse.github.io/fiddles/)** — all **540 fiddles**
+in one browsable gallery: live demos run in-page with auto-captured thumbnails, and anything
+that can't run in a browser (CLI tools, build experiments, retired stacks) opens as a readable
+source card instead. Deep-linkable by framework (`#vue`, `#three`, …) or fiddle.
+
+## Managed with `@hetalhouse/fiddle`
+
+This collection is scaffolded, run, and published by
+**[@hetalhouse/fiddle](https://www.npmjs.com/package/@hetalhouse/fiddle)** — the npm CLI that
+grew out of this repo (see [origins](#origins-fiddlesh) below).
 
 ```bash
-fiddle create react hello        # scaffold a new React fiddle
-fiddle start  react hello        # serve it locally
-fiddle fork   react hello world  # branch an existing fiddle
-fiddle build  react hello        # bundle + minify
-fiddle list   react              # catalog fiddles by type
+npm install            # pulls the tool (this repo's package.json pins it)
+npm run list           # catalog the collection, grouped by framework
+npm run preview        # build + serve the portfolio locally
+npm run publish-gallery  # regenerate + push the live gallery
 ```
 
-<details>
-<summary><b>Full command set</b> — 17 subcommands</summary>
+Or use it on your own collection:
 
-| command | what it does |
-|---|---|
-| `create` | scaffold a new fiddle |
-| `start` / `stop` | run / halt the dev server |
-| `fork` | branch an existing fiddle into a new one |
-| `build` / `combine` | bundle + minify sources |
-| `test` | run the fiddle's test suite |
-| `index` / `list` | catalog fiddles by type |
-| `refactor` | rename a fiddle |
-| `update` | run `npm-check-updates` on a fiddle |
-| `publish` | sync the public showcase repo |
-| `delete` · `edit` · `setup` · `emulate` | remove · open · bootstrap the machine · android emulator |
-
-</details>
+```bash
+npm i -g @hetalhouse/fiddle
+fiddle setup                    # one-time: config + prerequisites
+fiddle create three spinner     # scaffold a sandbox
+fiddle start three spinner      # run it
+fiddle publish                  # every fiddle → one portfolio site
+```
 
 ## The sandboxes
 
@@ -64,14 +62,20 @@ fiddle list   react              # catalog fiddles by type
 `NativeScript` · `Node` · `Python` · `Java` · `C` · `PHP` · `Bash` · `Chrome extensions` ·
 `AWS` · `Docker` · `Ember` · `Meteor` · `ExtJS` · `jQuery` · `Compass` · `Ant` · `Chef` · `Android`
 
+## Origins: `fiddle.sh`
+
+The workflow started life in 2015 as a 17-subcommand Bash CLI —
+[`scripts/legacy/fiddle.sh`](scripts/legacy/fiddle.sh) — that scaffolded, ran, forked, and
+published fiddles for a decade (`create` · `start` · `fork` · `build` · `test` · `publish` · …).
+In 2026 it was reborn as **`@hetalhouse/fiddle`**: a typed, cross-platform npm package that
+anyone can `npm i -g` and point at their own collection. The shell original is archived in
+[`scripts/legacy/`](scripts/legacy/) — retired, not deleted; it earned the keep.
+
 ## Why it's still here
 
 First commit **April 2014**, and still maintained. ~4,500 commits live in this repo — it's where
 the *build-to-learn* habit lives. The breadth is the point: a single, consistent workflow for
 spinning up and tearing down experiments across the entire front-end and back-end landscape.
-
-> 🚧 **In progress:** packaging `fiddle.sh` as a standalone, cross-platform npm CLI so anyone can
-> `npm i -g` it and scaffold sandboxes outside this repo.
 
 ## License
 
