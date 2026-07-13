@@ -2,7 +2,7 @@
   "name": "@bradyhouse/house",
   "version": "0.0.0",
   "private": true,
-  "description": "Framework experiment collection \u2014 scaffolded, built, and published with @hetalhouse/fiddle.",
+  "description": "Framework experiment collection — scaffolded, built, and published with @hetalhouse/fiddle.",
   "scripts": {
     "list": "fiddle list",
     "build": "fiddle build",
@@ -10,6 +10,6 @@
     "publish-gallery": "fiddle publish"
   },
   "devDependencies": {
-    "@hetalhouse/fiddle": "^0.2.3"
+    "@hetalhouse/fiddle": "^0.2.5"
   }
 }
