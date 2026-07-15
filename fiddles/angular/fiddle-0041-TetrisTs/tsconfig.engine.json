@@ -1,0 +1,16 @@
+/* Compiles ONLY the pure engine + its node:test spec for headless testing.
+   Used by `npm run test:engine` — no karma, no chrome, no Angular. */
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "outDir": ".engine-out",
+    "rootDir": "src/app/engine",
+    "types": ["node"]
+  },
+  "include": ["src/app/engine/**/*.ts", "src/app/engine/**/*.mts"]
+}

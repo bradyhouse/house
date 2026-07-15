@@ -1,0 +1,61 @@
+<div #shell class="shell" [class.is-fullscreen]="isFullscreen()">
+  <header class="hud" aria-label="Game stats">
+    <div class="stat">
+      <span class="stat-label">Score</span>
+      <span class="stat-value">{{ score() }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Lines</span>
+      <span class="stat-value">{{ lines() }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Level</span>
+      <span class="stat-value">{{ level() }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Speed</span>
+      <span class="stat-value">{{ speedMs() }}<small>ms</small></span>
+    </div>
+  </header>
+
+  <div class="board" role="grid" aria-label="Tetris board">
+    @for (cell of cells(); track $index) {
+      <div class="cell" [class.filled]="cell > 0" [style.--cell-color]="colorOf(cell)"></div>
+    }
+
+    @if (status() === 'idle') {
+      <div class="overlay">
+        <p class="overlay-title">Tetris</p>
+        <p class="overlay-hint">press Start to play</p>
+      </div>
+    } @else if (status() === 'paused') {
+      <div class="overlay">
+        <p class="overlay-title">Paused</p>
+        <p class="overlay-hint">press P to resume</p>
+      </div>
+    } @else if (status() === 'over') {
+      <div class="overlay">
+        <p class="overlay-title">Game over</p>
+        <p class="overlay-hint">final score {{ score() }}</p>
+      </div>
+    }
+  </div>
+
+  <footer class="controls">
+    <button type="button" (click)="start()">
+      {{ status() === 'idle' ? 'Start' : 'Restart' }}
+    </button>
+    <button type="button" (click)="pause()" [disabled]="status() === 'idle' || status() === 'over'">
+      {{ status() === 'paused' ? 'Resume' : 'Pause' }}
+    </button>
+    <button type="button" (click)="toggleFullscreen()">
+      {{ isFullscreen() ? 'Exit fullscreen' : 'Fullscreen' }}
+    </button>
+  </footer>
+
+  @if (fullscreenError(); as message) {
+    <p class="fullscreen-error" role="alert">{{ message }}</p>
+  }
+
+  <p class="key-legend">&larr; &rarr; move &middot; &uarr; rotate &middot; &darr; soft drop &middot; space hard drop &middot; P pause</p>
+</div>

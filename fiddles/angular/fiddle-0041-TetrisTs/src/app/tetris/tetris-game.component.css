@@ -1,0 +1,144 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 12px;
+}
+
+/* The same element is the fullscreen target: keep the game centered there. */
+.shell.is-fullscreen {
+  justify-content: center;
+  min-height: 100vh;
+  border-radius: 0;
+}
+
+.hud {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4.5rem;
+  padding: 0.35rem 0.6rem;
+  background: #1e293b;
+  border-radius: 8px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.stat-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-value small {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 1px;
+  aspect-ratio: 1 / 2;
+  height: min(62vh, 560px);
+  padding: 4px;
+  background: #020617;
+  border: 2px solid #334155;
+  border-radius: 8px;
+}
+
+.is-fullscreen .board {
+  height: min(78vh, 45vw);
+}
+
+.cell {
+  background: #0b1120;
+  border-radius: 2px;
+}
+
+.cell.filled {
+  background: var(--cell-color);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 35%), inset -2px -2px 0 rgb(0 0 0 / 25%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background: rgb(2 6 23 / 78%);
+  border-radius: 6px;
+}
+
+.overlay-title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.overlay-hint {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controls button {
+  padding: 0.45rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.controls button:hover:not(:disabled) {
+  background: #334155;
+}
+
+.controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.fullscreen-error {
+  margin: 0;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  color: #fecaca;
+  background: rgb(127 29 29 / 45%);
+  border-radius: 6px;
+}
+
+.key-legend {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}

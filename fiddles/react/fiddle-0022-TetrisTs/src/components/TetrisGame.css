@@ -1,0 +1,242 @@
+/* The stage is the fullscreen target: it centers the game both as a normal
+   page section and when promoted to fullscreen via the :fullscreen styles. */
+.tetris-stage {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50% 20%, #1b2340, #0b0f1a 70%);
+  color: #e7ecf5;
+}
+
+.tetris-stage:fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.tetris-layout {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* --- board ---------------------------------------------------------------- */
+
+.board-frame {
+  position: relative;
+  border: 2px solid #3b4668;
+  border-radius: 8px;
+  padding: 6px;
+  background: rgba(8, 11, 20, 0.85);
+  box-shadow: 0 0 40px rgba(64, 224, 208, 0.12);
+}
+
+.board {
+  display: grid;
+  gap: 1px;
+  height: min(76svh, 640px);
+  aspect-ratio: 1 / 2; /* 10 x 20 cells */
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+}
+
+.cell.filled {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* --- overlay ---------------------------------------------------------------- */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(8, 11, 20, 0.78);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.overlay-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-indent: 0.35em; /* visually re-center the letter-spaced text */
+  text-transform: uppercase;
+  color: #40e0d0;
+  text-shadow: 0 0 18px rgba(64, 224, 208, 0.6);
+}
+
+.overlay-detail {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffd700;
+}
+
+/* --- side panel ---------------------------------------------------------------- */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 200px;
+  max-width: 260px;
+}
+
+.panel h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #40e0d0;
+}
+
+.hud {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.hud-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 12px;
+  border: 1px solid #3b4668;
+  border-radius: 6px;
+  background: rgba(8, 11, 20, 0.6);
+}
+
+.hud-item dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8b94ad;
+}
+
+.hud-item dd {
+  margin: 0;
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+}
+
+.next {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.next .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8b94ad;
+}
+
+.next-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 16px);
+  grid-auto-rows: 16px;
+  gap: 1px;
+}
+
+.next-grid .cell {
+  background: transparent;
+}
+
+/* --- controls ---------------------------------------------------------------- */
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.controls button {
+  font: inherit;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #40e0d0;
+  background: transparent;
+  color: #40e0d0;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.controls button:hover:not(:disabled),
+.overlay button:hover {
+  background: #40e0d0;
+  color: #0b0f1a;
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.overlay button {
+  font: inherit;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: 1px solid #40e0d0;
+  background: transparent;
+  color: #40e0d0;
+  cursor: pointer;
+}
+
+.fullscreen-note {
+  margin: 0;
+  min-height: 1.2em;
+  font-size: 0.8rem;
+  color: #f79a19;
+}
+
+.help {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #8b94ad;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.4em;
+  padding: 1px 5px;
+  border: 1px solid #3b4668;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: rgba(8, 11, 20, 0.6);
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #e7ecf5;
+}
+
+/* Small screens: stack the panel under the board. */
+@media (max-width: 640px) {
+  .board {
+    height: min(60svh, 520px);
+  }
+
+  .panel {
+    max-width: none;
+    width: 100%;
+  }
+}

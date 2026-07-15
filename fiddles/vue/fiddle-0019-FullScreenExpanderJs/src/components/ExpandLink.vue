@@ -38,7 +38,7 @@ function openNewTab() {
   params.delete('expandedView')
   params.set('expandedView', 'true')
 
-  const newUrl = `${baseUrl}:${params.toString()}`
+  const newUrl = `${baseUrl}?${params.toString()}`
 
   window.open(newUrl, '_blank')
 }
