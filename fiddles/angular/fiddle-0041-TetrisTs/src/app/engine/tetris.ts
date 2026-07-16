@@ -1,31 +1,45 @@
 /**
  * Pure Tetris engine — no Angular, no DOM, no timers.
  *
- * Every transition takes a `GameState` and returns a new `GameState`,
- * which keeps the engine trivially unit-testable (see tetris.spec.mts,
- * run with `npm run test:engine`) and makes it a natural fit for Angular
- * signals: the component holds `signal<GameState>` and applies moves via
+ * Every transition takes a `GameState` and returns a new `GameState`, which
+ * keeps the engine trivially unit-testable (see tetris.spec.mts, run with
+ * `npm run test:engine`) and makes it a natural fit for Angular signals: the
+ * component holds `signal<GameState>` and applies moves via
  * `state.update(moveLeft)`, `state.update(s => tick(s))`, etc.
  *
- * Game mechanics ported from fiddles/vue/fiddle-0020-TetrisJs; scoring is
- * the classic NES table.
+ * Mechanics are ported faithfully from fiddles/vue/fiddle-0020-TetrisJs:
+ *   - a WIDE, landscape board (the vue original was 50x30; we keep the wide
+ *     ratio at a more playable size — see COLS/ROWS below),
+ *   - pieces that spawn at a RANDOM x across that wide board,
+ *   - a 4x4 clockwise matrix rotation.
+ * Scoring / level / speed are the classic NES table, added on top.
  */
 
-export const COLS = 10;
-export const ROWS = 20;
+/**
+ * Landscape playfield. The vue original is 50x30 (ratio 5:3) sized to the
+ * whole viewport; that is huge to actually play, so we keep the WIDE landscape
+ * character at 32x18 (16:9) — blocks read near-square on a widescreen canvas
+ * and pieces still appear scattered across a broad field, never a portrait well.
+ */
+export const COLS = 32;
+export const ROWS = 18;
 
 /** Classic NES line-clear base scores for 0..4 lines; multiplied by (level + 1). */
 export const LINE_SCORES = [0, 40, 100, 300, 1200] as const;
 
-/** Cell colors indexed by (cell value - 1); cell values are shape ids 1..7. */
+/**
+ * Cell colors indexed by (cell value - 1); cell values are shape ids 1..7.
+ * Palette matches the vue original's vivid arcade set so the game reads the
+ * same over the video backdrop.
+ */
 export const COLORS = [
-  '#22d3ee', // I — cyan
-  '#facc15', // O — yellow
-  '#c084fc', // T — purple
-  '#4ade80', // S — green
-  '#f87171', // Z — red
-  '#60a5fa', // J — blue
-  '#fb923c', // L — orange
+  '#00ffff', // I — cyan
+  '#ffa500', // J — orange
+  '#2323ff', // L — blue
+  '#ffd700', // O — gold
+  '#f72119', // S — red
+  '#39ff14', // Z — green
+  '#a020f0', // T — purple
 ] as const;
 
 export type Matrix = readonly (readonly number[])[];
@@ -52,36 +66,12 @@ export interface GameState {
 /** Injectable randomness so tests can force a piece sequence. */
 export type Rng = () => number;
 
-/** The 7 tetrominoes (I, O, T, S, Z, J, L) as 4x4 bit grids. */
+/** The 7 tetrominoes (I, J, L, O, S, Z, T) as 4x4 bit grids. */
 const SHAPES: Matrix[] = [
   [
     [0, 0, 0, 0],
     [1, 1, 1, 1],
     [0, 0, 0, 0],
-    [0, 0, 0, 0],
-  ],
-  [
-    [0, 0, 0, 0],
-    [0, 1, 1, 0],
-    [0, 1, 1, 0],
-    [0, 0, 0, 0],
-  ],
-  [
-    [0, 0, 0, 0],
-    [0, 1, 0, 0],
-    [1, 1, 1, 0],
-    [0, 0, 0, 0],
-  ],
-  [
-    [0, 0, 0, 0],
-    [0, 1, 1, 0],
-    [1, 1, 0, 0],
-    [0, 0, 0, 0],
-  ],
-  [
-    [0, 0, 0, 0],
-    [1, 1, 0, 0],
-    [0, 1, 1, 0],
     [0, 0, 0, 0],
   ],
   [
@@ -93,6 +83,30 @@ const SHAPES: Matrix[] = [
   [
     [0, 0, 0, 0],
     [0, 0, 1, 0],
+    [1, 1, 1, 0],
+    [0, 0, 0, 0],
+  ],
+  [
+    [0, 0, 0, 0],
+    [0, 1, 1, 0],
+    [0, 1, 1, 0],
+    [0, 0, 0, 0],
+  ],
+  [
+    [0, 0, 0, 0],
+    [0, 1, 1, 0],
+    [1, 1, 0, 0],
+    [0, 0, 0, 0],
+  ],
+  [
+    [0, 0, 0, 0],
+    [1, 1, 0, 0],
+    [0, 1, 1, 0],
+    [0, 0, 0, 0],
+  ],
+  [
+    [0, 0, 0, 0],
+    [0, 1, 0, 0],
     [1, 1, 1, 0],
     [0, 0, 0, 0],
   ],
@@ -125,10 +139,16 @@ export function createBoard(): number[][] {
   return Array.from({ length: ROWS }, () => Array<number>(COLS).fill(0));
 }
 
+/**
+ * Spawn a random piece at a RANDOM horizontal position on the wide board —
+ * faithful to the vue original (`Math.floor(rnd * (COLS - 4))`), which is a big
+ * part of the landscape feel: pieces rain down all across the field.
+ */
 export function spawnPiece(rng: Rng = Math.random): Piece {
   const id = Math.floor(rng() * SHAPES.length);
   const matrix = SHAPES[id].map((row) => row.map((cell) => (cell ? id + 1 : 0)));
-  return { matrix, x: Math.floor((COLS - 4) / 2), y: 0 };
+  const x = Math.floor(rng() * (COLS - 4));
+  return { matrix, x, y: 0 };
 }
 
 /** Rotate a 4x4 matrix 90° clockwise. */

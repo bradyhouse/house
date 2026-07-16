@@ -1,4 +1,27 @@
-<div #shell class="shell" [class.is-fullscreen]="isFullscreen()">
+<div
+  #stage
+  class="stage"
+  [class.is-fullscreen]="isFullscreen()"
+  [style.width.px]="viewW()"
+  [style.height.px]="viewH()"
+>
+  <!-- YouTube backdrop: sits BEHIND a transparent canvas so the video shows
+       through the empty cells while you play. -->
+  <div class="video-wrapper">
+    <iframe
+      class="youtube-backdrop"
+      title="YouTube video backdrop"
+      [src]="video.embedUrl()"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <!-- Transparent playfield: only filled blocks + optional gridlines are drawn. -->
+  <canvas #canvas class="playfield" [width]="viewW()" [height]="viewH()"></canvas>
+
+  <!-- HUD -->
   <header class="hud" aria-label="Game stats">
     <div class="stat">
       <span class="stat-label">Score</span>
@@ -18,44 +41,99 @@
     </div>
   </header>
 
-  <div class="board" role="grid" aria-label="Tetris board">
-    @for (cell of cells(); track $index) {
-      <div class="cell" [class.filled]="cell > 0" [style.--cell-color]="colorOf(cell)"></div>
-    }
+  <!-- Status overlays -->
+  @if (status() === 'idle') {
+    <div class="overlay">
+      <p class="overlay-title">Tetris</p>
+      <p class="overlay-hint">press Start to play over the video</p>
+    </div>
+  } @else if (status() === 'paused') {
+    <div class="overlay">
+      <p class="overlay-title">Paused</p>
+      <p class="overlay-hint">press P to resume</p>
+    </div>
+  } @else if (status() === 'over') {
+    <div class="overlay">
+      <p class="overlay-title">Game over</p>
+      <p class="overlay-hint">final score {{ score() }} — press Restart</p>
+    </div>
+  }
 
-    @if (status() === 'idle') {
-      <div class="overlay">
-        <p class="overlay-title">Tetris</p>
-        <p class="overlay-hint">press Start to play</p>
-      </div>
-    } @else if (status() === 'paused') {
-      <div class="overlay">
-        <p class="overlay-title">Paused</p>
-        <p class="overlay-hint">press P to resume</p>
-      </div>
-    } @else if (status() === 'over') {
-      <div class="overlay">
-        <p class="overlay-title">Game over</p>
-        <p class="overlay-hint">final score {{ score() }}</p>
-      </div>
-    }
-  </div>
+  <!-- Control bar -->
+  <footer class="controls" aria-label="Game controls">
+    <div class="pad" role="group" aria-label="Move">
+      <button type="button" title="Move left (←)" (click)="move('left')">◀</button>
+      <button type="button" title="Rotate (↑)" (click)="move('rotate')">⟳</button>
+      <button type="button" title="Soft drop (↓)" (click)="move('down')">▼</button>
+      <button type="button" title="Move right (→)" (click)="move('right')">▶</button>
+      <button type="button" title="Hard drop (space)" (click)="move('drop')">⤓</button>
+    </div>
 
-  <footer class="controls">
-    <button type="button" (click)="start()">
-      {{ status() === 'idle' ? 'Start' : 'Restart' }}
-    </button>
-    <button type="button" (click)="pause()" [disabled]="status() === 'idle' || status() === 'over'">
-      {{ status() === 'paused' ? 'Resume' : 'Pause' }}
-    </button>
-    <button type="button" (click)="toggleFullscreen()">
-      {{ isFullscreen() ? 'Exit fullscreen' : 'Fullscreen' }}
-    </button>
+    <div class="group" role="group" aria-label="Game">
+      <button type="button" (click)="start()">{{ status() === 'idle' ? 'Start' : 'Restart' }}</button>
+      <button
+        type="button"
+        (click)="pause()"
+        [disabled]="status() === 'idle' || status() === 'over'"
+      >
+        {{ status() === 'paused' ? 'Resume' : 'Pause' }}
+      </button>
+    </div>
+
+    <div class="group" role="group" aria-label="View">
+      <button type="button" (click)="toggleGrid()" [class.on]="gridOn()">
+        {{ gridOn() ? 'Grid on' : 'Grid off' }}
+      </button>
+      <button type="button" (click)="openVideoPanel()">Video</button>
+      <button type="button" (click)="toggleFullscreen()">
+        {{ isFullscreen() ? 'Exit fullscreen' : 'Fullscreen' }}
+      </button>
+    </div>
   </footer>
+
+  <!-- Configurable backdrop panel -->
+  @if (showVideoPanel()) {
+    <div class="video-panel" role="dialog" aria-label="Change background video">
+      <p class="panel-title">Background video</p>
+      <input
+        type="text"
+        class="panel-input"
+        placeholder="YouTube URL or 11-char video id"
+        [ngModel]="draftUrl()"
+        (ngModelChange)="draftUrl.set($event)"
+        (keydown.enter)="applyVideo()"
+      />
+
+      @if (previewUrl(); as preview) {
+        <iframe
+          class="panel-preview"
+          title="Video preview"
+          [src]="preview"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+        ></iframe>
+      } @else {
+        <p class="panel-hint">Paste a watch/share/embed URL or a bare id to preview.</p>
+      }
+
+      @if (videoError(); as message) {
+        <p class="panel-error" role="alert">{{ message }}</p>
+      }
+
+      <div class="panel-buttons">
+        <button type="button" (click)="resetVideo()">Reset to default</button>
+        <span class="spacer"></span>
+        <button type="button" (click)="closeVideoPanel()">Cancel</button>
+        <button type="button" class="primary" (click)="applyVideo()">Apply</button>
+      </div>
+    </div>
+  }
 
   @if (fullscreenError(); as message) {
     <p class="fullscreen-error" role="alert">{{ message }}</p>
   }
-
-  <p class="key-legend">&larr; &rarr; move &middot; &uarr; rotate &middot; &darr; soft drop &middot; space hard drop &middot; P pause</p>
 </div>
+
+<p class="key-legend">
+  &larr; &rarr; move &middot; &uarr; rotate &middot; &darr; soft drop &middot; space hard drop &middot; P pause
+</p>

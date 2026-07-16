@@ -12,6 +12,10 @@
 npm-debug.log
 yarn-error.log
 
+# Playwright
+/test-results
+/playwright-report
+
 # IDEs and editors
 .idea/
 .project

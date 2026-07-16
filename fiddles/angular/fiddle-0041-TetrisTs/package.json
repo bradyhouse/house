@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "playwright test",
-    "test:engine": "tsc -p tsconfig.engine.json && node --test .engine-out/tetris.spec.mjs"
+    "test:engine": "tsc -p tsconfig.engine.json && node --test .engine-out/tetris.spec.mjs .engine-out/youtube.spec.mjs"
   },
   "private": true,
   "dependencies": {

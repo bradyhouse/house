@@ -2,7 +2,7 @@
  * Engine unit tests — pure logic, no DOM, no Angular, no karma.
  *
  * Run headless with `npm run test:engine`:
- *   tsc -p tsconfig.engine.json && node --test .engine-out/tetris.spec.mjs
+ *   tsc -p tsconfig.engine.json && node --test .engine-out/tetris.spec.mjs …
  */
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
@@ -18,13 +18,14 @@ import {
   rotateClockwise,
   scoreFor,
   softDrop,
+  spawnPiece,
   tick,
   tickIntervalMs,
   type GameState,
   type Rng,
 } from './tetris.js';
 
-/** Rng stub that always spawns shape id 0 (the I piece). */
+/** Rng stub that always spawns shape id 0 (the I piece) at x = 0. */
 const alwaysI: Rng = () => 0;
 
 /** Fill a board row, optionally leaving some columns empty. */
@@ -33,6 +34,12 @@ function fillRow(board: number[][], y: number, except: number[] = []): void {
     board[y][x] = except.includes(x) ? 0 : 9;
   }
 }
+
+describe('landscape board', () => {
+  it('is wide — more columns than rows', () => {
+    assert.ok(COLS > ROWS, `expected a landscape board, got ${COLS}x${ROWS}`);
+  });
+});
 
 describe('scoring (classic NES table)', () => {
   it('pays 40/100/300/1200 × (level + 1)', () => {
@@ -108,6 +115,23 @@ describe('isValid (collision / wall validity)', () => {
   });
 });
 
+describe('spawnPiece (random-x on the wide board)', () => {
+  it('always lands fully inside the board for any rng draw', () => {
+    for (const r of [0, 0.25, 0.5, 0.75, 0.999]) {
+      const piece = spawnPiece(() => r);
+      piece.matrix.forEach((row, py) =>
+        row.forEach((cell, px) => {
+          if (!cell) return;
+          const x = piece.x + px;
+          const y = piece.y + py;
+          assert.ok(x >= 0 && x < COLS, `cell x ${x} out of bounds for rng ${r}`);
+          assert.ok(y >= 0 && y < ROWS, `cell y ${y} out of bounds for rng ${r}`);
+        }),
+      );
+    }
+  });
+});
+
 describe('rotateClockwise', () => {
   it('turns a row into a column and returns after four turns', () => {
     const iPiece = [
@@ -117,15 +141,12 @@ describe('rotateClockwise', () => {
       [0, 0, 0, 0],
     ];
     const once = rotateClockwise(iPiece);
-    assert.deepEqual(
-      once,
-      [
-        [0, 0, 1, 0],
-        [0, 0, 1, 0],
-        [0, 0, 1, 0],
-        [0, 0, 1, 0],
-      ],
-    );
+    assert.deepEqual(once, [
+      [0, 0, 1, 0],
+      [0, 0, 1, 0],
+      [0, 0, 1, 0],
+      [0, 0, 1, 0],
+    ]);
     const fourTimes = rotateClockwise(rotateClockwise(rotateClockwise(once)));
     assert.deepEqual(fourTimes, iPiece);
   });
@@ -140,10 +161,10 @@ describe('tick / hardDrop', () => {
   });
 
   it('hard drop locks the piece, clears the line, and scores 40 at level 0', () => {
-    const game = newGame(alwaysI);
-    // I piece is 4 wide at x=3 → leave exactly columns 3..6 open on the bottom row.
+    const game = newGame(alwaysI); // I piece spawns at x = 0 (rng → 0)
+    // I occupies row 1 of its matrix at cols 0..3 → leave those open on the floor.
     const board = createBoard();
-    fillRow(board, ROWS - 1, [3, 4, 5, 6]);
+    fillRow(board, ROWS - 1, [0, 1, 2, 3]);
     const rigged: GameState = { ...game, board };
 
     const next = hardDrop(rigged, alwaysI);
@@ -164,9 +185,9 @@ describe('tick / hardDrop', () => {
 
 describe('game over', () => {
   it('ends the game when the next spawn collides with the stack', () => {
-    const game = newGame(alwaysI);
-    // Block the spawn row of the next piece (I occupies row 1 of its matrix).
-    // Leave column 0 open so these rows are NOT clearable full lines.
+    const game = newGame(alwaysI); // spawns at x = 0
+    // Fill the I piece's spawn rows (matrix row 1 → board rows 1..2) except col 0,
+    // so they are NOT clearable full lines but DO block the next x=0 spawn.
     const board = createBoard();
     fillRow(board, 1, [0]);
     fillRow(board, 2, [0]);

@@ -5,11 +5,20 @@
  * Randomness is kept pure by threading a deterministic LCG seed through the
  * state, so every transition is reproducible (and unit-testable).
  *
- * Game mechanics ported from fiddles/vue/fiddle-0020-TetrisJs.
+ * Ported from fiddles/vue/fiddle-0020-TetrisJs. Faithful to that original's
+ * defining character: a WIDE, LANDSCAPE playfield (50 x 30) whose pieces spawn
+ * at a random column across the width (the vue store used
+ * `Math.floor(Math.random() * (COLS - 4))`), here made deterministic via the seed.
  */
 
-export const COLS = 10
-export const ROWS = 20
+/**
+ * Board dimensions. The original vue fiddle is a WIDE landscape board — 50
+ * columns by 30 rows — not a portrait well. These are exported so the renderer
+ * can size the canvas (block size = pixelW / COLS x pixelH / ROWS) and a caller
+ * could tune the shape while keeping the wide ratio.
+ */
+export const COLS = 50
+export const ROWS = 30
 
 /** Classic NES scoring table, indexed by number of lines cleared at once. */
 export const SCORE_TABLE = [0, 40, 100, 300, 1200] as const
@@ -50,7 +59,7 @@ export interface TetrisState {
   piece: Matrix
   pieceX: number
   pieceY: number
-  /** Piece id (index into SHAPES) shown in the "next" preview. */
+  /** Piece id (index into SHAPES) of the upcoming piece — small HUD preview. */
   nextPieceId: number
   score: number
   lines: number
@@ -76,6 +85,13 @@ const nextSeed = (seed: number): number =>
   (Math.imul(seed, 1664525) + 1013904223) >>> 0
 
 const pieceIdFromSeed = (seed: number): number => seed % SHAPES.length
+
+/**
+ * Random spawn column across the width, mirroring the vue store's
+ * `Math.floor(Math.random() * (COLS - 4))` — a piece can appear anywhere along
+ * the wide board, not just centered.
+ */
+const spawnXFromSeed = (seed: number): number => seed % Math.max(1, COLS - 4)
 
 // --- pure helpers ----------------------------------------------------------
 
@@ -157,15 +173,14 @@ export const tickIntervalMs = (level: number): number =>
 
 // --- state transitions ------------------------------------------------------
 
-const SPAWN_X = Math.floor((COLS - 4) / 2)
-
 export function createInitialState(seed = 1): TetrisState {
+  const firstId = pieceIdFromSeed(seed)
   return {
     board: createEmptyBoard(),
-    piece: shapeMatrix(pieceIdFromSeed(seed)),
-    pieceX: SPAWN_X,
+    piece: shapeMatrix(firstId),
+    pieceX: spawnXFromSeed(seed),
     pieceY: 0,
-    nextPieceId: pieceIdFromSeed(seed),
+    nextPieceId: pieceIdFromSeed(nextSeed(seed)),
     score: 0,
     lines: 0,
     status: 'idle',
@@ -173,18 +188,25 @@ export function createInitialState(seed = 1): TetrisState {
   }
 }
 
-/** Bring in the next piece; the game is lost if it has no room to spawn. */
+/**
+ * Bring in the queued `nextPieceId` at a random column; queue the following
+ * piece and advance the seed twice (once for the spawn column, once for the
+ * next id). The game is lost if the new piece has no room to spawn.
+ */
 function spawn(state: TetrisState): TetrisState {
-  const seed = nextSeed(state.seed)
   const piece = shapeMatrix(state.nextPieceId)
-  const blocked = !isValidPosition(state.board, piece, SPAWN_X, 0)
+  const seedForX = nextSeed(state.seed)
+  const pieceX = spawnXFromSeed(seedForX)
+  const seedForNext = nextSeed(seedForX)
+  const nextPieceId = pieceIdFromSeed(seedForNext)
+  const blocked = !isValidPosition(state.board, piece, pieceX, 0)
   return {
     ...state,
     piece,
-    pieceX: SPAWN_X,
+    pieceX,
     pieceY: 0,
-    nextPieceId: pieceIdFromSeed(seed),
-    seed,
+    nextPieceId,
+    seed: seedForNext,
     status: blocked ? 'gameover' : state.status,
   }
 }
