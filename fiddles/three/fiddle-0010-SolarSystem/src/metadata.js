@@ -2,40 +2,40 @@ let metadata = {
     urls: {
         github: 'https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0010-SolarSystem',
         sun: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunSurfaceMaterial.jpg',
-            atmosphereMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/sunAtmosphereMaterial.png'
+            surfaceMaterial: 'resources/images/sunSurfaceMaterial.jpg',
+            atmosphereMaterial: 'resources/images/sunAtmosphereMaterial.png'
         },
         mercury: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/mercurySurfaceMaterial.jpg'
+            surfaceMaterial: 'resources/images/mercurySurfaceMaterial.jpg'
         },
         venus: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/venusSurfaceMaterial.jpg'
+            surfaceMaterial: 'resources/images/venusSurfaceMaterial.jpg'
         },
         earth: {
-            normalMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurfaceNormal.jpg',
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurface.jpg',
-            specularMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthSurfaceSpecular.jpg',
-            cloudsMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/earthAtmosphere.png'
+            normalMaterial: 'resources/images/earthSurfaceNormal.jpg',
+            surfaceMaterial: 'resources/images/earthSurface.jpg',
+            specularMaterial: 'resources/images/earthSurfaceSpecular.jpg',
+            cloudsMaterial: 'resources/images/earthAtmosphere.png'
         },
-        moon: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/moon.jpg',
+        moon: 'resources/images/moon.jpg',
         mars: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/marsSurfaceMaterial.png'
+            surfaceMaterial: 'resources/images/marsSurfaceMaterial.png'
         },
         jupiter: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/jupiterSurfaceMaterial.jpg'
+            surfaceMaterial: 'resources/images/jupiterSurfaceMaterial.jpg'
         },
         saturn: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/saturnSurface.jpg',
-            ringsMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/saturnRings.png'
+            surfaceMaterial: 'resources/images/saturnSurface.jpg',
+            ringsMaterial: 'resources/images/saturnRings.png'
         },
         uranus: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/uranusSurfaceMaterial.jpg'
+            surfaceMaterial: 'resources/images/uranusSurfaceMaterial.jpg'
         },
         neptune: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/neptuneSurfaceMaterial.jpg'
+            surfaceMaterial: 'resources/images/neptuneSurfaceMaterial.jpg'
         },
         pluto: {
-            surfaceMaterial: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/plutoSurfaceMaterial.jpg'
+            surfaceMaterial: 'resources/images/plutoSurfaceMaterial.jpg'
         },
     },
     consoleTag: 'H O U S E ~ f i d d l e s',

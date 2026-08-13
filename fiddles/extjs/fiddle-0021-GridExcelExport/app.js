@@ -1,7 +1,7 @@
 var meta = {
     fiddleHeader: 'Extreme Fiddle ~ Grid Excel Exporter',
     fiddleSubHeader: '<i>Fiddle exploring the Ext.grid.plugin.Exporter class.</i></br>',
-    recordsUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/data.json'
+    recordsUrl: 'resources/data.json'
 }
 
 /**

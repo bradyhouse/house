@@ -1,7 +1,7 @@
 var meta = {
     fiddleHeader: 'Extreme Fiddle ~ Ext JS Aria Theme',
     fiddleSubHeader: '<br>Fiddle exploring how to manually persist (and then restore) the state of a grid using a local storage provider.</i></br>',
-    recordsUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/data.json'
+    recordsUrl: 'resources/data.json'
 }
 
 function getGridColumnState(grid) {

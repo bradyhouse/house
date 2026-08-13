@@ -5,7 +5,7 @@
         fiddleHeader: 'Rx - fiddle-0003-Disposable',
         urls: {
             github: 'https://github.com/bradyhouse/house/tree/master/fiddles/rxjs/fiddle-0003-Disposable',
-            data: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/data.json"
+            data: "resources/data.json"
         },
         consoleTag: 'H O U S E ~ f i d d l e s'
     };
