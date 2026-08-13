@@ -1,0 +1,152 @@
+{
+ "rss": {
+  "channel": {
+   "item": [
+    {
+     "title": "The Sun",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/sunSurfaceMaterial.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Mercury",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/mercurySurfaceMaterial.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Venus",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/venusSurfaceMaterial.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Earth",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/earthSurface.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "The Moon",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/moon.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Mars",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/marsSurfaceMaterial.png",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Jupiter",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/jupiterSurfaceMaterial.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Saturn",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/saturnSurface.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Saturn's Rings",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/saturnRings.png",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Uranus",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/uranusSurfaceMaterial.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Neptune",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/neptuneSurfaceMaterial.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    },
+    {
+     "title": "Pluto",
+     "media:group": {
+      "media:content": {
+       "$": {
+        "url": "resources/images/plutoSurfaceMaterial.jpg",
+        "width": "240",
+        "height": "240"
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}

@@ -5,7 +5,7 @@
     app.metadata = app.metadata || {
         consoleTag: 'H O U S E ~ f i d d l e s',
         gitHubUrl: 'https://github.com/bradyhouse/house/tree/master/fiddles/svg/fiddle-0027-ImageCloud',
-        dataUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/297733/photo-album.json'
+        dataUrl: 'photo-album.json'
     };
 
 
@@ -1442,7 +1442,7 @@
             console.log("%c" + app.metadata.gitHubUrl, "color: blue; font-style: italic; text-decoration: underline; background-color: #FFFF00;");
             $('#fiddleHook').width($(document).width());
             $('#fiddleHook').height($(document).height());
-            $(document).load(app.metadata.dataUrl);
+            $.get(app.metadata.dataUrl); // jQuery 3 dropped .load(url) ajax — $.get still triggers ajaxComplete
             $(document).ajaxComplete(this.onAjaxComplete);
         },
         onAjaxComplete: function(event, xhr, settings) {
