@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fiddle-0026-JumpmanLevels</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="fiddles/three/fiddle-0026-JumpmanLevels — a 2.5D three.js tribute to the 1983 platformer Jumpman">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="bradyhouse@gmail.com" />
+    <link rel="shortcut icon" href="../../resources/images/favicon.ico" id="favicon" />
+    <style>
+      html, body { margin: 0; height: 100%; background: #05060a; overflow: hidden; }
+      canvas { display: block; }
+      #hud {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+        display: flex; gap: 22px; align-items: baseline;
+        padding: 10px 16px; pointer-events: none;
+        font-family: "Courier New", ui-monospace, monospace;
+        color: #7dffea; text-shadow: 0 0 8px rgba(125,255,234,0.55);
+        letter-spacing: 0.14em; font-size: 15px; text-transform: uppercase;
+      }
+      #hud b { color: #fff6a8; text-shadow: 0 0 10px rgba(255,246,168,0.6); }
+      #banner {
+        position: fixed; inset: 0; z-index: 20; display: flex;
+        flex-direction: column; align-items: center; justify-content: center;
+        gap: 14px; text-align: center; pointer-events: none;
+        font-family: "Courier New", ui-monospace, monospace; color: #7dffea;
+      }
+      #banner .title { font-size: 46px; letter-spacing: 0.22em; color: #ff5db1;
+        text-shadow: 0 0 18px rgba(255,93,177,0.7); }
+      #banner .sub { font-size: 16px; letter-spacing: 0.16em; opacity: 0.9; }
+      #banner .keys { font-size: 13px; letter-spacing: 0.1em; opacity: 0.7; margin-top: 10px; line-height: 1.8; }
+      #banner.hide { display: none; }
+      .flash { animation: fl 1.1s ease-in-out infinite; }
+      @keyframes fl { 0%,100%{opacity:1} 50%{opacity:0.35} }
+    </style>
+</head>
+<body>
+    <a id="githubLink" href="https://github.com/bradyhouse/house/tree/master/fiddles/three/fiddle-0026-JumpmanLevels" target="_blank"><img style="z-index: 1000; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+
+    <div id="hud">
+      <span>Bombs <b id="bombs">0/0</b></span>
+      <span>Score <b id="score">0</b></span>
+      <span>Bonus <b id="bonus">0</b></span>
+      <span>Lives <b id="lives">7</b></span>
+      <span id="level">1. Dunno</span>
+    </div>
+
+    <div id="banner">
+      <div class="title">JUMPMAN</div>
+      <div class="sub" id="bannerSub">5 real boards</div>
+      <div class="keys">
+        ← → run &nbsp;·&nbsp; ↑ ↓ climb a rope or ladder &nbsp;·&nbsp; SPACE jump<br />
+        collect every bomb to clear the board &nbsp;·&nbsp; mind the drop
+      </div>
+      <div class="sub flash" id="bannerGo" style="margin-top:16px">press SPACE to start</div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.164.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
